@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawablefilter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimperror.h"
 end_include
 
@@ -125,12 +131,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-pick-color.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimagemap.h"
 end_include
 
 begin_include
@@ -601,7 +601,7 @@ specifier|static
 name|void
 name|gimp_filter_tool_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
 name|filter
 parameter_list|,
@@ -2918,7 +2918,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|filter_tool
 operator|->
@@ -2941,7 +2941,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|filter_tool
 operator|->
@@ -3182,7 +3182,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_image_map_set_preview
+name|gimp_drawable_filter_set_preview
 argument_list|(
 name|filter_tool
 operator|->
@@ -3237,7 +3237,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_set_preview
+name|gimp_drawable_filter_set_preview
 argument_list|(
 name|filter_tool
 operator|->
@@ -3286,7 +3286,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_set_preview
+name|gimp_drawable_filter_set_preview
 argument_list|(
 name|filter_tool
 operator|->
@@ -3335,7 +3335,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_set_region
+name|gimp_drawable_filter_set_region
 argument_list|(
 name|filter_tool
 operator|->
@@ -3365,7 +3365,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_set_gamma_hack
+name|gimp_drawable_filter_set_gamma_hack
 argument_list|(
 name|filter_tool
 operator|->
@@ -3682,7 +3682,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|filter_tool
 operator|->
@@ -3773,7 +3773,7 @@ name|options
 operator|->
 name|preview
 condition|)
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|filter_tool
 operator|->
@@ -3791,7 +3791,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_commit
+name|gimp_drawable_filter_commit
 argument_list|(
 name|filter_tool
 operator|->
@@ -4053,7 +4053,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|filter_tool
 operator|->
@@ -4079,7 +4079,7 @@ name|filter_tool
 operator|->
 name|filter
 operator|=
-name|gimp_image_map_new
+name|gimp_drawable_filter_new
 argument_list|(
 name|filter_tool
 operator|->
@@ -4098,7 +4098,7 @@ operator|->
 name|icon_name
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_set_region
+name|gimp_drawable_filter_set_region
 argument_list|(
 name|filter_tool
 operator|->
@@ -4147,7 +4147,7 @@ name|options
 operator|->
 name|preview
 condition|)
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|filter_tool
 operator|->
@@ -4162,10 +4162,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_filter_tool_flush (GimpImageMap * filter,GimpFilterTool * filter_tool)
+DECL|function|gimp_filter_tool_flush (GimpDrawableFilter * filter,GimpFilterTool * filter_tool)
 name|gimp_filter_tool_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
 name|filter
 parameter_list|,
@@ -4244,7 +4244,7 @@ name|options
 operator|->
 name|preview
 condition|)
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|filter_tool
 operator|->
@@ -4995,7 +4995,7 @@ operator|->
 name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|filter_tool
 operator|->
@@ -5496,7 +5496,7 @@ argument_list|)
 argument_list|,
 literal|"region"
 argument_list|,
-name|GIMP_IMAGE_MAP_REGION_SELECTION
+name|GIMP_FILTER_REGION_SELECTION
 argument_list|,
 name|NULL
 argument_list|)

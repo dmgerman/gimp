@@ -138,7 +138,7 @@ name|GeglBuffer
 modifier|*
 name|coords_buffer
 decl_stmt|;
-comment|/* Gegl buffer where coordinates are stored */
+comment|/* Buffer where coordinates are stored */
 DECL|member|graph
 name|GeglNode
 modifier|*
@@ -150,7 +150,7 @@ name|GeglNode
 modifier|*
 name|render_node
 decl_stmt|;
-comment|/* Gegl node to render the transformation */
+comment|/* Node to render the transformation */
 DECL|member|current_stroke
 name|GeglPath
 modifier|*
@@ -160,10 +160,10 @@ DECL|member|stroke_timer
 name|guint
 name|stroke_timer
 decl_stmt|;
-DECL|member|image_map
-name|GimpImageMap
+DECL|member|filter
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 decl_stmt|;
 DECL|member|redo_stack
 name|GList

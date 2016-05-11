@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b4ff5f0103
+DECL|enum|__anon29dfcf6e0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -244,10 +244,10 @@ name|GeglBuffer
 modifier|*
 name|dist_buffer
 decl_stmt|;
-DECL|member|image_map
-name|GimpImageMap
+DECL|member|filter
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 decl_stmt|;
 block|}
 struct|;

@@ -146,12 +146,12 @@ name|gint
 name|tool_state
 decl_stmt|;
 comment|/* The current state in the tool's                                    * state machine */
-DECL|member|image_map
-name|GimpImageMap
+DECL|member|filter
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 decl_stmt|;
-comment|/* The image map object which renders                                    * the live preview, and commits it                                    * when at the end */
+comment|/* The filter object which renders                                    * the live preview, and commits it                                    * when at the end */
 DECL|member|width
 DECL|member|height
 name|gint

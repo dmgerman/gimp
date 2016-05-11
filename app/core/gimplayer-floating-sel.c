@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-filter.h"
+file|"gimpdrawable-filters.h"
 end_include
 
 begin_include

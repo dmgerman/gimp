@@ -120,7 +120,7 @@ name|gdouble
 name|preview_position
 decl_stmt|;
 DECL|member|region
-name|GimpImageMapRegion
+name|GimpFilterRegion
 name|region
 decl_stmt|;
 DECL|member|gamma_hack

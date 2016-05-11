@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad99e070103
+DECL|enum|__anon2977adb10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -301,9 +301,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_IMAGE_MAP_REGION
+name|GIMP_TYPE_FILTER_REGION
 argument_list|,
-name|GIMP_IMAGE_MAP_REGION_SELECTION
+name|GIMP_FILTER_REGION_SELECTION
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||

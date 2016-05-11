@@ -212,10 +212,10 @@ name|gint
 name|tool_state
 decl_stmt|;
 comment|/* Current state in statemachine */
-DECL|member|image_map
-name|GimpImageMap
+DECL|member|filter
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 decl_stmt|;
 comment|/* For preview */
 block|}

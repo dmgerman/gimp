@@ -80,13 +80,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpdrawablefilter.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemap.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -247,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278c62290103
+DECL|enum|__anon290e998c0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -550,7 +550,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_seamless_clone_tool_create_image_map
+name|gimp_seamless_clone_tool_create_filter
 parameter_list|(
 name|GimpSeamlessCloneTool
 modifier|*
@@ -566,11 +566,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_seamless_clone_tool_image_map_flush
+name|gimp_seamless_clone_tool_filter_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|GimpTool
 modifier|*
@@ -582,7 +582,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_seamless_clone_tool_image_map_update
+name|gimp_seamless_clone_tool_filter_update
 parameter_list|(
 name|GimpSeamlessCloneTool
 modifier|*
@@ -1049,7 +1049,7 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|gimp_seamless_clone_tool_create_image_map
+name|gimp_seamless_clone_tool_create_filter
 argument_list|(
 name|sc
 argument_list|,
@@ -1169,26 +1169,26 @@ if|if
 condition|(
 name|sc
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|sc
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -1250,7 +1250,7 @@ if|if
 condition|(
 name|sc
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
 name|gimp_tool_control_push_preserve
@@ -1262,11 +1262,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_commit
+name|gimp_drawable_filter_commit
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
@@ -1280,12 +1280,12 @@ name|g_object_unref
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|sc
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -1474,7 +1474,7 @@ name|sc
 argument_list|)
 condition|)
 block|{
-name|gimp_seamless_clone_tool_image_map_update
+name|gimp_seamless_clone_tool_filter_update
 argument_list|(
 name|sc
 argument_list|)
@@ -1645,7 +1645,7 @@ name|sc
 argument_list|)
 condition|)
 block|{
-name|gimp_seamless_clone_tool_image_map_update
+name|gimp_seamless_clone_tool_filter_update
 argument_list|(
 name|sc
 argument_list|)
@@ -1771,7 +1771,7 @@ name|sc
 argument_list|)
 condition|)
 block|{
-name|gimp_seamless_clone_tool_image_map_update
+name|gimp_seamless_clone_tool_filter_update
 argument_list|(
 name|sc
 argument_list|)
@@ -1850,11 +1850,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* TODO: there may be issues with committing the image map            *       result after some changes were made and the preview            *       was scrolled. We can fix these by either invalidating            *       the area which is a union of the previous paste            *       rectangle each time (in the update function) or by            *       invalidating and re-rendering all now (expensive and            *       perhaps useless */
-name|gimp_image_map_commit
+name|gimp_drawable_filter_commit
 argument_list|(
 name|sct
 operator|->
-name|image_map
+name|filter
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
@@ -1868,12 +1868,12 @@ name|g_object_unref
 argument_list|(
 name|sct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|sct
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -2171,7 +2171,7 @@ name|sc
 argument_list|)
 condition|)
 block|{
-name|gimp_seamless_clone_tool_image_map_update
+name|gimp_seamless_clone_tool_filter_update
 argument_list|(
 name|sc
 argument_list|)
@@ -2605,8 +2605,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_seamless_clone_tool_create_image_map (GimpSeamlessCloneTool * sc,GimpDrawable * drawable)
-name|gimp_seamless_clone_tool_create_image_map
+DECL|function|gimp_seamless_clone_tool_create_filter (GimpSeamlessCloneTool * sc,GimpDrawable * drawable)
+name|gimp_seamless_clone_tool_create_filter
 parameter_list|(
 name|GimpSeamlessCloneTool
 modifier|*
@@ -2631,9 +2631,9 @@ argument_list|)
 expr_stmt|;
 name|sc
 operator|->
-name|image_map
+name|filter
 operator|=
-name|gimp_image_map_new
+name|gimp_drawable_filter_new
 argument_list|(
 name|drawable
 argument_list|,
@@ -2649,26 +2649,26 @@ argument_list|,
 name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_set_region
+name|gimp_drawable_filter_set_region
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|,
-name|GIMP_IMAGE_MAP_REGION_DRAWABLE
+name|GIMP_FILTER_REGION_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|,
 literal|"flush"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_seamless_clone_tool_image_map_flush
+name|gimp_seamless_clone_tool_filter_flush
 argument_list|)
 argument_list|,
 name|sc
@@ -2680,12 +2680,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_seamless_clone_tool_image_map_flush (GimpImageMap * image_map,GimpTool * tool)
-name|gimp_seamless_clone_tool_image_map_flush
+DECL|function|gimp_seamless_clone_tool_filter_flush (GimpDrawableFilter * filter,GimpTool * tool)
+name|gimp_seamless_clone_tool_filter_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|GimpTool
 modifier|*
@@ -2717,8 +2717,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_seamless_clone_tool_image_map_update (GimpSeamlessCloneTool * sc)
-name|gimp_seamless_clone_tool_image_map_update
+DECL|function|gimp_seamless_clone_tool_filter_update (GimpSeamlessCloneTool * sc)
+name|gimp_seamless_clone_tool_filter_update
 parameter_list|(
 name|GimpSeamlessCloneTool
 modifier|*
@@ -2888,7 +2888,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* Since the image_map_apply function receives a rectangle describing    * where it should update the preview, and since that rectangle should    * be relative to the drawable's location, we now offset back by the    * drawable's offsetts. */
+comment|/* Since the filter_apply function receives a rectangle describing    * where it should update the preview, and since that rectangle should    * be relative to the drawable's location, we now offset back by the    * drawable's offsetts. */
 name|visible
 operator|.
 name|x
@@ -2932,11 +2932,11 @@ name|op
 argument_list|)
 expr_stmt|;
 comment|/* Now update the image map and show this area */
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|sc
 operator|->
-name|image_map
+name|filter
 argument_list|,
 name|NULL
 argument_list|)

@@ -912,6 +912,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawableFilter
+typedef|typedef
+name|struct
+name|_GimpDrawableFilter
+name|GimpDrawableFilter
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpEnvironTable
 typedef|typedef
 name|struct
@@ -944,15 +953,6 @@ typedef|typedef
 name|struct
 name|_GimpIdTable
 name|GimpIdTable
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpImageMap
-typedef|typedef
-name|struct
-name|_GimpImageMap
-name|GimpImageMap
 typedef|;
 end_typedef
 

@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -1692,7 +1686,7 @@ name|region
 condition|)
 block|{
 case|case
-name|GIMP_IMAGE_MAP_REGION_SELECTION
+name|GIMP_FILTER_REGION_SELECTION
 case|:
 if|if
 condition|(
@@ -1728,7 +1722,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_IMAGE_MAP_REGION_DRAWABLE
+name|GIMP_FILTER_REGION_DRAWABLE
 case|:
 name|width
 operator|=

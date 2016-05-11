@@ -160,7 +160,7 @@ modifier|*
 name|help_id
 decl_stmt|;
 DECL|member|filter
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
 name|filter
 decl_stmt|;

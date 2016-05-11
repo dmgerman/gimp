@@ -7253,8 +7253,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_image_map_region_get_type (void)
-name|gimp_image_map_region_get_type
+DECL|function|gimp_filter_region_get_type (void)
+name|gimp_filter_region_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -7267,17 +7267,17 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_IMAGE_MAP_REGION_SELECTION
+name|GIMP_FILTER_REGION_SELECTION
 block|,
-literal|"GIMP_IMAGE_MAP_REGION_SELECTION"
+literal|"GIMP_FILTER_REGION_SELECTION"
 block|,
 literal|"selection"
 block|}
 block|,
 block|{
-name|GIMP_IMAGE_MAP_REGION_DRAWABLE
+name|GIMP_FILTER_REGION_DRAWABLE
 block|,
-literal|"GIMP_IMAGE_MAP_REGION_DRAWABLE"
+literal|"GIMP_FILTER_REGION_DRAWABLE"
 block|,
 literal|"drawable"
 block|}
@@ -7299,11 +7299,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_IMAGE_MAP_REGION_SELECTION
+name|GIMP_FILTER_REGION_SELECTION
 block|,
 name|NC_
 argument_list|(
-literal|"image-map-region"
+literal|"filter-region"
 argument_list|,
 literal|"Use the selection as input"
 argument_list|)
@@ -7312,11 +7312,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_IMAGE_MAP_REGION_DRAWABLE
+name|GIMP_FILTER_REGION_DRAWABLE
 block|,
 name|NC_
 argument_list|(
-literal|"image-map-region"
+literal|"filter-region"
 argument_list|,
 literal|"Use the entire layer as input"
 argument_list|)
@@ -7352,7 +7352,7 @@ name|type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpImageMapRegion"
+literal|"GimpFilterRegion"
 argument_list|,
 name|values
 argument_list|)
@@ -7361,7 +7361,7 @@ name|gimp_type_set_translation_context
 argument_list|(
 name|type
 argument_list|,
-literal|"image-map-region"
+literal|"filter-region"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

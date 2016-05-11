@@ -96,13 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpdrawablefilter.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemap.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29416a820103
+DECL|enum|__anon297387b30103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -539,7 +539,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_cage_tool_create_image_map
+name|gimp_cage_tool_create_filter
 parameter_list|(
 name|GimpCageTool
 modifier|*
@@ -555,11 +555,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_cage_tool_image_map_flush
+name|gimp_cage_tool_filter_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|GimpTool
 modifier|*
@@ -571,7 +571,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_cage_tool_image_map_update
+name|gimp_cage_tool_filter_update
 parameter_list|(
 name|GimpCageTool
 modifier|*
@@ -1040,26 +1040,26 @@ if|if
 condition|(
 name|ct
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|ct
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -1339,7 +1339,7 @@ condition|(
 operator|!
 name|ct
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
 name|GimpImage
@@ -1362,7 +1362,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|gimp_cage_tool_create_image_map
+name|gimp_cage_tool_create_filter
 argument_list|(
 name|ct
 argument_list|,
@@ -1370,7 +1370,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_cage_tool_image_map_update
+name|gimp_cage_tool_filter_update
 argument_list|(
 name|ct
 argument_list|)
@@ -1398,14 +1398,14 @@ if|if
 condition|(
 name|ct
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|gimp_tool_pop_status
@@ -1455,7 +1455,7 @@ argument_list|(
 name|ct
 argument_list|)
 expr_stmt|;
-name|gimp_cage_tool_image_map_update
+name|gimp_cage_tool_filter_update
 argument_list|(
 name|ct
 argument_list|)
@@ -2554,7 +2554,7 @@ break|break;
 case|case
 name|DEFORM_STATE_MOVE_HANDLE
 case|:
-name|gimp_cage_tool_image_map_update
+name|gimp_cage_tool_filter_update
 argument_list|(
 name|ct
 argument_list|)
@@ -2780,7 +2780,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_cage_tool_image_map_update
+name|gimp_cage_tool_filter_update
 argument_list|(
 name|ct
 argument_list|)
@@ -3573,7 +3573,7 @@ if|if
 condition|(
 name|ct
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
 name|gimp_tool_control_push_preserve
@@ -3585,23 +3585,23 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|ct
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -3667,7 +3667,7 @@ if|if
 condition|(
 name|ct
 operator|->
-name|image_map
+name|filter
 condition|)
 block|{
 name|GimpTool
@@ -3688,11 +3688,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_map_commit
+name|gimp_drawable_filter_commit
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(
@@ -3706,12 +3706,12 @@ name|g_object_unref
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|)
 expr_stmt|;
 name|ct
 operator|->
-name|image_map
+name|filter
 operator|=
 name|NULL
 expr_stmt|;
@@ -4877,8 +4877,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cage_tool_create_image_map (GimpCageTool * ct,GimpDrawable * drawable)
-name|gimp_cage_tool_create_image_map
+DECL|function|gimp_cage_tool_create_filter (GimpCageTool * ct,GimpDrawable * drawable)
+name|gimp_cage_tool_create_filter
 parameter_list|(
 name|GimpCageTool
 modifier|*
@@ -4903,9 +4903,9 @@ argument_list|)
 expr_stmt|;
 name|ct
 operator|->
-name|image_map
+name|filter
 operator|=
-name|gimp_image_map_new
+name|gimp_drawable_filter_new
 argument_list|(
 name|drawable
 argument_list|,
@@ -4925,13 +4925,13 @@ name|g_signal_connect
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|,
 literal|"flush"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_cage_tool_image_map_flush
+name|gimp_cage_tool_filter_flush
 argument_list|)
 argument_list|,
 name|ct
@@ -4943,12 +4943,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cage_tool_image_map_flush (GimpImageMap * image_map,GimpTool * tool)
-name|gimp_cage_tool_image_map_flush
+DECL|function|gimp_cage_tool_filter_flush (GimpDrawableFilter * filter,GimpTool * tool)
+name|gimp_cage_tool_filter_flush
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|GimpTool
 modifier|*
@@ -4980,19 +4980,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cage_tool_image_map_update (GimpCageTool * ct)
-name|gimp_cage_tool_image_map_update
+DECL|function|gimp_cage_tool_filter_update (GimpCageTool * ct)
+name|gimp_cage_tool_filter_update
 parameter_list|(
 name|GimpCageTool
 modifier|*
 name|ct
 parameter_list|)
 block|{
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 argument_list|(
 name|ct
 operator|->
-name|image_map
+name|filter
 argument_list|,
 name|NULL
 argument_list|)

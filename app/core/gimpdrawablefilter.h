@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_MAP_H__
+name|__GIMP_DRAWABLE_FILTER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_MAP_H__
+DECL|macro|__GIMP_DRAWABLE_FILTER_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_MAP_H__
+name|__GIMP_DRAWABLE_FILTER_H__
 end_define
 
 begin_include
@@ -23,81 +23,81 @@ file|"gimpfilter.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_IMAGE_MAP
+DECL|macro|GIMP_TYPE_DRAWABLE_FILTER
 define|#
 directive|define
-name|GIMP_TYPE_IMAGE_MAP
-value|(gimp_image_map_get_type ())
+name|GIMP_TYPE_DRAWABLE_FILTER
+value|(gimp_drawable_filter_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP (obj)
+DECL|macro|GIMP_DRAWABLE_FILTER (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP
+name|GIMP_DRAWABLE_FILTER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_MAP, GimpImageMap))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_FILTER, GimpDrawableFilter))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_CLASS (klass)
+DECL|macro|GIMP_DRAWABLE_FILTER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_CLASS
+name|GIMP_DRAWABLE_FILTER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_MAP, GimpImageMapClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_FILTER, GimpDrawableFilterClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_MAP (obj)
+DECL|macro|GIMP_IS_DRAWABLE_FILTER (obj)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_MAP
+name|GIMP_IS_DRAWABLE_FILTER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_MAP))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_FILTER))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_MAP_CLASS (klass)
+DECL|macro|GIMP_IS_DRAWABLE_FILTER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_MAP_CLASS
+name|GIMP_IS_DRAWABLE_FILTER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_MAP))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_FILTER))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_MAP_GET_CLASS (obj)
+DECL|macro|GIMP_DRAWABLE_FILTER_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_MAP_GET_CLASS
+name|GIMP_DRAWABLE_FILTER_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_MAP, GimpImageMapClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_FILTER, GimpDrawableFilterClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpImageMapClass
+DECL|typedef|GimpDrawableFilterClass
 typedef|typedef
 name|struct
-name|_GimpImageMapClass
-name|GimpImageMapClass
+name|_GimpDrawableFilterClass
+name|GimpDrawableFilterClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpImageMapClass
+DECL|struct|_GimpDrawableFilterClass
 struct|struct
-name|_GimpImageMapClass
+name|_GimpDrawableFilterClass
 block|{
 DECL|member|parent_class
 name|GimpFilterClass
@@ -110,9 +110,9 @@ modifier|*
 name|flush
 function_decl|)
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|)
 function_decl|;
 block|}
@@ -120,16 +120,16 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Image Map functions  */
+comment|/*  Drawable Filter functions  */
 end_comment
 
 begin_comment
-comment|/*  Successive image_map_apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call,  *  both of which will remove the live filter from the drawable.  */
+comment|/*  Successive apply() functions can be called, but eventually MUST be  *  followed with an commit() or an abort() call, both of which will  *  remove the live filter from the drawable.  */
 end_comment
 
 begin_decl_stmt
 name|GType
-name|gimp_image_map_get_type
+name|gimp_drawable_filter_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -138,9 +138,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|gimp_image_map_new
+name|gimp_drawable_filter_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -165,13 +165,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_set_region
+name|gimp_drawable_filter_set_region
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
-name|GimpImageMapRegion
+name|GimpFilterRegion
 name|region
 parameter_list|)
 function_decl|;
@@ -179,11 +179,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_set_preview
+name|gimp_drawable_filter_set_preview
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|gboolean
 name|enabled
@@ -199,11 +199,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_set_mode
+name|gimp_drawable_filter_set_mode
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|gdouble
 name|opacity
@@ -216,11 +216,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_set_gamma_hack
+name|gimp_drawable_filter_set_gamma_hack
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|gboolean
 name|gamma_hack
@@ -230,11 +230,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_apply
+name|gimp_drawable_filter_apply
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -246,11 +246,11 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_map_commit
+name|gimp_drawable_filter_commit
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -264,11 +264,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_map_abort
+name|gimp_drawable_filter_abort
 parameter_list|(
-name|GimpImageMap
+name|GimpDrawableFilter
 modifier|*
-name|image_map
+name|filter
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -279,7 +279,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_IMAGE_MAP_H__ */
+comment|/* __GIMP_DRAWABLE_FILTER_H__ */
 end_comment
 
 end_unit
