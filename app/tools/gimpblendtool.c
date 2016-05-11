@@ -3916,21 +3916,6 @@ name|height
 argument_list|)
 condition|)
 return|return;
-name|gimp_progress_start
-argument_list|(
-name|GIMP_PROGRESS
-argument_list|(
-name|blend_tool
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|_
-argument_list|(
-literal|"Calculating distance map"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|blend_tool
 operator|->
 name|dist_buffer
@@ -3941,7 +3926,7 @@ name|tool
 operator|->
 name|drawable
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(
