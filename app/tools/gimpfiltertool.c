@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -4117,6 +4123,22 @@ name|gimp_filter_tool_flush
 argument_list|)
 argument_list|,
 name|filter_tool
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_progress_connect
+argument_list|(
+name|filter_tool
+operator|->
+name|operation
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|filter_tool
+argument_list|)
+argument_list|,
+name|filter_tool
+operator|->
+name|undo_desc
 argument_list|)
 expr_stmt|;
 if|if
