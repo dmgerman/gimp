@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1e1a8a0108
+DECL|struct|__anon29b29e6a0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1e1a8a0208
+DECL|struct|__anon29b29e6a0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -703,20 +703,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|progress
-condition|)
-name|gimp_progress_set_text_literal
-argument_list|(
-name|progress
-argument_list|,
-name|_
-argument_list|(
-literal|"Calculating distance map"
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  allocate the distance map  */
 name|dist_buffer
 operator|=
@@ -974,7 +960,10 @@ name|shapeburst
 argument_list|,
 name|progress
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Calculating distance map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_apply_operation
