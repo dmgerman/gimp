@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TRANSFORM_TOOL_UNDO, GimpTran
 end_define
 
 begin_typedef
+DECL|typedef|GimpTransformToolUndo
+typedef|typedef
+name|struct
+name|_GimpTransformToolUndo
+name|GimpTransformToolUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTransformToolUndoClass
 typedef|typedef
 name|struct

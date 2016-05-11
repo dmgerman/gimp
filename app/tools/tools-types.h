@@ -93,15 +93,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpForegroundSelectToolUndo
-typedef|typedef
-name|struct
-name|_GimpForegroundSelectToolUndo
-name|GimpForegroundSelectToolUndo
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPaintTool
 typedef|typedef
 name|struct
@@ -116,15 +107,6 @@ typedef|typedef
 name|struct
 name|_GimpTransformTool
 name|GimpTransformTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpTransformToolUndo
-typedef|typedef
-name|struct
-name|_GimpTransformToolUndo
-name|GimpTransformToolUndo
 typedef|;
 end_typedef
 

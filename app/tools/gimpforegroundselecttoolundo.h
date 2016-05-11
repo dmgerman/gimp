@@ -85,7 +85,7 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FOREGROUND_SELECT_TOOL_UNDO, 
 end_define
 
 begin_endif
-unit|typedef struct _GimpForegroundSelectToolUndoClass GimpForegroundSelectToolUndoClass;  struct _GimpForegroundSelectToolUndo {   GimpUndo                  parent_instance;    GimpForegroundSelectTool *foreground_select_tool; };  struct _GimpForegroundSelectToolUndoClass {   GimpUndoClass  parent_class; };   GType   gimp_foreground_select_tool_undo_get_type (void) G_GNUC_CONST;
+unit|typedef struct _GimpForegroundSelectToolUndo      GimpForegroundSelectToolUndo; typedef struct _GimpForegroundSelectToolUndoClass GimpForegroundSelectToolUndoClass;  struct _GimpForegroundSelectToolUndo {   GimpUndo                  parent_instance;    GimpForegroundSelectTool *foreground_select_tool; };  struct _GimpForegroundSelectToolUndoClass {   GimpUndoClass  parent_class; };   GType   gimp_foreground_select_tool_undo_get_type (void) G_GNUC_CONST;
 endif|#
 directive|endif
 end_endif
