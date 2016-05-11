@@ -123,6 +123,10 @@ DECL|member|region
 name|GimpImageMapRegion
 name|region
 decl_stmt|;
+DECL|member|gamma_hack
+name|gboolean
+name|gamma_hack
+decl_stmt|;
 DECL|member|settings
 name|GFile
 modifier|*
