@@ -488,6 +488,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_view_renderer_set_color_config
+parameter_list|(
+name|GimpViewRenderer
+modifier|*
+name|renderer
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|color_config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_view_renderer_invalidate
 parameter_list|(
 name|GimpViewRenderer
