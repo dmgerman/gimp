@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimptooloptions.h"
+file|"gimpcoloroptions.h"
 end_include
 
 begin_define
@@ -89,7 +89,7 @@ begin_typedef
 DECL|typedef|GimpFilterOptionsClass
 typedef|typedef
 name|struct
-name|_GimpToolOptionsClass
+name|_GimpFilterOptionsClass
 name|GimpFilterOptionsClass
 typedef|;
 end_typedef
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpFilterOptions
 block|{
 DECL|member|parent_instance
-name|GimpToolOptions
+name|GimpColorOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|preview
@@ -131,6 +131,19 @@ DECL|member|settings
 name|GFile
 modifier|*
 name|settings
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpFilterOptionsClass
+struct|struct
+name|_GimpFilterOptionsClass
+block|{
+DECL|member|parent_instance
+name|GimpColorOptionsClass
+name|parent_instance
 decl_stmt|;
 block|}
 struct|;

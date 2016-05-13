@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphistogramoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785c6ed0103
+DECL|enum|__anon28d848550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,14 +130,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorOptions,gimp_color_options,GIMP_TYPE_FILTER_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpColorOptions,gimp_color_options,GIMP_TYPE_TOOL_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorOptions
 argument_list|,
 argument|gimp_color_options
 argument_list|,
-argument|GIMP_TYPE_FILTER_OPTIONS
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
 end_macro
 
@@ -465,6 +459,11 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
+init|=
+name|gimp_tool_options_gui
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -478,28 +477,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-if|if
-condition|(
-name|GIMP_IS_HISTOGRAM_OPTIONS
-argument_list|(
-name|tool_options
-argument_list|)
-condition|)
-name|vbox
-operator|=
-name|gimp_histogram_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
-else|else
-name|vbox
-operator|=
-name|gimp_tool_options_gui
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 comment|/*  the sample average options  */
 name|frame
 operator|=

@@ -168,7 +168,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcoloroptions.h"
+file|"gimpfilteroptions.h"
 end_include
 
 begin_include
@@ -520,7 +520,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_OPERATION_TOOL
 argument_list|,
-name|GIMP_TYPE_COLOR_OPTIONS
+name|GIMP_TYPE_FILTER_OPTIONS
 argument_list|,
 name|gimp_color_options_gui
 argument_list|,

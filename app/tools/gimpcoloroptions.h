@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpfilteroptions.h"
+file|"core/gimptooloptions.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpColorOptions
 block|{
 DECL|member|parent_instance
-name|GimpFilterOptions
+name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|sample_merged
@@ -125,7 +125,7 @@ struct|struct
 name|_GimpColorOptionsClass
 block|{
 DECL|member|parent_instance
-name|GimpFilterOptionsClass
+name|GimpToolOptionsClass
 name|parent_instance
 decl_stmt|;
 block|}

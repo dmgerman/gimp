@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimperror.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimphistogram.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimpthresholdtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptooloptions-gui.h"
 end_include
 
 begin_include
@@ -308,7 +308,7 @@ name|GIMP_TYPE_THRESHOLD_TOOL
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_OPTIONS
 argument_list|,
-name|gimp_histogram_options_gui
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -966,18 +966,29 @@ argument_list|,
 name|t_tool
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_options_connect_view
+name|g_object_bind_property
 argument_list|(
-name|GIMP_HISTOGRAM_OPTIONS
+name|G_OBJECT
 argument_list|(
 name|tool_options
 argument_list|)
 argument_list|,
+literal|"histogram-scale"
+argument_list|,
+name|G_OBJECT
+argument_list|(
 name|t_tool
 operator|->
 name|histogram_box
 operator|->
 name|view
+argument_list|)
+argument_list|,
+literal|"histogram-scale"
+argument_list|,
+name|G_BINDING_SYNC_CREATE
+operator||
+name|G_BINDING_BIDIRECTIONAL
 argument_list|)
 expr_stmt|;
 name|hbox
