@@ -891,12 +891,6 @@ operator|->
 name|surface
 argument_list|)
 expr_stmt|;
-name|renderer
-operator|->
-name|needs_render
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
