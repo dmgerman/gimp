@@ -199,6 +199,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -342,7 +348,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291de8fa0103
+DECL|enum|__anon28c3720c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -474,7 +480,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291de8fa0208
+DECL|struct|__anon28c3720c0208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -9120,6 +9126,21 @@ name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_view_renderer_set_color_config
+argument_list|(
+name|GIMP_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|renderer
+argument_list|,
+name|gimp_display_shell_get_color_config
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

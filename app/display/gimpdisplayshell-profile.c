@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-babl.h"
 end_include
 
@@ -216,10 +210,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpColorConfig
-modifier|*
-name|config
-decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|src_profile
@@ -259,19 +249,6 @@ operator|!
 name|image
 condition|)
 return|return;
-name|config
-operator|=
-name|GIMP_CORE_CONFIG
-argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
-name|config
-argument_list|)
-operator|->
-name|color_management
-expr_stmt|;
 name|src_profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -365,7 +342,10 @@ name|shell
 argument_list|)
 argument_list|)
 argument_list|,
-name|config
+name|gimp_display_shell_get_color_config
+argument_list|(
+name|shell
+argument_list|)
 argument_list|,
 name|src_profile
 argument_list|,

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -37,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"display-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -246,16 +234,12 @@ end_function
 begin_function
 name|GimpColorDisplayStack
 modifier|*
-DECL|function|gimp_display_shell_filter_new (GimpDisplayShell * shell,GimpColorConfig * config)
+DECL|function|gimp_display_shell_filter_new (GimpDisplayShell * shell)
 name|gimp_display_shell_filter_new
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|GimpColorConfig
-modifier|*
-name|config
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -263,16 +247,6 @@ argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_COLOR_CONFIG
-argument_list|(
-name|config
 argument_list|)
 argument_list|,
 name|NULL

@@ -50,10 +50,6 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|GimpColorConfig
-modifier|*
-name|config
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpviewable.h"
 end_include
 
 begin_include
@@ -108,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274b57040108
+DECL|struct|__anon28e9c8390108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -181,10 +175,6 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|GimpDisplayConfig
-modifier|*
-name|config
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -206,14 +196,6 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|config
-operator|=
-name|shell
-operator|->
-name|display
-operator|->
-name|config
 expr_stmt|;
 name|image
 operator|=
@@ -423,12 +405,10 @@ name|shell
 operator|->
 name|filter_stack
 argument_list|,
-name|GIMP_CORE_CONFIG
+name|gimp_display_shell_get_color_config
 argument_list|(
-name|config
+name|shell
 argument_list|)
-operator|->
-name|color_management
 argument_list|,
 name|GIMP_COLOR_MANAGED
 argument_list|(

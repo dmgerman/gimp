@@ -602,6 +602,12 @@ modifier|*
 name|grid_dialog
 decl_stmt|;
 comment|/*  grid configuration dialog          */
+DECL|member|color_config
+name|GimpColorConfig
+modifier|*
+name|color_config
+decl_stmt|;
+comment|/*  color management settings          */
 DECL|member|profile_transform
 name|GimpColorTransform
 name|profile_transform
@@ -998,6 +1004,18 @@ begin_function_decl
 name|GimpStatusbar
 modifier|*
 name|gimp_display_shell_get_statusbar
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorConfig
+modifier|*
+name|gimp_display_shell_get_color_config
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

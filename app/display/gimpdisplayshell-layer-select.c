@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77cc230108
+DECL|struct|__anon2aead2c30108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -145,6 +151,10 @@ name|LayerSelect
 modifier|*
 name|layer_select_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -275,6 +285,8 @@ name|layer_select
 operator|=
 name|layer_select_new
 argument_list|(
+name|shell
+argument_list|,
 name|image
 argument_list|,
 name|layer
@@ -345,9 +357,13 @@ begin_function
 specifier|static
 name|LayerSelect
 modifier|*
-DECL|function|layer_select_new (GimpImage * image,GimpLayer * layer,gint view_size)
+DECL|function|layer_select_new (GimpDisplayShell * shell,GimpImage * image,GimpLayer * layer,gint view_size)
 name|layer_select_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -633,6 +649,23 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_view_renderer_set_color_config
+argument_list|(
+name|GIMP_VIEW
+argument_list|(
+name|layer_select
+operator|->
+name|view
+argument_list|)
+operator|->
+name|renderer
+argument_list|,
+name|gimp_display_shell_get_color_config
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_view_set_viewable
