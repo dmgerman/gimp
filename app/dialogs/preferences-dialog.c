@@ -6208,9 +6208,10 @@ argument_list|(
 literal|"Select Preferred Grayscale Color Profile"
 argument_list|)
 argument_list|,
-operator|(
+name|_
+argument_list|(
 literal|"_Grayscale profile:"
-operator|)
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -10632,7 +10633,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b7181100108
+DECL|struct|__anon2b73f2dd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11492,7 +11493,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7181100208
+DECL|struct|__anon2b73f2dd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11647,7 +11648,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7181100308
+DECL|struct|__anon2b73f2dd0308
 block|{
 DECL|member|tree_label
 specifier|const
