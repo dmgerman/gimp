@@ -598,6 +598,14 @@ value|"gimp-view-rotate-other"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_COLOR_MANAGEMENT
+define|#
+directive|define
+name|GIMP_HELP_VIEW_COLOR_MANAGEMENT
+value|"gimp-view-color-management"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHOW_SELECTION
 define|#
 directive|define

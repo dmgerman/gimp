@@ -608,6 +608,11 @@ modifier|*
 name|color_config
 decl_stmt|;
 comment|/*  color management settings          */
+DECL|member|color_config_set
+name|gboolean
+name|color_config_set
+decl_stmt|;
+comment|/*  settings changed from defaults     */
 DECL|member|profile_transform
 name|GimpColorTransform
 name|profile_transform
