@@ -97,7 +97,7 @@ define|#
 directive|define
 name|COLOR_MANAGEMENT_MODE_BLURB
 define|\
-value|_("Mode of operation for color management.")
+value|_("How images are displayed on screen.")
 end_define
 
 begin_define
@@ -210,7 +210,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62c8420103
+DECL|enum|__anon2c2730ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
