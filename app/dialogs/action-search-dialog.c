@@ -994,6 +994,11 @@ condition|(
 operator|!
 name|matched
 operator|&&
+name|key_tokens
+index|[
+literal|0
+index|]
+operator|&&
 name|g_utf8_strlen
 argument_list|(
 name|key_tokens
