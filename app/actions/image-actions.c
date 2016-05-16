@@ -847,7 +847,9 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"Whether the image is color managed"
+literal|"Whether the image is color managed. Disabling "
+literal|"color management is equivalent to assigning a built-in sRGB "
+literal|"color profile. Better leave color management enabled."
 argument_list|)
 block|,
 name|G_CALLBACK

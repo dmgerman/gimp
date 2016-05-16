@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912205c0103
+DECL|enum|__anon29c03c8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -593,7 +593,13 @@ argument_list|(
 literal|"Color managed"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Whether the image is color managed. "
+literal|"Disabling color management is equivalent to "
+literal|"choosing a built-in sRGB profile. Better "
+literal|"leave color management enabled."
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
