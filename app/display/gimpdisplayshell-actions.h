@@ -18,6 +18,25 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_display_shell_set_action_sensitive
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action
+parameter_list|,
+name|gboolean
+name|sensitive
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_set_action_active
 parameter_list|(
 name|GimpDisplayShell
