@@ -277,7 +277,7 @@ name|gboolean
 name|linear
 parameter_list|,
 name|gboolean
-name|use_preview_cache
+name|use_split_preview
 parameter_list|,
 name|gboolean
 name|use_result_cache
@@ -381,7 +381,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 parameter_list|(
 name|GimpApplicator
 modifier|*
@@ -389,6 +389,17 @@ name|applicator
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_applicator_set_mode
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
 parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode

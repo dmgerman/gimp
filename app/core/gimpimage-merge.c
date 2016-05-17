@@ -2643,7 +2643,7 @@ name|off_y
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 argument_list|(
 name|applicator
 argument_list|,
@@ -2651,6 +2651,11 @@ name|gimp_layer_get_opacity
 argument_list|(
 name|layer
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_mode
+argument_list|(
+name|applicator
 argument_list|,
 name|mode
 argument_list|)

@@ -326,7 +326,7 @@ end_function
 begin_function
 name|GimpApplicator
 modifier|*
-DECL|function|gimp_applicator_new (GeglNode * parent,gboolean linear,gboolean use_preview_cache,gboolean use_result_cache)
+DECL|function|gimp_applicator_new (GeglNode * parent,gboolean linear,gboolean use_split_preview,gboolean use_result_cache)
 name|gimp_applicator_new
 parameter_list|(
 name|GeglNode
@@ -337,7 +337,7 @@ name|gboolean
 name|linear
 parameter_list|,
 name|gboolean
-name|use_preview_cache
+name|use_split_preview
 parameter_list|,
 name|gboolean
 name|use_result_cache
@@ -547,7 +547,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|use_preview_cache
+name|use_split_preview
 condition|)
 block|{
 name|applicator
@@ -1553,8 +1553,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,gdouble opacity,GimpLayerModeEffects paint_mode)
-name|gimp_applicator_set_mode
+DECL|function|gimp_applicator_set_opacity (GimpApplicator * applicator,gdouble opacity)
+name|gimp_applicator_set_opacity
 parameter_list|(
 name|GimpApplicator
 modifier|*
@@ -1562,9 +1562,6 @@ name|applicator
 parameter_list|,
 name|gdouble
 name|opacity
-parameter_list|,
-name|GimpLayerModeEffects
-name|paint_mode
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1600,6 +1597,30 @@ name|opacity
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerModeEffects paint_mode)
+name|gimp_applicator_set_mode
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_APPLICATOR
+argument_list|(
+name|applicator
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|applicator

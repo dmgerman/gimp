@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b688c7b0103
+DECL|enum|__anon2a96bd890103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2080,7 +2080,7 @@ modifier|*
 name|filter
 parameter_list|)
 block|{
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 argument_list|(
 name|filter
 operator|->
@@ -2089,6 +2089,13 @@ argument_list|,
 name|filter
 operator|->
 name|opacity
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_mode
+argument_list|(
+name|filter
+operator|->
+name|applicator
 argument_list|,
 name|filter
 operator|->

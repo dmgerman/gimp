@@ -555,11 +555,16 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 argument_list|(
 name|applicator
 argument_list|,
 name|opacity
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_mode
+argument_list|(
+name|applicator
 argument_list|,
 name|mode
 argument_list|)

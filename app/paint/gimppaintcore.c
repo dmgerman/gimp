@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299eb1fc0103
+DECL|enum|__anon2b3ec4a60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3642,13 +3642,20 @@ operator|->
 name|paint_buffer_y
 argument_list|)
 expr_stmt|;
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 argument_list|(
 name|core
 operator|->
 name|applicator
 argument_list|,
 name|image_opacity
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_mode
+argument_list|(
+name|core
+operator|->
+name|applicator
 argument_list|,
 name|paint_mode
 argument_list|)

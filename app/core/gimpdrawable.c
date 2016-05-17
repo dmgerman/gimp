@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6ccab0103
+DECL|enum|__anon29fe19890103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -213,7 +213,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6ccab0203
+DECL|enum|__anon29fe19890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4499,7 +4499,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_applicator_set_mode
+name|gimp_applicator_set_opacity
 argument_list|(
 name|private
 operator|->
@@ -4509,6 +4509,13 @@ name|gimp_layer_get_opacity
 argument_list|(
 name|fs
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_mode
+argument_list|(
+name|private
+operator|->
+name|fs_applicator
 argument_list|,
 name|gimp_layer_get_mode
 argument_list|(
