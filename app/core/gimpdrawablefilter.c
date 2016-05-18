@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a96bd890103
+DECL|enum|__anon2b8df1b70103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -237,6 +237,18 @@ name|old_alignment
 parameter_list|,
 name|gdouble
 name|old_position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_drawable_filter_sync_opacity
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1173,8 +1185,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,gdouble opacity,GimpLayerModeEffects paint_mode)
-name|gimp_drawable_filter_set_mode
+DECL|function|gimp_drawable_filter_set_opacity (GimpDrawableFilter * filter,gdouble opacity)
+name|gimp_drawable_filter_set_opacity
 parameter_list|(
 name|GimpDrawableFilter
 modifier|*
@@ -1182,9 +1194,6 @@ name|filter
 parameter_list|,
 name|gdouble
 name|opacity
-parameter_list|,
-name|GimpLayerModeEffects
-name|paint_mode
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1202,12 +1211,6 @@ operator|!=
 name|filter
 operator|->
 name|opacity
-operator|||
-name|paint_mode
-operator|!=
-name|filter
-operator|->
-name|paint_mode
 condition|)
 block|{
 name|filter
@@ -1216,6 +1219,59 @@ name|opacity
 operator|=
 name|opacity
 expr_stmt|;
+name|gimp_drawable_filter_sync_opacity
+argument_list|(
+name|filter
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_filter_is_filtering
+argument_list|(
+name|filter
+argument_list|)
+condition|)
+name|gimp_drawable_filter_update_drawable
+argument_list|(
+name|filter
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerModeEffects paint_mode)
+name|gimp_drawable_filter_set_mode
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
+parameter_list|,
+name|GimpLayerModeEffects
+name|paint_mode
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE_FILTER
+argument_list|(
+name|filter
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|paint_mode
+operator|!=
+name|filter
+operator|->
+name|paint_mode
+condition|)
+block|{
 name|filter
 operator|->
 name|paint_mode
@@ -2072,8 +2128,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_filter_sync_mode (GimpDrawableFilter * filter)
-name|gimp_drawable_filter_sync_mode
+DECL|function|gimp_drawable_filter_sync_opacity (GimpDrawableFilter * filter)
+name|gimp_drawable_filter_sync_opacity
 parameter_list|(
 name|GimpDrawableFilter
 modifier|*
@@ -2091,6 +2147,20 @@ operator|->
 name|opacity
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_drawable_filter_sync_mode (GimpDrawableFilter * filter)
+name|gimp_drawable_filter_sync_mode
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
+parameter_list|)
+block|{
 name|gimp_applicator_set_mode
 argument_list|(
 name|filter
@@ -2543,6 +2613,11 @@ argument_list|,
 name|filter
 operator|->
 name|preview_position
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_filter_sync_opacity
+argument_list|(
+name|filter
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_filter_sync_mode

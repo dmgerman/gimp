@@ -199,7 +199,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_filter_set_mode
+name|gimp_drawable_filter_set_opacity
 parameter_list|(
 name|GimpDrawableFilter
 modifier|*
@@ -207,6 +207,17 @@ name|filter
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_filter_set_mode
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
 parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
