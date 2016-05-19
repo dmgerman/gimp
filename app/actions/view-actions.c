@@ -731,7 +731,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Use black point compentation"
+literal|"Use black point compensation"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -2220,7 +2220,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rendering intent is percptual"
+literal|"Rendering intent is perceptual"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
@@ -2246,7 +2246,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rendering intent is relative colorimetic"
+literal|"Rendering intent is relative colorimetric"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
@@ -2298,7 +2298,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rendering intent is absolute colorimetic"
+literal|"Rendering intent is absolute colorimetric"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
