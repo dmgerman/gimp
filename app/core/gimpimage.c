@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e9bfd0103
+DECL|enum|__anon2a4646c70103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e9bfd0203
+DECL|enum|__anon2a4646c70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7448,10 +7448,9 @@ end_function
 
 begin_function
 name|gint64
-DECL|function|gimp_image_estimate_memsize (const GimpImage * image,GimpComponentType component_type,gint width,gint height)
+DECL|function|gimp_image_estimate_memsize (GimpImage * image,GimpComponentType component_type,gint width,gint height)
 name|gimp_image_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7727,10 +7726,9 @@ end_function
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_image_get_base_type (const GimpImage * image)
+DECL|function|gimp_image_get_base_type (GimpImage * image)
 name|gimp_image_get_base_type
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7760,10 +7758,9 @@ end_function
 
 begin_function
 name|GimpComponentType
-DECL|function|gimp_image_get_component_type (const GimpImage * image)
+DECL|function|gimp_image_get_component_type (GimpImage * image)
 name|gimp_image_get_component_type
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7796,10 +7793,9 @@ end_function
 
 begin_function
 name|GimpPrecision
-DECL|function|gimp_image_get_precision (const GimpImage * image)
+DECL|function|gimp_image_get_precision (GimpImage * image)
 name|gimp_image_get_precision
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7831,10 +7827,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_format (const GimpImage * image,GimpImageBaseType base_type,GimpPrecision precision,gboolean with_alpha)
+DECL|function|gimp_image_get_format (GimpImage * image,GimpImageBaseType base_type,GimpPrecision precision,gboolean with_alpha)
 name|gimp_image_get_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7921,10 +7916,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_layer_format (const GimpImage * image,gboolean with_alpha)
+DECL|function|gimp_image_get_layer_format (GimpImage * image,gboolean with_alpha)
 name|gimp_image_get_layer_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -7968,10 +7962,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_channel_format (const GimpImage * image)
+DECL|function|gimp_image_get_channel_format (GimpImage * image)
 name|gimp_image_get_channel_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8009,10 +8002,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_mask_format (const GimpImage * image)
+DECL|function|gimp_image_get_mask_format (GimpImage * image)
 name|gimp_image_get_mask_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8042,10 +8034,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_ID (const GimpImage * image)
+DECL|function|gimp_image_get_ID (GimpImage * image)
 name|gimp_image_get_ID
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8207,10 +8198,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_untitled_file (const GimpImage * image)
+DECL|function|gimp_image_get_untitled_file (GimpImage * image)
 name|gimp_image_get_untitled_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8271,10 +8261,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_file_or_untitled (const GimpImage * image)
+DECL|function|gimp_image_get_file_or_untitled (GimpImage * image)
 name|gimp_image_get_file_or_untitled
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8326,10 +8315,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_file (const GimpImage * image)
+DECL|function|gimp_image_get_file (GimpImage * image)
 name|gimp_image_get_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8363,10 +8351,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_imported_file (const GimpImage * image)
+DECL|function|gimp_image_get_imported_file (GimpImage * image)
 name|gimp_image_get_imported_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8400,10 +8387,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_exported_file (const GimpImage * image)
+DECL|function|gimp_image_get_exported_file (GimpImage * image)
 name|gimp_image_get_exported_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8437,10 +8423,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_save_a_copy_file (const GimpImage * image)
+DECL|function|gimp_image_get_save_a_copy_file (GimpImage * image)
 name|gimp_image_get_save_a_copy_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -8474,10 +8459,9 @@ end_comment
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_image_get_any_file (const GimpImage * image)
+DECL|function|gimp_image_get_any_file (GimpImage * image)
 name|gimp_image_get_any_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -9305,10 +9289,9 @@ end_function
 begin_function
 name|GimpPlugInProcedure
 modifier|*
-DECL|function|gimp_image_get_load_proc (const GimpImage * image)
+DECL|function|gimp_image_get_load_proc (GimpImage * image)
 name|gimp_image_get_load_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -9372,10 +9355,9 @@ end_function
 begin_function
 name|GimpPlugInProcedure
 modifier|*
-DECL|function|gimp_image_get_save_proc (const GimpImage * image)
+DECL|function|gimp_image_get_save_proc (GimpImage * image)
 name|gimp_image_get_save_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -9439,10 +9421,9 @@ end_function
 begin_function
 name|GimpPlugInProcedure
 modifier|*
-DECL|function|gimp_image_get_export_proc (const GimpImage * image)
+DECL|function|gimp_image_get_export_proc (GimpImage * image)
 name|gimp_image_get_export_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -9794,10 +9775,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_xcf_compat_mode (const GimpImage * image)
+DECL|function|gimp_image_get_xcf_compat_mode (GimpImage * image)
 name|gimp_image_get_xcf_compat_mode
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -9962,10 +9942,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_resolution (const GimpImage * image,gdouble * xresolution,gdouble * yresolution)
+DECL|function|gimp_image_get_resolution (GimpImage * image,gdouble * xresolution,gdouble * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10136,10 +10115,9 @@ end_function
 
 begin_function
 name|GimpUnit
-DECL|function|gimp_image_get_unit (const GimpImage * image)
+DECL|function|gimp_image_get_unit (GimpImage * image)
 name|gimp_image_get_unit
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10201,10 +10179,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_width (const GimpImage * image)
+DECL|function|gimp_image_get_width (GimpImage * image)
 name|gimp_image_get_width
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10233,10 +10210,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_height (const GimpImage * image)
+DECL|function|gimp_image_get_height (GimpImage * image)
 name|gimp_image_get_height
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10265,10 +10241,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_has_alpha (const GimpImage * image)
+DECL|function|gimp_image_has_alpha (GimpImage * image)
 name|gimp_image_has_alpha
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10342,10 +10317,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_is_empty (const GimpImage * image)
+DECL|function|gimp_image_is_empty (GimpImage * image)
 name|gimp_image_is_empty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10452,10 +10426,9 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_get_floating_selection (const GimpImage * image)
+DECL|function|gimp_image_get_floating_selection (GimpImage * image)
 name|gimp_image_get_floating_selection
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10518,10 +10491,9 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_mask (const GimpImage * image)
+DECL|function|gimp_image_get_mask (GimpImage * image)
 name|gimp_image_get_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10671,10 +10643,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_component_format (const GimpImage * image,GimpChannelType channel)
+DECL|function|gimp_image_get_component_format (GimpImage * image,GimpChannelType channel)
 name|gimp_image_get_component_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10797,10 +10768,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_component_index (const GimpImage * image,GimpChannelType channel)
+DECL|function|gimp_image_get_component_index (GimpImage * image,GimpChannelType channel)
 name|gimp_image_get_component_index
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -10999,10 +10969,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_active (const GimpImage * image,GimpChannelType channel)
+DECL|function|gimp_image_get_component_active (GimpImage * image,GimpChannelType channel)
 name|gimp_image_get_component_active
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -11062,10 +11031,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_active_array (const GimpImage * image,gboolean * components)
+DECL|function|gimp_image_get_active_array (GimpImage * image,gboolean * components)
 name|gimp_image_get_active_array
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -11134,10 +11102,9 @@ end_function
 
 begin_function
 name|GimpComponentMask
-DECL|function|gimp_image_get_active_mask (const GimpImage * image)
+DECL|function|gimp_image_get_active_mask (GimpImage * image)
 name|gimp_image_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -11468,10 +11435,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_visible (const GimpImage * image,GimpChannelType channel)
+DECL|function|gimp_image_get_component_visible (GimpImage * image,GimpChannelType channel)
 name|gimp_image_get_component_visible
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -11531,10 +11497,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_visible_array (const GimpImage * image,gboolean * components)
+DECL|function|gimp_image_get_visible_array (GimpImage * image,gboolean * components)
 name|gimp_image_get_visible_array
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -11603,10 +11568,9 @@ end_function
 
 begin_function
 name|GimpComponentMask
-DECL|function|gimp_image_get_visible_mask (const GimpImage * image)
+DECL|function|gimp_image_get_visible_mask (GimpImage * image)
 name|gimp_image_get_visible_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -12786,10 +12750,9 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_is_dirty (const GimpImage * image)
+DECL|function|gimp_image_is_dirty (GimpImage * image)
 name|gimp_image_is_dirty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -12824,10 +12787,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_is_export_dirty (const GimpImage * image)
+DECL|function|gimp_image_is_export_dirty (GimpImage * image)
 name|gimp_image_is_export_dirty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -12858,10 +12820,9 @@ end_function
 
 begin_function
 name|gint64
-DECL|function|gimp_image_get_dirty_time (const GimpImage * image)
+DECL|function|gimp_image_get_dirty_time (GimpImage * image)
 name|gimp_image_get_dirty_time
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -13038,10 +12999,9 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_display_count (const GimpImage * image)
+DECL|function|gimp_image_get_display_count (GimpImage * image)
 name|gimp_image_get_display_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -13128,10 +13088,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_instance_count (const GimpImage * image)
+DECL|function|gimp_image_get_instance_count (GimpImage * image)
 name|gimp_image_get_instance_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -13195,10 +13154,9 @@ begin_function
 specifier|const
 name|GimpParasite
 modifier|*
-DECL|function|gimp_image_parasite_find (const GimpImage * image,const gchar * name)
+DECL|function|gimp_image_parasite_find (GimpImage * image,const gchar * name)
 name|gimp_image_parasite_find
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -13279,10 +13237,9 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_image_parasite_list (const GimpImage * image,gint * count)
+DECL|function|gimp_image_parasite_list (GimpImage * image,gint * count)
 name|gimp_image_parasite_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14202,10 +14159,9 @@ end_comment
 begin_function
 name|GimpProjection
 modifier|*
-DECL|function|gimp_image_get_projection (const GimpImage * image)
+DECL|function|gimp_image_get_projection (GimpImage * image)
 name|gimp_image_get_projection
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14239,10 +14195,9 @@ end_comment
 begin_function
 name|GimpItemTree
 modifier|*
-DECL|function|gimp_image_get_layer_tree (const GimpImage * image)
+DECL|function|gimp_image_get_layer_tree (GimpImage * image)
 name|gimp_image_get_layer_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14272,10 +14227,9 @@ end_function
 begin_function
 name|GimpItemTree
 modifier|*
-DECL|function|gimp_image_get_channel_tree (const GimpImage * image)
+DECL|function|gimp_image_get_channel_tree (GimpImage * image)
 name|gimp_image_get_channel_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14305,10 +14259,9 @@ end_function
 begin_function
 name|GimpItemTree
 modifier|*
-DECL|function|gimp_image_get_vectors_tree (const GimpImage * image)
+DECL|function|gimp_image_get_vectors_tree (GimpImage * image)
 name|gimp_image_get_vectors_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14338,10 +14291,9 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_image_get_layers (const GimpImage * image)
+DECL|function|gimp_image_get_layers (GimpImage * image)
 name|gimp_image_get_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14373,10 +14325,9 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_image_get_channels (const GimpImage * image)
+DECL|function|gimp_image_get_channels (GimpImage * image)
 name|gimp_image_get_channels
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14408,10 +14359,9 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_image_get_vectors (const GimpImage * image)
+DECL|function|gimp_image_get_vectors (GimpImage * image)
 name|gimp_image_get_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14442,10 +14392,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_n_layers (const GimpImage * image)
+DECL|function|gimp_image_get_n_layers (GimpImage * image)
 name|gimp_image_get_n_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14486,10 +14435,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_n_channels (const GimpImage * image)
+DECL|function|gimp_image_get_n_channels (GimpImage * image)
 name|gimp_image_get_n_channels
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14530,10 +14478,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_n_vectors (const GimpImage * image)
+DECL|function|gimp_image_get_n_vectors (GimpImage * image)
 name|gimp_image_get_n_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14575,10 +14522,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_layer_iter (const GimpImage * image)
+DECL|function|gimp_image_get_layer_iter (GimpImage * image)
 name|gimp_image_get_layer_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14620,10 +14566,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_channel_iter (const GimpImage * image)
+DECL|function|gimp_image_get_channel_iter (GimpImage * image)
 name|gimp_image_get_channel_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14665,10 +14610,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_vectors_iter (const GimpImage * image)
+DECL|function|gimp_image_get_vectors_iter (GimpImage * image)
 name|gimp_image_get_vectors_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14710,10 +14654,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_layer_list (const GimpImage * image)
+DECL|function|gimp_image_get_layer_list (GimpImage * image)
 name|gimp_image_get_layer_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14755,10 +14698,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_channel_list (const GimpImage * image)
+DECL|function|gimp_image_get_channel_list (GimpImage * image)
 name|gimp_image_get_channel_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14800,10 +14742,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_get_vectors_list (const GimpImage * image)
+DECL|function|gimp_image_get_vectors_list (GimpImage * image)
 name|gimp_image_get_vectors_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14849,10 +14790,9 @@ end_comment
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_image_get_active_drawable (const GimpImage * image)
+DECL|function|gimp_image_get_active_drawable (GimpImage * image)
 name|gimp_image_get_active_drawable
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -14974,10 +14914,9 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_get_active_layer (const GimpImage * image)
+DECL|function|gimp_image_get_active_layer (GimpImage * image)
 name|gimp_image_get_active_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15021,10 +14960,9 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_active_channel (const GimpImage * image)
+DECL|function|gimp_image_get_active_channel (GimpImage * image)
 name|gimp_image_get_active_channel
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15068,10 +15006,9 @@ end_function
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_image_get_active_vectors (const GimpImage * image)
+DECL|function|gimp_image_get_active_vectors (GimpImage * image)
 name|gimp_image_get_active_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15588,10 +15525,9 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_get_layer_by_tattoo (const GimpImage * image,GimpTattoo tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (GimpImage * image,GimpTattoo tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15641,10 +15577,9 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_channel_by_tattoo (const GimpImage * image,GimpTattoo tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * image,GimpTattoo tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15694,10 +15629,9 @@ end_function
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_image_get_vectors_by_tattoo (const GimpImage * image,GimpTattoo tattoo)
+DECL|function|gimp_image_get_vectors_by_tattoo (GimpImage * image,GimpTattoo tattoo)
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15751,10 +15685,9 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_get_layer_by_name (const GimpImage * image,const gchar * name)
+DECL|function|gimp_image_get_layer_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_layer_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15812,10 +15745,9 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_channel_by_name (const GimpImage * image,const gchar * name)
+DECL|function|gimp_image_get_channel_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_channel_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -15873,10 +15805,9 @@ end_function
 begin_function
 name|GimpVectors
 modifier|*
-DECL|function|gimp_image_get_vectors_by_name (const GimpImage * image,const gchar * name)
+DECL|function|gimp_image_get_vectors_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_vectors_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

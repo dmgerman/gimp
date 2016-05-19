@@ -169,7 +169,6 @@ name|GimpTempBuf
 modifier|*
 name|gimp_pattern_get_mask
 parameter_list|(
-specifier|const
 name|GimpPattern
 modifier|*
 name|pattern
@@ -182,7 +181,6 @@ name|GeglBuffer
 modifier|*
 name|gimp_pattern_create_buffer
 parameter_list|(
-specifier|const
 name|GimpPattern
 modifier|*
 name|pattern

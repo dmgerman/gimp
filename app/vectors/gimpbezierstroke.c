@@ -72,7 +72,6 @@ specifier|static
 name|gdouble
 name|gimp_bezier_stroke_nearest_point_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -82,7 +81,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -122,7 +120,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -145,7 +142,6 @@ specifier|static
 name|gdouble
 name|gimp_bezier_stroke_nearest_tangent_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -160,7 +156,6 @@ name|GimpCoords
 modifier|*
 name|coord2
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -205,7 +200,6 @@ name|GimpCoords
 modifier|*
 name|coord2
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -490,12 +484,10 @@ name|GArray
 modifier|*
 name|gimp_bezier_stroke_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -512,7 +504,6 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_bezier_stroke_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -2625,10 +2616,9 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_bezier_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_bezier_stroke_nearest_point_get (GimpStroke * stroke,const GimpCoords * coord,gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_bezier_stroke_nearest_point_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -2638,7 +2628,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -3070,7 +3059,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_bezier_stroke_segment_nearest_point_get (const GimpCoords * beziercoords,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,gdouble * ret_pos,gint depth)
+DECL|function|gimp_bezier_stroke_segment_nearest_point_get (const GimpCoords * beziercoords,const GimpCoords * coord,gdouble precision,GimpCoords * ret_point,gdouble * ret_pos,gint depth)
 name|gimp_bezier_stroke_segment_nearest_point_get
 parameter_list|(
 specifier|const
@@ -3083,7 +3072,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -3680,10 +3668,9 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_bezier_stroke_nearest_tangent_get (const GimpStroke * stroke,const GimpCoords * coord1,const GimpCoords * coord2,const gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_bezier_stroke_nearest_tangent_get (GimpStroke * stroke,const GimpCoords * coord1,const GimpCoords * coord2,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_bezier_stroke_nearest_tangent_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -3698,7 +3685,6 @@ name|GimpCoords
 modifier|*
 name|coord2
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -4124,7 +4110,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_bezier_stroke_segment_nearest_tangent_get (const GimpCoords * beziercoords,const GimpCoords * coord1,const GimpCoords * coord2,const gdouble precision,GimpCoords * ret_point,gdouble * ret_pos)
+DECL|function|gimp_bezier_stroke_segment_nearest_tangent_get (const GimpCoords * beziercoords,const GimpCoords * coord1,const GimpCoords * coord2,gdouble precision,GimpCoords * ret_point,gdouble * ret_pos)
 name|gimp_bezier_stroke_segment_nearest_tangent_get
 parameter_list|(
 specifier|const
@@ -4142,7 +4128,6 @@ name|GimpCoords
 modifier|*
 name|coord2
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -6405,10 +6390,9 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_bezier_stroke_make_bezier (const GimpStroke * stroke)
+DECL|function|gimp_bezier_stroke_make_bezier (GimpStroke * stroke)
 name|gimp_bezier_stroke_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -7017,10 +7001,9 @@ begin_function
 specifier|static
 name|GArray
 modifier|*
-DECL|function|gimp_bezier_stroke_interpolate (const GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
+DECL|function|gimp_bezier_stroke_interpolate (GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
 name|gimp_bezier_stroke_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke

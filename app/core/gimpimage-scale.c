@@ -901,10 +901,9 @@ end_comment
 
 begin_function
 name|GimpImageScaleCheckType
-DECL|function|gimp_image_scale_check (const GimpImage * image,gint new_width,gint new_height,gint64 max_memsize,gint64 * new_memsize)
+DECL|function|gimp_image_scale_check (GimpImage * image,gint new_width,gint new_height,gint64 max_memsize,gint64 * new_memsize)
 name|gimp_image_scale_check
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

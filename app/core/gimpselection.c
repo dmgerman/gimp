@@ -146,7 +146,6 @@ specifier|static
 name|gboolean
 name|gimp_selection_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1013,10 +1012,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_is_attached (const GimpItem * item)
+DECL|function|gimp_selection_is_attached (GimpItem * item)
 name|gimp_selection_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item

@@ -632,7 +632,6 @@ begin_function_decl
 name|gdouble
 name|gimp_channel_get_opacity
 parameter_list|(
-specifier|const
 name|GimpChannel
 modifier|*
 name|channel
@@ -661,7 +660,6 @@ begin_function_decl
 name|void
 name|gimp_channel_get_color
 parameter_list|(
-specifier|const
 name|GimpChannel
 modifier|*
 name|channel

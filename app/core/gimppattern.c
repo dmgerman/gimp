@@ -1124,10 +1124,9 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_pattern_get_mask (const GimpPattern * pattern)
+DECL|function|gimp_pattern_get_mask (GimpPattern * pattern)
 name|gimp_pattern_get_mask
 parameter_list|(
-specifier|const
 name|GimpPattern
 modifier|*
 name|pattern
@@ -1154,10 +1153,9 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pattern_create_buffer (const GimpPattern * pattern)
+DECL|function|gimp_pattern_create_buffer (GimpPattern * pattern)
 name|gimp_pattern_create_buffer
 parameter_list|(
-specifier|const
 name|GimpPattern
 modifier|*
 name|pattern

@@ -237,7 +237,6 @@ modifier|*
 name|stroke_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -256,12 +255,10 @@ modifier|*
 name|stroke_get_next
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -274,12 +271,10 @@ modifier|*
 name|stroke_get_length
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -293,7 +288,6 @@ modifier|*
 name|anchor_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -332,7 +326,6 @@ modifier|*
 name|get_length
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -350,7 +343,6 @@ modifier|*
 name|get_distance
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -368,12 +360,10 @@ modifier|*
 name|interpolate
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -397,7 +387,6 @@ modifier|*
 name|make_bezier
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -476,7 +465,6 @@ begin_function_decl
 name|void
 name|gimp_vectors_copy_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|src_vectors
@@ -492,7 +480,6 @@ begin_function_decl
 name|void
 name|gimp_vectors_add_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|src_vectors
@@ -513,7 +500,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_vectors_anchor_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -540,7 +526,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_vectors_anchor_get_next
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -681,7 +666,6 @@ begin_function_decl
 name|gint
 name|gimp_vectors_get_n_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -694,7 +678,6 @@ name|GimpStroke
 modifier|*
 name|gimp_vectors_stroke_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -712,7 +695,6 @@ name|GimpStroke
 modifier|*
 name|gimp_vectors_stroke_get_by_ID
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -732,12 +714,10 @@ name|GimpStroke
 modifier|*
 name|gimp_vectors_stroke_get_next
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -749,12 +729,10 @@ begin_function_decl
 name|gdouble
 name|gimp_vectors_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -770,7 +748,6 @@ begin_function_decl
 name|gdouble
 name|gimp_vectors_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -787,7 +764,6 @@ begin_function_decl
 name|gdouble
 name|gimp_vectors_get_distance
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -808,12 +784,10 @@ begin_function_decl
 name|gint
 name|gimp_vectors_interpolate
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke

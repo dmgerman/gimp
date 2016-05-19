@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf94f5e0108
+DECL|struct|__anon28e2ad9b0108
 block|{
 DECL|member|filter
 name|GimpObjectFilterFunc
@@ -116,10 +116,9 @@ end_comment
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_container_filter (const GimpContainer * container,GimpObjectFilterFunc filter,gpointer user_data)
+DECL|function|gimp_container_filter (GimpContainer * container,GimpObjectFilterFunc filter,gpointer user_data)
 name|gimp_container_filter
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -236,10 +235,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_object_filter_by_name (const GimpObject * object,const GRegex * regex)
+DECL|function|gimp_object_filter_by_name (GimpObject * object,const GRegex * regex)
 name|gimp_object_filter_by_name
 parameter_list|(
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -275,10 +273,9 @@ end_comment
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_container_filter_by_name (const GimpContainer * container,const gchar * regexp,GError ** error)
+DECL|function|gimp_container_filter_by_name (GimpContainer * container,const gchar * regexp,GError ** error)
 name|gimp_container_filter_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -387,10 +384,9 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_container_get_filtered_name_array (const GimpContainer * container,const gchar * regexp,gint * length)
+DECL|function|gimp_container_get_filtered_name_array (GimpContainer * container,const gchar * regexp,gint * length)
 name|gimp_container_get_filtered_name_array
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container

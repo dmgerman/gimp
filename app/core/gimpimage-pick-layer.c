@@ -60,10 +60,9 @@ end_include
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_pick_layer (const GimpImage * image,gint x,gint y)
+DECL|function|gimp_image_pick_layer (GimpImage * image,gint x,gint y)
 name|gimp_image_pick_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -188,10 +187,9 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_pick_layer_by_bounds (const GimpImage * image,gint x,gint y)
+DECL|function|gimp_image_pick_layer_by_bounds (GimpImage * image,gint x,gint y)
 name|gimp_image_pick_layer_by_bounds
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -355,10 +353,9 @@ end_function
 begin_function
 name|GimpTextLayer
 modifier|*
-DECL|function|gimp_image_pick_text_layer (const GimpImage * image,gint x,gint y)
+DECL|function|gimp_image_pick_text_layer (GimpImage * image,gint x,gint y)
 name|gimp_image_pick_text_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

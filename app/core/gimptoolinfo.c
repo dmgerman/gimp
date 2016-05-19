@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e84f30103
+DECL|enum|__anon2945f16d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -801,10 +801,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_info_filter_preset (const GimpObject * object,gpointer user_data)
+DECL|function|gimp_tool_info_filter_preset (GimpObject * object,gpointer user_data)
 name|gimp_tool_info_filter_preset
 parameter_list|(
-specifier|const
 name|GimpObject
 modifier|*
 name|object

@@ -402,10 +402,9 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gimp_templates_migrate_get_child_by_name (const GimpContainer * container,const gchar * name)
+DECL|function|gimp_templates_migrate_get_child_by_name (GimpContainer * container,const gchar * name)
 name|gimp_templates_migrate_get_child_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container

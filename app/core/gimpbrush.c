@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4077f90103
+DECL|enum|__anon293e16ba0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4077f90203
+DECL|enum|__anon293e16ba0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3573,10 +3573,9 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_get_mask (const GimpBrush * brush)
+DECL|function|gimp_brush_get_mask (GimpBrush * brush)
 name|gimp_brush_get_mask
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3614,10 +3613,9 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_get_pixmap (const GimpBrush * brush)
+DECL|function|gimp_brush_get_pixmap (GimpBrush * brush)
 name|gimp_brush_get_pixmap
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3654,10 +3652,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_get_width (const GimpBrush * brush)
+DECL|function|gimp_brush_get_width (GimpBrush * brush)
 name|gimp_brush_get_width
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3688,10 +3685,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_get_height (const GimpBrush * brush)
+DECL|function|gimp_brush_get_height (GimpBrush * brush)
 name|gimp_brush_get_height
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3722,10 +3718,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_get_spacing (const GimpBrush * brush)
+DECL|function|gimp_brush_get_spacing (GimpBrush * brush)
 name|gimp_brush_get_spacing
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3834,10 +3829,9 @@ end_decl_stmt
 
 begin_function
 name|GimpVector2
-DECL|function|gimp_brush_get_x_axis (const GimpBrush * brush)
+DECL|function|gimp_brush_get_x_axis (GimpBrush * brush)
 name|gimp_brush_get_x_axis
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -3865,10 +3859,9 @@ end_function
 
 begin_function
 name|GimpVector2
-DECL|function|gimp_brush_get_y_axis (const GimpBrush * brush)
+DECL|function|gimp_brush_get_y_axis (GimpBrush * brush)
 name|gimp_brush_get_y_axis
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush

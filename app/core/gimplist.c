@@ -51,7 +51,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297df3140103
+DECL|enum|__anon2a2154660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -211,12 +211,10 @@ specifier|static
 name|gboolean
 name|gimp_list_have
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -229,7 +227,6 @@ specifier|static
 name|void
 name|gimp_list_foreach
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -249,7 +246,6 @@ name|GimpObject
 modifier|*
 name|gimp_list_get_child_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -268,7 +264,6 @@ name|GimpObject
 modifier|*
 name|gimp_list_get_child_by_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -284,12 +279,10 @@ specifier|static
 name|gint
 name|gimp_list_get_child_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -1243,15 +1236,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_list_have (const GimpContainer * container,const GimpObject * object)
+DECL|function|gimp_list_have (GimpContainer * container,GimpObject * object)
 name|gimp_list_have
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -1286,10 +1277,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_foreach (const GimpContainer * container,GFunc func,gpointer user_data)
+DECL|function|gimp_list_foreach (GimpContainer * container,GFunc func,gpointer user_data)
 name|gimp_list_foreach
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -1328,10 +1318,9 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gimp_list_get_child_by_name (const GimpContainer * container,const gchar * name)
+DECL|function|gimp_list_get_child_by_name (GimpContainer * container,const gchar * name)
 name|gimp_list_get_child_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -1410,10 +1399,9 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gimp_list_get_child_by_index (const GimpContainer * container,gint index)
+DECL|function|gimp_list_get_child_by_index (GimpContainer * container,gint index)
 name|gimp_list_get_child_by_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -1447,15 +1435,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_list_get_child_index (const GimpContainer * container,const GimpObject * object)
+DECL|function|gimp_list_get_child_index (GimpContainer * container,GimpObject * object)
 name|gimp_list_get_child_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object

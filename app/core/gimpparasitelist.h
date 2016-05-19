@@ -182,7 +182,6 @@ name|GimpParasiteList
 modifier|*
 name|gimp_parasite_list_copy
 parameter_list|(
-specifier|const
 name|GimpParasiteList
 modifier|*
 name|list

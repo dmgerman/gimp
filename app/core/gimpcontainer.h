@@ -226,12 +226,10 @@ modifier|*
 name|have
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -244,7 +242,6 @@ modifier|*
 name|foreach
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -264,7 +261,6 @@ modifier|*
 name|get_child_by_name
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -283,7 +279,6 @@ modifier|*
 name|get_child_by_index
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -299,12 +294,10 @@ modifier|*
 name|get_child_index
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -328,7 +321,6 @@ begin_function_decl
 name|GType
 name|gimp_container_get_children_type
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -340,7 +332,6 @@ begin_function_decl
 name|GimpContainerPolicy
 name|gimp_container_get_policy
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -352,7 +343,6 @@ begin_function_decl
 name|gint
 name|gimp_container_get_n_children
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -474,7 +464,6 @@ begin_function_decl
 name|gboolean
 name|gimp_container_is_empty
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -486,7 +475,6 @@ begin_function_decl
 name|gboolean
 name|gimp_container_have
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -502,7 +490,6 @@ begin_function_decl
 name|void
 name|gimp_container_foreach
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -521,7 +508,6 @@ name|GimpObject
 modifier|*
 name|gimp_container_get_child_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -539,7 +525,6 @@ name|GimpObject
 modifier|*
 name|gimp_container_get_child_by_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -555,7 +540,6 @@ name|GimpObject
 modifier|*
 name|gimp_container_get_first_child
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -568,7 +552,6 @@ name|GimpObject
 modifier|*
 name|gimp_container_get_last_child
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -580,12 +563,10 @@ begin_function_decl
 name|gint
 name|gimp_container_get_child_index
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -598,12 +579,10 @@ name|GimpObject
 modifier|*
 name|gimp_container_get_neighbor_of
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -617,7 +596,6 @@ modifier|*
 modifier|*
 name|gimp_container_get_name_array
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container

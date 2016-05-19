@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec52b80103
+DECL|enum|__anon2c4cd0440103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec52b80203
+DECL|enum|__anon2c4cd0440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -415,7 +415,6 @@ specifier|static
 name|gboolean
 name|gimp_item_real_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -428,7 +427,6 @@ specifier|static
 name|gboolean
 name|gimp_item_real_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1833,10 +1831,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_item_real_is_content_locked (const GimpItem * item)
+DECL|function|gimp_item_real_is_content_locked (GimpItem * item)
 name|gimp_item_real_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1877,10 +1874,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_item_real_is_position_locked (const GimpItem * item)
+DECL|function|gimp_item_real_is_position_locked (GimpItem * item)
 name|gimp_item_real_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -2882,10 +2878,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_removed (const GimpItem * item)
+DECL|function|gimp_item_is_removed (GimpItem * item)
 name|gimp_item_is_removed
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -3009,10 +3004,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_attached (const GimpItem * item)
+DECL|function|gimp_item_is_attached (GimpItem * item)
 name|gimp_item_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -3066,10 +3060,9 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_get_parent (const GimpItem * item)
+DECL|function|gimp_item_get_parent (GimpItem * item)
 name|gimp_item_get_parent
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -3995,10 +3988,9 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_item_get_width (const GimpItem * item)
+DECL|function|gimp_item_get_width (GimpItem * item)
 name|gimp_item_get_width
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -4032,10 +4024,9 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_item_get_height (const GimpItem * item)
+DECL|function|gimp_item_get_height (GimpItem * item)
 name|gimp_item_get_height
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -4199,10 +4190,9 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_get_offset (const GimpItem * item,gint * offset_x,gint * offset_y)
+DECL|function|gimp_item_get_offset (GimpItem * item,gint * offset_x,gint * offset_y)
 name|gimp_item_get_offset
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -4595,10 +4585,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_check_scaling (const GimpItem * item,gint new_width,gint new_height)
+DECL|function|gimp_item_check_scaling (GimpItem * item,gint new_width,gint new_height)
 name|gimp_item_check_scaling
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -6582,10 +6571,9 @@ end_function
 
 begin_function
 name|GimpTattoo
-DECL|function|gimp_item_get_tattoo (const GimpItem * item)
+DECL|function|gimp_item_get_tattoo (GimpItem * item)
 name|gimp_item_get_tattoo
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -6648,10 +6636,9 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_item_get_image (const GimpItem * item)
+DECL|function|gimp_item_get_image (GimpItem * item)
 name|gimp_item_get_image
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -7205,10 +7192,9 @@ end_comment
 begin_function
 name|GimpParasiteList
 modifier|*
-DECL|function|gimp_item_get_parasites (const GimpItem * item)
+DECL|function|gimp_item_get_parasites (GimpItem * item)
 name|gimp_item_get_parasites
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -7704,10 +7690,9 @@ begin_function
 specifier|const
 name|GimpParasite
 modifier|*
-DECL|function|gimp_item_parasite_find (const GimpItem * item,const gchar * name)
+DECL|function|gimp_item_parasite_find (GimpItem * item,const gchar * name)
 name|gimp_item_parasite_find
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -7788,10 +7773,9 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_item_parasite_list (const GimpItem * item,gint * count)
+DECL|function|gimp_item_parasite_list (GimpItem * item,gint * count)
 name|gimp_item_parasite_list
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -7976,10 +7960,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_get_visible (const GimpItem * item)
+DECL|function|gimp_item_get_visible (GimpItem * item)
 name|gimp_item_get_visible
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8009,10 +7992,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_visible (const GimpItem * item)
+DECL|function|gimp_item_is_visible (GimpItem * item)
 name|gimp_item_is_visible
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8152,10 +8134,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_get_linked (const GimpItem * item)
+DECL|function|gimp_item_get_linked (GimpItem * item)
 name|gimp_item_get_linked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8287,10 +8268,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_get_lock_content (const GimpItem * item)
+DECL|function|gimp_item_get_lock_content (GimpItem * item)
 name|gimp_item_get_lock_content
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8319,10 +8299,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_can_lock_content (const GimpItem * item)
+DECL|function|gimp_item_can_lock_content (GimpItem * item)
 name|gimp_item_can_lock_content
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8346,10 +8325,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_content_locked (const GimpItem * item)
+DECL|function|gimp_item_is_content_locked (GimpItem * item)
 name|gimp_item_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8495,10 +8473,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_get_lock_position (const GimpItem * item)
+DECL|function|gimp_item_get_lock_position (GimpItem * item)
 name|gimp_item_get_lock_position
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8527,10 +8504,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_can_lock_position (const GimpItem * item)
+DECL|function|gimp_item_can_lock_position (GimpItem * item)
 name|gimp_item_can_lock_position
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -8567,10 +8543,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_position_locked (const GimpItem * item)
+DECL|function|gimp_item_is_position_locked (GimpItem * item)
 name|gimp_item_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item

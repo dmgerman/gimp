@@ -213,7 +213,6 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_mask_get_layer
 parameter_list|(
-specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask

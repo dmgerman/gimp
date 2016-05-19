@@ -155,10 +155,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_is_enabled (const GimpImage * image)
+DECL|function|gimp_image_undo_is_enabled (GimpImage * image)
 name|gimp_image_undo_is_enabled
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -711,10 +710,9 @@ end_function
 begin_function
 name|GimpUndoStack
 modifier|*
-DECL|function|gimp_image_get_undo_stack (const GimpImage * image)
+DECL|function|gimp_image_get_undo_stack (GimpImage * image)
 name|gimp_image_get_undo_stack
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -744,10 +742,9 @@ end_function
 begin_function
 name|GimpUndoStack
 modifier|*
-DECL|function|gimp_image_get_redo_stack (const GimpImage * image)
+DECL|function|gimp_image_get_redo_stack (GimpImage * image)
 name|gimp_image_get_redo_stack
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -858,10 +855,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_undo_group_count (const GimpImage * image)
+DECL|function|gimp_image_get_undo_group_count (GimpImage * image)
 name|gimp_image_get_undo_group_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

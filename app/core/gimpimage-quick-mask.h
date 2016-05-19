@@ -46,7 +46,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_get_quick_mask_state
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -74,7 +73,6 @@ begin_function_decl
 name|void
 name|gimp_image_get_quick_mask_color
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -91,7 +89,6 @@ name|GimpChannel
 modifier|*
 name|gimp_image_get_quick_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -114,7 +111,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_get_quick_mask_inverted
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

@@ -522,10 +522,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_quick_mask_state (const GimpImage * image)
+DECL|function|gimp_image_get_quick_mask_state (GimpImage * image)
 name|gimp_image_get_quick_mask_state
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -621,10 +620,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_quick_mask_color (const GimpImage * image,GimpRGB * color)
+DECL|function|gimp_image_get_quick_mask_color (GimpImage * image,GimpRGB * color)
 name|gimp_image_get_quick_mask_color
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -665,10 +663,9 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_quick_mask (const GimpImage * image)
+DECL|function|gimp_image_get_quick_mask (GimpImage * image)
 name|gimp_image_get_quick_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -766,10 +763,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_quick_mask_inverted (const GimpImage * image)
+DECL|function|gimp_image_get_quick_mask_inverted (GimpImage * image)
 name|gimp_image_get_quick_mask_inverted
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

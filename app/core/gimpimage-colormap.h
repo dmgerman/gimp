@@ -63,7 +63,6 @@ name|Babl
 modifier|*
 name|gimp_image_colormap_get_rgb_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -77,7 +76,6 @@ name|Babl
 modifier|*
 name|gimp_image_colormap_get_rgba_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -103,7 +101,6 @@ name|guchar
 modifier|*
 name|gimp_image_get_colormap
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -115,7 +112,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_colormap_size
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

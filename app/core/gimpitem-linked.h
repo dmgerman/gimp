@@ -20,7 +20,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_linked_is_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item

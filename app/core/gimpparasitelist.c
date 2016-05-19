@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294f92180103
+DECL|enum|__anon2c9a964e0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1042,10 +1042,9 @@ end_function
 begin_function
 name|GimpParasiteList
 modifier|*
-DECL|function|gimp_parasite_list_copy (const GimpParasiteList * list)
+DECL|function|gimp_parasite_list_copy (GimpParasiteList * list)
 name|gimp_parasite_list_copy
 parameter_list|(
-specifier|const
 name|GimpParasiteList
 modifier|*
 name|list

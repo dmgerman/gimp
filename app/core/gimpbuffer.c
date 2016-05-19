@@ -1721,10 +1721,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_buffer_get_width (const GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_width (GimpBuffer * buffer)
 name|gimp_buffer_get_width
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -1753,10 +1752,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_buffer_get_height (const GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_height (GimpBuffer * buffer)
 name|gimp_buffer_get_height
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -1787,10 +1785,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_buffer_get_format (const GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_format (GimpBuffer * buffer)
 name|gimp_buffer_get_format
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -1820,10 +1817,9 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_buffer_get_buffer (const GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_buffer (GimpBuffer * buffer)
 name|gimp_buffer_get_buffer
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -1933,10 +1929,9 @@ end_function
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_buffer_get_color_profile (const GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_color_profile (GimpBuffer * buffer)
 name|gimp_buffer_get_color_profile
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer

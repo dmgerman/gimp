@@ -21,7 +21,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_pick_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -40,7 +39,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_pick_layer_by_bounds
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -59,7 +57,6 @@ name|GimpTextLayer
 modifier|*
 name|gimp_image_pick_text_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

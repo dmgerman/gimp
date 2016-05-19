@@ -20,7 +20,6 @@ begin_function_decl
 name|void
 name|gimp_vectors_warp_point
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -43,7 +42,6 @@ begin_function_decl
 name|void
 name|gimp_vectors_warp_vectors
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

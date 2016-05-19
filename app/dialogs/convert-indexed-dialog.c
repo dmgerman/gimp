@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295855800108
+DECL|struct|__anon277e11c90108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -225,7 +225,6 @@ specifier|static
 name|gboolean
 name|convert_dialog_palette_filter
 parameter_list|(
-specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -1884,10 +1883,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|convert_dialog_palette_filter (const GimpObject * object,gpointer user_data)
+DECL|function|convert_dialog_palette_filter (GimpObject * object,gpointer user_data)
 name|convert_dialog_palette_filter
 parameter_list|(
-specifier|const
 name|GimpObject
 modifier|*
 name|object

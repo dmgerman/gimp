@@ -161,7 +161,6 @@ modifier|*
 name|anchor_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -179,7 +178,6 @@ modifier|*
 name|nearest_point_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -189,7 +187,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -219,7 +216,6 @@ modifier|*
 name|nearest_tangent_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -234,7 +230,6 @@ name|GimpCoords
 modifier|*
 name|coord2
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -264,7 +259,6 @@ modifier|*
 name|nearest_intersection_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -279,7 +273,6 @@ name|GimpCoords
 modifier|*
 name|direction
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -310,7 +303,6 @@ modifier|*
 name|anchor_get_next
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -639,7 +631,6 @@ modifier|*
 name|is_empty
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -652,12 +643,10 @@ modifier|*
 name|get_length
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|)
@@ -669,7 +658,6 @@ modifier|*
 name|get_distance
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -687,16 +675,13 @@ modifier|*
 name|get_point_at_dist
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|dist
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -717,12 +702,10 @@ modifier|*
 name|interpolate
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -739,7 +722,6 @@ modifier|*
 name|duplicate
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -753,7 +735,6 @@ modifier|*
 name|make_bezier
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -883,7 +864,6 @@ modifier|*
 name|get_draw_anchors
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -897,7 +877,6 @@ modifier|*
 name|get_draw_controls
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -911,7 +890,6 @@ modifier|*
 name|get_draw_lines
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -925,7 +903,6 @@ modifier|*
 name|control_points_get
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -967,7 +944,6 @@ begin_function_decl
 name|gint
 name|gimp_stroke_get_ID
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -984,7 +960,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_control_points_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1001,7 +976,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_stroke_anchor_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1018,7 +992,6 @@ begin_function_decl
 name|gdouble
 name|gimp_stroke_nearest_point_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1028,7 +1001,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -1057,7 +1029,6 @@ begin_function_decl
 name|gdouble
 name|gimp_stroke_nearest_tangent_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1100,7 +1071,6 @@ begin_function_decl
 name|gdouble
 name|gimp_stroke_nearest_intersection_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1148,7 +1118,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_stroke_anchor_get_next
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1465,7 +1434,6 @@ begin_function_decl
 name|gboolean
 name|gimp_stroke_is_empty
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1481,12 +1449,10 @@ begin_function_decl
 name|gdouble
 name|gimp_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|)
@@ -1497,7 +1463,6 @@ begin_function_decl
 name|gdouble
 name|gimp_stroke_get_distance
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1514,16 +1479,13 @@ begin_function_decl
 name|gboolean
 name|gimp_stroke_get_point_at_dist
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|dist
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -1547,7 +1509,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1568,7 +1529,6 @@ name|GimpStroke
 modifier|*
 name|gimp_stroke_duplicate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1585,7 +1545,6 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_stroke_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1708,7 +1667,6 @@ name|GList
 modifier|*
 name|gimp_stroke_get_draw_anchors
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1721,7 +1679,6 @@ name|GList
 modifier|*
 name|gimp_stroke_get_draw_controls
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1734,7 +1691,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_get_draw_lines
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke

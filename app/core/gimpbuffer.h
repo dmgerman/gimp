@@ -201,7 +201,6 @@ begin_function_decl
 name|gint
 name|gimp_buffer_get_width
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -213,7 +212,6 @@ begin_function_decl
 name|gint
 name|gimp_buffer_get_height
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -227,7 +225,6 @@ name|Babl
 modifier|*
 name|gimp_buffer_get_format
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -240,7 +237,6 @@ name|GeglBuffer
 modifier|*
 name|gimp_buffer_get_buffer
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -268,7 +264,6 @@ name|GimpColorProfile
 modifier|*
 name|gimp_buffer_get_color_profile
 parameter_list|(
-specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer

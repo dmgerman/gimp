@@ -154,7 +154,6 @@ name|GFile
 modifier|*
 name|gimp_temporary_procedure_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure
@@ -448,10 +447,9 @@ begin_function
 specifier|static
 name|GFile
 modifier|*
-DECL|function|gimp_temporary_procedure_get_file (const GimpPlugInProcedure * procedure)
+DECL|function|gimp_temporary_procedure_get_file (GimpPlugInProcedure * procedure)
 name|gimp_temporary_procedure_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure

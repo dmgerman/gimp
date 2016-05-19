@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da760b0103
+DECL|enum|__anon2c1495020103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da760b0203
+DECL|enum|__anon2c1495020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -638,7 +638,6 @@ specifier|static
 name|gint64
 name|gimp_drawable_real_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -3238,10 +3237,9 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_drawable_real_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
+DECL|function|gimp_drawable_real_estimate_memsize (GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_drawable_real_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4062,10 +4060,9 @@ end_function
 
 begin_function
 name|gint64
-DECL|function|gimp_drawable_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
+DECL|function|gimp_drawable_estimate_memsize (GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_drawable_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4243,10 +4240,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_get_active_components (const GimpDrawable * drawable,gboolean * active)
+DECL|function|gimp_drawable_get_active_components (GimpDrawable * drawable,gboolean * active)
 name|gimp_drawable_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4302,10 +4298,9 @@ end_function
 
 begin_function
 name|GimpComponentMask
-DECL|function|gimp_drawable_get_active_mask (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_active_mask (GimpDrawable * drawable)
 name|gimp_drawable_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5489,10 +5484,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_format (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_format (GimpDrawable * drawable)
 name|gimp_drawable_get_format
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5525,10 +5519,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_format_with_alpha (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_format_with_alpha (GimpDrawable * drawable)
 name|gimp_drawable_get_format_with_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5575,10 +5568,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_format_without_alpha (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_format_without_alpha (GimpDrawable * drawable)
 name|gimp_drawable_get_format_without_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5623,10 +5615,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_get_linear (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_linear (GimpDrawable * drawable)
 name|gimp_drawable_get_linear
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5669,10 +5660,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_has_alpha (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_has_alpha (GimpDrawable * drawable)
 name|gimp_drawable_has_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5715,10 +5705,9 @@ end_function
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_drawable_get_base_type (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_base_type (GimpDrawable * drawable)
 name|gimp_drawable_get_base_type
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5762,10 +5751,9 @@ end_function
 
 begin_function
 name|GimpComponentType
-DECL|function|gimp_drawable_get_component_type (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_component_type (GimpDrawable * drawable)
 name|gimp_drawable_get_component_type
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5809,10 +5797,9 @@ end_function
 
 begin_function
 name|GimpPrecision
-DECL|function|gimp_drawable_get_precision (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_precision (GimpDrawable * drawable)
 name|gimp_drawable_get_precision
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5856,10 +5843,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_rgb (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_rgb (GimpDrawable * drawable)
 name|gimp_drawable_is_rgb
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5890,10 +5876,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_gray (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_gray (GimpDrawable * drawable)
 name|gimp_drawable_is_gray
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5924,10 +5909,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_indexed (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_indexed (GimpDrawable * drawable)
 name|gimp_drawable_is_indexed
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5960,10 +5944,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_drawable_get_component_format (const GimpDrawable * drawable,GimpChannelType channel)
+DECL|function|gimp_drawable_get_component_format (GimpDrawable * drawable,GimpChannelType channel)
 name|gimp_drawable_get_component_format
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -6086,10 +6069,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_get_component_index (const GimpDrawable * drawable,GimpChannelType channel)
+DECL|function|gimp_drawable_get_component_index (GimpDrawable * drawable,GimpChannelType channel)
 name|gimp_drawable_get_component_index
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -6186,10 +6168,9 @@ begin_function
 specifier|const
 name|guchar
 modifier|*
-DECL|function|gimp_drawable_get_colormap (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_colormap (GimpDrawable * drawable)
 name|gimp_drawable_get_colormap
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable

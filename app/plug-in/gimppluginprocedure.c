@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785cba60103
+DECL|enum|__anon2933690b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -321,7 +321,6 @@ name|GFile
 modifier|*
 name|gimp_plug_in_procedure_real_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure
@@ -1972,10 +1971,9 @@ begin_function
 specifier|static
 name|GFile
 modifier|*
-DECL|function|gimp_plug_in_procedure_real_get_file (const GimpPlugInProcedure * procedure)
+DECL|function|gimp_plug_in_procedure_real_get_file (GimpPlugInProcedure * procedure)
 name|gimp_plug_in_procedure_real_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure
@@ -2389,10 +2387,9 @@ end_function
 begin_function
 name|GFile
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_file (const GimpPlugInProcedure * proc)
+DECL|function|gimp_plug_in_procedure_get_file (GimpPlugInProcedure * proc)
 name|gimp_plug_in_procedure_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc
@@ -2465,10 +2462,9 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_locale_domain (const GimpPlugInProcedure * proc)
+DECL|function|gimp_plug_in_procedure_get_locale_domain (GimpPlugInProcedure * proc)
 name|gimp_plug_in_procedure_get_locale_domain
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc
@@ -2538,10 +2534,9 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_plug_in_procedure_get_help_domain (const GimpPlugInProcedure * proc)
+DECL|function|gimp_plug_in_procedure_get_help_domain (GimpPlugInProcedure * proc)
 name|gimp_plug_in_procedure_get_help_domain
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc

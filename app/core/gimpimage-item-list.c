@@ -854,10 +854,9 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_item_list_get_list (const GimpImage * image,GimpItemTypeMask type,GimpItemSet set)
+DECL|function|gimp_image_item_list_get_list (GimpImage * image,GimpItemTypeMask type,GimpItemSet set)
 name|gimp_image_item_list_get_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

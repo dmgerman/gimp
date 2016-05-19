@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f8b9b0103
+DECL|enum|__anon291087bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3250,10 +3250,9 @@ end_function
 
 begin_function
 name|GimpBrushGeneratedShape
-DECL|function|gimp_brush_generated_get_shape (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_shape (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_shape
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -3279,10 +3278,9 @@ end_function
 
 begin_function
 name|gfloat
-DECL|function|gimp_brush_generated_get_radius (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_radius (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_radius
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -3309,10 +3307,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_generated_get_spikes (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_spikes (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_spikes
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -3339,10 +3336,9 @@ end_function
 
 begin_function
 name|gfloat
-DECL|function|gimp_brush_generated_get_hardness (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_hardness (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_hardness
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -3369,10 +3365,9 @@ end_function
 
 begin_function
 name|gfloat
-DECL|function|gimp_brush_generated_get_aspect_ratio (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_aspect_ratio (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -3399,10 +3394,9 @@ end_function
 
 begin_function
 name|gfloat
-DECL|function|gimp_brush_generated_get_angle (const GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_angle (GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_angle
 parameter_list|(
-specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush

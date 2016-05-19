@@ -32,7 +32,6 @@ modifier|*
 name|GimpGetContainerFunc
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -50,7 +49,6 @@ modifier|*
 name|GimpGetItemFunc
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

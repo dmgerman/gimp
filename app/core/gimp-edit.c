@@ -209,7 +209,6 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-specifier|const
 name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_cut (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GError ** error)
@@ -346,7 +345,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_copy (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GError ** error)
@@ -483,7 +481,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_copy_visible (GimpImage * image,GimpContext * context,GError ** error)

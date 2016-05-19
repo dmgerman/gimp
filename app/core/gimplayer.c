@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b54b30103
+DECL|enum|__anon2bf7a25f0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b54b30203
+DECL|enum|__anon2bf7a25f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -456,7 +456,6 @@ specifier|static
 name|gboolean
 name|gimp_layer_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -750,7 +749,6 @@ specifier|static
 name|gint64
 name|gimp_layer_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -828,7 +826,6 @@ specifier|static
 name|void
 name|gimp_layer_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -845,7 +842,6 @@ specifier|static
 name|GimpComponentMask
 name|gimp_layer_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -3113,10 +3109,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_is_attached (const GimpItem * item)
+DECL|function|gimp_layer_is_attached (GimpItem * item)
 name|gimp_layer_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -4458,10 +4453,9 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_layer_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
+DECL|function|gimp_layer_estimate_memsize (GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_layer_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4941,10 +4935,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_get_active_components (const GimpDrawable * drawable,gboolean * active)
+DECL|function|gimp_layer_get_active_components (GimpDrawable * drawable,gboolean * active)
 name|gimp_layer_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5022,10 +5015,9 @@ end_function
 begin_function
 specifier|static
 name|GimpComponentMask
-DECL|function|gimp_layer_get_active_mask (const GimpDrawable * drawable)
+DECL|function|gimp_layer_get_active_mask (GimpDrawable * drawable)
 name|gimp_layer_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5472,10 +5464,9 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
-DECL|function|gimp_layer_get_mask (const GimpLayer * layer)
+DECL|function|gimp_layer_get_mask (GimpLayer * layer)
 name|gimp_layer_get_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -5949,10 +5940,9 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
-DECL|function|gimp_layer_create_mask (const GimpLayer * layer,GimpAddMaskType add_mask_type,GimpChannel * channel)
+DECL|function|gimp_layer_create_mask (GimpLayer * layer,GimpAddMaskType add_mask_type,GimpChannel * channel)
 name|gimp_layer_create_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -7349,10 +7339,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_apply_mask (const GimpLayer * layer)
+DECL|function|gimp_layer_get_apply_mask (GimpLayer * layer)
 name|gimp_layer_get_apply_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -7452,10 +7441,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_edit_mask (const GimpLayer * layer)
+DECL|function|gimp_layer_get_edit_mask (GimpLayer * layer)
 name|gimp_layer_get_edit_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -7713,10 +7701,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_show_mask (const GimpLayer * layer)
+DECL|function|gimp_layer_get_show_mask (GimpLayer * layer)
 name|gimp_layer_get_show_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8162,10 +8149,9 @@ end_comment
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_layer_get_floating_sel_drawable (const GimpLayer * layer)
+DECL|function|gimp_layer_get_floating_sel_drawable (GimpLayer * layer)
 name|gimp_layer_get_floating_sel_drawable
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8329,10 +8315,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_is_floating_sel (const GimpLayer * layer)
+DECL|function|gimp_layer_is_floating_sel (GimpLayer * layer)
 name|gimp_layer_is_floating_sel
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8517,10 +8502,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_layer_get_opacity (const GimpLayer * layer)
+DECL|function|gimp_layer_get_opacity (GimpLayer * layer)
 name|gimp_layer_get_opacity
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8689,10 +8673,9 @@ end_function
 
 begin_function
 name|GimpLayerModeEffects
-DECL|function|gimp_layer_get_mode (const GimpLayer * layer)
+DECL|function|gimp_layer_get_mode (GimpLayer * layer)
 name|gimp_layer_get_mode
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8834,10 +8817,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_get_lock_alpha (const GimpLayer * layer)
+DECL|function|gimp_layer_get_lock_alpha (GimpLayer * layer)
 name|gimp_layer_get_lock_alpha
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -8863,10 +8845,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_can_lock_alpha (const GimpLayer * layer)
+DECL|function|gimp_layer_can_lock_alpha (GimpLayer * layer)
 name|gimp_layer_can_lock_alpha
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer

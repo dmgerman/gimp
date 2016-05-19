@@ -201,7 +201,6 @@ name|GList
 modifier|*
 name|file_open_get_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2895,10 +2894,9 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|file_open_get_layers (const GimpImage * image,gboolean merge_visible,gint * n_visible)
+DECL|function|file_open_get_layers (GimpImage * image,gboolean merge_visible,gint * n_visible)
 name|file_open_get_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

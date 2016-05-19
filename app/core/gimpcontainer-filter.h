@@ -21,7 +21,6 @@ name|GimpContainer
 modifier|*
 name|gimp_container_filter
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -40,7 +39,6 @@ name|GimpContainer
 modifier|*
 name|gimp_container_filter_by_name
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -64,7 +62,6 @@ modifier|*
 modifier|*
 name|gimp_container_get_filtered_name_array
 parameter_list|(
-specifier|const
 name|GimpContainer
 modifier|*
 name|container

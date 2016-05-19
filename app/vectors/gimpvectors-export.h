@@ -20,12 +20,10 @@ begin_function_decl
 name|gboolean
 name|gimp_vectors_export_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -47,12 +45,10 @@ name|gchar
 modifier|*
 name|gimp_vectors_export_string
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

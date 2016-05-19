@@ -1247,7 +1247,6 @@ modifier|*
 name|GimpObjectFilterFunc
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpObject
 modifier|*
 name|object

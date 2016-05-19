@@ -185,7 +185,6 @@ modifier|*
 name|is_attached
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -198,7 +197,6 @@ modifier|*
 name|is_content_locked
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -211,7 +209,6 @@ modifier|*
 name|is_position_locked
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -747,7 +744,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_removed
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -770,7 +766,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -783,7 +778,6 @@ name|GimpItem
 modifier|*
 name|gimp_item_get_parent
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -963,7 +957,6 @@ begin_function_decl
 name|gint
 name|gimp_item_get_width
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -975,7 +968,6 @@ begin_function_decl
 name|gint
 name|gimp_item_get_height
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1004,7 +996,6 @@ begin_function_decl
 name|void
 name|gimp_item_get_offset
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1083,7 +1074,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_check_scaling
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1456,7 +1446,6 @@ begin_function_decl
 name|GimpTattoo
 name|gimp_item_get_tattoo
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1483,7 +1472,6 @@ name|GimpImage
 modifier|*
 name|gimp_item_get_image
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1541,7 +1529,6 @@ name|GimpParasiteList
 modifier|*
 name|gimp_item_get_parasites
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1614,7 +1601,6 @@ name|GimpParasite
 modifier|*
 name|gimp_item_parasite_find
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1633,7 +1619,6 @@ modifier|*
 modifier|*
 name|gimp_item_parasite_list
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1666,7 +1651,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_get_visible
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1678,7 +1662,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_visible
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1707,7 +1690,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_get_linked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1736,7 +1718,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_get_lock_content
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1748,7 +1729,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_can_lock_content
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1760,7 +1740,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1789,7 +1768,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_get_lock_position
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1801,7 +1779,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_can_lock_position
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1813,7 +1790,6 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item

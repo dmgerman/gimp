@@ -574,7 +574,6 @@ name|GimpTempBuf
 modifier|*
 name|gimp_brush_get_mask
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -587,7 +586,6 @@ name|GimpTempBuf
 modifier|*
 name|gimp_brush_get_pixmap
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -599,7 +597,6 @@ begin_function_decl
 name|gint
 name|gimp_brush_get_width
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -611,7 +608,6 @@ begin_function_decl
 name|gint
 name|gimp_brush_get_height
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -623,7 +619,6 @@ begin_function_decl
 name|gint
 name|gimp_brush_get_spacing
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -649,7 +644,6 @@ begin_function_decl
 name|GimpVector2
 name|gimp_brush_get_x_axis
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -661,7 +655,6 @@ begin_function_decl
 name|GimpVector2
 name|gimp_brush_get_y_axis
 parameter_list|(
-specifier|const
 name|GimpBrush
 modifier|*
 name|brush

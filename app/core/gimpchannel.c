@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba8f2f0103
+DECL|enum|__anon28b1de120103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -284,7 +284,6 @@ specifier|static
 name|gboolean
 name|gimp_channel_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -687,7 +686,6 @@ specifier|static
 name|void
 name|gimp_channel_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -704,7 +702,6 @@ specifier|static
 name|GimpComponentMask
 name|gimp_channel_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2357,10 +2354,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_is_attached (const GimpItem * item)
+DECL|function|gimp_channel_is_attached (GimpItem * item)
 name|gimp_channel_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -4558,10 +4554,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_get_active_components (const GimpDrawable * drawable,gboolean * active)
+DECL|function|gimp_channel_get_active_components (GimpDrawable * drawable,gboolean * active)
 name|gimp_channel_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4592,10 +4587,9 @@ end_function
 begin_function
 specifier|static
 name|GimpComponentMask
-DECL|function|gimp_channel_get_active_mask (const GimpDrawable * drawable)
+DECL|function|gimp_channel_get_active_mask (GimpDrawable * drawable)
 name|gimp_channel_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -8211,10 +8205,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_get_color (const GimpChannel * channel,GimpRGB * color)
+DECL|function|gimp_channel_get_color (GimpChannel * channel,GimpRGB * color)
 name|gimp_channel_get_color
 parameter_list|(
-specifier|const
 name|GimpChannel
 modifier|*
 name|channel
@@ -8251,10 +8244,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_channel_get_opacity (const GimpChannel * channel)
+DECL|function|gimp_channel_get_opacity (GimpChannel * channel)
 name|gimp_channel_get_opacity
 parameter_list|(
-specifier|const
 name|GimpChannel
 modifier|*
 name|channel

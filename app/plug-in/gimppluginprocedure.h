@@ -238,7 +238,6 @@ modifier|*
 name|get_file
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|procedure
@@ -313,7 +312,6 @@ name|GFile
 modifier|*
 name|gimp_plug_in_procedure_get_file
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc
@@ -343,7 +341,6 @@ name|gchar
 modifier|*
 name|gimp_plug_in_procedure_get_locale_domain
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc
@@ -373,7 +370,6 @@ name|gchar
 modifier|*
 name|gimp_plug_in_procedure_get_help_domain
 parameter_list|(
-specifier|const
 name|GimpPlugInProcedure
 modifier|*
 name|proc

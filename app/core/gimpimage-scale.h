@@ -44,7 +44,6 @@ begin_function_decl
 name|GimpImageScaleCheckType
 name|gimp_image_scale_check
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

@@ -20,7 +20,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_undo_is_enabled
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -121,7 +120,6 @@ name|GimpUndoStack
 modifier|*
 name|gimp_image_get_undo_stack
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -134,7 +132,6 @@ name|GimpUndoStack
 modifier|*
 name|gimp_image_get_redo_stack
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -157,7 +154,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_undo_group_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

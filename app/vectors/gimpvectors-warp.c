@@ -90,7 +90,6 @@ specifier|static
 name|void
 name|gimp_stroke_warp_point
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -116,7 +115,6 @@ specifier|static
 name|void
 name|gimp_vectors_warp_stroke
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -133,10 +131,9 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gimp_vectors_warp_point (const GimpVectors * vectors,GimpCoords * point,GimpCoords * point_warped,gdouble y_offset)
+DECL|function|gimp_vectors_warp_point (GimpVectors * vectors,GimpCoords * point,GimpCoords * point_warped,gdouble y_offset)
 name|gimp_vectors_warp_point
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -264,10 +261,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_warp_point (const GimpStroke * stroke,gdouble x,gdouble y,GimpCoords * point_warped,gdouble y_offset)
+DECL|function|gimp_stroke_warp_point (GimpStroke * stroke,gdouble x,gdouble y,GimpCoords * point_warped,gdouble y_offset)
 name|gimp_stroke_warp_point
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -499,10 +495,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_warp_stroke (const GimpVectors * vectors,GimpStroke * stroke,gdouble y_offset)
+DECL|function|gimp_vectors_warp_stroke (GimpVectors * vectors,GimpStroke * stroke,gdouble y_offset)
 name|gimp_vectors_warp_stroke
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -570,10 +565,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vectors_warp_vectors (const GimpVectors * vectors,GimpVectors * vectors_in,gdouble y_offset)
+DECL|function|gimp_vectors_warp_vectors (GimpVectors * vectors,GimpVectors * vectors_in,gdouble y_offset)
 name|gimp_vectors_warp_vectors
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

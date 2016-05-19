@@ -504,10 +504,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_colormap_get_rgb_format (const GimpImage * image)
+DECL|function|gimp_image_colormap_get_rgb_format (GimpImage * image)
 name|gimp_image_colormap_get_rgb_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -538,10 +537,9 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_colormap_get_rgba_format (const GimpImage * image)
+DECL|function|gimp_image_colormap_get_rgba_format (GimpImage * image)
 name|gimp_image_colormap_get_rgba_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -604,10 +602,9 @@ begin_function
 specifier|const
 name|guchar
 modifier|*
-DECL|function|gimp_image_get_colormap (const GimpImage * image)
+DECL|function|gimp_image_get_colormap (GimpImage * image)
 name|gimp_image_get_colormap
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -636,10 +633,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_colormap_size (const GimpImage * image)
+DECL|function|gimp_image_get_colormap_size (GimpImage * image)
 name|gimp_image_get_colormap_size
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

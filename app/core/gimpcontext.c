@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c889fa90103
+DECL|enum|__anon29193a490103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c889fa90203
+DECL|enum|__anon29193a490203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -6582,10 +6582,9 @@ end_function
 begin_function
 name|GimpContext
 modifier|*
-DECL|function|gimp_context_get_parent (const GimpContext * context)
+DECL|function|gimp_context_get_parent (GimpContext * context)
 name|gimp_context_get_parent
 parameter_list|(
-specifier|const
 name|GimpContext
 modifier|*
 name|context

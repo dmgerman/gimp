@@ -597,7 +597,6 @@ begin_function_decl
 name|gint64
 name|gimp_image_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -618,7 +617,6 @@ begin_function_decl
 name|GimpImageBaseType
 name|gimp_image_get_base_type
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -630,7 +628,6 @@ begin_function_decl
 name|GimpComponentType
 name|gimp_image_get_component_type
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -642,7 +639,6 @@ begin_function_decl
 name|GimpPrecision
 name|gimp_image_get_precision
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -656,7 +652,6 @@ name|Babl
 modifier|*
 name|gimp_image_get_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -679,7 +674,6 @@ name|Babl
 modifier|*
 name|gimp_image_get_layer_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -696,7 +690,6 @@ name|Babl
 modifier|*
 name|gimp_image_get_channel_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -710,7 +703,6 @@ name|Babl
 modifier|*
 name|gimp_image_get_mask_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -722,7 +714,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_ID
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -750,7 +741,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -763,7 +753,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_untitled_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -776,7 +765,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_file_or_untitled
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -789,7 +777,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_imported_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -802,7 +789,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_exported_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -815,7 +801,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_save_a_copy_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -828,7 +813,6 @@ name|GFile
 modifier|*
 name|gimp_image_get_any_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -942,7 +926,6 @@ name|GimpPlugInProcedure
 modifier|*
 name|gimp_image_get_load_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -970,7 +953,6 @@ name|GimpPlugInProcedure
 modifier|*
 name|gimp_image_get_save_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1013,7 +995,6 @@ name|GimpPlugInProcedure
 modifier|*
 name|gimp_image_get_export_proc
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1078,7 +1059,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_get_xcf_compat_mode
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1107,7 +1087,6 @@ begin_function_decl
 name|void
 name|gimp_image_get_resolution
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1152,7 +1131,6 @@ begin_function_decl
 name|GimpUnit
 name|gimp_image_get_unit
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1175,7 +1153,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_width
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1187,7 +1164,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_height
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1199,7 +1175,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_has_alpha
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1211,7 +1186,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_is_empty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1239,7 +1213,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_get_floating_selection
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1263,7 +1236,6 @@ name|GimpChannel
 modifier|*
 name|gimp_image_get_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1292,7 +1264,6 @@ name|Babl
 modifier|*
 name|gimp_image_get_component_format
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1307,7 +1278,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_component_index
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1339,7 +1309,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_get_component_active
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1354,7 +1323,6 @@ begin_function_decl
 name|void
 name|gimp_image_get_active_array
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1370,7 +1338,6 @@ begin_function_decl
 name|GimpComponentMask
 name|gimp_image_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1399,7 +1366,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_get_component_visible
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1414,7 +1380,6 @@ begin_function_decl
 name|void
 name|gimp_image_get_visible_array
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1430,7 +1395,6 @@ begin_function_decl
 name|GimpComponentMask
 name|gimp_image_get_visible_mask
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1723,7 +1687,6 @@ begin_function_decl
 name|gint
 name|gimp_image_is_dirty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1735,7 +1698,6 @@ begin_function_decl
 name|gboolean
 name|gimp_image_is_export_dirty
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1747,7 +1709,6 @@ begin_function_decl
 name|gint64
 name|gimp_image_get_dirty_time
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1778,7 +1739,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_display_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1812,7 +1772,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_instance_count
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1841,7 +1800,6 @@ name|GimpParasite
 modifier|*
 name|gimp_image_parasite_find
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1860,7 +1818,6 @@ modifier|*
 modifier|*
 name|gimp_image_parasite_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1974,7 +1931,6 @@ name|GimpProjection
 modifier|*
 name|gimp_image_get_projection
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -1991,7 +1947,6 @@ name|GimpItemTree
 modifier|*
 name|gimp_image_get_layer_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2004,7 +1959,6 @@ name|GimpItemTree
 modifier|*
 name|gimp_image_get_channel_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2017,7 +1971,6 @@ name|GimpItemTree
 modifier|*
 name|gimp_image_get_vectors_tree
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2030,7 +1983,6 @@ name|GimpContainer
 modifier|*
 name|gimp_image_get_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2043,7 +1995,6 @@ name|GimpContainer
 modifier|*
 name|gimp_image_get_channels
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2056,7 +2007,6 @@ name|GimpContainer
 modifier|*
 name|gimp_image_get_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2068,7 +2018,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_n_layers
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2080,7 +2029,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_n_channels
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2092,7 +2040,6 @@ begin_function_decl
 name|gint
 name|gimp_image_get_n_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2105,7 +2052,6 @@ name|GList
 modifier|*
 name|gimp_image_get_layer_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2118,7 +2064,6 @@ name|GList
 modifier|*
 name|gimp_image_get_channel_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2131,7 +2076,6 @@ name|GList
 modifier|*
 name|gimp_image_get_vectors_iter
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2144,7 +2088,6 @@ name|GList
 modifier|*
 name|gimp_image_get_layer_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2157,7 +2100,6 @@ name|GList
 modifier|*
 name|gimp_image_get_channel_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2170,7 +2112,6 @@ name|GList
 modifier|*
 name|gimp_image_get_vectors_list
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2183,7 +2124,6 @@ name|GimpDrawable
 modifier|*
 name|gimp_image_get_active_drawable
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2196,7 +2136,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_get_active_layer
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2209,7 +2148,6 @@ name|GimpChannel
 modifier|*
 name|gimp_image_get_active_channel
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2222,7 +2160,6 @@ name|GimpVectors
 modifier|*
 name|gimp_image_get_active_vectors
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2295,7 +2232,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2311,7 +2247,6 @@ name|GimpChannel
 modifier|*
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2327,7 +2262,6 @@ name|GimpVectors
 modifier|*
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2343,7 +2277,6 @@ name|GimpLayer
 modifier|*
 name|gimp_image_get_layer_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2361,7 +2294,6 @@ name|GimpChannel
 modifier|*
 name|gimp_image_get_channel_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -2379,7 +2311,6 @@ name|GimpVectors
 modifier|*
 name|gimp_image_get_vectors_by_name
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image

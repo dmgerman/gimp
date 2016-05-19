@@ -92,7 +92,6 @@ specifier|static
 name|gboolean
 name|gimp_layer_mask_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -105,7 +104,6 @@ specifier|static
 name|gboolean
 name|gimp_layer_mask_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -118,7 +116,6 @@ specifier|static
 name|gboolean
 name|gimp_layer_mask_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -379,10 +376,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_mask_is_content_locked (const GimpItem * item)
+DECL|function|gimp_layer_mask_is_content_locked (GimpItem * item)
 name|gimp_layer_mask_is_content_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -428,10 +424,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_mask_is_position_locked (const GimpItem * item)
+DECL|function|gimp_layer_mask_is_position_locked (GimpItem * item)
 name|gimp_layer_mask_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -477,10 +472,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_mask_is_attached (const GimpItem * item)
+DECL|function|gimp_layer_mask_is_attached (GimpItem * item)
 name|gimp_layer_mask_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1094,10 +1088,9 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_mask_get_layer (const GimpLayerMask * layer_mask)
+DECL|function|gimp_layer_mask_get_layer (GimpLayerMask * layer_mask)
 name|gimp_layer_mask_get_layer
 parameter_list|(
-specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c545cd0103
+DECL|enum|__anon27a1e65b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1090,10 +1090,9 @@ end_function
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_grid_to_parasite (const GimpGrid * grid)
+DECL|function|gimp_grid_to_parasite (GimpGrid * grid)
 name|gimp_grid_to_parasite
 parameter_list|(
-specifier|const
 name|GimpGrid
 modifier|*
 name|grid

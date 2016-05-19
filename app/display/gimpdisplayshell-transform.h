@@ -24,7 +24,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_zoom_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -45,7 +44,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unzoom_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -66,7 +64,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_zoom_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -92,7 +89,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unzoom_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -121,7 +117,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_zoom_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -147,7 +142,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unzoom_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -173,7 +167,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_zoom_segments
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -207,7 +200,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_rotate_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -228,7 +220,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unrotate_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -249,7 +240,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_rotate_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -275,7 +265,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unrotate_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -301,7 +290,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_rotate_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -327,7 +315,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_unrotate_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -435,7 +422,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -456,7 +442,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_coords
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -477,7 +462,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -503,7 +487,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_xy
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -532,7 +515,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -558,7 +540,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_xy_f
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -584,7 +565,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_bounds
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -624,7 +604,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_bounds
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -664,7 +643,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_viewport
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

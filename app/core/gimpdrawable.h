@@ -175,7 +175,6 @@ modifier|*
 name|estimate_memsize
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -209,7 +208,6 @@ modifier|*
 name|get_active_components
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -226,7 +224,6 @@ modifier|*
 name|get_active_mask
 function_decl|)
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -521,7 +518,6 @@ begin_function_decl
 name|gint64
 name|gimp_drawable_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -587,7 +583,6 @@ begin_function_decl
 name|void
 name|gimp_drawable_get_active_components
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -603,7 +598,6 @@ begin_function_decl
 name|GimpComponentMask
 name|gimp_drawable_get_active_mask
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -886,7 +880,6 @@ name|Babl
 modifier|*
 name|gimp_drawable_get_format
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -900,7 +893,6 @@ name|Babl
 modifier|*
 name|gimp_drawable_get_format_with_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -914,7 +906,6 @@ name|Babl
 modifier|*
 name|gimp_drawable_get_format_without_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -926,7 +917,6 @@ begin_function_decl
 name|gboolean
 name|gimp_drawable_get_linear
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -938,7 +928,6 @@ begin_function_decl
 name|gboolean
 name|gimp_drawable_has_alpha
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -950,7 +939,6 @@ begin_function_decl
 name|GimpImageBaseType
 name|gimp_drawable_get_base_type
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -962,7 +950,6 @@ begin_function_decl
 name|GimpComponentType
 name|gimp_drawable_get_component_type
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -974,7 +961,6 @@ begin_function_decl
 name|GimpPrecision
 name|gimp_drawable_get_precision
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -986,7 +972,6 @@ begin_function_decl
 name|gboolean
 name|gimp_drawable_is_rgb
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -998,7 +983,6 @@ begin_function_decl
 name|gboolean
 name|gimp_drawable_is_gray
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1010,7 +994,6 @@ begin_function_decl
 name|gboolean
 name|gimp_drawable_is_indexed
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1024,7 +1007,6 @@ name|Babl
 modifier|*
 name|gimp_drawable_get_component_format
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1039,7 +1021,6 @@ begin_function_decl
 name|gint
 name|gimp_drawable_get_component_index
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1056,7 +1037,6 @@ name|guchar
 modifier|*
 name|gimp_drawable_get_colormap
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable

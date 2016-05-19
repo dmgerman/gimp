@@ -222,12 +222,10 @@ begin_function_decl
 name|gboolean
 name|gimp_tag_equals
 parameter_list|(
-specifier|const
 name|GimpTag
 modifier|*
 name|tag
 parameter_list|,
-specifier|const
 name|GimpTag
 modifier|*
 name|other

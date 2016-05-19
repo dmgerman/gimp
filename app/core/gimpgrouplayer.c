@@ -339,7 +339,6 @@ specifier|static
 name|gboolean
 name|gimp_group_layer_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -554,7 +553,6 @@ specifier|static
 name|gint64
 name|gimp_group_layer_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1860,10 +1858,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_group_layer_is_position_locked (const GimpItem * item)
+DECL|function|gimp_group_layer_is_position_locked (GimpItem * item)
 name|gimp_group_layer_is_position_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -3548,10 +3545,9 @@ end_function
 begin_function
 specifier|static
 name|gint64
-DECL|function|gimp_group_layer_estimate_memsize (const GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
+DECL|function|gimp_group_layer_estimate_memsize (GimpDrawable * drawable,GimpComponentType component_type,gint width,gint height)
 name|gimp_group_layer_estimate_memsize
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable

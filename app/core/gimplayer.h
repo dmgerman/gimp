@@ -151,7 +151,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2ba784910108
+DECL|struct|__anon275caa820108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -311,7 +311,6 @@ name|GimpLayerMask
 modifier|*
 name|gimp_layer_get_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -324,7 +323,6 @@ name|GimpLayerMask
 modifier|*
 name|gimp_layer_create_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -401,7 +399,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_apply_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -427,7 +424,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_edit_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -456,7 +452,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_show_mask
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -510,7 +505,6 @@ name|GimpDrawable
 modifier|*
 name|gimp_layer_get_floating_sel_drawable
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -537,7 +531,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_is_floating_sel
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -566,7 +559,6 @@ begin_function_decl
 name|gdouble
 name|gimp_layer_get_opacity
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -595,7 +587,6 @@ begin_function_decl
 name|GimpLayerModeEffects
 name|gimp_layer_get_mode
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -624,7 +615,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_lock_alpha
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -636,7 +626,6 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_can_lock_alpha
 parameter_list|(
-specifier|const
 name|GimpLayer
 modifier|*
 name|layer

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5d07dd0103
+DECL|enum|__anon2b2c1ea60103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -220,7 +220,6 @@ specifier|static
 name|gboolean
 name|gimp_vectors_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -624,7 +623,6 @@ name|GimpStroke
 modifier|*
 name|gimp_vectors_real_stroke_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -643,12 +641,10 @@ name|GimpStroke
 modifier|*
 name|gimp_vectors_real_stroke_get_next
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -661,12 +657,10 @@ specifier|static
 name|gdouble
 name|gimp_vectors_real_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -680,7 +674,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_vectors_real_anchor_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -719,7 +712,6 @@ specifier|static
 name|gdouble
 name|gimp_vectors_real_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -737,7 +729,6 @@ specifier|static
 name|gdouble
 name|gimp_vectors_real_get_distance
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -755,12 +746,10 @@ specifier|static
 name|gint
 name|gimp_vectors_real_interpolate
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -784,7 +773,6 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_vectors_make_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -798,7 +786,6 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_vectors_real_make_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -1606,10 +1593,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_is_attached (const GimpItem * item)
+DECL|function|gimp_vectors_is_attached (GimpItem * item)
 name|gimp_vectors_is_attached
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -3583,10 +3569,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vectors_copy_strokes (const GimpVectors * src_vectors,GimpVectors * dest_vectors)
+DECL|function|gimp_vectors_copy_strokes (GimpVectors * src_vectors,GimpVectors * dest_vectors)
 name|gimp_vectors_copy_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|src_vectors
@@ -3666,10 +3651,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vectors_add_strokes (const GimpVectors * src_vectors,GimpVectors * dest_vectors)
+DECL|function|gimp_vectors_add_strokes (GimpVectors * src_vectors,GimpVectors * dest_vectors)
 name|gimp_vectors_add_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|src_vectors
@@ -4020,10 +4004,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_vectors_get_n_strokes (const GimpVectors * vectors)
+DECL|function|gimp_vectors_get_n_strokes (GimpVectors * vectors)
 name|gimp_vectors_get_n_strokes
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4053,10 +4036,9 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_stroke_get (const GimpVectors * vectors,const GimpCoords * coord)
+DECL|function|gimp_vectors_stroke_get (GimpVectors * vectors,const GimpCoords * coord)
 name|gimp_vectors_stroke_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4097,10 +4079,9 @@ begin_function
 specifier|static
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_real_stroke_get (const GimpVectors * vectors,const GimpCoords * coord)
+DECL|function|gimp_vectors_real_stroke_get (GimpVectors * vectors,const GimpCoords * coord)
 name|gimp_vectors_real_stroke_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4235,10 +4216,9 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_stroke_get_by_ID (const GimpVectors * vectors,gint id)
+DECL|function|gimp_vectors_stroke_get_by_ID (GimpVectors * vectors,gint id)
 name|gimp_vectors_stroke_get_by_ID
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4307,15 +4287,13 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_stroke_get_next (const GimpVectors * vectors,const GimpStroke * prev)
+DECL|function|gimp_vectors_stroke_get_next (GimpVectors * vectors,GimpStroke * prev)
 name|gimp_vectors_stroke_get_next
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -4351,15 +4329,13 @@ begin_function
 specifier|static
 name|GimpStroke
 modifier|*
-DECL|function|gimp_vectors_real_stroke_get_next (const GimpVectors * vectors,const GimpStroke * prev)
+DECL|function|gimp_vectors_real_stroke_get_next (GimpVectors * vectors,GimpStroke * prev)
 name|gimp_vectors_real_stroke_get_next
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|prev
@@ -4423,15 +4399,13 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vectors_stroke_get_length (const GimpVectors * vectors,const GimpStroke * stroke)
+DECL|function|gimp_vectors_stroke_get_length (GimpVectors * vectors,GimpStroke * stroke)
 name|gimp_vectors_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4476,15 +4450,13 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_vectors_real_stroke_get_length (const GimpVectors * vectors,const GimpStroke * stroke)
+DECL|function|gimp_vectors_real_stroke_get_length (GimpVectors * vectors,GimpStroke * stroke)
 name|gimp_vectors_real_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4526,10 +4498,9 @@ end_function
 begin_function
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_vectors_anchor_get (const GimpVectors * vectors,const GimpCoords * coord,GimpStroke ** ret_stroke)
+DECL|function|gimp_vectors_anchor_get (GimpVectors * vectors,const GimpCoords * coord,GimpStroke ** ret_stroke)
 name|gimp_vectors_anchor_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4577,10 +4548,9 @@ begin_function
 specifier|static
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_vectors_real_anchor_get (const GimpVectors * vectors,const GimpCoords * coord,GimpStroke ** ret_stroke)
+DECL|function|gimp_vectors_real_anchor_get (GimpVectors * vectors,const GimpCoords * coord,GimpStroke ** ret_stroke)
 name|gimp_vectors_real_anchor_get
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4871,10 +4841,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vectors_get_length (const GimpVectors * vectors,const GimpAnchor * start)
+DECL|function|gimp_vectors_get_length (GimpVectors * vectors,const GimpAnchor * start)
 name|gimp_vectors_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4914,10 +4883,9 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_vectors_real_get_length (const GimpVectors * vectors,const GimpAnchor * start)
+DECL|function|gimp_vectors_real_get_length (GimpVectors * vectors,const GimpAnchor * start)
 name|gimp_vectors_real_get_length
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4941,10 +4909,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vectors_get_distance (const GimpVectors * vectors,const GimpCoords * coord)
+DECL|function|gimp_vectors_get_distance (GimpVectors * vectors,const GimpCoords * coord)
 name|gimp_vectors_get_distance
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -4984,10 +4951,9 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_vectors_real_get_distance (const GimpVectors * vectors,const GimpCoords * coord)
+DECL|function|gimp_vectors_real_get_distance (GimpVectors * vectors,const GimpCoords * coord)
 name|gimp_vectors_real_get_distance
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -5011,15 +4977,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_vectors_interpolate (const GimpVectors * vectors,const GimpStroke * stroke,gdouble precision,gint max_points,GimpCoords * ret_coords)
+DECL|function|gimp_vectors_interpolate (GimpVectors * vectors,GimpStroke * stroke,gdouble precision,gint max_points,GimpCoords * ret_coords)
 name|gimp_vectors_interpolate
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5070,15 +5034,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_vectors_real_interpolate (const GimpVectors * vectors,const GimpStroke * stroke,gdouble precision,gint max_points,GimpCoords * ret_coords)
+DECL|function|gimp_vectors_real_interpolate (GimpVectors * vectors,GimpStroke * stroke,gdouble precision,gint max_points,GimpCoords * ret_coords)
 name|gimp_vectors_real_interpolate
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5157,10 +5119,9 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_vectors_make_bezier (const GimpVectors * vectors)
+DECL|function|gimp_vectors_make_bezier (GimpVectors * vectors)
 name|gimp_vectors_make_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -5184,10 +5145,9 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_vectors_real_make_bezier (const GimpVectors * vectors)
+DECL|function|gimp_vectors_real_make_bezier (GimpVectors * vectors)
 name|gimp_vectors_real_make_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

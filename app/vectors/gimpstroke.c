@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5370e20103
+DECL|enum|__anon2969aa1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -182,7 +182,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_stroke_real_anchor_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -201,7 +200,6 @@ name|GimpAnchor
 modifier|*
 name|gimp_stroke_real_anchor_get_next
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -529,7 +527,6 @@ specifier|static
 name|gboolean
 name|gimp_stroke_real_is_empty
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -542,12 +539,10 @@ specifier|static
 name|gdouble
 name|gimp_stroke_real_get_length
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|)
@@ -559,7 +554,6 @@ specifier|static
 name|gdouble
 name|gimp_stroke_real_get_distance
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -578,7 +572,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_real_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -599,7 +592,6 @@ name|GimpStroke
 modifier|*
 name|gimp_stroke_real_duplicate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -613,7 +605,6 @@ name|GimpBezierDesc
 modifier|*
 name|gimp_stroke_real_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -743,7 +734,6 @@ name|GList
 modifier|*
 name|gimp_stroke_real_get_draw_anchors
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -757,7 +747,6 @@ name|GList
 modifier|*
 name|gimp_stroke_real_get_draw_controls
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -771,7 +760,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_real_get_draw_lines
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -785,7 +773,6 @@ name|GArray
 modifier|*
 name|gimp_stroke_real_control_points_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -802,16 +789,13 @@ specifier|static
 name|gboolean
 name|gimp_stroke_real_get_point_at_dist
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|dist
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -1609,10 +1593,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_stroke_get_ID (const GimpStroke * stroke)
+DECL|function|gimp_stroke_get_ID (GimpStroke * stroke)
 name|gimp_stroke_get_ID
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1640,10 +1623,9 @@ end_function
 begin_function
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_stroke_anchor_get (const GimpStroke * stroke,const GimpCoords * coord)
+DECL|function|gimp_stroke_anchor_get (GimpStroke * stroke,const GimpCoords * coord)
 name|gimp_stroke_anchor_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1682,10 +1664,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_stroke_nearest_point_get (GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_nearest_point_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1778,10 +1759,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_nearest_tangent_get (const GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * coords2,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_stroke_nearest_tangent_get (GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * coords2,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_nearest_tangent_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -1889,10 +1869,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_nearest_intersection_get (const GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * direction,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
+DECL|function|gimp_stroke_nearest_intersection_get (GimpStroke * stroke,const GimpCoords * coords1,const GimpCoords * direction,gdouble precision,GimpCoords * nearest,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_nearest_intersection_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -2002,10 +1981,9 @@ begin_function
 specifier|static
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_stroke_real_anchor_get (const GimpStroke * stroke,const GimpCoords * coord)
+DECL|function|gimp_stroke_real_anchor_get (GimpStroke * stroke,const GimpCoords * coord)
 name|gimp_stroke_real_anchor_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -2250,10 +2228,9 @@ end_function
 begin_function
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_stroke_anchor_get_next (const GimpStroke * stroke,const GimpAnchor * prev)
+DECL|function|gimp_stroke_anchor_get_next (GimpStroke * stroke,const GimpAnchor * prev)
 name|gimp_stroke_anchor_get_next
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -2294,10 +2271,9 @@ begin_function
 specifier|static
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_stroke_real_anchor_get_next (const GimpStroke * stroke,const GimpAnchor * prev)
+DECL|function|gimp_stroke_real_anchor_get_next (GimpStroke * stroke,const GimpAnchor * prev)
 name|gimp_stroke_real_anchor_get_next
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -3716,10 +3692,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_stroke_is_empty (const GimpStroke * stroke)
+DECL|function|gimp_stroke_is_empty (GimpStroke * stroke)
 name|gimp_stroke_is_empty
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -3752,10 +3727,9 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_stroke_real_is_empty (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_is_empty (GimpStroke * stroke)
 name|gimp_stroke_real_is_empty
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -3774,15 +3748,13 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_get_length (const GimpStroke * stroke,const gdouble precision)
+DECL|function|gimp_stroke_get_length (GimpStroke * stroke,gdouble precision)
 name|gimp_stroke_get_length
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|)
@@ -3816,15 +3788,13 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_stroke_real_get_length (const GimpStroke * stroke,const gdouble precision)
+DECL|function|gimp_stroke_real_get_length (GimpStroke * stroke,gdouble precision)
 name|gimp_stroke_real_get_length
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|)
@@ -3954,10 +3924,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_get_distance (const GimpStroke * stroke,const GimpCoords * coord)
+DECL|function|gimp_stroke_get_distance (GimpStroke * stroke,const GimpCoords * coord)
 name|gimp_stroke_get_distance
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -3997,10 +3966,9 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_stroke_real_get_distance (const GimpStroke * stroke,const GimpCoords * coord)
+DECL|function|gimp_stroke_real_get_distance (GimpStroke * stroke,const GimpCoords * coord)
 name|gimp_stroke_real_get_distance
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4025,10 +3993,9 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_interpolate (const GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
+DECL|function|gimp_stroke_interpolate (GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
 name|gimp_stroke_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4073,10 +4040,9 @@ begin_function
 specifier|static
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_real_interpolate (const GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
+DECL|function|gimp_stroke_real_interpolate (GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
 name|gimp_stroke_real_interpolate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4103,10 +4069,9 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_stroke_duplicate (const GimpStroke * stroke)
+DECL|function|gimp_stroke_duplicate (GimpStroke * stroke)
 name|gimp_stroke_duplicate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4140,10 +4105,9 @@ begin_function
 specifier|static
 name|GimpStroke
 modifier|*
-DECL|function|gimp_stroke_real_duplicate (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_duplicate (GimpStroke * stroke)
 name|gimp_stroke_real_duplicate
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4240,10 +4204,9 @@ end_function
 begin_function
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_stroke_make_bezier (const GimpStroke * stroke)
+DECL|function|gimp_stroke_make_bezier (GimpStroke * stroke)
 name|gimp_stroke_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4277,10 +4240,9 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_stroke_real_make_bezier (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_make_bezier (GimpStroke * stroke)
 name|gimp_stroke_real_make_bezier
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4944,10 +4906,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_stroke_get_draw_anchors (const GimpStroke * stroke)
+DECL|function|gimp_stroke_get_draw_anchors (GimpStroke * stroke)
 name|gimp_stroke_get_draw_anchors
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -4981,10 +4942,9 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_stroke_real_get_draw_anchors (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_get_draw_anchors (GimpStroke * stroke)
 name|gimp_stroke_real_get_draw_anchors
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5057,10 +5017,9 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_stroke_get_draw_controls (const GimpStroke * stroke)
+DECL|function|gimp_stroke_get_draw_controls (GimpStroke * stroke)
 name|gimp_stroke_get_draw_controls
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5094,10 +5053,9 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_stroke_real_get_draw_controls (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_get_draw_controls (GimpStroke * stroke)
 name|gimp_stroke_real_get_draw_controls
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5277,10 +5235,9 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_get_draw_lines (const GimpStroke * stroke)
+DECL|function|gimp_stroke_get_draw_lines (GimpStroke * stroke)
 name|gimp_stroke_get_draw_lines
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5314,10 +5271,9 @@ begin_function
 specifier|static
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_real_get_draw_lines (const GimpStroke * stroke)
+DECL|function|gimp_stroke_real_get_draw_lines (GimpStroke * stroke)
 name|gimp_stroke_real_get_draw_lines
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5518,10 +5474,9 @@ end_function
 begin_function
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_control_points_get (const GimpStroke * stroke,gboolean * ret_closed)
+DECL|function|gimp_stroke_control_points_get (GimpStroke * stroke,gboolean * ret_closed)
 name|gimp_stroke_control_points_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5561,10 +5516,9 @@ begin_function
 specifier|static
 name|GArray
 modifier|*
-DECL|function|gimp_stroke_real_control_points_get (const GimpStroke * stroke,gboolean * ret_closed)
+DECL|function|gimp_stroke_real_control_points_get (GimpStroke * stroke,gboolean * ret_closed)
 name|gimp_stroke_real_control_points_get
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -5661,19 +5615,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_stroke_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * slope)
+DECL|function|gimp_stroke_get_point_at_dist (GimpStroke * stroke,gdouble dist,gdouble precision,GimpCoords * position,gdouble * slope)
 name|gimp_stroke_get_point_at_dist
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|dist
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
@@ -5721,19 +5672,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_stroke_real_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * slope)
+DECL|function|gimp_stroke_real_get_point_at_dist (GimpStroke * stroke,gdouble dist,gdouble precision,GimpCoords * position,gdouble * slope)
 name|gimp_stroke_real_get_point_at_dist
 parameter_list|(
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|dist
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,

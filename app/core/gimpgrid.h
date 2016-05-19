@@ -262,7 +262,6 @@ name|GimpParasite
 modifier|*
 name|gimp_grid_to_parasite
 parameter_list|(
-specifier|const
 name|GimpGrid
 modifier|*
 name|grid

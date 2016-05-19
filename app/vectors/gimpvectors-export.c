@@ -87,12 +87,10 @@ name|GString
 modifier|*
 name|gimp_vectors_export
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -105,7 +103,6 @@ specifier|static
 name|void
 name|gimp_vectors_export_image_size
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -122,7 +119,6 @@ specifier|static
 name|void
 name|gimp_vectors_export_path
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -140,7 +136,6 @@ name|gchar
 modifier|*
 name|gimp_vectors_export_path_data
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -154,15 +149,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_export_file (const GimpImage * image,const GimpVectors * vectors,GFile * file,GError ** error)
+DECL|function|gimp_vectors_export_file (GimpImage * image,GimpVectors * vectors,GFile * file,GError ** error)
 name|gimp_vectors_export_file
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -374,15 +367,13 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_vectors_export_string (const GimpImage * image,const GimpVectors * vectors)
+DECL|function|gimp_vectors_export_string (GimpImage * image,GimpVectors * vectors)
 name|gimp_vectors_export_string
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -432,15 +423,13 @@ begin_function
 specifier|static
 name|GString
 modifier|*
-DECL|function|gimp_vectors_export (const GimpImage * image,const GimpVectors * vectors)
+DECL|function|gimp_vectors_export (GimpImage * image,GimpVectors * vectors)
 name|gimp_vectors_export
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -571,10 +560,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_export_image_size (const GimpImage * image,GString * str)
+DECL|function|gimp_vectors_export_image_size (GimpImage * image,GString * str)
 name|gimp_vectors_export_image_size
 parameter_list|(
-specifier|const
 name|GimpImage
 modifier|*
 name|image
@@ -773,10 +761,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_export_path (const GimpVectors * vectors,GString * str)
+DECL|function|gimp_vectors_export_path (GimpVectors * vectors,GString * str)
 name|gimp_vectors_export_path
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -859,10 +846,9 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_vectors_export_path_data (const GimpVectors * vectors)
+DECL|function|gimp_vectors_export_path_data (GimpVectors * vectors)
 name|gimp_vectors_export_path_data
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

@@ -523,15 +523,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_tag_equals (const GimpTag * tag,const GimpTag * other)
+DECL|function|gimp_tag_equals (GimpTag * tag,GimpTag * other)
 name|gimp_tag_equals
 parameter_list|(
-specifier|const
 name|GimpTag
 modifier|*
 name|tag
 parameter_list|,
-specifier|const
 name|GimpTag
 modifier|*
 name|other

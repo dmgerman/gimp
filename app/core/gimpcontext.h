@@ -649,7 +649,6 @@ name|GimpContext
 modifier|*
 name|gimp_context_get_parent
 parameter_list|(
-specifier|const
 name|GimpContext
 modifier|*
 name|context

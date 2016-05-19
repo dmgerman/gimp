@@ -87,10 +87,9 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_linked_is_locked (const GimpItem * item)
+DECL|function|gimp_item_linked_is_locked (GimpItem * item)
 name|gimp_item_linked_is_locked
 parameter_list|(
-specifier|const
 name|GimpItem
 modifier|*
 name|item
