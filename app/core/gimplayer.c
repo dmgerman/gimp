@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-floating-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimperror.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6707dc0103
+DECL|enum|__anon2c6b54b30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -216,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6707dc0203
+DECL|enum|__anon2c6b54b30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

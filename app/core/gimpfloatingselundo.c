@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-floating-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfloatingselundo.h"
 end_include
 
