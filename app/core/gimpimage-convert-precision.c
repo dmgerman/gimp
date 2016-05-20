@@ -499,7 +499,10 @@ expr_stmt|;
 if|if
 condition|(
 name|old_profile
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|gimp_babl_format_get_linear
 argument_list|(
 name|old_format
@@ -511,11 +514,7 @@ name|new_format
 argument_list|)
 condition|)
 block|{
-name|GimpColorProfile
-modifier|*
-name|new_profile
-decl_stmt|;
-comment|/* when converting between linear and gamma, we create a new        * profile using the original profile's chromacities and        * whitepoint, but a linear/sRGB-gamma TRC.        */
+comment|/* when converting between linear and gamma, we create a new            * profile using the original profile's chromacities and            * whitepoint, but a linear/sRGB-gamma TRC.            */
 if|if
 condition|(
 name|gimp_babl_format_get_linear
@@ -542,7 +541,7 @@ name|old_profile
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if a new profile cannot be be generated, convert to the        * builtin profile, which is better than leaving the user with        * broken colors        */
+comment|/* if a new profile cannot be be generated, convert to the            * builtin profile, which is better than leaving the user with            * broken colors            */
 if|if
 condition|(
 operator|!
@@ -562,6 +561,19 @@ name|new_profile
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+operator|!
+name|new_profile
+condition|)
+name|new_profile
+operator|=
+name|g_object_ref
+argument_list|(
+name|old_profile
+argument_list|)
+expr_stmt|;
 block|}
 for|for
 control|(
@@ -664,9 +676,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|old_profile
+name|new_profile
 condition|)
 block|{
+if|if
+condition|(
+name|new_profile
+operator|!=
+name|old_profile
+condition|)
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
