@@ -68,7 +68,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* some magic numbers taken from http://www.garykessler.net/library/file_sigs.html  * see also http://fileformats.archiveteam.org/wiki/Cameras_and_Digital_Image_Sensors  */
+comment|/* some magic numbers taken from  * http://www.garykessler.net/library/file_sigs.html  *  * see also  * http://fileformats.archiveteam.org/wiki/Cameras_and_Digital_Image_Sensors  */
 end_comment
 
 begin_decl_stmt
@@ -83,7 +83,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Canon raw"
+literal|"Raw Canon"
 argument_list|)
 block|,
 literal|"image/x-canon-cr2,image/x-canon-crw,image/tiff"
@@ -102,7 +102,7 @@ comment|// tiff
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0377\\01"
 block|,
 comment|// tiff
-literal|"file-raw-canon-load"
+literal|"file-darktable-canon-load"
 block|,
 literal|"Load files in the Canon raw formats via darktable"
 block|,
@@ -112,7 +112,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Nikon raw"
+literal|"Raw Nikon"
 argument_list|)
 block|,
 literal|"image/x-nikon-nef,image/x-nikon-nrw"
@@ -122,7 +122,7 @@ literal|"nef,nrw"
 block|,
 name|NULL
 block|,
-literal|"file-raw-nikon-load"
+literal|"file-darktable-nikon-load"
 block|,
 literal|"Load files in the Nikon raw formats via darktable"
 block|,
@@ -132,7 +132,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Hasselblad raw"
+literal|"Raw Hasselblad"
 argument_list|)
 block|,
 literal|"image/x-hasselblad-3fr,image/x-hasselblad-fff"
@@ -142,7 +142,7 @@ literal|"3fr,fff"
 block|,
 name|NULL
 block|,
-literal|"file-raw-hasselblad-load"
+literal|"file-darktable-hasselblad-load"
 block|,
 literal|"Load files in the Hasselblad raw formats via darktable"
 block|,
@@ -152,7 +152,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Sony raw"
+literal|"Raw Sony"
 argument_list|)
 block|,
 literal|"image/x-sony-arw,image/x-sony-srf,image/x-sony-sr2"
@@ -162,7 +162,7 @@ literal|"arw,srf,sr2"
 block|,
 name|NULL
 block|,
-literal|"file-raw-sony-load"
+literal|"file-darktable-sony-load"
 block|,
 literal|"Load files in the Sony raw formats via darktable"
 block|,
@@ -172,7 +172,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Casio BAY raw"
+literal|"Raw Casio BAY"
 argument_list|)
 block|,
 literal|"image/x-casio-bay"
@@ -181,7 +181,7 @@ literal|"bay"
 block|,
 name|NULL
 block|,
-literal|"file-raw-bay-load"
+literal|"file-darktable-bay-load"
 block|,
 literal|"Load files in the BAY raw format via darktable"
 block|,
@@ -191,7 +191,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Phantom Software CINE raw"
+literal|"Raw Phantom Software CINE"
 argument_list|)
 block|,
 literal|""
@@ -201,7 +201,7 @@ literal|"cine,cin"
 block|,
 name|NULL
 block|,
-literal|"file-raw-cine-load"
+literal|"file-darktable-cine-load"
 block|,
 literal|"Load files in the CINE raw format via darktable"
 block|,
@@ -211,7 +211,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Sinar raw"
+literal|"Raw Sinar"
 argument_list|)
 block|,
 literal|""
@@ -221,7 +221,7 @@ literal|"cs1,ia,sti"
 block|,
 name|NULL
 block|,
-literal|"file-raw-sinar-load"
+literal|"file-darktable-sinar-load"
 block|,
 literal|"Load files in the Sinar raw formats via darktable"
 block|,
@@ -231,7 +231,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Kodak raw"
+literal|"Raw Kodak"
 argument_list|)
 block|,
 literal|"image/x-kodak-dc2,image/x-kodak-dcr,image/x-kodak-kdc,image/x-kodak-k25,image/x-kodak-kc2,image/tiff"
@@ -244,7 +244,7 @@ comment|// tiff
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0174\\01"
 block|,
 comment|// tiff
-literal|"file-raw-kodak-load"
+literal|"file-darktable-kodak-load"
 block|,
 literal|"Load files in the Kodak raw formats via darktable"
 block|,
@@ -254,7 +254,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Adobe DNG Digital Negative raw"
+literal|"Raw Adobe DNG Digital Negative"
 argument_list|)
 block|,
 literal|"image/x-adobe-dng"
@@ -263,7 +263,7 @@ literal|"dng"
 block|,
 name|NULL
 block|,
-literal|"file-raw-dng-load"
+literal|"file-darktable-dng-load"
 block|,
 literal|"Load files in the DNG raw format via darktable"
 block|,
@@ -273,7 +273,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Epson ERF raw"
+literal|"Raw Epson ERF"
 argument_list|)
 block|,
 literal|"image/x-epson-erf"
@@ -282,7 +282,7 @@ literal|"erf"
 block|,
 name|NULL
 block|,
-literal|"file-raw-erf-load"
+literal|"file-darktable-erf-load"
 block|,
 literal|"Load files in the ERF raw format via darktable"
 block|,
@@ -292,7 +292,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Phase One raw"
+literal|"Raw Phase One"
 argument_list|)
 block|,
 literal|"image/x-phaseone-cap,image/x-phaseone-iiq"
@@ -302,7 +302,7 @@ literal|"cap,iiq"
 block|,
 name|NULL
 block|,
-literal|"file-raw-phaseone-load"
+literal|"file-darktable-phaseone-load"
 block|,
 literal|"Load files in the Phase One raw formats via darktable"
 block|,
@@ -312,7 +312,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Minolta raw"
+literal|"Raw Minolta"
 argument_list|)
 block|,
 literal|"image/x-minolta-mdc,image/x-minolta-mrw"
@@ -322,7 +322,7 @@ literal|"mdc,mrw"
 block|,
 name|NULL
 block|,
-literal|"file-raw-minolta-load"
+literal|"file-darktable-minolta-load"
 block|,
 literal|"Load files in the Minolta raw formats via darktable"
 block|,
@@ -332,7 +332,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Mamiya MEF raw"
+literal|"Raw Mamiya MEF"
 argument_list|)
 block|,
 literal|"image/x-mamiya-mef"
@@ -341,7 +341,7 @@ literal|"mef"
 block|,
 name|NULL
 block|,
-literal|"file-raw-mef-load"
+literal|"file-darktable-mef-load"
 block|,
 literal|"Load files in the MEF raw format via darktable"
 block|,
@@ -351,7 +351,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Leaf MOS raw"
+literal|"Raw Leaf MOS"
 argument_list|)
 block|,
 literal|"image/x-leaf-mos"
@@ -360,7 +360,7 @@ literal|"mos"
 block|,
 name|NULL
 block|,
-literal|"file-raw-mos-load"
+literal|"file-darktable-mos-load"
 block|,
 literal|"Load files in the MOS raw format via darktable"
 block|,
@@ -370,7 +370,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Olympus ORF raw"
+literal|"Raw Olympus ORF"
 argument_list|)
 block|,
 literal|"image/x-olympus-orf"
@@ -379,7 +379,7 @@ literal|"orf"
 block|,
 literal|"0,string,IIRO,0,string,MMOR,0,string,IIRS"
 block|,
-literal|"file-raw-orf-load"
+literal|"file-darktable-orf-load"
 block|,
 literal|"Load files in the ORF raw format via darktable"
 block|,
@@ -389,7 +389,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Pentax PEF raw"
+literal|"Raw Pentax PEF"
 argument_list|)
 block|,
 literal|"image/x-pentax-pef,image/x-pentax-raw"
@@ -399,7 +399,7 @@ literal|"pef,raw"
 block|,
 name|NULL
 block|,
-literal|"file-raw-pef-load"
+literal|"file-darktable-pef-load"
 block|,
 literal|"Load files in the PEF raw format via darktable"
 block|,
@@ -409,7 +409,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Logitech PXN raw"
+literal|"Raw Logitech PXN"
 argument_list|)
 block|,
 literal|"image/x-pxn"
@@ -419,7 +419,7 @@ literal|"pxn"
 block|,
 name|NULL
 block|,
-literal|"file-raw-pxn-load"
+literal|"file-darktable-pxn-load"
 block|,
 literal|"Load files in the PXN raw format via darktable"
 block|,
@@ -429,7 +429,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Apple QuickTake QTK raw"
+literal|"Raw Apple QuickTake QTK"
 argument_list|)
 block|,
 literal|""
@@ -439,7 +439,7 @@ literal|"qtk"
 block|,
 name|NULL
 block|,
-literal|"file-raw-qtk-load"
+literal|"file-darktable-qtk-load"
 block|,
 literal|"Load files in the QTK raw format via darktable"
 block|,
@@ -449,7 +449,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Fujifilm RAF raw"
+literal|"Raw Fujifilm RAF"
 argument_list|)
 block|,
 literal|"image/x-fuji-raf"
@@ -458,7 +458,7 @@ literal|"raf"
 block|,
 literal|"0,string,FUJIFILMCCD-RAW"
 block|,
-literal|"file-raw-raf-load"
+literal|"file-darktable-raf-load"
 block|,
 literal|"Load files in the RAF raw format via darktable"
 block|,
@@ -468,7 +468,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Panasonic raw"
+literal|"Raw Panasonic"
 argument_list|)
 block|,
 literal|"image/x-panasonic-raw,image/x-panasonic-rw2"
@@ -478,7 +478,7 @@ literal|"raw,rw2"
 block|,
 literal|"0,string,IIU\\0"
 block|,
-literal|"file-raw-panasonic-load"
+literal|"file-darktable-panasonic-load"
 block|,
 literal|"Load files in the Panasonic raw formats via darktable"
 block|,
@@ -488,7 +488,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Digital Foto Maker RDC raw"
+literal|"Raw Digital Foto Maker RDC"
 argument_list|)
 block|,
 literal|""
@@ -498,7 +498,7 @@ literal|"rdc"
 block|,
 name|NULL
 block|,
-literal|"file-raw-rdc-load"
+literal|"file-darktable-rdc-load"
 block|,
 literal|"Load files in the RDC raw format via darktable"
 block|,
@@ -508,7 +508,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Leica RWL raw"
+literal|"Raw Leica RWL"
 argument_list|)
 block|,
 literal|"image/x-leica-rwl"
@@ -517,7 +517,7 @@ literal|"rwl"
 block|,
 name|NULL
 block|,
-literal|"file-raw-rwl-load"
+literal|"file-darktable-rwl-load"
 block|,
 literal|"Load files in the RWL raw format via darktable"
 block|,
@@ -527,7 +527,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Samsung SRW raw"
+literal|"Raw Samsung SRW"
 argument_list|)
 block|,
 literal|"image/x-samsung-srw"
@@ -536,7 +536,7 @@ literal|"srw"
 block|,
 name|NULL
 block|,
-literal|"file-raw-srw-load"
+literal|"file-darktable-srw-load"
 block|,
 literal|"Load files in the SRW raw format via darktable"
 block|,
@@ -546,7 +546,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Sigma X3F raw"
+literal|"Raw Sigma X3F"
 argument_list|)
 block|,
 literal|"image/x-sigma-x3f"
@@ -555,7 +555,7 @@ literal|"x3f"
 block|,
 literal|"0,string,FOVb"
 block|,
-literal|"file-raw-x3f-load"
+literal|"file-darktable-x3f-load"
 block|,
 literal|"Load files in the X3F raw format via darktable"
 block|,
@@ -565,7 +565,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Arriflex ARI raw"
+literal|"Raw Arriflex ARI"
 argument_list|)
 block|,
 literal|""
@@ -574,7 +574,7 @@ literal|"ari"
 block|,
 name|NULL
 block|,
-literal|"file-raw-ari-load"
+literal|"file-darktable-ari-load"
 block|,
 literal|"Load files in the ARI raw format via darktable"
 block|,
