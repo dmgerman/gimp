@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_UNDO, GimpDrawableUn
 end_define
 
 begin_typedef
+DECL|typedef|GimpDrawableUndo
+typedef|typedef
+name|struct
+name|_GimpDrawableUndo
+name|GimpDrawableUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawableUndoClass
 typedef|typedef
 name|struct

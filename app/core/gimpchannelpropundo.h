@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHANNEL_PROP_UNDO, GimpChanne
 end_define
 
 begin_typedef
+DECL|typedef|GimpChannelPropUndo
+typedef|typedef
+name|struct
+name|_GimpChannelPropUndo
+name|GimpChannelPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpChannelPropUndoClass
 typedef|typedef
 name|struct

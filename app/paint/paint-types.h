@@ -280,28 +280,6 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  paint undos  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpPaintCoreUndo
-typedef|typedef
-name|struct
-name|_GimpPaintCoreUndo
-name|GimpPaintCoreUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpInkUndo
-typedef|typedef
-name|struct
-name|_GimpInkUndo
-name|GimpInkUndo
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  functions  */
 end_comment
 

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_LAYER_MASK_UNDO, GimpLayerMas
 end_define
 
 begin_typedef
+DECL|typedef|GimpLayerMaskUndo
+typedef|typedef
+name|struct
+name|_GimpLayerMaskUndo
+name|GimpLayerMaskUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLayerMaskUndoClass
 typedef|typedef
 name|struct

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SAMPLE_POINT_UNDO, GimpSample
 end_define
 
 begin_typedef
+DECL|typedef|GimpSamplePointUndo
+typedef|typedef
+name|struct
+name|_GimpSamplePointUndo
+name|GimpSamplePointUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSamplePointUndoClass
 typedef|typedef
 name|struct

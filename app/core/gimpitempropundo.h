@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ITEM_PROP_UNDO, GimpItemPropU
 end_define
 
 begin_typedef
+DECL|typedef|GimpItemPropUndo
+typedef|typedef
+name|struct
+name|_GimpItemPropUndo
+name|GimpItemPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItemPropUndoClass
 typedef|typedef
 name|struct

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTORS_PROP_UNDO, GimpVector
 end_define
 
 begin_typedef
+DECL|typedef|GimpVectorsPropUndo
+typedef|typedef
+name|struct
+name|_GimpVectorsPropUndo
+name|GimpVectorsPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpVectorsPropUndoClass
 typedef|typedef
 name|struct

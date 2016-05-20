@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MASK_UNDO, GimpMaskUndoClass)
 end_define
 
 begin_typedef
+DECL|typedef|GimpMaskUndo
+typedef|typedef
+name|struct
+name|_GimpMaskUndo
+name|GimpMaskUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMaskUndoClass
 typedef|typedef
 name|struct

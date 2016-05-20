@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ITEM_UNDO, GimpItemUndoClass)
 end_define
 
 begin_typedef
+DECL|typedef|GimpItemUndo
+typedef|typedef
+name|struct
+name|_GimpItemUndo
+name|GimpItemUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItemUndoClass
 typedef|typedef
 name|struct

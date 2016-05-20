@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_CORE_UNDO, GimpPaintCor
 end_define
 
 begin_typedef
+DECL|typedef|GimpPaintCoreUndo
+typedef|typedef
+name|struct
+name|_GimpPaintCoreUndo
+name|GimpPaintCoreUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaintCoreUndoClass
 typedef|typedef
 name|struct

@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GROUP_LAYER_UNDO, GimpGroupLa
 end_define
 
 begin_typedef
+DECL|typedef|GimpGroupLayerUndo
+typedef|typedef
+name|struct
+name|_GimpGroupLayerUndo
+name|GimpGroupLayerUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGroupLayerUndoClass
 typedef|typedef
 name|struct
