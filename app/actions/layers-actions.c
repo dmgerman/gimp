@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer-floating-sel.h"
+file|"core/gimplayer-floating-selection.h"
 end_include
 
 begin_include

@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer-floating-sel.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimppickable.h"
+file|"core/gimplayer-floating-selection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"core/gimppickable.h"
 end_include
 
 begin_include

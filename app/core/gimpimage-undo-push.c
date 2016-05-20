@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfloatingselundo.h"
+file|"gimpfloatingselectionundo.h"
 end_include
 
 begin_include
@@ -4091,7 +4091,7 @@ name|gimp_image_undo_push
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_TYPE_FLOATING_SEL_UNDO
+name|GIMP_TYPE_FLOATING_SELECTION_UNDO
 argument_list|,
 name|GIMP_UNDO_FS_TO_LAYER
 argument_list|,

@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer-floating-sel.h"
+file|"core/gimplayer-floating-selection.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d59e710103
+DECL|enum|__anon28ee9e320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

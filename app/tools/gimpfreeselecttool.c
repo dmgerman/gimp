@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer-floating-sel.h"
+file|"core/gimplayer-floating-selection.h"
 end_include
 
 begin_include
@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aee6db60108
+DECL|struct|__anon29ffb72e0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index

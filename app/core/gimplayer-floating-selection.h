@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_LAYER_FLOATING_SEL_H__
+name|__GIMP_LAYER_FLOATING_SELECTION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_LAYER_FLOATING_SEL_H__
+DECL|macro|__GIMP_LAYER_FLOATING_SELECTION_H__
 define|#
 directive|define
-name|__GIMP_LAYER_FLOATING_SEL_H__
+name|__GIMP_LAYER_FLOATING_SELECTION_H__
 end_define
 
 begin_function_decl
@@ -103,7 +103,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_LAYER_FLOATING_SEL_H__ */
+comment|/* __GIMP_LAYER_FLOATING_SELECTION_H__ */
 end_comment
 
 end_unit

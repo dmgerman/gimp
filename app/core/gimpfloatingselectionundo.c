@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfloatingselundo.h"
+file|"gimpfloatingselectionundo.h"
 end_include
 
 begin_include
@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
+file|"gimplayer-floating-selection.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_floating_sel_undo_constructed
+name|gimp_floating_selection_undo_constructed
 parameter_list|(
 name|GObject
 modifier|*
@@ -72,7 +72,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_floating_sel_undo_pop
+name|gimp_floating_selection_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -89,12 +89,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFloatingSelUndo,gimp_floating_sel_undo,GIMP_TYPE_ITEM_UNDO)
+DECL|function|G_DEFINE_TYPE (GimpFloatingSelectionUndo,gimp_floating_selection_undo,GIMP_TYPE_ITEM_UNDO)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpFloatingSelUndo
+argument|GimpFloatingSelectionUndo
 argument_list|,
-argument|gimp_floating_sel_undo
+argument|gimp_floating_selection_undo
 argument_list|,
 argument|GIMP_TYPE_ITEM_UNDO
 argument_list|)
@@ -105,15 +105,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_floating_sel_undo_parent_class
+value|gimp_floating_selection_undo_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_floating_sel_undo_class_init
+name|gimp_floating_selection_undo_class_init
 parameter_list|(
-name|GimpFloatingSelUndoClass
+name|GimpFloatingSelectionUndoClass
 modifier|*
 name|klass
 parameter_list|)
@@ -140,13 +140,13 @@ name|object_class
 operator|->
 name|constructed
 operator|=
-name|gimp_floating_sel_undo_constructed
+name|gimp_floating_selection_undo_constructed
 expr_stmt|;
 name|undo_class
 operator|->
 name|pop
 operator|=
-name|gimp_floating_sel_undo_pop
+name|gimp_floating_selection_undo_pop
 expr_stmt|;
 block|}
 end_function
@@ -154,10 +154,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_floating_sel_undo_init (GimpFloatingSelUndo * undo)
-name|gimp_floating_sel_undo_init
+DECL|function|gimp_floating_selection_undo_init (GimpFloatingSelectionUndo * undo)
+name|gimp_floating_selection_undo_init
 parameter_list|(
-name|GimpFloatingSelUndo
+name|GimpFloatingSelectionUndo
 modifier|*
 name|undo
 parameter_list|)
@@ -167,27 +167,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_floating_sel_undo_constructed (GObject * object)
-name|gimp_floating_sel_undo_constructed
+DECL|function|gimp_floating_selection_undo_constructed (GObject * object)
+name|gimp_floating_selection_undo_constructed
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpFloatingSelUndo
+name|GimpFloatingSelectionUndo
 modifier|*
 name|floating_sel_undo
-init|=
-name|GIMP_FLOATING_SEL_UNDO
-argument_list|(
-name|object
-argument_list|)
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|floating_sel_undo
+operator|=
+name|GIMP_FLOATING_SELECTION_UNDO
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -257,8 +259,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_floating_sel_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
-name|gimp_floating_sel_undo_pop
+DECL|function|gimp_floating_selection_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+name|gimp_floating_selection_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -272,19 +274,23 @@ modifier|*
 name|accum
 parameter_list|)
 block|{
-name|GimpFloatingSelUndo
+name|GimpFloatingSelectionUndo
 modifier|*
 name|floating_sel_undo
-init|=
-name|GIMP_FLOATING_SEL_UNDO
-argument_list|(
-name|undo
-argument_list|)
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|floating_layer
-init|=
+decl_stmt|;
+name|floating_sel_undo
+operator|=
+name|GIMP_FLOATING_SELECTION_UNDO
+argument_list|(
+name|undo
+argument_list|)
+expr_stmt|;
+name|floating_layer
+operator|=
 name|GIMP_LAYER
 argument_list|(
 name|GIMP_ITEM_UNDO
@@ -294,7 +300,7 @@ argument_list|)
 operator|->
 name|item
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|GIMP_UNDO_CLASS
 argument_list|(
 name|parent_class
@@ -326,7 +332,7 @@ operator|==
 name|GIMP_UNDO_MODE_UNDO
 condition|)
 block|{
-comment|/*  Update the preview for the floating sel  */
+comment|/*  Update the preview for the floating selection  */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
