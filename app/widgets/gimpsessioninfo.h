@@ -134,10 +134,6 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
-DECL|member|position_accuracy
-name|gint
-name|position_accuracy
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -427,12 +423,8 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_session_info_class_set_position_accuracy
+name|gimp_session_info_set_position_accuracy
 parameter_list|(
-name|GimpSessionInfoClass
-modifier|*
-name|klass
-parameter_list|,
 name|gint
 name|accuracy
 parameter_list|)
@@ -441,12 +433,8 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_session_info_class_apply_position_accuracy
+name|gimp_session_info_apply_position_accuracy
 parameter_list|(
-name|GimpSessionInfoClass
-modifier|*
-name|klass
-parameter_list|,
 name|gint
 name|position
 parameter_list|)

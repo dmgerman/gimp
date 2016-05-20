@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d30c40103
+DECL|enum|__anon2907c9f90103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d30c40208
+DECL|struct|__anon2907c9f90208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -595,15 +595,6 @@ argument_list|(
 name|config
 argument_list|)
 decl_stmt|;
-name|GimpSessionInfoClass
-modifier|*
-name|klass
-init|=
-name|GIMP_SESSION_INFO_GET_CLASS
-argument_list|(
-name|info
-argument_list|)
-decl_stmt|;
 name|GList
 modifier|*
 name|iter
@@ -611,16 +602,16 @@ init|=
 name|NULL
 decl_stmt|;
 name|gint
-name|x_to_write
+name|x
 decl_stmt|;
 name|gint
-name|y_to_write
+name|y
 decl_stmt|;
 name|gint
-name|w_to_write
+name|width
 decl_stmt|;
 name|gint
-name|h_to_write
+name|height
 decl_stmt|;
 if|if
 condition|(
@@ -665,12 +656,10 @@ name|writer
 argument_list|)
 expr_stmt|;
 block|}
-name|x_to_write
+name|x
 operator|=
-name|gimp_session_info_class_apply_position_accuracy
+name|gimp_session_info_apply_position_accuracy
 argument_list|(
-name|klass
-argument_list|,
 name|info
 operator|->
 name|p
@@ -678,12 +667,10 @@ operator|->
 name|x
 argument_list|)
 expr_stmt|;
-name|y_to_write
+name|y
 operator|=
-name|gimp_session_info_class_apply_position_accuracy
+name|gimp_session_info_apply_position_accuracy
 argument_list|(
-name|klass
-argument_list|,
 name|info
 operator|->
 name|p
@@ -691,12 +678,10 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|w_to_write
+name|width
 operator|=
-name|gimp_session_info_class_apply_position_accuracy
+name|gimp_session_info_apply_position_accuracy
 argument_list|(
-name|klass
-argument_list|,
 name|info
 operator|->
 name|p
@@ -704,12 +689,10 @@ operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|h_to_write
+name|height
 operator|=
-name|gimp_session_info_class_apply_position_accuracy
+name|gimp_session_info_apply_position_accuracy
 argument_list|(
-name|klass
-argument_list|,
 name|info
 operator|->
 name|p
@@ -730,9 +713,9 @@ name|writer
 argument_list|,
 literal|"%d %d"
 argument_list|,
-name|x_to_write
+name|x
 argument_list|,
-name|y_to_write
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close
@@ -772,9 +755,9 @@ name|writer
 argument_list|,
 literal|"%d %d"
 argument_list|,
-name|w_to_write
+name|width
 argument_list|,
-name|h_to_write
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close
@@ -4202,33 +4185,29 @@ return|;
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|position_accuracy
+specifier|static
+name|gint
+name|position_accuracy
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
-comment|/**  * gimp_session_info_class_set_position_accuracy:  * @accuracy:  *  * When writing sessionrc, make positions and sizes a multiple of  * @accuracy. Meant to be used by test cases that does regression  * testing on session managed window positions and sizes, to allow for  * some deviations from the original setup, that the window manager  * might impose.  **/
+comment|/**  * gimp_session_info_set_position_accuracy:  * @accuracy:  *  * When writing sessionrc, make positions and sizes a multiple of  * @accuracy. Meant to be used by test cases that does regression  * testing on session managed window positions and sizes, to allow for  * some deviations from the original setup, that the window manager  * might impose.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_session_info_class_set_position_accuracy (GimpSessionInfoClass * klass,gint accuracy)
-name|gimp_session_info_class_set_position_accuracy
+DECL|function|gimp_session_info_set_position_accuracy (gint accuracy)
+name|gimp_session_info_set_position_accuracy
 parameter_list|(
-name|GimpSessionInfoClass
-modifier|*
-name|klass
-parameter_list|,
 name|gint
 name|accuracy
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_SESSION_INFO_CLASS
-argument_list|(
-name|klass
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|klass
-operator|->
 name|position_accuracy
 operator|=
 name|accuracy
@@ -4237,36 +4216,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_session_info_class_apply_position_accuracy:  * @position:  *  * Rounds @position to the nearest multiple of what was set with  * gimp_session_info_class_set_position_accuracy().  *  * Returns: Result.  **/
+comment|/**  * gimp_session_info_apply_position_accuracy:  * @position:  *  * Rounds @position to the nearest multiple of what was set with  * gimp_session_info_set_position_accuracy().  *  * Returns: Result.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_session_info_class_apply_position_accuracy (GimpSessionInfoClass * klass,gint position)
-name|gimp_session_info_class_apply_position_accuracy
+DECL|function|gimp_session_info_apply_position_accuracy (gint position)
+name|gimp_session_info_apply_position_accuracy
 parameter_list|(
-name|GimpSessionInfoClass
-modifier|*
-name|klass
-parameter_list|,
 name|gint
 name|position
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_SESSION_INFO_CLASS
-argument_list|(
-name|klass
-argument_list|)
-argument_list|,
-name|position
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|klass
-operator|->
 name|position_accuracy
 operator|>
 literal|0
@@ -4277,8 +4240,6 @@ name|to_floor
 init|=
 name|position
 operator|+
-name|klass
-operator|->
 name|position_accuracy
 operator|/
 literal|2
@@ -4288,8 +4249,6 @@ name|to_floor
 operator|-
 name|to_floor
 operator|%
-name|klass
-operator|->
 name|position_accuracy
 return|;
 block|}
