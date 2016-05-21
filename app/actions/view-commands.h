@@ -317,7 +317,35 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_color_management_mode_cmd_callback
+name|view_color_management_enable_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|view_color_management_softproof_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|view_display_intent_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -335,7 +363,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_color_management_intent_cmd_callback
+name|view_display_bpc_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|view_softproof_intent_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -353,7 +395,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_color_management_bpc_cmd_callback
+name|view_softproof_bpc_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -367,7 +409,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_color_management_gamut_check_cmd_callback
+name|view_softproof_gamut_check_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
