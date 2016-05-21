@@ -364,9 +364,6 @@ name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
-name|gboolean
-name|value
-decl_stmt|;
 name|param_spec
 operator|=
 name|check_param_spec_w
@@ -443,41 +440,23 @@ argument_list|,
 name|child
 argument_list|)
 expr_stmt|;
-name|g_object_get
+name|g_object_bind_property
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|config
+argument_list|)
 argument_list|,
 name|property_name
 argument_list|,
-operator|&
-name|value
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|value
-condition|)
-name|gtk_widget_show
+name|G_OBJECT
 argument_list|(
 name|child
 argument_list|)
-expr_stmt|;
-name|g_signal_connect_object
-argument_list|(
-name|toggle
 argument_list|,
-literal|"toggled"
+literal|"visible"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_toggle_button_set_visible
-argument_list|)
-argument_list|,
-name|child
-argument_list|,
-literal|0
+name|G_BINDING_SYNC_CREATE
 argument_list|)
 expr_stmt|;
 if|if
@@ -496,15 +475,15 @@ block|}
 end_function
 
 begin_comment
-comment|/****************/
+comment|/*********************/
 end_comment
 
 begin_comment
-comment|/*  paint menu  */
+comment|/*  paint mode menu  */
 end_comment
 
 begin_comment
-comment|/****************/
+comment|/*********************/
 end_comment
 
 begin_function_decl
@@ -3936,7 +3915,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec9b3f0108
+DECL|struct|__anon2b1df49a0108
 block|{
 DECL|member|config
 name|GObject

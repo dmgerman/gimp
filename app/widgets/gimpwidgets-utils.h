@@ -399,21 +399,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_toggle_button_set_visible
-parameter_list|(
-name|GtkToggleButton
-modifier|*
-name|toggle
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_widget_set_accel_help
 parameter_list|(
 name|GtkWidget
