@@ -435,6 +435,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_color_profile_srgb_to_pixel
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|pixel_format
+parameter_list|,
+name|gpointer
+name|pixel
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  internal API, to be called only from gimpimage.c  */
 end_comment
