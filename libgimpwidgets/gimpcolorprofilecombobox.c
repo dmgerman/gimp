@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c89020103
+DECL|enum|__anon2b97f34c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c89020208
+DECL|struct|__anon2b97f34c0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -364,6 +364,10 @@ decl_stmt|;
 name|g_object_set
 argument_list|(
 name|cell
+argument_list|,
+literal|"width-chars"
+argument_list|,
+literal|42
 argument_list|,
 literal|"ellipsize"
 argument_list|,
