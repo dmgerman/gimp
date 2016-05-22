@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4586fb0103
+DECL|enum|__anon2af7ccb50103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4586fb0203
+DECL|enum|__anon2af7ccb50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5325,9 +5325,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|gimp_layer_get_mask
+argument_list|(
 name|layer
-operator|->
-name|mask
+argument_list|)
+operator|&&
+name|gimp_layer_get_apply_mask
+argument_list|(
+name|layer
+argument_list|)
 condition|)
 block|{
 name|gdouble
