@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2ba472650108
+DECL|struct|__anon2c3e65e30108
 specifier|static
 struct|struct
 block|{
@@ -1766,6 +1766,8 @@ name|dest_exe
 operator|=
 name|g_strconcat
 argument_list|(
+name|dest_dir
+argument_list|,
 name|q
 argument_list|,
 name|EXEEXT
@@ -1811,7 +1813,7 @@ name|cmd
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s %s %s %s%s%s %s%s %s%s %s %s"
+literal|"%s %s %s %s%s %s%s %s%s %s %s"
 argument_list|,
 name|env_cc
 argument_list|,
@@ -1821,9 +1823,10 @@ name|cflags
 argument_list|,
 name|output_flag
 argument_list|,
-name|dest_dir
-argument_list|,
+name|g_shell_quote
+argument_list|(
 name|dest_exe
+argument_list|)
 argument_list|,
 name|what
 argument_list|,
@@ -2240,11 +2243,17 @@ name|COPY
 argument_list|,
 literal|" "
 argument_list|,
+name|g_shell_quote
+argument_list|(
 name|what
+argument_list|)
 argument_list|,
 literal|" "
 argument_list|,
+name|g_shell_quote
+argument_list|(
 name|dir
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2326,11 +2335,19 @@ name|REMOVE
 argument_list|,
 literal|" "
 argument_list|,
+name|g_shell_quote
+argument_list|(
+name|g_strconcat
+argument_list|(
 name|dir
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
 name|what
+argument_list|,
+name|NULL
+argument_list|)
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
