@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationcomposecrop.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationequalize.h"
 end_include
 
@@ -96,13 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationcomposecrop.h"
+file|"gimpoperationmaskcomponents.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationmaskcomponents.h"
+file|"gimpoperationprofiletransform.h"
 end_include
 
 begin_include
@@ -473,6 +479,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_MASK_COMPONENTS
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_PROFILE_TRANSFORM
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
