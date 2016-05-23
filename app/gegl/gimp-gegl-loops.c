@@ -2711,12 +2711,7 @@ index|[
 name|b
 index|]
 condition|?
-name|MIN
-argument_list|(
 name|new_val
-argument_list|,
-literal|1.0
-argument_list|)
 else|:
 name|bottom
 index|[
@@ -2874,12 +2869,7 @@ index|[
 name|b
 index|]
 condition|?
-name|MIN
-argument_list|(
 name|new_val
-argument_list|,
-literal|1.0
-argument_list|)
 else|:
 name|bottom
 index|[
