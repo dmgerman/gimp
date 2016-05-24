@@ -451,6 +451,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_preview_area_set_color_config
+parameter_list|(
+name|GimpPreviewArea
+modifier|*
+name|area
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_preview_area_set_max_size
 parameter_list|(
 name|GimpPreviewArea
