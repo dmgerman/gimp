@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13b6030103
+DECL|enum|__anon2be7e3ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,6 +148,7 @@ name|config
 decl_stmt|;
 DECL|member|transform
 name|GimpColorTransform
+modifier|*
 name|transform
 decl_stmt|;
 block|}
@@ -1127,6 +1128,16 @@ operator|->
 name|transform
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+decl_stmt|;
 name|gint
 name|rowstride
 init|=
@@ -1193,13 +1204,17 @@ name|i
 operator|++
 control|)
 block|{
-name|cmsDoTransform
+name|gimp_color_transform_process_pixels
 argument_list|(
 name|priv
 operator|->
 name|transform
 argument_list|,
+name|format
+argument_list|,
 name|src
+argument_list|,
+name|format
 argument_list|,
 name|dest
 argument_list|,
@@ -1523,7 +1538,7 @@ operator|->
 name|transform
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|priv
 operator|->
@@ -1622,10 +1637,8 @@ name|config
 argument_list|,
 name|profile
 argument_list|,
-operator|&
 name|format
 argument_list|,
-operator|&
 name|format
 argument_list|)
 expr_stmt|;
@@ -9440,7 +9453,7 @@ operator|->
 name|transform
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|priv
 operator|->

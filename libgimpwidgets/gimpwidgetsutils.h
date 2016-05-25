@@ -134,6 +134,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpColorTransform
+modifier|*
 name|gimp_widget_get_color_transform
 parameter_list|(
 name|GtkWidget
@@ -151,12 +152,10 @@ parameter_list|,
 specifier|const
 name|Babl
 modifier|*
-modifier|*
 name|src_format
 parameter_list|,
 specifier|const
 name|Babl
-modifier|*
 modifier|*
 name|dest_format
 parameter_list|)

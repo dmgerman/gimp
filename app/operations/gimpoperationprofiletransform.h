@@ -150,6 +150,7 @@ name|bpc
 decl_stmt|;
 DECL|member|transform
 name|GimpColorTransform
+modifier|*
 name|transform
 decl_stmt|;
 block|}

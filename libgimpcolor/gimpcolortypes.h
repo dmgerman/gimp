@@ -22,6 +22,12 @@ directive|include
 file|<libgimpbase/gimpbasetypes.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfigtypes.h>
+end_include
+
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
@@ -56,7 +62,8 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpColorTransform
 typedef|typedef
-name|gpointer
+name|struct
+name|_GimpColorTransform
 name|GimpColorTransform
 typedef|;
 end_typedef

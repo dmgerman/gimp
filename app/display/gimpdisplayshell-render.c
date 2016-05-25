@@ -75,22 +75,11 @@ directive|include
 file|"core/gimppickable.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_NODE_BLIT
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"core/gimpprojectable.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -752,9 +741,13 @@ argument_list|)
 argument_list|,
 name|buffer_scale
 argument_list|,
-name|shell
-operator|->
-name|profile_src_format
+name|gimp_projectable_get_format
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|,
 name|shell
 operator|->
@@ -786,9 +779,13 @@ argument_list|,
 name|scaled_height
 argument_list|)
 argument_list|,
-name|shell
-operator|->
-name|profile_src_format
+name|gimp_projectable_get_format
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|,
 name|shell
 operator|->

@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpcolor/gimpcolortransform.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimpcmyk.h>
 end_include
 

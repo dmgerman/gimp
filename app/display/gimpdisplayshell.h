@@ -615,19 +615,8 @@ decl_stmt|;
 comment|/*  settings changed from defaults     */
 DECL|member|profile_transform
 name|GimpColorTransform
+modifier|*
 name|profile_transform
-decl_stmt|;
-DECL|member|profile_src_format
-specifier|const
-name|Babl
-modifier|*
-name|profile_src_format
-decl_stmt|;
-DECL|member|profile_dest_format
-specifier|const
-name|Babl
-modifier|*
-name|profile_dest_format
 decl_stmt|;
 DECL|member|profile_buffer
 name|GeglBuffer

@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275d452a0103
+DECL|enum|__anon2bc6f09a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275d452a0203
+DECL|enum|__anon2bc6f09a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,6 +145,7 @@ name|config
 decl_stmt|;
 DECL|member|transform
 name|GimpColorTransform
+modifier|*
 name|transform
 decl_stmt|;
 block|}
@@ -1458,6 +1459,16 @@ operator|->
 name|transform
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"cairo-RGB24"
+argument_list|)
+decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -1508,13 +1519,17 @@ name|i
 operator|++
 control|)
 block|{
-name|cmsDoTransform
+name|gimp_color_transform_process_pixels
 argument_list|(
 name|priv
 operator|->
 name|transform
 argument_list|,
+name|format
+argument_list|,
 name|src
+argument_list|,
+name|format
 argument_list|,
 name|dest
 argument_list|,
@@ -2123,7 +2138,7 @@ operator|->
 name|transform
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|priv
 operator|->
@@ -3568,7 +3583,7 @@ operator|->
 name|transform
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|priv
 operator|->
@@ -3667,10 +3682,8 @@ name|config
 argument_list|,
 name|profile
 argument_list|,
-operator|&
 name|format
 argument_list|,
-operator|&
 name|format
 argument_list|)
 expr_stmt|;
