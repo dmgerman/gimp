@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fbd7460103
+DECL|enum|__anon279141ff0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fbd7460203
+DECL|enum|__anon279141ff0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fbd7460303
+DECL|enum|__anon279141ff0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2090,6 +2090,30 @@ argument_list|(
 name|selection
 operator|->
 name|scales
+argument_list|)
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
+name|gimp_color_area_set_color_config
+argument_list|(
+name|GIMP_COLOR_AREA
+argument_list|(
+name|selection
+operator|->
+name|old_color
+argument_list|)
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
+name|gimp_color_area_set_color_config
+argument_list|(
+name|GIMP_COLOR_AREA
+argument_list|(
+name|selection
+operator|->
+name|new_color
 argument_list|)
 argument_list|,
 name|config
