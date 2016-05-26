@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29463ffa0103
+DECL|enum|__anon2ac3057f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -643,7 +643,7 @@ name|self
 operator|->
 name|src_profile
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -669,7 +669,7 @@ name|self
 operator|->
 name|dest_profile
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
