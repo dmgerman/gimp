@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<cairo.h>
 end_include
 
@@ -3260,6 +3254,11 @@ name|GimpColorTransform
 modifier|*
 name|transform
 decl_stmt|;
+name|GimpColorTransformFlags
+name|flags
+init|=
+literal|0
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -3269,9 +3268,6 @@ specifier|const
 name|Babl
 modifier|*
 name|dest_format
-decl_stmt|;
-name|cmsUInt32Number
-name|flags
 decl_stmt|;
 name|src_format
 operator|=
@@ -3312,17 +3308,13 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|flags
-operator|=
-name|cmsFLAGS_NOOPTIMIZE
-expr_stmt|;
 if|if
 condition|(
 name|bpc
 condition|)
 name|flags
 operator||=
-name|cmsFLAGS_BLACKPOINTCOMPENSATION
+name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
 name|transform
 operator|=

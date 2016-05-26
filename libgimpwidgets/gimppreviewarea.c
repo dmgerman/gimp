@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -81,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7e3ac0103
+DECL|enum|__anon28a6d8570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<lcms2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -146,11 +140,13 @@ modifier|*
 name|config
 decl_stmt|;
 DECL|member|rgb2cmyk
-name|cmsHTRANSFORM
+name|GimpColorTransform
+modifier|*
 name|rgb2cmyk
 decl_stmt|;
 DECL|member|cmyk2rgb
-name|cmsHTRANSFORM
+name|GimpColorTransform
+modifier|*
 name|cmyk2rgb
 decl_stmt|;
 DECL|member|cmyk
@@ -932,13 +928,23 @@ name|rgb
 operator|->
 name|b
 expr_stmt|;
-name|cmsDoTransform
+name|gimp_color_transform_process_pixels
 argument_list|(
 name|module
 operator|->
 name|rgb2cmyk
 argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
+argument_list|,
 name|rgb_values
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"CMYK double"
+argument_list|)
 argument_list|,
 name|cmyk_values
 argument_list|,
@@ -1424,13 +1430,23 @@ name|k
 operator|*
 literal|100.0
 expr_stmt|;
-name|cmsDoTransform
+name|gimp_color_transform_process_pixels
 argument_list|(
 name|module
 operator|->
-name|cmyk2rgb
+name|rgb2cmyk
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"CMYK double"
+argument_list|)
 argument_list|,
 name|cmyk_values
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
 argument_list|,
 name|rgb_values
 argument_list|,
@@ -1536,7 +1552,7 @@ name|module
 operator|->
 name|config
 decl_stmt|;
-name|cmsUInt32Number
+name|GimpColorTransformFlags
 name|flags
 init|=
 literal|0
@@ -1553,12 +1569,6 @@ name|cmyk_profile
 init|=
 name|NULL
 decl_stmt|;
-name|cmsHPROFILE
-name|rgb_lcms
-decl_stmt|;
-name|cmsHPROFILE
-name|cmyk_lcms
-decl_stmt|;
 name|gchar
 modifier|*
 name|text
@@ -1570,7 +1580,7 @@ operator|->
 name|rgb2cmyk
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|module
 operator|->
@@ -1591,7 +1601,7 @@ operator|->
 name|cmyk2rgb
 condition|)
 block|{
-name|cmsDeleteTransform
+name|g_object_unref
 argument_list|(
 name|module
 operator|->
@@ -1707,20 +1717,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|rgb_lcms
-operator|=
-name|gimp_color_profile_get_lcms_profile
-argument_list|(
-name|rgb_profile
-argument_list|)
-expr_stmt|;
-name|cmyk_lcms
-operator|=
-name|gimp_color_profile_get_lcms_profile
-argument_list|(
-name|cmyk_profile
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|config
@@ -1732,22 +1728,28 @@ condition|)
 block|{
 name|flags
 operator||=
-name|cmsFLAGS_BLACKPOINTCOMPENSATION
+name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
 block|}
 name|module
 operator|->
 name|rgb2cmyk
 operator|=
-name|cmsCreateTransform
+name|gimp_color_transform_new
 argument_list|(
-name|rgb_lcms
+name|rgb_profile
 argument_list|,
-name|TYPE_RGB_DBL
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
 argument_list|,
-name|cmyk_lcms
+name|cmyk_profile
 argument_list|,
-name|TYPE_CMYK_DBL
+name|babl_format
+argument_list|(
+literal|"CMYK double"
+argument_list|)
 argument_list|,
 name|config
 operator|->
@@ -1760,15 +1762,21 @@ name|module
 operator|->
 name|cmyk2rgb
 operator|=
-name|cmsCreateTransform
+name|gimp_color_transform_new
 argument_list|(
-name|cmyk_lcms
+name|cmyk_profile
 argument_list|,
-name|TYPE_CMYK_DBL
+name|babl_format
+argument_list|(
+literal|"CMYK double"
+argument_list|)
 argument_list|,
-name|rgb_lcms
+name|rgb_profile
 argument_list|,
-name|TYPE_RGB_DBL
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
 argument_list|,
 name|config
 operator|->

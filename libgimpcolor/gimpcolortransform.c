@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c042cc0103
+DECL|enum|__anon29b5cbd60103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -395,7 +395,7 @@ end_comment
 begin_function
 name|GimpColorTransform
 modifier|*
-DECL|function|gimp_color_transform_new (GimpColorProfile * src_profile,const Babl * src_format,GimpColorProfile * dest_profile,const Babl * dest_format,GimpColorRenderingIntent rendering_intent,guint32 flags)
+DECL|function|gimp_color_transform_new (GimpColorProfile * src_profile,const Babl * src_format,GimpColorProfile * dest_profile,const Babl * dest_format,GimpColorRenderingIntent rendering_intent,GimpColorTransformFlags flags)
 name|gimp_color_transform_new
 parameter_list|(
 name|GimpColorProfile
@@ -419,7 +419,7 @@ parameter_list|,
 name|GimpColorRenderingIntent
 name|rendering_intent
 parameter_list|,
-name|guint32
+name|GimpColorTransformFlags
 name|flags
 parameter_list|)
 block|{
@@ -551,6 +551,8 @@ argument_list|,
 name|rendering_intent
 argument_list|,
 name|flags
+operator||
+name|cmsFLAGS_NOOPTIMIZE
 argument_list|)
 expr_stmt|;
 return|return
@@ -566,7 +568,7 @@ end_comment
 begin_function
 name|GimpColorTransform
 modifier|*
-DECL|function|gimp_color_transform_new_proofing (GimpColorProfile * src_profile,const Babl * src_format,GimpColorProfile * dest_profile,const Babl * dest_format,GimpColorProfile * proof_profile,GimpColorRenderingIntent proof_intent,GimpColorRenderingIntent display_intent,guint32 flags)
+DECL|function|gimp_color_transform_new_proofing (GimpColorProfile * src_profile,const Babl * src_format,GimpColorProfile * dest_profile,const Babl * dest_format,GimpColorProfile * proof_profile,GimpColorRenderingIntent proof_intent,GimpColorRenderingIntent display_intent,GimpColorTransformFlags flags)
 name|gimp_color_transform_new_proofing
 parameter_list|(
 name|GimpColorProfile
@@ -597,7 +599,7 @@ parameter_list|,
 name|GimpColorRenderingIntent
 name|display_intent
 parameter_list|,
-name|guint32
+name|GimpColorTransformFlags
 name|flags
 parameter_list|)
 block|{

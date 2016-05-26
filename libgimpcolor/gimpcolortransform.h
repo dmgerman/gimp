@@ -51,6 +51,26 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2be6e82c0103
+block|{
+DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_GAMUT_CHECK
+name|GIMP_COLOR_TRANSFORM_FLAGS_GAMUT_CHECK
+init|=
+literal|0x1000
+block|,
+DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
+name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
+init|=
+literal|0x2000
+block|, }
+DECL|typedef|GimpColorTransformFlags
+name|GimpColorTransformFlags
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_TRANSFORM
 define|#
@@ -256,7 +276,7 @@ parameter_list|,
 name|GimpColorRenderingIntent
 name|rendering_intent
 parameter_list|,
-name|guint32
+name|GimpColorTransformFlags
 name|flags
 parameter_list|)
 function_decl|;
@@ -295,7 +315,7 @@ parameter_list|,
 name|GimpColorRenderingIntent
 name|display_intent
 parameter_list|,
-name|guint32
+name|GimpColorTransformFlags
 name|flags
 parameter_list|)
 function_decl|;
