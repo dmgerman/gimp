@@ -102,6 +102,16 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|color_config
+name|GimpColorConfig
+modifier|*
+name|color_config
+decl_stmt|;
+DECL|member|transform
+name|GimpColorTransform
+modifier|*
+name|transform
+decl_stmt|;
 DECL|member|active_color
 name|GimpActiveColor
 name|active_color
