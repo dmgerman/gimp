@@ -306,6 +306,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_color_wheel_set_color_config
+parameter_list|(
+name|GimpColorWheel
+modifier|*
+name|wheel
+parameter_list|,
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_color_wheel_is_adjusting
 parameter_list|(
