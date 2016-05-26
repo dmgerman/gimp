@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp-palettes.h"
 end_include
 
@@ -71,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e918d0103
+DECL|enum|__anon27ec6c3e0103
 block|{
 DECL|enumerator|COLOR_SELECTED
 name|COLOR_SELECTED
@@ -84,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e918d0203
+DECL|enum|__anon27ec6c3e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -739,6 +751,29 @@ argument_list|,
 name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|,
 name|GDK_BUTTON2_MASK
+argument_list|)
+expr_stmt|;
+name|gimp_color_area_set_color_config
+argument_list|(
+name|GIMP_COLOR_AREA
+argument_list|(
+name|history
+operator|->
+name|color_areas
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|,
+name|history
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
