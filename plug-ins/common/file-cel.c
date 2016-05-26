@@ -975,6 +975,11 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|data_length
+condition|)
+block|{
 name|gimp_set_data
 argument_list|(
 name|SAVE_PROC
@@ -984,6 +989,7 @@ argument_list|,
 name|data_length
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
