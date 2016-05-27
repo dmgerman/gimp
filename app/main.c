@@ -3049,6 +3049,9 @@ name|GList
 modifier|*
 name|iter
 decl_stmt|;
+name|babl_init
+argument_list|()
+expr_stmt|;
 name|gimp
 operator|=
 name|g_object_new
