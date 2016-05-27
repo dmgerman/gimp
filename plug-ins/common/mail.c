@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b1c890108
+DECL|struct|__anon2772a24a0108
 block|{
 DECL|member|filename
 name|gchar
@@ -269,27 +269,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
+begin_function_decl
 specifier|static
 name|gchar
 modifier|*
 name|sendmail_content_type
-argument_list|(
+parameter_list|(
 specifier|const
 name|gchar
-operator|*
+modifier|*
 name|filename
-argument_list|)
-decl|static
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|sendmail_create_headers
-argument_list|(
+parameter_list|(
 name|FILE
-operator|*
+modifier|*
 name|mailpipe
-argument_list|)
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1111,6 +1115,8 @@ decl_stmt|;
 name|FILE
 modifier|*
 name|mailpipe
+init|=
+name|NULL
 decl_stmt|;
 endif|#
 directive|endif
@@ -1558,7 +1564,7 @@ condition|)
 return|return
 name|GIMP_PDB_EXECUTION_ERROR
 return|;
-name|create_headers
+name|sendmail_create_headers
 argument_list|(
 name|mailpipe
 argument_list|)
@@ -1571,7 +1577,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|to64
+name|sendmail_to64
 argument_list|(
 name|tmpname
 argument_list|,
@@ -1637,6 +1643,11 @@ comment|/* close out the sendmail process */
 ifdef|#
 directive|ifdef
 name|SENDMAIL
+if|if
+condition|(
+name|mailpipe
+condition|)
+block|{
 name|fclose
 argument_list|(
 name|mailpipe
@@ -1656,6 +1667,7 @@ argument_list|(
 name|mailpid
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* delete the tmpfile that was generated */
 name|g_unlink
 argument_list|(
