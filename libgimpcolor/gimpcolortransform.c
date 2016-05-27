@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d846310103
+DECL|enum|__anon2ac298900103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -950,6 +950,10 @@ block|}
 comment|/* copy the alpha channel */
 if|if
 condition|(
+name|src
+operator|!=
+name|dest
+operator|&&
 name|babl_format_has_alpha
 argument_list|(
 name|dest_format
