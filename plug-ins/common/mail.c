@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abeb9650108
+DECL|struct|__anon2b9b1c890108
 block|{
 DECL|member|filename
 name|gchar
@@ -518,6 +518,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|G_SPAWN_STDERR_TO_DEV_NULL
+operator||
+name|G_SPAWN_STDOUT_TO_DEV_NULL
 operator||
 name|G_SPAWN_SEARCH_PATH
 argument_list|,
