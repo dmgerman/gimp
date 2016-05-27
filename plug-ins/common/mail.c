@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772a24a0108
+DECL|struct|__anon2899ccdb0108
 block|{
 DECL|member|filename
 name|gchar
@@ -2047,6 +2047,16 @@ argument_list|,
 name|mail_info
 operator|.
 name|filename
+argument_list|)
+expr_stmt|;
+name|gtk_entry_set_activates_default
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 ifdef|#
