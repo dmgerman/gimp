@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ac37e920108
+DECL|struct|__anon29c497950108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ac37e920208
+DECL|struct|__anon29c497950208
 typedef|typedef
 struct|struct
 block|{
@@ -416,33 +416,6 @@ block|}
 name|WinSnapInterface
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* The dialog data */
-end_comment
-
-begin_decl_stmt
-DECL|variable|winsnapintf
-specifier|static
-name|WinSnapInterface
-name|winsnapintf
-init|=
-block|{
-ifdef|#
-directive|ifdef
-name|CAN_SET_DECOR
-name|NULL
-block|,
-endif|#
-directive|endif
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytes of which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
@@ -484,8 +457,6 @@ block|{
 return|return
 operator|(
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
-operator||
-name|SCREENSHOT_CAN_SHOOT_POINTER
 operator|)
 return|;
 block|}
@@ -718,12 +689,13 @@ decl_stmt|;
 name|gint32
 name|layer_id
 decl_stmt|;
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
+decl_stmt|;
+name|GeglRectangle
+modifier|*
+name|rectangle
 decl_stmt|;
 comment|/* Our width and height */
 name|width
@@ -833,55 +805,61 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Get our drawable */
-name|drawable
+comment|/* make rectangle */
+name|rectangle
 operator|=
-name|gimp_drawable_get
+name|g_new
+argument_list|(
+name|GeglRectangle
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|rectangle
+operator|->
+name|x
+operator|=
+literal|0
+expr_stmt|;
+name|rectangle
+operator|->
+name|y
+operator|=
+literal|0
+expr_stmt|;
+name|rectangle
+operator|->
+name|width
+operator|=
+name|ROUND4
+argument_list|(
+name|width
+argument_list|)
+expr_stmt|;
+name|rectangle
+operator|->
+name|height
+operator|=
+name|height
+expr_stmt|;
+comment|/* get the buffer */
+name|buffer
+operator|=
+name|gimp_drawable_get_buffer
 argument_list|(
 name|layer_id
 argument_list|)
 expr_stmt|;
-name|gimp_tile_cache_size
+comment|/* fill the buffer */
+name|gegl_buffer_set
 argument_list|(
-name|ROUND4
-argument_list|(
-name|width
-argument_list|)
-operator|*
-name|gimp_tile_height
-argument_list|()
-operator|*
-literal|3
-argument_list|)
-expr_stmt|;
-comment|/* Initialize a pixel region for writing to the image */
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|pixel_rgn
+name|buffer
 argument_list|,
-name|drawable
+name|rectangle
 argument_list|,
 literal|0
 argument_list|,
-literal|0
-argument_list|,
-name|ROUND4
-argument_list|(
-name|width
-argument_list|)
-argument_list|,
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_rgn_set_rect
-argument_list|(
-operator|&
-name|pixel_rgn
+name|NULL
 argument_list|,
 operator|(
 name|guchar
@@ -889,22 +867,13 @@ operator|*
 operator|)
 name|capBytes
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|ROUND4
-argument_list|(
-name|width
-argument_list|)
-argument_list|,
-name|height
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
-comment|/* HB: update data BEFORE size change */
-name|gimp_drawable_flush
+comment|/* flushing data */
+name|gegl_buffer_flush
 argument_list|(
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* Now resize the layer down to the correct size if necessary. */
@@ -971,28 +940,6 @@ block|{
 comment|/* Start up a standard Win32    * message handling loop for    * selection of the window    * to be captured    */
 name|winsnapWinMain
 argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * doRootWindowCapture  *  * Capture the root window  * ENTRY POINT FOR WINSNAP ROOT  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|doRootWindowCapture (void)
-name|doRootWindowCapture
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/* Do the window capture */
-name|doCapture
-argument_list|(
-literal|0
-argument_list|)
 expr_stmt|;
 block|}
 end_function

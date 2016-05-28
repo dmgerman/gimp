@@ -1628,6 +1628,26 @@ literal|"the region for the screenshot."
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|shoot_dialog_add_hint
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|SHOOT_WINDOW
+argument_list|,
+name|_
+argument_list|(
+literal|"Click in a window to snap it after delay."
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|shoot_dialog_add_hint
 argument_list|(
 name|GTK_NOTEBOOK
@@ -1644,6 +1664,8 @@ literal|"to snap it."
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -2113,6 +2135,13 @@ name|SHOOT_ROOT
 argument_list|)
 expr_stmt|;
 comment|/*  dragged region  */
+if|if
+condition|(
+name|capabilities
+operator|&
+name|SCREENSHOT_CAN_SHOOT_REGION
+condition|)
+block|{
 name|button
 operator|=
 name|gtk_radio_button_new_with_mnemonic
@@ -2199,6 +2228,7 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Delay  */
 name|frame
 operator|=
