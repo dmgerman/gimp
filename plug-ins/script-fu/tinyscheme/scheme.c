@@ -4343,7 +4343,7 @@ name|e1
 operator|%
 name|e2
 expr_stmt|;
-comment|/* remainder should have same sign as second operand */
+comment|/* remainder should have same sign as first operand */
 if|if
 condition|(
 name|res
@@ -4463,13 +4463,22 @@ expr_stmt|;
 comment|/* modulo should have same sign as second operand */
 if|if
 condition|(
+operator|(
 name|res
-operator|*
+operator|<
+literal|0
+operator|)
+operator|!=
+operator|(
 name|e2
 operator|<
 literal|0
+operator|)
+operator|&&
+name|res
 condition|)
 block|{
+comment|/* if their sign is different... */
 name|res
 operator|+=
 name|e2
@@ -12304,7 +12313,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b62dc540103
+DECL|enum|__anon2b0d99120103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30713,7 +30722,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b62dc540208
+DECL|struct|__anon2b0d99120208
 specifier|static
 struct|struct
 block|{
@@ -30948,7 +30957,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b62dc540308
+DECL|struct|__anon2b0d99120308
 typedef|typedef
 struct|struct
 block|{
