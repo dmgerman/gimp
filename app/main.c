@@ -1467,6 +1467,9 @@ name|p_SetDllDirectoryA
 decl_stmt|;
 name|p_SetDllDirectoryA
 operator|=
+operator|(
+name|t_SetDllDirectoryA
+operator|)
 name|GetProcAddress
 argument_list|(
 name|GetModuleHandle
@@ -1750,6 +1753,9 @@ name|p_SetProcessDEPPolicy
 decl_stmt|;
 name|p_SetProcessDEPPolicy
 operator|=
+operator|(
+name|t_SetProcessDEPPolicy
+operator|)
 name|GetProcAddress
 argument_list|(
 name|GetModuleHandle
@@ -1797,6 +1803,9 @@ name|p_SetCurrentProcessExplicitAppUserModelID
 decl_stmt|;
 name|p_SetCurrentProcessExplicitAppUserModelID
 operator|=
+operator|(
+name|t_SetCurrentProcessExplicitAppUserModelID
+operator|)
 name|GetProcAddress
 argument_list|(
 name|GetModuleHandle
