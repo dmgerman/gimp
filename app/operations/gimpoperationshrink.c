@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987dacd0103
+DECL|enum|__anon2a8cb8420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1300,7 +1300,7 @@ name|j
 operator|<
 name|self
 operator|->
-name|radius_x
+name|radius_y
 operator|+
 literal|1
 condition|;
