@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1495020103
+DECL|enum|__anon2c3a7fa10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1495020203
+DECL|enum|__anon2c3a7fa10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2490,6 +2490,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 name|gimp_context_get_background
 argument_list|(
 name|context
@@ -2498,7 +2499,23 @@ operator|&
 name|bg
 argument_list|)
 expr_stmt|;
+name|gimp_pickable_srgb_to_image_color
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|&
+name|bg
+argument_list|,
+operator|&
+name|bg
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimp_rgba_set
 argument_list|(
 operator|&
@@ -2513,6 +2530,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+block|}
 name|col
 operator|=
 name|gimp_gegl_color_new

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpsymmetry.h"
 end_include
 
@@ -1681,6 +1687,20 @@ operator|&
 name|foreground
 argument_list|)
 expr_stmt|;
+name|gimp_pickable_srgb_to_image_color
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|&
+name|foreground
+argument_list|,
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
 name|color
 operator|=
 name|gimp_gegl_color_new
@@ -2275,7 +2295,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dc1a0e0103
+DECL|enum|__anon2ae1e2010103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

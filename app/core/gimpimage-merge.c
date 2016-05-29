@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundostack.h"
 end_include
 
@@ -2227,6 +2233,20 @@ comment|/*  get the background for compositing  */
 name|gimp_context_get_background
 argument_list|(
 name|context
+argument_list|,
+operator|&
+name|bg
+argument_list|)
+expr_stmt|;
+name|gimp_pickable_srgb_to_image_color
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+operator|&
+name|bg
 argument_list|,
 operator|&
 name|bg

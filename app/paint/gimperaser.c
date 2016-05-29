@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpsymmetry.h"
 end_include
 
@@ -293,7 +299,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-comment|/* Erasing on a drawable without alpha is equivalent to                * drawing with background color. So let's save history. */
+comment|/* Erasing on a drawable without alpha is equivalent to                * drawing with background color. So let's save history.                */
 name|GimpContext
 modifier|*
 name|context
@@ -506,6 +512,20 @@ return|return;
 name|gimp_context_get_background
 argument_list|(
 name|context
+argument_list|,
+operator|&
+name|background
+argument_list|)
+expr_stmt|;
+name|gimp_pickable_srgb_to_image_color
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|&
+name|background
 argument_list|,
 operator|&
 name|background
