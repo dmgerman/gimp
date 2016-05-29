@@ -812,9 +812,11 @@ name|can_convert_to_u8
 condition|)
 block|{
 comment|/*  if there are filters, convert the pixels from the                *  profile_buffer to the filter_buffer                */
-name|gimp_display_shell_profile_convert_buffer
+name|gimp_color_transform_process_buffer
 argument_list|(
 name|shell
+operator|->
+name|profile_transform
 argument_list|,
 name|shell
 operator|->
@@ -851,9 +853,11 @@ block|}
 else|else
 block|{
 comment|/*  otherwise, convert the profile_buffer directly into                *  the cairo_buffer                */
-name|gimp_display_shell_profile_convert_buffer
+name|gimp_color_transform_process_buffer
 argument_list|(
 name|shell
+operator|->
+name|profile_transform
 argument_list|,
 name|shell
 operator|->
