@@ -203,7 +203,8 @@ name|color_config
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+comment|/* use after so we are called after the profile cache is invalidated    * in gimp_widget_get_color_transform()    */
+name|g_signal_connect_after
 argument_list|(
 name|shell
 operator|->
