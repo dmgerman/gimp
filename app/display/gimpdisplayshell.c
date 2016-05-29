@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43aae50103
+DECL|enum|__anon2b569e650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43aae50203
+DECL|enum|__anon2b569e650203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3271,6 +3271,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* make sure the information is up-to-date */
+name|gimp_display_shell_scale_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6224,6 +6230,10 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|GimpImageWindow
 modifier|*
 name|window
@@ -6254,12 +6264,28 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|config
+operator|=
+name|shell
+operator|->
+name|display
+operator|->
+name|config
+expr_stmt|;
 name|window
 operator|=
 name|gimp_display_shell_get_window
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|dot_for_dot
+operator|=
+name|config
+operator|->
+name|default_dot_for_dot
 expr_stmt|;
 name|gimp_display_shell_set_unit
 argument_list|(
@@ -6279,6 +6305,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_scale_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/* center the image so subsequent stuff only moves it a little in    * the center    */
 name|gimp_display_shell_scroll_center_image
 argument_list|(
@@ -6293,10 +6324,6 @@ name|gimp_display_shell_sync_config
 argument_list|(
 name|shell
 argument_list|,
-name|shell
-operator|->
-name|display
-operator|->
 name|config
 argument_list|)
 expr_stmt|;
