@@ -249,6 +249,23 @@ begin_comment
 comment|/* To get PROCESS_DEP_* defined we need _WIN32_WINNT at 0x0601. We still  * use the API optionally only if present, though.  */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_WIN32_WINNT
+end_ifdef
+
+begin_undef
+undef|#
+directive|undef
+name|_WIN32_WINNT
+end_undef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|_WIN32_WINNT
 define|#
