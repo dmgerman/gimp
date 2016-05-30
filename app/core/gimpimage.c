@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd7eba0103
+DECL|enum|__anon274a09b00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd7eba0203
+DECL|enum|__anon274a09b00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3783,24 +3783,6 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_viewable_size_changed
-argument_list|)
-argument_list|,
-name|image
-argument_list|,
-name|G_CONNECT_SWAPPED
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_object
-argument_list|(
-name|config
-operator|->
-name|color_management
-argument_list|,
-literal|"notify"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_color_managed_profile_changed
 argument_list|)
 argument_list|,
 name|image
