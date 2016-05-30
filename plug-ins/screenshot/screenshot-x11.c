@@ -2481,6 +2481,10 @@ name|SCREENSHOT_CAN_SHOOT_POINTER
 expr_stmt|;
 endif|#
 directive|endif
+name|capabilities
+operator||=
+name|SCREENSHOT_CAN_SHOOT_REGION
+expr_stmt|;
 return|return
 name|capabilities
 return|;

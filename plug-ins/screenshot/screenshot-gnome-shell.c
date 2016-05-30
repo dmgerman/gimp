@@ -162,6 +162,8 @@ operator|(
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
 operator||
 name|SCREENSHOT_CAN_SHOOT_POINTER
+operator||
+name|SCREENSHOT_CAN_SHOOT_REGION
 operator|)
 return|;
 block|}
