@@ -1890,6 +1890,12 @@ operator|->
 name|notify_id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|cache
+operator|->
+name|transform
+condition|)
 name|g_object_unref
 argument_list|(
 name|cache
