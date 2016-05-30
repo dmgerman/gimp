@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a09b00103
+DECL|enum|__anon279ee9dd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a09b00203
+DECL|enum|__anon279ee9dd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13537,6 +13537,58 @@ argument_list|,
 name|error
 argument_list|)
 return|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"gimp-comment"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_ERROR
+argument_list|,
+name|GIMP_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"'gimp-comment' parasite validation failed: "
+literal|"comment contains invalid UTF-8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 block|}
 return|return
 name|TRUE
