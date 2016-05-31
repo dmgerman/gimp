@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6d8570103
+DECL|enum|__anon298f24be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9417,6 +9417,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|config
+operator|!=
+name|priv
+operator|->
+name|config
+condition|)
+block|{
+if|if
+condition|(
 name|priv
 operator|->
 name|config
@@ -9498,6 +9507,7 @@ argument_list|,
 name|area
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

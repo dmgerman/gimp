@@ -964,6 +964,15 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|config
+operator|!=
+name|water
+operator|->
+name|config
+condition|)
+block|{
+if|if
+condition|(
 name|water
 operator|->
 name|config
@@ -1045,6 +1054,7 @@ argument_list|,
 name|water
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

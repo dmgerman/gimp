@@ -1159,12 +1159,12 @@ decl_stmt|;
 if|if
 condition|(
 name|config
-operator|==
+operator|!=
 name|module
 operator|->
 name|config
 condition|)
-return|return;
+block|{
 if|if
 condition|(
 name|module
@@ -1178,10 +1178,7 @@ name|module
 operator|->
 name|config
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|colorsel_cmyk_config_changed
-argument_list|)
 argument_list|,
 name|module
 argument_list|)
@@ -1236,6 +1233,7 @@ argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

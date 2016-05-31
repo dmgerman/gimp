@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba48c370103
+DECL|enum|__anon2c12f6a40103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba48c370208
+DECL|struct|__anon2c12f6a40208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba48c370303
+DECL|enum|__anon2c12f6a40303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -6845,6 +6845,15 @@ name|priv
 expr_stmt|;
 if|if
 condition|(
+name|config
+operator|!=
+name|priv
+operator|->
+name|config
+condition|)
+block|{
+if|if
+condition|(
 name|priv
 operator|->
 name|config
@@ -6926,6 +6935,7 @@ argument_list|,
 name|wheel
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
