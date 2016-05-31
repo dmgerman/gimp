@@ -1555,11 +1555,15 @@ name|config
 operator|->
 name|display_profile_from_gdk
 condition|)
+comment|/* get the toplevel's profile so all a window's colors look the same */
 name|profile
 operator|=
 name|gimp_widget_get_color_profile
 argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
 name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
