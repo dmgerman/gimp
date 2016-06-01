@@ -490,7 +490,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_STOCK_COLOR_WATER
 expr_stmt|;
 name|selector_class
 operator|->

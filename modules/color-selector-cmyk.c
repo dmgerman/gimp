@@ -408,9 +408,8 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-literal|"document-print"
+name|GIMP_STOCK_COLOR_CMYK
 expr_stmt|;
-comment|/* FIXME */
 name|selector_class
 operator|->
 name|set_color

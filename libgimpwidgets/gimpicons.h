@@ -302,6 +302,16 @@ define|#
 directive|define
 name|GIMP_STOCK_COLOR_TRIANGLE
 value|"gimp-color-triangle"
+DECL|macro|GIMP_STOCK_COLOR_CMYK
+define|#
+directive|define
+name|GIMP_STOCK_COLOR_CMYK
+value|"gimp-color-cmyk"
+DECL|macro|GIMP_STOCK_COLOR_WATER
+define|#
+directive|define
+name|GIMP_STOCK_COLOR_WATER
+value|"gimp-color-water"
 DECL|macro|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
 define|#
 directive|define
