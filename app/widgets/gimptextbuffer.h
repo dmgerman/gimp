@@ -136,6 +136,11 @@ name|GList
 modifier|*
 name|bg_color_tags
 decl_stmt|;
+DECL|member|preedit_underline_tag
+name|GtkTextTag
+modifier|*
+name|preedit_underline_tag
+decl_stmt|;
 DECL|member|insert_tags_set
 name|gboolean
 name|insert_tags_set

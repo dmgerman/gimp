@@ -5956,7 +5956,7 @@ name|text_tool
 operator|->
 name|buffer
 operator|->
-name|underline_tag
+name|preedit_underline_tag
 argument_list|,
 operator|&
 name|start
