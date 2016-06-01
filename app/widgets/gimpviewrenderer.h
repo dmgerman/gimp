@@ -692,6 +692,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_view_renderer_free_color_transform
+parameter_list|(
+name|GimpViewRenderer
+modifier|*
+name|renderer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
