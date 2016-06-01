@@ -121,6 +121,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_widget_track_monitor
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GCallback
+name|monitor_changed_callback
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpColorProfile
 modifier|*
 name|gimp_widget_get_color_profile
