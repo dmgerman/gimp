@@ -6042,7 +6042,7 @@ operator|==
 name|PANGO_ATTR_BACKGROUND
 condition|)
 block|{
-name|gimp_text_buffer_set_bg_color
+name|gimp_text_buffer_set_preedit_bg_color
 argument_list|(
 name|text_tool
 operator|->
@@ -6061,7 +6061,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_text_buffer_set_color
+name|gimp_text_buffer_set_preedit_color
 argument_list|(
 name|text_tool
 operator|->
