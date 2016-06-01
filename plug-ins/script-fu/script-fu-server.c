@@ -125,7 +125,7 @@ name|AI_ADDRCONFIG
 end_ifndef
 
 begin_comment
-comment|/* Missing from mingw headers, but value is publicly documented   * on http://msdn.microsoft.com/en-us/library/ms737530%28v=VS.85%29.aspx  */
+comment|/* Missing from mingw headers, but value is publicly documented  * on http://msdn.microsoft.com/en-us/library/ms737530%28v=VS.85%29.aspx  */
 end_comment
 
 begin_define
@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06e80a0108
+DECL|struct|__anon2c06624e0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06e80a0208
+DECL|struct|__anon2c06624e0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c06e80a030a
+DECL|union|__anon2c06624e030a
 block|{
 DECL|member|family
 name|sa_family_t

@@ -98,7 +98,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon287e236e0108
+DECL|struct|__anon2bd4cacb0108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon287e236e0208
+DECL|struct|__anon2bd4cacb0208
 typedef|typedef
 struct|struct
 block|{

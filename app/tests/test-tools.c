@@ -280,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0243f0108
+DECL|struct|__anon275e8f100108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int

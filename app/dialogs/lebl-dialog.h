@@ -56,7 +56,7 @@ directive|endif
 end_endif
 
 begin_expr_stmt
-DECL|union|__anon2a97360f010a
+DECL|union|__anon297ce6b1010a
 DECL|member|data
 DECL|member|alignment
 DECL|member|ptr

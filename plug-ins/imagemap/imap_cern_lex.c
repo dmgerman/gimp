@@ -284,7 +284,7 @@ literal|199901L
 end_if
 
 begin_comment
-comment|/* C99 says to define __STDC_LIMIT_MACROS before including stdint.h,  * if you want the limit (max/min) macros for int types.   */
+comment|/* C99 says to define __STDC_LIMIT_MACROS before including stdint.h,  * if you want the limit (max/min) macros for int types.  */
 end_comment
 
 begin_ifndef
@@ -7078,7 +7078,7 @@ comment|/* ifndef YY_NO_INPUT */
 end_comment
 
 begin_comment
-comment|/** Immediately switch to a different input stream.  * @param input_file A readable stream.  *   * @note This function does not reset the start condition to @c INITIAL .  */
+comment|/** Immediately switch to a different input stream.  * @param input_file A readable stream.  *  * @note This function does not reset the start condition to @c INITIAL .  */
 end_comment
 
 begin_function
@@ -7124,7 +7124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Switch to a different input buffer.  * @param new_buffer The new input buffer.  *   */
+comment|/** Switch to a different input buffer.  * @param new_buffer The new input buffer.  *  */
 end_comment
 
 begin_function
@@ -7244,7 +7244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Allocate and initialize an input buffer state.  * @param file A readable stream.  * @param size The character buffer size in bytes. When in doubt, use @c YY_BUF_SIZE.  *   * @return the allocated buffer state.  */
+comment|/** Allocate and initialize an input buffer state.  * @param file A readable stream.  * @param size The character buffer size in bytes. When in doubt, use @c YY_BUF_SIZE.  *  * @return the allocated buffer state.  */
 end_comment
 
 begin_function
@@ -7343,7 +7343,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Destroy the buffer.  * @param b a buffer created with cern__create_buffer()  *   */
+comment|/** Destroy the buffer.  * @param b a buffer created with cern__create_buffer()  *  */
 end_comment
 
 begin_function
@@ -7493,7 +7493,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Discard all buffered characters. On the next scan, YY_INPUT will be called.  * @param b the buffer state to be flushed, usually @c YY_CURRENT_BUFFER.  *   */
+comment|/** Discard all buffered characters. On the next scan, YY_INPUT will be called.  * @param b the buffer state to be flushed, usually @c YY_CURRENT_BUFFER.  *  */
 end_comment
 
 begin_function
@@ -7573,7 +7573,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Pushes the new state onto the stack. The new state becomes  *  the current state. This function will allocate the stack  *  if necessary.  *  @param new_buffer The new state.  *    */
+comment|/** Pushes the new state onto the stack. The new state becomes  *  the current state. This function will allocate the stack  *  if necessary.  *  @param new_buffer The new state.  *  */
 end_comment
 
 begin_function
@@ -7656,7 +7656,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Removes and deletes the top of the stack, if present.  *  The next element becomes the new top.  *    */
+comment|/** Removes and deletes the top of the stack, if present.  *  The next element becomes the new top.  *  */
 end_comment
 
 begin_function
@@ -7910,7 +7910,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Setup the input buffer state to scan directly from a user-specified character buffer.  * @param base the character buffer  * @param size the size in bytes of the character buffer  *   * @return the newly allocated buffer state object.   */
+comment|/** Setup the input buffer state to scan directly from a user-specified character buffer.  * @param base the character buffer  * @param size the size in bytes of the character buffer  *  * @return the newly allocated buffer state object.  */
 end_comment
 
 begin_function
@@ -8056,7 +8056,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Setup the input buffer state to scan a string. The next call to cern_lex() will  * scan from a @e copy of @a str.  * @param yystr a NUL-terminated string to scan  *   * @return the newly allocated buffer state object.  * @note If you want to scan bytes that may contain NUL values, then use  *       cern__scan_bytes() instead.  */
+comment|/** Setup the input buffer state to scan a string. The next call to cern_lex() will  * scan from a @e copy of @a str.  * @param yystr a NUL-terminated string to scan  *  * @return the newly allocated buffer state object.  * @note If you want to scan bytes that may contain NUL values, then use  *       cern__scan_bytes() instead.  */
 end_comment
 
 begin_function
@@ -8085,7 +8085,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Setup the input buffer state to scan the given bytes. The next call to cern_lex() will  * scan from a @e copy of @a bytes.  * @param yybytes the byte buffer to scan  * @param _yybytes_len the number of bytes in the buffer pointed to by @a bytes.  *   * @return the newly allocated buffer state object.  */
+comment|/** Setup the input buffer state to scan the given bytes. The next call to cern_lex() will  * scan from a @e copy of @a bytes.  * @param yybytes the byte buffer to scan  * @param _yybytes_len the number of bytes in the buffer pointed to by @a bytes.  *  * @return the newly allocated buffer state object.  */
 end_comment
 
 begin_function
@@ -8292,7 +8292,7 @@ comment|/* Accessor  methods (get/set functions) to struct members. */
 end_comment
 
 begin_comment
-comment|/** Get the current line number.  *   */
+comment|/** Get the current line number.  *  */
 end_comment
 
 begin_function
@@ -8310,7 +8310,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Get the input stream.  *   */
+comment|/** Get the input stream.  *  */
 end_comment
 
 begin_function
@@ -8329,7 +8329,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Get the output stream.  *   */
+comment|/** Get the output stream.  *  */
 end_comment
 
 begin_function
@@ -8348,7 +8348,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Get the length of the current token.  *   */
+comment|/** Get the length of the current token.  *  */
 end_comment
 
 begin_function
@@ -8366,7 +8366,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Get the current token.  *   */
+comment|/** Get the current token.  *  */
 end_comment
 
 begin_function
@@ -8385,7 +8385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Set the current line number.  * @param line_number  *   */
+comment|/** Set the current line number.  * @param line_number  *  */
 end_comment
 
 begin_function
@@ -8405,7 +8405,7 @@ block|}
 end_function
 
 begin_comment
-comment|/** Set the input stream. This does not discard the current  * input buffer.  * @param in_str A readable stream.  *   * @see cern__switch_to_buffer  */
+comment|/** Set the input stream. This does not discard the current  * input buffer.  * @param in_str A readable stream.  *  * @see cern__switch_to_buffer  */
 end_comment
 
 begin_function

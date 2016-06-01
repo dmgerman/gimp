@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2414430103
+DECL|enum|__anon2c2745280103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

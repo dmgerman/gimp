@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278c76370108
+DECL|struct|__anon2ab3f8fe0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
