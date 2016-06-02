@@ -1150,6 +1150,11 @@ define|#
 directive|define
 name|GIMP_STOCK_MYPAINT_BRUSH
 value|GIMP_STOCK_TOOL_MYPAINT_BRUSH
+DECL|macro|GIMP_STOCK_PALETTE
+define|#
+directive|define
+name|GIMP_STOCK_PALETTE
+value|GIMP_STOCK_COLOR_PALETTE
 DECL|macro|GIMP_STOCK_PATTERN
 define|#
 directive|define
