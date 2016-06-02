@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9639370108
+DECL|struct|__anon2c044bb60108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1823,6 +1823,9 @@ name|GetICMProfile
 argument_list|(
 name|hdc
 argument_list|,
+operator|(
+name|LPDWORD
+operator|)
 operator|&
 name|len
 argument_list|,
@@ -1844,6 +1847,9 @@ name|GetICMProfile
 argument_list|(
 name|hdc
 argument_list|,
+operator|(
+name|LPDWORD
+operator|)
 operator|&
 name|len
 argument_list|,
