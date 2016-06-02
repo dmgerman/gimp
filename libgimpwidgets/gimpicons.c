@@ -758,6 +758,7 @@ block|}
 block|,
 block|{
 name|GIMP_STOCK_COLOR_PALETTE
+block|,
 name|NULL
 block|,
 literal|0

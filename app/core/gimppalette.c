@@ -396,7 +396,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-name|GIMP_STOCK_COLOR_PALETTE
+literal|"gimp-color-palette"
 expr_stmt|;
 name|viewable_class
 operator|->
