@@ -757,6 +757,17 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
+name|GIMP_STOCK_COLOR_PALETTE
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
 name|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
 block|,
 name|NULL

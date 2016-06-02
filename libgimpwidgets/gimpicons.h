@@ -312,6 +312,11 @@ define|#
 directive|define
 name|GIMP_STOCK_COLOR_WATER
 value|"gimp-color-water"
+DECL|macro|GIMP_STOCK_COLOR_PALETTE
+define|#
+directive|define
+name|GIMP_STOCK_COLOR_PALETTE
+value|"gimp-color-palette"
 DECL|macro|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
 define|#
 directive|define
@@ -1145,11 +1150,6 @@ define|#
 directive|define
 name|GIMP_STOCK_MYPAINT_BRUSH
 value|GIMP_STOCK_TOOL_MYPAINT_BRUSH
-DECL|macro|GIMP_STOCK_PALETTE
-define|#
-directive|define
-name|GIMP_STOCK_PALETTE
-value|GTK_STOCK_SELECT_COLOR
 DECL|macro|GIMP_STOCK_PATTERN
 define|#
 directive|define

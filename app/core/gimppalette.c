@@ -396,7 +396,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gtk-select-color"
+name|GIMP_STOCK_COLOR_PALETTE
 expr_stmt|;
 name|viewable_class
 operator|->
