@@ -362,6 +362,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PRINT_RESOLUTION
 value|"gimp-print-resolution"
+DECL|macro|GIMP_STOCK_FONT
+define|#
+directive|define
+name|GIMP_STOCK_FONT
+value|"gimp-font"
 DECL|macro|GIMP_STOCK_TEXT_DIR_LTR
 define|#
 directive|define
@@ -1155,11 +1160,6 @@ define|#
 directive|define
 name|GIMP_STOCK_DETACH
 value|GTK_STOCK_CONVERT
-DECL|macro|GIMP_STOCK_FONT
-define|#
-directive|define
-name|GIMP_STOCK_FONT
-value|GTK_STOCK_SELECT_FONT
 DECL|macro|GIMP_STOCK_GRADIENT
 define|#
 directive|define
