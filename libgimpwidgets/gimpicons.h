@@ -357,6 +357,11 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
+DECL|macro|GIMP_STOCK_INTEND
+define|#
+directive|define
+name|GIMP_STOCK_INTEND
+value|"gimp-intend"
 DECL|macro|GIMP_STOCK_PRINT_RESOLUTION
 define|#
 directive|define

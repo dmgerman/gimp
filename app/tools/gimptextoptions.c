@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27f9f30103
+DECL|enum|__anon295165680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2502,7 +2502,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-literal|"format-indent-more"
+name|GIMP_STOCK_INDENT
 argument_list|,
 name|spinbutton
 argument_list|,
