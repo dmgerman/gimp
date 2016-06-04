@@ -10567,7 +10567,7 @@ argument_list|(
 name|prefs_box
 argument_list|)
 argument_list|,
-literal|"gimp-prefs-image-windows"
+literal|"gimp-prefs-image-windows-appearence"
 argument_list|,
 name|_
 argument_list|(
@@ -10725,7 +10725,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon274b46960108
+DECL|struct|__anon29579a4c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11193,7 +11193,7 @@ argument_list|(
 name|prefs_box
 argument_list|)
 argument_list|,
-literal|"gimp-prefs-tool-options"
+literal|"gimp-prefs-image-windows-snapping"
 argument_list|,
 name|_
 argument_list|(
@@ -11585,7 +11585,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274b46960208
+DECL|struct|__anon29579a4c0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11740,7 +11740,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274b46960308
+DECL|struct|__anon29579a4c0308
 block|{
 DECL|member|tree_label
 specifier|const
