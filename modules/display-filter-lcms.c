@@ -1534,7 +1534,7 @@ condition|)
 block|{
 name|profile
 operator|=
-name|gimp_color_config_get_printer_color_profile
+name|gimp_color_config_get_simulation_color_profile
 argument_list|(
 name|config
 argument_list|,

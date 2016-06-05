@@ -5919,12 +5919,12 @@ name|store
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Printer Color Profile"
+literal|"Select Simulation (Softproofing) Color Profile"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Print simulation profile:"
+literal|"_Simulation profile:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10658,7 +10658,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon291485770108
+DECL|struct|__anon293598900108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11518,7 +11518,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291485770208
+DECL|struct|__anon293598900208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11673,7 +11673,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291485770308
+DECL|struct|__anon293598900308
 block|{
 DECL|member|tree_label
 specifier|const

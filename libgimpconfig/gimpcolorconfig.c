@@ -140,10 +140,10 @@ value|_("The CMYK color profile used to convert between RGB and CMYK.")
 end_define
 
 begin_define
-DECL|macro|PRINTER_PROFILE_BLURB
+DECL|macro|SIMULATION_PROFILE_BLURB
 define|#
 directive|define
-name|PRINTER_PROFILE_BLURB
+name|SIMULATION_PROFILE_BLURB
 define|\
 value|_("The color profile to use for soft proofing from your image's " \     "color space to some other color space, including " \     "soft proofing to a printer or other output device profile. ")
 end_define
@@ -204,7 +204,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5c4530103
+DECL|enum|__anon28ba5a6e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -227,8 +227,8 @@ block|,
 DECL|enumerator|PROP_DISPLAY_PROFILE_FROM_GDK
 name|PROP_DISPLAY_PROFILE_FROM_GDK
 block|,
-DECL|enumerator|PROP_PRINTER_PROFILE
-name|PROP_PRINTER_PROFILE
+DECL|enumerator|PROP_SIMULATION_PROFILE
+name|PROP_SIMULATION_PROFILE
 block|,
 DECL|enumerator|PROP_DISPLAY_RENDERING_INTENT
 name|PROP_DISPLAY_RENDERING_INTENT
@@ -404,7 +404,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_config_set_printer_profile
+name|gimp_color_config_set_simulation_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
@@ -635,16 +635,17 @@ name|GIMP_CONFIG_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PRINTER_PROFILE
+name|PROP_SIMULATION_PROFILE
 argument_list|,
+comment|/* FIXME: 3.0: change to simulation-profile */
 literal|"printer-profile"
 argument_list|,
 name|_
 argument_list|(
-literal|"Print simulation profile"
+literal|"Simulation profile for softproofing"
 argument_list|)
 argument_list|,
-name|PRINTER_PROFILE_BLURB
+name|SIMULATION_PROFILE_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_FILE
 argument_list|,
@@ -1062,9 +1063,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRINTER_PROFILE
+name|PROP_SIMULATION_PROFILE
 case|:
-name|gimp_color_config_set_printer_profile
+name|gimp_color_config_set_simulation_profile
 argument_list|(
 name|color_config
 argument_list|,
@@ -1332,7 +1333,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRINTER_PROFILE
+name|PROP_SIMULATION_PROFILE
 case|:
 name|g_value_set_string
 argument_list|(
@@ -1914,8 +1915,8 @@ end_function
 begin_function
 name|GimpColorProfile
 modifier|*
-DECL|function|gimp_color_config_get_printer_color_profile (GimpColorConfig * config,GError ** error)
-name|gimp_color_config_get_printer_color_profile
+DECL|function|gimp_color_config_get_simulation_color_profile (GimpColorConfig * config,GError ** error)
+name|gimp_color_config_get_simulation_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
@@ -2510,8 +2511,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_config_set_printer_profile (GimpColorConfig * config,const gchar * filename,GError ** error)
-name|gimp_color_config_set_printer_profile
+DECL|function|gimp_color_config_set_simulation_profile (GimpColorConfig * config,const gchar * filename,GError ** error)
+name|gimp_color_config_set_simulation_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*

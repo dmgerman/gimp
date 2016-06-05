@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1e7cc60108
+DECL|struct|__anon2ab05a6d0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2473,7 +2473,7 @@ name|GIMP_COLOR_MANAGEMENT_SOFTPROOF
 case|:
 name|proof_profile
 operator|=
-name|gimp_color_config_get_printer_color_profile
+name|gimp_color_config_get_simulation_color_profile
 argument_list|(
 name|config
 argument_list|,

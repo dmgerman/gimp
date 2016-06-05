@@ -345,7 +345,7 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_color_config_get_printer_color_profile
+name|gimp_color_config_get_simulation_color_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
