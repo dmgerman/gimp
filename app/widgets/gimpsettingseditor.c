@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50b3f30103
+DECL|enum|__anon2a2f89160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -787,7 +787,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(

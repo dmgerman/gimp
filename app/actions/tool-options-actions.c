@@ -163,7 +163,7 @@ block|,
 block|{
 literal|"tool-options-save-preset-menu"
 block|,
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 block|,
 name|NC_
 argument_list|(

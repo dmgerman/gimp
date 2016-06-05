@@ -158,7 +158,7 @@ block|,
 block|{
 literal|"gradient-editor-save-left-color"
 block|,
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -197,7 +197,7 @@ block|,
 block|{
 literal|"gradient-editor-save-right-color"
 block|,
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 block|,
 name|NC_
 argument_list|(

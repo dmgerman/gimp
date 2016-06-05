@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978b1d0108
+DECL|struct|__anon2bd052750108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1571,7 +1571,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"dialog-warning"
+literal|"gimp-warning"
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)
@@ -3863,7 +3863,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"document-save"
+literal|"gimp-save"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

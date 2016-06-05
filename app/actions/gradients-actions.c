@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"gradients-save-as-pov"
 block|,
-literal|"document-save-as"
+name|GIMP_STOCK_SAVE_AS
 block|,
 name|NC_
 argument_list|(

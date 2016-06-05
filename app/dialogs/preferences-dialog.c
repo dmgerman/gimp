@@ -6589,7 +6589,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -7486,7 +7486,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -10101,7 +10101,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -10725,7 +10725,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a1166500108
+DECL|struct|__anon28e429750108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11417,7 +11417,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -11585,7 +11585,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1166500208
+DECL|struct|__anon28e429750208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11740,7 +11740,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1166500308
+DECL|struct|__anon28e429750308
 block|{
 DECL|member|tree_label
 specifier|const

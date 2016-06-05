@@ -172,7 +172,7 @@ block|{
 block|{
 literal|"error-console-save-all"
 block|,
-literal|"document-save-as"
+name|GIMP_STOCK_SAVE_AS
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ block|,
 block|{
 literal|"error-console-save-selection"
 block|,
-literal|"document-save-as"
+name|GIMP_STOCK_SAVE_AS
 block|,
 name|NC_
 argument_list|(
