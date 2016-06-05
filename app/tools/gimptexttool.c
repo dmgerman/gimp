@@ -656,21 +656,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
-name|gimp_text_tool_apply
-parameter_list|(
-name|GimpTextTool
-modifier|*
-name|text_tool
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|gimp_text_tool_apply_list
 parameter_list|(
@@ -4915,7 +4900,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gboolean
 DECL|function|gimp_text_tool_apply (GimpTextTool * text_tool,gboolean push_undo)
 name|gimp_text_tool_apply

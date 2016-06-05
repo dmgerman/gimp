@@ -3046,6 +3046,22 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+if|if
+condition|(
+name|text_tool
+operator|->
+name|pending
+condition|)
+block|{
+comment|/* If there are any pending text commits, there would be        * inconsistencies between the text_tool->buffer and layout.        * This could result in crashes. See bug 751333.        * Therefore we apply them first.        */
+name|gimp_text_tool_apply
+argument_list|(
+name|text_tool
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 name|GIMP_LOG
 argument_list|(
 name|TEXT_EDITING
