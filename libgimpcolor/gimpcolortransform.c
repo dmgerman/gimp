@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d825d40103
+DECL|enum|__anon288109e20103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -644,8 +644,6 @@ argument_list|,
 name|rendering_intent
 argument_list|,
 name|flags
-operator||
-name|cmsFLAGS_NOOPTIMIZE
 argument_list|)
 expr_stmt|;
 if|if

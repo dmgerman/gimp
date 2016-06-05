@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c044bb60108
+DECL|struct|__anon2c1e7cc60108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2680,12 +2680,17 @@ name|config
 operator|->
 name|simulation_use_black_point_compensation
 condition|)
-block|{
 name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
-block|}
+if|#
+directive|if
+literal|0
+comment|/* FIXME add this to GimpColorConfig */
+block|if (config->simulation_nooptimize)         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
+endif|#
+directive|endif
 if|if
 condition|(
 name|config
@@ -2824,12 +2829,17 @@ name|config
 operator|->
 name|display_use_black_point_compensation
 condition|)
-block|{
 name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
-block|}
+if|#
+directive|if
+literal|0
+comment|/* FIXME add this to GimpColorConfig */
+block|if (config->display_nooptimize)         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
+endif|#
+directive|endif
 name|cache
 operator|->
 name|transform

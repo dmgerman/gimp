@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac3057f0103
+DECL|enum|__anon27cb86480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -820,6 +820,10 @@ condition|)
 name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
+expr_stmt|;
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
 expr_stmt|;
 name|self
 operator|->

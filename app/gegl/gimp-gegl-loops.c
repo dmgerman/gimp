@@ -3136,6 +3136,10 @@ name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+expr_stmt|;
 name|transform
 operator|=
 name|gimp_color_transform_new

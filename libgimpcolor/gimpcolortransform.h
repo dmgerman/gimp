@@ -54,8 +54,13 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29406e850103
+DECL|enum|__anon2b8c5b8c0103
 block|{
+DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+init|=
+literal|0x0100
+block|,
 DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_GAMUT_CHECK
 name|GIMP_COLOR_TRANSFORM_FLAGS_GAMUT_CHECK
 init|=
