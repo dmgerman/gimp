@@ -37,6 +37,14 @@ modifier|*
 modifier|*
 name|dest_profile
 parameter_list|,
+name|GimpColorRenderingIntent
+modifier|*
+name|intent
+parameter_list|,
+name|gboolean
+modifier|*
+name|bpc
+parameter_list|,
 name|gboolean
 modifier|*
 name|dont_ask

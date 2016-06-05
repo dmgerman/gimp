@@ -800,6 +800,14 @@ modifier|*
 modifier|*
 name|dest_profile
 parameter_list|,
+name|GimpColorRenderingIntent
+modifier|*
+name|intent
+parameter_list|,
+name|gboolean
+modifier|*
+name|bpc
+parameter_list|,
 name|gboolean
 modifier|*
 name|dont_ask
@@ -3356,7 +3364,7 @@ end_function
 begin_function
 specifier|static
 name|GimpColorProfilePolicy
-DECL|function|gui_query_profile_policy (Gimp * gimp,GimpImage * image,GimpContext * context,GimpColorProfile ** dest_profile,gboolean * dont_ask)
+DECL|function|gui_query_profile_policy (Gimp * gimp,GimpImage * image,GimpContext * context,GimpColorProfile ** dest_profile,GimpColorRenderingIntent * intent,gboolean * bpc,gboolean * dont_ask)
 name|gui_query_profile_policy
 parameter_list|(
 name|Gimp
@@ -3376,6 +3384,14 @@ modifier|*
 modifier|*
 name|dest_profile
 parameter_list|,
+name|GimpColorRenderingIntent
+modifier|*
+name|intent
+parameter_list|,
+name|gboolean
+modifier|*
+name|bpc
+parameter_list|,
 name|gboolean
 modifier|*
 name|dont_ask
@@ -3391,6 +3407,10 @@ argument_list|,
 name|NULL
 argument_list|,
 name|dest_profile
+argument_list|,
+name|intent
+argument_list|,
+name|bpc
 argument_list|,
 name|dont_ask
 argument_list|)

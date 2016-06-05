@@ -2259,7 +2259,7 @@ end_function
 
 begin_function
 name|GimpColorProfilePolicy
-DECL|function|gimp_query_profile_policy (Gimp * gimp,GimpImage * image,GimpContext * context,GimpColorProfile ** dest_profile,gboolean * dont_ask)
+DECL|function|gimp_query_profile_policy (Gimp * gimp,GimpImage * image,GimpContext * context,GimpColorProfile ** dest_profile,GimpColorRenderingIntent * intent,gboolean * bpc,gboolean * dont_ask)
 name|gimp_query_profile_policy
 parameter_list|(
 name|Gimp
@@ -2278,6 +2278,14 @@ name|GimpColorProfile
 modifier|*
 modifier|*
 name|dest_profile
+parameter_list|,
+name|GimpColorRenderingIntent
+modifier|*
+name|intent
+parameter_list|,
+name|gboolean
+modifier|*
+name|bpc
 parameter_list|,
 name|gboolean
 modifier|*
@@ -2345,6 +2353,10 @@ argument_list|,
 name|context
 argument_list|,
 name|dest_profile
+argument_list|,
+name|intent
+argument_list|,
+name|bpc
 argument_list|,
 name|dont_ask
 argument_list|)
