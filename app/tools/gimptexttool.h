@@ -213,6 +213,10 @@ DECL|member|needs_im_reset
 name|gboolean
 name|needs_im_reset
 decl_stmt|;
+DECL|member|preedit_active
+name|gboolean
+name|preedit_active
+decl_stmt|;
 DECL|member|preedit_string
 name|gchar
 modifier|*

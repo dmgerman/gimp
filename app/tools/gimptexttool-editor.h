@@ -162,6 +162,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_text_tool_abort_im_context
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_text_tool_editor_get_cursor_rect
 parameter_list|(
 name|GimpTextTool
