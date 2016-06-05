@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279b59c40108
+DECL|struct|__anon2b2775050108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2687,13 +2687,18 @@ name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* FIXME add this to GimpColorConfig */
-block|if (gimp_color_config_get_simulation_nooptimize (config))         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
-endif|#
-directive|endif
+if|if
+condition|(
+operator|!
+name|gimp_color_config_get_simulation_optimize
+argument_list|(
+name|config
+argument_list|)
+condition|)
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+expr_stmt|;
 if|if
 condition|(
 name|gimp_color_config_get_simulation_gamut_check
@@ -2840,13 +2845,18 @@ name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* FIXME add this to GimpColorConfig */
-block|if (gimp_color_config_get_display_nooptimize (config))         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
-endif|#
-directive|endif
+if|if
+condition|(
+operator|!
+name|gimp_color_config_get_display_optimize
+argument_list|(
+name|config
+argument_list|)
+condition|)
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+expr_stmt|;
 name|cache
 operator|->
 name|transform

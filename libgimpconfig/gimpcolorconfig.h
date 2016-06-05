@@ -309,6 +309,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_color_config_get_display_optimize
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_color_config_get_display_profile_from_gdk
 parameter_list|(
 name|GimpColorConfig
@@ -332,6 +343,17 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_color_config_get_simulation_bpc
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_color_config_get_simulation_optimize
 parameter_list|(
 name|GimpColorConfig
 modifier|*
