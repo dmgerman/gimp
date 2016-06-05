@@ -6123,7 +6123,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Move the cursor to the expected location. */
