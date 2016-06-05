@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab05a6d0108
+DECL|struct|__anon279b59c40108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1927,9 +1927,10 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+name|gimp_color_config_get_display_profile_from_gdk
+argument_list|(
 name|config
-operator|->
-name|display_profile_from_gdk
+argument_list|)
 condition|)
 comment|/* get the toplevel's profile so all a window's colors look the same */
 name|profile
@@ -2457,9 +2458,10 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
+name|gimp_color_config_get_mode
+argument_list|(
 name|config
-operator|->
-name|mode
+argument_list|)
 condition|)
 block|{
 case|case
@@ -2676,9 +2678,10 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|gimp_color_config_get_simulation_bpc
+argument_list|(
 name|config
-operator|->
-name|simulation_use_black_point_compensation
+argument_list|)
 condition|)
 name|flags
 operator||=
@@ -2688,14 +2691,15 @@ if|#
 directive|if
 literal|0
 comment|/* FIXME add this to GimpColorConfig */
-block|if (config->simulation_nooptimize)         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
+block|if (gimp_color_config_get_simulation_nooptimize (config))         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
 endif|#
 directive|endif
 if|if
 condition|(
+name|gimp_color_config_get_simulation_gamut_check
+argument_list|(
 name|config
-operator|->
-name|simulation_gamut_check
+argument_list|)
 condition|)
 block|{
 name|cmsUInt16Number
@@ -2804,13 +2808,15 @@ name|cache
 operator|->
 name|proof_profile
 argument_list|,
+name|gimp_color_config_get_simulation_intent
+argument_list|(
 name|config
-operator|->
-name|simulation_intent
+argument_list|)
 argument_list|,
+name|gimp_color_config_get_display_intent
+argument_list|(
 name|config
-operator|->
-name|display_intent
+argument_list|)
 argument_list|,
 name|flags
 argument_list|)
@@ -2825,9 +2831,10 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|gimp_color_config_get_display_bpc
+argument_list|(
 name|config
-operator|->
-name|display_use_black_point_compensation
+argument_list|)
 condition|)
 name|flags
 operator||=
@@ -2837,7 +2844,7 @@ if|#
 directive|if
 literal|0
 comment|/* FIXME add this to GimpColorConfig */
-block|if (config->display_nooptimize)         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
+block|if (gimp_color_config_get_display_nooptimize (config))         flags |= GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE;
 endif|#
 directive|endif
 name|cache
@@ -2862,9 +2869,10 @@ name|cache
 operator|->
 name|dest_format
 argument_list|,
+name|gimp_color_config_get_display_intent
+argument_list|(
 name|config
-operator|->
-name|display_intent
+argument_list|)
 argument_list|,
 name|flags
 argument_list|)

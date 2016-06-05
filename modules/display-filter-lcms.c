@@ -1211,9 +1211,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_color_config_get_display_profile_from_gdk
+argument_list|(
 name|config
-operator|->
-name|display_profile_from_gdk
+argument_list|)
 condition|)
 name|profile
 operator|=

@@ -204,7 +204,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ba5a6e0103
+DECL|enum|__anon2914fbec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1452,6 +1452,238 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_comment
+comment|/**  * gimp_color_config_get_mode:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|GimpColorManagementMode
+DECL|function|gimp_color_config_get_mode (GimpColorConfig * config)
+name|gimp_color_config_get_mode
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_MANAGEMENT_OFF
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|mode
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_display_intent:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|GimpColorRenderingIntent
+DECL|function|gimp_color_config_get_display_intent (GimpColorConfig * config)
+name|gimp_color_config_get_display_intent
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|display_intent
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_display_bpc:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_color_config_get_display_bpc (GimpColorConfig * config)
+name|gimp_color_config_get_display_bpc
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|display_use_black_point_compensation
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_display_profile_from_gdk:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_color_config_get_display_profile_from_gdk (GimpColorConfig * config)
+name|gimp_color_config_get_display_profile_from_gdk
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|display_profile_from_gdk
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_simulation_intent:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|GimpColorRenderingIntent
+DECL|function|gimp_color_config_get_simulation_intent (GimpColorConfig * config)
+name|gimp_color_config_get_simulation_intent
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|simulation_intent
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_simulation_bpc:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_color_config_get_simulation_bpc (GimpColorConfig * config)
+name|gimp_color_config_get_simulation_bpc
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|simulation_use_black_point_compensation
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_simulation_gamut_check:  * @config: a #GimpColorConfig  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_color_config_get_simulation_gamut_check (GimpColorConfig * config)
+name|gimp_color_config_get_simulation_gamut_check
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_COLOR_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|config
+operator|->
+name|simulation_gamut_check
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_rgb_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+end_comment
+
 begin_function
 name|GimpColorProfile
 modifier|*
@@ -1576,6 +1808,10 @@ name|profile
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_gray_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+end_comment
 
 begin_function
 name|GimpColorProfile
@@ -1702,6 +1938,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_config_get_cmyk_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+end_comment
+
 begin_function
 name|GimpColorProfile
 modifier|*
@@ -1827,6 +2067,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_config_get_display_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+end_comment
+
 begin_function
 name|GimpColorProfile
 modifier|*
@@ -1911,6 +2155,10 @@ name|profile
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_config_get_simulation_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+end_comment
 
 begin_function
 name|GimpColorProfile
