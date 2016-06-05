@@ -1407,7 +1407,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gtk-cancel"
+name|GIMP_STOCK_CANCEL
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

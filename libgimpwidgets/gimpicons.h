@@ -102,6 +102,16 @@ define|#
 directive|define
 name|GIMP_STOCK_PREVIOUS
 value|"gimp-previous"
+DECL|macro|GIMP_STOCK_SAVE
+define|#
+directive|define
+name|GIMP_STOCK_SAVE
+value|"gimp-save"
+DECL|macro|GIMP_STOCK_CANCEL
+define|#
+directive|define
+name|GIMP_STOCK_CANCEL
+value|"gimp-cancel"
 DECL|macro|GIMP_STOCK_GRADIENT_LINEAR
 define|#
 directive|define
