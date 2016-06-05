@@ -92,6 +92,16 @@ define|#
 directive|define
 name|GIMP_STOCK_VISIBLE
 value|"gimp-visible"
+DECL|macro|GIMP_STOCK_NEXT
+define|#
+directive|define
+name|GIMP_STOCK_NEXT
+value|"gimp-next"
+DECL|macro|GIMP_STOCK_PREVIOUS
+define|#
+directive|define
+name|GIMP_STOCK_PREVIOUS
+value|"gimp-previous"
 DECL|macro|GIMP_STOCK_GRADIENT_LINEAR
 define|#
 directive|define
