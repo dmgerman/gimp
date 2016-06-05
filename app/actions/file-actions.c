@@ -271,7 +271,7 @@ block|,
 block|{
 literal|"file-open"
 block|,
-literal|"document-open"
+name|GIMP_STOCK_IMAGE_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -387,7 +387,7 @@ block|,
 block|{
 literal|"file-revert"
 block|,
-literal|"document-revert"
+name|GIMP_STOCK_IMAGE_RELOAD
 block|,
 name|NC_
 argument_list|(
@@ -416,7 +416,7 @@ block|,
 block|{
 literal|"file-close-all"
 block|,
-literal|"window-close"
+name|GIMP_STOCK_CLOSE_ALL
 block|,
 name|NC_
 argument_list|(
@@ -445,8 +445,7 @@ block|,
 block|{
 literal|"file-copy-location"
 block|,
-literal|"edit-copy"
-block|,
+name|GIMP_STOCK_CLIPBOARD
 name|NC_
 argument_list|(
 literal|"file-action"
@@ -474,8 +473,7 @@ block|,
 block|{
 literal|"file-show-in-file-manager"
 block|,
-literal|"gtk-directory"
-block|,
+name|GIMP_STOCK_FILE_MANAGER
 name|NC_
 argument_list|(
 literal|"file-action"
@@ -503,7 +501,7 @@ block|,
 block|{
 literal|"file-quit"
 block|,
-literal|"application-exit"
+name|GIMP_STOCK_QUIT
 block|,
 name|NC_
 argument_list|(
@@ -544,7 +542,7 @@ block|{
 block|{
 literal|"file-save"
 block|,
-literal|"document-save"
+name|GIMP_STOCK_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -572,7 +570,7 @@ block|,
 block|{
 literal|"file-save-as"
 block|,
-literal|"document-save-as"
+name|GIMP_STOCK_SAVE_AS
 block|,
 name|NC_
 argument_list|(
