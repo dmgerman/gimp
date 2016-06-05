@@ -922,7 +922,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gtk-directory"
+literal|"gimp-group-layer"
 expr_stmt|;
 name|viewable_class
 operator|->
