@@ -1714,23 +1714,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|config
-operator|->
-name|display_intent
-operator|==
-name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
-condition|)
-block|{
-name|flags
-operator||=
-name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
-expr_stmt|;
-block|}
 name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+expr_stmt|;
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
 name|module
 operator|->
@@ -1752,9 +1742,7 @@ argument_list|(
 literal|"CMYK double"
 argument_list|)
 argument_list|,
-name|config
-operator|->
-name|display_intent
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
 name|flags
 argument_list|)
@@ -1779,9 +1767,7 @@ argument_list|(
 literal|"R'G'B' double"
 argument_list|)
 argument_list|,
-name|config
-operator|->
-name|display_intent
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
 name|flags
 argument_list|)
