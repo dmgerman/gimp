@@ -2247,6 +2247,12 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
+comment|/* Making sure preedit text is removed. */
+name|gimp_text_tool_im_delete_preedit
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 comment|/* the following lines seem to be the only way of really getting    * rid of any ongoing preedit state, please somebody tell me    * a clean way... mitch    */
 name|gtk_im_context_focus_out
 argument_list|(
