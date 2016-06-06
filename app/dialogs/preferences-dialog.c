@@ -7560,7 +7560,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"edit-clear"
+name|GIMP_STOCK_EDIT_CLEAR
 argument_list|,
 name|_
 argument_list|(
@@ -9243,7 +9243,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"edit-clear"
+name|GIMP_STOCK_SHRED
 argument_list|,
 name|_
 argument_list|(
@@ -10725,7 +10725,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28e429750108
+DECL|struct|__anon298c09eb0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11585,7 +11585,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e429750208
+DECL|struct|__anon298c09eb0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11740,7 +11740,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e429750308
+DECL|struct|__anon298c09eb0308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4101c80103
+DECL|enum|__anon27c692a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1081,7 +1081,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"edit-clear"
+name|GIMP_STOCK_EDIT_CLEAR
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

@@ -102,7 +102,7 @@ block|,
 block|{
 literal|"error-console-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_STOCK_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(

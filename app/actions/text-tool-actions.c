@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"text-tool-clear"
 block|,
-literal|"edit-clear"
+name|GGIMP_STOCK_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(

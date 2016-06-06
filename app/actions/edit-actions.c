@@ -389,7 +389,7 @@ block|,
 block|{
 literal|"edit-undo-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_STOCK_SHRED
 block|,
 name|NC_
 argument_list|(
@@ -797,7 +797,7 @@ block|,
 block|{
 literal|"edit-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_STOCK_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -894,7 +894,7 @@ block|,
 block|{
 literal|"edit-fill-pattern"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_STOCK_PATTERN
 block|,
 name|NC_
 argument_list|(

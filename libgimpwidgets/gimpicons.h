@@ -152,6 +152,16 @@ define|#
 directive|define
 name|GIMP_STOCK_FILE_MANAGER
 value|"gimp-file-manager"
+DECL|macro|GIMP_STOCK_EDIT_CLEAR
+define|#
+directive|define
+name|GIMP_STOCK_EDIT_CLEAR
+value|"gimp-edit-clear"
+DECL|macro|GIMP_STOCK_SHRED
+define|#
+directive|define
+name|GIMP_STOCK_SHRED
+value|"gimp-shred"
 DECL|macro|GIMP_STOCK_GRADIENT_LINEAR
 define|#
 directive|define
