@@ -137,6 +137,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CLOSE_ALL
 value|"gimp-close-all"
+DECL|macro|GIMP_STOCK_REVERT
+define|#
+directive|define
+name|GIMP_STOCK_REVERT
+value|"gimp-revert"
 DECL|macro|GIMP_STOCK_CLIPBOARD
 define|#
 directive|define

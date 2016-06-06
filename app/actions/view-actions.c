@@ -380,7 +380,7 @@ block|,
 block|{
 literal|"view-close"
 block|,
-literal|"window-close"
+name|GIMP_STOCK_QUIT
 block|,
 name|NC_
 argument_list|(

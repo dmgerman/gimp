@@ -145,7 +145,7 @@ block|,
 block|{
 literal|"gradient-editor-load-left-color"
 block|,
-literal|"document-revert"
+name|GIMP_STOCK_REVERT
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"gradient-editor-load-right-color"
 block|,
-literal|"document-revert"
+name|GIMP_STOCK_REVERT
 block|,
 name|NC_
 argument_list|(

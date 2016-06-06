@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acf4ca0103
+DECL|enum|__anon29b4fa3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -917,7 +917,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"document-revert"
+name|GIMP_STOCK_REVERT
 argument_list|,
 name|_
 argument_list|(

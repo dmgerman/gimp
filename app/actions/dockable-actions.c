@@ -197,7 +197,7 @@ block|,
 block|{
 literal|"dockable-close-tab"
 block|,
-literal|"window-close"
+name|GIMP_STOCK_QUIT
 block|,
 name|NC_
 argument_list|(

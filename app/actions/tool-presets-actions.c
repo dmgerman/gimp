@@ -219,7 +219,7 @@ block|,
 block|{
 literal|"tool-presets-show-in-file-manager"
 block|,
-literal|"gtk-directory"
+name|GIMP_STOCK_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(
@@ -248,7 +248,7 @@ block|,
 block|{
 literal|"tool-presets-restore"
 block|,
-literal|"document-revert"
+name|GIMP_STOCK_REVERT
 block|,
 name|NC_
 argument_list|(

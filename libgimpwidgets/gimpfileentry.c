@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0ea230103
+DECL|enum|__anon28f56dad0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -395,7 +395,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gtk-directory"
+name|GIMP_STOCK_FILE_MANGER
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

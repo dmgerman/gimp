@@ -201,7 +201,7 @@ block|,
 block|{
 literal|"mypaint-brushes-show-in-file-manager"
 block|,
-literal|"gtk-directory"
+name|GIMP_STOCK_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(

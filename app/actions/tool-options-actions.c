@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"tool-options-restore-preset-menu"
 block|,
-literal|"document-revert"
+name|GIMP_STOCK_REVERT
 block|,
 name|NC_
 argument_list|(
