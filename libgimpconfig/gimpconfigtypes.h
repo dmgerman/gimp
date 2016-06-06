@@ -59,12 +59,6 @@ DECL|typedef|GimpConfigPath
 comment|/* to satisfy docs */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<libgimpconfig/gimpcolorconfig-enums.h>
-end_include
-
 begin_typedef
 DECL|typedef|GimpColorConfig
 typedef|typedef
@@ -73,6 +67,12 @@ name|_GimpColorConfig
 name|GimpColorConfig
 typedef|;
 end_typedef
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfigenums.h>
+end_include
 
 begin_endif
 endif|#
