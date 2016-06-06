@@ -442,6 +442,11 @@ define|#
 directive|define
 name|GIMP_STOCK_FONT
 value|"gimp-font"
+DECL|macro|GIMP_STOCK_PATTERN
+define|#
+directive|define
+name|GIMP_STOCK_PATTERN
+value|"gimp-pattern"
 DECL|macro|GIMP_STOCK_TEXT_DIR_LTR
 define|#
 directive|define
@@ -1250,11 +1255,6 @@ define|#
 directive|define
 name|GIMP_STOCK_PALETTE
 value|GIMP_STOCK_COLOR_PALETTE
-DECL|macro|GIMP_STOCK_PATTERN
-define|#
-directive|define
-name|GIMP_STOCK_PATTERN
-value|GIMP_STOCK_TOOL_BUCKET_FILL
 DECL|macro|GIMP_STOCK_CONTROLLER_MOUSE
 define|#
 directive|define
