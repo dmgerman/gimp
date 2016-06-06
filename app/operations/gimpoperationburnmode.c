@@ -367,16 +367,22 @@ index|[
 name|b
 index|]
 decl_stmt|;
+comment|/* The CLAMP macro is deliberately inlined and                * written to map comp == NAN (0 / 0) -> 1                */
 name|comp
 operator|=
-name|CLAMP
-argument_list|(
 name|comp
-argument_list|,
+operator|<
+literal|0
+condition|?
 literal|0.0
-argument_list|,
+else|:
+name|comp
+operator|<
 literal|1.0
-argument_list|)
+condition|?
+name|comp
+else|:
+literal|1.0
 expr_stmt|;
 name|out
 index|[
