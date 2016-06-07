@@ -112,7 +112,7 @@ name|NC_
 argument_list|(
 literal|"color-management-mode"
 argument_list|,
-literal|"Color managed display"
+literal|"Color-managed display"
 argument_list|)
 block|,
 name|NULL
@@ -125,7 +125,7 @@ name|NC_
 argument_list|(
 literal|"color-management-mode"
 argument_list|,
-literal|"Print simulation"
+literal|"Soft-proofing"
 argument_list|)
 block|,
 name|NULL
