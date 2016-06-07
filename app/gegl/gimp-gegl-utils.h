@@ -67,6 +67,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_gegl_node_get_format
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|pad_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_gegl_param_spec_has_key
 parameter_list|(
