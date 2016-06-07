@@ -5910,14 +5910,14 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-comment|/*  Print Simulation (Softproofing)  */
+comment|/*  Print Simulation (Soft-proofing)  */
 name|vbox2
 operator|=
 name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Print Simulation (Softproofing)"
+literal|"Soft-Proofing"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -5954,12 +5954,12 @@ name|store
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Simulation (Softproofing) Color Profile"
+literal|"Select Soft-Proofing Color Profile"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Simulation profile:"
+literal|"_Soft-proofing profile:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6059,7 +6059,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"O_ptimize simulation for:"
+literal|"O_ptimize soft-proofing for:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10725,7 +10725,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b16847a0108
+DECL|struct|__anon274b46960108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11585,7 +11585,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b16847a0208
+DECL|struct|__anon274b46960208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11740,7 +11740,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b16847a0308
+DECL|struct|__anon274b46960308
 block|{
 DECL|member|tree_label
 specifier|const

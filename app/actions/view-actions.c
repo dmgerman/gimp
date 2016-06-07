@@ -323,7 +323,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Simulation Re_ndering Intent"
+literal|"Soft-Proofing Re_ndering Intent"
 argument_list|)
 block|}
 block|,
@@ -748,7 +748,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"_Color Manage this View"
+literal|"_Color-Manage this View"
 argument_list|)
 block|,
 name|NULL
@@ -757,7 +757,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Color manage this view"
+literal|"Use color management for this view"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -779,7 +779,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"_Print Simulation"
+literal|"_Proof Colors"
 argument_list|)
 block|,
 name|NULL
@@ -788,7 +788,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Use this view for softproofing"
+literal|"Use this view for soft-proofing"
 argument_list|)
 block|,
 name|G_CALLBACK

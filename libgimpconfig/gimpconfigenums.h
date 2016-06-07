@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29586a950103
+DECL|enum|__anon28da3a3a0103
 block|{
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_OFF
 name|GIMP_COLOR_MANAGEMENT_OFF
@@ -46,10 +46,10 @@ comment|/*< desc="No color management">*/
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_DISPLAY
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 block|,
-comment|/*< desc="Color managed display">*/
+comment|/*< desc="Color-managed display">*/
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_SOFTPROOF
 name|GIMP_COLOR_MANAGEMENT_SOFTPROOF
-comment|/*< desc="Print simulation">*/
+comment|/*< desc="Soft-proofing">*/
 DECL|typedef|GimpColorManagementMode
 block|}
 name|GimpColorManagementMode
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29586a950203
+DECL|enum|__anon28da3a3a0203
 block|{
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL

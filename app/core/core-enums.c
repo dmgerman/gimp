@@ -6875,7 +6875,7 @@ name|NC_
 argument_list|(
 literal|"color-profile-policy"
 argument_list|,
-literal|"Convert to RGB workspace"
+literal|"Convert to preferred RGB color profile"
 argument_list|)
 block|,
 name|NULL

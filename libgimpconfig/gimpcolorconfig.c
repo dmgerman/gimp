@@ -199,7 +199,7 @@ define|#
 directive|define
 name|SIMULATION_OPTIMIZE_BLURB
 define|\
-value|_("When disabled, simulation might be of better quality " \     "at the cost of speed.")
+value|_("When disabled, soft-proofing might be of better quality " \     "at the cost of speed.")
 end_define
 
 begin_define
@@ -208,7 +208,7 @@ define|#
 directive|define
 name|SIMULATION_GAMUT_CHECK_BLURB
 define|\
-value|_("When enabled, the print simulation will mark colors " \     "which can not be represented in the target color space.")
+value|_("When enabled, the soft-proofing will mark colors " \     "which can not be represented in the target color space.")
 end_define
 
 begin_define
@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275768070103
+DECL|enum|__anon2c3ef8870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -788,7 +788,7 @@ literal|"simulation-rendering-intent"
 argument_list|,
 name|_
 argument_list|(
-literal|"Softproof rendering intent"
+literal|"Soft-proofing rendering intent"
 argument_list|)
 argument_list|,
 name|SIMULATION_RENDERING_INTENT_BLURB
@@ -810,7 +810,7 @@ literal|"simulation-use-black-point-compensation"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use black point compensation for softproofing"
+literal|"Use black point compensation for soft-proofing"
 argument_list|)
 argument_list|,
 name|SIMULATION_USE_BPC_BLURB
@@ -830,7 +830,7 @@ literal|"simulation-optimize"
 argument_list|,
 name|_
 argument_list|(
-literal|"Optimize simulation color transformations"
+literal|"Optimize soft-proofing color transformations"
 argument_list|)
 argument_list|,
 name|SIMULATION_OPTIMIZE_BLURB
