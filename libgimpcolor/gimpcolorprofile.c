@@ -4840,6 +4840,13 @@ name|babl_model
 argument_list|(
 literal|"RGBA"
 argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"RaGaBaA"
+argument_list|)
 condition|)
 block|{
 name|rgb
@@ -4867,6 +4874,13 @@ name|babl_model
 argument_list|(
 literal|"R'G'B'A"
 argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"R'aG'aB'aA"
+argument_list|)
 condition|)
 block|{
 name|rgb
@@ -4889,6 +4903,13 @@ operator|==
 name|babl_model
 argument_list|(
 literal|"YA"
+argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"YaA"
 argument_list|)
 condition|)
 block|{
@@ -4917,6 +4938,13 @@ name|babl_model
 argument_list|(
 literal|"Y'A"
 argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"Y'aA"
+argument_list|)
 condition|)
 block|{
 name|gray
@@ -4933,14 +4961,14 @@ name|babl_model
 argument_list|(
 literal|"CMYK"
 argument_list|)
-operator|||
-name|model
-operator|==
-name|babl_model
-argument_list|(
-literal|"CMYKA"
-argument_list|)
 condition|)
+if|#
+directive|if
+literal|0
+comment|/* FIXME missing from babl */
+then||| model == babl_model ("CMYKA"))
+endif|#
+directive|endif
 block|{
 name|cmyk
 operator|=
@@ -5455,7 +5483,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: layer format %s not supported, "
+literal|"%s: format %s not supported, "
 literal|"falling back to float\n"
 argument_list|,
 name|G_STRFUNC
