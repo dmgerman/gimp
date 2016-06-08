@@ -183,7 +183,7 @@ block|,
 block|{
 literal|"text-tool-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_STOCK_DUPLICATE
 block|,
 name|NC_
 argument_list|(

@@ -476,7 +476,7 @@ block|,
 block|{
 literal|"edit-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_STOCK_CLIPBOARD
 block|,
 name|NC_
 argument_list|(
@@ -709,7 +709,7 @@ block|,
 block|{
 literal|"edit-named-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_STOCK_DUPLICATE
 block|,
 name|NC_
 argument_list|(
