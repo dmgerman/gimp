@@ -145,7 +145,7 @@ define|#
 directive|define
 name|SIMULATION_PROFILE_BLURB
 define|\
-value|_("The color profile to use for soft proofing from your image's " \     "color space to some other color space, including " \     "soft proofing to a printer or other output device profile. ")
+value|_("The color profile to use for soft-proofing from your image's " \     "color space to some other color space, including " \     "soft-proofing to a printer or other output device profile. ")
 end_define
 
 begin_define
@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ef8870103
+DECL|enum|__anon2c72d9570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -704,7 +704,7 @@ literal|"printer-profile"
 argument_list|,
 name|_
 argument_list|(
-literal|"Simulation profile for softproofing"
+literal|"Simulation profile for soft-proofing"
 argument_list|)
 argument_list|,
 name|SIMULATION_PROFILE_BLURB

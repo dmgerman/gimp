@@ -850,7 +850,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Use black point compensation for softproofing"
+literal|"Use black point compensation for soft-proofing"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -881,7 +881,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"When softproofing, mark colors which cannot "
+literal|"When soft-proofing, mark colors which cannot "
 literal|"be represented in the target color space"
 argument_list|)
 block|,
@@ -2365,7 +2365,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Softproof rendering intent is perceptual"
+literal|"Soft-proofing rendering intent is perceptual"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
@@ -2391,7 +2391,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Softproof rendering intent is relative colorimetric"
+literal|"Soft-proofing rendering intent is relative colorimetric"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
@@ -2417,7 +2417,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Softproof rendering intent is saturation"
+literal|"Soft-proofing rendering intent is saturation"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_SATURATION
@@ -2443,7 +2443,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Softproof rendering intent is absolute colorimetric"
+literal|"Soft-proofing rendering intent is absolute colorimetric"
 argument_list|)
 block|,
 name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
