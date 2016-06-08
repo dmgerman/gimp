@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af34a9e0103
+DECL|enum|__anon2bf1cb3d0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af34a9e0203
+DECL|enum|__anon2bf1cb3d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1394,7 +1394,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-literal|"document-open"
+name|GIMP_STOCK_OPEN
 argument_list|,
 name|_
 argument_list|(

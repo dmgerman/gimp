@@ -97,7 +97,7 @@ block|,
 block|{
 literal|"text-editor-load"
 block|,
-literal|"document-open"
+name|GIMP_STOCK_OPEN
 block|,
 name|NC_
 argument_list|(

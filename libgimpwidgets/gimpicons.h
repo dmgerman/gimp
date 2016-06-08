@@ -102,6 +102,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PREVIOUS
 value|"gimp-previous"
+DECL|macro|GIMP_STOCK_OPEN
+define|#
+directive|define
+name|GIMP_STOCK_OPEN
+value|"gimp-open"
 DECL|macro|GIMP_STOCK_SAVE
 define|#
 directive|define

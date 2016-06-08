@@ -617,7 +617,7 @@ block|,
 block|{
 literal|"vectors-import"
 block|,
-literal|"document-open"
+name|GIMP_STOCK_OPEN
 block|,
 name|NC_
 argument_list|(

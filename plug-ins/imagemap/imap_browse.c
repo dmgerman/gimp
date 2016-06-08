@@ -547,7 +547,7 @@ name|icon
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"document-open"
+literal|"gimp-open"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

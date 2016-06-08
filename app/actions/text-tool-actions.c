@@ -255,7 +255,7 @@ block|,
 block|{
 literal|"text-tool-load"
 block|,
-literal|"document-open"
+name|GIMP_STOCK_OPEN
 block|,
 name|NC_
 argument_list|(

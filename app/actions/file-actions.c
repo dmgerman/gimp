@@ -851,7 +851,7 @@ index|]
 operator|.
 name|icon_name
 operator|=
-literal|"document-open"
+literal|"gimp-open"
 expr_stmt|;
 name|entries
 index|[
