@@ -860,7 +860,7 @@ block|,
 block|{
 literal|"dialogs-document-history"
 block|,
-literal|"document-open-recent"
+name|GIMP_STOCK_DOCUMENT_RECENT
 block|,
 name|NC_
 argument_list|(

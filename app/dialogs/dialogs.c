@@ -1414,7 +1414,7 @@ argument_list|(
 literal|"Document History"
 argument_list|)
 argument_list|,
-literal|"document-open-recent"
+name|GIMP_STOCK_DOCUMENT_RECENT
 argument_list|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,

@@ -167,6 +167,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SHRED
 value|"gimp-shred"
+DECL|macro|GIMP_STOCK_DOCUMENT_RECENT
+define|#
+directive|define
+name|GIMP_STOCK_DOCUMENT_RECENT
+value|"gimp-document-recent"
 DECL|macro|GIMP_STOCK_GRADIENT_LINEAR
 define|#
 directive|define
