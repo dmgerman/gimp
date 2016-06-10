@@ -446,6 +446,7 @@ block|{
 literal|"file-copy-location"
 block|,
 name|GIMP_STOCK_CLIPBOARD
+block|,
 name|NC_
 argument_list|(
 literal|"file-action"
@@ -474,6 +475,7 @@ block|{
 literal|"file-show-in-file-manager"
 block|,
 name|GIMP_STOCK_FILE_MANAGER
+block|,
 name|NC_
 argument_list|(
 literal|"file-action"

@@ -283,6 +283,7 @@ block|{
 literal|"documents-clear"
 block|,
 name|GIMP_STOCK_SHRED
+block|,
 name|NC_
 argument_list|(
 literal|"documents-action"

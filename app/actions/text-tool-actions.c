@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"text-tool-clear"
 block|,
-name|GGIMP_STOCK_EDIT_CLEAR
+name|GIMP_STOCK_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
