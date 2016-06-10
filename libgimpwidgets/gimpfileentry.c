@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpicons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -63,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd1eb10103
+DECL|enum|__anon2b01e93a0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -395,7 +401,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_FILE_MANGER
+name|GIMP_STOCK_FILE_MANAGER
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpicons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppatheditor.h"
 end_include
 
@@ -69,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290776e90103
+DECL|enum|__anon27deba220103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -85,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290776e90203
+DECL|enum|__anon27deba220203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
