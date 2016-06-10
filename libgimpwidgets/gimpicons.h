@@ -437,11 +437,11 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
-DECL|macro|GIMP_STOCK_INTEND
+DECL|macro|GIMP_STOCK_INDENT
 define|#
 directive|define
-name|GIMP_STOCK_INTEND
-value|"gimp-intend"
+name|GIMP_STOCK_INDENT
+value|"gimp-indent"
 DECL|macro|GIMP_STOCK_JUSTIFY_CENTER
 define|#
 directive|define

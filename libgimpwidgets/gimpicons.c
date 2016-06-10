@@ -1084,11 +1084,11 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_INTEND
+name|GIMP_STOCK_INDENT
 block|,
 name|N_
 argument_list|(
-literal|"I_ntend"
+literal|"I_ndent"
 argument_list|)
 block|,
 literal|0
