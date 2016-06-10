@@ -447,11 +447,11 @@ define|#
 directive|define
 name|GIMP_STOCK_JUSTIFY_CENTER
 value|"gimp-justify-center"
-DECL|macro|GIMP_STOCK_JUSTIFY_BLOCK
+DECL|macro|GIMP_STOCK_JUSTIFY_FILL
 define|#
 directive|define
-name|GIMP_STOCK_JUSTIFY_BLOCK
-value|"gimp-justify-block"
+name|GIMP_STOCK_JUSTIFY_FILL
+value|"gimp-justify-fill"
 DECL|macro|GIMP_STOCK_JUSTIFY_LEFT
 define|#
 directive|define

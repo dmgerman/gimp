@@ -1111,7 +1111,7 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
-name|GIMP_STOCK_JUSTIFY_BLOCK
+name|GIMP_STOCK_JUSTIFY_FILL
 block|,
 name|NULL
 block|,
