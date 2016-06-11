@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760efb00103
+DECL|enum|__anon2a3a9d5f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760efb00203
+DECL|enum|__anon2a3a9d5f0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1249,7 +1249,7 @@ name|p
 operator|->
 name|docks
 operator|=
-name|g_list_append
+name|g_list_insert
 argument_list|(
 name|dock_columns
 operator|->
@@ -1258,6 +1258,8 @@ operator|->
 name|docks
 argument_list|,
 name|dock
+argument_list|,
+name|index
 argument_list|)
 expr_stmt|;
 name|gimp_dock_update_with_context
