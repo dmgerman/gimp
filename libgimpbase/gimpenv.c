@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -415,6 +421,14 @@ name|gimp_env_initialized
 init|=
 name|FALSE
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|data_home
+init|=
+name|g_get_user_data_dir
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|gimp_env_initialized
@@ -534,6 +548,48 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/* The user data directory (XDG_DATA_HOME on Unix) is used to store    * various data, like crash logs (win32) or recently used file history    * (by GTK+). Yet it may be absent, in particular on non-Linux    * platforms. Make sure it exists.    */
+if|if
+condition|(
+operator|!
+name|g_file_test
+argument_list|(
+name|data_home
+argument_list|,
+name|G_FILE_TEST_IS_DIR
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|g_mkdir_with_parents
+argument_list|(
+name|data_home
+argument_list|,
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
+argument_list|)
+operator|!=
+literal|0
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Failed to create the data directory '%s': %s"
+argument_list|,
+name|data_home
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 
