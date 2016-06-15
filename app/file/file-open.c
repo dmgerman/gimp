@@ -2764,6 +2764,26 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* Make sure the projection is completely constructed from valid    * layers, this is needed in case something triggers projection or    * image preview creation before all layers are loaded, see bug #767663.    */
+name|gimp_image_invalidate
+argument_list|(
+name|image
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gimp_image_get_width
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|gimp_image_get_height
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Make sure all image states are up-to-date */
 name|gimp_image_flush
 argument_list|(
