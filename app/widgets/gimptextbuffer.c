@@ -3343,6 +3343,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_text_tag_set_priority
+argument_list|(
+name|tag
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|description
