@@ -2337,7 +2337,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  * The unit of the dash pattern segments is the actual line width used  * for the stroke opertation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  * This setting affects the following procedures: gimp_edit_stroke(),  * gimp_edit_stroke_vectors().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  * This setting affects the following procedures: gimp_edit_stroke(),  * gimp_edit_stroke_vectors().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -5703,7 +5703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_diagonal_neighbors:  * @diagonal_neighbors: The diagonal neighbors setting.  *  * Set the diagonal neighbors setting.  *  * This procedure modifies the diagonal neighbors setting. If the  * affected region of an operation is based on a seed point, like when  * doing a seed fill, then, when this setting is TRUE, all eight  * neighbors of each pixel are considered when calculating the affected  * region; in contrast, when this setting is FALSE, only the four  * orthogonal neighors of each pixel are considered.  * This setting affects the following procedures:  * gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_diagonal_neighbors:  * @diagonal_neighbors: The diagonal neighbors setting.  *  * Set the diagonal neighbors setting.  *  * This procedure modifies the diagonal neighbors setting. If the  * affected region of an operation is based on a seed point, like when  * doing a seed fill, then, when this setting is TRUE, all eight  * neighbors of each pixel are considered when calculating the affected  * region; in contrast, when this setting is FALSE, only the four  * orthogonal neighbors of each pixel are considered.  * This setting affects the following procedures:  * gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

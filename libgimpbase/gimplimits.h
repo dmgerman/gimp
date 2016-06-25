@@ -52,21 +52,21 @@ define|#
 directive|define
 name|GIMP_MIN_IMAGE_SIZE
 value|1
-comment|/**  * GIMP_MAX_IMAGE_SIZE:  *  * The maximum width and height of a GIMP image in pixels. This is a  * somewhat arbitray value that can be used when an upper value for  * pixel sizes is needed; for example to give a spin button an upper  * limit.  **/
+comment|/**  * GIMP_MAX_IMAGE_SIZE:  *  * The maximum width and height of a GIMP image in pixels. This is a  * somewhat arbitrary value that can be used when an upper value for  * pixel sizes is needed; for example to give a spin button an upper  * limit.  **/
 DECL|macro|GIMP_MAX_IMAGE_SIZE
 define|#
 directive|define
 name|GIMP_MAX_IMAGE_SIZE
 value|524288
 comment|/*  2^19  */
-comment|/**  * GIMP_MIN_RESOLUTION:  *  * The minimum resolution of a GIMP image in pixels per inch. This is  * a somewhat arbitray value that can be used when a lower value for a  * resolution is needed. GIMP will not accept resolutions smaller than  * this value.  **/
+comment|/**  * GIMP_MIN_RESOLUTION:  *  * The minimum resolution of a GIMP image in pixels per inch. This is  * a somewhat arbitrary value that can be used when a lower value for a  * resolution is needed. GIMP will not accept resolutions smaller than  * this value.  **/
 DECL|macro|GIMP_MIN_RESOLUTION
 define|#
 directive|define
 name|GIMP_MIN_RESOLUTION
 value|5e-3
 comment|/*  shouldn't display as 0.000  */
-comment|/**  * GIMP_MAX_RESOLUTION:  *  * The maximum resolution of a GIMP image in pixels per inch. This is  * a somewhat arbitray value that can be used to when an upper value  * for a resolution is needed. GIMP will not accept resolutions larger  * than this value.  **/
+comment|/**  * GIMP_MAX_RESOLUTION:  *  * The maximum resolution of a GIMP image in pixels per inch. This is  * a somewhat arbitrary value that can be used to when an upper value  * for a resolution is needed. GIMP will not accept resolutions larger  * than this value.  **/
 DECL|macro|GIMP_MAX_RESOLUTION
 define|#
 directive|define

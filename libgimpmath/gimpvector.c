@@ -2655,7 +2655,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector_2d_to_3d:  * @sx: the abscisse of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscisse of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: the position of the observer.  * @p: the resulting point.  *  * \"Compute screen (sx, sy) - (sx + w, sy + h) to 3D unit square  * mapping. The plane to map to is given in the z field of p. The  * observer is located at position vp (vp->z != 0.0).\"  *  * In other words, this computes the projection of the point (@x, @y)  * to the plane z = @p->z (parallel to XY), from the @vp point of view  * through the screen (@sx, @sy)->(@sx + @w, @sy + @h)  **/
+comment|/**  * gimp_vector_2d_to_3d:  * @sx: the abscissa of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscissa of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: the position of the observer.  * @p: the resulting point.  *  * \"Compute screen (sx, sy) - (sx + w, sy + h) to 3D unit square  * mapping. The plane to map to is given in the z field of p. The  * observer is located at position vp (vp->z != 0.0).\"  *  * In other words, this computes the projection of the point (@x, @y)  * to the plane z = @p->z (parallel to XY), from the @vp point of view  * through the screen (@sx, @sy)->(@sx + @w, @sy + @h)  **/
 end_comment
 
 begin_function
@@ -2835,7 +2835,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector_2d_to_3d_val:  * @sx: the abscisse of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscisse of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: position of the observer.  * @p: the resulting point.  *  * This function is identical to gimp_vector_2d_to_3d() but the  * position of the @observer and the resulting point @p are passed by  * value rather than by reference.  *  * Returns: the computed #GimpVector3 point.  **/
+comment|/**  * gimp_vector_2d_to_3d_val:  * @sx: the abscissa of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscissa of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: position of the observer.  * @p: the resulting point.  *  * This function is identical to gimp_vector_2d_to_3d() but the  * position of the @observer and the resulting point @p are passed by  * value rather than by reference.  *  * Returns: the computed #GimpVector3 point.  **/
 end_comment
 
 begin_function
@@ -3024,7 +3024,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector_3d_to_2d:  * @sx: the abscisse of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscisse of the point in the screen rectangle to map (return value).  * @y: the ordinate of the point in the screen rectangle to map (return value).  * @vp: position of the observer.  * @p: the 3D point to project to the plane.  *  * Convert the given 3D point to 2D (project it onto the viewing  * plane, (sx, sy, 0) - (sx + w, sy + h, 0). The input is assumed to  * be in the unit square (0, 0, z) - (1, 1, z). The viewpoint of the  * observer is passed in vp.  *  * This is basically the opposite of gimp_vector_2d_to_3d().  **/
+comment|/**  * gimp_vector_3d_to_2d:  * @sx: the abscissa of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscissa of the point in the screen rectangle to map (return value).  * @y: the ordinate of the point in the screen rectangle to map (return value).  * @vp: position of the observer.  * @p: the 3D point to project to the plane.  *  * Convert the given 3D point to 2D (project it onto the viewing  * plane, (sx, sy, 0) - (sx + w, sy + h, 0). The input is assumed to  * be in the unit square (0, 0, z) - (1, 1, z). The viewpoint of the  * observer is passed in vp.  *  * This is basically the opposite of gimp_vector_2d_to_3d().  **/
 end_comment
 
 begin_function

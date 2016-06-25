@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975c23c0108
+DECL|struct|__anon2a1a68c00108
 block|{
 DECL|member|min_row
 DECL|member|max_row
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975c23c0208
+DECL|struct|__anon2a1a68c00208
 block|{
 DECL|member|min_row
 DECL|member|max_row
@@ -125,7 +125,7 @@ value|((bb).max_col)
 end_define
 
 begin_comment
-comment|/* See the comments at `get_character_bitmap' in gf_input.c for why the    width and height are treated asymetrically.  */
+comment|/* See the comments at `get_character_bitmap' in gf_input.c for why the    width and height are treated asymmetrically.  */
 end_comment
 
 begin_define

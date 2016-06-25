@@ -34,7 +34,7 @@ file|"arcball.h"
 end_include
 
 begin_comment
-comment|/* Gloval variables */
+comment|/* Global variables */
 end_comment
 
 begin_comment

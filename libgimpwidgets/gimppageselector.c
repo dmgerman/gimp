@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b978a680103
+DECL|enum|__anon2c34c0a40103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b978a680203
+DECL|enum|__anon2c34c0a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b978a680303
+DECL|enum|__anon2c34c0a40303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b978a680408
+DECL|struct|__anon2c34c0a40408
 block|{
 DECL|member|n_pages
 name|gint
@@ -3069,7 +3069,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_select_range:  * @selector: Pointer to a #GimpPageSelector.  * @range: A string representing the set of selected pages.  *  * Selectes the pages described by @range. The range string is a  * user-editable list of pages and ranges, e.g. "1,3,5-7,9-12,14".  * Note that the page numbering in the range string starts with 1,  * not 0.  *  * Invalid pages and ranges will be silently ignored, duplicate and  * overlapping pages and ranges will be merged.  *  * Since: 2.4  **/
+comment|/**  * gimp_page_selector_select_range:  * @selector: Pointer to a #GimpPageSelector.  * @range: A string representing the set of selected pages.  *  * Selects the pages described by @range. The range string is a  * user-editable list of pages and ranges, e.g. "1,3,5-7,9-12,14".  * Note that the page numbering in the range string starts with 1,  * not 0.  *  * Invalid pages and ranges will be silently ignored, duplicate and  * overlapping pages and ranges will be merged.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

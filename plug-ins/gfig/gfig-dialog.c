@@ -371,7 +371,7 @@ block|,
 comment|/* Brush gradient                */
 literal|20.0
 block|,
-comment|/* Air bursh pressure            */
+comment|/* Air brush pressure            */
 name|ORIGINAL_LAYER
 block|,
 comment|/* Draw all objects on one layer */
@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1d3750108
+DECL|struct|__anon296b535a0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

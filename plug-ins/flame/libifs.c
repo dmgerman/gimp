@@ -7830,7 +7830,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * find a 2d bounding box that does not enclose eps of the fractal density  * in each compass direction.  works by binary search.  * this is stupid, it shouldjust use the find nth smallest algorithm.  */
+comment|/*  * find a 2d bounding box that does not enclose eps of the fractal density  * in each compass direction.  works by binary search.  * this is stupid, it should just use the find nth smallest algorithm.  */
 end_comment
 
 begin_function

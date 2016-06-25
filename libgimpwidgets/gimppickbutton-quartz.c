@@ -609,7 +609,7 @@ DECL|variable|point
 name|NSPoint
 name|point
 block|;
-comment|/* The event gives us a point in Cocoa window coordinates. The function    * CGWindowListCreateImage expects a rectangle in screen coordinates    * with the origin in the upper left (contrary to Cocoa). The origin is    * on the screen showing the menu bar (this is the screen at index 0 in the    * screens array). So, after convering the rectangle to Cocoa screen    * coordinates, we use the height of this particular screen to translate    * to the coordinate space expected by CGWindowListCreateImage.    */
+comment|/* The event gives us a point in Cocoa window coordinates. The function    * CGWindowListCreateImage expects a rectangle in screen coordinates    * with the origin in the upper left (contrary to Cocoa). The origin is    * on the screen showing the menu bar (this is the screen at index 0 in the    * screens array). So, after converting the rectangle to Cocoa screen    * coordinates, we use the height of this particular screen to translate    * to the coordinate space expected by CGWindowListCreateImage.    */
 name|point
 operator|=
 name|event

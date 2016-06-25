@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45aeb40103
+DECL|enum|__anon2b43414e0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45aeb40203
+DECL|enum|__anon2b43414e0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40308
+DECL|struct|__anon2b43414e0308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40408
+DECL|struct|__anon2b43414e0408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45aeb40503
+DECL|enum|__anon2b43414e0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40608
+DECL|struct|__anon2b43414e0608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a45aeb40708
+DECL|struct|__anon2b43414e0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40808
+DECL|struct|__anon2b43414e0808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40908
+DECL|struct|__anon2b43414e0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40a08
+DECL|struct|__anon2b43414e0a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40b08
+DECL|struct|__anon2b43414e0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40c08
+DECL|struct|__anon2b43414e0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40d08
+DECL|struct|__anon2b43414e0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45aeb40e08
+DECL|struct|__anon2b43414e0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8507,7 +8507,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a45aeb40f08
+DECL|struct|__anon2b43414e0f08
 block|{
 DECL|member|values
 name|guchar
@@ -10384,7 +10384,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Calc sflare's pixel (RGBA) value  *  *  the sflare (second flares) are needed to be rendered one each  *  sequencially, onto the source image, such as like usual layer  *  operations. So the function takes src_pix as argment.  glow, rays  *  routines don't have src_pix as argment, because of convienience.  *  *  @JAPANESE  *  sflare
+comment|/*  *  Calc sflare's pixel (RGBA) value  *  *  the sflare (second flares) are needed to be rendered one each  *  sequentially, onto the source image, such as like usual layer  *  operations. So the function takes src_pix as argment.  glow, rays  *  routines don't have src_pix as argment, because of convienience.  *  *  @JAPANESE  *  sflare
 comment|$B$OJ#?t$N%U%l%"$r=g$K
 comment|(B(
 comment|$B%l%$%dE*$K
@@ -14452,7 +14452,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2a45aeb41008
+DECL|struct|__anon2b43414e1008
 block|{
 DECL|member|label
 specifier|const
@@ -15898,7 +15898,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/*         This is gflare editor dilaog, one which opens by clicking         "Edit" button on the selector page in the main dialog.  */
+comment|/*         This is gflare editor dialog, one which opens by clicking         "Edit" button on the selector page in the main dialog.  */
 end_comment
 
 begin_function

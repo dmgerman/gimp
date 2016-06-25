@@ -95,7 +95,7 @@ argument_list|)
 end_macro
 
 begin_comment
-comment|/**  * gimp_value_array_index:  * @value_array: #GimpValueArray to get a value from  * @index: index of the value of interest  *  * Return a pointer to the value at @index containd in @value_array.  *  * Returns: (transfer none): pointer to a value at @index in @value_array  *  * Since: 2.10  */
+comment|/**  * gimp_value_array_index:  * @value_array: #GimpValueArray to get a value from  * @index: index of the value of interest  *  * Return a pointer to the value at @index contained in @value_array.  *  * Returns: (transfer none): pointer to a value at @index in @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function

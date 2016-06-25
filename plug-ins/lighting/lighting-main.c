@@ -963,7 +963,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"highlight"
 block|,
-literal|"Material highlight (0..->), note: it's expotential"
+literal|"Material highlight (0..->), note: it's exponential"
 block|}
 block|,
 block|{

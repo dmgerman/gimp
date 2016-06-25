@@ -7366,7 +7366,7 @@ literal|"gimp-text-layer-get-letter-spacing"
 argument_list|,
 literal|"Get the letter spacing used in a text layer."
 argument_list|,
-literal|"This procedure returns the additional spacing between the single glyps in a text layer."
+literal|"This procedure returns the additional spacing between the single glyphs in a text layer."
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,

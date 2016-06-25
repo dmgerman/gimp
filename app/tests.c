@@ -122,7 +122,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_init_for_testing:  *  * Initialize the GIMP object system for unit testing. This is a  * selected subset of the initialization happning in app_run().  **/
+comment|/**  * gimp_init_for_testing:  *  * Initialize the GIMP object system for unit testing. This is a  * selected subset of the initialization happening in app_run().  **/
 end_comment
 
 begin_function

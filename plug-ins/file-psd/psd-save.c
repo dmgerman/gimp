@@ -4869,7 +4869,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Write actual size of Layer and mask information secton */
+comment|/* Write actual size of Layer and mask information section */
 name|fseek
 argument_list|(
 name|fd

@@ -72,7 +72,7 @@ file|"screenshot-osx.h"
 end_include
 
 begin_comment
-comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a native OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a navtive build  */
+comment|/*  * Mac OS X uses a rootless X server. This won't let us use  * gdk_pixbuf_get_from_drawable() and similar function on the root  * window to get the entire screen contents. With a native OS X build  * we have to do this without X as well.  *  * Since Mac OS X 10.2 a system utility for screencapturing is  * included. We can safely use this, since it's available on every OS  * X version GIMP is running on.  *  * The main drawbacks are that it's not possible to shoot windows or  * regions in scripts in noninteractive mode, and that windows always  * include decorations, since decorations are different between X11  * windows and native OS X app windows. But we can use this switch  * to capture the shadow of a window, which is indeed very Mac-ish.  *  * This routines works well with X11 and as a native build.  */
 end_comment
 
 begin_function

@@ -1135,7 +1135,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The uppper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      Ignored, spin buttons must always have a zero page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a  * subsequent gtk_spin_button_new(). It also calls  * gtk_spin_button_set_numeric() so that non-numeric text cannot be  * entered.  *  * Deprecated: 2.10: Use gtk_spin_button_new() instead.  *  * Returns: A #GtkSpinButton and its #GtkAdjustment.  **/
+comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The upper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      Ignored, spin buttons must always have a zero page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a  * subsequent gtk_spin_button_new(). It also calls  * gtk_spin_button_set_numeric() so that non-numeric text cannot be  * entered.  *  * Deprecated: 2.10: Use gtk_spin_button_new() instead.  *  * Returns: A #GtkSpinButton and its #GtkAdjustment.  **/
 end_comment
 
 begin_function
@@ -1681,7 +1681,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3263b0108
+DECL|struct|__anon2a0751380108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3069,7 +3069,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_float_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gfloat varaiable which will store the  *              @adjustment's value.  **/
+comment|/**  * gimp_float_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gfloat variable which will store the  *              @adjustment's value.  **/
 end_comment
 
 begin_function

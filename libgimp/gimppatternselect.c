@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b411f590108
+DECL|struct|__anon290f5fef0108
 block|{
 DECL|member|pattern_callback
 name|gchar
@@ -198,7 +198,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mask height"
 block|,
-literal|"Pattern heigth"
+literal|"Pattern height"
 block|}
 block|,
 block|{

@@ -673,7 +673,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_memsize:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @minimum:       Smallest allowed value of the parameter.  * @maximum:       Largest allowed value of the parameter.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a memory size value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
+comment|/**  * gimp_param_spec_memsize:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief description of param.  * @minimum:       Smallest allowed value of the parameter.  * @maximum:       Largest allowed value of the parameter.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a memory size value.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: 2.4  **/
 end_comment
 
 begin_function

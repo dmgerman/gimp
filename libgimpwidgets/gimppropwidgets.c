@@ -13205,7 +13205,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_icom_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_icon_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.10  */
 end_comment
 
 begin_function

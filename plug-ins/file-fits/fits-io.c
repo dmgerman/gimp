@@ -370,7 +370,7 @@ file|"fits-io.h"
 end_include
 
 begin_comment
-comment|/* Declaration of local funtions */
+comment|/* Declaration of local functions */
 end_comment
 
 begin_function_decl
@@ -7339,7 +7339,7 @@ comment|/*                                                                      
 end_comment
 
 begin_comment
-comment|/* A card is searched in the reord list. Only the first eight characters of  */
+comment|/* A card is searched in the record list. Only the first eight characters of */
 end_comment
 
 begin_comment
@@ -8096,7 +8096,7 @@ return|return
 operator|-
 literal|1
 return|;
-comment|/* Currently we only return types equavalent to the image format */
+comment|/* Currently we only return types equivalent to the image format */
 if|if
 condition|(
 name|npix

@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289183370103
+DECL|enum|__anon276b7a3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -659,7 +659,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to expliticely list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to explicitely list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

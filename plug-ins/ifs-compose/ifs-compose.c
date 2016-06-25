@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful way for a  *    script to give the 19N paramters for an image).  Perhaps just  *    support saving parameters to a file, script passes file name.  * 2. Figure out if we need multiple phases for supersampled brushes.  */
+comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful way for a  *    script to give the 19N parameters for an image).  Perhaps just  *    support saving parameters to a file, script passes file name.  * 2. Figure out if we need multiple phases for supersampled brushes.  */
 end_comment
 
 begin_include
@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b541c880103
+DECL|enum|__anon29e582720103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b541c880203
+DECL|enum|__anon29e582720203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880308
+DECL|struct|__anon29e582720308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon2b541c88040a
+DECL|union|__anon29e58272040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880508
+DECL|struct|__anon29e582720508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880608
+DECL|struct|__anon29e582720608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880708
+DECL|struct|__anon29e582720708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880808
+DECL|struct|__anon29e582720808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880908
+DECL|struct|__anon29e582720908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541c880a08
+DECL|struct|__anon29e582720a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1206,7 +1206,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gint
-name|repsonse_id
+name|response_id
 parameter_list|,
 name|gpointer
 name|data

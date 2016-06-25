@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c70ad940103
+DECL|enum|__anon2b1400370103
 block|{
 DECL|enumerator|GIMP_THUMB_FILE_TYPE_NONE
 name|GIMP_THUMB_FILE_TYPE_NONE
@@ -57,7 +57,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpThumbSize:  * @GIMP_THUMB_SIZE_FAIL:   special size used to indicate a thumbnail  *                          creation failure  * @GIMP_THUMB_SIZE_NORMAL: normal thumbnail size (128 pixels)  * @GIMP_THUMB_SIZE_LARGE:  large thumbnail size (256 pixels)  *  * Possible thumbnail sizes as defined by the Thumbnail Managaging  * Standard.  **/
+comment|/**  * GimpThumbSize:  * @GIMP_THUMB_SIZE_FAIL:   special size used to indicate a thumbnail  *                          creation failure  * @GIMP_THUMB_SIZE_NORMAL: normal thumbnail size (128 pixels)  * @GIMP_THUMB_SIZE_LARGE:  large thumbnail size (256 pixels)  *  * Possible thumbnail sizes as defined by the Thumbnail Managing  * Standard.  **/
 end_comment
 
 begin_define
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c70ad940203
+DECL|enum|__anon2b1400370203
 block|{
 DECL|enumerator|GIMP_THUMB_SIZE_FAIL
 name|GIMP_THUMB_SIZE_FAIL
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c70ad940303
+DECL|enum|__anon2b1400370303
 block|{
 DECL|enumerator|GIMP_THUMB_STATE_UNKNOWN
 name|GIMP_THUMB_STATE_UNKNOWN

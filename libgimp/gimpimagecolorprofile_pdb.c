@@ -534,7 +534,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * precified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * specified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

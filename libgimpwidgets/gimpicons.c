@@ -3645,7 +3645,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_stock_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  *  * Deprecated: 2.10: USe gimp_icons_init() instead.  */
+comment|/**  * gimp_stock_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  *  * Deprecated: 2.10: Use gimp_icons_init() instead.  */
 end_comment
 
 begin_function

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2795a25c0108
+DECL|struct|__anon275862e20108
 block|{
 DECL|member|data
 name|coordinate_type
@@ -98,7 +98,7 @@ value|((p_o).clockwise)
 end_define
 
 begin_comment
-comment|/* Since a pixel outline is cyclic, the index of thenext coordinate    after the last is the first, and the previous coordinate before the    first is the last.  */
+comment|/* Since a pixel outline is cyclic, the index of the next coordinate    after the last is the first, and the previous coordinate before the    first is the last.  */
 end_comment
 
 begin_define
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2795a25c0208
+DECL|struct|__anon275862e20208
 block|{
 DECL|member|data
 name|pixel_outline_type

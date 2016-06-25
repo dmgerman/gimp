@@ -677,7 +677,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the spacified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1363,7 +1363,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segement.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2949,7 +2949,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_move:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @delta: The delta to move the segment range.  * @control_compress: Whether or not to compress the neighboring segments.  *  * Move the position of an entire segment range by a delta.  *  * This funtions moves the position of an entire segment range by a  * delta. The actual delta (which is returned) will be limited by the  * control points of the neighboring segments.  *  * Returns: The final delta by which the range moved.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_range_move:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @delta: The delta to move the segment range.  * @control_compress: Whether or not to compress the neighboring segments.  *  * Move the position of an entire segment range by a delta.  *  * This function moves the position of an entire segment range by a  * delta. The actual delta (which is returned) will be limited by the  * control points of the neighboring segments.  *  * Returns: The final delta by which the range moved.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

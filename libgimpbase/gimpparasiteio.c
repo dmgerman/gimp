@@ -4,7 +4,7 @@ comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis an
 end_comment
 
 begin_comment
-comment|/*  * Functions for bulding and parsing string representations of  * various standard parasite types.  */
+comment|/*  * Functions for building and parsing string representations of  * various standard parasite types.  */
 end_comment
 
 begin_include

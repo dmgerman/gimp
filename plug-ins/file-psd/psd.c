@@ -377,7 +377,7 @@ name|LOAD_THUMB_PROC
 argument_list|,
 literal|"Loads thumbnails from the Photoshop PSD file format"
 argument_list|,
-literal|"This plug-in loads thumnail images from Adobe "
+literal|"This plug-in loads thumbnail images from Adobe "
 literal|"Photoshop (TM) native PSD format files."
 argument_list|,
 literal|"John Marshall"

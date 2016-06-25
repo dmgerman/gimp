@@ -2099,7 +2099,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_letter_spacing:  * @layer_ID: The text layer.  *  * Get the letter spacing used in a text layer.  *  * This procedure returns the additional spacing between the single  * glyps in a text layer.  *  * Returns: The letter-spacing value.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_letter_spacing:  * @layer_ID: The text layer.  *  * Get the letter spacing used in a text layer.  *  * This procedure returns the additional spacing between the single  * glyphs in a text layer.  *  * Returns: The letter-spacing value.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
