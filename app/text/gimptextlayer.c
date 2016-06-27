@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27576f0d0103
+DECL|enum|__anon27db5f2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2729,7 +2729,19 @@ if|if
 condition|(
 operator|!
 name|name
+operator|||
+operator|!
+name|name
+index|[
+literal|0
+index|]
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 name|name
 operator|=
 name|g_strdup
@@ -2740,6 +2752,7 @@ literal|"Empty Text Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_item_is_attached
