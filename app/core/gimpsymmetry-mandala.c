@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d1ddd0103
+DECL|enum|__anon2a0a4fb10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -660,7 +660,7 @@ argument_list|,
 name|g_free
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|sym
 operator|->
@@ -674,6 +674,8 @@ name|gimp_mandala_image_size_changed_cb
 argument_list|)
 argument_list|,
 name|sym
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -690,15 +692,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpSymmetry
-modifier|*
-name|sym
-init|=
-name|GIMP_SYMMETRY
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 name|GimpMandala
 modifier|*
 name|mandala
@@ -708,17 +701,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_signal_handlers_disconnect_by_func
-argument_list|(
-name|sym
-operator|->
-name|image
-argument_list|,
-name|gimp_mandala_image_size_changed_cb
-argument_list|,
-name|object
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|mandala

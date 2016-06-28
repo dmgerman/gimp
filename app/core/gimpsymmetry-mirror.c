@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea88ec0103
+DECL|enum|__anon29a0ff7f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -775,7 +775,7 @@ argument_list|,
 name|g_free
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|sym
 operator|->
@@ -789,6 +789,8 @@ name|gimp_mirror_image_size_changed_cb
 argument_list|)
 argument_list|,
 name|sym
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

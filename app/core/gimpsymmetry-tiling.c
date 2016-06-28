@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14bfa20103
+DECL|enum|__anon29d9e7f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -633,7 +633,7 @@ argument_list|,
 name|g_free
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|sym
 operator|->
@@ -647,6 +647,8 @@ name|gimp_tiling_image_size_changed_cb
 argument_list|)
 argument_list|,
 name|sym
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Set reasonable defaults. */
