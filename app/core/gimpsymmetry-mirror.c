@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0ff7f0103
+DECL|enum|__anon291a91bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2571,7 +2571,7 @@ name|g_signal_emit_by_name
 argument_list|(
 name|mirror
 argument_list|,
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|GIMP_SYMMETRY
 argument_list|(
@@ -3143,7 +3143,7 @@ name|g_signal_emit_by_name
 argument_list|(
 name|sym
 argument_list|,
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|sym
 operator|->

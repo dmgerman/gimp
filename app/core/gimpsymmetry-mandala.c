@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0a4fb10103
+DECL|enum|__anon27974b5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2366,7 +2366,7 @@ name|g_signal_emit_by_name
 argument_list|(
 name|sym
 argument_list|,
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|sym
 operator|->

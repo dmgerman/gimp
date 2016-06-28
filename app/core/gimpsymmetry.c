@@ -83,13 +83,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2befee310103
+DECL|enum|__anon2999220a0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
 block|,
-DECL|enumerator|UPDATE_UI
-name|UPDATE_UI
+DECL|enumerator|GUI_PARAM_CHANGED
+name|GUI_PARAM_CHANGED
 block|,
 DECL|enumerator|ACTIVE_CHANGED
 name|ACTIVE_CHANGED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2befee310203
+DECL|enum|__anon2999220a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -311,12 +311,12 @@ expr_stmt|;
 comment|/* This signal should be emitted when you request a change in the    * settings UI. For instance adding some settings (therefore having    * a dynamic UI), or changing scale min/max extremes, etc.    */
 name|gimp_symmetry_signals
 index|[
-name|UPDATE_UI
+name|GUI_PARAM_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

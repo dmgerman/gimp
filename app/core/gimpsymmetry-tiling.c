@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9e7f80103
+DECL|enum|__anon299930340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1817,7 +1817,7 @@ name|g_signal_emit_by_name
 argument_list|(
 name|sym
 argument_list|,
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|sym
 operator|->

@@ -801,7 +801,7 @@ name|g_signal_connect
 argument_list|(
 name|symmetry
 argument_list|,
-literal|"update-ui"
+literal|"gui-param-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
