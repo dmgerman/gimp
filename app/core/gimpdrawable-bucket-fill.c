@@ -440,6 +440,18 @@ block|}
 else|else
 block|{
 comment|/*  The fill region and the selection are disjoint; bail.  */
+name|g_object_unref
+argument_list|(
+name|mask_buffer
+argument_list|)
+expr_stmt|;
+name|gimp_unset_busy
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 block|}
