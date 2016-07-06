@@ -143,7 +143,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_generic (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_generic (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|_gimp_prop_gui_new_generic
 parameter_list|(
 name|GObject
@@ -157,6 +157,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -352,6 +356,8 @@ name|config
 argument_list|,
 name|pspec
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -369,6 +375,8 @@ argument_list|(
 name|config
 argument_list|,
 name|next_pspec
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -758,6 +766,8 @@ argument_list|(
 name|config
 argument_list|,
 name|pspec
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -1777,7 +1787,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_color_rotate (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_color_rotate (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|_gimp_prop_gui_new_color_rotate
 parameter_list|(
 name|GObject
@@ -1791,6 +1801,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -2081,6 +2095,8 @@ literal|6
 argument_list|,
 literal|2
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -2160,7 +2176,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_convolution_matrix (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_convolution_matrix (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|_gimp_prop_gui_new_convolution_matrix
 parameter_list|(
 name|GObject
@@ -2174,6 +2190,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -2491,6 +2511,8 @@ name|config
 argument_list|,
 literal|"divisor"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -2529,6 +2551,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"offset"
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -2613,6 +2637,8 @@ literal|27
 argument_list|,
 literal|4
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -2655,6 +2681,8 @@ name|n_param_specs
 operator|-
 literal|31
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -2692,7 +2720,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_channel_mixer (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_channel_mixer (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|_gimp_prop_gui_new_channel_mixer
 parameter_list|(
 name|GObject
@@ -2706,6 +2734,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -2853,6 +2885,8 @@ name|config
 argument_list|,
 literal|"rr-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -2892,6 +2926,8 @@ name|config
 argument_list|,
 literal|"rg-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -2930,6 +2966,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"rb-gain"
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -3025,6 +3063,8 @@ name|config
 argument_list|,
 literal|"gr-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -3064,6 +3104,8 @@ name|config
 argument_list|,
 literal|"gg-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -3102,6 +3144,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"gb-gain"
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -3197,6 +3241,8 @@ name|config
 argument_list|,
 literal|"br-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -3235,6 +3281,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"bg-gain"
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -3275,6 +3323,8 @@ name|config
 argument_list|,
 literal|"bb-gain"
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|NULL
@@ -3313,6 +3363,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"preserve-luminosity"
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -3354,7 +3406,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_diffraction_patterns (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_diffraction_patterns (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
 name|_gimp_prop_gui_new_diffraction_patterns
 parameter_list|(
 name|GObject
@@ -3368,6 +3420,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -3443,6 +3499,8 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -3494,6 +3552,8 @@ operator|+
 literal|3
 argument_list|,
 literal|3
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,
@@ -3547,6 +3607,8 @@ literal|6
 argument_list|,
 literal|3
 argument_list|,
+name|area
+argument_list|,
 name|context
 argument_list|,
 name|create_picker_func
@@ -3598,6 +3660,8 @@ operator|+
 literal|9
 argument_list|,
 literal|3
+argument_list|,
+name|area
 argument_list|,
 name|context
 argument_list|,

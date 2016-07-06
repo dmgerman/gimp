@@ -33,6 +33,10 @@ parameter_list|,
 name|guint
 name|n_param_specs
 parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -62,6 +66,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -93,6 +101,10 @@ parameter_list|,
 name|guint
 name|n_param_specs
 parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -123,6 +135,10 @@ parameter_list|,
 name|guint
 name|n_param_specs
 parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -152,6 +168,10 @@ name|param_specs
 parameter_list|,
 name|guint
 name|n_param_specs
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*

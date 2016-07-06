@@ -65,6 +65,10 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -96,6 +100,10 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -130,6 +138,10 @@ name|owner_type
 parameter_list|,
 name|GParamFlags
 name|flags
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|area
 parameter_list|,
 name|GimpContext
 modifier|*
