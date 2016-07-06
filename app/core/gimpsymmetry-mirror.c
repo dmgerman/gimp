@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29405f760103
+DECL|enum|__anon2b21b9500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -479,6 +479,10 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GParamSpec
+modifier|*
+name|pspec
+decl_stmt|;
 name|object_class
 operator|->
 name|constructed
@@ -647,6 +651,33 @@ operator||
 name|GIMP_SYMMETRY_PARAM_GUI
 argument_list|)
 expr_stmt|;
+name|pspec
+operator|=
+name|g_object_class_find_property
+argument_list|(
+name|object_class
+argument_list|,
+literal|"horizontal-position"
+argument_list|)
+expr_stmt|;
+name|gegl_param_spec_set_property_key
+argument_list|(
+name|pspec
+argument_list|,
+literal|"unit"
+argument_list|,
+literal|"pixel-coordinate"
+argument_list|)
+expr_stmt|;
+name|gegl_param_spec_set_property_key
+argument_list|(
+name|pspec
+argument_list|,
+literal|"axis"
+argument_list|,
+literal|"y"
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
@@ -671,6 +702,33 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_SYMMETRY_PARAM_GUI
+argument_list|)
+expr_stmt|;
+name|pspec
+operator|=
+name|g_object_class_find_property
+argument_list|(
+name|object_class
+argument_list|,
+literal|"vertical-position"
+argument_list|)
+expr_stmt|;
+name|gegl_param_spec_set_property_key
+argument_list|(
+name|pspec
+argument_list|,
+literal|"unit"
+argument_list|,
+literal|"pixel-coordinate"
+argument_list|)
+expr_stmt|;
+name|gegl_param_spec_set_property_key
+argument_list|(
+name|pspec
+argument_list|,
+literal|"axis"
+argument_list|,
+literal|"x"
 argument_list|)
 expr_stmt|;
 block|}
@@ -709,7 +767,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-comment|/* TODO:    * - "horizontal-position" property should be soft-limited by the height;    * - "vertical-position" property should be soft-limited by the width.    */
 name|g_signal_connect_object
 argument_list|(
 name|sym
@@ -1501,9 +1558,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_mirror_prepare_operations (GimpMirror * mirror,gint paint_width,gint paint_height)
 specifier|static
 name|void
+DECL|function|gimp_mirror_prepare_operations (GimpMirror * mirror,gint paint_width,gint paint_height)
 name|gimp_mirror_prepare_operations
 parameter_list|(
 name|GimpMirror
@@ -2771,6 +2828,7 @@ name|mirror
 operator|->
 name|point_symmetry
 condition|)
+block|{
 name|gimp_mirror_remove_guide
 argument_list|(
 name|mirror
@@ -2778,6 +2836,7 @@ argument_list|,
 name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_mirror_reset
 argument_list|(
 name|mirror
@@ -2843,6 +2902,7 @@ name|mirror
 operator|->
 name|point_symmetry
 condition|)
+block|{
 name|gimp_mirror_remove_guide
 argument_list|(
 name|mirror
@@ -2850,6 +2910,7 @@ argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_mirror_reset
 argument_list|(
 name|mirror
@@ -3008,7 +3069,6 @@ name|image
 argument_list|)
 condition|)
 block|{
-comment|/* TODO: change soft limits of "vertical-position" and        * "horizontal-position" properties. */
 name|g_signal_emit_by_name
 argument_list|(
 name|sym
