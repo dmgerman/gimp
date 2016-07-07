@@ -1018,7 +1018,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"XXX setting widht %d on %s\n"
+literal|"XXX setting width %d on %s\n"
 argument_list|,
 name|area
 operator|->
@@ -1633,7 +1633,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon275f214b0108
+DECL|struct|__anon2877401a0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2214,7 +2214,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon275f214b0208
+DECL|struct|__anon2877401a0208
 block|{
 DECL|member|kelvin
 name|gdouble
