@@ -3084,7 +3084,7 @@ name|file_proc
 operator|->
 name|mime_type
 argument_list|,
-literal|"image/xcf"
+literal|"image/x-xcf"
 argument_list|)
 operator|==
 literal|0

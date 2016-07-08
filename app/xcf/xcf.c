@@ -392,7 +392,7 @@ name|gimp_plug_in_procedure_set_mime_type
 argument_list|(
 name|proc
 argument_list|,
-literal|"image/xcf"
+literal|"image/x-xcf"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_handles_uri
@@ -657,7 +657,7 @@ name|gimp_plug_in_procedure_set_mime_type
 argument_list|(
 name|proc
 argument_list|,
-literal|"image/xcf"
+literal|"image/x-xcf"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_procedure_set_handles_uri
