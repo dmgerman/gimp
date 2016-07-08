@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac396900103
+DECL|enum|__anon2bd202510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -137,9 +137,6 @@ name|PROP_DEFAULT_DOT_FOR_DOT
 block|,
 DECL|enumerator|PROP_INITIAL_ZOOM_TO_FIT
 name|PROP_INITIAL_ZOOM_TO_FIT
-block|,
-DECL|enumerator|PROP_PERFECT_MOUSE
-name|PROP_PERFECT_MOUSE
 block|,
 DECL|enumerator|PROP_CURSOR_MODE
 name|PROP_CURSOR_MODE
@@ -207,6 +204,9 @@ name|PROP_CONFIRM_ON_CLOSE
 block|,
 DECL|enumerator|PROP_XOR_COLOR
 name|PROP_XOR_COLOR
+block|,
+DECL|enumerator|PROP_PERFECT_MOUSE
+name|PROP_PERFECT_MOUSE
 block|}
 enum|;
 end_enum
