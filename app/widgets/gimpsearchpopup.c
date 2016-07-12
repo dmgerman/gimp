@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b01ce0103
+DECL|enum|__anon277dfcbc0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b01ce0203
+DECL|enum|__anon277dfcbc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,10 +489,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GtkBindingSet
-modifier|*
-name|binding_set
-decl_stmt|;
 name|object_class
 operator|->
 name|constructed
@@ -586,35 +582,6 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* We don't want space to activate actions in the search widget, since    * we allow search with spaces in it. */
-name|binding_set
-operator|=
-name|gtk_binding_set_by_class
-argument_list|(
-name|g_type_class_peek
-argument_list|(
-name|GIMP_TYPE_POPUP
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_binding_entry_remove
-argument_list|(
-name|binding_set
-argument_list|,
-name|GDK_KEY_space
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_binding_entry_remove
-argument_list|(
-name|binding_set
-argument_list|,
-name|GDK_KEY_KP_Space
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|g_type_class_add_private
