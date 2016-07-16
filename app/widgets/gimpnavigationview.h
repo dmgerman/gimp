@@ -190,6 +190,15 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
+parameter_list|,
+name|gboolean
+name|flip_horizontally
+parameter_list|,
+name|gboolean
+name|flip_vertically
+parameter_list|,
+name|gdouble
+name|rotate_angle
 parameter_list|)
 function_decl|;
 end_function_decl
