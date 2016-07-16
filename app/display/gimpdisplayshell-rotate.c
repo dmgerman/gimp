@@ -222,6 +222,11 @@ name|rotate_angle
 operator|=
 name|value
 expr_stmt|;
+name|gimp_display_shell_scroll_clamp_and_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_rotated
 argument_list|(
 name|shell

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-rotate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -1997,6 +2003,11 @@ operator|->
 name|offset_y
 operator|=
 name|offset_y
+expr_stmt|;
+name|gimp_display_shell_rotate_update_transform
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_resize
 argument_list|(
