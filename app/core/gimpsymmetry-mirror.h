@@ -119,13 +119,13 @@ DECL|member|disable_transformation
 name|gboolean
 name|disable_transformation
 decl_stmt|;
-DECL|member|horizontal_position
+DECL|member|horizontal_axis_position
 name|gdouble
-name|horizontal_position
+name|horizontal_axis_position
 decl_stmt|;
-DECL|member|vertical_position
+DECL|member|vertical_axis_position
 name|gdouble
-name|vertical_position
+name|vertical_axis_position
 decl_stmt|;
 DECL|member|horizontal_guide
 name|GimpGuide

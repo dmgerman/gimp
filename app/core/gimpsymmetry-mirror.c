@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21b9500103
+DECL|enum|__anon2b640b8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,11 +124,11 @@ block|,
 DECL|enumerator|PROP_DISABLE_TRANSFORMATION
 name|PROP_DISABLE_TRANSFORMATION
 block|,
-DECL|enumerator|PROP_HORIZONTAL_POSITION
-name|PROP_HORIZONTAL_POSITION
+DECL|enumerator|PROP_HORIZONTAL_AXIS_POSITION
+name|PROP_HORIZONTAL_AXIS_POSITION
 block|,
-DECL|enumerator|PROP_VERTICAL_POSITION
-name|PROP_VERTICAL_POSITION
+DECL|enumerator|PROP_VERTICAL_AXIS_POSITION
+name|PROP_VERTICAL_AXIS_POSITION
 block|}
 enum|;
 end_enum
@@ -629,9 +629,9 @@ name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_HORIZONTAL_POSITION
+name|PROP_HORIZONTAL_AXIS_POSITION
 argument_list|,
-literal|"horizontal-position"
+literal|"horizontal-axis-position"
 argument_list|,
 name|_
 argument_list|(
@@ -657,7 +657,7 @@ name|g_object_class_find_property
 argument_list|(
 name|object_class
 argument_list|,
-literal|"horizontal-position"
+literal|"horizontal-axis-position"
 argument_list|)
 expr_stmt|;
 name|gegl_param_spec_set_property_key
@@ -682,9 +682,9 @@ name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_VERTICAL_POSITION
+name|PROP_VERTICAL_AXIS_POSITION
 argument_list|,
-literal|"vertical-position"
+literal|"vertical-axis-position"
 argument_list|,
 name|_
 argument_list|(
@@ -710,7 +710,7 @@ name|g_object_class_find_property
 argument_list|(
 name|object_class
 argument_list|,
-literal|"vertical-position"
+literal|"vertical-axis-position"
 argument_list|)
 expr_stmt|;
 name|gegl_param_spec_set_property_key
@@ -1020,7 +1020,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_HORIZONTAL_POSITION
+name|PROP_HORIZONTAL_AXIS_POSITION
 case|:
 if|if
 condition|(
@@ -1047,7 +1047,7 @@ condition|)
 block|{
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -1082,7 +1082,7 @@ name|horizontal_guide
 argument_list|,
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1102,7 +1102,7 @@ block|}
 block|}
 break|break;
 case|case
-name|PROP_VERTICAL_POSITION
+name|PROP_VERTICAL_AXIS_POSITION
 case|:
 if|if
 condition|(
@@ -1129,7 +1129,7 @@ condition|)
 block|{
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -1164,7 +1164,7 @@ name|vertical_guide
 argument_list|,
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1287,7 +1287,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_HORIZONTAL_POSITION
+name|PROP_HORIZONTAL_AXIS_POSITION
 case|:
 name|g_value_set_double
 argument_list|(
@@ -1295,12 +1295,12 @@ name|value
 argument_list|,
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_VERTICAL_POSITION
+name|PROP_VERTICAL_AXIS_POSITION
 case|:
 name|g_value_set_double
 argument_list|(
@@ -1308,7 +1308,7 @@ name|value
 argument_list|,
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1418,7 +1418,7 @@ literal|2.0
 operator|*
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 operator|-
 name|origin
 operator|->
@@ -1461,7 +1461,7 @@ literal|2.0
 operator|*
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 operator|-
 name|origin
 operator|->
@@ -1504,7 +1504,7 @@ literal|2.0
 operator|*
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 operator|-
 name|origin
 operator|->
@@ -1518,7 +1518,7 @@ literal|2.0
 operator|*
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 operator|-
 name|origin
 operator|->
@@ -2020,7 +2020,7 @@ if|if
 condition|(
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 operator|<
 literal|1.0
 condition|)
@@ -2038,13 +2038,13 @@ name|position
 operator|=
 name|mirror
 operator|->
-name|horizontal_position
+name|horizontal_axis_position
 expr_stmt|;
 name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"horizontal-position"
+literal|"horizontal-axis-position"
 argument_list|,
 name|position
 argument_list|,
@@ -2065,7 +2065,7 @@ if|if
 condition|(
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 operator|<
 literal|1.0
 condition|)
@@ -2083,13 +2083,13 @@ name|position
 operator|=
 name|mirror
 operator|->
-name|vertical_position
+name|vertical_axis_position
 expr_stmt|;
 name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"vertical-position"
+literal|"vertical-axis-position"
 argument_list|,
 name|position
 argument_list|,
@@ -2342,7 +2342,7 @@ name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"horizontal-position"
+literal|"horizontal-axis-position"
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2454,7 +2454,7 @@ name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"vertical-position"
+literal|"vertical-axis-position"
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2618,7 +2618,7 @@ name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"horizontal-position"
+literal|"horizontal-axis-position"
 argument_list|,
 operator|(
 name|gdouble
@@ -2646,7 +2646,7 @@ name|g_object_set
 argument_list|(
 name|mirror
 argument_list|,
-literal|"vertical-position"
+literal|"vertical-axis-position"
 argument_list|,
 operator|(
 name|gdouble
