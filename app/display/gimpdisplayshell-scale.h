@@ -286,6 +286,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_display_shell_get_rotated_scale
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+modifier|*
+name|scale_x
+parameter_list|,
+name|gdouble
+modifier|*
+name|scale_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  debug API for testing  */
 end_comment
