@@ -1234,7 +1234,7 @@ operator|->
 name|rotate_untransform
 argument_list|,
 operator|&
-name|fy
+name|fx
 argument_list|,
 operator|&
 name|fy
@@ -2375,7 +2375,7 @@ operator|->
 name|rotate_untransform
 argument_list|,
 operator|&
-name|fy
+name|fx
 argument_list|,
 operator|&
 name|fy
