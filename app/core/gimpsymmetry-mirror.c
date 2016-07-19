@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b640b8f0103
+DECL|enum|__anon2ab13dce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -544,10 +544,13 @@ literal|"horizontal-symmetry"
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal Mirror"
+literal|"Horizontal Symmetry"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Reflect the initial stroke across a horizontal axis"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -566,10 +569,13 @@ literal|"vertical-symmetry"
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical Mirror"
+literal|"Vertical Symmetry"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Reflect the initial stroke across a vertical axis"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -591,7 +597,10 @@ argument_list|(
 literal|"Central Symmetry"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Invert the initial stroke through a point"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -615,7 +624,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Disable brush transformation (faster)"
+literal|"Disable brush reflection"
 argument_list|)
 argument_list|,
 name|FALSE

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2801bbb40103
+DECL|enum|__anon27caef450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -606,7 +606,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Disable brush transformation (faster)"
+literal|"Disable brush rotation"
 argument_list|)
 argument_list|,
 name|FALSE
