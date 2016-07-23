@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab328580108
+DECL|struct|__anon2bff655a0108
 block|{
 DECL|member|file
 name|GFile
@@ -360,7 +360,7 @@ operator|.
 name|output
 condition|)
 return|return
-name|FALSE
+name|NULL
 return|;
 name|tiff_io
 operator|.
