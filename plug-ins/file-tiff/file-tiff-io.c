@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff655a0108
+DECL|struct|__anon2b846aa00108
 block|{
 DECL|member|file
 name|GFile
@@ -445,6 +445,7 @@ name|tag
 init|=
 literal|0
 decl_stmt|;
+comment|/* Before libtiff 4.0.0alpha. */
 if|if
 condition|(
 operator|!
@@ -496,6 +497,15 @@ argument_list|(
 name|fmt
 argument_list|,
 literal|"unknown field with tag %d (0x%x) ignored"
+argument_list|)
+operator|||
+comment|/* Since libtiff 4.0.0alpha. */
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"Unknown field with tag %d (0x%x) encountered"
 argument_list|)
 condition|)
 block|{
