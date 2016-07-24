@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7278e0103
+DECL|enum|__anon2c61f0c90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7278e0203
+DECL|enum|__anon2c61f0c90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3867,13 +3867,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_ID
-case|:
-name|g_assert_not_reached
-argument_list|()
-expr_stmt|;
-break|break;
-case|case
 name|PROP_WIDTH
 case|:
 name|private
@@ -3911,6 +3904,11 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+name|_gimp_image_free_color_transforms
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|PROP_PRECISION
@@ -3924,13 +3922,11 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|PROP_METADATA
-case|:
-case|case
-name|PROP_BUFFER
-case|:
+name|_gimp_image_free_color_transforms
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|PROP_SYMMETRY
@@ -4083,6 +4079,15 @@ argument_list|)
 expr_stmt|;
 block|}
 break|break;
+case|case
+name|PROP_ID
+case|:
+case|case
+name|PROP_METADATA
+case|:
+case|case
+name|PROP_BUFFER
+case|:
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
