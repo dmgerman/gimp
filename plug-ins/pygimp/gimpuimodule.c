@@ -163,6 +163,26 @@ return|;
 block|}
 end_function
 
+begin_decl_stmt
+specifier|extern
+specifier|const
+name|char
+modifier|*
+name|prog_name
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|prog_name
+specifier|const
+name|char
+modifier|*
+name|prog_name
+init|=
+literal|"pygimp"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|PyMODINIT_FUNC
 DECL|function|init_gimpui (void)
@@ -181,12 +201,6 @@ decl_stmt|;
 name|PyObject
 modifier|*
 name|av
-decl_stmt|;
-name|char
-modifier|*
-name|prog_name
-init|=
-literal|"pygimp"
 decl_stmt|;
 name|av
 operator|=
@@ -247,13 +261,6 @@ literal|"ignoring sys.argv: it must be a list of strings"
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_ui_init
-argument_list|(
-name|prog_name
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|pygimp_init_pygobject
 argument_list|()
 expr_stmt|;
