@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df619b0103
+DECL|enum|__anon290e094e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27df619b0203
+DECL|enum|__anon290e094e0203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -696,6 +696,13 @@ name|GimpSpinScalePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|widget_class
+argument_list|,
+literal|"spinbutton"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -745,16 +752,6 @@ name|scale
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|)
-expr_stmt|;
-name|gtk_entry_set_has_frame
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric
