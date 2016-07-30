@@ -221,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b98eb5a0103
+DECL|enum|__anon2b6fd5ba0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1553,6 +1553,12 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+comment|/* Update tab styles, also recreates if changed */
+name|gimp_dockbook_update_automatic_tab_style
+argument_list|(
+name|dockbook
+argument_list|)
+expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -1563,12 +1569,6 @@ argument_list|(
 name|widget
 argument_list|,
 name|allocation
-argument_list|)
-expr_stmt|;
-comment|/* Update tab styles, also recreates if changed */
-name|gimp_dockbook_update_automatic_tab_style
-argument_list|(
-name|dockbook
 argument_list|)
 expr_stmt|;
 block|}
