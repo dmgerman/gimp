@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f46390103
+DECL|enum|__anon28db9f9e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -574,9 +574,9 @@ name|gtk_style_context_get_border
 argument_list|(
 name|style
 argument_list|,
-name|gtk_widget_get_state_flags
+name|gtk_style_context_get_state
 argument_list|(
-name|widget
+name|style
 argument_list|)
 argument_list|,
 operator|&
