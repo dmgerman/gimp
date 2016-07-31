@@ -36,13 +36,13 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimpidtable/" #function, \               GimpTestFixture, \               NULL, \               gimp_test_id_table_setup, \               gimp_test_id_ ## function, \               gimp_test_id_table_teardown);
+value|g_test_add ("/gimpidtable/" #function, \               GimpTestFixture, \               NULL, \               gimp_test_id_table_setup, \               gimp_test_id_table_ ## function, \               gimp_test_id_table_teardown);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc044e0108
+DECL|struct|__anon292c1b7f0108
 block|{
 DECL|member|id_table
 name|GimpIdTable
@@ -136,14 +136,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_insert_and_lookup:  *  * Test that insert and lookup works.  **/
+comment|/**  * gimp_test_id_table_insert_and_lookup:  *  * Test that insert and lookup works.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_insert_and_lookup (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_insert_and_lookup
+DECL|function|gimp_test_id_table_insert_and_lookup (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_insert_and_lookup
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -188,14 +188,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_insert_twice:  *  * Test that two consecutive inserts generates different IDs.  **/
+comment|/**  * gimp_test_id_table_insert_twice:  *  * Test that two consecutive inserts generates different IDs.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_insert_twice (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_insert_twice
+DECL|function|gimp_test_id_table_insert_twice (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_insert_twice
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -278,14 +278,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_insert_with_id:  *  * Test that it is possible to insert data with a specific ID.  **/
+comment|/**  * gimp_test_id_table_insert_with_id:  *  * Test that it is possible to insert data with a specific ID.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_insert_with_id (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_insert_with_id
+DECL|function|gimp_test_id_table_insert_with_id (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_insert_with_id
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -345,14 +345,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_insert_with_id_existing:  *  * Test that it is not possible to insert data with a specific ID if  * that ID already is inserted.  **/
+comment|/**  * gimp_test_id_table_insert_with_id_existing:  *  * Test that it is not possible to insert data with a specific ID if  * that ID already is inserted.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_insert_with_id_existing (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_insert_with_id_existing
+DECL|function|gimp_test_id_table_insert_with_id_existing (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_insert_with_id_existing
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -453,14 +453,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_replace:  *  * Test that it is possible to replace data with a given ID with  * different data.  **/
+comment|/**  * gimp_test_id_table_replace:  *  * Test that it is possible to replace data with a given ID with  * different data.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_replace (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_replace
+DECL|function|gimp_test_id_table_replace (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_replace
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -518,14 +518,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_replace_as_insert:  *  * Test that replace works like insert when there is no data to  * replace.  **/
+comment|/**  * gimp_test_id_table_replace_as_insert:  *  * Test that replace works like insert when there is no data to  * replace.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_replace_as_insert (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_replace_as_insert
+DECL|function|gimp_test_id_table_replace_as_insert (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_replace_as_insert
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -577,14 +577,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_remove:  *  * Test that it is possible to remove data identified by the ID:  **/
+comment|/**  * gimp_test_id_table_remove:  *  * Test that it is possible to remove data identified by the ID:  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_remove (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_remove
+DECL|function|gimp_test_id_table_remove (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_remove
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -667,14 +667,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_id_remove_non_existing:  *  * Tests that things work properly when trying to remove data with an  * ID that doesn't exist.  **/
+comment|/**  * gimp_test_id_table_remove_non_existing:  *  * Tests that things work properly when trying to remove data with an  * ID that doesn't exist.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_id_remove_non_existing (GimpTestFixture * f,gconstpointer data)
-name|gimp_test_id_remove_non_existing
+DECL|function|gimp_test_id_table_remove_non_existing (GimpTestFixture * f,gconstpointer data)
+name|gimp_test_id_table_remove_non_existing
 parameter_list|(
 name|GimpTestFixture
 modifier|*
