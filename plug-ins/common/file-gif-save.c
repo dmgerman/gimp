@@ -103,7 +103,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8899960103
+DECL|enum|__anon2afc38c40103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8899960203
+DECL|enum|__anon2afc38c40203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8899960308
+DECL|struct|__anon2afc38c40308
 block|{
 DECL|member|interlace
 name|gint
@@ -5037,18 +5037,12 @@ literal|"as-animation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|toggle
-argument_list|,
-name|animation_supported
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|animation_supported
 condition|)
+block|{
 name|gimp_help_set_help_data
 argument_list|(
 name|toggle
@@ -5062,6 +5056,25 @@ literal|"layer."
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Make sure the checkbox is not checked from session data. */
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+name|animation_supported
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property
