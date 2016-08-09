@@ -2402,6 +2402,14 @@ operator|->
 name|rotate_angle
 operator|==
 literal|0.0
+operator|||
+name|shell
+operator|->
+name|scale_x
+operator|==
+name|shell
+operator|->
+name|scale_y
 condition|)
 block|{
 if|if
