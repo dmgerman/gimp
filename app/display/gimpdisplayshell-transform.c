@@ -3457,7 +3457,7 @@ comment|/*  private functions  */
 end_comment
 
 begin_comment
-comment|/* Same as gimp_display_shell_transform_xy_f(), but doesn't do any rounding  * for the transformed coordiantes.  */
+comment|/* Same as gimp_display_shell_transform_xy_f(), but doesn't do any rounding  * for the transformed coordinates.  */
 end_comment
 
 begin_function
