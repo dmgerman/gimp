@@ -40,23 +40,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
-name|void
-name|save_dialog_response
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gint
-name|response_id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|static
 name|GtkListStore
 modifier|*
 name|save_dialog_presets
@@ -67,20 +51,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
-name|save_dialog_set_preset
+name|save_dialog_preset_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
+modifier|*
 name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|save_dialog_toggle_scale
 parameter_list|(
@@ -95,8 +83,9 @@ function_decl|;
 end_function_decl
 
 begin_struct
+specifier|static
 struct|struct
-DECL|struct|__anon27b57ace0108
+DECL|struct|__anon279cb1c80108
 block|{
 DECL|member|id
 specifier|const
@@ -160,41 +149,7 @@ struct|;
 end_struct
 
 begin_function
-name|void
-DECL|function|save_dialog_response (GtkWidget * widget,gint response_id,gpointer data)
-name|save_dialog_response
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gint
-name|response_id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-comment|/* Store the response */
-operator|*
-operator|(
-name|GtkResponseType
-operator|*
-operator|)
-name|data
-operator|=
-name|response_id
-expr_stmt|;
-comment|/* Close the dialog */
-name|gtk_widget_destroy
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
+specifier|static
 name|GtkListStore
 modifier|*
 DECL|function|save_dialog_presets (void)
@@ -207,10 +162,9 @@ name|GtkListStore
 modifier|*
 name|list_store
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-comment|/* Create the model */
 name|list_store
 operator|=
 name|gtk_list_store_new
@@ -222,7 +176,6 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|)
 expr_stmt|;
-comment|/* Insert the entries */
 for|for
 control|(
 name|i
@@ -239,7 +192,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|gtk_list_store_insert_with_values
 argument_list|(
 name|list_store
@@ -271,7 +223,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|list_store
 return|;
@@ -279,24 +230,28 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|save_dialog_set_preset (GtkWidget * widget,gpointer data)
-name|save_dialog_set_preset
+DECL|function|save_dialog_preset_changed (GtkWidget * widget,gchar ** data)
+name|save_dialog_preset_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
+modifier|*
 name|data
 parameter_list|)
 block|{
+name|g_free
+argument_list|(
 operator|*
-operator|(
-name|gchar
+name|data
+argument_list|)
+expr_stmt|;
 operator|*
-operator|*
-operator|)
 name|data
 operator|=
 name|gimp_string_combo_box_get_active
@@ -311,6 +266,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|save_dialog_toggle_scale (GtkWidget * widget,gpointer data)
 name|save_dialog_toggle_scale
@@ -344,8 +300,8 @@ block|}
 end_function
 
 begin_function
-name|GtkResponseType
-DECL|function|save_dialog (WebPSaveParams * params,gint32 image_ID,gint32 nLayers)
+name|gboolean
+DECL|function|save_dialog (WebPSaveParams * params,gint32 image_ID,gint32 n_layers)
 name|save_dialog
 parameter_list|(
 name|WebPSaveParams
@@ -356,7 +312,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|gint32
-name|nLayers
+name|n_layers
 parameter_list|)
 block|{
 name|GtkWidget
@@ -407,22 +363,22 @@ name|GtkObject
 modifier|*
 name|alpha_quality_scale
 decl_stmt|;
-name|GtkResponseType
-name|response
-decl_stmt|;
 name|gboolean
 name|animation_supported
 init|=
 name|FALSE
 decl_stmt|;
-name|int
+name|gint
 name|slider1
 decl_stmt|,
 name|slider2
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|animation_supported
 operator|=
-name|nLayers
+name|n_layers
 operator|>
 literal|1
 expr_stmt|;
@@ -439,37 +395,6 @@ argument_list|,
 name|BINARY_NAME
 argument_list|,
 name|SAVE_PROCEDURE
-argument_list|)
-expr_stmt|;
-comment|/* Store the response when the dialog is closed */
-name|g_signal_connect
-argument_list|(
-name|dialog
-argument_list|,
-literal|"response"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|save_dialog_response
-argument_list|)
-argument_list|,
-operator|&
-name|response
-argument_list|)
-expr_stmt|;
-comment|/* Quit the main loop when the dialog is closed */
-name|g_signal_connect
-argument_list|(
-name|dialog
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Create the vbox */
@@ -612,6 +537,18 @@ literal|"Preset:"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|preset_label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -629,9 +566,9 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
@@ -719,7 +656,7 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|save_dialog_set_preset
+name|save_dialog_preset_changed
 argument_list|)
 argument_list|,
 operator|&
@@ -1148,17 +1085,32 @@ argument_list|,
 name|alpha_quality_scale
 argument_list|)
 expr_stmt|;
-comment|/* Display the dialog and enter the main event loop */
 name|gtk_widget_show
 argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
+name|run
+operator|=
+operator|(
+name|gimp_dialog_run
+argument_list|(
+name|GIMP_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|dialog
+argument_list|)
 expr_stmt|;
 return|return
-name|response
+name|run
 return|;
 block|}
 end_function

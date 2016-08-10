@@ -381,13 +381,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|wp_data
 operator|.
 name|bytes

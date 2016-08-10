@@ -23,7 +23,7 @@ file|"file-webp-save.h"
 end_include
 
 begin_function_decl
-name|GtkResponseType
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|WebPSaveParams
@@ -34,7 +34,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 name|gint32
-name|nLayers
+name|n_layers
 parameter_list|)
 function_decl|;
 end_function_decl

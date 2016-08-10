@@ -493,7 +493,16 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Determine the current run mode */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -505,7 +514,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/* Fill in the return values */
 operator|*
 name|nreturn_vals
 operator|=
@@ -536,7 +544,6 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-comment|/* Determine which procedure is being invoked */
 if|if
 condition|(
 operator|!
@@ -643,7 +650,10 @@ name|params
 operator|.
 name|preset
 operator|=
+name|g_strdup
+argument_list|(
 literal|"default"
+argument_list|)
 expr_stmt|;
 name|params
 operator|.
@@ -738,7 +748,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"WEBP"
+literal|"WebP"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
@@ -769,6 +779,7 @@ block|}
 comment|/* Display the dialog */
 if|if
 condition|(
+operator|!
 name|save_dialog
 argument_list|(
 operator|&
@@ -778,8 +789,6 @@ name|image_ID
 argument_list|,
 name|n_layers
 argument_list|)
-operator|!=
-name|GTK_RESPONSE_OK
 condition|)
 block|{
 name|values
@@ -814,10 +823,19 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Load the parameters */
+name|g_free
+argument_list|(
+name|params
+operator|.
+name|preset
+argument_list|)
+expr_stmt|;
 name|params
 operator|.
 name|preset
 operator|=
+name|g_strdup
+argument_list|(
 name|param
 index|[
 literal|5
@@ -826,6 +844,7 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
 expr_stmt|;
 name|params
 operator|.
@@ -930,6 +949,13 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|params
+operator|.
+name|preset
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|layers

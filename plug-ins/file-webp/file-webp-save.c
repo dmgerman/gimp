@@ -2128,13 +2128,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_printerr
 argument_list|(
 literal|"Saving WebP file %s\n"

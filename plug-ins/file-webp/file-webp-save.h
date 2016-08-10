@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acff4920108
+DECL|struct|__anon2ae5eb560108
 block|{
 DECL|member|preset
 name|gchar
