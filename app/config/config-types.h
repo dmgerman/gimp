@@ -81,6 +81,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDialogConfig
+typedef|typedef
+name|struct
+name|_GimpDialogConfig
+name|GimpDialogConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPluginConfig
 typedef|typedef
 name|struct

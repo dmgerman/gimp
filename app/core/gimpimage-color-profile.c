@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
+file|"config/gimpdialogconfig.h"
 end_include
 
 begin_include
@@ -1717,11 +1717,14 @@ name|bpc
 decl_stmt|;
 name|policy
 operator|=
+name|GIMP_DIALOG_CONFIG
+argument_list|(
 name|image
 operator|->
 name|gimp
 operator|->
 name|config
+argument_list|)
 operator|->
 name|color_profile_policy
 expr_stmt|;
