@@ -4800,7 +4800,7 @@ name|notebook
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|event_box
+name|page
 decl_stmt|;
 name|gint
 name|page_num
@@ -4837,7 +4837,7 @@ name|notebook
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|event_box
+name|page
 operator|=
 name|gtk_notebook_get_nth_page
 argument_list|(
@@ -4855,7 +4855,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|event_box
+name|page
 argument_list|)
 argument_list|,
 literal|"gimp-help-id"
@@ -10725,7 +10725,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon298c09eb0108
+DECL|struct|__anon2ad49f0c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -11585,7 +11585,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298c09eb0208
+DECL|struct|__anon2ad49f0c0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -11740,7 +11740,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298c09eb0308
+DECL|struct|__anon2ad49f0c0308
 block|{
 DECL|member|tree_label
 specifier|const
