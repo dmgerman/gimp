@@ -472,12 +472,6 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* Free the original compressed data */
-name|g_free
-argument_list|(
-name|indata
-argument_list|)
-expr_stmt|;
 comment|/* Check to ensure the image data was loaded correctly */
 if|if
 condition|(
@@ -707,10 +701,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|WebPDataClear
+comment|/* Free the original compressed data */
+name|g_free
 argument_list|(
-operator|&
-name|wp_data
+name|indata
 argument_list|)
 expr_stmt|;
 if|if
