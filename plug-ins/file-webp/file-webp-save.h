@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae5eb560108
+DECL|struct|__anon2c3ab3050108
 block|{
 DECL|member|preset
 name|gchar
@@ -45,6 +45,18 @@ decl_stmt|;
 DECL|member|alpha_quality
 name|gfloat
 name|alpha_quality
+decl_stmt|;
+DECL|member|exif
+name|gboolean
+name|exif
+decl_stmt|;
+DECL|member|iptc
+name|gboolean
+name|iptc
+decl_stmt|;
+DECL|member|xmp
+name|gboolean
+name|xmp
 decl_stmt|;
 DECL|typedef|WebPSaveParams
 block|}
