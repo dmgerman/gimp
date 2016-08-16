@@ -1405,6 +1405,11 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|gimp_image_undo_freeze
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 do|do
 block|{
 name|gint
@@ -1526,6 +1531,15 @@ comment|/* Obtain the drawable type */
 name|drawable_type
 operator|=
 name|gimp_drawable_type
+argument_list|(
+name|allLayers
+index|[
+name|loop
+index|]
+argument_list|)
+expr_stmt|;
+comment|/* fix layers to avoid offset errors */
+name|gimp_layer_resize_to_image_size
 argument_list|(
 name|allLayers
 index|[
