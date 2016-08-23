@@ -1085,6 +1085,24 @@ value|"Sets the icon theme search path."
 end_define
 
 begin_define
+DECL|macro|LAYER_ADD_MASK_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_ADD_MASK_TYPE_BLURB
+define|\
+value|_("Sets the default mask for the 'Add Layer Mask' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_ADD_MASK_INVERT_BLURB
+define|#
+directive|define
+name|LAYER_ADD_MASK_INVERT_BLURB
+define|\
+value|_("Sets the default 'invert mask' state for the 'Add Layer Mask' dialog.")
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define

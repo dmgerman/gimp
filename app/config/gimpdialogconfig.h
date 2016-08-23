@@ -96,6 +96,14 @@ DECL|member|color_profile_policy
 name|GimpColorProfilePolicy
 name|color_profile_policy
 decl_stmt|;
+DECL|member|layer_add_mask_type
+name|GimpAddMaskType
+name|layer_add_mask_type
+decl_stmt|;
+DECL|member|layer_add_mask_invert
+name|gboolean
+name|layer_add_mask_invert
+decl_stmt|;
 block|}
 struct|;
 end_struct

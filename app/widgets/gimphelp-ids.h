@@ -3494,6 +3494,14 @@ value|"gimp-prefs-toolbox"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_DIALOG_DEFAULTS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_DIALOG_DEFAULTS
+value|"gimp-prefs-dialog-defaults"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_INPUT_DEVICES
 define|#
 directive|define
