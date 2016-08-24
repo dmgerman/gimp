@@ -1085,6 +1085,24 @@ value|"Sets the icon theme search path."
 end_define
 
 begin_define
+DECL|macro|LAYER_NEW_NAME_BLURB
+define|#
+directive|define
+name|LAYER_NEW_NAME_BLURB
+define|\
+value|_("Sets the default layer name for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_FILL_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'New Layer' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_ADD_MASK_TYPE_BLURB
 define|#
 directive|define

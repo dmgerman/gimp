@@ -96,6 +96,15 @@ DECL|member|color_profile_policy
 name|GimpColorProfilePolicy
 name|color_profile_policy
 decl_stmt|;
+DECL|member|layer_new_name
+name|gchar
+modifier|*
+name|layer_new_name
+decl_stmt|;
+DECL|member|layer_new_fill_type
+name|GimpFillType
+name|layer_new_fill_type
+decl_stmt|;
 DECL|member|layer_add_mask_type
 name|GimpAddMaskType
 name|layer_add_mask_type
