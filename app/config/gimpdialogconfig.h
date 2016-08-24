@@ -113,6 +113,15 @@ DECL|member|layer_add_mask_invert
 name|gboolean
 name|layer_add_mask_invert
 decl_stmt|;
+DECL|member|channel_new_name
+name|gchar
+modifier|*
+name|channel_new_name
+decl_stmt|;
+DECL|member|channel_new_color
+name|GimpRGB
+name|channel_new_color
+decl_stmt|;
 block|}
 struct|;
 end_struct

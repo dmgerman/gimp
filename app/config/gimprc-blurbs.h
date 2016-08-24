@@ -1121,6 +1121,24 @@ value|_("Sets the default 'invert mask' state for the 'Add Layer Mask' dialog.")
 end_define
 
 begin_define
+DECL|macro|CHANNEL_NEW_NAME_BLURB
+define|#
+directive|define
+name|CHANNEL_NEW_NAME_BLURB
+define|\
+value|_("Sets the default channel name for the 'New Channel' dialog.")
+end_define
+
+begin_define
+DECL|macro|CHANNEL_NEW_COLOR_BLURB
+define|#
+directive|define
+name|CHANNEL_NEW_COLOR_BLURB
+define|\
+value|_("Sets the default color and opacity for the 'New Channel' dialog.")
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define
