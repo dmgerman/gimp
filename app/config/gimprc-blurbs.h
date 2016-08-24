@@ -1139,6 +1139,15 @@ value|_("Sets the default color and opacity for the 'New Channel' dialog.")
 end_define
 
 begin_define
+DECL|macro|VECTORS_NEW_NAME_BLURB
+define|#
+directive|define
+name|VECTORS_NEW_NAME_BLURB
+define|\
+value|_("Sets the default path name for the 'New Path' dialog.")
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define

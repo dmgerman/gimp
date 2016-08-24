@@ -122,6 +122,11 @@ DECL|member|channel_new_color
 name|GimpRGB
 name|channel_new_color
 decl_stmt|;
+DECL|member|vectors_new_name
+name|gchar
+modifier|*
+name|vectors_new_name
+decl_stmt|;
 block|}
 struct|;
 end_struct
