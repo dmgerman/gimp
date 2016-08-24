@@ -175,6 +175,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_prefs_box_set_page_scrollable
+parameter_list|(
+name|GimpPrefsBox
+modifier|*
+name|box
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|page
+parameter_list|,
+name|gboolean
+name|scrollable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_prefs_box_get_tree_view
