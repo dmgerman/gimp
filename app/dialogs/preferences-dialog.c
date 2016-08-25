@@ -8974,7 +8974,7 @@ argument_list|(
 literal|"Layer name:"
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
@@ -9134,7 +9134,7 @@ argument_list|(
 literal|"Channel name:"
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
@@ -9238,7 +9238,7 @@ argument_list|(
 literal|"Path name:"
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
@@ -11205,7 +11205,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c62202c0108
+DECL|struct|__anon2a0a59440108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12065,7 +12065,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c62202c0208
+DECL|struct|__anon2a0a59440208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12220,7 +12220,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c62202c0308
+DECL|struct|__anon2a0a59440308
 block|{
 DECL|member|tree_label
 specifier|const
