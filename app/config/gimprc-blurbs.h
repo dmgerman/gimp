@@ -1148,6 +1148,69 @@ value|_("Sets the default path name for the 'New Path' dialog.")
 end_define
 
 begin_define
+DECL|macro|SELECTION_FEATHER_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_FEATHER_RADIUS_BLURB
+define|\
+value|_("Sets the default feather radius for the 'Feather Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_GROW_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_GROW_RADIUS_BLURB
+define|\
+value|_("Sets the default grow radius for the 'Grow Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_SHRINK_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_SHRINK_RADIUS_BLURB
+define|\
+value|_("Sets the default shrink radius for the 'Shrink Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_SHRINK_EDGE_LOCK_BLURB
+define|#
+directive|define
+name|SELECTION_SHRINK_EDGE_LOCK_BLURB
+define|\
+value|_("Sets the default 'Selected areas continue outside the image' setting " \   "for the 'Shrink Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_RADIUS_BLURB
+define|\
+value|_("Sets the default border radius for the 'Border Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_EDGE_LOCK_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_EDGE_LOCK_BLURB
+define|\
+value|_("Sets the default 'Selected areas continue outside the image' setting " \   "for the 'Border Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_STYLE_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_STYLE_BLURB
+define|\
+value|_("Sets the default border style for the 'Border Selection' dialog.")
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define
