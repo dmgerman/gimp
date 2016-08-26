@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf378af0108
+DECL|struct|__anon2a350dfd0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf378af0208
+DECL|struct|__anon2a350dfd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf378af0308
+DECL|struct|__anon2a350dfd0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2992,6 +2992,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/* bug 765850 */
+name|png_set_option
+argument_list|(
+name|pp
+argument_list|,
+name|PNG_SKIP_sRGB_CHECK_PROFILE
+argument_list|,
+name|PNG_OPTION_ON
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 comment|/*    * Open the file and initialize the PNG read "engine"...    */
@@ -5397,6 +5407,16 @@ argument_list|(
 name|pp
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* bug 765850 */
+name|png_set_option
+argument_list|(
+name|pp
+argument_list|,
+name|PNG_SKIP_sRGB_CHECK_PROFILE
+argument_list|,
+name|PNG_OPTION_ON
 argument_list|)
 expr_stmt|;
 endif|#
