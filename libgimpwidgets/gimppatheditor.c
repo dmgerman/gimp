@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deba220103
+DECL|enum|__anon28ae26a60103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deba220203
+DECL|enum|__anon28ae26a60203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -3072,7 +3072,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-literal|0
+name|COLUMN_DIRECTORY
 argument_list|,
 operator|&
 name|directory
