@@ -2162,7 +2162,7 @@ name|view_size
 argument_list|,
 literal|"gimp-font-list|gimp-font-grid"
 argument_list|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 argument_list|,
 name|_
 argument_list|(

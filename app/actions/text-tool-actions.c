@@ -183,7 +183,7 @@ block|,
 block|{
 literal|"text-tool-copy"
 block|,
-name|GIMP_STOCK_DUPLICATE
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -255,7 +255,7 @@ block|,
 block|{
 literal|"text-tool-load"
 block|,
-name|GIMP_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"text-tool-clear"
 block|,
-name|GIMP_STOCK_EDIT_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(

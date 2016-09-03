@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"palettes-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(

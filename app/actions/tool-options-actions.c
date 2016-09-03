@@ -163,7 +163,7 @@ block|,
 block|{
 literal|"tool-options-save-preset-menu"
 block|,
-name|GIMP_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"tool-options-restore-preset-menu"
 block|,
-name|GIMP_STOCK_REVERT
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(

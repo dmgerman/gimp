@@ -190,7 +190,7 @@ block|,
 block|{
 literal|"tool-presets-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -248,7 +248,7 @@ block|,
 block|{
 literal|"tool-presets-restore"
 block|,
-name|GIMP_STOCK_REVERT
+literal|"document-revert"
 block|,
 name|NC_
 argument_list|(

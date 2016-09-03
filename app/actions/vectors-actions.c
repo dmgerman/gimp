@@ -545,7 +545,7 @@ block|,
 block|{
 literal|"vectors-copy"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -593,7 +593,7 @@ block|,
 block|{
 literal|"vectors-export"
 block|,
-name|GIMP_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -617,7 +617,7 @@ block|,
 block|{
 literal|"vectors-import"
 block|,
-name|GIMP_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(

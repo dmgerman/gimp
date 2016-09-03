@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"gradients-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"gradients-save-as-pov"
 block|,
-name|GIMP_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(

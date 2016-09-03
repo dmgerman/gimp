@@ -445,7 +445,7 @@ block|,
 block|{
 literal|"file-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -503,7 +503,7 @@ block|,
 block|{
 literal|"file-quit"
 block|,
-name|GIMP_STOCK_QUIT
+literal|"application-exit"
 block|,
 name|NC_
 argument_list|(
@@ -544,7 +544,7 @@ block|{
 block|{
 literal|"file-save"
 block|,
-name|GIMP_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -572,7 +572,7 @@ block|,
 block|{
 literal|"file-save-as"
 block|,
-name|GIMP_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -853,7 +853,7 @@ index|]
 operator|.
 name|icon_name
 operator|=
-literal|"gimp-open"
+literal|"document-open"
 expr_stmt|;
 name|entries
 index|[

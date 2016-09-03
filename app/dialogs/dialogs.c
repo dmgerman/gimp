@@ -1371,7 +1371,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 argument_list|,
 name|GIMP_HELP_FONT_DIALOG
 argument_list|,
@@ -1414,7 +1414,7 @@ argument_list|(
 literal|"Document History"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_DOCUMENT_RECENT
+literal|"document-open-recent"
 argument_list|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,

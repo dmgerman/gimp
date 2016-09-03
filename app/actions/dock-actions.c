@@ -132,7 +132,7 @@ block|,
 block|{
 literal|"dock-close"
 block|,
-name|GIMP_STOCK_QUIT
+literal|"window-close"
 block|,
 name|NC_
 argument_list|(

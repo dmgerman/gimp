@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30ed230103
+DECL|enum|__anon2bf36eb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -885,7 +885,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_SAVE
+literal|"document-save"
 argument_list|,
 name|_
 argument_list|(
@@ -917,7 +917,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_REVERT
+literal|"document-revert"
 argument_list|,
 name|_
 argument_list|(

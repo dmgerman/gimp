@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7ae430108
+DECL|struct|__anon2a20d86b0108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7ae430203
+DECL|enum|__anon2a20d86b0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4882,7 +4882,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-previous"
+literal|"go-previous"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4954,7 +4954,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-next"
+literal|"go-next"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

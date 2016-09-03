@@ -226,7 +226,7 @@ block|,
 block|{
 literal|"context-font-menu"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 name|NC_
 argument_list|(
@@ -3597,7 +3597,7 @@ block|{
 block|{
 literal|"context-font-select-set"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 literal|"Select Font by Index"
 block|,
@@ -3615,7 +3615,7 @@ block|,
 block|{
 literal|"context-font-select-first"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 literal|"First Font"
 block|,
@@ -3633,7 +3633,7 @@ block|,
 block|{
 literal|"context-font-select-last"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 literal|"Last Font"
 block|,
@@ -3651,7 +3651,7 @@ block|,
 block|{
 literal|"context-font-select-previous"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 literal|"Previous Font"
 block|,
@@ -3669,7 +3669,7 @@ block|,
 block|{
 literal|"context-font-select-next"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 literal|"Next Font"
 block|,

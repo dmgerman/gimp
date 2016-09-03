@@ -782,7 +782,7 @@ block|,
 block|{
 literal|"dialogs-fonts"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 name|NC_
 argument_list|(
@@ -860,7 +860,7 @@ block|,
 block|{
 literal|"dialogs-document-history"
 block|,
-name|GIMP_STOCK_DOCUMENT_RECENT
+literal|"document-open-recent"
 block|,
 name|NC_
 argument_list|(
