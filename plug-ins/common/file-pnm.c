@@ -363,7 +363,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293620ea0108
+DECL|struct|__anon2baea6d40108
 block|{
 DECL|member|raw
 name|gint
@@ -846,7 +846,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon293620ea0208
+DECL|struct|__anon2baea6d40208
 block|{
 DECL|member|name
 name|gchar
@@ -4654,7 +4654,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon293620ea030a
+DECL|union|__anon2baea6d4030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -5879,9 +5879,9 @@ literal|"P1\n"
 expr_stmt|;
 name|format
 operator|=
-name|babl_format
+name|gegl_buffer_get_format
 argument_list|(
-literal|"Y' u8"
+name|buffer
 argument_list|)
 expr_stmt|;
 name|np
@@ -6032,9 +6032,9 @@ literal|"P4\n"
 expr_stmt|;
 name|format
 operator|=
-name|babl_format
+name|gegl_buffer_get_format
 argument_list|(
-literal|"Y' u8"
+name|buffer
 argument_list|)
 expr_stmt|;
 name|np
