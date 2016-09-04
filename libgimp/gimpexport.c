@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978b1d0108
+DECL|struct|__anon2b638c070108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -852,9 +852,9 @@ name|ExportAction
 name|export_action_animate_or_merge
 init|=
 block|{
-name|export_merge
-block|,
 name|NULL
+block|,
+name|export_merge
 block|,
 name|N_
 argument_list|(
@@ -864,12 +864,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Merge Visible Layers"
+literal|"Save as Animation"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Merge Visible Layers"
 argument_list|)
 block|}
 block|,
@@ -885,9 +885,9 @@ name|ExportAction
 name|export_action_animate_or_flatten
 init|=
 block|{
-name|export_flatten
-block|,
 name|NULL
+block|,
+name|export_flatten
 block|,
 name|N_
 argument_list|(
@@ -897,12 +897,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Flatten Image"
+literal|"Save as Animation"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Flatten Image"
 argument_list|)
 block|}
 block|,
@@ -1281,11 +1281,13 @@ name|action
 operator|->
 name|default_action
 condition|)
+block|{
 return|return
 name|action
 operator|->
 name|default_action
 return|;
+block|}
 if|if
 condition|(
 name|action
@@ -1298,11 +1300,13 @@ name|action
 operator|->
 name|alt_action
 condition|)
+block|{
 return|return
 name|action
 operator|->
 name|alt_action
 return|;
+block|}
 return|return
 name|export_void
 return|;
