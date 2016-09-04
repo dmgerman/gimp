@@ -6,33 +6,47 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__WEBP_H__
+name|__FILE_WEBP_H__
 end_ifndef
 
 begin_define
-DECL|macro|__WEBP_H__
+DECL|macro|__FILE_WEBP_H__
 define|#
 directive|define
-name|__WEBP_H__
+name|__FILE_WEBP_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-specifier|const
-name|char
-name|BINARY_NAME
-index|[]
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|LOAD_PROC
+define|#
+directive|define
+name|LOAD_PROC
+value|"file-webp-load"
+end_define
 
-begin_decl_stmt
-specifier|extern
-specifier|const
-name|char
-name|SAVE_PROCEDURE
-index|[]
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|SAVE_PROC
+define|#
+directive|define
+name|SAVE_PROC
+value|"file-webp-save"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"file-webp"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_ROLE
+define|#
+directive|define
+name|PLUG_IN_ROLE
+value|"gimp-file-webp"
+end_define
 
 begin_endif
 endif|#
@@ -40,7 +54,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __WEBP_H__ */
+comment|/* __FILE_WEBP_H__ */
 end_comment
 
 end_unit

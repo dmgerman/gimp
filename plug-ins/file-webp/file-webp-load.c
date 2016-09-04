@@ -30,24 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<webp/decode.h>
 end_include
 
@@ -61,6 +43,24 @@ begin_include
 include|#
 directive|include
 file|<webp/mux.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -318,13 +318,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|g_printerr
-argument_list|(
-literal|"Loading WebP file %s\n"
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 comment|/* Validate WebP data */
 if|if
 condition|(
@@ -343,9 +336,20 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|g_printerr
+name|g_set_error
 argument_list|(
-literal|"Invalid WebP file\n"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+literal|0
+argument_list|,
+literal|"Invalid WebP file '%s'"
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

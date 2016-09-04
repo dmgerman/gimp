@@ -651,15 +651,20 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
+name|gboolean
+name|has_alpha
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
-decl_stmt|;
-name|GimpImageType
-name|drawable_type
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -749,11 +754,37 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Obtain the drawable type */
-name|drawable_type
+name|has_alpha
 operator|=
-name|gimp_drawable_type
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable_ID
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+name|bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
 argument_list|)
 expr_stmt|;
 comment|/* Retrieve the buffer for the layer */
@@ -770,13 +801,6 @@ operator|*
 name|gegl_buffer_get_extent
 argument_list|(
 name|geglbuffer
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|w
@@ -907,7 +931,7 @@ name|extent
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buffer
 argument_list|,
@@ -919,9 +943,8 @@ expr_stmt|;
 comment|/* Use the appropriate function to import the data from the buffer */
 if|if
 condition|(
-name|drawable_type
-operator|==
-name|GIMP_RGB_IMAGE
+operator|!
+name|has_alpha
 condition|)
 block|{
 name|WebPPictureImportRGB
@@ -1360,11 +1383,17 @@ name|gint
 name|w
 decl_stmt|,
 name|h
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bpp
 decl_stmt|;
-name|GimpImageType
-name|drawable_type
+name|gboolean
+name|has_alpha
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 name|GimpColorProfile
 modifier|*
@@ -1528,14 +1557,40 @@ literal|0
 block|}
 decl_stmt|;
 comment|/* Obtain the drawable type */
-name|drawable_type
+name|has_alpha
 operator|=
-name|gimp_drawable_type
+name|gimp_drawable_has_alpha
 argument_list|(
 name|allLayers
 index|[
 name|loop
 index|]
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+name|bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
 argument_list|)
 expr_stmt|;
 comment|/* fix layers to avoid offset errors */
@@ -1564,16 +1619,6 @@ operator|*
 name|gegl_buffer_get_extent
 argument_list|(
 name|geglbuffer
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|allLayers
-index|[
-name|loop
-index|]
 argument_list|)
 expr_stmt|;
 name|w
@@ -1774,7 +1819,7 @@ name|extent
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|format
 argument_list|,
 name|buffer
 argument_list|,
@@ -1786,9 +1831,8 @@ expr_stmt|;
 comment|/* Use the appropriate function to import the data from the buffer */
 if|if
 condition|(
-name|drawable_type
-operator|==
-name|GIMP_RGB_IMAGE
+operator|!
+name|has_alpha
 condition|)
 block|{
 name|WebPPictureImportRGB

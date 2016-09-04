@@ -63,43 +63,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|BINARY_NAME
-specifier|const
-name|char
-name|BINARY_NAME
-index|[]
-init|=
-literal|"file-webp"
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|LOAD_PROCEDURE
-specifier|const
-name|char
-name|LOAD_PROCEDURE
-index|[]
-init|=
-literal|"file-webp-load"
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|SAVE_PROCEDURE
-specifier|const
-name|char
-name|SAVE_PROCEDURE
-index|[]
-init|=
-literal|"file-webp-save"
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Predeclare our entrypoints. */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -118,26 +81,27 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|name
 parameter_list|,
 name|gint
+name|nparams
 parameter_list|,
 specifier|const
 name|GimpParam
 modifier|*
+name|param
 parameter_list|,
 name|gint
 modifier|*
+name|nreturn_vals
 parameter_list|,
 name|GimpParam
 modifier|*
 modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Declare our plugin entry points. */
-end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -161,10 +125,6 @@ DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
-
-begin_comment
-comment|/* This function registers our load and save handlers. */
-end_comment
 
 begin_function
 specifier|static
@@ -344,7 +304,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|LOAD_PROCEDURE
+name|LOAD_PROC
 argument_list|,
 literal|"Loads images in the WebP file format"
 argument_list|,
@@ -382,14 +342,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-name|LOAD_PROCEDURE
+name|LOAD_PROC
 argument_list|,
 literal|"image/webp"
 argument_list|)
 expr_stmt|;
 name|gimp_register_load_handler
 argument_list|(
-name|LOAD_PROCEDURE
+name|LOAD_PROC
 argument_list|,
 literal|"webp"
 argument_list|,
@@ -398,7 +358,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-name|LOAD_PROCEDURE
+name|LOAD_PROC
 argument_list|,
 literal|"webp"
 argument_list|,
@@ -409,7 +369,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|SAVE_PROCEDURE
+name|SAVE_PROC
 argument_list|,
 literal|"Saves files in the WebP image format"
 argument_list|,
@@ -426,7 +386,7 @@ argument_list|(
 literal|"WebP image"
 argument_list|)
 argument_list|,
-literal|"RGB*"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -444,14 +404,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-name|SAVE_PROCEDURE
+name|SAVE_PROC
 argument_list|,
 literal|"image/webp"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-name|SAVE_PROCEDURE
+name|SAVE_PROC
 argument_list|,
 literal|"webp"
 argument_list|,
@@ -575,11 +535,10 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|LOAD_PROCEDURE
+name|LOAD_PROC
 argument_list|)
 condition|)
 block|{
-comment|/* No need to determine whether the plugin is being invoked        * interactively here since we don't need a UI for loading        */
 name|image_ID
 operator|=
 name|load_image
@@ -650,7 +609,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|SAVE_PROCEDURE
+name|SAVE_PROC
 argument_list|)
 condition|)
 block|{
@@ -658,7 +617,7 @@ name|WebPSaveParams
 name|params
 decl_stmt|;
 name|GimpExportReturn
-name|export_ret
+name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
@@ -727,7 +686,6 @@ name|xmp
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* Load the image and drawable IDs */
 name|image_ID
 operator|=
 name|param
@@ -750,17 +708,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|layers
-operator|=
-name|gimp_image_get_layers
-argument_list|(
-name|image_ID
-argument_list|,
-operator|&
-name|n_layers
-argument_list|)
-expr_stmt|;
-comment|/* What happens next depends on the run mode */
 switch|switch
 condition|(
 name|run_mode
@@ -774,13 +721,12 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-name|BINARY_NAME
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Attempt to export the image */
-name|export_ret
+name|export
 operator|=
 name|gimp_export_image
 argument_list|(
@@ -794,13 +740,18 @@ literal|"WebP"
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
+operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
 argument_list|)
 expr_stmt|;
-comment|/* Return immediately if canceled */
 if|if
 condition|(
-name|export_ret
+name|export
 operator|==
 name|GIMP_EXPORT_CANCEL
 condition|)
@@ -818,7 +769,28 @@ name|GIMP_PDB_CANCEL
 expr_stmt|;
 return|return;
 block|}
-comment|/* Display the dialog */
+break|break;
+default|default:
+break|break;
+block|}
+name|layers
+operator|=
+name|gimp_image_get_layers
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|n_layers
+argument_list|)
+expr_stmt|;
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|GIMP_RUN_INTERACTIVE
+case|:
 if|if
 condition|(
 operator|!
@@ -832,25 +804,14 @@ argument_list|,
 name|n_layers
 argument_list|)
 condition|)
-block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
-return|return;
-block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* Ensure the correct number of parameters were supplied */
 if|if
 condition|(
 name|nparams
@@ -862,9 +823,9 @@ name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-break|break;
 block|}
-comment|/* Load the parameters */
+else|else
+block|{
 name|g_free
 argument_list|(
 name|params
@@ -992,9 +953,18 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+block|}
+break|break;
+default|default:
 break|break;
 block|}
-comment|/* Attempt to save the image */
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -1030,6 +1000,7 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+block|}
 name|g_free
 argument_list|(
 name|params
@@ -1040,6 +1011,17 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|layers
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|GIMP_EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
