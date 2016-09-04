@@ -1694,7 +1694,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon28b358010108
+DECL|struct|__anon2c1b8a160108
 block|{
 DECL|member|id
 specifier|const
@@ -1861,15 +1861,6 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"old: %s\nnew: %s\n"
-argument_list|,
-name|dir
-argument_list|,
-name|tmp
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|dir
