@@ -62,11 +62,6 @@ define|#
 directive|define
 name|GIMP_STOCK_DUPLICATE
 value|"gimp-duplicate"
-DECL|macro|GIMP_STOCK_EDIT
-define|#
-directive|define
-name|GIMP_STOCK_EDIT
-value|"gimp-edit"
 DECL|macro|GIMP_STOCK_LINKED
 define|#
 directive|define
