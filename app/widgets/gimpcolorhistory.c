@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e086100103
+DECL|enum|__anon2af1a33e0103
 block|{
 DECL|enumerator|COLOR_SELECTED
 name|COLOR_SELECTED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e086100203
+DECL|enum|__anon2af1a33e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
