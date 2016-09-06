@@ -549,6 +549,46 @@ end_function
 
 begin_function
 name|gboolean
+DECL|function|gimp_help_browser_is_installed (Gimp * gimp)
+name|gimp_help_browser_is_installed
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_pdb_lookup_procedure
+argument_list|(
+name|gimp
+operator|->
+name|pdb
+argument_list|,
+literal|"extension-gimp-help-browser"
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
 DECL|function|gimp_help_user_manual_is_installed (Gimp * gimp)
 name|gimp_help_user_manual_is_installed
 parameter_list|(
@@ -1359,7 +1399,11 @@ literal|"Could not start the GIMP help browser "
 literal|"plug-in."
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"You may instead use the web browser "
+literal|"for reading the help pages."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|busy
