@@ -1205,6 +1205,12 @@ define|#
 directive|define
 name|GIMP_STOCK_CONVERT_PRECISION
 value|GIMP_STOCK_CONVERT_RGB
+comment|/* Deprecated icons: */
+DECL|macro|GIMP_STOCK_EDIT
+define|#
+directive|define
+name|GIMP_STOCK_EDIT
+value|"gtk-edit"
 name|GIMP_DEPRECATED_FOR
 argument_list|(
 name|gimp_icons_init
