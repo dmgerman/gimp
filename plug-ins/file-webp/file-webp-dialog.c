@@ -107,10 +107,7 @@ parameter_list|)
 block|{
 name|gimp_scale_entry_set_sensitive
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 operator|!
 name|gtk_toggle_button_get_active
@@ -293,11 +290,11 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|quality_scale
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|alpha_quality_scale
 decl_stmt|;
@@ -1524,10 +1521,6 @@ expr_stmt|;
 comment|/* default delay */
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|params
