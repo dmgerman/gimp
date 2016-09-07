@@ -256,6 +256,10 @@ name|GtkWidget
 modifier|*
 name|scrolled_window
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|viewport
+decl_stmt|;
 name|editor
 operator|->
 name|p
@@ -282,7 +286,6 @@ argument_list|,
 literal|200
 argument_list|)
 expr_stmt|;
-comment|/* Scrolled window to keep the dock size reasonable. */
 name|scrolled_window
 operator|=
 name|gtk_scrolled_window_new
@@ -325,7 +328,30 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 expr_stmt|;
-comment|/* A vbox to hold the symmetry options. */
+name|viewport
+operator|=
+name|gtk_viewport_new
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|viewport
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|viewport
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|p
@@ -353,11 +379,11 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_scrolled_window_add_with_viewport
+name|gtk_container_add
 argument_list|(
-name|GTK_SCROLLED_WINDOW
+name|GTK_CONTAINER
 argument_list|(
-name|scrolled_window
+name|viewport
 argument_list|)
 argument_list|,
 name|editor
