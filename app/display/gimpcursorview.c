@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29073dbd0103
+DECL|enum|__anon27e718b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -931,9 +931,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -943,8 +943,6 @@ name|pixel_x_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -992,9 +990,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1004,8 +1002,6 @@ name|pixel_y_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1135,9 +1131,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1147,8 +1143,6 @@ name|unit_x_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1196,9 +1190,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1208,8 +1202,6 @@ name|unit_y_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1339,9 +1331,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1351,8 +1343,6 @@ name|selection_x_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1400,9 +1390,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1412,8 +1402,6 @@ name|selection_y_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1539,9 +1527,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1551,8 +1539,6 @@ name|selection_width_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1601,9 +1587,9 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
@@ -1613,8 +1599,6 @@ name|selection_height_label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

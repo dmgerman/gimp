@@ -85,7 +85,7 @@ end_function_decl
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b155c050108
+DECL|struct|__anon2b3f02360108
 block|{
 DECL|member|id
 specifier|const
@@ -561,16 +561,14 @@ literal|"Preset:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|preset_label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

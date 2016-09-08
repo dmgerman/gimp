@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp3migration.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpframe.h"
 end_include
 
@@ -1014,14 +1020,22 @@ operator|&
 name|yalign
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 name|xalign
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_yalign
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
 name|yalign
 argument_list|)

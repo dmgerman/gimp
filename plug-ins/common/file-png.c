@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ce79b0108
+DECL|struct|__anon2bf378af0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ce79b0208
+DECL|struct|__anon2bf378af0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ce79b0308
+DECL|struct|__anon2bf378af0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4959,14 +4959,12 @@ argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_yalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.5
 argument_list|,
 literal|0.0
 argument_list|)

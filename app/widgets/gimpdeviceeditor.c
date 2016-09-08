@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ce6c40103
+DECL|enum|__anon2bf5a6f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -763,9 +763,9 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|private
 operator|->
@@ -773,8 +773,6 @@ name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_ellipsize

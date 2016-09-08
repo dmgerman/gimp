@@ -3343,16 +3343,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -11663,7 +11661,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292e224c0108
+DECL|struct|__anon28d05bdd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12523,7 +12521,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292e224c0208
+DECL|struct|__anon28d05bdd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12678,7 +12676,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292e224c0308
+DECL|struct|__anon28d05bdd0308
 block|{
 DECL|member|tree_label
 specifier|const

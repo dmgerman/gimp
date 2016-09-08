@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b32ba5a0103
+DECL|enum|__anon29d5605a0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1961,16 +1961,14 @@ argument_list|(
 literal|" "
 argument_list|)
 decl_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_width_chars

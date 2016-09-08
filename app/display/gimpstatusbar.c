@@ -1027,20 +1027,6 @@ argument_list|(
 literal|"8888, 8888"
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|statusbar
-operator|->
-name|cursor_label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX

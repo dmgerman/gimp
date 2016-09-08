@@ -2613,14 +2613,22 @@ argument_list|(
 literal|"Frame Content\nThis Frame is HIG compliant"
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|content
 argument_list|)
 argument_list|,
 literal|0.0
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_yalign
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|content
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|)

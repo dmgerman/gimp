@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29e308b30108
+DECL|struct|__anon28d7c8750108
 typedef|typedef
 struct|struct
 block|{
@@ -761,9 +761,9 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|data
 operator|->
@@ -771,8 +771,6 @@ name|image_dimensions
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -811,9 +809,9 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|data
 operator|->
@@ -821,8 +819,6 @@ name|guide_bounds
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1584,7 +1580,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29e308b30208
+DECL|struct|__anon28d7c8750208
 typedef|typedef
 struct|struct
 block|{

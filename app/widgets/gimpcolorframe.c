@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa94a650103
+DECL|enum|__anon28f453000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -654,9 +654,9 @@ argument_list|(
 literal|" "
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|frame
 operator|->
@@ -667,8 +667,6 @@ index|]
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -729,9 +727,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|frame
 operator|->
@@ -742,8 +740,6 @@ index|]
 argument_list|)
 argument_list|,
 literal|1.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
