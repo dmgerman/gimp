@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277dfcbc0103
+DECL|enum|__anon29144d360103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277dfcbc0203
+DECL|enum|__anon29144d360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,16 +127,6 @@ name|PROP_CALLBACK_DATA
 block|}
 enum|;
 end_enum
-
-begin_decl_stmt
-DECL|variable|window_height
-specifier|static
-name|gint
-name|window_height
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
 
 begin_struct
 DECL|struct|_GimpSearchPopupPrivate
@@ -174,10 +164,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/* GObject handlers */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -238,10 +224,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* GtkWidget handlers */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -257,10 +239,6 @@ name|allocation
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* GimpPopup handlers */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -281,7 +259,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|gboolean
-name|keyword_entry_on_key_press_event
+name|keyword_entry_key_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -301,7 +279,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|keyword_entry_on_key_release_event
+name|keyword_entry_key_release_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -325,7 +303,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|gboolean
-name|results_list_on_key_press_event
+name|results_list_key_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -345,7 +323,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|results_list_on_row_activated
+name|results_list_row_activated
 parameter_list|(
 name|GtkTreeView
 modifier|*
@@ -433,7 +411,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSearchPopup,gimp_search_popup,GIMP_TYPE_POPUP)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpSearchPopup
@@ -452,9 +429,19 @@ name|parent_class
 value|gimp_search_popup_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|gint
+name|window_height
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_search_popup_class_init (GimpSearchPopupClass * klass)
 name|gimp_search_popup_class_init
 parameter_list|(
 name|GimpSearchPopupClass
@@ -890,8 +877,6 @@ expr_stmt|;
 if|if
 condition|(
 name|accel_string
-operator|!=
-name|NULL
 condition|)
 block|{
 name|escaped_accel
@@ -1360,7 +1345,7 @@ literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|keyword_entry_on_key_press_event
+name|keyword_entry_key_press_event
 argument_list|)
 argument_list|,
 name|popup
@@ -1378,7 +1363,7 @@ literal|"key-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|keyword_entry_on_key_release_event
+name|keyword_entry_key_release_event
 argument_list|)
 argument_list|,
 name|popup
@@ -1396,7 +1381,7 @@ literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|results_list_on_key_press_event
+name|results_list_key_press_event
 argument_list|)
 argument_list|,
 name|popup
@@ -1414,7 +1399,7 @@ literal|"row-activated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|results_list_on_row_activated
+name|results_list_row_activated
 argument_list|)
 argument_list|,
 name|popup
@@ -1633,6 +1618,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_search_popup_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
 name|gimp_search_popup_size_allocate
@@ -1691,7 +1677,7 @@ init|=
 name|gdk_screen_get_default
 argument_list|()
 decl_stmt|;
-comment|/* I save the window height when results are shown so that resizes        * by the user are saved accross searches. */
+comment|/* Save the window height when results are shown so that resizes        * by the user are saved accross searches.        */
 name|window_height
 operator|=
 name|MAX
@@ -1743,8 +1729,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|keyword_entry_on_key_press_event (GtkWidget * widget,GdkEventKey * event,GimpSearchPopup * popup)
-name|keyword_entry_on_key_press_event
+DECL|function|keyword_entry_key_press_event (GtkWidget * widget,GdkEventKey * event,GimpSearchPopup * popup)
+name|keyword_entry_key_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1835,8 +1821,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|keyword_entry_on_key_release_event (GtkWidget * widget,GdkEventKey * event,GimpSearchPopup * popup)
-name|keyword_entry_on_key_release_event
+DECL|function|keyword_entry_key_release_event (GtkWidget * widget,GdkEventKey * event,GimpSearchPopup * popup)
+name|keyword_entry_key_release_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2197,8 +2183,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|results_list_on_key_press_event (GtkWidget * widget,GdkEventKey * kevent,GimpSearchPopup * popup)
-name|results_list_on_key_press_event
+DECL|function|results_list_key_press_event (GtkWidget * widget,GdkEventKey * kevent,GimpSearchPopup * popup)
+name|results_list_key_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2494,8 +2480,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|results_list_on_row_activated (GtkTreeView * treeview,GtkTreePath * path,GtkTreeViewColumn * col,GimpSearchPopup * popup)
-name|results_list_on_row_activated
+DECL|function|results_list_row_activated (GtkTreeView * treeview,GtkTreePath * path,GtkTreeViewColumn * col,GimpSearchPopup * popup)
+name|results_list_row_activated
 parameter_list|(
 name|GtkTreeView
 modifier|*
@@ -2673,14 +2659,11 @@ decl_stmt|;
 operator|*
 name|list_view
 operator|=
-name|GTK_WIDGET
-argument_list|(
 name|gtk_scrolled_window_new
 argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|store
@@ -2705,14 +2688,11 @@ expr_stmt|;
 operator|*
 name|results_list
 operator|=
-name|GTK_WIDGET
-argument_list|(
 name|gtk_tree_view_new_with_model
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
 name|store
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3002,7 +2982,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* The value returned by gtk_accelerator_get_label() must be freed after use. */
+comment|/* The value returned by gtk_accelerator_get_label() must be        * freed after use.        */
 name|g_free
 argument_list|(
 name|accel_string
