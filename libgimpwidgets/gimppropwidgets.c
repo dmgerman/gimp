@@ -4066,7 +4066,11 @@ name|scale
 operator|=
 name|g_object_new
 argument_list|(
-name|GTK_TYPE_HSCALE
+name|GTK_TYPE_SCALE
+argument_list|,
+literal|"orientation"
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|"adjustment"
 argument_list|,
