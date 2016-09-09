@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffcc070103
+DECL|enum|__anon2bc272660103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -1667,7 +1667,12 @@ name|height
 operator|=
 name|height
 expr_stmt|;
-name|gtk_widget_set_allocation
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|size_allocate
 argument_list|(
 name|widget
 argument_list|,

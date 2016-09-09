@@ -547,7 +547,12 @@ decl_stmt|;
 name|GtkAllocation
 name|child_allocation
 decl_stmt|;
-name|gtk_widget_set_allocation
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|size_allocate
 argument_list|(
 name|widget
 argument_list|,

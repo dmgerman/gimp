@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291910a60103
+DECL|enum|__anon2b0b2e130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291910a60208
+DECL|struct|__anon2b0b2e130208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291910a60308
+DECL|struct|__anon2b0b2e130308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -3035,7 +3035,12 @@ operator|->
 name|height
 operator|)
 expr_stmt|;
-name|gtk_widget_set_allocation
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|size_allocate
 argument_list|(
 name|widget
 argument_list|,
