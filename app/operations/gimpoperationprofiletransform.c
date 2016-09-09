@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cb86480103
+DECL|enum|__anon2c73c3710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -934,36 +934,6 @@ operator|->
 name|transform
 condition|)
 block|{
-comment|/* copy the alpha channel */
-if|if
-condition|(
-name|babl_format_has_alpha
-argument_list|(
-name|self
-operator|->
-name|dest_format
-argument_list|)
-condition|)
-name|babl_process
-argument_list|(
-name|babl_fish
-argument_list|(
-name|self
-operator|->
-name|src_format
-argument_list|,
-name|self
-operator|->
-name|dest_format
-argument_list|)
-argument_list|,
-name|src
-argument_list|,
-name|dest
-argument_list|,
-name|samples
-argument_list|)
-expr_stmt|;
 name|gimp_color_transform_process_pixels
 argument_list|(
 name|self
