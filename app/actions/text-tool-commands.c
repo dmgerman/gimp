@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text-tool-commands.h"
 end_include
 
@@ -102,22 +108,6 @@ end_include
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|text_tool_load_dialog_destroyed
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|dialog
-parameter_list|,
-name|GObject
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -300,7 +290,7 @@ name|chooser
 decl_stmt|;
 name|dialog
 operator|=
-name|g_object_get_data
+name|dialogs_get_dialog
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -415,7 +405,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
+name|dialogs_attach_dialog
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -425,20 +415,6 @@ argument_list|,
 literal|"gimp-text-file-dialog"
 argument_list|,
 name|dialog
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dialog
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|text_tool_load_dialog_destroyed
-argument_list|)
-argument_list|,
-name|text_tool
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_role
@@ -699,33 +675,6 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|text_tool_load_dialog_destroyed (GtkWidget * dialog,GObject * tool)
-name|text_tool_load_dialog_destroyed
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|dialog
-parameter_list|,
-name|GObject
-modifier|*
-name|tool
-parameter_list|)
-block|{
-name|g_object_set_data
-argument_list|(
-name|tool
-argument_list|,
-literal|"gimp-text-file-dialog"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static
