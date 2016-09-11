@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27980dd20103
+DECL|enum|__anon28db05880103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -92,7 +92,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27980dd20208
+DECL|struct|__anon28db05880208
 block|{
 DECL|member|action_name
 name|gchar
@@ -112,7 +112,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27980dd20308
+DECL|struct|__anon28db05880308
 block|{
 DECL|member|items
 name|GList
@@ -1086,7 +1086,7 @@ name|g_strcmp0
 argument_list|(
 name|action_name
 argument_list|,
-literal|"help-action-search"
+literal|"dialogs-action-search"
 argument_list|)
 operator|==
 literal|0
