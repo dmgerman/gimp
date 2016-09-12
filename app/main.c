@@ -230,12 +230,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"units.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"version.h"
 end_include
 
@@ -2993,6 +2987,9 @@ decl_stmt|;
 name|gboolean
 name|success
 decl_stmt|;
+name|babl_init
+argument_list|()
+expr_stmt|;
 name|gimp
 operator|=
 name|g_object_new
@@ -3001,14 +2998,6 @@ name|GIMP_TYPE_GIMP
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|units_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|babl_init
-argument_list|()
 expr_stmt|;
 name|success
 operator|=

@@ -194,12 +194,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"units.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"language.h"
 end_include
 
@@ -681,11 +675,6 @@ argument_list|,
 name|use_debug_handler
 argument_list|,
 name|stack_trace_mode
-argument_list|)
-expr_stmt|;
-name|units_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */

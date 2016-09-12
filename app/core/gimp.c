@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae210940103
+DECL|enum|__anon2a16526b0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae210940203
+DECL|enum|__anon2a16526b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -938,6 +938,11 @@ operator|=
 name|gimp_parasite_list_new
 argument_list|()
 expr_stmt|;
+name|gimp_units_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|images
@@ -1136,11 +1141,6 @@ operator|->
 name|constructed
 argument_list|(
 name|object
-argument_list|)
-expr_stmt|;
-name|gimp_units_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_modules_init
