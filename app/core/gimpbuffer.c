@@ -375,7 +375,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-literal|"gtk-paste"
+literal|"edit-paste"
 expr_stmt|;
 name|viewable_class
 operator|->
