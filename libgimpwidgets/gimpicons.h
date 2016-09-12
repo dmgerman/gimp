@@ -387,11 +387,6 @@ define|#
 directive|define
 name|GIMP_STOCK_PATTERN
 value|"gimp-pattern"
-DECL|macro|GIMP_STOCK_BUFFER
-define|#
-directive|define
-name|GIMP_STOCK_BUFFER
-value|"gimp-buffer"
 DECL|macro|GIMP_STOCK_TEXT_DIR_LTR
 define|#
 directive|define
@@ -1175,6 +1170,11 @@ define|#
 directive|define
 name|GIMP_STOCK_BRUSH
 value|GIMP_STOCK_TOOL_PAINTBRUSH
+DECL|macro|GIMP_STOCK_BUFFER
+define|#
+directive|define
+name|GIMP_STOCK_BUFFER
+value|"edit-paste"
 DECL|macro|GIMP_STOCK_DETACH
 define|#
 directive|define
