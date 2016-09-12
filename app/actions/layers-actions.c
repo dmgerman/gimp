@@ -393,7 +393,7 @@ block|,
 block|{
 literal|"layers-new-group"
 block|,
-literal|"folder"
+literal|"folder-new"
 block|,
 name|NC_
 argument_list|(
