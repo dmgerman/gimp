@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16526b0103
+DECL|enum|__anon2baf774a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16526b0203
+DECL|enum|__anon2baf774a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1056,6 +1056,16 @@ argument_list|,
 literal|"named buffers"
 argument_list|)
 expr_stmt|;
+name|gimp_fonts_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_data_factories_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|tool_info_list
@@ -1085,6 +1095,15 @@ name|tool_info_list
 argument_list|)
 argument_list|,
 literal|"tool infos"
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|documents
+operator|=
+name|gimp_document_list_new
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1148,6 +1167,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_paint_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|plug_in_manager
@@ -1171,11 +1195,8 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp
-operator|->
-name|documents
-operator|=
-name|gimp_document_list_new
+comment|/*  create user and default context  */
+name|gimp_contexts_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -1632,27 +1653,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|fonts
-condition|)
-block|{
-name|g_object_unref
+name|gimp_fonts_exit
 argument_list|(
 name|gimp
-operator|->
-name|fonts
 argument_list|)
 expr_stmt|;
-name|gimp
-operator|->
-name|fonts
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp
@@ -2359,18 +2364,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gimp_fonts_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-comment|/*  create the data factories& tag cache  */
-name|gimp_data_factories_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|gimp_paint_init
+name|gimp_fonts_set_config
 argument_list|(
 name|gimp
 argument_list|)
@@ -2390,12 +2384,6 @@ name|config
 operator|->
 name|default_image
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  create user and default context  */
-name|gimp_contexts_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  add data objects that need the user context  */
