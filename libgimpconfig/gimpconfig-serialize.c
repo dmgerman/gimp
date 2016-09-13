@@ -1488,7 +1488,7 @@ name|g_string_append
 argument_list|(
 name|str
 argument_list|,
-literal|"NULL"
+literal|"0"
 argument_list|)
 expr_stmt|;
 block|}
