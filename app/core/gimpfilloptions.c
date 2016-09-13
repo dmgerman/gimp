@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a184bfc0103
+DECL|enum|__anon29d744560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -194,6 +194,18 @@ end_define
 begin_function_decl
 specifier|static
 name|void
+name|gimp_fill_options_config_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_fill_options_set_property
 parameter_list|(
 name|GObject
@@ -238,15 +250,36 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_fill_options_serialize
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|,
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFillOptions,gimp_fill_options,GIMP_TYPE_CONTEXT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpFillOptions,gimp_fill_options,GIMP_TYPE_CONTEXT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_fill_options_config_init))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpFillOptions
 argument_list|,
 argument|gimp_fill_options
 argument_list|,
 argument|GIMP_TYPE_CONTEXT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_fill_options_config_init)
 argument_list|)
 end_macro
 
@@ -382,6 +415,26 @@ argument_list|(
 name|GimpFillOptionsPrivate
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_fill_options_config_init (GimpConfigInterface * iface)
+name|gimp_fill_options_config_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|serialize
+operator|=
+name|gimp_fill_options_serialize
 expr_stmt|;
 block|}
 end_function
@@ -609,6 +662,35 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_fill_options_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
+name|gimp_fill_options_serialize
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|,
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+return|return
+name|gimp_config_serialize_properties
+argument_list|(
+name|config
+argument_list|,
+name|writer
+argument_list|)
+return|;
 block|}
 end_function
 
