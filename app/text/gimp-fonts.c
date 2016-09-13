@@ -209,6 +209,12 @@ operator|->
 name|fonts
 condition|)
 block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|config
+condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|gimp
@@ -243,7 +249,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aad9f0108
+DECL|struct|__anon2b1bc07e0108
 block|{
 DECL|member|config
 name|FcConfig
