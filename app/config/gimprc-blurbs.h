@@ -1211,6 +1211,24 @@ value|_("Sets the default border style for the 'Border Selection' dialog.")
 end_define
 
 begin_define
+DECL|macro|FILL_OPTIONS_BLURB
+define|#
+directive|define
+name|FILL_OPTIONS_BLURB
+define|\
+value|"The default fill options for the fill dialogs."
+end_define
+
+begin_define
+DECL|macro|STROKE_OPTIONS_BLURB
+define|#
+directive|define
+name|STROKE_OPTIONS_BLURB
+define|\
+value|"The default stroke options for the stroke dialogs."
+end_define
+
+begin_define
 DECL|macro|THUMBNAIL_SIZE_BLURB
 define|#
 directive|define

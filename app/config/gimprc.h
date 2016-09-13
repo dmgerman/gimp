@@ -146,6 +146,10 @@ name|GimpRc
 modifier|*
 name|gimp_rc_new
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|GFile
 modifier|*
 name|system_gimprc

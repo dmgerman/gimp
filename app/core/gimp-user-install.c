@@ -153,6 +153,11 @@ DECL|struct|_GimpUserInstall
 struct|struct
 name|_GimpUserInstall
 block|{
+DECL|member|gimp
+name|GObject
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|verbose
 name|gboolean
 name|verbose
@@ -191,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6166dc0103
+DECL|enum|__anon2bded19a0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6166dc0208
+DECL|struct|__anon2bded19a0208
 block|{
 DECL|member|name
 specifier|const
@@ -583,9 +588,13 @@ end_comment
 begin_function
 name|GimpUserInstall
 modifier|*
-DECL|function|gimp_user_install_new (gboolean verbose)
+DECL|function|gimp_user_install_new (GObject * gimp,gboolean verbose)
 name|gimp_user_install_new
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|verbose
 parameter_list|)
@@ -599,6 +608,12 @@ argument_list|(
 name|GimpUserInstall
 argument_list|)
 decl_stmt|;
+name|install
+operator|->
+name|gimp
+operator|=
+name|gimp
+expr_stmt|;
 name|install
 operator|->
 name|verbose
@@ -3022,6 +3037,10 @@ name|gimprc
 operator|=
 name|gimp_rc_new
 argument_list|(
+name|install
+operator|->
+name|gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

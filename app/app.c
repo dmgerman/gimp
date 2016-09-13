@@ -705,6 +705,11 @@ name|install
 init|=
 name|gimp_user_install_new
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|be_verbose
 argument_list|)
 decl_stmt|;

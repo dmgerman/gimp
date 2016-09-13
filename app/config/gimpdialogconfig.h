@@ -22,6 +22,28 @@ directive|include
 file|"config/gimpguiconfig.h"
 end_include
 
+begin_comment
+comment|/* We don't want to include stuff from core/ here, instead do the next  * less ugly hack...  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpFillOptions
+typedef|typedef
+name|struct
+name|_GimpFillOptions
+name|GimpFillOptions
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpStrokeOptions
+typedef|typedef
+name|struct
+name|_GimpStrokeOptions
+name|GimpStrokeOptions
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_DIALOG_CONFIG
 define|#
@@ -154,6 +176,16 @@ decl_stmt|;
 DECL|member|selection_border_style
 name|GimpChannelBorderStyle
 name|selection_border_style
+decl_stmt|;
+DECL|member|fill_options
+name|GimpFillOptions
+modifier|*
+name|fill_options
+decl_stmt|;
+DECL|member|stroke_options
+name|GimpStrokeOptions
+modifier|*
+name|stroke_options
 decl_stmt|;
 block|}
 struct|;

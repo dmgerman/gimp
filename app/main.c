@@ -3012,6 +3012,11 @@ name|success
 operator|=
 name|gimp_config_dump
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|format
 argument_list|)
 expr_stmt|;

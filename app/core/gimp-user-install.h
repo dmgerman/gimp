@@ -53,6 +53,10 @@ name|GimpUserInstall
 modifier|*
 name|gimp_user_install_new
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|verbose
 parameter_list|)

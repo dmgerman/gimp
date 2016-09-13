@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52bfc90103
+DECL|enum|__anon29fb462f0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52bfc90203
+DECL|enum|__anon29fb462f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3250,6 +3250,11 @@ name|gimprc
 operator|=
 name|gimp_rc_new
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
