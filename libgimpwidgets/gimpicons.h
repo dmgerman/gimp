@@ -377,11 +377,6 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
-DECL|macro|GIMP_STOCK_PRINT_RESOLUTION
-define|#
-directive|define
-name|GIMP_STOCK_PRINT_RESOLUTION
-value|"gimp-print-resolution"
 DECL|macro|GIMP_STOCK_PATTERN
 define|#
 directive|define
@@ -1205,6 +1200,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CONVERT_PRECISION
 value|GIMP_STOCK_CONVERT_RGB
+DECL|macro|GIMP_STOCK_PRINT_RESOLUTION
+define|#
+directive|define
+name|GIMP_STOCK_PRINT_RESOLUTION
+value|"document-print"
 comment|/* Deprecated icons: */
 DECL|macro|GIMP_STOCK_EDIT
 define|#
