@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1d4700103
+DECL|enum|__anon2a15c2e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -766,7 +766,7 @@ name|dynamics
 argument_list|,
 literal|"flow-output"
 argument_list|,
-name|GIMP_DYNAMICS_OUTPUT_RATE
+name|GIMP_DYNAMICS_OUTPUT_FLOW
 argument_list|)
 expr_stmt|;
 name|private
