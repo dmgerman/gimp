@@ -704,6 +704,15 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|gimp_fill_options_set_antialias
+argument_list|(
+name|fill_options
+argument_list|,
+name|options
+operator|->
+name|antialias
+argument_list|)
+expr_stmt|;
 name|gimp_context_set_opacity
 argument_list|(
 name|GIMP_CONTEXT

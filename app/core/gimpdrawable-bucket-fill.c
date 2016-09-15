@@ -172,6 +172,9 @@ name|GeglBuffer
 modifier|*
 name|mask_buffer
 decl_stmt|;
+name|gboolean
+name|antialias
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -303,6 +306,13 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|antialias
+operator|=
+name|gimp_fill_options_get_antialias
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
 comment|/*  Do a seed bucket fill...To do this, calculate a new    *  contiguous region.    */
 name|mask_buffer
 operator|=
@@ -310,7 +320,7 @@ name|gimp_pickable_contiguous_region_by_seed
 argument_list|(
 name|pickable
 argument_list|,
-name|TRUE
+name|antialias
 argument_list|,
 name|threshold
 argument_list|,
