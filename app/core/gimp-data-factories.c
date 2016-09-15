@@ -1392,7 +1392,7 @@ argument_list|(
 literal|"Dynamics"
 argument_list|)
 argument_list|,
-literal|0.2
+literal|0.15
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -1420,7 +1420,7 @@ argument_list|(
 literal|"MyPaint Brushes"
 argument_list|)
 argument_list|,
-literal|0.25
+literal|0.2
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -1523,6 +1523,18 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the color history   */
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Color History"
+argument_list|)
+argument_list|,
+literal|0.55
+argument_list|)
+expr_stmt|;
 name|gimp_palettes_load
 argument_list|(
 name|gimp
@@ -1575,7 +1587,7 @@ argument_list|(
 literal|"Updating tag cache"
 argument_list|)
 argument_list|,
-literal|0.7
+literal|0.65
 argument_list|)
 expr_stmt|;
 name|gimp_tag_cache_load

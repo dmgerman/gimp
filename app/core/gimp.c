@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb462f0103
+DECL|enum|__anon2a4d42bf0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb462f0203
+DECL|enum|__anon2a4d42bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3462,6 +3462,33 @@ argument_list|)
 expr_stmt|;
 comment|/*  initialize the lists of gimp brushes, dynamics, patterns etc.  */
 name|gimp_data_factories_load
+argument_list|(
+name|gimp
+argument_list|,
+name|status_callback
+argument_list|)
+expr_stmt|;
+comment|/*  initialize the list of fonts  */
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Fonts (this may take a while)"
+argument_list|)
+argument_list|,
+literal|0.7
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_fonts
+condition|)
+name|gimp_fonts_load
 argument_list|(
 name|gimp
 argument_list|,
