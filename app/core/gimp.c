@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d42bf0103
+DECL|enum|__anon28f7942d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d42bf0203
+DECL|enum|__anon28f7942d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3469,6 +3469,14 @@ name|status_callback
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of fonts  */
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_fonts
+condition|)
+block|{
 name|status_callback
 argument_list|(
 name|NULL
@@ -3481,13 +3489,6 @@ argument_list|,
 literal|0.7
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp
-operator|->
-name|no_fonts
-condition|)
 name|gimp_fonts_load
 argument_list|(
 name|gimp
@@ -3495,6 +3496,7 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  initialize the template list  */
 name|status_callback
 argument_list|(
@@ -3545,7 +3547,7 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
-comment|/* when done, make sure everything is clean, to clean out dirty    * states from data object which reference each other and got    * dirtied by loading the referenced object    */
+comment|/* when done, make sure everything is clean, to clean out dirty    * states from data objects which reference each other and got    * dirtied by loading the referenced object    */
 name|gimp_data_factories_data_clean
 argument_list|(
 name|gimp
