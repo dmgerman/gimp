@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cd0440103
+DECL|enum|__anon27dea89d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cd0440203
+DECL|enum|__anon27dea89d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8614,9 +8614,9 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|,
-name|w
+name|width
 decl_stmt|,
-name|h
+name|height
 decl_stmt|;
 name|gboolean
 name|retval
@@ -8678,10 +8678,10 @@ operator|&
 name|y
 argument_list|,
 operator|&
-name|w
+name|width
 argument_list|,
 operator|&
-name|h
+name|height
 argument_list|)
 condition|)
 block|{
@@ -8710,13 +8710,13 @@ name|x2
 operator|=
 name|x
 operator|+
-name|w
+name|width
 expr_stmt|;
 name|y2
 operator|=
 name|y
 operator|+
-name|h
+name|height
 expr_stmt|;
 name|x
 operator|=
@@ -8782,13 +8782,13 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|w
+name|width
 operator|=
 name|x2
 operator|-
 name|x
 expr_stmt|;
-name|h
+name|height
 operator|=
 name|y2
 operator|-
@@ -8809,14 +8809,14 @@ name|y
 operator|=
 literal|0
 expr_stmt|;
-name|w
+name|width
 operator|=
 name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|h
+name|height
 operator|=
 name|gimp_item_get_height
 argument_list|(
@@ -8855,7 +8855,7 @@ name|x2
 operator|=
 name|x
 operator|+
-name|w
+name|width
 expr_stmt|;
 if|if
 condition|(
@@ -8866,7 +8866,7 @@ name|y2
 operator|=
 name|y
 operator|+
-name|h
+name|height
 expr_stmt|;
 return|return
 name|retval
