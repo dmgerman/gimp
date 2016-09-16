@@ -5214,22 +5214,29 @@ name|block_rem
 operator|-=
 literal|12
 expr_stmt|;
-comment|//Round up to the nearest even byte
-while|while
+if|if
 condition|(
 name|res_a
 operator|.
 name|data_len
 operator|%
-literal|4
+literal|2
 operator|!=
 literal|0
 condition|)
+block|{
+comment|/*  Warn the user about an invalid length value but                    *  try to recover graciously. See bug #771558.                    */
+name|g_printerr
+argument_list|(
+literal|"psd-load: Layer extra data length should "
+literal|"be even, but it is %d."
+argument_list|,
 name|res_a
 operator|.
 name|data_len
-operator|++
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|res_a
