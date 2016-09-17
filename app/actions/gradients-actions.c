@@ -350,7 +350,7 @@ name|NC_
 argument_list|(
 literal|"gradients-action"
 argument_list|,
-literal|"Edit gradient"
+literal|"Edit this gradient"
 argument_list|)
 block|,
 literal|"gimp-gradient-editor"

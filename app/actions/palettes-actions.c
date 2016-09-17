@@ -379,7 +379,7 @@ name|NC_
 argument_list|(
 literal|"palettes-action"
 argument_list|,
-literal|"Edit palette"
+literal|"Edit this palette"
 argument_list|)
 block|,
 literal|"gimp-palette-editor"
