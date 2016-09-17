@@ -561,7 +561,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gui_global_buffer_changed
+name|gui_clipboard_changed
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1736,20 +1736,21 @@ name|gimp_clipboard_set_buffer
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_clipboard_buffer
+argument_list|(
 name|gimp
-operator|->
-name|global_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|gimp
 argument_list|,
-literal|"buffer-changed"
+literal|"clipboard-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gui_global_buffer_changed
+name|gui_clipboard_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -2736,7 +2737,7 @@ name|gimp
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gui_global_buffer_changed
+name|gui_clipboard_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -2962,8 +2963,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_global_buffer_changed (Gimp * gimp)
-name|gui_global_buffer_changed
+DECL|function|gui_clipboard_changed (Gimp * gimp)
+name|gui_clipboard_changed
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2974,9 +2975,10 @@ name|gimp_clipboard_set_buffer
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_clipboard_buffer
+argument_list|(
 name|gimp
-operator|->
-name|global_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

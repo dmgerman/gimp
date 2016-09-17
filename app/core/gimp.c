@@ -273,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7942d0103
+DECL|enum|__anon2b4dca640103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -284,8 +284,8 @@ block|,
 DECL|enumerator|EXIT
 name|EXIT
 block|,
-DECL|enumerator|BUFFER_CHANGED
-name|BUFFER_CHANGED
+DECL|enumerator|CLIPBOARD_CHANGED
+name|CLIPBOARD_CHANGED
 block|,
 DECL|enumerator|FILTER_HISTORY_CHANGED
 name|FILTER_HISTORY_CHANGED
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7942d0203
+DECL|enum|__anon2b4dca640203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -668,12 +668,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_signals
 index|[
-name|BUFFER_CHANGED
+name|CLIPBOARD_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"buffer-changed"
+literal|"clipboard-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -686,7 +686,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpClass
 argument_list|,
-name|buffer_changed
+name|clipboard_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -826,7 +826,7 @@ name|gimp_real_exit
 expr_stmt|;
 name|klass
 operator|->
-name|buffer_changed
+name|clipboard_changed
 operator|=
 name|NULL
 expr_stmt|;
@@ -1725,19 +1725,19 @@ if|if
 condition|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 operator|=
 name|NULL
 expr_stmt|;
@@ -2190,7 +2190,7 @@ name|GIMP_OBJECT
 argument_list|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 argument_list|)
 argument_list|,
 name|gui_size
@@ -3867,8 +3867,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_set_global_buffer (Gimp * gimp,GimpBuffer * buffer)
-name|gimp_set_global_buffer
+DECL|function|gimp_set_clipboard_buffer (Gimp * gimp,GimpBuffer * buffer)
+name|gimp_set_clipboard_buffer
 parameter_list|(
 name|Gimp
 modifier|*
@@ -3905,25 +3905,25 @@ name|buffer
 operator|==
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 condition|)
 return|return;
 if|if
 condition|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 condition|)
 name|g_object_unref
 argument_list|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 operator|=
 name|buffer
 expr_stmt|;
@@ -3931,13 +3931,13 @@ if|if
 condition|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 condition|)
 name|g_object_ref
 argument_list|(
 name|gimp
 operator|->
-name|global_buffer
+name|clipboard_buffer
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -3946,12 +3946,41 @@ name|gimp
 argument_list|,
 name|gimp_signals
 index|[
-name|BUFFER_CHANGED
+name|CLIPBOARD_CHANGED
 index|]
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpBuffer
+modifier|*
+DECL|function|gimp_get_clipboard_buffer (Gimp * gimp)
+name|gimp_get_clipboard_buffer
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp
+operator|->
+name|clipboard_buffer
+return|;
 block|}
 end_function
 

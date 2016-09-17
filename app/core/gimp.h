@@ -265,10 +265,10 @@ name|GList
 modifier|*
 name|image_windows
 decl_stmt|;
-DECL|member|global_buffer
+DECL|member|clipboard_buffer
 name|GimpBuffer
 modifier|*
-name|global_buffer
+name|clipboard_buffer
 decl_stmt|;
 DECL|member|named_buffers
 name|GimpContainer
@@ -428,11 +428,11 @@ name|gboolean
 name|force
 parameter_list|)
 function_decl|;
-DECL|member|buffer_changed
+DECL|member|clipboard_changed
 name|void
 function_decl|(
 modifier|*
-name|buffer_changed
+name|clipboard_changed
 function_decl|)
 parameter_list|(
 name|Gimp
@@ -694,7 +694,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_set_global_buffer
+name|gimp_set_clipboard_buffer
 parameter_list|(
 name|Gimp
 modifier|*
@@ -703,6 +703,18 @@ parameter_list|,
 name|GimpBuffer
 modifier|*
 name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpBuffer
+modifier|*
+name|gimp_get_clipboard_buffer
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

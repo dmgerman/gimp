@@ -2618,9 +2618,10 @@ name|named_buffers
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
+name|gimp_get_clipboard_buffer
+argument_list|(
 name|gimp
-operator|->
-name|global_buffer
+argument_list|)
 argument_list|)
 argument_list|)
 return|;
