@@ -1444,9 +1444,24 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|image
 condition|)
+block|{
+comment|/*  don't keep clipboard images in the image list  */
+name|gimp_container_remove
+argument_list|(
+name|gimp
+operator|->
+name|images
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
 block|{
 name|g_warning
 argument_list|(
