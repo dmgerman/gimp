@@ -83,6 +83,41 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  image (xcf)  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_selection_data_set_xcf
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_selection_data_get_xcf
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  stream (svg/png)  */
 end_comment
 
