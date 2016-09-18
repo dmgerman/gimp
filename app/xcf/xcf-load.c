@@ -2103,6 +2103,12 @@ operator|->
 name|active_channel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|file
+condition|)
 name|gimp_image_set_file
 argument_list|(
 name|image
