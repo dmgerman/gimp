@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80103
+DECL|enum|__anon29d6b2ae0103
 block|{
 DECL|enumerator|GIMP_COMPONENT_MASK_RED
 name|GIMP_COMPONENT_MASK_RED
@@ -139,7 +139,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80203
+DECL|enum|__anon29d6b2ae0203
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6faae80303
+DECL|enum|__anon29d6b2ae0303
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -222,7 +222,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80403
+DECL|enum|__anon29d6b2ae0403
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -263,7 +263,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80503
+DECL|enum|__anon29d6b2ae0503
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -300,7 +300,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80603
+DECL|enum|__anon29d6b2ae0603
 block|{
 DECL|enumerator|GIMP_GRAVITY_NONE
 name|GIMP_GRAVITY_NONE
@@ -359,7 +359,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80703
+DECL|enum|__anon29d6b2ae0703
 block|{
 DECL|enumerator|GIMP_GUIDE_STYLE_NONE
 name|GIMP_GUIDE_STYLE_NONE
@@ -402,7 +402,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6faae80803
+DECL|enum|__anon29d6b2ae0803
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -472,7 +472,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6faae80903
+DECL|enum|__anon29d6b2ae0903
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -632,7 +632,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80a03
+DECL|enum|__anon29d6b2ae0a03
 block|{
 DECL|enumerator|GIMP_MATTING_ENGINE_GLOBAL
 name|GIMP_MATTING_ENGINE_GLOBAL
@@ -645,6 +645,44 @@ comment|/*< desc="Matting Levin">*/
 DECL|typedef|GimpMattingEngine
 block|}
 name|GimpMattingEngine
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_PASTE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_PASTE_TYPE
+value|(gimp_paste_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_paste_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon29d6b2ae0b03
+block|{
+DECL|enumerator|GIMP_PASTE_TYPE_FLOATING
+name|GIMP_PASTE_TYPE_FLOATING
+block|,
+DECL|enumerator|GIMP_PASTE_TYPE_FLOATING_INTO
+name|GIMP_PASTE_TYPE_FLOATING_INTO
+block|,
+DECL|enumerator|GIMP_PASTE_TYPE_NEW_LAYER
+name|GIMP_PASTE_TYPE_NEW_LAYER
+DECL|typedef|GimpPasteType
+block|}
+name|GimpPasteType
 typedef|;
 end_typedef
 
@@ -670,7 +708,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80b03
+DECL|enum|__anon29d6b2ae0c03
 block|{
 DECL|enumerator|GIMP_ALIGN_LEFT
 name|GIMP_ALIGN_LEFT
@@ -741,7 +779,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80c03
+DECL|enum|__anon29d6b2ae0d03
 block|{
 DECL|enumerator|GIMP_ALIGN_REFERENCE_FIRST
 name|GIMP_ALIGN_REFERENCE_FIRST
@@ -794,7 +832,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80d03
+DECL|enum|__anon29d6b2ae0e03
 block|{
 DECL|enumerator|GIMP_FILL_STYLE_SOLID
 name|GIMP_FILL_STYLE_SOLID
@@ -831,7 +869,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80e03
+DECL|enum|__anon29d6b2ae0f03
 block|{
 DECL|enumerator|GIMP_DASH_CUSTOM
 name|GIMP_DASH_CUSTOM
@@ -904,7 +942,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae80f03
+DECL|enum|__anon29d6b2ae1003
 block|{
 DECL|enumerator|GIMP_ITEM_SET_NONE
 name|GIMP_ITEM_SET_NONE
@@ -953,7 +991,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81003
+DECL|enum|__anon29d6b2ae1103
 block|{
 DECL|enumerator|GIMP_VIEW_SIZE_TINY
 name|GIMP_VIEW_SIZE_TINY
@@ -1036,7 +1074,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81103
+DECL|enum|__anon29d6b2ae1203
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_LIST
 name|GIMP_VIEW_TYPE_LIST
@@ -1073,7 +1111,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81203
+DECL|enum|__anon29d6b2ae1303
 block|{
 DECL|enumerator|GIMP_THUMBNAIL_SIZE_NONE
 name|GIMP_THUMBNAIL_SIZE_NONE
@@ -1120,7 +1158,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81303
+DECL|enum|__anon29d6b2ae1403
 block|{
 DECL|enumerator|GIMP_UNDO_MODE_UNDO
 name|GIMP_UNDO_MODE_UNDO
@@ -1155,7 +1193,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81403
+DECL|enum|__anon29d6b2ae1503
 block|{
 DECL|enumerator|GIMP_UNDO_EVENT_UNDO_PUSHED
 name|GIMP_UNDO_EVENT_UNDO_PUSHED
@@ -1216,7 +1254,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81503
+DECL|enum|__anon29d6b2ae1603
 block|{
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
 DECL|enumerator|GIMP_UNDO_GROUP_NONE
@@ -1609,7 +1647,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81603
+DECL|enum|__anon29d6b2ae1703
 block|{
 DECL|enumerator|GIMP_DIRTY_NONE
 name|GIMP_DIRTY_NONE
@@ -1718,7 +1756,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81703
+DECL|enum|__anon29d6b2ae1803
 block|{
 DECL|enumerator|GIMP_GRADIENT_COLOR_FIXED
 name|GIMP_GRADIENT_COLOR_FIXED
@@ -1762,7 +1800,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81803
+DECL|enum|__anon29d6b2ae1903
 block|{
 DECL|enumerator|GIMP_MESSAGE_INFO
 name|GIMP_MESSAGE_INFO
@@ -1803,7 +1841,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81903
+DECL|enum|__anon29d6b2ae1a03
 block|{
 DECL|enumerator|GIMP_COLOR_PROFILE_POLICY_ASK
 name|GIMP_COLOR_PROFILE_POLICY_ASK
@@ -1844,7 +1882,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81a03
+DECL|enum|__anon29d6b2ae1b03
 block|{
 DECL|enumerator|GIMP_DYNAMICS_OUTPUT_OPACITY
 name|GIMP_DYNAMICS_OUTPUT_OPACITY
@@ -1918,7 +1956,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81b03
+DECL|enum|__anon29d6b2ae1c03
 block|{
 DECL|enumerator|GIMP_FILTER_REGION_SELECTION
 name|GIMP_FILTER_REGION_SELECTION
@@ -1955,7 +1993,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6faae81c03
+DECL|enum|__anon29d6b2ae1d03
 block|{
 DECL|enumerator|GIMP_CHANNEL_BORDER_STYLE_HARD
 name|GIMP_CHANNEL_BORDER_STYLE_HARD
@@ -1982,7 +2020,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6faae81d03
+DECL|enum|__anon29d6b2ae1e03
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_FIRST
 name|GIMP_CONTEXT_PROP_FIRST
@@ -2098,7 +2136,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6faae81e03
+DECL|enum|__anon29d6b2ae1f03
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_MASK_IMAGE
 name|GIMP_CONTEXT_PROP_MASK_IMAGE
@@ -2291,7 +2329,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6faae81f03
+DECL|enum|__anon29d6b2ae2003
 block|{
 DECL|enumerator|GIMP_IMAGE_SCALE_OK
 name|GIMP_IMAGE_SCALE_OK
@@ -2311,7 +2349,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6faae82003
+DECL|enum|__anon29d6b2ae2103
 block|{
 DECL|enumerator|GIMP_ITEM_TYPE_LAYERS
 name|GIMP_ITEM_TYPE_LAYERS

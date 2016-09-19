@@ -130,8 +130,8 @@ name|GimpBufferView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|paste_into
+name|GimpPasteType
+name|paste_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -160,7 +160,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|FALSE
+name|GIMP_PASTE_TYPE_FLOATING
 argument_list|)
 expr_stmt|;
 block|}
@@ -186,7 +186,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|TRUE
+name|GIMP_PASTE_TYPE_FLOATING_INTO
 argument_list|)
 expr_stmt|;
 block|}
@@ -366,15 +366,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|buffers_paste (GimpBufferView * view,gboolean paste_into)
+DECL|function|buffers_paste (GimpBufferView * view,GimpPasteType paste_type)
 name|buffers_paste
 parameter_list|(
 name|GimpBufferView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|paste_into
+name|GimpPasteType
+name|paste_type
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -540,9 +540,12 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|buffer
+argument_list|)
 argument_list|,
-name|paste_into
+name|paste_type
 argument_list|,
 name|x
 argument_list|,
