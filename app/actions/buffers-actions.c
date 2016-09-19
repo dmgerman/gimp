@@ -164,7 +164,7 @@ name|GIMP_HELP_BUFFER_PASTE_INTO
 block|}
 block|,
 block|{
-literal|"buffers-paste-as-new"
+literal|"buffers-paste-as-new-image"
 block|,
 name|GIMP_STOCK_PASTE_AS_NEW
 block|,
@@ -186,10 +186,10 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|buffers_paste_as_new_cmd_callback
+name|buffers_paste_as_new_image_cmd_callback
 argument_list|)
 block|,
-name|GIMP_HELP_BUFFER_PASTE_AS_NEW
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
 block|}
 block|,
 block|{
@@ -317,7 +317,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"buffers-paste-as-new"
+literal|"buffers-paste-as-new-image"
 argument_list|,
 name|buffer
 argument_list|)

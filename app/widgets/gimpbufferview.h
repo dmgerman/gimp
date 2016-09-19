@@ -123,10 +123,10 @@ name|GtkWidget
 modifier|*
 name|paste_into_button
 decl_stmt|;
-DECL|member|paste_as_new_button
+DECL|member|paste_as_new_image_button
 name|GtkWidget
 modifier|*
-name|paste_as_new_button
+name|paste_as_new_image_button
 decl_stmt|;
 DECL|member|delete_button
 name|GtkWidget

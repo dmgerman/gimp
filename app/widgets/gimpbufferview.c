@@ -312,32 +312,7 @@ name|GimpBufferView
 modifier|*
 name|view
 parameter_list|)
-block|{
-name|view
-operator|->
-name|paste_button
-operator|=
-name|NULL
-expr_stmt|;
-name|view
-operator|->
-name|paste_into_button
-operator|=
-name|NULL
-expr_stmt|;
-name|view
-operator|->
-name|paste_as_new_button
-operator|=
-name|NULL
-expr_stmt|;
-name|view
-operator|->
-name|delete_button
-operator|=
-name|NULL
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -811,7 +786,7 @@ argument_list|)
 expr_stmt|;
 name|buffer_view
 operator|->
-name|paste_as_new_button
+name|paste_as_new_image_button
 operator|=
 name|gimp_editor_add_action_button
 argument_list|(
@@ -824,7 +799,7 @@ argument_list|)
 argument_list|,
 literal|"buffers"
 argument_list|,
-literal|"buffers-paste-as-new"
+literal|"buffers-paste-as-new-image"
 argument_list|,
 name|NULL
 argument_list|)
@@ -891,7 +866,7 @@ name|GTK_BUTTON
 argument_list|(
 name|buffer_view
 operator|->
-name|paste_as_new_button
+name|paste_as_new_image_button
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_BUFFER

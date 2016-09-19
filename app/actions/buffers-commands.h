@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|buffers_paste_as_new_cmd_callback
+name|buffers_paste_as_new_image_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

@@ -1243,7 +1243,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 else|else
-name|edit_paste_as_new_cmd_callback
+name|edit_paste_as_new_image_cmd_callback
 argument_list|(
 name|action
 argument_list|,
@@ -1289,8 +1289,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_as_new_cmd_callback (GtkAction * action,gpointer data)
-name|edit_paste_as_new_cmd_callback
+DECL|function|edit_paste_as_new_image_cmd_callback (GtkAction * action,gpointer data)
+name|edit_paste_as_new_image_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

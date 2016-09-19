@@ -194,8 +194,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_paste_as_new_cmd_callback (GtkAction * action,gpointer data)
-name|buffers_paste_as_new_cmd_callback
+DECL|function|buffers_paste_as_new_image_cmd_callback (GtkAction * action,gpointer data)
+name|buffers_paste_as_new_image_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

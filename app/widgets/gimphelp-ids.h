@@ -286,11 +286,11 @@ value|"gimp-edit-paste-into"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW
+DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
 define|#
 directive|define
-name|GIMP_HELP_EDIT_PASTE_AS_NEW
-value|"gimp-edit-paste-as-new"
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
+value|"gimp-edit-paste-as-new-image"
 end_define
 
 begin_define
@@ -3150,11 +3150,11 @@ value|"gimp-buffer-paste-into"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW
+DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
 define|#
 directive|define
-name|GIMP_HELP_BUFFER_PASTE_AS_NEW
-value|"gimp-buffer-paste-as-new"
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
+value|"gimp-buffer-paste-as-new-image"
 end_define
 
 begin_define
