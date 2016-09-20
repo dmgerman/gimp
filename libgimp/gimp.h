@@ -104,6 +104,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpedit.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpfontselect.h>
 end_include
 

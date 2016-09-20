@@ -94,7 +94,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_edit_paste_as_new
+name|gimp_edit_paste_as_new_image
 parameter_list|(
 name|void
 parameter_list|)
@@ -169,7 +169,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_edit_named_paste_as_new
+name|gimp_edit_named_paste_as_new_image
 parameter_list|(
 specifier|const
 name|gchar

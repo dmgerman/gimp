@@ -945,8 +945,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|edit_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|edit_paste_as_new_invoker
+DECL|function|edit_paste_as_new_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|edit_paste_as_new_image_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1966,8 +1966,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|edit_named_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|edit_named_paste_as_new_invoker
+DECL|function|edit_named_paste_as_new_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|edit_named_paste_as_new_image_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -4500,12 +4500,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-edit-paste-as-new    */
+comment|/*    * gimp-edit-paste-as-new-image    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|edit_paste_as_new_invoker
+name|edit_paste_as_new_image_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4515,14 +4515,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-edit-paste-as-new"
+literal|"gimp-edit-paste-as-new-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-paste-as-new"
+literal|"gimp-edit-paste-as-new-image"
 argument_list|,
 literal|"Paste buffer to a new image."
 argument_list|,
@@ -5063,12 +5063,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-edit-named-paste-as-new    */
+comment|/*    * gimp-edit-named-paste-as-new-image    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|edit_named_paste_as_new_invoker
+name|edit_named_paste_as_new_image_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -5078,18 +5078,18 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-edit-named-paste-as-new"
+literal|"gimp-edit-named-paste-as-new-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-named-paste-as-new"
+literal|"gimp-edit-named-paste-as-new-image"
 argument_list|,
 literal|"Paste named buffer to a new image."
 argument_list|,
-literal|"This procedure works like 'gimp-edit-paste-as-new' but pastes a named buffer instead of the global buffer."
+literal|"This procedure works like 'gimp-edit-paste-as-new-image' but pastes a named buffer instead of the global buffer."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
