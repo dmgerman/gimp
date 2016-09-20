@@ -1648,11 +1648,14 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|?
+name|GIMP_LAYER
+argument_list|(
 name|gimp_item_get_parent
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 argument_list|)
 else|:
