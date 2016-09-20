@@ -591,6 +591,35 @@ name|GIMP_HELP_EDIT_PASTE_INTO
 block|}
 block|,
 block|{
+literal|"edit-paste-as-new-layer"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"edit-action"
+argument_list|,
+literal|"New _Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"edit-action"
+argument_list|,
+literal|"Create a new layer from the content of the clipboard"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|edit_paste_as_new_layer_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
+block|}
+block|,
+block|{
 literal|"edit-paste-as-new-image"
 block|,
 name|GIMP_STOCK_PASTE_AS_NEW
@@ -646,35 +675,6 @@ name|edit_paste_as_new_image_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
-block|}
-block|,
-block|{
-literal|"edit-paste-as-new-layer"
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"edit-action"
-argument_list|,
-literal|"New _Layer"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"edit-action"
-argument_list|,
-literal|"Create a new layer from the content of the clipboard"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|edit_paste_as_new_layer_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 block|}
 block|,
 block|{
@@ -1707,14 +1707,14 @@ expr_stmt|;
 comment|/*             "edit-paste" is always active */
 name|SET_SENSITIVE
 argument_list|(
-literal|"edit-paste-as-new-layer"
+literal|"edit-paste-into"
 argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"edit-paste-into"
+literal|"edit-paste-as-new-layer"
 argument_list|,
 name|image
 argument_list|)
@@ -1743,13 +1743,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"edit-named-paste"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+comment|/*             "edit-named-paste" is always active */
 name|SET_SENSITIVE
 argument_list|(
 literal|"edit-clear"

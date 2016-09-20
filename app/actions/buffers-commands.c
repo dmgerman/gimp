@@ -194,6 +194,32 @@ end_function
 
 begin_function
 name|void
+DECL|function|buffers_paste_as_new_layer_cmd_callback (GtkAction * action,gpointer data)
+name|buffers_paste_as_new_layer_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|buffers_paste
+argument_list|(
+name|GIMP_BUFFER_VIEW
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|GIMP_PASTE_TYPE_NEW_LAYER
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|buffers_paste_as_new_image_cmd_callback (GtkAction * action,gpointer data)
 name|buffers_paste_as_new_image_cmd_callback
 parameter_list|(

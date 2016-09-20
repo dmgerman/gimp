@@ -123,6 +123,11 @@ name|GtkWidget
 modifier|*
 name|paste_into_button
 decl_stmt|;
+DECL|member|paste_as_new_layer_button
+name|GtkWidget
+modifier|*
+name|paste_as_new_layer_button
+decl_stmt|;
 DECL|member|paste_as_new_image_button
 name|GtkWidget
 modifier|*

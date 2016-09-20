@@ -286,19 +286,19 @@ value|"gimp-edit-paste-into"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
-define|#
-directive|define
-name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
-value|"gimp-edit-paste-as-new-image"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 define|#
 directive|define
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 value|"gimp-edit-paste-as-new-layer"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
+value|"gimp-edit-paste-as-new-image"
 end_define
 
 begin_define
@@ -3147,6 +3147,14 @@ define|#
 directive|define
 name|GIMP_HELP_BUFFER_PASTE_INTO
 value|"gimp-buffer-paste-into"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
+define|#
+directive|define
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
+value|"gimp-buffer-paste-as-new-layer"
 end_define
 
 begin_define
