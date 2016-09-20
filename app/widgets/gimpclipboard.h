@@ -83,6 +83,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpObject
+modifier|*
+name|gimp_clipboard_get_object
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImage
 modifier|*
 name|gimp_clipboard_get_image

@@ -1358,7 +1358,67 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_image:  * @gimp: pointer to #Gimp  *  * Retrieves either an image from the global image cut buffer of @gimp.  *  * The returned #GimpImage needs to be unref'ed when it's no longer  * needed.  *  * Return value: a reference to a #GimpImage or %NULL if there's no  *               image in the clipboard  **/
+comment|/**  * gimp_clipboard_get_object:  * @gimp: pointer to #Gimp  *  * Retrieves either an image or a buffer from the global image cut  * buffer of @gimp.  *  * The returned #GimpObject needs to be unref'ed when it's no longer  * needed.  *  * Return value: a reference to a #GimpObject or %NULL if there's no  *               image or buffer in the clipboard  **/
+end_comment
+
+begin_function
+name|GimpObject
+modifier|*
+DECL|function|gimp_clipboard_get_object (Gimp * gimp)
+name|gimp_clipboard_get_object
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|GimpObject
+modifier|*
+name|object
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|object
+operator|=
+name|GIMP_OBJECT
+argument_list|(
+name|gimp_clipboard_get_image
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|object
+condition|)
+name|object
+operator|=
+name|GIMP_OBJECT
+argument_list|(
+name|gimp_clipboard_get_buffer
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|object
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_clipboard_get_image:  * @gimp: pointer to #Gimp  *  * Retrieves an image from the global image cut buffer of @gimp.  *  * The returned #GimpImage needs to be unref'ed when it's no longer  * needed.  *  * Return value: a reference to a #GimpImage or %NULL if there's no  *               image in the clipboard  **/
 end_comment
 
 begin_function

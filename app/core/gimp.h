@@ -698,6 +698,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpObject
+modifier|*
+name|gimp_get_clipboard_object
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_set_clipboard_image
 parameter_list|(
