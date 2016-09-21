@@ -151,7 +151,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon275caa820108
+DECL|struct|__anon2becbc580108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -472,7 +472,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_layer_flatten
+name|gimp_layer_remove_alpha
 parameter_list|(
 name|GimpLayer
 modifier|*

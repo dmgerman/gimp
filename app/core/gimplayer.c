@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941778b0103
+DECL|enum|__anon27fd2a080103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941778b0203
+DECL|enum|__anon27fd2a080203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8041,8 +8041,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_flatten (GimpLayer * layer,GimpContext * context)
-name|gimp_layer_flatten
+DECL|function|gimp_layer_remove_alpha (GimpLayer * layer,GimpContext * context)
+name|gimp_layer_remove_alpha
 parameter_list|(
 name|GimpLayer
 modifier|*

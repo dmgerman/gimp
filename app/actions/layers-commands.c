@@ -3828,7 +3828,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_layer_flatten
+name|gimp_layer_remove_alpha
 argument_list|(
 name|layer
 argument_list|,
