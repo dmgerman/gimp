@@ -1121,6 +1121,33 @@ value|_("Sets the default 'invert mask' state for the 'Add Layer Mask' dialog.")
 end_define
 
 begin_define
+DECL|macro|LAYER_MERGE_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_TYPE_BLURB
+define|\
+value|_("Sets the default merge type for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_MERGE_ACTIVE_GROUP_ONLY_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_ACTIVE_GROUP_ONLY_BLURB
+define|\
+value|_("Sets the default 'Active group only' for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_MERGE_DISCARD_INVISIBLE_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_DISCARD_INVISIBLE_BLURB
+define|\
+value|_("Sets the default 'Discard invisible' for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
 DECL|macro|CHANNEL_NEW_NAME_BLURB
 define|#
 directive|define
