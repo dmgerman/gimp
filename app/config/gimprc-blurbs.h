@@ -1085,6 +1085,24 @@ value|"Sets the icon theme search path."
 end_define
 
 begin_define
+DECL|macro|IMAGE_CONVERT_PROFILE_INTENT_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PROFILE_INTENT_BLURB
+define|\
+value|_("Sets the default rendering intent for the 'Convert to Color Profile' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PROFILE_BPC_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PROFILE_BPC_BLURB
+define|\
+value|_("Sets the default 'Black Point Compensation' state for the " \   "'Convert to Color Profile' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_NAME_BLURB
 define|#
 directive|define

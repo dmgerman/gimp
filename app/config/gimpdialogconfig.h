@@ -118,6 +118,14 @@ DECL|member|color_profile_policy
 name|GimpColorProfilePolicy
 name|color_profile_policy
 decl_stmt|;
+DECL|member|image_convert_profile_intent
+name|GimpColorRenderingIntent
+name|image_convert_profile_intent
+decl_stmt|;
+DECL|member|image_convert_profile_bpc
+name|gboolean
+name|image_convert_profile_bpc
+decl_stmt|;
 DECL|member|layer_new_name
 name|gchar
 modifier|*
