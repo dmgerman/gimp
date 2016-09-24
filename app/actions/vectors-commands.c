@@ -535,11 +535,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Path Attributes"
@@ -555,6 +550,11 @@ literal|"Edit Path Attributes"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PATH_EDIT
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -652,10 +652,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|config
-operator|->
-name|vectors_new_name
-argument_list|,
 name|_
 argument_list|(
 literal|"New Path"
@@ -671,6 +667,10 @@ literal|"New Path Options"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PATH_NEW
+argument_list|,
+name|config
+operator|->
+name|vectors_new_name
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

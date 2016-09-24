@@ -90,7 +90,7 @@ end_function_decl
 begin_function
 name|VectorsOptionsDialog
 modifier|*
-DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GimpContext * context,GtkWidget * parent,const gchar * vectors_name,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id)
+DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * vectors_name)
 name|vectors_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -108,11 +108,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|vectors_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -138,6 +133,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|vectors_name
 parameter_list|)
 block|{
 name|VectorsOptionsDialog

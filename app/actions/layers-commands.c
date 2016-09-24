@@ -791,15 +791,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|config
-operator|->
-name|layer_new_fill_type
-argument_list|,
 name|_
 argument_list|(
 literal|"Layer Attributes"
@@ -815,6 +806,15 @@ literal|"Edit Layer Attributes"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_LAYER_EDIT
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|config
+operator|->
+name|layer_new_fill_type
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -980,14 +980,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|config
-operator|->
-name|layer_new_name
-argument_list|,
-name|config
-operator|->
-name|layer_new_fill_type
-argument_list|,
 name|_
 argument_list|(
 literal|"New Layer"
@@ -1003,6 +995,14 @@ literal|"Create a New Layer"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_LAYER_NEW
+argument_list|,
+name|config
+operator|->
+name|layer_new_name
+argument_list|,
+name|config
+operator|->
+name|layer_new_fill_type
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

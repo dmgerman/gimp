@@ -259,16 +259,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-operator|&
-name|channel
-operator|->
-name|color
-argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|channel
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Channel Attributes"
@@ -284,6 +274,16 @@ literal|"Edit Channel Attributes"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_CHANNEL_EDIT
+argument_list|,
+operator|&
+name|channel
+operator|->
+name|color
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|channel
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -393,15 +393,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-operator|&
-name|config
-operator|->
-name|channel_new_color
-argument_list|,
-name|config
-operator|->
-name|channel_new_name
-argument_list|,
 name|_
 argument_list|(
 literal|"New Channel"
@@ -417,6 +408,15 @@ literal|"New Channel Options"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_CHANNEL_NEW
+argument_list|,
+operator|&
+name|config
+operator|->
+name|channel_new_color
+argument_list|,
+name|config
+operator|->
+name|channel_new_name
 argument_list|,
 name|_
 argument_list|(

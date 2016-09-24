@@ -313,11 +313,6 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-operator|&
-name|color
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Quick Mask Attributes"
@@ -333,6 +328,11 @@ literal|"Edit Quick Mask Attributes"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_QUICK_MASK_EDIT
+argument_list|,
+operator|&
+name|color
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(

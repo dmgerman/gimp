@@ -134,7 +134,7 @@ end_comment
 begin_function
 name|ChannelOptionsDialog
 modifier|*
-DECL|function|channel_options_dialog_new (GimpImage * image,GimpChannel * channel,GimpContext * context,GtkWidget * parent,const GimpRGB * channel_color,const gchar * channel_name,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
+DECL|function|channel_options_dialog_new (GimpImage * image,GimpChannel * channel,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const GimpRGB * channel_color,const gchar * channel_name,const gchar * color_label,const gchar * opacity_label,gboolean show_from_sel)
 name|channel_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -152,16 +152,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|channel_color
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|channel_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -187,6 +177,16 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|channel_color
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|channel_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -272,15 +272,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|channel_color
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|title
 operator|!=
 name|NULL
@@ -318,6 +309,15 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|help_id
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|channel_color
 operator|!=
 name|NULL
 argument_list|,

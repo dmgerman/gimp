@@ -78,11 +78,6 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|vectors_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
 name|title
 parameter_list|,
 specifier|const
@@ -104,6 +99,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|vectors_name
 parameter_list|)
 function_decl|;
 end_function_decl
