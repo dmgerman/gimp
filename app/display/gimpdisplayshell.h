@@ -596,12 +596,6 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  navigation popup                   */
-DECL|member|grid_dialog
-name|GtkWidget
-modifier|*
-name|grid_dialog
-decl_stmt|;
-comment|/*  grid configuration dialog          */
 DECL|member|color_config
 name|GimpColorConfig
 modifier|*

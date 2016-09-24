@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b569e650103
+DECL|enum|__anon2a3379740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b569e650203
+DECL|enum|__anon2a3379740203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3576,27 +3576,6 @@ expr_stmt|;
 name|shell
 operator|->
 name|nav_popup
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|shell
-operator|->
-name|grid_dialog
-condition|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|shell
-operator|->
-name|grid_dialog
-argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|grid_dialog
 operator|=
 name|NULL
 expr_stmt|;
