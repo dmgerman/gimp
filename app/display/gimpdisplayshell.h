@@ -639,12 +639,6 @@ DECL|member|filter_idle_id
 name|guint
 name|filter_idle_id
 decl_stmt|;
-DECL|member|filters_dialog
-name|GtkWidget
-modifier|*
-name|filters_dialog
-decl_stmt|;
-comment|/* color display filter dialog       */
 DECL|member|filter_format
 specifier|const
 name|Babl
