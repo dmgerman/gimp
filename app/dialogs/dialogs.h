@@ -146,6 +146,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|dialogs_destroy_dialog
+parameter_list|(
+name|GObject
+modifier|*
+name|attach_object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|attach_key
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
