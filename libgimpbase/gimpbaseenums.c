@@ -5267,7 +5267,12 @@ block|{
 block|{
 name|GIMP_EXPAND_AS_NECESSARY
 block|,
-literal|"GIMP_EXPAND_AS_NECESSARY"
+name|NC_
+argument_list|(
+literal|"merge-type"
+argument_list|,
+literal|"Expanded as neccessary"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5275,7 +5280,12 @@ block|,
 block|{
 name|GIMP_CLIP_TO_IMAGE
 block|,
-literal|"GIMP_CLIP_TO_IMAGE"
+name|NC_
+argument_list|(
+literal|"merge-type"
+argument_list|,
+literal|"Clipped to image"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5283,7 +5293,12 @@ block|,
 block|{
 name|GIMP_CLIP_TO_BOTTOM_LAYER
 block|,
-literal|"GIMP_CLIP_TO_BOTTOM_LAYER"
+name|NC_
+argument_list|(
+literal|"merge-type"
+argument_list|,
+literal|"Clipped to bottom layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5291,7 +5306,12 @@ block|,
 block|{
 name|GIMP_FLATTEN_IMAGE
 block|,
-literal|"GIMP_FLATTEN_IMAGE"
+name|NC_
+argument_list|(
+literal|"merge-type"
+argument_list|,
+literal|"Flatten"
+argument_list|)
 block|,
 name|NULL
 block|}
