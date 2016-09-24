@@ -465,7 +465,7 @@ name|GimpUnit
 name|resolution_unit
 parameter_list|,
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -482,6 +482,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -2504,10 +2508,7 @@ name|layer_resize_unit
 argument_list|,
 name|layers_resize_layer_callback
 argument_list|,
-name|action_data_get_context
-argument_list|(
-name|data
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog
@@ -4913,7 +4914,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_scale_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gdouble xresolution,gdouble yresolution,GimpUnit resolution_unit,gpointer data)
+DECL|function|layers_scale_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gdouble xresolution,gdouble yresolution,GimpUnit resolution_unit,gpointer user_data)
 name|layers_scale_layer_callback
 parameter_list|(
 name|GtkWidget
@@ -4949,7 +4950,7 @@ name|resolution_unit
 parameter_list|,
 comment|/* unused */
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -4958,7 +4959,7 @@ name|display
 init|=
 name|GIMP_DISPLAY
 argument_list|(
-name|data
+name|user_data
 argument_list|)
 decl_stmt|;
 name|layer_scale_unit
@@ -5120,7 +5121,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_resize_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet unused,gboolean unused2,gpointer data)
+DECL|function|layers_resize_layer_callback (GtkWidget * dialog,GimpViewable * viewable,GimpContext * context,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet unused,gboolean unused2,gpointer user_data)
 name|layers_resize_layer_callback
 parameter_list|(
 name|GtkWidget
@@ -5130,6 +5131,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|width
@@ -5153,18 +5158,9 @@ name|gboolean
 name|unused2
 parameter_list|,
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-init|=
-name|GIMP_CONTEXT
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|layer_resize_unit
 operator|=
 name|unit
