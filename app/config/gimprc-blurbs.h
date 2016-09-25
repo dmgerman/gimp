@@ -1193,6 +1193,51 @@ value|_("Sets the default path name for the 'New Path' dialog.")
 end_define
 
 begin_define
+DECL|macro|VECTORS_EXPORT_PATH_BLURB
+define|#
+directive|define
+name|VECTORS_EXPORT_PATH_BLURB
+define|\
+value|_("Sets the default folder path for the 'Export Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_EXPORT_ACTIVE_ONLY_BLURB
+define|#
+directive|define
+name|VECTORS_EXPORT_ACTIVE_ONLY_BLURB
+define|\
+value|_("Sets the default 'Export the active path' state for the 'Export Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_PATH_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_PATH_BLURB
+define|\
+value|_("Sets the default folder path for the 'Import Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_MERGE_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_MERGE_BLURB
+define|\
+value|_("Sets the default 'Merge imported paths' state for the 'Import Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_SCALE_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_SCALE_BLURB
+define|\
+value|_("Sets the default 'Scale imported paths to fit size' state for the 'Import Path' dialog.")
+end_define
+
+begin_define
 DECL|macro|SELECTION_FEATHER_RADIUS_BLURB
 define|#
 directive|define
