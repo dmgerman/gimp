@@ -483,7 +483,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|layers_scale_layer_callback
+name|layers_scale_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -523,7 +523,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|layers_resize_layer_callback
+name|layers_resize_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2588,7 +2588,7 @@ name|GIMP_HELP_LAYER_RESIZE
 argument_list|,
 name|layer_resize_unit
 argument_list|,
-name|layers_resize_layer_callback
+name|layers_resize_callback
 argument_list|,
 name|NULL
 argument_list|)
@@ -2818,7 +2818,7 @@ name|layer_scale_unit
 argument_list|,
 name|layer_scale_interp
 argument_list|,
-name|layers_scale_layer_callback
+name|layers_scale_callback
 argument_list|,
 name|display
 argument_list|)
@@ -4919,8 +4919,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_scale_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gdouble xresolution,gdouble yresolution,GimpUnit resolution_unit,gpointer user_data)
-name|layers_scale_layer_callback
+DECL|function|layers_scale_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gdouble xresolution,gdouble yresolution,GimpUnit resolution_unit,gpointer user_data)
+name|layers_scale_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5126,8 +5126,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_resize_layer_callback (GtkWidget * dialog,GimpViewable * viewable,GimpContext * context,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet unused,gboolean unused2,gpointer user_data)
-name|layers_resize_layer_callback
+DECL|function|layers_resize_callback (GtkWidget * dialog,GimpViewable * viewable,GimpContext * context,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet unused,gboolean unused2,gpointer user_data)
+name|layers_resize_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

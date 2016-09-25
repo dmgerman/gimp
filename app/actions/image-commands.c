@@ -933,7 +933,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  always flush, also when only the indexed dialog was shown, so the    *  menu items get updated back to the current image type    */
+comment|/*  always flush, also when only the indexed dialog was shown, so    *  the menu items get updated back to the current image type    */
 name|gimp_image_flush
 argument_list|(
 name|image
@@ -2659,10 +2659,11 @@ name|gint
 name|x
 decl_stmt|,
 name|y
+decl_stmt|;
+name|gint
+name|width
 decl_stmt|,
-name|w
-decl_stmt|,
-name|h
+name|height
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -2698,10 +2699,10 @@ operator|&
 name|y
 argument_list|,
 operator|&
-name|w
+name|width
 argument_list|,
 operator|&
-name|h
+name|height
 argument_list|)
 condition|)
 block|{
@@ -2720,7 +2721,8 @@ name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot crop because the current selection is empty."
+literal|"Cannot crop because the current selection "
+literal|"is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2739,9 +2741,9 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|w
+name|width
 argument_list|,
-name|h
+name|height
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2909,7 +2911,8 @@ name|GIMP_MESSAGE_INFO
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot crop because the image is already cropped to its content."
+literal|"Cannot crop because the image is already "
+literal|"cropped to its content."
 argument_list|)
 argument_list|)
 expr_stmt|;

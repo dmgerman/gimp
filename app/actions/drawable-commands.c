@@ -385,7 +385,8 @@ name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"White Balance operates only on RGB color layers."
+literal|"White Balance operates only on RGB color "
+literal|"layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
