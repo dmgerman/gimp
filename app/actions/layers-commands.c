@@ -2945,7 +2945,8 @@ name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot crop because the current selection is empty."
+literal|"Cannot crop because the current selection "
+literal|"is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3045,13 +3046,14 @@ modifier|*
 name|widget
 decl_stmt|;
 name|gint
-name|x1
+name|x
 decl_stmt|,
-name|y1
+name|y
+decl_stmt|;
+name|gint
+name|width
 decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
+name|height
 decl_stmt|;
 name|return_if_no_layer
 argument_list|(
@@ -3099,16 +3101,16 @@ argument_list|)
 argument_list|)
 argument_list|,
 operator|&
-name|x1
+name|x
 argument_list|,
 operator|&
-name|y1
+name|y
 argument_list|,
 operator|&
-name|x2
+name|width
 argument_list|,
 operator|&
-name|y2
+name|height
 argument_list|)
 condition|)
 block|{
@@ -3139,19 +3141,15 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|,
-name|y2
-operator|-
-name|y1
+name|height
 argument_list|,
 operator|-
-name|x1
+name|x
 argument_list|,
 operator|-
-name|y1
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
@@ -3183,7 +3181,8 @@ name|GIMP_MESSAGE_INFO
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot crop because the active layer has no content."
+literal|"Cannot crop because the active layer "
+literal|"has no content."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3206,7 +3205,8 @@ name|GIMP_MESSAGE_INFO
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot crop because the active layer is already cropped to its content."
+literal|"Cannot crop because the active layer "
+literal|"is already cropped to its content."
 argument_list|)
 argument_list|)
 expr_stmt|;
