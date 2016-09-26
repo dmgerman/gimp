@@ -1103,6 +1103,33 @@ value|_("Sets the default 'Black Point Compensation' state for the " \   "'Conve
 end_define
 
 begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_LAYER_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_LAYER_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default layer dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_TEXT_LAYER_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_TEXT_LAYER_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default text layer dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_CHANNEL_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_CHANNEL_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default channel dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_NAME_BLURB
 define|#
 directive|define
