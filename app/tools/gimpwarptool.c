@@ -3079,6 +3079,10 @@ literal|"operation"
 argument_list|,
 literal|"gegl:map-relative"
 argument_list|,
+literal|"sampler_type"
+argument_list|,
+name|GEGL_SAMPLER_LINEAR
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
