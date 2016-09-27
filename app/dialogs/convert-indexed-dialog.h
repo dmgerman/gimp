@@ -40,10 +40,10 @@ name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 parameter_list|,
 name|gboolean
 name|remove_dups
@@ -85,10 +85,10 @@ name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 parameter_list|,
 name|gboolean
 name|remove_dups

@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7656b0108
+DECL|struct|__anon2abf7d850108
 block|{
 DECL|member|image
 name|GimpImage
@@ -129,13 +129,13 @@ DECL|member|dither_type
 name|GimpConvertDitherType
 name|dither_type
 decl_stmt|;
-DECL|member|alpha_dither
+DECL|member|dither_alpha
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 decl_stmt|;
-DECL|member|text_layer_dither
+DECL|member|dither_text_layers
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 decl_stmt|;
 DECL|member|remove_dups
 name|gboolean
@@ -265,7 +265,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|convert_indexed_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent,gint n_colors,GimpConvertDitherType dither_type,gboolean alpha_dither,gboolean text_layer_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpConvertIndexedCallback callback,gpointer user_data)
+DECL|function|convert_indexed_dialog_new (GimpImage * image,GimpContext * context,GtkWidget * parent,gint n_colors,GimpConvertDitherType dither_type,gboolean dither_alpha,gboolean dither_text_layers,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpConvertIndexedCallback callback,gpointer user_data)
 name|convert_indexed_dialog_new
 parameter_list|(
 name|GimpImage
@@ -287,10 +287,10 @@ name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 parameter_list|,
 name|gboolean
 name|remove_dups
@@ -441,15 +441,15 @@ name|dither_type
 expr_stmt|;
 name|private
 operator|->
-name|alpha_dither
+name|dither_alpha
 operator|=
-name|alpha_dither
+name|dither_alpha
 expr_stmt|;
 name|private
 operator|->
-name|text_layer_dither
+name|dither_text_layers
 operator|=
-name|text_layer_dither
+name|dither_text_layers
 expr_stmt|;
 name|private
 operator|->
@@ -1213,7 +1213,7 @@ argument_list|)
 argument_list|,
 name|private
 operator|->
-name|alpha_dither
+name|dither_alpha
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1251,7 +1251,7 @@ argument_list|,
 operator|&
 name|private
 operator|->
-name|alpha_dither
+name|dither_alpha
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -1273,7 +1273,7 @@ argument_list|)
 argument_list|,
 name|private
 operator|->
-name|text_layer_dither
+name|dither_text_layers
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1311,7 +1311,7 @@ argument_list|,
 operator|&
 name|private
 operator|->
-name|text_layer_dither
+name|dither_text_layers
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -1381,11 +1381,11 @@ name|dither_type
 argument_list|,
 name|private
 operator|->
-name|alpha_dither
+name|dither_alpha
 argument_list|,
 name|private
 operator|->
-name|text_layer_dither
+name|dither_text_layers
 argument_list|,
 name|private
 operator|->

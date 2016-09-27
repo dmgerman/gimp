@@ -321,10 +321,10 @@ name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 parameter_list|,
 name|gboolean
 name|remove_dups
@@ -570,20 +570,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_convert_indexed_alpha_dither
+DECL|variable|image_convert_indexed_dither_alpha
 specifier|static
 name|gboolean
-name|image_convert_indexed_alpha_dither
+name|image_convert_indexed_dither_alpha
 init|=
 name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_convert_indexed_text_layer_dither
+DECL|variable|image_convert_indexed_dither_text_layers
 specifier|static
 name|gboolean
-name|image_convert_indexed_text_layer_dither
+name|image_convert_indexed_dither_text_layers
 init|=
 name|FALSE
 decl_stmt|;
@@ -1058,9 +1058,9 @@ name|image_convert_indexed_n_colors
 argument_list|,
 name|image_convert_indexed_dither_type
 argument_list|,
-name|image_convert_indexed_alpha_dither
+name|image_convert_indexed_dither_alpha
 argument_list|,
-name|image_convert_indexed_text_layer_dither
+name|image_convert_indexed_dither_text_layers
 argument_list|,
 name|image_convert_indexed_remove_dups
 argument_list|,
@@ -3578,7 +3578,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_convert_indexed_callback (GtkWidget * dialog,GimpImage * image,gint n_colors,GimpConvertDitherType dither_type,gboolean alpha_dither,gboolean text_layer_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,gpointer user_data)
+DECL|function|image_convert_indexed_callback (GtkWidget * dialog,GimpImage * image,gint n_colors,GimpConvertDitherType dither_type,gboolean dither_alpha,gboolean dither_text_layers,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,gpointer user_data)
 name|image_convert_indexed_callback
 parameter_list|(
 name|GtkWidget
@@ -3596,10 +3596,10 @@ name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|gboolean
-name|text_layer_dither
+name|dither_text_layers
 parameter_list|,
 name|gboolean
 name|remove_dups
@@ -3657,13 +3657,13 @@ name|image_convert_indexed_dither_type
 operator|=
 name|dither_type
 expr_stmt|;
-name|image_convert_indexed_alpha_dither
+name|image_convert_indexed_dither_alpha
 operator|=
-name|alpha_dither
+name|dither_alpha
 expr_stmt|;
-name|image_convert_indexed_text_layer_dither
+name|image_convert_indexed_dither_text_layers
 operator|=
-name|text_layer_dither
+name|dither_text_layers
 expr_stmt|;
 name|image_convert_indexed_remove_dups
 operator|=
@@ -3723,9 +3723,9 @@ name|image_convert_indexed_n_colors
 argument_list|,
 name|image_convert_indexed_dither_type
 argument_list|,
-name|image_convert_indexed_alpha_dither
+name|image_convert_indexed_dither_alpha
 argument_list|,
-name|image_convert_indexed_text_layer_dither
+name|image_convert_indexed_dither_text_layers
 argument_list|,
 name|image_convert_indexed_remove_dups
 argument_list|,
