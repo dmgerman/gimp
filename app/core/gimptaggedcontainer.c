@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baaf7910103
+DECL|enum|__anon27dbd7700103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -442,7 +442,7 @@ name|tagged_container
 operator|->
 name|tag_ref_counts
 operator|=
-name|g_hash_table_new
+name|g_hash_table_new_full
 argument_list|(
 operator|(
 name|GHashFunc
@@ -453,6 +453,16 @@ operator|(
 name|GEqualFunc
 operator|)
 name|gimp_tag_equals
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_object_unref
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1521,7 +1531,10 @@ name|tagged_container
 operator|->
 name|tag_ref_counts
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|tag
+argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -1609,7 +1622,10 @@ name|tagged_container
 operator|->
 name|tag_ref_counts
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|tag
+argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
