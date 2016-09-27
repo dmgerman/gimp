@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db62dc0108
+DECL|struct|__anon289bf5850108
 block|{
 DECL|member|image
 name|GimpImage
@@ -947,8 +947,8 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Remove unused colors "
-literal|"from colormap"
+literal|"_Remove unused and duplicate "
+literal|"colors from colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;

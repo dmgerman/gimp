@@ -1130,6 +1130,60 @@ value|_("Sets the default channel dithering method for the 'Convert Precision' d
 end_define
 
 begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_PALETTE_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_PALETTE_TYPE_BLURB
+define|\
+value|_("Sets the default palette type for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_MAX_COLORS_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_MAX_COLORS_BLURB
+define|\
+value|_("Sets the default maximum number of colors for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_REMOVE_DUPLICATES_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_REMOVE_DUPLICATES_BLURB
+define|\
+value|_("Sets the default 'Remove duplicate colors' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_TYPE_BLURB
+define|\
+value|_("Sets the default dithering type for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_ALPHA_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_ALPHA_BLURB
+define|\
+value|_("Sets the default 'Dither alpha' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_TEXT_LAYERS_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_TEXT_LAYERS_BLURB
+define|\
+value|_("Sets the default 'Dither text layers' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_NAME_BLURB
 define|#
 directive|define
