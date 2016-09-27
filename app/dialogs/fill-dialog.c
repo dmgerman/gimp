@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f798ff0108
+DECL|struct|__anon2a27fa370108
 block|{
 DECL|member|item
 name|GimpItem
@@ -293,6 +293,15 @@ name|GTK_IS_WIDGET
 argument_list|(
 name|parent
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|callback
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
