@@ -2170,15 +2170,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|file
-condition|)
-name|g_object_ref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|dialog
 condition|)
 block|{
