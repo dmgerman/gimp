@@ -1068,7 +1068,7 @@ literal|"alpha-bits"
 argument_list|,
 name|bits
 argument_list|,
-literal|"dither-strategy"
+literal|"dither-method"
 argument_list|,
 name|dither_type
 argument_list|,
