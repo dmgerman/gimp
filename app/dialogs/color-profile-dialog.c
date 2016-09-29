@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9aec320108
+DECL|struct|__anon2b2876ff0108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -1616,6 +1616,8 @@ operator|->
 name|image
 argument_list|,
 name|profile
+argument_list|,
+name|file
 argument_list|,
 name|private
 operator|->

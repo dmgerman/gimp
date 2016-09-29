@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc49260103
+DECL|enum|__anon27a9daec0103
 block|{
 DECL|enumerator|COLOR_PROFILE_DIALOG_ASSIGN_PROFILE
 name|COLOR_PROFILE_DIALOG_ASSIGN_PROFILE
@@ -58,6 +58,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent

@@ -316,7 +316,11 @@ name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*
-name|profile
+name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -345,7 +349,11 @@ name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*
-name|profile
+name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -446,7 +454,11 @@ name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*
-name|profile
+name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -475,7 +487,11 @@ name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*
-name|profile
+name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -3829,7 +3845,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_convert_rgb_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
+DECL|function|image_convert_rgb_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GFile * new_file,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
 name|image_convert_rgb_callback
 parameter_list|(
 name|GtkWidget
@@ -3843,6 +3859,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -3965,7 +3985,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_convert_gray_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
+DECL|function|image_convert_gray_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GFile * new_file,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
 name|image_convert_gray_callback
 parameter_list|(
 name|GtkWidget
@@ -3979,6 +3999,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -4497,7 +4521,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_profile_assign_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
+DECL|function|image_profile_assign_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GFile * new_file,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
 name|image_profile_assign_callback
 parameter_list|(
 name|GtkWidget
@@ -4511,6 +4535,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
@@ -4630,7 +4658,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_profile_convert_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
+DECL|function|image_profile_convert_callback (GtkWidget * dialog,GimpImage * image,GimpColorProfile * new_profile,GFile * new_file,GimpColorRenderingIntent intent,gboolean bpc,gpointer user_data)
 name|image_profile_convert_callback
 parameter_list|(
 name|GtkWidget
@@ -4644,6 +4672,10 @@ parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|new_profile
+parameter_list|,
+name|GFile
+modifier|*
+name|new_file
 parameter_list|,
 name|GimpColorRenderingIntent
 name|intent
