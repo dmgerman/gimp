@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a9daec0103
+DECL|enum|__anon2b902e200103
 block|{
 DECL|enumerator|COLOR_PROFILE_DIALOG_ASSIGN_PROFILE
 name|COLOR_PROFILE_DIALOG_ASSIGN_PROFILE
@@ -32,6 +32,9 @@ name|COLOR_PROFILE_DIALOG_CONVERT_TO_RGB
 block|,
 DECL|enumerator|COLOR_PROFILE_DIALOG_CONVERT_TO_GRAY
 name|COLOR_PROFILE_DIALOG_CONVERT_TO_GRAY
+block|,
+DECL|enumerator|COLOR_PROFILE_DIALOG_SELECT_SOFTPROOF_PROFILE
+name|COLOR_PROFILE_DIALOG_SELECT_SOFTPROOF_PROFILE
 DECL|typedef|ColorProfileDialogType
 block|}
 name|ColorProfileDialogType

@@ -4534,6 +4534,16 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
+literal|"printer-profile"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|param_spec
+operator|->
+name|name
+argument_list|,
 literal|"simulation-rendering-intent"
 argument_list|)
 operator|||
