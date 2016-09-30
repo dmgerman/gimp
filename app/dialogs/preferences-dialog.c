@@ -7949,7 +7949,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Profile Import dialog"
+literal|"Color Profile Import Dialog"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -11183,7 +11183,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27b4116c0108
+DECL|struct|__anon28ed16770108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12043,7 +12043,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b4116c0208
+DECL|struct|__anon28ed16770208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12181,7 +12181,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b4116c0308
+DECL|struct|__anon28ed16770308
 block|{
 DECL|member|tree_label
 specifier|const
