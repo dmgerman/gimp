@@ -1498,6 +1498,7 @@ name|dialog
 operator|->
 name|box
 argument_list|,
+comment|/* TRANSLATORS: unless your language                                         msgstr[0] applies to 1 only (as                                         in English), replace "one" with %d. */
 name|ngettext
 argument_list|(
 literal|"There is one image with "
