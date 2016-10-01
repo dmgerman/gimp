@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpicons.h"
 end_include
 
@@ -75,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296366490103
+DECL|enum|__anon28f648d20103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -91,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296366490203
+DECL|enum|__anon28f648d20203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -550,6 +556,20 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|new_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Add a new folder"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|up_button
@@ -623,6 +643,20 @@ name|gimp_path_editor_move_clicked
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|up_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Move the selected folder up"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|editor
@@ -700,6 +734,20 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|down_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Move the selected folder down"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|delete_button
@@ -773,6 +821,20 @@ name|gimp_path_editor_delete_clicked
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|editor
+operator|->
+name|delete_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove the selected folder from the list"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|scrolled_window
