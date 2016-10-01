@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcellrendererbutton.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcellrendererviewable.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295bef840103
+DECL|enum|__anon297d2b700103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -1521,7 +1527,8 @@ argument_list|,
 name|tree_view
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+comment|/* connect_after so external code can connect to "query-tooltip" too    * and override the default tip    */
+name|g_signal_connect_after
 argument_list|(
 name|tree_view
 operator|->
@@ -2335,6 +2342,11 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CELL_RENDERER_TOGGLE
+argument_list|(
+name|cell
+argument_list|)
+operator|||
+name|GIMP_IS_CELL_RENDERER_BUTTON
 argument_list|(
 name|cell
 argument_list|)
@@ -4367,7 +4379,7 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
-name|GimpCellRendererToggle
+name|GtkCellRenderer
 modifier|*
 name|toggled_cell
 init|=
@@ -4576,10 +4588,6 @@ expr_stmt|;
 block|}
 name|toggled_cell
 operator|=
-operator|(
-name|GimpCellRendererToggle
-operator|*
-operator|)
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
 name|widget
@@ -4857,9 +4865,20 @@ condition|(
 name|toggled_cell
 condition|)
 block|{
-name|gimp_cell_renderer_toggle_clicked
+if|if
+condition|(
+name|GIMP_IS_CELL_RENDERER_TOGGLE
 argument_list|(
 name|toggled_cell
+argument_list|)
+condition|)
+block|{
+name|gimp_cell_renderer_toggle_clicked
+argument_list|(
+name|GIMP_CELL_RENDERER_TOGGLE
+argument_list|(
+name|toggled_cell
+argument_list|)
 argument_list|,
 name|path_str
 argument_list|,
@@ -4868,6 +4887,31 @@ operator|->
 name|state
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_CELL_RENDERER_BUTTON
+argument_list|(
+name|toggled_cell
+argument_list|)
+condition|)
+block|{
+name|gimp_cell_renderer_button_clicked
+argument_list|(
+name|GIMP_CELL_RENDERER_BUTTON
+argument_list|(
+name|toggled_cell
+argument_list|)
+argument_list|,
+name|path_str
+argument_list|,
+name|bevent
+operator|->
+name|state
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
