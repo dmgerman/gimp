@@ -1083,7 +1083,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"File has no path represantation"
+literal|"File has no path representation"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1893,7 +1893,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon298130ee0108
+DECL|struct|__anon2b8d6be10108
 block|{
 DECL|member|id
 specifier|const
