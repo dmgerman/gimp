@@ -1786,6 +1786,7 @@ argument_list|)
 operator|==
 name|image
 condition|)
+block|{
 name|gimp_display_shell_present
 argument_list|(
 name|gimp_display_get_shell
@@ -1794,6 +1795,18 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* We only want to update the active shell. Give back keyboard            * focus to the quit dialog after this. */
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+operator|->
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
