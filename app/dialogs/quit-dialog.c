@@ -351,7 +351,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|quit_close_all_dialog_image_activated
+name|quit_close_all_dialog_image_selected
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -1022,11 +1022,11 @@ name|g_signal_connect
 argument_list|(
 name|view
 argument_list|,
-literal|"activate-item"
+literal|"select-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|quit_close_all_dialog_image_activated
+name|quit_close_all_dialog_image_selected
 argument_list|)
 argument_list|,
 name|private
@@ -1721,8 +1721,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|quit_close_all_dialog_image_activated (GimpContainerView * view,GimpImage * image,gpointer insert_data,QuitDialog * private)
-name|quit_close_all_dialog_image_activated
+DECL|function|quit_close_all_dialog_image_selected (GimpContainerView * view,GimpImage * image,gpointer insert_data,QuitDialog * private)
+name|quit_close_all_dialog_image_selected
 parameter_list|(
 name|GimpContainerView
 modifier|*
