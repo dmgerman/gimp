@@ -4954,7 +4954,10 @@ name|VECTORS_FINISHED
 case|:
 name|status
 operator|=
-name|NULL
+name|_
+argument_list|(
+literal|"Clicking here does nothing, try clicking on path elements."
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
