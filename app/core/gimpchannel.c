@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1de120103
+DECL|enum|__anon293412230103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -642,12 +642,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -2776,6 +2770,11 @@ argument_list|(
 name|dest_image
 argument_list|)
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -4371,7 +4370,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_channel_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4386,12 +4385,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*

@@ -657,6 +657,11 @@ argument_list|)
 argument_list|,
 name|precision
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|new_profile
 argument_list|,
 name|dither_type

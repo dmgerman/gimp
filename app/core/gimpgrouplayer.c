@@ -587,12 +587,6 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
@@ -3803,7 +3797,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_group_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3818,13 +3812,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-comment|/* unused */
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -3909,9 +3896,15 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|new_base_type
+name|gimp_babl_format_get_base_type
+argument_list|(
+name|new_format
+argument_list|)
 argument_list|,
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_projectable_structure_changed
@@ -3992,7 +3985,10 @@ if|if
 condition|(
 name|mask
 operator|&&
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
 operator|!=
 name|gimp_drawable_get_precision
 argument_list|(
@@ -4014,7 +4010,18 @@ name|dest_image
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

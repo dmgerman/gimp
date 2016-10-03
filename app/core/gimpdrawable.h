@@ -249,12 +249,6 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
@@ -622,6 +616,9 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gboolean
+name|new_has_alpha
 parameter_list|,
 name|GimpColorProfile
 modifier|*

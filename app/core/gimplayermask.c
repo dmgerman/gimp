@@ -197,12 +197,6 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
@@ -651,7 +645,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_mask_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_mask_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -666,12 +660,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -695,7 +683,10 @@ name|new_format
 operator|=
 name|gimp_babl_mask_format
 argument_list|(
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
@@ -710,10 +701,6 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_format
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
 argument_list|,
 name|dest_profile
 argument_list|,

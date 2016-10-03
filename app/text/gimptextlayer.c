@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27db5f2b0103
+DECL|enum|__anon28cb2b7f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -325,12 +325,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -1256,7 +1250,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_text_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -1271,12 +1265,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -1345,10 +1333,6 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_format
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
 argument_list|,
 name|dest_profile
 argument_list|,

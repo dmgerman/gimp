@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a7fa10103
+DECL|enum|__anon2b8749d10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a7fa10203
+DECL|enum|__anon2b8749d10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -671,12 +671,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -3344,7 +3338,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3359,12 +3353,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -4367,7 +4355,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,GimpPrecision new_precision,gboolean new_has_alpha,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4383,6 +4371,9 @@ name|new_base_type
 parameter_list|,
 name|GimpPrecision
 name|new_precision
+parameter_list|,
+name|gboolean
+name|new_has_alpha
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -4439,6 +4430,13 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|||
+name|new_has_alpha
+operator|!=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+operator|||
 name|dest_profile
 argument_list|)
 expr_stmt|;
@@ -4491,10 +4489,7 @@ name|new_base_type
 argument_list|,
 name|new_precision
 argument_list|,
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
+name|new_has_alpha
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
@@ -4509,10 +4504,6 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_format
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
 argument_list|,
 name|dest_profile
 argument_list|,

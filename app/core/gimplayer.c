@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd2a080103
+DECL|enum|__anon278b285a0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd2a080203
+DECL|enum|__anon278b285a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -782,12 +782,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -3575,6 +3569,11 @@ name|new_base_type
 argument_list|,
 name|new_precision
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|dest_profile
 argument_list|,
 literal|0
@@ -4594,7 +4593,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4609,12 +4608,6 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
-parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -4854,7 +4847,10 @@ name|layer
 operator|->
 name|mask
 operator|&&
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
 operator|!=
 name|gimp_drawable_get_precision
 argument_list|(
@@ -4880,7 +4876,20 @@ name|dest_image
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

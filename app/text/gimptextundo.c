@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9e97f0103
+DECL|enum|__anon29f9e98a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1064,6 +1064,13 @@ name|format
 argument_list|)
 argument_list|,
 name|gimp_babl_format_get_precision
+argument_list|(
+name|text_undo
+operator|->
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_has_alpha
 argument_list|(
 name|text_undo
 operator|->

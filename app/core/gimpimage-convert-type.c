@@ -484,6 +484,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|dest_profile
 argument_list|,
 literal|0
