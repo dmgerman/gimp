@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cde830103
+DECL|enum|__anon27897a990103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -224,10 +224,6 @@ argument_list|,
 literal|"ypad"
 argument_list|,
 literal|2
-argument_list|,
-literal|"follow-state"
-argument_list|,
-name|TRUE
 argument_list|,
 literal|"stock-size"
 argument_list|,
