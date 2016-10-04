@@ -2219,6 +2219,17 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+comment|/* Make sure the quit dialog kept keyboard focus when                    * the save dialog will exit. */
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|private
+operator|->
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|state
