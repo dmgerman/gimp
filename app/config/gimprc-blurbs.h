@@ -770,6 +770,15 @@ value|_("Remember the current tool, pattern, color, and brush across GIMP " \   
 end_define
 
 begin_define
+DECL|macro|DEVICES_SHARE_TOOL_BLURB
+define|#
+directive|define
+name|DEVICES_SHARE_TOOL_BLURB
+define|\
+value|_("When enabled, the same tool and tool options will be used for all " \   "input devices. No tool switching will occur when the input device " \   "changes.")
+end_define
+
+begin_define
 DECL|macro|SAVE_DOCUMENT_HISTORY_BLURB
 define|#
 directive|define

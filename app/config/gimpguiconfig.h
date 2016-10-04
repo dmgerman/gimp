@@ -124,6 +124,10 @@ DECL|member|save_device_status
 name|gboolean
 name|save_device_status
 decl_stmt|;
+DECL|member|devices_share_tool
+name|gboolean
+name|devices_share_tool
+decl_stmt|;
 DECL|member|save_session_info
 name|gboolean
 name|save_session_info
