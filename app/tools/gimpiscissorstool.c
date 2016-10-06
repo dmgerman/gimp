@@ -873,10 +873,6 @@ name|GPtrArray
 modifier|*
 name|plot_pixels
 parameter_list|(
-name|GimpIscissorsTool
-modifier|*
-name|iscissors
-parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|dp_buf
@@ -5304,27 +5300,6 @@ if|if
 condition|(
 name|iscissors
 operator|->
-name|dp_buf
-condition|)
-block|{
-name|gimp_temp_buf_unref
-argument_list|(
-name|iscissors
-operator|->
-name|dp_buf
-argument_list|)
-expr_stmt|;
-name|iscissors
-operator|->
-name|dp_buf
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|iscissors
-operator|->
 name|mask
 condition|)
 block|{
@@ -6326,8 +6301,13 @@ operator|)
 condition|)
 block|{
 comment|/*  If the bounding box has width and height...  */
+name|GimpTempBuf
+modifier|*
+name|dp_buf
+decl_stmt|;
+comment|/*  dynamic programming buffer  */
 name|gint
-name|bb_width
+name|dp_width
 init|=
 operator|(
 name|x2
@@ -6336,7 +6316,7 @@ name|x1
 operator|)
 decl_stmt|;
 name|gint
-name|bb_height
+name|dp_height
 init|=
 operator|(
 name|y2
@@ -6344,29 +6324,13 @@ operator|-
 name|y1
 operator|)
 decl_stmt|;
-comment|/*  allocate the dynamic programming array  */
-if|if
-condition|(
-name|iscissors
-operator|->
-name|dp_buf
-condition|)
-name|gimp_temp_buf_unref
-argument_list|(
-name|iscissors
-operator|->
-name|dp_buf
-argument_list|)
-expr_stmt|;
-name|iscissors
-operator|->
 name|dp_buf
 operator|=
 name|gimp_temp_buf_new
 argument_list|(
-name|bb_width
+name|dp_width
 argument_list|,
-name|bb_height
+name|dp_height
 argument_list|,
 name|babl_format
 argument_list|(
@@ -6381,8 +6345,6 @@ name|iscissors
 operator|->
 name|gradient_map
 argument_list|,
-name|iscissors
-operator|->
 name|dp_buf
 argument_list|,
 name|x1
@@ -6405,10 +6367,6 @@ name|points
 operator|=
 name|plot_pixels
 argument_list|(
-name|iscissors
-argument_list|,
-name|iscissors
-operator|->
 name|dp_buf
 argument_list|,
 name|x1
@@ -6422,6 +6380,11 @@ argument_list|,
 name|xe
 argument_list|,
 name|ye
+argument_list|)
+expr_stmt|;
+name|gimp_temp_buf_unref
+argument_list|(
+name|dp_buf
 argument_list|)
 expr_stmt|;
 block|}
@@ -6871,13 +6834,9 @@ begin_function
 specifier|static
 name|GPtrArray
 modifier|*
-DECL|function|plot_pixels (GimpIscissorsTool * iscissors,GimpTempBuf * dp_buf,gint x1,gint y1,gint xs,gint ys,gint xe,gint ye)
+DECL|function|plot_pixels (GimpTempBuf * dp_buf,gint x1,gint y1,gint xs,gint ys,gint xe,gint ye)
 name|plot_pixels
 parameter_list|(
-name|GimpIscissorsTool
-modifier|*
-name|iscissors
-parameter_list|,
 name|GimpTempBuf
 modifier|*
 name|dp_buf
