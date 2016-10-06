@@ -116,10 +116,10 @@ DECL|member|parent_instance
 name|GimpTileHandlerValidate
 name|parent_instance
 decl_stmt|;
-DECL|member|image
-name|GimpImage
+DECL|member|pickable
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 decl_stmt|;
 block|}
 struct|;
@@ -153,9 +153,9 @@ name|GeglTileHandler
 modifier|*
 name|gimp_tile_handler_iscissors_new
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 parameter_list|)
 function_decl|;
 end_function_decl

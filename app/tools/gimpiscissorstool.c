@@ -696,9 +696,9 @@ name|GeglBuffer
 modifier|*
 name|gradient_map_new
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -746,9 +746,9 @@ name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 parameter_list|,
 name|gint
 modifier|*
@@ -1893,7 +1893,10 @@ name|find_max_gradient
 argument_list|(
 name|iscissors
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|image
+argument_list|)
 argument_list|,
 operator|&
 name|iscissors
@@ -3221,7 +3224,10 @@ name|find_max_gradient
 argument_list|(
 name|iscissors
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|image
+argument_list|)
 argument_list|,
 operator|&
 name|iscissors
@@ -6014,21 +6020,23 @@ argument_list|)
 operator|->
 name|display
 decl_stmt|;
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 init|=
+name|GIMP_PICKABLE
+argument_list|(
 name|gimp_display_get_image
 argument_list|(
 name|display
 argument_list|)
+argument_list|)
 decl_stmt|;
 name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
-name|dir
+name|width
+decl_stmt|;
+name|gint
+name|height
 decl_stmt|;
 name|gint
 name|xs
@@ -6049,15 +6057,45 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-name|gint
 name|ewidth
 decl_stmt|,
 name|eheight
 decl_stmt|;
+comment|/* Initialise the gradient map buffer for this pickable if we don't    * already have one.    */
+if|if
+condition|(
+operator|!
+name|iscissors
+operator|->
+name|gradient_map
+condition|)
+name|iscissors
+operator|->
+name|gradient_map
+operator|=
+name|gradient_map_new
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
+name|width
+operator|=
+name|gegl_buffer_get_width
+argument_list|(
+name|iscissors
+operator|->
+name|gradient_map
+argument_list|)
+expr_stmt|;
+name|height
+operator|=
+name|gegl_buffer_get_height
+argument_list|(
+name|iscissors
+operator|->
+name|gradient_map
+argument_list|)
+expr_stmt|;
 comment|/*  Calculate the lowest cost path from one vertex to the next as specified    *  by the parameter "segment".    *    Here are the steps:    *      1)  Calculate the appropriate working area for this operation    *      2)  Allocate a temp buf for the dynamic programming array    *      3)  Run the dynamic programming algorithm to find the optimal path    *      4)  Translate the optimal path into pixels in the isegment data    *            structure.    */
 comment|/*  Get the bounding box  */
 name|xs
@@ -6070,10 +6108,7 @@ name|x1
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 operator|-
 literal|1
 argument_list|)
@@ -6088,10 +6123,7 @@ name|y1
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 operator|-
 literal|1
 argument_list|)
@@ -6106,10 +6138,7 @@ name|x2
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 operator|-
 literal|1
 argument_list|)
@@ -6124,10 +6153,7 @@ name|y2
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 operator|-
 literal|1
 argument_list|)
@@ -6212,10 +6238,7 @@ name|ewidth
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 operator|-
 name|x2
 argument_list|)
@@ -6246,10 +6269,7 @@ name|eheight
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 operator|-
 name|y2
 argument_list|)
@@ -6290,7 +6310,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  If the bounding box has width and height...  */
 if|if
 condition|(
 operator|(
@@ -6306,39 +6325,25 @@ name|y1
 operator|)
 condition|)
 block|{
-name|width
-operator|=
+comment|/*  If the bounding box has width and height...  */
+name|gint
+name|bb_width
+init|=
 operator|(
 name|x2
 operator|-
 name|x1
 operator|)
-expr_stmt|;
-name|height
-operator|=
+decl_stmt|;
+name|gint
+name|bb_height
+init|=
 operator|(
 name|y2
 operator|-
 name|y1
 operator|)
-expr_stmt|;
-comment|/* Initialise the gradient map tile manager for this image if we        * don't already have one. */
-if|if
-condition|(
-operator|!
-name|iscissors
-operator|->
-name|gradient_map
-condition|)
-name|iscissors
-operator|->
-name|gradient_map
-operator|=
-name|gradient_map_new
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/*  allocate the dynamic programming array  */
 if|if
 condition|(
@@ -6359,9 +6364,9 @@ name|dp_buf
 operator|=
 name|gimp_temp_buf_new
 argument_list|(
-name|width
+name|bb_width
 argument_list|,
-name|height
+name|bb_height
 argument_list|,
 name|babl_format
 argument_list|(
@@ -6420,7 +6425,6 @@ name|ye
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  If the bounding box has no width  */
 elseif|else
 if|if
 condition|(
@@ -6433,13 +6437,16 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*  If the bounding box has no width  */
 comment|/*  plot a vertical line  */
+name|gint
 name|y
-operator|=
+init|=
 name|ys
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|dir
-operator|=
+init|=
 operator|(
 name|ys
 operator|>
@@ -6450,7 +6457,7 @@ operator|-
 literal|1
 else|:
 literal|1
-expr_stmt|;
+decl_stmt|;
 name|segment
 operator|->
 name|points
@@ -6489,7 +6496,6 @@ name|dir
 expr_stmt|;
 block|}
 block|}
-comment|/*  If the bounding box has no height  */
 elseif|else
 if|if
 condition|(
@@ -6502,13 +6508,16 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*  If the bounding box has no height  */
 comment|/*  plot a horizontal line  */
+name|gint
 name|x
-operator|=
+init|=
 name|xs
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|dir
-operator|=
+init|=
 operator|(
 name|xs
 operator|>
@@ -6519,7 +6528,7 @@ operator|-
 literal|1
 else|:
 literal|1
-expr_stmt|;
+decl_stmt|;
 name|segment
 operator|->
 name|points
@@ -7747,12 +7756,12 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gradient_map_new (GimpImage * image)
+DECL|function|gradient_map_new (GimpPickable * pickable)
 name|gradient_map_new
 parameter_list|(
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -7765,6 +7774,13 @@ name|handler
 decl_stmt|;
 name|buffer
 operator|=
+name|gimp_pickable_get_buffer
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
+name|buffer
+operator|=
 name|gegl_buffer_new
 argument_list|(
 name|GEGL_RECTANGLE
@@ -7773,14 +7789,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
+name|gegl_buffer_get_width
 argument_list|(
-name|image
+name|buffer
 argument_list|)
 argument_list|,
-name|gimp_image_get_height
+name|gegl_buffer_get_height
 argument_list|(
-name|image
+name|buffer
 argument_list|)
 argument_list|)
 argument_list|,
@@ -7799,7 +7815,7 @@ name|handler
 operator|=
 name|gimp_tile_handler_iscissors_new
 argument_list|(
-name|image
+name|pickable
 argument_list|)
 expr_stmt|;
 name|gimp_tile_handler_validate_assign
@@ -7823,14 +7839,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
+name|gegl_buffer_get_width
 argument_list|(
-name|image
+name|buffer
 argument_list|)
 argument_list|,
-name|gimp_image_get_height
+name|gegl_buffer_get_height
 argument_list|(
-name|image
+name|buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7848,16 +7864,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_max_gradient (GimpIscissorsTool * iscissors,GimpImage * image,gint * x,gint * y)
+DECL|function|find_max_gradient (GimpIscissorsTool * iscissors,GimpPickable * pickable,gint * x,gint * y)
 name|find_max_gradient
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|GimpImage
+name|GimpPickable
 modifier|*
-name|image
+name|pickable
 parameter_list|,
 name|gint
 modifier|*
@@ -7875,6 +7891,12 @@ decl_stmt|;
 name|GeglRectangle
 modifier|*
 name|roi
+decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
 decl_stmt|;
 name|gint
 name|radius
@@ -7896,7 +7918,7 @@ decl_stmt|;
 name|gfloat
 name|max_gradient
 decl_stmt|;
-comment|/* Initialise the gradient map buffer for this image if we don't    * already have one.    */
+comment|/* Initialise the gradient map buffer for this pickable if we don't    * already have one.    */
 if|if
 condition|(
 operator|!
@@ -7910,7 +7932,25 @@ name|gradient_map
 operator|=
 name|gradient_map_new
 argument_list|(
-name|image
+name|pickable
+argument_list|)
+expr_stmt|;
+name|width
+operator|=
+name|gegl_buffer_get_width
+argument_list|(
+name|iscissors
+operator|->
+name|gradient_map
+argument_list|)
+expr_stmt|;
+name|height
+operator|=
+name|gegl_buffer_get_height
+argument_list|(
+name|iscissors
+operator|->
+name|gradient_map
 argument_list|)
 expr_stmt|;
 name|radius
@@ -7929,10 +7969,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 argument_list|)
 expr_stmt|;
 name|cy
@@ -7944,10 +7981,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 argument_list|)
 expr_stmt|;
 name|x1
@@ -7960,10 +7994,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 argument_list|)
 expr_stmt|;
 name|y1
@@ -7976,10 +8007,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 argument_list|)
 expr_stmt|;
 name|x2
@@ -7992,10 +8020,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_width
-argument_list|(
-name|image
-argument_list|)
+name|width
 argument_list|)
 expr_stmt|;
 name|y2
@@ -8008,10 +8033,7 @@ name|radius
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_height
-argument_list|(
-name|image
-argument_list|)
+name|height
 argument_list|)
 expr_stmt|;
 comment|/*  calculate the factor to multiply the distance from the cursor by  */
