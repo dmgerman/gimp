@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -43,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"tools-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimppropwidgets.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c86d2670103
+DECL|enum|__anon2a096ab00103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -88,6 +88,9 @@ literal|1
 block|,
 DECL|enumerator|PROP_ALLOW_GROWING
 name|PROP_ALLOW_GROWING
+block|,
+DECL|enumerator|PROP_FILL_TYPE
+name|PROP_FILL_TYPE
 block|}
 enum|;
 end_enum
@@ -267,6 +270,31 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_ENUM
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_FILL_TYPE
+argument_list|,
+literal|"fill-type"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill with"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"How to fill new areas created by 'Allow growing'"
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_FILL_TYPE
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 name|gimp_rectangle_options_install_properties
 argument_list|(
 name|object_class
@@ -364,6 +392,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_FILL_TYPE
+case|:
+name|options
+operator|->
+name|fill_type
+operator|=
+name|g_value_get_enum
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|gimp_rectangle_options_set_property
 argument_list|(
@@ -443,6 +484,19 @@ name|allow_growing
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_FILL_TYPE
+case|:
+name|g_value_set_enum
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|fill_type
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|gimp_rectangle_options_get_property
 argument_list|(
@@ -497,6 +551,14 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|combo
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 comment|/*  layer toggle  */
 name|button
 operator|=
@@ -530,14 +592,45 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*  allow growing toggle  */
-name|button
+comment|/*  fill type combo  */
+name|combo
 operator|=
-name|gimp_prop_check_button_new
+name|gimp_prop_enum_combo_box_new
+argument_list|(
+name|config
+argument_list|,
+literal|"fill-type"
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_set_label
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill with"
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  allow growing toggle/frame  */
+name|frame
+operator|=
+name|gimp_prop_expanding_frame_new
 argument_list|(
 name|config
 argument_list|,
 literal|"allow-growing"
+argument_list|,
+name|NULL
+argument_list|,
+name|combo
 argument_list|,
 name|NULL
 argument_list|)
@@ -549,7 +642,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|button
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -560,7 +653,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  rectangle options  */
