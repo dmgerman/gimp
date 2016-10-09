@@ -2059,6 +2059,14 @@ literal|"No patterns available for this operation."
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  fall back to BG fill  */
+name|gimp_context_get_background
+argument_list|(
+name|context
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
