@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dea89d0103
+DECL|enum|__anon2b2e0cab0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dea89d0203
+DECL|enum|__anon2b2e0cab0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -588,6 +588,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -2527,7 +2530,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_item_real_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_item_real_resize
 parameter_list|(
 name|GimpItem
@@ -2537,6 +2540,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -5267,7 +5273,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_item_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_item_resize
 parameter_list|(
 name|GimpItem
@@ -5277,6 +5283,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -5373,6 +5382,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|new_width
 argument_list|,

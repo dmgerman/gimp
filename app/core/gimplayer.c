@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b285a0103
+DECL|enum|__anon29e85c410103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b285a0203
+DECL|enum|__anon29e85c410203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -602,6 +602,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -4039,7 +4042,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_layer_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_layer_resize
 parameter_list|(
 name|GimpItem
@@ -4049,6 +4052,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -4072,6 +4078,27 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|fill_type
+operator|==
+name|GIMP_FILL_TRANSPARENT
+operator|&&
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|fill_type
+operator|=
+name|GIMP_FILL_BACKGROUND
+expr_stmt|;
+block|}
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -4082,6 +4109,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|new_width
 argument_list|,
@@ -4108,6 +4137,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,
@@ -8196,7 +8227,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_resize_to_image (GimpLayer * layer,GimpContext * context)
+DECL|function|gimp_layer_resize_to_image (GimpLayer * layer,GimpContext * context,GimpFillType fill_type)
 name|gimp_layer_resize_to_image
 parameter_list|(
 name|GimpLayer
@@ -8206,6 +8237,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|)
 block|{
 name|GimpImage
@@ -8291,6 +8325,8 @@ name|layer
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|gimp_image_get_width
 argument_list|(

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c1ea60103
+DECL|enum|__anon2b4136740103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -367,6 +367,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -2426,7 +2429,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_vectors_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_vectors_resize
 parameter_list|(
 name|GimpItem
@@ -2436,6 +2439,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -2541,6 +2547,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|gimp_image_get_width
 argument_list|(

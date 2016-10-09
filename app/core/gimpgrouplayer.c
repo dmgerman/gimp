@@ -446,6 +446,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -2792,7 +2795,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_group_layer_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_group_layer_resize
 parameter_list|(
 name|GimpItem
@@ -2802,6 +2805,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -2988,6 +2994,8 @@ name|child
 argument_list|,
 name|context
 argument_list|,
+name|fill_type
+argument_list|,
 name|child_width
 argument_list|,
 name|child_height
@@ -3063,6 +3071,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,

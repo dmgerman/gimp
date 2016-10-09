@@ -858,6 +858,8 @@ name|image
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|offx
 argument_list|,
 name|offy

@@ -151,7 +151,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2becbc580108
+DECL|struct|__anon29d226760108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -496,6 +496,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|)
 function_decl|;
 end_function_decl

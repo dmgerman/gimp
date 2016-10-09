@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293412230103
+DECL|enum|__anon2c5fecb80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -432,6 +432,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -439,10 +442,10 @@ name|gint
 name|new_height
 parameter_list|,
 name|gint
-name|offx
+name|offset_x
 parameter_list|,
 name|gint
-name|offy
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2959,6 +2962,8 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -3630,7 +3635,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_channel_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_channel_resize
 parameter_list|(
 name|GimpItem
@@ -3640,6 +3645,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -3664,6 +3672,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,

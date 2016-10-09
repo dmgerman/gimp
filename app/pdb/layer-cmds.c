@@ -2004,6 +2004,8 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -2122,6 +2124,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|)
 expr_stmt|;
 else|else

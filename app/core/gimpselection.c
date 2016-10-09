@@ -231,6 +231,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -1165,7 +1168,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_selection_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_selection_resize
 parameter_list|(
 name|GimpItem
@@ -1175,6 +1178,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -1199,6 +1205,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,

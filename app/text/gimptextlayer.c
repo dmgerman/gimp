@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb2b7f0103
+DECL|enum|__anon297afe6e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2614,6 +2614,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|unused_eek
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|width
 argument_list|,

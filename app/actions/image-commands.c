@@ -522,6 +522,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -3206,6 +3209,8 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -3318,6 +3323,8 @@ name|action_data_get_context
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|x
 argument_list|,
@@ -4832,7 +4839,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,GimpContext * context,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,gpointer user_data)
+DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,GimpContext * context,GimpFillType fill_type,gint width,gint height,GimpUnit unit,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,gpointer user_data)
 name|image_resize_callback
 parameter_list|(
 name|GtkWidget
@@ -4846,6 +4853,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|width
@@ -4950,6 +4960,8 @@ argument_list|(
 name|image
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|width
 argument_list|,

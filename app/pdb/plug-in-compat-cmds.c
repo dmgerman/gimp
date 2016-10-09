@@ -2495,6 +2495,8 @@ name|image
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -2722,6 +2724,8 @@ name|layer
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|width
 argument_list|,
