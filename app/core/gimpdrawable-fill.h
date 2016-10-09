@@ -17,7 +17,7 @@ name|__GIMP_DRAWABLE_FILL_H__
 end_define
 
 begin_comment
-comment|/*  Lowlevel API that is used for initializing the entire drawable  *  before it is added to the image, doesn't even push an undo.  */
+comment|/*  Lowlevel API that is used for initializing entire drawables and  *  buffers before they are used in images, they don't push an undo.  */
 end_comment
 
 begin_function_decl
@@ -34,6 +34,36 @@ name|context
 parameter_list|,
 name|GimpFillType
 name|fill_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_fill_buffer
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|GimpPattern
+modifier|*
+name|pattern
+parameter_list|,
+name|gint
+name|pattern_offset_x
+parameter_list|,
+name|gint
+name|pattern_offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
