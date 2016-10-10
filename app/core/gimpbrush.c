@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e16ba0103
+DECL|enum|__anon2c36f1010103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e16ba0203
+DECL|enum|__anon2c36f1010203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1375,9 +1375,25 @@ name|NULL
 argument_list|,
 name|scale
 argument_list|,
-literal|0.0
+operator|(
+name|gimp_brush_generated_get_aspect_ratio
+argument_list|(
+name|gen_brush
+argument_list|)
+operator|-
+literal|1.0
+operator|)
+operator|*
+literal|20.0
+operator|/
+literal|19.0
 argument_list|,
-literal|0.0
+name|gimp_brush_generated_get_angle
+argument_list|(
+name|gen_brush
+argument_list|)
+operator|/
+literal|360.0
 argument_list|,
 name|gimp_brush_generated_get_hardness
 argument_list|(
