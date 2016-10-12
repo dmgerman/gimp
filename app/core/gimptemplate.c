@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c03c8e0103
+DECL|enum|__anon2b8bba030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -734,6 +734,27 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|color_profile
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|private
+operator|->
+name|color_profile
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|color_profile
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|private
