@@ -1553,11 +1553,6 @@ argument_list|(
 name|parse_name
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
