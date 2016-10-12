@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882cf9f0103
+DECL|enum|__anon292617c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3902,6 +3902,10 @@ name|GtkListStore
 modifier|*
 name|profile_store
 decl_stmt|;
+name|GFile
+modifier|*
+name|profile
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -3973,7 +3977,18 @@ argument_list|(
 name|profile_store
 argument_list|)
 expr_stmt|;
-comment|/* FIXME use template's profile */
+name|g_object_get
+argument_list|(
+name|template
+argument_list|,
+literal|"color-profile"
+argument_list|,
+operator|&
+name|profile
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_color_profile_combo_box_set_active_file
 argument_list|(
 name|GIMP_COLOR_PROFILE_COMBO_BOX
@@ -3983,9 +3998,18 @@ operator|->
 name|profile_combo
 argument_list|)
 argument_list|,
-name|NULL
+name|profile
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+name|g_object_unref
+argument_list|(
+name|profile
 argument_list|)
 expr_stmt|;
 block|}
