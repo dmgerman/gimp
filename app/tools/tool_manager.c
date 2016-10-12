@@ -435,7 +435,7 @@ name|gimp
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"tmp"
+literal|"tool-manager-shared-paint-options"
 argument_list|,
 name|NULL
 argument_list|)
@@ -2608,16 +2608,6 @@ name|tool_options
 argument_list|)
 condition|)
 block|{
-name|GimpCoreConfig
-modifier|*
-name|config
-init|=
-name|user_context
-operator|->
-name|gimp
-operator|->
-name|config
-decl_stmt|;
 name|GimpToolOptions
 modifier|*
 name|src
@@ -2638,13 +2628,9 @@ name|tool_info
 operator|->
 name|tool_options
 decl_stmt|;
-comment|/* if connect_options() did overwrite the brush options and the        * preset contains a brush, use the brush options from the        * preset        */
+comment|/*  copy various data objects' additional tool options again        *  manually, they might have been overwritten by e.g. the "link        *  brush stuff to brush defaults" logic in        *  gimptooloptions-gui.c        */
 if|if
 condition|(
-name|config
-operator|->
-name|global_brush
-operator|&&
 name|preset
 operator|->
 name|use_brush
@@ -2664,10 +2650,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|config
-operator|->
-name|global_dynamics
-operator|&&
 name|preset
 operator|->
 name|use_dynamics
@@ -2687,10 +2669,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|config
-operator|->
-name|global_gradient
-operator|&&
 name|preset
 operator|->
 name|use_gradient
