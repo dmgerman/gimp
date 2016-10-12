@@ -2502,6 +2502,14 @@ value|"gimp-tool-preset-editor-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_EDITOR_EDIT_ACTIVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_EDITOR_EDIT_ACTIVE
+value|"gimp-tool-preset-editor-edit-active"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DYNAMICS_DIALOG
 define|#
 directive|define
@@ -3219,6 +3227,14 @@ define|#
 directive|define
 name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
 value|"gimp-tool-preset-show-in-file-manager"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_SAVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_SAVE
+value|"gimp-tool-preset-save"
 end_define
 
 begin_define

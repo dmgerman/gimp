@@ -66,19 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainereditor.h"
+file|"widgets/gimpdataeditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool-presets-commands.h"
+file|"tool-preset-editor-commands.h"
 end_include
 
 begin_include
@@ -93,8 +87,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_presets_save_cmd_callback (GtkAction * action,gpointer data)
-name|tool_presets_save_cmd_callback
+DECL|function|tool_preset_editor_save_cmd_callback (GtkAction * action,gpointer data)
+name|tool_preset_editor_save_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -104,17 +98,21 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerEditor
+name|GimpDataEditor
 modifier|*
 name|editor
 init|=
-name|GIMP_CONTAINER_EDITOR
+name|GIMP_DATA_EDITOR
 argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
 name|GimpContext
 modifier|*
+name|context
+init|=
+name|editor
+operator|->
 name|context
 decl_stmt|;
 name|GimpToolPreset
@@ -125,20 +123,14 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
-name|context
-operator|=
-name|gimp_container_view_get_context
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
 name|preset
 operator|=
-name|gimp_context_get_tool_preset
+name|GIMP_TOOL_PRESET
 argument_list|(
-name|context
+name|gimp_data_editor_get_data
+argument_list|(
+name|editor
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -238,8 +230,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_presets_restore_cmd_callback (GtkAction * action,gpointer data)
-name|tool_presets_restore_cmd_callback
+DECL|function|tool_preset_editor_restore_cmd_callback (GtkAction * action,gpointer data)
+name|tool_preset_editor_restore_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -249,11 +241,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerEditor
+name|GimpDataEditor
 modifier|*
 name|editor
 init|=
-name|GIMP_CONTAINER_EDITOR
+name|GIMP_DATA_EDITOR
 argument_list|(
 name|data
 argument_list|)
@@ -261,25 +253,23 @@ decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|editor
+operator|->
+name|context
 decl_stmt|;
 name|GimpToolPreset
 modifier|*
 name|preset
 decl_stmt|;
-name|context
-operator|=
-name|gimp_container_view_get_context
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
 name|preset
 operator|=
-name|gimp_context_get_tool_preset
+name|GIMP_TOOL_PRESET
 argument_list|(
-name|context
+name|gimp_data_editor_get_data
+argument_list|(
+name|editor
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

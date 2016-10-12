@@ -246,6 +246,36 @@ name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
 block|}
 block|,
 block|{
+literal|"tool-presets-save"
+block|,
+literal|"document-save"
+block|,
+name|NC_
+argument_list|(
+literal|"tool-presets-action"
+argument_list|,
+literal|"_Save Tool Options to Preset"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"tool-presets-action"
+argument_list|,
+literal|"Save the active tool options to this "
+literal|"tool preset"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|tool_presets_save_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_TOOL_PRESET_SAVE
+block|}
+block|,
+block|{
 literal|"tool-presets-restore"
 block|,
 literal|"document-revert"
@@ -536,6 +566,13 @@ argument_list|(
 literal|"tool-presets-show-in-file-manager"
 argument_list|,
 name|file
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"tool-presets-save"
+argument_list|,
+name|tool_preset
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool-preset-editor-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -108,7 +114,66 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_BRUSH_EDITOR_DIALOG
+name|GIMP_HELP_TOOL_PRESET_EDITOR_DIALOG
+block|}
+block|,
+block|{
+literal|"tool-preset-editor-save"
+block|,
+literal|"document-save"
+block|,
+name|NC_
+argument_list|(
+literal|"tool-preset-editor-action"
+argument_list|,
+literal|"_Save Tool Options to Preset"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"tool-preset-editor-action"
+argument_list|,
+literal|"Save the active tool options to this "
+literal|"tool preset"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|tool_preset_editor_save_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_TOOL_PRESET_SAVE
+block|}
+block|,
+block|{
+literal|"tool-preset-editor-restore"
+block|,
+literal|"document-revert"
+block|,
+name|NC_
+argument_list|(
+literal|"tool-preset-editor-action"
+argument_list|,
+literal|"_Restore Tool Preset"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"tool-preset-editor-action"
+argument_list|,
+literal|"Restore this tool preset"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|tool_preset_editor_restore_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_TOOL_PRESET_RESTORE
 block|}
 block|}
 decl_stmt|;
@@ -146,7 +211,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_BRUSH_EDITOR_EDIT_ACTIVE
+name|GIMP_HELP_TOOL_PRESET_EDITOR_EDIT_ACTIVE
 block|}
 block|}
 decl_stmt|;
@@ -249,6 +314,24 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"tool-preset-editor-save"
+argument_list|,
+name|data_editor
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"tool-preset-editor-restore"
+argument_list|,
+name|data_editor
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"tool-preset-editor-edit-active"

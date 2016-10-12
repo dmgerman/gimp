@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOL_PRESETS_COMMANDS_H__
+name|__TOOL_PRESET_EDITOR_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOL_PRESETS_COMMANDS_H__
+DECL|macro|__TOOL_PRESET_EDITOR_COMMANDS_H__
 define|#
 directive|define
-name|__TOOL_PRESETS_COMMANDS_H__
+name|__TOOL_PRESET_EDITOR_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|tool_presets_save_cmd_callback
+name|tool_preset_editor_save_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_presets_restore_cmd_callback
+name|tool_preset_editor_restore_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -50,7 +50,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TOOL_PRESETS_COMMANDS_H__ */
+comment|/* __TOOL_PRESET_EDITOR_COMMANDS_H__ */
 end_comment
 
 end_unit
