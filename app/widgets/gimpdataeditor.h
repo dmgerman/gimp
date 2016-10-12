@@ -137,16 +137,6 @@ modifier|*
 name|view
 decl_stmt|;
 comment|/* filled by subclasses */
-DECL|member|save_button
-name|GtkWidget
-modifier|*
-name|save_button
-decl_stmt|;
-DECL|member|revert_button
-name|GtkWidget
-modifier|*
-name|revert_button
-decl_stmt|;
 block|}
 struct|;
 end_struct
