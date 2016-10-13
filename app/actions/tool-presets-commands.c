@@ -288,7 +288,12 @@ name|preset
 condition|)
 name|gimp_context_tool_preset_changed
 argument_list|(
+name|gimp_get_user_context
+argument_list|(
 name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
