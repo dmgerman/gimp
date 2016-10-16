@@ -476,6 +476,11 @@ name|file
 init|=
 name|NULL
 decl_stmt|;
+name|gint
+name|sel_count
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|context
@@ -488,12 +493,16 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|sel_count
+operator|=
 name|action_data_sel_count
 argument_list|(
 name|user_data
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|sel_count
 operator|>
 literal|1
 condition|)
@@ -560,10 +569,11 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"palettes-merge"
 argument_list|,
-name|FALSE
+name|sel_count
+operator|>
+literal|1
 argument_list|)
 expr_stmt|;
-comment|/* FIXME palette&& GIMP_IS_CONTAINER_LIST_VIEW (editor->view)); */
 name|SET_SENSITIVE
 argument_list|(
 literal|"palettes-copy-location"
