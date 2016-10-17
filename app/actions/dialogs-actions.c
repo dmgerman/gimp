@@ -566,7 +566,7 @@ argument_list|,
 literal|"Open paint dynamics dialog"
 argument_list|)
 block|,
-literal|"gimp-dynamics-list"
+literal|"gimp-dynamics-list|gimp-dynamics-grid"
 block|,
 name|GIMP_HELP_DYNAMICS_DIALOG
 block|}
@@ -774,7 +774,7 @@ argument_list|,
 literal|"Open tool presets dialog"
 argument_list|)
 block|,
-literal|"gimp-tool-preset-list"
+literal|"gimp-tool-preset-list|gimp-tool-preset-grid"
 block|,
 name|GIMP_HELP_TOOL_PRESET_DIALOG
 block|}

@@ -543,7 +543,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewSize view_size,const gchar * editor_id,const gchar * editor_tooltip)
+DECL|function|dynamics_box_new (GimpContainer * container,GimpContext * context,const gchar * label,gint spacing,GimpViewType view_type,GimpViewSize view_size,const gchar * editor_id,const gchar * editor_tooltip)
 name|dynamics_box_new
 parameter_list|(
 name|GimpContainer
@@ -561,6 +561,9 @@ name|label
 parameter_list|,
 name|gint
 name|spacing
+parameter_list|,
+name|GimpViewType
+name|view_type
 parameter_list|,
 name|GimpViewSize
 name|view_size
@@ -603,13 +606,13 @@ name|label
 argument_list|,
 name|spacing
 argument_list|,
-name|GIMP_VIEW_TYPE_LIST
+name|view_type
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 name|view_size
 argument_list|,
-literal|"gimp-dynamics-list"
+literal|"gimp-dynamics-list|gimp-dynamics-grid"
 argument_list|,
 name|GIMP_STOCK_DYNAMICS
 argument_list|,
@@ -683,6 +686,8 @@ argument_list|,
 name|label
 argument_list|,
 name|spacing
+argument_list|,
+name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
@@ -796,6 +801,8 @@ argument_list|,
 name|label
 argument_list|,
 name|spacing
+argument_list|,
+name|view_type
 argument_list|,
 name|view_size
 argument_list|,
