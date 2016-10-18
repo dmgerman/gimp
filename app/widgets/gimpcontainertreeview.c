@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d2b700103
+DECL|enum|__anon2c9024150103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -3820,7 +3820,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-comment|/* When focusing out of a tree view, I want its content to be updated    * as though it had been activated. */
+comment|/*  When focusing out of a tree view, we want its content to be    *  updated as though it had been activated.    */
 name|g_signal_emit_by_name
 argument_list|(
 name|widget
