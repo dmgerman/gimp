@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f734c0108
+DECL|struct|__anon2a4fe6120108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -1874,6 +1874,18 @@ operator|&
 name|private
 operator|->
 name|resize_text_layers
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Resizing text layers will make them uneditable"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
