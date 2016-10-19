@@ -1193,6 +1193,33 @@ value|_("Sets the default 'Dither text layers' state for the 'Convert to Indexed
 end_define
 
 begin_define
+DECL|macro|IMAGE_RESIZE_FILL_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_RESIZE_LAYER_SET_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_LAYER_SET_BLURB
+define|\
+value|_("Sets the default set of layers to resize for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_RESIZE_RESIZE_TEXT_LAYERS_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_RESIZE_TEXT_LAYERS_BLURB
+define|\
+value|_("Sets the default 'Resize text layers' state for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_NAME_BLURB
 define|#
 directive|define
@@ -1208,6 +1235,15 @@ directive|define
 name|LAYER_NEW_FILL_TYPE_BLURB
 define|\
 value|_("Sets the default fill type for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_RESIZE_FILL_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_RESIZE_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'Layer Boundary Size' dialog.")
 end_define
 
 begin_define
