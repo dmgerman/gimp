@@ -54,12 +54,6 @@ directive|include
 file|"language.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_function
 name|void
 DECL|function|language_init (const gchar * language)
