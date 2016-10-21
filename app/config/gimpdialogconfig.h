@@ -179,6 +179,14 @@ name|gchar
 modifier|*
 name|layer_new_name
 decl_stmt|;
+DECL|member|layer_new_mode
+name|GimpLayerModeEffects
+name|layer_new_mode
+decl_stmt|;
+DECL|member|layer_new_opacity
+name|gdouble
+name|layer_new_opacity
+decl_stmt|;
 DECL|member|layer_new_fill_type
 name|GimpFillType
 name|layer_new_fill_type
