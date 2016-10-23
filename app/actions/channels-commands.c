@@ -498,7 +498,7 @@ name|GIMP_STOCK_CHANNEL
 argument_list|,
 name|_
 argument_list|(
-literal|"New Channel Options"
+literal|"Create a New Channel"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_CHANNEL_NEW

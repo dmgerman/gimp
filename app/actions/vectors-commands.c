@@ -761,7 +761,7 @@ name|GIMP_STOCK_PATH
 argument_list|,
 name|_
 argument_list|(
-literal|"New Path Options"
+literal|"Create a New Path"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PATH_NEW
