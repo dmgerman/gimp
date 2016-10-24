@@ -2247,7 +2247,10 @@ name|frame
 operator|=
 name|gimp_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Switches"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
