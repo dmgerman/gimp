@@ -1588,15 +1588,24 @@ block|{
 literal|0
 block|}
 decl_stmt|;
+name|gint32
+name|drawable
+init|=
+name|allLayers
+index|[
+name|nLayers
+operator|-
+literal|1
+operator|-
+name|loop
+index|]
+decl_stmt|;
 comment|/* Obtain the drawable type */
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|allLayers
-index|[
-name|loop
-index|]
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1628,10 +1637,7 @@ expr_stmt|;
 comment|/* fix layers to avoid offset errors */
 name|gimp_layer_resize_to_image_size
 argument_list|(
-name|allLayers
-index|[
-name|loop
-index|]
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Retrieve the buffer for the layer */
@@ -1639,10 +1645,7 @@ name|geglbuffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|allLayers
-index|[
-name|loop
-index|]
+name|drawable
 argument_list|)
 expr_stmt|;
 name|extent
