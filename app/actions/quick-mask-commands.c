@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/item-options-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -136,6 +142,18 @@ name|channel_color
 parameter_list|,
 name|gboolean
 name|save_selection
+parameter_list|,
+name|gboolean
+name|channel_visible
+parameter_list|,
+name|gboolean
+name|channel_linked
+parameter_list|,
+name|gboolean
+name|channel_lock_content
+parameter_list|,
+name|gboolean
+name|channel_lock_position
 parameter_list|,
 name|gpointer
 name|user_data
@@ -379,11 +397,6 @@ argument_list|)
 argument_list|,
 name|GIMP_HELP_QUICK_MASK_EDIT
 argument_list|,
-name|NULL
-argument_list|,
-operator|&
-name|color
-argument_list|,
 name|_
 argument_list|(
 literal|"Edit Quick Mask Color"
@@ -391,14 +404,34 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Mask opacity"
+literal|"_Mask opacity:"
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|color
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
 name|quick_mask_configure_callback
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|item_options_dialog_set_switches_visible
+argument_list|(
+name|dialog
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog
@@ -432,7 +465,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|quick_mask_configure_callback (GtkWidget * dialog,GimpImage * image,GimpChannel * channel,GimpContext * context,const gchar * channel_name,const GimpRGB * channel_color,gboolean save_selection,gpointer user_data)
+DECL|function|quick_mask_configure_callback (GtkWidget * dialog,GimpImage * image,GimpChannel * channel,GimpContext * context,const gchar * channel_name,const GimpRGB * channel_color,gboolean save_selection,gboolean channel_visible,gboolean channel_linked,gboolean channel_lock_content,gboolean channel_lock_position,gpointer user_data)
 name|quick_mask_configure_callback
 parameter_list|(
 name|GtkWidget
@@ -463,6 +496,18 @@ name|channel_color
 parameter_list|,
 name|gboolean
 name|save_selection
+parameter_list|,
+name|gboolean
+name|channel_visible
+parameter_list|,
+name|gboolean
+name|channel_linked
+parameter_list|,
+name|gboolean
+name|channel_lock_content
+parameter_list|,
+name|gboolean
+name|channel_lock_position
 parameter_list|,
 name|gpointer
 name|user_data
