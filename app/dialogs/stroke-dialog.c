@@ -120,9 +120,18 @@ value|1
 end_define
 
 begin_typedef
+DECL|typedef|StrokeDialog
 typedef|typedef
+name|struct
+name|_StrokeDialog
+name|StrokeDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_StrokeDialog
 struct|struct
-DECL|struct|__anon2adf221a0108
+name|_StrokeDialog
 block|{
 DECL|member|item
 name|GimpItem
@@ -157,15 +166,25 @@ name|GtkWidget
 modifier|*
 name|tool_combo
 decl_stmt|;
-DECL|typedef|StrokeDialog
 block|}
-name|StrokeDialog
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
-comment|/*  local functions  */
+comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|stroke_dialog_free
+parameter_list|(
+name|StrokeDialog
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -179,18 +198,6 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|StrokeDialog
-modifier|*
-name|private
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|stroke_dialog_free
-parameter_list|(
 name|StrokeDialog
 modifier|*
 name|private
@@ -1086,6 +1093,34 @@ end_comment
 begin_function
 specifier|static
 name|void
+DECL|function|stroke_dialog_free (StrokeDialog * private)
+name|stroke_dialog_free
+parameter_list|(
+name|StrokeDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_object_unref
+argument_list|(
+name|private
+operator|->
+name|options
+argument_list|)
+expr_stmt|;
+name|g_slice_free
+argument_list|(
+name|StrokeDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|stroke_dialog_response (GtkWidget * dialog,gint response_id,StrokeDialog * private)
 name|stroke_dialog_response
 parameter_list|(
@@ -1189,34 +1224,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|stroke_dialog_free (StrokeDialog * private)
-name|stroke_dialog_free
-parameter_list|(
-name|StrokeDialog
-modifier|*
-name|private
-parameter_list|)
-block|{
-name|g_object_unref
-argument_list|(
-name|private
-operator|->
-name|options
-argument_list|)
-expr_stmt|;
-name|g_slice_free
-argument_list|(
-name|StrokeDialog
-argument_list|,
-name|private
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

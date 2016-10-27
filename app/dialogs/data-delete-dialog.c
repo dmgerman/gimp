@@ -143,7 +143,7 @@ name|response_id
 parameter_list|,
 name|DataDeleteDialog
 modifier|*
-name|delete_data
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -177,7 +177,7 @@ parameter_list|)
 block|{
 name|DataDeleteDialog
 modifier|*
-name|delete_data
+name|private
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -227,32 +227,32 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|delete_data
+name|private
 operator|=
 name|g_slice_new0
 argument_list|(
 name|DataDeleteDialog
 argument_list|)
 expr_stmt|;
-name|delete_data
+name|private
 operator|->
 name|factory
 operator|=
 name|factory
 expr_stmt|;
-name|delete_data
+name|private
 operator|->
 name|data
 operator|=
 name|data
 expr_stmt|;
-name|delete_data
+name|private
 operator|->
 name|context
 operator|=
 name|context
 expr_stmt|;
-name|delete_data
+name|private
 operator|->
 name|parent
 operator|=
@@ -333,7 +333,7 @@ argument_list|(
 name|data_delete_dialog_response
 argument_list|)
 argument_list|,
-name|delete_data
+name|private
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_primary_text
@@ -390,7 +390,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|data_delete_dialog_response (GtkWidget * dialog,gint response_id,DataDeleteDialog * delete_data)
+DECL|function|data_delete_dialog_response (GtkWidget * dialog,gint response_id,DataDeleteDialog * private)
 name|data_delete_dialog_response
 parameter_list|(
 name|GtkWidget
@@ -402,7 +402,7 @@ name|response_id
 parameter_list|,
 name|DataDeleteDialog
 modifier|*
-name|delete_data
+name|private
 parameter_list|)
 block|{
 name|gtk_widget_destroy
@@ -421,7 +421,7 @@ name|GimpDataFactory
 modifier|*
 name|factory
 init|=
-name|delete_data
+name|private
 operator|->
 name|factory
 decl_stmt|;
@@ -429,7 +429,7 @@ name|GimpData
 modifier|*
 name|data
 init|=
-name|delete_data
+name|private
 operator|->
 name|data
 decl_stmt|;
@@ -458,7 +458,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|delete_data
+name|private
 operator|->
 name|context
 operator|&&
@@ -469,7 +469,7 @@ argument_list|)
 operator|==
 name|gimp_context_get_by_type
 argument_list|(
-name|delete_data
+name|private
 operator|->
 name|context
 argument_list|,
@@ -518,7 +518,7 @@ argument_list|)
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|delete_data
+name|private
 operator|->
 name|parent
 argument_list|)
@@ -545,7 +545,7 @@ name|new_active
 condition|)
 name|gimp_context_set_by_type
 argument_list|(
-name|delete_data
+name|private
 operator|->
 name|context
 argument_list|,
@@ -562,7 +562,7 @@ name|g_slice_free
 argument_list|(
 name|DataDeleteDialog
 argument_list|,
-name|delete_data
+name|private
 argument_list|)
 expr_stmt|;
 block|}

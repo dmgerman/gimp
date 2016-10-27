@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6d33b0108
+DECL|struct|__anon274ee92a0108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -178,6 +178,18 @@ end_typedef
 
 begin_function_decl
 specifier|static
+name|void
+name|color_profile_dialog_free
+parameter_list|(
+name|ProfileDialog
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|GtkWidget
 modifier|*
 name|color_profile_combo_box_new
@@ -217,18 +229,6 @@ name|GtkWidget
 modifier|*
 name|combo
 parameter_list|,
-name|ProfileDialog
-modifier|*
-name|private
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|color_profile_dialog_free
-parameter_list|(
 name|ProfileDialog
 modifier|*
 name|private
@@ -1318,6 +1318,27 @@ end_comment
 
 begin_function
 specifier|static
+name|void
+DECL|function|color_profile_dialog_free (ProfileDialog * private)
+name|color_profile_dialog_free
+parameter_list|(
+name|ProfileDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ProfileDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|GtkWidget
 modifier|*
 DECL|function|color_profile_combo_box_new (ProfileDialog * private)
@@ -1882,27 +1903,6 @@ name|dest_profile
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|color_profile_dialog_free (ProfileDialog * private)
-name|color_profile_dialog_free
-parameter_list|(
-name|ProfileDialog
-modifier|*
-name|private
-parameter_list|)
-block|{
-name|g_slice_free
-argument_list|(
-name|ProfileDialog
-argument_list|,
-name|private
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

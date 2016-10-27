@@ -87,6 +87,10 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -98,6 +102,10 @@ name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  public function  */
+end_comment
 
 begin_function
 name|TemplateOptionsDialog
@@ -498,6 +506,10 @@ name|options
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static

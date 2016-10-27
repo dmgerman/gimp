@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32cfa70103
+DECL|enum|__anon28b0ea8d0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -161,9 +161,18 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|ImportDialog
 typedef|typedef
+name|struct
+name|_ImportDialog
+name|ImportDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ImportDialog
 struct|struct
-DECL|struct|__anon2a32cfa70208
+name|_ImportDialog
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -259,11 +268,9 @@ name|GtkWidget
 modifier|*
 name|no_colors_label
 decl_stmt|;
-DECL|typedef|ImportDialog
 block|}
-name|ImportDialog
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static

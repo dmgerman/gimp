@@ -122,9 +122,18 @@ value|(GIMP_OFFSET_BACKGROUND | GIMP_OFFSET_TRANSPARENT)
 end_define
 
 begin_typedef
+DECL|typedef|OffsetDialog
 typedef|typedef
+name|struct
+name|_OffsetDialog
+name|OffsetDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_OffsetDialog
 struct|struct
-DECL|struct|__anon2c00047f0108
+name|_OffsetDialog
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -153,15 +162,25 @@ name|GtkWidget
 modifier|*
 name|off_se
 decl_stmt|;
-DECL|typedef|OffsetDialog
 block|}
-name|OffsetDialog
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|offset_dialog_free
+parameter_list|(
+name|OffsetDialog
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -223,18 +242,6 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|OffsetDialog
-modifier|*
-name|private
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|offset_dialog_free
-parameter_list|(
 name|OffsetDialog
 modifier|*
 name|private
@@ -1336,6 +1343,27 @@ end_comment
 begin_function
 specifier|static
 name|void
+DECL|function|offset_dialog_free (OffsetDialog * private)
+name|offset_dialog_free
+parameter_list|(
+name|OffsetDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|OffsetDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|offset_dialog_response (GtkWidget * dialog,gint response_id,OffsetDialog * private)
 name|offset_dialog_response
 parameter_list|(
@@ -1603,27 +1631,6 @@ name|item
 argument_list|)
 operator|/
 literal|2
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|offset_dialog_free (OffsetDialog * private)
-name|offset_dialog_free
-parameter_list|(
-name|OffsetDialog
-modifier|*
-name|private
-parameter_list|)
-block|{
-name|g_slice_free
-argument_list|(
-name|OffsetDialog
-argument_list|,
-name|private
 argument_list|)
 expr_stmt|;
 block|}

@@ -5260,6 +5260,11 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gtk_widget_destroy
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|width

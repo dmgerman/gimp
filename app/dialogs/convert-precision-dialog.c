@@ -88,9 +88,18 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
+DECL|typedef|ConvertDialog
 typedef|typedef
+name|struct
+name|_ConvertDialog
+name|ConvertDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ConvertDialog
 struct|struct
-DECL|struct|__anon29f26a3e0108
+name|_ConvertDialog
 block|{
 DECL|member|image
 name|GimpImage
@@ -129,11 +138,25 @@ DECL|member|user_data
 name|gpointer
 name|user_data
 decl_stmt|;
-DECL|typedef|ConvertDialog
 block|}
+struct|;
+end_struct
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|convert_precision_dialog_free
+parameter_list|(
 name|ConvertDialog
-typedef|;
-end_typedef
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -147,18 +170,6 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|ConvertDialog
-modifier|*
-name|private
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|convert_precision_dialog_free
-parameter_list|(
 name|ConvertDialog
 modifier|*
 name|private
@@ -1250,6 +1261,27 @@ end_comment
 begin_function
 specifier|static
 name|void
+DECL|function|convert_precision_dialog_free (ConvertDialog * private)
+name|convert_precision_dialog_free
+parameter_list|(
+name|ConvertDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ConvertDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|convert_precision_dialog_response (GtkWidget * dialog,gint response_id,ConvertDialog * private)
 name|convert_precision_dialog_response
 parameter_list|(
@@ -1324,27 +1356,6 @@ name|dialog
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|convert_precision_dialog_free (ConvertDialog * private)
-name|convert_precision_dialog_free
-parameter_list|(
-name|ConvertDialog
-modifier|*
-name|private
-parameter_list|)
-block|{
-name|g_slice_free
-argument_list|(
-name|ConvertDialog
-argument_list|,
-name|private
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

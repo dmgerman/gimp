@@ -110,9 +110,18 @@ value|8
 end_define
 
 begin_typedef
+DECL|typedef|ResizeDialog
 typedef|typedef
+name|struct
+name|_ResizeDialog
+name|ResizeDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ResizeDialog
 struct|struct
-DECL|struct|__anon2c9678500108
+name|_ResizeDialog
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -198,11 +207,25 @@ name|GtkWidget
 modifier|*
 name|text_layers_button
 decl_stmt|;
-DECL|typedef|ResizeDialog
 block|}
+struct|;
+end_struct
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|resize_dialog_free
+parameter_list|(
 name|ResizeDialog
-typedef|;
-end_typedef
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -227,18 +250,6 @@ begin_function_decl
 specifier|static
 name|void
 name|resize_dialog_reset
-parameter_list|(
-name|ResizeDialog
-modifier|*
-name|private
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|resize_dialog_free
 parameter_list|(
 name|ResizeDialog
 modifier|*
@@ -320,6 +331,10 @@ name|private
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  public function  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -727,16 +742,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_resizable
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
@@ -752,6 +757,16 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_weak_ref
@@ -1972,6 +1987,31 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|resize_dialog_free (ResizeDialog * private)
+name|resize_dialog_free
+parameter_list|(
+name|ResizeDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|g_slice_free
+argument_list|(
+name|ResizeDialog
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_function
 specifier|static
 name|void
@@ -2217,27 +2257,6 @@ argument_list|,
 name|private
 operator|->
 name|old_resize_text_layers
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|resize_dialog_free (ResizeDialog * private)
-name|resize_dialog_free
-parameter_list|(
-name|ResizeDialog
-modifier|*
-name|private
-parameter_list|)
-block|{
-name|g_slice_free
-argument_list|(
-name|ResizeDialog
-argument_list|,
-name|private
 argument_list|)
 expr_stmt|;
 block|}
