@@ -2132,7 +2132,9 @@ name|offset_y
 decl_stmt|;
 if|if
 condition|(
-name|item
+name|private
+operator|->
+name|size_se
 condition|)
 block|{
 name|width
