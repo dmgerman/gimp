@@ -73,6 +73,9 @@ parameter_list|,
 name|gboolean
 name|layer_linked
 parameter_list|,
+name|GimpColorTag
+name|layer_color_tag
+parameter_list|,
 name|gboolean
 name|layer_lock_content
 parameter_list|,
@@ -156,6 +159,9 @@ name|layer_visible
 parameter_list|,
 name|gboolean
 name|layer_linked
+parameter_list|,
+name|GimpColorTag
+name|layer_color_tag
 parameter_list|,
 name|gboolean
 name|layer_lock_content

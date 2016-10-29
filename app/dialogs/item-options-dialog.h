@@ -52,6 +52,9 @@ parameter_list|,
 name|gboolean
 name|item_linked
 parameter_list|,
+name|GimpColorTag
+name|item_color_tag
+parameter_list|,
 name|gboolean
 name|item_lock_content
 parameter_list|,
@@ -140,6 +143,9 @@ name|item_visible
 parameter_list|,
 name|gboolean
 name|item_linked
+parameter_list|,
+name|GimpColorTag
+name|item_color_tag
 parameter_list|,
 name|gboolean
 name|item_lock_content

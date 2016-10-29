@@ -60,6 +60,9 @@ parameter_list|,
 name|gboolean
 name|channel_linked
 parameter_list|,
+name|GimpColorTag
+name|channel_color_tag
+parameter_list|,
 name|gboolean
 name|channel_lock_content
 parameter_list|,
@@ -146,6 +149,9 @@ name|channel_visible
 parameter_list|,
 name|gboolean
 name|channel_linked
+parameter_list|,
+name|GimpColorTag
+name|channel_color_tag
 parameter_list|,
 name|gboolean
 name|channel_lock_content

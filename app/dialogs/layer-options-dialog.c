@@ -232,6 +232,9 @@ parameter_list|,
 name|gboolean
 name|item_linked
 parameter_list|,
+name|GimpColorTag
+name|item_color_tag
+parameter_list|,
 name|gboolean
 name|item_lock_content
 parameter_list|,
@@ -267,7 +270,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * layer_name,GimpLayerModeEffects layer_mode,gdouble layer_opacity,GimpFillType layer_fill_type,gboolean layer_visible,gboolean layer_linked,gboolean layer_lock_content,gboolean layer_lock_position,gboolean layer_lock_alpha,GimpLayerOptionsCallback callback,gpointer user_data)
+DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * layer_name,GimpLayerModeEffects layer_mode,gdouble layer_opacity,GimpFillType layer_fill_type,gboolean layer_visible,gboolean layer_linked,GimpColorTag layer_color_tag,gboolean layer_lock_content,gboolean layer_lock_position,gboolean layer_lock_alpha,GimpLayerOptionsCallback callback,gpointer user_data)
 name|layer_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -330,6 +333,9 @@ name|layer_visible
 parameter_list|,
 name|gboolean
 name|layer_linked
+parameter_list|,
+name|GimpColorTag
+name|layer_color_tag
 parameter_list|,
 name|gboolean
 name|layer_lock_content
@@ -565,6 +571,8 @@ argument_list|,
 name|layer_visible
 argument_list|,
 name|layer_linked
+argument_list|,
+name|layer_color_tag
 argument_list|,
 name|layer_lock_content
 argument_list|,
@@ -2068,7 +2076,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_options_dialog_callback (GtkWidget * dialog,GimpImage * image,GimpItem * item,GimpContext * context,const gchar * item_name,gboolean item_visible,gboolean item_linked,gboolean item_lock_content,gboolean item_lock_position,gpointer user_data)
+DECL|function|layer_options_dialog_callback (GtkWidget * dialog,GimpImage * image,GimpItem * item,GimpContext * context,const gchar * item_name,gboolean item_visible,gboolean item_linked,GimpColorTag item_color_tag,gboolean item_lock_content,gboolean item_lock_position,gpointer user_data)
 name|layer_options_dialog_callback
 parameter_list|(
 name|GtkWidget
@@ -2097,6 +2105,9 @@ name|item_visible
 parameter_list|,
 name|gboolean
 name|item_linked
+parameter_list|,
+name|GimpColorTag
+name|item_color_tag
 parameter_list|,
 name|gboolean
 name|item_lock_content
@@ -2248,6 +2259,8 @@ argument_list|,
 name|item_visible
 argument_list|,
 name|item_linked
+argument_list|,
+name|item_color_tag
 argument_list|,
 name|item_lock_content
 argument_list|,

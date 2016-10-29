@@ -143,6 +143,9 @@ parameter_list|,
 name|gboolean
 name|item_linked
 parameter_list|,
+name|GimpColorTag
+name|item_color_tag
+parameter_list|,
 name|gboolean
 name|item_lock_content
 parameter_list|,
@@ -162,7 +165,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * vectors_name,gboolean vectors_visible,gboolean vectors_linked,gboolean vectors_lock_content,gboolean vectors_lock_position,GimpVectorsOptionsCallback callback,gpointer user_data)
+DECL|function|vectors_options_dialog_new (GimpImage * image,GimpVectors * vectors,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * vectors_name,gboolean vectors_visible,gboolean vectors_linked,GimpColorTag vectors_color_tag,gboolean vectors_lock_content,gboolean vectors_lock_position,GimpVectorsOptionsCallback callback,gpointer user_data)
 name|vectors_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -216,6 +219,9 @@ name|vectors_visible
 parameter_list|,
 name|gboolean
 name|vectors_linked
+parameter_list|,
+name|GimpColorTag
+name|vectors_color_tag
 parameter_list|,
 name|gboolean
 name|vectors_lock_content
@@ -403,6 +409,8 @@ name|vectors_visible
 argument_list|,
 name|vectors_linked
 argument_list|,
+name|vectors_color_tag
+argument_list|,
 name|vectors_lock_content
 argument_list|,
 name|vectors_lock_position
@@ -461,7 +469,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vectors_options_dialog_callback (GtkWidget * dialog,GimpImage * image,GimpItem * item,GimpContext * context,const gchar * item_name,gboolean item_visible,gboolean item_linked,gboolean item_lock_content,gboolean item_lock_position,gpointer user_data)
+DECL|function|vectors_options_dialog_callback (GtkWidget * dialog,GimpImage * image,GimpItem * item,GimpContext * context,const gchar * item_name,gboolean item_visible,gboolean item_linked,GimpColorTag item_color_tag,gboolean item_lock_content,gboolean item_lock_position,gpointer user_data)
 name|vectors_options_dialog_callback
 parameter_list|(
 name|GtkWidget
@@ -490,6 +498,9 @@ name|item_visible
 parameter_list|,
 name|gboolean
 name|item_linked
+parameter_list|,
+name|GimpColorTag
+name|item_color_tag
 parameter_list|,
 name|gboolean
 name|item_lock_content
@@ -527,6 +538,8 @@ argument_list|,
 name|item_visible
 argument_list|,
 name|item_linked
+argument_list|,
+name|item_color_tag
 argument_list|,
 name|item_lock_content
 argument_list|,

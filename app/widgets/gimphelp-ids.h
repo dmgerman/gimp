@@ -1302,6 +1302,14 @@ value|"gimp-layer-linked"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_LAYER_COLOR_TAG
+value|"gimp-layer-color-tag"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_OPACITY
 define|#
 directive|define
@@ -1622,6 +1630,30 @@ value|"gimp-channel-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_CHANNEL_VISIBLE
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_VISIBLE
+value|"gimp-channel-visible"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_CHANNEL_LINKED
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_LINKED
+value|"gimp-channel-linked"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_CHANNEL_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_COLOR_TAG
+value|"gimp-channel-color-tag"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_CHANNEL_LOCK_PIXELS
 define|#
 directive|define
@@ -1795,6 +1827,14 @@ define|#
 directive|define
 name|GIMP_HELP_PATH_LINKED
 value|"gimp-path-linked"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATH_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_PATH_COLOR_TAG
+value|"gimp-path-color-tag"
 end_define
 
 begin_define

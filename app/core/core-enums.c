@@ -4882,6 +4882,14 @@ literal|"item-linked"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_COLOR_TAG
+block|,
+literal|"GIMP_UNDO_ITEM_COLOR_TAG"
+block|,
+literal|"item-color-tag"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_ITEM_LOCK_CONTENT
 block|,
 literal|"GIMP_UNDO_ITEM_LOCK_CONTENT"
@@ -5868,6 +5876,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Link/Unlink item"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_COLOR_TAG
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Item color tag"
 argument_list|)
 block|,
 name|NULL

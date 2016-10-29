@@ -149,6 +149,9 @@ parameter_list|,
 name|gboolean
 name|channel_linked
 parameter_list|,
+name|GimpColorTag
+name|channel_color_tag
+parameter_list|,
 name|gboolean
 name|channel_lock_content
 parameter_list|,
@@ -418,6 +421,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|GIMP_COLOR_TAG_NONE
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -465,7 +470,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|quick_mask_configure_callback (GtkWidget * dialog,GimpImage * image,GimpChannel * channel,GimpContext * context,const gchar * channel_name,const GimpRGB * channel_color,gboolean save_selection,gboolean channel_visible,gboolean channel_linked,gboolean channel_lock_content,gboolean channel_lock_position,gpointer user_data)
+DECL|function|quick_mask_configure_callback (GtkWidget * dialog,GimpImage * image,GimpChannel * channel,GimpContext * context,const gchar * channel_name,const GimpRGB * channel_color,gboolean save_selection,gboolean channel_visible,gboolean channel_linked,GimpColorTag channel_color_tag,gboolean channel_lock_content,gboolean channel_lock_position,gpointer user_data)
 name|quick_mask_configure_callback
 parameter_list|(
 name|GtkWidget
@@ -502,6 +507,9 @@ name|channel_visible
 parameter_list|,
 name|gboolean
 name|channel_linked
+parameter_list|,
+name|GimpColorTag
+name|channel_color_tag
 parameter_list|,
 name|gboolean
 name|channel_lock_content
