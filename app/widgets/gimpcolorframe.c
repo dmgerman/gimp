@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aaa900103
+DECL|enum|__anon2c0233760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2642,10 +2642,8 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|frame
 operator|->
 name|color
@@ -2653,7 +2651,6 @@ operator|.
 name|r
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2663,10 +2660,8 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|frame
 operator|->
 name|color
@@ -2674,7 +2669,6 @@ operator|.
 name|g
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2684,10 +2678,8 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|frame
 operator|->
 name|color
@@ -2695,7 +2687,6 @@ operator|.
 name|b
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2705,10 +2696,8 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|frame
 operator|->
 name|color
@@ -2716,7 +2705,6 @@ operator|.
 name|a
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2874,16 +2862,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d \302\260"
+literal|"%.01f \302\260"
 argument_list|,
-name|ROUND
-argument_list|(
 name|hsv
 operator|.
 name|h
 operator|*
 literal|360.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2893,16 +2878,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|hsv
 operator|.
 name|s
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2912,16 +2894,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|hsv
 operator|.
 name|v
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -2931,16 +2910,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|hsv
 operator|.
 name|a
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3187,16 +3163,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|cmyk
 operator|.
 name|c
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -3206,16 +3179,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|cmyk
 operator|.
 name|m
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -3225,16 +3195,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|cmyk
 operator|.
 name|y
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -3244,16 +3211,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|cmyk
 operator|.
 name|k
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -3263,16 +3227,13 @@ index|]
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %%"
+literal|"%.01f %%"
 argument_list|,
-name|ROUND
-argument_list|(
 name|cmyk
 operator|.
 name|a
 operator|*
 literal|100.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
