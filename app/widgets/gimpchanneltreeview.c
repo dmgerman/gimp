@@ -457,12 +457,6 @@ literal|"channels-edit-attributes"
 expr_stmt|;
 name|iv_class
 operator|->
-name|edit_action
-operator|=
-literal|"channels-edit-attributes"
-expr_stmt|;
-name|iv_class
-operator|->
 name|new_action
 operator|=
 literal|"channels-new"

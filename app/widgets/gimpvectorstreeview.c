@@ -384,12 +384,6 @@ literal|"vectors-path-tool"
 expr_stmt|;
 name|iv_class
 operator|->
-name|edit_action
-operator|=
-literal|"vectors-edit-attributes"
-expr_stmt|;
-name|iv_class
-operator|->
 name|new_action
 operator|=
 literal|"vectors-new"
@@ -597,18 +591,6 @@ name|object
 argument_list|)
 argument_list|,
 name|GDK_MODIFIER_INTENT_MODIFY_SELECTION
-argument_list|)
-expr_stmt|;
-comment|/*  hide basically useless edit button  */
-name|gtk_widget_hide
-argument_list|(
-name|gimp_item_tree_view_get_edit_button
-argument_list|(
-name|GIMP_ITEM_TREE_VIEW
-argument_list|(
-name|view
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
