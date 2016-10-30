@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -151,6 +157,20 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gimp_action_group_set_action_context
+argument_list|(
+name|group
+argument_list|,
+name|action
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|group
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_get_color_tag_color
 argument_list|(
 name|value
