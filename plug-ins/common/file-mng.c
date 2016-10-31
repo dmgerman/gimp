@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a22db420103
+DECL|enum|__anon2b49dfee0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a22db420203
+DECL|enum|__anon2b49dfee0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2807,12 +2807,30 @@ name|gint
 name|layer_bpp
 decl_stmt|;
 name|guint8
+name|__attribute__
+argument_list|(
+operator|(
+name|unused
+operator|)
+argument_list|)
 name|layer_mng_colortype
 decl_stmt|;
 name|guint8
+name|__attribute__
+argument_list|(
+operator|(
+name|unused
+operator|)
+argument_list|)
 name|layer_mng_compression_type
 decl_stmt|;
 name|guint8
+name|__attribute__
+argument_list|(
+operator|(
+name|unused
+operator|)
+argument_list|)
 name|layer_mng_interlace_type
 decl_stmt|;
 name|gboolean

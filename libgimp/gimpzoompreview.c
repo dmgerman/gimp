@@ -21,6 +21,17 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_comment
+comment|/* we use our own deprecated API here */
+end_comment
+
+begin_define
+DECL|macro|GIMP_DISABLE_DEPRECATION_WARNINGS
+define|#
+directive|define
+name|GIMP_DISABLE_DEPRECATION_WARNINGS
+end_define
+
 begin_include
 include|#
 directive|include
@@ -57,7 +68,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ec70d0103
+DECL|enum|__anon2b72a0b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -104,7 +115,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ec70d0208
+DECL|struct|__anon2b72a0b20208
 block|{
 DECL|member|update
 name|gboolean
