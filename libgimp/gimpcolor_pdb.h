@@ -332,6 +332,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_histogram
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_histogram
@@ -403,6 +410,13 @@ name|saturation
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_threshold
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean

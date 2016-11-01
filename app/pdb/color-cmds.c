@@ -5035,17 +5035,17 @@ name|procedure
 argument_list|,
 literal|"gimp-histogram"
 argument_list|,
-literal|"Returns information on the intensity histogram for the specified drawable."
+literal|"Deprecated: Use 'gimp-drawable-histogram' instead."
 argument_list|,
-literal|"This tool makes it possible to gather information about the intensity histogram of a drawable. A channel to examine is first specified. This can be either value, red, green, or blue, depending on whether the drawable is of type color or grayscale. Second, a range of intensities are specified. The 'gimp-histogram' function returns statistics based on the pixels in the drawable that fall under this range of values. Mean, standard deviation, median, number of pixels, and percentile are all returned. Additionally, the total count of pixels in the image is returned. Counts of pixels are weighted by any associated alpha values and by the current selection mask. That is, pixels that lie outside an active selection mask will not be counted. Similarly, pixels with transparent alpha values will not be counted. The returned mean, std_dev and median are in the range (0..255) for 8-bit images, or if the plug-in is not precision-aware, and in the range (0.0..1.0) otherwise."
+literal|"Deprecated: Use 'gimp-drawable-histogram' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-histogram"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5471,17 +5471,17 @@ name|procedure
 argument_list|,
 literal|"gimp-threshold"
 argument_list|,
-literal|"Threshold the specified drawable."
+literal|"Deprecated: Use 'gimp-drawable-threshold' instead."
 argument_list|,
-literal|"This procedures generates a threshold map of the specified drawable. All pixels between the values of 'low_threshold' and 'high_threshold' are replaced with white, and all other pixels with black."
+literal|"Deprecated: Use 'gimp-drawable-threshold' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1997"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-threshold"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

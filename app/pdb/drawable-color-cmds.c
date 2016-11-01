@@ -1668,10 +1668,10 @@ decl_stmt|;
 name|gint32
 name|channel
 decl_stmt|;
-name|gint32
+name|gdouble
 name|start_range
 decl_stmt|;
-name|gint32
+name|gdouble
 name|end_range
 decl_stmt|;
 name|gdouble
@@ -1732,7 +1732,7 @@ argument_list|)
 expr_stmt|;
 name|start_range
 operator|=
-name|g_value_get_int
+name|g_value_get_double
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1744,7 +1744,7 @@ argument_list|)
 expr_stmt|;
 name|end_range
 operator|=
-name|g_value_get_int
+name|g_value_get_double
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1822,17 +1822,13 @@ name|TRUE
 argument_list|)
 decl_stmt|;
 name|gint
+name|n_bins
+decl_stmt|;
+name|gint
 name|start
-init|=
-name|start_range
 decl_stmt|;
 name|gint
 name|end
-init|=
-name|end_range
-decl_stmt|;
-name|gint
-name|n_bins
 decl_stmt|;
 name|gimp_drawable_calculate_histogram
 argument_list|(
@@ -1848,13 +1844,6 @@ argument_list|(
 name|histogram
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|n_bins
-operator|!=
-literal|256
-condition|)
-block|{
 name|start
 operator|=
 name|ROUND
@@ -1869,8 +1858,6 @@ name|n_bins
 operator|-
 literal|1
 operator|)
-operator|/
-literal|255
 argument_list|)
 expr_stmt|;
 name|end
@@ -1887,11 +1874,8 @@ name|n_bins
 operator|-
 literal|1
 operator|)
-operator|/
-literal|255
 argument_list|)
 expr_stmt|;
-block|}
 name|mean
 operator|=
 name|gimp_histogram_get_mean
@@ -3132,10 +3116,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gdouble
 name|low_threshold
 decl_stmt|;
-name|gint32
+name|gdouble
 name|high_threshold
 decl_stmt|;
 name|drawable
@@ -3154,7 +3138,7 @@ argument_list|)
 expr_stmt|;
 name|low_threshold
 operator|=
-name|g_value_get_int
+name|g_value_get_double
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3166,7 +3150,7 @@ argument_list|)
 expr_stmt|;
 name|high_threshold
 operator|=
-name|g_value_get_int
+name|g_value_get_double
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3223,14 +3207,10 @@ argument_list|,
 literal|"low"
 argument_list|,
 name|low_threshold
-operator|/
-literal|255.0
 argument_list|,
 literal|"high"
 argument_list|,
 name|high_threshold
-operator|/
-literal|255.0
 argument_list|,
 name|NULL
 argument_list|)
@@ -4198,7 +4178,7 @@ literal|"gimp-drawable-histogram"
 argument_list|,
 literal|"Returns information on the intensity histogram for the specified drawable."
 argument_list|,
-literal|"This tool makes it possible to gather information about the intensity histogram of a drawable. A channel to examine is first specified. This can be either value, red, green, or blue, depending on whether the drawable is of type color or grayscale. Second, a range of intensities are specified. The 'gimp-histogram' function returns statistics based on the pixels in the drawable that fall under this range of values. Mean, standard deviation, median, number of pixels, and percentile are all returned. Additionally, the total count of pixels in the image is returned. Counts of pixels are weighted by any associated alpha values and by the current selection mask. That is, pixels that lie outside an active selection mask will not be counted. Similarly, pixels with transparent alpha values will not be counted. The returned mean, std_dev and median are in the range (0..255) for 8-bit images, or if the plug-in is not precision-aware, and in the range (0.0..1.0) otherwise."
+literal|"This tool makes it possible to gather information about the intensity histogram of a drawable. A channel to examine is first specified. This can be either value, red, green, or blue, depending on whether the drawable is of type color or grayscale. Second, a range of intensities are specified. The 'gimp-drawable-histogram' function returns statistics based on the pixels in the drawable that fall under this range of values. Mean, standard deviation, median, number of pixels, and percentile are all returned. Additionally, the total count of pixels in the image is returned. Counts of pixels are weighted by any associated alpha values and by the current selection mask. That is, pixels that lie outside an active selection mask will not be counted. Similarly, pixels with transparent alpha values will not be counted. The returned mean, std_dev and median are in the range (0..255) for 8-bit images or if the plug-in is not precision-aware, and in the range (0.0..1.0) otherwise."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4241,7 +4221,7 @@ literal|"channel"
 argument_list|,
 literal|"channel"
 argument_list|,
-literal|"The channel to modify"
+literal|"The channel to query"
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
@@ -4255,7 +4235,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_double
 argument_list|(
 literal|"start-range"
 argument_list|,
@@ -4263,11 +4243,11 @@ literal|"start range"
 argument_list|,
 literal|"Start of the intensity measurement range"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|255
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -4277,7 +4257,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_double
 argument_list|(
 literal|"end-range"
 argument_list|,
@@ -4285,11 +4265,11 @@ literal|"end range"
 argument_list|,
 literal|"End of the intensity measurement range"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|255
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5129,7 +5109,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_double
 argument_list|(
 literal|"low-threshold"
 argument_list|,
@@ -5137,11 +5117,11 @@ literal|"low threshold"
 argument_list|,
 literal|"The low threshold value"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|255
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5151,7 +5131,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_double
 argument_list|(
 literal|"high-threshold"
 argument_list|,
@@ -5159,11 +5139,11 @@ literal|"high threshold"
 argument_list|,
 literal|"The high threshold value"
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|255
+literal|1.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
