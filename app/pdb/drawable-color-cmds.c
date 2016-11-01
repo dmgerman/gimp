@@ -3116,6 +3116,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|gint32
+name|channel
+decl_stmt|;
 name|gdouble
 name|low_threshold
 decl_stmt|;
@@ -3136,6 +3139,18 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
+name|channel
+operator|=
+name|g_value_get_enum
+argument_list|(
+name|gimp_value_array_index
+argument_list|(
+name|args
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|low_threshold
 operator|=
 name|g_value_get_double
@@ -3144,7 +3159,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3156,7 +3171,7 @@ name|gimp_value_array_index
 argument_list|(
 name|args
 argument_list|,
-literal|2
+literal|3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3203,6 +3218,10 @@ argument_list|,
 literal|"operation"
 argument_list|,
 literal|"gimp:threshold"
+argument_list|,
+literal|"channel"
+argument_list|,
+name|channel
 argument_list|,
 literal|"low"
 argument_list|,
@@ -5072,7 +5091,7 @@ literal|"gimp-drawable-threshold"
 argument_list|,
 literal|"Threshold the specified drawable."
 argument_list|,
-literal|"This procedures generates a threshold map of the specified drawable. All pixels between the values of 'low_threshold' and 'high_threshold' are replaced with white, and all other pixels with black."
+literal|"This procedures generates a threshold map of the specified drawable. All pixels between the values of 'low_threshold' and 'high_threshold', on the scale of 'channel' are replaced with white, and all other pixels with black."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5100,6 +5119,26 @@ operator|->
 name|gimp
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|g_param_spec_enum
+argument_list|(
+literal|"channel"
+argument_list|,
+literal|"channel"
+argument_list|,
+literal|"The channel to base the threshold on"
+argument_list|,
+name|GIMP_TYPE_HISTOGRAM_CHANNEL
+argument_list|,
+name|GIMP_HISTOGRAM_VALUE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

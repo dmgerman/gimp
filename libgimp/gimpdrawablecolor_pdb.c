@@ -1262,16 +1262,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_threshold:  * @drawable_ID: The drawable.  * @low_threshold: The low threshold value.  * @high_threshold: The high threshold value.  *  * Threshold the specified drawable.  *  * This procedures generates a threshold map of the specified drawable.  * All pixels between the values of 'low_threshold' and  * 'high_threshold' are replaced with white, and all other pixels with  * black.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_threshold:  * @drawable_ID: The drawable.  * @channel: The channel to base the threshold on.  * @low_threshold: The low threshold value.  * @high_threshold: The high threshold value.  *  * Threshold the specified drawable.  *  * This procedures generates a threshold map of the specified drawable.  * All pixels between the values of 'low_threshold' and  * 'high_threshold', on the scale of 'channel' are replaced with white,  * and all other pixels with black.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_threshold (gint32 drawable_ID,gdouble low_threshold,gdouble high_threshold)
+DECL|function|gimp_drawable_threshold (gint32 drawable_ID,GimpHistogramChannel channel,gdouble low_threshold,gdouble high_threshold)
 name|gimp_drawable_threshold
 parameter_list|(
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|gdouble
 name|low_threshold
@@ -1304,6 +1307,10 @@ argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|channel
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,

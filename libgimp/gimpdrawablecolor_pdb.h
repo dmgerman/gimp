@@ -313,6 +313,9 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+name|GimpHistogramChannel
+name|channel
+parameter_list|,
 name|gdouble
 name|low_threshold
 parameter_list|,
