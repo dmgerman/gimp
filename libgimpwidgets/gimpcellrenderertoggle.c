@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297747750103
+DECL|enum|__anon2c649fb10103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297747750203
+DECL|enum|__anon2c649fb10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1361,16 +1361,7 @@ condition|(
 name|background_set
 condition|)
 block|{
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|window
-argument_list|)
-decl_stmt|;
-name|GdkColor
+name|GdkRGBA
 modifier|*
 name|color
 decl_stmt|;
@@ -1378,7 +1369,7 @@ name|g_object_get
 argument_list|(
 name|cell
 argument_list|,
-literal|"cell-background-gdk"
+literal|"cell-background-rgba"
 argument_list|,
 operator|&
 name|color
@@ -1393,7 +1384,7 @@ argument_list|,
 name|background_area
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -1405,14 +1396,9 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gdk_color_free
+name|gdk_rgba_free
 argument_list|(
 name|color
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 block|}
