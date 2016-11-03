@@ -2573,7 +2573,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -3617,7 +3617,7 @@ name|name
 init|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -4042,7 +4042,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -4210,7 +4210,7 @@ name|name
 init|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+

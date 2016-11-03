@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db05880103
+DECL|enum|__anon2a0d0ce00103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -92,7 +92,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db05880208
+DECL|struct|__anon2a0d0ce00208
 block|{
 DECL|member|action_name
 name|gchar
@@ -112,7 +112,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28db05880308
+DECL|struct|__anon2a0d0ce00308
 block|{
 DECL|member|items
 name|GList
@@ -1061,7 +1061,7 @@ name|g_str_has_prefix
 argument_list|(
 name|action_name
 argument_list|,
-literal|"plug-in-recent-"
+literal|"filters-recent-"
 argument_list|)
 operator|||
 name|g_strcmp0
