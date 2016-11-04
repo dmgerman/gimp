@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b751c60103
+DECL|enum|__anon274afd950103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -186,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b751c60203
+DECL|enum|__anon274afd950203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8843,6 +8843,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* check for is_empty() before intersecting so we ignore the    * selection if it is suspended (like when stroking)    */
 if|if
 condition|(
 name|GIMP_ITEM
@@ -8851,6 +8852,12 @@ name|selection
 argument_list|)
 operator|!=
 name|item
+operator|&&
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|selection
+argument_list|)
 operator|&&
 name|gimp_item_bounds
 argument_list|(
@@ -9147,6 +9154,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* check for is_empty() before intersecting so we ignore the    * selection if it is suspended (like when stroking)    */
 if|if
 condition|(
 name|GIMP_ITEM
@@ -9155,6 +9163,12 @@ name|selection
 argument_list|)
 operator|!=
 name|item
+operator|&&
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|selection
+argument_list|)
 operator|&&
 name|gimp_item_bounds
 argument_list|(
