@@ -140,13 +140,13 @@ name|Babl
 modifier|*
 name|dest_format
 decl_stmt|;
-DECL|member|intent
+DECL|member|rendering_intent
 name|GimpColorRenderingIntent
-name|intent
+name|rendering_intent
 decl_stmt|;
-DECL|member|bpc
+DECL|member|black_point_compensation
 name|gboolean
-name|bpc
+name|black_point_compensation
 decl_stmt|;
 DECL|member|transform
 name|GimpColorTransform
