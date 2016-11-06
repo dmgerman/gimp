@@ -5553,7 +5553,7 @@ name|NC_
 argument_list|(
 literal|"merge-type"
 argument_list|,
-literal|"Expanded as neccessary"
+literal|"Expanded as necessary"
 argument_list|)
 block|,
 name|NULL

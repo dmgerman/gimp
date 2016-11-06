@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288013290108
+DECL|struct|__anon28b022e40108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1172,7 +1172,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"%s plug-in  can only handle RGB or indexed images"
+literal|"%s plug-in can only handle RGB or indexed images"
 argument_list|)
 block|,
 block|{
