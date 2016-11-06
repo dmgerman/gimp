@@ -672,7 +672,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export the image again"
+literal|"Export the image"
 argument_list|)
 block|,
 name|GIMP_SAVE_MODE_EXPORT
