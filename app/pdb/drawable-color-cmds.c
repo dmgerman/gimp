@@ -1848,10 +1848,7 @@ name|start
 operator|=
 name|ROUND
 argument_list|(
-operator|(
-name|gdouble
-operator|)
-name|start
+name|start_range
 operator|*
 operator|(
 name|n_bins
@@ -1864,10 +1861,7 @@ name|end
 operator|=
 name|ROUND
 argument_list|(
-operator|(
-name|gdouble
-operator|)
-name|end
+name|end_range
 operator|*
 operator|(
 name|n_bins
