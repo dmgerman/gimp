@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296986a50103
+DECL|enum|__anon2c4cda130103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296986a50208
+DECL|struct|__anon2c4cda130208
 block|{
 DECL|member|name
 specifier|const
@@ -2175,7 +2175,7 @@ define|#
 directive|define
 name|GIMPRC_UPDATE_PATTERN
 define|\
-value|"\\(theme [^)]*\\)"
+value|"\\(theme [^)]*\\)"    "|" \   "\\(.*-path [^)]*\\)"
 end_define
 
 begin_function
@@ -2197,7 +2197,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* Do not migrate themes from GIMP< 2.10. */
+comment|/* Do not migrate paths and themes from GIMP< 2.10. */
 return|return
 name|FALSE
 return|;
