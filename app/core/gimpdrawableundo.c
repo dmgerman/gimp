@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27db77680103
+DECL|enum|__anon2c17a7a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,11 +413,12 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
+name|GEGL_IS_BUFFER
+argument_list|(
 name|drawable_undo
 operator|->
 name|buffer
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
