@@ -388,10 +388,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -1621,7 +1621,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_selection_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_selection_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -1641,10 +1641,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean

@@ -491,9 +491,9 @@ argument_list|)
 argument_list|,
 name|dest_profile
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|TRUE
 argument_list|,

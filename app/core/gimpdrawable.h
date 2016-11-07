@@ -253,10 +253,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -624,10 +624,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean

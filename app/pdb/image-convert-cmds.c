@@ -988,13 +988,13 @@ name|image
 argument_list|,
 name|precision
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-name|NULL
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

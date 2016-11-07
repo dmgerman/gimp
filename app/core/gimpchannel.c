@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5fecb80103
+DECL|enum|__anon2b3e918a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -650,10 +650,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -2780,9 +2780,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4380,7 +4380,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_channel_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_channel_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4400,10 +4400,10 @@ name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -4452,7 +4452,7 @@ if|if
 condition|(
 name|mask_dither_type
 operator|==
-literal|0
+name|GEGL_DITHER_NONE
 condition|)
 block|{
 name|gegl_buffer_copy

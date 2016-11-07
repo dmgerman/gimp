@@ -1572,11 +1572,11 @@ name|image
 argument_list|,
 name|precision
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|GIMP_PROGRESS
 argument_list|(

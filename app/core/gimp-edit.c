@@ -1647,9 +1647,9 @@ name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|FALSE
 argument_list|,
