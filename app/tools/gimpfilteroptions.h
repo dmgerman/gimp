@@ -123,6 +123,10 @@ DECL|member|region
 name|GimpFilterRegion
 name|region
 decl_stmt|;
+DECL|member|color_managed
+name|gboolean
+name|color_managed
+decl_stmt|;
 DECL|member|gamma_hack
 name|gboolean
 name|gamma_hack
