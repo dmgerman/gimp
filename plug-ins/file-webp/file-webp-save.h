@@ -19,11 +19,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298fd49a0108
+DECL|struct|__anon29e086020108
 block|{
 DECL|member|preset
-name|gchar
-modifier|*
+name|WebPPreset
 name|preset
 decl_stmt|;
 DECL|member|lossless

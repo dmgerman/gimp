@@ -231,11 +231,11 @@ literal|"The name entered"
 block|}
 block|,
 block|{
-name|GIMP_PDB_STRING
+name|GIMP_PDB_INT32
 block|,
 literal|"preset"
 block|,
-literal|"Name of preset to use"
+literal|"preset (Default=0, Picture=1, Photo=2, Drawing=3, Icon=4, Text=5)"
 block|}
 block|,
 block|{
@@ -697,7 +697,13 @@ case|:
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/* Default settings. */
+comment|/* Default settings */
+name|params
+operator|.
+name|preset
+operator|=
+name|WEBP_PRESET_DEFAULT
+expr_stmt|;
 name|params
 operator|.
 name|lossless
@@ -767,16 +773,6 @@ operator|&
 name|params
 argument_list|)
 expr_stmt|;
-comment|/* can't serialize strings, so restore default */
-name|params
-operator|.
-name|preset
-operator|=
-name|g_strdup
-argument_list|(
-literal|"default"
-argument_list|)
-expr_stmt|;
 name|export
 operator|=
 name|gimp_export_image
@@ -841,12 +837,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|params
-operator|.
-name|preset
-operator|=
-name|g_strdup
-argument_list|(
+if|if
+condition|(
 name|param
 index|[
 literal|5
@@ -854,8 +846,40 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_string
-argument_list|)
+name|d_int32
+operator|<
+name|WEBP_PRESET_DEFAULT
+operator|||
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|>
+name|WEBP_PRESET_TEXT
+condition|)
+name|params
+operator|.
+name|preset
+operator|=
+name|WEBP_PRESET_DEFAULT
+expr_stmt|;
+else|else
+name|params
+operator|.
+name|preset
+operator|=
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 name|params
 operator|.
@@ -1082,19 +1106,6 @@ block|}
 block|}
 name|g_free
 argument_list|(
-name|params
-operator|.
-name|preset
-argument_list|)
-expr_stmt|;
-name|params
-operator|.
-name|preset
-operator|=
-name|NULL
-expr_stmt|;
-name|g_free
-argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
@@ -1117,7 +1128,6 @@ name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* save parameters for later */
-comment|/* we can't serialize strings this way. params.preset isn't saved. */
 name|gimp_set_data
 argument_list|(
 name|SAVE_PROC
