@@ -307,7 +307,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"delay"
 block|,
-literal|"Delay to use when timestamp are not available or forced"
+literal|"Delay to use when timestamps are not available or forced"
 block|}
 block|,
 block|{
@@ -315,7 +315,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"force-delay"
 block|,
-literal|"Toggle to for delay"
+literal|"Force delay on all frames"
 block|}
 block|}
 decl_stmt|;
@@ -697,7 +697,68 @@ case|:
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/*  Possibly retrieve data  */
+comment|/* Default settings. */
+name|params
+operator|.
+name|lossless
+operator|=
+name|FALSE
+expr_stmt|;
+name|params
+operator|.
+name|animation
+operator|=
+name|FALSE
+expr_stmt|;
+name|params
+operator|.
+name|loop
+operator|=
+name|TRUE
+expr_stmt|;
+name|params
+operator|.
+name|quality
+operator|=
+literal|90.0f
+expr_stmt|;
+name|params
+operator|.
+name|alpha_quality
+operator|=
+literal|100.0f
+expr_stmt|;
+name|params
+operator|.
+name|exif
+operator|=
+name|TRUE
+expr_stmt|;
+name|params
+operator|.
+name|iptc
+operator|=
+name|TRUE
+expr_stmt|;
+name|params
+operator|.
+name|xmp
+operator|=
+name|TRUE
+expr_stmt|;
+name|params
+operator|.
+name|delay
+operator|=
+literal|200
+expr_stmt|;
+name|params
+operator|.
+name|force_delay
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Possibly override with session data  */
 name|gimp_get_data
 argument_list|(
 name|SAVE_PROC
@@ -706,6 +767,7 @@ operator|&
 name|params
 argument_list|)
 expr_stmt|;
+comment|/* can't serialize strings, so restore default */
 name|params
 operator|.
 name|preset
@@ -715,7 +777,6 @@ argument_list|(
 literal|"default"
 argument_list|)
 expr_stmt|;
-comment|/* can't serialize strings, so restore default */
 name|export
 operator|=
 name|gimp_export_image
@@ -761,7 +822,6 @@ name|status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
-break|break;
 block|}
 break|break;
 case|case

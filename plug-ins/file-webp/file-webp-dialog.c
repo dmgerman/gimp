@@ -85,7 +85,7 @@ end_function_decl
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e888570108
+DECL|struct|__anon288ac3da0108
 block|{
 DECL|member|id
 specifier|const
@@ -980,10 +980,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|animation_box2
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|animation_label
 decl_stmt|;
 name|GtkWidget
 modifier|*
