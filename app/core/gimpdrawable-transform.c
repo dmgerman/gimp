@@ -504,6 +504,26 @@ name|clip_result
 operator|=
 name|GIMP_TRANSFORM_RESIZE_CLIP
 expr_stmt|;
+if|if
+condition|(
+name|gimp_matrix3_will_explode
+argument_list|(
+operator|&
+name|m
+argument_list|,
+name|u1
+argument_list|,
+name|v1
+argument_list|,
+name|u2
+argument_list|,
+name|v2
+argument_list|)
+condition|)
+name|clip_result
+operator|=
+name|GIMP_TRANSFORM_RESIZE_CLIP
+expr_stmt|;
 comment|/*  Find the bounding coordinates of target */
 name|gimp_transform_resize_boundary
 argument_list|(
@@ -607,6 +627,8 @@ argument_list|,
 name|new_buffer
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|clip_result
 argument_list|,
 operator|&
 name|gegl_matrix

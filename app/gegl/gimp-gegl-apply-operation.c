@@ -2675,7 +2675,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_transform (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,GimpInterpolationType interpolation_type,GimpMatrix3 * transform)
+DECL|function|gimp_gegl_apply_transform (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,GimpMatrix3 * transform)
 name|gimp_gegl_apply_transform
 parameter_list|(
 name|GeglBuffer
@@ -2698,6 +2698,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|,
 name|GimpMatrix3
 modifier|*
 name|transform
@@ -2706,6 +2709,9 @@ block|{
 name|GeglNode
 modifier|*
 name|node
+decl_stmt|;
+name|gboolean
+name|clip_to_input
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2735,6 +2741,14 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|clip_to_input
+operator|=
+operator|(
+name|clip_result
+operator|==
+name|GIMP_TRANSFORM_RESIZE_CLIP
+operator|)
+expr_stmt|;
 name|node
 operator|=
 name|gegl_node_new_child
@@ -2748,6 +2762,10 @@ argument_list|,
 literal|"sampler"
 argument_list|,
 name|interpolation_type
+argument_list|,
+literal|"clip-to-input"
+argument_list|,
+name|clip_to_input
 argument_list|,
 name|NULL
 argument_list|)
