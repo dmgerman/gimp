@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292617c40103
+DECL|enum|__anon2956655a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -592,6 +592,9 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|text
+decl_stmt|;
+name|gint
+name|row
 decl_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
@@ -1618,7 +1621,7 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|6
+literal|9
 argument_list|,
 literal|2
 argument_list|,
@@ -2287,6 +2290,10 @@ argument_list|(
 name|focus_chain
 argument_list|)
 expr_stmt|;
+name|row
+operator|=
+literal|2
+expr_stmt|;
 name|combo
 operator|=
 name|gimp_prop_enum_combo_box_new
@@ -2312,7 +2319,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+name|row
+operator|++
 argument_list|,
 name|_
 argument_list|(
@@ -2339,7 +2347,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-literal|"precision"
+literal|"component-type"
 argument_list|,
 literal|0
 argument_list|,
@@ -2355,7 +2363,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|3
+name|row
+operator|++
 argument_list|,
 name|_
 argument_list|(
@@ -2375,18 +2384,23 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gimp_prop_check_button_new
+name|gimp_prop_boolean_combo_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|template
 argument_list|)
 argument_list|,
-literal|"color-managed"
+literal|"linear"
 argument_list|,
 name|_
 argument_list|(
-literal|"Color manage this image"
+literal|"Linear light"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Perceptual gamma (sRGB)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2399,7 +2413,53 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|4
+name|row
+operator|++
+argument_list|,
+name|_
+argument_list|(
+literal|"_Gamma:"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|,
+name|toggle
+argument_list|,
+literal|1
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|=
+name|gimp_prop_check_button_new
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|template
+argument_list|)
+argument_list|,
+literal|"color-managed"
+argument_list|,
+name|_
+argument_list|(
+literal|"Color _manage this image"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_table_attach_aligned
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|row
+operator|++
 argument_list|,
 name|NULL
 argument_list|,
@@ -2444,11 +2504,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+name|row
+operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Color _profile:"
+literal|"Co_lor profile:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2489,7 +2550,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|6
+name|row
+operator|++
 argument_list|,
 name|_
 argument_list|(
@@ -2538,6 +2600,8 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -2547,7 +2611,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|7
+name|row
+operator|++
 argument_list|,
 name|_
 argument_list|(
@@ -2613,6 +2678,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|text_view
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|text_view
 argument_list|)
 expr_stmt|;
