@@ -1042,6 +1042,17 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|bits
+operator|=
+name|CLAMP
+argument_list|(
+name|bits
+argument_list|,
+literal|1
+argument_list|,
+literal|16
+argument_list|)
+expr_stmt|;
 name|node
 operator|=
 name|gegl_node_new_child
