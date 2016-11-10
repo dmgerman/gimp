@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7579160103
+DECL|enum|__anon2b6d0b550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3435,7 +3435,7 @@ block|{
 case|case
 name|GIMP_COMPONENT_TYPE_U8
 case|:
-comment|/* default to gamma when converting to 8 bit */
+comment|/* default to gamma for 8 bit */
 name|g_object_set
 argument_list|(
 name|private
@@ -3457,18 +3457,18 @@ case|case
 name|GIMP_COMPONENT_TYPE_U32
 case|:
 default|default:
-comment|/* leave 'linear' alone */
+comment|/* leave gamma alone by default for 16/32 bit int */
 break|break;
-case|case
-name|GIMP_COMPONENT_TYPE_FLOAT
-case|:
 case|case
 name|GIMP_COMPONENT_TYPE_HALF
 case|:
 case|case
+name|GIMP_COMPONENT_TYPE_FLOAT
+case|:
+case|case
 name|GIMP_COMPONENT_TYPE_DOUBLE
 case|:
-comment|/* default to linear when converting to float or double */
+comment|/* default to linear for floating point */
 name|g_object_set
 argument_list|(
 name|private
