@@ -16,6 +16,18 @@ directive|define
 name|__CONVERT_PRECISION_DIALOG_H__
 end_define
 
+begin_comment
+comment|/*  Don't offer dithering when converting down to more than this  *  number of bits per component. Note that gegl:color-reduction would  *  do 16 bit, so this is a limitation of the GUI to values that make  *  sense. See bug #735895.  */
+end_comment
+
+begin_define
+DECL|macro|CONVERT_PRECISION_DIALOG_MAX_DITHER_BITS
+define|#
+directive|define
+name|CONVERT_PRECISION_DIALOG_MAX_DITHER_BITS
+value|8
+end_define
+
 begin_typedef
 DECL|typedef|GimpConvertPrecisionCallback
 typedef|typedef

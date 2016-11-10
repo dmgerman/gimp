@@ -4559,10 +4559,10 @@ name|old_bits
 operator|||
 name|new_bits
 operator|>
-literal|16
+name|CONVERT_PRECISION_DIALOG_MAX_DITHER_BITS
 condition|)
 block|{
-comment|/*  don't dither if we are converting to a higher bit depth,        *  or to more than 16 bits (gegl:color-reduction only does        *  16 bits).        */
+comment|/*  don't dither if we are converting to a higher bit depth,        *  or to more than MAX_DITHER_BITS.        */
 name|layer_dither_method
 operator|=
 name|GEGL_DITHER_NONE
