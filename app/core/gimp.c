@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimppdb.h"
 end_include
 
@@ -273,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08c42d0103
+DECL|enum|__anon2a8d1dca0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08c42d0203
+DECL|enum|__anon2a8d1dca0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2434,12 +2440,27 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+comment|/*  initialize GEGL and babl  */
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+literal|"GEGL"
+argument_list|,
+literal|0.1
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_fonts_set_config
 argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* Set the last values used to default values. */
+comment|/*  set the last values used to default values  */
 name|gimp
 operator|->
 name|image_new_last_template
