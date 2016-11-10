@@ -395,6 +395,31 @@ operator|<=
 name|CONVERT_PRECISION_DIALOG_MAX_DITHER_BITS
 operator|)
 expr_stmt|;
+comment|/* when changing this logic, also change the same switch()    * in gimptemplateeditor.h    */
+switch|switch
+condition|(
+name|component_type
+condition|)
+block|{
+case|case
+name|GIMP_COMPONENT_TYPE_U8
+case|:
+comment|/* default to gamma when converting 8 bit */
+name|linear
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_U16
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_U32
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_HALF
+case|:
+default|default:
 name|linear
 operator|=
 name|gimp_babl_format_get_linear
@@ -402,6 +427,20 @@ argument_list|(
 name|old_format
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_FLOAT
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+comment|/* default to linear when converting to float or double */
+name|linear
+operator|=
+name|TRUE
+expr_stmt|;
+break|break;
+block|}
 name|private
 operator|=
 name|g_slice_new0
