@@ -410,14 +410,12 @@ operator|=
 name|FALSE
 expr_stmt|;
 break|break;
+comment|/* leave gamma alone by default when converting to 16/32 bit float */
 case|case
 name|GIMP_COMPONENT_TYPE_U16
 case|:
 case|case
 name|GIMP_COMPONENT_TYPE_U32
-case|:
-case|case
-name|GIMP_COMPONENT_TYPE_HALF
 case|:
 default|default:
 name|linear
@@ -432,9 +430,12 @@ case|case
 name|GIMP_COMPONENT_TYPE_FLOAT
 case|:
 case|case
+name|GIMP_COMPONENT_TYPE_HALF
+case|:
+case|case
 name|GIMP_COMPONENT_TYPE_DOUBLE
 case|:
-comment|/* default to linear when converting to float or double */
+comment|/* default to linear when converting to half, single or double precision        * floating point */
 name|linear
 operator|=
 name|TRUE

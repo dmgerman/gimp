@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27437a3c0103
+DECL|enum|__anon2c7579160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3456,14 +3456,14 @@ case|:
 case|case
 name|GIMP_COMPONENT_TYPE_U32
 case|:
-case|case
-name|GIMP_COMPONENT_TYPE_HALF
-case|:
 default|default:
 comment|/* leave 'linear' alone */
 break|break;
 case|case
 name|GIMP_COMPONENT_TYPE_FLOAT
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_HALF
 case|:
 case|case
 name|GIMP_COMPONENT_TYPE_DOUBLE
