@@ -1067,6 +1067,241 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* create a bunch of fishes - to decrease the initial lazy intialization cost      for some interactions    */
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RaGaBaA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RaGaBaA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RaGaBaA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"cairo-RGB24"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"cairo-ARGB32"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A double"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA double"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1074,7 +1309,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b97ca990108
+DECL|struct|__anon2c53a9080108
 block|{
 DECL|member|name
 specifier|const
