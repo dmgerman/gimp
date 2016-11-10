@@ -409,7 +409,7 @@ argument_list|(
 name|grid_dialog_response
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
@@ -603,6 +603,13 @@ argument_list|,
 name|private
 operator|->
 name|grid_backup
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|private
+operator|->
+name|image
 argument_list|)
 expr_stmt|;
 block|}
