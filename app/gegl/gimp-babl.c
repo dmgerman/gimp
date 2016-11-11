@@ -1067,7 +1067,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* create a bunch of fishes - to decrease the initial lazy intialization cost      for some interactions    */
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_babl_init_fishes (void)
+name|gimp_babl_init_fishes
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/* create a bunch of fishes - to decrease the initial lazy    * intialization cost for some interactions    */
 name|babl_fish
 argument_list|(
 name|babl_format
@@ -1309,7 +1320,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c53a9080108
+DECL|struct|__anon29aabebb0108
 block|{
 DECL|member|name
 specifier|const
