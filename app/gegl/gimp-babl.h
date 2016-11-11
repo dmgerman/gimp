@@ -29,7 +29,8 @@ begin_function_decl
 name|void
 name|gimp_babl_init_fishes
 parameter_list|(
-name|void
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|)
 function_decl|;
 end_function_decl

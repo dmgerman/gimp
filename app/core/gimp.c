@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990ecab0103
+DECL|enum|__anon2c5abb250103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990ecab0203
+DECL|enum|__anon2c5abb250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2508,19 +2508,6 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
-comment|/*  initialize babl fishes  */
-name|status_callback
-argument_list|(
-name|NULL
-argument_list|,
-literal|"Babl Fishes"
-argument_list|,
-literal|0.9
-argument_list|)
-expr_stmt|;
-name|gimp_babl_init_fishes
-argument_list|()
-expr_stmt|;
 name|status_callback
 argument_list|(
 name|NULL
@@ -2571,6 +2558,24 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
+name|status_callback
+argument_list|)
+expr_stmt|;
+comment|/*  initialize babl fishes  */
+name|status_callback
+argument_list|(
+name|_
+argument_list|(
+literal|"Initialization"
+argument_list|)
+argument_list|,
+literal|"Babl Fishes"
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|gimp_babl_init_fishes
+argument_list|(
 name|status_callback
 argument_list|)
 expr_stmt|;

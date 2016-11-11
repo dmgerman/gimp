@@ -1072,247 +1072,215 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_babl_init_fishes (void)
+DECL|function|gimp_babl_init_fishes (GimpInitStatusFunc status_callback)
 name|gimp_babl_init_fishes
 parameter_list|(
-name|void
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|)
 block|{
 comment|/* create a bunch of fishes - to decrease the initial lazy    * intialization cost for some interactions    */
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+specifier|static
+specifier|const
+struct|struct
+DECL|struct|__anon2b6f0daa0108
+block|{
+DECL|member|from_format
+specifier|const
+name|gchar
+modifier|*
+name|from_format
+decl_stmt|;
+DECL|member|to_format
+specifier|const
+name|gchar
+modifier|*
+name|to_format
+decl_stmt|;
+block|}
+name|fishes
+index|[]
+init|=
+block|{
+block|{
 literal|"Y' u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"RaGaBaA float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"Y u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"RaGaBaA float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"RaGaBaA float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B' u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"RGBA float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"RGBA float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"RGBA float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"RGBA float"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"Y' u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B' u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"Y u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"Y float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B' u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"cairo-RGB24"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B' u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B' u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"R'G'B'A float"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A u8"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"cairo-ARGB32"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|babl_fish
-argument_list|(
-name|babl_format
-argument_list|(
+block|}
+block|,
+block|{
 literal|"R'G'B'A double"
-argument_list|)
-argument_list|,
-name|babl_format
-argument_list|(
+block|,
 literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"R'G'B'A float"
+block|,
+literal|"RGBA double"
+block|}
+block|}
+struct|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|fishes
 argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|i
+operator|+
+literal|1
+argument_list|)
+operator|/
+operator|(
+name|gdouble
+operator|)
+name|G_N_ELEMENTS
+argument_list|(
+name|fishes
+argument_list|)
+operator|/
+literal|2.0
 argument_list|)
 expr_stmt|;
 name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+name|fishes
+index|[
+name|i
+index|]
+operator|.
+name|from_format
 argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"RGBA double"
+name|fishes
+index|[
+name|i
+index|]
+operator|.
+name|to_format
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1320,7 +1288,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29aabebb0108
+DECL|struct|__anon2b6f0daa0208
 block|{
 DECL|member|name
 specifier|const
