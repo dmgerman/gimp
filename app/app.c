@@ -777,6 +777,12 @@ operator|->
 name|language
 argument_list|)
 expr_stmt|;
+comment|/*  initialize lowlevel stuff  */
+name|gimp_gegl_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/*  Connect our restore_after callback before gui_init() connects    *  theirs, so ours runs first and can grab the initial monitor    *  before the GUI's restore_after callback resets it.    */
 name|g_signal_connect_after
 argument_list|(
@@ -819,12 +825,6 @@ condition|)
 name|update_status_func
 operator|=
 name|app_init_update_noop
-expr_stmt|;
-comment|/*  initialize lowlevel stuff  */
-name|gimp_gegl_init
-argument_list|(
-name|gimp
-argument_list|)
 expr_stmt|;
 comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
 name|gimp_initialize
