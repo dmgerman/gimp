@@ -1083,7 +1083,7 @@ comment|/* create a bunch of fishes - to decrease the initial lazy    * intializ
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6f0daa0108
+DECL|struct|__anon2c7d9b3d0108
 block|{
 DECL|member|from_format
 specifier|const
@@ -1209,6 +1209,48 @@ literal|"R'G'B'A float"
 block|,
 literal|"RGBA double"
 block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RGB float"
+block|}
+block|,
+block|{
+literal|"RGB float"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"RaGaBaA float"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"RaGaBaA float"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"RGBA float"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RaGaBaA float"
+block|}
 block|}
 struct|;
 name|gint
@@ -1288,7 +1330,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6f0daa0208
+DECL|struct|__anon2c7d9b3d0208
 block|{
 DECL|member|name
 specifier|const
