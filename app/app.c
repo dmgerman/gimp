@@ -129,6 +129,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -813,6 +819,12 @@ condition|)
 name|update_status_func
 operator|=
 name|app_init_update_noop
+expr_stmt|;
+comment|/*  initialize lowlevel stuff  */
+name|gimp_gegl_init
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
 name|gimp_initialize
