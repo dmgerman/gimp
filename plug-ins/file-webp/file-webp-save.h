@@ -16,20 +16,14 @@ directive|define
 name|__WEBP_SAVE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<webp/encode.h>
-end_include
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba82c450108
+DECL|struct|__anon298fd49a0108
 block|{
 DECL|member|preset
-name|enum
-name|WebPPreset
+name|gchar
+modifier|*
 name|preset
 decl_stmt|;
 DECL|member|lossless
@@ -77,16 +71,6 @@ block|}
 name|WebPSaveParams
 typedef|;
 end_typedef
-
-begin_function_decl
-name|WebPPreset
-name|get_preset_from_id
-parameter_list|(
-name|gint
-name|id
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|gboolean
