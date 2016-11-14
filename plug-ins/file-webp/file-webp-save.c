@@ -1264,10 +1264,8 @@ operator|>=
 name|length
 condition|)
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 if|if
 condition|(
@@ -1331,10 +1329,8 @@ operator|<=
 literal|2
 condition|)
 return|return
-operator|(
 operator|-
 literal|3
-operator|)
 return|;
 if|if
 condition|(
