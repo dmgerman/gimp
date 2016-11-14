@@ -529,8 +529,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Preset:"
+literal|"Source type:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|preset_label
+argument_list|,
+name|_
+argument_list|(
+literal|"WebP encoder \"preset\""
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_xalign
