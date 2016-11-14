@@ -1083,7 +1083,7 @@ comment|/* create a bunch of fishes - to decrease the initial lazy    * intializ
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c7d9b3d0108
+DECL|struct|__anon2a2e39310108
 block|{
 DECL|member|from_format
 specifier|const
@@ -1295,8 +1295,8 @@ name|G_N_ELEMENTS
 argument_list|(
 name|fishes
 argument_list|)
-operator|/
-literal|2.0
+operator|*
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|babl_fish
@@ -1330,7 +1330,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c7d9b3d0208
+DECL|struct|__anon2a2e39310208
 block|{
 DECL|member|name
 specifier|const
