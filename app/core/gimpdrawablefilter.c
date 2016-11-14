@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7742a00103
+DECL|enum|__anon2ae52a850103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
