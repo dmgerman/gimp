@@ -602,6 +602,14 @@ name|box_unit
 argument_list|,
 name|xres
 argument_list|)
+operator|-
+literal|2
+operator|*
+name|layout
+operator|->
+name|text
+operator|->
+name|border
 argument_list|)
 argument_list|)
 expr_stmt|;
