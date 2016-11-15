@@ -3414,7 +3414,7 @@ case|case
 name|PROP_COLOR_TAG
 case|:
 block|{
-name|gint32
+name|guint32
 name|color_tag
 decl_stmt|;
 name|color_tag
@@ -7629,7 +7629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63d24f0108
+DECL|struct|__anon2958abb70108
 block|{
 DECL|member|info
 name|XcfInfo
