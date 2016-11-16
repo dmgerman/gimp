@@ -763,6 +763,10 @@ DECL|member|rotate_drag_angle
 name|gdouble
 name|rotate_drag_angle
 decl_stmt|;
+DECL|member|scaling
+name|gboolean
+name|scaling
+decl_stmt|;
 DECL|member|scroll_info
 name|gpointer
 name|scroll_info

@@ -235,6 +235,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_scale_drag
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|delta_x
+parameter_list|,
+name|gdouble
+name|delta_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scale_shrink_wrap
 parameter_list|(
 name|GimpDisplayShell
