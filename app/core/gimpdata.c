@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288fe7e30103
+DECL|enum|__anon2a1b3a8e0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288fe7e30203
+DECL|enum|__anon2a1b3a8e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1857,9 +1857,11 @@ operator|!
 name|identifier
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Failed to convert '%s' to utf8.\n"
+literal|"%s: failed to convert '%s' to utf8.\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
