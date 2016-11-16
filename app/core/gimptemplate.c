@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b602bf30103
+DECL|enum|__anon291e4e210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -390,6 +390,12 @@ operator|->
 name|default_icon_name
 operator|=
 literal|"gimp-template"
+expr_stmt|;
+name|viewable_class
+operator|->
+name|name_editable
+operator|=
+name|TRUE
 expr_stmt|;
 name|GIMP_CONFIG_PROP_INT
 argument_list|(

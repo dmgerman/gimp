@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274afd950103
+DECL|enum|__anon28b3e50a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -186,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274afd950203
+DECL|enum|__anon28b3e50a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -888,6 +888,12 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_item_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|name_editable
+operator|=
+name|TRUE
 expr_stmt|;
 name|viewable_class
 operator|->

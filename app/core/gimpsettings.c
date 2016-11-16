@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3333b0103
+DECL|enum|__anon29e2db940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,6 +144,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+init|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -155,6 +164,12 @@ operator|->
 name|get_property
 operator|=
 name|gimp_settings_get_property
+expr_stmt|;
+name|viewable_class
+operator|->
+name|name_editable
+operator|=
+name|TRUE
 expr_stmt|;
 name|GIMP_CONFIG_PROP_UINT
 argument_list|(

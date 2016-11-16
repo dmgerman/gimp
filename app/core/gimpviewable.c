@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a80c90103
+DECL|enum|__anon27fe9cee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a80c90203
+DECL|enum|__anon27fe9cee0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -390,6 +390,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gboolean
+name|gimp_viewable_real_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|GimpContainer
 modifier|*
 name|gimp_viewable_real_get_children
@@ -630,6 +642,12 @@ literal|"name-changed"
 expr_stmt|;
 name|klass
 operator|->
+name|name_editable
+operator|=
+name|FALSE
+expr_stmt|;
+name|klass
+operator|->
 name|invalidate_preview
 operator|=
 name|gimp_viewable_real_invalidate_preview
@@ -687,6 +705,12 @@ operator|->
 name|get_description
 operator|=
 name|gimp_viewable_real_get_description
+expr_stmt|;
+name|klass
+operator|->
+name|is_name_editable
+operator|=
+name|gimp_viewable_real_is_name_editable
 expr_stmt|;
 name|klass
 operator|->
@@ -1572,6 +1596,28 @@ argument_list|(
 name|viewable
 argument_list|)
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_viewable_real_is_name_editable (GimpViewable * viewable)
+name|gimp_viewable_real_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+return|return
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|name_editable
 return|;
 block|}
 end_function
@@ -3904,6 +3950,44 @@ argument_list|(
 name|viewable
 argument_list|,
 name|tooltip
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_viewable_is_name_editable:  * @viewable: viewable object for which to retrieve a description.  *  * Returns: whether the viewable's name is editable by the user.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_viewable_is_name_editable (GimpViewable * viewable)
+name|gimp_viewable_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_VIEWABLE
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|is_name_editable
+argument_list|(
+name|viewable
 argument_list|)
 return|;
 block|}

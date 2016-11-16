@@ -379,6 +379,12 @@ literal|"edit-paste"
 expr_stmt|;
 name|viewable_class
 operator|->
+name|name_editable
+operator|=
+name|TRUE
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_size
 operator|=
 name|gimp_buffer_get_size
