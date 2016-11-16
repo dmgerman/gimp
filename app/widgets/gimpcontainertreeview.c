@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9024150103
+DECL|enum|__anon2a1bc1680103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -4426,6 +4426,30 @@ operator|==
 name|GTK_SELECTION_MULTIPLE
 operator|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
+name|bevent
+operator|->
+name|state
+operator|&
+operator|(
+name|gimp_get_extend_selection_mask
+argument_list|()
+operator||
+name|gimp_get_modify_selection_mask
+argument_list|()
+operator|)
+operator|)
+condition|)
+block|{
+comment|/*  don't chain up for multi-selection handling if none of            *  the participating modifiers is pressed, we implement            *  button_press completely ourselves for a reason and don't            *  want the default implementation mess up our state            */
+name|multisel_mode
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|gtk_tree_model_get_iter
 argument_list|(
 name|tree_view
