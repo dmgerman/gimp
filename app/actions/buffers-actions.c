@@ -201,7 +201,7 @@ name|NC_
 argument_list|(
 literal|"buffers-action"
 argument_list|,
-literal|"Paste Buffer as _New"
+literal|"Paste Buffer as _New Image"
 argument_list|)
 block|,
 name|NULL
