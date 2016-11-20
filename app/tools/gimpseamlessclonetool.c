@@ -247,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e998c0103
+DECL|enum|__anon28e720e40103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -667,7 +667,7 @@ argument_list|(
 literal|"_Seamless Clone"
 argument_list|)
 argument_list|,
-literal|"<shift>L"
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

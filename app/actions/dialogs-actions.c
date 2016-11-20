@@ -609,7 +609,7 @@ argument_list|,
 literal|"_MyPaint Brushes"
 argument_list|)
 block|,
-literal|"<primary><shift>Y"
+name|NULL
 block|,
 name|NC_
 argument_list|(
