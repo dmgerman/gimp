@@ -1449,6 +1449,8 @@ decl_stmt|;
 if|if
 condition|(
 name|text
+operator|&&
+name|text
 operator|->
 name|box_mode
 operator|==
