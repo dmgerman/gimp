@@ -414,7 +414,7 @@ name|g_strcmp0
 argument_list|(
 name|name
 argument_list|,
-literal|"plug-in-repeat"
+literal|"filters-repeat"
 argument_list|)
 operator|!=
 literal|0
@@ -423,7 +423,7 @@ name|g_strcmp0
 argument_list|(
 name|name
 argument_list|,
-literal|"plug-in-reshow"
+literal|"filters-reshow"
 argument_list|)
 operator|!=
 literal|0
