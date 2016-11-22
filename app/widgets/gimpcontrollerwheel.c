@@ -1124,10 +1124,7 @@ operator|==
 name|sevent
 operator|->
 name|direction
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 operator|(
 name|wheel_events
 index|[
@@ -1198,7 +1195,6 @@ operator|&
 name|controller_event
 argument_list|)
 return|;
-block|}
 block|}
 block|}
 return|return

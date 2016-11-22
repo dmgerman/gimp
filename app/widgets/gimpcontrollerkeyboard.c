@@ -1130,10 +1130,7 @@ operator|==
 name|kevent
 operator|->
 name|keyval
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 operator|(
 name|keyboard_events
 index|[
@@ -1192,8 +1189,7 @@ name|event_id
 operator|=
 name|i
 expr_stmt|;
-if|if
-condition|(
+return|return
 name|gimp_controller_event
 argument_list|(
 name|GIMP_CONTROLLER
@@ -1204,13 +1200,7 @@ argument_list|,
 operator|&
 name|controller_event
 argument_list|)
-condition|)
-block|{
-return|return
-name|TRUE
 return|;
-block|}
-block|}
 block|}
 block|}
 return|return
