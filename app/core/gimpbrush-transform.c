@@ -476,6 +476,10 @@ argument_list|(
 operator|&
 name|matrix
 argument_list|)
+operator|&&
+name|hardness
+operator|==
+literal|1.0
 condition|)
 return|return
 name|gimp_temp_buf_copy
@@ -1469,6 +1473,10 @@ argument_list|(
 operator|&
 name|matrix
 argument_list|)
+operator|&&
+name|hardness
+operator|==
+literal|1.0
 condition|)
 return|return
 name|gimp_temp_buf_copy
