@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277e49020103
+DECL|enum|__anon27d4add50103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -104,7 +104,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277e49020208
+DECL|struct|__anon27d4add50208
 block|{
 DECL|member|action_name
 name|gchar
@@ -124,7 +124,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277e49020308
+DECL|struct|__anon27d4add50308
 block|{
 DECL|member|items
 name|GList
@@ -1006,6 +1006,20 @@ name|managers
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|manager
+operator|->
+name|name
+argument_list|,
+literal|"<Dockable>"
+argument_list|)
+operator|==
+literal|0
+condition|)
+continue|continue;
 name|action
 operator|=
 name|gimp_ui_manager_find_action
