@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a444e990103
+DECL|enum|__anon29a921700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1538,7 +1538,7 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * dialog_factory,GdkScreen * screen,gint monitor)
+DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpUIManager * popup_manager,GimpDialogFactory * dialog_factory,GdkScreen * screen,gint monitor)
 name|gimp_display_new
 parameter_list|(
 name|Gimp
@@ -1554,10 +1554,6 @@ name|unit
 parameter_list|,
 name|gdouble
 name|scale
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|,
 name|GimpUIManager
 modifier|*
@@ -1753,8 +1749,6 @@ argument_list|,
 name|private
 operator|->
 name|image
-argument_list|,
-name|menu_factory
 argument_list|,
 name|dialog_factory
 argument_list|,

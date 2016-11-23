@@ -46,12 +46,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpguiconfig.h"
 end_include
 
@@ -233,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a310a920103
+DECL|enum|__anon2b037bd30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1240,6 +1234,10 @@ name|GimpContext
 modifier|*
 name|factory_context
 decl_stmt|;
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+decl_stmt|;
 name|GtkAccelGroup
 modifier|*
 name|accel_group
@@ -1365,6 +1363,17 @@ operator|->
 name|dock_window_hint
 argument_list|)
 expr_stmt|;
+name|menu_factory
+operator|=
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
+name|dock_window
+operator|->
+name|p
+operator|->
+name|dialog_factory
+argument_list|)
+expr_stmt|;
 comment|/* Make image window related keyboard shortcuts work also when a    * dock window is the focused window    */
 name|dock_window
 operator|->
@@ -1374,7 +1383,7 @@ name|ui_manager
 operator|=
 name|gimp_menu_factory_manager_new
 argument_list|(
-name|global_menu_factory
+name|menu_factory
 argument_list|,
 name|dock_window
 operator|->
@@ -4607,7 +4616,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dock_window_new (const gchar * role,const gchar * ui_manager_name,gboolean allow_dockbook_absence,GimpDialogFactory * factory,GimpContext * context)
+DECL|function|gimp_dock_window_new (const gchar * role,const gchar * ui_manager_name,gboolean allow_dockbook_absence,GimpDialogFactory * dialog_factory,GimpContext * context)
 name|gimp_dock_window_new
 parameter_list|(
 specifier|const
@@ -4625,7 +4634,7 @@ name|allow_dockbook_absence
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
-name|factory
+name|dialog_factory
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -4636,7 +4645,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
-name|factory
+name|dialog_factory
 argument_list|)
 argument_list|,
 name|NULL
@@ -4671,7 +4680,7 @@ name|allow_dockbook_absence
 argument_list|,
 literal|"dialog-factory"
 argument_list|,
-name|factory
+name|dialog_factory
 argument_list|,
 literal|"context"
 argument_list|,

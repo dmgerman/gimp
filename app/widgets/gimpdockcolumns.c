@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -113,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c0a030103
+DECL|enum|__anon27a7eddf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -132,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c0a030203
+DECL|enum|__anon27a7eddf0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1647,6 +1641,10 @@ modifier|*
 name|dockbook_p
 parameter_list|)
 block|{
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dock
@@ -1672,11 +1670,22 @@ argument_list|,
 name|dock_index
 argument_list|)
 expr_stmt|;
+name|menu_factory
+operator|=
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
+name|dock_columns
+operator|->
+name|p
+operator|->
+name|dialog_factory
+argument_list|)
+expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|global_menu_factory
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book

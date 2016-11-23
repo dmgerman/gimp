@@ -143,10 +143,6 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GimpDialogFactory
 modifier|*
 name|dialog_factory

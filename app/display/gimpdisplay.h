@@ -159,10 +159,6 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
