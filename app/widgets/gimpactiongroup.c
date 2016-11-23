@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7be5b0103
+DECL|enum|__anon29f930740103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d7be5b0203
+DECL|enum|__anon29f930740203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
