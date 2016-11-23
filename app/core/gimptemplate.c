@@ -90,12 +90,12 @@ DECL|macro|DEFAULT_RESOLUTION
 define|#
 directive|define
 name|DEFAULT_RESOLUTION
-value|72.0
+value|300.0
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e4e210103
+DECL|enum|__anon2b0cf5110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
