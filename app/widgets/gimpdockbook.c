@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b863be00103
+DECL|enum|__anon2b010f740103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
