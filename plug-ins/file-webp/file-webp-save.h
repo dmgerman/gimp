@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e086020108
+DECL|struct|__anon275d1f080108
 block|{
 DECL|member|preset
 name|WebPPreset
@@ -36,6 +36,14 @@ decl_stmt|;
 DECL|member|loop
 name|gboolean
 name|loop
+decl_stmt|;
+DECL|member|minimize_size
+name|gboolean
+name|minimize_size
+decl_stmt|;
+DECL|member|kf_distance
+name|gint
+name|kf_distance
 decl_stmt|;
 DECL|member|quality
 name|gfloat
