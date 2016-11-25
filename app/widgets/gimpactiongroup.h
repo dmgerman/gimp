@@ -695,6 +695,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_action_group_remove_action
+parameter_list|(
+name|GimpActionGroup
+modifier|*
+name|group
+parameter_list|,
+name|GimpAction
+modifier|*
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_action_group_activate_action
 parameter_list|(
 name|GimpActionGroup
