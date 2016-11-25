@@ -2166,8 +2166,7 @@ operator|++
 control|)
 name|gimp_dialog_factory_register_entry
 argument_list|(
-name|gimp_dialog_factory_get_singleton
-argument_list|()
+name|factory
 argument_list|,
 name|entries
 index|[
