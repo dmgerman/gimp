@@ -5327,6 +5327,10 @@ condition|(
 name|first
 operator|&&
 name|last
+operator|&&
+name|first
+operator|!=
+name|last
 condition|)
 block|{
 name|ISegment
