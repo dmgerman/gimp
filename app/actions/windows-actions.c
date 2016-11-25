@@ -1759,6 +1759,9 @@ name|accel_key
 operator|=
 name|GDK_KEY_0
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gtk_accel_map_change_entry
 argument_list|(
 name|accel_path
@@ -1769,7 +1772,18 @@ name|GDK_MOD1_MASK
 argument_list|,
 name|TRUE
 argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: failed to set accelerator for %s"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|accel_path
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
