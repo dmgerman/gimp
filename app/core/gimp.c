@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5abb250103
+DECL|enum|__anon2b6391fe0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5abb250203
+DECL|enum|__anon2b6391fe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
