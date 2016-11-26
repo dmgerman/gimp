@@ -62,7 +62,7 @@ DECL|macro|MAX_BLUR_KERNEL
 define|#
 directive|define
 name|MAX_BLUR_KERNEL
-value|15
+value|50
 end_define
 
 begin_comment
