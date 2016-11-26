@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushpipe.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e396c0103
+DECL|enum|__anon28dc814a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -132,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e396c0203
+DECL|enum|__anon28dc814a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3068,7 +3074,26 @@ name|GIMP_IS_BRUSH_GENERATED
 argument_list|(
 name|brush
 argument_list|)
+operator|&&
+operator|!
+name|GIMP_IS_BRUSH_PIPE
+argument_list|(
+name|brush
+argument_list|)
+operator|&&
+comment|/*Cant cache pipes. Sanely anway*/
+name|hardness
+operator|<
+literal|1.0
+operator|&&
+operator|!
+name|brush
+operator|->
+name|priv
+operator|->
+name|pixmap
 condition|)
+comment|/*If we have a pixmap, dont touch mask*/
 block|{
 name|brush
 operator|->
@@ -3110,6 +3135,12 @@ operator|->
 name|priv
 operator|->
 name|blured_mask
+operator|||
+name|brush
+operator|->
+name|priv
+operator|->
+name|pixmap
 condition|)
 block|{
 name|effective_hardness
@@ -3473,6 +3504,17 @@ name|GIMP_IS_BRUSH_GENERATED
 argument_list|(
 name|brush
 argument_list|)
+operator|&&
+operator|!
+name|GIMP_IS_BRUSH_PIPE
+argument_list|(
+name|brush
+argument_list|)
+comment|/*Cant cache pipes. Sanely anway*/
+operator|&&
+name|hardness
+operator|<
+literal|1.0
 condition|)
 block|{
 name|brush
@@ -3486,7 +3528,7 @@ argument_list|(
 name|brush
 argument_list|)
 operator|->
-name|transform_mask
+name|transform_pixmap
 argument_list|(
 name|brush
 argument_list|,
@@ -4146,6 +4188,26 @@ name|blured_mask
 argument_list|)
 return|;
 block|}
+if|if
+condition|(
+name|brush
+operator|->
+name|priv
+operator|->
+name|blured_pixmap
+condition|)
+block|{
+return|return
+name|gimp_temp_buf_get_width
+argument_list|(
+name|brush
+operator|->
+name|priv
+operator|->
+name|blured_pixmap
+argument_list|)
+return|;
+block|}
 return|return
 name|gimp_temp_buf_get_width
 argument_list|(
@@ -4196,6 +4258,26 @@ operator|->
 name|priv
 operator|->
 name|blured_mask
+argument_list|)
+return|;
+block|}
+if|if
+condition|(
+name|brush
+operator|->
+name|priv
+operator|->
+name|blured_pixmap
+condition|)
+block|{
+return|return
+name|gimp_temp_buf_get_height
+argument_list|(
+name|brush
+operator|->
+name|priv
+operator|->
+name|blured_pixmap
 argument_list|)
 return|;
 block|}
