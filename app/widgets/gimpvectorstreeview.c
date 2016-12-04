@@ -650,7 +650,7 @@ name|view
 operator|->
 name|toselection_button
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|view
@@ -683,7 +683,7 @@ name|view
 operator|->
 name|tovectors_button
 argument_list|,
-literal|6
+literal|5
 argument_list|)
 expr_stmt|;
 name|view
@@ -733,7 +733,7 @@ name|view
 operator|->
 name|stroke_button
 argument_list|,
-literal|7
+literal|6
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_svg_dest_add

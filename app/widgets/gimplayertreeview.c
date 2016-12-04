@@ -1973,7 +1973,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|7
+literal|6
 argument_list|)
 expr_stmt|;
 block|}
@@ -2317,7 +2317,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1dd9b90108
+DECL|struct|__anon2748594b0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1dd9b90208
+DECL|struct|__anon2748594b0208
 block|{
 DECL|member|mask_column
 name|gint
