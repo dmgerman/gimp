@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ed62b00103
+DECL|enum|__anon2912192e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2931,6 +2931,18 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/*  ignore notifications on parent class properties such as fg/bg  */
+if|if
+condition|(
+name|pspec
+operator|->
+name|owner_type
+operator|==
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|object
+argument_list|)
+condition|)
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -2962,6 +2974,18 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/*  see above  */
+if|if
+condition|(
+name|pspec
+operator|->
+name|owner_type
+operator|==
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|object
+argument_list|)
+condition|)
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
