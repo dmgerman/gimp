@@ -1267,6 +1267,14 @@ argument_list|(
 name|config_copy
 argument_list|)
 expr_stmt|;
+name|gimp_rc_load_system
+argument_list|(
+name|GIMP_RC
+argument_list|(
+name|config_copy
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* don't use the default value if there is no help browser */
 if|if
 condition|(
@@ -11335,7 +11343,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ad5cc0d0108
+DECL|struct|__anon2c1392b00108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12212,7 +12220,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad5cc0d0208
+DECL|struct|__anon2c1392b00208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12350,7 +12358,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad5cc0d0308
+DECL|struct|__anon2c1392b00308
 block|{
 DECL|member|tree_label
 specifier|const
