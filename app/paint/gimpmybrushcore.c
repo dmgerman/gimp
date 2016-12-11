@@ -1621,6 +1621,17 @@ argument_list|,
 name|brush_data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|mypaint_brush_get_base_value
+argument_list|(
+name|brush
+argument_list|,
+name|MYPAINT_BRUSH_SETTING_RESTORE_COLOR
+argument_list|)
+condition|)
+block|{
 name|mypaint_brush_set_base_value
 argument_list|(
 name|brush
@@ -1654,6 +1665,7 @@ operator|.
 name|v
 argument_list|)
 expr_stmt|;
+block|}
 name|mypaint_brush_set_base_value
 argument_list|(
 name|brush
