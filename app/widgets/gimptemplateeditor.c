@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d0b550103
+DECL|enum|__anon2acc17d70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2365,9 +2365,9 @@ argument_list|)
 argument_list|,
 literal|"component-type"
 argument_list|,
-literal|0
+name|GIMP_COMPONENT_TYPE_U8
 argument_list|,
-literal|0
+name|GIMP_COMPONENT_TYPE_FLOAT
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
