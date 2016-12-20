@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf66e60108
+DECL|struct|__anon2c6be5680108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf66e60203
+DECL|enum|__anon2c6be5680203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -4760,6 +4760,18 @@ operator|=
 name|max
 expr_stmt|;
 block|}
+name|data
+operator|->
+name|min_xres
+operator|=
+name|x
+expr_stmt|;
+name|data
+operator|->
+name|min_yres
+operator|=
+name|y
+expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|info

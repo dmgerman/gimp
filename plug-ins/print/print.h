@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed2cfe0103
+DECL|enum|__anon2b8015760103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PRINT_ERROR_FAILED
 name|GIMP_PLUGIN_PRINT_ERROR_FAILED
@@ -55,7 +55,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed2cfe0203
+DECL|enum|__anon2b8015760203
 block|{
 DECL|enumerator|CENTER_NONE
 name|CENTER_NONE
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed2cfe0308
+DECL|struct|__anon2b8015760308
 block|{
 DECL|member|image_id
 name|gint32
@@ -106,6 +106,14 @@ decl_stmt|;
 DECL|member|yres
 name|gdouble
 name|yres
+decl_stmt|;
+DECL|member|min_xres
+name|gdouble
+name|min_xres
+decl_stmt|;
+DECL|member|min_yres
+name|gdouble
+name|min_yres
 decl_stmt|;
 DECL|member|image_unit
 name|GimpUnit
