@@ -758,7 +758,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27985ac70108
+DECL|struct|__anon2b7f31e00108
 block|{
 DECL|member|label
 specifier|const

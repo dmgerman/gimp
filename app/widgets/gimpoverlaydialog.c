@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4256bf0103
+DECL|enum|__anon2889a4650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4256bf0203
+DECL|enum|__anon2889a4650203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE

@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d633270103
+DECL|enum|__anon28fda4990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d633270208
+DECL|struct|__anon28fda4990208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d633270308
+DECL|struct|__anon28fda4990308
 block|{
 DECL|member|buffer
 name|GeglBuffer
