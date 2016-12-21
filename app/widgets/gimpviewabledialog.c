@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11aca50103
+DECL|enum|__anon27955c9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1040,7 +1040,7 @@ name|viewable
 condition|)
 name|g_warning
 argument_list|(
-literal|"Use of GimpViewableDialog with a NULL viewable is depecrated!"
+literal|"Use of GimpViewableDialog with a NULL viewable is deprecated!"
 argument_list|)
 expr_stmt|;
 name|dialog
