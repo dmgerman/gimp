@@ -5413,7 +5413,7 @@ literal|"The paint application mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5632,7 +5632,7 @@ literal|"The paint application mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -5889,7 +5889,7 @@ literal|"The paint application mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

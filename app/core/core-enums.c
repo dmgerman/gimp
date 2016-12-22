@@ -1406,11 +1406,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 block|,
-literal|"GIMP_LAYER_MODE_NORMAL"
+literal|"GIMP_LAYER_MODE_NORMAL_NON_LINEAR"
 block|,
-literal|"normal"
+literal|"normal-non-linear"
 block|}
 block|,
 block|{
@@ -1630,6 +1630,14 @@ literal|"lch-lightness"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_NORMAL
+block|,
+literal|"GIMP_LAYER_MODE_NORMAL"
+block|,
+literal|"normal"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1670,13 +1678,13 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Normal"
+literal|"Normal (non-linear)"
 argument_list|)
 block|,
 name|NULL
@@ -2028,6 +2036,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Lightness (LCH)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_NORMAL
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Normal"
 argument_list|)
 block|,
 name|NULL

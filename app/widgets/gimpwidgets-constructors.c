@@ -320,9 +320,11 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|25
+literal|26
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
+argument_list|,
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -493,7 +495,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|)
