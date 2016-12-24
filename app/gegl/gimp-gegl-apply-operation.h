@@ -107,7 +107,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_gegl_apply_color_reduction
+name|gimp_gegl_apply_dither
 parameter_list|(
 name|GeglBuffer
 modifier|*
@@ -127,7 +127,7 @@ modifier|*
 name|dest_buffer
 parameter_list|,
 name|gint
-name|bits
+name|levels
 parameter_list|,
 name|gint
 name|dither_type

@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c67366f0103
+DECL|enum|__anon2917f0010103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4493,7 +4493,7 @@ name|new_format
 argument_list|)
 operator|)
 expr_stmt|;
-name|gimp_gegl_apply_color_reduction
+name|gimp_gegl_apply_dither
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -4506,6 +4506,8 @@ name|NULL
 argument_list|,
 name|dest_buffer
 argument_list|,
+literal|1
+operator|<<
 name|bits
 argument_list|,
 name|mask_dither_type

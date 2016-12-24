@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6651920103
+DECL|enum|__anon2c8dc8670103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6651920203
+DECL|enum|__anon2c8dc8670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4519,7 +4519,7 @@ operator|>
 literal|16
 condition|)
 block|{
-comment|/*  don't dither if we are converting to a higher bit depth,        *  or to more than 16 bits (gegl:color-reduction only does        *  16 bits).        */
+comment|/*  don't dither if we are converting to a higher bit depth,        *  or to more than 16 bits (gegl:dither only does        *  16 bits).        */
 name|layer_dither_type
 operator|=
 name|GEGL_DITHER_NONE

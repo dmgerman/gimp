@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e5e27b0103
+DECL|enum|__anon295680a10103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e5e27b0203
+DECL|enum|__anon295680a10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4747,7 +4747,7 @@ name|new_format
 argument_list|)
 operator|)
 expr_stmt|;
-name|gimp_gegl_apply_color_reduction
+name|gimp_gegl_apply_dither
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -4760,6 +4760,8 @@ name|NULL
 argument_list|,
 name|src_buffer
 argument_list|,
+literal|1
+operator|<<
 name|bits
 argument_list|,
 name|layer_dither_type

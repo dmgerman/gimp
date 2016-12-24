@@ -983,8 +983,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_color_reduction (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,gint bits,gint dither_type)
-name|gimp_gegl_apply_color_reduction
+DECL|function|gimp_gegl_apply_dither (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,gint levels,gint dither_type)
+name|gimp_gegl_apply_dither
 parameter_list|(
 name|GeglBuffer
 modifier|*
@@ -1004,7 +1004,7 @@ modifier|*
 name|dest_buffer
 parameter_list|,
 name|gint
-name|bits
+name|levels
 parameter_list|,
 name|gint
 name|dither_type
@@ -1042,15 +1042,15 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|bits
+name|levels
 operator|=
 name|CLAMP
 argument_list|(
-name|bits
+name|levels
 argument_list|,
-literal|1
+literal|2
 argument_list|,
-literal|16
+literal|65536
 argument_list|)
 expr_stmt|;
 name|node
@@ -1061,23 +1061,23 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:color-reduction"
+literal|"gegl:dither"
 argument_list|,
-literal|"red-bits"
+literal|"red-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
-literal|"green-bits"
+literal|"green-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
-literal|"blue-bits"
+literal|"blue-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
 literal|"alpha-bits"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
 literal|"dither-method"
 argument_list|,
