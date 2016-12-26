@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba2aa370103
+DECL|enum|__anon291941380103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba2aa370203
+DECL|enum|__anon291941380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba2aa370303
+DECL|enum|__anon291941380303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba2aa370408
+DECL|struct|__anon291941380408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -247,7 +247,7 @@ modifier|*
 name|entry
 parameter_list|,
 name|gunichar
-name|canditate
+name|candidate
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -337,7 +337,7 @@ name|gimp_number_pair_entry_events
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widgett
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
@@ -1848,7 +1848,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manully set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: 2.4  */
+comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manually set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -2553,7 +2553,7 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* Mak sure the entry text is up to date */
+comment|/* Make sure the entry text is up to date */
 name|gimp_number_pair_entry_update_text
 argument_list|(
 name|entry

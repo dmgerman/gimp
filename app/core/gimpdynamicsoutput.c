@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79eb9e0103
+DECL|enum|__anon2bdb4b8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1953,12 +1953,12 @@ block|{
 if|if
 condition|(
 name|tilt_y
-operator|>=
+operator|>
 literal|0.0
 condition|)
 name|tilt
 operator|=
-literal|0.5
+literal|0.25
 expr_stmt|;
 elseif|else
 if|if
@@ -1969,13 +1969,12 @@ literal|0.0
 condition|)
 name|tilt
 operator|=
-literal|0.0
+literal|0.75
 expr_stmt|;
 else|else
 name|tilt
 operator|=
-operator|-
-literal|1.0
+literal|0.0
 expr_stmt|;
 block|}
 else|else

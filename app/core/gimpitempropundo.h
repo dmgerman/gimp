@@ -158,6 +158,10 @@ name|lock_position
 range|:
 literal|1
 decl_stmt|;
+DECL|member|color_tag
+name|GimpColorTag
+name|color_tag
+decl_stmt|;
 DECL|member|parasite_name
 name|gchar
 modifier|*

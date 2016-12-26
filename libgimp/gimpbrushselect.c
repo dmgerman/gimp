@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd1c070108
+DECL|struct|__anon296aa0db0108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -238,7 +238,7 @@ block|{
 name|GIMP_PDB_INT32
 block|,
 literal|"mask height"
-literal|"Brush heigth"
+literal|"Brush height"
 block|}
 block|,
 block|{

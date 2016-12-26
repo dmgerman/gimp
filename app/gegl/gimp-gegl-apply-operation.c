@@ -983,8 +983,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_color_reduction (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,gint bits,gint dither_type)
-name|gimp_gegl_apply_color_reduction
+DECL|function|gimp_gegl_apply_dither (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,gint levels,gint dither_type)
+name|gimp_gegl_apply_dither
 parameter_list|(
 name|GeglBuffer
 modifier|*
@@ -1004,7 +1004,7 @@ modifier|*
 name|dest_buffer
 parameter_list|,
 name|gint
-name|bits
+name|levels
 parameter_list|,
 name|gint
 name|dither_type
@@ -1042,6 +1042,17 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|levels
+operator|=
+name|CLAMP
+argument_list|(
+name|levels
+argument_list|,
+literal|2
+argument_list|,
+literal|65536
+argument_list|)
+expr_stmt|;
 name|node
 operator|=
 name|gegl_node_new_child
@@ -1050,25 +1061,25 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:color-reduction"
+literal|"gegl:dither"
 argument_list|,
-literal|"red-bits"
+literal|"red-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
-literal|"green-bits"
+literal|"green-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
-literal|"blue-bits"
+literal|"blue-levels"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
 literal|"alpha-bits"
 argument_list|,
-name|bits
+name|levels
 argument_list|,
-literal|"dither-strategy"
+literal|"dither-method"
 argument_list|,
 name|dither_type
 argument_list|,
@@ -2675,7 +2686,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_transform (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,GimpInterpolationType interpolation_type,GimpMatrix3 * transform)
+DECL|function|gimp_gegl_apply_transform (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,GimpInterpolationType interpolation_type,GimpTransformResize clip_result,GimpMatrix3 * transform)
 name|gimp_gegl_apply_transform
 parameter_list|(
 name|GeglBuffer
@@ -2698,6 +2709,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|,
 name|GimpMatrix3
 modifier|*
 name|transform
@@ -2706,6 +2720,9 @@ block|{
 name|GeglNode
 modifier|*
 name|node
+decl_stmt|;
+name|gboolean
+name|clip_to_input
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2735,6 +2752,14 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|clip_to_input
+operator|=
+operator|(
+name|clip_result
+operator|==
+name|GIMP_TRANSFORM_RESIZE_CLIP
+operator|)
+expr_stmt|;
 name|node
 operator|=
 name|gegl_node_new_child
@@ -2748,6 +2773,10 @@ argument_list|,
 literal|"sampler"
 argument_list|,
 name|interpolation_type
+argument_list|,
+literal|"clip-to-input"
+argument_list|,
+name|clip_to_input
 argument_list|,
 name|NULL
 argument_list|)

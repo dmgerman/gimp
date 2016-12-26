@@ -200,6 +200,62 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_dock_container_get_dialog_factory:  * @container: A #GimpDockContainer  *  * Returns: The #GimpDialogFactory of the #GimpDockContainer  **/
+end_comment
+
+begin_function
+name|GimpDialogFactory
+modifier|*
+DECL|function|gimp_dock_container_get_dialog_factory (GimpDockContainer * container)
+name|gimp_dock_container_get_dialog_factory
+parameter_list|(
+name|GimpDockContainer
+modifier|*
+name|container
+parameter_list|)
+block|{
+name|GimpDockContainerInterface
+modifier|*
+name|iface
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCK_CONTAINER
+argument_list|(
+name|container
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|iface
+operator|=
+name|GIMP_DOCK_CONTAINER_GET_INTERFACE
+argument_list|(
+name|container
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|iface
+operator|->
+name|get_dialog_factory
+condition|)
+return|return
+name|iface
+operator|->
+name|get_dialog_factory
+argument_list|(
+name|container
+argument_list|)
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_dock_container_get_ui_manager:  * @container: A #GimpDockContainer  *  * Returns: The #GimpUIManager of the #GimpDockContainer  **/
 end_comment
 

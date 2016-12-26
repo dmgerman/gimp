@@ -1401,7 +1401,7 @@ modifier|*
 name|center
 parameter_list|)
 block|{
-comment|/* Get angle (in degress) of point given origin of center */
+comment|/* Get angle (in degrees) of point given origin of center */
 name|gint16
 name|shift_x
 decl_stmt|;

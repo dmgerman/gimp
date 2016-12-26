@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0987e50108
+DECL|struct|__anon2a350dfd0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0987e50208
+DECL|struct|__anon2a350dfd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0987e50308
+DECL|struct|__anon2a350dfd0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2641,7 +2641,7 @@ decl_stmt|;
 name|png_charp
 name|profname
 decl_stmt|;
-name|png_charp
+name|png_bytep
 name|prof
 decl_stmt|;
 name|int
@@ -2990,6 +2990,16 @@ argument_list|(
 name|pp
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* bug 765850 */
+name|png_set_option
+argument_list|(
+name|pp
+argument_list|,
+name|PNG_SKIP_sRGB_CHECK_PROFILE
+argument_list|,
+name|PNG_OPTION_ON
 argument_list|)
 expr_stmt|;
 endif|#
@@ -4959,14 +4969,12 @@ argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_yalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.5
 argument_list|,
 literal|0.0
 argument_list|)
@@ -5066,37 +5074,47 @@ name|gint
 name|i
 decl_stmt|,
 name|k
-decl_stmt|,
+decl_stmt|;
 comment|/* Looping vars */
+name|gint
 name|bpp
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
 comment|/* Bytes per pixel */
+name|gint
 name|type
-decl_stmt|,
+decl_stmt|;
 comment|/* Type of drawable/layer */
+name|gint
 name|num_passes
-decl_stmt|,
+decl_stmt|;
 comment|/* Number of interlace passes in file */
+name|gint
 name|pass
-decl_stmt|,
+decl_stmt|;
 comment|/* Current pass in file */
+name|gint
 name|tile_height
-decl_stmt|,
+decl_stmt|;
 comment|/* Height of tile in GIMP */
+name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
 comment|/* image width */
+name|gint
 name|height
-decl_stmt|,
+decl_stmt|;
 comment|/* image height */
+name|gint
 name|begin
-decl_stmt|,
+decl_stmt|;
 comment|/* Beginning tile row */
+name|gint
 name|end
-decl_stmt|,
+decl_stmt|;
 comment|/* Ending tile row */
+name|gint
 name|num
 decl_stmt|;
 comment|/* Number of rows to load */
@@ -5105,6 +5123,17 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* File pointer */
+name|GimpColorProfile
+modifier|*
+name|profile
+init|=
+name|NULL
+decl_stmt|;
+comment|/* Color profile */
+name|gboolean
+name|linear
+decl_stmt|;
+comment|/* Save linear RGB */
 name|GeglBuffer
 modifier|*
 name|buffer
@@ -5134,12 +5163,14 @@ name|guchar
 modifier|*
 modifier|*
 name|pixels
-decl_stmt|,
+decl_stmt|;
 comment|/* Pixel rows */
+name|guchar
 modifier|*
 name|fixed
-decl_stmt|,
+decl_stmt|;
 comment|/* Fixed-up pixel data */
+name|guchar
 modifier|*
 name|pixel
 decl_stmt|;
@@ -5168,12 +5199,16 @@ modifier|*
 name|gmt
 decl_stmt|;
 comment|/* GMT broken down */
-name|int
+name|gint
 name|color_type
 decl_stmt|;
-name|int
+comment|/* PNG color type */
+name|gint
 name|bit_depth
+init|=
+literal|16
 decl_stmt|;
+comment|/* Default to bit bepth 16 */
 name|guchar
 name|remap
 index|[
@@ -5186,24 +5221,99 @@ name|text
 init|=
 name|NULL
 decl_stmt|;
-if|if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|PNG_iCCP_SUPPORTED
+argument_list|)
+name|profile
+operator|=
+name|gimp_image_get_color_profile
+argument_list|(
+name|orig_image_ID
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+switch|switch
 condition|(
 name|gimp_image_get_precision
 argument_list|(
 name|image_ID
 argument_list|)
-operator|==
-name|GIMP_PRECISION_U8_GAMMA
+condition|)
+block|{
+case|case
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+comment|/* only keep 8 bit linear RGB if we also save a profile */
+if|if
+condition|(
+name|profile
 condition|)
 name|bit_depth
 operator|=
 literal|8
 expr_stmt|;
+case|case
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U32_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+comment|/* save linear RGB only if we save a profile, or a loader won't        * do the right thing        */
+if|if
+condition|(
+name|profile
+condition|)
+name|linear
+operator|=
+name|TRUE
+expr_stmt|;
 else|else
+name|linear
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
+case|:
 name|bit_depth
 operator|=
-literal|16
+literal|8
 expr_stmt|;
+case|case
+name|GIMP_PRECISION_U16_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+name|linear
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+block|}
 name|pp
 operator|=
 name|png_create_write_struct
@@ -5223,7 +5333,7 @@ operator|!
 name|pp
 condition|)
 block|{
-comment|/* this could happen if the compile time and run-time libpng          versions do not match. */
+comment|/* this could happen if the compile time and run-time libpng        * versions do not match.        */
 name|g_set_error
 argument_list|(
 name|error
@@ -5297,6 +5407,16 @@ argument_list|(
 name|pp
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* bug 765850 */
+name|png_set_option
+argument_list|(
+name|pp
+argument_list|,
+name|PNG_SKIP_sRGB_CHECK_PROFILE
+argument_list|,
+name|PNG_OPTION_ON
 argument_list|)
 expr_stmt|;
 endif|#
@@ -5438,11 +5558,38 @@ name|bit_depth
 operator|==
 literal|8
 condition|)
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGB u8"
+argument_list|)
+expr_stmt|;
+else|else
 name|file_format
 operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGB u16"
 argument_list|)
 expr_stmt|;
 else|else
@@ -5453,6 +5600,7 @@ argument_list|(
 literal|"R'G'B' u16"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_RGBA_IMAGE
@@ -5467,11 +5615,38 @@ name|bit_depth
 operator|==
 literal|8
 condition|)
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA u8"
+argument_list|)
+expr_stmt|;
+else|else
 name|file_format
 operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA u16"
 argument_list|)
 expr_stmt|;
 else|else
@@ -5482,6 +5657,7 @@ argument_list|(
 literal|"R'G'B'A u16"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_GRAY_IMAGE
@@ -5496,11 +5672,38 @@ name|bit_depth
 operator|==
 literal|8
 condition|)
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+expr_stmt|;
+else|else
 name|file_format
 operator|=
 name|babl_format
 argument_list|(
 literal|"Y' u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y u16"
 argument_list|)
 expr_stmt|;
 else|else
@@ -5511,6 +5714,7 @@ argument_list|(
 literal|"Y' u16"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_GRAYA_IMAGE
@@ -5525,11 +5729,38 @@ name|bit_depth
 operator|==
 literal|8
 condition|)
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"YA u8"
+argument_list|)
+expr_stmt|;
+else|else
 name|file_format
 operator|=
 name|babl_format
 argument_list|(
 literal|"Y'A u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|linear
+condition|)
+name|file_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"YA u16"
 argument_list|)
 expr_stmt|;
 else|else
@@ -5540,6 +5771,7 @@ argument_list|(
 literal|"Y'A u16"
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_INDEXED_IMAGE
@@ -6044,18 +6276,6 @@ name|defined
 argument_list|(
 name|PNG_iCCP_SUPPORTED
 argument_list|)
-block|{
-name|GimpColorProfile
-modifier|*
-name|profile
-decl_stmt|;
-name|profile
-operator|=
-name|gimp_image_get_color_profile
-argument_list|(
-name|orig_image_ID
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|profile
@@ -6141,9 +6361,6 @@ literal|"ICC profile"
 argument_list|,
 literal|0
 argument_list|,
-operator|(
-name|png_charp
-operator|)
 name|icc_data
 argument_list|,
 name|icc_length
@@ -6159,7 +6376,6 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 endif|#
 directive|endif

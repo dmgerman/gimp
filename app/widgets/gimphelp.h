@@ -46,6 +46,21 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  checks if the help browser is available  */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_help_browser_is_installed
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  checks if the user manual is installed locally  */
 end_comment
 

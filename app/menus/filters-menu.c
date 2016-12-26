@@ -126,7 +126,7 @@ name|action_name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+

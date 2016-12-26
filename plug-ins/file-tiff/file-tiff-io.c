@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab328580108
+DECL|struct|__anon298945450108
 block|{
 DECL|member|file
 name|GFile
@@ -360,7 +360,7 @@ operator|.
 name|output
 condition|)
 return|return
-name|FALSE
+name|NULL
 return|;
 name|tiff_io
 operator|.
@@ -445,6 +445,7 @@ name|tag
 init|=
 literal|0
 decl_stmt|;
+comment|/* Between libtiff 3.7.0beta2 and 4.0.0alpha. */
 if|if
 condition|(
 operator|!
@@ -453,6 +454,15 @@ argument_list|(
 name|fmt
 argument_list|,
 literal|"%s: unknown field with tag %d (0x%x) encountered"
+argument_list|)
+operator|||
+comment|/* Before libtiff 3.7.0beta2. */
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"%.1000s: unknown field with tag %d (0x%x) encountered"
 argument_list|)
 condition|)
 block|{
@@ -496,6 +506,15 @@ argument_list|(
 name|fmt
 argument_list|,
 literal|"unknown field with tag %d (0x%x) ignored"
+argument_list|)
+operator|||
+comment|/* Since libtiff 4.0.0alpha. */
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"Unknown field with tag %d (0x%x) encountered"
 argument_list|)
 condition|)
 block|{

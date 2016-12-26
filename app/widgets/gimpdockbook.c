@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f0db80103
+DECL|enum|__anon2b010f740103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2169,7 +2169,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: UI manager '%s' has now widget at path '%s'"
+literal|"%s: UI manager '%s' has no widget at path '%s'"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -2300,6 +2300,16 @@ name|parent_menu_widget
 argument_list|)
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+name|gtk_image_menu_item_set_always_show_image
+argument_list|(
+name|GTK_IMAGE_MENU_ITEM
+argument_list|(
+name|parent_menu_widget
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

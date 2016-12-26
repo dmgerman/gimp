@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9e97f0103
+DECL|enum|__anon279285770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1070,11 +1070,18 @@ operator|->
 name|format
 argument_list|)
 argument_list|,
+name|babl_format_has_alpha
+argument_list|(
+name|text_undo
+operator|->
+name|format
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|FALSE
 argument_list|,

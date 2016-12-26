@@ -153,6 +153,11 @@ DECL|struct|_GimpUserInstall
 struct|struct
 name|_GimpUserInstall
 block|{
+DECL|member|gimp
+name|GObject
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|verbose
 name|gboolean
 name|verbose
@@ -191,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6166dc0103
+DECL|enum|__anon28f5dfd50103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -210,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6166dc0208
+DECL|struct|__anon28f5dfd50208
 block|{
 DECL|member|name
 specifier|const
@@ -583,9 +588,13 @@ end_comment
 begin_function
 name|GimpUserInstall
 modifier|*
-DECL|function|gimp_user_install_new (gboolean verbose)
+DECL|function|gimp_user_install_new (GObject * gimp,gboolean verbose)
 name|gimp_user_install_new
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|verbose
 parameter_list|)
@@ -599,6 +608,12 @@ argument_list|(
 name|GimpUserInstall
 argument_list|)
 decl_stmt|;
+name|install
+operator|->
+name|gimp
+operator|=
+name|gimp
+expr_stmt|;
 name|install
 operator|->
 name|verbose
@@ -1775,7 +1790,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* The regexp pattern of all options changed from menurc of GIMP 2.8.  * Add any pattern that we want to recognize for replacement in the menurc of  * the next release*/
+comment|/* The regexp pattern of all options changed from menurc of GIMP 2.8.  * Add any pattern that we want to recognize for replacement in the menurc of  * the next release  */
 end_comment
 
 begin_define
@@ -1783,7 +1798,8 @@ DECL|macro|MENURC_OVER20_UPDATE_PATTERN
 define|#
 directive|define
 name|MENURC_OVER20_UPDATE_PATTERN
-value|"\"<Actions>/file/file-export-to\""         "|" \                                      "\"<Actions>/file/file-export\""            "|" \                                      "\"<Actions>/tools/tools-value-[1-4]-.*\""
+define|\
+value|"\"<Actions>/file/file-export-to\""           "|" \   "\"<Actions>/file/file-export\""              "|" \   "\"<Actions>/edit/edit-paste-as-new\""        "|" \   "\"<Actions>/buffers/buffers-paste-as-new\""  "|" \   "\"<Actions>/tools/tools-value-[1-4]-.*\""
 end_define
 
 begin_comment
@@ -1812,17 +1828,15 @@ block|{
 name|gchar
 modifier|*
 name|match
-decl_stmt|;
-name|match
-operator|=
+init|=
 name|g_match_info_fetch
 argument_list|(
 name|matched_value
 argument_list|,
 literal|0
 argument_list|)
-expr_stmt|;
-comment|/* file-export-* changes to follow file-save-* patterns.    * Actions available since GIMP 2.8, changed for 2.10 in commit 4b14ed2. */
+decl_stmt|;
+comment|/* file-export-* changes to follow file-save-* patterns.  Actions    * available since GIMP 2.8, changed for 2.10 in commit 4b14ed2.    */
 if|if
 condition|(
 name|g_strcmp0
@@ -1864,7 +1878,50 @@ literal|"\"<Actions>/file/file-export\""
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Tools settings renamed more user-friendly.    * Actions available since GIMP 2.4, changed for 2.10 in commit 0bdb747. */
+comment|/* "*-paste-as-new" renamed to "*-paste-as-new-image"    */
+elseif|else
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/edit/edit-paste-as-new\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/edit/edit-paste-as-new-image\""
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/buffers/buffers-paste-as-new\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/buffers/buffers-paste-as-new-image\""
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* Tools settings renamed more user-friendly.  Actions available    * since GIMP 2.4, changed for 2.10 in commit 0bdb747.    */
 elseif|else
 if|if
 condition|(
@@ -1977,7 +2034,7 @@ literal|31
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Should not happen. Just in case we match something unexpected by mistake. */
+comment|/* Should not happen. Just in case we match something unexpected by    * mistake.    */
 else|else
 block|{
 name|g_string_append
@@ -2004,6 +2061,7 @@ DECL|macro|CONTROLLERRC_UPDATE_PATTERN
 define|#
 directive|define
 name|CONTROLLERRC_UPDATE_PATTERN
+define|\
 value|"\\(map \"(scroll|cursor)-[^\"]*\\bcontrol\\b[^\"]*\""
 end_define
 
@@ -2116,7 +2174,8 @@ DECL|macro|GIMPRC_UPDATE_PATTERN
 define|#
 directive|define
 name|GIMPRC_UPDATE_PATTERN
-value|"\\(theme [^)]*\\)"
+define|\
+value|"\\(theme [^)]*\\)"    "|" \   "\\(.*-path [^)]*\\)"
 end_define
 
 begin_function
@@ -2138,7 +2197,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* Do not migrate themes from GIMP< 2.10. */
+comment|/* Do not migrate paths and themes from GIMP< 2.10. */
 return|return
 name|FALSE
 return|;
@@ -3022,6 +3081,10 @@ name|gimprc
 operator|=
 name|gimp_rc_new
 argument_list|(
+name|install
+operator|->
+name|gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00108
+DECL|struct|__anon2c65e3ad0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00208
+DECL|struct|__anon2c65e3ad0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00308
+DECL|struct|__anon2c65e3ad0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00408
+DECL|struct|__anon2c65e3ad0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00508
+DECL|struct|__anon2c65e3ad0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00608
+DECL|struct|__anon2c65e3ad0608
 block|{
 DECL|member|name
 specifier|const
@@ -4082,16 +4082,14 @@ literal|"_Spot function:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7092,7 +7090,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945db00708
+DECL|struct|__anon2c65e3ad0708
 block|{
 DECL|member|index
 name|gint

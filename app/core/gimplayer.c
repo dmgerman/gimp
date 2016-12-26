@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941778b0103
+DECL|enum|__anon295680a10103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941778b0203
+DECL|enum|__anon295680a10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -603,6 +603,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -783,20 +786,14 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -3575,11 +3572,16 @@ name|new_base_type
 argument_list|,
 name|new_precision
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|dest_profile
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4040,7 +4042,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_layer_resize (GimpItem * item,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_layer_resize
 parameter_list|(
 name|GimpItem
@@ -4050,6 +4052,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -4073,6 +4078,27 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|fill_type
+operator|==
+name|GIMP_FILL_TRANSPARENT
+operator|&&
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|fill_type
+operator|=
+name|GIMP_FILL_BACKGROUND
+expr_stmt|;
+block|}
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -4083,6 +4109,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|new_width
 argument_list|,
@@ -4109,6 +4137,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,
@@ -4594,7 +4624,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -4610,20 +4640,14 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -4655,7 +4679,7 @@ if|if
 condition|(
 name|layer_dither_type
 operator|==
-literal|0
+name|GEGL_DITHER_NONE
 condition|)
 block|{
 name|src_buffer
@@ -4723,7 +4747,7 @@ name|new_format
 argument_list|)
 operator|)
 expr_stmt|;
-name|gimp_gegl_apply_color_reduction
+name|gimp_gegl_apply_dither
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -4736,6 +4760,8 @@ name|NULL
 argument_list|,
 name|src_buffer
 argument_list|,
+literal|1
+operator|<<
 name|bits
 argument_list|,
 name|layer_dither_type
@@ -4854,7 +4880,10 @@ name|layer
 operator|->
 name|mask
 operator|&&
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
 operator|!=
 name|gimp_drawable_get_precision
 argument_list|(
@@ -4880,7 +4909,20 @@ name|dest_image
 argument_list|,
 name|GIMP_GRAY
 argument_list|,
-name|new_precision
+name|gimp_babl_format_get_precision
+argument_list|(
+name|new_format
+argument_list|)
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -8041,8 +8083,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_flatten (GimpLayer * layer,GimpContext * context)
-name|gimp_layer_flatten
+DECL|function|gimp_layer_remove_alpha (GimpLayer * layer,GimpContext * context)
+name|gimp_layer_remove_alpha
 parameter_list|(
 name|GimpLayer
 modifier|*
@@ -8187,7 +8229,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_resize_to_image (GimpLayer * layer,GimpContext * context)
+DECL|function|gimp_layer_resize_to_image (GimpLayer * layer,GimpContext * context,GimpFillType fill_type)
 name|gimp_layer_resize_to_image
 parameter_list|(
 name|GimpLayer
@@ -8197,6 +8239,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|)
 block|{
 name|GimpImage
@@ -8282,6 +8327,8 @@ name|layer
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|gimp_image_get_width
 argument_list|(

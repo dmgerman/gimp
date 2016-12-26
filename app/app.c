@@ -194,12 +194,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"units.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"language.h"
 end_include
 
@@ -683,11 +677,6 @@ argument_list|,
 name|stack_trace_mode
 argument_list|)
 expr_stmt|;
-name|units_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 name|gimpdir
 operator|=
@@ -716,6 +705,11 @@ name|install
 init|=
 name|gimp_user_install_new
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|be_verbose
 argument_list|)
 decl_stmt|;

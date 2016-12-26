@@ -898,6 +898,13 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-softproof-profile"
+argument_list|,
+name|softproof
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|gimp_color_config_get_simulation_intent

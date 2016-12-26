@@ -258,7 +258,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste:  * @drawable_ID: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either gimp_edit_cut() or gimp_edit_copy().  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to it's drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: The new floating selection.  **/
+comment|/**  * gimp_edit_paste:  * @drawable_ID: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either gimp_edit_cut() or gimp_edit_copy().  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to its drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: The new floating selection.  **/
 end_comment
 
 begin_function
@@ -344,13 +344,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: 2.4  **/
+comment|/**  * gimp_edit_paste_as_new_image:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_edit_paste_as_new (void)
-name|gimp_edit_paste_as_new
+DECL|function|gimp_edit_paste_as_new_image (void)
+name|gimp_edit_paste_as_new_image
 parameter_list|(
 name|void
 parameter_list|)
@@ -372,7 +372,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-edit-paste-as-new"
+literal|"gimp-edit-paste-as-new-image"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -789,13 +789,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste_as_new:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new() but pastes a  * named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: 2.4  **/
+comment|/**  * gimp_edit_named_paste_as_new_image:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new_image() but pastes  * a named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_edit_named_paste_as_new (const gchar * buffer_name)
-name|gimp_edit_named_paste_as_new
+DECL|function|gimp_edit_named_paste_as_new_image (const gchar * buffer_name)
+name|gimp_edit_named_paste_as_new_image
 parameter_list|(
 specifier|const
 name|gchar
@@ -820,7 +820,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-edit-named-paste-as-new"
+literal|"gimp-edit-named-paste-as-new-image"
 argument_list|,
 operator|&
 name|nreturn_vals

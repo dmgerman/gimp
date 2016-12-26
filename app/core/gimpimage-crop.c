@@ -105,7 +105,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_crop (GimpImage * image,GimpContext * context,gint x,gint y,gint width,gint height,gboolean crop_layers)
+DECL|function|gimp_image_crop (GimpImage * image,GimpContext * context,GimpFillType fill_type,gint x,gint y,gint width,gint height,gboolean crop_layers)
 name|gimp_image_crop
 parameter_list|(
 name|GimpImage
@@ -115,6 +115,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|x
@@ -298,6 +301,8 @@ name|item
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -344,6 +349,8 @@ name|item
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -368,6 +375,8 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|width
 argument_list|,
@@ -545,6 +554,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|width
 argument_list|,

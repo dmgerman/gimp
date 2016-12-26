@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27547a900103
+DECL|enum|__anon27955c9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,9 +516,9 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|dialog
 operator|->
@@ -526,8 +526,6 @@ name|desc_label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
@@ -1042,7 +1040,7 @@ name|viewable
 condition|)
 name|g_warning
 argument_list|(
-literal|"Use of GimpViewableDialog with a NULL viewable is depecrated!"
+literal|"Use of GimpViewableDialog with a NULL viewable is deprecated!"
 argument_list|)
 expr_stmt|;
 name|dialog

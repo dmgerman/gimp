@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<lcms2.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gexiv2/gexiv2.h>
 end_include
 
@@ -140,6 +146,17 @@ specifier|static
 name|gchar
 modifier|*
 name|sanity_check_gdk_pixbuf
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|sanity_check_lcms
 parameter_list|(
 name|void
 parameter_list|)
@@ -280,6 +297,16 @@ condition|)
 name|abort_message
 operator|=
 name|sanity_check_gdk_pixbuf
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|abort_message
+condition|)
+name|abort_message
+operator|=
+name|sanity_check_lcms
 argument_list|()
 expr_stmt|;
 if|if
@@ -1153,6 +1180,152 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
+DECL|function|sanity_check_lcms (void)
+name|sanity_check_lcms
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+DECL|macro|LCMS_REQUIRED_MAJOR
+define|#
+directive|define
+name|LCMS_REQUIRED_MAJOR
+value|2
+DECL|macro|LCMS_REQUIRED_MINOR
+define|#
+directive|define
+name|LCMS_REQUIRED_MINOR
+value|7
+name|gint
+name|lcms_version
+init|=
+name|cmsGetEncodedCMMversion
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|LCMS_VERSION
+operator|>
+name|lcms_version
+condition|)
+block|{
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"Liblcms2 version mismatch!\n\n"
+literal|"GIMP was compiled against LittleCMS version %d.%d, but the\n"
+literal|"LittleCMS version found at runtime is only %d.%d.\n\n"
+literal|"Somehow you or your software packager managed\n"
+literal|"to install a LittleCMS that is older than what GIMP was\n"
+literal|"built against.\n\n"
+literal|"Please make sure that the installed LittleCMS version\n"
+literal|"is at least %d.%d and that headers and library match."
+argument_list|,
+name|LCMS_VERSION
+operator|/
+literal|1000
+argument_list|,
+name|LCMS_VERSION
+operator|%
+literal|100
+operator|/
+literal|10
+argument_list|,
+name|lcms_version
+operator|/
+literal|1000
+argument_list|,
+name|lcms_version
+operator|%
+literal|100
+operator|/
+literal|10
+argument_list|,
+name|LCMS_VERSION
+operator|/
+literal|1000
+argument_list|,
+name|LCMS_VERSION
+operator|%
+literal|100
+operator|/
+literal|10
+argument_list|)
+return|;
+block|}
+if|if
+condition|(
+name|lcms_version
+operator|<
+operator|(
+name|LCMS_REQUIRED_MAJOR
+operator|*
+literal|1000
+operator|+
+name|LCMS_REQUIRED_MINOR
+operator|*
+literal|10
+operator|)
+condition|)
+block|{
+specifier|const
+name|gint
+name|lcms_major_version
+init|=
+name|lcms_version
+operator|/
+literal|1000
+decl_stmt|;
+specifier|const
+name|gint
+name|lcms_minor_version
+init|=
+name|lcms_version
+operator|%
+literal|100
+operator|/
+literal|10
+decl_stmt|;
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"Liblcms2 version too old!\n\n"
+literal|"GIMP requires LittleCMS version %d.%d or later.\n"
+literal|"Installed LittleCMS version is %d.%d.\n\n"
+literal|"Somehow you or your software packager managed\n"
+literal|"to install GIMP with an older LittleCMS version.\n\n"
+literal|"Please upgrade to LittleCMS version %d.%d or later."
+argument_list|,
+name|LCMS_REQUIRED_MAJOR
+argument_list|,
+name|LCMS_REQUIRED_MINOR
+argument_list|,
+name|lcms_major_version
+argument_list|,
+name|lcms_minor_version
+argument_list|,
+name|LCMS_REQUIRED_MAJOR
+argument_list|,
+name|LCMS_REQUIRED_MINOR
+argument_list|)
+return|;
+block|}
+undef|#
+directive|undef
+name|LCMS_REQUIRED_MAJOR
+undef|#
+directive|undef
+name|LCMS_REQUIRED_MINOR
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
 DECL|function|sanity_check_gexiv2 (void)
 name|sanity_check_gexiv2
 parameter_list|(
@@ -1310,7 +1483,7 @@ DECL|macro|BABL_REQUIRED_MICRO
 define|#
 directive|define
 name|BABL_REQUIRED_MICRO
-value|14
+value|18
 name|babl_get_version
 argument_list|(
 operator|&
@@ -1420,7 +1593,7 @@ DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|6
+value|10
 name|gegl_get_version
 argument_list|(
 operator|&
@@ -1537,8 +1710,6 @@ literal|"gegl:color-enhance"
 block|,
 literal|"gegl:color-exchange"
 block|,
-literal|"gegl:color-reduction"
-block|,
 literal|"gegl:color-rotate"
 block|,
 literal|"gegl:color-temperature"
@@ -1562,6 +1733,8 @@ block|,
 literal|"gegl:displace"
 block|,
 literal|"gegl:distance-transform"
+block|,
+literal|"gegl:dither"
 block|,
 literal|"gegl:dropshadow"
 block|,

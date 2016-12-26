@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpsamplepointeditor.c  * Copyright (C) 2005 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpsamplepointeditor.c  * Copyright (C) 2005-2016 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -31,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -93,9 +99,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|N_POINTS
+define|#
+directive|define
+name|N_POINTS
+value|4
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd58200103
+DECL|enum|__anon2c169c640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +593,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|4
+name|N_POINTS
 condition|;
 name|i
 operator|++
@@ -1006,6 +1020,15 @@ argument_list|(
 name|image_editor
 argument_list|)
 decl_stmt|;
+name|GimpColorConfig
+modifier|*
+name|config
+init|=
+name|NULL
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 if|if
 condition|(
 name|image_editor
@@ -1137,6 +1160,46 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|config
+operator|=
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
+expr_stmt|;
+block|}
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|N_POINTS
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|gimp_color_frame_set_color_config
+argument_list|(
+name|GIMP_COLOR_FRAME
+argument_list|(
+name|editor
+operator|->
+name|color_frames
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_sample_point_editor_points_changed
 argument_list|(
@@ -1249,7 +1312,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|4
+name|N_POINTS
 condition|;
 name|i
 operator|++
@@ -1407,7 +1470,7 @@ if|if
 condition|(
 name|i
 operator|<
-literal|4
+name|N_POINTS
 condition|)
 name|gimp_sample_point_editor_dirty
 argument_list|(
@@ -1487,7 +1550,7 @@ name|n_points
 operator|=
 name|MIN
 argument_list|(
-literal|4
+name|N_POINTS
 argument_list|,
 name|g_list_length
 argument_list|(
@@ -1636,7 +1699,7 @@ name|n_points
 operator|=
 name|MIN
 argument_list|(
-literal|4
+name|N_POINTS
 argument_list|,
 name|g_list_length
 argument_list|(
@@ -1689,7 +1752,7 @@ name|n_points
 init|;
 name|i
 operator|<
-literal|4
+name|N_POINTS
 condition|;
 name|i
 operator|++
@@ -1871,7 +1934,7 @@ name|n_points
 operator|=
 name|MIN
 argument_list|(
-literal|4
+name|N_POINTS
 argument_list|,
 name|g_list_length
 argument_list|(

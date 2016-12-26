@@ -838,11 +838,15 @@ operator|>=
 name|n_colors
 condition|)
 return|return;
+comment|/* TRANSLATORS: the "%s" is an item title and "%u" is the number of      occurrences for this item. */
 name|lab
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"%s (occurs %u)"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

@@ -12,43 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -61,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"cursor-info-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
 end_include
 
 begin_comment

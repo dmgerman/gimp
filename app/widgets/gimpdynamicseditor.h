@@ -108,11 +108,6 @@ name|GimpDynamics
 modifier|*
 name|dynamics_model
 decl_stmt|;
-DECL|member|check_grid
-name|GtkWidget
-modifier|*
-name|check_grid
-decl_stmt|;
 DECL|member|view_selector
 name|GtkWidget
 modifier|*

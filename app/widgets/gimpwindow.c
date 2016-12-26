@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05b0320103
+DECL|enum|__anon2bf570080103
 block|{
 DECL|enumerator|MONITOR_CHANGED
 name|MONITOR_CHANGED

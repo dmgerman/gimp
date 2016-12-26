@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad6dc6d0103
+DECL|enum|__anon2c632c7f0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -341,7 +341,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6dc6d0203
+DECL|enum|__anon2c632c7f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -470,22 +470,27 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* The RGB<->LMS transforms above are computed from the human cone    * photo-pigment absorption spectra and the monitor phosphor    * emission spectra. These parameters are fairly constant for most    * humans and most montiors (at least for modern CRTs). However,    * gamma will vary quite a bit, as it is a property of the monitor    * (eg. amplifier gain), the video card, and even the    * software. Further, users can adjust their gammas (either via    * adjusting the monitor amp gains or in software). That said, the    * following are the gamma estimates that we have used in the    * Vischeck code. Many colorblind users have viewed our simulations    * and told us that they "work" (simulated and original images are    * indistinguishable).    */
+comment|/* The RGB<->LMS transforms above are computed from the human cone  * photo-pigment absorption spectra and the monitor phosphor  * emission spectra. These parameters are fairly constant for most  * humans and most monitors (at least for modern CRTs). However,  * gamma will vary quite a bit, as it is a property of the monitor  * (eg. amplifier gain), the video card, and even the  * software. Further, users can adjust their gammas (either via  * adjusting the monitor amp gains or in software). That said, the  * following are the gamma estimates that we have used in the  * Vischeck code. Many colorblind users have viewed our simulations  * and told us that they "work" (simulated and original images are  * indistinguishable).  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|gammaRGB
-specifier|static
-specifier|const
-name|gfloat
-name|gammaRGB
-init|=
-literal|2.1
-decl_stmt|;
-end_decl_stmt
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
 begin_comment
-comment|/* For most modern Cathode-Ray Tube monitors (CRTs), the following    * are good estimates of the RGB->LMS and LMS->RGB transform    * matrices.  They are based on spectra measured on a typical CRT    * with a PhotoResearch PR650 spectral photometer and the Stockman    * human cone fundamentals. NOTE: these estimates will NOT work well    * for LCDs!    */
+comment|/* Gamma conversion is now handled by simply asking for a linear buffer */
+end_comment
+
+begin_endif
+unit|static const gfloat gammaRGB = 2.1;
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* For most modern Cathode-Ray Tube monitors (CRTs), the following * are good estimates of the RGB->LMS and LMS->RGB transform * matrices.  They are based on spectra measured on a typical CRT * with a PhotoResearch PR650 spectral photometer and the Stockman * human cone fundamentals. NOTE: these estimates will NOT work well * for LCDs! */
 end_comment
 
 begin_decl_stmt

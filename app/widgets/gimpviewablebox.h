@@ -75,6 +75,11 @@ specifier|const
 name|gchar
 modifier|*
 name|editor_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -138,6 +143,11 @@ specifier|const
 name|gchar
 modifier|*
 name|editor_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -327,6 +337,11 @@ specifier|const
 name|gchar
 modifier|*
 name|editor_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -390,6 +405,11 @@ specifier|const
 name|gchar
 modifier|*
 name|editor_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|editor_tooltip
 parameter_list|)
 function_decl|;
 end_function_decl

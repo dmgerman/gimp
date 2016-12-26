@@ -660,7 +660,7 @@ comment|/* FIXME GIMP_HELP_FILTER_COLOR_EXCHANGE */
 block|}
 block|,
 block|{
-literal|"filters-color-reduction"
+literal|"filters-dither"
 block|,
 name|GIMP_STOCK_GEGL
 block|,
@@ -668,17 +668,17 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Color _Reduction..."
+literal|"Dithe_r..."
 argument_list|)
 block|,
 name|NULL
 block|,
 name|NULL
 block|,
-literal|"gegl:color-reduction"
+literal|"gegl:dither"
 block|,
 name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_TEMPERATURE */
+comment|/* FIXME GIMP_HELP_FILTER_DITHER */
 block|}
 block|,
 block|{
@@ -2573,7 +2573,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -2955,7 +2955,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"filters-color-reduction"
+literal|"filters-dither"
 argument_list|,
 name|writable
 argument_list|)
@@ -3617,7 +3617,7 @@ name|name
 init|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -4042,7 +4042,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+
@@ -4210,7 +4210,7 @@ name|name
 init|=
 name|g_strdup_printf
 argument_list|(
-literal|"filter-recent-%02d"
+literal|"filters-recent-%02d"
 argument_list|,
 name|i
 operator|+

@@ -165,6 +165,8 @@ name|image
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -185,7 +187,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,GimpProgress * progress)
+DECL|function|gimp_image_resize_with_layers (GimpImage * image,GimpContext * context,GimpFillType fill_type,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpItemSet layer_set,gboolean resize_text_layers,GimpProgress * progress)
 name|gimp_image_resize_with_layers
 parameter_list|(
 name|GimpImage
@@ -195,6 +197,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|gint
 name|new_width
@@ -437,6 +442,8 @@ name|item
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -495,6 +502,8 @@ name|item
 argument_list|,
 name|context
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -531,6 +540,8 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|new_width
 argument_list|,
@@ -679,6 +690,8 @@ argument_list|(
 name|item
 argument_list|,
 name|context
+argument_list|,
+name|fill_type
 argument_list|,
 name|new_width
 argument_list|,

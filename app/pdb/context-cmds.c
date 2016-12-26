@@ -12975,7 +12975,7 @@ argument_list|,
 literal|"Set the line dash pattern setting."
 argument_list|,
 literal|"This procedure modifies the line dash pattern setting for stroking lines.\n"
-literal|"The unit of the dash pattern segments is the actual line width used for the stroke opertation, in other words a segment length of 1.0 results in a square segment shape (or gap shape).\n"
+literal|"The unit of the dash pattern segments is the actual line width used for the stroke operation, in other words a segment length of 1.0 results in a square segment shape (or gap shape).\n"
 literal|"This setting affects the following procedures: 'gimp-edit-stroke', 'gimp-edit-stroke-vectors'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -16310,7 +16310,7 @@ literal|"gimp-context-set-diagonal-neighbors"
 argument_list|,
 literal|"Set the diagonal neighbors setting."
 argument_list|,
-literal|"This procedure modifies the diagonal neighbors setting. If the affected region of an operation is based on a seed point, like when doing a seed fill, then, when this setting is TRUE, all eight neighbors of each pixel are considered when calculating the affected region; in contrast, when this setting is FALSE, only the four orthogonal neighors of each pixel are considered.\n"
+literal|"This procedure modifies the diagonal neighbors setting. If the affected region of an operation is based on a seed point, like when doing a seed fill, then, when this setting is TRUE, all eight neighbors of each pixel are considered when calculating the affected region; in contrast, when this setting is FALSE, only the four orthogonal neighbors of each pixel are considered.\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color'."
 argument_list|,
 literal|"Ell"

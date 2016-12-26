@@ -132,6 +132,10 @@ DECL|member|diagonal_neighbors
 name|gboolean
 name|diagonal_neighbors
 decl_stmt|;
+DECL|member|antialias
+name|gboolean
+name|antialias
+decl_stmt|;
 DECL|member|threshold
 name|gdouble
 name|threshold

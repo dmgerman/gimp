@@ -425,6 +425,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_get_color_tag_color
+parameter_list|(
+name|GimpColorTag
+name|color_tag
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pango_layout_set_scale
 parameter_list|(

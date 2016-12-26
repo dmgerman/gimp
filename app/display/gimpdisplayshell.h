@@ -596,12 +596,6 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  navigation popup                   */
-DECL|member|grid_dialog
-name|GtkWidget
-modifier|*
-name|grid_dialog
-decl_stmt|;
-comment|/*  grid configuration dialog          */
 DECL|member|color_config
 name|GimpColorConfig
 modifier|*
@@ -645,12 +639,6 @@ DECL|member|filter_idle_id
 name|guint
 name|filter_idle_id
 decl_stmt|;
-DECL|member|filters_dialog
-name|GtkWidget
-modifier|*
-name|filters_dialog
-decl_stmt|;
-comment|/* color display filter dialog       */
 DECL|member|filter_format
 specifier|const
 name|Babl
@@ -774,6 +762,10 @@ decl_stmt|;
 DECL|member|rotate_drag_angle
 name|gdouble
 name|rotate_drag_angle
+decl_stmt|;
+DECL|member|scaling
+name|gboolean
+name|scaling
 decl_stmt|;
 DECL|member|scroll_info
 name|gpointer

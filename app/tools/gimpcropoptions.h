@@ -122,6 +122,11 @@ DECL|member|allow_growing
 name|gboolean
 name|allow_growing
 decl_stmt|;
+comment|/* How to fill new areas created by 'allow_growing. */
+DECL|member|fill_type
+name|GimpFillType
+name|fill_type
+decl_stmt|;
 block|}
 struct|;
 end_struct

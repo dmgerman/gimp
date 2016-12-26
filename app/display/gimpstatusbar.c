@@ -1027,20 +1027,6 @@ argument_list|(
 literal|"8888, 8888"
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|statusbar
-operator|->
-name|cursor_label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1407,7 +1393,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_CANCEL
+literal|"gtk-cancel"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2036,6 +2022,9 @@ name|statusbar
 operator|->
 name|progressbar
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|statusbar
 operator|->
 name|progress_active
@@ -2129,6 +2118,16 @@ name|cancel_button
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_get_allocation
+argument_list|(
+name|statusbar
+operator|->
+name|label
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|statusbar
@@ -2143,13 +2142,23 @@ operator|->
 name|label
 argument_list|)
 expr_stmt|;
-comment|/*  This call is needed so that the progress bar is drawn in the        *  correct place. Probably due a bug in GTK+.        */
+comment|/*  This shit is needed so that the progress bar is drawn in the        *  correct place in the cases where we suck completely and run        *  an operation that blocks the GUI and doesn't let the main        *  loop run.        */
 name|gtk_container_resize_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|statusbar
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_size_allocate
+argument_list|(
+name|statusbar
+operator|->
+name|progressbar
+argument_list|,
+operator|&
+name|allocation
 argument_list|)
 expr_stmt|;
 if|if

@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"fonts-popup"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 name|NC_
 argument_list|(

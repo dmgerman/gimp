@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295987770103
+DECL|enum|__anon2c1395600103
 block|{
 DECL|enumerator|CHANGE_SIZE
 name|CHANGE_SIZE

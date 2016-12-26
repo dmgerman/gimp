@@ -175,9 +175,13 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_dump (GimpConfigDumpFormat format)
+DECL|function|gimp_config_dump (GObject * gimp,GimpConfigDumpFormat format)
 name|gimp_config_dump
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpConfigDumpFormat
 name|format
 parameter_list|)
@@ -194,11 +198,25 @@ name|GimpConfig
 modifier|*
 name|rc
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|G_IS_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|rc
 operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_RC
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
 argument_list|,
 name|NULL
 argument_list|)

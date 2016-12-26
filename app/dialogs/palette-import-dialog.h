@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PALETTE_IMPORT_H__
+name|__PALETTE_IMPORT_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PALETTE_IMPORT_H__
+DECL|macro|__PALETTE_IMPORT_DIALOG_H__
 define|#
 directive|define
-name|__PALETTE_IMPORT_H__
+name|__PALETTE_IMPORT_DIALOG_H__
 end_define
 
 begin_function_decl
@@ -34,7 +34,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PALETTE_IMPORT_H__ */
+comment|/* __PALETTE_IMPORT_DIALOG_H__ */
 end_comment
 
 end_unit

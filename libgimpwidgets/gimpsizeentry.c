@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2745280103
+DECL|enum|__anon2b6527ef0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -2017,16 +2017,14 @@ name|children
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 name|alignment
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

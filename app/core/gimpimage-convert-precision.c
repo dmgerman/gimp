@@ -107,7 +107,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,gint layer_dither_type,gint text_layer_dither_type,gint mask_dither_type,GimpProgress * progress)
+DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision,GeglDitherMethod layer_dither_type,GeglDitherMethod text_layer_dither_type,GeglDitherMethod mask_dither_type,GimpProgress * progress)
 name|gimp_image_convert_precision
 parameter_list|(
 name|GimpImage
@@ -117,13 +117,13 @@ parameter_list|,
 name|GimpPrecision
 name|precision
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|text_layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|GimpProgress
@@ -656,6 +656,11 @@ name|drawable
 argument_list|)
 argument_list|,
 name|precision
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|new_profile
 argument_list|,

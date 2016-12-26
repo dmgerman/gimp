@@ -120,6 +120,10 @@ DECL|member|prev_precision
 name|GimpPrecision
 name|prev_precision
 decl_stmt|;
+DECL|member|prev_has_alpha
+name|gboolean
+name|prev_has_alpha
+decl_stmt|;
 block|}
 struct|;
 end_struct

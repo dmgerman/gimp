@@ -1422,6 +1422,12 @@ name|guint32
 name|tag
 decl_stmt|;
 name|gboolean
+name|__attribute__
+argument_list|(
+operator|(
+name|unused
+operator|)
+argument_list|)
 name|do_toggle_endian
 init|=
 name|FALSE
@@ -3106,7 +3112,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c980de0108
+DECL|struct|__anon29072f3f0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5642,7 +5648,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon28c980de0208
+DECL|struct|__anon29072f3f0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5770,7 +5776,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon28c980de0308
+DECL|struct|__anon29072f3f0308
 struct|struct
 block|{
 DECL|member|DICOM

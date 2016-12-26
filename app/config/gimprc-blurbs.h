@@ -770,6 +770,15 @@ value|_("Remember the current tool, pattern, color, and brush across GIMP " \   
 end_define
 
 begin_define
+DECL|macro|DEVICES_SHARE_TOOL_BLURB
+define|#
+directive|define
+name|DEVICES_SHARE_TOOL_BLURB
+define|\
+value|_("When enabled, the same tool and tool options will be used for all " \   "input devices. No tool switching will occur when the input device " \   "changes.")
+end_define
+
+begin_define
 DECL|macro|SAVE_DOCUMENT_HISTORY_BLURB
 define|#
 directive|define
@@ -1082,6 +1091,375 @@ directive|define
 name|ICON_THEME_PATH_BLURB
 define|\
 value|"Sets the icon theme search path."
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PROFILE_INTENT_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PROFILE_INTENT_BLURB
+define|\
+value|_("Sets the default rendering intent for the 'Convert to Color Profile' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PROFILE_BPC_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PROFILE_BPC_BLURB
+define|\
+value|_("Sets the default 'Black Point Compensation' state for the " \   "'Convert to Color Profile' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_LAYER_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_LAYER_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default layer dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_TEXT_LAYER_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_TEXT_LAYER_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default text layer dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_PRECISION_CHANNEL_DITHER_METHOD_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_PRECISION_CHANNEL_DITHER_METHOD_BLURB
+define|\
+value|_("Sets the default channel dithering method for the 'Convert Precision' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_PALETTE_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_PALETTE_TYPE_BLURB
+define|\
+value|_("Sets the default palette type for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_MAX_COLORS_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_MAX_COLORS_BLURB
+define|\
+value|_("Sets the default maximum number of colors for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_REMOVE_DUPLICATES_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_REMOVE_DUPLICATES_BLURB
+define|\
+value|_("Sets the default 'Remove duplicate colors' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_TYPE_BLURB
+define|\
+value|_("Sets the default dithering type for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_ALPHA_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_ALPHA_BLURB
+define|\
+value|_("Sets the default 'Dither alpha' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_CONVERT_INDEXED_DITHER_TEXT_LAYERS_BLURB
+define|#
+directive|define
+name|IMAGE_CONVERT_INDEXED_DITHER_TEXT_LAYERS_BLURB
+define|\
+value|_("Sets the default 'Dither text layers' state for the 'Convert to Indexed' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_RESIZE_FILL_TYPE_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_RESIZE_LAYER_SET_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_LAYER_SET_BLURB
+define|\
+value|_("Sets the default set of layers to resize for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|IMAGE_RESIZE_RESIZE_TEXT_LAYERS_BLURB
+define|#
+directive|define
+name|IMAGE_RESIZE_RESIZE_TEXT_LAYERS_BLURB
+define|\
+value|_("Sets the default 'Resize text layers' state for the 'Canvas Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_NAME_BLURB
+define|#
+directive|define
+name|LAYER_NEW_NAME_BLURB
+define|\
+value|_("Sets the default layer name for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_MODE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_MODE_BLURB
+define|\
+value|_("Sets the default mode for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_OPACITY_BLURB
+define|#
+directive|define
+name|LAYER_NEW_OPACITY_BLURB
+define|\
+value|_("Sets the default opacity for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_FILL_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_RESIZE_FILL_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_RESIZE_FILL_TYPE_BLURB
+define|\
+value|_("Sets the default fill type for the 'Layer Boundary Size' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_ADD_MASK_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_ADD_MASK_TYPE_BLURB
+define|\
+value|_("Sets the default mask for the 'Add Layer Mask' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_ADD_MASK_INVERT_BLURB
+define|#
+directive|define
+name|LAYER_ADD_MASK_INVERT_BLURB
+define|\
+value|_("Sets the default 'invert mask' state for the 'Add Layer Mask' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_MERGE_TYPE_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_TYPE_BLURB
+define|\
+value|_("Sets the default merge type for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_MERGE_ACTIVE_GROUP_ONLY_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_ACTIVE_GROUP_ONLY_BLURB
+define|\
+value|_("Sets the default 'Active group only' for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_MERGE_DISCARD_INVISIBLE_BLURB
+define|#
+directive|define
+name|LAYER_MERGE_DISCARD_INVISIBLE_BLURB
+define|\
+value|_("Sets the default 'Discard invisible' for the 'Merge Visible Layers' dialog.")
+end_define
+
+begin_define
+DECL|macro|CHANNEL_NEW_NAME_BLURB
+define|#
+directive|define
+name|CHANNEL_NEW_NAME_BLURB
+define|\
+value|_("Sets the default channel name for the 'New Channel' dialog.")
+end_define
+
+begin_define
+DECL|macro|CHANNEL_NEW_COLOR_BLURB
+define|#
+directive|define
+name|CHANNEL_NEW_COLOR_BLURB
+define|\
+value|_("Sets the default color and opacity for the 'New Channel' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_NEW_NAME_BLURB
+define|#
+directive|define
+name|VECTORS_NEW_NAME_BLURB
+define|\
+value|_("Sets the default path name for the 'New Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_EXPORT_PATH_BLURB
+define|#
+directive|define
+name|VECTORS_EXPORT_PATH_BLURB
+define|\
+value|_("Sets the default folder path for the 'Export Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_EXPORT_ACTIVE_ONLY_BLURB
+define|#
+directive|define
+name|VECTORS_EXPORT_ACTIVE_ONLY_BLURB
+define|\
+value|_("Sets the default 'Export the active path' state for the 'Export Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_PATH_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_PATH_BLURB
+define|\
+value|_("Sets the default folder path for the 'Import Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_MERGE_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_MERGE_BLURB
+define|\
+value|_("Sets the default 'Merge imported paths' state for the 'Import Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|VECTORS_IMPORT_SCALE_BLURB
+define|#
+directive|define
+name|VECTORS_IMPORT_SCALE_BLURB
+define|\
+value|_("Sets the default 'Scale imported paths to fit size' state for the 'Import Path' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_FEATHER_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_FEATHER_RADIUS_BLURB
+define|\
+value|_("Sets the default feather radius for the 'Feather Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_GROW_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_GROW_RADIUS_BLURB
+define|\
+value|_("Sets the default grow radius for the 'Grow Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_SHRINK_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_SHRINK_RADIUS_BLURB
+define|\
+value|_("Sets the default shrink radius for the 'Shrink Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_SHRINK_EDGE_LOCK_BLURB
+define|#
+directive|define
+name|SELECTION_SHRINK_EDGE_LOCK_BLURB
+define|\
+value|_("Sets the default 'Selected areas continue outside the image' setting " \   "for the 'Shrink Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_RADIUS_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_RADIUS_BLURB
+define|\
+value|_("Sets the default border radius for the 'Border Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_EDGE_LOCK_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_EDGE_LOCK_BLURB
+define|\
+value|_("Sets the default 'Selected areas continue outside the image' setting " \   "for the 'Border Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|SELECTION_BORDER_STYLE_BLURB
+define|#
+directive|define
+name|SELECTION_BORDER_STYLE_BLURB
+define|\
+value|_("Sets the default border style for the 'Border Selection' dialog.")
+end_define
+
+begin_define
+DECL|macro|FILL_OPTIONS_BLURB
+define|#
+directive|define
+name|FILL_OPTIONS_BLURB
+define|\
+value|"The default fill options for the fill dialogs."
+end_define
+
+begin_define
+DECL|macro|STROKE_OPTIONS_BLURB
+define|#
+directive|define
+name|STROKE_OPTIONS_BLURB
+define|\
+value|"The default stroke options for the stroke dialogs."
 end_define
 
 begin_define

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
+file|"config/gimpdialogconfig.h"
 end_include
 
 begin_define
@@ -89,7 +89,7 @@ struct|struct
 name|_GimpPluginConfig
 block|{
 DECL|member|parent_instance
-name|GimpGuiConfig
+name|GimpDialogConfig
 name|parent_instance
 decl_stmt|;
 DECL|member|fractalexplorer_path

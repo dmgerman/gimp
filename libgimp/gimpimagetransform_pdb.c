@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimagetransform  * @title: gimpimagetransform  * @short_description: Transformations onm images.  *  * Operations to scale, resize, crop, flip and rotate images.  **/
+comment|/**  * SECTION: gimpimagetransform  * @title: gimpimagetransform  * @short_description: Transformations on images.  *  * Operations to scale, resize, crop, flip and rotate images.  **/
 end_comment
 
 begin_comment

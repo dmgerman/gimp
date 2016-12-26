@@ -1845,8 +1845,6 @@ name|unit
 argument_list|,
 name|scale
 argument_list|,
-name|global_menu_factory
-argument_list|,
 name|image_managers
 operator|->
 name|data

@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd052750108
+DECL|struct|__anon28b022e40108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -852,9 +852,9 @@ name|ExportAction
 name|export_action_animate_or_merge
 init|=
 block|{
-name|export_merge
-block|,
 name|NULL
+block|,
+name|export_merge
 block|,
 name|N_
 argument_list|(
@@ -864,12 +864,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Merge Visible Layers"
+literal|"Save as Animation"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Merge Visible Layers"
 argument_list|)
 block|}
 block|,
@@ -885,9 +885,9 @@ name|ExportAction
 name|export_action_animate_or_flatten
 init|=
 block|{
-name|export_flatten
-block|,
 name|NULL
+block|,
+name|export_flatten
 block|,
 name|N_
 argument_list|(
@@ -897,12 +897,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Flatten Image"
+literal|"Save as Animation"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Flatten Image"
 argument_list|)
 block|}
 block|,
@@ -1172,7 +1172,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"%s plug-in  can only handle RGB or indexed images"
+literal|"%s plug-in can only handle RGB or indexed images"
 argument_list|)
 block|,
 block|{
@@ -1281,11 +1281,13 @@ name|action
 operator|->
 name|default_action
 condition|)
+block|{
 return|return
 name|action
 operator|->
 name|default_action
 return|;
+block|}
 if|if
 condition|(
 name|action
@@ -1298,11 +1300,13 @@ name|action
 operator|->
 name|alt_action
 condition|)
+block|{
 return|return
 name|action
 operator|->
 name|alt_action
 return|;
+block|}
 return|return
 name|export_void
 return|;
@@ -1571,7 +1575,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-warning"
+literal|"dialog-warning"
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)
@@ -1679,14 +1683,12 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -2073,14 +2075,12 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -2455,14 +2455,12 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -2548,14 +2546,12 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -3863,7 +3859,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-save"
+literal|"document-save"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

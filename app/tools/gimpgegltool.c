@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29df89e10103
+DECL|enum|__anon2911f1df0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -336,8 +336,6 @@ literal|"gegl:color-enhance"
 block|,
 literal|"gegl:color-exchange"
 block|,
-literal|"gegl:color-reduction"
-block|,
 literal|"gegl:color-rotate"
 block|,
 literal|"gegl:color-temperature"
@@ -357,6 +355,8 @@ block|,
 literal|"gegl:displace"
 block|,
 literal|"gegl:distance-transform"
+block|,
+literal|"gegl:dither"
 block|,
 literal|"gegl:dropshadow"
 block|,
@@ -1393,16 +1393,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|tool
 operator|->
 name|description_label
 argument_list|)
-argument_list|,
-literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)

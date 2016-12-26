@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b01e93a0103
+DECL|enum|__anon2ad26d0b0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -483,7 +483,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-open"
+literal|"document-open"
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -746,6 +746,8 @@ name|entry
 operator|->
 name|browse_button
 argument_list|,
+name|entry
+operator|->
 name|dir_only
 condition|?
 name|_
@@ -800,6 +802,29 @@ argument_list|(
 name|entry
 operator|->
 name|file_exists
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|entry
+operator|->
+name|file_exists
+argument_list|,
+name|entry
+operator|->
+name|dir_only
+condition|?
+name|_
+argument_list|(
+literal|"Indicates whether or not the folder exists"
+argument_list|)
+else|:
+name|_
+argument_list|(
+literal|"Indicates whether or not the file exists"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

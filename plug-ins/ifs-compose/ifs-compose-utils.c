@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a17f1320108
+DECL|struct|__anon2a479ab90108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -353,7 +353,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Find a pure stretch in some directon that brings xo,yo to xn,yn */
+comment|/* Find a pure stretch in some direction that brings xo,yo to xn,yn */
 end_comment
 
 begin_function
@@ -1555,7 +1555,7 @@ argument_list|,
 name|ipolygon_sort_func
 argument_list|)
 expr_stmt|;
-comment|/* now ensure that all turns as we trace the perimiter are      counter-clockwise */
+comment|/* now ensure that all turns as we trace the perimeter are      counter-clockwise */
 name|new_points
 index|[
 literal|0

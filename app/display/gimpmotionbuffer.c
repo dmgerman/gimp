@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fb0a80103
+DECL|enum|__anon27d8be4f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fb0a80203
+DECL|enum|__anon27d8be4f0203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -291,17 +291,6 @@ init|=
 block|{
 literal|0
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|default_coords
-specifier|static
-specifier|const
-name|GimpCoords
-name|default_coords
-init|=
-name|GIMP_COORDS_DEFAULT_VALUES
 decl_stmt|;
 end_decl_stmt
 

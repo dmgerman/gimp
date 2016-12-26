@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297902e90103
+DECL|enum|__anon29a4e6c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -130,14 +136,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPluginConfig,gimp_plugin_config,GIMP_TYPE_GUI_CONFIG)
+DECL|function|G_DEFINE_TYPE (GimpPluginConfig,gimp_plugin_config,GIMP_TYPE_DIALOG_CONFIG)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpPluginConfig
 argument_list|,
 argument|gimp_plugin_config
 argument_list|,
-argument|GIMP_TYPE_GUI_CONFIG
+argument|GIMP_TYPE_DIALOG_CONFIG
 argument_list|)
 end_macro
 

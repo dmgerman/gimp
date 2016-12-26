@@ -227,6 +227,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_drawable_filter_set_color_managed
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
+parameter_list|,
+name|gboolean
+name|managed
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_drawable_filter_set_gamma_hack
 parameter_list|(
 name|GimpDrawableFilter

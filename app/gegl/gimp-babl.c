@@ -1070,11 +1070,267 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_babl_init_fishes (GimpInitStatusFunc status_callback)
+name|gimp_babl_init_fishes
+parameter_list|(
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+block|{
+comment|/* create a bunch of fishes - to decrease the initial lazy    * intialization cost for some interactions    */
+specifier|static
+specifier|const
+struct|struct
+DECL|struct|__anon2a2e39310108
+block|{
+DECL|member|from_format
+specifier|const
+name|gchar
+modifier|*
+name|from_format
+decl_stmt|;
+DECL|member|to_format
+specifier|const
+name|gchar
+modifier|*
+name|to_format
+decl_stmt|;
+block|}
+name|fishes
+index|[]
+init|=
+block|{
+block|{
+literal|"Y' u8"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|,
+block|{
+literal|"Y u8"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|,
+block|{
+literal|"R'G'B'A u8"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|,
+block|{
+literal|"R'G'B'A float"
+block|,
+literal|"R'G'B'A u8"
+block|}
+block|,
+block|{
+literal|"R'G'B'A float"
+block|,
+literal|"R'G'B' u8"
+block|}
+block|,
+block|{
+literal|"R'G'B'A u8"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"RGBA float"
+block|,
+literal|"R'G'B'A u8"
+block|}
+block|,
+block|{
+literal|"RGBA float"
+block|,
+literal|"R'G'B'A u8"
+block|}
+block|,
+block|{
+literal|"RGBA float"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"Y' u8"
+block|,
+literal|"R'G'B' u8"
+block|}
+block|,
+block|{
+literal|"Y u8"
+block|,
+literal|"Y float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"cairo-RGB24"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"R'G'B'A u8"
+block|}
+block|,
+block|{
+literal|"R'G'B'A u8"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"R'G'B'A u8"
+block|,
+literal|"cairo-ARGB32"
+block|}
+block|,
+block|{
+literal|"R'G'B'A double"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"R'G'B'A float"
+block|,
+literal|"RGBA double"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RGB float"
+block|}
+block|,
+block|{
+literal|"RGB float"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"RaGaBaA float"
+block|,
+literal|"R'G'B'A float"
+block|}
+block|,
+block|{
+literal|"RaGaBaA float"
+block|,
+literal|"RGBA float"
+block|}
+block|,
+block|{
+literal|"RGBA float"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|,
+block|{
+literal|"R'G'B' u8"
+block|,
+literal|"RaGaBaA float"
+block|}
+block|}
+struct|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|fishes
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|i
+operator|+
+literal|1
+argument_list|)
+operator|/
+operator|(
+name|gdouble
+operator|)
+name|G_N_ELEMENTS
+argument_list|(
+name|fishes
+argument_list|)
+operator|*
+literal|0.8
+argument_list|)
+expr_stmt|;
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+name|fishes
+index|[
+name|i
+index|]
+operator|.
+name|from_format
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+name|fishes
+index|[
+name|i
+index|]
+operator|.
+name|to_format
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
 begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b2d79f40108
+DECL|struct|__anon2a2e39310208
 block|{
 DECL|member|name
 specifier|const
@@ -2960,6 +3216,71 @@ name|g_return_val_if_reached
 argument_list|(
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_babl_linear (GimpPrecision precision)
+name|gimp_babl_linear
+parameter_list|(
+name|GimpPrecision
+name|precision
+parameter_list|)
+block|{
+switch|switch
+condition|(
+name|precision
+condition|)
+block|{
+case|case
+name|GIMP_PRECISION_U8_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U16_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U32_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_HALF_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_FLOAT_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_LINEAR
+case|:
+return|return
+name|TRUE
+return|;
+case|case
+name|GIMP_PRECISION_U8_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_U16_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_U32_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_HALF_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_FLOAT_GAMMA
+case|:
+case|case
+name|GIMP_PRECISION_DOUBLE_GAMMA
+case|:
+return|return
+name|FALSE
+return|;
+block|}
+name|g_return_val_if_reached
+argument_list|(
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

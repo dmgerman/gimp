@@ -26,6 +26,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_babl_init_fishes
+parameter_list|(
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
@@ -103,6 +113,16 @@ end_function_decl
 begin_function_decl
 name|GimpComponentType
 name|gimp_babl_component_type
+parameter_list|(
+name|GimpPrecision
+name|precision
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_babl_linear
 parameter_list|(
 name|GimpPrecision
 name|precision

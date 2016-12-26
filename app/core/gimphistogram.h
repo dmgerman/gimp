@@ -150,7 +150,7 @@ modifier|*
 name|gimp_histogram_new
 parameter_list|(
 name|gboolean
-name|gamma_correct
+name|linear
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -800,7 +800,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon291ba4c60108
+DECL|struct|__anon2ba72bca0108
 block|{
 DECL|member|g_type
 name|GType
@@ -1120,7 +1120,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291ba4c60208
+DECL|struct|__anon2ba72bca0208
 block|{
 DECL|member|old_name
 specifier|const
@@ -1812,6 +1812,19 @@ block|{
 literal|"gimp-parasite-list"
 block|,
 literal|"gimp-get-parasite-list"
+block|}
+block|,
+comment|/*  deprecations since 2.8  */
+block|{
+literal|"gimp-edit-paste-as-new"
+block|,
+literal|"gimp-edit-paste-as-new-image"
+block|}
+block|,
+block|{
+literal|"gimp-edit-named-paste-as-new"
+block|,
+literal|"gimp-edit-named-paste-as-new-image"
 block|}
 block|}
 struct|;

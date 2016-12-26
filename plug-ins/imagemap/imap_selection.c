@@ -2050,9 +2050,9 @@ argument_list|(
 name|swin
 argument_list|)
 expr_stmt|;
-name|gtk_scrolled_window_add_with_viewport
+name|gtk_container_add
 argument_list|(
-name|GTK_SCROLLED_WINDOW
+name|GTK_CONTAINER
 argument_list|(
 name|swin
 argument_list|)

@@ -1567,6 +1567,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|is_double
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|aux
 init|=
 name|FALSE
@@ -1618,6 +1623,9 @@ decl_stmt|;
 name|GimpPrecision
 name|precision
 decl_stmt|;
+name|GimpComponentType
+name|component_type
+decl_stmt|;
 name|base_type
 operator|=
 name|gimp_image_get_base_type
@@ -1628,6 +1636,13 @@ expr_stmt|;
 name|precision
 operator|=
 name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|component_type
+operator|=
+name|gimp_image_get_component_type
 argument_list|(
 name|image
 argument_list|)
@@ -1673,10 +1688,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|gimp_image_get_component_type
-argument_list|(
-name|image
-argument_list|)
+name|component_type
 condition|)
 block|{
 case|case
@@ -1788,6 +1800,14 @@ operator|==
 name|GIMP_PRECISION_U8_GAMMA
 operator|)
 expr_stmt|;
+name|is_double
+operator|=
+operator|(
+name|component_type
+operator|==
+name|GIMP_COMPONENT_TYPE_DOUBLE
+operator|)
+expr_stmt|;
 name|aux
 operator|=
 operator|(
@@ -1888,6 +1908,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
+DECL|macro|SET_VISIBLE (action,condition)
+define|#
+directive|define
+name|SET_VISIBLE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_visible (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"image-duplicate"
@@ -2033,6 +2064,13 @@ name|image
 operator|&&
 operator|!
 name|is_indexed
+argument_list|)
+expr_stmt|;
+name|SET_VISIBLE
+argument_list|(
+literal|"image-convert-double"
+argument_list|,
+name|is_double
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -2233,6 +2271,9 @@ name|SET_SENSITIVE
 undef|#
 directive|undef
 name|SET_ACTIVE
+undef|#
+directive|undef
+name|SET_VISIBLE
 block|}
 end_function
 

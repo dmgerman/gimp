@@ -114,18 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpuiconfigurer.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee8ea80103
+DECL|enum|__anon29256f0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1570,8 +1564,6 @@ operator|->
 name|gimp
 argument_list|,
 name|NULL
-argument_list|,
-name|global_menu_factory
 argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()

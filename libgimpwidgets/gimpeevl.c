@@ -4,7 +4,7 @@ comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis an
 end_comment
 
 begin_comment
-comment|/* Introducing eevl eva, the evaluator. A straightforward recursive  * descent parser, no fuss, no new dependencies. The lexer is hand  * coded, tedious, not extremely fast but works. It evaluates the  * expression as it goes along, and does not create a parse tree or  * anything, and will not optimize anything. It uses doubles for  * precision, with the given use case, that's enough to combat any  * rounding errors (as opposed to optimizing the evalutation).  *  * It relies on external unit resolving through a callback and does  * elementary dimensionality constraint check (e.g. "2 mm + 3 px * 4  * in" is an error, as L + L^2 is a missmatch). It uses setjmp/longjmp  * for try/catch like pattern on error, it uses g_strtod() for numeric  * conversions and it's non-destructive in terms of the paramters, and  * it's reentrant.  *  * EBNF:  *  *   expression    ::= term { ('+' | '-') term }*  |  *<empty string> ;  *  *   term          ::= signed factor { ( '*' | '/' ) signed factor }* ;  *  *   signed factor ::= ( '+' | '-' )? factor ;  *  *   unit factor   ::= factor unit? ;  *  *   factor        ::= number | '(' expression ')' ;  *  *   number        ::= ? what g_strtod() consumes ? ;  *  *   unit          ::= ? what not g_strtod() consumes and not whitespace ? ;  *  * The code should match the EBNF rather closely (except for the  * non-terminal unit factor, which is inlined into factor) for  * maintainability reasons.  *  * It will allow 1++1 and 1+-1 (resulting in 2 and 0, respectively),  * but I figured one might want that, and I don't think it's going to  * throw anyone off.  */
+comment|/* Introducing eevl eva, the evaluator. A straightforward recursive  * descent parser, no fuss, no new dependencies. The lexer is hand  * coded, tedious, not extremely fast but works. It evaluates the  * expression as it goes along, and does not create a parse tree or  * anything, and will not optimize anything. It uses doubles for  * precision, with the given use case, that's enough to combat any  * rounding errors (as opposed to optimizing the evaluation).  *  * It relies on external unit resolving through a callback and does  * elementary dimensionality constraint check (e.g. "2 mm + 3 px * 4  * in" is an error, as L + L^2 is a missmatch). It uses setjmp/longjmp  * for try/catch like pattern on error, it uses g_strtod() for numeric  * conversions and it's non-destructive in terms of the parameters, and  * it's reentrant.  *  * EBNF:  *  *   expression    ::= term { ('+' | '-') term }*  |  *<empty string> ;  *  *   term          ::= signed factor { ( '*' | '/' ) signed factor }* ;  *  *   signed factor ::= ( '+' | '-' )? factor ;  *  *   unit factor   ::= factor unit? ;  *  *   factor        ::= number | '(' expression ')' ;  *  *   number        ::= ? what g_strtod() consumes ? ;  *  *   unit          ::= ? what not g_strtod() consumes and not whitespace ? ;  *  * The code should match the EBNF rather closely (except for the  * non-terminal unit factor, which is inlined into factor) for  * maintainability reasons.  *  * It will allow 1++1 and 1+-1 (resulting in 2 and 0, respectively),  * but I figured one might want that, and I don't think it's going to  * throw anyone off.  */
 end_comment
 
 begin_include
@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287f8c8d0103
+DECL|enum|__anon2b064b690103
 block|{
 DECL|enumerator|GIMP_EEVL_TOKEN_NUM
 name|GIMP_EEVL_TOKEN_NUM
@@ -82,21 +82,21 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f8c8d0208
+DECL|struct|__anon2b064b690208
 block|{
 DECL|member|type
 name|GimpEevlTokenType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon287f8c8d030a
+DECL|union|__anon2b064b69030a
 block|{
 DECL|member|fl
 name|gdouble
 name|fl
 decl_stmt|;
 struct|struct
-DECL|struct|__anon287f8c8d0408
+DECL|struct|__anon2b064b690408
 block|{
 DECL|member|c
 specifier|const
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f8c8d0508
+DECL|struct|__anon2b064b690508
 block|{
 DECL|member|string
 specifier|const
@@ -402,7 +402,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_eevl_evaluate:  * @string:             The NULL-terminated string to be evaluated.  * @unit_resolver_proc: Unit resolver callback.  * @result:             Result of evaluation.  * @data:               Data passed to unit resolver.  * @error_pos:          Will point to the poisiton within the string,  *                      before which the parse / evaluation error  *                      occurred. Will be set to null of no error occurred.  * @error_message:      Will point to a static string with a semi-descriptive  *                      error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two menas in^2).  **/
+comment|/**  * gimp_eevl_evaluate:  * @string:             The NULL-terminated string to be evaluated.  * @unit_resolver_proc: Unit resolver callback.  * @result:             Result of evaluation.  * @data:               Data passed to unit resolver.  * @error_pos:          Will point to the positon within the string,  *                      before which the parse / evaluation error  *                      occurred. Will be set to null of no error occurred.  * @error_message:      Will point to a static string with a semi-descriptive  *                      error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two means in^2).  **/
 end_comment
 
 begin_function
@@ -795,7 +795,7 @@ argument_list|(
 name|eva
 argument_list|)
 decl_stmt|;
-comment|/* If dimensions missmatch, attempt default unit assignent */
+comment|/* If dimensions missmatch, attempt default unit assignment */
 if|if
 condition|(
 name|new_term
@@ -1458,7 +1458,7 @@ operator|==
 literal|'-'
 condition|)
 block|{
-comment|/* Snatch these before the g_strtod() does, othewise they might        * be used in a numeric conversion.        */
+comment|/* Snatch these before the g_strtod() does, otherwise they might        * be used in a numeric conversion.        */
 name|gimp_eevl_lex_accept_count
 argument_list|(
 name|eva

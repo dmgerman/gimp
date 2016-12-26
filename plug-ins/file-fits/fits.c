@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288130f10108
+DECL|struct|__anon29f5dc980108
 block|{
 DECL|member|replace
 name|gint
@@ -3469,7 +3469,7 @@ name|datamax
 operator|=
 literal|4294967295.0
 expr_stmt|;
-comment|/* .0 to slinence gcc */
+comment|/* .0 to silence gcc */
 break|break;
 case|case
 operator|-

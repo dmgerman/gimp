@@ -432,6 +432,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|_gimp_image_free_color_transforms
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|_gimp_image_update_color_profile
 parameter_list|(
 name|GimpImage

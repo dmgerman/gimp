@@ -102,7 +102,7 @@ block|,
 block|{
 literal|"error-console-clear"
 block|,
-name|GIMP_STOCK_EDIT_CLEAR
+literal|"edit-clear"
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|{
 block|{
 literal|"error-console-save-all"
 block|,
-name|GIMP_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ block|,
 block|{
 literal|"error-console-save-selection"
 block|,
-name|GIMP_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(

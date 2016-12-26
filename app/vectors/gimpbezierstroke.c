@@ -1572,7 +1572,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* subdivided 0-6 contains the bezier segement subdivided at<position> */
+comment|/* subdivided 0-6 contains the bezier segment subdivided at<position> */
 name|list
 operator|=
 name|segment_start

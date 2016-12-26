@@ -954,6 +954,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_layer_can_lock_alpha
+argument_list|(
+name|new_layer
+argument_list|)
+condition|)
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|new_layer

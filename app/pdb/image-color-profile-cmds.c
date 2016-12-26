@@ -1811,7 +1811,7 @@ literal|"gimp-image-convert-color-profile-from-file"
 argument_list|,
 literal|"Convert the image's layers to a color profile"
 argument_list|,
-literal|"This procedure converts from the image's color profile (or the default RGB or grayscale profile if none is set) to an ICC profile precified by 'uri'. Only RGB and grayscale color profiles are accepted, according to the image's type."
+literal|"This procedure converts from the image's color profile (or the default RGB or grayscale profile if none is set) to an ICC profile specified by 'uri'. Only RGB and grayscale color profiles are accepted, according to the image's type."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

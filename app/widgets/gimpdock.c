@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -133,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a87a580103
+DECL|enum|__anon287ff6b20103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1396,6 +1390,10 @@ argument_list|(
 name|source
 argument_list|)
 decl_stmt|;
+name|GimpDialogFactory
+modifier|*
+name|factory
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dockbook
@@ -1501,11 +1499,21 @@ name|dockable
 argument_list|)
 expr_stmt|;
 comment|/* Create a new dockbook */
+name|factory
+operator|=
+name|gimp_dock_get_dialog_factory
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|global_menu_factory
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
+name|factory
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
@@ -1959,9 +1967,12 @@ name|dock_window
 condition|)
 name|dialog_factory
 operator|=
-name|gimp_dock_window_get_dialog_factory
+name|gimp_dock_container_get_dialog_factory
+argument_list|(
+name|GIMP_DOCK_CONTAINER
 argument_list|(
 name|dock_window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

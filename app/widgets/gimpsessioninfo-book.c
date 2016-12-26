@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdialogfactory.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a79910103
+DECL|enum|__anon2b3bf1ac0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -817,6 +811,14 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
+name|GimpDialogFactory
+modifier|*
+name|dialog_factory
+decl_stmt|;
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dockbook
@@ -849,11 +851,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|dialog_factory
+operator|=
+name|gimp_dock_get_dialog_factory
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
+name|menu_factory
+operator|=
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
+name|dialog_factory
+argument_list|)
+expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|global_menu_factory
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book

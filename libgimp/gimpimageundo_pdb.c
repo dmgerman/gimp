@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_thaw:  * @image_ID: The image.  *  * Thaw the image's undo stack.  *  * This procedure thaws the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with gimp_image_undo_freeze() to temporarily freeze an  * image undo stack. gimp_image_undo_thaw() does NOT free the undo  * stack as gimp_image_undo_enable() does, so is suited for situations  * where one wishes to leave the undo stack in the same state in which  * one found it despite non-destructively playing with the image in the  * meantime. An example would be in-situ plugin previews. Balancing  * freezes and thaws and ensuring image consistancy is the  * responsibility of the caller.  *  * Returns: TRUE if the image undo has been thawed.  **/
+comment|/**  * gimp_image_undo_thaw:  * @image_ID: The image.  *  * Thaw the image's undo stack.  *  * This procedure thaws the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with gimp_image_undo_freeze() to temporarily freeze an  * image undo stack. gimp_image_undo_thaw() does NOT free the undo  * stack as gimp_image_undo_enable() does, so is suited for situations  * where one wishes to leave the undo stack in the same state in which  * one found it despite non-destructively playing with the image in the  * meantime. An example would be in-situ plugin previews. Balancing  * freezes and thaws and ensuring image consistency is the  * responsibility of the caller.  *  * Returns: TRUE if the image undo has been thawed.  **/
 end_comment
 
 begin_function

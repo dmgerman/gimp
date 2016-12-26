@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9de64e0103
+DECL|enum|__anon295b415c0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9de64e0203
+DECL|enum|__anon295b415c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -321,6 +321,18 @@ parameter_list|,
 name|gint64
 modifier|*
 name|gui_size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_data_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -576,6 +588,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+init|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -652,6 +673,18 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_data_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|name_editable
+operator|=
+name|TRUE
+expr_stmt|;
+name|viewable_class
+operator|->
+name|is_name_editable
+operator|=
+name|gimp_data_is_name_editable
 expr_stmt|;
 name|klass
 operator|->
@@ -1368,6 +1401,29 @@ end_function
 
 begin_function
 specifier|static
+name|gboolean
+DECL|function|gimp_data_is_name_editable (GimpViewable * viewable)
+name|gimp_data_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+return|return
+name|gimp_data_is_writable
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gimp_data_real_dirty (GimpData * data)
 name|gimp_data_real_dirty
@@ -1801,9 +1857,11 @@ operator|!
 name|identifier
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Failed to convert '%s' to utf8.\n"
+literal|"%s: failed to convert '%s' to utf8.\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)

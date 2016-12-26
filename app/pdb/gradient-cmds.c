@@ -6780,7 +6780,7 @@ name|procedure
 argument_list|,
 literal|"gimp-gradient-get-custom-samples"
 argument_list|,
-literal|"Sample the spacified gradient in custom positions."
+literal|"Sample the specified gradient in custom positions."
 argument_list|,
 literal|"This procedure samples the active gradient in the specified number of points. The procedure will sample the gradient in the specified positions from the list. The left endpoint of the gradient corresponds to position 0.0, and the right endpoint corresponds to 1.0. The procedure returns a list of floating-point values which correspond to the RGBA values for each sample."
 argument_list|,
@@ -7617,7 +7617,7 @@ literal|"gimp-gradient-segment-set-left-pos"
 argument_list|,
 literal|"Sets the left endpoint position of the specified segment"
 argument_list|,
-literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segement.\n"
+literal|"This procedure sets the left endpoint position of the specified segment of the specified gradient. The final position will be between the position of the middle point to the left to the middle point of the current segment.\n"
 literal|"This procedure returns the final position."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
@@ -9760,7 +9760,7 @@ literal|"gimp-gradient-segment-range-move"
 argument_list|,
 literal|"Move the position of an entire segment range by a delta."
 argument_list|,
-literal|"This funtions moves the position of an entire segment range by a delta. The actual delta (which is returned) will be limited by the control points of the neighboring segments."
+literal|"This function moves the position of an entire segment range by a delta. The actual delta (which is returned) will be limited by the control points of the neighboring segments."
 argument_list|,
 literal|"Shlomi Fish<shlomif@iglu.org.il>"
 argument_list|,

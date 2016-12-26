@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f3fd40103
+DECL|enum|__anon2ad6cd7f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -759,6 +759,11 @@ argument_list|,
 literal|"gradient-reverse"
 argument_list|,
 literal|"gimp-gradient-editor"
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit this gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -171,21 +171,6 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_free_select_tool_select
-parameter_list|(
-name|GimpFreeSelectTool
-modifier|*
-name|free_sel
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_free_select_tool_get_points
 parameter_list|(
 name|GimpFreeSelectTool

@@ -286,19 +286,19 @@ value|"gimp-edit-paste-into"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW
-define|#
-directive|define
-name|GIMP_HELP_EDIT_PASTE_AS_NEW
-value|"gimp-edit-paste-as-new"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 define|#
 directive|define
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 value|"gimp-edit-paste-as-new-layer"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
+value|"gimp-edit-paste-as-new-image"
 end_define
 
 begin_define
@@ -1302,6 +1302,14 @@ value|"gimp-layer-linked"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_LAYER_COLOR_TAG
+value|"gimp-layer-color-tag"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_OPACITY
 define|#
 directive|define
@@ -1622,6 +1630,30 @@ value|"gimp-channel-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_CHANNEL_VISIBLE
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_VISIBLE
+value|"gimp-channel-visible"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_CHANNEL_LINKED
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_LINKED
+value|"gimp-channel-linked"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_CHANNEL_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_CHANNEL_COLOR_TAG
+value|"gimp-channel-color-tag"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_CHANNEL_LOCK_PIXELS
 define|#
 directive|define
@@ -1795,6 +1827,14 @@ define|#
 directive|define
 name|GIMP_HELP_PATH_LINKED
 value|"gimp-path-linked"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATH_COLOR_TAG
+define|#
+directive|define
+name|GIMP_HELP_PATH_COLOR_TAG
+value|"gimp-path-color-tag"
 end_define
 
 begin_define
@@ -2502,6 +2542,14 @@ value|"gimp-tool-preset-editor-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_EDITOR_EDIT_ACTIVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_EDITOR_EDIT_ACTIVE
+value|"gimp-tool-preset-editor-edit-active"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DYNAMICS_DIALOG
 define|#
 directive|define
@@ -3150,11 +3198,19 @@ value|"gimp-buffer-paste-into"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW
+DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
 define|#
 directive|define
-name|GIMP_HELP_BUFFER_PASTE_AS_NEW
-value|"gimp-buffer-paste-as-new"
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
+value|"gimp-buffer-paste-as-new-layer"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
+value|"gimp-buffer-paste-as-new-image"
 end_define
 
 begin_define
@@ -3211,6 +3267,14 @@ define|#
 directive|define
 name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
 value|"gimp-tool-preset-show-in-file-manager"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PRESET_SAVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PRESET_SAVE
+value|"gimp-tool-preset-save"
 end_define
 
 begin_define
@@ -3491,6 +3555,14 @@ define|#
 directive|define
 name|GIMP_HELP_PREFS_TOOLBOX
 value|"gimp-prefs-toolbox"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_DIALOG_DEFAULTS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_DIALOG_DEFAULTS
+value|"gimp-prefs-dialog-defaults"
 end_define
 
 begin_define

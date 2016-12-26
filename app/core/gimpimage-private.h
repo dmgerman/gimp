@@ -177,6 +177,10 @@ name|color_profile
 decl_stmt|;
 comment|/*  image's color profile        */
 comment|/*  Cached color transforms: from layer to sRGB u8 and double, and back    */
+DECL|member|color_transforms_created
+name|gboolean
+name|color_transforms_created
+decl_stmt|;
 DECL|member|transform_to_srgb_u8
 name|GimpColorTransform
 modifier|*

@@ -296,7 +296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_table_attach_aligned:  * @table:      The #GtkTable the widgets will be attached to.  * @column:     The column to start with.  * @row:        The row to attach the widgets.  * @label_text: The text for the #GtkLabel which will be attached left of  *              the widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertival alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @colspan:    The number of columns the widget will use.  * @left_align: %TRUE if the widget should be left-aligned.  *  * Note that the @label_text can be %NULL and that the widget will be  * attached starting at (@column + 1) in this case, too.  *  * Returns: The created #GtkLabel.  **/
+comment|/**  * gimp_table_attach_aligned:  * @table:      The #GtkTable the widgets will be attached to.  * @column:     The column to start with.  * @row:        The row to attach the widgets.  * @label_text: The text for the #GtkLabel which will be attached left of  *              the widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertical alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @colspan:    The number of columns the widget will use.  * @left_align: %TRUE if the widget should be left-aligned.  *  * Note that the @label_text can be %NULL and that the widget will be  * attached starting at (@column + 1) in this case, too.  *  * Returns: The created #GtkLabel.  **/
 end_comment
 
 begin_function
@@ -359,14 +359,22 @@ argument_list|(
 name|label_text
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 name|xalign
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_yalign
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
 name|yalign
 argument_list|)
@@ -526,7 +534,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_label_set_attributes:  * @label: a #GtkLabel  * @...:   a list of PangoAttrType and value pairs terminated by -1.  *  * Sets Pango attributes on a #GtkLabel in a more convenient way than  * gtk_label_set_attributes().  *  * This function is useful if you want to change the font attributes  * of a #GtkLabel. This is an alternative to using PangoMarkup which  * is slow to parse and akward to handle in an i18n-friendly way.  *  * The attributes are set on the complete label, from start to end. If  * you need to set attributes on part of the label, you will have to  * use the PangoAttributes API directly.  *  * Since: 2.2  **/
+comment|/**  * gimp_label_set_attributes:  * @label: a #GtkLabel  * @...:   a list of PangoAttrType and value pairs terminated by -1.  *  * Sets Pango attributes on a #GtkLabel in a more convenient way than  * gtk_label_set_attributes().  *  * This function is useful if you want to change the font attributes  * of a #GtkLabel. This is an alternative to using PangoMarkup which  * is slow to parse and awkward to handle in an i18n-friendly way.  *  * The attributes are set on the complete label, from start to end. If  * you need to set attributes on part of the label, you will have to  * use the PangoAttributes API directly.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1151,7 +1159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2775050108
+DECL|struct|__anon2a0fd2570108
 block|{
 DECL|member|widget
 name|GtkWidget

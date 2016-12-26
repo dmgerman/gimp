@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a474350103
+DECL|enum|__anon28c567260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1825,16 +1825,14 @@ argument_list|(
 name|message
 argument_list|)
 decl_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes

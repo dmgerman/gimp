@@ -1460,7 +1460,7 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* Re calc which object point we are lookin at */
+comment|/* Re calc which object point we are looking at */
 name|scan_obj_points
 argument_list|(
 name|operation_obj
@@ -1697,7 +1697,7 @@ name|gboolean
 name|shift_down
 parameter_list|)
 block|{
-comment|/* Must do diffent things depending on object type */
+comment|/* Must do different things depending on object type */
 comment|/* but must have object to operate on! */
 comment|/* Special case - if shift own and move_obj then move ALL objects */
 if|if

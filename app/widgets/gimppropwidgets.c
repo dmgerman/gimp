@@ -1520,7 +1520,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  * @label:         Label of the created #GimpSpinScale.  * @step_increment:  * @page_increment:  * @digits:  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
+comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  * @label:         Label of the created #GimpSpinScale.  * @step_increment:  * @page_increment:  * @digits:  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  * The property's lower and upper values will be used as min/max of the  * #GimpSpinScale.  *  * Return value:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
 end_comment
 
 begin_function
@@ -1593,6 +1593,7 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* The generic min and max for the property. */
 if|if
 condition|(
 operator|!
@@ -1617,6 +1618,7 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* Get label. */
 if|if
 condition|(
 operator|!
@@ -1629,6 +1631,7 @@ argument_list|(
 name|param_spec
 argument_list|)
 expr_stmt|;
+comment|/* Also usable on int properties. */
 if|if
 condition|(
 operator|!
@@ -3915,7 +3918,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1df49a0108
+DECL|struct|__anon27c9abe10108
 block|{
 DECL|member|config
 name|GObject
@@ -5523,20 +5526,25 @@ name|NULL
 decl_stmt|;
 name|param_spec
 operator|=
-name|g_object_class_find_property
-argument_list|(
-name|G_OBJECT_GET_CLASS
+name|find_param_spec
 argument_list|(
 name|config
-argument_list|)
 argument_list|,
 name|property_name
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|param_spec
-operator|&&
+condition|)
+return|return
+name|NULL
+return|;
+if|if
+condition|(
 name|G_IS_PARAM_SPEC_STRING
 argument_list|(
 name|param_spec
@@ -5602,10 +5610,6 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|value
-decl_stmt|;
-name|gchar
-modifier|*
 name|path
 decl_stmt|;
 name|g_object_get
@@ -5615,29 +5619,9 @@ argument_list|,
 name|property_name
 argument_list|,
 operator|&
-name|value
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|path
-operator|=
-name|value
-condition|?
-name|gimp_config_path_expand
-argument_list|(
-name|value
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
-argument_list|)
-else|:
-name|NULL
-expr_stmt|;
-name|g_free
-argument_list|(
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -5647,9 +5631,11 @@ condition|)
 block|{
 name|file
 operator|=
-name|g_file_new_for_path
+name|gimp_file_new_for_config_path
 argument_list|(
 name|path
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5867,9 +5853,11 @@ name|file
 condition|)
 name|path
 operator|=
-name|g_file_get_path
+name|gimp_file_get_config_path
 argument_list|(
 name|file
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -5969,10 +5957,6 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|value
-decl_stmt|;
-name|gchar
-modifier|*
 name|path
 decl_stmt|;
 name|g_object_get
@@ -5984,29 +5968,9 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|path
-operator|=
-name|value
-condition|?
-name|gimp_config_path_expand
-argument_list|(
-name|value
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
-argument_list|)
-else|:
-name|NULL
-expr_stmt|;
-name|g_free
-argument_list|(
-name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -6016,9 +5980,11 @@ condition|)
 block|{
 name|file
 operator|=
-name|g_file_new_for_path
+name|gimp_file_new_for_config_path
 argument_list|(
 name|path
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

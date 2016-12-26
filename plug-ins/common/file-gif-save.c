@@ -103,7 +103,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8899960103
+DECL|enum|__anon2c0450800103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8899960203
+DECL|enum|__anon2c0450800203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8899960308
+DECL|struct|__anon2c0450800308
 block|{
 DECL|member|interlace
 name|gint
@@ -403,7 +403,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run-mode",        "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",           "Image to export" }, \     { GIMP_PDB_DRAWABLE, "drawable",        "Drawable to export" }, \     { GIMP_PDB_STRING,   "uri",             "The name of the URI to export the image in" }, \     { GIMP_PDB_STRING,   "raw-uri",         "The name of the URI to export the image in" }, \     { GIMP_PDB_INT32,    "interlace",       "Try to export as interlaced" }, \     { GIMP_PDB_INT32,    "loop",            "(animated gif) loop infinitely" }, \     { GIMP_PDB_INT32,    "default-delay",   "(animated gif) Default delay between framese in milliseconds" }, \     { GIMP_PDB_INT32,    "default-dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
+value|{ GIMP_PDB_INT32,    "run-mode",        "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",           "Image to export" }, \     { GIMP_PDB_DRAWABLE, "drawable",        "Drawable to export" }, \     { GIMP_PDB_STRING,   "uri",             "The name of the URI to export the image in" }, \     { GIMP_PDB_STRING,   "raw-uri",         "The name of the URI to export the image in" }, \     { GIMP_PDB_INT32,    "interlace",       "Try to export as interlaced" }, \     { GIMP_PDB_INT32,    "loop",            "(animated gif) loop infinitely" }, \     { GIMP_PDB_INT32,    "default-delay",   "(animated gif) Default delay between frames in milliseconds" }, \     { GIMP_PDB_INT32,    "default-dispose", "(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=replace)" }
 end_define
 
 begin_function
@@ -4295,10 +4295,7 @@ argument_list|(
 name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
-operator|&
-name|gsvals
-operator|.
-name|default_delay
+name|value_pointer
 argument_list|)
 expr_stmt|;
 return|return
@@ -5037,18 +5034,12 @@ literal|"as-animation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|toggle
-argument_list|,
-name|animation_supported
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|animation_supported
 condition|)
+block|{
 name|gimp_help_set_help_data
 argument_list|(
 name|toggle
@@ -5062,6 +5053,25 @@ literal|"layer."
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Make sure the checkbox is not checked from session data. */
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+name|animation_supported
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property

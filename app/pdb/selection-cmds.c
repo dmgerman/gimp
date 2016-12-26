@@ -2445,7 +2445,7 @@ literal|"gimp-selection-bounds"
 argument_list|,
 literal|"Find the bounding box of the current selection."
 argument_list|,
-literal|"This procedure returns whether there is a selection for the specified image. If there is one, the upper left and lower right corners of the bounding box are returned. These coordinates are relative to the image. Please note that the pixel specified by the lower righthand coordinate of the bounding box is not part of the selection. The selection ends at the upper left corner of this pixel. This means the width of the selection can be calculated as (x2 - x1), its height as (y2 - y1)."
+literal|"This procedure returns whether there is a selection for the specified image. If there is one, the upper left and lower right corners of the bounding box are returned. These coordinates are relative to the image. Please note that the pixel specified by the lower right coordinate of the bounding box is not part of the selection. The selection ends at the upper left corner of this pixel. This means the width of the selection can be calculated as (x2 - x1), its height as (y2 - y1)."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3663,7 +3663,7 @@ literal|"gimp-selection-shrink"
 argument_list|,
 literal|"Shrink the image's selection"
 argument_list|,
-literal|"This procedure shrinks the selection. Shrinking invovles trimming the existing selection boundary on all sides by the specified number of pixels."
+literal|"This procedure shrinks the selection. Shrinking involves trimming the existing selection boundary on all sides by the specified number of pixels."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

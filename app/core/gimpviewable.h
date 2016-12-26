@@ -160,6 +160,10 @@ name|gchar
 modifier|*
 name|name_changed_signal
 decl_stmt|;
+DECL|member|name_editable
+name|gboolean
+name|name_editable
+decl_stmt|;
 comment|/*  signals  */
 DECL|member|invalidate_preview
 name|void
@@ -372,6 +376,18 @@ name|gchar
 modifier|*
 modifier|*
 name|tooltip
+parameter_list|)
+function_decl|;
+DECL|member|is_name_editable
+name|gboolean
+function_decl|(
+modifier|*
+name|is_name_editable
+function_decl|)
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|)
 function_decl|;
 DECL|member|get_children
@@ -710,6 +726,17 @@ name|gchar
 modifier|*
 modifier|*
 name|tooltip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_viewable_is_name_editable
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|)
 function_decl|;
 end_function_decl

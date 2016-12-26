@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf711380103
+DECL|enum|__anon2b436c3c0103
 block|{
 comment|/*  positive values indicate the lenght of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE

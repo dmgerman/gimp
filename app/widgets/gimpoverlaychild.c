@@ -684,7 +684,14 @@ name|attributes
 operator|.
 name|event_mask
 operator|=
+operator|(
+name|gtk_widget_get_events
+argument_list|(
+name|widget
+argument_list|)
+operator||
 name|GDK_EXPOSURE_MASK
+operator|)
 expr_stmt|;
 name|attributes
 operator|.

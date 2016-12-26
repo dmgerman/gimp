@@ -3715,7 +3715,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * This is the delta-compression method from the classic Autodesk  * Animator.  It's basically the RLE method from above, but it  * supports skiping unchanged lines at the beginning and end of an  * image, and unchanged pixels in a line This chunk is used in FLI  * files.  */
+comment|/*  * This is the delta-compression method from the classic Autodesk  * Animator.  It's basically the RLE method from above, but it  * supports skipping unchanged lines at the beginning and end of an  * image, and unchanged pixels in a line. This chunk is used in FLI  * files.  */
 end_comment
 
 begin_function

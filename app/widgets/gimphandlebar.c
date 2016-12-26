@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d3c1c0103
+DECL|enum|__anon273bb4af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -808,6 +808,25 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+comment|/* Make all sliders well visible even on similar colored            * backgrounds.            */
+if|if
+condition|(
+name|i
+operator|==
+literal|0
+condition|)
+name|cairo_set_source_rgb
+argument_list|(
+name|cr
+argument_list|,
+literal|0.6
+argument_list|,
+literal|0.6
+argument_list|,
+literal|0.6
+argument_list|)
+expr_stmt|;
+else|else
 name|cairo_set_source_rgb
 argument_list|(
 name|cr

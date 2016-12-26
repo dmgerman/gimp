@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe8e030108
+DECL|struct|__anon2a05dd350108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe8e030208
+DECL|struct|__anon2a05dd350208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbe8e030303
+DECL|enum|__anon2a05dd350303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe8e030403
+DECL|enum|__anon2a05dd350403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe8e030503
+DECL|enum|__anon2a05dd350503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe8e030603
+DECL|enum|__anon2a05dd350603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe8e030703
+DECL|enum|__anon2a05dd350703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe8e030808
+DECL|struct|__anon2a05dd350808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe8e030908
+DECL|struct|__anon2a05dd350908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe8e030a08
+DECL|struct|__anon2a05dd350a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1292,7 +1292,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bbe8e030b08
+DECL|struct|__anon2a05dd350b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -4960,16 +4960,14 @@ name|description
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -7368,14 +7366,22 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|1.0
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_yalign
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|)

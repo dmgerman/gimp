@@ -1809,6 +1809,9 @@ name|GimpBuffer
 modifier|*
 name|buffer
 decl_stmt|;
+name|GimpPasteType
+name|paste_type
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1893,6 +1896,10 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|paste_type
+operator|=
+name|GIMP_PASTE_TYPE_FLOATING
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_get_active_drawable
@@ -1931,16 +1938,21 @@ operator|->
 name|display
 argument_list|)
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|GIMP_MESSAGE_INFO
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot modify the pixels of layer groups."
+literal|"Pasted as new layer because the "
+literal|"target is a layer group."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+name|paste_type
+operator|=
+name|GIMP_PASTE_TYPE_NEW_LAYER
+expr_stmt|;
 block|}
+elseif|else
 if|if
 condition|(
 name|gimp_item_is_content_locked
@@ -1971,11 +1983,15 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"The active layer's pixels are locked."
+literal|"Pasted as new layer because the "
+literal|"target's pixels are locked."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+name|paste_type
+operator|=
+name|GIMP_PASTE_TYPE_NEW_LAYER
+expr_stmt|;
 block|}
 block|}
 name|buffer
@@ -2009,9 +2025,12 @@ name|image
 argument_list|,
 name|drawable
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|buffer
+argument_list|)
 argument_list|,
-name|FALSE
+name|paste_type
 argument_list|,
 name|x
 argument_list|,

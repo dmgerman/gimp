@@ -367,7 +367,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixel_fetcher_destroy:  * @pf: a pointer to a previously initialized #GimpPixelFetcher.  *  * Close a previously initializd pixel region.  **/
+comment|/**  * gimp_pixel_fetcher_destroy:  * @pf: a pointer to a previously initialized #GimpPixelFetcher.  *  * Close a previously initialized pixel region.  **/
 end_comment
 
 begin_function
@@ -415,7 +415,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixel_fetcher_set_edge_mode:  * @pf:   a pointer to a previously initialized #GimpPixelFetcher.  * @mode: the new edge mode from #GimpPixelFetcherEdgeMode.  *  * Change the edage mode of a previously initialized pixel region.  **/
+comment|/**  * gimp_pixel_fetcher_set_edge_mode:  * @pf:   a pointer to a previously initialized #GimpPixelFetcher.  * @mode: the new edge mode from #GimpPixelFetcherEdgeMode.  *  * Change the edge mode of a previously initialized pixel region.  **/
 end_comment
 
 begin_function

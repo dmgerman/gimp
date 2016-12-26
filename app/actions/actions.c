@@ -756,7 +756,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 name|fonts_actions_setup
 block|,

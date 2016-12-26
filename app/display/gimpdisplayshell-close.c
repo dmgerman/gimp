@@ -592,17 +592,6 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"_Discard Changes"
-argument_list|)
-argument_list|,
-name|GTK_RESPONSE_CLOSE
-argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
 operator|(
 name|file
 condition|?
@@ -612,6 +601,17 @@ name|GTK_STOCK_SAVE_AS
 operator|)
 argument_list|,
 name|RESPONSE_SAVE
+argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+name|_
+argument_list|(
+literal|"_Discard Changes"
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_CLOSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -791,16 +791,14 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_line_wrap

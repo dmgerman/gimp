@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -271,10 +277,6 @@ name|GimpContext
 modifier|*
 name|user_context
 decl_stmt|;
-name|GimpDeviceInfo
-modifier|*
-name|current_device
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -445,6 +447,23 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|devices_share_tool
+condition|)
+block|{
+name|GimpDeviceInfo
+modifier|*
+name|current_device
+decl_stmt|;
 name|current_device
 operator|=
 name|gimp_device_manager_get_current_device
@@ -474,6 +493,7 @@ argument_list|,
 name|user_context
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29328e720103
+DECL|enum|__anon2b80cb070103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29328e720203
+DECL|enum|__anon2b80cb070203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -128,9 +128,18 @@ enum|;
 end_enum
 
 begin_typedef
+DECL|typedef|ModuleDialog
 typedef|typedef
+name|struct
+name|_ModuleDialog
+name|ModuleDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ModuleDialog
 struct|struct
-DECL|struct|__anon29328e720308
+name|_ModuleDialog
 block|{
 DECL|member|gimp
 name|Gimp
@@ -175,11 +184,9 @@ name|GtkWidget
 modifier|*
 name|error_label
 decl_stmt|;
-DECL|typedef|ModuleDialog
 block|}
-name|ModuleDialog
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -199,7 +206,7 @@ name|response_id
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,7 +222,7 @@ name|widget
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,7 +238,7 @@ name|sel
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -252,7 +259,7 @@ name|path_string
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -286,7 +293,7 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -306,7 +313,7 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -326,7 +333,7 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,7 +345,7 @@ name|dialog_info_init
 parameter_list|(
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -362,9 +369,13 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|ModuleDialog
+modifier|*
+name|private
+decl_stmt|;
 name|GtkWidget
 modifier|*
-name|shell
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -381,10 +392,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|image
-decl_stmt|;
-name|ModuleDialog
-modifier|*
-name|dialog
 decl_stmt|;
 name|GtkTreeSelection
 modifier|*
@@ -411,20 +418,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|=
 name|g_slice_new0
 argument_list|(
 name|ModuleDialog
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|=
 name|gimp
 expr_stmt|;
-name|shell
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -458,7 +465,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|shell
+name|dialog
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
@@ -471,7 +478,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|shell
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -480,7 +487,7 @@ argument_list|(
 name|dialog_response
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -510,7 +517,7 @@ name|gtk_dialog_get_content_area
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|shell
+name|dialog
 argument_list|)
 argument_list|)
 argument_list|)
@@ -529,7 +536,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|hint
 operator|=
@@ -549,7 +556,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|hint
 argument_list|,
@@ -568,7 +575,7 @@ name|write_modulerc
 condition|)
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|hint
 argument_list|)
@@ -634,7 +641,7 @@ argument_list|(
 name|sw
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|list
 operator|=
@@ -655,7 +662,7 @@ name|gtk_tree_view_new_with_model
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -663,7 +670,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -688,7 +695,7 @@ name|modules
 argument_list|,
 name|make_list_item
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|rend
@@ -707,7 +714,7 @@ argument_list|(
 name|dialog_enabled_toggled
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|col
@@ -784,7 +791,7 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|table
 operator|=
@@ -801,7 +808,7 @@ name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|table
 argument_list|)
@@ -816,7 +823,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|table
 argument_list|,
@@ -829,12 +836,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|table
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|error_box
 operator|=
@@ -852,7 +859,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|error_box
 argument_list|,
@@ -876,7 +883,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_box
 argument_list|)
@@ -895,7 +902,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|error_label
 operator|=
@@ -904,30 +911,28 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_box
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|error_label
 argument_list|,
@@ -940,16 +945,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_label
 argument_list|)
 expr_stmt|;
 name|dialog_info_init
 argument_list|(
-name|dialog
+name|private
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|table
 argument_list|)
@@ -960,11 +965,11 @@ name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|selected
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|sel
@@ -988,7 +993,7 @@ argument_list|(
 name|dialog_select_callback
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 if|if
@@ -997,7 +1002,7 @@ name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1028,7 +1033,7 @@ argument_list|(
 name|dialog_info_add
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1044,7 +1049,7 @@ argument_list|(
 name|dialog_info_remove
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1060,12 +1065,12 @@ argument_list|(
 name|dialog_info_update
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|shell
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1074,11 +1079,11 @@ argument_list|(
 name|dialog_destroy_callback
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 return|return
-name|shell
+name|dialog
 return|;
 block|}
 end_function
@@ -1090,7 +1095,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_response (GtkWidget * widget,gint response_id,ModuleDialog * dialog)
+DECL|function|dialog_response (GtkWidget * widget,gint response_id,ModuleDialog * private)
 name|dialog_response
 parameter_list|(
 name|GtkWidget
@@ -1102,7 +1107,7 @@ name|response_id
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 if|if
@@ -1113,7 +1118,7 @@ name|RESPONSE_REFRESH
 condition|)
 name|gimp_modules_refresh
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|gimp
 argument_list|)
@@ -1130,7 +1135,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_destroy_callback (GtkWidget * widget,ModuleDialog * dialog)
+DECL|function|dialog_destroy_callback (GtkWidget * widget,ModuleDialog * private)
 name|dialog_destroy_callback
 parameter_list|(
 name|GtkWidget
@@ -1139,12 +1144,12 @@ name|widget
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|->
@@ -1152,12 +1157,12 @@ name|module_db
 argument_list|,
 name|dialog_info_add
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|->
@@ -1165,12 +1170,12 @@ name|module_db
 argument_list|,
 name|dialog_info_remove
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|->
@@ -1178,14 +1183,14 @@ name|module_db
 argument_list|,
 name|dialog_info_update
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
 name|ModuleDialog
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 block|}
@@ -1194,7 +1199,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_select_callback (GtkTreeSelection * sel,ModuleDialog * dialog)
+DECL|function|dialog_select_callback (GtkTreeSelection * sel,ModuleDialog * private)
 name|dialog_select_callback
 parameter_list|(
 name|GtkTreeSelection
@@ -1203,7 +1208,7 @@ name|sel
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -1230,7 +1235,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1258,14 +1263,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dialog
+name|private
 operator|->
 name|selected
 operator|==
 name|module
 condition|)
 return|return;
-name|dialog
+name|private
 operator|->
 name|selected
 operator|=
@@ -1273,17 +1278,17 @@ name|module
 expr_stmt|;
 name|dialog_info_update
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|selected
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 block|}
@@ -1293,7 +1298,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_enabled_toggled (GtkCellRendererToggle * celltoggle,const gchar * path_string,ModuleDialog * dialog)
+DECL|function|dialog_enabled_toggled (GtkCellRendererToggle * celltoggle,const gchar * path_string,ModuleDialog * private)
 name|dialog_enabled_toggled
 parameter_list|(
 name|GtkCellRendererToggle
@@ -1307,7 +1312,7 @@ name|path_string
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GtkTreePath
@@ -1337,7 +1342,7 @@ name|gtk_tree_model_get_iter
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1367,7 +1372,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1404,7 +1409,7 @@ argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|gimp
 operator|->
@@ -1414,7 +1419,7 @@ name|TRUE
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|hint
 argument_list|)
@@ -1426,12 +1431,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_list_item_update (ModuleDialog * dialog,GtkTreeIter * iter,GimpModule * module)
+DECL|function|dialog_list_item_update (ModuleDialog * private,GtkTreeIter * iter,GimpModule * module)
 name|dialog_list_item_update
 parameter_list|(
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|,
 name|GtkTreeIter
 modifier|*
@@ -1444,7 +1449,7 @@ parameter_list|)
 block|{
 name|gtk_list_store_set
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|,
@@ -1513,7 +1518,7 @@ name|data
 decl_stmt|;
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 init|=
 name|user_data
 decl_stmt|;
@@ -1523,11 +1528,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|dialog
+name|private
 operator|->
 name|selected
 condition|)
-name|dialog
+name|private
 operator|->
 name|selected
 operator|=
@@ -1535,7 +1540,7 @@ name|module
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|,
@@ -1545,7 +1550,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_list_item_update
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 operator|&
 name|iter
@@ -1559,7 +1564,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_info_add (GimpModuleDB * db,GimpModule * module,ModuleDialog * dialog)
+DECL|function|dialog_info_add (GimpModuleDB * db,GimpModule * module,ModuleDialog * private)
 name|dialog_info_add
 parameter_list|(
 name|GimpModuleDB
@@ -1572,14 +1577,14 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|make_list_item
 argument_list|(
 name|module
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 block|}
@@ -1588,7 +1593,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_info_remove (GimpModuleDB * db,GimpModule * module,ModuleDialog * dialog)
+DECL|function|dialog_info_remove (GimpModuleDB * db,GimpModule * module,ModuleDialog * private)
 name|dialog_info_remove
 parameter_list|(
 name|GimpModuleDB
@@ -1601,7 +1606,7 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -1615,7 +1620,7 @@ name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1635,7 +1640,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1670,7 +1675,7 @@ condition|)
 block|{
 name|gtk_list_store_remove
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|,
@@ -1687,7 +1692,7 @@ name|gtk_tree_model_iter_next
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1710,7 +1715,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_info_update (GimpModuleDB * db,GimpModule * module,ModuleDialog * dialog)
+DECL|function|dialog_info_update (GimpModuleDB * db,GimpModule * module,ModuleDialog * private)
 name|dialog_info_update
 parameter_list|(
 name|GimpModuleDB
@@ -1723,7 +1728,7 @@ name|module
 parameter_list|,
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GtkTreeModel
@@ -1732,7 +1737,7 @@ name|model
 init|=
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|list
 argument_list|)
@@ -1835,7 +1840,7 @@ name|iter_valid
 condition|)
 name|dialog_list_item_update
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 operator|&
 name|iter
@@ -1848,7 +1853,7 @@ if|if
 condition|(
 name|module
 operator|!=
-name|dialog
+name|private
 operator|->
 name|selected
 condition|)
@@ -1876,7 +1881,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -1891,7 +1896,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_label
 argument_list|)
@@ -1901,7 +1906,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_box
 argument_list|)
@@ -2029,7 +2034,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -2074,7 +2079,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_label
 argument_list|)
@@ -2090,7 +2095,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_visible
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|error_box
 argument_list|,
@@ -2103,12 +2108,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_info_init (ModuleDialog * dialog,GtkWidget * table)
+DECL|function|dialog_info_init (ModuleDialog * private,GtkWidget * table)
 name|dialog_info_init
 parameter_list|(
 name|ModuleDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -2186,16 +2191,14 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2235,7 +2238,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -2247,11 +2250,11 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -2260,15 +2263,13 @@ index|]
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_ellipsize
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -2283,12 +2284,12 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|table
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|label
 index|[
@@ -2320,7 +2321,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|label
 index|[

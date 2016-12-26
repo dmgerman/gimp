@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964903f0108
+DECL|struct|__anon29ed22690108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1435,8 +1435,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
 specifier|inline
+name|void
 DECL|function|mix_colors (const GdkColor * start,const GdkColor * end,GdkColor * target,gdouble pos)
 name|mix_colors
 parameter_list|(

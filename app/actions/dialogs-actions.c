@@ -566,7 +566,7 @@ argument_list|,
 literal|"Open paint dynamics dialog"
 argument_list|)
 block|,
-literal|"gimp-dynamics-list"
+literal|"gimp-dynamics-list|gimp-dynamics-grid"
 block|,
 name|GIMP_HELP_DYNAMICS_DIALOG
 block|}
@@ -609,7 +609,7 @@ argument_list|,
 literal|"_MyPaint Brushes"
 argument_list|)
 block|,
-literal|"<primary><shift>Y"
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -774,7 +774,7 @@ argument_list|,
 literal|"Open tool presets dialog"
 argument_list|)
 block|,
-literal|"gimp-tool-preset-list"
+literal|"gimp-tool-preset-list|gimp-tool-preset-grid"
 block|,
 name|GIMP_HELP_TOOL_PRESET_DIALOG
 block|}
@@ -782,7 +782,7 @@ block|,
 block|{
 literal|"dialogs-fonts"
 block|,
-name|GIMP_STOCK_FONT
+literal|"gtk-select-font"
 block|,
 name|NC_
 argument_list|(
@@ -860,7 +860,7 @@ block|,
 block|{
 literal|"dialogs-document-history"
 block|,
-name|GIMP_STOCK_DOCUMENT_RECENT
+literal|"document-open-recent"
 block|,
 name|NC_
 argument_list|(

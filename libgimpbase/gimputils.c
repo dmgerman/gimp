@@ -844,7 +844,7 @@ name|ret
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Calling this function mutiple times should do no harm, but it is        easier to put this here as it needs linking against ole32. */
+comment|/* Calling this function multiple times should do no harm, but it is        easier to put this here as it needs linking against ole32. */
 name|CoInitialize
 argument_list|(
 name|NULL

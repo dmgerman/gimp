@@ -759,7 +759,7 @@ name|histogram
 operator|=
 name|gimp_histogram_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

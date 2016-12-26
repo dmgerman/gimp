@@ -992,7 +992,7 @@ operator|.
 name|snap2grid
 condition|)
 block|{
-comment|/* Save point to constained point ... if button 3 down */
+comment|/* Save point to constrained point ... if button 3 down */
 if|if
 condition|(
 name|bevent

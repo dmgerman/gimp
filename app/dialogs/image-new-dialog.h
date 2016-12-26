@@ -34,7 +34,7 @@ name|image_new_dialog_set
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
+name|dialog
 parameter_list|,
 name|GimpImage
 modifier|*

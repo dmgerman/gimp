@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc9e640103
+DECL|enum|__anon279eb8fd0103
 block|{
 DECL|enumerator|GIMP_CONFIG_DUMP_NONE
 name|GIMP_CONFIG_DUMP_NONE
@@ -42,6 +42,10 @@ begin_function_decl
 name|gboolean
 name|gimp_config_dump
 parameter_list|(
+name|GObject
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpConfigDumpFormat
 name|format
 parameter_list|)

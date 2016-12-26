@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcbd0c0103
+DECL|enum|__anon2b542ad30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -487,7 +487,7 @@ name|PROP_TILE_CACHE_SIZE
 argument_list|,
 literal|"tile-cache-size"
 argument_list|,
-literal|"Tile cach size"
+literal|"Tile cache size"
 argument_list|,
 name|TILE_CACHE_SIZE_BLURB
 argument_list|,

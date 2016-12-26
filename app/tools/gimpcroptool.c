@@ -1357,6 +1357,10 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
+name|options
+operator|->
+name|fill_type
+argument_list|,
 name|w
 argument_list|,
 name|h
@@ -1377,6 +1381,8 @@ name|GIMP_CONTEXT
 argument_list|(
 name|options
 argument_list|)
+argument_list|,
+name|GIMP_FILL_TRANSPARENT
 argument_list|,
 name|x
 argument_list|,

@@ -247,31 +247,6 @@ literal|"Saves files in the OpenEXR file format"
 block|,
 literal|"This procedure saves images in the OpenEXR format, using gegl:save"
 block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"WebP image"
-argument_list|)
-block|,
-literal|"image/webp"
-block|,
-literal|"webp"
-block|,
-literal|""
-block|,
-literal|"file-webp-load"
-block|,
-literal|"Loads WebP images using GEGL"
-block|,
-literal|"This procedure loads images in WebP format, using gegl:load"
-block|,
-literal|"file-webp-save"
-block|,
-literal|"Saves WebP images using GEGL"
-block|,
-literal|"This procedure saves images in WebP format, using gegl:save"
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt

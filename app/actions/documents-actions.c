@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"documents-popup"
 block|,
-name|GIMP_STOCK_DOCUMENT_RECENT
+literal|"document-open-recent"
 block|,
 name|NC_
 argument_list|(
@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"documents-open"
 block|,
-name|GIMP_STOCK_OPEN
+literal|"document-open"
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"documents-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(

@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27e9c1c70103
+DECL|enum|__anon2afc299d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1485,9 +1485,9 @@ name|CFHistogram
 name|histogram
 decl_stmt|;
 comment|/* holds the histogram               */
-DECL|member|want_alpha_dither
+DECL|member|want_dither_alpha
 name|gboolean
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 DECL|member|error_freedom
 name|gint
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9c1c70208
+DECL|struct|__anon2afc299d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1623,7 +1623,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1644,7 +1644,7 @@ name|gint
 name|col_limit
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -1669,7 +1669,7 @@ name|GimpImageBaseType
 name|old_type
 parameter_list|,
 name|gint
-name|num_cols
+name|max_colors
 parameter_list|,
 name|GimpConvertDitherType
 name|dither_type
@@ -1682,7 +1682,7 @@ modifier|*
 name|custom_palette
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9c1c70308
+DECL|struct|__anon2afc299d0308
 block|{
 DECL|member|used_count
 name|glong
@@ -2735,30 +2735,30 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_indexed (GimpImage * image,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean text_layer_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress,GError ** error)
+DECL|function|gimp_image_convert_indexed (GimpImage * image,GimpConvertPaletteType palette_type,gint max_colors,gboolean remove_duplicates,GimpConvertDitherType dither_type,gboolean dither_alpha,gboolean dither_text_layers,GimpPalette * custom_palette,GimpProgress * progress,GError ** error)
 name|gimp_image_convert_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint
-name|num_cols
-parameter_list|,
-name|GimpConvertDitherType
-name|dither
-parameter_list|,
-name|gboolean
-name|alpha_dither
-parameter_list|,
-name|gboolean
-name|text_layer_dither
-parameter_list|,
-name|gboolean
-name|remove_dups
-parameter_list|,
 name|GimpConvertPaletteType
 name|palette_type
+parameter_list|,
+name|gint
+name|max_colors
+parameter_list|,
+name|gboolean
+name|remove_duplicates
+parameter_list|,
+name|GimpConvertDitherType
+name|dither_type
+parameter_list|,
+name|gboolean
+name|dither_alpha
+parameter_list|,
+name|gboolean
+name|dither_text_layers
 parameter_list|,
 name|GimpPalette
 modifier|*
@@ -3059,7 +3059,7 @@ name|old_type
 operator|==
 name|GIMP_GRAY
 operator|&&
-name|num_cols
+name|max_colors
 operator|==
 literal|256
 operator|&&
@@ -3068,7 +3068,7 @@ operator|==
 name|GIMP_MAKE_PALETTE
 condition|)
 block|{
-name|dither
+name|dither_type
 operator|=
 name|GIMP_NO_DITHER
 expr_stmt|;
@@ -3079,15 +3079,15 @@ name|initialize_median_cut
 argument_list|(
 name|old_type
 argument_list|,
-name|num_cols
+name|max_colors
 argument_list|,
-name|dither
+name|dither_type
 argument_list|,
 name|palette_type
 argument_list|,
 name|custom_palette
 argument_list|,
-name|alpha_dither
+name|dither_alpha
 argument_list|,
 name|progress
 argument_list|)
@@ -3176,7 +3176,7 @@ name|histogram
 argument_list|,
 name|layer
 argument_list|,
-name|alpha_dither
+name|dither_alpha
 argument_list|)
 expr_stmt|;
 block|}
@@ -3191,9 +3191,9 @@ name|histogram
 argument_list|,
 name|layer
 argument_list|,
-name|num_cols
+name|max_colors
 argument_list|,
-name|alpha_dither
+name|dither_alpha
 argument_list|,
 name|progress
 argument_list|,
@@ -3250,7 +3250,7 @@ name|initialize_median_cut
 argument_list|(
 name|old_type
 argument_list|,
-name|num_cols
+name|max_colors
 argument_list|,
 name|GIMP_NODESTRUCT_DITHER
 argument_list|,
@@ -3258,7 +3258,7 @@ name|palette_type
 argument_list|,
 name|custom_palette
 argument_list|,
-name|alpha_dither
+name|dither_alpha
 argument_list|,
 name|progress
 argument_list|)
@@ -3549,7 +3549,7 @@ argument_list|)
 condition|)
 name|quantize
 operator|=
-name|text_layer_dither
+name|dither_text_layers
 expr_stmt|;
 else|else
 name|quantize
@@ -3671,11 +3671,19 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|,
 name|dest_profile
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
-literal|0
+name|GEGL_DITHER_NONE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3687,7 +3695,7 @@ block|}
 comment|/*  Set the final palette on the image  */
 if|if
 condition|(
-name|remove_dups
+name|remove_duplicates
 operator|&&
 operator|(
 name|palette_type
@@ -4076,7 +4084,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_gray (CFHistogram histogram,GimpLayer * layer,gboolean alpha_dither)
+DECL|function|generate_histogram_gray (CFHistogram histogram,GimpLayer * layer,gboolean dither_alpha)
 name|generate_histogram_gray
 parameter_list|(
 name|CFHistogram
@@ -4087,7 +4095,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|)
 block|{
 name|GeglBufferIterator
@@ -4257,7 +4265,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,gint col_limit,gboolean alpha_dither,GimpProgress * progress,gint nth_layer,gint n_layers)
+DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,gint col_limit,gboolean dither_alpha,GimpProgress * progress,gint nth_layer,gint n_layers)
 name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
@@ -4271,7 +4279,7 @@ name|gint
 name|col_limit
 parameter_list|,
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -4494,7 +4502,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 comment|/* if alpha-dithering,                  we need to be deterministic w.r.t. offsets */
@@ -4733,7 +4741,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 if|if
@@ -10615,11 +10623,11 @@ operator|->
 name|index_used_count
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|offsetx
@@ -10843,7 +10851,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -11074,11 +11082,11 @@ operator|->
 name|index_used_count
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|offsetx
@@ -11592,7 +11600,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 if|if
@@ -11774,11 +11782,11 @@ init|=
 name|ALPHA
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|offsetx
@@ -12058,7 +12066,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -12397,11 +12405,11 @@ init|=
 name|ALPHA
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|offsetx
@@ -12713,7 +12721,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 if|if
@@ -13407,11 +13415,11 @@ name|gint
 name|has_alpha
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|red_pix
@@ -13644,7 +13652,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -14318,11 +14326,11 @@ decl_stmt|,
 name|offsety
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gint
 name|width
@@ -14721,7 +14729,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -14836,7 +14844,7 @@ else|else
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -15497,11 +15505,11 @@ decl_stmt|,
 name|offsety
 decl_stmt|;
 name|gboolean
-name|alpha_dither
+name|dither_alpha
 init|=
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 decl_stmt|;
 name|gulong
 modifier|*
@@ -16146,7 +16154,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -16287,7 +16295,7 @@ else|else
 block|{
 if|if
 condition|(
-name|alpha_dither
+name|dither_alpha
 condition|)
 block|{
 name|gint
@@ -17294,7 +17302,7 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,gboolean want_alpha_dither,GimpProgress * progress)
+DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,gboolean want_dither_alpha,GimpProgress * progress)
 name|initialize_median_cut
 parameter_list|(
 name|GimpImageBaseType
@@ -17314,7 +17322,7 @@ modifier|*
 name|custom_palette
 parameter_list|,
 name|gboolean
-name|want_alpha_dither
+name|want_dither_alpha
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -17386,9 +17394,9 @@ name|num_colors
 expr_stmt|;
 name|quantobj
 operator|->
-name|want_alpha_dither
+name|want_dither_alpha
 operator|=
-name|want_alpha_dither
+name|want_dither_alpha
 expr_stmt|;
 name|quantobj
 operator|->

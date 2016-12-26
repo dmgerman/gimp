@@ -33,6 +33,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -47,6 +51,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|,
 name|GimpItemSet
 name|layer_set
@@ -97,6 +104,15 @@ name|help_id
 parameter_list|,
 name|GimpUnit
 name|unit
+parameter_list|,
+name|GimpFillType
+name|fill_type
+parameter_list|,
+name|GimpItemSet
+name|layer_set
+parameter_list|,
+name|gboolean
+name|resize_text_layers
 parameter_list|,
 name|GimpResizeCallback
 name|callback

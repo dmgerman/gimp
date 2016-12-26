@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be691c30108
+DECL|struct|__anon2c721e5d0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2be691c30208
+DECL|struct|__anon2c721e5d0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -5182,16 +5182,14 @@ argument_list|(
 literal|"ms"
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|tmpwidget
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*align left*/
@@ -5631,16 +5629,25 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0
+literal|0.0
+argument_list|)
+expr_stmt|;
+comment|/*align top-left*/
+name|gtk_label_set_yalign
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*align top-left*/
@@ -9139,7 +9146,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2be691c30308
+DECL|struct|__anon2c721e5d0308
 block|{
 DECL|member|size
 name|guint32

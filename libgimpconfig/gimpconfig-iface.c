@@ -2077,7 +2077,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_return:  * @scanner:        a #GScanner  * @expected_token: the expected token  * @nest_level:     the next level  *  * Returns:  *  * Since: 2.4  **/
+comment|/**  * gimp_config_deserialize_return:  * @scanner:        a #GScanner  * @expected_token: the expected token  * @nest_level:     the nest level  *  * Returns:  *  * Since: 2.4  **/
 end_comment
 
 begin_function

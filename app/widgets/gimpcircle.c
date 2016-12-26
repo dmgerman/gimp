@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b220e0103
+DECL|enum|__anon27b882f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1388,7 +1388,12 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|gtk_widget_set_allocation
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|size_allocate
 argument_list|(
 name|widget
 argument_list|,

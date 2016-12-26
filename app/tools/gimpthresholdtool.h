@@ -118,6 +118,11 @@ name|GimpHistogram
 modifier|*
 name|histogram
 decl_stmt|;
+DECL|member|channel_menu
+name|GtkWidget
+modifier|*
+name|channel_menu
+decl_stmt|;
 DECL|member|histogram_box
 name|GimpHistogramBox
 modifier|*

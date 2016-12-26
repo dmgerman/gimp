@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b58b00108
+DECL|struct|__anon277fa1690108
 block|{
 DECL|member|file
 name|GFile

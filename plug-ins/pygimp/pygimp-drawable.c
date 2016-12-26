@@ -4963,7 +4963,7 @@ name|PyErr_Warn
 argument_list|(
 name|PyExc_Warning
 argument_list|,
-literal|"Could not find apropriate data format - returning raw bytes"
+literal|"Could not find appropriate data format - returning raw bytes"
 argument_list|)
 expr_stmt|;
 name|array_data_type
@@ -10091,7 +10091,7 @@ comment|/* -------------------------------------------------------- */
 end_comment
 
 begin_comment
-comment|/* Since this help will primaly be seen from within  * GIMP's Python console, we should make it fit in that  * window's default size.  */
+comment|/* Since this help will primarily be seen from within  * GIMP's Python console, we should make it fit in that  * window's default size.  */
 end_comment
 
 begin_define

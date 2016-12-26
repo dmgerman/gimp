@@ -445,7 +445,7 @@ block|,
 block|{
 literal|"file-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -503,7 +503,7 @@ block|,
 block|{
 literal|"file-quit"
 block|,
-name|GIMP_STOCK_QUIT
+literal|"application-exit"
 block|,
 name|NC_
 argument_list|(
@@ -544,7 +544,7 @@ block|{
 block|{
 literal|"file-save"
 block|,
-name|GIMP_STOCK_SAVE
+literal|"document-save"
 block|,
 name|NC_
 argument_list|(
@@ -572,7 +572,7 @@ block|,
 block|{
 literal|"file-save-as"
 block|,
-name|GIMP_STOCK_SAVE_AS
+literal|"document-save-as"
 block|,
 name|NC_
 argument_list|(
@@ -672,7 +672,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export the image again"
+literal|"Export the image"
 argument_list|)
 block|,
 name|GIMP_SAVE_MODE_EXPORT
@@ -853,7 +853,7 @@ index|]
 operator|.
 name|icon_name
 operator|=
-literal|"gimp-open"
+literal|"document-open"
 expr_stmt|;
 name|entries
 index|[
@@ -978,10 +978,6 @@ name|i
 operator|++
 control|)
 block|{
-name|GtkAction
-modifier|*
-name|action
-decl_stmt|;
 name|gimp_action_group_set_action_visible
 argument_list|(
 name|group
@@ -1010,14 +1006,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|action
-operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_set_action_context
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -1025,13 +1016,6 @@ name|i
 index|]
 operator|.
 name|name
-argument_list|)
-expr_stmt|;
-name|g_object_set
-argument_list|(
-name|action
-argument_list|,
-literal|"context"
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
@@ -1039,8 +1023,6 @@ name|group
 operator|->
 name|gimp
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -234,18 +234,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDialogFactory
-modifier|*
-name|gimp_dock_window_get_dialog_factory
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_dock_window_get_auto_follow_active
 parameter_list|(

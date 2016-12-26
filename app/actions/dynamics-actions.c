@@ -172,7 +172,7 @@ block|,
 block|{
 literal|"dynamics-copy-location"
 block|,
-name|GIMP_STOCK_CLIPBOARD
+literal|"edit-copy"
 block|,
 name|NC_
 argument_list|(
@@ -315,7 +315,7 @@ name|NC_
 argument_list|(
 literal|"dynamics-action"
 argument_list|,
-literal|"Edit dynamics"
+literal|"Edit this dynamics"
 argument_list|)
 block|,
 literal|"gimp-dynamics-editor"

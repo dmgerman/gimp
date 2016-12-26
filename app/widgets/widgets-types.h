@@ -1509,6 +1509,15 @@ comment|/*  cell renderers  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpCellRendererButton
+typedef|typedef
+name|struct
+name|_GimpCellRendererButton
+name|GimpCellRendererButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCellRendererDashes
 typedef|typedef
 name|struct

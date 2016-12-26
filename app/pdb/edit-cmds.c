@@ -811,11 +811,18 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpBuffer
+modifier|*
+name|buffer
+init|=
+name|gimp_get_clipboard_buffer
+argument_list|(
+name|gimp
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|gimp
-operator|->
-name|global_buffer
+name|buffer
 operator|&&
 name|gimp_pdb_item_is_attached
 argument_list|(
@@ -856,11 +863,16 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
-name|gimp
-operator|->
-name|global_buffer
+name|GIMP_OBJECT
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 name|paste_into
+condition|?
+name|GIMP_PASTE_TYPE_FLOATING_INTO
+else|:
+name|GIMP_PASTE_TYPE_FLOATING
 argument_list|,
 operator|-
 literal|1
@@ -933,8 +945,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|edit_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|edit_paste_as_new_invoker
+DECL|function|edit_paste_as_new_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|edit_paste_as_new_image_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -978,11 +990,18 @@ name|image
 init|=
 name|NULL
 decl_stmt|;
+name|GimpBuffer
+modifier|*
+name|buffer
+init|=
+name|gimp_get_clipboard_buffer
+argument_list|(
+name|gimp
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|gimp
-operator|->
-name|global_buffer
+name|buffer
 condition|)
 block|{
 name|image
@@ -993,9 +1012,7 @@ name|gimp
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp
-operator|->
-name|global_buffer
+name|buffer
 argument_list|)
 expr_stmt|;
 if|if
@@ -1867,9 +1884,16 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|buffer
+argument_list|)
 argument_list|,
 name|paste_into
+condition|?
+name|GIMP_PASTE_TYPE_FLOATING_INTO
+else|:
+name|GIMP_PASTE_TYPE_FLOATING
 argument_list|,
 operator|-
 literal|1
@@ -1942,8 +1966,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|edit_named_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|edit_named_paste_as_new_invoker
+DECL|function|edit_named_paste_as_new_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|edit_named_paste_as_new_image_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -4391,7 +4415,7 @@ literal|"gimp-edit-paste"
 argument_list|,
 literal|"Paste buffer to the specified drawable."
 argument_list|,
-literal|"This procedure pastes a copy of the internal GIMP edit buffer to the specified drawable. The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. The \"paste_into\" option specifies whether to clear the current image selection, or to paste the buffer \"behind\" the selection. This allows the selection to act as a mask for the pasted buffer. Anywhere that the selection mask is non-zero, the pasted buffer will show through. The pasted buffer will be a new layer in the image which is designated as the image floating selection. If the image has a floating selection at the time of pasting, the old floating selection will be anchored to it's drawable before the new floating selection is added. This procedure returns the new floating layer. The resulting floating selection will already be attached to the specified drawable, and a subsequent call to floating_sel_attach is not needed."
+literal|"This procedure pastes a copy of the internal GIMP edit buffer to the specified drawable. The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'. The \"paste_into\" option specifies whether to clear the current image selection, or to paste the buffer \"behind\" the selection. This allows the selection to act as a mask for the pasted buffer. Anywhere that the selection mask is non-zero, the pasted buffer will show through. The pasted buffer will be a new layer in the image which is designated as the image floating selection. If the image has a floating selection at the time of pasting, the old floating selection will be anchored to its drawable before the new floating selection is added. This procedure returns the new floating layer. The resulting floating selection will already be attached to the specified drawable, and a subsequent call to floating_sel_attach is not needed."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4476,12 +4500,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-edit-paste-as-new    */
+comment|/*    * gimp-edit-paste-as-new-image    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|edit_paste_as_new_invoker
+name|edit_paste_as_new_image_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4491,14 +4515,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-edit-paste-as-new"
+literal|"gimp-edit-paste-as-new-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-paste-as-new"
+literal|"gimp-edit-paste-as-new-image"
 argument_list|,
 literal|"Paste buffer to a new image."
 argument_list|,
@@ -5039,12 +5063,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-edit-named-paste-as-new    */
+comment|/*    * gimp-edit-named-paste-as-new-image    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|edit_named_paste_as_new_invoker
+name|edit_named_paste_as_new_image_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -5054,18 +5078,18 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-edit-named-paste-as-new"
+literal|"gimp-edit-named-paste-as-new-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-edit-named-paste-as-new"
+literal|"gimp-edit-named-paste-as-new-image"
 argument_list|,
 literal|"Paste named buffer to a new image."
 argument_list|,
-literal|"This procedure works like 'gimp-edit-paste-as-new' but pastes a named buffer instead of the global buffer."
+literal|"This procedure works like 'gimp-edit-paste-as-new-image' but pastes a named buffer instead of the global buffer."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

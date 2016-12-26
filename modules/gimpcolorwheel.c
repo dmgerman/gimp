@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b7cc60103
+DECL|enum|__anon27dd3c670103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278b7cc60208
+DECL|struct|__anon27dd3c670208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b7cc60303
+DECL|enum|__anon27dd3c670303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1419,7 +1419,12 @@ decl_stmt|;
 name|gint
 name|focus_pad
 decl_stmt|;
-name|gtk_widget_set_allocation
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|size_allocate
 argument_list|(
 name|widget
 argument_list|,

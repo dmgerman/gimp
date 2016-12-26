@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|linear
+name|gboolean
+name|linear
+decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
 modifier|*

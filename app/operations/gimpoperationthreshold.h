@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpOperationPointFilter
 name|parent_instance
 decl_stmt|;
+DECL|member|channel
+name|GimpHistogramChannel
+name|channel
+decl_stmt|;
 DECL|member|low
 name|gdouble
 name|low

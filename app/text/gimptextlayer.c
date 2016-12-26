@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27576f0d0103
+DECL|enum|__anon279e15860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,20 +326,14 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -1256,7 +1250,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpImageBaseType new_base_type,GimpPrecision new_precision,GimpColorProfile * dest_profile,gint layer_dither_type,gint mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_text_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_text_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -1272,20 +1266,14 @@ name|Babl
 modifier|*
 name|new_format
 parameter_list|,
-name|GimpImageBaseType
-name|new_base_type
-parameter_list|,
-name|GimpPrecision
-name|new_precision
-parameter_list|,
 name|GimpColorProfile
 modifier|*
 name|dest_profile
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|gboolean
@@ -1330,7 +1318,7 @@ name|modified
 operator|||
 name|layer_dither_type
 operator|!=
-literal|0
+name|GEGL_DITHER_NONE
 condition|)
 block|{
 name|GIMP_DRAWABLE_CLASS
@@ -1345,10 +1333,6 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_format
-argument_list|,
-name|new_base_type
-argument_list|,
-name|new_precision
 argument_list|,
 name|dest_profile
 argument_list|,
@@ -2631,6 +2615,8 @@ argument_list|)
 argument_list|,
 name|unused_eek
 argument_list|,
+name|GIMP_FILL_TRANSPARENT
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2729,7 +2715,19 @@ if|if
 condition|(
 operator|!
 name|name
+operator|||
+operator|!
+name|name
+index|[
+literal|0
+index|]
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 name|name
 operator|=
 name|g_strdup
@@ -2740,6 +2738,7 @@ literal|"Empty Text Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_item_is_attached

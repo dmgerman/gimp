@@ -457,12 +457,6 @@ literal|"channels-edit-attributes"
 expr_stmt|;
 name|iv_class
 operator|->
-name|edit_action
-operator|=
-literal|"channels-edit-attributes"
-expr_stmt|;
-name|iv_class
-operator|->
 name|new_action
 operator|=
 literal|"channels-new"
@@ -794,7 +788,7 @@ name|priv
 operator|->
 name|toselection_button
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 block|}

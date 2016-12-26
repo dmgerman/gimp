@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7b68d20103
+DECL|enum|__anon29dad5710103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -144,7 +144,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b68d20203
+DECL|enum|__anon29dad5710203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6970,7 +6970,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* Seperator for tags    * IMPORTANT: use only one of Unicode terminal punctuation chars.    * http://unicode.org/review/pr-23.html    */
+comment|/* Separator for tags    * IMPORTANT: use only one of Unicode terminal punctuation chars.    * http://unicode.org/review/pr-23.html    */
 return|return
 name|_
 argument_list|(

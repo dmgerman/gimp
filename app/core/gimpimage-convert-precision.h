@@ -27,13 +27,13 @@ parameter_list|,
 name|GimpPrecision
 name|precision
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|text_layer_dither_type
 parameter_list|,
-name|gint
+name|GeglDitherMethod
 name|mask_dither_type
 parameter_list|,
 name|GimpProgress

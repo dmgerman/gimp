@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97f34c0103
+DECL|enum|__anon2883dd9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97f34c0208
+DECL|struct|__anon2883dd9c0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1454,7 +1454,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_get_active:  * @combo: a #GimpColorProfileComboBox  *  * Return value: The filename of the currently selected color profile,  *               This is a newly allocated string and should be released  *               using g_free() when it is not any longer needed.  *  * Deprecated: use gimp_color_profile_combo_box_get_active_file() inatead.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_get_active:  * @combo: a #GimpColorProfileComboBox  *  * Return value: The filename of the currently selected color profile,  *               This is a newly allocated string and should be released  *               using g_free() when it is not any longer needed.  *  * Deprecated: use gimp_color_profile_combo_box_get_active_file() instead.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

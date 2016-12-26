@@ -384,12 +384,6 @@ literal|"vectors-path-tool"
 expr_stmt|;
 name|iv_class
 operator|->
-name|edit_action
-operator|=
-literal|"vectors-edit-attributes"
-expr_stmt|;
-name|iv_class
-operator|->
 name|new_action
 operator|=
 literal|"vectors-new"
@@ -599,18 +593,6 @@ argument_list|,
 name|GDK_MODIFIER_INTENT_MODIFY_SELECTION
 argument_list|)
 expr_stmt|;
-comment|/*  hide basically useless edit button  */
-name|gtk_widget_hide
-argument_list|(
-name|gimp_item_tree_view_get_edit_button
-argument_list|(
-name|GIMP_ITEM_TREE_VIEW
-argument_list|(
-name|view
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|view
 operator|->
 name|toselection_button
@@ -668,7 +650,7 @@ name|view
 operator|->
 name|toselection_button
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|view
@@ -701,7 +683,7 @@ name|view
 operator|->
 name|tovectors_button
 argument_list|,
-literal|6
+literal|5
 argument_list|)
 expr_stmt|;
 name|view
@@ -751,7 +733,7 @@ name|view
 operator|->
 name|stroke_button
 argument_list|,
-literal|7
+literal|6
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_svg_dest_add

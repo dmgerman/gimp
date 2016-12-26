@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c66e2cd0108
+DECL|struct|__anon2b15a1300108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2468,9 +2468,9 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
+name|gtk_label_set_xalign
 argument_list|(
-name|GTK_MISC
+name|GTK_LABEL
 argument_list|(
 name|sf_interface
 operator|->
@@ -2478,8 +2478,6 @@ name|progress_label
 argument_list|)
 argument_list|,
 literal|0.0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_ellipsize

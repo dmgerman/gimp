@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d4db960103
+DECL|enum|__anon28b059d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -110,6 +110,9 @@ name|PROP_TRUST_DIRTY_FLAG
 block|,
 DECL|enumerator|PROP_SAVE_DEVICE_STATUS
 name|PROP_SAVE_DEVICE_STATUS
+block|,
+DECL|enumerator|PROP_DEVICES_SHARE_TOOL
+name|PROP_DEVICES_SHARE_TOOL
 block|,
 DECL|enumerator|PROP_SAVE_SESSION_INFO
 name|PROP_SAVE_SESSION_INFO
@@ -436,6 +439,23 @@ argument_list|,
 literal|"Save device status"
 argument_list|,
 name|SAVE_DEVICE_STATUS_BLURB
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DEVICES_SHARE_TOOL
+argument_list|,
+literal|"devices-share-tool"
+argument_list|,
+literal|"Devics share tool"
+argument_list|,
+name|DEVICES_SHARE_TOOL_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1519,6 +1539,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DEVICES_SHARE_TOOL
+case|:
+name|gui_config
+operator|->
+name|devices_share_tool
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_SAVE_SESSION_INFO
 case|:
 name|gui_config
@@ -2157,6 +2190,19 @@ argument_list|,
 name|gui_config
 operator|->
 name|save_device_status
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_DEVICES_SHARE_TOOL
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|gui_config
+operator|->
+name|devices_share_tool
 argument_list|)
 expr_stmt|;
 break|break;

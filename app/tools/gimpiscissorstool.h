@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f41b70103
+DECL|enum|__anon2c4be0340103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f41b70203
+DECL|enum|__anon2c4be0340203
 block|{
 DECL|enumerator|ISCISSORS_OP_NONE
 name|ISCISSORS_OP_NONE
@@ -255,12 +255,6 @@ modifier|*
 name|gradient_map
 decl_stmt|;
 comment|/*  lazily filled gradient map              */
-DECL|member|dp_buf
-name|GimpTempBuf
-modifier|*
-name|dp_buf
-decl_stmt|;
-comment|/*  dynamic programming buffer              */
 DECL|member|mask
 name|GimpChannel
 modifier|*

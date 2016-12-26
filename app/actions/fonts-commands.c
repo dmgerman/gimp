@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpfontview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions.h"
 end_include
 
@@ -55,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"fonts-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
 end_include
 
 begin_comment

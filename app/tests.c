@@ -93,12 +93,6 @@ directive|include
 file|"tests.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"units.h"
-end_include
-
 begin_function
 specifier|static
 name|void
@@ -122,7 +116,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_init_for_testing:  *  * Initialize the GIMP object system for unit testing. This is a  * selected subset of the initialization happning in app_run().  **/
+comment|/**  * gimp_init_for_testing:  *  * Initialize the GIMP object system for unit testing. This is a  * selected subset of the initialization happening in app_run().  **/
 end_comment
 
 begin_function
@@ -177,11 +171,6 @@ argument_list|,
 name|GIMP_STACK_TRACE_QUERY
 argument_list|,
 name|GIMP_PDB_COMPAT_OFF
-argument_list|)
-expr_stmt|;
-name|units_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_load_config
@@ -367,11 +356,6 @@ argument_list|(
 name|gimp
 argument_list|,
 name|show_gui
-argument_list|)
-expr_stmt|;
-name|units_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_load_config

@@ -117,6 +117,14 @@ name|GimpSamplePoint
 modifier|*
 name|sample_point
 decl_stmt|;
+DECL|member|sample_point_old_x
+name|gint
+name|sample_point_old_x
+decl_stmt|;
+DECL|member|sample_point_old_y
+name|gint
+name|sample_point_old_y
+decl_stmt|;
 DECL|member|sample_point_x
 name|gint
 name|sample_point_x

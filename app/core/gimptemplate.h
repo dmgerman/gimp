@@ -30,22 +30,22 @@ name|GIMP_TEMPLATE_PARAM_COPY_FIRST
 value|(1<< (8 + G_PARAM_USER_SHIFT))
 end_define
 
-begin_comment
-comment|/*  The default image aspect ratio is the golden mean. We use  *  two adjacent fibonacci numbers for the unstable series and  *  some less odd values for the stable version.  */
-end_comment
-
 begin_ifdef
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
 end_ifdef
 
+begin_comment
+comment|/* Uncommon ratio, with at least one odd value, to encourage testing  * GIMP with unusual numbers.  * It also has to be a higher resolution, to push GIMP a little further  * in tests. */
+end_comment
+
 begin_define
 DECL|macro|GIMP_DEFAULT_IMAGE_WIDTH
 define|#
 directive|define
 name|GIMP_DEFAULT_IMAGE_WIDTH
-value|610
+value|2001
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ DECL|macro|GIMP_DEFAULT_IMAGE_HEIGHT
 define|#
 directive|define
 name|GIMP_DEFAULT_IMAGE_HEIGHT
-value|377
+value|1984
 end_define
 
 begin_else
@@ -61,12 +61,16 @@ else|#
 directive|else
 end_else
 
+begin_comment
+comment|/* 1366x768 is the most common screen resolution in 2016.  * 1920x1080 is the second most common.  * Since GIMP targets advanced graphics artists, let's go for the  * highest common dimension.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_DEFAULT_IMAGE_WIDTH
 define|#
 directive|define
 name|GIMP_DEFAULT_IMAGE_WIDTH
-value|640
+value|1920
 end_define
 
 begin_define
@@ -74,7 +78,7 @@ DECL|macro|GIMP_DEFAULT_IMAGE_HEIGHT
 define|#
 directive|define
 name|GIMP_DEFAULT_IMAGE_HEIGHT
-value|400
+value|1080
 end_define
 
 begin_endif

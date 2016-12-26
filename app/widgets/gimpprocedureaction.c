@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c61d50103
+DECL|enum|__anon2b5f68610103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c61d50203
+DECL|enum|__anon2b5f68610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -545,7 +545,7 @@ argument_list|(
 name|action
 argument_list|)
 decl_stmt|;
-comment|/* Not all actions have procedures associated with them, for example    * unused "plug-in-recent-[N]" actions, so check for NULL before we    * invoke the action    */
+comment|/* Not all actions have procedures associated with them, for example    * unused "filters-recent-[N]" actions, so check for NULL before we    * invoke the action    */
 if|if
 condition|(
 name|procedure_action

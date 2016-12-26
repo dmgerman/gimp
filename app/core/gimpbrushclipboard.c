@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf9abb0103
+DECL|enum|__anon28ece3c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -160,7 +160,7 @@ end_endif
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_clipboard_buffer_changed
+name|gimp_brush_clipboard_changed
 parameter_list|(
 name|Gimp
 modifier|*
@@ -333,11 +333,11 @@ name|brush
 operator|->
 name|gimp
 argument_list|,
-literal|"buffer-changed"
+literal|"clipboard-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_brush_clipboard_buffer_changed
+name|gimp_brush_clipboard_changed
 argument_list|)
 argument_list|,
 name|brush
@@ -345,7 +345,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_brush_clipboard_buffer_changed
+name|gimp_brush_clipboard_changed
 argument_list|(
 name|brush
 operator|->
@@ -551,8 +551,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_clipboard_buffer_changed (Gimp * gimp,GimpBrush * brush)
-name|gimp_brush_clipboard_buffer_changed
+DECL|function|gimp_brush_clipboard_changed (Gimp * gimp,GimpBrush * brush)
+name|gimp_brush_clipboard_changed
 parameter_list|(
 name|Gimp
 modifier|*
@@ -563,6 +563,10 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
+name|GimpBuffer
+modifier|*
+name|gimp_buffer
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -623,11 +627,16 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|gimp_buffer
+operator|=
+name|gimp_get_clipboard_buffer
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|gimp
-operator|->
-name|global_buffer
+name|gimp_buffer
 condition|)
 block|{
 name|GeglBuffer
@@ -636,9 +645,7 @@ name|buffer
 init|=
 name|gimp_buffer_get_buffer
 argument_list|(
-name|gimp
-operator|->
-name|global_buffer
+name|gimp_buffer
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -661,9 +668,7 @@ name|MIN
 argument_list|(
 name|gimp_buffer_get_width
 argument_list|(
-name|gimp
-operator|->
-name|global_buffer
+name|gimp_buffer
 argument_list|)
 argument_list|,
 literal|1024
@@ -675,9 +680,7 @@ name|MIN
 argument_list|(
 name|gimp_buffer_get_height
 argument_list|(
-name|gimp
-operator|->
-name|global_buffer
+name|gimp_buffer
 argument_list|)
 argument_list|,
 literal|1024
