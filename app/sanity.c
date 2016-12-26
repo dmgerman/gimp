@@ -1710,8 +1710,6 @@ literal|"gegl:color-enhance"
 block|,
 literal|"gegl:color-exchange"
 block|,
-literal|"gegl:color-reduction"
-block|,
 literal|"gegl:color-rotate"
 block|,
 literal|"gegl:color-temperature"
@@ -1735,6 +1733,8 @@ block|,
 literal|"gegl:displace"
 block|,
 literal|"gegl:distance-transform"
+block|,
+literal|"gegl:dither"
 block|,
 literal|"gegl:dropshadow"
 block|,
