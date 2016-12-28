@@ -313,26 +313,57 @@ directive|include
 file|<gtkosxapplication.h>
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
-comment|/* GDK_WINDOWING_QUARTZ */
+comment|/* Forward declare since we are building against old SDKs. */
 end_comment
 
-begin_include
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|MAC_OS_X_VERSION_10_12
+argument_list|)
+operator|||
+expr|\
+name|MAC_OS_X_VERSION_MIN_REQUIRED
+operator|<
+name|MAC_OS_X_VERSION_10_12
+end_if
+
+begin_decl_stmt
+unit|@
+name|interface
+name|NSWindow
+argument_list|(
+name|ForwardDeclarations
+argument_list|)
+decl|+
+argument_list|(
+name|void
+argument_list|)
+name|setAllowsAutomaticWindowTabbing
+range|:
+operator|(
+name|BOOL
+operator|)
+name|allow
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+unit|@
+name|end
+endif|#
+directive|endif
+endif|#
+directive|endif
+comment|/* GDK_WINDOWING_QUARTZ */
 include|#
 directive|include
 file|"gimp-intl.h"
-end_include
-
-begin_comment
 comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
 specifier|static
 name|gchar
 modifier|*
@@ -1028,6 +1059,34 @@ argument_list|(
 name|FALSE
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+comment|/* Before the first window is created (typically the splash window),    * we need to disable automatic tabbing behavior introduced on Sierra.    * This is known to cause all kinds of weird issues (see for instance    * Bugzilla #776294) and needs proper GTK+ support if we would want to    * enable it.    */
+if|if
+condition|(
+index|[
+name|NSWindow
+name|respondsToSelector
+operator|:
+expr|@
+name|selector
+argument_list|(
+name|setAllowsAutomaticWindowTabbing
+operator|:
+argument_list|)
+expr|]
+condition|)
+index|[
+name|NSWindow
+name|setAllowsAutomaticWindowTabbing
+operator|:
+name|NO
+index|]
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* GDK_WINDOWING_QUARTZ */
 name|gimp_dnd_init
 argument_list|(
 name|gimp
@@ -3343,7 +3402,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888094f0108
+DECL|struct|__anon27a8fa300108
 block|{
 DECL|member|path
 specifier|const
