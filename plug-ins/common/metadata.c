@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0429190103
+DECL|enum|__anon2977f6600103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0429190203
+DECL|enum|__anon2977f6600203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0429190308
+DECL|struct|__anon2977f6600308
 block|{
 DECL|member|tag
 name|gchar
@@ -1505,7 +1505,7 @@ operator|!
 name|truncate
 operator|||
 name|size
-operator|<
+operator|<=
 name|TAG_VALUE_MAX_SIZE
 condition|)
 block|{
