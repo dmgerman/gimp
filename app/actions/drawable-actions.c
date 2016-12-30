@@ -149,12 +149,41 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Invert the colors"
+literal|"Invert the colors perceptually"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
 name|drawable_invert_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_LAYER_INVERT
+block|}
+block|,
+block|{
+literal|"drawable-linear-invert"
+block|,
+name|GIMP_STOCK_INVERT
+block|,
+name|NC_
+argument_list|(
+literal|"drawable-action"
+argument_list|,
+literal|"_Linear Invert"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"drawable-action"
+argument_list|,
+literal|"Invert the colors in linear light"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|drawable_linear_invert_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_LAYER_INVERT
@@ -178,7 +207,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Invert the brightness of each pixel"
+literal|"Invert the brightness of each pixel, keeping the color"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -968,6 +997,16 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"drawable-invert"
+argument_list|,
+name|writable
+operator|&&
+operator|!
+name|children
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"drawable-linear-invert"
 argument_list|,
 name|writable
 operator|&&

@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a0a4980103
+DECL|enum|__anon27e926d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -987,6 +987,11 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|enum_value
+condition|)
+block|{
 name|icon_name
 operator|=
 name|g_strconcat
@@ -1002,6 +1007,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gtk_list_store_set
 argument_list|(

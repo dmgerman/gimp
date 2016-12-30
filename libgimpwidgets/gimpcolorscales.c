@@ -485,11 +485,11 @@ literal|100
 block|,
 literal|100
 block|,
-literal|255
+literal|100
 block|,
-literal|255
+literal|100
 block|,
-literal|255
+literal|100
 block|,
 literal|100
 block|}
@@ -835,7 +835,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|gettext
 argument_list|(
@@ -1451,7 +1451,7 @@ name|rgb
 operator|.
 name|r
 operator|*
-literal|255.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1467,7 +1467,7 @@ name|rgb
 operator|.
 name|g
 operator|*
-literal|255.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1483,7 +1483,7 @@ name|rgb
 operator|.
 name|b
 operator|*
-literal|255.0
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1801,7 +1801,7 @@ name|r
 operator|=
 name|value
 operator|/
-literal|255.0
+literal|100.0
 expr_stmt|;
 break|break;
 case|case
@@ -1815,7 +1815,7 @@ name|g
 operator|=
 name|value
 operator|/
-literal|255.0
+literal|100.0
 expr_stmt|;
 break|break;
 case|case
@@ -1829,7 +1829,7 @@ name|b
 operator|=
 name|value
 operator|/
-literal|255.0
+literal|100.0
 expr_stmt|;
 break|break;
 case|case
