@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d725a0103
+DECL|enum|__anon2c0429190103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d725a0203
+DECL|enum|__anon2c0429190203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d725a0308
+DECL|struct|__anon2c0429190308
 block|{
 DECL|member|tag
 name|gchar
@@ -290,6 +290,9 @@ specifier|const
 name|gchar
 modifier|*
 name|tag
+parameter_list|,
+name|gboolean
+name|truncate
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1169,6 +1172,9 @@ name|iptc_data
 index|[
 name|i
 index|]
+argument_list|,
+comment|/* truncate = */
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1343,6 +1349,9 @@ argument_list|(
 name|metadata
 argument_list|,
 name|tag
+argument_list|,
+comment|/* truncate = */
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
@@ -1377,7 +1386,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|metadata_dialog_format_tag_value (GExiv2Metadata * metadata,const gchar * tag)
+DECL|function|metadata_dialog_format_tag_value (GExiv2Metadata * metadata,const gchar * tag,gboolean truncate)
 name|metadata_dialog_format_tag_value
 parameter_list|(
 name|GExiv2Metadata
@@ -1388,6 +1397,9 @@ specifier|const
 name|gchar
 modifier|*
 name|tag
+parameter_list|,
+name|gboolean
+name|truncate
 parameter_list|)
 block|{
 specifier|const
@@ -1489,6 +1501,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|truncate
+operator|||
 name|size
 operator|<
 name|TAG_VALUE_MAX_SIZE
@@ -1612,6 +1627,16 @@ operator|&
 name|size
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|truncate
+condition|)
+name|display_size
+operator|=
+name|size
+expr_stmt|;
+else|else
 name|display_size
 operator|=
 name|MIN
