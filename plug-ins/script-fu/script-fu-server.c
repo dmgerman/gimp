@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e92f210108
+DECL|struct|__anon2b0b6b250108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e92f210208
+DECL|struct|__anon2b0b6b250208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28e92f21030a
+DECL|union|__anon2b0b6b25030a
 block|{
 DECL|member|family
 name|sa_family_t
