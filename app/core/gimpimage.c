@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900699a0103
+DECL|enum|__anon2bb81f380103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900699a0203
+DECL|enum|__anon2bb81f380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9696,6 +9696,18 @@ break|break;
 comment|/* new layer modes not supported by gimp-2.8 */
 case|case
 name|GIMP_NEW_OVERLAY_MODE
+case|:
+case|case
+name|GIMP_LCH_HUE_MODE
+case|:
+case|case
+name|GIMP_LCH_CHROMA_MODE
+case|:
+case|case
+name|GIMP_LCH_COLOR_MODE
+case|:
+case|case
+name|GIMP_LCH_LIGHTNESS_MODE
 case|:
 name|version
 operator|=
