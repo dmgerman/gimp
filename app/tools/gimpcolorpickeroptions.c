@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294682ae0103
+DECL|enum|__anon286f7dc50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -183,7 +183,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use accumulated color value from "
+literal|"Use averaged color value from "
 literal|"nearby pixels"
 argument_list|)
 argument_list|,

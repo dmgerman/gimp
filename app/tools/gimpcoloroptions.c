@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920bd220103
+DECL|enum|__anon2afd71600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -187,7 +187,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use accumulated color value from "
+literal|"Use merged color value from "
 literal|"all composited visible layers"
 argument_list|)
 argument_list|,
@@ -211,7 +211,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use accumulated color value from "
+literal|"Use averaged color value from "
 literal|"nearby pixels"
 argument_list|)
 argument_list|,
