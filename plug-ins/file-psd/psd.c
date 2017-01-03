@@ -706,6 +706,9 @@ name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 literal|"image/x-psd"
 argument_list|,
 name|metadata
@@ -1127,6 +1130,11 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|metadata
+argument_list|)
+expr_stmt|;
 block|}
 name|values
 index|[
@@ -1196,15 +1204,6 @@ condition|)
 name|gimp_image_delete
 argument_list|(
 name|image_ID
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|metadata
-condition|)
-name|g_object_unref
-argument_list|(
-name|metadata
 argument_list|)
 expr_stmt|;
 block|}

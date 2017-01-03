@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/gimpdbusservice-generated.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimp-paint.h"
 end_include
 
@@ -279,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6391fe0103
+DECL|enum|__anon2b0c0a7d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6391fe0203
+DECL|enum|__anon2b0c0a7d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

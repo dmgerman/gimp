@@ -146,6 +146,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpitem.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimplayer.h>
 end_include
 

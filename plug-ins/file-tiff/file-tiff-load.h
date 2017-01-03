@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2968cae30108
+DECL|struct|__anon2a44b4780108
 block|{
 DECL|member|o_pages
 name|gint
@@ -71,6 +71,10 @@ parameter_list|(
 name|GFile
 modifier|*
 name|file
+parameter_list|,
+name|gint32
+modifier|*
+name|layer_ID
 parameter_list|,
 name|TIFF
 modifier|*

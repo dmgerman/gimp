@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a371f0108
+DECL|struct|__anon291314aa0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a371f0208
+DECL|struct|__anon291314aa0208
 block|{
 DECL|member|run
 name|gboolean
@@ -866,6 +866,9 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
+name|gint32
+name|layer_ID
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -986,6 +989,9 @@ operator|->
 name|file_name
 argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
+argument_list|,
+operator|&
+name|layer_ID
 argument_list|,
 name|TRUE
 argument_list|,

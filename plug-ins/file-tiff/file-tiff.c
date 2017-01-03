@@ -815,6 +815,9 @@ block|{
 name|gint32
 name|image
 decl_stmt|;
+name|gint32
+name|layer_ID
+decl_stmt|;
 name|gboolean
 name|resolution_loaded
 init|=
@@ -842,6 +845,9 @@ operator|=
 name|load_image
 argument_list|(
 name|file
+argument_list|,
+operator|&
+name|layer_ID
 argument_list|,
 name|tif
 argument_list|,
@@ -908,6 +914,8 @@ expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image
+argument_list|,
+name|layer_ID
 argument_list|,
 literal|"image/tiff"
 argument_list|,
@@ -1594,21 +1602,21 @@ name|metadata
 condition|)
 block|{
 comment|/* See bug 758909: clear TIFFTAG_MIN/MAXSAMPLEVALUE because                    * exiv2 saves them with wrong type and the original values                    * could be invalid, see also bug 761823                    */
-name|gexiv2_metadata_clear_tag
+name|gimp_metadata_remove_attribute
 argument_list|(
 name|metadata
 argument_list|,
 literal|"Exif.Image.0x0118"
 argument_list|)
 expr_stmt|;
-name|gexiv2_metadata_clear_tag
+name|gimp_metadata_remove_attribute
 argument_list|(
 name|metadata
 argument_list|,
 literal|"Exif.Image.0x0119"
 argument_list|)
 expr_stmt|;
-name|gexiv2_metadata_clear_tag
+name|gimp_metadata_remove_attribute
 argument_list|(
 name|metadata
 argument_list|,
@@ -1691,6 +1699,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|metadata
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  Store mvals data  */
 name|gimp_set_data
@@ -1729,15 +1742,6 @@ condition|)
 name|gimp_image_delete
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|metadata
-condition|)
-name|g_object_unref
-argument_list|(
-name|metadata
 argument_list|)
 expr_stmt|;
 block|}

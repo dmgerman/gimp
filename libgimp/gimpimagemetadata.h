@@ -77,6 +77,9 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+name|gint32
+name|layer_ID
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

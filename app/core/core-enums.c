@@ -4778,14 +4778,6 @@ literal|"image-grid"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE_METADATA
-block|,
-literal|"GIMP_UNDO_IMAGE_METADATA"
-block|,
-literal|"image-metadata"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_IMAGE_COLORMAP
 block|,
 literal|"GIMP_UNDO_IMAGE_COLORMAP"
@@ -4799,6 +4791,14 @@ block|,
 literal|"GIMP_UNDO_IMAGE_COLOR_MANAGED"
 block|,
 literal|"image-color-managed"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_METADATA
+block|,
+literal|"GIMP_UNDO_IMAGE_METADATA"
+block|,
+literal|"image-metadata"
 block|}
 block|,
 block|{
@@ -4839,6 +4839,14 @@ block|,
 literal|"GIMP_UNDO_MASK"
 block|,
 literal|"mask"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_METADATA
+block|,
+literal|"GIMP_UNDO_ITEM_METADATA"
+block|,
+literal|"item-metadata"
 block|}
 block|,
 block|{
@@ -5713,19 +5721,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE_METADATA
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Change metadata"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|GIMP_UNDO_IMAGE_COLORMAP
 block|,
 name|NC_
@@ -5747,6 +5742,14 @@ literal|"undo-type"
 argument_list|,
 literal|"Change color managed state"
 argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_METADATA
+block|,
+literal|"GIMP_UNDO_IMAGE_METADATA"
 block|,
 name|NULL
 block|}
@@ -5812,6 +5815,14 @@ literal|"undo-type"
 argument_list|,
 literal|"Selection mask"
 argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_ITEM_METADATA
+block|,
+literal|"GIMP_UNDO_ITEM_METADATA"
 block|,
 name|NULL
 block|}

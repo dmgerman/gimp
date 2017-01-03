@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpattribute.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpbase/gimpchecks.h>
 end_include
 
