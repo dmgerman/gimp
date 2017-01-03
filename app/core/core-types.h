@@ -714,15 +714,6 @@ name|GimpUndoAccumulator
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpViewableUndo
-typedef|typedef
-name|struct
-name|_GimpViewableUndo
-name|GimpViewableUndo
-typedef|;
-end_typedef
-
 begin_comment
 comment|/* Symmetry transformations */
 end_comment

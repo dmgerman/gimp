@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909bbf90108
+DECL|struct|__anon2a350dfd0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909bbf90208
+DECL|struct|__anon2a350dfd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909bbf90308
+DECL|struct|__anon2a350dfd0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -395,10 +395,6 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
-parameter_list|,
 name|gboolean
 name|interactive
 parameter_list|,
@@ -432,10 +428,6 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
-parameter_list|,
-name|gint
-modifier|*
-name|bits_depth
 parameter_list|,
 name|GError
 modifier|*
@@ -1130,9 +1122,6 @@ name|gint32
 name|image_ID
 decl_stmt|;
 name|gint32
-name|layer_ID
-decl_stmt|;
-name|gint32
 name|drawable_ID
 decl_stmt|;
 name|GError
@@ -1255,9 +1244,6 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-operator|&
-name|layer_ID
-argument_list|,
 name|interactive
 argument_list|,
 operator|&
@@ -1330,8 +1316,6 @@ expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
-argument_list|,
-name|layer_ID
 argument_list|,
 literal|"image/png"
 argument_list|,
@@ -1427,9 +1411,6 @@ name|metadata_flags
 decl_stmt|;
 name|gint32
 name|orig_image_ID
-decl_stmt|;
-name|gint
-name|bits_depth
 decl_stmt|;
 name|GimpExportReturn
 name|export
@@ -1883,9 +1864,6 @@ argument_list|,
 name|orig_image_ID
 argument_list|,
 operator|&
-name|bits_depth
-argument_list|,
-operator|&
 name|error
 argument_list|)
 condition|)
@@ -2001,11 +1979,6 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|metadata
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
@@ -2041,6 +2014,15 @@ condition|)
 name|gimp_image_delete
 argument_list|(
 name|image_ID
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|metadata
+condition|)
+name|g_object_unref
+argument_list|(
+name|metadata
 argument_list|)
 expr_stmt|;
 block|}
@@ -2749,17 +2731,13 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gint32 * layer_ID,gboolean interactive,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
 parameter_list|,
 name|gboolean
 name|interactive
@@ -4748,11 +4726,6 @@ name|buffer
 argument_list|)
 expr_stmt|;
 block|}
-operator|*
-name|layer_ID
-operator|=
-name|layer
-expr_stmt|;
 return|return
 name|image
 return|;
@@ -5074,7 +5047,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gint * bits_depth,GError ** error)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -5090,10 +5063,6 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
-parameter_list|,
-name|gint
-modifier|*
-name|bits_depth
 parameter_list|,
 name|GError
 modifier|*
@@ -5345,11 +5314,6 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
-operator|*
-name|bits_depth
-operator|=
-name|bit_depth
-expr_stmt|;
 name|pp
 operator|=
 name|png_create_write_struct

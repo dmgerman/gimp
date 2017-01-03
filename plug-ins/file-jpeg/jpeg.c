@@ -657,9 +657,6 @@ name|gint32
 name|image_ID
 decl_stmt|;
 name|gint32
-name|layer_ID
-decl_stmt|;
-name|gint32
 name|drawable_ID
 decl_stmt|;
 name|GimpParasite
@@ -807,9 +804,6 @@ name|d_string
 argument_list|,
 name|run_mode
 argument_list|,
-operator|&
-name|layer_ID
-argument_list|,
 name|FALSE
 argument_list|,
 operator|&
@@ -882,8 +876,6 @@ expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
-argument_list|,
-name|layer_ID
 argument_list|,
 literal|"image/jpeg"
 argument_list|,

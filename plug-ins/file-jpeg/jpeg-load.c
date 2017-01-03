@@ -183,7 +183,7 @@ end_decl_stmt
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gint32 * layer_ID,gboolean preview,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -193,10 +193,6 @@ name|filename
 parameter_list|,
 name|GimpRunMode
 name|runmode
-parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
 parameter_list|,
 name|gboolean
 name|preview
@@ -216,7 +212,7 @@ specifier|volatile
 name|image_ID
 decl_stmt|;
 name|gint32
-name|_layer_ID
+name|layer_ID
 decl_stmt|;
 name|struct
 name|jpeg_decompress_struct
@@ -743,14 +739,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|_layer_ID
+name|layer_ID
 operator|=
 name|preview_layer_ID
 expr_stmt|;
 block|}
 else|else
 block|{
-name|_layer_ID
+name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
@@ -1136,7 +1132,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|_layer_ID
+name|layer_ID
 argument_list|)
 expr_stmt|;
 name|format
@@ -1369,18 +1365,13 @@ name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
-name|_layer_ID
+name|layer_ID
 argument_list|,
 operator|-
 literal|1
 argument_list|,
 literal|0
 argument_list|)
-expr_stmt|;
-operator|*
-name|layer_ID
-operator|=
-name|_layer_ID
 expr_stmt|;
 return|return
 name|image_ID

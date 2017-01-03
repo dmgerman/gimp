@@ -118,11 +118,6 @@ modifier|*
 name|item
 decl_stmt|;
 comment|/* the item this undo is for */
-DECL|member|metadata
-name|GimpMetadata
-modifier|*
-name|metadata
-decl_stmt|;
 block|}
 struct|;
 end_struct

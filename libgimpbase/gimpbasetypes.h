@@ -127,24 +127,6 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|typedef|GimpAttribute
-typedef|typedef
-name|struct
-name|_GimpAttribute
-name|GimpAttribute
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpMetadata
-typedef|typedef
-name|struct
-name|_GimpMetadata
-name|GimpMetadata
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParasite
 typedef|typedef
 name|struct
@@ -207,6 +189,15 @@ name|gpointer
 name|user_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMetadata
+typedef|typedef
+name|struct
+name|_GExiv2Metadata
+name|GimpMetadata
+typedef|;
 end_typedef
 
 begin_comment

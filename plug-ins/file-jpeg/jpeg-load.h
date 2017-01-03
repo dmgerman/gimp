@@ -28,10 +28,6 @@ parameter_list|,
 name|GimpRunMode
 name|runmode
 parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
-parameter_list|,
 name|gboolean
 name|preview
 parameter_list|,

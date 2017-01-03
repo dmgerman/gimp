@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f1d730108
+DECL|struct|__anon298bfd6a0108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f1d730208
+DECL|struct|__anon298bfd6a0208
 block|{
 DECL|member|ID
 name|gint32
@@ -702,16 +702,12 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|load_image (GFile * file,gint32 * layer_ID,TIFF * tif,TiffSelectedPages * pages,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (GFile * file,TIFF * tif,TiffSelectedPages * pages,gboolean * resolution_loaded,GError ** error)
 name|load_image
 parameter_list|(
 name|GFile
 modifier|*
 name|file
-parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
 parameter_list|,
 name|TIFF
 modifier|*
@@ -3123,11 +3119,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-operator|*
-name|layer_ID
-operator|=
-name|layer
-expr_stmt|;
 if|if
 condition|(
 operator|!

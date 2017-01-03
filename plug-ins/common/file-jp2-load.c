@@ -170,10 +170,6 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -405,9 +401,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|gint32
-name|layer_ID
-decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -518,9 +511,6 @@ operator|.
 name|d_string
 argument_list|,
 operator|&
-name|layer_ID
-argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -578,8 +568,6 @@ decl_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
-argument_list|,
-name|layer_ID
 argument_list|,
 literal|"image/jp2"
 argument_list|,
@@ -696,17 +684,13 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gint32 * layer_ID,GError ** error)
+DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gint32
-modifier|*
-name|layer_ID
 parameter_list|,
 name|GError
 modifier|*
@@ -730,6 +714,9 @@ decl_stmt|;
 name|jas_image_t
 modifier|*
 name|image
+decl_stmt|;
+name|gint32
+name|layer_ID
 decl_stmt|;
 name|GimpImageType
 name|image_type

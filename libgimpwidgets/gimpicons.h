@@ -703,11 +703,6 @@ define|#
 directive|define
 name|GIMP_STOCK_IMAGE
 value|"gimp-image"
-DECL|macro|GIMP_STOCK_IMAGE_METADATA
-define|#
-directive|define
-name|GIMP_STOCK_IMAGE_METADATA
-value|"gimp-image-metadata"
 DECL|macro|GIMP_STOCK_LAYER
 define|#
 directive|define
