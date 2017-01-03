@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f44d40103
+DECL|enum|__anon27a53bc80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1778,7 +1778,7 @@ operator|->
 name|color_frame_2
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_RGB
+name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

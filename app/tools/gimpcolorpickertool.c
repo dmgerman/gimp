@@ -1494,7 +1494,7 @@ operator|->
 name|color_frame2
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_RGB
+name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
