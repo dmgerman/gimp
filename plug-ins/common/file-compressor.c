@@ -2251,6 +2251,8 @@ name|O_CREAT
 operator||
 name|O_WRONLY
 operator||
+name|O_TRUNC
+operator||
 name|_O_BINARY
 argument_list|,
 literal|0664
@@ -2692,6 +2694,8 @@ argument_list|,
 name|O_CREAT
 operator||
 name|O_WRONLY
+operator||
+name|O_TRUNC
 operator||
 name|_O_BINARY
 argument_list|,
