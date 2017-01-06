@@ -1344,12 +1344,12 @@ DECL|macro|GEXIV2_REQUIRED_MINOR
 define|#
 directive|define
 name|GEXIV2_REQUIRED_MINOR
-value|7
+value|10
 DECL|macro|GEXIV2_REQUIRED_MICRO
 define|#
 directive|define
 name|GEXIV2_REQUIRED_MICRO
-value|0
+value|3
 name|gint
 name|gexiv2_version
 init|=
