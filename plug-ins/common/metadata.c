@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977f6600103
+DECL|enum|__anon2baaf75d0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977f6600203
+DECL|enum|__anon2baaf75d0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977f6600308
+DECL|struct|__anon2baaf75d0308
 block|{
 DECL|member|tag
 name|gchar
@@ -1087,6 +1087,11 @@ argument_list|,
 name|C_EXIF_VALUE
 argument_list|)
 expr_stmt|;
+name|g_strfreev
+argument_list|(
+name|exif_data
+argument_list|)
+expr_stmt|;
 name|xmp_data
 operator|=
 name|gexiv2_metadata_get_xmp_tags
@@ -1117,6 +1122,11 @@ argument_list|,
 name|C_XMP_TAG
 argument_list|,
 name|C_XMP_VALUE
+argument_list|)
+expr_stmt|;
+name|g_strfreev
+argument_list|(
+name|xmp_data
 argument_list|)
 expr_stmt|;
 name|iptc_data
@@ -1248,6 +1258,11 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+name|g_strfreev
+argument_list|(
+name|iptc_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
