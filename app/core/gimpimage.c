@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb81f380103
+DECL|enum|__anon2bf3d3cc0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb81f380203
+DECL|enum|__anon2bf3d3cc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9672,16 +9672,16 @@ condition|)
 block|{
 comment|/* new layer modes not supported by gimp-1.2 */
 case|case
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 case|:
 case|case
-name|GIMP_GRAIN_EXTRACT_MODE
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
 case|:
 case|case
-name|GIMP_GRAIN_MERGE_MODE
+name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
 case|:
 case|case
-name|GIMP_COLOR_ERASE_MODE
+name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|version
 operator|=
@@ -9695,19 +9695,19 @@ expr_stmt|;
 break|break;
 comment|/* new layer modes not supported by gimp-2.8 */
 case|case
-name|GIMP_NEW_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY
 case|:
 case|case
-name|GIMP_LCH_HUE_MODE
+name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 case|case
-name|GIMP_LCH_CHROMA_MODE
+name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 case|case
-name|GIMP_LCH_COLOR_MODE
+name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 case|case
-name|GIMP_LCH_LIGHTNESS_MODE
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|version
 operator|=

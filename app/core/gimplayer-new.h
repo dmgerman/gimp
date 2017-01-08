@@ -44,7 +44,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -76,7 +76,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -108,7 +108,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|GimpColorProfile
@@ -144,7 +144,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 function_decl|;

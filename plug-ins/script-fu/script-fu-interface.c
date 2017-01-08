@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15a1300108
+DECL|struct|__anon2c8f796c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -402,7 +402,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint
@@ -2952,7 +2952,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_brush_callback (gpointer data,const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing)
+DECL|function|script_fu_brush_callback (gpointer data,const gchar * name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing)
 name|script_fu_brush_callback
 parameter_list|(
 name|gpointer
@@ -2969,7 +2969,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint

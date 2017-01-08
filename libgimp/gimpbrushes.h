@@ -83,7 +83,7 @@ argument_list|)
 end_macro
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_brushes_get_paint_mode
 parameter_list|(
 name|void
@@ -102,7 +102,7 @@ begin_function_decl
 name|gboolean
 name|gimp_brushes_set_paint_mode
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

@@ -577,7 +577,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 case|:
 name|strcpy
 argument_list|(
@@ -588,7 +588,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DARKEN_ONLY_MODE
+name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -599,7 +599,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LIGHTEN_ONLY_MODE
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -610,7 +610,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HUE_MODE
+name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -621,7 +621,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SATURATION_MODE
+name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -632,7 +632,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_MODE
+name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -643,7 +643,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ADDITION_MODE
+name|GIMP_LAYER_MODE_ADDITION_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -654,7 +654,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MULTIPLY_MODE
+name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -665,7 +665,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SCREEN_MODE
+name|GIMP_LAYER_MODE_SCREEN_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -676,7 +676,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DISSOLVE_MODE
+name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|strcpy
 argument_list|(
@@ -687,7 +687,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DIFFERENCE_MODE
+name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -698,7 +698,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_VALUE_MODE
+name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
 case|:
 comment|/* ? */
 name|strcpy
@@ -710,7 +710,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HARDLIGHT_MODE
+name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -721,10 +721,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 case|:
 case|case
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 case|:
 name|strcpy
 argument_list|(
@@ -735,7 +735,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_NEW_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|strcpy
 argument_list|(
@@ -756,7 +756,7 @@ literal|"?"
 decl_stmt|;
 name|gimp_enum_get_value
 argument_list|(
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|gimp_layer_get_mode
 argument_list|(

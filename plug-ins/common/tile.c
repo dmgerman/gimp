@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea47710108
+DECL|struct|__anon28fa425f0108
 block|{
 DECL|member|new_width
 name|gint
@@ -1256,7 +1256,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 if|if

@@ -73,7 +73,7 @@ argument_list|,
 name|gint
 name|spacing
 argument_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 argument_list|,
 name|GimpRunBrushCallback
@@ -129,7 +129,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

@@ -2197,7 +2197,7 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2331,7 +2331,7 @@ literal|"merged layer"
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2483,7 +2483,7 @@ name|GimpApplicator
 modifier|*
 name|applicator
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 decl_stmt|;
 name|layer
@@ -2506,7 +2506,7 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.        */
+comment|/* MODE_DISSOLVE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.        */
 name|mode
 operator|=
 name|gimp_layer_get_mode
@@ -2522,11 +2522,11 @@ name|bottom_layer
 operator|&&
 name|mode
 operator|!=
-name|GIMP_DISSOLVE_MODE
+name|GIMP_LAYER_MODE_DISSOLVE
 condition|)
 name|mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|merge_buffer
 operator|=

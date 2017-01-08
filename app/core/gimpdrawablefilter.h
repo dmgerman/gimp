@@ -219,7 +219,7 @@ name|GimpDrawableFilter
 modifier|*
 name|filter
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

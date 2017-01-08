@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae52a850103
+DECL|enum|__anon279735ec0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -156,7 +156,7 @@ name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|member|color_managed
@@ -600,7 +600,7 @@ name|drawable_filter
 operator|->
 name|paint_mode
 operator|=
-name|GIMP_REPLACE_MODE
+name|GIMP_LAYER_MODE_REPLACE
 expr_stmt|;
 block|}
 end_function
@@ -1336,14 +1336,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerMode paint_mode)
 name|gimp_drawable_filter_set_mode
 parameter_list|(
 name|GimpDrawableFilter
 modifier|*
 name|filter
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

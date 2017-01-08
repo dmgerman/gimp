@@ -382,7 +382,7 @@ name|undo_desc
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_REPLACE_MODE
+name|GIMP_LAYER_MODE_REPLACE
 argument_list|,
 name|NULL
 argument_list|,

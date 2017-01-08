@@ -167,7 +167,7 @@ name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|member|brush
@@ -414,7 +414,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;
@@ -1206,7 +1206,7 @@ comment|/*  paint mode  */
 end_comment
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_context_get_paint_mode
 parameter_list|(
 name|GimpContext
@@ -1224,7 +1224,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

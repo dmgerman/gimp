@@ -1304,7 +1304,7 @@ operator|->
 name|paint_mode_menu
 argument_list|)
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2317,7 +2317,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2748594b0108
+DECL|struct|__anon297a4b8a0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2748594b0208
+DECL|struct|__anon297a4b8a0208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3592,7 +3592,7 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -3746,9 +3746,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -4081,7 +4081,7 @@ name|layer
 argument_list|)
 operator|!=
 operator|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 operator|)
 name|mode
 condition|)
@@ -4135,7 +4135,7 @@ argument_list|(
 name|layer
 argument_list|,
 operator|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 operator|)
 name|mode
 argument_list|,

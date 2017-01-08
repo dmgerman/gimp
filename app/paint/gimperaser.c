@@ -424,7 +424,7 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 name|GeglBuffer
@@ -547,7 +547,7 @@ name|anti_erase
 condition|)
 name|paint_mode
 operator|=
-name|GIMP_ANTI_ERASE_MODE
+name|GIMP_LAYER_MODE_ANTI_ERASE
 expr_stmt|;
 elseif|else
 if|if
@@ -559,12 +559,12 @@ argument_list|)
 condition|)
 name|paint_mode
 operator|=
-name|GIMP_ERASE_MODE
+name|GIMP_LAYER_MODE_ERASE
 expr_stmt|;
 else|else
 name|paint_mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|gimp_brush_core_eval_transform_dynamics
 argument_list|(

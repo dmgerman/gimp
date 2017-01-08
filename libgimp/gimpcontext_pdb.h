@@ -218,7 +218,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_context_get_paint_mode
 parameter_list|(
 name|void
@@ -230,7 +230,7 @@ begin_function_decl
 name|gboolean
 name|gimp_context_set_paint_mode
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

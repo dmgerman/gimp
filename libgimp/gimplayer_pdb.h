@@ -74,7 +74,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -452,7 +452,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_layer_get_mode
 parameter_list|(
 name|gint32
@@ -468,7 +468,7 @@ parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 function_decl|;

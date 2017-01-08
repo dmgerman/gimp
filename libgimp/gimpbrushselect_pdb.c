@@ -29,7 +29,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_brushes_popup (const gchar * brush_callback,const gchar * popup_title,const gchar * initial_brush,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brushes_popup (const gchar * brush_callback,const gchar * popup_title,const gchar * initial_brush,gdouble opacity,gint spacing,GimpLayerMode paint_mode)
 name|gimp_brushes_popup
 parameter_list|(
 specifier|const
@@ -53,7 +53,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{
@@ -206,7 +206,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_brushes_set_popup (const gchar * brush_callback,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brushes_set_popup (const gchar * brush_callback,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode)
 name|gimp_brushes_set_popup
 parameter_list|(
 specifier|const
@@ -225,7 +225,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

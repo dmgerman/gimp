@@ -4454,11 +4454,11 @@ if|if
 condition|(
 name|mode
 operator|==
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 condition|)
 name|mode
 operator|=
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 expr_stmt|;
 name|gimp_layer_set_mode
 argument_list|(
@@ -4466,7 +4466,7 @@ operator|*
 name|layer
 argument_list|,
 operator|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 operator|)
 name|mode
 argument_list|,
@@ -6143,7 +6143,7 @@ name|name
 argument_list|,
 literal|255
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|g_free

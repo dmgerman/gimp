@@ -762,7 +762,7 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpPaintApplicationMode

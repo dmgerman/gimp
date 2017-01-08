@@ -168,7 +168,7 @@ name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|member|linear
@@ -401,7 +401,7 @@ name|GimpApplicator
 modifier|*
 name|applicator
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

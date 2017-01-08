@@ -113,7 +113,7 @@ name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
 DECL|member|mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 decl_stmt|;
 DECL|member|opacity

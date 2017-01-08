@@ -73,7 +73,7 @@ comment|/**  * gimp_brushes_get_paint_mode:  *  * This procedure is deprecated! 
 end_comment
 
 begin_function
-name|GimpLayerModeEffects
+name|GimpLayerMode
 DECL|function|gimp_brushes_get_paint_mode (void)
 name|gimp_brushes_get_paint_mode
 parameter_list|(
@@ -93,10 +93,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_brushes_set_paint_mode (GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brushes_set_paint_mode (GimpLayerMode paint_mode)
 name|gimp_brushes_set_paint_mode
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

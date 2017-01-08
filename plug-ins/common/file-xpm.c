@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2878ab580108
+DECL|struct|__anon2ad73baa0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2878ab580208
+DECL|struct|__anon2ad73baa0208
 block|{
 DECL|member|r
 name|guchar
@@ -1666,7 +1666,7 @@ name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

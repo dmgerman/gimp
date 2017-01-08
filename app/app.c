@@ -102,11 +102,28 @@ endif|#
 directive|endif
 end_endif
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* for compat enums */
+end_comment
+
 begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_DISABLE_DEPRECATED
+define|#
+directive|define
+name|GIMP_DISABLE_DEPRECATED
+end_define
 
 begin_include
 include|#
@@ -311,6 +328,9 @@ name|gboolean
 name|no_interface
 parameter_list|)
 block|{
+name|GQuark
+name|quark
+decl_stmt|;
 comment|/* disable OpenCL before GEGL is even initialized; this way we only    * enable if wanted in gimprc, instead of always enabling, and then    * disabling again if wanted in gimprc    */
 name|g_object_set
 argument_list|(
@@ -353,6 +373,26 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/*  keep compat enum code in sync with tools/pdbgen/enumcode.pl  */
+name|quark
+operator|=
+name|g_quark_from_static_string
+argument_list|(
+literal|"gimp-compat-enum"
+argument_list|)
+expr_stmt|;
+name|g_type_set_qdata
+argument_list|(
+name|GIMP_TYPE_LAYER_MODE
+argument_list|,
+name|quark
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_TYPE_LAYER_MODE_EFFECTS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

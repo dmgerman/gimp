@@ -1230,7 +1230,7 @@ comment|/**  * gimp_context_get_paint_mode:  *  * Get the paint mode.  *  * This
 end_comment
 
 begin_function
-name|GimpLayerModeEffects
+name|GimpLayerMode
 DECL|function|gimp_context_get_paint_mode (void)
 name|gimp_context_get_paint_mode
 parameter_list|(
@@ -1244,7 +1244,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 init|=
 literal|0
@@ -1304,10 +1304,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_context_set_paint_mode (GimpLayerModeEffects paint_mode)
+DECL|function|gimp_context_set_paint_mode (GimpLayerMode paint_mode)
 name|gimp_context_set_paint_mode
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

@@ -6535,7 +6535,7 @@ decl_stmt|;
 name|GimpImageType
 name|image_type
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|layer_mode
 decl_stmt|;
 name|IFDBG
@@ -8188,7 +8188,7 @@ name|image_type
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10279,7 +10279,7 @@ name|image_type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

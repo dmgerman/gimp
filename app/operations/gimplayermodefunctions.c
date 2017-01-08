@@ -215,10 +215,10 @@ end_include
 
 begin_function
 name|GimpLayerModeFunction
-DECL|function|get_layer_mode_function (GimpLayerModeEffects paint_mode,gboolean linear_mode)
+DECL|function|get_layer_mode_function (GimpLayerMode paint_mode,gboolean linear_mode)
 name|get_layer_mode_function
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gboolean
@@ -236,7 +236,7 @@ name|paint_mode
 condition|)
 block|{
 case|case
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 case|:
 name|func
 operator|=
@@ -244,7 +244,7 @@ name|gimp_operation_normal_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DISSOLVE_MODE
+name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|func
 operator|=
@@ -252,7 +252,7 @@ name|gimp_operation_dissolve_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BEHIND_MODE
+name|GIMP_LAYER_MODE_BEHIND
 case|:
 name|func
 operator|=
@@ -260,7 +260,7 @@ name|gimp_operation_behind_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MULTIPLY_MODE
+name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
 case|:
 name|func
 operator|=
@@ -268,7 +268,7 @@ name|gimp_operation_multiply_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SCREEN_MODE
+name|GIMP_LAYER_MODE_SCREEN_BROKEN
 case|:
 name|func
 operator|=
@@ -276,7 +276,7 @@ name|gimp_operation_screen_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 case|:
 name|func
 operator|=
@@ -284,7 +284,7 @@ name|gimp_operation_softlight_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DIFFERENCE_MODE
+name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
 case|:
 name|func
 operator|=
@@ -292,7 +292,7 @@ name|gimp_operation_difference_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ADDITION_MODE
+name|GIMP_LAYER_MODE_ADDITION_BROKEN
 case|:
 name|func
 operator|=
@@ -300,7 +300,7 @@ name|gimp_operation_addition_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SUBTRACT_MODE
+name|GIMP_LAYER_MODE_SUBTRACT_BROKEN
 case|:
 name|func
 operator|=
@@ -308,7 +308,7 @@ name|gimp_operation_subtract_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DARKEN_ONLY_MODE
+name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
 case|:
 name|func
 operator|=
@@ -316,7 +316,7 @@ name|gimp_operation_darken_only_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LIGHTEN_ONLY_MODE
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
 case|:
 name|func
 operator|=
@@ -324,7 +324,7 @@ name|gimp_operation_lighten_only_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HUE_MODE
+name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
 case|:
 name|func
 operator|=
@@ -332,7 +332,7 @@ name|gimp_operation_hue_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SATURATION_MODE
+name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
 case|:
 name|func
 operator|=
@@ -340,7 +340,7 @@ name|gimp_operation_saturation_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_MODE
+name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
 case|:
 name|func
 operator|=
@@ -348,7 +348,7 @@ name|gimp_operation_color_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_VALUE_MODE
+name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
 case|:
 name|func
 operator|=
@@ -356,7 +356,7 @@ name|gimp_operation_value_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DIVIDE_MODE
+name|GIMP_LAYER_MODE_DIVIDE_BROKEN
 case|:
 name|func
 operator|=
@@ -364,7 +364,7 @@ name|gimp_operation_divide_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DODGE_MODE
+name|GIMP_LAYER_MODE_DODGE_BROKEN
 case|:
 name|func
 operator|=
@@ -372,7 +372,7 @@ name|gimp_operation_dodge_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BURN_MODE
+name|GIMP_LAYER_MODE_BURN_BROKEN
 case|:
 name|func
 operator|=
@@ -380,7 +380,7 @@ name|gimp_operation_burn_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HARDLIGHT_MODE
+name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
 case|:
 name|func
 operator|=
@@ -388,7 +388,7 @@ name|gimp_operation_hardlight_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 case|:
 name|func
 operator|=
@@ -396,7 +396,7 @@ name|gimp_operation_softlight_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAIN_EXTRACT_MODE
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
 case|:
 name|func
 operator|=
@@ -404,7 +404,7 @@ name|gimp_operation_grain_extract_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAIN_MERGE_MODE
+name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
 case|:
 name|func
 operator|=
@@ -412,7 +412,7 @@ name|gimp_operation_grain_merge_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_ERASE_MODE
+name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|func
 operator|=
@@ -420,7 +420,7 @@ name|gimp_operation_color_erase_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_NEW_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|func
 operator|=
@@ -428,7 +428,7 @@ name|gimp_operation_overlay_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_HUE_MODE
+name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 name|func
 operator|=
@@ -440,7 +440,7 @@ name|gimp_operation_lch_hue_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_CHROMA_MODE
+name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 name|func
 operator|=
@@ -452,7 +452,7 @@ name|gimp_operation_lch_chroma_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_COLOR_MODE
+name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 name|func
 operator|=
@@ -464,7 +464,7 @@ name|gimp_operation_lch_color_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_LIGHTNESS_MODE
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|func
 operator|=
@@ -476,7 +476,7 @@ name|gimp_operation_lch_lightness_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ERASE_MODE
+name|GIMP_LAYER_MODE_ERASE
 case|:
 name|func
 operator|=
@@ -484,7 +484,7 @@ name|gimp_operation_erase_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_REPLACE_MODE
+name|GIMP_LAYER_MODE_REPLACE
 case|:
 name|func
 operator|=
@@ -492,7 +492,7 @@ name|gimp_operation_replace_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ANTI_ERASE_MODE
+name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
 name|func
 operator|=

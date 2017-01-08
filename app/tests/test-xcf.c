@@ -252,7 +252,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER1_OPACITY
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER1_OPACITY
-value|1.0
+value|GIMP_OPACITY_OPAQUE
 end_define
 
 begin_define
@@ -260,7 +260,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER1_MODE
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER1_MODE
-value|GIMP_NORMAL_MODE
+value|GIMP_LAYER_MODE_NORMAL
 end_define
 
 begin_define
@@ -300,7 +300,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER2_OPACITY
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER2_OPACITY
-value|0.0
+value|GIMP_OPACITY_TRANSPARENT
 end_define
 
 begin_define
@@ -308,7 +308,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER2_MODE
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER2_MODE
-value|GIMP_MULTIPLY_MODE
+value|GIMP_LAYER_MODE_MULTIPLY_BROKEN
 end_define
 
 begin_define

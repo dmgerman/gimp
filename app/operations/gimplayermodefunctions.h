@@ -20,7 +20,7 @@ begin_function_decl
 name|GimpLayerModeFunction
 name|get_layer_mode_function
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gboolean

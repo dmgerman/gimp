@@ -114,7 +114,7 @@ name|gint
 name|spacing
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|member|width
@@ -152,7 +152,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fb38b60103
+DECL|enum|__anon2c1b3ac60103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -165,7 +165,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fb38b60203
+DECL|enum|__anon2c1b3ac60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,7 +279,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint
@@ -665,7 +665,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpBrushSelectButton:paint-mode:    *    * The name of the currently selected brush.    *    * Since: 2.4    */
+comment|/**    * GimpBrushSelectButton:paint-mode:    *    * The paint mode.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -683,7 +683,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|GIMP_COLOR_ERASE_MODE
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 argument_list|,
 operator|-
 literal|1
@@ -884,7 +884,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_select_button_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brush_select_button_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode)
 name|gimp_brush_select_button_new
 parameter_list|(
 specifier|const
@@ -903,7 +903,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{
@@ -984,7 +984,7 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_brush_select_button_get_brush (GimpBrushSelectButton * button,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode)
+DECL|function|gimp_brush_select_button_get_brush (GimpBrushSelectButton * button,gdouble * opacity,gint * spacing,GimpLayerMode * paint_mode)
 name|gimp_brush_select_button_get_brush
 parameter_list|(
 name|GimpBrushSelectButton
@@ -999,7 +999,7 @@ name|gint
 modifier|*
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 modifier|*
 name|paint_mode
 parameter_list|)
@@ -1072,7 +1072,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_select_button_set_brush (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brush_select_button_set_brush (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode)
 name|gimp_brush_select_button_set_brush
 parameter_list|(
 name|GimpBrushSelectButton
@@ -1090,7 +1090,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{
@@ -1690,7 +1690,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_button_callback (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer data)
+DECL|function|gimp_brush_select_button_callback (const gchar * name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer data)
 name|gimp_brush_select_button_callback
 parameter_list|(
 specifier|const
@@ -1704,7 +1704,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint

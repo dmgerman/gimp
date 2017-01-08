@@ -9675,10 +9675,10 @@ name|opacity
 init|=
 literal|100.0
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 init|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 decl_stmt|;
 if|if
 condition|(
@@ -10333,10 +10333,10 @@ name|opacity
 init|=
 literal|100.0
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 init|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 decl_stmt|;
 if|if
 condition|(

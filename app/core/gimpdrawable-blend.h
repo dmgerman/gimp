@@ -32,7 +32,7 @@ name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpGradientType

@@ -450,14 +450,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerModeEffects mode,gboolean linear)
+DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerMode mode,gboolean linear)
 name|gimp_gegl_mode_node_set_mode
 parameter_list|(
 name|GeglNode
 modifier|*
 name|node
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|gboolean
@@ -488,7 +488,7 @@ name|mode
 condition|)
 block|{
 case|case
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 case|:
 name|operation
 operator|=
@@ -496,7 +496,7 @@ literal|"gimp:normal-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DISSOLVE_MODE
+name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|operation
 operator|=
@@ -504,7 +504,7 @@ literal|"gimp:dissolve-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BEHIND_MODE
+name|GIMP_LAYER_MODE_BEHIND
 case|:
 name|operation
 operator|=
@@ -512,7 +512,7 @@ literal|"gimp:behind-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MULTIPLY_MODE
+name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
 case|:
 name|operation
 operator|=
@@ -520,7 +520,7 @@ literal|"gimp:multiply-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SCREEN_MODE
+name|GIMP_LAYER_MODE_SCREEN_BROKEN
 case|:
 name|operation
 operator|=
@@ -528,7 +528,7 @@ literal|"gimp:screen-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 case|:
 name|operation
 operator|=
@@ -536,7 +536,7 @@ literal|"gimp:softlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DIFFERENCE_MODE
+name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
 case|:
 name|operation
 operator|=
@@ -544,7 +544,7 @@ literal|"gimp:difference-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ADDITION_MODE
+name|GIMP_LAYER_MODE_ADDITION_BROKEN
 case|:
 name|operation
 operator|=
@@ -552,7 +552,7 @@ literal|"gimp:addition-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SUBTRACT_MODE
+name|GIMP_LAYER_MODE_SUBTRACT_BROKEN
 case|:
 name|operation
 operator|=
@@ -560,7 +560,7 @@ literal|"gimp:subtract-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DARKEN_ONLY_MODE
+name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
 case|:
 name|operation
 operator|=
@@ -568,7 +568,7 @@ literal|"gimp:darken-only-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LIGHTEN_ONLY_MODE
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
 case|:
 name|operation
 operator|=
@@ -576,7 +576,7 @@ literal|"gimp:lighten-only-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HUE_MODE
+name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
 case|:
 name|operation
 operator|=
@@ -584,7 +584,7 @@ literal|"gimp:hue-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SATURATION_MODE
+name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
 case|:
 name|operation
 operator|=
@@ -592,7 +592,7 @@ literal|"gimp:saturation-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_MODE
+name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
 case|:
 name|operation
 operator|=
@@ -600,7 +600,7 @@ literal|"gimp:color-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_VALUE_MODE
+name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
 case|:
 name|operation
 operator|=
@@ -608,7 +608,7 @@ literal|"gimp:value-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DIVIDE_MODE
+name|GIMP_LAYER_MODE_DIVIDE_BROKEN
 case|:
 name|operation
 operator|=
@@ -616,7 +616,7 @@ literal|"gimp:divide-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DODGE_MODE
+name|GIMP_LAYER_MODE_DODGE_BROKEN
 case|:
 name|operation
 operator|=
@@ -624,7 +624,7 @@ literal|"gimp:dodge-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BURN_MODE
+name|GIMP_LAYER_MODE_BURN_BROKEN
 case|:
 name|operation
 operator|=
@@ -632,7 +632,7 @@ literal|"gimp:burn-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_HARDLIGHT_MODE
+name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
 case|:
 name|operation
 operator|=
@@ -640,7 +640,7 @@ literal|"gimp:hardlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 case|:
 name|operation
 operator|=
@@ -648,7 +648,7 @@ literal|"gimp:softlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAIN_EXTRACT_MODE
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
 case|:
 name|operation
 operator|=
@@ -656,7 +656,7 @@ literal|"gimp:grain-extract-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAIN_MERGE_MODE
+name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
 case|:
 name|operation
 operator|=
@@ -664,7 +664,7 @@ literal|"gimp:grain-merge-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_ERASE_MODE
+name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|operation
 operator|=
@@ -672,7 +672,7 @@ literal|"gimp:color-erase-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_NEW_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|operation
 operator|=
@@ -680,31 +680,7 @@ literal|"gimp:overlay-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ERASE_MODE
-case|:
-name|operation
-operator|=
-literal|"gimp:erase-mode"
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_REPLACE_MODE
-case|:
-name|operation
-operator|=
-literal|"gimp:replace-mode"
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_ANTI_ERASE_MODE
-case|:
-name|operation
-operator|=
-literal|"gimp:anti-erase-mode"
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_LCH_HUE_MODE
+name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 name|operation
 operator|=
@@ -712,7 +688,7 @@ literal|"gimp:lch-hue-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_CHROMA_MODE
+name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 name|operation
 operator|=
@@ -720,7 +696,7 @@ literal|"gimp:lch-chroma-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_COLOR_MODE
+name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 name|operation
 operator|=
@@ -728,11 +704,35 @@ literal|"gimp:lch-color-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LCH_LIGHTNESS_MODE
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|operation
 operator|=
 literal|"gimp:lch-lightness-mode"
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_ERASE
+case|:
+name|operation
+operator|=
+literal|"gimp:erase-mode"
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_REPLACE
+case|:
+name|operation
+operator|=
+literal|"gimp:replace-mode"
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_ANTI_ERASE
+case|:
+name|operation
+operator|=
+literal|"gimp:anti-erase-mode"
 expr_stmt|;
 break|break;
 default|default:

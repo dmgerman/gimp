@@ -143,7 +143,7 @@ modifier|*
 name|layer
 decl_stmt|;
 DECL|member|mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 decl_stmt|;
 DECL|member|opacity
@@ -270,7 +270,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * layer_name,GimpLayerModeEffects layer_mode,gdouble layer_opacity,GimpFillType layer_fill_type,gboolean layer_visible,gboolean layer_linked,GimpColorTag layer_color_tag,gboolean layer_lock_content,gboolean layer_lock_position,gboolean layer_lock_alpha,GimpLayerOptionsCallback callback,gpointer user_data)
+DECL|function|layer_options_dialog_new (GimpImage * image,GimpLayer * layer,GimpContext * context,GtkWidget * parent,const gchar * title,const gchar * role,const gchar * icon_name,const gchar * desc,const gchar * help_id,const gchar * layer_name,GimpLayerMode layer_mode,gdouble layer_opacity,GimpFillType layer_fill_type,gboolean layer_visible,gboolean layer_linked,GimpColorTag layer_color_tag,gboolean layer_lock_content,gboolean layer_lock_position,gboolean layer_lock_alpha,GimpLayerOptionsCallback callback,gpointer user_data)
 name|layer_options_dialog_new
 parameter_list|(
 name|GimpImage
@@ -319,7 +319,7 @@ name|gchar
 modifier|*
 name|layer_name
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|layer_mode
 parameter_list|,
 name|gdouble

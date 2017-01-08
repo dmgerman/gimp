@@ -132,7 +132,7 @@ modifier|*
 name|applied_buffer
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|member|opacity

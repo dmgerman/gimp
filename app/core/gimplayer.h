@@ -109,7 +109,7 @@ name|opacity
 decl_stmt|;
 comment|/*  layer opacity              */
 DECL|member|mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 decl_stmt|;
 comment|/*  layer combination mode     */
@@ -151,7 +151,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29d226760108
+DECL|struct|__anon29421e1b0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -577,7 +577,7 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|gboolean
@@ -587,7 +587,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_layer_get_mode
 parameter_list|(
 name|GimpLayer

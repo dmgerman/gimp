@@ -254,7 +254,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint

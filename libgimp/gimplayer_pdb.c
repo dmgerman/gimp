@@ -29,7 +29,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|_gimp_layer_new (gint32 image_ID,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|_gimp_layer_new (gint32 image_ID,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerMode mode)
 name|_gimp_layer_new
 parameter_list|(
 name|gint32
@@ -52,7 +52,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{
@@ -2368,7 +2368,7 @@ comment|/**  * gimp_layer_get_mode:  * @layer_ID: The layer.  *  * Get the combi
 end_comment
 
 begin_function
-name|GimpLayerModeEffects
+name|GimpLayerMode
 DECL|function|gimp_layer_get_mode (gint32 layer_ID)
 name|gimp_layer_get_mode
 parameter_list|(
@@ -2383,7 +2383,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 init|=
 literal|0
@@ -2447,13 +2447,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_set_mode (gint32 layer_ID,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_set_mode (gint32 layer_ID,GimpLayerMode mode)
 name|gimp_layer_set_mode
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{

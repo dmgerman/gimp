@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5dc980108
+DECL|struct|__anon28c70b1a0108
 block|{
 DECL|member|replace
 name|gint
@@ -1958,7 +1958,7 @@ name|dtype
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

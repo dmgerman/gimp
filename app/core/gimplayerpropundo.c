@@ -340,7 +340,7 @@ case|case
 name|GIMP_UNDO_LAYER_MODE
 case|:
 block|{
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 decl_stmt|;
 name|mode

@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6f0990108
+DECL|struct|__anon288b90c30108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6f0990208
+DECL|struct|__anon288b90c30208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -208,7 +208,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
@@ -223,7 +223,7 @@ name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpGradientType

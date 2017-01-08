@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9849b50108
+DECL|struct|__anon290bd2bf0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9849b50208
+DECL|struct|__anon290bd2bf0208
 block|{
 DECL|member|y
 name|gint32
@@ -14104,7 +14104,7 @@ decl_stmt|;
 name|gdouble
 name|l_opacity
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|l_mode
 decl_stmt|;
 name|gint

@@ -2178,7 +2178,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_brush_changed_callback (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
+DECL|function|gfig_brush_changed_callback (GimpBrushSelectButton * button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
 name|gfig_brush_changed_callback
 parameter_list|(
 name|GimpBrushSelectButton
@@ -2196,7 +2196,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint

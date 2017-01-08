@@ -46,7 +46,7 @@ name|gchar
 modifier|*
 name|layer_name
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|layer_mode
 parameter_list|,
 name|gdouble
@@ -145,7 +145,7 @@ name|gchar
 modifier|*
 name|layer_name
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|layer_mode
 parameter_list|,
 name|gdouble

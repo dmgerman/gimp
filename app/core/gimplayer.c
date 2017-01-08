@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295680a10103
+DECL|enum|__anon2bd03bfa0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295680a10203
+DECL|enum|__anon2bd03bfa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1764,9 +1764,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READABLE
 argument_list|)
@@ -1856,7 +1856,7 @@ name|layer
 operator|->
 name|mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|layer
 operator|->
@@ -2299,7 +2299,7 @@ name|GeglNode
 modifier|*
 name|mode_node
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|visible_mode
 decl_stmt|;
 name|gboolean
@@ -2328,7 +2328,7 @@ condition|)
 block|{
 name|visible_mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|linear
 operator|=
@@ -2343,7 +2343,7 @@ name|layer
 operator|->
 name|mode
 operator|!=
-name|GIMP_DISSOLVE_MODE
+name|GIMP_LAYER_MODE_DISSOLVE
 operator|&&
 name|gimp_filter_get_is_last_node
 argument_list|(
@@ -2356,7 +2356,7 @@ condition|)
 block|{
 name|visible_mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 block|}
 else|else
@@ -8749,14 +8749,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_mode (GimpLayer * layer,GimpLayerModeEffects mode,gboolean push_undo)
+DECL|function|gimp_layer_set_mode (GimpLayer * layer,GimpLayerMode mode,gboolean push_undo)
 name|gimp_layer_set_mode
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|gboolean
@@ -8891,7 +8891,7 @@ block|}
 end_function
 
 begin_function
-name|GimpLayerModeEffects
+name|GimpLayerMode
 DECL|function|gimp_layer_get_mode (GimpLayer * layer)
 name|gimp_layer_get_mode
 parameter_list|(
@@ -8907,7 +8907,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 return|return

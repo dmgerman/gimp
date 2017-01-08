@@ -728,7 +728,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;
@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c288d570103
+DECL|enum|__anon2bc260bc0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c288d570203
+DECL|enum|__anon2bc260bc0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2147,7 +2147,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -3053,9 +3053,9 @@ argument_list|(
 literal|"Paint Mode"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -5743,7 +5743,7 @@ argument_list|(
 name|config
 argument_list|)
 decl_stmt|;
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|old_paint_mode
 init|=
 name|context
@@ -5779,7 +5779,7 @@ name|context
 operator|->
 name|paint_mode
 operator|==
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 condition|)
 name|g_object_set
 argument_list|(
@@ -5787,7 +5787,7 @@ name|context
 argument_list|,
 literal|"paint-mode"
 argument_list|,
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 argument_list|,
 name|NULL
 argument_list|)
@@ -10467,7 +10467,7 @@ comment|/*  paint mode  ********************************************************
 end_comment
 
 begin_function
-name|GimpLayerModeEffects
+name|GimpLayerMode
 DECL|function|gimp_context_get_paint_mode (GimpContext * context)
 name|gimp_context_get_paint_mode
 parameter_list|(
@@ -10483,7 +10483,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 return|return
@@ -10496,14 +10496,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_paint_mode (GimpContext * context,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_context_set_paint_mode (GimpContext * context,GimpLayerMode paint_mode)
 name|gimp_context_set_paint_mode
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{
@@ -10572,14 +10572,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_paint_mode (GimpContext * context,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_context_real_set_paint_mode (GimpContext * context,GimpLayerMode paint_mode)
 name|gimp_context_real_set_paint_mode
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

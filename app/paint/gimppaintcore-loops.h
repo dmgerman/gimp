@@ -121,7 +121,7 @@ parameter_list|,
 name|gboolean
 name|linear_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 function_decl|;

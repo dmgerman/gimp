@@ -2051,7 +2051,7 @@ name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|buffer

@@ -107,7 +107,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
+DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerMode mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
 name|gimp_drawable_real_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -134,7 +134,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|GeglBuffer

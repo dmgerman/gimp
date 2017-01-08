@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon287d3c1e0108
+DECL|struct|__anon2ba452440108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon287d3c1e0208
+DECL|struct|__anon2ba452440208
 specifier|static
 struct|struct
 block|{
@@ -1940,7 +1940,7 @@ name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1976,7 +1976,7 @@ name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 block|}

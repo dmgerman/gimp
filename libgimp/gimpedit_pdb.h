@@ -212,7 +212,7 @@ parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gdouble
@@ -243,7 +243,7 @@ parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gdouble
@@ -280,7 +280,7 @@ parameter_list|,
 name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpGradientType

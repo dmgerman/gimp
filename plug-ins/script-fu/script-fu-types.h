@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30108
+DECL|struct|__anon294f4d460108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30208
+DECL|struct|__anon294f4d460208
 block|{
 DECL|member|filename
 name|gchar
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30308
+DECL|struct|__anon294f4d460308
 block|{
 DECL|member|name
 name|gchar
@@ -101,7 +101,7 @@ name|gint
 name|spacing
 decl_stmt|;
 DECL|member|paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
 DECL|typedef|SFBrush
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30408
+DECL|struct|__anon294f4d460408
 block|{
 DECL|member|list
 name|GSList
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30508
+DECL|struct|__anon294f4d460508
 block|{
 DECL|member|type_name
 name|gchar
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2bc40cc3060a
+DECL|union|__anon294f4d46060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30708
+DECL|struct|__anon294f4d460708
 block|{
 DECL|member|type
 name|SFArgType
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc40cc30808
+DECL|struct|__anon294f4d460808
 block|{
 DECL|member|name
 name|gchar

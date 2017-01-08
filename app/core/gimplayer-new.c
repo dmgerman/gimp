@@ -123,7 +123,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new (GimpImage * image,gint width,gint height,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new (GimpImage * image,gint width,gint height,const Babl * format,const gchar * name,gdouble opacity,GimpLayerMode mode)
 name|gimp_layer_new
 parameter_list|(
 name|GimpImage
@@ -149,7 +149,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{
@@ -254,7 +254,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_buffer (GimpBuffer * buffer,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_buffer (GimpBuffer * buffer,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerMode mode)
 name|gimp_layer_new_from_buffer
 parameter_list|(
 name|GimpBuffer
@@ -278,7 +278,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{
@@ -345,7 +345,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_gegl_buffer (GeglBuffer * buffer,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode,GimpColorProfile * buffer_profile)
+DECL|function|gimp_layer_new_from_gegl_buffer (GeglBuffer * buffer,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerMode mode,GimpColorProfile * buffer_profile)
 name|gimp_layer_new_from_gegl_buffer
 parameter_list|(
 name|GeglBuffer
@@ -369,7 +369,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|GimpColorProfile
@@ -474,7 +474,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_pixbuf (GdkPixbuf * pixbuf,GimpImage * dest_image,const Babl * format,const gchar * name,gdouble opacity,GimpLayerMode mode)
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
 name|GdkPixbuf
@@ -498,7 +498,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{

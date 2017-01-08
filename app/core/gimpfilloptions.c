@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85f19f0103
+DECL|enum|__anon2ba65eea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1087,7 +1087,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_ERASE_MODE
+name|GIMP_LAYER_MODE_ERASE
 argument_list|)
 expr_stmt|;
 name|undo_desc

@@ -180,7 +180,7 @@ modifier|*
 name|layer_new_name
 decl_stmt|;
 DECL|member|layer_new_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|layer_new_mode
 decl_stmt|;
 DECL|member|layer_new_opacity

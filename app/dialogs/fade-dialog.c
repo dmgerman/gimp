@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa094b50108
+DECL|struct|__anon29e828520108
 block|{
 DECL|member|image
 name|GimpImage
@@ -136,7 +136,7 @@ name|gboolean
 name|applied
 decl_stmt|;
 DECL|member|orig_paint_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|orig_paint_mode
 decl_stmt|;
 DECL|member|orig_opacity

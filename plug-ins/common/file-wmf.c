@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bbbf290108
+DECL|struct|__anon27aa851a0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -4910,7 +4910,7 @@ name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|buffer

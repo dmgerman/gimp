@@ -34,7 +34,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new (gint32 image_ID,const gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new (gint32 image_ID,const gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerMode mode)
 name|gimp_layer_new
 parameter_list|(
 name|gint32
@@ -57,7 +57,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{
@@ -112,7 +112,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_pixbuf (gint32 image_ID,const gchar * name,GdkPixbuf * pixbuf,gdouble opacity,GimpLayerModeEffects mode,gdouble progress_start,gdouble progress_end)
+DECL|function|gimp_layer_new_from_pixbuf (gint32 image_ID,const gchar * name,GdkPixbuf * pixbuf,gdouble opacity,GimpLayerMode mode,gdouble progress_start,gdouble progress_end)
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
 name|gint32
@@ -130,7 +130,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|gdouble
@@ -722,7 +722,7 @@ name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 if|if

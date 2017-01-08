@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a393190108
+DECL|struct|__anon2c06023d0108
 block|{
 DECL|member|callback
 name|GimpRunBrushCallback
@@ -82,7 +82,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_select_widget_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,GimpRunBrushCallback callback,gpointer data)
+DECL|function|gimp_brush_select_widget_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,GimpRunBrushCallback callback,gpointer data)
 name|gimp_brush_select_widget_new
 parameter_list|(
 specifier|const
@@ -144,7 +144,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpRunBrushCallback
@@ -270,7 +270,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_select_widget_set (GtkWidget * widget,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_brush_select_widget_set (GtkWidget * widget,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode)
 name|gimp_brush_select_widget_set
 parameter_list|(
 name|GtkWidget
@@ -288,7 +288,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{
@@ -321,7 +321,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compat_callback (GimpBrushSelectButton * brush_button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,CompatCallbackData * data)
+DECL|function|compat_callback (GimpBrushSelectButton * brush_button,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,CompatCallbackData * data)
 name|compat_callback
 parameter_list|(
 name|GimpBrushSelectButton
@@ -339,7 +339,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gint

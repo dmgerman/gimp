@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298bfd6a0108
+DECL|struct|__anon28b79deb0108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298bfd6a0208
+DECL|struct|__anon28b79deb0208
 block|{
 DECL|member|ID
 name|gint32
@@ -3055,7 +3055,7 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3110,7 +3110,7 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|g_free

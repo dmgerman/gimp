@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3351490103
+DECL|enum|__anon27d75bfd0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4237,7 +4237,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode,GeglNode * op)
+DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerMode paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode,GeglNode * op)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4259,7 +4259,7 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpBrushApplicationMode

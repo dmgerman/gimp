@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296aa0db0108
+DECL|struct|__anon294293ca0108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -158,7 +158,7 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_brush_select_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,GimpRunBrushCallback callback,gpointer data)
+DECL|function|gimp_brush_select_new (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerMode paint_mode,GimpRunBrushCallback callback,gpointer data)
 name|gimp_brush_select_new
 parameter_list|(
 specifier|const
@@ -177,7 +177,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpRunBrushCallback

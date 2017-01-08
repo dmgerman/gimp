@@ -80,7 +80,7 @@ name|GeglNode
 modifier|*
 name|node
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|mode
 parameter_list|,
 name|gboolean

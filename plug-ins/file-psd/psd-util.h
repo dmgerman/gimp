@@ -201,7 +201,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|psd_to_gimp_blend_mode
 parameter_list|(
 specifier|const
@@ -217,7 +217,7 @@ name|gchar
 modifier|*
 name|gimp_to_psd_blend_mode
 parameter_list|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|gimp_layer_mode
 parameter_list|)
 function_decl|;

@@ -112,7 +112,7 @@ name|gdouble
 name|initial_opacity
 decl_stmt|;
 DECL|member|initial_mode
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|initial_mode
 decl_stmt|;
 DECL|member|spacing

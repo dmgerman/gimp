@@ -173,7 +173,7 @@ name|applicator
 operator|->
 name|paint_mode
 operator|=
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|applicator
 operator|->
@@ -1602,14 +1602,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerModeEffects paint_mode)
+DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerMode paint_mode)
 name|gimp_applicator_set_mode
 parameter_list|(
 name|GimpApplicator
 modifier|*
 name|applicator
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|)
 block|{

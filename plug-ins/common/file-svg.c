@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1abac90108
+DECL|struct|__anon2a0ef1700108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1407,7 +1407,7 @@ name|pixbuf
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 literal|0.0
 argument_list|,

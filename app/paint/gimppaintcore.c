@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3ec4a60103
+DECL|enum|__anon2adf40540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3345,7 +3345,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paste (GimpPaintCore * core,const GimpTempBuf * paint_mask,gint paint_mask_offset_x,gint paint_mask_offset_y,GimpDrawable * drawable,gdouble paint_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpPaintApplicationMode mode)
+DECL|function|gimp_paint_core_paste (GimpPaintCore * core,const GimpTempBuf * paint_mask,gint paint_mask_offset_x,gint paint_mask_offset_y,GimpDrawable * drawable,gdouble paint_opacity,gdouble image_opacity,GimpLayerMode paint_mode,GimpPaintApplicationMode mode)
 name|gimp_paint_core_paste
 parameter_list|(
 name|GimpPaintCore
@@ -3373,7 +3373,7 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpPaintApplicationMode
@@ -4074,7 +4074,7 @@ name|paint_opacity
 argument_list|,
 name|image_opacity
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|mode
 argument_list|)

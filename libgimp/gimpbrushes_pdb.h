@@ -161,7 +161,7 @@ name|gint
 modifier|*
 name|spacing
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 modifier|*
 name|paint_mode
 parameter_list|,

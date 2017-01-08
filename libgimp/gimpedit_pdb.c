@@ -1016,7 +1016,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_bucket_fill (gint32 drawable_ID,GimpBucketFillMode fill_mode,GimpLayerModeEffects paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_edit_bucket_fill (gint32 drawable_ID,GimpBucketFillMode fill_mode,GimpLayerMode paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_edit_bucket_fill
 parameter_list|(
 name|gint32
@@ -1025,7 +1025,7 @@ parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gdouble
@@ -1132,7 +1132,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_bucket_fill_full (gint32 drawable_ID,GimpBucketFillMode fill_mode,GimpLayerModeEffects paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gboolean fill_transparent,GimpSelectCriterion select_criterion,gdouble x,gdouble y)
+DECL|function|gimp_edit_bucket_fill_full (gint32 drawable_ID,GimpBucketFillMode fill_mode,GimpLayerMode paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gboolean fill_transparent,GimpSelectCriterion select_criterion,gdouble x,gdouble y)
 name|gimp_edit_bucket_fill_full
 parameter_list|(
 name|gint32
@@ -1141,7 +1141,7 @@ parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|gdouble
@@ -1262,7 +1262,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_blend (gint32 drawable_ID,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_edit_blend (gint32 drawable_ID,GimpBlendMode blend_mode,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_edit_blend
 parameter_list|(
 name|gint32
@@ -1271,7 +1271,7 @@ parameter_list|,
 name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpGradientType

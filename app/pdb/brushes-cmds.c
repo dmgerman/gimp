@@ -819,11 +819,11 @@ if|if
 condition|(
 name|paint_mode
 operator|==
-name|GIMP_OVERLAY_MODE
+name|GIMP_LAYER_MODE_OVERLAY_BROKEN
 condition|)
 name|paint_mode
 operator|=
-name|GIMP_SOFTLIGHT_MODE
+name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
 expr_stmt|;
 if|if
 condition|(
@@ -1656,9 +1656,9 @@ literal|"paint mode"
 argument_list|,
 literal|"The paint mode"
 argument_list|,
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

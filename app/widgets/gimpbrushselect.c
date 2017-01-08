@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a18ce8e0103
+DECL|enum|__anon291d63e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -219,7 +219,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpBrushSelect
@@ -383,9 +383,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_NORMAL_MODE
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_WRITABLE
 operator||
@@ -1335,14 +1335,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_mode_changed (GimpContext * context,GimpLayerModeEffects paint_mode,GimpBrushSelect * select)
+DECL|function|gimp_brush_select_mode_changed (GimpContext * context,GimpLayerMode paint_mode,GimpBrushSelect * select)
 name|gimp_brush_select_mode_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpLayerModeEffects
+name|GimpLayerMode
 name|paint_mode
 parameter_list|,
 name|GimpBrushSelect
@@ -1474,7 +1474,7 @@ operator|->
 name|context
 argument_list|,
 operator|(
-name|GimpLayerModeEffects
+name|GimpLayerMode
 operator|)
 name|paint_mode
 argument_list|)
