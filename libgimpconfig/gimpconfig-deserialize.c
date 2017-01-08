@@ -1885,9 +1885,12 @@ init|=
 operator|(
 name|GType
 operator|)
-name|g_param_spec_get_qdata
+name|g_type_get_qdata
 argument_list|(
-name|prop_spec
+name|G_VALUE_TYPE
+argument_list|(
+name|value
+argument_list|)
 argument_list|,
 name|quark
 argument_list|)
