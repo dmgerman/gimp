@@ -57,7 +57,7 @@ name|GIMP_ADD_MASK_WHITE
 block|,
 literal|"GIMP_ADD_MASK_WHITE"
 block|,
-literal|"white-mask"
+literal|"white"
 block|}
 block|,
 block|{
@@ -65,7 +65,7 @@ name|GIMP_ADD_MASK_BLACK
 block|,
 literal|"GIMP_ADD_MASK_BLACK"
 block|,
-literal|"black-mask"
+literal|"black"
 block|}
 block|,
 block|{
@@ -73,7 +73,7 @@ name|GIMP_ADD_MASK_ALPHA
 block|,
 literal|"GIMP_ADD_MASK_ALPHA"
 block|,
-literal|"alpha-mask"
+literal|"alpha"
 block|}
 block|,
 block|{
@@ -81,7 +81,7 @@ name|GIMP_ADD_MASK_ALPHA_TRANSFER
 block|,
 literal|"GIMP_ADD_MASK_ALPHA_TRANSFER"
 block|,
-literal|"alpha-transfer-mask"
+literal|"alpha-transfer"
 block|}
 block|,
 block|{
@@ -89,7 +89,7 @@ name|GIMP_ADD_MASK_SELECTION
 block|,
 literal|"GIMP_ADD_MASK_SELECTION"
 block|,
-literal|"selection-mask"
+literal|"selection"
 block|}
 block|,
 block|{
@@ -97,7 +97,7 @@ name|GIMP_ADD_MASK_COPY
 block|,
 literal|"GIMP_ADD_MASK_COPY"
 block|,
-literal|"copy-mask"
+literal|"copy"
 block|}
 block|,
 block|{
@@ -105,7 +105,7 @@ name|GIMP_ADD_MASK_CHANNEL
 block|,
 literal|"GIMP_ADD_MASK_CHANNEL"
 block|,
-literal|"channel-mask"
+literal|"channel"
 block|}
 block|,
 block|{
@@ -297,7 +297,7 @@ name|GIMP_BLEND_FG_BG_RGB
 block|,
 literal|"GIMP_BLEND_FG_BG_RGB"
 block|,
-literal|"fg-bg-rgb-mode"
+literal|"fg-bg-rgb"
 block|}
 block|,
 block|{
@@ -305,7 +305,7 @@ name|GIMP_BLEND_FG_BG_HSV
 block|,
 literal|"GIMP_BLEND_FG_BG_HSV"
 block|,
-literal|"fg-bg-hsv-mode"
+literal|"fg-bg-hsv"
 block|}
 block|,
 block|{
@@ -313,7 +313,7 @@ name|GIMP_BLEND_FG_TRANSPARENT
 block|,
 literal|"GIMP_BLEND_FG_TRANSPARENT"
 block|,
-literal|"fg-transparent-mode"
+literal|"fg-transparent"
 block|}
 block|,
 block|{
@@ -321,7 +321,7 @@ name|GIMP_BLEND_CUSTOM
 block|,
 literal|"GIMP_BLEND_CUSTOM"
 block|,
-literal|"custom-mode"
+literal|"custom"
 block|}
 block|,
 block|{
@@ -630,7 +630,7 @@ name|GIMP_BUCKET_FILL_FG
 block|,
 literal|"GIMP_BUCKET_FILL_FG"
 block|,
-literal|"fg-bucket-fill"
+literal|"fg"
 block|}
 block|,
 block|{
@@ -638,7 +638,7 @@ name|GIMP_BUCKET_FILL_BG
 block|,
 literal|"GIMP_BUCKET_FILL_BG"
 block|,
-literal|"bg-bucket-fill"
+literal|"bg"
 block|}
 block|,
 block|{
@@ -646,7 +646,7 @@ name|GIMP_BUCKET_FILL_PATTERN
 block|,
 literal|"GIMP_BUCKET_FILL_PATTERN"
 block|,
-literal|"pattern-bucket-fill"
+literal|"pattern"
 block|}
 block|,
 block|{
@@ -1713,7 +1713,7 @@ name|GIMP_CLONE_IMAGE
 block|,
 literal|"GIMP_CLONE_IMAGE"
 block|,
-literal|"image-clone"
+literal|"image"
 block|}
 block|,
 block|{
@@ -1721,7 +1721,7 @@ name|GIMP_CLONE_PATTERN
 block|,
 literal|"GIMP_CLONE_PATTERN"
 block|,
-literal|"pattern-clone"
+literal|"pattern"
 block|}
 block|,
 block|{
@@ -2526,7 +2526,7 @@ name|GIMP_CONVOLVE_BLUR
 block|,
 literal|"GIMP_CONVOLVE_BLUR"
 block|,
-literal|"blur-convolve"
+literal|"blur"
 block|}
 block|,
 block|{
@@ -2534,7 +2534,7 @@ name|GIMP_CONVOLVE_SHARPEN
 block|,
 literal|"GIMP_CONVOLVE_SHARPEN"
 block|,
-literal|"sharpen-convolve"
+literal|"sharpen"
 block|}
 block|,
 block|{
@@ -2973,7 +2973,7 @@ name|GIMP_FILL_FOREGROUND
 block|,
 literal|"GIMP_FILL_FOREGROUND"
 block|,
-literal|"foreground-fill"
+literal|"foreground"
 block|}
 block|,
 block|{
@@ -2981,7 +2981,7 @@ name|GIMP_FILL_BACKGROUND
 block|,
 literal|"GIMP_FILL_BACKGROUND"
 block|,
-literal|"background-fill"
+literal|"background"
 block|}
 block|,
 block|{
@@ -2989,7 +2989,7 @@ name|GIMP_FILL_WHITE
 block|,
 literal|"GIMP_FILL_WHITE"
 block|,
-literal|"white-fill"
+literal|"white"
 block|}
 block|,
 block|{
@@ -2997,7 +2997,7 @@ name|GIMP_FILL_TRANSPARENT
 block|,
 literal|"GIMP_FILL_TRANSPARENT"
 block|,
-literal|"transparent-fill"
+literal|"transparent"
 block|}
 block|,
 block|{
@@ -3005,7 +3005,7 @@ name|GIMP_FILL_PATTERN
 block|,
 literal|"GIMP_FILL_PATTERN"
 block|,
-literal|"pattern-fill"
+literal|"pattern"
 block|}
 block|,
 block|{
