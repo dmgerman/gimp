@@ -260,7 +260,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER1_MODE
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER1_MODE
-value|GIMP_LAYER_MODE_NORMAL
+value|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 end_define
 
 begin_define
