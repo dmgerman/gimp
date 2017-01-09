@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|30
+literal|31
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -355,6 +355,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_DIFFERENCE
 argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 argument_list|,

@@ -1670,6 +1670,14 @@ literal|"screen"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_DIFFERENCE
+block|,
+literal|"GIMP_LAYER_MODE_DIFFERENCE"
+block|,
+literal|"difference"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1794,7 +1802,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Difference"
+literal|"Difference (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2133,6 +2141,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Screen"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_DIFFERENCE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Difference"
 argument_list|)
 block|,
 name|NULL
