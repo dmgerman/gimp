@@ -332,6 +332,8 @@ name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_SCREEN_LEGACY
 argument_list|,
+name|GIMP_LAYER_MODE_DODGE
+argument_list|,
 name|GIMP_LAYER_MODE_DODGE_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_ADDITION_LEGACY

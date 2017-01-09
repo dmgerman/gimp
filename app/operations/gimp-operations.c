@@ -348,7 +348,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodgemode.h"
+file|"gimpoperationdodge.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationdodgelegacy.h"
 end_include
 
 begin_include
@@ -659,7 +665,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_DODGE_MODE
+name|GIMP_TYPE_OPERATION_DODGE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_DODGE_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

@@ -1654,6 +1654,14 @@ literal|"multiply-linear"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_DODGE
+block|,
+literal|"GIMP_LAYER_MODE_DODGE"
+block|,
+literal|"dodge"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1908,7 +1916,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Dodge"
+literal|"Dodge (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2091,6 +2099,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Multiply (linear)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_DODGE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Dodge"
 argument_list|)
 block|,
 name|NULL

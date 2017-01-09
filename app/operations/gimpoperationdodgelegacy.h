@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_OPERATION_DODGE_MODE_H__
+name|__GIMP_OPERATION_DODGE_LEGACY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_OPERATION_DODGE_MODE_H__
+DECL|macro|__GIMP_OPERATION_DODGE_LEGACY_H__
 define|#
 directive|define
-name|__GIMP_OPERATION_DODGE_MODE_H__
+name|__GIMP_OPERATION_DODGE_LEGACY_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_DODGE_MODE
+DECL|macro|GIMP_TYPE_OPERATION_DODGE_LEGACY
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_DODGE_MODE
-value|(gimp_operation_dodge_mode_get_type ())
+name|GIMP_TYPE_OPERATION_DODGE_LEGACY
+value|(gimp_operation_dodge_legacy_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_DODGE_MODE (obj)
+DECL|macro|GIMP_OPERATION_DODGE_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_DODGE_MODE
+name|GIMP_OPERATION_DODGE_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_DODGE_MODE, GimpOperationDodgeMode))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_DODGE_LEGACY, GimpOperationDodgeLegacy))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_DODGE_MODE_CLASS (klass)
+DECL|macro|GIMP_OPERATION_DODGE_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OPERATION_DODGE_MODE_CLASS
+name|GIMP_OPERATION_DODGE_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_DODGE_MODE, GimpOperationDodgeModeClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_DODGE_LEGACY, GimpOperationDodgeLegacyClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_DODGE_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_DODGE_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_DODGE_MODE
+name|GIMP_IS_OPERATION_DODGE_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_DODGE_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_DODGE_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_DODGE_MODE_CLASS (klass)
+DECL|macro|GIMP_IS_OPERATION_DODGE_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_DODGE_MODE_CLASS
+name|GIMP_IS_OPERATION_DODGE_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_DODGE_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_DODGE_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_DODGE_MODE_GET_CLASS (obj)
+DECL|macro|GIMP_OPERATION_DODGE_LEGACY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_DODGE_MODE_GET_CLASS
+name|GIMP_OPERATION_DODGE_LEGACY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DODGE_MODE, GimpOperationDodgeModeClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_DODGE_LEGACY, GimpOperationDodgeLegacyClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationDodgeMode
+DECL|typedef|GimpOperationDodgeLegacy
 typedef|typedef
 name|struct
-name|_GimpOperationDodgeMode
-name|GimpOperationDodgeMode
+name|_GimpOperationDodgeLegacy
+name|GimpOperationDodgeLegacy
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationDodgeModeClass
+DECL|typedef|GimpOperationDodgeLegacyClass
 typedef|typedef
 name|struct
-name|_GimpOperationDodgeModeClass
-name|GimpOperationDodgeModeClass
+name|_GimpOperationDodgeLegacyClass
+name|GimpOperationDodgeLegacyClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpOperationDodgeMode
+DECL|struct|_GimpOperationDodgeLegacy
 struct|struct
-name|_GimpOperationDodgeMode
+name|_GimpOperationDodgeLegacy
 block|{
 DECL|member|parent_instance
 name|GimpOperationPointLayerMode
@@ -117,9 +117,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationDodgeModeClass
+DECL|struct|_GimpOperationDodgeLegacyClass
 struct|struct
-name|_GimpOperationDodgeModeClass
+name|_GimpOperationDodgeLegacyClass
 block|{
 DECL|member|parent_class
 name|GimpOperationPointLayerModeClass
@@ -131,7 +131,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_operation_dodge_mode_get_type
+name|gimp_operation_dodge_legacy_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -141,7 +141,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_dodge_mode_process_pixels
+name|gimp_operation_dodge_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -182,7 +182,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_OPERATION_DODGE_MODE_H__ */
+comment|/* __GIMP_OPERATION_DODGE_LEGACY_H__ */
 end_comment
 
 end_unit

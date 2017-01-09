@@ -138,7 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodgemode.h"
+file|"gimpoperationdodge.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationdodgelegacy.h"
 end_include
 
 begin_include
@@ -378,11 +384,19 @@ name|gimp_operation_divide_mode_process_pixels
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_LAYER_MODE_DODGE
+case|:
+name|func
+operator|=
+name|gimp_operation_dodge_process_pixels
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_LAYER_MODE_DODGE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_dodge_mode_process_pixels
+name|gimp_operation_dodge_legacy_process_pixels
 expr_stmt|;
 break|break;
 case|case
