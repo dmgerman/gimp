@@ -1662,6 +1662,14 @@ literal|"dodge"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_SCREEN
+block|,
+literal|"GIMP_LAYER_MODE_SCREEN"
+block|,
+literal|"screen"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1760,7 +1768,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Screen"
+literal|"Screen (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2112,6 +2120,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Dodge"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_SCREEN
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Screen"
 argument_list|)
 block|,
 name|NULL

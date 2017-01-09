@@ -276,7 +276,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationscreenmode.h"
+file|"layer-modes/gimpoperationscreen.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationscreenlegacy.h"
 end_include
 
 begin_include

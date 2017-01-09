@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|27
+literal|30
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -329,6 +329,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_SCREEN
 argument_list|,
 name|GIMP_LAYER_MODE_SCREEN_LEGACY
 argument_list|,

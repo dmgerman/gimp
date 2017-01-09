@@ -60,7 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationscreenmode.h"
+file|"layer-modes/gimpoperationscreen.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationscreenlegacy.h"
 end_include
 
 begin_include
@@ -286,7 +292,15 @@ name|GIMP_LAYER_MODE_SCREEN_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_screen_mode_process_pixels
+name|gimp_operation_screen_legacy_process_pixels
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_SCREEN
+case|:
+name|func
+operator|=
+name|gimp_operation_screen_process_pixels
 expr_stmt|;
 break|break;
 case|case

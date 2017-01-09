@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c398e740103
+DECL|enum|__anon2c3ca70f0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c398e740203
+DECL|enum|__anon2c3ca70f0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c398e740303
+DECL|enum|__anon2c3ca70f0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c398e740403
+DECL|enum|__anon2c3ca70f0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -256,6 +256,9 @@ name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_DODGE
 name|GIMP_LAYER_MODE_DODGE
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_SCREEN
+name|GIMP_LAYER_MODE_SCREEN
 DECL|typedef|GimpLayerMode
 block|}
 name|GimpLayerMode
