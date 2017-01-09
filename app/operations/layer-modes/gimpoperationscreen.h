@@ -23,22 +23,22 @@ file|"../gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_SCREEN_MODE
+DECL|macro|GIMP_TYPE_OPERATION_SCREEN
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_SCREEN_MODE
+name|GIMP_TYPE_OPERATION_SCREEN
 value|(gimp_operation_screen_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_SCREEN_MODE (obj)
+DECL|macro|GIMP_OPERATION_SCREEN (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_SCREEN_MODE
+name|GIMP_OPERATION_SCREEN
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_SCREEN_MODE, GimpOperationScreen))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_SCREEN, GimpOperationScreen))
 end_define
 
 begin_define
@@ -49,18 +49,18 @@ name|GIMP_OPERATION_SCREEN_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_SCREEN_MODE, GimpOperationScreenClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_SCREEN, GimpOperationScreenClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_SCREEN_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_SCREEN (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_SCREEN_MODE
+name|GIMP_IS_OPERATION_SCREEN
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_SCREEN_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_SCREEN))
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ name|GIMP_IS_OPERATION_SCREEN_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_SCREEN_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_SCREEN))
 end_define
 
 begin_define
@@ -82,7 +82,7 @@ name|GIMP_OPERATION_SCREEN_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SCREEN_MODE, GimpOperationScreenClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SCREEN, GimpOperationScreenClass))
 end_define
 
 begin_typedef

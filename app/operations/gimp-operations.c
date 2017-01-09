@@ -294,7 +294,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdifferencemode.h"
+file|"layer-modes/gimpoperationdifference.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationdifferencelegacy.h"
 end_include
 
 begin_include
@@ -611,7 +617,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_SCREEN_MODE
+name|GIMP_TYPE_OPERATION_SCREEN
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SCREEN_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -621,7 +632,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_DIFFERENCE_MODE
+name|GIMP_TYPE_OPERATION_DIFFERENCE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_DIFFERENCE_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

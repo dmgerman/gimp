@@ -78,7 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdifferencemode.h"
+file|"layer-modes/gimpoperationdifference.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationdifferencelegacy.h"
 end_include
 
 begin_include
@@ -316,7 +322,15 @@ name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_difference_mode_process_pixels
+name|gimp_operation_difference_legacy_process_pixels
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_DIFFERENCE
+case|:
+name|func
+operator|=
+name|gimp_operation_difference_process_pixels
 expr_stmt|;
 break|break;
 case|case
