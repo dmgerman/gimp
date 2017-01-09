@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"operations/operations-types.h"
 end_include
 
 begin_include

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
+file|"operations/gimpoperationpointlayermode.h"
 end_include
 
 begin_define

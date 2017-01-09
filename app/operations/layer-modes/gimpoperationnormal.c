@@ -30,19 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"operations/operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationnormalmode.h"
+file|"gimpoperationnormal.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|gimp_operation_normal_mode_process_pixels
+DECL|variable|gimp_operation_normal_process_pixels
 name|GimpLayerModeFunction
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 init|=
 name|NULL
 decl_stmt|;
@@ -80,7 +80,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_normal_mode_process
+name|gimp_operation_normal_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -119,9 +119,9 @@ end_function_decl
 begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationNormalMode
+argument|GimpOperationNormal
 argument_list|,
-argument|gimp_operation_normal_mode
+argument|gimp_operation_normal
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -132,7 +132,7 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_operation_normal_mode_parent_class
+value|gimp_operation_normal_parent_class
 end_define
 
 begin_decl_stmt
@@ -163,10 +163,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_normal_mode_class_init (GimpOperationNormalModeClass * klass)
-name|gimp_operation_normal_mode_class_init
+DECL|function|gimp_operation_normal_class_init (GimpOperationNormalClass * klass)
+name|gimp_operation_normal_class_init
 parameter_list|(
-name|GimpOperationNormalModeClass
+name|GimpOperationNormalClass
 modifier|*
 name|klass
 parameter_list|)
@@ -226,11 +226,11 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_normal_mode_process
+name|gimp_operation_normal_process
 expr_stmt|;
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 operator|=
-name|gimp_operation_normal_mode_process_pixels_core
+name|gimp_operation_normal_process_pixels_core
 expr_stmt|;
 if|#
 directive|if
@@ -242,9 +242,9 @@ argument_list|()
 operator|&
 name|GIMP_CPU_ACCEL_X86_SSE2
 condition|)
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 operator|=
-name|gimp_operation_normal_mode_process_pixels_sse2
+name|gimp_operation_normal_process_pixels_sse2
 expr_stmt|;
 endif|#
 directive|endif
@@ -259,9 +259,9 @@ argument_list|()
 operator|&
 name|GIMP_CPU_ACCEL_X86_SSE4_1
 condition|)
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 operator|=
-name|gimp_operation_normal_mode_process_pixels_sse4
+name|gimp_operation_normal_process_pixels_sse4
 expr_stmt|;
 endif|#
 directive|endif
@@ -272,10 +272,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_normal_mode_init (GimpOperationNormalMode * self)
-name|gimp_operation_normal_mode_init
+DECL|function|gimp_operation_normal_init (GimpOperationNormal * self)
+name|gimp_operation_normal_init
 parameter_list|(
-name|GimpOperationNormalMode
+name|GimpOperationNormal
 modifier|*
 name|self
 parameter_list|)
@@ -501,8 +501,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_normal_mode_process
+DECL|function|gimp_operation_normal_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_normal_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -547,7 +547,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -571,8 +571,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process_pixels_core (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_normal_mode_process_pixels_core
+DECL|function|gimp_operation_normal_process_pixels_core (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_normal_process_pixels_core
 parameter_list|(
 name|gfloat
 modifier|*

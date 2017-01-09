@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"operations/operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationnormalmode.h"
+file|"gimpoperationnormal.h"
 end_include
 
 begin_if
@@ -45,8 +45,8 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_mode_process_pixels_sse4 (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_normal_mode_process_pixels_sse4
+DECL|function|gimp_operation_normal_process_pixels_sse4 (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_normal_process_pixels_sse4
 parameter_list|(
 name|gfloat
 modifier|*
@@ -109,7 +109,7 @@ literal|0x0F
 condition|)
 block|{
 return|return
-name|gimp_operation_normal_mode_process_pixels_core
+name|gimp_operation_normal_process_pixels_core
 argument_list|(
 name|in
 argument_list|,

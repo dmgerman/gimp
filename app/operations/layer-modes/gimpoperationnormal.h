@@ -1,112 +1,112 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationnormalmode.h  * Copyright (C) 2012 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationnormal.h  * Copyright (C) 2012 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_OPERATION_NORMAL_MODE_H__
+name|__GIMP_OPERATION_NORMAL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_OPERATION_NORMAL_MODE_H__
+DECL|macro|__GIMP_OPERATION_NORMAL_H__
 define|#
 directive|define
-name|__GIMP_OPERATION_NORMAL_MODE_H__
+name|__GIMP_OPERATION_NORMAL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
+file|"operations/gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_NORMAL_MODE
+DECL|macro|GIMP_TYPE_OPERATION_NORMAL
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_NORMAL_MODE
-value|(gimp_operation_normal_mode_get_type ())
+name|GIMP_TYPE_OPERATION_NORMAL
+value|(gimp_operation_normal_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_NORMAL_MODE (obj)
+DECL|macro|GIMP_OPERATION_NORMAL (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_NORMAL_MODE
+name|GIMP_OPERATION_NORMAL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_NORMAL_MODE, GimpOperationNormalMode))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_NORMAL, GimpOperationNormal))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_NORMAL_MODE_CLASS (klass)
+DECL|macro|GIMP_OPERATION_NORMAL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OPERATION_NORMAL_MODE_CLASS
+name|GIMP_OPERATION_NORMAL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_NORMAL_MODE, GimpOperationNormalModeClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_NORMAL, GimpOperationNormalClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_NORMAL_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_NORMAL (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_NORMAL_MODE
+name|GIMP_IS_OPERATION_NORMAL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_NORMAL_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_NORMAL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_NORMAL_MODE_CLASS (klass)
+DECL|macro|GIMP_IS_OPERATION_NORMAL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_NORMAL_MODE_CLASS
+name|GIMP_IS_OPERATION_NORMAL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_NORMAL_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_NORMAL))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_NORMAL_MODE_GET_CLASS (obj)
+DECL|macro|GIMP_OPERATION_NORMAL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_NORMAL_MODE_GET_CLASS
+name|GIMP_OPERATION_NORMAL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_NORMAL_MODE, GimpOperationNormalModeClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_NORMAL, GimpOperationNormalClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationNormalMode
+DECL|typedef|GimpOperationNormal
 typedef|typedef
 name|struct
-name|_GimpOperationNormalMode
-name|GimpOperationNormalMode
+name|_GimpOperationNormal
+name|GimpOperationNormal
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationNormalModeClass
+DECL|typedef|GimpOperationNormalClass
 typedef|typedef
 name|struct
-name|_GimpOperationNormalModeClass
-name|GimpOperationNormalModeClass
+name|_GimpOperationNormalClass
+name|GimpOperationNormalClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpOperationNormalMode
+DECL|struct|_GimpOperationNormal
 struct|struct
-name|_GimpOperationNormalMode
+name|_GimpOperationNormal
 block|{
 DECL|member|parent_instance
 name|GimpOperationPointLayerMode
@@ -117,9 +117,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationNormalModeClass
+DECL|struct|_GimpOperationNormalClass
 struct|struct
-name|_GimpOperationNormalModeClass
+name|_GimpOperationNormalClass
 block|{
 DECL|member|parent_class
 name|GimpOperationPointLayerModeClass
@@ -131,7 +131,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_operation_normal_mode_get_type
+name|gimp_operation_normal_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -142,13 +142,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|GimpLayerModeFunction
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_normal_mode_process_pixels_core
+name|gimp_operation_normal_process_pixels_core
 parameter_list|(
 name|gfloat
 modifier|*
@@ -185,7 +185,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_normal_mode_process_pixels_sse2
+name|gimp_operation_normal_process_pixels_sse2
 parameter_list|(
 name|gfloat
 modifier|*
@@ -222,7 +222,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_normal_mode_process_pixels_sse4
+name|gimp_operation_normal_process_pixels_sse4
 parameter_list|(
 name|gfloat
 modifier|*
@@ -263,7 +263,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_OPERATION_NORMAL_MODE_H__ */
+comment|/* __GIMP_OPERATION_NORMAL_H__ */
 end_comment
 
 end_unit

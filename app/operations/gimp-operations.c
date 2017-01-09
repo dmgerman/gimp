@@ -246,7 +246,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationnormalmode.h"
+file|"layer-modes/gimpoperationnormal.h"
 end_include
 
 begin_include
@@ -264,13 +264,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiply.h"
+file|"layer-modes/gimpoperationmultiply.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiplylegacy.h"
+file|"layer-modes-legacy/gimpoperationmultiplylegacy.h"
 end_include
 
 begin_include
@@ -348,13 +348,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodge.h"
+file|"layer-modes/gimpoperationdodge.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodgelegacy.h"
+file|"layer-modes-legacy/gimpoperationdodgelegacy.h"
 end_include
 
 begin_include
@@ -580,7 +580,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_NORMAL_MODE
+name|GIMP_TYPE_OPERATION_NORMAL
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpoperationnormalmode.h"
+file|"layer-modes/gimpoperationnormal.h"
 end_include
 
 begin_include
@@ -54,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiply.h"
+file|"layer-modes/gimpoperationmultiply.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiplylegacy.h"
+file|"layer-modes-legacy/gimpoperationmultiplylegacy.h"
 end_include
 
 begin_include
@@ -138,13 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodge.h"
+file|"layer-modes/gimpoperationdodge.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationdodgelegacy.h"
+file|"layer-modes-legacy/gimpoperationdodgelegacy.h"
 end_include
 
 begin_include
@@ -240,7 +234,7 @@ block|{
 name|GimpLayerModeFunction
 name|func
 init|=
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 decl_stmt|;
 switch|switch
 condition|(
@@ -252,7 +246,7 @@ name|GIMP_LAYER_MODE_NORMAL
 case|:
 name|func
 operator|=
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -537,7 +531,7 @@ argument_list|)
 expr_stmt|;
 name|func
 operator|=
-name|gimp_operation_normal_mode_process_pixels
+name|gimp_operation_normal_process_pixels
 expr_stmt|;
 break|break;
 block|}
