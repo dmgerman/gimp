@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc260bc0103
+DECL|enum|__anon2b0340890103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc260bc0203
+DECL|enum|__anon2b0340890203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -5779,7 +5779,7 @@ name|context
 operator|->
 name|paint_mode
 operator|==
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 condition|)
 name|g_object_set
 argument_list|(
@@ -5787,7 +5787,7 @@ name|context
 argument_list|,
 literal|"paint-mode"
 argument_list|,
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 argument_list|,
 name|NULL
 argument_list|)

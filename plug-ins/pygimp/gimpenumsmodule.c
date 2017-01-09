@@ -699,7 +699,7 @@ name|m
 argument_list|,
 literal|"MULTIPLY_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -708,7 +708,7 @@ name|m
 argument_list|,
 literal|"SCREEN_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_SCREEN_BROKEN
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -717,7 +717,7 @@ name|m
 argument_list|,
 literal|"OVERLAY_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -726,7 +726,7 @@ name|m
 argument_list|,
 literal|"DIFFERENCE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -735,7 +735,7 @@ name|m
 argument_list|,
 literal|"ADDITION_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_ADDITION_BROKEN
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -744,7 +744,7 @@ name|m
 argument_list|,
 literal|"SUBTRACT_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_SUBTRACT_BROKEN
+name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -753,7 +753,7 @@ name|m
 argument_list|,
 literal|"DARKEN_ONLY_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -762,7 +762,7 @@ name|m
 argument_list|,
 literal|"LIGHTEN_ONLY_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -771,7 +771,7 @@ name|m
 argument_list|,
 literal|"HUE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -780,7 +780,7 @@ name|m
 argument_list|,
 literal|"SATURATION_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -789,7 +789,7 @@ name|m
 argument_list|,
 literal|"COLOR_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
+name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -798,7 +798,7 @@ name|m
 argument_list|,
 literal|"VALUE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -807,7 +807,7 @@ name|m
 argument_list|,
 literal|"DIVIDE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_DIVIDE_BROKEN
+name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -816,7 +816,7 @@ name|m
 argument_list|,
 literal|"DODGE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_DODGE_BROKEN
+name|GIMP_LAYER_MODE_DODGE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -825,7 +825,7 @@ name|m
 argument_list|,
 literal|"BURN_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_BURN_BROKEN
+name|GIMP_LAYER_MODE_BURN_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -834,7 +834,7 @@ name|m
 argument_list|,
 literal|"HARDLIGHT_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -843,7 +843,7 @@ name|m
 argument_list|,
 literal|"SOFTLIGHT_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -852,7 +852,7 @@ name|m
 argument_list|,
 literal|"GRAIN_EXTRACT_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant
@@ -861,7 +861,7 @@ name|m
 argument_list|,
 literal|"GRAIN_MERGE_MODE"
 argument_list|,
-name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 argument_list|)
 expr_stmt|;
 name|PyModule_AddIntConstant

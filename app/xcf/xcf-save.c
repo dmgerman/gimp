@@ -3273,11 +3273,11 @@ if|if
 condition|(
 name|mode
 operator|==
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 condition|)
 name|mode
 operator|=
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 expr_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -7629,7 +7629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294913370108
+DECL|struct|__anon276861e90108
 block|{
 DECL|member|info
 name|XcfInfo

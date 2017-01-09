@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3d3cc0103
+DECL|enum|__anon278f61400103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3d3cc0203
+DECL|enum|__anon278f61400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9672,13 +9672,13 @@ condition|)
 block|{
 comment|/* new layer modes not supported by gimp-1.2 */
 case|case
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 case|:
 case|case
-name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 case|:
 case|case
-name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE

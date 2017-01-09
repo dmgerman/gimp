@@ -2359,7 +2359,7 @@ literal|0
 condition|)
 comment|/* Darken (ps3) */
 return|return
-name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 return|;
 if|if
 condition|(
@@ -2376,7 +2376,7 @@ literal|0
 condition|)
 comment|/* Lighten (ps3) */
 return|return
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 return|;
 if|if
 condition|(
@@ -2393,7 +2393,7 @@ literal|0
 condition|)
 comment|/* Hue (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 return|;
 if|if
 condition|(
@@ -2432,7 +2432,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 return|;
 block|}
 if|if
@@ -2450,7 +2450,7 @@ literal|0
 condition|)
 comment|/* Color (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
+name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 return|;
 if|if
 condition|(
@@ -2489,7 +2489,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 return|;
 block|}
 if|if
@@ -2507,7 +2507,7 @@ literal|0
 condition|)
 comment|/* Multiply (ps3) */
 return|return
-name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 return|;
 if|if
 condition|(
@@ -2524,7 +2524,7 @@ literal|0
 condition|)
 comment|/* Linear Dodge (cs2) */
 return|return
-name|GIMP_LAYER_MODE_ADDITION_BROKEN
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
 return|;
 if|if
 condition|(
@@ -2541,7 +2541,7 @@ literal|0
 condition|)
 comment|/* Screen (ps3) */
 return|return
-name|GIMP_LAYER_MODE_SCREEN_BROKEN
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
 return|;
 if|if
 condition|(
@@ -2592,7 +2592,7 @@ literal|0
 condition|)
 comment|/* Hard light (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 return|;
 if|if
 condition|(
@@ -2631,7 +2631,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 return|;
 block|}
 if|if
@@ -2649,7 +2649,7 @@ literal|0
 condition|)
 comment|/* Difference (ps3) */
 return|return
-name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 return|;
 if|if
 condition|(
@@ -2705,7 +2705,7 @@ literal|0
 condition|)
 comment|/* Color dodge (ps6) */
 return|return
-name|GIMP_LAYER_MODE_DODGE_BROKEN
+name|GIMP_LAYER_MODE_DODGE_LEGACY
 return|;
 if|if
 condition|(
@@ -2722,7 +2722,7 @@ literal|0
 condition|)
 comment|/* Color burn (ps6) */
 return|return
-name|GIMP_LAYER_MODE_BURN_BROKEN
+name|GIMP_LAYER_MODE_BURN_LEGACY
 return|;
 if|if
 condition|(
@@ -2778,7 +2778,7 @@ literal|0
 condition|)
 comment|/* Linear dodge (ps7)*/
 return|return
-name|GIMP_LAYER_MODE_ADDITION_BROKEN
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
 return|;
 if|if
 condition|(
@@ -3046,7 +3046,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3060,7 +3060,7 @@ expr_stmt|;
 comment|/* Multiply (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_SCREEN_BROKEN
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3088,7 +3088,7 @@ expr_stmt|;
 comment|/* Overlay (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3102,7 +3102,7 @@ expr_stmt|;
 comment|/* Difference (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_ADDITION_BROKEN
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3116,7 +3116,7 @@ expr_stmt|;
 comment|/* Linear dodge (ps7)*/
 break|break;
 case|case
-name|GIMP_LAYER_MODE_SUBTRACT_BROKEN
+name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 case|:
 if|if
 condition|(
@@ -3143,7 +3143,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3157,7 +3157,7 @@ expr_stmt|;
 comment|/* Darken (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3171,7 +3171,7 @@ expr_stmt|;
 comment|/* Lighten (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3185,7 +3185,7 @@ expr_stmt|;
 comment|/* Hue (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 case|:
 if|if
 condition|(
@@ -3214,7 +3214,7 @@ expr_stmt|;
 comment|/* Saturation (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
+name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3228,7 +3228,7 @@ expr_stmt|;
 comment|/* Color (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 case|:
 if|if
 condition|(
@@ -3257,7 +3257,7 @@ expr_stmt|;
 comment|/* Luminosity (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DIVIDE_BROKEN
+name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 case|:
 if|if
 condition|(
@@ -3284,7 +3284,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DODGE_BROKEN
+name|GIMP_LAYER_MODE_DODGE_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3298,7 +3298,7 @@ expr_stmt|;
 comment|/* Color Dodge (ps6) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_BURN_BROKEN
+name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3312,7 +3312,7 @@ expr_stmt|;
 comment|/* Color Burn (ps6) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 case|:
 name|psd_mode
 operator|=
@@ -3326,10 +3326,10 @@ expr_stmt|;
 comment|/* Hard Light (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 case|:
 case|case
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 case|:
 if|if
 condition|(
@@ -3357,7 +3357,7 @@ expr_stmt|;
 comment|/* Soft Light (ps3) */
 break|break;
 case|case
-name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 case|:
 if|if
 condition|(
@@ -3384,7 +3384,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 if|if
 condition|(

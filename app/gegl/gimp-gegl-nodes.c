@@ -512,7 +512,7 @@ literal|"gimp:behind-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|operation
 operator|=
@@ -520,7 +520,7 @@ literal|"gimp:multiply-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_SCREEN_BROKEN
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
 case|:
 name|operation
 operator|=
@@ -528,7 +528,7 @@ literal|"gimp:screen-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 case|:
 name|operation
 operator|=
@@ -536,7 +536,7 @@ literal|"gimp:softlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|operation
 operator|=
@@ -544,7 +544,7 @@ literal|"gimp:difference-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_ADDITION_BROKEN
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
 case|:
 name|operation
 operator|=
@@ -552,7 +552,7 @@ literal|"gimp:addition-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_SUBTRACT_BROKEN
+name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 case|:
 name|operation
 operator|=
@@ -560,7 +560,7 @@ literal|"gimp:subtract-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 case|:
 name|operation
 operator|=
@@ -568,7 +568,7 @@ literal|"gimp:darken-only-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 case|:
 name|operation
 operator|=
@@ -576,7 +576,7 @@ literal|"gimp:lighten-only-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 case|:
 name|operation
 operator|=
@@ -584,7 +584,7 @@ literal|"gimp:hue-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 case|:
 name|operation
 operator|=
@@ -592,7 +592,7 @@ literal|"gimp:saturation-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
+name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 case|:
 name|operation
 operator|=
@@ -600,7 +600,7 @@ literal|"gimp:color-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 case|:
 name|operation
 operator|=
@@ -608,7 +608,7 @@ literal|"gimp:value-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DIVIDE_BROKEN
+name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 case|:
 name|operation
 operator|=
@@ -616,7 +616,7 @@ literal|"gimp:divide-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_DODGE_BROKEN
+name|GIMP_LAYER_MODE_DODGE_LEGACY
 case|:
 name|operation
 operator|=
@@ -624,7 +624,7 @@ literal|"gimp:dodge-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_BURN_BROKEN
+name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
 name|operation
 operator|=
@@ -632,7 +632,7 @@ literal|"gimp:burn-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 case|:
 name|operation
 operator|=
@@ -640,7 +640,7 @@ literal|"gimp:hardlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 case|:
 name|operation
 operator|=
@@ -648,7 +648,7 @@ literal|"gimp:softlight-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_GRAIN_EXTRACT_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 case|:
 name|operation
 operator|=
@@ -656,7 +656,7 @@ literal|"gimp:grain-extract-mode"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_GRAIN_MERGE_BROKEN
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 name|operation
 operator|=

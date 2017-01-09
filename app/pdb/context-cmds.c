@@ -1698,11 +1698,11 @@ if|if
 condition|(
 name|paint_mode
 operator|==
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 condition|)
 name|paint_mode
 operator|=
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 expr_stmt|;
 name|gimp_context_set_paint_mode
 argument_list|(

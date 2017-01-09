@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880103
+DECL|enum|__anon2b951bbb0103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880203
+DECL|enum|__anon2b951bbb0203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880303
+DECL|enum|__anon2b951bbb0303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880403
+DECL|enum|__anon2b951bbb0403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880503
+DECL|enum|__anon2b951bbb0503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880603
+DECL|enum|__anon2b951bbb0603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880703
+DECL|enum|__anon2b951bbb0703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880803
+DECL|enum|__anon2b951bbb0803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880903
+DECL|enum|__anon2b951bbb0903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880a03
+DECL|enum|__anon2b951bbb0a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880b03
+DECL|enum|__anon2b951bbb0b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880c03
+DECL|enum|__anon2b951bbb0c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880d03
+DECL|enum|__anon2b951bbb0d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880e03
+DECL|enum|__anon2b951bbb0e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9880f03
+DECL|enum|__anon2b951bbb0f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881003
+DECL|enum|__anon2b951bbb1003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881103
+DECL|enum|__anon2b951bbb1103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881203
+DECL|enum|__anon2b951bbb1203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881303
+DECL|enum|__anon2b951bbb1303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881403
+DECL|enum|__anon2b951bbb1403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881503
+DECL|enum|__anon2b951bbb1503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881603
+DECL|enum|__anon2b951bbb1603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881703
+DECL|enum|__anon2b951bbb1703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881803
+DECL|enum|__anon2b951bbb1803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881903
+DECL|enum|__anon2b951bbb1903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881a03
+DECL|enum|__anon2b951bbb1a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881b03
+DECL|enum|__anon2b951bbb1b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881c03
+DECL|enum|__anon2b951bbb1c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881d03
+DECL|enum|__anon2b951bbb1d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881e03
+DECL|enum|__anon2b951bbb1e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be8e9881f03
+DECL|enum|__anon2b951bbb1f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8e9882008
+DECL|struct|__anon2b951bbb2008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1708,7 +1708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be8e9882108
+DECL|struct|__anon2b951bbb2108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -3569,50 +3569,50 @@ case|case
 name|PSP_BLEND_DARKEN
 case|:
 return|return
-name|GIMP_LAYER_MODE_DARKEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 return|;
 case|case
 name|PSP_BLEND_LIGHTEN
 case|:
 return|return
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_BROKEN
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 return|;
 case|case
 name|PSP_BLEND_HUE
 case|:
 return|return
-name|GIMP_LAYER_MODE_HSV_HUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 return|;
 case|case
 name|PSP_BLEND_SATURATION
 case|:
 return|return
-name|GIMP_LAYER_MODE_HSV_SATURATION_BROKEN
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 return|;
 case|case
 name|PSP_BLEND_COLOR
 case|:
 return|return
-name|GIMP_LAYER_MODE_HSV_COLOR_BROKEN
+name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 return|;
 case|case
 name|PSP_BLEND_LUMINOSITY
 case|:
 return|return
-name|GIMP_LAYER_MODE_HSV_VALUE_BROKEN
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 return|;
 comment|/* ??? */
 case|case
 name|PSP_BLEND_MULTIPLY
 case|:
 return|return
-name|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 return|;
 case|case
 name|PSP_BLEND_SCREEN
 case|:
 return|return
-name|GIMP_LAYER_MODE_SCREEN_BROKEN
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
 return|;
 case|case
 name|PSP_BLEND_DISSOLVE
@@ -3630,31 +3630,31 @@ case|case
 name|PSP_BLEND_HARD_LIGHT
 case|:
 return|return
-name|GIMP_LAYER_MODE_HARDLIGHT_BROKEN
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 return|;
 case|case
 name|PSP_BLEND_SOFT_LIGHT
 case|:
 return|return
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 return|;
 case|case
 name|PSP_BLEND_DIFFERENCE
 case|:
 return|return
-name|GIMP_LAYER_MODE_DIFFERENCE_BROKEN
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 return|;
 case|case
 name|PSP_BLEND_DODGE
 case|:
 return|return
-name|GIMP_LAYER_MODE_DODGE_BROKEN
+name|GIMP_LAYER_MODE_DODGE_LEGACY
 return|;
 case|case
 name|PSP_BLEND_BURN
 case|:
 return|return
-name|GIMP_LAYER_MODE_BURN_BROKEN
+name|GIMP_LAYER_MODE_BURN_LEGACY
 return|;
 case|case
 name|PSP_BLEND_EXCLUSION

@@ -4454,11 +4454,11 @@ if|if
 condition|(
 name|mode
 operator|==
-name|GIMP_LAYER_MODE_OVERLAY_BROKEN
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 condition|)
 name|mode
 operator|=
-name|GIMP_LAYER_MODE_SOFTLIGHT_BROKEN
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 expr_stmt|;
 name|gimp_layer_set_mode
 argument_list|(

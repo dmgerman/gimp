@@ -308,7 +308,7 @@ DECL|macro|GIMP_MAINIMAGE_LAYER2_MODE
 define|#
 directive|define
 name|GIMP_MAINIMAGE_LAYER2_MODE
-value|GIMP_LAYER_MODE_MULTIPLY_BROKEN
+value|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 end_define
 
 begin_define
