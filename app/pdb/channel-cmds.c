@@ -1873,7 +1873,7 @@ literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

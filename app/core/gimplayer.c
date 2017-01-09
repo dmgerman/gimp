@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd03bfa0103
+DECL|enum|__anon2ad41efd0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd03bfa0203
+DECL|enum|__anon2ad41efd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6382,7 +6382,7 @@ name|gimp_image_get_component_format
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set_format

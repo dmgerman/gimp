@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a1b4080103
+DECL|enum|__anon297e59720103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a1b4080203
+DECL|enum|__anon297e59720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6017,7 +6017,7 @@ name|channel
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 return|return
 name|gimp_babl_component_format
@@ -6033,7 +6033,7 @@ name|RED
 argument_list|)
 return|;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 return|return
 name|gimp_babl_component_format
@@ -6049,7 +6049,7 @@ name|GREEN
 argument_list|)
 return|;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 return|return
 name|gimp_babl_component_format
@@ -6065,7 +6065,7 @@ name|BLUE
 argument_list|)
 return|;
 case|case
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 case|:
 return|return
 name|gimp_babl_component_format
@@ -6081,7 +6081,7 @@ name|ALPHA
 argument_list|)
 return|;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 return|return
 name|gimp_babl_component_format
@@ -6097,7 +6097,7 @@ name|GRAY
 argument_list|)
 return|;
 case|case
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 case|:
 return|return
 name|babl_format
@@ -6143,37 +6143,37 @@ name|channel
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 return|return
 name|RED
 return|;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 return|return
 name|GREEN
 return|;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 return|return
 name|BLUE
 return|;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 return|return
 name|GRAY
 return|;
 case|case
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 case|:
 return|return
 name|INDEXED
 return|;
 case|case
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 case|:
 switch|switch
 condition|(

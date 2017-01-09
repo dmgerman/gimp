@@ -200,7 +200,7 @@ name|gimp_image_get_component_visible
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 argument_list|)
 operator|)
 condition|)
@@ -511,7 +511,7 @@ name|channel
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 name|icon_name
 operator|=
@@ -519,7 +519,7 @@ name|GIMP_STOCK_CHANNEL_RED
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 name|icon_name
 operator|=
@@ -527,7 +527,7 @@ name|GIMP_STOCK_CHANNEL_GREEN
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 name|icon_name
 operator|=
@@ -535,7 +535,7 @@ name|GIMP_STOCK_CHANNEL_BLUE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 name|icon_name
 operator|=
@@ -543,7 +543,7 @@ name|GIMP_STOCK_CHANNEL_GRAY
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 case|:
 name|icon_name
 operator|=
@@ -551,7 +551,7 @@ name|GIMP_STOCK_CHANNEL_INDEXED
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 case|:
 name|icon_name
 operator|=

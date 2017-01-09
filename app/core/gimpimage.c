@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f61400103
+DECL|enum|__anon29c9528c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f61400203
+DECL|enum|__anon29c9528c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10811,7 +10811,7 @@ name|channel
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 return|return
 name|gimp_babl_component_format
@@ -10827,7 +10827,7 @@ name|RED
 argument_list|)
 return|;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 return|return
 name|gimp_babl_component_format
@@ -10843,7 +10843,7 @@ name|GREEN
 argument_list|)
 return|;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 return|return
 name|gimp_babl_component_format
@@ -10859,7 +10859,7 @@ name|BLUE
 argument_list|)
 return|;
 case|case
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 case|:
 return|return
 name|gimp_babl_component_format
@@ -10875,7 +10875,7 @@ name|ALPHA
 argument_list|)
 return|;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 return|return
 name|gimp_babl_component_format
@@ -10891,7 +10891,7 @@ name|GRAY
 argument_list|)
 return|;
 case|case
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 case|:
 return|return
 name|babl_format
@@ -10937,37 +10937,37 @@ name|channel
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 return|return
 name|RED
 return|;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 return|return
 name|GREEN
 return|;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 return|return
 name|BLUE
 return|;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 return|return
 name|GRAY
 return|;
 case|case
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 case|:
 return|return
 name|INDEXED
 return|;
 case|case
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 case|:
 switch|switch
 condition|(

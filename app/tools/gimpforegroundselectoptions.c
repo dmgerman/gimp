@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bed07b0103
+DECL|enum|__anon2bb10c3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -286,7 +286,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1093,9 +1093,9 @@ name|config
 argument_list|,
 literal|"mask-color"
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_set_label
@@ -1478,7 +1478,7 @@ name|mask_color
 condition|)
 block|{
 case|case
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -1495,7 +1495,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -1512,7 +1512,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -1529,7 +1529,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 case|:
 name|gimp_rgba_set
 argument_list|(

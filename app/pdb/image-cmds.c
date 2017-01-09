@@ -8502,7 +8502,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 condition|)
 name|success
 operator|=
@@ -8520,7 +8520,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 condition|)
 name|success
 operator|=
@@ -8693,7 +8693,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 condition|)
 name|success
 operator|=
@@ -8711,7 +8711,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 condition|)
 name|success
 operator|=
@@ -8858,7 +8858,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 condition|)
 name|success
 operator|=
@@ -8876,7 +8876,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 condition|)
 name|success
 operator|=
@@ -9049,7 +9049,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 condition|)
 name|success
 operator|=
@@ -9067,7 +9067,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 condition|)
 name|success
 operator|=
@@ -18092,7 +18092,7 @@ literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -18201,7 +18201,7 @@ literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -18310,7 +18310,7 @@ literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -18419,7 +18419,7 @@ literal|"The image component"
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

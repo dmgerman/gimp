@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d8da0d0103
+DECL|enum|__anon2c7954200103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1395,21 +1395,21 @@ index|[
 literal|0
 index|]
 operator|=
-name|GIMP_RED_CHANNEL
+name|GIMP_CHANNEL_RED
 expr_stmt|;
 name|components
 index|[
 literal|1
 index|]
 operator|=
-name|GIMP_GREEN_CHANNEL
+name|GIMP_CHANNEL_GREEN
 expr_stmt|;
 name|components
 index|[
 literal|2
 index|]
 operator|=
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 expr_stmt|;
 break|break;
 case|case
@@ -1424,7 +1424,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|GIMP_GRAY_CHANNEL
+name|GIMP_CHANNEL_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -1439,7 +1439,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|GIMP_INDEXED_CHANNEL
+name|GIMP_CHANNEL_INDEXED
 expr_stmt|;
 break|break;
 block|}
@@ -1456,7 +1456,7 @@ name|n_components
 operator|++
 index|]
 operator|=
-name|GIMP_ALPHA_CHANNEL
+name|GIMP_CHANNEL_ALPHA
 expr_stmt|;
 name|enum_class
 operator|=
