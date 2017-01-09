@@ -4538,7 +4538,7 @@ literal|"Range of affected hues"
 argument_list|,
 name|GIMP_TYPE_HUE_RANGE
 argument_list|,
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

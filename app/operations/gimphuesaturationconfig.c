@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15ad5a0103
+DECL|enum|__anon2c4ce0a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -311,7 +311,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_HUE_RANGE
 argument_list|,
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 argument_list|,
 literal|0
 argument_list|)
@@ -843,11 +843,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 init|;
 name|range
 operator|<=
-name|GIMP_MAGENTA_HUES
+name|GIMP_HUE_RANGE_MAGENTA
 condition|;
 name|range
 operator|++
@@ -1045,11 +1045,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 init|;
 name|range
 operator|<=
-name|GIMP_MAGENTA_HUES
+name|GIMP_HUE_RANGE_MAGENTA
 condition|;
 name|range
 operator|++
@@ -1150,11 +1150,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 init|;
 name|range
 operator|<=
-name|GIMP_MAGENTA_HUES
+name|GIMP_HUE_RANGE_MAGENTA
 condition|;
 name|range
 operator|++
@@ -1238,11 +1238,11 @@ for|for
 control|(
 name|range
 operator|=
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 init|;
 name|range
 operator|<=
-name|GIMP_MAGENTA_HUES
+name|GIMP_HUE_RANGE_MAGENTA
 condition|;
 name|range
 operator|++

@@ -40,7 +40,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390103
+DECL|enum|__anon293c9d5b0103
 block|{
 DECL|enumerator|GIMP_ADD_MASK_WHITE
 name|GIMP_ADD_MASK_WHITE
@@ -144,7 +144,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390203
+DECL|enum|__anon293c9d5b0203
 block|{
 DECL|enumerator|GIMP_BLEND_FG_BG_RGB
 name|GIMP_BLEND_FG_BG_RGB
@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390303
+DECL|enum|__anon293c9d5b0303
 block|{
 DECL|enumerator|GIMP_BRUSH_GENERATED_CIRCLE
 name|GIMP_BRUSH_GENERATED_CIRCLE
@@ -258,7 +258,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390403
+DECL|enum|__anon293c9d5b0403
 block|{
 DECL|enumerator|GIMP_BUCKET_FILL_FG
 name|GIMP_BUCKET_FILL_FG
@@ -322,7 +322,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390503
+DECL|enum|__anon293c9d5b0503
 block|{
 DECL|enumerator|GIMP_CAP_BUTT
 name|GIMP_CAP_BUTT
@@ -362,7 +362,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390603
+DECL|enum|__anon293c9d5b0603
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -406,7 +406,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390703
+DECL|enum|__anon293c9d5b0703
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -459,7 +459,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b79c7390803
+DECL|enum|__anon293c9d5b0803
 block|{
 DECL|enumerator|GIMP_CHECK_SIZE_SMALL_CHECKS
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
@@ -506,7 +506,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b79c7390903
+DECL|enum|__anon293c9d5b0903
 block|{
 DECL|enumerator|GIMP_CHECK_TYPE_LIGHT_CHECKS
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
@@ -570,7 +570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390a03
+DECL|enum|__anon293c9d5b0a03
 block|{
 DECL|enumerator|GIMP_CLONE_IMAGE
 name|GIMP_CLONE_IMAGE
@@ -624,7 +624,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390b03
+DECL|enum|__anon293c9d5b0b03
 block|{
 DECL|enumerator|GIMP_COLOR_TAG_NONE
 name|GIMP_COLOR_TAG_NONE
@@ -688,7 +688,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390c03
+DECL|enum|__anon293c9d5b0c03
 block|{
 DECL|enumerator|GIMP_COMPONENT_TYPE_U8
 name|GIMP_COMPONENT_TYPE_U8
@@ -752,7 +752,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390d03
+DECL|enum|__anon293c9d5b0d03
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -800,7 +800,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390e03
+DECL|enum|__anon293c9d5b0e03
 block|{
 DECL|enumerator|GIMP_CONVOLVE_BLUR
 name|GIMP_CONVOLVE_BLUR
@@ -854,7 +854,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7390f03
+DECL|enum|__anon293c9d5b0f03
 block|{
 DECL|enumerator|GIMP_DESATURATE_LIGHTNESS
 name|GIMP_DESATURATE_LIGHTNESS
@@ -910,7 +910,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391003
+DECL|enum|__anon293c9d5b1003
 block|{
 DECL|enumerator|GIMP_DODGE_BURN_TYPE_DODGE
 name|GIMP_DODGE_BURN_TYPE_DODGE
@@ -964,7 +964,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391103
+DECL|enum|__anon293c9d5b1103
 block|{
 DECL|enumerator|GIMP_FILL_FOREGROUND
 name|GIMP_FILL_FOREGROUND
@@ -1048,7 +1048,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391203
+DECL|enum|__anon293c9d5b1203
 block|{
 DECL|enumerator|GIMP_FOREGROUND_EXTRACT_SIOX
 name|GIMP_FOREGROUND_EXTRACT_SIOX
@@ -1082,7 +1082,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391303
+DECL|enum|__anon293c9d5b1303
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_RGB
 name|GIMP_GRADIENT_SEGMENT_RGB
@@ -1122,7 +1122,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391403
+DECL|enum|__anon293c9d5b1403
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_LINEAR
 name|GIMP_GRADIENT_SEGMENT_LINEAR
@@ -1165,7 +1165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391503
+DECL|enum|__anon293c9d5b1503
 block|{
 DECL|enumerator|GIMP_GRADIENT_LINEAR
 name|GIMP_GRADIENT_LINEAR
@@ -1237,7 +1237,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391603
+DECL|enum|__anon293c9d5b1603
 block|{
 DECL|enumerator|GIMP_GRID_DOTS
 name|GIMP_GRID_DOTS
@@ -1285,28 +1285,76 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391703
+DECL|enum|__anon293c9d5b1703
 block|{
+DECL|enumerator|GIMP_HUE_RANGE_ALL
+name|GIMP_HUE_RANGE_ALL
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_RED
+name|GIMP_HUE_RANGE_RED
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_YELLOW
+name|GIMP_HUE_RANGE_YELLOW
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_GREEN
+name|GIMP_HUE_RANGE_GREEN
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_CYAN
+name|GIMP_HUE_RANGE_CYAN
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_BLUE
+name|GIMP_HUE_RANGE_BLUE
+block|,
+DECL|enumerator|GIMP_HUE_RANGE_MAGENTA
+name|GIMP_HUE_RANGE_MAGENTA
+block|,
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
+init|=
+name|GIMP_HUE_RANGE_ALL
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_RED_HUES
 name|GIMP_RED_HUES
+init|=
+name|GIMP_HUE_RANGE_RED
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_YELLOW_HUES
 name|GIMP_YELLOW_HUES
+init|=
+name|GIMP_HUE_RANGE_YELLOW
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_GREEN_HUES
 name|GIMP_GREEN_HUES
+init|=
+name|GIMP_HUE_RANGE_GREEN
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_CYAN_HUES
 name|GIMP_CYAN_HUES
+init|=
+name|GIMP_HUE_RANGE_CYAN
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_BLUE_HUES
 name|GIMP_BLUE_HUES
+init|=
+name|GIMP_HUE_RANGE_BLUE
 block|,
+comment|/*< skip, pdb-skip>*/
 DECL|enumerator|GIMP_MAGENTA_HUES
 name|GIMP_MAGENTA_HUES
+init|=
+name|GIMP_HUE_RANGE_MAGENTA
+comment|/*< skip, pdb-skip>*/
+endif|#
+directive|endif
+comment|/* GIMP_DISABLE_DEPRECATED */
 DECL|typedef|GimpHueRange
 block|}
 name|GimpHueRange
@@ -1334,7 +1382,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391803
+DECL|enum|__anon293c9d5b1803
 block|{
 DECL|enumerator|GIMP_ICON_TYPE_ICON_NAME
 name|GIMP_ICON_TYPE_ICON_NAME
@@ -1386,7 +1434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391903
+DECL|enum|__anon293c9d5b1903
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -1426,7 +1474,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391a03
+DECL|enum|__anon293c9d5b1a03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -1478,7 +1526,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391b03
+DECL|enum|__anon293c9d5b1b03
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
 name|GIMP_INK_BLOB_TYPE_CIRCLE
@@ -1518,7 +1566,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391c03
+DECL|enum|__anon293c9d5b1c03
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -1578,7 +1626,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391d03
+DECL|enum|__anon293c9d5b1d03
 block|{
 DECL|enumerator|GIMP_JOIN_MITER
 name|GIMP_JOIN_MITER
@@ -1625,7 +1673,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b79c7391e03
+DECL|enum|__anon293c9d5b1e03
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -1731,7 +1779,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7391f03
+DECL|enum|__anon293c9d5b1f03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1765,7 +1813,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392003
+DECL|enum|__anon293c9d5b2003
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1809,7 +1857,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392103
+DECL|enum|__anon293c9d5b2103
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -1846,7 +1894,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392203
+DECL|enum|__anon293c9d5b2203
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -1880,7 +1928,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392303
+DECL|enum|__anon293c9d5b2303
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -1920,7 +1968,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392403
+DECL|enum|__anon293c9d5b2403
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -1956,7 +2004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392503
+DECL|enum|__anon293c9d5b2503
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -2077,7 +2125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392603
+DECL|enum|__anon293c9d5b2603
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_HANDLER_INTERNAL
 name|GIMP_PDB_ERROR_HANDLER_INTERNAL
@@ -2111,7 +2159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392703
+DECL|enum|__anon293c9d5b2703
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -2155,7 +2203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392803
+DECL|enum|__anon293c9d5b2803
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -2198,7 +2246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392903
+DECL|enum|__anon293c9d5b2903
 block|{
 DECL|enumerator|GIMP_PRECISION_U8_LINEAR
 name|GIMP_PRECISION_U8_LINEAR
@@ -2298,7 +2346,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392a03
+DECL|enum|__anon293c9d5b2a03
 block|{
 DECL|enumerator|GIMP_PROGRESS_COMMAND_START
 name|GIMP_PROGRESS_COMMAND_START
@@ -2344,7 +2392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392b03
+DECL|enum|__anon293c9d5b2b03
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -2388,7 +2436,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392c03
+DECL|enum|__anon293c9d5b2c03
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -2425,7 +2473,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392d03
+DECL|enum|__anon293c9d5b2d03
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -2465,7 +2513,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392e03
+DECL|enum|__anon293c9d5b2e03
 block|{
 DECL|enumerator|GIMP_SELECT_CRITERION_COMPOSITE
 name|GIMP_SELECT_CRITERION_COMPOSITE
@@ -2525,7 +2573,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7392f03
+DECL|enum|__anon293c9d5b2f03
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -2561,7 +2609,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393003
+DECL|enum|__anon293c9d5b3003
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -2598,7 +2646,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393103
+DECL|enum|__anon293c9d5b3103
 block|{
 DECL|enumerator|GIMP_STROKE_LINE
 name|GIMP_STROKE_LINE
@@ -2634,7 +2682,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393203
+DECL|enum|__anon293c9d5b3203
 block|{
 DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
 name|GIMP_TEXT_DIRECTION_LTR
@@ -2670,7 +2718,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393303
+DECL|enum|__anon293c9d5b3303
 block|{
 DECL|enumerator|GIMP_TEXT_HINT_STYLE_NONE
 name|GIMP_TEXT_HINT_STYLE_NONE
@@ -2714,7 +2762,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393403
+DECL|enum|__anon293c9d5b3403
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT
@@ -2758,7 +2806,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393503
+DECL|enum|__anon293c9d5b3503
 block|{
 DECL|enumerator|GIMP_TRANSFER_SHADOWS
 name|GIMP_TRANSFER_SHADOWS
@@ -2822,7 +2870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393603
+DECL|enum|__anon293c9d5b3603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -2858,7 +2906,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393703
+DECL|enum|__anon293c9d5b3703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_RESIZE_ADJUST
 name|GIMP_TRANSFORM_RESIZE_ADJUST
@@ -2885,7 +2933,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b79c7393803
+DECL|enum|__anon293c9d5b3803
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -2955,7 +3003,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393903
+DECL|enum|__anon293c9d5b3903
 block|{
 DECL|enumerator|GIMP_USER_DIRECTORY_DESKTOP
 name|GIMP_USER_DIRECTORY_DESKTOP
@@ -3016,7 +3064,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b79c7393a03
+DECL|enum|__anon293c9d5b3a03
 block|{
 DECL|enumerator|GIMP_VECTORS_STROKE_TYPE_BEZIER
 name|GIMP_VECTORS_STROKE_TYPE_BEZIER

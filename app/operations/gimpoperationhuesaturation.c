@@ -245,7 +245,7 @@ name|config
 operator|->
 name|hue
 index|[
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 index|]
 operator|+
 name|config
@@ -344,7 +344,7 @@ name|config
 operator|->
 name|hue
 index|[
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 index|]
 operator|+
 name|v
@@ -407,7 +407,7 @@ name|config
 operator|->
 name|saturation
 index|[
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 index|]
 operator|+
 name|config
@@ -465,7 +465,7 @@ name|config
 operator|->
 name|lightness
 index|[
-name|GIMP_ALL_HUES
+name|GIMP_HUE_RANGE_ALL
 index|]
 operator|+
 name|config
