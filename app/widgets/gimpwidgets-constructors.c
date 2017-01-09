@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|26
+literal|27
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -337,6 +337,10 @@ argument_list|,
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_MULTIPLY
+argument_list|,
+name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 argument_list|,

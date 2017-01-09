@@ -264,7 +264,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiplymode.h"
+file|"gimpoperationmultiply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationmultiplylegacy.h"
 end_include
 
 begin_include
@@ -583,7 +589,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_MULTIPLY_MODE
+name|GIMP_TYPE_OPERATION_MULTIPLY
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_MULTIPLY_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

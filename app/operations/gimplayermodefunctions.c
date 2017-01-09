@@ -54,7 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationmultiplymode.h"
+file|"gimpoperationmultiply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationmultiplylegacy.h"
 end_include
 
 begin_include
@@ -264,7 +270,15 @@ name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_multiply_mode_process_pixels
+name|gimp_operation_multiply_legacy_process_pixels
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_MULTIPLY
+case|:
+name|func
+operator|=
+name|gimp_operation_multiply_process_pixels
 expr_stmt|;
 break|break;
 case|case
