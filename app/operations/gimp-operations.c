@@ -288,7 +288,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationoverlaymode.h"
+file|"layer-modes/gimpoperationoverlay.h"
 end_include
 
 begin_include
@@ -616,7 +616,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_OVERLAY_MODE
+name|GIMP_TYPE_OPERATION_OVERLAY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

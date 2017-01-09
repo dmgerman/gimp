@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationoverlaymode.h"
+file|"layer-modes/gimpoperationoverlay.h"
 end_include
 
 begin_include
@@ -460,7 +460,7 @@ name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|func
 operator|=
-name|gimp_operation_overlay_mode_process_pixels
+name|gimp_operation_overlay_process_pixels
 expr_stmt|;
 break|break;
 case|case

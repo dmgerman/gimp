@@ -711,7 +711,7 @@ name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|operation
 operator|=
-literal|"gimp:overlay-mode"
+literal|"gimp:overlay"
 expr_stmt|;
 break|break;
 case|case
