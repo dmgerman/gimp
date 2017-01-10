@@ -664,7 +664,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"No direct function for layer mode (%d), using gimp:normal-mode"
+literal|"No direct function for layer mode (%d), using gimp:normal"
 argument_list|,
 name|paint_mode
 argument_list|)

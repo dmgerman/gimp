@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e59720103
+DECL|enum|__anon2b1933760103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e59720203
+DECL|enum|__anon2b1933760203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1925,7 +1925,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:normal-mode"
+literal|"gimp:normal"
 argument_list|,
 name|NULL
 argument_list|)

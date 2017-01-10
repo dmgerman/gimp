@@ -469,7 +469,7 @@ name|gchar
 modifier|*
 name|operation
 init|=
-literal|"gimp:normal-mode"
+literal|"gimp:normal"
 decl_stmt|;
 name|gdouble
 name|opacity
@@ -492,7 +492,7 @@ name|GIMP_LAYER_MODE_NORMAL
 case|:
 name|operation
 operator|=
-literal|"gimp:normal-mode"
+literal|"gimp:normal"
 expr_stmt|;
 break|break;
 case|case

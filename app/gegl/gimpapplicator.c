@@ -448,7 +448,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:normal-mode"
+literal|"gimp:normal"
 argument_list|,
 name|NULL
 argument_list|)

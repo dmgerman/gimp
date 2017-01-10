@@ -144,7 +144,7 @@ name|reference_xml
 init|=
 literal|"<?xml version='1.0' encoding='UTF-8'?>"
 literal|"<gegl>"
-literal|"<node operation='gimp:normal-mode'>"
+literal|"<node operation='gimp:normal'>"
 literal|"<node operation='gegl:load'>"
 literal|"<params>"
 literal|"<param name='path'>blending-test-B.png</param>"
@@ -199,7 +199,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:normal-mode"
+literal|"gimp:normal"
 argument_list|,
 literal|"description"
 argument_list|,
