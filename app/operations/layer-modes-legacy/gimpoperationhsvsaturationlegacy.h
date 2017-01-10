@@ -6,107 +6,107 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_OPERATION_SATURATION_MODE_H__
+name|__GIMP_OPERATION_HSV_SATURATION_LEGACY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_OPERATION_SATURATION_MODE_H__
+DECL|macro|__GIMP_OPERATION_HSV_SATURATION_LEGACY_H__
 define|#
 directive|define
-name|__GIMP_OPERATION_SATURATION_MODE_H__
+name|__GIMP_OPERATION_HSV_SATURATION_LEGACY_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
+file|"../gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_SATURATION_MODE
+DECL|macro|GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_SATURATION_MODE
-value|(gimp_operation_saturation_mode_get_type ())
+name|GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY
+value|(gimp_operation_hsv_saturation_legacy_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_SATURATION_MODE (obj)
+DECL|macro|GIMP_OPERATION_HSV_SATURATION_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_SATURATION_MODE
+name|GIMP_OPERATION_HSV_SATURATION_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_SATURATION_MODE, GimpOperationSaturationMode))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY, GimpOperationHsvSaturationLegacy))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_SATURATION_MODE_CLASS (klass)
+DECL|macro|GIMP_OPERATION_HSV_SATURATION_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OPERATION_SATURATION_MODE_CLASS
+name|GIMP_OPERATION_HSV_SATURATION_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_SATURATION_MODE, GimpOperationSaturationModeClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY, GimpOperationHsvSaturationLegacyClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_SATURATION_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_HSV_SATURATION_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_SATURATION_MODE
+name|GIMP_IS_OPERATION_HSV_SATURATION_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_SATURATION_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_SATURATION_MODE_CLASS (klass)
+DECL|macro|GIMP_IS_OPERATION_HSV_SATURATION_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_SATURATION_MODE_CLASS
+name|GIMP_IS_OPERATION_HSV_SATURATION_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_SATURATION_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_SATURATION_MODE_GET_CLASS (obj)
+DECL|macro|GIMP_OPERATION_HSV_SATURATION_LEGACY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_SATURATION_MODE_GET_CLASS
+name|GIMP_OPERATION_HSV_SATURATION_LEGACY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_SATURATION_MODE, GimpOperationSaturationModeClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HSV_SATURATION_LEGACY, GimpOperationHsvSaturationLegacyClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationSaturationMode
+DECL|typedef|GimpOperationHsvSaturationLegacy
 typedef|typedef
 name|struct
-name|_GimpOperationSaturationMode
-name|GimpOperationSaturationMode
+name|_GimpOperationHsvSaturationLegacy
+name|GimpOperationHsvSaturationLegacy
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationSaturationModeClass
+DECL|typedef|GimpOperationHsvSaturationLegacyClass
 typedef|typedef
 name|struct
-name|_GimpOperationSaturationModeClass
-name|GimpOperationSaturationModeClass
+name|_GimpOperationHsvSaturationLegacyClass
+name|GimpOperationHsvSaturationLegacyClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpOperationSaturationMode
+DECL|struct|_GimpOperationHsvSaturationLegacy
 struct|struct
-name|_GimpOperationSaturationMode
+name|_GimpOperationHsvSaturationLegacy
 block|{
 DECL|member|parent_instance
 name|GimpOperationPointLayerMode
@@ -117,9 +117,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationSaturationModeClass
+DECL|struct|_GimpOperationHsvSaturationLegacyClass
 struct|struct
-name|_GimpOperationSaturationModeClass
+name|_GimpOperationHsvSaturationLegacyClass
 block|{
 DECL|member|parent_class
 name|GimpOperationPointLayerModeClass
@@ -131,7 +131,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_operation_saturation_mode_get_type
+name|gimp_operation_hsv_saturation_legacy_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -141,7 +141,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_saturation_mode_process_pixels
+name|gimp_operation_hsv_saturation_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -182,7 +182,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_OPERATION_SATURATION_MODE_H__ */
+comment|/* __GIMP_OPERATION_HSV_SATURATION_LEGACY_H__ */
 end_comment
 
 end_unit

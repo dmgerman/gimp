@@ -1710,6 +1710,38 @@ literal|"lighten-only"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_HSV_HUE
+block|,
+literal|"GIMP_LAYER_MODE_HSV_HUE"
+block|,
+literal|"hsv-hue"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_SATURATION
+block|,
+literal|"GIMP_LAYER_MODE_HSV_SATURATION"
+block|,
+literal|"hsv-saturation"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_COLOR
+block|,
+literal|"GIMP_LAYER_MODE_HSV_COLOR"
+block|,
+literal|"hsv-color"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_VALUE
+block|,
+literal|"GIMP_LAYER_MODE_HSV_VALUE"
+block|,
+literal|"hsv-value"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1899,7 +1931,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hue (HSV)"
+literal|"Hue (HSV) (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -1912,7 +1944,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Saturation (HSV)"
+literal|"Saturation (HSV) (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -1925,7 +1957,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSV)"
+literal|"Color (HSV) (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -1938,7 +1970,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Value (HSV)"
+literal|"Value (HSV) (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2238,6 +2270,58 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Lighten only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_HUE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hue (HSV)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_SATURATION
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Saturation (HSV)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_COLOR
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Color (HSV)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HSV_VALUE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Value (HSV)"
 argument_list|)
 block|,
 name|NULL

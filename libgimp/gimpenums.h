@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bd54450103
+DECL|enum|__anon28a00d410103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bd54450203
+DECL|enum|__anon28a00d410203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bd54450303
+DECL|enum|__anon28a00d410303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bd54450403
+DECL|enum|__anon28a00d410403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -274,6 +274,18 @@ name|GIMP_LAYER_MODE_DARKEN_ONLY
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_LIGHTEN_ONLY
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HSV_HUE
+name|GIMP_LAYER_MODE_HSV_HUE
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HSV_SATURATION
+name|GIMP_LAYER_MODE_HSV_SATURATION
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSV_COLOR
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE
+name|GIMP_LAYER_MODE_HSV_VALUE
 DECL|typedef|GimpLayerMode
 block|}
 name|GimpLayerMode

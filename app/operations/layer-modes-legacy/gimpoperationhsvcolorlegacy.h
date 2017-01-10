@@ -6,107 +6,107 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_OPERATION_COLOR_MODE_H__
+name|__GIMP_OPERATION_HSV_COLOR_LEGACY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_OPERATION_COLOR_MODE_H__
+DECL|macro|__GIMP_OPERATION_HSV_COLOR_LEGACY_H__
 define|#
 directive|define
-name|__GIMP_OPERATION_COLOR_MODE_H__
+name|__GIMP_OPERATION_HSV_COLOR_LEGACY_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
+file|"../gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_COLOR_MODE
+DECL|macro|GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_COLOR_MODE
-value|(gimp_operation_color_mode_get_type ())
+name|GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY
+value|(gimp_operation_hsv_color_legacy_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_COLOR_MODE (obj)
+DECL|macro|GIMP_OPERATION_HSV_COLOR_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_COLOR_MODE
+name|GIMP_OPERATION_HSV_COLOR_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_COLOR_MODE, GimpOperationColorMode))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY, GimpOperationHsvColorLegacy))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_COLOR_MODE_CLASS (klass)
+DECL|macro|GIMP_OPERATION_HSV_COLOR_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OPERATION_COLOR_MODE_CLASS
+name|GIMP_OPERATION_HSV_COLOR_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_COLOR_MODE, GimpOperationColorModeClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY, GimpOperationHsvColorLegacyClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_COLOR_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_HSV_COLOR_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_COLOR_MODE
+name|GIMP_IS_OPERATION_HSV_COLOR_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_COLOR_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_COLOR_MODE_CLASS (klass)
+DECL|macro|GIMP_IS_OPERATION_HSV_COLOR_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_COLOR_MODE_CLASS
+name|GIMP_IS_OPERATION_HSV_COLOR_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_COLOR_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_COLOR_MODE_GET_CLASS (obj)
+DECL|macro|GIMP_OPERATION_HSV_COLOR_LEGACY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_COLOR_MODE_GET_CLASS
+name|GIMP_OPERATION_HSV_COLOR_LEGACY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_COLOR_MODE, GimpOperationColorModeClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY, GimpOperationHsvColorLegacyClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationColorMode
+DECL|typedef|GimpOperationHsvColorLegacy
 typedef|typedef
 name|struct
-name|_GimpOperationColorMode
-name|GimpOperationColorMode
+name|_GimpOperationHsvColorLegacy
+name|GimpOperationHsvColorLegacy
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationColorModeClass
+DECL|typedef|GimpOperationHsvColorLegacyClass
 typedef|typedef
 name|struct
-name|_GimpOperationColorModeClass
-name|GimpOperationColorModeClass
+name|_GimpOperationHsvColorLegacyClass
+name|GimpOperationHsvColorLegacyClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpOperationColorMode
+DECL|struct|_GimpOperationHsvColorLegacy
 struct|struct
-name|_GimpOperationColorMode
+name|_GimpOperationHsvColorLegacy
 block|{
 DECL|member|parent_instance
 name|GimpOperationPointLayerMode
@@ -117,9 +117,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationColorModeClass
+DECL|struct|_GimpOperationHsvColorLegacyClass
 struct|struct
-name|_GimpOperationColorModeClass
+name|_GimpOperationHsvColorLegacyClass
 block|{
 DECL|member|parent_class
 name|GimpOperationPointLayerModeClass
@@ -131,7 +131,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_operation_color_mode_get_type
+name|gimp_operation_hsv_color_legacy_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -141,7 +141,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_color_mode_process_pixels
+name|gimp_operation_hsv_color_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -182,7 +182,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_OPERATION_COLOR_MODE_H__ */
+comment|/* __GIMP_OPERATION_HSV_COLOR_LEGACY_H__ */
 end_comment
 
 end_unit

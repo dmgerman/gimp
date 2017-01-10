@@ -6,107 +6,107 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_OPERATION_VALUE_MODE_H__
+name|__GIMP_OPERATION_HSV_VALUE_LEGACY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_OPERATION_VALUE_MODE_H__
+DECL|macro|__GIMP_OPERATION_HSV_VALUE_LEGACY_H__
 define|#
 directive|define
-name|__GIMP_OPERATION_VALUE_MODE_H__
+name|__GIMP_OPERATION_HSV_VALUE_LEGACY_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationpointlayermode.h"
+file|"../gimpoperationpointlayermode.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_OPERATION_VALUE_MODE
+DECL|macro|GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY
 define|#
 directive|define
-name|GIMP_TYPE_OPERATION_VALUE_MODE
-value|(gimp_operation_value_mode_get_type ())
+name|GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY
+value|(gimp_operation_hsv_value_legacy_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_VALUE_MODE (obj)
+DECL|macro|GIMP_OPERATION_HSV_VALUE_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_VALUE_MODE
+name|GIMP_OPERATION_HSV_VALUE_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_VALUE_MODE, GimpOperationValueMode))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY, GimpOperationHsvValueLegacy))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_VALUE_MODE_CLASS (klass)
+DECL|macro|GIMP_OPERATION_HSV_VALUE_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OPERATION_VALUE_MODE_CLASS
+name|GIMP_OPERATION_HSV_VALUE_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_VALUE_MODE, GimpOperationValueModeClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY, GimpOperationHsvValueLegacyClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_VALUE_MODE (obj)
+DECL|macro|GIMP_IS_OPERATION_HSV_VALUE_LEGACY (obj)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_VALUE_MODE
+name|GIMP_IS_OPERATION_HSV_VALUE_LEGACY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_VALUE_MODE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_OPERATION_VALUE_MODE_CLASS (klass)
+DECL|macro|GIMP_IS_OPERATION_HSV_VALUE_LEGACY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_OPERATION_VALUE_MODE_CLASS
+name|GIMP_IS_OPERATION_HSV_VALUE_LEGACY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_VALUE_MODE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY))
 end_define
 
 begin_define
-DECL|macro|GIMP_OPERATION_VALUE_MODE_GET_CLASS (obj)
+DECL|macro|GIMP_OPERATION_HSV_VALUE_LEGACY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_OPERATION_VALUE_MODE_GET_CLASS
+name|GIMP_OPERATION_HSV_VALUE_LEGACY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_VALUE_MODE, GimpOperationValueModeClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_HSV_VALUE_LEGACY, GimpOperationHsvValueLegacyClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpOperationValueMode
+DECL|typedef|GimpOperationHsvValueLegacy
 typedef|typedef
 name|struct
-name|_GimpOperationValueMode
-name|GimpOperationValueMode
+name|_GimpOperationHsvValueLegacy
+name|GimpOperationHsvValueLegacy
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationValueModeClass
+DECL|typedef|GimpOperationHsvValueLegacyClass
 typedef|typedef
 name|struct
-name|_GimpOperationValueModeClass
-name|GimpOperationValueModeClass
+name|_GimpOperationHsvValueLegacyClass
+name|GimpOperationHsvValueLegacyClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpOperationValueMode
+DECL|struct|_GimpOperationHsvValueLegacy
 struct|struct
-name|_GimpOperationValueMode
+name|_GimpOperationHsvValueLegacy
 block|{
 DECL|member|parent_instance
 name|GimpOperationPointLayerMode
@@ -117,9 +117,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationValueModeClass
+DECL|struct|_GimpOperationHsvValueLegacyClass
 struct|struct
-name|_GimpOperationValueModeClass
+name|_GimpOperationHsvValueLegacyClass
 block|{
 DECL|member|parent_class
 name|GimpOperationPointLayerModeClass
@@ -131,7 +131,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_operation_value_mode_get_type
+name|gimp_operation_hsv_value_legacy_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -141,7 +141,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_operation_value_mode_process_pixels
+name|gimp_operation_hsv_value_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -182,7 +182,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_OPERATION_VALUE_MODE_H__ */
+comment|/* __GIMP_OPERATION_HSV_VALUE_LEGACY_H__ */
 end_comment
 
 end_unit

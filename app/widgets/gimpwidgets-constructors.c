@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|35
+literal|39
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -375,6 +375,14 @@ argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_DIVIDE_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_HSV_HUE
+argument_list|,
+name|GIMP_LAYER_MODE_HSV_SATURATION
+argument_list|,
+name|GIMP_LAYER_MODE_HSV_COLOR
+argument_list|,
+name|GIMP_LAYER_MODE_HSV_VALUE
 argument_list|,
 name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 argument_list|,

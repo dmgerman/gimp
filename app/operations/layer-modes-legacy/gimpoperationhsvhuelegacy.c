@@ -36,19 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationhuemode.h"
+file|"gimpoperationhsvhuelegacy.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_hue_mode_process
+name|gimp_operation_hsv_hue_legacy_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -85,12 +85,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationHueMode,gimp_operation_hue_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationHsvHueLegacy,gimp_operation_hsv_hue_legacy,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationHueMode
+argument|GimpOperationHsvHueLegacy
 argument_list|,
-argument|gimp_operation_hue_mode
+argument|gimp_operation_hsv_hue_legacy
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -99,9 +99,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_operation_hue_mode_class_init
+name|gimp_operation_hsv_hue_legacy_class_init
 parameter_list|(
-name|GimpOperationHueModeClass
+name|GimpOperationHsvHueLegacyClass
 modifier|*
 name|klass
 parameter_list|)
@@ -134,7 +134,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:hue-mode"
+literal|"gimp:hsv-hue-legacy"
 argument_list|,
 literal|"description"
 argument_list|,
@@ -147,7 +147,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_hue_mode_process
+name|gimp_operation_hsv_hue_legacy_process
 expr_stmt|;
 block|}
 end_function
@@ -155,10 +155,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_hue_mode_init (GimpOperationHueMode * self)
-name|gimp_operation_hue_mode_init
+DECL|function|gimp_operation_hsv_hue_legacy_init (GimpOperationHsvHueLegacy * self)
+name|gimp_operation_hsv_hue_legacy_init
 parameter_list|(
-name|GimpOperationHueMode
+name|GimpOperationHsvHueLegacy
 modifier|*
 name|self
 parameter_list|)
@@ -168,8 +168,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_hue_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_hue_mode_process
+DECL|function|gimp_operation_hsv_hue_legacy_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_hsv_hue_legacy_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -214,7 +214,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_hue_mode_process_pixels
+name|gimp_operation_hsv_hue_legacy_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -238,8 +238,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_hue_mode_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_hue_mode_process_pixels
+DECL|function|gimp_operation_hsv_hue_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_hsv_hue_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
