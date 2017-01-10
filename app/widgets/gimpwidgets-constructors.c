@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|31
+literal|33
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -337,6 +337,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_DODGE
 argument_list|,
 name|GIMP_LAYER_MODE_DODGE_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_ADDITION
 argument_list|,
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
 argument_list|,
@@ -359,6 +361,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_SUBTRACT
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 argument_list|,
