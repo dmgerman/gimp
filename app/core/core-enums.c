@@ -1694,6 +1694,22 @@ literal|"subtract"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_DARKEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_DARKEN_ONLY"
+block|,
+literal|"darken-only"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_LIGHTEN_ONLY"
+block|,
+literal|"lighten-only"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1857,7 +1873,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Darken only"
+literal|"Darken only (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -1870,7 +1886,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Lighten only"
+literal|"Lighten only (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2196,6 +2212,32 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Subtract"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_DARKEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Darken only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Lighten only"
 argument_list|)
 block|,
 name|NULL

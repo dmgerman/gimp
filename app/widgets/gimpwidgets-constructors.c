@@ -320,13 +320,15 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|33
+literal|35
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
+argument_list|,
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 argument_list|,
@@ -341,6 +343,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_ADDITION
 argument_list|,
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_DARKEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 argument_list|,
