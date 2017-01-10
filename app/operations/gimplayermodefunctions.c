@@ -264,7 +264,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationerasemode.h"
+file|"layer-modes/gimpoperationerase.h"
 end_include
 
 begin_include
@@ -276,7 +276,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationantierasemode.h"
+file|"layer-modes/gimpoperationantierase.h"
 end_include
 
 begin_function
@@ -642,7 +642,7 @@ name|GIMP_LAYER_MODE_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_erase_mode_process_pixels
+name|gimp_operation_erase_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -658,7 +658,7 @@ name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_anti_erase_mode_process_pixels
+name|gimp_operation_anti_erase_process_pixels
 expr_stmt|;
 break|break;
 default|default:

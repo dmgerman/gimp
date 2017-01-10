@@ -815,7 +815,7 @@ name|GIMP_LAYER_MODE_ERASE
 case|:
 name|operation
 operator|=
-literal|"gimp:erase-mode"
+literal|"gimp:erase"
 expr_stmt|;
 break|break;
 case|case
@@ -831,7 +831,7 @@ name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
 name|operation
 operator|=
-literal|"gimp:anti-erase-mode"
+literal|"gimp:anti-erase"
 expr_stmt|;
 break|break;
 default|default:

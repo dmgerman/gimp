@@ -480,7 +480,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationerasemode.h"
+file|"layer-modes/gimpoperationerase.h"
 end_include
 
 begin_include
@@ -492,7 +492,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationantierasemode.h"
+file|"layer-modes/gimpoperationantierase.h"
 end_include
 
 begin_function
@@ -835,7 +835,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_ERASE_MODE
+name|GIMP_TYPE_OPERATION_ERASE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -845,7 +845,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_ANTI_ERASE_MODE
+name|GIMP_TYPE_OPERATION_ANTI_ERASE
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_config_register
