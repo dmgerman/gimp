@@ -116,7 +116,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:screen-mode"
+literal|"gimp:screen"
 argument_list|,
 literal|"description"
 argument_list|,
