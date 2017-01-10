@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationlchhuemode.c  * Copyright (C) 2015 Elle Stone<ellestone@ninedegreesbelow.com>  *                    Massimo Valentini<mvalentini@src.gnome.org>  *                    Thomas Manni<thomas.manni@free.fr>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationlchchroma.c  * Copyright (C) 2015 Elle Stone<ellestone@ninedegreesbelow.com>  *                    Massimo Valentini<mvalentini@src.gnome.org>  *                    Thomas Manni<thomas.manni@free.fr>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -36,19 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchhuemode.h"
+file|"gimpoperationlchchroma.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_lch_hue_mode_process
+name|gimp_operation_lch_chroma_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -85,12 +85,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationLchHueMode,gimp_operation_lch_hue_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationLchChroma,gimp_operation_lch_chroma,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationLchHueMode
+argument|GimpOperationLchChroma
 argument_list|,
-argument|gimp_operation_lch_hue_mode
+argument|gimp_operation_lch_chroma
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -101,15 +101,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_operation_lch_hue_mode_parent_class
+value|gimp_operation_lch_chroma_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_operation_lch_hue_mode_class_init
+name|gimp_operation_lch_chroma_class_init
 parameter_list|(
-name|GimpOperationLchHueModeClass
+name|GimpOperationLchChromaClass
 modifier|*
 name|klass
 parameter_list|)
@@ -148,11 +148,11 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:lch-hue-mode"
+literal|"gimp:lch-chroma"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP LCH hue mode operation"
+literal|"GIMP LCH chroma mode operation"
 argument_list|,
 name|NULL
 argument_list|)
@@ -161,7 +161,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_lch_hue_mode_process
+name|gimp_operation_lch_chroma_process
 expr_stmt|;
 block|}
 end_function
@@ -169,10 +169,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_lch_hue_mode_init (GimpOperationLchHueMode * self)
-name|gimp_operation_lch_hue_mode_init
+DECL|function|gimp_operation_lch_chroma_init (GimpOperationLchChroma * self)
+name|gimp_operation_lch_chroma_init
 parameter_list|(
-name|GimpOperationLchHueMode
+name|GimpOperationLchChroma
 modifier|*
 name|self
 parameter_list|)
@@ -182,8 +182,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_lch_hue_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_lch_hue_mode_process
+DECL|function|gimp_operation_lch_chroma_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_lch_chroma_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -244,9 +244,9 @@ return|return
 operator|(
 name|linear
 condition|?
-name|gimp_operation_lch_hue_mode_process_pixels_linear
+name|gimp_operation_lch_chroma_process_pixels_linear
 else|:
-name|gimp_operation_lch_hue_mode_process_pixels
+name|gimp_operation_lch_chroma_process_pixels
 operator|)
 operator|(
 name|in_buf
@@ -272,8 +272,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hue_pre_process (const Babl * format,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
-name|hue_pre_process
+DECL|function|chroma_pre_process (const Babl * format,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
+name|chroma_pre_process
 parameter_list|(
 specifier|const
 name|Babl
@@ -298,9 +298,6 @@ name|glong
 name|samples
 parameter_list|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|gfloat
 name|tmp
 index|[
@@ -313,6 +310,9 @@ modifier|*
 name|layer_lab
 init|=
 name|tmp
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|babl_process
 argument_list|(
@@ -361,47 +361,6 @@ name|i
 control|)
 block|{
 name|gfloat
-name|A2
-init|=
-name|layer_lab
-index|[
-literal|4
-operator|*
-name|i
-operator|+
-literal|1
-index|]
-decl_stmt|;
-name|gfloat
-name|B2
-init|=
-name|layer_lab
-index|[
-literal|4
-operator|*
-name|i
-operator|+
-literal|2
-index|]
-decl_stmt|;
-name|gfloat
-name|c2
-init|=
-name|hypot
-argument_list|(
-name|A2
-argument_list|,
-name|B2
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|c2
-operator|>
-literal|0.1
-condition|)
-block|{
-name|gfloat
 name|A1
 init|=
 name|out
@@ -433,25 +392,66 @@ argument_list|(
 name|A1
 argument_list|,
 name|B1
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|c1
+operator|!=
+literal|0
+condition|)
+block|{
+name|gfloat
+name|A2
+init|=
+name|layer_lab
+index|[
+literal|4
+operator|*
+name|i
+operator|+
+literal|1
+index|]
+decl_stmt|;
+name|gfloat
+name|B2
+init|=
+name|layer_lab
+index|[
+literal|4
+operator|*
+name|i
+operator|+
+literal|2
+index|]
+decl_stmt|;
+name|gfloat
+name|c2
+init|=
+name|hypot
+argument_list|(
+name|A2
+argument_list|,
+name|B2
 argument_list|)
 decl_stmt|;
 name|gfloat
 name|A
 init|=
-name|c1
-operator|*
-name|A2
-operator|/
 name|c2
+operator|*
+name|A1
+operator|/
+name|c1
 decl_stmt|;
 name|gfloat
 name|B
 init|=
-name|c1
-operator|*
-name|B2
-operator|/
 name|c2
+operator|*
+name|B1
+operator|/
+name|c1
 decl_stmt|;
 name|out
 index|[
@@ -499,8 +499,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hue_post_process (const gfloat * in,const gfloat * layer,const gfloat * mask,gfloat * out,gfloat opacity,glong samples)
-name|hue_post_process
+DECL|function|chroma_post_process (const gfloat * in,const gfloat * layer,const gfloat * mask,gfloat * out,gfloat opacity,glong samples)
+name|chroma_post_process
 parameter_list|(
 specifier|const
 name|gfloat
@@ -719,8 +719,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_lch_hue_mode_process_pixels_linear (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_lch_hue_mode_process_pixels_linear
+DECL|function|gimp_operation_lch_chroma_process_pixels_linear (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_lch_chroma_process_pixels_linear
 parameter_list|(
 name|gfloat
 modifier|*
@@ -753,7 +753,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|hue_pre_process
+name|chroma_pre_process
 argument_list|(
 name|babl_format
 argument_list|(
@@ -769,7 +769,7 @@ argument_list|,
 name|samples
 argument_list|)
 expr_stmt|;
-name|hue_post_process
+name|chroma_post_process
 argument_list|(
 name|in
 argument_list|,
@@ -792,8 +792,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_lch_hue_mode_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_lch_hue_mode_process_pixels
+DECL|function|gimp_operation_lch_chroma_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_lch_chroma_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -826,7 +826,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|hue_pre_process
+name|chroma_pre_process
 argument_list|(
 name|babl_format
 argument_list|(
@@ -842,7 +842,7 @@ argument_list|,
 name|samples
 argument_list|)
 expr_stmt|;
-name|hue_post_process
+name|chroma_post_process
 argument_list|(
 name|in
 argument_list|,

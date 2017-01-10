@@ -408,25 +408,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchhuemode.h"
+file|"layer-modes/gimpoperationlchhue.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchchromamode.h"
+file|"layer-modes/gimpoperationlchchroma.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchcolormode.h"
+file|"layer-modes/gimpoperationlchcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchlightnessmode.h"
+file|"layer-modes/gimpoperationlchlightness.h"
 end_include
 
 begin_include
@@ -727,22 +727,22 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_LCH_HUE_MODE
+name|GIMP_TYPE_OPERATION_LCH_HUE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_LCH_CHROMA_MODE
+name|GIMP_TYPE_OPERATION_LCH_CHROMA
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_LCH_COLOR_MODE
+name|GIMP_TYPE_OPERATION_LCH_COLOR
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_LCH_LIGHTNESS_MODE
+name|GIMP_TYPE_OPERATION_LCH_LIGHTNESS
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

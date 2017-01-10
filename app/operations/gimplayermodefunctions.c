@@ -192,25 +192,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchhuemode.h"
+file|"layer-modes/gimpoperationlchhue.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchchromamode.h"
+file|"layer-modes/gimpoperationlchchroma.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchcolormode.h"
+file|"layer-modes/gimpoperationlchcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationlchlightnessmode.h"
+file|"layer-modes/gimpoperationlchlightness.h"
 end_include
 
 begin_include
@@ -484,9 +484,9 @@ name|func
 operator|=
 name|linear_mode
 condition|?
-name|gimp_operation_lch_hue_mode_process_pixels_linear
+name|gimp_operation_lch_hue_process_pixels_linear
 else|:
-name|gimp_operation_lch_hue_mode_process_pixels
+name|gimp_operation_lch_hue_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -496,9 +496,9 @@ name|func
 operator|=
 name|linear_mode
 condition|?
-name|gimp_operation_lch_chroma_mode_process_pixels_linear
+name|gimp_operation_lch_chroma_process_pixels_linear
 else|:
-name|gimp_operation_lch_chroma_mode_process_pixels
+name|gimp_operation_lch_chroma_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -508,9 +508,9 @@ name|func
 operator|=
 name|linear_mode
 condition|?
-name|gimp_operation_lch_color_mode_process_pixels_linear
+name|gimp_operation_lch_color_process_pixels_linear
 else|:
-name|gimp_operation_lch_color_mode_process_pixels
+name|gimp_operation_lch_color_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -520,9 +520,9 @@ name|func
 operator|=
 name|linear_mode
 condition|?
-name|gimp_operation_lch_lightness_mode_process_pixels_linear
+name|gimp_operation_lch_lightness_process_pixels_linear
 else|:
-name|gimp_operation_lch_lightness_mode_process_pixels
+name|gimp_operation_lch_lightness_process_pixels
 expr_stmt|;
 break|break;
 case|case

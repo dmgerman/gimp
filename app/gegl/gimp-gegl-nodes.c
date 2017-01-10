@@ -719,7 +719,7 @@ name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 name|operation
 operator|=
-literal|"gimp:lch-hue-mode"
+literal|"gimp:lch-hue"
 expr_stmt|;
 break|break;
 case|case
@@ -727,7 +727,7 @@ name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 name|operation
 operator|=
-literal|"gimp:lch-chroma-mode"
+literal|"gimp:lch-chroma"
 expr_stmt|;
 break|break;
 case|case
@@ -735,7 +735,7 @@ name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 name|operation
 operator|=
-literal|"gimp:lch-color-mode"
+literal|"gimp:lch-color"
 expr_stmt|;
 break|break;
 case|case
@@ -743,7 +743,7 @@ name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|operation
 operator|=
-literal|"gimp:lch-lightness-mode"
+literal|"gimp:lch-lightness"
 expr_stmt|;
 break|break;
 case|case
