@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationdissolvemode.c  * Copyright (C) 2012 Ville Sokk<ville.sokk@gmail.com>  *               2012 Ãyvind KolÃ¥s<pippin@gimp.org>  *               2003 Helvetix Victorinox  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationdissolve.c  * Copyright (C) 2012 Ville Sokk<ville.sokk@gmail.com>  *               2012 Ãyvind KolÃ¥s<pippin@gimp.org>  *               2003 Helvetix Victorinox  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationdissolvemode.h"
+file|"gimpoperationdissolve.h"
 end_include
 
 begin_define
@@ -38,7 +38,7 @@ end_define
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_dissolve_mode_process
+name|gimp_operation_dissolve_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -75,12 +75,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationDissolveMode,gimp_operation_dissolve_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationDissolve,gimp_operation_dissolve,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationDissolveMode
+argument|GimpOperationDissolve
 argument_list|,
-argument|gimp_operation_dissolve_mode
+argument|gimp_operation_dissolve
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -99,9 +99,9 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-name|gimp_operation_dissolve_mode_class_init
+name|gimp_operation_dissolve_class_init
 parameter_list|(
-name|GimpOperationDissolveModeClass
+name|GimpOperationDissolveClass
 modifier|*
 name|klass
 parameter_list|)
@@ -141,7 +141,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:dissolve-mode"
+literal|"gimp:dissolve"
 argument_list|,
 literal|"description"
 argument_list|,
@@ -158,7 +158,7 @@ name|point_composer_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_dissolve_mode_process
+name|gimp_operation_dissolve_process
 expr_stmt|;
 comment|/* generate a table of random seeds */
 name|gr
@@ -202,10 +202,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_dissolve_mode_init (GimpOperationDissolveMode * self)
-name|gimp_operation_dissolve_mode_init
+DECL|function|gimp_operation_dissolve_init (GimpOperationDissolve * self)
+name|gimp_operation_dissolve_init
 parameter_list|(
-name|GimpOperationDissolveMode
+name|GimpOperationDissolve
 modifier|*
 name|self
 parameter_list|)
@@ -215,8 +215,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_dissolve_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * result,gint level)
-name|gimp_operation_dissolve_mode_process
+DECL|function|gimp_operation_dissolve_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * result,gint level)
+name|gimp_operation_dissolve_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -261,7 +261,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_dissolve_mode_process_pixels
+name|gimp_operation_dissolve_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -285,8 +285,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_dissolve_mode_process_pixels (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * result,gint level)
-name|gimp_operation_dissolve_mode_process_pixels
+DECL|function|gimp_operation_dissolve_process_pixels (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * result,gint level)
+name|gimp_operation_dissolve_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*

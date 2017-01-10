@@ -252,7 +252,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdissolvemode.h"
+file|"layer-modes/gimpoperationdissolve.h"
 end_include
 
 begin_include
@@ -609,7 +609,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_DISSOLVE_MODE
+name|GIMP_TYPE_OPERATION_DISSOLVE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

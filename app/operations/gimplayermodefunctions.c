@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdissolvemode.h"
+file|"layer-modes/gimpoperationdissolve.h"
 end_include
 
 begin_include
@@ -278,7 +278,7 @@ name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|func
 operator|=
-name|gimp_operation_dissolve_mode_process_pixels
+name|gimp_operation_dissolve_process_pixels
 expr_stmt|;
 break|break;
 case|case

@@ -500,7 +500,7 @@ name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|operation
 operator|=
-literal|"gimp:dissolve-mode"
+literal|"gimp:dissolve"
 expr_stmt|;
 break|break;
 case|case
