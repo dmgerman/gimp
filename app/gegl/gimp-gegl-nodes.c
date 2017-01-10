@@ -516,7 +516,7 @@ name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|operation
 operator|=
-literal|"gimp:multiply-mode"
+literal|"gimp:multiply-legacy"
 expr_stmt|;
 break|break;
 case|case
