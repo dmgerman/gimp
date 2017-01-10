@@ -116,7 +116,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:subtract-mode"
+literal|"gimp:subtract"
 argument_list|,
 literal|"description"
 argument_list|,
