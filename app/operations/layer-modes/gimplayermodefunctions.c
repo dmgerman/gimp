@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
@@ -30,289 +30,289 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationnormal.h"
+file|"operations/layer-modes-legacy/gimpoperationadditionlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdissolve.h"
+file|"operations/layer-modes-legacy/gimpoperationburnlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationbehind.h"
+file|"operations/layer-modes-legacy/gimpoperationdarkenonlylegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationmultiply.h"
+file|"operations/layer-modes-legacy/gimpoperationdifferencelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationmultiplylegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationdividelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationscreen.h"
+file|"operations/layer-modes-legacy/gimpoperationdodgelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationscreenlegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationgrainextractlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationoverlay.h"
+file|"operations/layer-modes-legacy/gimpoperationgrainmergelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdifference.h"
+file|"operations/layer-modes-legacy/gimpoperationhardlightlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationdifferencelegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationhsvcolorlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationaddition.h"
+file|"operations/layer-modes-legacy/gimpoperationhsvhuelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationsubtract.h"
+file|"operations/layer-modes-legacy/gimpoperationhsvsaturationlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationadditionlegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationhsvvaluelegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationsubtractlegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationlightenonlylegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdarkenonly.h"
+file|"operations/layer-modes-legacy/gimpoperationmultiplylegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationdarkenonlylegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationscreenlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationlightenonly.h"
+file|"operations/layer-modes-legacy/gimpoperationsoftlightlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationlightenonlylegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationsubtractlegacy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationhsvhue.h"
+file|"gimpoperationaddition.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhsvhuelegacy.h"
+file|"gimpoperationantierase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationhsvsaturation.h"
+file|"gimpoperationbehind.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhsvsaturationlegacy.h"
+file|"gimpoperationburn.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationhsvcolor.h"
+file|"gimpoperationcolorerase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhsvcolorlegacy.h"
+file|"gimpoperationdarkenonly.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationhsvvalue.h"
+file|"gimpoperationdifference.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhsvvaluelegacy.h"
+file|"gimpoperationdissolve.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdivide.h"
+file|"gimpoperationdivide.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationdividelegacy.h"
+file|"gimpoperationdodge.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdodge.h"
+file|"gimpoperationerase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationdodgelegacy.h"
+file|"gimpoperationgrainextract.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationburn.h"
+file|"gimpoperationgrainmerge.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationburnlegacy.h"
+file|"gimpoperationhardlight.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationhardlight.h"
+file|"gimpoperationhsvcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhardlightlegacy.h"
+file|"gimpoperationhsvhue.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationsoftlight.h"
+file|"gimpoperationhsvsaturation.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationsoftlightlegacy.h"
+file|"gimpoperationhsvvalue.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationgrainextract.h"
+file|"gimpoperationlchchroma.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationgrainextractlegacy.h"
+file|"gimpoperationlchcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationgrainmerge.h"
+file|"gimpoperationlchhue.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationgrainmergelegacy.h"
+file|"gimpoperationlchlightness.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationcolorerase.h"
+file|"gimpoperationlightenonly.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationlchhue.h"
+file|"gimpoperationmultiply.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationlchchroma.h"
+file|"gimpoperationnormal.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationlchcolor.h"
+file|"gimpoperationoverlay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationlchlightness.h"
+file|"gimpoperationreplace.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationerase.h"
+file|"gimpoperationscreen.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationreplace.h"
+file|"gimpoperationsoftlight.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationantierase.h"
+file|"gimpoperationsubtract.h"
 end_include
 
 begin_function

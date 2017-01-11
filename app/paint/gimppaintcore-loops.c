@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppaintcore-loops.h"
+file|"operations/layer-modes/gimplayermodefunctions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"operations/gimplayermodefunctions.h"
+file|"gimppaintcore-loops.h"
 end_include
 
 begin_function
