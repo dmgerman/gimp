@@ -1037,7 +1037,13 @@ case|case
 name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
 case|case
+name|GIMP_LAYER_MODE_HARDLIGHT
+case|:
+case|case
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
+case|:
+case|case
+name|GIMP_LAYER_MODE_SOFTLIGHT
 case|:
 case|case
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
