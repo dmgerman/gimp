@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33928a0103
+DECL|enum|__anon2784cecc0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33928a0203
+DECL|enum|__anon2784cecc0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33928a0303
+DECL|enum|__anon2784cecc0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33928a0403
+DECL|enum|__anon2784cecc0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -292,6 +292,18 @@ name|GIMP_LAYER_MODE_DIVIDE
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_BURN
 name|GIMP_LAYER_MODE_BURN
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HARDLIGHT
+name|GIMP_LAYER_MODE_HARDLIGHT
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_SOFTLIGHT
+name|GIMP_LAYER_MODE_SOFTLIGHT
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_GRAIN_EXTRACT
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_GRAIN_MERGE
+name|GIMP_LAYER_MODE_GRAIN_MERGE
 DECL|typedef|GimpLayerMode
 block|}
 name|GimpLayerMode

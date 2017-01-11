@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|43
+literal|45
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -376,7 +376,11 @@ name|GIMP_LAYER_MODE_SUBTRACT
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 argument_list|,
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT
+argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_GRAIN_MERGE
 argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 argument_list|,

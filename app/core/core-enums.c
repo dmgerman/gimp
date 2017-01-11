@@ -1758,6 +1758,38 @@ literal|"burn"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_HARDLIGHT
+block|,
+literal|"GIMP_LAYER_MODE_HARDLIGHT"
+block|,
+literal|"hardlight"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_SOFTLIGHT
+block|,
+literal|"GIMP_LAYER_MODE_SOFTLIGHT"
+block|,
+literal|"softlight"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT
+block|,
+literal|"GIMP_LAYER_MODE_GRAIN_EXTRACT"
+block|,
+literal|"grain-extract"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_GRAIN_MERGE
+block|,
+literal|"GIMP_LAYER_MODE_GRAIN_MERGE"
+block|,
+literal|"grain-merge"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -2038,7 +2070,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hard light"
+literal|"Hard light (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2051,7 +2083,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Soft light"
+literal|"Soft light (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2064,7 +2096,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Grain extract"
+literal|"Grain extract (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2077,7 +2109,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Grain merge"
+literal|"Grain merge (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2364,6 +2396,58 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Burn"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HARDLIGHT
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hard light"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_SOFTLIGHT
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Soft light"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Grain extract"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_GRAIN_MERGE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Grain merge"
 argument_list|)
 block|,
 name|NULL

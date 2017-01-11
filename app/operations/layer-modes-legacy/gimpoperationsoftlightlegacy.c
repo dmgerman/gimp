@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationgrainmergemode.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *               2012 Ville Sokk<ville.sokk@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationsoftlightmode.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *               2012 Ville Sokk<ville.sokk@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationgrainmergemode.h"
+file|"gimpoperationsoftlightlegacy.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_grain_merge_mode_process
+name|gimp_operation_softlight_legacy_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -67,23 +67,48 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationGrainMergeMode,gimp_operation_grain_merge_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationGrainMergeMode
+argument|GimpOperationSoftlightLegacy
 argument_list|,
-argument|gimp_operation_grain_merge_mode
+argument|gimp_operation_softlight_legacy
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
 end_macro
 
+begin_decl_stmt
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|reference_xml
+init|=
+literal|"<?xml version='1.0' encoding='UTF-8'?>"
+literal|"<gegl>"
+literal|"<node operation='gimp:softlight-mode'>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>B.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</node>"
+literal|"<node operation='gegl:load'>"
+literal|"<params>"
+literal|"<param name='path'>A.png</param>"
+literal|"</params>"
+literal|"</node>"
+literal|"</gegl>"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
-name|gimp_operation_grain_merge_mode_class_init
+DECL|function|gimp_operation_softlight_legacy_class_init (GimpOperationSoftlightLegacyClass * klass)
+name|gimp_operation_softlight_legacy_class_init
 parameter_list|(
-name|GimpOperationGrainMergeModeClass
+name|GimpOperationSoftlightLegacyClass
 modifier|*
 name|klass
 parameter_list|)
@@ -116,11 +141,19 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:grain-merge-mode"
+literal|"gimp:softlight-legacy"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP grain merge mode operation"
+literal|"GIMP softlight mode operation"
+argument_list|,
+literal|"reference-image"
+argument_list|,
+literal|"soft-light-mode.png"
+argument_list|,
+literal|"reference-composition"
+argument_list|,
+name|reference_xml
 argument_list|,
 name|NULL
 argument_list|)
@@ -129,7 +162,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_grain_merge_mode_process
+name|gimp_operation_softlight_legacy_process
 expr_stmt|;
 block|}
 end_function
@@ -137,10 +170,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_grain_merge_mode_init (GimpOperationGrainMergeMode * self)
-name|gimp_operation_grain_merge_mode_init
+DECL|function|gimp_operation_softlight_legacy_init (GimpOperationSoftlightLegacy * self)
+name|gimp_operation_softlight_legacy_init
 parameter_list|(
-name|GimpOperationGrainMergeMode
+name|GimpOperationSoftlightLegacy
 modifier|*
 name|self
 parameter_list|)
@@ -150,8 +183,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_grain_merge_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_grain_merge_mode_process
+DECL|function|gimp_operation_softlight_legacy_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_softlight_legacy_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -196,7 +229,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_grain_merge_mode_process_pixels
+name|gimp_operation_softlight_legacy_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -220,8 +253,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_grain_merge_mode_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_grain_merge_mode_process_pixels
+DECL|function|gimp_operation_softlight_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_softlight_legacy_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -348,20 +381,69 @@ name|b
 operator|++
 control|)
 block|{
+if|#
+directive|if
+literal|0
+comment|/* softlight is now used for what GIMP formerly called                * OVERLAY.  We fixed OVERLAY to use the right math                * (under the name NEW_OVERLAY), and redirect uses of                * the old OVERLAY blend mode here. This math was                * formerly used for OVERLAY and is exactly the same as                * the multiply, screen, comp math used below.                * See bug #673501.                */
+block|gfloat comp = in[b] * (in[b] + (2.0 * layer[b]) * (1.0 - in[b]));
+endif|#
+directive|endif
 name|gfloat
-name|comp
+name|multiply
 init|=
 name|in
 index|[
 name|b
 index|]
-operator|+
+operator|*
 name|layer
 index|[
 name|b
 index|]
+decl_stmt|;
+name|gfloat
+name|screen
+init|=
+literal|1.0
 operator|-
-literal|0.5
+operator|(
+literal|1.0
+operator|-
+name|in
+index|[
+name|b
+index|]
+operator|)
+operator|*
+operator|(
+literal|1.0
+operator|-
+name|layer
+index|[
+name|b
+index|]
+operator|)
+decl_stmt|;
+name|gfloat
+name|comp
+init|=
+operator|(
+literal|1.0
+operator|-
+name|in
+index|[
+name|b
+index|]
+operator|)
+operator|*
+name|multiply
+operator|+
+name|in
+index|[
+name|b
+index|]
+operator|*
+name|screen
 decl_stmt|;
 name|out
 index|[
@@ -382,23 +464,6 @@ literal|1.0
 operator|-
 name|ratio
 operator|)
-expr_stmt|;
-name|out
-index|[
-name|b
-index|]
-operator|=
-name|CLAMP
-argument_list|(
-name|out
-index|[
-name|b
-index|]
-argument_list|,
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
 expr_stmt|;
 block|}
 block|}
