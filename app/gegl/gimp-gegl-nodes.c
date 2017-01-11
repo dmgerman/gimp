@@ -567,7 +567,7 @@ name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|operation
 operator|=
-literal|"gimp:difference-legacyy"
+literal|"gimp:difference-legacy"
 expr_stmt|;
 break|break;
 case|case
