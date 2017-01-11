@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationbehindmode.h"
+file|"layer-modes/gimpoperationbehind.h"
 end_include
 
 begin_include
@@ -270,7 +270,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationcolorerasemode.h"
+file|"layer-modes/gimpoperationcolorerase.h"
 end_include
 
 begin_include
@@ -306,7 +306,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationreplacemode.h"
+file|"layer-modes/gimpoperationreplace.h"
 end_include
 
 begin_include
@@ -358,7 +358,7 @@ name|GIMP_LAYER_MODE_BEHIND
 case|:
 name|func
 operator|=
-name|gimp_operation_behind_mode_process_pixels
+name|gimp_operation_behind_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -662,7 +662,7 @@ name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_color_erase_mode_process_pixels
+name|gimp_operation_color_erase_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -734,7 +734,7 @@ name|GIMP_LAYER_MODE_REPLACE
 case|:
 name|func
 operator|=
-name|gimp_operation_replace_mode_process_pixels
+name|gimp_operation_replace_process_pixels
 expr_stmt|;
 break|break;
 case|case

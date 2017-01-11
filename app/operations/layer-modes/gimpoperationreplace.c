@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationbehindmode.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *               2012 Ville Sokk<ville.sokk@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationreplace.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationbehindmode.h"
+file|"gimpoperationreplace.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_behind_mode_process
+name|gimp_operation_replace_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -67,12 +67,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationBehindMode,gimp_operation_behind_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationReplace,gimp_operation_replace,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationBehindMode
+argument|GimpOperationReplace
 argument_list|,
-argument|gimp_operation_behind_mode
+argument|gimp_operation_replace
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -81,9 +81,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_operation_behind_mode_class_init
+name|gimp_operation_replace_class_init
 parameter_list|(
-name|GimpOperationBehindModeClass
+name|GimpOperationReplaceClass
 modifier|*
 name|klass
 parameter_list|)
@@ -116,11 +116,11 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:behind-mode"
+literal|"gimp:replace"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP behind mode operation"
+literal|"GIMP replace mode operation"
 argument_list|,
 name|NULL
 argument_list|)
@@ -129,7 +129,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_behind_mode_process
+name|gimp_operation_replace_process
 expr_stmt|;
 block|}
 end_function
@@ -137,10 +137,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_behind_mode_init (GimpOperationBehindMode * self)
-name|gimp_operation_behind_mode_init
+DECL|function|gimp_operation_replace_init (GimpOperationReplace * self)
+name|gimp_operation_replace_init
 parameter_list|(
-name|GimpOperationBehindMode
+name|GimpOperationReplace
 modifier|*
 name|self
 parameter_list|)
@@ -150,8 +150,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_behind_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_behind_mode_process
+DECL|function|gimp_operation_replace_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_replace_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -196,7 +196,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_behind_mode_process_pixels
+name|gimp_operation_replace_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -220,8 +220,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_behind_mode_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_behind_mode_process_pixels
+DECL|function|gimp_operation_replace_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_replace_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*
@@ -269,21 +269,8 @@ operator|--
 condition|)
 block|{
 name|gfloat
-name|src1_alpha
+name|opacity_value
 init|=
-name|in
-index|[
-name|ALPHA
-index|]
-decl_stmt|;
-name|gfloat
-name|src2_alpha
-init|=
-name|layer
-index|[
-name|ALPHA
-index|]
-operator|*
 name|opacity
 decl_stmt|;
 name|gfloat
@@ -296,22 +283,31 @@ if|if
 condition|(
 name|has_mask
 condition|)
-name|src2_alpha
+name|opacity_value
 operator|*=
 operator|*
 name|mask
 expr_stmt|;
 name|new_alpha
 operator|=
-name|src2_alpha
-operator|+
 operator|(
-literal|1.0
+name|layer
+index|[
+name|ALPHA
+index|]
 operator|-
-name|src2_alpha
+name|in
+index|[
+name|ALPHA
+index|]
 operator|)
 operator|*
-name|src1_alpha
+name|opacity_value
+operator|+
+name|in
+index|[
+name|ALPHA
+index|]
 expr_stmt|;
 if|if
 condition|(
@@ -321,19 +317,14 @@ block|{
 name|gfloat
 name|ratio
 init|=
-name|in
+name|opacity_value
+operator|*
+name|layer
 index|[
 name|ALPHA
 index|]
 operator|/
 name|new_alpha
-decl_stmt|;
-name|gfloat
-name|compl_ratio
-init|=
-literal|1.0f
-operator|-
-name|ratio
 decl_stmt|;
 for|for
 control|(
@@ -349,6 +340,38 @@ name|b
 operator|++
 control|)
 block|{
+name|gfloat
+name|t
+decl_stmt|;
+if|if
+condition|(
+name|layer
+index|[
+name|b
+index|]
+operator|>
+name|in
+index|[
+name|b
+index|]
+condition|)
+block|{
+name|t
+operator|=
+operator|(
+name|layer
+index|[
+name|b
+index|]
+operator|-
+name|in
+index|[
+name|b
+index|]
+operator|)
+operator|*
+name|ratio
+expr_stmt|;
 name|out
 index|[
 name|b
@@ -358,16 +381,41 @@ name|in
 index|[
 name|b
 index|]
-operator|*
-name|ratio
 operator|+
+name|t
+expr_stmt|;
+block|}
+else|else
+block|{
+name|t
+operator|=
+operator|(
+name|in
+index|[
+name|b
+index|]
+operator|-
 name|layer
 index|[
 name|b
 index|]
+operator|)
 operator|*
-name|compl_ratio
+name|ratio
 expr_stmt|;
+name|out
+index|[
+name|b
+index|]
+operator|=
+name|in
+index|[
+name|b
+index|]
+operator|-
+name|t
+expr_stmt|;
+block|}
 block|}
 block|}
 else|else
@@ -385,18 +433,16 @@ condition|;
 name|b
 operator|++
 control|)
-block|{
 name|out
 index|[
 name|b
 index|]
 operator|=
-name|layer
+name|in
 index|[
 name|b
 index|]
 expr_stmt|;
-block|}
 block|}
 name|out
 index|[

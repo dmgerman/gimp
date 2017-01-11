@@ -508,7 +508,7 @@ name|GIMP_LAYER_MODE_BEHIND
 case|:
 name|operation
 operator|=
-literal|"gimp:behind-mode"
+literal|"gimp:behind"
 expr_stmt|;
 break|break;
 case|case
@@ -815,7 +815,7 @@ name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|operation
 operator|=
-literal|"gimp:color-erase-mode"
+literal|"gimp:color-erase"
 expr_stmt|;
 break|break;
 case|case
@@ -871,7 +871,7 @@ name|GIMP_LAYER_MODE_REPLACE
 case|:
 name|operation
 operator|=
-literal|"gimp:replace-mode"
+literal|"gimp:replace"
 expr_stmt|;
 break|break;
 case|case

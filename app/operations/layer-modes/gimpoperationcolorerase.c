@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationcolorerasemode.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *               2012 Ville Sokk<ville.sokk@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationcolorerase.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *               2012 Ville Sokk<ville.sokk@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -36,19 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationcolorerasemode.h"
+file|"gimpoperationcolorerase.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_color_erase_mode_process
+name|gimp_operation_color_erase_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -85,12 +85,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationColorEraseMode,gimp_operation_color_erase_mode,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationColorErase,gimp_operation_color_erase,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationColorEraseMode
+argument|GimpOperationColorErase
 argument_list|,
-argument|gimp_operation_color_erase_mode
+argument|gimp_operation_color_erase
 argument_list|,
 argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
@@ -99,9 +99,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_operation_color_erase_mode_class_init
+name|gimp_operation_color_erase_class_init
 parameter_list|(
-name|GimpOperationColorEraseModeClass
+name|GimpOperationColorEraseClass
 modifier|*
 name|klass
 parameter_list|)
@@ -134,7 +134,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:color-erase-mode"
+literal|"gimp:color-erase"
 argument_list|,
 literal|"description"
 argument_list|,
@@ -147,7 +147,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_color_erase_mode_process
+name|gimp_operation_color_erase_process
 expr_stmt|;
 block|}
 end_function
@@ -155,10 +155,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_color_erase_mode_init (GimpOperationColorEraseMode * self)
-name|gimp_operation_color_erase_mode_init
+DECL|function|gimp_operation_color_erase_init (GimpOperationColorErase * self)
+name|gimp_operation_color_erase_init
 parameter_list|(
-name|GimpOperationColorEraseMode
+name|GimpOperationColorErase
 modifier|*
 name|self
 parameter_list|)
@@ -168,8 +168,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_color_erase_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_color_erase_mode_process
+DECL|function|gimp_operation_color_erase_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * aux2_buf,void * out_buf,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_color_erase_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -214,7 +214,7 @@ operator|->
 name|opacity
 decl_stmt|;
 return|return
-name|gimp_operation_color_erase_mode_process_pixels
+name|gimp_operation_color_erase_process_pixels
 argument_list|(
 name|in_buf
 argument_list|,
@@ -238,8 +238,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_color_erase_mode_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_color_erase_mode_process_pixels
+DECL|function|gimp_operation_color_erase_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_color_erase_process_pixels
 parameter_list|(
 name|gfloat
 modifier|*

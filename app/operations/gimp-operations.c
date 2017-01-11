@@ -258,7 +258,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationbehindmode.h"
+file|"layer-modes/gimpoperationbehind.h"
 end_include
 
 begin_include
@@ -486,7 +486,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationcolorerasemode.h"
+file|"layer-modes/gimpoperationcolorerase.h"
 end_include
 
 begin_include
@@ -522,7 +522,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationreplacemode.h"
+file|"layer-modes/gimpoperationreplace.h"
 end_include
 
 begin_include
@@ -686,7 +686,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_BEHIND_MODE
+name|GIMP_TYPE_OPERATION_BEHIND
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -876,7 +876,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_COLOR_ERASE_MODE
+name|GIMP_TYPE_OPERATION_COLOR_ERASE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -906,7 +906,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_REPLACE_MODE
+name|GIMP_TYPE_OPERATION_REPLACE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
