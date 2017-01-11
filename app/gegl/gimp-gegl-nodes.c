@@ -551,7 +551,7 @@ name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 case|:
 name|operation
 operator|=
-literal|"gimp:softlight-mode"
+literal|"gimp:softlight-legacy"
 expr_stmt|;
 break|break;
 case|case
