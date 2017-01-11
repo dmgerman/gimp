@@ -186,7 +186,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdividemode.h"
+file|"layer-modes/gimpoperationdivide.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationdividelegacy.h"
 end_include
 
 begin_include
@@ -204,7 +210,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationburnmode.h"
+file|"layer-modes/gimpoperationburn.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationburnlegacy.h"
 end_include
 
 begin_include
@@ -510,11 +522,19 @@ name|gimp_operation_hsv_value_legacy_process_pixels
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_LAYER_MODE_DIVIDE
+case|:
+name|func
+operator|=
+name|gimp_operation_divide_process_pixels
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_divide_mode_process_pixels
+name|gimp_operation_divide_legacy_process_pixels
 expr_stmt|;
 break|break;
 case|case
@@ -538,7 +558,15 @@ name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_burn_mode_process_pixels
+name|gimp_operation_burn_legacy_process_pixels
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_BURN
+case|:
+name|func
+operator|=
+name|gimp_operation_burn_process_pixels
 expr_stmt|;
 break|break;
 case|case

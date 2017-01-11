@@ -320,7 +320,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|39
+literal|41
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -354,6 +354,8 @@ name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 argument_list|,
+name|GIMP_LAYER_MODE_BURN
+argument_list|,
 name|GIMP_LAYER_MODE_BURN_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_OVERLAY
@@ -373,6 +375,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_DIVIDE
 argument_list|,
 name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 argument_list|,

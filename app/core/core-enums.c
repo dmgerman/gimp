@@ -1742,6 +1742,22 @@ literal|"hsv-value"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_DIVIDE
+block|,
+literal|"GIMP_LAYER_MODE_DIVIDE"
+block|,
+literal|"divide"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_BURN
+block|,
+literal|"GIMP_LAYER_MODE_BURN"
+block|,
+literal|"burn"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1983,7 +1999,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Divide"
+literal|"Divide (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2009,7 +2025,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Burn"
+literal|"Burn (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -2322,6 +2338,32 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Value (HSV)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_DIVIDE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Divide"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_BURN
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Burn"
 argument_list|)
 block|,
 name|NULL

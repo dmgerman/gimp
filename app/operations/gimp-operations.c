@@ -402,7 +402,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationdividemode.h"
+file|"layer-modes/gimpoperationdivide.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationdividelegacy.h"
 end_include
 
 begin_include
@@ -420,7 +426,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationburnmode.h"
+file|"layer-modes/gimpoperationburn.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer-modes-legacy/gimpoperationburnlegacy.h"
 end_include
 
 begin_include
@@ -770,7 +782,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_DIVIDE_MODE
+name|GIMP_TYPE_OPERATION_DIVIDE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_DIVIDE_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -785,7 +802,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_BURN_MODE
+name|GIMP_TYPE_OPERATION_BURN
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_BURN_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

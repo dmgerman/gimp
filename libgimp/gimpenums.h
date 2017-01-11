@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a00d410103
+DECL|enum|__anon2b33928a0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a00d410203
+DECL|enum|__anon2b33928a0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a00d410303
+DECL|enum|__anon2b33928a0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a00d410403
+DECL|enum|__anon2b33928a0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -286,6 +286,12 @@ name|GIMP_LAYER_MODE_HSV_COLOR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE
 name|GIMP_LAYER_MODE_HSV_VALUE
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_DIVIDE
+name|GIMP_LAYER_MODE_DIVIDE
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_BURN
+name|GIMP_LAYER_MODE_BURN
 DECL|typedef|GimpLayerMode
 block|}
 name|GimpLayerMode
