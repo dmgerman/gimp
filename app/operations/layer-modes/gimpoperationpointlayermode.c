@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b73a1d0103
+DECL|enum|__anon294a5f8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
