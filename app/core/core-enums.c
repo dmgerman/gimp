@@ -1422,11 +1422,11 @@ literal|"dissolve"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
 block|,
-literal|"GIMP_LAYER_MODE_BEHIND"
+literal|"GIMP_LAYER_MODE_BEHIND_NON_LINEAR"
 block|,
-literal|"behind"
+literal|"behind-non-linear"
 block|}
 block|,
 block|{
@@ -1790,6 +1790,14 @@ literal|"grain-merge"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_BEHIND
+block|,
+literal|"GIMP_LAYER_MODE_BEHIND"
+block|,
+literal|"behind"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -1856,13 +1864,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Behind"
+literal|"Behind (non-linear)"
 argument_list|)
 block|,
 name|NULL
@@ -2448,6 +2456,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Grain merge"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_BEHIND
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Behind"
 argument_list|)
 block|,
 name|NULL

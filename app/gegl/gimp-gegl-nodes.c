@@ -471,11 +471,14 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 case|:
+case|case
+name|GIMP_LAYER_MODE_BEHIND
+case|:
 return|return
 name|TRUE
 return|;
 case|case
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
 case|:
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY
