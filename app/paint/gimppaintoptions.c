@@ -338,7 +338,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c59bc0103
+DECL|enum|__anon294accef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -678,7 +678,7 @@ literal|"Use GimpApplicator"
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
