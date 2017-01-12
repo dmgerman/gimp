@@ -340,6 +340,9 @@ block|{
 case|case
 name|GIMP_LAYER_MODE_NORMAL
 case|:
+case|case
+name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+case|:
 name|func
 operator|=
 name|gimp_operation_normal_process_pixels
@@ -356,6 +359,9 @@ break|break;
 case|case
 name|GIMP_LAYER_MODE_BEHIND
 case|:
+case|case
+name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+case|:
 name|func
 operator|=
 name|gimp_operation_behind_process_pixels
@@ -371,6 +377,9 @@ expr_stmt|;
 break|break;
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY
+case|:
+case|case
+name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 case|:
 name|func
 operator|=
