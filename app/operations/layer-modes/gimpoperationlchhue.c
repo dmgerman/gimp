@@ -12,25 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<cairo.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl-plugin.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
+file|<math.h>
 end_include
 
 begin_include
