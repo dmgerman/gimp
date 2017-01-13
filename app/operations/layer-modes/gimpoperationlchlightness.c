@@ -254,13 +254,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lightness_pre_process (const Babl * format,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
+DECL|function|lightness_pre_process (const Babl * from_fish_la,const Babl * from_fish_laba,const Babl * to_fish,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
 name|lightness_pre_process
 parameter_list|(
 specifier|const
 name|Babl
 modifier|*
-name|format
+name|from_fish_la
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|from_fish_laba
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|to_fish
 parameter_list|,
 specifier|const
 name|gfloat
@@ -293,12 +303,7 @@ name|i
 decl_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
+name|from_fish_laba
 argument_list|,
 name|in
 argument_list|,
@@ -309,12 +314,7 @@ argument_list|)
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE L alpha float"
-argument_list|)
+name|from_fish_la
 argument_list|,
 name|layer
 argument_list|,
@@ -352,12 +352,7 @@ index|]
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-literal|"CIE Lab alpha float"
-argument_list|,
-name|format
-argument_list|)
+name|to_fish
 argument_list|,
 name|out
 argument_list|,
@@ -409,7 +404,15 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|from_fish
+name|from_fish_laba
+init|=
+name|NULL
+decl_stmt|;
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|from_fish_la
 init|=
 name|NULL
 decl_stmt|;
@@ -424,15 +427,29 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|from_fish
+name|from_fish_laba
 condition|)
-name|from_fish
+name|from_fish_laba
 operator|=
 name|babl_fish
 argument_list|(
 literal|"RGBA float"
 argument_list|,
 literal|"CIE Lab alpha float"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|from_fish_la
+condition|)
+name|from_fish_la
+operator|=
+name|babl_fish
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+literal|"CIE L alpha float"
 argument_list|)
 expr_stmt|;
 if|if
@@ -451,10 +468,11 @@ argument_list|)
 expr_stmt|;
 name|lightness_pre_process
 argument_list|(
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|from_fish_la
+argument_list|,
+name|from_fish_laba
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,
@@ -526,7 +544,15 @@ specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|from_fish
+name|from_fish_laba
+init|=
+name|NULL
+decl_stmt|;
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|from_fish_la
 init|=
 name|NULL
 decl_stmt|;
@@ -541,15 +567,29 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|from_fish
+name|from_fish_laba
 condition|)
-name|from_fish
+name|from_fish_laba
 operator|=
 name|babl_fish
 argument_list|(
 literal|"R'G'B'A float"
 argument_list|,
 literal|"CIE Lab alpha float"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|from_fish_la
+condition|)
+name|from_fish_la
+operator|=
+name|babl_fish
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+literal|"CIE L alpha float"
 argument_list|)
 expr_stmt|;
 if|if
@@ -568,10 +608,11 @@ argument_list|)
 expr_stmt|;
 name|lightness_pre_process
 argument_list|(
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+name|from_fish_la
+argument_list|,
+name|from_fish_laba
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,

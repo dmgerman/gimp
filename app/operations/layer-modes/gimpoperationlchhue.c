@@ -260,13 +260,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|hue_pre_process (const Babl * format,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
+DECL|function|hue_pre_process (const Babl * from_fish,const Babl * to_fish,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
 name|hue_pre_process
 parameter_list|(
 specifier|const
 name|Babl
 modifier|*
-name|format
+name|from_fish
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|to_fish
 parameter_list|,
 specifier|const
 name|gfloat
@@ -304,12 +309,7 @@ name|tmp
 decl_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
+name|from_fish
 argument_list|,
 name|in
 argument_list|,
@@ -320,12 +320,7 @@ argument_list|)
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
+name|from_fish
 argument_list|,
 name|layer
 argument_list|,
@@ -467,12 +462,7 @@ block|}
 block|}
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-literal|"CIE Lab alpha float"
-argument_list|,
-name|format
-argument_list|)
+name|to_fish
 argument_list|,
 name|out
 argument_list|,
@@ -566,10 +556,9 @@ argument_list|)
 expr_stmt|;
 name|hue_pre_process
 argument_list|(
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
+name|from_fish
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,
@@ -683,10 +672,9 @@ argument_list|)
 expr_stmt|;
 name|hue_pre_process
 argument_list|(
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|)
+name|from_fish
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,
