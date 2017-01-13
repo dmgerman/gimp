@@ -260,13 +260,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|chroma_pre_process (const Babl * format,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
+DECL|function|chroma_pre_process (const Babl * from_fish,const Babl * to_fish,const gfloat * in,const gfloat * layer,gfloat * out,glong samples)
 name|chroma_pre_process
 parameter_list|(
 specifier|const
 name|Babl
 modifier|*
-name|format
+name|from_fish
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|to_fish
 parameter_list|,
 specifier|const
 name|gfloat
@@ -304,12 +309,7 @@ name|i
 decl_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
+name|from_fish
 argument_list|,
 name|in
 argument_list|,
@@ -320,12 +320,7 @@ argument_list|)
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-name|format
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
+name|from_fish
 argument_list|,
 name|layer
 argument_list|,
@@ -467,12 +462,7 @@ block|}
 block|}
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-literal|"CIE Lab alpha float"
-argument_list|,
-name|format
-argument_list|)
+name|to_fish
 argument_list|,
 name|out
 argument_list|,
@@ -487,8 +477,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|chroma_post_process (const gfloat * in,const gfloat * layer,const gfloat * mask,gfloat * out,gfloat opacity,glong samples)
-name|chroma_post_process
+DECL|function|gimp_operation_layer_composite (const gfloat * in,const gfloat * layer,const gfloat * mask,gfloat * out,gfloat opacity,glong samples)
+name|gimp_operation_layer_composite
 parameter_list|(
 specifier|const
 name|gfloat
@@ -712,12 +702,51 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|chroma_pre_process
-argument_list|(
-name|babl_format
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|from_fish
+decl_stmt|;
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|to_fish
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|from_fish
+condition|)
+name|from_fish
+operator|=
+name|babl_fish
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+literal|"CIE Lab alpha float"
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|to_fish
+condition|)
+name|to_fish
+operator|=
+name|babl_fish
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+name|chroma_pre_process
+argument_list|(
+name|from_fish
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,
@@ -728,7 +757,7 @@ argument_list|,
 name|samples
 argument_list|)
 expr_stmt|;
-name|chroma_post_process
+name|gimp_operation_layer_composite
 argument_list|(
 name|in
 argument_list|,
@@ -785,12 +814,55 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|chroma_pre_process
-argument_list|(
-name|babl_format
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|from_fish
+init|=
+name|NULL
+decl_stmt|;
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|to_fish
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|from_fish
+condition|)
+name|from_fish
+operator|=
+name|babl_fish
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+literal|"CIE Lab alpha float"
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|to_fish
+condition|)
+name|to_fish
+operator|=
+name|babl_fish
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+name|chroma_pre_process
+argument_list|(
+name|from_fish
+argument_list|,
+name|to_fish
 argument_list|,
 name|in
 argument_list|,
@@ -801,7 +873,7 @@ argument_list|,
 name|samples
 argument_list|)
 expr_stmt|;
-name|chroma_post_process
+name|gimp_operation_layer_composite
 argument_list|(
 name|in
 argument_list|,
