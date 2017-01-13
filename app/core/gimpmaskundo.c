@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c272b0103
+DECL|enum|__anon2a0f0c9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1146,15 +1146,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_get_width
-argument_list|(
-name|item
-argument_list|)
+operator|-
+literal|1
 argument_list|,
-name|gimp_item_get_height
-argument_list|(
-name|item
-argument_list|)
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
