@@ -411,7 +411,7 @@ decl_stmt|;
 name|gfloat
 name|c2
 init|=
-name|hypot
+name|hypotf
 argument_list|(
 name|A2
 argument_list|,
