@@ -1422,11 +1422,11 @@ literal|"dissolve"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND
 block|,
-literal|"GIMP_LAYER_MODE_BEHIND_NON_LINEAR"
+literal|"GIMP_LAYER_MODE_BEHIND"
 block|,
-literal|"behind-non-linear"
+literal|"behind"
 block|}
 block|,
 block|{
@@ -1638,11 +1638,11 @@ literal|"normal"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 block|,
-literal|"GIMP_LAYER_MODE_BEHIND"
+literal|"GIMP_LAYER_MODE_BEHIND_LINEAR"
 block|,
-literal|"behind"
+literal|"behind-linear"
 block|}
 block|,
 block|{
@@ -1944,13 +1944,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Behind (non-linear)"
+literal|"Behind"
 argument_list|)
 block|,
 name|NULL
@@ -2295,13 +2295,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Behind"
+literal|"Behind (linear)"
 argument_list|)
 block|,
 name|NULL

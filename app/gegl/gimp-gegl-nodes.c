@@ -558,10 +558,10 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND
 case|:
 return|return
-name|TRUE
+name|FALSE
 return|;
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
@@ -647,9 +647,6 @@ return|;
 case|case
 name|GIMP_LAYER_MODE_NORMAL
 case|:
-case|case
-name|GIMP_LAYER_MODE_BEHIND
-case|:
 return|return
 name|TRUE
 return|;
@@ -710,6 +707,9 @@ case|:
 return|return
 name|FALSE
 return|;
+case|case
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
+case|:
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 case|:
@@ -828,10 +828,10 @@ literal|"gimp:dissolve"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND
 case|:
 case|case
-name|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 case|:
 name|operation
 operator|=

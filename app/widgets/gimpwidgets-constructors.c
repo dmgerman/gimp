@@ -322,9 +322,9 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|45
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
-argument_list|,
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+argument_list|,
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -517,7 +517,7 @@ argument_list|)
 argument_list|,
 name|GIMP_LAYER_MODE_BEHIND
 argument_list|,
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 argument_list|)
 expr_stmt|;
 name|gimp_enum_store_insert_value_after
@@ -527,7 +527,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_COLOR_ERASE
 argument_list|)
@@ -545,7 +545,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|)

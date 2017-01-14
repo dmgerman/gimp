@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ccc4e0103
+DECL|enum|__anon2bcd8f3e0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ccc4e0203
+DECL|enum|__anon2bcd8f3e0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ccc4e0303
+DECL|enum|__anon2bcd8f3e0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ccc4e0403
+DECL|enum|__anon2bcd8f3e0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -167,8 +167,8 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_DISSOLVE
 name|GIMP_LAYER_MODE_DISSOLVE
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
-name|GIMP_LAYER_MODE_BEHIND_NON_LINEAR
+DECL|enumerator|GIMP_LAYER_MODE_BEHIND
+name|GIMP_LAYER_MODE_BEHIND
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
@@ -248,8 +248,8 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
 name|GIMP_LAYER_MODE_NORMAL
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_BEHIND
-name|GIMP_LAYER_MODE_BEHIND
+DECL|enumerator|GIMP_LAYER_MODE_BEHIND_LINEAR
+name|GIMP_LAYER_MODE_BEHIND_LINEAR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_MULTIPLY
 name|GIMP_LAYER_MODE_MULTIPLY
