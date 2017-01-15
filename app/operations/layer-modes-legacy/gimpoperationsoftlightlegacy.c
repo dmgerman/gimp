@@ -218,15 +218,15 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|gfloat
-name|opacity
+name|GimpOperationPointLayerMode
+modifier|*
+name|layer_mode
 init|=
-name|GIMP_OPERATION_POINT_LAYER_MODE
-argument_list|(
+operator|(
+name|GimpOperationPointLayerMode
+operator|*
+operator|)
 name|operation
-argument_list|)
-operator|->
-name|opacity
 decl_stmt|;
 return|return
 name|gimp_operation_softlight_legacy_process_pixels
@@ -239,6 +239,8 @@ name|aux2_buf
 argument_list|,
 name|out_buf
 argument_list|,
+name|layer_mode
+operator|->
 name|opacity
 argument_list|,
 name|samples
@@ -246,6 +248,18 @@ argument_list|,
 name|roi
 argument_list|,
 name|level
+argument_list|,
+name|layer_mode
+operator|->
+name|blend_trc
+argument_list|,
+name|layer_mode
+operator|->
+name|composite_trc
+argument_list|,
+name|layer_mode
+operator|->
+name|composite_mode
 argument_list|)
 return|;
 block|}
@@ -253,7 +267,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_softlight_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_softlight_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode)
 name|gimp_operation_softlight_legacy_process_pixels
 parameter_list|(
 name|gfloat
@@ -285,6 +299,15 @@ name|roi
 parameter_list|,
 name|gint
 name|level
+parameter_list|,
+name|GimpLayerBlendTRC
+name|blend_trc
+parameter_list|,
+name|GimpLayerBlendTRC
+name|composite_trc
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 block|{
 specifier|const

@@ -45,7 +45,7 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_process_pixels_sse4 (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_normal_process_pixels_sse4 (gfloat * in,gfloat * aux,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode)
 name|gimp_operation_normal_process_pixels_sse4
 parameter_list|(
 name|gfloat
@@ -77,6 +77,15 @@ name|roi
 parameter_list|,
 name|gint
 name|level
+parameter_list|,
+name|GimpLayerBlendTRC
+name|blend_trc
+parameter_list|,
+name|GimpLayerBlendTRC
+name|composite_trc
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 block|{
 comment|/* check alignment */
@@ -126,6 +135,12 @@ argument_list|,
 name|roi
 argument_list|,
 name|level
+argument_list|,
+name|blend_trc
+argument_list|,
+name|composite_trc
+argument_list|,
+name|composite_mode
 argument_list|)
 return|;
 block|}

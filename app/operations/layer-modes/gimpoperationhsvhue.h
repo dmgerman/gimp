@@ -172,6 +172,15 @@ name|roi
 parameter_list|,
 name|gint
 name|level
+parameter_list|,
+name|GimpLayerBlendTRC
+name|blend_trc
+parameter_list|,
+name|GimpLayerBlendTRC
+name|composite_trc
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 function_decl|;
 end_function_decl

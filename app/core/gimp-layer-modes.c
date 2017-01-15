@@ -208,6 +208,9 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_OVERLAY
 case|:
+return|return
+name|FALSE
+return|;
 case|case
 name|GIMP_LAYER_MODE_LCH_HUE
 case|:
@@ -221,7 +224,7 @@ case|case
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 return|return
-name|FALSE
+name|TRUE
 return|;
 case|case
 name|GIMP_LAYER_MODE_NORMAL
@@ -284,7 +287,7 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE
 case|:
 return|return
-name|FALSE
+name|TRUE
 return|;
 case|case
 name|GIMP_LAYER_MODE_BEHIND_LINEAR

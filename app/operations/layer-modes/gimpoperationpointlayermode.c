@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<cairo.h>
+file|<gegl-plugin.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gegl-plugin.h>
+file|<cairo.h>
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294ef77c0103
+DECL|enum|__anon2b4246320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -159,7 +159,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationPointLayerMode,gimp_operation_point_layer_mode,GEGL_TYPE_OPERATION_POINT_COMPOSER3)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationPointLayerMode
@@ -178,9 +177,75 @@ name|parent_class
 value|gimp_operation_point_layer_mode_parent_class
 end_define
 
+begin_decl_stmt
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_rgba_to_perceptual
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_fish_perceptual_to_rgba
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_perceptual_to_rgba
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_fish_perceptual_to_laba
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_perceptual_to_laba
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_fish_rgba_to_laba
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_rgba_to_laba
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_fish_laba_to_rgba
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_laba_to_rgba
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_fish_laba_to_perceptual
+specifier|const
+name|Babl
+modifier|*
+name|_gimp_fish_laba_to_perceptual
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_operation_point_layer_mode_class_init (GimpOperationPointLayerModeClass * klass)
 name|gimp_operation_point_layer_mode_class_init
 parameter_list|(
 name|GimpOperationPointLayerModeClass
@@ -350,6 +415,68 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|_gimp_fish_rgba_to_perceptual
+operator|==
+name|NULL
+condition|)
+block|{
+name|_gimp_fish_rgba_to_perceptual
+operator|=
+name|babl_fish
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+name|_gimp_fish_perceptual_to_rgba
+operator|=
+name|babl_fish
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+name|_gimp_fish_perceptual_to_laba
+operator|=
+name|babl_fish
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+literal|"CIE Lab alpha float"
+argument_list|)
+expr_stmt|;
+name|_gimp_fish_rgba_to_laba
+operator|=
+name|babl_fish
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+literal|"CIE Lab alpha float"
+argument_list|)
+expr_stmt|;
+name|_gimp_fish_laba_to_rgba
+operator|=
+name|babl_fish
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+literal|"RGBA float"
+argument_list|)
+expr_stmt|;
+name|_gimp_fish_laba_to_perceptual
+operator|=
+name|babl_fish
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
