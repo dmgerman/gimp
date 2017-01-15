@@ -135,26 +135,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_gegl_mode_is_legacy
-parameter_list|(
-name|GimpLayerMode
-name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_gegl_mode_is_linear
-parameter_list|(
-name|GimpLayerMode
-name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
