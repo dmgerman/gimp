@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcd8f3e0103
+DECL|enum|__anon27a743f40103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcd8f3e0203
+DECL|enum|__anon27a743f40203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcd8f3e0303
+DECL|enum|__anon27a743f40303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcd8f3e0403
+DECL|enum|__anon27a743f40403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -260,6 +260,12 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_SCREEN
 name|GIMP_LAYER_MODE_SCREEN
 block|,
+DECL|enumerator|GIMP_LAYER_MODE_SCREEN_LINEAR
+name|GIMP_LAYER_MODE_SCREEN_LINEAR
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_OVERLAY_LINEAR
+name|GIMP_LAYER_MODE_OVERLAY_LINEAR
+block|,
 DECL|enumerator|GIMP_LAYER_MODE_DIFFERENCE
 name|GIMP_LAYER_MODE_DIFFERENCE
 block|,
@@ -323,8 +329,14 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_HARDLIGHT
 name|GIMP_LAYER_MODE_HARDLIGHT
 block|,
+DECL|enumerator|GIMP_LAYER_MODE_HARDLIGHT_LINEAR
+name|GIMP_LAYER_MODE_HARDLIGHT_LINEAR
+block|,
 DECL|enumerator|GIMP_LAYER_MODE_SOFTLIGHT
 name|GIMP_LAYER_MODE_SOFTLIGHT
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_SOFTLIGHT_LINEAR
+name|GIMP_LAYER_MODE_SOFTLIGHT_LINEAR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_GRAIN_EXTRACT
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT
