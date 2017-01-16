@@ -316,9 +316,9 @@ file|"gimpoperationsubtract.h"
 end_include
 
 begin_function
-name|GimpLayerModeFunction
-DECL|function|get_layer_mode_function (GimpLayerMode paint_mode,gboolean linear_mode)
-name|get_layer_mode_function
+name|GimpLayerModeFunc
+DECL|function|gimp_get_layer_mode_function (GimpLayerMode paint_mode,gboolean linear_mode)
+name|gimp_get_layer_mode_function
 parameter_list|(
 name|GimpLayerMode
 name|paint_mode
@@ -327,7 +327,7 @@ name|gboolean
 name|linear_mode
 parameter_list|)
 block|{
-name|GimpLayerModeFunction
+name|GimpLayerModeFunc
 name|func
 decl_stmt|;
 switch|switch

@@ -17,8 +17,8 @@ name|__GIMP_LAYER_MODE_FUNCTIONS_H__
 end_define
 
 begin_function_decl
-name|GimpLayerModeFunction
-name|get_layer_mode_function
+name|GimpLayerModeFunc
+name|gimp_get_layer_mode_function
 parameter_list|(
 name|GimpLayerMode
 name|paint_mode

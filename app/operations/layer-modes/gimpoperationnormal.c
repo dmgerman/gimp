@@ -39,15 +39,6 @@ directive|include
 file|"gimpoperationnormal.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|gimp_operation_normal_process_pixels
-name|GimpLayerModeFunction
-name|gimp_operation_normal_process_pixels
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|gboolean
@@ -157,6 +148,15 @@ literal|"<param name='path'>blending-test-A.png</param>"
 literal|"</params>"
 literal|"</node>"
 literal|"</gegl>"
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_operation_normal_process_pixels
+name|GimpLayerModeFunc
+name|gimp_operation_normal_process_pixels
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

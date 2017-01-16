@@ -141,7 +141,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpLayerModeFunction
+name|GimpLayerModeFunc
 name|gimp_operation_normal_process_pixels
 decl_stmt|;
 end_decl_stmt

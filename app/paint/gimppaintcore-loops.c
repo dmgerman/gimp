@@ -1613,10 +1613,10 @@ argument_list|(
 name|paint_buf
 argument_list|)
 decl_stmt|;
-name|GimpLayerModeFunction
+name|GimpLayerModeFunc
 name|apply_func
 init|=
-name|get_layer_mode_function
+name|gimp_get_layer_mode_function
 argument_list|(
 name|paint_mode
 argument_list|,
