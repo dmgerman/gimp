@@ -28,6 +28,12 @@ directive|include
 file|"gegl/gimp-gegl-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"operations-enums.h"
+end_include
+
 begin_comment
 comment|/*  operations  */
 end_comment
