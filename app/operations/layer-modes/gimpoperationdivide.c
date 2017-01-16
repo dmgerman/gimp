@@ -338,12 +338,12 @@ literal|4294967296.0f
 operator|&&
 name|comp
 operator|<
-literal|4294967296.0f
+literal|5.0f
 operator|)
 condition|)
 name|comp
 operator|=
-literal|4294967296.0f
+literal|5.0f
 expr_stmt|;
 name|out
 index|[
