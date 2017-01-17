@@ -402,7 +402,7 @@ name|mode
 parameter_list|)
 block|{
 return|return
-name|GIMP_LAYER_COMPOSITE_OVER
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 return|;
 block|}
 end_function
