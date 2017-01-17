@@ -16,10 +16,28 @@ directive|define
 name|__OPERATIONS_ENUMS_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_BLEND_TRC
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_BLEND_TRC
+value|(gimp_layer_blend_trc_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_layer_blend_trc_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab0af1f0103
+DECL|enum|__anon28b1eaf90103
 block|{
 DECL|enumerator|GIMP_LAYER_BLEND_RGB_LINEAR
 name|GIMP_LAYER_BLEND_RGB_LINEAR
@@ -30,15 +48,33 @@ block|,
 DECL|enumerator|GIMP_LAYER_BLEND_LAB
 name|GIMP_LAYER_BLEND_LAB
 block|, }
-DECL|typedef|GimpBlendBlend
-name|GimpBlendBlend
+DECL|typedef|GimpLayerBlendTRC
+name|GimpLayerBlendTRC
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_COMPOSITE_MODE
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_COMPOSITE_MODE
+value|(gimp_layer_composite_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_layer_composite_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab0af1f0203
+DECL|enum|__anon28b1eaf90203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_ATOP
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
@@ -51,9 +87,9 @@ name|GIMP_LAYER_COMPOSITE_SRC_IN
 block|,
 DECL|enumerator|GIMP_LAYER_COMPOSITE_DST_ATOP
 name|GIMP_LAYER_COMPOSITE_DST_ATOP
-DECL|typedef|GimpLayerComposite
+DECL|typedef|GimpLayerCompositeMode
 block|}
-name|GimpLayerComposite
+name|GimpLayerCompositeMode
 typedef|;
 end_typedef
 
