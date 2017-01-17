@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp-utils.h"
 end_include
 
@@ -181,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf40540103
+DECL|enum|__anon2bff745a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1777,10 +1783,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|NULL
-argument_list|,
-name|core
-operator|->
-name|linear_mode
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3859,9 +3861,10 @@ name|core
 operator|->
 name|mask_y_offset
 argument_list|,
-name|core
-operator|->
-name|linear_mode
+name|gimp_layer_mode_is_linear
+argument_list|(
+name|paint_mode
+argument_list|)
 argument_list|,
 name|paint_mode
 argument_list|)
@@ -3906,9 +3909,10 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|core
-operator|->
-name|linear_mode
+name|gimp_layer_mode_is_linear
+argument_list|(
+name|paint_mode
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

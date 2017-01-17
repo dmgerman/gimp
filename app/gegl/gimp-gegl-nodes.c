@@ -456,7 +456,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerMode mode,gboolean linear)
+DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerMode mode)
 name|gimp_gegl_mode_node_set_mode
 parameter_list|(
 name|GeglNode
@@ -465,9 +465,6 @@ name|node
 parameter_list|,
 name|GimpLayerMode
 name|mode
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|)
 block|{
 name|gdouble

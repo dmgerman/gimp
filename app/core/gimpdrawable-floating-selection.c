@@ -621,9 +621,6 @@ name|GeglNode
 modifier|*
 name|fs_source
 decl_stmt|;
-name|gboolean
-name|linear
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -668,16 +665,6 @@ expr_stmt|;
 name|fs_source
 operator|=
 name|gimp_drawable_get_source_node
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|fs
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|linear
-operator|=
-name|gimp_drawable_get_linear
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -730,8 +717,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|node
-argument_list|,
-name|linear
 argument_list|,
 name|FALSE
 argument_list|,

@@ -326,15 +326,12 @@ end_function
 begin_function
 name|GimpApplicator
 modifier|*
-DECL|function|gimp_applicator_new (GeglNode * parent,gboolean linear,gboolean use_split_preview,gboolean use_result_cache)
+DECL|function|gimp_applicator_new (GeglNode * parent,gboolean use_split_preview,gboolean use_result_cache)
 name|gimp_applicator_new
 parameter_list|(
 name|GeglNode
 modifier|*
 name|parent
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|,
 name|gboolean
 name|use_split_preview
@@ -369,12 +366,6 @@ name|GIMP_TYPE_APPLICATOR
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|applicator
-operator|->
-name|linear
-operator|=
-name|linear
 expr_stmt|;
 if|if
 condition|(
@@ -462,10 +453,6 @@ argument_list|,
 name|applicator
 operator|->
 name|paint_mode
-argument_list|,
-name|applicator
-operator|->
-name|linear
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_mode_node_set_opacity
@@ -1643,10 +1630,6 @@ operator|->
 name|mode_node
 argument_list|,
 name|paint_mode
-argument_list|,
-name|applicator
-operator|->
-name|linear
 argument_list|)
 expr_stmt|;
 block|}

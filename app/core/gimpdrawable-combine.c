@@ -466,11 +466,6 @@ name|gimp_applicator_new
 argument_list|(
 name|NULL
 argument_list|,
-name|gimp_drawable_get_linear
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE

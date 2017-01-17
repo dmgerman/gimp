@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ac0fe0103
+DECL|enum|__anon2b970c500103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ac0fe0203
+DECL|enum|__anon2b970c500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2302,9 +2302,6 @@ decl_stmt|;
 name|GimpLayerMode
 name|visible_mode
 decl_stmt|;
-name|gboolean
-name|linear
-decl_stmt|;
 name|mode_node
 operator|=
 name|gimp_drawable_get_mode_node
@@ -2329,10 +2326,6 @@ block|{
 name|visible_mode
 operator|=
 name|GIMP_LAYER_MODE_NORMAL
-expr_stmt|;
-name|linear
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 else|else
@@ -2368,24 +2361,12 @@ operator|->
 name|mode
 expr_stmt|;
 block|}
-name|linear
-operator|=
-name|gimp_drawable_get_linear
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|mode_node
 argument_list|,
 name|visible_mode
-argument_list|,
-name|linear
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_mode_node_set_opacity

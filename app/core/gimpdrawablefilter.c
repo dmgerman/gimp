@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279735ec0103
+DECL|enum|__anon29f324e50103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -882,13 +882,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|node
-argument_list|,
-name|gimp_drawable_get_linear
-argument_list|(
-name|filter
-operator|->
-name|drawable
-argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
