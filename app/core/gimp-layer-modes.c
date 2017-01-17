@@ -363,6 +363,51 @@ block|}
 end_function
 
 begin_function
+name|GimpLayerBlendTRC
+DECL|function|gimp_layer_mode_get_blend_trc (GimpLayerMode mode)
+name|gimp_layer_mode_get_blend_trc
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+return|return
+name|GIMP_LAYER_BLEND_RGB_LINEAR
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpLayerBlendTRC
+DECL|function|gimp_layer_mode_get_composite_trc (GimpLayerMode mode)
+name|gimp_layer_mode_get_composite_trc
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+return|return
+name|GIMP_LAYER_BLEND_RGB_LINEAR
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpLayerCompositeMode
+DECL|function|gimp_layer_mode_get_composite_mode (GimpLayerMode mode)
+name|gimp_layer_mode_get_composite_mode
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+return|return
+name|GIMP_LAYER_COMPOSITE_OVER
+return|;
+block|}
+end_function
+
+begin_function
 specifier|const
 name|gchar
 modifier|*
