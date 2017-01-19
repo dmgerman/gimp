@@ -208,8 +208,7 @@ modifier|*
 name|layer_mode
 init|=
 operator|(
-name|void
-operator|*
+name|gpointer
 operator|)
 name|operation
 decl_stmt|;

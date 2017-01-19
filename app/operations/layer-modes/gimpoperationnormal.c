@@ -541,8 +541,7 @@ modifier|*
 name|layer_mode
 init|=
 operator|(
-name|GimpOperationPointLayerMode
-operator|*
+name|gpointer
 operator|)
 name|operation
 decl_stmt|;
