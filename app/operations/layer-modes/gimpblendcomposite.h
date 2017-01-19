@@ -2671,6 +2671,7 @@ operator|=
 name|comp
 expr_stmt|;
 block|}
+block|}
 name|out
 index|[
 name|ALPHA
@@ -2681,7 +2682,6 @@ index|[
 name|ALPHA
 index|]
 expr_stmt|;
-block|}
 name|out
 operator|+=
 literal|4
@@ -2821,6 +2821,7 @@ operator|=
 name|comp
 expr_stmt|;
 block|}
+block|}
 name|out
 index|[
 name|ALPHA
@@ -2831,7 +2832,6 @@ index|[
 name|ALPHA
 index|]
 expr_stmt|;
-block|}
 name|out
 operator|+=
 literal|4
@@ -2969,6 +2969,7 @@ operator|=
 name|comp
 expr_stmt|;
 block|}
+block|}
 name|out
 index|[
 name|ALPHA
@@ -2979,7 +2980,6 @@ index|[
 name|ALPHA
 index|]
 expr_stmt|;
-block|}
 name|out
 operator|+=
 literal|4
