@@ -1087,6 +1087,8 @@ expr_stmt|;
 if|if
 condition|(
 name|fish_to_blend
+operator|||
+name|fish_to_composite
 condition|)
 block|{
 name|blend_in
@@ -1117,6 +1119,12 @@ operator|*
 name|samples
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|fish_to_blend
+condition|)
+block|{
 name|babl_process
 argument_list|(
 name|fish_to_blend
