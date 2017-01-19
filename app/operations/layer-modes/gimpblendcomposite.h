@@ -16,54 +16,6 @@ directive|define
 name|__GIMP_BLEND_COMPOSITE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gegl-plugin.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<alloca.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<cairo.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"../operations-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"../operations-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpcolor/gimpcolor.h"
-end_include
-
 begin_decl_stmt
 specifier|extern
 specifier|const
@@ -407,15 +359,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gint
-name|b
-decl_stmt|;
 name|gfloat
 name|ratio
 init|=
 name|comp_alpha
 operator|/
 name|new_alpha
+decl_stmt|;
+name|gint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -935,7 +887,7 @@ condition|)
 comment|/* in-place detected, avoid clobbering since we need to                     read it for the compositing stage  */
 name|blend_out
 operator|=
-name|alloca
+name|g_alloca
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -954,7 +906,7 @@ condition|)
 block|{
 name|blend_in
 operator|=
-name|alloca
+name|g_alloca
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -968,7 +920,7 @@ argument_list|)
 expr_stmt|;
 name|blend_layer
 operator|=
-name|alloca
+name|g_alloca
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -1219,7 +1171,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1328,7 +1280,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1427,7 +1379,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1526,7 +1478,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1625,7 +1577,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1719,7 +1671,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1755,7 +1707,7 @@ index|[
 name|c
 index|]
 decl_stmt|;
-comment|/* The CLAMP macro is deliberately inlined and written to map comp ==          * NAN (0 / 0) -> 1 */
+comment|/* The CLAMP macro is deliberately inlined and written                * to map comp == NAN (0 / 0) -> 1                */
 name|out
 index|[
 name|c
@@ -1844,7 +1796,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1860,7 +1812,6 @@ condition|;
 name|c
 operator|++
 control|)
-block|{
 name|out
 index|[
 name|c
@@ -1879,7 +1830,6 @@ name|c
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|out
 index|[
@@ -1948,7 +1898,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -1964,7 +1914,6 @@ condition|;
 name|c
 operator|++
 control|)
-block|{
 name|out
 index|[
 name|c
@@ -1983,7 +1932,6 @@ name|c
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|out
 index|[
@@ -2052,7 +2000,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2173,7 +2121,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2203,7 +2151,7 @@ index|[
 name|c
 index|]
 decl_stmt|;
-comment|/* make infinities(or NaN) correspond to a high number, to get more          * predictable math, ideally higher than 5.0 but it seems like some          * babl conversions might be acting up then          */
+comment|/* make infinities(or NaN) correspond to a high number,                * to get more predictable math, ideally higher than 5.0                * but it seems like some babl conversions might be                * acting up then                */
 if|if
 condition|(
 operator|!
@@ -2298,7 +2246,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2417,7 +2365,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2433,7 +2381,6 @@ condition|;
 name|c
 operator|++
 control|)
-block|{
 name|out
 index|[
 name|c
@@ -2451,7 +2398,6 @@ index|]
 operator|+
 literal|0.5f
 expr_stmt|;
-block|}
 block|}
 name|out
 index|[
@@ -2520,7 +2466,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2536,7 +2482,6 @@ condition|;
 name|c
 operator|++
 control|)
-block|{
 name|out
 index|[
 name|c
@@ -2554,7 +2499,6 @@ index|]
 operator|-
 literal|0.5f
 expr_stmt|;
-block|}
 block|}
 name|out
 index|[
@@ -2623,7 +2567,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2795,7 +2739,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -2945,7 +2889,7 @@ operator|!=
 literal|0.0f
 condition|)
 block|{
-name|int
+name|gint
 name|c
 decl_stmt|;
 for|for
@@ -4004,12 +3948,12 @@ expr_stmt|;
 block|}
 name|out
 index|[
-literal|3
+name|ALPHA
 index|]
 operator|=
 name|src
 index|[
-literal|3
+name|ALPHA
 index|]
 expr_stmt|;
 name|out
@@ -4207,12 +4151,12 @@ block|}
 block|}
 name|out
 index|[
-literal|3
+name|ALPHA
 index|]
 operator|=
 name|src
 index|[
-literal|3
+name|ALPHA
 index|]
 expr_stmt|;
 name|out
@@ -4305,12 +4249,12 @@ expr_stmt|;
 block|}
 name|out
 index|[
-literal|3
+name|ALPHA
 index|]
 operator|=
 name|src
 index|[
-literal|3
+name|ALPHA
 index|]
 expr_stmt|;
 name|out
@@ -4333,6 +4277,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_BLEND_COMPOSITE_H__ */
+end_comment
 
 end_unit
 
