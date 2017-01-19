@@ -623,7 +623,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_composite_blend (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode,void (* blendfun)(const float * dst,const float * src,float * out,int samples))
+DECL|function|gimp_composite_blend (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode,GimpBlendFunc blend_func)
 name|gimp_composite_blend
 parameter_list|(
 name|gfloat
@@ -657,29 +657,8 @@ parameter_list|,
 name|GimpLayerCompositeMode
 name|composite_mode
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
-name|blendfun
-function_decl|)
-parameter_list|(
-specifier|const
-name|float
-modifier|*
-name|dst
-parameter_list|,
-specifier|const
-name|float
-modifier|*
-name|src
-parameter_list|,
-name|float
-modifier|*
-name|out
-parameter_list|,
-name|int
-name|samples
-parameter_list|)
+name|GimpBlendFunc
+name|blend_func
 parameter_list|)
 block|{
 name|gfloat
@@ -955,7 +934,7 @@ name|samples
 argument_list|)
 expr_stmt|;
 block|}
-name|blendfun
+name|blend_func
 argument_list|(
 name|blend_in
 argument_list|,
