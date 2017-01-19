@@ -17,16 +17,16 @@ name|__OPERATIONS_ENUMS_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_LAYER_BLEND_TRC
+DECL|macro|GIMP_TYPE_LAYER_COLOR_SPACE
 define|#
 directive|define
-name|GIMP_TYPE_LAYER_BLEND_TRC
-value|(gimp_layer_blend_trc_get_type ())
+name|GIMP_TYPE_LAYER_COLOR_SPACE
+value|(gimp_layer_color_space_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_layer_blend_trc_get_type
+name|gimp_layer_color_space_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -37,19 +37,19 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1eaf90103
+DECL|enum|__anon2baca7db0103
 block|{
-DECL|enumerator|GIMP_LAYER_BLEND_RGB_LINEAR
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|,
-DECL|enumerator|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|,
-DECL|enumerator|GIMP_LAYER_BLEND_LAB
-name|GIMP_LAYER_BLEND_LAB
+DECL|enumerator|GIMP_LAYER_COLOR_SPACE_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 block|, }
-DECL|typedef|GimpLayerBlendTRC
-name|GimpLayerBlendTRC
+DECL|typedef|GimpLayerColorSpace
+name|GimpLayerColorSpace
 typedef|;
 end_typedef
 
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1eaf90203
+DECL|enum|__anon2baca7db0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_ATOP
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP

@@ -233,7 +233,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_dodge_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode)
+DECL|function|gimp_operation_dodge_legacy_process_pixels (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,const GeglRectangle * roi,gint level,GimpLayerColorSpace blend_trc,GimpLayerColorSpace composite_trc,GimpLayerCompositeMode composite_mode)
 name|gimp_operation_dodge_legacy_process_pixels
 parameter_list|(
 name|gfloat
@@ -266,10 +266,10 @@ parameter_list|,
 name|gint
 name|level
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|blend_trc
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|composite_trc
 parameter_list|,
 name|GimpLayerCompositeMode

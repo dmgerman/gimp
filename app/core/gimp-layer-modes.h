@@ -37,8 +37,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerBlendTRC
-name|gimp_layer_mode_get_blend_trc
+name|GimpLayerColorSpace
+name|gimp_layer_mode_get_blend_space
 parameter_list|(
 name|GimpLayerMode
 name|mode
@@ -47,8 +47,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerBlendTRC
-name|gimp_layer_mode_get_composite_trc
+name|GimpLayerColorSpace
+name|gimp_layer_mode_get_composite_space
 parameter_list|(
 name|GimpLayerMode
 name|mode

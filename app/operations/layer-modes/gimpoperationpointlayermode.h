@@ -125,11 +125,11 @@ name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|blend_trc
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|blend_trc
 decl_stmt|;
 DECL|member|composite_trc
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|composite_trc
 decl_stmt|;
 DECL|member|composite_mode

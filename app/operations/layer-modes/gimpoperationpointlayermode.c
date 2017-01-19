@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a5fd20103
+DECL|enum|__anon2c7057690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,9 +357,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_LAYER_BLEND_TRC
+name|GIMP_TYPE_LAYER_COLOR_SPACE
 argument_list|,
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -381,9 +381,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_LAYER_BLEND_TRC
+name|GIMP_TYPE_LAYER_COLOR_SPACE
 argument_list|,
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||

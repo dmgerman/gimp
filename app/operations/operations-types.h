@@ -206,10 +206,10 @@ parameter_list|,
 name|gint
 name|level
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|blend_trc
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|composite_trc
 parameter_list|,
 name|GimpLayerCompositeMode

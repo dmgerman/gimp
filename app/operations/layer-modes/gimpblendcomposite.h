@@ -826,7 +826,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_composite_blend (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,GimpLayerBlendTRC blend_trc,GimpLayerBlendTRC composite_trc,GimpLayerCompositeMode composite_mode,GimpBlendFunc blend_func)
+DECL|function|gimp_composite_blend (gfloat * in,gfloat * layer,gfloat * mask,gfloat * out,gfloat opacity,glong samples,GimpLayerColorSpace blend_trc,GimpLayerColorSpace composite_trc,GimpLayerCompositeMode composite_mode,GimpBlendFunc blend_func)
 name|gimp_composite_blend
 parameter_list|(
 name|gfloat
@@ -851,10 +851,10 @@ parameter_list|,
 name|glong
 name|samples
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|blend_trc
 parameter_list|,
-name|GimpLayerBlendTRC
+name|GimpLayerColorSpace
 name|composite_trc
 parameter_list|,
 name|GimpLayerCompositeMode
@@ -910,7 +910,7 @@ condition|)
 block|{
 default|default:
 case|case
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
 name|fish_to_blend
 operator|=
@@ -922,7 +922,7 @@ name|composite_trc
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_BLEND_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 case|:
 name|fish_to_composite
 operator|=
@@ -935,7 +935,7 @@ expr_stmt|;
 break|break;
 default|default:
 case|case
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
 name|fish_to_composite
 operator|=
@@ -947,7 +947,7 @@ name|NULL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 case|:
 name|fish_to_composite
 operator|=
@@ -961,7 +961,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 case|:
 name|fish_to_blend
 operator|=
@@ -973,7 +973,7 @@ name|composite_trc
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_BLEND_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 case|:
 default|default:
 name|fish_to_composite
@@ -986,7 +986,7 @@ name|_gimp_fish_laba_to_rgba
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
 name|fish_to_composite
 operator|=
@@ -998,7 +998,7 @@ name|NULL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 case|:
 name|fish_to_composite
 operator|=
@@ -1012,7 +1012,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 case|:
 name|fish_to_blend
 operator|=
@@ -1024,7 +1024,7 @@ name|composite_trc
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_BLEND_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 case|:
 default|default:
 name|fish_to_composite
@@ -1037,7 +1037,7 @@ name|NULL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
 name|fish_to_composite
 operator|=
@@ -1049,7 +1049,7 @@ name|NULL
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 case|:
 name|fish_to_composite
 operator|=
@@ -1168,7 +1168,7 @@ if|if
 condition|(
 name|composite_trc
 operator|==
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 condition|)
 block|{
 name|blend_in

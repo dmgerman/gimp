@@ -366,9 +366,9 @@ block|}
 end_function
 
 begin_function
-name|GimpLayerBlendTRC
-DECL|function|gimp_layer_mode_get_blend_trc (GimpLayerMode mode)
-name|gimp_layer_mode_get_blend_trc
+name|GimpLayerColorSpace
+DECL|function|gimp_layer_mode_get_blend_space (GimpLayerMode mode)
+name|gimp_layer_mode_get_blend_space
 parameter_list|(
 name|GimpLayerMode
 name|mode
@@ -383,19 +383,19 @@ case|case
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 case|case
 name|GIMP_LAYER_MODE_BEHIND
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
@@ -464,7 +464,7 @@ case|case
 name|GIMP_LAYER_MODE_OVERLAY
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_LCH_HUE
@@ -479,13 +479,13 @@ case|case
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 return|return
-name|GIMP_LAYER_BLEND_LAB
+name|GIMP_LAYER_COLOR_SPACE_LAB
 return|;
 case|case
 name|GIMP_LAYER_MODE_NORMAL
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 case|case
 name|GIMP_LAYER_MODE_MULTIPLY
@@ -542,7 +542,7 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_BEHIND_LINEAR
@@ -593,44 +593,44 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LINEAR
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 case|case
 name|GIMP_LAYER_MODE_ERASE
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 case|case
 name|GIMP_LAYER_MODE_REPLACE
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 block|}
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpLayerBlendTRC
-DECL|function|gimp_layer_mode_get_composite_trc (GimpLayerMode mode)
-name|gimp_layer_mode_get_composite_trc
+name|GimpLayerColorSpace
+DECL|function|gimp_layer_mode_get_composite_space (GimpLayerMode mode)
+name|gimp_layer_mode_get_composite_space
 parameter_list|(
 name|GimpLayerMode
 name|mode
 parameter_list|)
 block|{
 return|return
-name|GIMP_LAYER_BLEND_RGB_LINEAR
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 block|}
 end_function
