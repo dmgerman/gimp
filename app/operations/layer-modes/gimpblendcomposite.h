@@ -729,6 +729,7 @@ name|fish_from_composite
 operator|=
 name|_gimp_fish_laba_to_rgba
 expr_stmt|;
+break|break;
 default|default:
 case|case
 name|GIMP_LAYER_BLEND_RGB_LINEAR
@@ -780,6 +781,7 @@ name|fish_from_composite
 operator|=
 name|_gimp_fish_laba_to_rgba
 expr_stmt|;
+break|break;
 case|case
 name|GIMP_LAYER_BLEND_RGB_LINEAR
 case|:
@@ -830,6 +832,7 @@ name|fish_from_composite
 operator|=
 name|NULL
 expr_stmt|;
+break|break;
 case|case
 name|GIMP_LAYER_BLEND_RGB_LINEAR
 case|:
