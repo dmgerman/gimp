@@ -555,7 +555,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_digits:  * @unit: The unit you want to know the digits.  *  * Returns the number of digits an entry field should provide to get  * approximately the same accuracy as an inch input field with two digits.  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The suggested number of digits.  **/
+comment|/**  * gimp_unit_get_digits:  * @unit: The unit you want to know the digits.  *  * Returns the number of digits set for @unit.  * Built-in units' accuracy is approximately the same as an inch with  * two digits. User-defined units can suggest a different accuracy.  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The suggested number of digits.  **/
 end_comment
 
 begin_function
