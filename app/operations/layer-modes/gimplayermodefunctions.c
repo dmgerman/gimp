@@ -317,14 +317,11 @@ end_include
 
 begin_function
 name|GimpLayerModeFunc
-DECL|function|gimp_get_layer_mode_function (GimpLayerMode paint_mode,gboolean linear_mode)
+DECL|function|gimp_get_layer_mode_function (GimpLayerMode paint_mode)
 name|gimp_get_layer_mode_function
 parameter_list|(
 name|GimpLayerMode
 name|paint_mode
-parameter_list|,
-name|gboolean
-name|linear_mode
 parameter_list|)
 block|{
 name|GimpLayerModeFunc
@@ -715,10 +712,6 @@ name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 name|func
 operator|=
-name|linear_mode
-condition|?
-name|gimp_operation_lch_hue_process_pixels_linear
-else|:
 name|gimp_operation_lch_hue_process_pixels
 expr_stmt|;
 break|break;
@@ -727,10 +720,6 @@ name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 name|func
 operator|=
-name|linear_mode
-condition|?
-name|gimp_operation_lch_chroma_process_pixels_linear
-else|:
 name|gimp_operation_lch_chroma_process_pixels
 expr_stmt|;
 break|break;
@@ -739,10 +728,6 @@ name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 name|func
 operator|=
-name|linear_mode
-condition|?
-name|gimp_operation_lch_color_process_pixels_linear
-else|:
 name|gimp_operation_lch_color_process_pixels
 expr_stmt|;
 break|break;
@@ -751,10 +736,6 @@ name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|func
 operator|=
-name|linear_mode
-condition|?
-name|gimp_operation_lch_lightness_process_pixels_linear
-else|:
 name|gimp_operation_lch_lightness_process_pixels
 expr_stmt|;
 break|break;
