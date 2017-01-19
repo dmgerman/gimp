@@ -581,6 +581,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gint
+name|b
+decl_stmt|;
 for|for
 control|(
 name|b
