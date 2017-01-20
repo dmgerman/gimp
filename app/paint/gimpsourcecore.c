@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fab42d0103
+DECL|enum|__anon2bc8a0ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1409,6 +1409,9 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
+name|GimpLayerMode
+name|paint_mode
+decl_stmt|;
 name|GeglNode
 modifier|*
 name|op
@@ -1574,6 +1577,16 @@ argument_list|,
 name|origin
 argument_list|)
 expr_stmt|;
+name|paint_mode
+operator|=
+name|gimp_context_get_paint_mode
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|paint_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|n_strokes
 operator|=
 name|gimp_symmetry_get_size
@@ -1613,6 +1626,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|paint_mode
 argument_list|,
 name|coords
 argument_list|,

@@ -464,6 +464,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpLayerMode
+name|paint_mode
+decl_stmt|;
 name|GimpRGB
 name|gradient_color
 decl_stmt|;
@@ -600,6 +603,13 @@ name|coords
 argument_list|)
 expr_stmt|;
 block|}
+name|paint_mode
+operator|=
+name|gimp_context_get_paint_mode
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 name|n_strokes
 operator|=
 name|gimp_symmetry_get_size
@@ -644,6 +654,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|paint_mode
 argument_list|,
 name|coords
 argument_list|,
@@ -894,10 +906,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|gimp_context_get_paint_mode
-argument_list|(
-name|context
-argument_list|)
+name|paint_mode
 argument_list|,
 name|gimp_paint_options_get_brush_mode
 argument_list|(

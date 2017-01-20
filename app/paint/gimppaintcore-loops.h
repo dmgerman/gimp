@@ -118,9 +118,6 @@ parameter_list|,
 name|gint
 name|mask_y_offset
 parameter_list|,
-name|gboolean
-name|linear_mode
-parameter_list|,
 name|GimpLayerMode
 name|paint_mode
 parameter_list|)

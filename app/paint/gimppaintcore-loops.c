@@ -1538,7 +1538,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|do_layer_blend (GeglBuffer * src_buffer,GeglBuffer * dst_buffer,GimpTempBuf * paint_buf,GeglBuffer * mask_buffer,gfloat opacity,gint x_offset,gint y_offset,gint mask_x_offset,gint mask_y_offset,gboolean linear_mode,GimpLayerMode paint_mode)
+DECL|function|do_layer_blend (GeglBuffer * src_buffer,GeglBuffer * dst_buffer,GimpTempBuf * paint_buf,GeglBuffer * mask_buffer,gfloat opacity,gint x_offset,gint y_offset,gint mask_x_offset,gint mask_y_offset,GimpLayerMode paint_mode)
 name|do_layer_blend
 parameter_list|(
 name|GeglBuffer
@@ -1571,9 +1571,6 @@ name|mask_x_offset
 parameter_list|,
 name|gint
 name|mask_y_offset
-parameter_list|,
-name|gboolean
-name|linear_mode
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
@@ -1664,7 +1661,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|linear_mode
+name|gimp_layer_mode_is_linear
+argument_list|(
+name|paint_mode
+argument_list|)
 condition|)
 name|iterator_format
 operator|=

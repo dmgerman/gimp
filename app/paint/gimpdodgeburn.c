@@ -520,6 +520,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
+name|GIMP_LAYER_MODE_NORMAL
+argument_list|,
 name|coords
 argument_list|,
 operator|&

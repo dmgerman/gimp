@@ -189,11 +189,6 @@ modifier|*
 name|comp_buffer
 decl_stmt|;
 comment|/*  scratch buffer used when masking components */
-DECL|member|linear_mode
-name|gboolean
-name|linear_mode
-decl_stmt|;
-comment|/*  if painting to a linear surface     */
 DECL|member|paint_buffer
 name|GeglBuffer
 modifier|*
@@ -400,6 +395,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -684,6 +682,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords

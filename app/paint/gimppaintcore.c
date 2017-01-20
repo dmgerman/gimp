@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff745a0103
+DECL|enum|__anon29ea7e7d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,6 +413,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -1001,7 +1004,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_paint_core_real_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
+DECL|function|gimp_paint_core_real_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpLayerMode paint_mode,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_paint_core_real_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -1015,6 +1018,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -1760,15 +1766,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|core
-operator|->
-name|linear_mode
-operator|=
-name|gimp_drawable_get_linear
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|paint_options
@@ -1889,9 +1886,10 @@ name|format
 decl_stmt|;
 if|if
 condition|(
-name|core
-operator|->
-name|linear_mode
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|format
 operator|=
@@ -3108,7 +3106,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_paint_core_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
+DECL|function|gimp_paint_core_get_paint_buffer (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpLayerMode paint_mode,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_paint_core_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -3122,6 +3120,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -3233,6 +3234,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|paint_mode
 argument_list|,
 name|coords
 argument_list|,
@@ -3861,11 +3864,6 @@ name|core
 operator|->
 name|mask_y_offset
 argument_list|,
-name|gimp_layer_mode_is_linear
-argument_list|(
-name|paint_mode
-argument_list|)
-argument_list|,
 name|paint_mode
 argument_list|)
 expr_stmt|;
@@ -3909,9 +3907,9 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|gimp_layer_mode_is_linear
+name|gimp_drawable_get_linear
 argument_list|(
-name|paint_mode
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;

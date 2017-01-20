@@ -651,6 +651,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
+name|paint_mode
+argument_list|,
 name|coords
 argument_list|,
 operator|&

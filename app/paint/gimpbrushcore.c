@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -133,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d75bfd0103
+DECL|enum|__anon29e9caeb0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -285,6 +291,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -3549,7 +3558,7 @@ begin_function
 specifier|static
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_brush_core_get_paint_buffer (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
+DECL|function|gimp_brush_core_get_paint_buffer (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpLayerMode paint_mode,const GimpCoords * coords,gint * paint_buffer_x,gint * paint_buffer_y,gint * paint_width,gint * paint_height)
 name|gimp_brush_core_get_paint_buffer
 parameter_list|(
 name|GimpPaintCore
@@ -3563,6 +3572,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|GimpLayerMode
+name|paint_mode
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -3802,9 +3814,9 @@ name|format
 decl_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_linear
+name|gimp_layer_mode_is_linear
 argument_list|(
-name|drawable
+name|paint_mode
 argument_list|)
 condition|)
 name|format
