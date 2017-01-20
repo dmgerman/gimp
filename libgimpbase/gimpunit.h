@@ -233,6 +233,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_unit_get_scaled_digits
+parameter_list|(
+name|GimpUnit
+name|unit
+parameter_list|,
+name|gdouble
+name|resolution
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
