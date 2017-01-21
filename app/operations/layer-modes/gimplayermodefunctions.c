@@ -340,7 +340,7 @@ name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_normal_process_pixels
+name|gimp_operation_normal_process
 expr_stmt|;
 break|break;
 case|case
@@ -348,7 +348,7 @@ name|GIMP_LAYER_MODE_DISSOLVE
 case|:
 name|func
 operator|=
-name|gimp_operation_dissolve_process_pixels
+name|gimp_operation_dissolve_process
 expr_stmt|;
 break|break;
 case|case
@@ -359,7 +359,7 @@ name|GIMP_LAYER_MODE_BEHIND_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_behind_process_pixels
+name|gimp_operation_behind_process
 expr_stmt|;
 break|break;
 case|case
@@ -367,7 +367,7 @@ name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_multiply_legacy_process_pixels
+name|gimp_operation_multiply_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -378,7 +378,7 @@ name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_multiply_process_pixels
+name|gimp_operation_multiply_process
 expr_stmt|;
 break|break;
 case|case
@@ -386,7 +386,7 @@ name|GIMP_LAYER_MODE_SCREEN_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_screen_legacy_process_pixels
+name|gimp_operation_screen_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -394,7 +394,7 @@ name|GIMP_LAYER_MODE_SCREEN
 case|:
 name|func
 operator|=
-name|gimp_operation_screen_process_pixels
+name|gimp_operation_screen_process
 expr_stmt|;
 break|break;
 case|case
@@ -402,7 +402,7 @@ name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_softlight_legacy_process_pixels
+name|gimp_operation_softlight_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -410,7 +410,7 @@ name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_difference_legacy_process_pixels
+name|gimp_operation_difference_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -421,7 +421,7 @@ name|GIMP_LAYER_MODE_DIFFERENCE_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_difference_process_pixels
+name|gimp_operation_difference_process
 expr_stmt|;
 break|break;
 case|case
@@ -429,7 +429,7 @@ name|GIMP_LAYER_MODE_ADDITION_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_addition_legacy_process_pixels
+name|gimp_operation_addition_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -440,7 +440,7 @@ name|GIMP_LAYER_MODE_ADDITION_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_addition_process_pixels
+name|gimp_operation_addition_process
 expr_stmt|;
 break|break;
 case|case
@@ -448,7 +448,7 @@ name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_subtract_legacy_process_pixels
+name|gimp_operation_subtract_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -459,7 +459,7 @@ name|GIMP_LAYER_MODE_SUBTRACT_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_subtract_process_pixels
+name|gimp_operation_subtract_process
 expr_stmt|;
 break|break;
 case|case
@@ -467,7 +467,7 @@ name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_darken_only_legacy_process_pixels
+name|gimp_operation_darken_only_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -478,7 +478,7 @@ name|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_darken_only_process_pixels
+name|gimp_operation_darken_only_process
 expr_stmt|;
 break|break;
 case|case
@@ -486,7 +486,7 @@ name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_lighten_only_legacy_process_pixels
+name|gimp_operation_lighten_only_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -497,7 +497,7 @@ name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_lighten_only_process_pixels
+name|gimp_operation_lighten_only_process
 expr_stmt|;
 break|break;
 case|case
@@ -505,7 +505,7 @@ name|GIMP_LAYER_MODE_HSV_HUE
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_hue_process_pixels
+name|gimp_operation_hsv_hue_process
 expr_stmt|;
 break|break;
 case|case
@@ -513,7 +513,7 @@ name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_hue_legacy_process_pixels
+name|gimp_operation_hsv_hue_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -521,7 +521,7 @@ name|GIMP_LAYER_MODE_HSV_SATURATION
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_saturation_process_pixels
+name|gimp_operation_hsv_saturation_process
 expr_stmt|;
 break|break;
 case|case
@@ -529,7 +529,7 @@ name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_saturation_legacy_process_pixels
+name|gimp_operation_hsv_saturation_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -537,7 +537,7 @@ name|GIMP_LAYER_MODE_HSV_COLOR
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_color_process_pixels
+name|gimp_operation_hsv_color_process
 expr_stmt|;
 break|break;
 case|case
@@ -545,7 +545,7 @@ name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_color_legacy_process_pixels
+name|gimp_operation_hsv_color_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -553,7 +553,7 @@ name|GIMP_LAYER_MODE_HSV_VALUE
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_value_process_pixels
+name|gimp_operation_hsv_value_process
 expr_stmt|;
 break|break;
 case|case
@@ -561,7 +561,7 @@ name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_hsv_value_legacy_process_pixels
+name|gimp_operation_hsv_value_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -569,7 +569,7 @@ name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_divide_legacy_process_pixels
+name|gimp_operation_divide_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -580,7 +580,7 @@ name|GIMP_LAYER_MODE_DIVIDE_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_divide_process_pixels
+name|gimp_operation_divide_process
 expr_stmt|;
 break|break;
 case|case
@@ -588,7 +588,7 @@ name|GIMP_LAYER_MODE_DODGE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_dodge_legacy_process_pixels
+name|gimp_operation_dodge_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -599,7 +599,7 @@ name|GIMP_LAYER_MODE_DODGE_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_dodge_process_pixels
+name|gimp_operation_dodge_process
 expr_stmt|;
 break|break;
 case|case
@@ -607,7 +607,7 @@ name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_burn_legacy_process_pixels
+name|gimp_operation_burn_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -618,7 +618,7 @@ name|GIMP_LAYER_MODE_BURN_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_burn_process_pixels
+name|gimp_operation_burn_process
 expr_stmt|;
 break|break;
 case|case
@@ -626,7 +626,7 @@ name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_hardlight_legacy_process_pixels
+name|gimp_operation_hardlight_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -634,7 +634,7 @@ name|GIMP_LAYER_MODE_HARDLIGHT
 case|:
 name|func
 operator|=
-name|gimp_operation_hardlight_process_pixels
+name|gimp_operation_hardlight_process
 expr_stmt|;
 break|break;
 case|case
@@ -642,7 +642,7 @@ name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_softlight_legacy_process_pixels
+name|gimp_operation_softlight_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -650,7 +650,7 @@ name|GIMP_LAYER_MODE_SOFTLIGHT
 case|:
 name|func
 operator|=
-name|gimp_operation_softlight_process_pixels
+name|gimp_operation_softlight_process
 expr_stmt|;
 break|break;
 case|case
@@ -658,7 +658,7 @@ name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_grain_extract_legacy_process_pixels
+name|gimp_operation_grain_extract_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -669,7 +669,7 @@ name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_grain_extract_process_pixels
+name|gimp_operation_grain_extract_process
 expr_stmt|;
 break|break;
 case|case
@@ -677,7 +677,7 @@ name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 name|func
 operator|=
-name|gimp_operation_grain_merge_legacy_process_pixels
+name|gimp_operation_grain_merge_legacy_process
 expr_stmt|;
 break|break;
 case|case
@@ -688,7 +688,7 @@ name|GIMP_LAYER_MODE_GRAIN_MERGE_LINEAR
 case|:
 name|func
 operator|=
-name|gimp_operation_grain_merge_process_pixels
+name|gimp_operation_grain_merge_process
 expr_stmt|;
 break|break;
 case|case
@@ -696,7 +696,7 @@ name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_color_erase_process_pixels
+name|gimp_operation_color_erase_process
 expr_stmt|;
 break|break;
 case|case
@@ -704,7 +704,7 @@ name|GIMP_LAYER_MODE_OVERLAY
 case|:
 name|func
 operator|=
-name|gimp_operation_overlay_process_pixels
+name|gimp_operation_overlay_process
 expr_stmt|;
 break|break;
 case|case
@@ -712,7 +712,7 @@ name|GIMP_LAYER_MODE_LCH_HUE
 case|:
 name|func
 operator|=
-name|gimp_operation_lch_hue_process_pixels
+name|gimp_operation_lch_hue_process
 expr_stmt|;
 break|break;
 case|case
@@ -720,7 +720,7 @@ name|GIMP_LAYER_MODE_LCH_CHROMA
 case|:
 name|func
 operator|=
-name|gimp_operation_lch_chroma_process_pixels
+name|gimp_operation_lch_chroma_process
 expr_stmt|;
 break|break;
 case|case
@@ -728,7 +728,7 @@ name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 name|func
 operator|=
-name|gimp_operation_lch_color_process_pixels
+name|gimp_operation_lch_color_process
 expr_stmt|;
 break|break;
 case|case
@@ -736,7 +736,7 @@ name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
 name|func
 operator|=
-name|gimp_operation_lch_lightness_process_pixels
+name|gimp_operation_lch_lightness_process
 expr_stmt|;
 break|break;
 case|case
@@ -744,7 +744,7 @@ name|GIMP_LAYER_MODE_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_erase_process_pixels
+name|gimp_operation_erase_process
 expr_stmt|;
 break|break;
 case|case
@@ -752,7 +752,7 @@ name|GIMP_LAYER_MODE_REPLACE
 case|:
 name|func
 operator|=
-name|gimp_operation_replace_process_pixels
+name|gimp_operation_replace_process
 expr_stmt|;
 break|break;
 case|case
@@ -760,7 +760,7 @@ name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
 name|func
 operator|=
-name|gimp_operation_anti_erase_process_pixels
+name|gimp_operation_anti_erase_process
 expr_stmt|;
 break|break;
 default|default:
@@ -773,7 +773,7 @@ argument_list|)
 expr_stmt|;
 name|func
 operator|=
-name|gimp_operation_normal_process_pixels
+name|gimp_operation_normal_process
 expr_stmt|;
 break|break;
 block|}

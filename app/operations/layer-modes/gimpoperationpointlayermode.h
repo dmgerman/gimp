@@ -136,6 +136,10 @@ DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
 decl_stmt|;
+DECL|member|blend_func
+name|GimpBlendFunc
+name|blend_func
+decl_stmt|;
 block|}
 struct|;
 end_struct
