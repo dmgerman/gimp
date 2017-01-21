@@ -1206,6 +1206,10 @@ condition|(
 name|composite_in
 operator|==
 name|in
+operator|&&
+name|in
+operator|!=
+name|out
 condition|)
 name|composite_in
 operator|=
