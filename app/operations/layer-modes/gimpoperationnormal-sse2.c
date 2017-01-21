@@ -137,7 +137,7 @@ name|opacity
 init|=
 operator|(
 operator|(
-name|GimpOperationPointLayerMode
+name|GimpOperationLayerMode
 operator|*
 operator|)
 operator|(

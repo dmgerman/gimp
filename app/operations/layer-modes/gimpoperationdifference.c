@@ -34,14 +34,14 @@ file|"gimpblendcomposite.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationDifference,gimp_operation_difference,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationDifference,gimp_operation_difference,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationDifference
 argument_list|,
 argument|gimp_operation_difference
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 

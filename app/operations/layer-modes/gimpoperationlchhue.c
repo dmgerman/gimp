@@ -34,24 +34,16 @@ file|"gimpblendcomposite.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationLchHue,gimp_operation_lch_hue,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationLchHue,gimp_operation_lch_hue,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationLchHue
 argument_list|,
 argument|gimp_operation_lch_hue
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
-
-begin_define
-DECL|macro|parent_class
-define|#
-directive|define
-name|parent_class
-value|gimp_operation_lch_hue_parent_class
-end_define
 
 begin_function
 specifier|static

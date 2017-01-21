@@ -36,14 +36,14 @@ value|4096
 end_define
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationDissolve,gimp_operation_dissolve,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationDissolve,gimp_operation_dissolve,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationDissolve
 argument_list|,
 argument|gimp_operation_dissolve
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 
@@ -175,7 +175,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_dissolve_process (GeglOperation * op,void * in_p,void * aux_p,void * mask_p,void * out_p,glong samples,const GeglRectangle * result,gint level)
+DECL|function|gimp_operation_dissolve_process (GeglOperation * op,void * in_p,void * layer_p,void * mask_p,void * out_p,glong samples,const GeglRectangle * result,gint level)
 name|gimp_operation_dissolve_process
 parameter_list|(
 name|GeglOperation
@@ -188,7 +188,7 @@ name|in_p
 parameter_list|,
 name|void
 modifier|*
-name|aux_p
+name|layer_p
 parameter_list|,
 name|void
 modifier|*
@@ -210,7 +210,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|GimpOperationPointLayerMode
+name|GimpOperationLayerMode
 modifier|*
 name|layer_mode
 init|=
@@ -220,32 +220,35 @@ operator|)
 name|op
 decl_stmt|;
 name|gfloat
+modifier|*
+name|in
+init|=
+name|in_p
+decl_stmt|;
+name|gfloat
+modifier|*
+name|out
+init|=
+name|out_p
+decl_stmt|;
+name|gfloat
+modifier|*
+name|layer
+init|=
+name|layer_p
+decl_stmt|;
+name|gfloat
+modifier|*
+name|mask
+init|=
+name|mask_p
+decl_stmt|;
+name|gfloat
 name|opacity
 init|=
 name|layer_mode
 operator|->
 name|opacity
-decl_stmt|;
-name|gfloat
-modifier|*
-name|in
-init|=
-name|in_p
-decl_stmt|,
-modifier|*
-name|aux
-init|=
-name|aux_p
-decl_stmt|,
-modifier|*
-name|mask
-init|=
-name|mask_p
-decl_stmt|,
-modifier|*
-name|out
-init|=
-name|out_p
 decl_stmt|;
 specifier|const
 name|gboolean
@@ -342,7 +345,7 @@ block|{
 name|gfloat
 name|value
 init|=
-name|aux
+name|layer
 index|[
 name|ALPHA
 index|]
@@ -422,7 +425,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|aux
+name|layer
 index|[
 literal|0
 index|]
@@ -432,7 +435,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|aux
+name|layer
 index|[
 literal|1
 index|]
@@ -442,7 +445,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|aux
+name|layer
 index|[
 literal|2
 index|]
@@ -459,11 +462,11 @@ name|in
 operator|+=
 literal|4
 expr_stmt|;
-name|out
+name|layer
 operator|+=
 literal|4
 expr_stmt|;
-name|aux
+name|out
 operator|+=
 literal|4
 expr_stmt|;

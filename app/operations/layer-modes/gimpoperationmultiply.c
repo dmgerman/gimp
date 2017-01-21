@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/operations-types.h"
+file|"../operations-types.h"
 end_include
 
 begin_include
@@ -34,14 +34,14 @@ file|"gimpblendcomposite.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationMultiply,gimp_operation_multiply,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationMultiply,gimp_operation_multiply,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationMultiply
 argument_list|,
 argument|gimp_operation_multiply
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 

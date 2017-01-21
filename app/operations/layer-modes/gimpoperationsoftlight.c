@@ -40,7 +40,7 @@ argument|GimpOperationSoftlight
 argument_list|,
 argument|gimp_operation_softlight
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 

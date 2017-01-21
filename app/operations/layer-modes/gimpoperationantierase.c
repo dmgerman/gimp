@@ -28,14 +28,14 @@ file|"gimpoperationantierase.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationAntiErase,gimp_operation_anti_erase,GIMP_TYPE_OPERATION_POINT_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationAntiErase,gimp_operation_anti_erase,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationAntiErase
 argument_list|,
 argument|gimp_operation_anti_erase
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 
@@ -145,22 +145,34 @@ name|gint
 name|level
 parameter_list|)
 block|{
+name|GimpOperationLayerMode
+modifier|*
+name|layer_mode
+init|=
+operator|(
+name|gpointer
+operator|)
+name|op
+decl_stmt|;
+name|gfloat
+modifier|*
+name|in
+init|=
+name|in_p
+decl_stmt|;
 name|gfloat
 modifier|*
 name|out
 init|=
 name|out_p
-decl_stmt|,
-modifier|*
-name|in
-init|=
-name|in_p
-decl_stmt|,
+decl_stmt|;
+name|gfloat
 modifier|*
 name|layer
 init|=
 name|layer_p
-decl_stmt|,
+decl_stmt|;
+name|gfloat
 modifier|*
 name|mask
 init|=
@@ -169,15 +181,7 @@ decl_stmt|;
 name|gfloat
 name|opacity
 init|=
-operator|(
-operator|(
-name|GimpOperationPointLayerMode
-operator|*
-operator|)
-operator|(
-name|op
-operator|)
-operator|)
+name|layer_mode
 operator|->
 name|opacity
 decl_stmt|;

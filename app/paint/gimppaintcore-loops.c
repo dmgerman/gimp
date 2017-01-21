@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/layer-modes/gimpoperationpointlayermode.h"
+file|"operations/layer-modes/gimpoperationlayermode.h"
 end_include
 
 begin_include
@@ -1834,6 +1834,9 @@ name|iter
 argument_list|)
 condition|)
 block|{
+name|GimpOperationLayerMode
+name|layer_data
+decl_stmt|;
 name|gfloat
 modifier|*
 name|out_pixel
@@ -1873,7 +1876,12 @@ decl_stmt|;
 name|gfloat
 modifier|*
 name|paint_pixel
-init|=
+decl_stmt|;
+name|gint
+name|iy
+decl_stmt|;
+name|paint_pixel
+operator|=
 name|paint_data
 operator|+
 operator|(
@@ -1909,13 +1917,7 @@ name|x
 operator|)
 operator|*
 literal|4
-decl_stmt|;
-name|int
-name|iy
-decl_stmt|;
-name|GimpOperationPointLayerMode
-name|layer_data
-decl_stmt|;
+expr_stmt|;
 name|layer_data
 operator|.
 name|opacity

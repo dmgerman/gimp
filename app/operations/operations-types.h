@@ -48,11 +48,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationPointLayerMode
+DECL|typedef|GimpOperationLayerMode
 typedef|typedef
 name|struct
-name|_GimpOperationPointLayerMode
-name|GimpOperationPointLayerMode
+name|_GimpOperationLayerMode
+name|GimpOperationLayerMode
 typedef|;
 end_typedef
 

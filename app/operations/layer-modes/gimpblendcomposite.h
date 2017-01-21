@@ -855,7 +855,7 @@ name|GimpBlendFunc
 name|blend_func
 parameter_list|)
 block|{
-name|GimpOperationPointLayerMode
+name|GimpOperationLayerMode
 modifier|*
 name|layer_mode
 init|=

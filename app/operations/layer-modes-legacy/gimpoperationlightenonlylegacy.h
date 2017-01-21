@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"operations/layer-modes/gimpoperationpointlayermode.h"
+file|"operations/layer-modes/gimpoperationlayermode.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpOperationLightenOnlyLegacy
 block|{
 DECL|member|parent_instance
-name|GimpOperationPointLayerMode
+name|GimpOperationLayerMode
 name|parent_instance
 decl_stmt|;
 block|}
@@ -122,7 +122,7 @@ struct|struct
 name|_GimpOperationLightenOnlyLegacyClass
 block|{
 DECL|member|parent_class
-name|GimpOperationPointLayerModeClass
+name|GimpOperationLayerModeClass
 name|parent_class
 decl_stmt|;
 block|}
