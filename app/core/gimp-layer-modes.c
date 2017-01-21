@@ -645,7 +645,7 @@ name|mode
 parameter_list|)
 block|{
 return|return
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 return|;
 block|}
 end_function
