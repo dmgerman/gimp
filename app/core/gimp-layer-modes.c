@@ -455,7 +455,7 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 return|return
-name|FALSE
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 return|;
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE
