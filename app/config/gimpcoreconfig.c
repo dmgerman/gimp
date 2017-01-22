@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29353f950103
+DECL|enum|__anon28a31bc70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1824,6 +1824,26 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_RGB
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_QUICK_MASK_COLOR
+argument_list|,
+literal|"quick-mask-color"
+argument_list|,
+literal|"Quick mask color"
+argument_list|,
+name|QUICK_MASK_COLOR_BLURB
+argument_list|,
+name|TRUE
+argument_list|,
+operator|&
+name|red
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -1854,26 +1874,6 @@ argument_list|,
 name|IMPORT_PROMOTE_DITHER_BLURB
 argument_list|,
 name|TRUE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_PROP_RGB
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_QUICK_MASK_COLOR
-argument_list|,
-literal|"quick-mask-color"
-argument_list|,
-literal|"Quick mask color"
-argument_list|,
-name|QUICK_MASK_COLOR_BLURB
-argument_list|,
-name|TRUE
-argument_list|,
-operator|&
-name|red
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
