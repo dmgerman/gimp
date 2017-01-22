@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6721610103
+DECL|enum|__anon2768734e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -378,7 +378,7 @@ name|PROP_BLEND_SPACE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"blend-trc"
+literal|"blend-space"
 argument_list|,
 name|NULL
 argument_list|,
@@ -402,7 +402,7 @@ name|PROP_COMPOSITE_SPACE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"composite-trc"
+literal|"composite-space"
 argument_list|,
 name|NULL
 argument_list|,

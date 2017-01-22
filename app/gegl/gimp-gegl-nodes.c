@@ -517,14 +517,14 @@ argument_list|(
 name|mode
 argument_list|)
 argument_list|,
-literal|"blend-trc"
+literal|"blend-space"
 argument_list|,
 name|gimp_layer_mode_get_blend_space
 argument_list|(
 name|mode
 argument_list|)
 argument_list|,
-literal|"composite-trc"
+literal|"composite-space"
 argument_list|,
 name|gimp_layer_mode_get_composite_space
 argument_list|(
