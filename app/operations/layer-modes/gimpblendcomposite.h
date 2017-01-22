@@ -869,18 +869,18 @@ operator|->
 name|opacity
 decl_stmt|;
 name|GimpLayerColorSpace
-name|blend_trc
+name|blend_space
 init|=
 name|layer_mode
 operator|->
-name|blend_trc
+name|blend_space
 decl_stmt|;
 name|GimpLayerColorSpace
-name|composite_trc
+name|composite_space
 init|=
 name|layer_mode
 operator|->
-name|composite_trc
+name|composite_space
 decl_stmt|;
 name|GimpLayerCompositeMode
 name|composite_mode
@@ -964,7 +964,7 @@ name|NULL
 decl_stmt|;
 switch|switch
 condition|(
-name|blend_trc
+name|blend_space
 condition|)
 block|{
 default|default:
@@ -977,7 +977,7 @@ name|NULL
 expr_stmt|;
 switch|switch
 condition|(
-name|composite_trc
+name|composite_space
 condition|)
 block|{
 case|case
@@ -1028,7 +1028,7 @@ name|_gimp_fish_rgba_to_laba
 expr_stmt|;
 switch|switch
 condition|(
-name|composite_trc
+name|composite_space
 condition|)
 block|{
 case|case
@@ -1079,7 +1079,7 @@ name|_gimp_fish_rgba_to_perceptual
 expr_stmt|;
 switch|switch
 condition|(
-name|composite_trc
+name|composite_space
 condition|)
 block|{
 case|case
@@ -1157,7 +1157,7 @@ operator|||
 operator|(
 name|composite_needs_in_color
 operator|&&
-name|composite_trc
+name|composite_space
 operator|==
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 operator|)
@@ -1242,7 +1242,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|composite_trc
+name|composite_space
 operator|==
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 condition|)

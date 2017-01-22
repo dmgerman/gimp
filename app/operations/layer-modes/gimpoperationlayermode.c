@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e41110103
+DECL|enum|__anon2b6721610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,11 +61,11 @@ block|,
 DECL|enumerator|PROP_OPACITY
 name|PROP_OPACITY
 block|,
-DECL|enumerator|PROP_BLEND_TRC
-name|PROP_BLEND_TRC
+DECL|enumerator|PROP_BLEND_SPACE
+name|PROP_BLEND_SPACE
 block|,
-DECL|enumerator|PROP_COMPOSITE_TRC
-name|PROP_COMPOSITE_TRC
+DECL|enumerator|PROP_COMPOSITE_SPACE
+name|PROP_COMPOSITE_SPACE
 block|,
 DECL|enumerator|PROP_COMPOSITE_MODE
 name|PROP_COMPOSITE_MODE
@@ -374,7 +374,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_BLEND_TRC
+name|PROP_BLEND_SPACE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -398,7 +398,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_COMPOSITE_TRC
+name|PROP_COMPOSITE_SPACE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
@@ -589,11 +589,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_BLEND_TRC
+name|PROP_BLEND_SPACE
 case|:
 name|self
 operator|->
-name|blend_trc
+name|blend_space
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -602,11 +602,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_COMPOSITE_TRC
+name|PROP_COMPOSITE_SPACE
 case|:
 name|self
 operator|->
-name|composite_trc
+name|composite_space
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -718,7 +718,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_BLEND_TRC
+name|PROP_BLEND_SPACE
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -726,12 +726,12 @@ name|value
 argument_list|,
 name|self
 operator|->
-name|blend_trc
+name|blend_space
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_COMPOSITE_TRC
+name|PROP_COMPOSITE_SPACE
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -739,7 +739,7 @@ name|value
 argument_list|,
 name|self
 operator|->
-name|composite_trc
+name|composite_space
 argument_list|)
 expr_stmt|;
 break|break;
