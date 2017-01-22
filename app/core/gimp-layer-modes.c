@@ -350,7 +350,7 @@ case|case
 name|GIMP_LAYER_MODE_REPLACE
 case|:
 return|return
-name|FALSE
+name|TRUE
 return|;
 case|case
 name|GIMP_LAYER_MODE_ANTI_ERASE
@@ -605,7 +605,7 @@ case|case
 name|GIMP_LAYER_MODE_REPLACE
 case|:
 return|return
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 return|;
 case|case
 name|GIMP_LAYER_MODE_ANTI_ERASE
