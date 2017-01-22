@@ -1297,6 +1297,27 @@ name|active_tool
 argument_list|)
 condition|)
 block|{
+comment|/*  Remember the prodecure that created this tool, because we        *  can't just switch to an operation tool using        *  gimp_context_set_tool(), we also have to go through the        *  initialization code below, otherwise we end up with a dummy        *  tool that does nothing. See bug #776370.        */
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|active_tool
+argument_list|)
+argument_list|,
+literal|"gimp-gegl-procedure"
+argument_list|,
+name|g_object_ref
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_object_unref
+argument_list|)
+expr_stmt|;
 name|gimp_operation_tool_set_operation
 argument_list|(
 name|GIMP_OPERATION_TOOL
