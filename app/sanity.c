@@ -1742,6 +1742,8 @@ literal|"gegl:edge"
 block|,
 literal|"gegl:edge-laplace"
 block|,
+literal|"gegl:edge-neon"
+block|,
 literal|"gegl:edge-sobel"
 block|,
 literal|"gegl:emboss"

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911f1df0103
+DECL|enum|__anon27a0b22c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -363,6 +363,8 @@ block|,
 literal|"gegl:edge"
 block|,
 literal|"gegl:edge-laplace"
+block|,
+literal|"gegl:edge-neon"
 block|,
 literal|"gegl:edge-sobel"
 block|,
