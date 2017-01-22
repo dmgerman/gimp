@@ -358,6 +358,8 @@ name|GIMP_LAYER_MODE_BURN
 argument_list|,
 name|GIMP_LAYER_MODE_BURN_LEGACY
 argument_list|,
+name|GIMP_LAYER_MODE_LINEAR_BURN
+argument_list|,
 name|GIMP_LAYER_MODE_OVERLAY
 argument_list|,
 name|GIMP_LAYER_MODE_SOFTLIGHT
@@ -368,6 +370,12 @@ name|GIMP_LAYER_MODE_HARDLIGHT
 argument_list|,
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 argument_list|,
+name|GIMP_LAYER_MODE_VIVID_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_PIN_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
+argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
@@ -375,6 +383,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
+argument_list|,
+name|GIMP_LAYER_MODE_EXCLUSION
 argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT
 argument_list|,
@@ -446,7 +456,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_BURN_LEGACY
+name|GIMP_LAYER_MODE_LINEAR_BURN
 argument_list|,
 operator|-
 literal|1
@@ -459,7 +469,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
 argument_list|,
 operator|-
 literal|1
