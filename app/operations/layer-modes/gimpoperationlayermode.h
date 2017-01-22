@@ -116,6 +116,10 @@ DECL|member|parent_instance
 name|GeglOperationPointComposer3
 name|parent_instance
 decl_stmt|;
+DECL|member|layer_mode
+name|GimpLayerMode
+name|layer_mode
+decl_stmt|;
 DECL|member|linear
 name|gboolean
 name|linear

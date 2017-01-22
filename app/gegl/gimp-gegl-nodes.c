@@ -502,6 +502,10 @@ argument_list|(
 name|mode
 argument_list|)
 argument_list|,
+literal|"layer-mode"
+argument_list|,
+name|mode
+argument_list|,
 literal|"opacity"
 argument_list|,
 name|opacity
