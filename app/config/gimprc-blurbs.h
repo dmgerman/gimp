@@ -494,6 +494,24 @@ value|_("Sets the text to appear in image window titles.")
 end_define
 
 begin_define
+DECL|macro|IMPORT_PROMOTE_FLOAT_BLURB
+define|#
+directive|define
+name|IMPORT_PROMOTE_FLOAT_BLURB
+define|\
+value|_("Promote imported images to floating point precision. Does not apply " \   "to indexed images.")
+end_define
+
+begin_define
+DECL|macro|IMPORT_PROMOTE_DITHER_BLURB
+define|#
+directive|define
+name|IMPORT_PROMOTE_DITHER_BLURB
+define|\
+value|_("When promoting imported images to floating point precision, also add " \   "minimal noise in order do distribute color values a bit.")
+end_define
+
+begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define

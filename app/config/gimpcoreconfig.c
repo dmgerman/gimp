@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c05ba0103
+DECL|enum|__anon29353f950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,6 +324,12 @@ name|PROP_SAVE_DOCUMENT_HISTORY
 block|,
 DECL|enumerator|PROP_QUICK_MASK_COLOR
 name|PROP_QUICK_MASK_COLOR
+block|,
+DECL|enumerator|PROP_IMPORT_PROMOTE_FLOAT
+name|PROP_IMPORT_PROMOTE_FLOAT
+block|,
+DECL|enumerator|PROP_IMPORT_PROMOTE_DITHER
+name|PROP_IMPORT_PROMOTE_DITHER
 block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_INSTALL_COLORMAP
@@ -1767,7 +1773,7 @@ name|PROP_THUMBNAIL_FILESIZE_LIMIT
 argument_list|,
 literal|"thumbnail-filesize-limit"
 argument_list|,
-literal|"Thumbnail file size limie"
+literal|"Thumbnail file size limit"
 argument_list|,
 name|THUMBNAIL_FILESIZE_LIMIT_BLURB
 argument_list|,
@@ -1812,6 +1818,40 @@ argument_list|,
 literal|"Save document history"
 argument_list|,
 name|SAVE_DOCUMENT_HISTORY_BLURB
+argument_list|,
+name|TRUE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_IMPORT_PROMOTE_FLOAT
+argument_list|,
+literal|"import-promote-float"
+argument_list|,
+literal|"Import promote float"
+argument_list|,
+name|IMPORT_PROMOTE_FLOAT_BLURB
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_IMPORT_PROMOTE_DITHER
+argument_list|,
+literal|"import-promote-dither"
+argument_list|,
+literal|"Import promote dither"
+argument_list|,
+name|IMPORT_PROMOTE_DITHER_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3209,6 +3249,32 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_IMPORT_PROMOTE_FLOAT
+case|:
+name|core_config
+operator|->
+name|import_promote_float
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_IMPORT_PROMOTE_DITHER
+case|:
+name|core_config
+operator|->
+name|import_promote_dither
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_INSTALL_COLORMAP
 case|:
 case|case
@@ -3928,6 +3994,32 @@ operator|&
 name|core_config
 operator|->
 name|quick_mask_color
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_IMPORT_PROMOTE_FLOAT
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|import_promote_float
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_IMPORT_PROMOTE_DITHER
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|import_promote_dither
 argument_list|)
 expr_stmt|;
 break|break;

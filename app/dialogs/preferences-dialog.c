@@ -5471,6 +5471,95 @@ name|store
 argument_list|)
 expr_stmt|;
 block|}
+comment|/***************************/
+comment|/*  Image Import / Export  */
+comment|/***************************/
+name|vbox
+operator|=
+name|gimp_prefs_box_add_page
+argument_list|(
+name|GIMP_PREFS_BOX
+argument_list|(
+name|prefs_box
+argument_list|)
+argument_list|,
+literal|"gimp-prefs-import-export"
+argument_list|,
+name|_
+argument_list|(
+literal|"Image Import& Export"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Image Import"
+argument_list|)
+argument_list|,
+name|GIMP_HELP_PREFS_DIALOG
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|top_iter
+argument_list|)
+expr_stmt|;
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Import Policies"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"import-promote-float"
+argument_list|,
+name|_
+argument_list|(
+literal|"Promote imported images to "
+literal|"_floating point precition"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"import-promote-dither"
+argument_list|,
+name|_
+argument_list|(
+literal|"Dither images when promoting to "
+literal|"floating point"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/****************/
 comment|/*  Playground  */
 comment|/****************/
@@ -11343,7 +11432,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c1392b00108
+DECL|struct|__anon274b43510108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12220,7 +12309,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c1392b00208
+DECL|struct|__anon274b43510208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12358,7 +12447,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c1392b00308
+DECL|struct|__anon274b43510308
 block|{
 DECL|member|tree_label
 specifier|const

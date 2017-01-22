@@ -336,6 +336,14 @@ DECL|member|quick_mask_color
 name|GimpRGB
 name|quick_mask_color
 decl_stmt|;
+DECL|member|import_promote_float
+name|gboolean
+name|import_promote_float
+decl_stmt|;
+DECL|member|import_promote_dither
+name|gboolean
+name|import_promote_dither
+decl_stmt|;
 block|}
 struct|;
 end_struct
