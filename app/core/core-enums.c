@@ -2959,7 +2959,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Linear light"
+literal|"Linear burn"
 argument_list|)
 block|,
 name|NULL
