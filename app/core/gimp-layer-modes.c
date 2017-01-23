@@ -205,11 +205,14 @@ return|;
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
+return|return
+name|FALSE
+return|;
 case|case
 name|GIMP_LAYER_MODE_OVERLAY
 case|:
 return|return
-name|FALSE
+name|TRUE
 return|;
 case|case
 name|GIMP_LAYER_MODE_LCH_HUE
