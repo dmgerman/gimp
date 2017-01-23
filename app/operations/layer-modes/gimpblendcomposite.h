@@ -3226,7 +3226,7 @@ init|=
 operator|(
 literal|1.0f
 operator|-
-name|src
+name|dest
 index|[
 name|c
 index|]
@@ -5047,16 +5047,14 @@ index|[
 name|c
 index|]
 operator|+
-literal|2
+literal|2.0
 operator|*
-operator|(
 name|src
 index|[
 name|c
 index|]
 operator|-
 literal|1.0
-operator|)
 expr_stmt|;
 block|}
 name|out
