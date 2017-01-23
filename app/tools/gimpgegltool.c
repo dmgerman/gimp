@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0b22c0103
+DECL|enum|__anon27df4c310103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -481,6 +481,8 @@ block|,
 literal|"gegl:video-degradation"
 block|,
 literal|"gegl:vignette"
+block|,
+literal|"gegl:wavelet-blur"
 block|,
 literal|"gegl:waves"
 block|,

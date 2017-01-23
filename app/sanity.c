@@ -1884,6 +1884,8 @@ literal|"gegl:vignette"
 block|,
 literal|"gegl:warp"
 block|,
+literal|"gegl:wavelet-blur"
+block|,
 literal|"gegl:waves"
 block|,
 literal|"gegl:whirl-pinch"
