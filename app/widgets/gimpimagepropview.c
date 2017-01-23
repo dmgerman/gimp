@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a26c50103
+DECL|enum|__anon2b1777d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1704,9 +1704,6 @@ decl_stmt|;
 name|gdouble
 name|unit_factor
 decl_stmt|;
-name|gint
-name|unit_digits
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -1792,13 +1789,6 @@ operator|=
 name|gimp_get_default_unit
 argument_list|()
 expr_stmt|;
-name|unit_digits
-operator|=
-name|gimp_unit_get_digits
-argument_list|(
-name|unit
-argument_list|)
-expr_stmt|;
 name|g_snprintf
 argument_list|(
 name|format_buf
@@ -1810,13 +1800,19 @@ argument_list|)
 argument_list|,
 literal|"%%.%df Ã %%.%df %s"
 argument_list|,
-name|unit_digits
-operator|+
-literal|1
+name|gimp_unit_get_scaled_digits
+argument_list|(
+name|unit
 argument_list|,
-name|unit_digits
-operator|+
-literal|1
+name|xres
+argument_list|)
+argument_list|,
+name|gimp_unit_get_scaled_digits
+argument_list|(
+name|unit
+argument_list|,
+name|yres
+argument_list|)
 argument_list|,
 name|gimp_unit_get_plural
 argument_list|(
