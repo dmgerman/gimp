@@ -321,14 +321,14 @@ name|GIMP_HELP_IMAGE_COLOR_PROFILE_IMPORT
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep"
+literal|"_Keep"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Convert"
+literal|"C_onvert"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
