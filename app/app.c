@@ -286,6 +286,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GType
+name|gimp_layer_mode_effects_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* compat cruft */
+end_comment
+
 begin_comment
 comment|/*  local variables  */
 end_comment
@@ -390,7 +403,8 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|GIMP_TYPE_LAYER_MODE_EFFECTS
+name|gimp_layer_mode_effects_get_type
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
