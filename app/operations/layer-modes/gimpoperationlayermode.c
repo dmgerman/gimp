@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfb24cb0103
+DECL|enum|__anon2bb9c7d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6777,7 +6777,7 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT
 case|:
 return|return
-name|blendfun_grain_merge
+name|blendfun_grain_extract
 return|;
 case|case
 name|GIMP_LAYER_MODE_DODGE_LINEAR
@@ -7030,6 +7030,13 @@ operator|)
 name|dummy_fun
 return|;
 block|}
+return|return
+operator|(
+name|void
+operator|*
+operator|)
+name|dummy_fun
+return|;
 block|}
 end_function
 
