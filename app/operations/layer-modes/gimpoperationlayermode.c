@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29813dcf0103
+DECL|enum|__anon2c3ed2500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7460,17 +7460,11 @@ return|return
 name|blendfun_difference
 return|;
 case|case
-name|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
-case|:
-case|case
 name|GIMP_LAYER_MODE_DARKEN_ONLY
 case|:
 return|return
 name|blendfun_darken_only
 return|;
-case|case
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
-case|:
 case|case
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
 case|:

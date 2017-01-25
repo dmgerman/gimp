@@ -1742,27 +1742,11 @@ literal|"darken-only"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
-block|,
-literal|"GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR"
-block|,
-literal|"darken-only-linear"
-block|}
-block|,
-block|{
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
 block|,
 literal|"GIMP_LAYER_MODE_LIGHTEN_ONLY"
 block|,
 literal|"lighten-only"
-block|}
-block|,
-block|{
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
-block|,
-literal|"GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR"
-block|,
-literal|"lighten-only-linear"
 block|}
 block|,
 block|{
@@ -2576,19 +2560,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
-block|,
-name|NC_
-argument_list|(
-literal|"layer-mode"
-argument_list|,
-literal|"Darken only (linear)"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
 block|,
 name|NC_
@@ -2596,19 +2567,6 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Lighten only"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
-block|,
-name|NC_
-argument_list|(
-literal|"layer-mode"
-argument_list|,
-literal|"Lighten only (linear)"
 argument_list|)
 block|,
 name|NULL

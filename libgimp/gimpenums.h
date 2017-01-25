@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a31998e0103
+DECL|enum|__anon27d4c30a0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a31998e0203
+DECL|enum|__anon27d4c30a0203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a31998e0303
+DECL|enum|__anon27d4c30a0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a31998e0403
+DECL|enum|__anon27d4c30a0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
 name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
@@ -287,14 +287,8 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_DARKEN_ONLY
 name|GIMP_LAYER_MODE_DARKEN_ONLY
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
-name|GIMP_LAYER_MODE_DARKEN_ONLY_LINEAR
-block|,
 DECL|enumerator|GIMP_LAYER_MODE_LIGHTEN_ONLY
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
-block|,
-DECL|enumerator|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LINEAR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_HSV_HUE
 name|GIMP_LAYER_MODE_HSV_HUE
