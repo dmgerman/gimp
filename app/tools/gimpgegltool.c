@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df4c310103
+DECL|enum|__anon2bf210280103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -517,6 +517,9 @@ literal|"gegl:linear-gradient"
 block|,
 comment|/* we use the blend tool */
 literal|"gegl:matting-global"
+block|,
+comment|/* used in the foreground select tool */
+literal|"gegl:matting-levin"
 block|,
 comment|/* used in the foreground select tool */
 literal|"gegl:opacity"
