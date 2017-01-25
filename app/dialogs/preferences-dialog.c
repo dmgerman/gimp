@@ -5531,7 +5531,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Promote imported images to "
-literal|"_floating point precition"
+literal|"_floating point precision"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -11432,7 +11432,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon274b43510108
+DECL|struct|__anon2bf268c50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12309,7 +12309,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274b43510208
+DECL|struct|__anon2bf268c50208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12447,7 +12447,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274b43510308
+DECL|struct|__anon2bf268c50308
 block|{
 DECL|member|tree_label
 specifier|const
