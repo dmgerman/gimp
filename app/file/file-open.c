@@ -1053,6 +1053,13 @@ name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
 operator|&&
+name|gimp_image_get_base_type
+argument_list|(
+name|image
+argument_list|)
+operator|!=
+name|GIMP_INDEXED
+operator|&&
 name|gimp
 operator|->
 name|config
