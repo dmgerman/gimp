@@ -2020,7 +2020,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Normal (non-linear)"
+literal|"Normal"
 argument_list|)
 block|,
 name|NULL
@@ -2384,7 +2384,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Normal"
+literal|"Normal (linear)"
 argument_list|)
 block|,
 name|NULL
@@ -3045,6 +3045,14 @@ index|[]
 init|=
 block|{
 block|{
+name|GIMP_LAYER_MODE_GROUP_DEFAULT
+block|,
+literal|"GIMP_LAYER_MODE_GROUP_DEFAULT"
+block|,
+literal|"default"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_GROUP_LINEAR
 block|,
 literal|"GIMP_LAYER_MODE_GROUP_LINEAR"
@@ -3084,6 +3092,19 @@ name|descs
 index|[]
 init|=
 block|{
+block|{
+name|GIMP_LAYER_MODE_GROUP_DEFAULT
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode-group"
+argument_list|,
+literal|"Default"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_GROUP_LINEAR
 block|,
