@@ -1974,6 +1974,22 @@ literal|"linear-burn-linear"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY"
+block|,
+literal|"luminance-darken-only"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY"
+block|,
+literal|"luminance-lighten-only"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_ERASE
 block|,
 literal|"GIMP_LAYER_MODE_ERASE"
@@ -2931,6 +2947,32 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Linear burn (linear)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luminance darken only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luminance lighten only"
 argument_list|)
 block|,
 name|NULL
