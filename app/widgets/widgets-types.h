@@ -1191,6 +1191,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerModeComboBox
+typedef|typedef
+name|struct
+name|_GimpLayerModeComboBox
+name|GimpLayerModeComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMessageBox
 typedef|typedef
 name|struct
