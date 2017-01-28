@@ -125,7 +125,7 @@ DECL|macro|GIMP_NORMAL_MODE
 define|#
 directive|define
 name|GIMP_NORMAL_MODE
-value|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+value|GIMP_LAYER_MODE_NORMAL
 end_define
 
 begin_define
