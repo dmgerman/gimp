@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ed2500103
+DECL|enum|__anon29be10020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7322,7 +7322,7 @@ return|return
 name|blendfun_multiply
 return|;
 case|case
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 case|:
 case|case
 name|GIMP_LAYER_MODE_NORMAL

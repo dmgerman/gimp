@@ -322,9 +322,9 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|45
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
-argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
+argument_list|,
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -555,7 +555,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|)

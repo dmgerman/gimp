@@ -200,7 +200,7 @@ case|case
 name|GIMP_LAYER_MODE_NORMAL
 case|:
 case|case
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 case|:
 name|func
 operator|=

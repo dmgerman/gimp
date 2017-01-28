@@ -11923,7 +11923,7 @@ literal|"The paint mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -11992,7 +11992,7 @@ literal|"The paint mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

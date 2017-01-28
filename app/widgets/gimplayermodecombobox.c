@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b41d4340103
+DECL|enum|__anon2a3f8e1e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1062,7 +1062,7 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|30
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -1234,7 +1234,7 @@ name|gimp_layer_mode_combo_box_insert_value
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|)
@@ -1291,7 +1291,7 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|22
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -1418,7 +1418,7 @@ name|gimp_layer_mode_combo_box_insert_value
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|)
@@ -1475,7 +1475,7 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|30
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
@@ -1667,7 +1667,7 @@ name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 literal|20
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_NON_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
