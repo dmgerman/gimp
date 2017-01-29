@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f8e1e0103
+DECL|enum|__anon2b2002c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -810,16 +810,28 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_layer_mode_combo_box_new (void)
+DECL|function|gimp_layer_mode_combo_box_new (gboolean with_behind,gboolean with_replace)
 name|gimp_layer_mode_combo_box_new
 parameter_list|(
-name|void
+name|gboolean
+name|with_behind
+parameter_list|,
+name|gboolean
+name|with_replace
 parameter_list|)
 block|{
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE_COMBO_BOX
+argument_list|,
+literal|"with-behind"
+argument_list|,
+name|with_behind
+argument_list|,
+literal|"with-replace"
+argument_list|,
+name|with_replace
 argument_list|,
 name|NULL
 argument_list|)

@@ -143,7 +143,11 @@ name|GtkWidget
 modifier|*
 name|gimp_layer_mode_combo_box_new
 parameter_list|(
-name|void
+name|gboolean
+name|with_behind
+parameter_list|,
+name|gboolean
+name|with_replace
 parameter_list|)
 function_decl|;
 end_function_decl
