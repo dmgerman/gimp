@@ -104,7 +104,13 @@ begin_struct
 DECL|struct|_GimpMetadataPrivate
 struct|struct
 name|_GimpMetadataPrivate
-block|{ }
+block|{
+comment|/* dummy entry to avoid a critical warning due to size 0 */
+DECL|member|_gimp_reserved1
+name|gpointer
+name|_gimp_reserved1
+decl_stmt|;
+block|}
 struct|;
 end_struct
 
@@ -1253,7 +1259,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796aa4e0108
+DECL|struct|__anon2ab18c600108
 block|{
 DECL|member|name
 name|gchar
