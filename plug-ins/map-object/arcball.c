@@ -1869,6 +1869,7 @@ name|vlen
 operator|!=
 literal|0.0
 condition|)
+block|{
 name|u
 operator|.
 name|x
@@ -1899,6 +1900,7 @@ name|z
 operator|/
 name|vlen
 expr_stmt|;
+block|}
 return|return
 operator|(
 name|u
