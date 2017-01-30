@@ -1330,7 +1330,8 @@ name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_HUE
+operator|-
+literal|1
 block|,
 operator|-
 literal|1
@@ -1341,7 +1342,8 @@ name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_SATURATION
+operator|-
+literal|1
 block|,
 operator|-
 literal|1
@@ -1352,7 +1354,8 @@ name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR
+operator|-
+literal|1
 block|,
 operator|-
 literal|1
@@ -1363,7 +1366,8 @@ name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_VALUE
+operator|-
+literal|1
 block|,
 operator|-
 literal|1

@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32de600103
+DECL|enum|__anon2ade6f8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1124,7 +1124,7 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|32
+literal|28
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
@@ -1163,14 +1163,6 @@ argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_MERGE
 argument_list|,
 name|GIMP_LAYER_MODE_DIVIDE
-argument_list|,
-name|GIMP_LAYER_MODE_HSV_HUE
-argument_list|,
-name|GIMP_LAYER_MODE_HSV_SATURATION
-argument_list|,
-name|GIMP_LAYER_MODE_HSV_COLOR
-argument_list|,
-name|GIMP_LAYER_MODE_HSV_VALUE
 argument_list|,
 name|GIMP_LAYER_MODE_LCH_HUE
 argument_list|,
@@ -1236,16 +1228,6 @@ argument_list|(
 name|store
 argument_list|,
 name|GIMP_LAYER_MODE_DIVIDE
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_layer_mode_combo_box_insert_separator
-argument_list|(
-name|store
-argument_list|,
-name|GIMP_LAYER_MODE_HSV_VALUE
 argument_list|,
 operator|-
 literal|1
