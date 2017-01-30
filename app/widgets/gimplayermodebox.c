@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295041570103
+DECL|enum|__anon293eea880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -517,6 +517,18 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|group_combo
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|group_combo
+argument_list|,
+name|_
+argument_list|(
+literal|"Switch to another group of modes"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|layout
