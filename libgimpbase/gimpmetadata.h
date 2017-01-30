@@ -20,10 +20,73 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_define
+DECL|macro|GIMP_TYPE_METADATA
+define|#
+directive|define
+name|GIMP_TYPE_METADATA
+value|(gimp_metadata_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_METADATA (obj)
+define|#
+directive|define
+name|GIMP_METADATA
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_METADATA, GimpMetadata))
+end_define
+
+begin_define
+DECL|macro|GIMP_METADATA_CLASS (klass)
+define|#
+directive|define
+name|GIMP_METADATA_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_METADATA, GimpMetadataClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_METADATA (obj)
+define|#
+directive|define
+name|GIMP_IS_METADATA
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_METADATA))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_METADATA_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_METADATA_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_METADATA))
+end_define
+
+begin_define
+DECL|macro|GIMP_METADATA_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_METADATA_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_METADATA, GimpMetadataClass))
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760b9e00103
+DECL|enum|__anon2aeb1fbb0103
 block|{
 DECL|enumerator|GIMP_METADATA_LOAD_COMMENT
 name|GIMP_METADATA_LOAD_COMMENT
@@ -66,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760b9e00203
+DECL|enum|__anon2aeb1fbb0203
 block|{
 DECL|enumerator|GIMP_METADATA_SAVE_EXIF
 name|GIMP_METADATA_SAVE_EXIF
@@ -109,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760b9e00303
+DECL|enum|__anon2aeb1fbb0303
 block|{
 DECL|enumerator|GIMP_METADATA_COLORSPACE_UNSPECIFIED
 name|GIMP_METADATA_COLORSPACE_UNSPECIFIED
@@ -127,6 +190,16 @@ block|}
 name|GimpMetadataColorspace
 typedef|;
 end_typedef
+
+begin_decl_stmt
+name|GType
+name|gimp_metadata_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GimpMetadata

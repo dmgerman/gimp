@@ -195,7 +195,7 @@ begin_typedef
 DECL|typedef|GimpMetadata
 typedef|typedef
 name|struct
-name|_GExiv2Metadata
+name|_GimpMetadata
 name|GimpMetadata
 typedef|;
 end_typedef

@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baaf75d0103
+DECL|enum|__anon299ff1f60103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baaf75d0203
+DECL|enum|__anon299ff1f60203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -156,7 +156,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baaf75d0308
+DECL|struct|__anon299ff1f60308
 block|{
 DECL|member|tag
 name|gchar
@@ -226,7 +226,7 @@ parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GExiv2Metadata
+name|GimpMetadata
 modifier|*
 name|metadata
 parameter_list|)
@@ -729,13 +729,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|metadata_dialog (gint32 image_id,GExiv2Metadata * metadata)
+DECL|function|metadata_dialog (gint32 image_id,GimpMetadata * metadata)
 name|metadata_dialog
 parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GExiv2Metadata
+name|GimpMetadata
 modifier|*
 name|metadata
 parameter_list|)
@@ -987,7 +987,10 @@ argument_list|)
 expr_stmt|;
 name|metadata_dialog_set_metadata
 argument_list|(
+name|GEXIV2_METADATA
+argument_list|(
 name|metadata
+argument_list|)
 argument_list|,
 name|builder
 argument_list|)
@@ -1776,7 +1779,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|GExiv2Metadata *metadata;   gint            i;    metadata = gimp_image_get_metadata (handler->image);    for (i = 0; i< G_N_ELEMENTS (iptc_tags); i++)     {       GObject *object = gtk_builder_get_object (handler->builder,                                                 iptc_tags[i].tag);        if (! strcmp ("single", iptc_tags[i].mode))         {           GtkEntry *entry = GTK_ENTRY (object);            gexiv2_metadata_set_tag_string (metadata, iptc_tags[i].tag,                                           gtk_entry_get_text (entry));         }       else  if (!strcmp ("multi", iptc_tags[i].mode))         {           GtkTextView   *text_view = GTK_TEXT_VIEW (object);           GtkTextBuffer *buffer;           GtkTextIter    start;           GtkTextIter    end;           gchar         *text;            buffer = gtk_text_view_get_buffer (text_view);           gtk_text_buffer_get_start_iter (buffer,&start);           gtk_text_buffer_get_end_iter (buffer,&end);            text = gtk_text_buffer_get_text (buffer,&start,&end, TRUE);           gexiv2_metadata_set_tag_string (metadata, iptc_tags[i].tag, text);           g_free (text);         }     }
+block|GimpMetadata *metadata;   gint            i;    metadata = gimp_image_get_metadata (handler->image);    for (i = 0; i< G_N_ELEMENTS (iptc_tags); i++)     {       GObject *object = gtk_builder_get_object (handler->builder,                                                 iptc_tags[i].tag);        if (! strcmp ("single", iptc_tags[i].mode))         {           GtkEntry *entry = GTK_ENTRY (object);            gexiv2_metadata_set_tag_string (GEXIV2_METADATA (metadata),                                           iptc_tags[i].tag,                                           gtk_entry_get_text (entry));         }       else  if (!strcmp ("multi", iptc_tags[i].mode))         {           GtkTextView   *text_view = GTK_TEXT_VIEW (object);           GtkTextBuffer *buffer;           GtkTextIter    start;           GtkTextIter    end;           gchar         *text;            buffer = gtk_text_view_get_buffer (text_view);           gtk_text_buffer_get_start_iter (buffer,&start);           gtk_text_buffer_get_end_iter (buffer,&end);            text = gtk_text_buffer_get_text (buffer,&start,&end, TRUE);           gexiv2_metadata_set_tag_string (GEXIV2_METADATA (metadata),                                           iptc_tags[i].tag, text);           g_free (text);         }     }
 endif|#
 directive|endif
 block|}
