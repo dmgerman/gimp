@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e828520108
+DECL|struct|__anon28d7c4bc0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -609,7 +609,7 @@ expr_stmt|;
 comment|/*  the paint mode menu  */
 name|menu
 operator|=
-name|gimp_prop_paint_mode_menu_new
+name|gimp_prop_layer_mode_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(

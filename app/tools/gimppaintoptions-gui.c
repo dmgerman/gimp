@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimplayermodebox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -461,7 +467,7 @@ expr_stmt|;
 comment|/*  the paint mode menu  */
 name|menu
 operator|=
-name|gimp_prop_paint_mode_menu_new
+name|gimp_prop_layer_mode_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -472,9 +478,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_int_combo_box_set_label
+name|gimp_layer_mode_box_set_label
 argument_list|(
-name|GIMP_INT_COMBO_BOX
+name|GIMP_LAYER_MODE_BOX
 argument_list|(
 name|menu
 argument_list|)
@@ -485,15 +491,14 @@ literal|"Mode"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_set
+name|gimp_layer_mode_box_set_ellipsize
+argument_list|(
+name|GIMP_LAYER_MODE_BOX
 argument_list|(
 name|menu
-argument_list|,
-literal|"ellipsize"
+argument_list|)
 argument_list|,
 name|PANGO_ELLIPSIZE_END
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
