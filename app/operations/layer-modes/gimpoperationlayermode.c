@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d30750103
+DECL|enum|__anon29119bff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7820,11 +7820,17 @@ return|;
 case|case
 name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
 case|:
+case|case
+name|GIMP_LAYER_MODE_LUMA_DARKEN_ONLY
+case|:
 return|return
 name|blendfun_luminance_darken_only
 return|;
 case|case
 name|GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY
+case|:
+case|case
+name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
 case|:
 return|return
 name|blendfun_luminance_lighten_only

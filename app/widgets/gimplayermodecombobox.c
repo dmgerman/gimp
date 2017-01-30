@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c8f430103
+DECL|enum|__anon2a32de600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1124,13 +1124,15 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|30
+literal|32
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_SCREEN
 argument_list|,
@@ -1139,6 +1141,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_ADDITION
 argument_list|,
 name|GIMP_LAYER_MODE_DARKEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_MULTIPLY
 argument_list|,
@@ -1353,13 +1357,15 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|22
+literal|24
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMINANCE_LIGHTEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_SCREEN_LINEAR
 argument_list|,
@@ -1368,6 +1374,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_ADDITION_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DARKEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
 argument_list|,
@@ -1537,13 +1545,15 @@ name|gimp_enum_store_new_with_values
 argument_list|(
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-literal|30
+literal|32
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_LAYER_MODE_DISSOLVE
 argument_list|,
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_SCREEN
 argument_list|,
@@ -1552,6 +1562,8 @@ argument_list|,
 name|GIMP_LAYER_MODE_ADDITION
 argument_list|,
 name|GIMP_LAYER_MODE_DARKEN_ONLY
+argument_list|,
+name|GIMP_LAYER_MODE_LUMA_DARKEN_ONLY
 argument_list|,
 name|GIMP_LAYER_MODE_MULTIPLY
 argument_list|,

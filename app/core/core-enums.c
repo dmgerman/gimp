@@ -1974,11 +1974,27 @@ literal|"linear-burn-linear"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_LUMA_DARKEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_LUMA_DARKEN_ONLY"
+block|,
+literal|"luma-darken-only"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
 block|,
 literal|"GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY"
 block|,
 literal|"luminance-darken-only"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
+block|,
+literal|"GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY"
+block|,
+literal|"luma-lighten-only"
 block|}
 block|,
 block|{
@@ -2953,6 +2969,19 @@ name|NULL
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_LUMA_DARKEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luma darken only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_LUMINANCE_DARKEN_ONLY
 block|,
 name|NC_
@@ -2960,6 +2989,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Luminance darken only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luma lighten only"
 argument_list|)
 block|,
 name|NULL
