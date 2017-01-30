@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ade6f8a0103
+DECL|enum|__anon2c4c0e390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1154,6 +1154,12 @@ name|GIMP_LAYER_MODE_SOFTLIGHT
 argument_list|,
 name|GIMP_LAYER_MODE_HARDLIGHT
 argument_list|,
+name|GIMP_LAYER_MODE_VIVID_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_PIN_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
+argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT
@@ -1171,12 +1177,6 @@ argument_list|,
 name|GIMP_LAYER_MODE_LCH_COLOR
 argument_list|,
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
-argument_list|,
-name|GIMP_LAYER_MODE_VIVID_LIGHT
-argument_list|,
-name|GIMP_LAYER_MODE_PIN_LIGHT
-argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT
 argument_list|,
 name|GIMP_LAYER_MODE_EXCLUSION
 argument_list|,
@@ -1217,7 +1217,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_HARDLIGHT
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
 argument_list|,
 operator|-
 literal|1
@@ -1369,6 +1369,12 @@ name|GIMP_LAYER_MODE_SOFTLIGHT_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_HARDLIGHT_LINEAR
 argument_list|,
+name|GIMP_LAYER_MODE_VIVID_LIGHT_LINEAR
+argument_list|,
+name|GIMP_LAYER_MODE_PIN_LIGHT_LINEAR
+argument_list|,
+name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
+argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT_LINEAR
@@ -1378,12 +1384,6 @@ argument_list|,
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_DIVIDE_LINEAR
-argument_list|,
-name|GIMP_LAYER_MODE_VIVID_LIGHT_LINEAR
-argument_list|,
-name|GIMP_LAYER_MODE_PIN_LIGHT_LINEAR
-argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
 argument_list|,
 name|GIMP_LAYER_MODE_EXCLUSION_LINEAR
 argument_list|,
@@ -1424,7 +1424,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_HARDLIGHT_LINEAR
+name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
 argument_list|,
 operator|-
 literal|1
@@ -1557,6 +1557,12 @@ name|GIMP_LAYER_MODE_SOFTLIGHT
 argument_list|,
 name|GIMP_LAYER_MODE_HARDLIGHT
 argument_list|,
+name|GIMP_LAYER_MODE_VIVID_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_PIN_LIGHT
+argument_list|,
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
+argument_list|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 argument_list|,
 name|GIMP_LAYER_MODE_SUBTRACT
@@ -1582,12 +1588,6 @@ argument_list|,
 name|GIMP_LAYER_MODE_LCH_COLOR
 argument_list|,
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
-argument_list|,
-name|GIMP_LAYER_MODE_VIVID_LIGHT
-argument_list|,
-name|GIMP_LAYER_MODE_PIN_LIGHT
-argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT
 argument_list|,
 name|GIMP_LAYER_MODE_EXCLUSION
 argument_list|,
@@ -1628,7 +1628,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_HARDLIGHT
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
 argument_list|,
 operator|-
 literal|1
