@@ -4989,14 +4989,6 @@ name|GIMP_HELP_CONTROLLER_WHEEL
 value|"gimp-controller-wheel"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_CONFIG_USE_GEGL
-define|#
-directive|define
-name|GIMP_HELP_CONFIG_USE_GEGL
-value|"gimp-config-use-gegl"
-end_define
-
 begin_endif
 endif|#
 directive|endif
