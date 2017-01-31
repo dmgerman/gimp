@@ -1579,6 +1579,9 @@ return|;
 case|case
 name|GIMP_LAYER_MODE_ERASE
 case|:
+return|return
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+return|;
 case|case
 name|GIMP_LAYER_MODE_REPLACE
 case|:
