@@ -2518,10 +2518,10 @@ value|"gimp-filter-deinterlace"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_DESATURATE
+DECL|macro|GIMP_HELP_FILTER_DESATURATE
 define|#
 directive|define
-name|GIMP_HELP_TOOL_DESATURATE
+name|GIMP_HELP_FILTER_DESATURATE
 value|"gimp-filter-desaturate"
 end_define
 
@@ -2894,10 +2894,10 @@ value|"gimp-filter-polar-coordinates"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_POSTERIZE
+DECL|macro|GIMP_HELP_FILTER_POSTERIZE
 define|#
 directive|define
-name|GIMP_HELP_TOOL_POSTERIZE
+name|GIMP_HELP_FILTER_POSTERIZE
 value|"gimp-filter-posterize"
 end_define
 

@@ -813,7 +813,7 @@ name|NULL
 block|,
 literal|"gimp:desaturate"
 block|,
-name|GIMP_HELP_TOOL_DESATURATE
+name|GIMP_HELP_FILTER_DESATURATE
 block|}
 block|,
 block|{
@@ -1800,7 +1800,7 @@ name|NULL
 block|,
 literal|"gimp:posterize"
 block|,
-name|GIMP_HELP_TOOL_POSTERIZE
+name|GIMP_HELP_FILTER_POSTERIZE
 block|}
 block|,
 block|{
