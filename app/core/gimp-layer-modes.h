@@ -28,7 +28,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_layer_mode_is_linear
+name|gimp_layer_mode_wants_linear_data
 parameter_list|(
 name|GimpLayerMode
 name|mode

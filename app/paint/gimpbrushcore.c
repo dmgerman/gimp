@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9caeb0103
+DECL|enum|__anon2ad5fce40103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3814,7 +3814,7 @@ name|format
 decl_stmt|;
 if|if
 condition|(
-name|gimp_layer_mode_is_linear
+name|gimp_layer_mode_wants_linear_data
 argument_list|(
 name|paint_mode
 argument_list|)

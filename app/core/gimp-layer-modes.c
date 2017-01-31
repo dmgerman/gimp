@@ -745,8 +745,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_mode_is_linear (GimpLayerMode mode)
-name|gimp_layer_mode_is_linear
+DECL|function|gimp_layer_mode_wants_linear_data (GimpLayerMode mode)
+name|gimp_layer_mode_wants_linear_data
 parameter_list|(
 name|GimpLayerMode
 name|mode

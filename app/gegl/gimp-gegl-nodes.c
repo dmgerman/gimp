@@ -512,7 +512,7 @@ name|opacity
 argument_list|,
 literal|"linear"
 argument_list|,
-name|gimp_layer_mode_is_linear
+name|gimp_layer_mode_wants_linear_data
 argument_list|(
 name|mode
 argument_list|)

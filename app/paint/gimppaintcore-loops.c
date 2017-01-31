@@ -1642,7 +1642,7 @@ argument_list|)
 expr_stmt|;
 name|linear
 operator|=
-name|gimp_layer_mode_is_linear
+name|gimp_layer_mode_wants_linear_data
 argument_list|(
 name|paint_mode
 argument_list|)

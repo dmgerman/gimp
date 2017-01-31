@@ -1063,7 +1063,7 @@ name|format
 decl_stmt|;
 if|if
 condition|(
-name|gimp_layer_mode_is_linear
+name|gimp_layer_mode_wants_linear_data
 argument_list|(
 name|paint_mode
 argument_list|)
@@ -2315,7 +2315,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b11cf420103
+DECL|enum|__anon28b26c130103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
