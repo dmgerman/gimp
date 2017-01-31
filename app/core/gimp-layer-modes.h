@@ -89,6 +89,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|GimpLayerMode
+modifier|*
+name|gimp_layer_mode_get_group_array
+parameter_list|(
+name|GimpLayerModeGroup
+name|group
+parameter_list|,
+name|gint
+modifier|*
+name|n_modes
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_layer_mode_get_for_group
 parameter_list|(
