@@ -435,8 +435,7 @@ name|NULL
 block|,
 literal|"gegl:alien-map"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_ALIEN_MAP */
+name|GIMP_HELP_FILTER_ALIEN_MAP
 block|}
 block|,
 block|{
@@ -457,8 +456,7 @@ name|NULL
 block|,
 literal|"gegl:antialias"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_ANTIALIAS */
+name|GIMP_HELP_FILTER_ANTIALIAS
 block|}
 block|,
 block|{
@@ -479,8 +477,7 @@ name|NULL
 block|,
 literal|"gegl:texturize-canvas"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_APPLY_CANVAS */
+name|GIMP_HELP_FILTER_APPLY_CANVAS
 block|}
 block|,
 block|{
@@ -501,8 +498,7 @@ name|NULL
 block|,
 literal|"gegl:apply-lens"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_APPLY_LENS */
+name|GIMP_HELP_FILTER_APPLY_LENS
 block|}
 block|,
 block|{
@@ -523,8 +519,7 @@ name|NULL
 block|,
 literal|"gegl:bump-map"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_BUMP_MAP */
+name|GIMP_HELP_FILTER_BUMP_MAP
 block|}
 block|,
 block|{
@@ -545,8 +540,7 @@ name|NULL
 block|,
 literal|"gegl:c2g"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_C2G */
+name|GIMP_HELP_FILTER_C2G
 block|}
 block|,
 block|{
@@ -567,8 +561,7 @@ name|NULL
 block|,
 literal|"gegl:cartoon"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_CARTOON */
+name|GIMP_HELP_FILTER_CARTOON
 block|}
 block|,
 block|{
@@ -589,8 +582,7 @@ name|NULL
 block|,
 literal|"gegl:channel-mixer"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_CHANNEL_MIXER */
+name|GIMP_HELP_FILTER_CHANNEL_MIXER
 block|}
 block|,
 block|{
@@ -611,8 +603,7 @@ name|NULL
 block|,
 literal|"gegl:checkerboard"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_CHECKERBOARD */
+name|GIMP_HELP_FILTER_CHECKERBOARD
 block|}
 block|,
 block|{
@@ -633,8 +624,7 @@ name|NULL
 block|,
 literal|"gegl:color-enhance"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_ENHANCE */
+name|GIMP_HELP_FILTER_COLOR_ENHANCE
 block|}
 block|,
 block|{
@@ -655,8 +645,7 @@ name|NULL
 block|,
 literal|"gegl:color-exchange"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_EXCHANGE */
+name|GIMP_HELP_FILTER_COLOR_EXCHANGE
 block|}
 block|,
 block|{
@@ -677,8 +666,7 @@ name|NULL
 block|,
 literal|"gegl:dither"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DITHER */
+name|GIMP_HELP_FILTER_DITHER
 block|}
 block|,
 block|{
@@ -699,8 +687,7 @@ name|NULL
 block|,
 literal|"gegl:color-rotate"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_ROTATE */
+name|GIMP_HELP_FILTER_COLOR_ROTATE
 block|}
 block|,
 block|{
@@ -721,8 +708,7 @@ name|NULL
 block|,
 literal|"gegl:color-temperature"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_TEMPERATURE */
+name|GIMP_HELP_FILTER_COLOR_TEMPERATURE
 block|}
 block|,
 block|{
@@ -743,8 +729,7 @@ name|NULL
 block|,
 literal|"gegl:color-to-alpha"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_COLOR_TO_ALPHA */
+name|GIMP_HELP_FILTER_COLOR_TO_ALPHA
 block|}
 block|,
 block|{
@@ -765,8 +750,7 @@ name|NULL
 block|,
 literal|"gegl:convolution-matrix"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_CONVOLUTION_MATRIX */
+name|GIMP_HELP_FILTER_CONVOLUTION_MATRIX
 block|}
 block|,
 block|{
@@ -787,8 +771,7 @@ name|NULL
 block|,
 literal|"gegl:cubism"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_CUBISM */
+name|GIMP_HELP_FILTER_CUBISM
 block|}
 block|,
 block|{
@@ -809,8 +792,7 @@ name|NULL
 block|,
 literal|"gegl:deinterlace"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DEINTERLACE */
+name|GIMP_HELP_FILTER_DEINTERLACE
 block|}
 block|,
 block|{
@@ -852,8 +834,7 @@ name|NULL
 block|,
 literal|"gegl:difference-of-gaussians"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS */
+name|GIMP_HELP_FILTER_DIFFERENCE_OF_GAUSSIANS
 block|}
 block|,
 block|{
@@ -874,8 +855,7 @@ name|NULL
 block|,
 literal|"gegl:diffraction-patterns"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DIFFRACTION_PATTERNS */
+name|GIMP_HELP_FILTER_DIFFRACTION_PATTERNS
 block|}
 block|,
 block|{
@@ -896,8 +876,7 @@ name|NULL
 block|,
 literal|"gegl:displace"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DISPLACE */
+name|GIMP_HELP_FILTER_DISPLACE
 block|}
 block|,
 block|{
@@ -918,8 +897,7 @@ name|NULL
 block|,
 literal|"gegl:distance-transform"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DISTANCE_MAP */
+name|GIMP_HELP_FILTER_DISTANCE_MAP
 block|}
 block|,
 block|{
@@ -940,8 +918,7 @@ name|NULL
 block|,
 literal|"gegl:dropshadow"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_DROPSHADOW */
+name|GIMP_HELP_FILTER_DROPSHADOW
 block|}
 block|,
 block|{
@@ -962,8 +939,7 @@ name|NULL
 block|,
 literal|"gegl:edge"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EDGE_LAPLACE */
+name|GIMP_HELP_FILTER_EDGE
 block|}
 block|,
 block|{
@@ -984,8 +960,7 @@ name|NULL
 block|,
 literal|"gegl:edge-laplace"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EDGE_LAPLACE */
+name|GIMP_HELP_FILTER_EDGE_LAPLACE
 block|}
 block|,
 block|{
@@ -1006,8 +981,7 @@ name|NULL
 block|,
 literal|"gegl:edge-neon"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EDGE_LAPLACE */
+name|GIMP_HELP_FILTER_EDGE_NEON
 block|}
 block|,
 block|{
@@ -1028,8 +1002,7 @@ name|NULL
 block|,
 literal|"gegl:edge-sobel"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EDGE_SOBEL */
+name|GIMP_HELP_FILTER_EDGE_SOBEL
 block|}
 block|,
 block|{
@@ -1050,8 +1023,7 @@ name|NULL
 block|,
 literal|"gegl:emboss"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EMBOSS */
+name|GIMP_HELP_FILTER_EMBOSS
 block|}
 block|,
 block|{
@@ -1072,8 +1044,7 @@ name|NULL
 block|,
 literal|"gegl:engrave"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_ENGRAVE */
+name|GIMP_HELP_FILTER_ENGRAVE
 block|}
 block|,
 block|{
@@ -1094,8 +1065,7 @@ name|NULL
 block|,
 literal|"gegl:exposure"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_EXPOSURE */
+name|GIMP_HELP_FILTER_EXPOSURE
 block|}
 block|,
 block|{
@@ -1116,8 +1086,7 @@ name|NULL
 block|,
 literal|"gegl:fractal-trace"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_FRACTAL_TRACE */
+name|GIMP_HELP_FILTER_FRACTAL_TRACE
 block|}
 block|,
 block|{
@@ -1138,8 +1107,7 @@ name|NULL
 block|,
 literal|"gegl:gaussian-blur"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR */
+name|GIMP_HELP_FILTER_GAUSSIAN_BLUR
 block|}
 block|,
 block|{
@@ -1160,8 +1128,7 @@ name|NULL
 block|,
 literal|"gegl:gaussian-blur-selective"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_BLUR_SELECTIVE */
+name|GIMP_HELP_FILTER_GAUSSIAN_BLUR_SELECTIVE
 block|}
 block|,
 block|{
@@ -1182,8 +1149,7 @@ name|NULL
 block|,
 literal|"gegl:gegl"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_GEGL_GRAPH */
+name|GIMP_HELP_FILTER_GEGL_GRAPH
 block|}
 block|,
 block|{
@@ -1204,8 +1170,7 @@ name|NULL
 block|,
 literal|"gegl:grid"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_GAUSSIAN_GRID */
+name|GIMP_HELP_FILTER_GAUSSIAN_GRID
 block|}
 block|,
 block|{
@@ -1226,8 +1191,7 @@ name|NULL
 block|,
 literal|"gegl:high-pass"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_HIGH_PASS */
+name|GIMP_HELP_FILTER_HIGH_PASS
 block|}
 block|,
 block|{
@@ -1248,8 +1212,7 @@ name|NULL
 block|,
 literal|"gegl:illusion"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_ILLUSION */
+name|GIMP_HELP_FILTER_ILLUSION
 block|}
 block|,
 block|{
@@ -1270,8 +1233,7 @@ name|NULL
 block|,
 literal|"gegl:mirrors"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_KALEIDOSCOPE */
+name|GIMP_HELP_FILTER_KALEIDOSCOPE
 block|}
 block|,
 block|{
@@ -1292,8 +1254,7 @@ name|NULL
 block|,
 literal|"gegl:lens-distortion"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_LENS_DISTORTION */
+name|GIMP_HELP_FILTER_LENS_DISTORTION
 block|}
 block|,
 block|{
@@ -1314,8 +1275,7 @@ name|NULL
 block|,
 literal|"gegl:lens-flare"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_LENS_FLARE */
+name|GIMP_HELP_FILTER_LENS_FLARE
 block|}
 block|,
 block|{
@@ -1336,8 +1296,7 @@ name|NULL
 block|,
 literal|"gegl:maze"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MAZE */
+name|GIMP_HELP_FILTER_MAZE
 block|}
 block|,
 block|{
@@ -1358,8 +1317,7 @@ name|NULL
 block|,
 literal|"gegl:mono-mixer"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MONO_MIXER */
+name|GIMP_HELP_FILTER_MONO_MIXER
 block|}
 block|,
 block|{
@@ -1380,8 +1338,7 @@ name|NULL
 block|,
 literal|"gegl:mosaic"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MOSAIC */
+name|GIMP_HELP_FILTER_MOSAIC
 block|}
 block|,
 block|{
@@ -1402,8 +1359,7 @@ name|NULL
 block|,
 literal|"gegl:motion-blur-circular"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_CIRCULAR */
+name|GIMP_HELP_FILTER_MOTION_BLUR_CIRCULAR
 block|}
 block|,
 block|{
@@ -1424,8 +1380,7 @@ name|NULL
 block|,
 literal|"gegl:motion-blur-linear"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_LINEAR */
+name|GIMP_HELP_FILTER_MOTION_BLUR_LINEAR
 block|}
 block|,
 block|{
@@ -1446,8 +1401,7 @@ name|NULL
 block|,
 literal|"gegl:motion-blur-zoom"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_MOTION_BLUR_ZOOM */
+name|GIMP_HELP_FILTER_MOTION_BLUR_ZOOM
 block|}
 block|,
 block|{
@@ -1468,8 +1422,7 @@ name|NULL
 block|,
 literal|"gegl:cell-noise"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_CELL */
+name|GIMP_HELP_FILTER_NOISE_CELL
 block|}
 block|,
 block|{
@@ -1490,8 +1443,7 @@ name|NULL
 block|,
 literal|"gegl:noise-cie-lch"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_CIE_LCH */
+name|GIMP_HELP_FILTER_NOISE_CIE_LCH
 block|}
 block|,
 block|{
@@ -1512,8 +1464,7 @@ name|NULL
 block|,
 literal|"gegl:noise-hsv"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_HSV */
+name|GIMP_HELP_FILTER_NOISE_HSV
 block|}
 block|,
 block|{
@@ -1534,8 +1485,7 @@ name|NULL
 block|,
 literal|"gegl:noise-hurl"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_HURL */
+name|GIMP_HELP_FILTER_NOISE_HURL
 block|}
 block|,
 block|{
@@ -1556,8 +1506,7 @@ name|NULL
 block|,
 literal|"gegl:perlin-noise"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_PERLIIN */
+name|GIMP_HELP_FILTER_NOISE_PERLIN
 block|}
 block|,
 block|{
@@ -1578,8 +1527,7 @@ name|NULL
 block|,
 literal|"gegl:noise-pick"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_PICK */
+name|GIMP_HELP_FILTER_NOISE_PICK
 block|}
 block|,
 block|{
@@ -1600,8 +1548,7 @@ name|NULL
 block|,
 literal|"gegl:noise-rgb"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_RGB */
+name|GIMP_HELP_FILTER_NOISE_RGB
 block|}
 block|,
 block|{
@@ -1622,8 +1569,7 @@ name|NULL
 block|,
 literal|"gegl:noise-reduction"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_REDUCTION */
+name|GIMP_HELP_FILTER_NOISE_REDUCTION
 block|}
 block|,
 block|{
@@ -1644,8 +1590,7 @@ name|NULL
 block|,
 literal|"gegl:simplex-noise"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_SIMPLEX */
+name|GIMP_HELP_FILTER_NOISE_SIMPLEX
 block|}
 block|,
 block|{
@@ -1666,8 +1611,7 @@ name|NULL
 block|,
 literal|"gegl:noise-slur"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_SLUR */
+name|GIMP_HELP_FILTER_NOISE_SLUR
 block|}
 block|,
 block|{
@@ -1688,8 +1632,7 @@ name|NULL
 block|,
 literal|"gegl:noise-solid"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_SOLID */
+name|GIMP_HELP_FILTER_NOISE_SOLID
 block|}
 block|,
 block|{
@@ -1710,8 +1653,7 @@ name|NULL
 block|,
 literal|"gegl:noise-spread"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_NOISE_SPREAD */
+name|GIMP_HELP_FILTER_NOISE_SPREAD
 block|}
 block|,
 block|{
@@ -1732,8 +1674,7 @@ name|NULL
 block|,
 literal|"gegl:oilify"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_OILIFY */
+name|GIMP_HELP_FILTER_OILIFY
 block|}
 block|,
 block|{
@@ -1754,8 +1695,7 @@ name|NULL
 block|,
 literal|"gegl:panorama-projection"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_PANORAMA_PROJECTION */
+name|GIMP_HELP_FILTER_PANORAMA_PROJECTION
 block|}
 block|,
 block|{
@@ -1776,8 +1716,7 @@ name|NULL
 block|,
 literal|"gegl:photocopy"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_PHOTOCOPY */
+name|GIMP_HELP_FILTER_PHOTOCOPY
 block|}
 block|,
 block|{
@@ -1798,8 +1737,7 @@ name|NULL
 block|,
 literal|"gegl:pixelize"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_PIXELIZE */
+name|GIMP_HELP_FILTER_PIXELIZE
 block|}
 block|,
 block|{
@@ -1820,8 +1758,7 @@ name|NULL
 block|,
 literal|"gegl:plasma"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_PLASMA */
+name|GIMP_HELP_FILTER_PLASMA
 block|}
 block|,
 block|{
@@ -1842,8 +1779,7 @@ name|NULL
 block|,
 literal|"gegl:polar-coordinates"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_POLAR_COORDINATES */
+name|GIMP_HELP_FILTER_POLAR_COORDINATES
 block|}
 block|,
 block|{
@@ -1885,8 +1821,7 @@ name|NULL
 block|,
 literal|"gegl:red-eye-removal"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_RED_EYE_REMOVAL */
+name|GIMP_HELP_FILTER_RED_EYE_REMOVAL
 block|}
 block|,
 block|{
@@ -1907,8 +1842,7 @@ name|NULL
 block|,
 literal|"gegl:ripple"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_RIPPLE */
+name|GIMP_HELP_FILTER_RIPPLE
 block|}
 block|,
 block|{
@@ -1929,8 +1863,7 @@ name|NULL
 block|,
 literal|"gegl:saturation"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SATURATION */
+name|GIMP_HELP_FILTER_SATURATION
 block|}
 block|,
 block|{
@@ -1951,8 +1884,7 @@ name|NULL
 block|,
 literal|"gimp:semi-flatten"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SEMI_FLATTEN */
+name|GIMP_HELP_FILTER_SEMI_FLATTEN
 block|}
 block|,
 block|{
@@ -1973,8 +1905,7 @@ name|NULL
 block|,
 literal|"gegl:sepia"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SEPIA */
+name|GIMP_HELP_FILTER_SEPIA
 block|}
 block|,
 block|{
@@ -1995,8 +1926,7 @@ name|NULL
 block|,
 literal|"gegl:shift"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SHIFT */
+name|GIMP_HELP_FILTER_SHIFT
 block|}
 block|,
 block|{
@@ -2017,8 +1947,7 @@ name|NULL
 block|,
 literal|"gegl:sinus"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SINUS */
+name|GIMP_HELP_FILTER_SINUS
 block|}
 block|,
 block|{
@@ -2039,8 +1968,7 @@ name|NULL
 block|,
 literal|"gegl:softglow"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SOFTGLOW */
+name|GIMP_HELP_FILTER_SOFTGLOW
 block|}
 block|,
 block|{
@@ -2061,8 +1989,7 @@ name|NULL
 block|,
 literal|"gegl:stretch-contrast"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_STRETCH_CONTRAST */
+name|GIMP_HELP_FILTER_STRETCH_CONTRAST
 block|}
 block|,
 block|{
@@ -2083,8 +2010,7 @@ name|NULL
 block|,
 literal|"gegl:stretch-contrast-hsv"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_STRETCH_CONTRAST_HSV */
+name|GIMP_HELP_FILTER_STRETCH_CONTRAST_HSV
 block|}
 block|,
 block|{
@@ -2105,8 +2031,7 @@ name|NULL
 block|,
 literal|"gegl:supernova"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_SUPERNOVA */
+name|GIMP_HELP_FILTER_SUPERNOVA
 block|}
 block|,
 block|{
@@ -2127,8 +2052,7 @@ name|NULL
 block|,
 literal|"gimp:threshold-alpha"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_THRESHOLD_ALPHA */
+name|GIMP_HELP_FILTER_THRESHOLD_ALPHA
 block|}
 block|,
 block|{
@@ -2149,8 +2073,7 @@ name|NULL
 block|,
 literal|"gegl:tile-glass"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_TILE_GLASS */
+name|GIMP_HELP_FILTER_TILE_GLASS
 block|}
 block|,
 block|{
@@ -2171,8 +2094,7 @@ name|NULL
 block|,
 literal|"gegl:tile-paper"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_TILE_GLASS */
+name|GIMP_HELP_FILTER_TILE_PAPER
 block|}
 block|,
 block|{
@@ -2193,8 +2115,7 @@ name|NULL
 block|,
 literal|"gegl:tile-seamless"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_TILE_SEAMLESS */
+name|GIMP_HELP_FILTER_TILE_SEAMLESS
 block|}
 block|,
 block|{
@@ -2215,8 +2136,7 @@ name|NULL
 block|,
 literal|"gegl:unsharp-mask"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_UNSHARP_MASK */
+name|GIMP_HELP_FILTER_UNSHARP_MASK
 block|}
 block|,
 block|{
@@ -2237,8 +2157,7 @@ name|NULL
 block|,
 literal|"gegl:value-propagate"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_VALUE_PROPAGATE */
+name|GIMP_HELP_FILTER_VALUE_PROPAGATE
 block|}
 block|,
 block|{
@@ -2259,8 +2178,7 @@ name|NULL
 block|,
 literal|"gegl:video-degradation"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_VIDEO_DEGRADATION */
+name|GIMP_HELP_FILTER_VIDEO_DEGRADATION
 block|}
 block|,
 block|{
@@ -2281,8 +2199,7 @@ name|NULL
 block|,
 literal|"gegl:vignette"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_VIGNETTE */
+name|GIMP_HELP_FILTER_VIGNETTE
 block|}
 block|,
 block|{
@@ -2303,8 +2220,7 @@ name|NULL
 block|,
 literal|"gegl:waves"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_WAVES */
+name|GIMP_HELP_FILTER_WAVES
 block|}
 block|,
 block|{
@@ -2325,8 +2241,7 @@ name|NULL
 block|,
 literal|"gegl:whirl-pinch"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_WHIRL_PINCH */
+name|GIMP_HELP_FILTER_WHIRL_PINCH
 block|}
 block|,
 block|{
@@ -2347,8 +2262,7 @@ name|NULL
 block|,
 literal|"gegl:wind"
 block|,
-name|NULL
-comment|/* FIXME GIMP_HELP_FILTER_WIND */
+name|GIMP_HELP_FILTER_WIND
 block|}
 block|}
 decl_stmt|;
