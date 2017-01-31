@@ -270,6 +270,9 @@ block|,
 comment|/* window ID    */
 literal|0
 block|,
+comment|/* monitor      */
+literal|0
+block|,
 comment|/* select delay */
 literal|0
 block|,
@@ -281,7 +284,9 @@ block|,
 literal|0
 block|,
 name|FALSE
+block|,
 comment|/* show cursor */
+name|SCREENSHOT_PROFILE_POLICY_MONITOR
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -911,10 +916,12 @@ name|shoot_type
 operator|==
 name|SHOOT_REGION
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
@@ -968,6 +975,39 @@ init|=
 name|gimp_get_default_comment
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|.
+name|profile_policy
+operator|==
+name|SCREENSHOT_PROFILE_POLICY_SRGB
+condition|)
+block|{
+name|GimpColorProfile
+modifier|*
+name|srgb_profile
+init|=
+name|gimp_color_profile_new_rgb_srgb
+argument_list|()
+decl_stmt|;
+name|gimp_image_convert_color_profile
+argument_list|(
+name|image_ID
+argument_list|,
+name|srgb_profile
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|srgb_profile
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|comment
@@ -1615,7 +1655,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  Hints  */
+comment|/*  Create delay hints notebook early  */
 name|notebook
 operator|=
 name|g_object_new
@@ -1631,108 +1671,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|notebook
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|notebook
-argument_list|)
-expr_stmt|;
-name|shoot_dialog_add_hint
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|SHOOT_ROOT
-argument_list|,
-name|_
-argument_list|(
-literal|"After the delay, the screenshot is taken."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|shoot_dialog_add_hint
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|SHOOT_REGION
-argument_list|,
-name|_
-argument_list|(
-literal|"After the delay, drag your mouse to select "
-literal|"the region for the screenshot."
-argument_list|)
-argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-name|shoot_dialog_add_hint
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|SHOOT_WINDOW
-argument_list|,
-name|_
-argument_list|(
-literal|"Click in a window to snap it after delay."
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
-name|shoot_dialog_add_hint
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|SHOOT_WINDOW
-argument_list|,
-name|_
-argument_list|(
-literal|"At the end of the delay, click in a window "
-literal|"to snap it."
-argument_list|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-name|gtk_notebook_set_current_page
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|shootvals
-operator|.
-name|shoot_type
 argument_list|)
 expr_stmt|;
 comment|/*  Area  */
@@ -1791,7 +1729,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*  single window  */
+comment|/*  Aingle window  */
 name|button
 operator|=
 name|gtk_radio_button_new_with_mnemonic
@@ -1865,7 +1803,7 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
-comment|/*  window decorations  */
+comment|/*  Window decorations  */
 if|if
 condition|(
 name|capabilities
@@ -1991,7 +1929,7 @@ operator|==
 name|SHOOT_WINDOW
 argument_list|)
 expr_stmt|;
-comment|/*  whole screen  */
+comment|/*  Whole screen  */
 name|button
 operator|=
 name|gtk_radio_button_new_with_mnemonic
@@ -2065,7 +2003,7 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
-comment|/*  mouse pointer  */
+comment|/*  Mouse pointer  */
 if|if
 condition|(
 name|capabilities
@@ -2191,7 +2129,7 @@ operator|==
 name|SHOOT_ROOT
 argument_list|)
 expr_stmt|;
-comment|/*  dragged region  */
+comment|/*  Dragged region  */
 if|if
 condition|(
 name|capabilities
@@ -2454,7 +2392,7 @@ operator|.
 name|select_delay
 argument_list|)
 expr_stmt|;
-comment|/* this is the unit label of a spinbutton */
+comment|/*  translators: this is the unit label of a spinbutton  */
 name|label
 operator|=
 name|gtk_label_new
@@ -2484,6 +2422,175 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
+argument_list|)
+expr_stmt|;
+comment|/*  Delay hints  */
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|notebook
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|notebook
+argument_list|)
+expr_stmt|;
+name|shoot_dialog_add_hint
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|SHOOT_ROOT
+argument_list|,
+name|_
+argument_list|(
+literal|"After the delay, the screenshot is taken."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|shoot_dialog_add_hint
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|SHOOT_REGION
+argument_list|,
+name|_
+argument_list|(
+literal|"After the delay, drag your mouse to select "
+literal|"the region for the screenshot."
+argument_list|)
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|shoot_dialog_add_hint
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|SHOOT_WINDOW
+argument_list|,
+name|_
+argument_list|(
+literal|"Click in a window to snap it after delay."
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|shoot_dialog_add_hint
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|SHOOT_WINDOW
+argument_list|,
+name|_
+argument_list|(
+literal|"At the end of the delay, click in a window "
+literal|"to snap it."
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+name|gtk_notebook_set_current_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|shootvals
+operator|.
+name|shoot_type
+argument_list|)
+expr_stmt|;
+comment|/*  Color profile  */
+name|frame
+operator|=
+name|gimp_int_radio_group_new
+argument_list|(
+name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Color Profile"
+argument_list|)
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_radio_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|shootvals
+operator|.
+name|profile_policy
+argument_list|,
+name|SCREENSHOT_PROFILE_POLICY_MONITOR
+argument_list|,
+name|_
+argument_list|(
+literal|"Tag image with _monitor profile"
+argument_list|)
+argument_list|,
+name|SCREENSHOT_PROFILE_POLICY_MONITOR
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Convert image to sR_GB"
+argument_list|)
+argument_list|,
+name|SCREENSHOT_PROFILE_POLICY_SRGB
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|main_vbox
+argument_list|)
+argument_list|,
+name|frame
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

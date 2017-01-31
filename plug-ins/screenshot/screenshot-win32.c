@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a9803e20108
+DECL|struct|__anon2c4036ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a9803e20208
+DECL|struct|__anon2c4036ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -485,6 +485,12 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GimpPDBStatusType
+name|status
+init|=
+name|GIMP_PDB_EXECUTION_ERROR
+decl_stmt|;
+comment|/* leave "shootvals->monitor" alone until somebody patches the code    * to be able to get a monitor's color profile    */
 name|image_id
 operator|=
 name|image_ID
@@ -511,9 +517,10 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-return|return
+name|status
+operator|=
 name|GIMP_PDB_SUCCESS
-return|;
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -528,9 +535,10 @@ block|{
 name|doWindowCapture
 argument_list|()
 expr_stmt|;
-return|return
+name|status
+operator|=
 name|GIMP_PDB_SUCCESS
-return|;
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -541,11 +549,51 @@ name|shoot_type
 operator|==
 name|SHOOT_REGION
 condition|)
+block|{
+comment|/* FIXME */
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+name|GimpColorProfile
+modifier|*
+name|profile
+decl_stmt|;
+name|profile
+operator|=
+name|gimp_screen_get_color_profile
+argument_list|(
+name|screen
+argument_list|,
+name|monitor
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|profile
+condition|)
+block|{
+name|gimp_image_set_color_profile
+argument_list|(
+operator|*
+name|image_ID
+argument_list|,
+name|profile
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 return|return
-name|GIMP_PDB_EXECUTION_ERROR
-return|;
-return|return
-name|GIMP_PDB_EXECUTION_ERROR
+name|status
 return|;
 block|}
 end_function
@@ -914,7 +962,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Finish up */
 operator|*
 name|image_id
 operator|=

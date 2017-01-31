@@ -295,6 +295,7 @@ operator|==
 name|EXIT_SUCCESS
 condition|)
 block|{
+comment|/* don't attach a profile, screencapture attached one        */
 operator|*
 name|image_ID
 operator|=
