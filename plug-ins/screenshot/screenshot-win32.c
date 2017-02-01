@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c4036ed0108
+DECL|struct|__anon280139240108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c4036ed0208
+DECL|struct|__anon280139240208
 typedef|typedef
 struct|struct
 block|{
@@ -563,12 +563,15 @@ name|GimpColorProfile
 modifier|*
 name|profile
 decl_stmt|;
+comment|/* XXX No idea if the "monitor" value is right at all, especially        * considering above comment. Just make so that it at least        * compiles!        */
 name|profile
 operator|=
 name|gimp_screen_get_color_profile
 argument_list|(
 name|screen
 argument_list|,
+name|shootvals
+operator|->
 name|monitor
 argument_list|)
 expr_stmt|;
