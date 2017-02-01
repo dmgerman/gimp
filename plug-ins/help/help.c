@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e420b0108
+DECL|struct|__anon28e28dc60108
 block|{
 DECL|member|procedure
 name|gchar
