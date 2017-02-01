@@ -301,6 +301,9 @@ parameter_list|,
 name|GimpLayerMode
 name|mode
 parameter_list|,
+name|GimpLayerCompositeMode
+name|composite
+parameter_list|,
 name|GeglBuffer
 modifier|*
 name|base_buffer
@@ -670,6 +673,9 @@ name|opacity
 parameter_list|,
 name|GimpLayerMode
 name|mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite
 parameter_list|,
 name|GeglBuffer
 modifier|*

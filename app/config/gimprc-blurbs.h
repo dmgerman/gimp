@@ -1256,6 +1256,15 @@ value|_("Sets the default mode for the 'New Layer' dialog.")
 end_define
 
 begin_define
+DECL|macro|LAYER_NEW_COMPOSITE_MODE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_COMPOSITE_MODE_BLURB
+define|\
+value|_("Sets the default composite mode for the 'New Layer' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_OPACITY_BLURB
 define|#
 directive|define

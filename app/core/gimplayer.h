@@ -113,6 +113,11 @@ name|GimpLayerMode
 name|mode
 decl_stmt|;
 comment|/*  layer combination mode     */
+DECL|member|composite
+name|GimpLayerCompositeMode
+name|composite
+decl_stmt|;
+comment|/*  layer composite mode       */
 DECL|member|lock_alpha
 name|gboolean
 name|lock_alpha
@@ -151,7 +156,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29421e1b0108
+DECL|struct|__anon2c74dc9a0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -209,6 +214,18 @@ name|void
 function_decl|(
 modifier|*
 name|mode_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+DECL|member|composite_changed
+name|void
+function_decl|(
+modifier|*
+name|composite_changed
 function_decl|)
 parameter_list|(
 name|GimpLayer
@@ -589,6 +606,34 @@ end_function_decl
 begin_function_decl
 name|GimpLayerMode
 name|gimp_layer_get_mode
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_layer_set_composite
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpLayerCompositeMode
+name|gimp_layer_get_composite
 parameter_list|(
 name|GimpLayer
 modifier|*

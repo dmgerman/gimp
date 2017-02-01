@@ -177,6 +177,12 @@ name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|applicator
 operator|->
+name|composite_mode
+operator|=
+name|GIMP_LAYER_COMPOSITE_AUTO
+expr_stmt|;
+name|applicator
+operator|->
 name|affect
 operator|=
 name|GIMP_COMPONENT_MASK_ALL
@@ -453,6 +459,10 @@ argument_list|,
 name|applicator
 operator|->
 name|paint_mode
+argument_list|,
+name|applicator
+operator|->
+name|composite_mode
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_mode_node_set_opacity
@@ -1589,7 +1599,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerMode paint_mode)
+DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerMode paint_mode,GimpLayerCompositeMode composite_mode)
 name|gimp_applicator_set_mode
 parameter_list|(
 name|GimpApplicator
@@ -1598,6 +1608,9 @@ name|applicator
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1615,6 +1628,12 @@ operator|->
 name|paint_mode
 operator|!=
 name|paint_mode
+operator|||
+name|applicator
+operator|->
+name|composite_mode
+operator|!=
+name|composite_mode
 condition|)
 block|{
 name|applicator
@@ -1623,6 +1642,12 @@ name|paint_mode
 operator|=
 name|paint_mode
 expr_stmt|;
+name|applicator
+operator|->
+name|composite_mode
+operator|=
+name|composite_mode
+expr_stmt|;
 name|gimp_gegl_mode_node_set_mode
 argument_list|(
 name|applicator
@@ -1630,6 +1655,8 @@ operator|->
 name|mode_node
 argument_list|,
 name|paint_mode
+argument_list|,
+name|composite_mode
 argument_list|)
 expr_stmt|;
 block|}

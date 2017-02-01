@@ -186,11 +186,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_AUTO
 block|,
-literal|"GIMP_LAYER_COMPOSITE_SRC_ATOP"
+literal|"GIMP_LAYER_COMPOSITE_AUTO"
 block|,
-literal|"src-atop"
+literal|"auto"
 block|}
 block|,
 block|{
@@ -199,6 +199,14 @@ block|,
 literal|"GIMP_LAYER_COMPOSITE_SRC_OVER"
 block|,
 literal|"src-over"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+literal|"GIMP_LAYER_COMPOSITE_SRC_ATOP"
+block|,
+literal|"src-atop"
 block|}
 block|,
 block|{
@@ -234,9 +242,14 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_AUTO
 block|,
-literal|"GIMP_LAYER_COMPOSITE_SRC_ATOP"
+name|NC_
+argument_list|(
+literal|"layer-composite-mode"
+argument_list|,
+literal|"Auto"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -244,7 +257,25 @@ block|,
 block|{
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
-literal|"GIMP_LAYER_COMPOSITE_SRC_OVER"
+name|NC_
+argument_list|(
+literal|"layer-composite-mode"
+argument_list|,
+literal|"Source over"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|NC_
+argument_list|(
+literal|"layer-composite-mode"
+argument_list|,
+literal|"Source atop"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -252,7 +283,12 @@ block|,
 block|{
 name|GIMP_LAYER_COMPOSITE_SRC_IN
 block|,
-literal|"GIMP_LAYER_COMPOSITE_SRC_IN"
+name|NC_
+argument_list|(
+literal|"layer-composite-mode"
+argument_list|,
+literal|"Source in"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -260,7 +296,12 @@ block|,
 block|{
 name|GIMP_LAYER_COMPOSITE_DST_ATOP
 block|,
-literal|"GIMP_LAYER_COMPOSITE_DST_ATOP"
+name|NC_
+argument_list|(
+literal|"layer-composite-mode"
+argument_list|,
+literal|"Destination atop"
+argument_list|)
 block|,
 name|NULL
 block|}

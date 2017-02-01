@@ -1251,6 +1251,11 @@ name|gimp_layer_get_mode
 argument_list|(
 name|fs
 argument_list|)
+argument_list|,
+name|gimp_layer_get_composite
+argument_list|(
+name|fs
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_applicator_set_affect

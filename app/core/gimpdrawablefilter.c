@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f324e50103
+DECL|enum|__anon2ace8e040103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -158,6 +158,10 @@ decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
+decl_stmt|;
+DECL|member|composite_mode
+name|GimpLayerCompositeMode
+name|composite_mode
 decl_stmt|;
 DECL|member|color_managed
 name|gboolean
@@ -601,6 +605,12 @@ operator|->
 name|paint_mode
 operator|=
 name|GIMP_LAYER_MODE_REPLACE
+expr_stmt|;
+name|drawable_filter
+operator|->
+name|composite_mode
+operator|=
+name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 block|}
 end_function
@@ -1329,7 +1339,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerMode paint_mode)
+DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerMode paint_mode,GimpLayerCompositeMode composite_mode)
 name|gimp_drawable_filter_set_mode
 parameter_list|(
 name|GimpDrawableFilter
@@ -1338,6 +1348,9 @@ name|filter
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1355,6 +1368,12 @@ operator|!=
 name|filter
 operator|->
 name|paint_mode
+operator|||
+name|composite_mode
+operator|!=
+name|filter
+operator|->
+name|composite_mode
 condition|)
 block|{
 name|filter
@@ -1362,6 +1381,12 @@ operator|->
 name|paint_mode
 operator|=
 name|paint_mode
+expr_stmt|;
+name|filter
+operator|->
+name|composite_mode
+operator|=
+name|composite_mode
 expr_stmt|;
 name|gimp_drawable_filter_sync_mode
 argument_list|(
@@ -2314,6 +2339,10 @@ argument_list|,
 name|filter
 operator|->
 name|paint_mode
+argument_list|,
+name|filter
+operator|->
+name|composite_mode
 argument_list|)
 expr_stmt|;
 block|}

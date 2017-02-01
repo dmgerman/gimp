@@ -82,6 +82,9 @@ name|node
 parameter_list|,
 name|GimpLayerMode
 name|mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite
 parameter_list|)
 function_decl|;
 end_function_decl

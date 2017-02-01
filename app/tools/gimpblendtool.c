@@ -2658,6 +2658,8 @@ name|gimp_context_get_paint_mode
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|)
 expr_stmt|;
 block|}
@@ -4642,6 +4644,8 @@ name|gimp_context_get_paint_mode
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

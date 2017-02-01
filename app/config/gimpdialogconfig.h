@@ -183,6 +183,10 @@ DECL|member|layer_new_mode
 name|GimpLayerMode
 name|layer_new_mode
 decl_stmt|;
+DECL|member|layer_new_composite_mode
+name|GimpLayerCompositeMode
+name|layer_new_composite_mode
+decl_stmt|;
 DECL|member|layer_new_opacity
 name|gdouble
 name|layer_new_opacity

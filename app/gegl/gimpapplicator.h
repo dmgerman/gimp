@@ -171,6 +171,10 @@ DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
+DECL|member|composite_mode
+name|GimpLayerCompositeMode
+name|composite_mode
+decl_stmt|;
 DECL|member|mode_node
 name|GeglNode
 modifier|*
@@ -396,6 +400,9 @@ name|applicator
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 function_decl|;
 end_function_decl

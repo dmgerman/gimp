@@ -221,6 +221,9 @@ name|filter
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|)
 function_decl|;
 end_function_decl

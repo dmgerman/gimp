@@ -49,6 +49,9 @@ parameter_list|,
 name|GimpLayerMode
 name|layer_mode
 parameter_list|,
+name|GimpLayerCompositeMode
+name|layer_composite
+parameter_list|,
 name|gdouble
 name|layer_opacity
 parameter_list|,
@@ -147,6 +150,9 @@ name|layer_name
 parameter_list|,
 name|GimpLayerMode
 name|layer_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|layer_composite
 parameter_list|,
 name|gdouble
 name|layer_opacity

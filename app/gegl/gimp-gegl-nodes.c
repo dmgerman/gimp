@@ -456,7 +456,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerMode mode)
+DECL|function|gimp_gegl_mode_node_set_mode (GeglNode * node,GimpLayerMode mode,GimpLayerCompositeMode composite)
 name|gimp_gegl_mode_node_set_mode
 parameter_list|(
 name|GeglNode
@@ -465,6 +465,9 @@ name|node
 parameter_list|,
 name|GimpLayerMode
 name|mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite
 parameter_list|)
 block|{
 name|gdouble
@@ -476,6 +479,19 @@ name|GEGL_IS_NODE
 argument_list|(
 name|node
 argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|composite
+operator|==
+name|GIMP_LAYER_COMPOSITE_AUTO
+condition|)
+name|composite
+operator|=
+name|gimp_layer_mode_get_composite_mode
+argument_list|(
+name|mode
 argument_list|)
 expr_stmt|;
 name|gegl_node_get
@@ -506,6 +522,10 @@ literal|"layer-mode"
 argument_list|,
 name|mode
 argument_list|,
+literal|"composite-mode"
+argument_list|,
+name|composite
+argument_list|,
 literal|"opacity"
 argument_list|,
 name|opacity
@@ -527,13 +547,6 @@ argument_list|,
 literal|"composite-space"
 argument_list|,
 name|gimp_layer_mode_get_composite_space
-argument_list|(
-name|mode
-argument_list|)
-argument_list|,
-literal|"composite-mode"
-argument_list|,
-name|gimp_layer_mode_get_composite_mode
 argument_list|(
 name|mode
 argument_list|)

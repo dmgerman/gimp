@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b90c30108
+DECL|struct|__anon2aa266940108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b90c30208
+DECL|struct|__anon2aa266940208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -577,6 +577,8 @@ argument_list|,
 name|opacity
 argument_list|,
 name|paint_mode
+argument_list|,
+name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|,
 name|NULL
 argument_list|,

@@ -37,7 +37,8 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baca7db0103
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2bbf9e550103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -74,19 +75,27 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baca7db0203
+DECL|enum|__anon2bbf9e550203
 block|{
-DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_ATOP
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
+name|GIMP_LAYER_COMPOSITE_AUTO
 block|,
+comment|/*< desc="Auto">*/
 DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_OVER
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
+comment|/*< desc="Source over">*/
+DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+comment|/*< desc="Source atop">*/
 DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_IN
 name|GIMP_LAYER_COMPOSITE_SRC_IN
 block|,
+comment|/*< desc="Source in">*/
 DECL|enumerator|GIMP_LAYER_COMPOSITE_DST_ATOP
 name|GIMP_LAYER_COMPOSITE_DST_ATOP
+comment|/*< desc="Destination atop">*/
 DECL|typedef|GimpLayerCompositeMode
 block|}
 name|GimpLayerCompositeMode

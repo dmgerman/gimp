@@ -135,6 +135,10 @@ DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
+DECL|member|composite_mode
+name|GimpLayerCompositeMode
+name|composite_mode
+decl_stmt|;
 DECL|member|opacity
 name|gdouble
 name|opacity
