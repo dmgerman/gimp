@@ -208,6 +208,10 @@ specifier|const
 name|gchar
 modifier|*
 name|psd_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+modifier|*
+name|layer_composite
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -218,7 +222,10 @@ modifier|*
 name|gimp_to_psd_blend_mode
 parameter_list|(
 name|GimpLayerMode
-name|gimp_layer_mode
+name|layer_mode
+parameter_list|,
+name|GimpLayerCompositeMode
+name|layer_composite
 parameter_list|)
 function_decl|;
 end_function_decl

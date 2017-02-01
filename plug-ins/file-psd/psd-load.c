@@ -6538,6 +6538,9 @@ decl_stmt|;
 name|GimpLayerMode
 name|layer_mode
 decl_stmt|;
+name|GimpLayerCompositeMode
+name|layer_composite
+decl_stmt|;
 name|IFDBG
 argument_list|(
 literal|2
@@ -8052,6 +8055,9 @@ name|lidx
 index|]
 operator|->
 name|blend_mode
+argument_list|,
+operator|&
+name|layer_composite
 argument_list|)
 expr_stmt|;
 name|gimp_layer_set_mode
@@ -8059,6 +8065,13 @@ argument_list|(
 name|layer_id
 argument_list|,
 name|layer_mode
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_composite_mode
+argument_list|(
+name|layer_id
+argument_list|,
+name|layer_composite
 argument_list|)
 expr_stmt|;
 name|gimp_layer_set_opacity
@@ -8492,6 +8505,9 @@ name|lidx
 index|]
 operator|->
 name|blend_mode
+argument_list|,
+operator|&
+name|layer_composite
 argument_list|)
 expr_stmt|;
 name|layer_id
@@ -8525,6 +8541,13 @@ operator|/
 literal|255
 argument_list|,
 name|layer_mode
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_composite_mode
+argument_list|(
+name|layer_id
+argument_list|,
+name|layer_composite
 argument_list|)
 expr_stmt|;
 name|IFDBG
