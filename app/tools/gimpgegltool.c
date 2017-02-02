@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e55c8f0103
+DECL|enum|__anon292f5c400103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -390,6 +390,8 @@ literal|"gegl:high-pass"
 block|,
 literal|"gegl:illusion"
 block|,
+literal|"gegl:image-gradient"
+block|,
 literal|"gegl:invert-linear"
 block|,
 literal|"gegl:invert-gamma"
@@ -462,6 +464,8 @@ literal|"gegl:sinus"
 block|,
 literal|"gegl:slic"
 block|,
+literal|"gegl:snn-mean"
+block|,
 literal|"gegl:softglow"
 block|,
 literal|"gegl:stretch-contrast"
@@ -502,6 +506,9 @@ comment|/* these ops are blacklisted for other reasons */
 literal|"gegl:contrast-curve"
 block|,
 literal|"gegl:convert-format"
+block|,
+comment|/* pointless */
+literal|"gegl:ditto"
 block|,
 comment|/* pointless */
 literal|"gegl:fill-path"
@@ -562,7 +569,7 @@ comment|/* we use gimp's op */
 literal|"gegl:tile"
 block|,
 comment|/* pointless */
-literal|"gegl:unpremus"
+literal|"gegl:unpremul"
 block|,
 comment|/* pointless */
 literal|"gegl:vector-stroke"

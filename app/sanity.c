@@ -1768,6 +1768,8 @@ literal|"gegl:high-pass"
 block|,
 literal|"gegl:illusion"
 block|,
+literal|"gegl:image-gradient"
+block|,
 literal|"gegl:introspect"
 block|,
 literal|"gegl:invert-gamma"
@@ -1855,6 +1857,8 @@ block|,
 literal|"gegl:sinus"
 block|,
 literal|"gegl:slic"
+block|,
+literal|"gegl:snn-mean"
 block|,
 literal|"gegl:softglow"
 block|,

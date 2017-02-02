@@ -2686,6 +2686,14 @@ value|"gimp-filter-illusion"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_IMAGE_GRADIENT
+define|#
+directive|define
+name|GIMP_HELP_FILTER_IMAGE_GRADIENT
+value|"gimp-filter-image-gradient"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_KALEIDOSCOPE
 define|#
 directive|define
@@ -2979,6 +2987,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_SLIC
 value|"gimp-filter-slic"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_SNN_MEAN
+define|#
+directive|define
+name|GIMP_HELP_FILTER_SNN_MEAN
+value|"gimp-filter-snn-mean"
 end_define
 
 begin_define
