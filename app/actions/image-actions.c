@@ -299,6 +299,19 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"colors-tone-mapping-menu"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"image-action"
+argument_list|,
+literal|"_Tone Mapping"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"colors-components-menu"
 block|,
 name|NULL

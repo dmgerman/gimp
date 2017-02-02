@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2e2fd0108
+DECL|struct|__anon2a31baa90108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2e2fd0203
+DECL|enum|__anon2a31baa90203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2e2fd0308
+DECL|struct|__anon2a31baa90308
 block|{
 DECL|member|N
 name|gint
@@ -582,7 +582,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Colors/Modify"
+literal|"<Image>/Colors/Tone Mapping"
 argument_list|)
 expr_stmt|;
 block|}

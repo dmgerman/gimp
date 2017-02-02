@@ -2630,6 +2630,14 @@ value|"gimp-filter-exposure"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_FATTAL_2002
+define|#
+directive|define
+name|GIMP_HELP_FILTER_FATTAL_2002
+value|"gimp-filter-fattal-2002"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_FRACTAL_TRACE
 define|#
 directive|define
@@ -2715,6 +2723,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_LENS_FLARE
 value|"gimp-filter-lens-flare"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_MANTIUK_2006
+define|#
+directive|define
+name|GIMP_HELP_FILTER_MANTIUK_2006
+value|"gimp-filter-manituk-2006"
 end_define
 
 begin_define
@@ -2926,6 +2942,14 @@ value|"gimp-filter-red-eye-removal"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_REINHARD_2005
+define|#
+directive|define
+name|GIMP_HELP_FILTER_REINHARD_2005
+value|"gimp-filter-reinhard-2005"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_RGB_CLIP
 define|#
 directive|define
@@ -3019,6 +3043,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_STRETCH_CONTRAST_HSV
 value|"gimp-filter-stretch-contrast-hsv"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_STRESS
+define|#
+directive|define
+name|GIMP_HELP_FILTER_STRESS
+value|"gimp-filter-stress"
 end_define
 
 begin_define

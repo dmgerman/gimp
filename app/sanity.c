@@ -1754,6 +1754,8 @@ literal|"gegl:engrave"
 block|,
 literal|"gegl:exposure"
 block|,
+literal|"gegl:fattal02"
+block|,
 literal|"gegl:fractal-trace"
 block|,
 literal|"gegl:gaussian-blur"
@@ -1779,6 +1781,8 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
+block|,
+literal|"gegl:mantiuk06"
 block|,
 literal|"gegl:map-absolute"
 block|,
@@ -1836,6 +1840,8 @@ literal|"gegl:polar-coordinates"
 block|,
 literal|"gegl:red-eye-removal"
 block|,
+literal|"gegl:reinhard05"
+block|,
 literal|"gegl:rgb-clip"
 block|,
 literal|"gegl:ripple"
@@ -1865,6 +1871,8 @@ block|,
 literal|"gegl:stretch-contrast"
 block|,
 literal|"gegl:stretch-contrast-hsv"
+block|,
+literal|"gegl:stress"
 block|,
 literal|"gegl:supernova"
 block|,
