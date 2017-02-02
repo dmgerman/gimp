@@ -103,6 +103,20 @@ DECL|member|parent_class
 name|GeglOperationPointComposer3Class
 name|parent_class
 decl_stmt|;
+comment|/*  virtual functions  */
+comment|/* Returns the set of inputs that the layer mode affects, apart    * from the overlapping regions.  Returns an empty set by default,    * which is suitable for almost all layer modes.    */
+DECL|member|get_affect_mask
+name|GimpLayerModeAffectMask
+function_decl|(
+modifier|*
+name|get_affect_mask
+function_decl|)
+parameter_list|(
+name|GimpOperationLayerMode
+modifier|*
+name|layer_mode
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -157,6 +171,17 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpLayerModeAffectMask
+name|gimp_operation_layer_mode_get_affect_mask
+parameter_list|(
+name|GimpOperationLayerMode
+modifier|*
+name|layer_mode
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean

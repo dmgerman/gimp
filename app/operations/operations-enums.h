@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bbf9e550103
+DECL|enum|__anon2b3239af0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -75,7 +75,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbf9e550203
+DECL|enum|__anon2b3239af0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -99,6 +99,40 @@ comment|/*< desc="Destination atop">*/
 DECL|typedef|GimpLayerCompositeMode
 block|}
 name|GimpLayerCompositeMode
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2b3239af0303
+block|{
+DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
+name|GIMP_LAYER_MODE_AFFECT_NONE
+init|=
+literal|0
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_AFFECT_DST
+name|GIMP_LAYER_MODE_AFFECT_DST
+init|=
+literal|1
+operator|<<
+literal|0
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_AFFECT_SRC
+name|GIMP_LAYER_MODE_AFFECT_SRC
+init|=
+literal|1
+operator|<<
+literal|1
+DECL|typedef|GimpLayerModeAffectMask
+block|}
+name|GimpLayerModeAffectMask
 typedef|;
 end_typedef
 

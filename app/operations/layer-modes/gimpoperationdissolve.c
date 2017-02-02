@@ -35,6 +35,18 @@ name|RANDOM_TABLE_SIZE
 value|4096
 end_define
 
+begin_function_decl
+specifier|static
+name|GimpLayerModeAffectMask
+name|gimp_operation_dissolve_get_affect_mask
+parameter_list|(
+name|GimpOperationLayerMode
+modifier|*
+name|layer_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpOperationDissolve,gimp_operation_dissolve,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
@@ -75,6 +87,10 @@ name|GeglOperationPointComposer3Class
 modifier|*
 name|point_composer_class
 decl_stmt|;
+name|GimpOperationLayerModeClass
+modifier|*
+name|layer_mode_class
+decl_stmt|;
 name|GRand
 modifier|*
 name|gr
@@ -92,6 +108,13 @@ expr_stmt|;
 name|point_composer_class
 operator|=
 name|GEGL_OPERATION_POINT_COMPOSER3_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|layer_mode_class
+operator|=
+name|GIMP_OPERATION_LAYER_MODE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -120,6 +143,12 @@ operator|->
 name|process
 operator|=
 name|gimp_operation_dissolve_process
+expr_stmt|;
+name|layer_mode_class
+operator|->
+name|get_affect_mask
+operator|=
+name|gimp_operation_dissolve_get_affect_mask
 expr_stmt|;
 comment|/* generate a table of random seeds */
 name|gr
@@ -486,6 +515,23 @@ expr_stmt|;
 block|}
 return|return
 name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpLayerModeAffectMask
+DECL|function|gimp_operation_dissolve_get_affect_mask (GimpOperationLayerMode * layer_mode)
+name|gimp_operation_dissolve_get_affect_mask
+parameter_list|(
+name|GimpOperationLayerMode
+modifier|*
+name|layer_mode
+parameter_list|)
+block|{
+return|return
+name|GIMP_LAYER_MODE_AFFECT_SRC
 return|;
 block|}
 end_function
