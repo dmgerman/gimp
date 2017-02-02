@@ -2462,14 +2462,6 @@ value|"gimp-filter-color-exchange"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILTER_DITHER
-define|#
-directive|define
-name|GIMP_HELP_FILTER_DITHER
-value|"gimp-filter-dither"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILTER_COLOR_ROTATE
 define|#
 directive|define
@@ -2491,6 +2483,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_COLOR_TO_ALPHA
 value|"gimp-filter-color-to-alpha"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_COMPONENT_EXTRACT
+define|#
+directive|define
+name|GIMP_HELP_FILTER_COMPONENT_EXTRACT
+value|"gimp-filter-component-extract"
 end_define
 
 begin_define
@@ -2555,6 +2555,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_DISTANCE_MAP
 value|"gimp-filter-distance-map"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_DITHER
+define|#
+directive|define
+name|GIMP_HELP_FILTER_DITHER
+value|"gimp-filter-dither"
 end_define
 
 begin_define
@@ -2910,6 +2918,14 @@ value|"gimp-filter-red-eye-removal"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_RGB_CLIP
+define|#
+directive|define
+name|GIMP_HELP_FILTER_RGB_CLIP
+value|"gimp-filter-rgb-clip"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_RIPPLE
 define|#
 directive|define
@@ -2955,6 +2971,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_SINUS
 value|"gimp-filter-sinus"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_SLIC
+define|#
+directive|define
+name|GIMP_HELP_FILTER_SLIC
+value|"gimp-filter-slic"
 end_define
 
 begin_define
@@ -3051,6 +3075,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_VIGNETTE
 value|"gimp-filter-vignette"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_WATERPIXELS
+define|#
+directive|define
+name|GIMP_HELP_FILTER_WATERPIXELS
+value|"gimp-filter-waterpixels"
 end_define
 
 begin_define

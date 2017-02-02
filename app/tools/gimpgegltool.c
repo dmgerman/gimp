@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf210280103
+DECL|enum|__anon28e55c8f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -342,6 +342,8 @@ literal|"gegl:color-temperature"
 block|,
 literal|"gegl:color-to-alpha"
 block|,
+literal|"gegl:component-extract"
+block|,
 literal|"gegl:convolution-matrix"
 block|,
 literal|"gegl:cubism"
@@ -444,6 +446,8 @@ literal|"gegl:polar-coordinates"
 block|,
 literal|"gegl:red-eye-removal"
 block|,
+literal|"gegl:rgb-clip"
+block|,
 literal|"gegl:ripple"
 block|,
 literal|"gegl:saturation"
@@ -455,6 +459,8 @@ block|,
 literal|"gegl:simplex-noise"
 block|,
 literal|"gegl:sinus"
+block|,
+literal|"gegl:slic"
 block|,
 literal|"gegl:softglow"
 block|,
@@ -481,6 +487,8 @@ block|,
 literal|"gegl:video-degradation"
 block|,
 literal|"gegl:vignette"
+block|,
+literal|"gegl:waterpixels"
 block|,
 literal|"gegl:wavelet-blur"
 block|,
@@ -516,6 +524,12 @@ comment|/* not usable here */
 literal|"gegl:linear-gradient"
 block|,
 comment|/* we use the blend tool */
+literal|"gegl:map-absolute"
+block|,
+comment|/* pointless */
+literal|"gegl:map-relative"
+block|,
+comment|/* pointless */
 literal|"gegl:matting-global"
 block|,
 comment|/* used in the foreground select tool */
@@ -533,6 +547,9 @@ comment|/* we use gimp's op */
 literal|"gegl:radial-gradient"
 block|,
 comment|/* we use the blend tool */
+literal|"gegl:rectangle"
+block|,
+comment|/* pointless */
 literal|"gegl:seamless-clone"
 block|,
 comment|/* used in the seamless clone tool */
@@ -543,6 +560,9 @@ literal|"gegl:threshold"
 block|,
 comment|/* we use gimp's op */
 literal|"gegl:tile"
+block|,
+comment|/* pointless */
+literal|"gegl:unpremus"
 block|,
 comment|/* pointless */
 literal|"gegl:vector-stroke"

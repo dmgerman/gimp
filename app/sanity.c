@@ -1716,6 +1716,8 @@ literal|"gegl:color-temperature"
 block|,
 literal|"gegl:color-to-alpha"
 block|,
+literal|"gegl:component-extract"
+block|,
 literal|"gegl:convolution-matrix"
 block|,
 literal|"gegl:copy-buffer"
@@ -1832,6 +1834,8 @@ literal|"gegl:polar-coordinates"
 block|,
 literal|"gegl:red-eye-removal"
 block|,
+literal|"gegl:rgb-clip"
+block|,
 literal|"gegl:ripple"
 block|,
 literal|"gegl:saturation"
@@ -1849,6 +1853,8 @@ block|,
 literal|"gegl:shift"
 block|,
 literal|"gegl:sinus"
+block|,
+literal|"gegl:slic"
 block|,
 literal|"gegl:softglow"
 block|,
@@ -1883,6 +1889,8 @@ block|,
 literal|"gegl:vignette"
 block|,
 literal|"gegl:warp"
+block|,
+literal|"gegl:waterpixels"
 block|,
 literal|"gegl:wavelet-blur"
 block|,
