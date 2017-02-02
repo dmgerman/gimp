@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29119bff0103
+DECL|enum|__anon2a45301d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6992,7 +6992,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* added according to:      http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
+comment|/* added according to:     http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
 end_comment
 
 begin_function
@@ -7170,7 +7170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* added according to:      http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
+comment|/* added according to:     http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
 end_comment
 
 begin_function
@@ -7325,7 +7325,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* added according to:      http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
+comment|/* added according to:     http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
 end_comment
 
 begin_function
