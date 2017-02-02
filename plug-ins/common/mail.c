@@ -19,6 +19,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|SENDMAIL
+end_ifdef
+
 begin_include
 include|#
 directive|include
@@ -30,6 +36,11 @@ include|#
 directive|include
 file|<sys/wait.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -90,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73792f0108
+DECL|struct|__anon29549c1c0108
 block|{
 DECL|member|filename
 name|gchar
