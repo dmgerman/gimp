@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297de7be0103
+DECL|enum|__anon29eb22560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8398,6 +8398,8 @@ block|,
 literal|"gimp:normal"
 block|,
 literal|0
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -8406,6 +8408,8 @@ block|,
 literal|"gimp:dissolve"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -8414,6 +8418,8 @@ block|,
 literal|"gimp:behind"
 block|,
 literal|0
+block|,
+name|GIMP_LAYER_COMPOSITE_DST_ATOP
 block|,   }
 block|,
 block|{
@@ -8422,7 +8428,9 @@ block|,
 literal|"gimp:multiply-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
-block|}
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,   }
 block|,
 block|{
 name|GIMP_LAYER_MODE_SCREEN_LEGACY
@@ -8430,6 +8438,8 @@ block|,
 literal|"gimp:screen-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8438,6 +8448,8 @@ block|,
 literal|"gimp:overlay-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8446,6 +8458,8 @@ block|,
 literal|"gimp:difference-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8454,6 +8468,8 @@ block|,
 literal|"gimp:addition-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8462,6 +8478,8 @@ block|,
 literal|"gimp:subtract-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8470,6 +8488,8 @@ block|,
 literal|"gimp:darken-only-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8478,6 +8498,8 @@ block|,
 literal|"gimp:lighten-only-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8486,6 +8508,8 @@ block|,
 literal|"gimp:hsv-hue-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8494,6 +8518,8 @@ block|,
 literal|"gimp:hsv-saturation-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8502,6 +8528,8 @@ block|,
 literal|"gimp:hsv-color-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8510,6 +8538,8 @@ block|,
 literal|"gimp:hsv-value-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8518,6 +8548,8 @@ block|,
 literal|"gimp:divide-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8526,6 +8558,8 @@ block|,
 literal|"gimp:dodge-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8534,6 +8568,8 @@ block|,
 literal|"gimp:burn-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8542,6 +8578,8 @@ block|,
 literal|"gimp:hardlight-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8550,6 +8588,8 @@ block|,
 literal|"gimp:softlight-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8558,6 +8598,8 @@ block|,
 literal|"gimp:grain-extract-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8566,6 +8608,8 @@ block|,
 literal|"gimp:grain-merge-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -8574,6 +8618,8 @@ block|,
 literal|"gimp:color-erase"
 block|,
 literal|0
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
