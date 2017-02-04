@@ -80,6 +80,8 @@ name|GIMP_LAYER_MODE_PIN_LIGHT
 block|,
 name|GIMP_LAYER_MODE_LINEAR_LIGHT
 block|,
+name|GIMP_LAYER_MODE_HARD_MIX
+block|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 block|,
 name|GIMP_LAYER_MODE_SUBTRACT
@@ -148,6 +150,8 @@ name|GIMP_LAYER_MODE_PIN_LIGHT_LINEAR
 block|,
 name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
 block|,
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+block|,
 name|GIMP_LAYER_MODE_DIFFERENCE_LINEAR
 block|,
 name|GIMP_LAYER_MODE_SUBTRACT_LINEAR
@@ -207,6 +211,8 @@ block|,
 name|GIMP_LAYER_MODE_PIN_LIGHT
 block|,
 name|GIMP_LAYER_MODE_LINEAR_LIGHT
+block|,
+name|GIMP_LAYER_MODE_HARD_MIX
 block|,
 name|GIMP_LAYER_MODE_DIFFERENCE
 block|,
@@ -574,6 +580,17 @@ block|,
 name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
 block|,
 name|GIMP_LAYER_MODE_LINEAR_LIGHT
+block|,
+operator|-
+literal|1
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HARD_MIX
+block|,
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+block|,
+name|GIMP_LAYER_MODE_HARD_MIX
 block|,
 operator|-
 literal|1

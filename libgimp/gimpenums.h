@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2905ce110103
+DECL|enum|__anon27db2eb00103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2905ce110203
+DECL|enum|__anon27db2eb00203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2905ce110303
+DECL|enum|__anon27db2eb00303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2905ce110403
+DECL|enum|__anon27db2eb00403
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -202,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2905ce110503
+DECL|enum|__anon27db2eb00503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
 name|GIMP_LAYER_MODE_NORMAL
@@ -404,6 +404,12 @@ name|GIMP_LAYER_MODE_LINEAR_LIGHT
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
 name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HARD_MIX
+name|GIMP_LAYER_MODE_HARD_MIX
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_EXCLUSION
 name|GIMP_LAYER_MODE_EXCLUSION

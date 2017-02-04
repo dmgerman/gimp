@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988b1b50103
+DECL|enum|__anon2b56d44f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1361,7 +1361,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT
+name|GIMP_LAYER_MODE_HARD_MIX
 argument_list|,
 operator|-
 literal|1
@@ -1504,7 +1504,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
 argument_list|,
 operator|-
 literal|1
@@ -1628,7 +1628,7 @@ name|gimp_layer_mode_combo_box_insert_separator
 argument_list|(
 name|store
 argument_list|,
-name|GIMP_LAYER_MODE_LINEAR_LIGHT
+name|GIMP_LAYER_MODE_HARD_MIX
 argument_list|,
 operator|-
 literal|1

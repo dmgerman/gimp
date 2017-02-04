@@ -1942,6 +1942,22 @@ literal|"linear-light-linear"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_HARD_MIX
+block|,
+literal|"GIMP_LAYER_MODE_HARD_MIX"
+block|,
+literal|"hard-mix"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+block|,
+literal|"GIMP_LAYER_MODE_HARD_MIX_LINEAR"
+block|,
+literal|"hard-mix-linear"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_EXCLUSION
 block|,
 literal|"GIMP_LAYER_MODE_EXCLUSION"
@@ -2911,6 +2927,32 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Linear light (linear)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HARD_MIX
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hard mix"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hard mix (linear)"
 argument_list|)
 block|,
 name|NULL
