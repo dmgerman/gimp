@@ -3459,6 +3459,20 @@ expr_stmt|;
 comment|/* Color Burn (ps6) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_LINEAR_BURN
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"lbrn"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Linear Burn (ps6) */
+break|break;
+case|case
 name|GIMP_LAYER_MODE_HARDLIGHT
 case|:
 case|case
@@ -3799,6 +3813,7 @@ literal|"ADD"
 block|,
 literal|"SUBTRACT"
 block|,
+literal|"EXCLUSION"
 literal|"DARKEN"
 block|,
 literal|"LIGHTEN"
@@ -3817,9 +3832,16 @@ literal|"DODGE"
 block|,
 literal|"BURN"
 block|,
+literal|"LINEAR BURN"
 literal|"HARD LIGHT"
 block|,
 literal|"SOFT LIGHT"
+block|,
+literal|"VIVID LIGHT"
+block|,
+literal|"LINEAR LIGHT"
+block|,
+literal|"PIN LIGHT"
 block|,
 literal|"GRAIN EXTRACT"
 block|,
