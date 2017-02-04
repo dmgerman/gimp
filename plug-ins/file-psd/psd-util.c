@@ -3143,6 +3143,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_LAYER_MODE_MULTIPLY
+case|:
+case|case
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 case|:
 name|psd_mode
@@ -3156,6 +3159,9 @@ argument_list|)
 expr_stmt|;
 comment|/* Multiply (ps3) */
 break|break;
+case|case
+name|GIMP_LAYER_MODE_SCREEN
+case|:
 case|case
 name|GIMP_LAYER_MODE_SCREEN_LEGACY
 case|:
@@ -3185,6 +3191,9 @@ expr_stmt|;
 comment|/* Overlay (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_DIFFERENCE
+case|:
+case|case
 name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 case|:
 name|psd_mode
@@ -3198,6 +3207,9 @@ argument_list|)
 expr_stmt|;
 comment|/* Difference (ps3) */
 break|break;
+case|case
+name|GIMP_LAYER_MODE_ADDITION
+case|:
 case|case
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
 case|:
@@ -3240,6 +3252,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_LAYER_MODE_DARKEN_ONLY
+case|:
+case|case
 name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 case|:
 name|psd_mode
@@ -3253,6 +3268,9 @@ argument_list|)
 expr_stmt|;
 comment|/* Darken (ps3) */
 break|break;
+case|case
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY
+case|:
 case|case
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 case|:
@@ -3268,6 +3286,9 @@ expr_stmt|;
 comment|/* Lighten (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_LCH_HUE
+case|:
+case|case
 name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 case|:
 name|psd_mode
@@ -3282,6 +3303,9 @@ expr_stmt|;
 comment|/* Hue (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_LCH_CHROMA
+case|:
+case|case
 name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 case|:
 if|if
@@ -3290,8 +3314,8 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for "
-literal|"blend mode: %s. Results will differ."
+literal|"GIMP uses a different equation to Photoshop for "
+literal|"blend mode: %s. Results may differ."
 argument_list|,
 name|gimp_layer_mode_effects_name
 argument_list|(
@@ -3311,6 +3335,9 @@ expr_stmt|;
 comment|/* Saturation (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_LCH_COLOR
+case|:
+case|case
 name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
 case|:
 name|psd_mode
@@ -3325,6 +3352,9 @@ expr_stmt|;
 comment|/* Color (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
+case|:
+case|case
 name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 case|:
 if|if
@@ -3333,8 +3363,8 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for "
-literal|"blend mode: %s. Results will differ."
+literal|"GIMP uses a different equation to Photoshop for "
+literal|"blend mode: %s. Results may differ."
 argument_list|,
 name|gimp_layer_mode_effects_name
 argument_list|(
@@ -3381,6 +3411,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_LAYER_MODE_DODGE
+case|:
+case|case
 name|GIMP_LAYER_MODE_DODGE_LEGACY
 case|:
 name|psd_mode
@@ -3394,6 +3427,23 @@ argument_list|)
 expr_stmt|;
 comment|/* Color Dodge (ps6) */
 break|break;
+case|case
+name|GIMP_LAYER_MODE_EXCLUSION
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"smud"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Exclusion (ps6) */
+break|break;
+case|case
+name|GIMP_LAYER_MODE_BURN
+case|:
 case|case
 name|GIMP_LAYER_MODE_BURN_LEGACY
 case|:
@@ -3409,6 +3459,9 @@ expr_stmt|;
 comment|/* Color Burn (ps6) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_HARDLIGHT
+case|:
+case|case
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 case|:
 name|psd_mode
@@ -3421,6 +3474,63 @@ literal|4
 argument_list|)
 expr_stmt|;
 comment|/* Hard Light (ps3) */
+break|break;
+case|case
+name|GIMP_LAYER_MODE_VIVID_LIGHT
+case|:
+if|if
+condition|(
+name|CONVERSION_WARNINGS
+condition|)
+name|g_message
+argument_list|(
+literal|"GIMP uses a different equation to Photoshop for "
+literal|"blend mode: %s. Results may differ."
+argument_list|,
+name|gimp_layer_mode_effects_name
+argument_list|(
+name|layer_mode
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"vLit"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Vivid Light (ps3) */
+break|break;
+case|case
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"lLit"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Linear light (ps7)*/
+break|break;
+case|case
+name|GIMP_LAYER_MODE_PIN_LIGHT
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"pLit"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Pin light (ps7)*/
 break|break;
 case|case
 name|GIMP_LAYER_MODE_OVERLAY_LEGACY
@@ -3454,6 +3564,9 @@ expr_stmt|;
 comment|/* Soft Light (ps3) */
 break|break;
 case|case
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT
+case|:
+case|case
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 case|:
 if|if
@@ -3480,6 +3593,9 @@ literal|4
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_LAYER_MODE_GRAIN_MERGE
+case|:
 case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
@@ -3517,6 +3633,88 @@ condition|)
 name|g_message
 argument_list|(
 literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
+argument_list|(
+name|layer_mode
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"norm"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_LAYER_MODE_SCREEN_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_ADDITION_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_SUBTRACT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_MULTIPLY_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_NORMAL_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_BURN_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_DODGE_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_OVERLAY_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_HARDLIGHT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_SOFTLIGHT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_DIVIDE_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_DIFFERENCE_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_VIVID_LIGHT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_PIN_LIGHT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_LINEAR_LIGHT_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_EXCLUSION_LINEAR
+case|:
+case|case
+name|GIMP_LAYER_MODE_LINEAR_BURN_LINEAR
+case|:
+if|if
+condition|(
+name|CONVERSION_WARNINGS
+condition|)
+name|g_message
+argument_list|(
+literal|"GIMP cannot export linear pixel data in blend mode: %s."
+literal|"Mode reverts to normal"
 argument_list|,
 name|gimp_layer_mode_effects_name
 argument_list|(
