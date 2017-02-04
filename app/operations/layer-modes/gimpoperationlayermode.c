@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b682ea70103
+DECL|enum|__anon297de7be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7365,7 +7365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* added according to:     http://www.deepskycolors.com/archivo/2010/04/21/formulas-for-Photoshop-blending-modes.html */
+comment|/* added according to:     http://www.simplefilter.de/en/basics/mixmods.html */
 end_comment
 
 begin_function
@@ -7442,13 +7442,12 @@ name|src
 index|[
 name|c
 index|]
-operator|>
+operator|<=
 literal|0.5f
 condition|)
 block|{
 name|comp
 operator|=
-operator|(
 literal|1.0f
 operator|-
 operator|(
@@ -7468,7 +7467,6 @@ name|src
 index|[
 name|c
 index|]
-operator|)
 operator|)
 operator|)
 expr_stmt|;
@@ -7483,17 +7481,15 @@ name|c
 index|]
 operator|/
 operator|(
-literal|1.0f
-operator|-
 literal|2.0f
 operator|*
 operator|(
+literal|1.0f
+operator|-
 name|src
 index|[
 name|c
 index|]
-operator|-
-literal|0.5
 operator|)
 operator|)
 expr_stmt|;
