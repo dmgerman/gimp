@@ -2384,7 +2384,7 @@ literal|0
 condition|)
 comment|/* Darken (ps3) */
 return|return
-name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
+name|GIMP_LAYER_MODE_DARKEN_ONLY
 return|;
 if|if
 condition|(
@@ -2401,7 +2401,7 @@ literal|0
 condition|)
 comment|/* Lighten (ps3) */
 return|return
-name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY
 return|;
 if|if
 condition|(
@@ -2418,7 +2418,7 @@ literal|0
 condition|)
 comment|/* Hue (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
+name|GIMP_LAYER_MODE_LCH_HUE
 return|;
 if|if
 condition|(
@@ -2457,7 +2457,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
+name|GIMP_LAYER_MODE_LCH_CHROMA
 return|;
 block|}
 if|if
@@ -2475,7 +2475,7 @@ literal|0
 condition|)
 comment|/* Color (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_LCH_COLOR
 return|;
 if|if
 condition|(
@@ -2514,7 +2514,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
+name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 return|;
 block|}
 if|if
@@ -2532,7 +2532,7 @@ literal|0
 condition|)
 comment|/* Multiply (ps3) */
 return|return
-name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
+name|GIMP_LAYER_MODE_MULTIPLY
 return|;
 if|if
 condition|(
@@ -2549,7 +2549,7 @@ literal|0
 condition|)
 comment|/* Linear Dodge (cs2) */
 return|return
-name|GIMP_LAYER_MODE_ADDITION_LEGACY
+name|GIMP_LAYER_MODE_ADDITION
 return|;
 if|if
 condition|(
@@ -2566,7 +2566,7 @@ literal|0
 condition|)
 comment|/* Screen (ps3) */
 return|return
-name|GIMP_LAYER_MODE_SCREEN_LEGACY
+name|GIMP_LAYER_MODE_SCREEN
 return|;
 if|if
 condition|(
@@ -2628,7 +2628,7 @@ literal|0
 condition|)
 comment|/* Hard light (ps3) */
 return|return
-name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
+name|GIMP_LAYER_MODE_HARDLIGHT
 return|;
 if|if
 condition|(
@@ -2659,7 +2659,7 @@ literal|"SOFT LIGHT"
 decl_stmt|;
 name|g_message
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for "
+literal|"GIMP uses a different equation to Photoshop for "
 literal|"blend mode: %s. Results will differ."
 argument_list|,
 name|mode_name
@@ -2667,7 +2667,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
+name|GIMP_LAYER_MODE_SOFTLIGHT
 return|;
 block|}
 if|if
@@ -2685,7 +2685,7 @@ literal|0
 condition|)
 comment|/* Difference (ps3) */
 return|return
-name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
+name|GIMP_LAYER_MODE_DIFFERENCE
 return|;
 if|if
 condition|(
@@ -2701,40 +2701,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Exclusion (ps6) */
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"EXCLUSION"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_EXCLUSION
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2750,7 +2719,7 @@ literal|0
 condition|)
 comment|/* Color dodge (ps6) */
 return|return
-name|GIMP_LAYER_MODE_DODGE_LEGACY
+name|GIMP_LAYER_MODE_DODGE
 return|;
 if|if
 condition|(
@@ -2767,7 +2736,7 @@ literal|0
 condition|)
 comment|/* Color burn (ps6) */
 return|return
-name|GIMP_LAYER_MODE_BURN_LEGACY
+name|GIMP_LAYER_MODE_BURN
 return|;
 if|if
 condition|(
@@ -2783,40 +2752,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Linear burn (ps7)*/
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"LINEAR BURN"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_LINEAR_BURN
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2832,7 +2770,7 @@ literal|0
 condition|)
 comment|/* Linear dodge (ps7)*/
 return|return
-name|GIMP_LAYER_MODE_ADDITION_LEGACY
+name|GIMP_LAYER_MODE_ADDITION
 return|;
 if|if
 condition|(
@@ -2848,40 +2786,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Linear light (ps7)*/
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"LINEAR LIGHT"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_LINEAR_LIGHT
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2896,40 +2803,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Pin light (ps7)*/
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"PIN LIGHT"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_PIN_LIGHT
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2959,23 +2835,15 @@ literal|"VIVID LIGHT"
 decl_stmt|;
 name|g_message
 argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
+literal|"GIMP uses a different equation to Photoshop for "
+literal|"blend mode: %s. Results will differ."
 argument_list|,
 name|mode_name
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_VIVID_LIGHT
 return|;
 block|}
 if|if
