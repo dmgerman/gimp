@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-types.h"
+file|"operations-types.h"
 end_include
 
 begin_include
@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-config.h"
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-gegl-utils.h"
+file|"gimp-operation-config.h"
 end_include
 
 begin_comment
@@ -88,7 +88,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_gegl_config_config_sync
+name|gimp_operation_config_config_sync
 parameter_list|(
 name|GObject
 modifier|*
@@ -109,7 +109,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_gegl_config_config_notify
+name|gimp_operation_config_config_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -130,7 +130,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_gegl_config_node_notify
+name|gimp_operation_config_node_notify
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -156,8 +156,8 @@ begin_function
 specifier|static
 name|GHashTable
 modifier|*
-DECL|function|gimp_gegl_config_get_type_table (void)
-name|gimp_gegl_config_get_type_table
+DECL|function|gimp_operation_config_get_type_table (void)
+name|gimp_operation_config_get_type_table
 parameter_list|(
 name|void
 parameter_list|)
@@ -200,8 +200,8 @@ begin_function
 specifier|static
 name|GHashTable
 modifier|*
-DECL|function|gimp_gegl_config_get_container_table (void)
-name|gimp_gegl_config_get_container_table
+DECL|function|gimp_operation_config_get_container_table (void)
+name|gimp_operation_config_get_container_table
 parameter_list|(
 name|void
 parameter_list|)
@@ -244,8 +244,8 @@ begin_function
 specifier|static
 name|GValue
 modifier|*
-DECL|function|gimp_gegl_config_value_new (GParamSpec * pspec)
-name|gimp_gegl_config_value_new
+DECL|function|gimp_operation_config_value_new (GParamSpec * pspec)
+name|gimp_operation_config_value_new
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -279,8 +279,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_value_free (GValue * value)
-name|gimp_gegl_config_value_free
+DECL|function|gimp_operation_config_value_free (GValue * value)
+name|gimp_operation_config_value_free
 parameter_list|(
 name|GValue
 modifier|*
@@ -306,8 +306,8 @@ begin_function
 specifier|static
 name|GHashTable
 modifier|*
-DECL|function|gimp_gegl_config_get_properties (GObject * object)
-name|gimp_gegl_config_get_properties
+DECL|function|gimp_operation_config_get_properties (GObject * object)
+name|gimp_operation_config_get_properties
 parameter_list|(
 name|GObject
 modifier|*
@@ -347,7 +347,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_gegl_config_value_free
+name|gimp_operation_config_value_free
 argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
@@ -375,8 +375,8 @@ begin_function
 specifier|static
 name|GValue
 modifier|*
-DECL|function|gimp_gegl_config_value_get (GObject * object,GParamSpec * pspec)
-name|gimp_gegl_config_value_get
+DECL|function|gimp_operation_config_value_get (GObject * object,GParamSpec * pspec)
+name|gimp_operation_config_value_get
 parameter_list|(
 name|GObject
 modifier|*
@@ -391,7 +391,7 @@ name|GHashTable
 modifier|*
 name|properties
 init|=
-name|gimp_gegl_config_get_properties
+name|gimp_operation_config_get_properties
 argument_list|(
 name|object
 argument_list|)
@@ -419,7 +419,7 @@ condition|)
 block|{
 name|value
 operator|=
-name|gimp_gegl_config_value_new
+name|gimp_operation_config_value_new
 argument_list|(
 name|pspec
 argument_list|)
@@ -448,8 +448,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_gegl_config_set_property
+DECL|function|gimp_operation_config_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_config_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -472,7 +472,7 @@ name|GValue
 modifier|*
 name|val
 init|=
-name|gimp_gegl_config_value_get
+name|gimp_operation_config_value_get
 argument_list|(
 name|object
 argument_list|,
@@ -492,8 +492,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_gegl_config_get_property
+DECL|function|gimp_operation_config_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_config_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -515,7 +515,7 @@ name|GValue
 modifier|*
 name|val
 init|=
-name|gimp_gegl_config_value_get
+name|gimp_operation_config_value_get
 argument_list|(
 name|object
 argument_list|,
@@ -535,8 +535,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_class_init (GObjectClass * klass,const gchar * operation)
-name|gimp_gegl_config_class_init
+DECL|function|gimp_operation_config_class_init (GObjectClass * klass,const gchar * operation)
+name|gimp_operation_config_class_init
 parameter_list|(
 name|GObjectClass
 modifier|*
@@ -563,13 +563,13 @@ name|klass
 operator|->
 name|set_property
 operator|=
-name|gimp_gegl_config_set_property
+name|gimp_operation_config_set_property
 expr_stmt|;
 name|klass
 operator|->
 name|get_property
 operator|=
-name|gimp_gegl_config_get_property
+name|gimp_operation_config_get_property
 expr_stmt|;
 name|pspecs
 operator|=
@@ -680,8 +680,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_gegl_config_equal (GimpConfig * a,GimpConfig * b)
-name|gimp_gegl_config_equal
+DECL|function|gimp_operation_config_equal (GimpConfig * a,GimpConfig * b)
+name|gimp_operation_config_equal
 parameter_list|(
 name|GimpConfig
 modifier|*
@@ -804,8 +804,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_config_iface_init (GimpConfigInterface * iface)
-name|gimp_gegl_config_config_iface_init
+DECL|function|gimp_operation_config_config_iface_init (GimpConfigInterface * iface)
+name|gimp_operation_config_config_iface_init
 parameter_list|(
 name|GimpConfigInterface
 modifier|*
@@ -816,7 +816,7 @@ name|iface
 operator|->
 name|equal
 operator|=
-name|gimp_gegl_config_equal
+name|gimp_operation_config_equal
 expr_stmt|;
 block|}
 end_function
@@ -827,8 +827,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_gegl_config_register (const gchar * operation,GType config_type)
-name|gimp_gegl_config_register
+DECL|function|gimp_operation_config_register (const gchar * operation,GType config_type)
+name|gimp_operation_config_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -862,7 +862,7 @@ argument_list|)
 expr_stmt|;
 name|config_types
 operator|=
-name|gimp_gegl_config_get_type_table
+name|gimp_operation_config_get_type_table
 argument_list|()
 expr_stmt|;
 name|g_hash_table_insert
@@ -886,8 +886,8 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_gegl_config_new (const gchar * operation,const gchar * icon_name,GType parent_type)
-name|gimp_gegl_config_new
+DECL|function|gimp_operation_config_new (const gchar * operation,const gchar * icon_name,GType parent_type)
+name|gimp_operation_config_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -933,7 +933,7 @@ argument_list|)
 expr_stmt|;
 name|config_types
 operator|=
-name|gimp_gegl_config_get_type_table
+name|gimp_operation_config_get_type_table
 argument_list|()
 expr_stmt|;
 name|config_type
@@ -987,7 +987,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_gegl_config_class_init
+name|gimp_operation_config_class_init
 block|,
 name|NULL
 block|,
@@ -1005,7 +1005,7 @@ operator|(
 name|GInstanceInitFunc
 operator|)
 name|NULL
-block|,           }
+block|,         }
 decl_stmt|;
 specifier|const
 name|GInterfaceInfo
@@ -1015,7 +1015,7 @@ block|{
 operator|(
 name|GInterfaceInitFunc
 operator|)
-name|gimp_gegl_config_config_iface_init
+name|gimp_operation_config_config_iface_init
 block|,
 name|NULL
 block|,
@@ -1111,7 +1111,7 @@ name|viewable_class
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_gegl_config_register
+name|gimp_operation_config_register
 argument_list|(
 name|operation
 argument_list|,
@@ -1134,8 +1134,8 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_gegl_config_get_container (GType config_type)
-name|gimp_gegl_config_get_container
+DECL|function|gimp_operation_config_get_container (GType config_type)
+name|gimp_operation_config_get_container
 parameter_list|(
 name|GType
 name|config_type
@@ -1163,7 +1163,7 @@ argument_list|)
 expr_stmt|;
 name|config_containers
 operator|=
-name|gimp_gegl_config_get_container_table
+name|gimp_operation_config_get_container_table
 argument_list|()
 expr_stmt|;
 name|container
@@ -1214,8 +1214,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_config_sync_node (GimpObject * config,GeglNode * node)
-name|gimp_gegl_config_sync_node
+DECL|function|gimp_operation_config_sync_node (GimpObject * config,GeglNode * node)
+name|gimp_operation_config_sync_node
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -1514,8 +1514,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_config_connect_node (GimpObject * config,GeglNode * node)
-name|gimp_gegl_config_connect_node
+DECL|function|gimp_operation_config_connect_node (GimpObject * config,GeglNode * node)
+name|gimp_operation_config_connect_node
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -1640,7 +1640,7 @@ literal|"notify"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_gegl_config_config_sync
+name|gimp_operation_config_config_sync
 argument_list|)
 argument_list|,
 name|node
@@ -1723,7 +1723,7 @@ name|notify_name
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_gegl_config_config_notify
+name|gimp_operation_config_config_notify
 argument_list|)
 argument_list|,
 name|node
@@ -1739,7 +1739,7 @@ name|notify_name
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_gegl_config_node_notify
+name|gimp_operation_config_node_notify
 argument_list|)
 argument_list|,
 name|config
@@ -1769,8 +1769,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_config_sync (GObject * config,const GParamSpec * gimp_pspec,GeglNode * node)
-name|gimp_gegl_config_config_sync
+DECL|function|gimp_operation_config_config_sync (GObject * config,const GParamSpec * gimp_pspec,GeglNode * node)
+name|gimp_operation_config_config_sync
 parameter_list|(
 name|GObject
 modifier|*
@@ -1786,7 +1786,7 @@ modifier|*
 name|node
 parameter_list|)
 block|{
-name|gimp_gegl_config_sync_node
+name|gimp_operation_config_sync_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1802,8 +1802,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_config_notify (GObject * config,const GParamSpec * gimp_pspec,GeglNode * node)
-name|gimp_gegl_config_config_notify
+DECL|function|gimp_operation_config_config_notify (GObject * config,const GParamSpec * gimp_pspec,GeglNode * node)
+name|gimp_operation_config_config_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -1947,7 +1947,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_gegl_config_node_notify
+name|gimp_operation_config_node_notify
 argument_list|,
 name|config
 argument_list|)
@@ -1999,8 +1999,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_gegl_config_node_notify (GeglNode * node,const GParamSpec * gegl_pspec,GObject * config)
-name|gimp_gegl_config_node_notify
+DECL|function|gimp_operation_config_node_notify (GeglNode * node,const GParamSpec * gegl_pspec,GObject * config)
+name|gimp_operation_config_node_notify
 parameter_list|(
 name|GeglNode
 modifier|*
@@ -2192,7 +2192,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_gegl_config_config_notify
+name|gimp_operation_config_config_notify
 argument_list|,
 name|node
 argument_list|)

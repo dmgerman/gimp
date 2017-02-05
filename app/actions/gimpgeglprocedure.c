@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/gimp-operation-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/gimp-gegl-config.h"
 end_include
 
 begin_include
@@ -1039,7 +1039,7 @@ name|active_tool
 decl_stmt|;
 name|settings
 operator|=
-name|gimp_gegl_config_new
+name|gimp_operation_config_new
 argument_list|(
 name|procedure
 operator|->
@@ -1058,7 +1058,7 @@ argument_list|)
 expr_stmt|;
 name|container
 operator|=
-name|gimp_gegl_config_get_container
+name|gimp_operation_config_get_container
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -1138,7 +1138,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_config_sync_node
+name|gimp_operation_config_sync_node
 argument_list|(
 name|settings
 argument_list|,

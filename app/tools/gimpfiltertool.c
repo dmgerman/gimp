@@ -76,7 +76,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-config.h"
+file|"operations/gimp-operation-config.h"
 end_include
 
 begin_include
@@ -1645,7 +1645,7 @@ name|settings_ui
 decl_stmt|;
 name|settings
 operator|=
-name|gimp_gegl_config_get_container
+name|gimp_operation_config_get_container
 argument_list|(
 name|type
 argument_list|)
@@ -5526,7 +5526,7 @@ name|config
 operator|=
 name|G_OBJECT
 argument_list|(
-name|gimp_gegl_config_new
+name|gimp_operation_config_new
 argument_list|(
 name|operation_name
 argument_list|,
@@ -5538,7 +5538,7 @@ name|GIMP_TYPE_SETTINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_config_sync_node
+name|gimp_operation_config_sync_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -5552,7 +5552,7 @@ operator|->
 name|operation
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_config_connect_node
+name|gimp_operation_config_connect_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(

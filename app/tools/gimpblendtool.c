@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-config.h"
+file|"operations/gimp-operation-config.h"
 end_include
 
 begin_include
@@ -3505,7 +3505,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Initially sync all of the properties */
-name|gimp_gegl_config_sync_node
+name|gimp_operation_config_sync_node
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(

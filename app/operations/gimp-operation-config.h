@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_GEGL_CONFIG_ARGH_H__
+name|__GIMP_OPERATION_CONFIG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_GEGL_CONFIG_ARGH_H__
+DECL|macro|__GIMP_OPERATION_CONFIG_H__
 define|#
 directive|define
-name|__GIMP_GEGL_CONFIG_ARGH_H__
+name|__GIMP_OPERATION_CONFIG_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_gegl_config_register
+name|gimp_operation_config_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -34,7 +34,7 @@ end_function_decl
 begin_function_decl
 name|GimpObject
 modifier|*
-name|gimp_gegl_config_new
+name|gimp_operation_config_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -55,7 +55,7 @@ end_function_decl
 begin_function_decl
 name|GimpContainer
 modifier|*
-name|gimp_gegl_config_get_container
+name|gimp_operation_config_get_container
 parameter_list|(
 name|GType
 name|config_type
@@ -65,7 +65,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_config_sync_node
+name|gimp_operation_config_sync_node
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -80,7 +80,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gegl_config_connect_node
+name|gimp_operation_config_connect_node
 parameter_list|(
 name|GimpObject
 modifier|*
@@ -99,7 +99,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_GEGL_CONFIG_ARGH_H__ */
+comment|/* __GIMP_OPERATION_CONFIG_H__ */
 end_comment
 
 end_unit
