@@ -46,6 +46,7 @@ name|GimpLayerMode
 name|layer_mode
 decl_stmt|;
 DECL|member|op_name
+specifier|const
 name|gchar
 modifier|*
 name|op_name
@@ -77,6 +78,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|layer_mode_infos
 specifier|static
+specifier|const
 name|GimpLayerModeInfo
 name|layer_mode_infos
 index|[]
@@ -1723,7 +1725,7 @@ block|,
 operator|-
 literal|1
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
