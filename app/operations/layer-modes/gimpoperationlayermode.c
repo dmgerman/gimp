@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4514280103
+DECL|enum|__anon28a548970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9495,7 +9495,9 @@ block|,
 literal|"gimp:erase"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
-block|,   }
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|}
 block|,
 block|{
 name|GIMP_LAYER_MODE_REPLACE
