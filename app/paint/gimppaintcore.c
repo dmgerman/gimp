@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d332620103
+DECL|enum|__anon27e7a7380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3664,7 +3664,7 @@ name|applicator
 argument_list|,
 name|paint_mode
 argument_list|,
-name|GIMP_LAYER_COMPOSITE_AUTO
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the image  */

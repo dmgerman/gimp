@@ -1670,10 +1670,7 @@ argument_list|)
 expr_stmt|;
 name|composite_mode
 operator|=
-name|gimp_layer_mode_get_composite_mode
-argument_list|(
-name|paint_mode
-argument_list|)
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 expr_stmt|;
 if|if
 condition|(
