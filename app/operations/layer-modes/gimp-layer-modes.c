@@ -27,6 +27,49 @@ directive|include
 file|"gimp-layer-modes.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpLayerModeInfo
+typedef|typedef
+name|struct
+name|_GimpLayerModeInfo
+name|GimpLayerModeInfo
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpLayerModeInfo
+struct|struct
+name|_GimpLayerModeInfo
+block|{
+DECL|member|layer_mode
+name|GimpLayerMode
+name|layer_mode
+decl_stmt|;
+DECL|member|op_name
+name|gchar
+modifier|*
+name|op_name
+decl_stmt|;
+DECL|member|flags
+name|GimpLayerModeFlags
+name|flags
+decl_stmt|;
+DECL|member|composite_mode
+name|GimpLayerCompositeMode
+name|composite_mode
+decl_stmt|;
+DECL|member|composite_space
+name|GimpLayerColorSpace
+name|composite_space
+decl_stmt|;
+DECL|member|blend_space
+name|GimpLayerColorSpace
+name|blend_space
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_comment
 comment|/*  static variables  */
 end_comment
@@ -1736,6 +1779,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 specifier|const
 name|GimpLayerModeInfo
 modifier|*
