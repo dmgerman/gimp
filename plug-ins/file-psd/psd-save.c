@@ -861,6 +861,17 @@ literal|"vLit"
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_LAYER_MODE_HARD_MIX
+case|:
+name|strcpy
+argument_list|(
+name|psdMode
+argument_list|,
+literal|"hMix"
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 block|{
 specifier|const

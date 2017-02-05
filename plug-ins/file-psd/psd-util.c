@@ -2820,32 +2820,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Vivid light (ps7)*/
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"VIVID LIGHT"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"GIMP uses a different equation to Photoshop for "
-literal|"blend mode: %s. Results will differ."
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|GIMP_LAYER_MODE_VIVID_LIGHT
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2860,40 +2837,9 @@ operator|==
 literal|0
 condition|)
 comment|/* Hard Mix (CS)*/
-block|{
-if|if
-condition|(
-name|CONVERSION_WARNINGS
-condition|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|mode_name
-init|=
-literal|"HARD MIX"
-decl_stmt|;
-name|g_message
-argument_list|(
-literal|"Unsupported blend mode: %s. Mode reverts to normal"
-argument_list|,
-name|mode_name
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|layer_composite
-condition|)
-operator|*
-name|layer_composite
-operator|=
-name|GIMP_LAYER_COMPOSITE_AUTO
-expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_HARD_MIX
 return|;
-block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -3547,6 +3493,20 @@ expr_stmt|;
 comment|/* Pin light (ps7)*/
 break|break;
 case|case
+name|GIMP_LAYER_MODE_HARD_MIX
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"hMix"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Hard Mix (CS)*/
+break|break;
+case|case
 name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 case|:
 case|case
@@ -3721,6 +3681,9 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_LINEAR_BURN_LINEAR
 case|:
+case|case
+name|GIMP_LAYER_MODE_HARD_MIX_LINEAR
+case|:
 if|if
 condition|(
 name|CONVERSION_WARNINGS
@@ -3843,6 +3806,7 @@ literal|"LINEAR LIGHT"
 block|,
 literal|"PIN LIGHT"
 block|,
+literal|"HARD MIX"
 literal|"GRAIN EXTRACT"
 block|,
 literal|"GRAIN MERGE"
