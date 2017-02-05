@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-loops.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp-layer-modes.h"
 end_include
 
 begin_include
@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27803b8e0103
+DECL|enum|__anon27d332620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

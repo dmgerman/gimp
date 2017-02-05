@@ -348,6 +348,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer-modes/gimpoperationantierase.h"
 end_include
 
@@ -395,6 +401,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|gimp_layer_modes_init
+argument_list|()
+expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_BLEND

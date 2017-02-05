@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-layer-modes.h"
+file|"operations/layer-modes/gimp-layer-modes.h"
 end_include
 
 begin_include
@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293eea880103
+DECL|enum|__anon28c7ddfc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

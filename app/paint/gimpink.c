@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"operations/layer-modes/gimp-layer-modes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp-layer-modes.h"
+file|"gegl/gimp-gegl-utils.h"
 end_include
 
 begin_include
@@ -2315,7 +2315,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b26c130103
+DECL|enum|__anon27b8724c0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

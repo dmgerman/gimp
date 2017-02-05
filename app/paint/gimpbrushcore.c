@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-babl.h"
+file|"operations/layer-modes/gimp-layer-modes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp-layer-modes.h"
+file|"gegl/gimp-babl.h"
 end_include
 
 begin_include
@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5fce40103
+DECL|enum|__anon28c735a60103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
