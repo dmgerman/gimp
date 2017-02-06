@@ -2723,9 +2723,9 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -2776,9 +2776,9 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -2895,7 +2895,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ae0fbf0108
+DECL|struct|__anon2b822ba80108
 block|{
 DECL|member|tooltip
 specifier|const
