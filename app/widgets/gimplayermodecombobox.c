@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293172010103
+DECL|enum|__anon2c009fec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -444,13 +444,6 @@ argument_list|,
 name|GimpLayerModeComboBoxPrivate
 argument_list|)
 expr_stmt|;
-name|gimp_layer_mode_combo_box_update_model
-argument_list|(
-name|combo
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gtk_combo_box_set_row_separator_func
 argument_list|(
 name|GTK_COMBO_BOX
@@ -500,6 +493,13 @@ operator|->
 name|constructed
 argument_list|(
 name|object
+argument_list|)
+expr_stmt|;
+name|gimp_layer_mode_combo_box_update_model
+argument_list|(
+name|combo
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_set_active
