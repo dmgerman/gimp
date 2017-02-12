@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e7a7380103
+DECL|enum|__anon27bcffb60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3663,6 +3663,10 @@ operator|->
 name|applicator
 argument_list|,
 name|paint_mode
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 argument_list|)

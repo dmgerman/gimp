@@ -107,7 +107,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerMode mode,GimpLayerCompositeMode composite,GeglBuffer * base_buffer,gint base_x,gint base_y)
+DECL|function|gimp_drawable_real_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerMode mode,GimpLayerColorSpace blend_space,GimpLayerColorSpace composite_space,GimpLayerCompositeMode composite_mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
 name|gimp_drawable_real_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -137,8 +137,14 @@ parameter_list|,
 name|GimpLayerMode
 name|mode
 parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
+parameter_list|,
 name|GimpLayerCompositeMode
-name|composite
+name|composite_mode
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -385,9 +391,21 @@ name|mode
 expr_stmt|;
 name|undo
 operator|->
+name|blend_space
+operator|=
+name|blend_space
+expr_stmt|;
+name|undo
+operator|->
+name|composite_space
+operator|=
+name|composite_space
+expr_stmt|;
+name|undo
+operator|->
 name|composite_mode
 operator|=
-name|composite
+name|composite_mode
 expr_stmt|;
 name|undo
 operator|->
@@ -572,7 +590,11 @@ name|applicator
 argument_list|,
 name|mode
 argument_list|,
-name|composite
+name|blend_space
+argument_list|,
+name|composite_space
+argument_list|,
+name|composite_mode
 argument_list|)
 expr_stmt|;
 name|gimp_applicator_set_affect

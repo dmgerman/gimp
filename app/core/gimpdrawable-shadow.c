@@ -384,6 +384,10 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_LAYER_MODE_REPLACE
 argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
 name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|,
 name|NULL

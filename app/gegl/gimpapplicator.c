@@ -177,6 +177,18 @@ name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|applicator
 operator|->
+name|blend_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+expr_stmt|;
+name|applicator
+operator|->
+name|composite_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+expr_stmt|;
+name|applicator
+operator|->
 name|composite_mode
 operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -459,6 +471,14 @@ argument_list|,
 name|applicator
 operator|->
 name|paint_mode
+argument_list|,
+name|applicator
+operator|->
+name|blend_space
+argument_list|,
+name|applicator
+operator|->
+name|composite_space
 argument_list|,
 name|applicator
 operator|->
@@ -1599,7 +1619,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerMode paint_mode,GimpLayerCompositeMode composite_mode)
+DECL|function|gimp_applicator_set_mode (GimpApplicator * applicator,GimpLayerMode paint_mode,GimpLayerColorSpace blend_space,GimpLayerColorSpace composite_space,GimpLayerCompositeMode composite_mode)
 name|gimp_applicator_set_mode
 parameter_list|(
 name|GimpApplicator
@@ -1608,6 +1628,12 @@ name|applicator
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|,
 name|GimpLayerCompositeMode
 name|composite_mode
@@ -1631,6 +1657,18 @@ name|paint_mode
 operator|||
 name|applicator
 operator|->
+name|blend_space
+operator|!=
+name|blend_space
+operator|||
+name|applicator
+operator|->
+name|composite_space
+operator|!=
+name|composite_space
+operator|||
+name|applicator
+operator|->
 name|composite_mode
 operator|!=
 name|composite_mode
@@ -1641,6 +1679,18 @@ operator|->
 name|paint_mode
 operator|=
 name|paint_mode
+expr_stmt|;
+name|applicator
+operator|->
+name|blend_space
+operator|=
+name|blend_space
+expr_stmt|;
+name|applicator
+operator|->
+name|composite_space
+operator|=
+name|composite_space
 expr_stmt|;
 name|applicator
 operator|->
@@ -1655,6 +1705,10 @@ operator|->
 name|mode_node
 argument_list|,
 name|paint_mode
+argument_list|,
+name|blend_space
+argument_list|,
+name|composite_space
 argument_list|,
 name|composite_mode
 argument_list|)

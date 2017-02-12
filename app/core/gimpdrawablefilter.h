@@ -222,6 +222,12 @@ parameter_list|,
 name|GimpLayerMode
 name|paint_mode
 parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
+parameter_list|,
 name|GimpLayerCompositeMode
 name|composite_mode
 parameter_list|)

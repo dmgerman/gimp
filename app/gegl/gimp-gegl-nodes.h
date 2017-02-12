@@ -83,8 +83,14 @@ parameter_list|,
 name|GimpLayerMode
 name|mode
 parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
+parameter_list|,
 name|GimpLayerCompositeMode
-name|composite
+name|composite_mode
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -4863,7 +4863,7 @@ condition|)
 block|{
 name|composite_mode
 operator|=
-name|gimp_layer_get_composite
+name|gimp_layer_get_composite_mode
 argument_list|(
 name|layer
 argument_list|)
@@ -4984,7 +4984,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_layer_set_composite
+name|gimp_layer_set_composite_mode
 argument_list|(
 name|layer
 argument_list|,

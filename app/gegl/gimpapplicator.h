@@ -171,6 +171,14 @@ DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
 decl_stmt|;
+DECL|member|blend_space
+name|GimpLayerColorSpace
+name|blend_space
+decl_stmt|;
+DECL|member|composite_space
+name|GimpLayerColorSpace
+name|composite_space
+decl_stmt|;
 DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
@@ -400,6 +408,12 @@ name|applicator
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|,
 name|GimpLayerCompositeMode
 name|composite_mode

@@ -2628,6 +2628,10 @@ name|options
 argument_list|)
 argument_list|)
 argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
 name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|,
 name|NULL
@@ -2797,6 +2801,10 @@ name|gimp_context_get_paint_mode
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|,

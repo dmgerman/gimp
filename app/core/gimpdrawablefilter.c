@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace8e040103
+DECL|enum|__anon2c15edba0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -158,6 +158,14 @@ decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
+decl_stmt|;
+DECL|member|blend_space
+name|GimpLayerColorSpace
+name|blend_space
+decl_stmt|;
+DECL|member|composite_space
+name|GimpLayerColorSpace
+name|composite_space
 decl_stmt|;
 DECL|member|composite_mode
 name|GimpLayerCompositeMode
@@ -605,6 +613,18 @@ operator|->
 name|paint_mode
 operator|=
 name|GIMP_LAYER_MODE_REPLACE
+expr_stmt|;
+name|drawable_filter
+operator|->
+name|blend_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+expr_stmt|;
+name|drawable_filter
+operator|->
+name|composite_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_AUTO
 expr_stmt|;
 name|drawable_filter
 operator|->
@@ -1339,7 +1359,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerMode paint_mode,GimpLayerCompositeMode composite_mode)
+DECL|function|gimp_drawable_filter_set_mode (GimpDrawableFilter * filter,GimpLayerMode paint_mode,GimpLayerColorSpace blend_space,GimpLayerColorSpace composite_space,GimpLayerCompositeMode composite_mode)
 name|gimp_drawable_filter_set_mode
 parameter_list|(
 name|GimpDrawableFilter
@@ -1348,6 +1368,12 @@ name|filter
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
+parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|,
 name|GimpLayerCompositeMode
 name|composite_mode
@@ -1369,6 +1395,18 @@ name|filter
 operator|->
 name|paint_mode
 operator|||
+name|blend_space
+operator|!=
+name|filter
+operator|->
+name|blend_space
+operator|||
+name|composite_space
+operator|!=
+name|filter
+operator|->
+name|composite_space
+operator|||
 name|composite_mode
 operator|!=
 name|filter
@@ -1381,6 +1419,18 @@ operator|->
 name|paint_mode
 operator|=
 name|paint_mode
+expr_stmt|;
+name|filter
+operator|->
+name|blend_space
+operator|=
+name|blend_space
+expr_stmt|;
+name|filter
+operator|->
+name|composite_space
+operator|=
+name|composite_space
 expr_stmt|;
 name|filter
 operator|->
@@ -2339,6 +2389,14 @@ argument_list|,
 name|filter
 operator|->
 name|paint_mode
+argument_list|,
+name|filter
+operator|->
+name|blend_space
+argument_list|,
+name|filter
+operator|->
+name|composite_space
 argument_list|,
 name|filter
 operator|->

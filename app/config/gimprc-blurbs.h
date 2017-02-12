@@ -1256,6 +1256,24 @@ value|_("Sets the default mode for the 'New Layer' dialog.")
 end_define
 
 begin_define
+DECL|macro|LAYER_NEW_BLEND_SPACE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_BLEND_SPACE_BLURB
+define|\
+value|_("Sets the default blend space for the 'New Layer' dialog.")
+end_define
+
+begin_define
+DECL|macro|LAYER_NEW_COMPOSITE_SPACE_BLURB
+define|#
+directive|define
+name|LAYER_NEW_COMPOSITE_SPACE_BLURB
+define|\
+value|_("Sets the default composite space for the 'New Layer' dialog.")
+end_define
+
+begin_define
 DECL|macro|LAYER_NEW_COMPOSITE_MODE_BLURB
 define|#
 directive|define

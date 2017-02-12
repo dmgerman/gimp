@@ -38,18 +38,26 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bb8ad590103
+DECL|enum|__anon288d11f00103
 block|{
+DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+block|,
+comment|/*< desc="Auto">*/
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|,
+comment|/*< desc="RGB (linear)">*/
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|,
+comment|/*< desc="RGB (perceptual)">*/
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_LAB
 name|GIMP_LAYER_COLOR_SPACE_LAB
-block|, }
+block|,
+comment|/*< desc="LAB">*/
 DECL|typedef|GimpLayerColorSpace
+block|}
 name|GimpLayerColorSpace
 typedef|;
 end_typedef
@@ -75,7 +83,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8ad590203
+DECL|enum|__anon288d11f00203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -123,7 +131,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8ad590303
+DECL|enum|__anon288d11f00303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
@@ -476,7 +484,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bb8ad590403
+DECL|enum|__anon288d11f00403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -508,7 +516,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2bb8ad590503
+DECL|enum|__anon288d11f00503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -538,7 +546,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2bb8ad590603
+DECL|enum|__anon288d11f00603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

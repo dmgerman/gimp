@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4538730103
+DECL|enum|__anon2b0b25b40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4538730203
+DECL|enum|__anon2b0b25b40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4603,7 +4603,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerMode mode,GimpLayerCompositeMode composite,GeglBuffer * base_buffer,gint base_x,gint base_y)
+DECL|function|gimp_drawable_apply_buffer (GimpDrawable * drawable,GeglBuffer * buffer,const GeglRectangle * buffer_region,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerMode mode,GimpLayerColorSpace blend_space,GimpLayerColorSpace composite_space,GimpLayerCompositeMode composite_mode,GeglBuffer * base_buffer,gint base_x,gint base_y)
 name|gimp_drawable_apply_buffer
 parameter_list|(
 name|GimpDrawable
@@ -4633,8 +4633,14 @@ parameter_list|,
 name|GimpLayerMode
 name|mode
 parameter_list|,
+name|GimpLayerColorSpace
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
+parameter_list|,
 name|GimpLayerCompositeMode
-name|composite
+name|composite_mode
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -4714,7 +4720,11 @@ name|opacity
 argument_list|,
 name|mode
 argument_list|,
-name|composite
+name|blend_space
+argument_list|,
+name|composite_space
+argument_list|,
+name|composite_mode
 argument_list|,
 name|base_buffer
 argument_list|,

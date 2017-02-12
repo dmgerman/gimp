@@ -183,6 +183,14 @@ DECL|member|layer_new_mode
 name|GimpLayerMode
 name|layer_new_mode
 decl_stmt|;
+DECL|member|layer_new_blend_space
+name|GimpLayerColorSpace
+name|layer_new_blend_space
+decl_stmt|;
+DECL|member|layer_new_composite_space
+name|GimpLayerColorSpace
+name|layer_new_composite_space
+decl_stmt|;
 DECL|member|layer_new_composite_mode
 name|GimpLayerCompositeMode
 name|layer_new_composite_mode
