@@ -2170,11 +2170,11 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_CANCEL
+literal|"_Cancel"
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+literal|"_OK"
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
