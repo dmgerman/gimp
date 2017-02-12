@@ -192,7 +192,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon276b7bc70103
+DECL|enum|__anon2adb4c3a0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -212,7 +212,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b7bc70208
+DECL|struct|__anon2adb4c3a0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b7bc70308
+DECL|struct|__anon2adb4c3a0308
 block|{
 DECL|member|x1
 name|gint
@@ -462,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b7bc70408
+DECL|struct|__anon2adb4c3a0408
 block|{
 DECL|member|width
 name|gint
@@ -1053,7 +1053,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b7bc70508
+DECL|struct|__anon2adb4c3a0508
 block|{
 DECL|member|r
 name|guchar
@@ -2982,7 +2982,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b7bc70608
+DECL|struct|__anon2adb4c3a0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3954,11 +3954,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

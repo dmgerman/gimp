@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b6b250108
+DECL|struct|__anon299d3dc60108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b6b250208
+DECL|struct|__anon299d3dc60208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b0b6b25030a
+DECL|union|__anon299d3dc6030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3242,7 +3242,10 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"plug-in-script-fu-server"
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,

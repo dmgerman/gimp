@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad195950103
+DECL|enum|__anon27d8fe610103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad195950208
+DECL|struct|__anon27d8fe610208
 block|{
 DECL|member|max_p
 name|gint
@@ -524,7 +524,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad195950308
+DECL|struct|__anon27d8fe610308
 block|{
 DECL|member|init_value
 name|gint
@@ -1012,11 +1012,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a21a9ef0108
+DECL|struct|__anon277466510108
 block|{
 DECL|member|period
 name|gint
@@ -913,7 +913,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a21a9ef0208
+DECL|struct|__anon277466510208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -2057,11 +2057,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

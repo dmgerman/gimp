@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abbddb90108
+DECL|struct|__anon29ec09280108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abbddb90208
+DECL|struct|__anon29ec09280208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abbddb90308
+DECL|struct|__anon29ec09280308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abbddb90408
+DECL|struct|__anon29ec09280408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abbddb90508
+DECL|struct|__anon29ec09280508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5990,7 +5990,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|,
 name|RESPONSE_RESET
 argument_list|,
@@ -6001,11 +6004,17 @@ argument_list|)
 argument_list|,
 name|RESPONSE_GET_COLORS
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|,
-name|GTK_STOCK_APPLY
+name|_
+argument_list|(
+literal|"_Apply"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_APPLY
 argument_list|,

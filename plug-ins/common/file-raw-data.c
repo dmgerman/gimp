@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890c7390103
+DECL|enum|__anon2b324b720103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890c7390203
+DECL|enum|__anon2b324b720203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c7390308
+DECL|struct|__anon2b324b720308
 block|{
 DECL|member|image_type
 name|RawType
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c7390408
+DECL|struct|__anon2b324b720408
 block|{
 DECL|member|run
 name|gboolean
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c7390508
+DECL|struct|__anon2b324b720508
 block|{
 DECL|member|file_offset
 name|gint32
@@ -345,7 +345,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c7390608
+DECL|struct|__anon2b324b720608
 block|{
 DECL|member|fp
 name|FILE
@@ -6725,11 +6725,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|LOAD_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

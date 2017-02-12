@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eb4f1a0108
+DECL|struct|__anon28805ace0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eb4f1a0208
+DECL|struct|__anon28805ace0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1016,7 +1016,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eb4f1a0308
+DECL|struct|__anon28805ace0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1988,7 +1988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eb4f1a0408
+DECL|struct|__anon28805ace0408
 block|{
 DECL|member|eol
 name|goffset
@@ -15162,7 +15162,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|LOAD_PS_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,

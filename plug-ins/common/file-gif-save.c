@@ -103,7 +103,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0450800103
+DECL|enum|__anon2b9ee9ff0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0450800203
+DECL|enum|__anon2b9ee9ff0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0450800308
+DECL|struct|__anon2b9ee9ff0308
 block|{
 DECL|member|interlace
 name|gint
@@ -4066,11 +4066,17 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GIMP_STOCK_TOOL_CROP
+name|_
+argument_list|(
+literal|"Cr_op"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

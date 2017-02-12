@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0afbed0108
+DECL|struct|__anon2bb9c0d50108
 block|{
 DECL|member|image
 name|gint32
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0afbed0203
+DECL|enum|__anon2bb9c0d50203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0afbed0303
+DECL|enum|__anon2bb9c0d50303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -167,7 +167,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c0afbed0408
+DECL|struct|__anon2bb9c0d50408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2406,11 +2406,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

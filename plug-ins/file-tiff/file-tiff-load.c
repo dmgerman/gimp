@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b79deb0108
+DECL|struct|__anon2ae45fc60108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b79deb0208
+DECL|struct|__anon2ae45fc60208
 block|{
 DECL|member|ID
 name|gint32
@@ -397,7 +397,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|help_id
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,

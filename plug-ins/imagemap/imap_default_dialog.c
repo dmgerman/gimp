@@ -33,6 +33,12 @@ directive|include
 file|"imap_main.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function
 specifier|static
 name|void
@@ -332,7 +338,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_STOCK_APPLY
+name|_
+argument_list|(
+literal|"_Apply"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_APPLY
 argument_list|)
@@ -350,7 +359,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|)
@@ -368,7 +380,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
