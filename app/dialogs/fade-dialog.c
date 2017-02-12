@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7c4bc0108
+DECL|struct|__anon28e8bd410108
 block|{
 DECL|member|image
 name|GimpImage
@@ -435,7 +435,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_EDIT_FADE
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,

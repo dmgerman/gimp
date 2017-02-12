@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5b44e0103
+DECL|enum|__anon27f0b2480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,7 +579,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|)

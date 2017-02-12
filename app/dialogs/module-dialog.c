@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80cb070103
+DECL|enum|__anon2a5040dc0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80cb070203
+DECL|enum|__anon2a5040dc0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -450,11 +450,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_MODULE_DIALOG
 argument_list|,
-name|GTK_STOCK_REFRESH
+name|_
+argument_list|(
+literal|"_Refresh"
+argument_list|)
 argument_list|,
 name|RESPONSE_REFRESH
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|,

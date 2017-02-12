@@ -163,9 +163,12 @@ literal|"help-id"
 argument_list|,
 name|GIMP_HELP_FILE_OPEN
 argument_list|,
-literal|"stock-id"
+literal|"ok-button-label"
 argument_list|,
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|,
 literal|"automatic-label"
 argument_list|,

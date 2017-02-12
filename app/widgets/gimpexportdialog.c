@@ -175,7 +175,7 @@ literal|"help-id"
 argument_list|,
 name|GIMP_HELP_FILE_EXPORT_AS
 argument_list|,
-literal|"stock-id"
+literal|"ok-button-label"
 argument_list|,
 name|_
 argument_list|(

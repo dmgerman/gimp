@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f070930103
+DECL|enum|__anon292af1de0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -624,6 +624,12 @@ modifier|*
 name|new_offset_y
 parameter_list|)
 function_decl|;
+DECL|member|ok_button_label
+specifier|const
+name|gchar
+modifier|*
+name|ok_button_label
+decl_stmt|;
 block|}
 struct|;
 end_struct

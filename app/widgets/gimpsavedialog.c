@@ -494,9 +494,12 @@ literal|"help-id"
 argument_list|,
 name|GIMP_HELP_FILE_SAVE
 argument_list|,
-literal|"stock-id"
+literal|"ok-button-label"
 argument_list|,
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Save"
+argument_list|)
 argument_list|,
 literal|"automatic-label"
 argument_list|,

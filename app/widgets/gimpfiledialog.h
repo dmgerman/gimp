@@ -154,10 +154,10 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|ok_button_label
 name|gchar
 modifier|*
-name|stock_id
+name|ok_button_label
 decl_stmt|;
 DECL|member|automatic_help_id
 name|gchar

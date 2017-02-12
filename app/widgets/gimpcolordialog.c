@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f229170103
+DECL|enum|__anon27b8adbb0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -369,15 +369,24 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|,
 name|RESPONSE_RESET
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

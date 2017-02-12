@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5a6f20103
+DECL|enum|__anon2767565e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2096,11 +2096,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_DELETE
+name|_
+argument_list|(
+literal|"_Delete"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

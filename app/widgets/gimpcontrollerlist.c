@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94974e0103
+DECL|enum|__anon298b231f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94974e0203
+DECL|enum|__anon298b231f0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2450,18 +2450,21 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Disable Controller"
+literal|"_Disable Controller"
 argument_list|)
 argument_list|,
 name|RESPONSE_DISABLE
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove Controller"
+literal|"_Remove Controller"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -2708,7 +2711,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_PREFS_INPUT_CONTROLLERS
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|,

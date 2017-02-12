@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42ab210103
+DECL|enum|__anon2c9cc4c90103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -379,6 +379,15 @@ operator|->
 name|get_undo_desc
 operator|=
 name|gimp_scale_tool_get_undo_desc
+expr_stmt|;
+name|trans_class
+operator|->
+name|ok_button_label
+operator|=
+name|_
+argument_list|(
+literal|"_Scale"
+argument_list|)
 expr_stmt|;
 block|}
 end_function

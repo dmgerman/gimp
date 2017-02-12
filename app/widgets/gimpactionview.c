@@ -2336,7 +2336,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c6b170108
+DECL|struct|__anon297376130108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2595,13 +2595,16 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Reassign shortcut"
+literal|"_Reassign Shortcut"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK

@@ -229,7 +229,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_QUIT
+name|_
+argument_list|(
+literal|"_Quit"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

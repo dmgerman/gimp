@@ -129,7 +129,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_KEYBOARD_SHORTCUTS
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

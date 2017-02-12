@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc8e4c70103
+DECL|enum|__anon2c2b56880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc8e4c70203
+DECL|enum|__anon2c2b56880203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2877,11 +2877,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_PREFS_INPUT_CONTROLLERS
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

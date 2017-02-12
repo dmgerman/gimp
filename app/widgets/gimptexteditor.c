@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b020eee0103
+DECL|enum|__anon2a2108070103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -577,7 +577,10 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"_Close"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
 argument_list|)

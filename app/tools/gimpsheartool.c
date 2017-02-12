@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aca3bf40103
+DECL|enum|__anon2b324b7e0103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
@@ -370,6 +370,15 @@ operator|->
 name|get_undo_desc
 operator|=
 name|gimp_shear_tool_get_undo_desc
+expr_stmt|;
+name|trans_class
+operator|->
+name|ok_button_label
+operator|=
+name|_
+argument_list|(
+literal|"_Shear"
+argument_list|)
 expr_stmt|;
 block|}
 end_function

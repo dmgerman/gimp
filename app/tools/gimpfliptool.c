@@ -352,6 +352,15 @@ name|transform
 operator|=
 name|gimp_flip_tool_transform
 expr_stmt|;
+name|trans_class
+operator|->
+name|ok_button_label
+operator|=
+name|_
+argument_list|(
+literal|"_Flip"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -63,6 +63,12 @@ directive|include
 file|"window-commands.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -209,11 +215,17 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

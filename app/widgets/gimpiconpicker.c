@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5b74ed0103
+DECL|enum|__anon290f33010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2001,11 +2001,17 @@ name|NULL
 argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_ACCEPT
 argument_list|,

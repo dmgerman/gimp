@@ -525,7 +525,10 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_LAYER_OFFSET
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
