@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f77c490103
+DECL|enum|__anon27b6d3df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -408,6 +408,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1766,7 +1768,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f77c490208
+DECL|struct|__anon27b6d3df0208
 block|{
 DECL|member|dialog
 name|GtkDialog
