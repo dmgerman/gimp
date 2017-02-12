@@ -2668,7 +2668,10 @@ argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GIMP_STOCK_TOOL_ROTATE
+name|_
+argument_list|(
+literal|"_Rotate"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

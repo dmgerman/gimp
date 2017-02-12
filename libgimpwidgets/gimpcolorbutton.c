@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0ce9c0103
+DECL|enum|__anon2ad878720103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0ce9c0203
+DECL|enum|__anon2ad878720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1961,15 +1961,24 @@ name|gimp_color_button_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|,
 name|RESPONSE_RESET
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,

@@ -33,13 +33,19 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/libgimp-intl.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpdialog  * @title: GimpDialog  * @short_description: Constructors for #GtkDialog's and action_areas as  *                     well as other dialog-related stuff.  *  * Constructors for #GtkDialog's and action_areas as well as other  * dialog-related stuff.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29528fed0103
+DECL|enum|__anon28f77c490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -558,9 +564,12 @@ name|private
 operator|->
 name|help_button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_HELP
+name|_
+argument_list|(
+literal|"_Help"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1757,7 +1766,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29528fed0208
+DECL|struct|__anon28f77c490208
 block|{
 DECL|member|dialog
 name|GtkDialog
