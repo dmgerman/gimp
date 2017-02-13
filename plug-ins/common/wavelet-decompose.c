@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1afa10108
+DECL|struct|__anon2bf926590108
 block|{
 DECL|member|scales
 name|gint
@@ -257,7 +257,7 @@ argument_list|(
 literal|"Wavelet decompose"
 argument_list|)
 argument_list|,
-literal|"compute wavelet scales"
+literal|"Compute and render wavelet scales"
 argument_list|,
 literal|"Miroslav Talasek<miroslav.talasek@seznam.cz>"
 argument_list|,
@@ -267,7 +267,7 @@ literal|"19january 2017"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Wavelet-decompose"
+literal|"_Wavelet-decompose..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
