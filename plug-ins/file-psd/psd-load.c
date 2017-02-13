@@ -9399,6 +9399,25 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* Set layer color tag */
+name|gimp_item_set_color_tag
+argument_list|(
+name|layer_id
+argument_list|,
+name|psd_to_gimp_layer_color_tag
+argument_list|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|color_tag
+index|[
+literal|0
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|cidx

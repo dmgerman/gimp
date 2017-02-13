@@ -230,6 +230,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpColorTag
+name|psd_to_gimp_layer_color_tag
+parameter_list|(
+name|guint16
+name|layer_color_tag
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guint16
+name|gimp_to_psd_layer_color_tag
+parameter_list|(
+name|GimpColorTag
+name|layer_color_tag
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

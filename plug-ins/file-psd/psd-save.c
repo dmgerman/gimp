@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"psd-util.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"psd-save.h"
 end_include
 
@@ -4814,6 +4820,8 @@ argument_list|,
 name|layerName
 argument_list|)
 decl_stmt|;
+comment|/* Additional layer information blocks */
+comment|/* Unicode layer name */
 name|write_datablock_luni
 argument_list|(
 name|fd
@@ -4821,6 +4829,74 @@ argument_list|,
 name|layerName
 argument_list|,
 literal|"luni extra data block"
+argument_list|)
+expr_stmt|;
+comment|/* Layer color tag */
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+literal|"8BIMlclr"
+argument_list|,
+literal|8
+argument_list|,
+literal|"sheet color signature"
+argument_list|)
+expr_stmt|;
+name|write_gint32
+argument_list|(
+name|fd
+argument_list|,
+literal|8
+argument_list|,
+literal|"sheet color size"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+name|gimp_to_psd_layer_color_tag
+argument_list|(
+name|gimp_item_get_color_tag
+argument_list|(
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+argument_list|,
+literal|"sheet color code"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"sheet color unused value"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"sheet color unused value"
+argument_list|)
+expr_stmt|;
+name|write_gint16
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"sheet color unused value"
 argument_list|)
 expr_stmt|;
 comment|/* Write real length for: Extra data */
