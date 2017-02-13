@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-babl.h"
 end_include
 
@@ -191,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296f09a50103
+DECL|enum|__anon2ab176ea0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -231,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296f09a50203
+DECL|enum|__anon2ab176ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9341,6 +9347,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_layer_mode_is_blend_space_mutable
+argument_list|(
+name|layer
+operator|->
+name|mode
+argument_list|)
+condition|)
+return|return;
+if|if
+condition|(
 name|layer
 operator|->
 name|blend_space
@@ -9502,6 +9519,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_layer_mode_is_composite_space_mutable
+argument_list|(
+name|layer
+operator|->
+name|mode
+argument_list|)
+condition|)
+return|return;
+if|if
+condition|(
 name|layer
 operator|->
 name|composite_space
@@ -9661,6 +9689,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_layer_mode_is_composite_mode_mutable
+argument_list|(
+name|layer
+operator|->
+name|mode
+argument_list|)
+condition|)
+return|return;
 if|if
 condition|(
 name|layer

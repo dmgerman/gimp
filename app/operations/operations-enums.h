@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon288d11f00103
+DECL|enum|__anon29c6492b0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -83,7 +83,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288d11f00203
+DECL|enum|__anon29c6492b0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -131,7 +131,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288d11f00303
+DECL|enum|__anon29c6492b0303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
@@ -484,7 +484,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon288d11f00403
+DECL|enum|__anon29c6492b0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -516,7 +516,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon288d11f00503
+DECL|enum|__anon29c6492b0503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -546,7 +546,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon288d11f00603
+DECL|enum|__anon29c6492b0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
@@ -561,8 +561,29 @@ init|=
 literal|1
 operator|<<
 literal|1
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+init|=
+literal|1
+operator|<<
+literal|2
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+init|=
+literal|1
+operator|<<
+literal|3
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+init|=
+literal|1
+operator|<<
+literal|4
+block|, }
 DECL|typedef|GimpLayerModeFlags
-block|}
 name|GimpLayerModeFlags
 typedef|;
 end_typedef

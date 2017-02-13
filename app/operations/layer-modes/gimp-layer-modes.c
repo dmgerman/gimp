@@ -120,6 +120,12 @@ block|,
 literal|"gimp:multiply-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -130,6 +136,12 @@ block|,
 literal|"gimp:screen-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -140,6 +152,12 @@ block|,
 literal|"gimp:overlay-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -150,6 +168,12 @@ block|,
 literal|"gimp:difference-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -160,6 +184,12 @@ block|,
 literal|"gimp:addition-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -170,6 +200,12 @@ block|,
 literal|"gimp:subtract-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -180,6 +216,12 @@ block|,
 literal|"gimp:darken-only-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -190,6 +232,12 @@ block|,
 literal|"gimp:lighten-only-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -200,6 +248,12 @@ block|,
 literal|"gimp:hsv-hue-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -210,6 +264,12 @@ block|,
 literal|"gimp:hsv-saturation-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -220,6 +280,12 @@ block|,
 literal|"gimp:hsv-color-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -230,6 +296,12 @@ block|,
 literal|"gimp:hsv-value-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -240,6 +312,12 @@ block|,
 literal|"gimp:divide-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -250,6 +328,12 @@ block|,
 literal|"gimp:dodge-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -260,6 +344,12 @@ block|,
 literal|"gimp:burn-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -270,6 +360,12 @@ block|,
 literal|"gimp:hardlight-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -280,6 +376,12 @@ block|,
 literal|"gimp:softlight-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -290,6 +392,12 @@ block|,
 literal|"gimp:grain-extract-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -300,6 +408,12 @@ block|,
 literal|"gimp:grain-merge-legacy"
 block|,
 name|GIMP_LAYER_MODE_FLAG_LEGACY
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -334,6 +448,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -348,6 +464,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -362,6 +480,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -376,6 +496,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1895,6 +2017,129 @@ operator|&
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator|)
 operator|!=
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_mode_is_blend_space_mutable (GimpLayerMode mode)
+name|gimp_layer_mode_is_blend_space_mutable
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+specifier|const
+name|GimpLayerModeInfo
+modifier|*
+name|info
+init|=
+name|gimp_layer_mode_info
+argument_list|(
+name|mode
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|info
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+operator|(
+name|info
+operator|->
+name|flags
+operator|&
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator|)
+operator|==
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_mode_is_composite_space_mutable (GimpLayerMode mode)
+name|gimp_layer_mode_is_composite_space_mutable
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+specifier|const
+name|GimpLayerModeInfo
+modifier|*
+name|info
+init|=
+name|gimp_layer_mode_info
+argument_list|(
+name|mode
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|info
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+operator|(
+name|info
+operator|->
+name|flags
+operator|&
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator|)
+operator|==
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_mode_is_composite_mode_mutable (GimpLayerMode mode)
+name|gimp_layer_mode_is_composite_mode_mutable
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+specifier|const
+name|GimpLayerModeInfo
+modifier|*
+name|info
+init|=
+name|gimp_layer_mode_info
+argument_list|(
+name|mode
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|info
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+operator|(
+name|info
+operator|->
+name|flags
+operator|&
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+operator|)
+operator|==
 literal|0
 return|;
 block|}
