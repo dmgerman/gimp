@@ -55,6 +55,10 @@ DECL|member|flags
 name|GimpLayerModeFlags
 name|flags
 decl_stmt|;
+DECL|member|paint_composite_mode
+name|GimpLayerCompositeMode
+name|paint_composite_mode
+decl_stmt|;
 DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
@@ -92,6 +96,8 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -106,6 +112,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -115,8 +123,10 @@ literal|"gimp:behind"
 block|,
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
-block|,   }
+name|GIMP_LAYER_COMPOSITE_DST_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_DST_ATOP
+block|}
 block|,
 block|{
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
@@ -130,6 +140,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -148,6 +160,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -162,6 +176,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -180,6 +196,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -194,6 +212,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -212,6 +232,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -226,6 +248,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -244,6 +268,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -258,6 +284,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -276,6 +304,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -290,6 +320,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -308,6 +340,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -322,6 +356,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -340,6 +376,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -354,6 +392,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -372,6 +412,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -386,6 +428,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -404,6 +448,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -420,6 +466,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
 block|,
 block|{
@@ -428,6 +476,8 @@ block|,
 literal|"gimp:color-erase"
 block|,
 literal|0
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,   }
@@ -438,6 +488,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -455,6 +507,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -470,6 +524,8 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -487,6 +543,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -502,6 +560,8 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -528,6 +588,10 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_DST_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_DST_ATOP
 block|,   }
 block|,
 block|{
@@ -536,6 +600,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -551,6 +617,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -564,6 +632,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -579,6 +649,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -592,6 +664,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -607,6 +681,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -620,6 +696,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -635,6 +713,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -648,6 +728,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -663,6 +745,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -676,6 +760,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -693,6 +779,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -708,6 +796,8 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -725,6 +815,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -740,6 +832,8 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -757,6 +851,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -773,6 +869,8 @@ name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -786,6 +884,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -801,6 +901,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -814,6 +916,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -829,6 +933,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -842,6 +948,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -857,6 +965,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -870,6 +980,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -885,6 +997,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -898,6 +1012,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -913,6 +1029,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -926,6 +1044,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -941,6 +1061,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -954,6 +1076,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -969,6 +1093,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -982,6 +1108,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -997,6 +1125,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1010,6 +1140,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1025,6 +1157,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1038,6 +1172,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1053,6 +1189,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1066,6 +1204,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1081,6 +1221,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1094,6 +1236,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1109,6 +1253,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1122,6 +1268,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1137,6 +1285,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1150,6 +1300,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1165,6 +1317,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1179,6 +1333,8 @@ literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
@@ -1192,6 +1348,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1210,6 +1368,8 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|}
 block|,
 block|{
@@ -1220,6 +1380,10 @@ block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
 operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -1232,7 +1396,11 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
-block|,   }
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|,
+name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2274,6 +2442,41 @@ return|return
 name|info
 operator|->
 name|composite_mode
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpLayerCompositeMode
+DECL|function|gimp_layer_mode_get_paint_composite_mode (GimpLayerMode mode)
+name|gimp_layer_mode_get_paint_composite_mode
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+block|{
+specifier|const
+name|GimpLayerModeInfo
+modifier|*
+name|info
+init|=
+name|gimp_layer_mode_info
+argument_list|(
+name|mode
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|info
+condition|)
+return|return
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
+return|;
+return|return
+name|info
+operator|->
+name|paint_composite_mode
 return|;
 block|}
 end_function

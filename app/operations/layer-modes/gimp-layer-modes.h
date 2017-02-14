@@ -106,6 +106,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerCompositeMode
+name|gimp_layer_mode_get_paint_composite_mode
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
