@@ -89,7 +89,7 @@ name|GIMP_LAYER_MODE_NORMAL
 block|,
 literal|"gimp:normal"
 block|,
-literal|0
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
@@ -100,6 +100,10 @@ block|,
 literal|"gimp:dissolve"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
@@ -109,9 +113,9 @@ name|GIMP_LAYER_MODE_BEHIND
 block|,
 literal|"gimp:behind"
 block|,
-literal|0
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,   }
 block|,
 block|{
@@ -512,6 +516,8 @@ block|,
 literal|"gimp:normal"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,   }
 block|,
 block|{
@@ -520,6 +526,8 @@ block|,
 literal|"gimp:behind"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,   }
 block|,
 block|{
@@ -682,6 +690,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -696,6 +706,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -710,6 +722,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -724,6 +738,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -738,6 +754,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -752,6 +770,8 @@ block|,
 literal|"gimp:layer-mode"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1186,6 +1206,8 @@ block|,
 literal|"gimp:erase"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|}
@@ -1196,6 +1218,8 @@ block|,
 literal|"gimp:replace"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,   }
 block|,
 block|{
@@ -1204,6 +1228,10 @@ block|,
 literal|"gimp:anti-erase"
 block|,
 name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
+operator||
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 block|,   }
 block|}
 decl_stmt|;
