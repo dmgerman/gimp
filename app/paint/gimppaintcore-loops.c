@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/layer-modes/gimplayermodefunctions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"operations/layer-modes/gimpoperationlayermode.h"
 end_include
 
@@ -1649,7 +1643,7 @@ argument_list|)
 expr_stmt|;
 name|apply_func
 operator|=
-name|gimp_get_layer_mode_function
+name|gimp_layer_mode_get_function
 argument_list|(
 name|paint_mode
 argument_list|)
