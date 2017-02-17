@@ -487,13 +487,13 @@ comment|/********************/
 end_comment
 
 begin_comment
-comment|/**  * gimp_prop_layer_mode_box_new:  * @config:             #GimpConfig object to which property is attached.  * @property_name:      Name of Enum property.  * @with_behind_mode:   Whether to include "Behind" mode in the menu.  * @with_replace_modes: Whether to include the "Replace", "Erase" and  *                      "Anti Erase" modes in the menu.  *  * Creates a #GimpLayerModeBox widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerMode.  *  * Return value: The newly created #GimpLayerModeBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_layer_mode_box_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of Enum property.  * @context:       A context mask, determining the set of modes to  *                 include in the menu.  *  * Creates a #GimpLayerModeBox widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerMode.  *  * Return value: The newly created #GimpLayerModeBox widget.  *  * Since GIMP 2.10  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_layer_mode_box_new (GObject * config,const gchar * property_name,gboolean with_behind_mode,gboolean with_replace_modes)
+DECL|function|gimp_prop_layer_mode_box_new (GObject * config,const gchar * property_name,GimpLayerModeContext context)
 name|gimp_prop_layer_mode_box_new
 parameter_list|(
 name|GObject
@@ -505,11 +505,8 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|gboolean
-name|with_behind_mode
-parameter_list|,
-name|gboolean
-name|with_replace_modes
+name|GimpLayerModeContext
+name|context
 parameter_list|)
 block|{
 name|GParamSpec
@@ -545,9 +542,7 @@ name|box
 operator|=
 name|gimp_layer_mode_box_new
 argument_list|(
-name|with_behind_mode
-argument_list|,
-name|with_replace_modes
+name|context
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property
@@ -3706,7 +3701,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcc62f0108
+DECL|struct|__anon27c6aab20108
 block|{
 DECL|member|config
 name|GObject

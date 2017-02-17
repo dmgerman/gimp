@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27a9042b0103
+DECL|enum|__anon298d3c590103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -83,7 +83,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a9042b0203
+DECL|enum|__anon298d3c590203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -131,7 +131,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a9042b0303
+DECL|enum|__anon298d3c590303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
@@ -455,7 +455,15 @@ block|,
 comment|/*< pdb-skip, desc="Replace">*/
 DECL|enumerator|GIMP_LAYER_MODE_ANTI_ERASE
 name|GIMP_LAYER_MODE_ANTI_ERASE
+block|,
 comment|/*< pdb-skip, desc="Anti erase">*/
+comment|/*  Layer mode menu separator  */
+DECL|enumerator|GIMP_LAYER_MODE_SEPARATOR
+name|GIMP_LAYER_MODE_SEPARATOR
+init|=
+operator|-
+literal|1
+comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpLayerMode
 block|}
 name|GimpLayerMode
@@ -484,7 +492,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27a9042b0403
+DECL|enum|__anon298d3c590403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -530,7 +538,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27a9042b0503
+DECL|enum|__anon298d3c590503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -586,7 +594,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon27a9042b0603
+DECL|enum|__anon298d3c590603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -616,7 +624,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon27a9042b0703
+DECL|enum|__anon298d3c590703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e4ce20103
+DECL|enum|__anon2b2b53720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -812,9 +812,7 @@ name|layer_mode_box
 operator|=
 name|gimp_layer_mode_box_new
 argument_list|(
-name|TRUE
-argument_list|,
-name|FALSE
+name|GIMP_LAYER_MODE_CONTEXT_PAINT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -473,9 +473,7 @@ name|config
 argument_list|,
 literal|"paint-mode"
 argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+name|GIMP_LAYER_MODE_CONTEXT_PAINT
 argument_list|)
 expr_stmt|;
 name|gimp_layer_mode_box_set_label

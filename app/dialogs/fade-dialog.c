@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8bd410108
+DECL|struct|__anon28c90a240108
 block|{
 DECL|member|image
 name|GimpImage
@@ -623,9 +623,7 @@ argument_list|)
 argument_list|,
 literal|"paint-mode"
 argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
+name|GIMP_LAYER_MODE_CONTEXT_FADE
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
