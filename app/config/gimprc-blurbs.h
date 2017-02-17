@@ -512,6 +512,15 @@ value|_("When promoting imported images to floating point precision, also add " 
 end_define
 
 begin_define
+DECL|macro|IMPORT_ADD_ALPHA_BLURB
+define|#
+directive|define
+name|IMPORT_ADD_ALPHA_BLURB
+define|\
+value|_("Add an alpha channel to all layers of imported images.")
+end_define
+
+begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define

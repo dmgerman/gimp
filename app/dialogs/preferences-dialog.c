@@ -5581,6 +5581,25 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"import-add-alpha"
+argument_list|,
+name|_
+argument_list|(
+literal|"Add an alpha channel to imported images"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/****************/
 comment|/*  Playground  */
 comment|/****************/
@@ -11453,7 +11472,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2745575a0108
+DECL|struct|__anon2967b0520108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12330,7 +12349,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2745575a0208
+DECL|struct|__anon2967b0520208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12468,7 +12487,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2745575a0308
+DECL|struct|__anon2967b0520308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -350,6 +350,10 @@ DECL|member|import_promote_dither
 name|gboolean
 name|import_promote_dither
 decl_stmt|;
+DECL|member|import_add_alpha
+name|gboolean
+name|import_add_alpha
+decl_stmt|;
 block|}
 struct|;
 end_struct

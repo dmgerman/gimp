@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a31bc70103
+DECL|enum|__anon298609380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,6 +330,9 @@ name|PROP_IMPORT_PROMOTE_FLOAT
 block|,
 DECL|enumerator|PROP_IMPORT_PROMOTE_DITHER
 name|PROP_IMPORT_PROMOTE_DITHER
+block|,
+DECL|enumerator|PROP_IMPORT_ADD_ALPHA
+name|PROP_IMPORT_ADD_ALPHA
 block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_INSTALL_COLORMAP
@@ -1878,6 +1881,23 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_IMPORT_ADD_ALPHA
+argument_list|,
+literal|"import-add-alpha"
+argument_list|,
+literal|"Import add alpha"
+argument_list|,
+name|IMPORT_ADD_ALPHA_BLURB
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 comment|/*  only for backward compatibility:  */
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
@@ -3275,6 +3295,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_IMPORT_ADD_ALPHA
+case|:
+name|core_config
+operator|->
+name|import_add_alpha
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_INSTALL_COLORMAP
 case|:
 case|case
@@ -4020,6 +4053,19 @@ argument_list|,
 name|core_config
 operator|->
 name|import_promote_dither
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_IMPORT_ADD_ALPHA
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|import_add_alpha
 argument_list|)
 expr_stmt|;
 break|break;
