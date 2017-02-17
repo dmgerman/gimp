@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b08b3480103
+DECL|enum|__anon28bfec310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8561,6 +8561,10 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_ANTI_ERASE
 case|:
+case|case
+name|GIMP_LAYER_MODE_SEPARATOR
+case|:
+comment|/* to stop GCC from complaining :P */
 return|return
 name|blendfun_dummy
 return|;

@@ -379,6 +379,9 @@ break|break;
 case|case
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 case|:
+case|case
+name|GIMP_LAYER_COMPOSITE_AUTO
+case|:
 while|while
 condition|(
 name|samples
