@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c735a60103
+DECL|enum|__anon2b9cb8360103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3812,26 +3812,17 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-if|if
-condition|(
-name|gimp_layer_mode_wants_linear_data
+name|format
+operator|=
+name|gimp_layer_mode_get_format
 argument_list|(
 name|paint_mode
-argument_list|)
-condition|)
-name|format
-operator|=
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
-expr_stmt|;
-else|else
-name|format
-operator|=
-name|babl_format
-argument_list|(
-literal|"R'G'B'A float"
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

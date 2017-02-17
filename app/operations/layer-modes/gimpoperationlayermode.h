@@ -134,10 +134,6 @@ DECL|member|layer_mode
 name|GimpLayerMode
 name|layer_mode
 decl_stmt|;
-DECL|member|linear
-name|gboolean
-name|linear
-decl_stmt|;
 DECL|member|opacity
 name|gdouble
 name|opacity

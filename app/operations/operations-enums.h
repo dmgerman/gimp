@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon298d3c590103
+DECL|enum|__anon2b92fb2f0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -83,7 +83,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298d3c590203
+DECL|enum|__anon2b92fb2f0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -131,7 +131,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298d3c590303
+DECL|enum|__anon2b92fb2f0303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
@@ -492,7 +492,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon298d3c590403
+DECL|enum|__anon2b92fb2f0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -538,7 +538,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon298d3c590503
+DECL|enum|__anon2b92fb2f0503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -594,7 +594,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon298d3c590603
+DECL|enum|__anon2b92fb2f0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -624,7 +624,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon298d3c590703
+DECL|enum|__anon2b92fb2f0703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
@@ -633,33 +633,26 @@ literal|1
 operator|<<
 literal|0
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
-name|GIMP_LAYER_MODE_FLAG_WANTS_LINEAR_DATA
-init|=
-literal|1
-operator|<<
-literal|1
-block|,
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 init|=
 literal|1
 operator|<<
-literal|2
+literal|1
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 init|=
 literal|1
 operator|<<
-literal|3
+literal|2
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 init|=
 literal|1
 operator|<<
-literal|4
+literal|3
 block|, }
 DECL|typedef|GimpLayerModeFlags
 name|GimpLayerModeFlags
