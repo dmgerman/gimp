@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29c6492b0103
+DECL|enum|__anon27a9042b0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -83,7 +83,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c6492b0203
+DECL|enum|__anon27a9042b0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -131,7 +131,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c6492b0303
+DECL|enum|__anon27a9042b0303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
@@ -484,7 +484,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29c6492b0403
+DECL|enum|__anon27a9042b0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -508,6 +508,76 @@ name|GimpLayerModeGroup
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_MODE_CONTEXT
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_MODE_CONTEXT
+value|(gimp_layer_mode_context_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_layer_mode_context_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon27a9042b0503
+block|{
+DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
+name|GIMP_LAYER_MODE_CONTEXT_LAYER
+init|=
+literal|1
+operator|<<
+literal|0
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_GROUP
+name|GIMP_LAYER_MODE_CONTEXT_GROUP
+init|=
+literal|1
+operator|<<
+literal|1
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_PAINT
+name|GIMP_LAYER_MODE_CONTEXT_PAINT
+init|=
+literal|1
+operator|<<
+literal|2
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_FADE
+name|GIMP_LAYER_MODE_CONTEXT_FADE
+init|=
+literal|1
+operator|<<
+literal|3
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_ALL
+name|GIMP_LAYER_MODE_CONTEXT_ALL
+init|=
+operator|(
+name|GIMP_LAYER_MODE_CONTEXT_LAYER
+operator||
+name|GIMP_LAYER_MODE_CONTEXT_GROUP
+operator||
+name|GIMP_LAYER_MODE_CONTEXT_PAINT
+operator||
+name|GIMP_LAYER_MODE_CONTEXT_FADE
+operator|)
+DECL|typedef|GimpLayerModeContext
+block|}
+name|GimpLayerModeContext
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -516,7 +586,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon29c6492b0503
+DECL|enum|__anon27a9042b0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -546,7 +616,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon29c6492b0603
+DECL|enum|__anon27a9042b0703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
