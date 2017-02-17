@@ -1326,6 +1326,15 @@ operator|=
 name|gimp_operation_color_erase_process
 block|,
 operator|.
+name|flags
+operator|=
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+block|,
+operator|.
 name|context
 operator|=
 name|GIMP_LAYER_MODE_CONTEXT_PAINT
