@@ -152,19 +152,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
-modifier|*
-name|gimp_temp_name
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|extension
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_register_magic_load_handler
 parameter_list|(
