@@ -4159,7 +4159,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a42b6130108
+DECL|struct|__anon2c353e8b0108
 block|{
 DECL|member|r
 name|guchar
@@ -4190,72 +4190,72 @@ comment|/* none   */
 block|{
 literal|84
 block|,
-literal|182
+literal|102
 block|,
-literal|231
+literal|159
 block|}
 block|,
 comment|/* blue   */
 block|{
-literal|154
+literal|111
 block|,
-literal|202
+literal|143
 block|,
-literal|66
+literal|48
 block|}
 block|,
 comment|/* green  */
 block|{
-literal|250
+literal|210
 block|,
-literal|228
+literal|182
 block|,
-literal|57
+literal|45
 block|}
 block|,
 comment|/* yellow */
 block|{
-literal|255
+literal|217
 block|,
-literal|168
+literal|122
 block|,
-literal|63
+literal|38
 block|}
 block|,
 comment|/* orange */
 block|{
-literal|179
+literal|87
 block|,
-literal|101
+literal|53
 block|,
-literal|65
+literal|25
 block|}
 block|,
 comment|/* brown  */
 block|{
-literal|245
+literal|170
 block|,
-literal|44
+literal|42
 block|,
-literal|52
+literal|47
 block|}
 block|,
 comment|/* red    */
 block|{
-literal|196
+literal|99
 block|,
-literal|107
+literal|66
 block|,
-literal|217
+literal|174
 block|}
 block|,
 comment|/* violet */
 block|{
-literal|121
+literal|87
 block|,
-literal|122
+literal|87
 block|,
-literal|116
+literal|87
 block|}
 comment|/* gray   */
 block|}
