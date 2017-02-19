@@ -805,7 +805,7 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gint
+name|gsize
 name|rowstride
 decl_stmt|;
 name|guint
