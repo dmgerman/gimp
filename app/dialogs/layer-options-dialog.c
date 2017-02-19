@@ -955,6 +955,18 @@ operator|->
 name|composite_mode
 argument_list|)
 expr_stmt|;
+comment|/*  set the sensitivity of above 3 menus  */
+name|layer_options_dialog_mode_notify
+argument_list|(
+name|private
+operator|->
+name|mode_box
+argument_list|,
+name|NULL
+argument_list|,
+name|private
+argument_list|)
+expr_stmt|;
 name|adjustment
 operator|=
 name|GTK_ADJUSTMENT
