@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd3a760103
+DECL|enum|__anon2bfcc02c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2625,13 +2625,6 @@ name|in
 operator|)
 operator||
 comment|/* alignment check */
-operator|(
-operator|(
-name|uintptr_t
-operator|)
-name|mask
-operator|)
-operator||
 operator|(
 operator|(
 name|uintptr_t
