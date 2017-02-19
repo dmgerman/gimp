@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293721b60103
+DECL|enum|__anon27dd3a760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2658,7 +2658,7 @@ literal|0x0F
 condition|)
 block|{
 return|return
-name|composite_func_src_atop
+name|composite_func_src_atop_core
 argument_list|(
 name|in
 argument_list|,
