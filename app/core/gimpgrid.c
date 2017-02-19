@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1e65b0103
+DECL|enum|__anon292267910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -334,7 +334,7 @@ argument_list|(
 literal|"Horizontal spacing of grid lines."
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -361,7 +361,7 @@ argument_list|(
 literal|"Vertical spacing of grid lines."
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -981,7 +981,6 @@ name|grid
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME subpixel grid */
 if|if
 condition|(
 name|xspacing
@@ -989,12 +988,9 @@ condition|)
 operator|*
 name|xspacing
 operator|=
-name|RINT
-argument_list|(
 name|grid
 operator|->
 name|xspacing
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1003,12 +999,9 @@ condition|)
 operator|*
 name|yspacing
 operator|=
-name|RINT
-argument_list|(
 name|grid
 operator|->
 name|yspacing
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1039,7 +1032,6 @@ name|grid
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME subpixel grid */
 if|if
 condition|(
 name|xoffset
@@ -1047,12 +1039,9 @@ condition|)
 operator|*
 name|xoffset
 operator|=
-name|RINT
-argument_list|(
 name|grid
 operator|->
 name|xoffset
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1061,12 +1050,9 @@ condition|)
 operator|*
 name|yoffset
 operator|=
-name|RINT
-argument_list|(
 name|grid
 operator|->
 name|yoffset
-argument_list|)
 expr_stmt|;
 block|}
 end_function
