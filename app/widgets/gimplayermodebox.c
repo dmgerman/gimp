@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b86ee3f0103
+DECL|enum|__anon2b6f975c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -552,7 +552,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|4
+literal|2
 condition|;
 name|i
 operator|++
@@ -567,10 +567,6 @@ index|[]
 init|=
 block|{
 literal|"gimp-reset"
-block|,
-literal|"gimp-histogram-linear"
-block|,
-literal|"gimp-visible"
 block|,
 literal|"gimp-wilber-eek"
 block|}
