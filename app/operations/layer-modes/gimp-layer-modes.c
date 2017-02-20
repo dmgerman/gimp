@@ -1895,6 +1895,11 @@ operator|.
 name|composite_space
 operator|=
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+block|,
+operator|.
+name|blend_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
 block|,
 block|{
@@ -1932,6 +1937,11 @@ name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
 operator|.
 name|composite_space
+operator|=
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+block|,
+operator|.
+name|blend_space
 operator|=
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
