@@ -1895,11 +1895,7 @@ operator|.
 name|composite_space
 operator|=
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-block|,
-operator|.
-name|blend_space
-operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+comment|/* no blend_space: reuse composite space, no conversion thus fewer copies */
 block|}
 block|,
 block|{
@@ -1939,11 +1935,7 @@ operator|.
 name|composite_space
 operator|=
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-block|,
-operator|.
-name|blend_space
-operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+comment|/* no blend_space: reuse composite space, no conversion thus fewer copies */
 block|}
 block|,
 block|{
