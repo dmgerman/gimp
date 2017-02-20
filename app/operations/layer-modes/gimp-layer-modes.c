@@ -1699,7 +1699,7 @@ block|,
 operator|.
 name|blend_space
 operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
 block|,
 block|{
@@ -1816,7 +1816,7 @@ block|,
 operator|.
 name|blend_space
 operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
 block|,
 block|{
@@ -1855,7 +1855,7 @@ block|,
 operator|.
 name|blend_space
 operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
 block|,
 block|{
@@ -2158,7 +2158,7 @@ block|,
 operator|.
 name|blend_space
 operator|=
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|}
 block|,
 block|{
