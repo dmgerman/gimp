@@ -138,6 +138,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerMode
+modifier|*
+name|gimp_layer_mode_get_context_array
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|,
+name|GimpLayerModeContext
+name|context
+parameter_list|,
+name|gint
+modifier|*
+name|n_modes
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpLayerModeGroup
 name|gimp_layer_mode_get_group
 parameter_list|(
