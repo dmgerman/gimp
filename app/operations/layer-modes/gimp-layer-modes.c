@@ -4081,6 +4081,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|modes
@@ -4093,6 +4094,7 @@ condition|)
 return|return
 name|TRUE
 return|;
+block|}
 return|return
 name|FALSE
 return|;
