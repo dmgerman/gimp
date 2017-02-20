@@ -197,6 +197,8 @@ block|,
 name|GIMP_LAYER_MODE_LCH_COLOR
 block|,
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
+block|,
+name|GIMP_LAYER_MODE_LUMINANCE
 block|}
 decl_stmt|;
 end_decl_stmt

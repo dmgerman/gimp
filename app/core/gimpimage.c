@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9528c0103
+DECL|enum|__anon2798dc460103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9528c0203
+DECL|enum|__anon2798dc460203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9708,6 +9708,9 @@ name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 case|case
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
+case|:
+case|case
+name|GIMP_LAYER_MODE_LUMINANCE
 case|:
 name|version
 operator|=

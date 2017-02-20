@@ -152,7 +152,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b3ac60103
+DECL|enum|__anon27a662630103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -165,7 +165,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b3ac60203
+DECL|enum|__anon27a662630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -683,7 +683,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|GIMP_LAYER_MODE_LCH_LIGHTNESS
+name|GIMP_LAYER_MODE_LUMINANCE
 argument_list|,
 operator|-
 literal|1

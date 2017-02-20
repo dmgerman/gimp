@@ -636,6 +636,14 @@ literal|"lch-lightness"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_LUMINANCE
+block|,
+literal|"GIMP_LAYER_MODE_LUMINANCE"
+block|,
+literal|"luminance"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_NORMAL_LINEAR
 block|,
 literal|"GIMP_LAYER_MODE_NORMAL_LINEAR"
@@ -1258,6 +1266,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Lightness (LCH)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_LUMINANCE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luminance"
 argument_list|)
 block|,
 name|NULL
