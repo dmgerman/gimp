@@ -2543,7 +2543,10 @@ argument_list|)
 expr_stmt|;
 name|gexiv2_metadata_set_orientation
 argument_list|(
+name|GEXIV2_METADATA
+argument_list|(
 name|metadata
+argument_list|)
 argument_list|,
 name|GEXIV2_ORIENTATION_NORMAL
 argument_list|)
