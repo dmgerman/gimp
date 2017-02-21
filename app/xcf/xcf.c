@@ -234,33 +234,36 @@ init|=
 block|{
 name|xcf_load_image
 block|,
-comment|/* version 0 */
+comment|/* version  0 */
 name|xcf_load_image
 block|,
-comment|/* version 1 */
+comment|/* version  1 */
 name|xcf_load_image
 block|,
-comment|/* version 2 */
+comment|/* version  2 */
 name|xcf_load_image
 block|,
-comment|/* version 3 */
+comment|/* version  3 */
 name|xcf_load_image
 block|,
-comment|/* version 4 */
+comment|/* version  4 */
 name|xcf_load_image
 block|,
-comment|/* version 5 */
+comment|/* version  5 */
 name|xcf_load_image
 block|,
-comment|/* version 6 */
+comment|/* version  6 */
 name|xcf_load_image
 block|,
-comment|/* version 7 */
+comment|/* version  7 */
 name|xcf_load_image
 block|,
-comment|/* version 8 */
+comment|/* version  8 */
 name|xcf_load_image
-comment|/* version 9 */
+block|,
+comment|/* version  9 */
+name|xcf_load_image
+comment|/* version 10 */
 block|}
 decl_stmt|;
 end_decl_stmt
