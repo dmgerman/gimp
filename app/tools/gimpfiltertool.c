@@ -587,7 +587,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_filter_tool_create_map
+name|gimp_filter_tool_create_filter
 parameter_list|(
 name|GimpFilterTool
 modifier|*
@@ -2218,7 +2218,7 @@ operator|->
 name|gui
 argument_list|)
 expr_stmt|;
-name|gimp_filter_tool_create_map
+name|gimp_filter_tool_create_filter
 argument_list|(
 name|filter_tool
 argument_list|)
@@ -4208,8 +4208,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_filter_tool_create_map (GimpFilterTool * filter_tool)
-name|gimp_filter_tool_create_map
+DECL|function|gimp_filter_tool_create_filter (GimpFilterTool * filter_tool)
+name|gimp_filter_tool_create_filter
 parameter_list|(
 name|GimpFilterTool
 modifier|*
@@ -4286,6 +4286,28 @@ argument_list|,
 name|options
 operator|->
 name|region
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_filter_set_color_managed
+argument_list|(
+name|filter_tool
+operator|->
+name|filter
+argument_list|,
+name|options
+operator|->
+name|color_managed
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_filter_set_gamma_hack
+argument_list|(
+name|filter_tool
+operator|->
+name|filter
+argument_list|,
+name|options
+operator|->
+name|gamma_hack
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -5740,7 +5762,7 @@ argument_list|)
 operator|->
 name|drawable
 condition|)
-name|gimp_filter_tool_create_map
+name|gimp_filter_tool_create_filter
 argument_list|(
 name|filter_tool
 argument_list|)
