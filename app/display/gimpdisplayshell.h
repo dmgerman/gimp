@@ -210,7 +210,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GtkBox
+name|GtkEventBox
 name|parent_instance
 decl_stmt|;
 DECL|member|display
@@ -820,7 +820,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GtkBoxClass
+name|GtkEventBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled

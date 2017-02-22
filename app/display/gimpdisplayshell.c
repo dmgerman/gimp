@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3379740103
+DECL|enum|__anon27dd2f250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3379740203
+DECL|enum|__anon27dd2f250203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -781,7 +781,7 @@ argument|GimpDisplayShell
 argument_list|,
 argument|gimp_display_shell
 argument_list|,
-argument|GTK_TYPE_BOX
+argument|GTK_TYPE_EVENT_BOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)
@@ -1292,16 +1292,6 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gtk_orientable_set_orientation
-argument_list|(
-name|GTK_ORIENTABLE
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-name|GTK_ORIENTATION_VERTICAL
-argument_list|)
-expr_stmt|;
 name|shell
 operator|->
 name|options
@@ -1605,6 +1595,10 @@ name|filter
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|upper_hbox
 decl_stmt|;
 name|GtkWidget
@@ -1821,8 +1815,33 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *     |      |    *     |      +-- quick_mask    *     |      +-- hscrollbar    *     |      +-- navbutton    *     |    *     +-- statusbar    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- main_vbox    *            |    *            +-- upper_hbox    *            |      |    *            |      +-- inner_table    *            |      |      |    *            |      |      +-- origin    *            |      |      +-- hruler    *            |      |      +-- vruler    *            |      |      +-- canvas    *            |      |    *            |      +-- right_vbox    *            |             |    *            |             +-- zoom_on_resize_button    *            |             +-- vscrollbar    *            |    *            +-- lower_hbox    *            |      |    *            |      +-- quick_mask    *            |      +-- hscrollbar    *            |      +-- navbutton    *            |    *            +-- statusbard    *    *  Note that we separate "shell" and "main_vbox", so that we can make    *  "shell" a GtkEventBox, giving it its own window.  This isolates our    *  events from those of our ancestors, avoiding some potential slowdowns,    *  and making things generally smoother.  See bug #778966.    */
 comment|/*  first, set up the container hierarchy  *********************************/
+comment|/*  the root vbox  */
+name|main_vbox
+operator|=
+name|gtk_box_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|main_vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|main_vbox
+argument_list|)
+expr_stmt|;
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
 operator|=
@@ -1837,7 +1856,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|shell
+name|main_vbox
 argument_list|)
 argument_list|,
 name|upper_hbox
@@ -1956,7 +1975,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|shell
+name|main_vbox
 argument_list|)
 argument_list|,
 name|lower_hbox
@@ -2957,7 +2976,7 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|shell
+name|main_vbox
 argument_list|)
 argument_list|,
 name|shell
