@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd2f250103
+DECL|enum|__anon277caab20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd2f250203
+DECL|enum|__anon277caab20203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1815,7 +1815,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- main_vbox    *            |    *            +-- upper_hbox    *            |      |    *            |      +-- inner_table    *            |      |      |    *            |      |      +-- origin    *            |      |      +-- hruler    *            |      |      +-- vruler    *            |      |      +-- canvas    *            |      |    *            |      +-- right_vbox    *            |             |    *            |             +-- zoom_on_resize_button    *            |             +-- vscrollbar    *            |    *            +-- lower_hbox    *            |      |    *            |      +-- quick_mask    *            |      +-- hscrollbar    *            |      +-- navbutton    *            |    *            +-- statusbard    *    *  Note that we separate "shell" and "main_vbox", so that we can make    *  "shell" a GtkEventBox, giving it its own window.  This isolates our    *  events from those of our ancestors, avoiding some potential slowdowns,    *  and making things generally smoother.  See bug #778966.    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- main_vbox    *            |    *            +-- upper_hbox    *            |      |    *            |      +-- inner_table    *            |      |      |    *            |      |      +-- origin    *            |      |      +-- hruler    *            |      |      +-- vruler    *            |      |      +-- canvas    *            |      |    *            |      +-- right_vbox    *            |             |    *            |             +-- zoom_on_resize_button    *            |             +-- vscrollbar    *            |    *            +-- lower_hbox    *            |      |    *            |      +-- quick_mask    *            |      +-- hscrollbar    *            |      +-- navbutton    *            |    *            +-- statusbar    *    *  Note that we separate "shell" and "main_vbox", so that we can make    *  "shell" a GtkEventBox, giving it its own window.  This isolates our    *  events from those of our ancestors, avoiding some potential slowdowns,    *  and making things generally smoother.  See bug #778966.    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the root vbox  */
 name|main_vbox
