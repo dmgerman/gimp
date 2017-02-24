@@ -4667,7 +4667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B',  * R'G'B'A, Y, YA, Y', Y'A and the cairo-RGB24 and cairo-ARGB32 formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               is the passed @format is not supported at all.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B',  * R'G'B'A, Y, YA, Y', Y'A and the cairo-RGB24 and cairo-ARGB32 formats.  *  * Return value: the #Babl format to be used instead of @format, or %NULL  *               if the passed @format is not supported at all.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -4974,6 +4974,56 @@ name|cmyk
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"CIE Lab"
+argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"CIE Lab alpha"
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+operator|*
+name|lcms_format
+operator|=
+name|TYPE_RGBA_FLT
+expr_stmt|;
+return|return
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+return|;
+block|}
+else|else
+block|{
+operator|*
+name|lcms_format
+operator|=
+name|TYPE_RGB_FLT
+expr_stmt|;
+return|return
+name|babl_format
+argument_list|(
+literal|"RGB float"
+argument_list|)
+return|;
+block|}
 block|}
 elseif|else
 if|if
