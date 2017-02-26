@@ -125,7 +125,7 @@ DECL|macro|GIMP_NORMAL_MODE
 define|#
 directive|define
 name|GIMP_NORMAL_MODE
-value|GIMP_LAYER_MODE_NORMAL
+value|GIMP_LAYER_MODE_NORMAL_LEGACY
 end_define
 
 begin_define
@@ -141,7 +141,7 @@ DECL|macro|GIMP_BEHIND_MODE
 define|#
 directive|define
 name|GIMP_BEHIND_MODE
-value|GIMP_LAYER_MODE_BEHIND
+value|GIMP_LAYER_MODE_BEHIND_LEGACY
 end_define
 
 begin_define
