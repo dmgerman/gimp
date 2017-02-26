@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ffb67a0108
+DECL|struct|__anon29a285770108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -605,7 +605,7 @@ name|gimp_image_convert_indexed
 argument_list|(
 name|image_ID
 argument_list|,
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,
@@ -623,7 +623,7 @@ name|gimp_image_convert_indexed
 argument_list|(
 name|image_ID
 argument_list|,
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,
@@ -671,7 +671,7 @@ name|gimp_image_convert_indexed
 argument_list|(
 name|image_ID
 argument_list|,
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,

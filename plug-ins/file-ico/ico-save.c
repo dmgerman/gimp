@@ -2709,7 +2709,7 @@ name|gimp_image_convert_indexed
 argument_list|(
 name|tmp_image
 argument_list|,
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,
@@ -2864,7 +2864,7 @@ name|gimp_image_convert_indexed
 argument_list|(
 name|tmp_image
 argument_list|,
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 argument_list|,
 name|GIMP_MAKE_PALETTE
 argument_list|,

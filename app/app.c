@@ -288,6 +288,19 @@ end_function_decl
 
 begin_function_decl
 name|GType
+name|gimp_convert_dither_type_compat_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* compat cruft */
+end_comment
+
+begin_function_decl
+name|GType
 name|gimp_layer_mode_effects_get_type
 parameter_list|(
 name|void
@@ -392,6 +405,19 @@ operator|=
 name|g_quark_from_static_string
 argument_list|(
 literal|"gimp-compat-enum"
+argument_list|)
+expr_stmt|;
+name|g_type_set_qdata
+argument_list|(
+name|GIMP_TYPE_CONVERT_DITHER_TYPE
+argument_list|,
+name|quark
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|gimp_convert_dither_type_compat_get_type
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_type_set_qdata

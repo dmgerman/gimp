@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5713070103
+DECL|enum|__anon299be8480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,7 +665,7 @@ name|IMAGE_CONVERT_INDEXED_DITHER_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_CONVERT_DITHER_TYPE
 argument_list|,
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

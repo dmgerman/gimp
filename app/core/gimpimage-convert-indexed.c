@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2afc299d0103
+DECL|enum|__anon28f682740103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc299d0208
+DECL|struct|__anon28f682740208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc299d0308
+DECL|struct|__anon28f682740308
 block|{
 DECL|member|used_count
 name|glong
@@ -3070,7 +3070,7 @@ condition|)
 block|{
 name|dither_type
 operator|=
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 expr_stmt|;
 block|}
 name|quantobj
@@ -3252,7 +3252,7 @@ name|old_type
 argument_list|,
 name|max_colors
 argument_list|,
-name|GIMP_NODESTRUCT_DITHER
+name|GIMP_CONVERT_DITHER_NODESTRUCT
 argument_list|,
 name|palette_type
 argument_list|,
@@ -17479,7 +17479,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|GIMP_NODESTRUCT_DITHER
+name|GIMP_CONVERT_DITHER_NODESTRUCT
 case|:
 default|default:
 name|g_warning
@@ -17488,7 +17488,7 @@ literal|"Uh-oh, bad dither type, W1"
 argument_list|)
 expr_stmt|;
 case|case
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 case|:
 name|quantobj
 operator|->
@@ -17504,7 +17504,7 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 case|:
 name|quantobj
 operator|->
@@ -17526,7 +17526,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FSLOWBLEED_DITHER
+name|GIMP_CONVERT_DITHER_FS_LOWBLEED
 case|:
 name|quantobj
 operator|->
@@ -17548,7 +17548,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FIXED_DITHER
+name|GIMP_CONVERT_DITHER_FIXED
 case|:
 name|quantobj
 operator|->
@@ -17573,7 +17573,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|GIMP_NODESTRUCT_DITHER
+name|GIMP_CONVERT_DITHER_NODESTRUCT
 case|:
 default|default:
 name|g_warning
@@ -17582,7 +17582,7 @@ literal|"Uh-oh, bad dither type, W2"
 argument_list|)
 expr_stmt|;
 case|case
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 case|:
 name|quantobj
 operator|->
@@ -17598,7 +17598,7 @@ name|median_cut_pass2_no_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 case|:
 name|quantobj
 operator|->
@@ -17620,7 +17620,7 @@ name|median_cut_pass2_fs_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FSLOWBLEED_DITHER
+name|GIMP_CONVERT_DITHER_FS_LOWBLEED
 case|:
 name|quantobj
 operator|->
@@ -17642,7 +17642,7 @@ name|median_cut_pass2_fs_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FIXED_DITHER
+name|GIMP_CONVERT_DITHER_FIXED
 case|:
 name|quantobj
 operator|->
@@ -17723,7 +17723,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 case|:
 name|quantobj
 operator|->
@@ -17739,7 +17739,7 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FS_DITHER
+name|GIMP_CONVERT_DITHER_FS
 case|:
 name|quantobj
 operator|->
@@ -17761,7 +17761,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FSLOWBLEED_DITHER
+name|GIMP_CONVERT_DITHER_FS_LOWBLEED
 case|:
 name|quantobj
 operator|->
@@ -17783,7 +17783,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_NODESTRUCT_DITHER
+name|GIMP_CONVERT_DITHER_NODESTRUCT
 case|:
 name|quantobj
 operator|->
@@ -17799,7 +17799,7 @@ name|median_cut_pass2_nodestruct_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FIXED_DITHER
+name|GIMP_CONVERT_DITHER_FIXED
 case|:
 name|quantobj
 operator|->

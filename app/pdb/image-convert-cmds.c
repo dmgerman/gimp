@@ -1253,7 +1253,7 @@ literal|"The dither type to use"
 argument_list|,
 name|GIMP_TYPE_CONVERT_DITHER_TYPE
 argument_list|,
-name|GIMP_NO_DITHER
+name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
