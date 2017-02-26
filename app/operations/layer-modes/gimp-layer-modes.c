@@ -1601,6 +1601,11 @@ operator|=
 name|gimp_operation_normal_process
 block|,
 operator|.
+name|flags
+operator|=
+name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+block|,
+operator|.
 name|context
 operator|=
 name|GIMP_LAYER_MODE_CONTEXT_ALL
