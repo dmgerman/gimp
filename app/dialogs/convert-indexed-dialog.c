@@ -654,14 +654,14 @@ name|gimp_enum_radio_frame_new_with_range
 argument_list|(
 name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 operator|(
 name|palette_box
 condition|?
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 else|:
-name|GIMP_MONO_PALETTE
+name|GIMP_CONVERT_PALETTE_MONO
 operator|)
 argument_list|,
 name|gtk_label_new
@@ -738,7 +738,7 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 name|TRUE
 argument_list|)
@@ -905,7 +905,7 @@ argument_list|)
 argument_list|,
 name|palette_box
 argument_list|,
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 argument_list|,
 name|TRUE
 argument_list|)

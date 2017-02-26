@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299be8480103
+DECL|enum|__anon2aea4e750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -608,7 +608,7 @@ name|IMAGE_CONVERT_INDEXED_PALETTE_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

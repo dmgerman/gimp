@@ -2711,7 +2711,7 @@ name|tmp_image
 argument_list|,
 name|GIMP_CONVERT_DITHER_FS
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 literal|1
 operator|<<
@@ -2866,7 +2866,7 @@ name|tmp_image
 argument_list|,
 name|GIMP_CONVERT_DITHER_FS
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 operator|(
 literal|1

@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0103
+DECL|enum|__anon27ccbebe0103
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -99,7 +99,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0203
+DECL|enum|__anon27ccbebe0203
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -147,7 +147,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0303
+DECL|enum|__anon27ccbebe0303
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -190,7 +190,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0403
+DECL|enum|__anon27ccbebe0403
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -248,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0503
+DECL|enum|__anon27ccbebe0503
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -286,7 +286,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0603
+DECL|enum|__anon27ccbebe0603
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -302,6 +302,49 @@ name|GIMP_FIXED_DITHER
 DECL|typedef|GimpConvertDitherTypeCompat
 block|}
 name|GimpConvertDitherTypeCompat
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CONVERT_PALETTE_TYPE_COMPAT
+define|#
+directive|define
+name|GIMP_TYPE_CONVERT_PALETTE_TYPE_COMPAT
+value|(gimp_convert_palette_type_compat_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_convert_palette_type_compat_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27ccbebe0703
+block|{
+DECL|enumerator|GIMP_MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
+block|,
+DECL|enumerator|GIMP_REUSE_PALETTE
+name|GIMP_REUSE_PALETTE
+block|,
+DECL|enumerator|GIMP_WEB_PALETTE
+name|GIMP_WEB_PALETTE
+block|,
+DECL|enumerator|GIMP_MONO_PALETTE
+name|GIMP_MONO_PALETTE
+block|,
+DECL|enumerator|GIMP_CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
+DECL|typedef|GimpConvertPaletteTypeCompat
+block|}
+name|GimpConvertPaletteTypeCompat
 typedef|;
 end_typedef
 
@@ -326,7 +369,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0703
+DECL|enum|__anon27ccbebe0803
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -364,7 +407,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0803
+DECL|enum|__anon27ccbebe0903
 block|{
 DECL|enumerator|GIMP_DESATURATE_LUMINOSITY
 name|GIMP_DESATURATE_LUMINOSITY
@@ -397,7 +440,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0903
+DECL|enum|__anon27ccbebe0a03
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -435,7 +478,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0a03
+DECL|enum|__anon27ccbebe0b03
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -488,7 +531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0b03
+DECL|enum|__anon27ccbebe0c03
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -551,7 +594,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0c03
+DECL|enum|__anon27ccbebe0d03
 block|{
 DECL|enumerator|GIMP_ICON_TYPE_STOCK_ID
 name|GIMP_ICON_TYPE_STOCK_ID
@@ -584,7 +627,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0d03
+DECL|enum|__anon27ccbebe0e03
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_LANCZOS
 name|GIMP_INTERPOLATION_LANCZOS
@@ -617,7 +660,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0e03
+DECL|enum|__anon27ccbebe0f03
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -714,7 +757,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd11eb0f03
+DECL|enum|__anon27ccbebe1003
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS

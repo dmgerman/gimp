@@ -563,7 +563,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 case|:
 if|if
 condition|(
@@ -581,7 +581,7 @@ name|FALSE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 case|:
 name|pal
 operator|=
@@ -1273,7 +1273,7 @@ literal|"The type of palette to use"
 argument_list|,
 name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1289,7 +1289,7 @@ literal|"num-cols"
 argument_list|,
 literal|"num cols"
 argument_list|,
-literal|"The number of colors to quantize to, ignored unless (palette_type == GIMP_MAKE_PALETTE)"
+literal|"The number of colors to quantize to, ignored unless (palette_type == GIMP_CONVERT_PALETTE_GENERATE)"
 argument_list|,
 name|G_MININT32
 argument_list|,
@@ -1329,7 +1329,7 @@ literal|"remove-unused"
 argument_list|,
 literal|"remove unused"
 argument_list|,
-literal|"Remove unused or duplicate color entries from final palette, ignored if (palette_type == GIMP_MAKE_PALETTE)"
+literal|"Remove unused or duplicate color entries from final palette, ignored if (palette_type == GIMP_CONVERT_PALETTE_GENERATE)"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1347,7 +1347,7 @@ literal|"palette"
 argument_list|,
 literal|"palette"
 argument_list|,
-literal|"The name of the custom palette to use, ignored unless (palette_type == GIMP_CUSTOM_PALETTE)"
+literal|"The name of the custom palette to use, ignored unless (palette_type == GIMP_CONVERT_PALETTE_CUSTOM)"
 argument_list|,
 name|FALSE
 argument_list|,

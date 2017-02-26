@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28f682740103
+DECL|enum|__anon28a135b50103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f682740208
+DECL|struct|__anon28a135b50208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f682740308
+DECL|struct|__anon28a135b50308
 block|{
 DECL|member|used_count
 name|glong
@@ -2887,7 +2887,7 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 condition|)
 block|{
 if|if
@@ -2897,7 +2897,7 @@ name|custom_palette
 condition|)
 name|palette_type
 operator|=
-name|GIMP_MONO_PALETTE
+name|GIMP_CONVERT_PALETTE_MONO
 expr_stmt|;
 if|if
 condition|(
@@ -3065,7 +3065,7 @@ literal|256
 operator|&&
 name|palette_type
 operator|==
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 condition|)
 block|{
 name|dither_type
@@ -3096,7 +3096,7 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 condition|)
 block|{
 if|if
@@ -3230,7 +3230,7 @@ name|needs_quantize
 operator|&&
 name|palette_type
 operator|==
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 condition|)
 block|{
 name|gint
@@ -3351,7 +3351,7 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 condition|)
 name|qsort
 argument_list|(
@@ -3700,7 +3700,7 @@ operator|&&
 operator|(
 name|palette_type
 operator|!=
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 operator|)
 condition|)
 block|{
@@ -17351,7 +17351,7 @@ name|GIMP_GRAY
 operator|&&
 name|palette_type
 operator|==
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 condition|)
 name|quantobj
 operator|->
@@ -17418,7 +17418,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 case|:
 name|quantobj
 operator|->
@@ -17428,7 +17428,7 @@ name|median_cut_pass1_gray
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_WEB_PALETTE
+name|GIMP_CONVERT_PALETTE_WEB
 case|:
 name|quantobj
 operator|->
@@ -17438,7 +17438,7 @@ name|webpal_pass1
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 case|:
 name|quantobj
 operator|->
@@ -17452,7 +17452,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MONO_PALETTE
+name|GIMP_CONVERT_PALETTE_MONO
 case|:
 default|default:
 name|quantobj
@@ -17466,11 +17466,11 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|GIMP_WEB_PALETTE
+name|GIMP_CONVERT_PALETTE_WEB
 operator|||
 name|palette_type
 operator|==
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 condition|)
 block|{
 switch|switch
@@ -17669,7 +17669,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|GIMP_MAKE_PALETTE
+name|GIMP_CONVERT_PALETTE_GENERATE
 case|:
 name|quantobj
 operator|->
@@ -17679,7 +17679,7 @@ name|median_cut_pass1_rgb
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_WEB_PALETTE
+name|GIMP_CONVERT_PALETTE_WEB
 case|:
 name|quantobj
 operator|->
@@ -17693,7 +17693,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CUSTOM_PALETTE
+name|GIMP_CONVERT_PALETTE_CUSTOM
 case|:
 name|quantobj
 operator|->
@@ -17707,7 +17707,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MONO_PALETTE
+name|GIMP_CONVERT_PALETTE_MONO
 case|:
 default|default:
 name|quantobj
