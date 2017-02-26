@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947a5f60108
+DECL|struct|__anon2c129c8a0108
 block|{
 DECL|member|raw
 name|gint
@@ -844,7 +844,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2947a5f60208
+DECL|struct|__anon2c129c8a0208
 block|{
 DECL|member|name
 name|gchar
@@ -3076,7 +3076,7 @@ operator|)
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
@@ -4688,7 +4688,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2947a5f6030a
+DECL|union|__anon2c129c8a030a
 DECL|member|f
 DECL|member|i
 union|union

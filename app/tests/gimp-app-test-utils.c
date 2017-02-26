@@ -344,7 +344,7 @@ literal|"layer1"
 argument_list|,
 literal|1.0
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

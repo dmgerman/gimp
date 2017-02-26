@@ -2366,7 +2366,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 return|;
 block|}
 if|if
@@ -2885,7 +2885,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 return|;
 block|}
 if|if
@@ -2933,7 +2933,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 return|;
 block|}
 if|if
@@ -2975,7 +2975,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 return|;
 block|}
 end_function
@@ -3003,7 +3003,7 @@ operator|(
 operator|(
 name|layer_mode
 operator|==
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 operator|||
 name|layer_mode
 operator|==
@@ -3034,7 +3034,7 @@ name|layer_mode
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 case|:
 name|psd_mode
 operator|=

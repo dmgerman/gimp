@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9c0d50108
+DECL|struct|__anon275e50370108
 block|{
 DECL|member|image
 name|gint32
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb9c0d50203
+DECL|enum|__anon275e50370203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb9c0d50303
+DECL|enum|__anon275e50370303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -167,7 +167,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb9c0d50408
+DECL|struct|__anon275e50370408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -1256,7 +1256,7 @@ name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|ndrw

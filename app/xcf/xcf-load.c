@@ -6257,7 +6257,7 @@ name|name
 argument_list|,
 literal|255
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_free

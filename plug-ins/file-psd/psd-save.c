@@ -583,7 +583,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 case|:
 name|strcpy
 argument_list|(

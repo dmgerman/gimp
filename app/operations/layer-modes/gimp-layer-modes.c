@@ -247,7 +247,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 block|,
 operator|.
 name|op_name
@@ -263,6 +263,10 @@ operator|.
 name|flags
 operator|=
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
 block|,
 operator|.
 name|context
@@ -1584,7 +1588,7 @@ name|GIMP_LAYER_COLOR_SPACE_LAB
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_NORMAL_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 block|,
 operator|.
 name|op_name
@@ -1595,11 +1599,6 @@ operator|.
 name|function
 operator|=
 name|gimp_operation_normal_process
-block|,
-operator|.
-name|flags
-operator|=
-name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 block|,
 operator|.
 name|context
@@ -2973,7 +2972,7 @@ name|layer_mode_group_legacy
 index|[]
 init|=
 block|{
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 block|,
 name|GIMP_LAYER_MODE_DISSOLVE
 block|,
@@ -3051,7 +3050,7 @@ index|[
 name|GIMP_LAYER_MODE_GROUP_LEGACY
 index|]
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 block|}
 block|,
 block|{

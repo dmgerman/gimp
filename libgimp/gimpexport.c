@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52046e0108
+DECL|struct|__anon28ffb67a0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -217,7 +217,7 @@ literal|1
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

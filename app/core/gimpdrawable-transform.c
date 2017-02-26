@@ -4160,7 +4160,7 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|buffer_profile
 argument_list|)

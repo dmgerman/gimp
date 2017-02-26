@@ -685,7 +685,7 @@ name|name
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|profile
 argument_list|)
@@ -5712,7 +5712,7 @@ literal|"The layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8653,7 +8653,7 @@ literal|"The layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -8744,7 +8744,7 @@ literal|"The new layer combination mode"
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

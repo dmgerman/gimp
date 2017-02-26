@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7fb13e0108
+DECL|struct|__anon2baef4500108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7fb13e0208
+DECL|struct|__anon2baef4500208
 block|{
 DECL|member|transparent
 name|gint
@@ -4207,7 +4207,7 @@ name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 block|}
@@ -4230,7 +4230,7 @@ name|GIMP_INDEXEDA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|alpha_frame
@@ -4575,7 +4575,7 @@ name|GIMP_INDEXEDA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|alpha_frame

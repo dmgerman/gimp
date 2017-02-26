@@ -564,7 +564,7 @@ expr_stmt|;
 else|else
 name|paint_mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 expr_stmt|;
 name|gimp_brush_core_eval_transform_dynamics
 argument_list|(

@@ -9678,7 +9678,7 @@ decl_stmt|;
 name|GimpLayerMode
 name|mode
 init|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 decl_stmt|;
 if|if
 condition|(
@@ -10099,7 +10099,7 @@ DECL|macro|GROUPLAYER_DOC
 define|#
 directive|define
 name|GROUPLAYER_DOC
-value|""                                \ "gimp.GroupLayer(img, name="", opacity=100.0,   "        \ "mode=gimp.NORMAL_MODE)\n"                               \ "\n"                                                     \ " Creates a new GroupLayer object that has to be \n"     \ "subsequently added to an image. Use Image.add_layer \n" \ "or pdb.gimp_image_insert_layer calls to do that. \n"    \  static PyMethodDef grouplay_methods[] = {
+value|""                                \ "gimp.GroupLayer(img, name="", opacity=100.0,   "        \ "mode=gimp.LAYER_MODE_NORMAL_LEGACY)\n"                  \ "\n"                                                     \ " Creates a new GroupLayer object that has to be \n"     \ "subsequently added to an image. Use Image.add_layer \n" \ "or pdb.gimp_image_insert_layer calls to do that. \n"    \  static PyMethodDef grouplay_methods[] = {
 end_define
 
 begin_block
@@ -10336,7 +10336,7 @@ decl_stmt|;
 name|GimpLayerMode
 name|mode
 init|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 decl_stmt|;
 if|if
 condition|(

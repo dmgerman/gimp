@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c50d2d0103
+DECL|enum|__anon2bf6c1700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -592,7 +592,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -8160,7 +8160,7 @@ return|return
 name|blendfun_multiply
 return|;
 case|case
-name|GIMP_LAYER_MODE_NORMAL_LINEAR
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 case|:
 case|case
 name|GIMP_LAYER_MODE_NORMAL

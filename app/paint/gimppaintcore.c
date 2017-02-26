@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b681cae0103
+DECL|enum|__anon29e3bea60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4099,7 +4099,7 @@ name|paint_opacity
 argument_list|,
 name|image_opacity
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|mode
 argument_list|)

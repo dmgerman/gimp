@@ -2317,7 +2317,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29919c360108
+DECL|struct|__anon2b200ef50108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29919c360208
+DECL|struct|__anon2b200ef50208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3592,7 +3592,7 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -3748,7 +3748,7 @@ name|NULL
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

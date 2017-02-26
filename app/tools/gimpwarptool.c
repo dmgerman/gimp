@@ -3940,7 +3940,7 @@ name|gimp_layer_set_mode
 argument_list|(
 name|layer
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|FALSE
 argument_list|)

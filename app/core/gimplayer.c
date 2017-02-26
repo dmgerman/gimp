@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6e9e60103
+DECL|enum|__anon28eff82c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -237,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6e9e60203
+DECL|enum|__anon28eff82c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1910,7 +1910,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_PARAM_READABLE
 argument_list|)
@@ -2066,7 +2066,7 @@ name|layer
 operator|->
 name|mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 expr_stmt|;
 name|layer
 operator|->
@@ -2604,7 +2604,7 @@ condition|)
 block|{
 name|visible_mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 expr_stmt|;
 name|visible_blend_space
 operator|=
@@ -2640,7 +2640,7 @@ condition|)
 block|{
 name|visible_mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 expr_stmt|;
 name|visible_blend_space
 operator|=
@@ -9347,7 +9347,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 return|return

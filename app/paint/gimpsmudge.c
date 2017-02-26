@@ -791,7 +791,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|coords
 argument_list|,
@@ -1229,7 +1229,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|coords
 argument_list|,

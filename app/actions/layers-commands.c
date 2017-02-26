@@ -1456,7 +1456,7 @@ literal|1.0
 expr_stmt|;
 name|mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 expr_stmt|;
 block|}
 name|gimp_image_undo_group_start
@@ -1638,7 +1638,7 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|profile
 argument_list|)

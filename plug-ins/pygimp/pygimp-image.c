@@ -565,7 +565,7 @@ decl_stmt|;
 name|GimpLayerMode
 name|mode
 init|=
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 decl_stmt|;
 name|GimpFillType
 name|fill_mode

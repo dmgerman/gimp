@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a579e90108
+DECL|struct|__anon277359a70108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1112,7 +1112,7 @@ name|img_type
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
@@ -8510,7 +8510,7 @@ name|drawable_id
 argument_list|,
 name|GIMP_BLEND_CUSTOM
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 argument_list|,
@@ -8560,7 +8560,7 @@ name|drawable_id
 argument_list|,
 name|GIMP_BLEND_CUSTOM
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_GRADIENT_LINEAR
 argument_list|,
@@ -8601,7 +8601,7 @@ name|drawable_id
 argument_list|,
 name|GIMP_BLEND_CUSTOM
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|GIMP_GRADIENT_LINEAR
 argument_list|,
@@ -8641,7 +8641,7 @@ argument_list|,
 name|fill_mode
 argument_list|,
 comment|/* Fill mode */
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|,
 name|current_style
 operator|->

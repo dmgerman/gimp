@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d9b080103
+DECL|enum|__anon2c2cde4f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d9b080203
+DECL|enum|__anon2c2cde4f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9672,7 +9672,7 @@ condition|)
 block|{
 comment|/*  Modes that exist since ancient times  */
 case|case
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 case|:
 case|case
 name|GIMP_LAYER_MODE_DISSOLVE
@@ -9780,7 +9780,7 @@ expr_stmt|;
 break|break;
 comment|/*  Since 2.10  */
 case|case
-name|GIMP_LAYER_MODE_NORMAL_LINEAR
+name|GIMP_LAYER_MODE_NORMAL
 case|:
 case|case
 name|GIMP_LAYER_MODE_BEHIND

@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c657dd0108
+DECL|struct|__anon29e72e580108
 block|{
 DECL|member|image
 name|GimpImage
@@ -315,7 +315,7 @@ literal|"Test Layer"
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpint
@@ -457,7 +457,7 @@ literal|"Test Layer"
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpint
@@ -575,7 +575,7 @@ literal|"Test Layer"
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_assert_cmpint

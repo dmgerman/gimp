@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8009a80108
+DECL|struct|__anon2b52f4fb0108
 block|{
 union|union
-DECL|union|__anon2c8009a8020a
+DECL|union|__anon2b52f4fb020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8009a80308
+DECL|struct|__anon2b52f4fb0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8009a80408
+DECL|struct|__anon2b52f4fb0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8009a80508
+DECL|struct|__anon2b52f4fb0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8009a80608
+DECL|struct|__anon2b52f4fb0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -4413,7 +4413,7 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

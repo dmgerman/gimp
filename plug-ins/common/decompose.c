@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b972f150108
+DECL|struct|__anon2bcbdd530108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b972f150208
+DECL|struct|__anon2bcbdd530208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b972f150308
+DECL|struct|__anon2bcbdd530308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2965,7 +2965,7 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

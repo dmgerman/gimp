@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28805ace0108
+DECL|struct|__anon297cc7f30108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28805ace0208
+DECL|struct|__anon297cc7f30208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1016,7 +1016,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28805ace0308
+DECL|struct|__anon297cc7f30308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1988,7 +1988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28805ace0408
+DECL|struct|__anon297cc7f30408
 block|{
 DECL|member|eol
 name|goffset
@@ -8185,7 +8185,7 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_free

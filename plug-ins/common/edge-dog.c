@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2935371e0108
+DECL|struct|__anon287b032f0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -4642,7 +4642,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
 argument_list|)
 expr_stmt|;
 name|preview_drawable
