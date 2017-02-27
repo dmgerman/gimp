@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b66f77b0103
+DECL|enum|__anon2b522e190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66f77b0208
+DECL|struct|__anon2b522e190208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b66f77b0308
+DECL|struct|__anon2b522e190308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -3297,6 +3297,12 @@ name|font_scale
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|priv
+operator|->
+name|backing_store_valid
+operator|=
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
