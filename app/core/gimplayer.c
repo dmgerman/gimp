@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eff82c0103
+DECL|enum|__anon2b8d7fdc0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -237,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eff82c0203
+DECL|enum|__anon2b8d7fdc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2623,12 +2623,6 @@ else|else
 block|{
 if|if
 condition|(
-name|layer
-operator|->
-name|mode
-operator|!=
-name|GIMP_LAYER_MODE_DISSOLVE
-operator|&&
 name|gimp_filter_get_is_last_node
 argument_list|(
 name|GIMP_FILTER
@@ -2638,9 +2632,22 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|layer
+operator|->
+name|mode
+operator|!=
+name|GIMP_LAYER_MODE_DISSOLVE
+condition|)
 name|visible_mode
 operator|=
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
+expr_stmt|;
+else|else
+name|visible_mode
+operator|=
+name|GIMP_LAYER_MODE_DISSOLVE
 expr_stmt|;
 name|visible_blend_space
 operator|=

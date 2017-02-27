@@ -2549,12 +2549,14 @@ condition|(
 name|layer
 operator|==
 name|bottom_layer
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|mode
 operator|!=
 name|GIMP_LAYER_MODE_DISSOLVE
 condition|)
-block|{
 name|mode
 operator|=
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
