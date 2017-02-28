@@ -247,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e720e40103
+DECL|enum|__anon2bcb686c0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -673,7 +673,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_SEAMLESS_CLONE
 argument_list|,
-name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
+name|GIMP_ICON_TOOL_SEAMLESS_CLONE
 argument_list|,
 name|data
 argument_list|)
@@ -2646,7 +2646,7 @@ name|sc
 operator|->
 name|render_node
 argument_list|,
-name|GIMP_STOCK_TOOL_SEAMLESS_CLONE
+name|GIMP_ICON_TOOL_SEAMLESS_CLONE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_filter_set_region

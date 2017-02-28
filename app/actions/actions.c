@@ -891,7 +891,7 @@ argument_list|(
 literal|"MyPaint Brushes"
 argument_list|)
 block|,
-name|GIMP_STOCK_MYPAINT_BRUSH
+name|GIMP_ICON_MYPAINT_BRUSH
 block|,
 name|mypaint_brushes_actions_setup
 block|,

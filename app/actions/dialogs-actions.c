@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"dialogs-symmetry"
 block|,
-name|GIMP_STOCK_SYMMETRY
+name|GIMP_ICON_SYMMETRY
 block|,
 name|NC_
 argument_list|(
@@ -600,7 +600,7 @@ block|,
 block|{
 literal|"dialogs-mypaint-brushes"
 block|,
-name|GIMP_STOCK_MYPAINT_BRUSH
+name|GIMP_ICON_MYPAINT_BRUSH
 block|,
 name|NC_
 argument_list|(

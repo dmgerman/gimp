@@ -408,7 +408,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_COLOR_CMYK
+name|GIMP_ICON_COLOR_CMYK
 expr_stmt|;
 name|selector_class
 operator|->

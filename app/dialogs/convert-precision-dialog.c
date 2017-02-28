@@ -523,7 +523,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-convert-precision"
 argument_list|,
-name|GIMP_STOCK_CONVERT_PRECISION
+name|GIMP_ICON_CONVERT_PRECISION
 argument_list|,
 name|blurb
 argument_list|,

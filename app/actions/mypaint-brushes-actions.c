@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"mypaint-brushes-popup"
 block|,
-name|GIMP_STOCK_MYPAINT_BRUSH
+name|GIMP_ICON_MYPAINT_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -201,7 +201,7 @@ block|,
 block|{
 literal|"mypaint-brushes-show-in-file-manager"
 block|,
-name|GIMP_STOCK_FILE_MANAGER
+name|GIMP_ICON_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(

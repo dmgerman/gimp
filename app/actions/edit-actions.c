@@ -389,7 +389,7 @@ block|,
 block|{
 literal|"edit-undo-clear"
 block|,
-name|GIMP_STOCK_SHRED
+name|GIMP_ICON_SHRED
 block|,
 name|NC_
 argument_list|(

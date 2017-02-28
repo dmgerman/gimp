@@ -1311,7 +1311,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_MYPAINT_BRUSH
+name|GIMP_ICON_MYPAINT_BRUSH
 argument_list|,
 name|GIMP_HELP_MYPAINT_BRUSH_DIALOG
 argument_list|,
@@ -1633,7 +1633,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_SYMMETRY
+name|GIMP_ICON_SYMMETRY
 argument_list|,
 name|GIMP_HELP_SYMMETRY_DIALOG
 argument_list|,

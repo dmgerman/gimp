@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277f44cc0103
+DECL|enum|__anon2a9bafb70103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -401,7 +401,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_FILE_MANAGER
+name|GIMP_ICON_FILE_MANAGER
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

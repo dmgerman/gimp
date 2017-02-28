@@ -828,7 +828,7 @@ block|{
 block|{
 literal|"tools-mypaint-brush-radius-set"
 block|,
-name|GIMP_STOCK_TOOL_MYPAINT_BRUSH
+name|GIMP_ICON_TOOL_MYPAINT_BRUSH
 block|,
 literal|"Set MyPaint Brush Radius"
 block|,
@@ -858,7 +858,7 @@ block|{
 block|{
 literal|"tools-mypaint-brush-hardness-set"
 block|,
-name|GIMP_STOCK_TOOL_MYPAINT_BRUSH
+name|GIMP_ICON_TOOL_MYPAINT_BRUSH
 block|,
 literal|"Set MyPaint Brush Hardness"
 block|,
@@ -948,7 +948,7 @@ block|{
 block|{
 literal|"tools-warp-effect-size-set"
 block|,
-name|GIMP_STOCK_TOOL_WARP
+name|GIMP_ICON_TOOL_WARP
 block|,
 literal|"Set Warp Effect Size"
 block|,
@@ -978,7 +978,7 @@ block|{
 block|{
 literal|"tools-warp-effect-hardness-set"
 block|,
-name|GIMP_STOCK_TOOL_WARP
+name|GIMP_ICON_TOOL_WARP
 block|,
 literal|"Set Warp Effect Hardness"
 block|,

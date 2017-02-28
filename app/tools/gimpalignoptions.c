@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e979690103
+DECL|enum|__anon29da20b50103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e979690203
+DECL|enum|__anon29da20b50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -728,7 +728,7 @@ name|GIMP_ARRANGE_HFILL
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_HFILL
+name|GIMP_ICON_HFILL
 expr_stmt|;
 break|break;
 case|case
@@ -736,7 +736,7 @@ name|GIMP_ARRANGE_VFILL
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_VFILL
+name|GIMP_ICON_VFILL
 expr_stmt|;
 break|break;
 default|default:

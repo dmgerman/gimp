@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"palettes-show-in-file-manager"
 block|,
-name|GIMP_STOCK_FILE_MANAGER
+name|GIMP_ICON_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(

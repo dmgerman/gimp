@@ -271,7 +271,7 @@ block|,
 block|{
 literal|"file-open"
 block|,
-name|GIMP_STOCK_IMAGE_OPEN
+name|GIMP_ICON_IMAGE_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -387,7 +387,7 @@ block|,
 block|{
 literal|"file-revert"
 block|,
-name|GIMP_STOCK_IMAGE_RELOAD
+name|GIMP_ICON_IMAGE_RELOAD
 block|,
 name|NC_
 argument_list|(
@@ -416,7 +416,7 @@ block|,
 block|{
 literal|"file-close-all"
 block|,
-name|GIMP_STOCK_CLOSE_ALL
+name|GIMP_ICON_CLOSE_ALL
 block|,
 name|NC_
 argument_list|(
@@ -474,7 +474,7 @@ block|,
 block|{
 literal|"file-show-in-file-manager"
 block|,
-name|GIMP_STOCK_FILE_MANAGER
+name|GIMP_ICON_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(

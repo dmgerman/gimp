@@ -10047,7 +10047,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GIMP_STOCK_SHRED
+name|GIMP_ICON_SHRED
 argument_list|,
 name|_
 argument_list|(
@@ -11529,7 +11529,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon287e4b240108
+DECL|struct|__anon296f86410108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12406,7 +12406,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon287e4b240208
+DECL|struct|__anon296f86410208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12544,7 +12544,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon287e4b240308
+DECL|struct|__anon296f86410308
 block|{
 DECL|member|tree_label
 specifier|const

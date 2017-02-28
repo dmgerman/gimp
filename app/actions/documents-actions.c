@@ -224,7 +224,7 @@ block|,
 block|{
 literal|"documents-show-in-file-manager"
 block|,
-name|GIMP_STOCK_FILE_MANAGER
+name|GIMP_ICON_FILE_MANAGER
 block|,
 name|NC_
 argument_list|(
@@ -282,7 +282,7 @@ block|,
 block|{
 literal|"documents-clear"
 block|,
-name|GIMP_STOCK_SHRED
+name|GIMP_ICON_SHRED
 block|,
 name|NC_
 argument_list|(

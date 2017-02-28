@@ -746,7 +746,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_N_POINT_DEFORMATION
 argument_list|,
-name|GIMP_STOCK_TOOL_N_POINT_DEFORMATION
+name|GIMP_ICON_TOOL_N_POINT_DEFORMATION
 argument_list|,
 name|data
 argument_list|)
