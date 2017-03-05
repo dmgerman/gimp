@@ -478,7 +478,7 @@ name|display_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_DISPLAY_FILTER_LCMS
+name|GIMP_ICON_DISPLAY_FILTER_LCMS
 expr_stmt|;
 name|display_class
 operator|->

@@ -391,7 +391,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-quick-mask-edit"
 argument_list|,
-name|GIMP_STOCK_QUICK_MASK_ON
+name|GIMP_ICON_QUICK_MASK_ON
 argument_list|,
 name|_
 argument_list|(

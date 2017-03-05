@@ -1257,7 +1257,7 @@ name|widget
 operator|=
 name|gimp_message_box_new
 argument_list|(
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_primary_text
@@ -1523,7 +1523,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-name|GIMP_STOCK_COLOR_PICKER_GRAY
+name|GIMP_ICON_COLOR_PICKER_GRAY
 argument_list|,
 name|_
 argument_list|(
@@ -1633,7 +1633,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2877401a0108
+DECL|struct|__anon2784ad830108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2214,7 +2214,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2877401a0208
+DECL|struct|__anon2784ad830208
 block|{
 DECL|member|kelvin
 name|gdouble
@@ -2416,7 +2416,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_MENU_LEFT
+name|GIMP_ICON_MENU_LEFT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

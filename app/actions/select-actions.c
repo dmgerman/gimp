@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"selection-popup"
 block|,
-name|GIMP_STOCK_SELECTION
+name|GIMP_ICON_SELECTION
 block|,
 name|NC_
 argument_list|(
@@ -133,7 +133,7 @@ block|,
 block|{
 literal|"select-all"
 block|,
-name|GIMP_STOCK_SELECTION_ALL
+name|GIMP_ICON_SELECTION_ALL
 block|,
 name|NC_
 argument_list|(
@@ -162,7 +162,7 @@ block|,
 block|{
 literal|"select-none"
 block|,
-name|GIMP_STOCK_SELECTION_NONE
+name|GIMP_ICON_SELECTION_NONE
 block|,
 name|NC_
 argument_list|(
@@ -191,7 +191,7 @@ block|,
 block|{
 literal|"select-invert"
 block|,
-name|GIMP_STOCK_INVERT
+name|GIMP_ICON_INVERT
 block|,
 name|NC_
 argument_list|(
@@ -220,7 +220,7 @@ block|,
 block|{
 literal|"select-float"
 block|,
-name|GIMP_STOCK_FLOATING_SELECTION
+name|GIMP_ICON_LAYER_FLOATING_SELECTION
 block|,
 name|NC_
 argument_list|(
@@ -307,7 +307,7 @@ block|,
 block|{
 literal|"select-shrink"
 block|,
-name|GIMP_STOCK_SELECTION_SHRINK
+name|GIMP_ICON_SELECTION_SHRINK
 block|,
 name|NC_
 argument_list|(
@@ -336,7 +336,7 @@ block|,
 block|{
 literal|"select-grow"
 block|,
-name|GIMP_STOCK_SELECTION_GROW
+name|GIMP_ICON_SELECTION_GROW
 block|,
 name|NC_
 argument_list|(
@@ -365,7 +365,7 @@ block|,
 block|{
 literal|"select-border"
 block|,
-name|GIMP_STOCK_SELECTION_BORDER
+name|GIMP_ICON_SELECTION_BORDER
 block|,
 name|NC_
 argument_list|(
@@ -423,7 +423,7 @@ block|,
 block|{
 literal|"select-save"
 block|,
-name|GIMP_STOCK_SELECTION_TO_CHANNEL
+name|GIMP_ICON_SELECTION_TO_CHANNEL
 block|,
 name|NC_
 argument_list|(
@@ -452,7 +452,7 @@ block|,
 block|{
 literal|"select-fill"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -481,7 +481,7 @@ block|,
 block|{
 literal|"select-fill-last-values"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -510,7 +510,7 @@ block|,
 block|{
 literal|"select-stroke"
 block|,
-name|GIMP_STOCK_SELECTION_STROKE
+name|GIMP_ICON_SELECTION_STROKE
 block|,
 name|NC_
 argument_list|(
@@ -539,7 +539,7 @@ block|,
 block|{
 literal|"select-stroke-last-values"
 block|,
-name|GIMP_STOCK_SELECTION_STROKE
+name|GIMP_ICON_SELECTION_STROKE
 block|,
 name|NC_
 argument_list|(

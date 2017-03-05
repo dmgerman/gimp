@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b231f0103
+DECL|enum|__anon2c144d320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b231f0203
+DECL|enum|__anon2c144d320203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1089,7 +1089,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-next"
+name|GIMP_ICON_GO_NEXT
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1190,7 +1190,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-previous"
+name|GIMP_ICON_GO_PREVIOUS
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -1391,7 +1391,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-literal|"document-properties"
+name|GIMP_ICON_DOCUMENT_PROPERTIES
 argument_list|,
 name|_
 argument_list|(
@@ -1423,7 +1423,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 argument_list|,
 name|_
 argument_list|(
@@ -1455,7 +1455,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 argument_list|,
 name|_
 argument_list|(
@@ -2435,7 +2435,7 @@ argument_list|(
 literal|"Remove Controller?"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"palette-editor-popup"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"palette-editor-edit-color"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -149,7 +149,7 @@ block|,
 block|{
 literal|"palette-editor-delete-color"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -190,7 +190,7 @@ block|{
 block|{
 literal|"palette-editor-edit-active"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -228,7 +228,7 @@ block|{
 block|{
 literal|"palette-editor-new-color-fg"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -256,7 +256,7 @@ block|,
 block|{
 literal|"palette-editor-new-color-bg"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -296,7 +296,7 @@ block|{
 block|{
 literal|"palette-editor-zoom-in"
 block|,
-literal|"zoom-in"
+name|GIMP_ICON_ZOOM_IN
 block|,
 name|N_
 argument_list|(
@@ -320,7 +320,7 @@ block|,
 block|{
 literal|"palette-editor-zoom-out"
 block|,
-literal|"zoom-out"
+name|GIMP_ICON_ZOOM_OUT
 block|,
 name|N_
 argument_list|(
@@ -344,7 +344,7 @@ block|,
 block|{
 literal|"palette-editor-zoom-all"
 block|,
-literal|"zoom-fit-best"
+name|GIMP_ICON_ZOOM_FIT_BEST
 block|,
 name|N_
 argument_list|(

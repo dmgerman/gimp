@@ -70,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf9fbff0103
+DECL|enum|__anon276acfd10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf9fbff0203
+DECL|enum|__anon276acfd10203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -251,7 +251,7 @@ name|klass
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER
+name|GIMP_ICON_CONTROLLER
 expr_stmt|;
 name|klass
 operator|->

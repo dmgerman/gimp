@@ -984,9 +984,12 @@ argument_list|()
 expr_stmt|;
 name|tmpw
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_EDIT
+name|_
+argument_list|(
+literal|"_Edit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

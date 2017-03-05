@@ -284,7 +284,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_COLORIZE
 argument_list|,
-name|GIMP_STOCK_TOOL_COLORIZE
+name|GIMP_ICON_TOOL_COLORIZE
 argument_list|,
 name|data
 argument_list|)
@@ -933,7 +933,7 @@ name|filter_tool
 argument_list|,
 literal|"colorize"
 argument_list|,
-name|GIMP_STOCK_COLOR_PICKER_GRAY
+name|GIMP_ICON_COLOR_PICKER_GRAY
 argument_list|,
 name|_
 argument_list|(

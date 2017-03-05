@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"dynamics-editor-popup"
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|{
 block|{
 literal|"dynamics-editor-edit-active"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(

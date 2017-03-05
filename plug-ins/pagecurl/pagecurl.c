@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27905d640103
+DECL|enum|__anon2c3aa6980103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27905d640203
+DECL|enum|__anon2c3aa6980203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27905d640303
+DECL|enum|__anon2c3aa6980303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27905d640408
+DECL|struct|__anon2c3aa6980408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -2273,9 +2273,9 @@ argument_list|(
 literal|"Current gradient (reversed)"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 operator|-
 literal|1
@@ -2299,9 +2299,9 @@ argument_list|(
 literal|"Current gradient"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 operator|-
 literal|1
@@ -2325,9 +2325,9 @@ argument_list|(
 literal|"Foreground / background colors"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 argument_list|,
 operator|-
 literal|1

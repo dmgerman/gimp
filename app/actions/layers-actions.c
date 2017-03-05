@@ -135,7 +135,7 @@ block|{
 block|{
 literal|"layers-popup"
 block|,
-name|GIMP_STOCK_LAYERS
+name|GIMP_ICON_DIALOG_LAYERS
 block|,
 name|NC_
 argument_list|(
@@ -219,7 +219,7 @@ block|,
 block|{
 literal|"layers-color-tag-menu"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -306,7 +306,7 @@ block|,
 block|{
 literal|"layers-properties-menu"
 block|,
-literal|"document-properties"
+name|GIMP_ICON_DOCUMENT_PROPERTIES
 block|,
 name|NC_
 argument_list|(
@@ -319,7 +319,7 @@ block|,
 block|{
 literal|"layers-opacity-menu"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 name|NC_
 argument_list|(
@@ -332,7 +332,7 @@ block|,
 block|{
 literal|"layers-mode-menu"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 name|NC_
 argument_list|(
@@ -345,7 +345,7 @@ block|,
 block|{
 literal|"layers-text-tool"
 block|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 block|,
 name|NC_
 argument_list|(
@@ -374,7 +374,7 @@ block|,
 block|{
 literal|"layers-edit-attributes"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -403,7 +403,7 @@ block|,
 block|{
 literal|"layers-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -432,7 +432,7 @@ block|,
 block|{
 literal|"layers-new-last-values"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -490,7 +490,7 @@ block|,
 block|{
 literal|"layers-new-group"
 block|,
-literal|"folder-new"
+name|GIMP_ICON_FOLDER_NEW
 block|,
 name|NC_
 argument_list|(
@@ -519,7 +519,7 @@ block|,
 block|{
 literal|"layers-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -548,7 +548,7 @@ block|,
 block|{
 literal|"layers-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -577,7 +577,7 @@ block|,
 block|{
 literal|"layers-raise"
 block|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 block|,
 name|NC_
 argument_list|(
@@ -606,7 +606,7 @@ block|,
 block|{
 literal|"layers-raise-to-top"
 block|,
-literal|"go-top"
+name|GIMP_ICON_GO_TOP
 block|,
 name|NC_
 argument_list|(
@@ -635,7 +635,7 @@ block|,
 block|{
 literal|"layers-lower"
 block|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 block|,
 name|NC_
 argument_list|(
@@ -664,7 +664,7 @@ block|,
 block|{
 literal|"layers-lower-to-bottom"
 block|,
-literal|"go-bottom"
+name|GIMP_ICON_GO_BOTTOM
 block|,
 name|NC_
 argument_list|(
@@ -693,7 +693,7 @@ block|,
 block|{
 literal|"layers-anchor"
 block|,
-name|GIMP_STOCK_ANCHOR
+name|GIMP_ICON_LAYER_ANCHOR
 block|,
 name|NC_
 argument_list|(
@@ -722,7 +722,7 @@ block|,
 block|{
 literal|"layers-merge-down"
 block|,
-name|GIMP_STOCK_MERGE_DOWN
+name|GIMP_ICON_LAYER_MERGE_DOWN
 block|,
 name|NC_
 argument_list|(
@@ -838,7 +838,7 @@ block|,
 block|{
 literal|"layers-text-discard"
 block|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 block|,
 name|NC_
 argument_list|(
@@ -867,7 +867,7 @@ block|,
 block|{
 literal|"layers-text-to-vectors"
 block|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 block|,
 name|NC_
 argument_list|(
@@ -896,7 +896,7 @@ block|,
 block|{
 literal|"layers-text-along-vectors"
 block|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 block|,
 name|NC_
 argument_list|(
@@ -925,7 +925,7 @@ block|,
 block|{
 literal|"layers-resize"
 block|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_ICON_OBJECT_RESIZE
 block|,
 name|NC_
 argument_list|(
@@ -954,7 +954,7 @@ block|,
 block|{
 literal|"layers-resize-to-image"
 block|,
-name|GIMP_STOCK_LAYER_TO_IMAGESIZE
+name|GIMP_ICON_LAYER_TO_IMAGESIZE
 block|,
 name|NC_
 argument_list|(
@@ -983,7 +983,7 @@ block|,
 block|{
 literal|"layers-scale"
 block|,
-name|GIMP_STOCK_SCALE
+name|GIMP_ICON_OBJECT_SCALE
 block|,
 name|NC_
 argument_list|(
@@ -1012,7 +1012,7 @@ block|,
 block|{
 literal|"layers-crop-to-selection"
 block|,
-name|GIMP_STOCK_TOOL_CROP
+name|GIMP_ICON_TOOL_CROP
 block|,
 name|NC_
 argument_list|(
@@ -1041,7 +1041,7 @@ block|,
 block|{
 literal|"layers-crop-to-content"
 block|,
-name|GIMP_STOCK_TOOL_CROP
+name|GIMP_ICON_TOOL_CROP
 block|,
 name|NC_
 argument_list|(
@@ -1070,7 +1070,7 @@ block|,
 block|{
 literal|"layers-mask-add"
 block|,
-name|GIMP_STOCK_LAYER_MASK
+name|GIMP_ICON_LAYER_MASK
 block|,
 name|NC_
 argument_list|(
@@ -1100,7 +1100,7 @@ comment|/* this is the same as layers-mask-add, except it's sensitive even if   
 block|{
 literal|"layers-mask-add-button"
 block|,
-name|GIMP_STOCK_LAYER_MASK
+name|GIMP_ICON_LAYER_MASK
 block|,
 name|NC_
 argument_list|(
@@ -1129,7 +1129,7 @@ block|,
 block|{
 literal|"layers-mask-add-last-values"
 block|,
-name|GIMP_STOCK_LAYER_MASK
+name|GIMP_ICON_LAYER_MASK
 block|,
 name|NC_
 argument_list|(
@@ -1158,7 +1158,7 @@ block|,
 block|{
 literal|"layers-alpha-add"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 name|NC_
 argument_list|(
@@ -1228,7 +1228,7 @@ block|{
 block|{
 literal|"layers-mask-edit"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -1259,7 +1259,7 @@ block|,
 block|{
 literal|"layers-mask-show"
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|NC_
 argument_list|(
@@ -1316,7 +1316,7 @@ block|,
 block|{
 literal|"layers-visible"
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|NC_
 argument_list|(
@@ -1342,7 +1342,7 @@ block|,
 block|{
 literal|"layers-linked"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -1369,7 +1369,7 @@ block|{
 literal|"layers-lock-content"
 block|,
 name|NULL
-comment|/* GIMP_STOCK_LOCK */
+comment|/* GIMP_ICON_LOCK */
 block|,
 name|NC_
 argument_list|(
@@ -1395,7 +1395,7 @@ block|,
 block|{
 literal|"layers-lock-position"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 block|,
 name|NC_
 argument_list|(
@@ -1421,7 +1421,7 @@ block|,
 block|{
 literal|"layers-lock-alpha"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 name|NC_
 argument_list|(
@@ -1731,7 +1731,7 @@ block|{
 block|{
 literal|"layers-color-tag-none"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -2024,7 +2024,7 @@ block|,
 block|{
 literal|"layers-mask-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -2064,7 +2064,7 @@ block|{
 block|{
 literal|"layers-mask-selection-replace"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -2092,7 +2092,7 @@ block|,
 block|{
 literal|"layers-mask-selection-add"
 block|,
-name|GIMP_STOCK_SELECTION_ADD
+name|GIMP_ICON_SELECTION_ADD
 block|,
 name|NC_
 argument_list|(
@@ -2120,7 +2120,7 @@ block|,
 block|{
 literal|"layers-mask-selection-subtract"
 block|,
-name|GIMP_STOCK_SELECTION_SUBTRACT
+name|GIMP_ICON_SELECTION_SUBTRACT
 block|,
 name|NC_
 argument_list|(
@@ -2148,7 +2148,7 @@ block|,
 block|{
 literal|"layers-mask-selection-intersect"
 block|,
-name|GIMP_STOCK_SELECTION_INTERSECT
+name|GIMP_ICON_SELECTION_INTERSECT
 block|,
 name|NC_
 argument_list|(
@@ -2188,7 +2188,7 @@ block|{
 block|{
 literal|"layers-alpha-selection-replace"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -2216,7 +2216,7 @@ block|,
 block|{
 literal|"layers-alpha-selection-add"
 block|,
-name|GIMP_STOCK_SELECTION_ADD
+name|GIMP_ICON_SELECTION_ADD
 block|,
 name|NC_
 argument_list|(
@@ -2244,7 +2244,7 @@ block|,
 block|{
 literal|"layers-alpha-selection-subtract"
 block|,
-name|GIMP_STOCK_SELECTION_SUBTRACT
+name|GIMP_ICON_SELECTION_SUBTRACT
 block|,
 name|NC_
 argument_list|(
@@ -2272,7 +2272,7 @@ block|,
 block|{
 literal|"layers-alpha-selection-intersect"
 block|,
-name|GIMP_STOCK_SELECTION_INTERSECT
+name|GIMP_ICON_SELECTION_INTERSECT
 block|,
 name|NC_
 argument_list|(
@@ -2436,7 +2436,7 @@ block|{
 block|{
 literal|"layers-opacity-set"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Set Opacity"
 block|,
@@ -2454,7 +2454,7 @@ block|,
 block|{
 literal|"layers-opacity-transparent"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Completely Transparent"
 block|,
@@ -2472,7 +2472,7 @@ block|,
 block|{
 literal|"layers-opacity-opaque"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Completely Opaque"
 block|,
@@ -2490,7 +2490,7 @@ block|,
 block|{
 literal|"layers-opacity-decrease"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"More Transparent"
 block|,
@@ -2508,7 +2508,7 @@ block|,
 block|{
 literal|"layers-opacity-increase"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"More Opaque"
 block|,
@@ -2526,7 +2526,7 @@ block|,
 block|{
 literal|"layers-opacity-decrease-skip"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"10% More Transparent"
 block|,
@@ -2544,7 +2544,7 @@ block|,
 block|{
 literal|"layers-opacity-increase-skip"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"10% More Opaque"
 block|,
@@ -2574,7 +2574,7 @@ block|{
 block|{
 literal|"layers-mode-first"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"First Layer Mode"
 block|,
@@ -2592,7 +2592,7 @@ block|,
 block|{
 literal|"layers-mode-last"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Last Layer Mode"
 block|,
@@ -2610,7 +2610,7 @@ block|,
 block|{
 literal|"layers-mode-previous"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Previous Layer Mode"
 block|,
@@ -2628,7 +2628,7 @@ block|,
 block|{
 literal|"layers-mode-next"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Next Layer Mode"
 block|,

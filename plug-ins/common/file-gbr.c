@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9063c0108
+DECL|struct|__anon27b7d23a0108
 block|{
 DECL|member|description
 name|gchar
@@ -422,7 +422,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
@@ -494,7 +494,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
@@ -2342,7 +2342,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29d9063c020a
+DECL|union|__anon27b7d23a020a
 block|{
 DECL|member|u
 name|guint16

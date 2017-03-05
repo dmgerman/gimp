@@ -739,7 +739,7 @@ name|controller_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER_KEYBOARD
+name|GIMP_ICON_CONTROLLER_KEYBOARD
 expr_stmt|;
 name|controller_class
 operator|->

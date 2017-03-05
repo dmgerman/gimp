@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aec980108
+DECL|struct|__anon29a141ac0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0aec980203
+DECL|enum|__anon29a141ac0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aec980308
+DECL|struct|__anon29a141ac0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aec980408
+DECL|struct|__anon29a141ac0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1813,9 +1813,12 @@ name|toggle
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2502,9 +2505,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_APPLY
+name|_
+argument_list|(
+literal|"_Apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

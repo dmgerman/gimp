@@ -122,7 +122,7 @@ block|,
 block|{
 literal|"context-colors-menu"
 block|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 block|,
 name|NC_
 argument_list|(
@@ -135,7 +135,7 @@ block|,
 block|{
 literal|"context-opacity-menu"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 name|NC_
 argument_list|(
@@ -148,7 +148,7 @@ block|,
 block|{
 literal|"context-paint-mode-menu"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 name|NC_
 argument_list|(
@@ -161,7 +161,7 @@ block|,
 block|{
 literal|"context-tool-menu"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 name|NC_
 argument_list|(
@@ -174,7 +174,7 @@ block|,
 block|{
 literal|"context-brush-menu"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -187,7 +187,7 @@ block|,
 block|{
 literal|"context-pattern-menu"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ block|,
 block|{
 literal|"context-palette-menu"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -213,7 +213,7 @@ block|,
 block|{
 literal|"context-gradient-menu"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|NC_
 argument_list|(
@@ -226,7 +226,7 @@ block|,
 block|{
 literal|"context-font-menu"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 name|NC_
 argument_list|(
@@ -317,7 +317,7 @@ block|,
 block|{
 literal|"context-colors-default"
 block|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 block|,
 name|NC_
 argument_list|(
@@ -346,7 +346,7 @@ block|,
 block|{
 literal|"context-colors-swap"
 block|,
-name|GIMP_STOCK_SWAP_COLORS
+name|GIMP_ICON_COLORS_SWAP
 block|,
 name|NC_
 argument_list|(
@@ -386,7 +386,7 @@ block|{
 block|{
 literal|"context-palette-foreground-set"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Set"
 block|,
@@ -404,7 +404,7 @@ block|,
 block|{
 literal|"context-palette-foreground-first"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color First"
 block|,
@@ -422,7 +422,7 @@ block|,
 block|{
 literal|"context-palette-foreground-last"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Last"
 block|,
@@ -440,7 +440,7 @@ block|,
 block|{
 literal|"context-palette-foreground-previous"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Previous"
 block|,
@@ -458,7 +458,7 @@ block|,
 block|{
 literal|"context-palette-foreground-next"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Next"
 block|,
@@ -476,7 +476,7 @@ block|,
 block|{
 literal|"context-palette-foreground-previous-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Skip Back"
 block|,
@@ -494,7 +494,7 @@ block|,
 block|{
 literal|"context-palette-foreground-next-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Palette Color Skip Forward"
 block|,
@@ -523,7 +523,7 @@ block|{
 block|{
 literal|"context-palette-background-set"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Set"
 block|,
@@ -541,7 +541,7 @@ block|,
 block|{
 literal|"context-palette-background-first"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color First"
 block|,
@@ -559,7 +559,7 @@ block|,
 block|{
 literal|"context-palette-background-last"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Last"
 block|,
@@ -577,7 +577,7 @@ block|,
 block|{
 literal|"context-palette-background-previous"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Previous"
 block|,
@@ -595,7 +595,7 @@ block|,
 block|{
 literal|"context-palette-background-next"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Next"
 block|,
@@ -613,7 +613,7 @@ block|,
 block|{
 literal|"context-palette-background-previous-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Skip Back"
 block|,
@@ -631,7 +631,7 @@ block|,
 block|{
 literal|"context-palette-background-next-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Palette Color Skip Forward"
 block|,
@@ -660,7 +660,7 @@ block|{
 block|{
 literal|"context-colormap-foreground-set"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Set"
 block|,
@@ -678,7 +678,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-first"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color First"
 block|,
@@ -696,7 +696,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-last"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Last"
 block|,
@@ -714,7 +714,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-previous"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Previous"
 block|,
@@ -732,7 +732,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-next"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Next"
 block|,
@@ -750,7 +750,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-previous-skip"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Skip Back"
 block|,
@@ -768,7 +768,7 @@ block|,
 block|{
 literal|"context-colormap-foreground-next-skip"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Foreground Colormap Color Skip Forward"
 block|,
@@ -797,7 +797,7 @@ block|{
 block|{
 literal|"context-colormap-background-set"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Set"
 block|,
@@ -815,7 +815,7 @@ block|,
 block|{
 literal|"context-colormap-background-first"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color First"
 block|,
@@ -833,7 +833,7 @@ block|,
 block|{
 literal|"context-colormap-background-last"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Last"
 block|,
@@ -851,7 +851,7 @@ block|,
 block|{
 literal|"context-colormap-background-previous"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Previous"
 block|,
@@ -869,7 +869,7 @@ block|,
 block|{
 literal|"context-colormap-background-next"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Next"
 block|,
@@ -887,7 +887,7 @@ block|,
 block|{
 literal|"context-colormap-background-previous-skip"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Skip Back"
 block|,
@@ -905,7 +905,7 @@ block|,
 block|{
 literal|"context-colormap-background-next-skip"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 literal|"Background Colormap Color Skip Forward"
 block|,
@@ -934,7 +934,7 @@ block|{
 block|{
 literal|"context-swatch-foreground-set"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Set"
 block|,
@@ -952,7 +952,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-first"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color First"
 block|,
@@ -970,7 +970,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-last"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Last"
 block|,
@@ -988,7 +988,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-previous"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Previous"
 block|,
@@ -1006,7 +1006,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-next"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Next"
 block|,
@@ -1024,7 +1024,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-previous-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Skip Back"
 block|,
@@ -1042,7 +1042,7 @@ block|,
 block|{
 literal|"context-swatch-foreground-next-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Foreground Swatch Color Skip Forward"
 block|,
@@ -1071,7 +1071,7 @@ block|{
 block|{
 literal|"context-swatch-background-set"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Set"
 block|,
@@ -1089,7 +1089,7 @@ block|,
 block|{
 literal|"context-swatch-background-first"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color First"
 block|,
@@ -1107,7 +1107,7 @@ block|,
 block|{
 literal|"context-swatch-background-last"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Last"
 block|,
@@ -1125,7 +1125,7 @@ block|,
 block|{
 literal|"context-swatch-background-previous"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Previous"
 block|,
@@ -1143,7 +1143,7 @@ block|,
 block|{
 literal|"context-swatch-background-next"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Next"
 block|,
@@ -1161,7 +1161,7 @@ block|,
 block|{
 literal|"context-swatch-background-previous-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Skip Back"
 block|,
@@ -1179,7 +1179,7 @@ block|,
 block|{
 literal|"context-swatch-background-next-skip"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Background Swatch Color Skip Forward"
 block|,
@@ -1209,7 +1209,7 @@ block|{
 block|{
 literal|"context-foreground-red-set"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Set"
 block|,
@@ -1227,7 +1227,7 @@ block|,
 block|{
 literal|"context-foreground-red-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Minimum"
 block|,
@@ -1245,7 +1245,7 @@ block|,
 block|{
 literal|"context-foreground-red-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Maximum"
 block|,
@@ -1263,7 +1263,7 @@ block|,
 block|{
 literal|"context-foreground-red-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Decrease"
 block|,
@@ -1281,7 +1281,7 @@ block|,
 block|{
 literal|"context-foreground-red-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Increase"
 block|,
@@ -1299,7 +1299,7 @@ block|,
 block|{
 literal|"context-foreground-red-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Decrease 10%"
 block|,
@@ -1317,7 +1317,7 @@ block|,
 block|{
 literal|"context-foreground-red-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Foreground Red Increase 10%"
 block|,
@@ -1347,7 +1347,7 @@ block|{
 block|{
 literal|"context-foreground-green-set"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Set"
 block|,
@@ -1365,7 +1365,7 @@ block|,
 block|{
 literal|"context-foreground-green-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Minimum"
 block|,
@@ -1383,7 +1383,7 @@ block|,
 block|{
 literal|"context-foreground-green-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Maximum"
 block|,
@@ -1401,7 +1401,7 @@ block|,
 block|{
 literal|"context-foreground-green-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Decrease"
 block|,
@@ -1419,7 +1419,7 @@ block|,
 block|{
 literal|"context-foreground-green-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Increase"
 block|,
@@ -1437,7 +1437,7 @@ block|,
 block|{
 literal|"context-foreground-green-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Decrease 10%"
 block|,
@@ -1455,7 +1455,7 @@ block|,
 block|{
 literal|"context-foreground-green-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Increase 10%"
 block|,
@@ -1485,7 +1485,7 @@ block|{
 block|{
 literal|"context-foreground-blue-set"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Set"
 block|,
@@ -1503,7 +1503,7 @@ block|,
 block|{
 literal|"context-foreground-blue-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Minimum"
 block|,
@@ -1521,7 +1521,7 @@ block|,
 block|{
 literal|"context-foreground-blue-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Maximum"
 block|,
@@ -1539,7 +1539,7 @@ block|,
 block|{
 literal|"context-foreground-blue-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Decrease"
 block|,
@@ -1557,7 +1557,7 @@ block|,
 block|{
 literal|"context-foreground-blue-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Increase"
 block|,
@@ -1575,7 +1575,7 @@ block|,
 block|{
 literal|"context-foreground-blue-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Decrease 10%"
 block|,
@@ -1593,7 +1593,7 @@ block|,
 block|{
 literal|"context-foreground-blue-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Increase 10%"
 block|,
@@ -1623,7 +1623,7 @@ block|{
 block|{
 literal|"context-background-red-set"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Set"
 block|,
@@ -1641,7 +1641,7 @@ block|,
 block|{
 literal|"context-background-red-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Minimum"
 block|,
@@ -1659,7 +1659,7 @@ block|,
 block|{
 literal|"context-background-red-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Maximum"
 block|,
@@ -1677,7 +1677,7 @@ block|,
 block|{
 literal|"context-background-red-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Decrease"
 block|,
@@ -1695,7 +1695,7 @@ block|,
 block|{
 literal|"context-background-red-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Increase"
 block|,
@@ -1713,7 +1713,7 @@ block|,
 block|{
 literal|"context-background-red-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Decrease 10%"
 block|,
@@ -1731,7 +1731,7 @@ block|,
 block|{
 literal|"context-background-red-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 block|,
 literal|"Background Red Increase 10%"
 block|,
@@ -1761,7 +1761,7 @@ block|{
 block|{
 literal|"context-background-green-set"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Set"
 block|,
@@ -1779,7 +1779,7 @@ block|,
 block|{
 literal|"context-background-green-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Minimum"
 block|,
@@ -1797,7 +1797,7 @@ block|,
 block|{
 literal|"context-background-green-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Maximum"
 block|,
@@ -1815,7 +1815,7 @@ block|,
 block|{
 literal|"context-background-green-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Decrease"
 block|,
@@ -1833,7 +1833,7 @@ block|,
 block|{
 literal|"context-background-green-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Increase"
 block|,
@@ -1851,7 +1851,7 @@ block|,
 block|{
 literal|"context-background-green-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Decrease 10%"
 block|,
@@ -1869,7 +1869,7 @@ block|,
 block|{
 literal|"context-background-green-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 block|,
 literal|"Background Green Increase 10%"
 block|,
@@ -1899,7 +1899,7 @@ block|{
 block|{
 literal|"context-background-blue-set"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Set"
 block|,
@@ -1917,7 +1917,7 @@ block|,
 block|{
 literal|"context-background-blue-minimum"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Minimum"
 block|,
@@ -1935,7 +1935,7 @@ block|,
 block|{
 literal|"context-background-blue-maximum"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Maximum"
 block|,
@@ -1953,7 +1953,7 @@ block|,
 block|{
 literal|"context-background-blue-decrease"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Decrease"
 block|,
@@ -1971,7 +1971,7 @@ block|,
 block|{
 literal|"context-background-blue-increase"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Increase"
 block|,
@@ -1989,7 +1989,7 @@ block|,
 block|{
 literal|"context-background-blue-decrease-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Decrease 10%"
 block|,
@@ -2007,7 +2007,7 @@ block|,
 block|{
 literal|"context-background-blue-increase-skip"
 block|,
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 block|,
 literal|"Background Blue Increase 10%"
 block|,
@@ -2037,7 +2037,7 @@ block|{
 block|{
 literal|"context-foreground-hue-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Set"
 block|,
@@ -2055,7 +2055,7 @@ block|,
 block|{
 literal|"context-foreground-hue-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Minimum"
 block|,
@@ -2073,7 +2073,7 @@ block|,
 block|{
 literal|"context-foreground-hue-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Maximum"
 block|,
@@ -2091,7 +2091,7 @@ block|,
 block|{
 literal|"context-foreground-hue-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Decrease"
 block|,
@@ -2109,7 +2109,7 @@ block|,
 block|{
 literal|"context-foreground-hue-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Increase"
 block|,
@@ -2127,7 +2127,7 @@ block|,
 block|{
 literal|"context-foreground-hue-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Decrease 10%"
 block|,
@@ -2145,7 +2145,7 @@ block|,
 block|{
 literal|"context-foreground-hue-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Hue Increase 10%"
 block|,
@@ -2175,7 +2175,7 @@ block|{
 block|{
 literal|"context-foreground-saturation-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Set"
 block|,
@@ -2193,7 +2193,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Minimum"
 block|,
@@ -2211,7 +2211,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Maximum"
 block|,
@@ -2229,7 +2229,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Decrease"
 block|,
@@ -2247,7 +2247,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Increase"
 block|,
@@ -2265,7 +2265,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Decrease 10%"
 block|,
@@ -2283,7 +2283,7 @@ block|,
 block|{
 literal|"context-foreground-saturation-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Saturation Increase 10%"
 block|,
@@ -2313,7 +2313,7 @@ block|{
 block|{
 literal|"context-foreground-value-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Set"
 block|,
@@ -2331,7 +2331,7 @@ block|,
 block|{
 literal|"context-foreground-value-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Minimum"
 block|,
@@ -2349,7 +2349,7 @@ block|,
 block|{
 literal|"context-foreground-value-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Maximum"
 block|,
@@ -2367,7 +2367,7 @@ block|,
 block|{
 literal|"context-foreground-value-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Decrease"
 block|,
@@ -2385,7 +2385,7 @@ block|,
 block|{
 literal|"context-foreground-value-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Increase"
 block|,
@@ -2403,7 +2403,7 @@ block|,
 block|{
 literal|"context-foreground-value-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Decrease 10%"
 block|,
@@ -2421,7 +2421,7 @@ block|,
 block|{
 literal|"context-foreground-value-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Foreground Value Increase 10%"
 block|,
@@ -2451,7 +2451,7 @@ block|{
 block|{
 literal|"context-background-hue-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Set"
 block|,
@@ -2469,7 +2469,7 @@ block|,
 block|{
 literal|"context-background-hue-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Minimum"
 block|,
@@ -2487,7 +2487,7 @@ block|,
 block|{
 literal|"context-background-hue-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Maximum"
 block|,
@@ -2505,7 +2505,7 @@ block|,
 block|{
 literal|"context-background-hue-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Decrease"
 block|,
@@ -2523,7 +2523,7 @@ block|,
 block|{
 literal|"context-background-hue-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Increase"
 block|,
@@ -2541,7 +2541,7 @@ block|,
 block|{
 literal|"context-background-hue-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Decrease 10%"
 block|,
@@ -2559,7 +2559,7 @@ block|,
 block|{
 literal|"context-background-hue-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Hue Increase 10%"
 block|,
@@ -2589,7 +2589,7 @@ block|{
 block|{
 literal|"context-background-saturation-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Set"
 block|,
@@ -2607,7 +2607,7 @@ block|,
 block|{
 literal|"context-background-saturation-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Minimum"
 block|,
@@ -2625,7 +2625,7 @@ block|,
 block|{
 literal|"context-background-saturation-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Maximum"
 block|,
@@ -2643,7 +2643,7 @@ block|,
 block|{
 literal|"context-background-saturation-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Decrease"
 block|,
@@ -2661,7 +2661,7 @@ block|,
 block|{
 literal|"context-background-saturation-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Increase"
 block|,
@@ -2679,7 +2679,7 @@ block|,
 block|{
 literal|"context-background-saturation-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Decrease 10%"
 block|,
@@ -2697,7 +2697,7 @@ block|,
 block|{
 literal|"context-background-saturation-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Saturation Increase 10%"
 block|,
@@ -2727,7 +2727,7 @@ block|{
 block|{
 literal|"context-background-value-set"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Set"
 block|,
@@ -2745,7 +2745,7 @@ block|,
 block|{
 literal|"context-background-value-minimum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Minimum"
 block|,
@@ -2763,7 +2763,7 @@ block|,
 block|{
 literal|"context-background-value-maximum"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Maximum"
 block|,
@@ -2781,7 +2781,7 @@ block|,
 block|{
 literal|"context-background-value-decrease"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Decrease"
 block|,
@@ -2799,7 +2799,7 @@ block|,
 block|{
 literal|"context-background-value-increase"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Increase"
 block|,
@@ -2817,7 +2817,7 @@ block|,
 block|{
 literal|"context-background-value-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Decrease 10%"
 block|,
@@ -2835,7 +2835,7 @@ block|,
 block|{
 literal|"context-background-value-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
 literal|"Background Value Increase 10%"
 block|,
@@ -2865,7 +2865,7 @@ block|{
 block|{
 literal|"context-opacity-set"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Set Transparency"
 block|,
@@ -2883,7 +2883,7 @@ block|,
 block|{
 literal|"context-opacity-transparent"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Completely Transparent"
 block|,
@@ -2901,7 +2901,7 @@ block|,
 block|{
 literal|"context-opacity-opaque"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"Completely Opaque"
 block|,
@@ -2919,7 +2919,7 @@ block|,
 block|{
 literal|"context-opacity-decrease"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"More Transparent"
 block|,
@@ -2937,7 +2937,7 @@ block|,
 block|{
 literal|"context-opacity-increase"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"More Opaque"
 block|,
@@ -2955,7 +2955,7 @@ block|,
 block|{
 literal|"context-opacity-decrease-skip"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"10% More Transparent"
 block|,
@@ -2973,7 +2973,7 @@ block|,
 block|{
 literal|"context-opacity-increase-skip"
 block|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 block|,
 literal|"10% More Opaque"
 block|,
@@ -3003,7 +3003,7 @@ block|{
 block|{
 literal|"context-paint-mode-first"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"First Paint Mode"
 block|,
@@ -3021,7 +3021,7 @@ block|,
 block|{
 literal|"context-paint-mode-last"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Last Paint Mode"
 block|,
@@ -3039,7 +3039,7 @@ block|,
 block|{
 literal|"context-paint-mode-previous"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Previous Paint Mode"
 block|,
@@ -3057,7 +3057,7 @@ block|,
 block|{
 literal|"context-paint-mode-next"
 block|,
-name|GIMP_STOCK_TOOL_PENCIL
+name|GIMP_ICON_TOOL_PENCIL
 block|,
 literal|"Next Paint Mode"
 block|,
@@ -3087,7 +3087,7 @@ block|{
 block|{
 literal|"context-tool-select-set"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 literal|"Select Tool by Index"
 block|,
@@ -3105,7 +3105,7 @@ block|,
 block|{
 literal|"context-tool-select-first"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 literal|"First Tool"
 block|,
@@ -3123,7 +3123,7 @@ block|,
 block|{
 literal|"context-tool-select-last"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 literal|"Last Tool"
 block|,
@@ -3141,7 +3141,7 @@ block|,
 block|{
 literal|"context-tool-select-previous"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 literal|"Previous Tool"
 block|,
@@ -3159,7 +3159,7 @@ block|,
 block|{
 literal|"context-tool-select-next"
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 literal|"Next Tool"
 block|,
@@ -3189,7 +3189,7 @@ block|{
 block|{
 literal|"context-brush-select-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Select Brush by Index"
 block|,
@@ -3207,7 +3207,7 @@ block|,
 block|{
 literal|"context-brush-select-first"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"First Brush"
 block|,
@@ -3225,7 +3225,7 @@ block|,
 block|{
 literal|"context-brush-select-last"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Last Brush"
 block|,
@@ -3243,7 +3243,7 @@ block|,
 block|{
 literal|"context-brush-select-previous"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Previous Brush"
 block|,
@@ -3261,7 +3261,7 @@ block|,
 block|{
 literal|"context-brush-select-next"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Next Brush"
 block|,
@@ -3291,7 +3291,7 @@ block|{
 block|{
 literal|"context-pattern-select-set"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 literal|"Select Pattern by Index"
 block|,
@@ -3309,7 +3309,7 @@ block|,
 block|{
 literal|"context-pattern-select-first"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 literal|"First Pattern"
 block|,
@@ -3327,7 +3327,7 @@ block|,
 block|{
 literal|"context-pattern-select-last"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 literal|"Last Pattern"
 block|,
@@ -3345,7 +3345,7 @@ block|,
 block|{
 literal|"context-pattern-select-previous"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 literal|"Previous Pattern"
 block|,
@@ -3363,7 +3363,7 @@ block|,
 block|{
 literal|"context-pattern-select-next"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 literal|"Next Pattern"
 block|,
@@ -3393,7 +3393,7 @@ block|{
 block|{
 literal|"context-palette-select-set"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Select Palette by Index"
 block|,
@@ -3411,7 +3411,7 @@ block|,
 block|{
 literal|"context-palette-select-first"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"First Palette"
 block|,
@@ -3429,7 +3429,7 @@ block|,
 block|{
 literal|"context-palette-select-last"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Last Palette"
 block|,
@@ -3447,7 +3447,7 @@ block|,
 block|{
 literal|"context-palette-select-previous"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Previous Palette"
 block|,
@@ -3465,7 +3465,7 @@ block|,
 block|{
 literal|"context-palette-select-next"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 literal|"Next Palette"
 block|,
@@ -3495,7 +3495,7 @@ block|{
 block|{
 literal|"context-gradient-select-set"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 literal|"Select Gradient by Index"
 block|,
@@ -3513,7 +3513,7 @@ block|,
 block|{
 literal|"context-gradient-select-first"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 literal|"First Gradient"
 block|,
@@ -3531,7 +3531,7 @@ block|,
 block|{
 literal|"context-gradient-select-last"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 literal|"Last Gradient"
 block|,
@@ -3549,7 +3549,7 @@ block|,
 block|{
 literal|"context-gradient-select-previous"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 literal|"Previous Gradient"
 block|,
@@ -3567,7 +3567,7 @@ block|,
 block|{
 literal|"context-gradient-select-next"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 literal|"Next Gradient"
 block|,
@@ -3597,7 +3597,7 @@ block|{
 block|{
 literal|"context-font-select-set"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 literal|"Select Font by Index"
 block|,
@@ -3615,7 +3615,7 @@ block|,
 block|{
 literal|"context-font-select-first"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 literal|"First Font"
 block|,
@@ -3633,7 +3633,7 @@ block|,
 block|{
 literal|"context-font-select-last"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 literal|"Last Font"
 block|,
@@ -3651,7 +3651,7 @@ block|,
 block|{
 literal|"context-font-select-previous"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 literal|"Previous Font"
 block|,
@@ -3669,7 +3669,7 @@ block|,
 block|{
 literal|"context-font-select-next"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 literal|"Next Font"
 block|,
@@ -3699,7 +3699,7 @@ block|{
 block|{
 literal|"context-brush-spacing-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Spacing"
 block|,
@@ -3717,7 +3717,7 @@ block|,
 block|{
 literal|"context-brush-spacing-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Minimum Spacing"
 block|,
@@ -3735,7 +3735,7 @@ block|,
 block|{
 literal|"context-brush-spacing-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Maximum Spacing"
 block|,
@@ -3753,7 +3753,7 @@ block|,
 block|{
 literal|"context-brush-spacing-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Spacing"
 block|,
@@ -3771,7 +3771,7 @@ block|,
 block|{
 literal|"context-brush-spacing-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Spacing"
 block|,
@@ -3789,7 +3789,7 @@ block|,
 block|{
 literal|"context-brush-spacing-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Spacing More"
 block|,
@@ -3807,7 +3807,7 @@ block|,
 block|{
 literal|"context-brush-spacing-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Spacing More"
 block|,
@@ -3837,7 +3837,7 @@ block|{
 block|{
 literal|"context-brush-shape-circle"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Circular Brush"
 block|,
@@ -3855,7 +3855,7 @@ block|,
 block|{
 literal|"context-brush-shape-square"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Square Brush"
 block|,
@@ -3873,7 +3873,7 @@ block|,
 block|{
 literal|"context-brush-shape-diamond"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Diamond Brush"
 block|,
@@ -3903,7 +3903,7 @@ block|{
 block|{
 literal|"context-brush-radius-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Radius"
 block|,
@@ -3921,7 +3921,7 @@ block|,
 block|{
 literal|"context-brush-radius-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Minimum Radius"
 block|,
@@ -3939,7 +3939,7 @@ block|,
 block|{
 literal|"context-brush-radius-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Maximum Radius"
 block|,
@@ -3957,7 +3957,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease-less"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Radius Less"
 block|,
@@ -3975,7 +3975,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase-less"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Radius Less"
 block|,
@@ -3993,7 +3993,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Radius"
 block|,
@@ -4011,7 +4011,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Radius"
 block|,
@@ -4029,7 +4029,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Radius More"
 block|,
@@ -4047,7 +4047,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Radius More"
 block|,
@@ -4065,7 +4065,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease-percent"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Radius Relative"
 block|,
@@ -4083,7 +4083,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase-percent"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Radius Relative"
 block|,
@@ -4113,7 +4113,7 @@ block|{
 block|{
 literal|"context-brush-spikes-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Spikes"
 block|,
@@ -4131,7 +4131,7 @@ block|,
 block|{
 literal|"context-brush-spikes-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Minimum Spikes"
 block|,
@@ -4149,7 +4149,7 @@ block|,
 block|{
 literal|"context-brush-spikes-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Maximum Spikes"
 block|,
@@ -4167,7 +4167,7 @@ block|,
 block|{
 literal|"context-brush-spikes-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Spikes"
 block|,
@@ -4185,7 +4185,7 @@ block|,
 block|{
 literal|"context-brush-spikes-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Spikes"
 block|,
@@ -4203,7 +4203,7 @@ block|,
 block|{
 literal|"context-brush-spikes-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Spikes More"
 block|,
@@ -4221,7 +4221,7 @@ block|,
 block|{
 literal|"context-brush-spikes-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Spikes More"
 block|,
@@ -4251,7 +4251,7 @@ block|{
 block|{
 literal|"context-brush-hardness-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Hardness"
 block|,
@@ -4269,7 +4269,7 @@ block|,
 block|{
 literal|"context-brush-hardness-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Minimum Hardness"
 block|,
@@ -4287,7 +4287,7 @@ block|,
 block|{
 literal|"context-brush-hardness-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Maximum Hardness"
 block|,
@@ -4305,7 +4305,7 @@ block|,
 block|{
 literal|"context-brush-hardness-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Hardness"
 block|,
@@ -4323,7 +4323,7 @@ block|,
 block|{
 literal|"context-brush-hardness-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Hardness"
 block|,
@@ -4341,7 +4341,7 @@ block|,
 block|{
 literal|"context-brush-hardness-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Hardness More"
 block|,
@@ -4359,7 +4359,7 @@ block|,
 block|{
 literal|"context-brush-hardness-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Hardness More"
 block|,
@@ -4389,7 +4389,7 @@ block|{
 block|{
 literal|"context-brush-aspect-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Aspect"
 block|,
@@ -4407,7 +4407,7 @@ block|,
 block|{
 literal|"context-brush-aspect-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Minimum Aspect"
 block|,
@@ -4425,7 +4425,7 @@ block|,
 block|{
 literal|"context-brush-aspect-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Maximum Aspect"
 block|,
@@ -4443,7 +4443,7 @@ block|,
 block|{
 literal|"context-brush-aspect-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Aspect"
 block|,
@@ -4461,7 +4461,7 @@ block|,
 block|{
 literal|"context-brush-aspect-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Aspect"
 block|,
@@ -4479,7 +4479,7 @@ block|,
 block|{
 literal|"context-brush-aspect-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Decrease Aspect More"
 block|,
@@ -4497,7 +4497,7 @@ block|,
 block|{
 literal|"context-brush-aspect-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Increase Aspect More"
 block|,
@@ -4527,7 +4527,7 @@ block|{
 block|{
 literal|"context-brush-angle-set"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Set Brush Angle"
 block|,
@@ -4545,7 +4545,7 @@ block|,
 block|{
 literal|"context-brush-angle-minimum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Horizontal"
 block|,
@@ -4563,7 +4563,7 @@ block|,
 block|{
 literal|"context-brush-angle-maximum"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Vertical"
 block|,
@@ -4581,7 +4581,7 @@ block|,
 block|{
 literal|"context-brush-angle-decrease"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Rotate Right"
 block|,
@@ -4599,7 +4599,7 @@ block|,
 block|{
 literal|"context-brush-angle-increase"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Rotate Left"
 block|,
@@ -4617,7 +4617,7 @@ block|,
 block|{
 literal|"context-brush-angle-decrease-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Rotate Right 15Â°"
 block|,
@@ -4635,7 +4635,7 @@ block|,
 block|{
 literal|"context-brush-angle-increase-skip"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 literal|"Rotate Left 15Â°"
 block|,

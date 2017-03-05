@@ -205,7 +205,7 @@ name|gimp_message_dialog_new
 argument_list|(
 literal|"Open Display"
 argument_list|,
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 argument_list|,
 name|widget
 argument_list|,

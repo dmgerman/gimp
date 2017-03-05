@@ -1149,7 +1149,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 argument_list|,
@@ -1174,7 +1174,7 @@ argument_list|(
 literal|"Device Status"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_DEVICE_STATUS
+name|GIMP_ICON_DIALOG_DEVICE_STATUS
 argument_list|,
 name|GIMP_HELP_DEVICE_STATUS_DIALOG
 argument_list|,
@@ -1199,7 +1199,7 @@ argument_list|(
 literal|"Error Console"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|GIMP_HELP_ERRORS_DIALOG
 argument_list|,
@@ -1224,7 +1224,7 @@ argument_list|(
 literal|"Pointer Information"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 argument_list|,
 name|GIMP_HELP_POINTER_INFO_DIALOG
 argument_list|,
@@ -1249,7 +1249,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_IMAGES
+name|GIMP_ICON_DIALOG_IMAGES
 argument_list|,
 name|GIMP_HELP_IMAGE_DIALOG
 argument_list|,
@@ -1269,7 +1269,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|GIMP_HELP_BRUSH_DIALOG
 argument_list|,
@@ -1289,7 +1289,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 argument_list|,
 name|GIMP_HELP_DYNAMICS_DIALOG
 argument_list|,
@@ -1331,7 +1331,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 argument_list|,
 name|GIMP_HELP_PATTERN_DIALOG
 argument_list|,
@@ -1351,7 +1351,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 name|GIMP_HELP_GRADIENT_DIALOG
 argument_list|,
@@ -1371,7 +1371,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 argument_list|,
 name|GIMP_HELP_PALETTE_DIALOG
 argument_list|,
@@ -1391,7 +1391,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 argument_list|,
 name|GIMP_HELP_FONT_DIALOG
 argument_list|,
@@ -1411,7 +1411,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_BUFFER
+name|GIMP_ICON_BUFFER
 argument_list|,
 name|GIMP_HELP_BUFFER_DIALOG
 argument_list|,
@@ -1433,7 +1433,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 argument_list|,
 name|GIMP_HELP_TOOL_PRESET_DIALOG
 argument_list|,
@@ -1456,7 +1456,7 @@ argument_list|(
 literal|"Document History"
 argument_list|)
 argument_list|,
-literal|"document-open-recent"
+name|GIMP_ICON_DOCUMENT_OPEN_RECENT
 argument_list|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,
@@ -1479,7 +1479,7 @@ argument_list|(
 literal|"Image Templates"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TEMPLATE
+name|GIMP_ICON_TEMPLATE
 argument_list|,
 name|GIMP_HELP_TEMPLATE_DIALOG
 argument_list|,
@@ -1498,7 +1498,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_LAYERS
+name|GIMP_ICON_DIALOG_LAYERS
 argument_list|,
 name|GIMP_HELP_LAYER_DIALOG
 argument_list|,
@@ -1520,7 +1520,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_CHANNELS
+name|GIMP_ICON_DIALOG_CHANNELS
 argument_list|,
 name|GIMP_HELP_CHANNEL_DIALOG
 argument_list|,
@@ -1542,7 +1542,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_PATHS
+name|GIMP_ICON_DIALOG_PATHS
 argument_list|,
 name|GIMP_HELP_PATH_DIALOG
 argument_list|,
@@ -1564,7 +1564,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 argument_list|,
 name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 argument_list|,
@@ -1586,7 +1586,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_HISTOGRAM
+name|GIMP_ICON_HISTOGRAM
 argument_list|,
 name|GIMP_HELP_HISTOGRAM_DIALOG
 argument_list|,
@@ -1611,7 +1611,7 @@ argument_list|(
 literal|"Selection Editor"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_SELECTION
+name|GIMP_ICON_SELECTION
 argument_list|,
 name|GIMP_HELP_SELECTION_DIALOG
 argument_list|,
@@ -1658,7 +1658,7 @@ argument_list|(
 literal|"Undo History"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_UNDO_HISTORY
+name|GIMP_ICON_DIALOG_UNDO_HISTORY
 argument_list|,
 name|GIMP_HELP_UNDO_DIALOG
 argument_list|,
@@ -1683,7 +1683,7 @@ argument_list|(
 literal|"Sample Points"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_SAMPLE_POINT
+name|GIMP_ICON_SAMPLE_POINT
 argument_list|,
 name|GIMP_HELP_SAMPLE_POINT_DIALOG
 argument_list|,
@@ -1709,7 +1709,7 @@ argument_list|(
 literal|"Display Navigation"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_NAVIGATION
+name|GIMP_ICON_DIALOG_NAVIGATION
 argument_list|,
 name|GIMP_HELP_NAVIGATION_DIALOG
 argument_list|,
@@ -1735,7 +1735,7 @@ argument_list|(
 literal|"FG/BG Color"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 argument_list|,
 name|GIMP_HELP_COLOR_DIALOG
 argument_list|,
@@ -1758,7 +1758,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|GIMP_HELP_BRUSH_EDITOR_DIALOG
 argument_list|,
@@ -1780,7 +1780,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 argument_list|,
 name|GIMP_HELP_DYNAMICS_EDITOR_DIALOG
 argument_list|,
@@ -1802,7 +1802,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 name|GIMP_HELP_GRADIENT_EDITOR_DIALOG
 argument_list|,
@@ -1824,7 +1824,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|,
@@ -1846,7 +1846,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 argument_list|,
 name|GIMP_HELP_TOOL_PRESET_EDITOR_DIALOG
 argument_list|,

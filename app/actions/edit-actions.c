@@ -273,7 +273,7 @@ block|,
 block|{
 literal|"edit-undo"
 block|,
-literal|"edit-undo"
+name|GIMP_ICON_EDIT_UNDO
 block|,
 name|NC_
 argument_list|(
@@ -302,7 +302,7 @@ block|,
 block|{
 literal|"edit-redo"
 block|,
-literal|"edit-redo"
+name|GIMP_ICON_EDIT_REDO
 block|,
 name|NC_
 argument_list|(
@@ -331,7 +331,7 @@ block|,
 block|{
 literal|"edit-strong-undo"
 block|,
-literal|"edit-undo"
+name|GIMP_ICON_EDIT_UNDO
 block|,
 name|NC_
 argument_list|(
@@ -360,7 +360,7 @@ block|,
 block|{
 literal|"edit-strong-redo"
 block|,
-literal|"edit-redo"
+name|GIMP_ICON_EDIT_REDO
 block|,
 name|NC_
 argument_list|(
@@ -418,7 +418,7 @@ block|,
 block|{
 literal|"edit-fade"
 block|,
-literal|"edit-undo"
+name|GIMP_ICON_EDIT_UNDO
 block|,
 name|NC_
 argument_list|(
@@ -447,7 +447,7 @@ block|,
 block|{
 literal|"edit-cut"
 block|,
-literal|"edit-cut"
+name|GIMP_ICON_EDIT_CUT
 block|,
 name|NC_
 argument_list|(
@@ -476,7 +476,7 @@ block|,
 block|{
 literal|"edit-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -507,7 +507,7 @@ literal|"edit-copy-visible"
 block|,
 name|NULL
 block|,
-comment|/* GIMP_STOCK_COPY_VISIBLE, */
+comment|/* GIMP_ICON_COPY_VISIBLE, */
 name|NC_
 argument_list|(
 literal|"edit-action"
@@ -535,7 +535,7 @@ block|,
 block|{
 literal|"edit-paste"
 block|,
-literal|"edit-paste"
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NC_
 argument_list|(
@@ -564,7 +564,7 @@ block|,
 block|{
 literal|"edit-paste-into"
 block|,
-name|GIMP_STOCK_PASTE_INTO
+name|GIMP_ICON_EDIT_PASTE_INTO
 block|,
 name|NC_
 argument_list|(
@@ -622,7 +622,7 @@ block|,
 block|{
 literal|"edit-paste-as-new-image"
 block|,
-name|GIMP_STOCK_PASTE_AS_NEW
+name|GIMP_ICON_EDIT_PASTE_AS_NEW
 block|,
 name|NC_
 argument_list|(
@@ -651,7 +651,7 @@ block|,
 block|{
 literal|"edit-paste-as-new-image-short"
 block|,
-name|GIMP_STOCK_PASTE_AS_NEW
+name|GIMP_ICON_EDIT_PASTE_AS_NEW
 block|,
 name|NC_
 argument_list|(
@@ -680,7 +680,7 @@ block|,
 block|{
 literal|"edit-named-cut"
 block|,
-literal|"edit-cut"
+name|GIMP_ICON_EDIT_CUT
 block|,
 name|NC_
 argument_list|(
@@ -709,7 +709,7 @@ block|,
 block|{
 literal|"edit-named-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -740,7 +740,7 @@ literal|"edit-named-copy-visible"
 block|,
 name|NULL
 block|,
-comment|/* GIMP_STOCK_COPY_VISIBLE, */
+comment|/* GIMP_ICON_COPY_VISIBLE, */
 name|NC_
 argument_list|(
 literal|"edit-action"
@@ -768,7 +768,7 @@ block|,
 block|{
 literal|"edit-named-paste"
 block|,
-literal|"edit-paste"
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NC_
 argument_list|(
@@ -797,7 +797,7 @@ block|,
 block|{
 literal|"edit-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -838,7 +838,7 @@ block|{
 block|{
 literal|"edit-fill-fg"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -866,7 +866,7 @@ block|,
 block|{
 literal|"edit-fill-bg"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -894,7 +894,7 @@ block|,
 block|{
 literal|"edit-fill-pattern"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 name|NC_
 argument_list|(

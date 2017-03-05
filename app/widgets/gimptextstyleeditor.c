@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4101c80103
+DECL|enum|__anon273da58b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1596,7 +1596,7 @@ name|buffer
 operator|->
 name|bold_tag
 argument_list|,
-literal|"format-text-bold"
+name|GIMP_ICON_FORMAT_TEXT_BOLD
 argument_list|,
 name|_
 argument_list|(
@@ -1614,7 +1614,7 @@ name|buffer
 operator|->
 name|italic_tag
 argument_list|,
-literal|"format-text-italic"
+name|GIMP_ICON_FORMAT_TEXT_ITALIC
 argument_list|,
 name|_
 argument_list|(
@@ -1632,7 +1632,7 @@ name|buffer
 operator|->
 name|underline_tag
 argument_list|,
-literal|"format-text-underline"
+name|GIMP_ICON_FORMAT_TEXT_UNDERLINE
 argument_list|,
 name|_
 argument_list|(
@@ -1650,7 +1650,7 @@ name|buffer
 operator|->
 name|strikethrough_tag
 argument_list|,
-literal|"format-text-strikethrough"
+name|GIMP_ICON_FORMAT_TEXT_STRIKETHROUGH
 argument_list|,
 name|_
 argument_list|(

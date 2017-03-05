@@ -150,7 +150,7 @@ block|{
 block|{
 literal|"quick-mask-toggle"
 block|,
-name|GIMP_STOCK_QUICK_MASK_ON
+name|GIMP_ICON_QUICK_MASK_ON
 block|,
 name|NC_
 argument_list|(

@@ -300,7 +300,7 @@ block|,
 block|{
 literal|"file-open-as-layers"
 block|,
-name|GIMP_STOCK_LAYER
+name|GIMP_ICON_LAYER
 block|,
 name|NC_
 argument_list|(
@@ -329,7 +329,7 @@ block|,
 block|{
 literal|"file-open-location"
 block|,
-name|GIMP_STOCK_WEB
+name|GIMP_ICON_WEB
 block|,
 name|NC_
 argument_list|(
@@ -445,7 +445,7 @@ block|,
 block|{
 literal|"file-copy-location"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -503,7 +503,7 @@ block|,
 block|{
 literal|"file-quit"
 block|,
-literal|"application-exit"
+name|GIMP_ICON_APPLICATION_EXIT
 block|,
 name|NC_
 argument_list|(
@@ -544,7 +544,7 @@ block|{
 block|{
 literal|"file-save"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -572,7 +572,7 @@ block|,
 block|{
 literal|"file-save-as"
 block|,
-literal|"document-save-as"
+name|GIMP_ICON_DOCUMENT_SAVE_AS
 block|,
 name|NC_
 argument_list|(
@@ -853,8 +853,8 @@ index|]
 operator|.
 name|icon_name
 operator|=
-literal|"document-open"
-expr_stmt|;
+name|GIMP_ICON_DOCUMENT_OPEN
+operator|,
 name|entries
 index|[
 name|i

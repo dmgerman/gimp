@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"text-editor-toolbar"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 literal|"Text Editor Toolbar"
 block|,
@@ -97,7 +97,7 @@ block|,
 block|{
 literal|"text-editor-load"
 block|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|,
 block|{
 literal|"text-editor-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -167,7 +167,7 @@ block|{
 block|{
 literal|"text-editor-direction-ltr"
 block|,
-name|GIMP_STOCK_TEXT_DIR_LTR
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_LTR
 block|,
 name|NC_
 argument_list|(
@@ -193,7 +193,7 @@ block|,
 block|{
 literal|"text-editor-direction-rtl"
 block|,
-name|GIMP_STOCK_TEXT_DIR_RTL
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_RTL
 block|,
 name|NC_
 argument_list|(

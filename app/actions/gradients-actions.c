@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"gradients-popup"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|NC_
 argument_list|(
@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"gradients-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -149,7 +149,7 @@ block|,
 block|{
 literal|"gradients-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"gradients-copy-location"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"gradients-save-as-pov"
 block|,
-literal|"document-save-as"
+name|GIMP_ICON_DOCUMENT_SAVE_AS
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"gradients-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -294,7 +294,7 @@ block|,
 block|{
 literal|"gradients-refresh"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NC_
 argument_list|(
@@ -335,7 +335,7 @@ block|{
 block|{
 literal|"gradients-edit"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(

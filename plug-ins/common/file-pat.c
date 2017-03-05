@@ -367,7 +367,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
@@ -440,7 +440,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

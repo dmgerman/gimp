@@ -654,7 +654,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_CURVES
 argument_list|,
-name|GIMP_STOCK_TOOL_CURVES
+name|GIMP_ICON_TOOL_CURVES
 argument_list|,
 name|data
 argument_list|)

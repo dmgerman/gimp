@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767565e0103
+DECL|enum|__anon2901e01c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2080,7 +2080,7 @@ argument_list|(
 literal|"Delete Device Settings"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

@@ -356,7 +356,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_WEB
+name|GIMP_ICON_WEB
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

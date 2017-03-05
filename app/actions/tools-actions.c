@@ -188,7 +188,7 @@ block|{
 block|{
 literal|"tools-by-color-select-short"
 block|,
-name|GIMP_STOCK_TOOL_BY_COLOR_SELECT
+name|GIMP_ICON_TOOL_BY_COLOR_SELECT
 block|,
 name|NC_
 argument_list|(
@@ -214,7 +214,7 @@ block|,
 block|{
 literal|"tools-rotate-arbitrary"
 block|,
-name|GIMP_STOCK_TOOL_ROTATE
+name|GIMP_ICON_TOOL_ROTATE
 block|,
 name|NC_
 argument_list|(
@@ -252,7 +252,7 @@ block|{
 block|{
 literal|"tools-color-average-radius-set"
 block|,
-name|GIMP_STOCK_TOOL_COLOR_PICKER
+name|GIMP_ICON_TOOL_COLOR_PICKER
 block|,
 literal|"Set Color Picker Radius"
 block|,
@@ -282,7 +282,7 @@ block|{
 block|{
 literal|"tools-paintbrush-size-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Size"
 block|,
@@ -312,7 +312,7 @@ block|{
 block|{
 literal|"tools-paintbrush-aspect-ratio-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Aspect Ratio"
 block|,
@@ -342,7 +342,7 @@ block|{
 block|{
 literal|"tools-paintbrush-angle-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Angle"
 block|,
@@ -372,7 +372,7 @@ block|{
 block|{
 literal|"tools-paintbrush-spacing-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Spacing"
 block|,
@@ -402,7 +402,7 @@ block|{
 block|{
 literal|"tools-paintbrush-hardness-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Hardness"
 block|,
@@ -432,7 +432,7 @@ block|{
 block|{
 literal|"tools-paintbrush-force-set"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 block|,
 literal|"Set Brush Force"
 block|,
@@ -462,7 +462,7 @@ block|{
 block|{
 literal|"tools-ink-blob-size-set"
 block|,
-name|GIMP_STOCK_TOOL_INK
+name|GIMP_ICON_TOOL_INK
 block|,
 literal|"Set Ink Blob Size"
 block|,
@@ -492,7 +492,7 @@ block|{
 block|{
 literal|"tools-ink-blob-aspect-set"
 block|,
-name|GIMP_STOCK_TOOL_INK
+name|GIMP_ICON_TOOL_INK
 block|,
 literal|"Set Ink Blob Aspect"
 block|,
@@ -522,7 +522,7 @@ block|{
 block|{
 literal|"tools-ink-blob-angle-set"
 block|,
-name|GIMP_STOCK_TOOL_INK
+name|GIMP_ICON_TOOL_INK
 block|,
 literal|"Set Ink Blob Angle"
 block|,
@@ -552,7 +552,7 @@ block|{
 block|{
 literal|"tools-airbrush-rate-set"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Set Airrush Rate"
 block|,
@@ -570,7 +570,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-minimum"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Minimum Rate"
 block|,
@@ -588,7 +588,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-maximum"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Maximum Rate"
 block|,
@@ -606,7 +606,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-decrease"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Decrease Rate"
 block|,
@@ -624,7 +624,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-increase"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Increase Rate"
 block|,
@@ -642,7 +642,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Decrease Rate More"
 block|,
@@ -660,7 +660,7 @@ block|,
 block|{
 literal|"tools-airbrush-rate-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Increase Rate More"
 block|,
@@ -690,7 +690,7 @@ block|{
 block|{
 literal|"tools-airbrush-flow-set"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Set Airrush Flow"
 block|,
@@ -708,7 +708,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-minimum"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Minimum Flow"
 block|,
@@ -726,7 +726,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-maximum"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Maximum Flow"
 block|,
@@ -744,7 +744,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-decrease"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Decrease Flow"
 block|,
@@ -762,7 +762,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-increase"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Increase Flow"
 block|,
@@ -780,7 +780,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Decrease Flow More"
 block|,
@@ -798,7 +798,7 @@ block|,
 block|{
 literal|"tools-airbrush-flow-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
 literal|"Increase Flow More"
 block|,
@@ -888,7 +888,7 @@ block|{
 block|{
 literal|"tools-foreground-select-brush-size-set"
 block|,
-name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
+name|GIMP_ICON_TOOL_FOREGROUND_SELECT
 block|,
 literal|"Set Foreground Select Brush Size"
 block|,
@@ -918,7 +918,7 @@ block|{
 block|{
 literal|"tools-transform-preview-opacity-set"
 block|,
-name|GIMP_STOCK_TOOL_PERSPECTIVE
+name|GIMP_ICON_TOOL_PERSPECTIVE
 block|,
 literal|"Set Transform Tool Preview Opacity"
 block|,
@@ -1008,7 +1008,7 @@ block|{
 block|{
 literal|"tools-opacity-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Opacity"
 block|,
@@ -1026,7 +1026,7 @@ block|,
 block|{
 literal|"tools-opacity-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Opacity To Default Value"
 block|,
@@ -1044,7 +1044,7 @@ block|,
 block|{
 literal|"tools-opacity-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Opacity"
 block|,
@@ -1062,7 +1062,7 @@ block|,
 block|{
 literal|"tools-opacity-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Opacity"
 block|,
@@ -1080,7 +1080,7 @@ block|,
 block|{
 literal|"tools-opacity-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Opacity"
 block|,
@@ -1098,7 +1098,7 @@ block|,
 block|{
 literal|"tools-opacity-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Opacity"
 block|,
@@ -1116,7 +1116,7 @@ block|,
 block|{
 literal|"tools-opacity-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Opacity More"
 block|,
@@ -1134,7 +1134,7 @@ block|,
 block|{
 literal|"tools-opacity-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Opacity More"
 block|,
@@ -1152,7 +1152,7 @@ block|,
 block|{
 literal|"tools-opacity-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Opacity Relative"
 block|,
@@ -1170,7 +1170,7 @@ block|,
 block|{
 literal|"tools-opacity-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Opacity Relative"
 block|,
@@ -1200,7 +1200,7 @@ block|{
 block|{
 literal|"tools-size-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Size"
 block|,
@@ -1218,7 +1218,7 @@ block|,
 block|{
 literal|"tools-size-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Size To Default Value"
 block|,
@@ -1236,7 +1236,7 @@ block|,
 block|{
 literal|"tools-size-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Size"
 block|,
@@ -1254,7 +1254,7 @@ block|,
 block|{
 literal|"tools-size-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Size"
 block|,
@@ -1272,7 +1272,7 @@ block|,
 block|{
 literal|"tools-size-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Size"
 block|,
@@ -1290,7 +1290,7 @@ block|,
 block|{
 literal|"tools-size-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Size"
 block|,
@@ -1308,7 +1308,7 @@ block|,
 block|{
 literal|"tools-size-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Size More"
 block|,
@@ -1326,7 +1326,7 @@ block|,
 block|{
 literal|"tools-size-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Size More"
 block|,
@@ -1344,7 +1344,7 @@ block|,
 block|{
 literal|"tools-size-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Size Relative"
 block|,
@@ -1362,7 +1362,7 @@ block|,
 block|{
 literal|"tools-size-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Size Relative"
 block|,
@@ -1392,7 +1392,7 @@ block|{
 block|{
 literal|"tools-aspect-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Aspect Ratio"
 block|,
@@ -1410,7 +1410,7 @@ block|,
 block|{
 literal|"tools-aspect-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Aspect Ratio To Default Value"
 block|,
@@ -1428,7 +1428,7 @@ block|,
 block|{
 literal|"tools-aspect-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Aspect Ratio"
 block|,
@@ -1446,7 +1446,7 @@ block|,
 block|{
 literal|"tools-aspect-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Aspect Ratio"
 block|,
@@ -1464,7 +1464,7 @@ block|,
 block|{
 literal|"tools-aspect-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Aspect Ratio"
 block|,
@@ -1482,7 +1482,7 @@ block|,
 block|{
 literal|"tools-aspect-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Aspect Ratio"
 block|,
@@ -1500,7 +1500,7 @@ block|,
 block|{
 literal|"tools-aspect-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Aspect Ratio More"
 block|,
@@ -1518,7 +1518,7 @@ block|,
 block|{
 literal|"tools-aspect-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Aspect Ratio More"
 block|,
@@ -1536,7 +1536,7 @@ block|,
 block|{
 literal|"tools-aspect-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Aspect Ratio Relative"
 block|,
@@ -1554,7 +1554,7 @@ block|,
 block|{
 literal|"tools-aspect-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Aspect Ratio Relative"
 block|,
@@ -1584,7 +1584,7 @@ block|{
 block|{
 literal|"tools-angle-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Angle"
 block|,
@@ -1602,7 +1602,7 @@ block|,
 block|{
 literal|"tools-angle-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Angle To Default Value"
 block|,
@@ -1620,7 +1620,7 @@ block|,
 block|{
 literal|"tools-angle-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Angle"
 block|,
@@ -1638,7 +1638,7 @@ block|,
 block|{
 literal|"tools-angle-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Angle"
 block|,
@@ -1656,7 +1656,7 @@ block|,
 block|{
 literal|"tools-angle-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Angle"
 block|,
@@ -1674,7 +1674,7 @@ block|,
 block|{
 literal|"tools-angle-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Angle"
 block|,
@@ -1692,7 +1692,7 @@ block|,
 block|{
 literal|"tools-angle-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Angle More"
 block|,
@@ -1710,7 +1710,7 @@ block|,
 block|{
 literal|"tools-angle-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Angle More"
 block|,
@@ -1728,7 +1728,7 @@ block|,
 block|{
 literal|"tools-angle-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Angle Relative"
 block|,
@@ -1746,7 +1746,7 @@ block|,
 block|{
 literal|"tools-angle-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Angle Relative"
 block|,
@@ -1776,7 +1776,7 @@ block|{
 block|{
 literal|"tools-spacing-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Spacing"
 block|,
@@ -1794,7 +1794,7 @@ block|,
 block|{
 literal|"tools-spacing-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Spacing To Default Value"
 block|,
@@ -1812,7 +1812,7 @@ block|,
 block|{
 literal|"tools-spacing-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Spacing"
 block|,
@@ -1830,7 +1830,7 @@ block|,
 block|{
 literal|"tools-spacing-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Spacing"
 block|,
@@ -1848,7 +1848,7 @@ block|,
 block|{
 literal|"tools-spacing-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Spacing"
 block|,
@@ -1866,7 +1866,7 @@ block|,
 block|{
 literal|"tools-spacing-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Spacing"
 block|,
@@ -1884,7 +1884,7 @@ block|,
 block|{
 literal|"tools-spacing-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Spacing More"
 block|,
@@ -1902,7 +1902,7 @@ block|,
 block|{
 literal|"tools-spacing-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Spacing More"
 block|,
@@ -1920,7 +1920,7 @@ block|,
 block|{
 literal|"tools-spacing-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Spacing Relative"
 block|,
@@ -1938,7 +1938,7 @@ block|,
 block|{
 literal|"tools-spacing-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Spacing Relative"
 block|,
@@ -1968,7 +1968,7 @@ block|{
 block|{
 literal|"tools-hardness-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Hardness"
 block|,
@@ -1986,7 +1986,7 @@ block|,
 block|{
 literal|"tools-hardness-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Hardness To Default Value"
 block|,
@@ -2004,7 +2004,7 @@ block|,
 block|{
 literal|"tools-hardness-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Hardness"
 block|,
@@ -2022,7 +2022,7 @@ block|,
 block|{
 literal|"tools-hardness-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Hardness"
 block|,
@@ -2040,7 +2040,7 @@ block|,
 block|{
 literal|"tools-hardness-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Hardness"
 block|,
@@ -2058,7 +2058,7 @@ block|,
 block|{
 literal|"tools-hardness-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Hardness"
 block|,
@@ -2076,7 +2076,7 @@ block|,
 block|{
 literal|"tools-hardness-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Hardness More"
 block|,
@@ -2094,7 +2094,7 @@ block|,
 block|{
 literal|"tools-hardness-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Hardness More"
 block|,
@@ -2112,7 +2112,7 @@ block|,
 block|{
 literal|"tools-hardness-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Hardness Relative"
 block|,
@@ -2130,7 +2130,7 @@ block|,
 block|{
 literal|"tools-hardness-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Hardness Relative"
 block|,
@@ -2160,7 +2160,7 @@ block|{
 block|{
 literal|"tools-force-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Force"
 block|,
@@ -2178,7 +2178,7 @@ block|,
 block|{
 literal|"tools-force-set-to-default"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Set Force To Default Value"
 block|,
@@ -2196,7 +2196,7 @@ block|,
 block|{
 literal|"tools-force-minimum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Minimize Force"
 block|,
@@ -2214,7 +2214,7 @@ block|,
 block|{
 literal|"tools-force-maximum"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Maximize Force"
 block|,
@@ -2232,7 +2232,7 @@ block|,
 block|{
 literal|"tools-force-decrease"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Force"
 block|,
@@ -2250,7 +2250,7 @@ block|,
 block|{
 literal|"tools-force-increase"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Force"
 block|,
@@ -2268,7 +2268,7 @@ block|,
 block|{
 literal|"tools-force-decrease-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Force More"
 block|,
@@ -2286,7 +2286,7 @@ block|,
 block|{
 literal|"tools-force-increase-skip"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Force More"
 block|,
@@ -2304,7 +2304,7 @@ block|,
 block|{
 literal|"tools-force-decrease-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Decrease Force Relative"
 block|,
@@ -2322,7 +2322,7 @@ block|,
 block|{
 literal|"tools-force-increase-percent"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Increase Force Relative"
 block|,
@@ -2352,7 +2352,7 @@ block|{
 block|{
 literal|"tools-object-1-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Select Object 1 by Index"
 block|,
@@ -2370,7 +2370,7 @@ block|,
 block|{
 literal|"tools-object-1-first"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"First Object 1"
 block|,
@@ -2388,7 +2388,7 @@ block|,
 block|{
 literal|"tools-object-1-last"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Last Object 1"
 block|,
@@ -2406,7 +2406,7 @@ block|,
 block|{
 literal|"tools-object-1-previous"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Previous Object 1"
 block|,
@@ -2424,7 +2424,7 @@ block|,
 block|{
 literal|"tools-object-1-next"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Next Object 1"
 block|,
@@ -2454,7 +2454,7 @@ block|{
 block|{
 literal|"tools-object-2-set"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Select Object 2 by Index"
 block|,
@@ -2472,7 +2472,7 @@ block|,
 block|{
 literal|"tools-object-2-first"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"First Object 2"
 block|,
@@ -2490,7 +2490,7 @@ block|,
 block|{
 literal|"tools-object-2-last"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Last Object 2"
 block|,
@@ -2508,7 +2508,7 @@ block|,
 block|{
 literal|"tools-object-2-previous"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Previous Object 2"
 block|,
@@ -2526,7 +2526,7 @@ block|,
 block|{
 literal|"tools-object-2-next"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 literal|"Next Object 2"
 block|,

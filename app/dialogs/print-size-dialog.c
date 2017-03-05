@@ -447,7 +447,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|GIMP_STOCK_PRINT_RESOLUTION
+name|GIMP_ICON_DOCUMENT_PRINT_RESOLUTION
 argument_list|,
 name|title
 argument_list|,

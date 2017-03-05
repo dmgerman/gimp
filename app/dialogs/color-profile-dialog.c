@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0099550108
+DECL|struct|__anon2b69ae2c0108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -589,7 +589,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-convert-rgb"
 argument_list|,
-name|GIMP_STOCK_CONVERT_RGB
+name|GIMP_ICON_CONVERT_RGB
 argument_list|,
 name|_
 argument_list|(
@@ -648,7 +648,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-convert-gray"
 argument_list|,
-name|GIMP_STOCK_CONVERT_GRAYSCALE
+name|GIMP_ICON_CONVERT_GRAYSCALE
 argument_list|,
 name|_
 argument_list|(
@@ -707,7 +707,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-select-softproof-profile"
 argument_list|,
-name|GTK_STOCK_PRINT
+name|GIMP_ICON_DOCUMENT_PRINT
 argument_list|,
 name|_
 argument_list|(

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83e19c0103
+DECL|enum|__anon2c8052530103
 block|{
 DECL|enumerator|COLUMN_TREE_ICON_NAME
 name|COLUMN_TREE_ICON_NAME
@@ -1788,7 +1788,7 @@ name|button
 operator|=
 name|gimp_icon_button_new
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|label
 argument_list|)

@@ -470,7 +470,7 @@ argument_list|(
 literal|"Brush Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|brush_editor_actions_setup
 block|,
@@ -485,7 +485,7 @@ argument_list|(
 literal|"Brushes"
 argument_list|)
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|brushes_actions_setup
 block|,
@@ -500,7 +500,7 @@ argument_list|(
 literal|"Buffers"
 argument_list|)
 block|,
-name|GIMP_STOCK_BUFFER
+name|GIMP_ICON_BUFFER
 block|,
 name|buffers_actions_setup
 block|,
@@ -515,7 +515,7 @@ argument_list|(
 literal|"Channels"
 argument_list|)
 block|,
-name|GIMP_STOCK_CHANNEL
+name|GIMP_ICON_CHANNEL
 block|,
 name|channels_actions_setup
 block|,
@@ -530,7 +530,7 @@ argument_list|(
 literal|"Colormap"
 argument_list|)
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 name|colormap_actions_setup
 block|,
@@ -545,7 +545,7 @@ argument_list|(
 literal|"Context"
 argument_list|)
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 comment|/* well... */
 block|,
 name|context_actions_setup
@@ -651,7 +651,7 @@ argument_list|(
 literal|"Drawable"
 argument_list|)
 block|,
-name|GIMP_STOCK_LAYER
+name|GIMP_ICON_LAYER
 block|,
 name|drawable_actions_setup
 block|,
@@ -666,7 +666,7 @@ argument_list|(
 literal|"Paint Dynamics"
 argument_list|)
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 block|,
 name|dynamics_actions_setup
 block|,
@@ -681,7 +681,7 @@ argument_list|(
 literal|"Paint Dynamics Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 block|,
 name|dynamics_editor_actions_setup
 block|,
@@ -696,7 +696,7 @@ argument_list|(
 literal|"Edit"
 argument_list|)
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|edit_actions_setup
 block|,
@@ -711,7 +711,7 @@ argument_list|(
 literal|"Error Console"
 argument_list|)
 block|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 block|,
 name|error_console_actions_setup
 block|,
@@ -741,7 +741,7 @@ argument_list|(
 literal|"Filters"
 argument_list|)
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|filters_actions_setup
 block|,
@@ -756,7 +756,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 name|fonts_actions_setup
 block|,
@@ -771,7 +771,7 @@ argument_list|(
 literal|"Gradient Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|gradient_editor_actions_setup
 block|,
@@ -786,7 +786,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|gradients_actions_setup
 block|,
@@ -801,7 +801,7 @@ argument_list|(
 literal|"Tool Presets"
 argument_list|)
 block|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 block|,
 name|tool_presets_actions_setup
 block|,
@@ -816,7 +816,7 @@ argument_list|(
 literal|"Tool Preset Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 block|,
 name|tool_preset_editor_actions_setup
 block|,
@@ -846,7 +846,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 block|,
-name|GIMP_STOCK_IMAGE
+name|GIMP_ICON_IMAGE
 block|,
 name|image_actions_setup
 block|,
@@ -861,7 +861,7 @@ argument_list|(
 literal|"Images"
 argument_list|)
 block|,
-name|GIMP_STOCK_IMAGE
+name|GIMP_ICON_IMAGE
 block|,
 name|images_actions_setup
 block|,
@@ -876,7 +876,7 @@ argument_list|(
 literal|"Layers"
 argument_list|)
 block|,
-name|GIMP_STOCK_LAYER
+name|GIMP_ICON_LAYER
 block|,
 name|layers_actions_setup
 block|,
@@ -906,7 +906,7 @@ argument_list|(
 literal|"Palette Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|palette_editor_actions_setup
 block|,
@@ -921,7 +921,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|palettes_actions_setup
 block|,
@@ -936,7 +936,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 name|patterns_actions_setup
 block|,
@@ -951,7 +951,7 @@ argument_list|(
 literal|"Plug-Ins"
 argument_list|)
 block|,
-name|GIMP_STOCK_PLUGIN
+name|GIMP_ICON_PLUGIN
 block|,
 name|plug_in_actions_setup
 block|,
@@ -966,7 +966,7 @@ argument_list|(
 literal|"Quick Mask"
 argument_list|)
 block|,
-name|GIMP_STOCK_QUICK_MASK_ON
+name|GIMP_ICON_QUICK_MASK_ON
 block|,
 name|quick_mask_actions_setup
 block|,
@@ -981,7 +981,7 @@ argument_list|(
 literal|"Sample Points"
 argument_list|)
 block|,
-name|GIMP_STOCK_SAMPLE_POINT
+name|GIMP_ICON_SAMPLE_POINT
 block|,
 name|sample_points_actions_setup
 block|,
@@ -996,7 +996,7 @@ argument_list|(
 literal|"Select"
 argument_list|)
 block|,
-name|GIMP_STOCK_SELECTION
+name|GIMP_ICON_SELECTION
 block|,
 name|select_actions_setup
 block|,
@@ -1011,7 +1011,7 @@ argument_list|(
 literal|"Templates"
 argument_list|)
 block|,
-name|GIMP_STOCK_TEMPLATE
+name|GIMP_ICON_TEMPLATE
 block|,
 name|templates_actions_setup
 block|,
@@ -1026,7 +1026,7 @@ argument_list|(
 literal|"Text Tool"
 argument_list|)
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|text_tool_actions_setup
 block|,
@@ -1041,7 +1041,7 @@ argument_list|(
 literal|"Text Editor"
 argument_list|)
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|text_editor_actions_setup
 block|,
@@ -1056,7 +1056,7 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 name|tool_options_actions_setup
 block|,
@@ -1071,7 +1071,7 @@ argument_list|(
 literal|"Tools"
 argument_list|)
 block|,
-name|GIMP_STOCK_TOOLS
+name|GIMP_ICON_DIALOG_TOOLS
 block|,
 name|tools_actions_setup
 block|,
@@ -1086,7 +1086,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 block|,
-name|GIMP_STOCK_PATH
+name|GIMP_ICON_PATH
 block|,
 name|vectors_actions_setup
 block|,
@@ -1101,7 +1101,7 @@ argument_list|(
 literal|"View"
 argument_list|)
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|view_actions_setup
 block|,

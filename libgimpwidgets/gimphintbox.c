@@ -42,7 +42,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295aa6af0108
+DECL|struct|__anon2c0824f80108
 block|{
 DECL|member|parent_instance
 name|GtkBox
@@ -82,7 +82,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aa6af0203
+DECL|enum|__anon2c0824f80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -247,7 +247,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||
@@ -269,7 +269,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||

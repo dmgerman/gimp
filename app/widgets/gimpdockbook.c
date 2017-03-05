@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b010f740103
+DECL|enum|__anon2987a6060103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1280,7 +1280,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_MENU_LEFT
+name|GIMP_ICON_MENU_LEFT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1302,7 +1302,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_MENU_LEFT
+name|GIMP_ICON_MENU_LEFT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

@@ -134,7 +134,7 @@ block|,
 block|{
 literal|"drawable-invert"
 block|,
-name|GIMP_STOCK_INVERT
+name|GIMP_ICON_INVERT
 block|,
 name|NC_
 argument_list|(
@@ -163,7 +163,7 @@ block|,
 block|{
 literal|"drawable-linear-invert"
 block|,
-name|GIMP_STOCK_INVERT
+name|GIMP_ICON_INVERT
 block|,
 name|NC_
 argument_list|(
@@ -192,7 +192,7 @@ block|,
 block|{
 literal|"drawable-value-invert"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -250,7 +250,7 @@ block|,
 block|{
 literal|"drawable-dilate"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"drawable-erode"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -349,7 +349,7 @@ block|{
 block|{
 literal|"drawable-visible"
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|NC_
 argument_list|(
@@ -380,7 +380,7 @@ block|,
 block|{
 literal|"drawable-linked"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -412,7 +412,7 @@ block|{
 literal|"drawable-lock-content"
 block|,
 name|NULL
-comment|/* GIMP_STOCK_LOCK */
+comment|/* GIMP_ICON_LOCK */
 block|,
 name|NC_
 argument_list|(
@@ -443,7 +443,7 @@ block|,
 block|{
 literal|"drawable-lock-position"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 block|,
 name|NC_
 argument_list|(
@@ -486,7 +486,7 @@ block|{
 block|{
 literal|"drawable-flip-horizontal"
 block|,
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 block|,
 name|NC_
 argument_list|(
@@ -514,7 +514,7 @@ block|,
 block|{
 literal|"drawable-flip-vertical"
 block|,
-name|GIMP_STOCK_FLIP_VERTICAL
+name|GIMP_ICON_OBJECT_FLIP_VERTICAL
 block|,
 name|NC_
 argument_list|(
@@ -554,7 +554,7 @@ block|{
 block|{
 literal|"drawable-rotate-90"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_ICON_OBJECT_ROTATE_90
 block|,
 name|NC_
 argument_list|(
@@ -582,7 +582,7 @@ block|,
 block|{
 literal|"drawable-rotate-180"
 block|,
-name|GIMP_STOCK_ROTATE_180
+name|GIMP_ICON_OBJECT_ROTATE_180
 block|,
 name|NC_
 argument_list|(
@@ -610,7 +610,7 @@ block|,
 block|{
 literal|"drawable-rotate-270"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_ICON_OBJECT_ROTATE_270
 block|,
 name|NC_
 argument_list|(

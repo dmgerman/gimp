@@ -219,7 +219,7 @@ argument_list|(
 literal|"GIMP User Installation"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 argument_list|,
 name|NULL
 argument_list|,

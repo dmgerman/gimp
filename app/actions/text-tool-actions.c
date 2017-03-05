@@ -159,7 +159,7 @@ block|,
 block|{
 literal|"text-tool-cut"
 block|,
-literal|"edit-cut"
+name|GIMP_ICON_EDIT_CUT
 block|,
 name|NC_
 argument_list|(
@@ -183,7 +183,7 @@ block|,
 block|{
 literal|"text-tool-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -207,7 +207,7 @@ block|,
 block|{
 literal|"text-tool-paste"
 block|,
-literal|"edit-paste"
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NC_
 argument_list|(
@@ -231,7 +231,7 @@ block|,
 block|{
 literal|"text-tool-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -255,7 +255,7 @@ block|,
 block|{
 literal|"text-tool-load"
 block|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -279,7 +279,7 @@ block|,
 block|{
 literal|"text-tool-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -308,7 +308,7 @@ block|,
 block|{
 literal|"text-tool-text-to-path"
 block|,
-name|GIMP_STOCK_PATH
+name|GIMP_ICON_PATH
 block|,
 name|NC_
 argument_list|(
@@ -337,7 +337,7 @@ block|,
 block|{
 literal|"text-tool-text-along-path"
 block|,
-name|GIMP_STOCK_PATH
+name|GIMP_ICON_PATH
 block|,
 name|NC_
 argument_list|(
@@ -378,7 +378,7 @@ block|{
 block|{
 literal|"text-tool-direction-ltr"
 block|,
-name|GIMP_STOCK_TEXT_DIR_LTR
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_LTR
 block|,
 name|NC_
 argument_list|(
@@ -399,7 +399,7 @@ block|,
 block|{
 literal|"text-tool-direction-rtl"
 block|,
-name|GIMP_STOCK_TEXT_DIR_RTL
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_RTL
 block|,
 name|NC_
 argument_list|(

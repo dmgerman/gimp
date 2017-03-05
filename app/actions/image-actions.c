@@ -340,7 +340,7 @@ block|,
 block|{
 literal|"image-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -369,7 +369,7 @@ block|,
 block|{
 literal|"image-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -514,7 +514,7 @@ block|,
 block|{
 literal|"image-resize"
 block|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_ICON_OBJECT_RESIZE
 block|,
 name|NC_
 argument_list|(
@@ -601,7 +601,7 @@ block|,
 block|{
 literal|"image-print-size"
 block|,
-name|GIMP_STOCK_PRINT_RESOLUTION
+name|GIMP_ICON_DOCUMENT_PRINT_RESOLUTION
 block|,
 name|NC_
 argument_list|(
@@ -630,7 +630,7 @@ block|,
 block|{
 literal|"image-scale"
 block|,
-name|GIMP_STOCK_SCALE
+name|GIMP_ICON_OBJECT_SCALE
 block|,
 name|NC_
 argument_list|(
@@ -659,7 +659,7 @@ block|,
 block|{
 literal|"image-crop-to-selection"
 block|,
-name|GIMP_STOCK_TOOL_CROP
+name|GIMP_ICON_TOOL_CROP
 block|,
 name|NC_
 argument_list|(
@@ -688,7 +688,7 @@ block|,
 block|{
 literal|"image-crop-to-content"
 block|,
-name|GIMP_STOCK_TOOL_CROP
+name|GIMP_ICON_TOOL_CROP
 block|,
 name|NC_
 argument_list|(
@@ -775,7 +775,7 @@ block|,
 block|{
 literal|"image-configure-grid"
 block|,
-name|GIMP_STOCK_GRID
+name|GIMP_ICON_GRID
 block|,
 name|NC_
 argument_list|(
@@ -890,7 +890,7 @@ block|{
 block|{
 literal|"image-convert-rgb"
 block|,
-name|GIMP_STOCK_CONVERT_RGB
+name|GIMP_ICON_CONVERT_RGB
 block|,
 name|NC_
 argument_list|(
@@ -916,7 +916,7 @@ block|,
 block|{
 literal|"image-convert-grayscale"
 block|,
-name|GIMP_STOCK_CONVERT_GRAYSCALE
+name|GIMP_ICON_CONVERT_GRAYSCALE
 block|,
 name|NC_
 argument_list|(
@@ -942,7 +942,7 @@ block|,
 block|{
 literal|"image-convert-indexed"
 block|,
-name|GIMP_STOCK_CONVERT_INDEXED
+name|GIMP_ICON_CONVERT_INDEXED
 block|,
 name|NC_
 argument_list|(
@@ -1212,7 +1212,7 @@ block|{
 block|{
 literal|"image-flip-horizontal"
 block|,
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 block|,
 name|NC_
 argument_list|(
@@ -1240,7 +1240,7 @@ block|,
 block|{
 literal|"image-flip-vertical"
 block|,
-name|GIMP_STOCK_FLIP_VERTICAL
+name|GIMP_ICON_OBJECT_FLIP_VERTICAL
 block|,
 name|NC_
 argument_list|(
@@ -1280,7 +1280,7 @@ block|{
 block|{
 literal|"image-rotate-90"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_ICON_OBJECT_ROTATE_90
 block|,
 name|NC_
 argument_list|(
@@ -1308,7 +1308,7 @@ block|,
 block|{
 literal|"image-rotate-180"
 block|,
-name|GIMP_STOCK_ROTATE_180
+name|GIMP_ICON_OBJECT_ROTATE_180
 block|,
 name|NC_
 argument_list|(
@@ -1336,7 +1336,7 @@ block|,
 block|{
 literal|"image-rotate-270"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_ICON_OBJECT_ROTATE_270
 block|,
 name|NC_
 argument_list|(

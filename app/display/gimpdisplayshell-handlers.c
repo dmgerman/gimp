@@ -2635,7 +2635,7 @@ name|gtk_image_set_from_icon_name
 argument_list|(
 name|gtk_image
 argument_list|,
-name|GIMP_STOCK_QUICK_MASK_ON
+name|GIMP_ICON_QUICK_MASK_ON
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2645,7 +2645,7 @@ name|gtk_image_set_from_icon_name
 argument_list|(
 name|gtk_image
 argument_list|,
-name|GIMP_STOCK_QUICK_MASK_OFF
+name|GIMP_ICON_QUICK_MASK_OFF
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -3527,7 +3527,7 @@ name|statusbar
 argument_list|,
 name|GIMP_MESSAGE_INFO
 argument_list|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -3577,7 +3577,7 @@ name|statusbar
 argument_list|,
 name|GIMP_MESSAGE_INFO
 argument_list|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(

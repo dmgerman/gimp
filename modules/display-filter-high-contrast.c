@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a540f0103
+DECL|enum|__anon29d93d4b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -446,7 +446,7 @@ name|display_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_DISPLAY_FILTER_CONTRAST
+name|GIMP_ICON_DISPLAY_FILTER_CONTRAST
 expr_stmt|;
 name|display_class
 operator|->

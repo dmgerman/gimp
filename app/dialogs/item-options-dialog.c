@@ -1141,7 +1141,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1253,7 +1253,7 @@ argument_list|(
 literal|"_Visible"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -1301,7 +1301,7 @@ argument_list|(
 literal|"_Linked"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -1391,7 +1391,7 @@ name|check_button_with_icon_new
 argument_list|(
 name|lock_position_label
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 argument_list|,
 name|GTK_BOX
 argument_list|(

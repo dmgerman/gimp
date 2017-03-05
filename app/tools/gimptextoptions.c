@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27f9f30103
+DECL|enum|__anon27940e320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2420,7 +2420,7 @@ name|config
 argument_list|,
 literal|"justify"
 argument_list|,
-literal|"gtk-justify"
+literal|"format-justify"
 argument_list|,
 literal|0
 argument_list|,
@@ -2502,7 +2502,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-literal|"format-indent-more"
+name|GIMP_ICON_FORMAT_INDENT_MORE
 argument_list|,
 name|spinbutton
 argument_list|,
@@ -2546,7 +2546,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|GIMP_STOCK_LINE_SPACING
+name|GIMP_ICON_FORMAT_TEXT_SPACING_LINE
 argument_list|,
 name|spinbutton
 argument_list|,
@@ -2590,7 +2590,7 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|GIMP_STOCK_LETTER_SPACING
+name|GIMP_ICON_FORMAT_TEXT_SPACING_LETTER
 argument_list|,
 name|spinbutton
 argument_list|,

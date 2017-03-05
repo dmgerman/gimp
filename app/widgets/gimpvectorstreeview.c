@@ -434,7 +434,7 @@ name|iv_class
 operator|->
 name|lock_content_icon_name
 operator|=
-name|GIMP_STOCK_TOOL_PATH
+name|GIMP_ICON_TOOL_PATH
 expr_stmt|;
 name|iv_class
 operator|->
@@ -455,7 +455,7 @@ name|iv_class
 operator|->
 name|lock_position_icon_name
 operator|=
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 expr_stmt|;
 name|iv_class
 operator|->

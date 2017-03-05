@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d3dc60108
+DECL|struct|__anon2875f14c0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d3dc60208
+DECL|struct|__anon2875f14c0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon299d3dc6030a
+DECL|union|__anon2875f14c030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3571,7 +3571,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)

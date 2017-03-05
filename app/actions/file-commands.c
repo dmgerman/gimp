@@ -1614,7 +1614,7 @@ argument_list|(
 literal|"Revert Image"
 argument_list|)
 argument_list|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

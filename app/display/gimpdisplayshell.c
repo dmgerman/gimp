@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277caab20103
+DECL|enum|__anon2965c98c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277caab20203
+DECL|enum|__anon2965c98c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2096,7 +2096,7 @@ name|gtk_image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_MENU_RIGHT
+name|GIMP_ICON_MENU_RIGHT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2688,7 +2688,7 @@ name|gtk_image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_ZOOM_FOLLOW_WINDOW
+name|GIMP_ICON_ZOOM_FOLLOW_WINDOW
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2782,7 +2782,7 @@ name|gtk_image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_QUICK_MASK_OFF
+name|GIMP_ICON_QUICK_MASK_OFF
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2889,7 +2889,7 @@ name|gtk_image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_NAVIGATION
+name|GIMP_ICON_DIALOG_NAVIGATION
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

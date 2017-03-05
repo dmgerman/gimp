@@ -116,7 +116,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279659e80103
+DECL|enum|__anon2923d6780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -780,7 +780,7 @@ name|controller_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER_LINUX_INPUT
+name|GIMP_ICON_CONTROLLER_LINUX_INPUT
 expr_stmt|;
 name|controller_class
 operator|->

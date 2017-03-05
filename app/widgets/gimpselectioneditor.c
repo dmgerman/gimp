@@ -472,7 +472,7 @@ argument_list|)
 operator|->
 name|renderer
 argument_list|,
-name|GIMP_STOCK_TEXTURE
+name|GIMP_ICON_TEXTURE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

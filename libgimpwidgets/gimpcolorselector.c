@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpicons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetsmarshal.h"
 end_include
 
@@ -57,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a07fe0103
+DECL|enum|__anon2c17a44a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -232,7 +238,7 @@ name|klass
 operator|->
 name|icon_name
 operator|=
-literal|"gtk-select-color"
+name|GIMP_ICON_PALETTE
 expr_stmt|;
 name|klass
 operator|->

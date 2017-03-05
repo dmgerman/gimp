@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb10c3e0103
+DECL|enum|__anon2b0b66020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1004,7 +1004,7 @@ name|button
 operator|=
 name|gimp_icon_button_new
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|NULL
 argument_list|)
@@ -1032,7 +1032,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

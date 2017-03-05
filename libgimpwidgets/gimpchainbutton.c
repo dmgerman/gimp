@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947b8bb0103
+DECL|enum|__anon28a5852b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947b8bb0203
+DECL|enum|__anon28a5852b0203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -209,13 +209,13 @@ name|gimp_chain_icon_names
 index|[]
 init|=
 block|{
-name|GIMP_STOCK_HCHAIN
+name|GIMP_ICON_CHAIN_HORIZONTAL
 block|,
-name|GIMP_STOCK_HCHAIN_BROKEN
+name|GIMP_ICON_CHAIN_HORIZONTAL_BROKEN
 block|,
-name|GIMP_STOCK_VCHAIN
+name|GIMP_ICON_CHAIN_VERTICAL
 block|,
-name|GIMP_STOCK_VCHAIN_BROKEN
+name|GIMP_ICON_CHAIN_VERTICAL_BROKEN
 block|}
 decl_stmt|;
 end_decl_stmt

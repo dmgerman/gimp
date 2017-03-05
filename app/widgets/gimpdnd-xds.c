@@ -778,7 +778,7 @@ argument_list|(
 literal|"File Exists"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|parent
 argument_list|,

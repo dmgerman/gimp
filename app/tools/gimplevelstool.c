@@ -615,7 +615,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_LEVELS
 argument_list|,
-name|GIMP_STOCK_TOOL_LEVELS
+name|GIMP_ICON_TOOL_LEVELS
 argument_list|,
 name|data
 argument_list|)
@@ -1218,7 +1218,7 @@ name|PICK_LOW_INPUT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_COLOR_PICKER_BLACK
+name|GIMP_ICON_COLOR_PICKER_BLACK
 expr_stmt|;
 if|if
 condition|(
@@ -1245,7 +1245,7 @@ name|PICK_GAMMA
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_COLOR_PICKER_GRAY
+name|GIMP_ICON_COLOR_PICKER_GRAY
 expr_stmt|;
 if|if
 condition|(
@@ -1272,7 +1272,7 @@ name|PICK_HIGH_INPUT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_COLOR_PICKER_WHITE
+name|GIMP_ICON_COLOR_PICKER_WHITE
 expr_stmt|;
 if|if
 condition|(
@@ -3197,7 +3197,7 @@ name|button
 operator|=
 name|gimp_icon_button_new
 argument_list|(
-name|GIMP_STOCK_TOOL_CURVES
+name|GIMP_ICON_TOOL_CURVES
 argument_list|,
 name|_
 argument_list|(

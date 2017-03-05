@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea54860103
+DECL|enum|__anon2b721f060103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -205,7 +205,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_GEGL
 argument_list|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 argument_list|,
 name|data
 argument_list|)
@@ -1197,7 +1197,7 @@ argument_list|)
 condition|)
 name|icon_name
 operator|=
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 expr_stmt|;
 if|if
 condition|(
@@ -1689,7 +1689,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 argument_list|,
 name|GIMP_HELP_TOOL_GEGL
 argument_list|)

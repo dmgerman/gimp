@@ -778,7 +778,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_BLEND
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_ICON_TOOL_BLEND
 argument_list|,
 name|data
 argument_list|)
@@ -4614,7 +4614,7 @@ name|blend_tool
 operator|->
 name|graph
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_ICON_TOOL_BLEND
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_filter_set_region

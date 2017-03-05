@@ -565,7 +565,7 @@ argument_list|(
 literal|"Clear Undo History"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|widget
 argument_list|,

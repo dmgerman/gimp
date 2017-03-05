@@ -574,7 +574,7 @@ block|,
 block|{
 literal|"Open"
 block|,
-name|GTK_STOCK_OPEN
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|N_
 argument_list|(
@@ -594,7 +594,7 @@ block|,
 block|{
 literal|"Save"
 block|,
-name|GTK_STOCK_SAVE
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|N_
 argument_list|(
@@ -614,7 +614,7 @@ block|,
 block|{
 literal|"SaveAs"
 block|,
-name|GTK_STOCK_SAVE_AS
+name|GIMP_ICON_DOCUMENT_SAVE_AS
 block|,
 name|N_
 argument_list|(
@@ -631,7 +631,7 @@ block|,
 block|{
 literal|"Close"
 block|,
-name|GTK_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 block|,
 name|NULL
 block|,
@@ -645,7 +645,7 @@ block|,
 block|{
 literal|"Quit"
 block|,
-name|GTK_STOCK_QUIT
+name|GIMP_ICON_APPLICATION_EXIT
 block|,
 name|NULL
 block|,
@@ -670,7 +670,7 @@ block|,
 block|{
 literal|"Undo"
 block|,
-name|GTK_STOCK_UNDO
+name|GIMP_ICON_EDIT_UNDO
 block|,
 name|NULL
 block|,
@@ -687,7 +687,7 @@ block|,
 block|{
 literal|"Redo"
 block|,
-name|GTK_STOCK_REDO
+name|GIMP_ICON_EDIT_REDO
 block|,
 name|NULL
 block|,
@@ -704,7 +704,7 @@ block|,
 block|{
 literal|"Cut"
 block|,
-name|GTK_STOCK_CUT
+name|GIMP_ICON_EDIT_CUT
 block|,
 name|NULL
 block|,
@@ -721,7 +721,7 @@ block|,
 block|{
 literal|"Copy"
 block|,
-name|GTK_STOCK_COPY
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NULL
 block|,
@@ -738,7 +738,7 @@ block|,
 block|{
 literal|"Paste"
 block|,
-name|GTK_STOCK_PASTE
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NULL
 block|,
@@ -755,7 +755,7 @@ block|,
 block|{
 literal|"Clear"
 block|,
-name|GTK_STOCK_DELETE
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NULL
 block|,
@@ -806,7 +806,7 @@ block|,
 block|{
 literal|"EditAreaInfo"
 block|,
-name|GTK_STOCK_EDIT
+name|GIMP_ICON_EDIT
 block|,
 name|N_
 argument_list|(
@@ -826,7 +826,7 @@ block|,
 block|{
 literal|"Preferences"
 block|,
-name|GTK_STOCK_PREFERENCES
+name|GIMP_ICON_PREFERENCES_SYSTEM
 block|,
 name|NULL
 block|,
@@ -894,7 +894,7 @@ block|,
 block|{
 literal|"MoveUp"
 block|,
-name|GTK_STOCK_GO_UP
+name|GIMP_ICON_GO_UP
 block|,
 name|N_
 argument_list|(
@@ -911,7 +911,7 @@ block|,
 block|{
 literal|"MoveDown"
 block|,
-name|GTK_STOCK_GO_DOWN
+name|GIMP_ICON_GO_DOWN
 block|,
 name|N_
 argument_list|(
@@ -990,7 +990,7 @@ block|,
 block|{
 literal|"ZoomIn"
 block|,
-name|GTK_STOCK_ZOOM_IN
+name|GIMP_ICON_ZOOM_IN
 block|,
 name|NULL
 block|,
@@ -1007,7 +1007,7 @@ block|,
 block|{
 literal|"ZoomOut"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+name|GIMP_ICON_ZOOM_OUT
 block|,
 name|NULL
 block|,
@@ -1046,7 +1046,7 @@ block|,
 block|{
 literal|"EditMapInfo"
 block|,
-name|GTK_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 block|,
 name|N_
 argument_list|(
@@ -1139,7 +1139,7 @@ block|,
 block|{
 literal|"Contents"
 block|,
-name|GTK_STOCK_HELP
+name|GIMP_ICON_HELP
 block|,
 name|N_
 argument_list|(
@@ -1156,7 +1156,7 @@ block|,
 block|{
 literal|"About"
 block|,
-name|GTK_STOCK_ABOUT
+name|GIMP_ICON_HELP_ABOUT
 block|,
 name|NULL
 block|,
@@ -1216,7 +1216,7 @@ block|,
 block|{
 literal|"Grid"
 block|,
-name|GIMP_STOCK_GRID
+name|GIMP_ICON_GRID
 block|,
 name|N_
 argument_list|(
@@ -1296,7 +1296,7 @@ block|{
 block|{
 literal|"Arrow"
 block|,
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 block|,
 name|N_
 argument_list|(

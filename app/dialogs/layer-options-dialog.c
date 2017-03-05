@@ -659,7 +659,7 @@ argument_list|(
 literal|"Layer _name:"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 argument_list|,
 name|_
 argument_list|(
@@ -2268,7 +2268,7 @@ name|item_options_dialog_add_switch
 argument_list|(
 name|dialog
 argument_list|,
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 argument_list|,
 name|_
 argument_list|(
@@ -2325,7 +2325,7 @@ name|item_options_dialog_add_switch
 argument_list|(
 name|dialog
 argument_list|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 argument_list|,
 name|_
 argument_list|(

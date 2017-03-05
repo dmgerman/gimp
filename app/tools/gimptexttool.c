@@ -873,7 +873,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_TEXT
 argument_list|,
-name|GIMP_STOCK_TOOL_TEXT
+name|GIMP_ICON_TOOL_TEXT
 argument_list|,
 name|data
 argument_list|)
@@ -5897,7 +5897,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-text-tool-confirm"
 argument_list|,
-name|GIMP_STOCK_TEXT_LAYER
+name|GIMP_ICON_LAYER_TEXT_LAYER
 argument_list|,
 name|_
 argument_list|(

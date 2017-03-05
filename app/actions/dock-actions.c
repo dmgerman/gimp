@@ -111,7 +111,7 @@ block|{
 block|{
 literal|"dock-move-to-screen-menu"
 block|,
-name|GIMP_STOCK_MOVE_TO_SCREEN
+name|GIMP_ICON_WINDOW_MOVE_TO_SCREEN
 block|,
 name|NC_
 argument_list|(
@@ -132,7 +132,7 @@ block|,
 block|{
 literal|"dock-close"
 block|,
-literal|"window-close"
+name|GIMP_ICON_WINDOW_CLOSE
 block|,
 name|NC_
 argument_list|(

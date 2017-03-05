@@ -391,7 +391,7 @@ argument_list|(
 literal|"Path _name:"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_PATH
+name|GIMP_ICON_TOOL_PATH
 argument_list|,
 name|_
 argument_list|(

@@ -357,7 +357,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_COLOR_TRIANGLE
+name|GIMP_ICON_COLOR_SELECTOR_TRIANGLE
 expr_stmt|;
 name|selector_class
 operator|->

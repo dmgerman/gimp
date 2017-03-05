@@ -179,7 +179,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a86f6f0103
+DECL|enum|__anon293464650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -519,7 +519,7 @@ name|display_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_DISPLAY_FILTER_PROOF
+name|GIMP_ICON_DISPLAY_FILTER_PROOF
 expr_stmt|;
 name|display_class
 operator|->

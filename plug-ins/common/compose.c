@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f4fb0108
+DECL|struct|__anon29febb700108
 block|{
 union|union
-DECL|union|__anon2b52f4fb020a
+DECL|union|__anon29febb70020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f4fb0308
+DECL|struct|__anon29febb700308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f4fb0408
+DECL|struct|__anon29febb700408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -512,7 +512,7 @@ DECL|macro|CPN_RGBA_R
 define|#
 directive|define
 name|CPN_RGBA_R
-value|{ "R", N_("_Red:"),   GIMP_STOCK_CHANNEL_RED, 0.0, 1.0, FALSE}
+value|{ "R", N_("_Red:"),   GIMP_ICON_CHANNEL_RED, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -520,7 +520,7 @@ DECL|macro|CPN_RGBA_G
 define|#
 directive|define
 name|CPN_RGBA_G
-value|{ "G", N_("_Green:"), GIMP_STOCK_CHANNEL_GREEN, 0.0, 1.0, FALSE}
+value|{ "G", N_("_Green:"), GIMP_ICON_CHANNEL_GREEN, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -528,7 +528,7 @@ DECL|macro|CPN_RGBA_B
 define|#
 directive|define
 name|CPN_RGBA_B
-value|{ "B", N_("_Blue:"),  GIMP_STOCK_CHANNEL_BLUE, 0.0, 1.0, FALSE}
+value|{ "B", N_("_Blue:"),  GIMP_ICON_CHANNEL_BLUE, 0.0, 1.0, FALSE}
 end_define
 
 begin_define
@@ -536,7 +536,7 @@ DECL|macro|CPN_RGBA_A
 define|#
 directive|define
 name|CPN_RGBA_A
-value|{ "A", N_("_Alpha:"), GIMP_STOCK_CHANNEL_ALPHA, 0.0, 1.0, TRUE}
+value|{ "A", N_("_Alpha:"), GIMP_ICON_CHANNEL_ALPHA, 0.0, 1.0, TRUE}
 end_define
 
 begin_define
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f4fb0508
+DECL|struct|__anon29febb700508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52f4fb0608
+DECL|struct|__anon29febb700608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5332,7 +5332,7 @@ name|gtk_widget_render_icon
 argument_list|(
 name|dialog
 argument_list|,
-name|GIMP_STOCK_CHANNEL_GRAY
+name|GIMP_ICON_CHANNEL_GRAY
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
@@ -6274,7 +6274,7 @@ condition|(
 name|icon
 condition|)
 block|{
-name|gtk_image_set_from_stock
+name|gtk_image_set_from_icon_name
 argument_list|(
 name|GTK_IMAGE
 argument_list|(

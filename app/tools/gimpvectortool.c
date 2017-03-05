@@ -748,7 +748,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_PATH
 argument_list|,
-name|GIMP_STOCK_TOOL_PATH
+name|GIMP_ICON_TOOL_PATH
 argument_list|,
 name|data
 argument_list|)
@@ -7423,7 +7423,7 @@ argument_list|(
 literal|"Stroke Path"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_PATH_STROKE
+name|GIMP_ICON_PATH_STROKE
 argument_list|,
 name|GIMP_HELP_PATH_STROKE
 argument_list|,

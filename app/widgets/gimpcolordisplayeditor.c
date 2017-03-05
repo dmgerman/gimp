@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7196520103
+DECL|enum|__anon28fd16580103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7196520203
+DECL|enum|__anon28fd16580203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -836,7 +836,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-next"
+name|GIMP_ICON_GO_NEXT
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -919,7 +919,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-previous"
+name|GIMP_ICON_GO_PREVIOUS
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -994,7 +994,7 @@ argument_list|(
 name|ed
 argument_list|)
 argument_list|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 argument_list|,
 name|_
 argument_list|(
@@ -1024,7 +1024,7 @@ argument_list|(
 name|ed
 argument_list|)
 argument_list|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 argument_list|,
 name|_
 argument_list|(
@@ -1218,7 +1218,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1520,7 +1520,7 @@ name|reset_button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

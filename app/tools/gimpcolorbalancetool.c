@@ -281,7 +281,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_COLOR_BALANCE
 argument_list|,
-name|GIMP_STOCK_TOOL_COLOR_BALANCE
+name|GIMP_ICON_TOOL_COLOR_BALANCE
 argument_list|,
 name|data
 argument_list|)

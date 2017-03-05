@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9f4dd40108
+DECL|struct|__anon2b93b3610108
 block|{
 DECL|member|filename
 name|gchar
@@ -646,7 +646,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GTK_STOCK_EDIT
+name|GIMP_ICON_EDIT
 argument_list|)
 expr_stmt|;
 name|g_free

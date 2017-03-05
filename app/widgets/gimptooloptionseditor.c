@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5a3a080103
+DECL|enum|__anon29c9763d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -883,7 +883,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -915,7 +915,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 argument_list|,
 name|_
 argument_list|(
@@ -947,7 +947,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 argument_list|,
 name|_
 argument_list|(

@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon27a50cf70108
+DECL|struct|__anon2c7fbe430108
 block|{
 DECL|member|randomize
 name|gint
@@ -4989,9 +4989,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_EDIT
+name|_
+argument_list|(
+literal|"_Edit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5033,9 +5036,12 @@ name|load_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5077,9 +5083,12 @@ name|save_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5917,9 +5926,9 @@ argument_list|(
 literal|"Custom gradient"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 operator|-
 literal|1

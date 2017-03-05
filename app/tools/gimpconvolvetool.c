@@ -252,7 +252,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_CONVOLVE
 argument_list|,
-name|GIMP_STOCK_TOOL_BLUR
+name|GIMP_ICON_TOOL_BLUR
 argument_list|,
 name|data
 argument_list|)

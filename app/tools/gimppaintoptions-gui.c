@@ -2806,7 +2806,7 @@ name|button
 operator|=
 name|gimp_icon_button_new
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|NULL
 argument_list|)
@@ -2834,7 +2834,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -2908,7 +2908,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

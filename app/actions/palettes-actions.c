@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"palettes-popup"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"palettes-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"palettes-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"palettes-copy-location"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -294,7 +294,7 @@ block|,
 block|{
 literal|"palettes-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -323,7 +323,7 @@ block|,
 block|{
 literal|"palettes-refresh"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NC_
 argument_list|(
@@ -364,7 +364,7 @@ block|{
 block|{
 literal|"palettes-edit"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(

@@ -1060,7 +1060,7 @@ name|eye_cell
 operator|=
 name|gimp_cell_renderer_toggle_new
 argument_list|(
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|)
 expr_stmt|;
 name|icon_size
@@ -1072,7 +1072,7 @@ argument_list|(
 name|tool_editor
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
@@ -1178,7 +1178,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 argument_list|,
 name|_
 argument_list|(
@@ -1214,7 +1214,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 argument_list|,
 name|_
 argument_list|(
@@ -1250,7 +1250,7 @@ argument_list|(
 name|tree_view
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|_
 argument_list|(

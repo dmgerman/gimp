@@ -697,7 +697,7 @@ name|picker_creator
 argument_list|,
 name|pspec_name
 argument_list|,
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 argument_list|,
 name|_
 argument_list|(
@@ -2895,7 +2895,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b822ba80108
+DECL|struct|__anon2c15e49f0108
 block|{
 DECL|member|tooltip
 specifier|const
@@ -2942,7 +2942,7 @@ block|,
 operator|.
 name|icon_name
 operator|=
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_ICON_OBJECT_ROTATE_270
 block|,
 operator|.
 name|rotate
@@ -2967,7 +2967,7 @@ block|,
 operator|.
 name|icon_name
 operator|=
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_ICON_OBJECT_ROTATE_90
 block|,
 operator|.
 name|rotate
@@ -2992,7 +2992,7 @@ block|,
 operator|.
 name|icon_name
 operator|=
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 block|,
 operator|.
 name|rotate
@@ -3017,7 +3017,7 @@ block|,
 operator|.
 name|icon_name
 operator|=
-name|GIMP_STOCK_FLIP_VERTICAL
+name|GIMP_ICON_OBJECT_FLIP_VERTICAL
 block|,
 operator|.
 name|rotate

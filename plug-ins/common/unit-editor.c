@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3158660103
+DECL|enum|__anon289114ad0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3158660208
+DECL|struct|__anon289114ad0208
 block|{
 DECL|member|title
 specifier|const
@@ -443,7 +443,7 @@ block|,
 block|{
 literal|"unit-editor-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NULL
 block|,
@@ -463,7 +463,7 @@ block|,
 block|{
 literal|"unit-editor-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NULL
 block|,
@@ -569,7 +569,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_TOOL_MEASURE
+name|GIMP_ICON_TOOL_MEASURE
 argument_list|)
 expr_stmt|;
 block|}

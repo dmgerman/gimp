@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bca3b8f0108
+DECL|struct|__anon27b44b280108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -885,7 +885,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_NAVIGATION
+name|GIMP_ICON_DIALOG_NAVIGATION
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

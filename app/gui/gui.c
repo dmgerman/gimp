@@ -874,7 +874,7 @@ name|GIMP_TYPE_MESSAGE_BOX
 argument_list|,
 literal|"icon-name"
 argument_list|,
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 argument_list|,
 literal|"border-width"
 argument_list|,
@@ -3405,7 +3405,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276133cb0108
+DECL|struct|__anon295307410108
 block|{
 DECL|member|path
 specifier|const

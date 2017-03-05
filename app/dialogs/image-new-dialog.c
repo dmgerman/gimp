@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eac07e0108
+DECL|struct|__anon27c56ca00108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1315,7 +1315,7 @@ argument_list|(
 literal|"Confirm Image Size"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|private
 operator|->

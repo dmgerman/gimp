@@ -328,7 +328,7 @@ name|view_size
 argument_list|,
 literal|"gimp-brush-grid|gimp-brush-list"
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|_
 argument_list|(
@@ -614,7 +614,7 @@ name|view_size
 argument_list|,
 literal|"gimp-dynamics-list|gimp-dynamics-grid"
 argument_list|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 argument_list|,
 name|_
 argument_list|(
@@ -890,7 +890,7 @@ name|view_size
 argument_list|,
 literal|"gimp-mypaint-brush-grid|gimp-mypaint-brush-list"
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|_
 argument_list|(
@@ -1158,7 +1158,7 @@ name|view_size
 argument_list|,
 literal|"gimp-pattern-grid|gimp-pattern-list"
 argument_list|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 argument_list|,
 name|_
 argument_list|(
@@ -1444,7 +1444,7 @@ name|view_size
 argument_list|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 name|_
 argument_list|(
@@ -1580,7 +1580,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1969,7 +1969,7 @@ name|view_size
 argument_list|,
 literal|"gimp-palette-list|gimp-palette-grid"
 argument_list|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 argument_list|,
 name|_
 argument_list|(
@@ -2242,7 +2242,7 @@ name|view_size
 argument_list|,
 literal|"gimp-font-list|gimp-font-grid"
 argument_list|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 argument_list|,
 name|_
 argument_list|(
@@ -2854,7 +2854,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GTK_STOCK_EDIT
+name|GIMP_ICON_EDIT
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

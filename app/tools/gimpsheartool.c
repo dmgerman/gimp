@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b324b7e0103
+DECL|enum|__anon29b1582f0103
 block|{
 DECL|enumerator|HORZ_OR_VERT
 name|HORZ_OR_VERT
@@ -307,7 +307,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_SHEAR
 argument_list|,
-name|GIMP_STOCK_TOOL_SHEAR
+name|GIMP_ICON_TOOL_SHEAR
 argument_list|,
 name|data
 argument_list|)

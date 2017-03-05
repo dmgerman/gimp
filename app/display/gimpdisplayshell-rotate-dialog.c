@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5489a40108
+DECL|struct|__anon278fd0500108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -377,7 +377,7 @@ argument_list|)
 argument_list|,
 literal|"display-rotate"
 argument_list|,
-name|GIMP_STOCK_ROTATE_180
+name|GIMP_ICON_OBJECT_ROTATE_180
 argument_list|,
 name|_
 argument_list|(

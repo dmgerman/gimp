@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289eab590108
+DECL|struct|__anon2c506eed0108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289eab590208
+DECL|struct|__anon2c506eed0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -677,7 +677,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
@@ -754,7 +754,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

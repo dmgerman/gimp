@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b03ff080108
+DECL|struct|__anon2b6396110108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b03ff080208
+DECL|struct|__anon2b6396110208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b03ff080308
+DECL|struct|__anon2b6396110308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4959,7 +4959,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)

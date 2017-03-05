@@ -742,7 +742,7 @@ name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
-name|GIMP_STOCK_FRAME
+name|GIMP_ICON_FRAME
 argument_list|,
 literal|48
 argument_list|)

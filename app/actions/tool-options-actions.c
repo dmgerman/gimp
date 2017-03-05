@@ -142,7 +142,7 @@ block|{
 block|{
 literal|"tool-options-popup"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 name|NC_
 argument_list|(
@@ -163,7 +163,7 @@ block|,
 block|{
 literal|"tool-options-save-preset-menu"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"tool-options-restore-preset-menu"
 block|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 block|,
 name|NC_
 argument_list|(
@@ -205,7 +205,7 @@ block|,
 block|{
 literal|"tool-options-edit-preset-menu"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -226,7 +226,7 @@ block|,
 block|{
 literal|"tool-options-delete-preset-menu"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -247,7 +247,7 @@ block|,
 block|{
 literal|"tool-options-save-new-preset"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -271,7 +271,7 @@ block|,
 block|{
 literal|"tool-options-reset"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(
@@ -300,7 +300,7 @@ block|,
 block|{
 literal|"tool-options-reset-all"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(

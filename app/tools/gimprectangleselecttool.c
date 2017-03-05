@@ -686,7 +686,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_RECT_SELECT
 argument_list|,
-name|GIMP_STOCK_TOOL_RECT_SELECT
+name|GIMP_ICON_TOOL_RECT_SELECT
 argument_list|,
 name|data
 argument_list|)

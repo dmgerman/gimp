@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4bfdd0108
+DECL|struct|__anon2b1efea20108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4bfdd0208
+DECL|struct|__anon2b1efea20208
 block|{
 DECL|member|url
 name|char
@@ -960,7 +960,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_WEB
+name|GIMP_ICON_WEB
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

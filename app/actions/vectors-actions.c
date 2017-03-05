@@ -111,7 +111,7 @@ block|{
 block|{
 literal|"vectors-popup"
 block|,
-name|GIMP_STOCK_PATHS
+name|GIMP_ICON_DIALOG_PATHS
 block|,
 name|NC_
 argument_list|(
@@ -132,7 +132,7 @@ block|,
 block|{
 literal|"vectors-color-tag-menu"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -154,7 +154,7 @@ block|,
 block|{
 literal|"vectors-path-tool"
 block|,
-name|GIMP_STOCK_TOOL_PATH
+name|GIMP_ICON_TOOL_PATH
 block|,
 name|NC_
 argument_list|(
@@ -178,7 +178,7 @@ block|,
 block|{
 literal|"vectors-edit-attributes"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -207,7 +207,7 @@ block|,
 block|{
 literal|"vectors-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"vectors-new-last-values"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -265,7 +265,7 @@ block|,
 block|{
 literal|"vectors-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -294,7 +294,7 @@ block|,
 block|{
 literal|"vectors-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -347,7 +347,7 @@ block|,
 block|{
 literal|"vectors-raise"
 block|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 block|,
 name|NC_
 argument_list|(
@@ -376,7 +376,7 @@ block|,
 block|{
 literal|"vectors-raise-to-top"
 block|,
-literal|"go-top"
+name|GIMP_ICON_GO_TOP
 block|,
 name|NC_
 argument_list|(
@@ -405,7 +405,7 @@ block|,
 block|{
 literal|"vectors-lower"
 block|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 block|,
 name|NC_
 argument_list|(
@@ -434,7 +434,7 @@ block|,
 block|{
 literal|"vectors-lower-to-bottom"
 block|,
-literal|"go-bottom"
+name|GIMP_ICON_GO_BOTTOM
 block|,
 name|NC_
 argument_list|(
@@ -463,7 +463,7 @@ block|,
 block|{
 literal|"vectors-fill"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -492,7 +492,7 @@ block|,
 block|{
 literal|"vectors-fill-last-values"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 block|,
 name|NC_
 argument_list|(
@@ -521,7 +521,7 @@ block|,
 block|{
 literal|"vectors-stroke"
 block|,
-name|GIMP_STOCK_PATH_STROKE
+name|GIMP_ICON_PATH_STROKE
 block|,
 name|NC_
 argument_list|(
@@ -550,7 +550,7 @@ block|,
 block|{
 literal|"vectors-stroke-last-values"
 block|,
-name|GIMP_STOCK_PATH_STROKE
+name|GIMP_ICON_PATH_STROKE
 block|,
 name|NC_
 argument_list|(
@@ -579,7 +579,7 @@ block|,
 block|{
 literal|"vectors-copy"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -603,7 +603,7 @@ block|,
 block|{
 literal|"vectors-paste"
 block|,
-literal|"edit-paste"
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NC_
 argument_list|(
@@ -627,7 +627,7 @@ block|,
 block|{
 literal|"vectors-export"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -651,7 +651,7 @@ block|,
 block|{
 literal|"vectors-import"
 block|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -687,7 +687,7 @@ block|{
 block|{
 literal|"vectors-visible"
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|NC_
 argument_list|(
@@ -713,7 +713,7 @@ block|,
 block|{
 literal|"vectors-linked"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -740,7 +740,7 @@ block|{
 literal|"vectors-lock-content"
 block|,
 name|NULL
-comment|/* GIMP_STOCK_LOCK */
+comment|/* GIMP_ICON_LOCK */
 block|,
 name|NC_
 argument_list|(
@@ -766,7 +766,7 @@ block|,
 block|{
 literal|"vectors-lock-position"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 block|,
 name|NC_
 argument_list|(
@@ -804,7 +804,7 @@ block|{
 block|{
 literal|"vectors-color-tag-none"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -1069,7 +1069,7 @@ block|{
 block|{
 literal|"vectors-selection-replace"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -1097,7 +1097,7 @@ block|,
 block|{
 literal|"vectors-selection-from-vectors"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -1125,7 +1125,7 @@ block|,
 block|{
 literal|"vectors-selection-add"
 block|,
-name|GIMP_STOCK_SELECTION_ADD
+name|GIMP_ICON_SELECTION_ADD
 block|,
 name|NC_
 argument_list|(
@@ -1153,7 +1153,7 @@ block|,
 block|{
 literal|"vectors-selection-subtract"
 block|,
-name|GIMP_STOCK_SELECTION_SUBTRACT
+name|GIMP_ICON_SELECTION_SUBTRACT
 block|,
 name|NC_
 argument_list|(
@@ -1181,7 +1181,7 @@ block|,
 block|{
 literal|"vectors-selection-intersect"
 block|,
-name|GIMP_STOCK_SELECTION_INTERSECT
+name|GIMP_ICON_SELECTION_INTERSECT
 block|,
 name|NC_
 argument_list|(
@@ -1221,7 +1221,7 @@ block|{
 block|{
 literal|"vectors-selection-to-vectors"
 block|,
-name|GIMP_STOCK_SELECTION_TO_PATH
+name|GIMP_ICON_SELECTION_TO_PATH
 block|,
 name|NC_
 argument_list|(
@@ -1249,7 +1249,7 @@ block|,
 block|{
 literal|"vectors-selection-to-vectors-short"
 block|,
-name|GIMP_STOCK_SELECTION_TO_PATH
+name|GIMP_ICON_SELECTION_TO_PATH
 block|,
 name|NC_
 argument_list|(
@@ -1277,7 +1277,7 @@ block|,
 block|{
 literal|"vectors-selection-to-vectors-advanced"
 block|,
-name|GIMP_STOCK_SELECTION_TO_PATH
+name|GIMP_ICON_SELECTION_TO_PATH
 block|,
 name|NC_
 argument_list|(

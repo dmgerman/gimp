@@ -303,7 +303,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-merge-layers"
 argument_list|,
-name|GIMP_STOCK_MERGE_DOWN
+name|GIMP_ICON_LAYER_MERGE_DOWN
 argument_list|,
 name|_
 argument_list|(

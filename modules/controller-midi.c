@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2886ad180108
+DECL|struct|__anon289a9d530108
 block|{
 DECL|member|name
 name|gchar
@@ -152,7 +152,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2886ad180203
+DECL|enum|__anon289a9d530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -847,7 +847,7 @@ name|controller_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER_MIDI
+name|GIMP_ICON_CONTROLLER_MIDI
 expr_stmt|;
 name|controller_class
 operator|->

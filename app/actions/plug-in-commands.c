@@ -618,7 +618,7 @@ argument_list|(
 literal|"Reset all Filters"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|NULL
 argument_list|,

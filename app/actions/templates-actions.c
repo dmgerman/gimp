@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"templates-popup"
 block|,
-name|GIMP_STOCK_TEMPLATE
+name|GIMP_ICON_TEMPLATE
 block|,
 name|NC_
 argument_list|(
@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"templates-create-image"
 block|,
-name|GIMP_STOCK_IMAGE
+name|GIMP_ICON_IMAGE
 block|,
 name|NC_
 argument_list|(
@@ -137,7 +137,7 @@ block|,
 block|{
 literal|"templates-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -166,7 +166,7 @@ block|,
 block|{
 literal|"templates-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"templates-edit"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -224,7 +224,7 @@ block|,
 block|{
 literal|"templates-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(

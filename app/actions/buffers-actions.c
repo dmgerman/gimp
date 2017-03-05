@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"buffers-popup"
 block|,
-name|GIMP_STOCK_BUFFER
+name|GIMP_ICON_BUFFER
 block|,
 name|NC_
 argument_list|(
@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"buffers-paste"
 block|,
-literal|"edit-paste"
+name|GIMP_ICON_EDIT_PASTE
 block|,
 name|NC_
 argument_list|(
@@ -137,7 +137,7 @@ block|,
 block|{
 literal|"buffers-paste-into"
 block|,
-name|GIMP_STOCK_PASTE_INTO
+name|GIMP_ICON_EDIT_PASTE_INTO
 block|,
 name|NC_
 argument_list|(
@@ -166,7 +166,7 @@ block|,
 block|{
 literal|"buffers-paste-as-new-layer"
 block|,
-name|GIMP_STOCK_PASTE_AS_NEW
+name|GIMP_ICON_EDIT_PASTE_AS_NEW
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"buffers-paste-as-new-image"
 block|,
-name|GIMP_STOCK_PASTE_AS_NEW
+name|GIMP_ICON_EDIT_PASTE_AS_NEW
 block|,
 name|NC_
 argument_list|(
@@ -224,7 +224,7 @@ block|,
 block|{
 literal|"buffers-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(

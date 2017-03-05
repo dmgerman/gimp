@@ -99,7 +99,7 @@ block|{
 block|{
 literal|"tool-preset-editor-popup"
 block|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 block|,
 name|NC_
 argument_list|(
@@ -120,7 +120,7 @@ block|,
 block|{
 literal|"tool-preset-editor-save"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -150,7 +150,7 @@ block|,
 block|{
 literal|"tool-preset-editor-restore"
 block|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 block|,
 name|NC_
 argument_list|(
@@ -191,7 +191,7 @@ block|{
 block|{
 literal|"tool-preset-editor-edit-active"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(

@@ -267,7 +267,7 @@ argument_list|(
 literal|"Edit Colormap Entry"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 argument_list|,
 name|desc
 argument_list|,

@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"brushes-popup"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"brushes-open-as-image"
 block|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -143,7 +143,7 @@ block|,
 block|{
 literal|"brushes-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|,
 block|{
 literal|"brushes-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -201,7 +201,7 @@ block|,
 block|{
 literal|"brushes-copy-location"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -259,7 +259,7 @@ block|,
 block|{
 literal|"brushes-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -288,7 +288,7 @@ block|,
 block|{
 literal|"brushes-refresh"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NC_
 argument_list|(
@@ -329,7 +329,7 @@ block|{
 block|{
 literal|"brushes-edit"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(

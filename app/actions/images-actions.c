@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"images-popup"
 block|,
-name|GIMP_STOCK_IMAGES
+name|GIMP_ICON_DIALOG_IMAGES
 block|,
 name|NC_
 argument_list|(
@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"images-raise-views"
 block|,
-literal|"go-top"
+name|GIMP_ICON_GO_TOP
 block|,
 name|NC_
 argument_list|(
@@ -143,7 +143,7 @@ block|,
 block|{
 literal|"images-new-view"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|,
 block|{
 literal|"images-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(

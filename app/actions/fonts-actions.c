@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"fonts-popup"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 name|NC_
 argument_list|(
@@ -114,7 +114,7 @@ block|,
 block|{
 literal|"fonts-refresh"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NC_
 argument_list|(

@@ -1739,7 +1739,7 @@ argument_list|(
 literal|"Fill Selection Outline"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 argument_list|,
 name|GIMP_HELP_SELECTION_FILL
 argument_list|,
@@ -1838,7 +1838,7 @@ argument_list|(
 literal|"Stroke Selection"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_SELECTION_STROKE
+name|GIMP_ICON_SELECTION_STROKE
 argument_list|,
 name|GIMP_HELP_SELECTION_STROKE
 argument_list|,

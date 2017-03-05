@@ -479,7 +479,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-literal|"document-print"
+name|GIMP_ICON_DOCUMENT_PRINT
 argument_list|)
 expr_stmt|;
 ifndef|#
@@ -542,7 +542,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-literal|"document-page-setup"
+name|GIMP_ICON_DOCUMENT_PAGE_SETUP
 argument_list|)
 expr_stmt|;
 endif|#

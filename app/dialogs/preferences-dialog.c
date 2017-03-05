@@ -1179,7 +1179,7 @@ argument_list|(
 literal|"Reset All Preferences"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|dialog
 argument_list|,
@@ -2437,7 +2437,7 @@ argument_list|(
 literal|"Remove all Keyboard Shortcuts"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(
@@ -5853,7 +5853,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -5884,7 +5884,7 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|_
 argument_list|(
@@ -6020,7 +6020,7 @@ argument_list|(
 literal|"_Brush"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -6041,7 +6041,7 @@ argument_list|(
 literal|"_Dynamics"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -6062,7 +6062,7 @@ argument_list|(
 literal|"_Pattern"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -6083,7 +6083,7 @@ argument_list|(
 literal|"_Gradient"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -6122,7 +6122,7 @@ argument_list|(
 literal|"Set layer or path as active"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -6691,7 +6691,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"preferences-system"
+name|GIMP_ICON_PREFERENCES_SYSTEM
 argument_list|,
 name|_
 argument_list|(
@@ -6739,7 +6739,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -6770,7 +6770,7 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|_
 argument_list|(
@@ -6813,7 +6813,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"edit-clear"
+name|GIMP_ICON_EDIT_CLEAR
 argument_list|,
 name|_
 argument_list|(
@@ -7289,7 +7289,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 argument_list|,
 name|_
 argument_list|(
@@ -7930,7 +7930,7 @@ argument_list|(
 literal|"Show _foreground& background color"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -7951,7 +7951,7 @@ argument_list|(
 literal|"Show active _brush, pattern& gradient"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -7972,7 +7972,7 @@ argument_list|(
 literal|"Show active _image"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_IMAGE
+name|GIMP_ICON_IMAGE
 argument_list|,
 name|GTK_BOX
 argument_list|(
@@ -9785,7 +9785,7 @@ name|hbox
 operator|=
 name|prefs_hint_box_new
 argument_list|(
-name|GIMP_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|,
 name|_
 argument_list|(
@@ -9801,7 +9801,7 @@ name|hbox
 operator|=
 name|prefs_hint_box_new
 argument_list|(
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|_
 argument_list|(
@@ -9910,7 +9910,7 @@ name|hbox
 operator|=
 name|prefs_hint_box_new
 argument_list|(
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|_
 argument_list|(
@@ -10905,7 +10905,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -10936,7 +10936,7 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|_
 argument_list|(
@@ -11529,7 +11529,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon296f86410108
+DECL|struct|__anon27dda2f30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12190,7 +12190,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"preferences-system"
+name|GIMP_ICON_PREFERENCES_SYSTEM
 argument_list|,
 name|_
 argument_list|(
@@ -12238,7 +12238,7 @@ name|button
 operator|=
 name|prefs_button_add
 argument_list|(
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -12269,7 +12269,7 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 argument_list|,
 name|_
 argument_list|(
@@ -12406,7 +12406,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296f86410208
+DECL|struct|__anon27dda2f30208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12544,7 +12544,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296f86410308
+DECL|struct|__anon27dda2f30308
 block|{
 DECL|member|tree_label
 specifier|const

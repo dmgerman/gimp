@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a17d7c0103
+DECL|enum|__anon2b4ad6b20103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1604,7 +1604,7 @@ name|eye_cell
 operator|=
 name|gimp_cell_renderer_toggle_new
 argument_list|(
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1733,7 +1733,7 @@ name|chain_cell
 operator|=
 name|gimp_cell_renderer_toggle_new
 argument_list|(
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -2662,7 +2662,7 @@ name|eye_cell
 argument_list|,
 literal|"icon-name"
 argument_list|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2677,7 +2677,7 @@ name|chain_cell
 argument_list|,
 literal|"icon-name"
 argument_list|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 argument_list|,
 name|NULL
 argument_list|)

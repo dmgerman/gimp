@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0657ac0103
+DECL|enum|__anon2c9384390103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0657ac0203
+DECL|enum|__anon2c9384390203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0657ac0303
+DECL|enum|__anon2c9384390303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0657ac0408
+DECL|struct|__anon2c9384390408
 block|{
 DECL|member|n_pages
 name|gint
@@ -4717,7 +4717,7 @@ argument_list|(
 name|gtk_icon_theme_get_default
 argument_list|()
 argument_list|,
-name|GIMP_STOCK_FRAME
+name|GIMP_ICON_FRAME
 argument_list|,
 literal|64
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da20b50103
+DECL|enum|__anon2b8ce2a60103
 block|{
 DECL|enumerator|ALIGN_BUTTON_CLICKED
 name|ALIGN_BUTTON_CLICKED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da20b50203
+DECL|enum|__anon2b8ce2a60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -632,7 +632,7 @@ name|GIMP_ALIGN_LEFT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_WEST
+name|GIMP_ICON_GRAVITY_WEST
 expr_stmt|;
 break|break;
 case|case
@@ -640,7 +640,7 @@ name|GIMP_ALIGN_HCENTER
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_HCENTER
+name|GIMP_ICON_CENTER_HORIZONTAL
 expr_stmt|;
 break|break;
 case|case
@@ -648,7 +648,7 @@ name|GIMP_ALIGN_RIGHT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_EAST
+name|GIMP_ICON_GRAVITY_EAST
 expr_stmt|;
 break|break;
 case|case
@@ -656,7 +656,7 @@ name|GIMP_ALIGN_TOP
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_NORTH
+name|GIMP_ICON_GRAVITY_NORTH
 expr_stmt|;
 break|break;
 case|case
@@ -664,7 +664,7 @@ name|GIMP_ALIGN_VCENTER
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_VCENTER
+name|GIMP_ICON_CENTER_VERTICAL
 expr_stmt|;
 break|break;
 case|case
@@ -672,7 +672,7 @@ name|GIMP_ALIGN_BOTTOM
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_SOUTH
+name|GIMP_ICON_GRAVITY_SOUTH
 expr_stmt|;
 break|break;
 case|case
@@ -680,7 +680,7 @@ name|GIMP_ARRANGE_LEFT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_WEST
+name|GIMP_ICON_GRAVITY_WEST
 expr_stmt|;
 break|break;
 case|case
@@ -688,7 +688,7 @@ name|GIMP_ARRANGE_HCENTER
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_HCENTER
+name|GIMP_ICON_CENTER_HORIZONTAL
 expr_stmt|;
 break|break;
 case|case
@@ -696,7 +696,7 @@ name|GIMP_ARRANGE_RIGHT
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_EAST
+name|GIMP_ICON_GRAVITY_EAST
 expr_stmt|;
 break|break;
 case|case
@@ -704,7 +704,7 @@ name|GIMP_ARRANGE_TOP
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_NORTH
+name|GIMP_ICON_GRAVITY_NORTH
 expr_stmt|;
 break|break;
 case|case
@@ -712,7 +712,7 @@ name|GIMP_ARRANGE_VCENTER
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_VCENTER
+name|GIMP_ICON_CENTER_VERTICAL
 expr_stmt|;
 break|break;
 case|case
@@ -720,7 +720,7 @@ name|GIMP_ARRANGE_BOTTOM
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_GRAVITY_SOUTH
+name|GIMP_ICON_GRAVITY_SOUTH
 expr_stmt|;
 break|break;
 case|case
@@ -728,7 +728,7 @@ name|GIMP_ARRANGE_HFILL
 case|:
 name|icon_name
 operator|=
-name|GIMP_ICON_HFILL
+name|GIMP_ICON_FILL_HORIZONTAL
 expr_stmt|;
 break|break;
 case|case
@@ -736,7 +736,7 @@ name|GIMP_ARRANGE_VFILL
 case|:
 name|icon_name
 operator|=
-name|GIMP_ICON_VFILL
+name|GIMP_ICON_FILL_VERTICAL
 expr_stmt|;
 break|break;
 default|default:

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -332,7 +338,7 @@ argument_list|)
 argument_list|,
 name|GTK_ENTRY_ICON_SECONDARY
 argument_list|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

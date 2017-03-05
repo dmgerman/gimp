@@ -515,7 +515,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-drawable-offset"
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 argument_list|,
 name|title
 argument_list|,

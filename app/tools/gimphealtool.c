@@ -141,7 +141,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_HEAL
 argument_list|,
-name|GIMP_STOCK_TOOL_HEAL
+name|GIMP_ICON_TOOL_HEAL
 argument_list|,
 name|data
 argument_list|)

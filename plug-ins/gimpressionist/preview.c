@@ -882,9 +882,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

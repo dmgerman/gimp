@@ -717,7 +717,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_ICON_OBJECT_RESIZE
 argument_list|,
 name|title
 argument_list|,
@@ -1326,7 +1326,7 @@ name|button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|GIMP_STOCK_CENTER
+name|GIMP_ICON_CENTER
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults

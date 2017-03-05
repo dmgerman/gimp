@@ -205,7 +205,7 @@ argument_list|(
 literal|"Edit Palette Color"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 argument_list|,
 name|_
 argument_list|(

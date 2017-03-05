@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac43e660103
+DECL|enum|__anon2c1274600103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac43e660203
+DECL|enum|__anon2c1274600203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1374,7 +1374,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

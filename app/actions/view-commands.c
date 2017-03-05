@@ -3647,7 +3647,7 @@ argument_list|(
 literal|"Set Canvas Padding Color"
 argument_list|)
 argument_list|,
-literal|"gtk-select-color"
+name|GIMP_ICON_FONT
 argument_list|,
 name|_
 argument_list|(

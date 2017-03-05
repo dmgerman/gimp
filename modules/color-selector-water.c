@@ -481,7 +481,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_ICON_COLOR_WATER
+name|GIMP_ICON_COLOR_SELECTOR_WATER
 expr_stmt|;
 name|selector_class
 operator|->

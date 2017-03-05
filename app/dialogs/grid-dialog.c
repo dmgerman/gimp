@@ -328,7 +328,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-grid-configure"
 argument_list|,
-name|GIMP_STOCK_GRID
+name|GIMP_ICON_GRID
 argument_list|,
 name|_
 argument_list|(

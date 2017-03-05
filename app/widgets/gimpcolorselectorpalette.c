@@ -171,7 +171,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 expr_stmt|;
 name|selector_class
 operator|->

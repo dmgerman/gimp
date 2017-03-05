@@ -349,9 +349,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_HINT_BOX
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 literal|"hint"
 argument_list|,

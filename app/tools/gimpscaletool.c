@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9cc4c90103
+DECL|enum|__anon277293400103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -316,7 +316,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_SCALE
 argument_list|,
-name|GIMP_STOCK_TOOL_SCALE
+name|GIMP_ICON_TOOL_SCALE
 argument_list|,
 name|data
 argument_list|)

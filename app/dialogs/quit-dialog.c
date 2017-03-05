@@ -639,7 +639,7 @@ argument_list|(
 literal|"Close All Images"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|NULL
 argument_list|,

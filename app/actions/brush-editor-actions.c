@@ -93,7 +93,7 @@ block|{
 block|{
 literal|"brush-editor-popup"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|{
 block|{
 literal|"brush-editor-edit-active"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(

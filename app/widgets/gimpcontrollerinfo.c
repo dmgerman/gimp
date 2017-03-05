@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aae2dde0103
+DECL|enum|__anon2c3b7ab50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aae2dde0203
+DECL|enum|__anon2c3b7ab50203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -348,7 +348,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER
+name|GIMP_ICON_CONTROLLER
 expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(

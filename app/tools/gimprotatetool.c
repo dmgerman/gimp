@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277f7aa30103
+DECL|enum|__anon27b920bb0103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -346,7 +346,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_ROTATE
 argument_list|,
-name|GIMP_STOCK_TOOL_ROTATE
+name|GIMP_ICON_TOOL_ROTATE
 argument_list|,
 name|data
 argument_list|)

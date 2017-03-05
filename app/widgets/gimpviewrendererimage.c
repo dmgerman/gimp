@@ -515,7 +515,7 @@ name|GIMP_CHANNEL_RED
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_RED
+name|GIMP_ICON_CHANNEL_RED
 expr_stmt|;
 break|break;
 case|case
@@ -523,7 +523,7 @@ name|GIMP_CHANNEL_GREEN
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_GREEN
+name|GIMP_ICON_CHANNEL_GREEN
 expr_stmt|;
 break|break;
 case|case
@@ -531,7 +531,7 @@ name|GIMP_CHANNEL_BLUE
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_BLUE
+name|GIMP_ICON_CHANNEL_BLUE
 expr_stmt|;
 break|break;
 case|case
@@ -539,7 +539,7 @@ name|GIMP_CHANNEL_GRAY
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_GRAY
+name|GIMP_ICON_CHANNEL_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -547,7 +547,7 @@ name|GIMP_CHANNEL_INDEXED
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_INDEXED
+name|GIMP_ICON_CHANNEL_INDEXED
 expr_stmt|;
 break|break;
 case|case
@@ -555,7 +555,7 @@ name|GIMP_CHANNEL_ALPHA
 case|:
 name|icon_name
 operator|=
-name|GIMP_STOCK_CHANNEL_ALPHA
+name|GIMP_ICON_CHANNEL_ALPHA
 expr_stmt|;
 break|break;
 default|default:

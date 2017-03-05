@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909b8280103
+DECL|enum|__anon2890d0070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909b8280203
+DECL|enum|__anon2890d0070203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -102,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909b8280308
+DECL|struct|__anon2890d0070308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -439,7 +439,7 @@ name|klass
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_DISPLAY_FILTER
+name|GIMP_ICON_DISPLAY_FILTER
 expr_stmt|;
 name|klass
 operator|->

@@ -105,7 +105,7 @@ block|{
 block|{
 literal|"channels-popup"
 block|,
-name|GIMP_STOCK_CHANNELS
+name|GIMP_ICON_DIALOG_CHANNELS
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|,
 block|{
 literal|"channels-color-tag-menu"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -148,7 +148,7 @@ block|,
 block|{
 literal|"channels-edit-attributes"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -177,7 +177,7 @@ block|,
 block|{
 literal|"channels-new"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -206,7 +206,7 @@ block|,
 block|{
 literal|"channels-new-last-values"
 block|,
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 block|,
 name|NC_
 argument_list|(
@@ -235,7 +235,7 @@ block|,
 block|{
 literal|"channels-duplicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 name|NC_
 argument_list|(
@@ -264,7 +264,7 @@ block|,
 block|{
 literal|"channels-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 name|NC_
 argument_list|(
@@ -293,7 +293,7 @@ block|,
 block|{
 literal|"channels-raise"
 block|,
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 block|,
 name|NC_
 argument_list|(
@@ -322,7 +322,7 @@ block|,
 block|{
 literal|"channels-raise-to-top"
 block|,
-literal|"go-top"
+name|GIMP_ICON_GO_TOP
 block|,
 name|NC_
 argument_list|(
@@ -351,7 +351,7 @@ block|,
 block|{
 literal|"channels-lower"
 block|,
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 block|,
 name|NC_
 argument_list|(
@@ -380,7 +380,7 @@ block|,
 block|{
 literal|"channels-lower-to-bottom"
 block|,
-literal|"go-bottom"
+name|GIMP_ICON_GO_BOTTOM
 block|,
 name|NC_
 argument_list|(
@@ -421,7 +421,7 @@ block|{
 block|{
 literal|"channels-visible"
 block|,
-name|GIMP_STOCK_VISIBLE
+name|GIMP_ICON_VISIBLE
 block|,
 name|NC_
 argument_list|(
@@ -447,7 +447,7 @@ block|,
 block|{
 literal|"channels-linked"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -474,7 +474,7 @@ block|{
 literal|"channels-lock-content"
 block|,
 name|NULL
-comment|/* GIMP_STOCK_LOCK */
+comment|/* GIMP_ICON_LOCK */
 block|,
 name|NC_
 argument_list|(
@@ -500,7 +500,7 @@ block|,
 block|{
 literal|"channels-lock-position"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 block|,
 name|NC_
 argument_list|(
@@ -538,7 +538,7 @@ block|{
 block|{
 literal|"channels-color-tag-none"
 block|,
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 comment|/* abused */
 block|,
 name|NC_
@@ -803,7 +803,7 @@ block|{
 block|{
 literal|"channels-selection-replace"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -831,7 +831,7 @@ block|,
 block|{
 literal|"channels-selection-add"
 block|,
-name|GIMP_STOCK_SELECTION_ADD
+name|GIMP_ICON_SELECTION_ADD
 block|,
 name|NC_
 argument_list|(
@@ -859,7 +859,7 @@ block|,
 block|{
 literal|"channels-selection-subtract"
 block|,
-name|GIMP_STOCK_SELECTION_SUBTRACT
+name|GIMP_ICON_SELECTION_SUBTRACT
 block|,
 name|NC_
 argument_list|(
@@ -887,7 +887,7 @@ block|,
 block|{
 literal|"channels-selection-intersect"
 block|,
-name|GIMP_STOCK_SELECTION_INTERSECT
+name|GIMP_ICON_SELECTION_INTERSECT
 block|,
 name|NC_
 argument_list|(

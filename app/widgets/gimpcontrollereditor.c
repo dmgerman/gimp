@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b56880103
+DECL|enum|__anon2770028d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b56880203
+DECL|enum|__anon2770028d0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1686,9 +1686,12 @@ name|editor
 operator|->
 name|edit_button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_EDIT
+name|_
+argument_list|(
+literal|"_Edit event"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1736,9 +1739,12 @@ name|editor
 operator|->
 name|delete_button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_CLEAR
+name|_
+argument_list|(
+literal|"_Clear event"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2861,7 +2867,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-controller-action-dialog"
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|title
 argument_list|,

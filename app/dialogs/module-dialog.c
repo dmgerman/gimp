@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5040dc0103
+DECL|enum|__anon2ace1ebf0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5040dc0203
+DECL|enum|__anon2ace1ebf0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -880,7 +880,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

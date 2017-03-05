@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2889a4650103
+DECL|enum|__anon28b1699c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2889a4650203
+DECL|enum|__anon28b1699c0203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -890,7 +890,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1006,7 +1006,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_DETACH
+name|GIMP_ICON_DETACH
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

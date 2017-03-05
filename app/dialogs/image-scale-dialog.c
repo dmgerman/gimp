@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a2a020108
+DECL|struct|__anon29bcea5c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -715,7 +715,7 @@ argument_list|(
 literal|"Confirm Scaling"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|private
 operator|->

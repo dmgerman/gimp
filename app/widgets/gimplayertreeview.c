@@ -1511,7 +1511,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_TRANSPARENCY
+name|GIMP_ICON_TRANSPARENCY
 argument_list|,
 name|icon_size
 argument_list|)
@@ -2317,7 +2317,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b200ef50108
+DECL|struct|__anon2af70e6e0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b200ef50208
+DECL|struct|__anon2af70e6e0208
 block|{
 DECL|member|mask_column
 name|gint

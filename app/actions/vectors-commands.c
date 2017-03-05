@@ -609,7 +609,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-vectors-edit"
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -774,7 +774,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-vectors-new"
 argument_list|,
-name|GIMP_STOCK_PATH
+name|GIMP_ICON_PATH
 argument_list|,
 name|_
 argument_list|(
@@ -1653,7 +1653,7 @@ argument_list|(
 literal|"Fill Path"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_ICON_TOOL_BUCKET_FILL
 argument_list|,
 name|GIMP_HELP_PATH_FILL
 argument_list|,
@@ -1758,7 +1758,7 @@ argument_list|(
 literal|"Stroke Path"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_PATH_STROKE
+name|GIMP_ICON_PATH_STROKE
 argument_list|,
 name|GIMP_HELP_PATH_STROKE
 argument_list|,

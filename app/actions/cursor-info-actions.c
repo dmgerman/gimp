@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"cursor-info-popup"
 block|,
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 block|,
 name|NC_
 argument_list|(

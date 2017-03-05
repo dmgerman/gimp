@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d30ea0103
+DECL|enum|__anon2894ed730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d30ea0208
+DECL|struct|__anon2894ed730208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -9442,7 +9442,7 @@ name|gtk_image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_CLOSE
+name|GIMP_ICON_CLOSE
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)

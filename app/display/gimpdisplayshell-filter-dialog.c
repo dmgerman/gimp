@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c88a060108
+DECL|struct|__anon287ac7990108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -246,7 +246,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-display-filters"
 argument_list|,
-name|GIMP_STOCK_DISPLAY_FILTER
+name|GIMP_ICON_DISPLAY_FILTER
 argument_list|,
 name|_
 argument_list|(

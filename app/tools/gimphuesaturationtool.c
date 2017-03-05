@@ -363,7 +363,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_HUE_SATURATION
 argument_list|,
-name|GIMP_STOCK_TOOL_HUE_SATURATION
+name|GIMP_ICON_TOOL_HUE_SATURATION
 argument_list|,
 name|data
 argument_list|)
@@ -758,7 +758,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b7f31e00108
+DECL|struct|__anon28be81e00108
 block|{
 DECL|member|label
 specifier|const

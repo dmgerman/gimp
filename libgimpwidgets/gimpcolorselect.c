@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2758dbe50103
+DECL|enum|__anon27cb81860103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2758dbe50203
+DECL|enum|__anon27cb81860203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2758dbe50303
+DECL|enum|__anon27cb81860303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -911,7 +911,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_WILBER
+name|GIMP_ICON_WILBER
 expr_stmt|;
 name|selector_class
 operator|->

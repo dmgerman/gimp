@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2954c0080108
+DECL|struct|__anon2b5451910108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1924,7 +1924,7 @@ name|eek
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)

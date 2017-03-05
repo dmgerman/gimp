@@ -132,7 +132,7 @@ block|,
 block|{
 literal|"dialogs-tool-options"
 block|,
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ block|,
 block|{
 literal|"dialogs-device-status"
 block|,
-name|GIMP_STOCK_DEVICE_STATUS
+name|GIMP_ICON_DIALOG_DEVICE_STATUS
 block|,
 name|NC_
 argument_list|(
@@ -210,7 +210,7 @@ block|,
 block|{
 literal|"dialogs-layers"
 block|,
-name|GIMP_STOCK_LAYERS
+name|GIMP_ICON_DIALOG_LAYERS
 block|,
 name|NC_
 argument_list|(
@@ -236,7 +236,7 @@ block|,
 block|{
 literal|"dialogs-channels"
 block|,
-name|GIMP_STOCK_CHANNELS
+name|GIMP_ICON_DIALOG_CHANNELS
 block|,
 name|NC_
 argument_list|(
@@ -262,7 +262,7 @@ block|,
 block|{
 literal|"dialogs-vectors"
 block|,
-name|GIMP_STOCK_PATHS
+name|GIMP_ICON_DIALOG_PATHS
 block|,
 name|NC_
 argument_list|(
@@ -288,7 +288,7 @@ block|,
 block|{
 literal|"dialogs-indexed-palette"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 name|NC_
 argument_list|(
@@ -314,7 +314,7 @@ block|,
 block|{
 literal|"dialogs-histogram"
 block|,
-name|GIMP_STOCK_HISTOGRAM
+name|GIMP_ICON_HISTOGRAM
 block|,
 name|NC_
 argument_list|(
@@ -340,7 +340,7 @@ block|,
 block|{
 literal|"dialogs-selection-editor"
 block|,
-name|GIMP_STOCK_SELECTION
+name|GIMP_ICON_SELECTION
 block|,
 name|NC_
 argument_list|(
@@ -366,7 +366,7 @@ block|,
 block|{
 literal|"dialogs-navigation"
 block|,
-name|GIMP_STOCK_NAVIGATION
+name|GIMP_ICON_DIALOG_NAVIGATION
 block|,
 name|NC_
 argument_list|(
@@ -392,7 +392,7 @@ block|,
 block|{
 literal|"dialogs-undo-history"
 block|,
-name|GIMP_STOCK_UNDO_HISTORY
+name|GIMP_ICON_DIALOG_UNDO_HISTORY
 block|,
 name|NC_
 argument_list|(
@@ -418,7 +418,7 @@ block|,
 block|{
 literal|"dialogs-cursor"
 block|,
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 block|,
 name|NC_
 argument_list|(
@@ -444,7 +444,7 @@ block|,
 block|{
 literal|"dialogs-sample-points"
 block|,
-name|GIMP_STOCK_SAMPLE_POINT
+name|GIMP_ICON_SAMPLE_POINT
 block|,
 name|NC_
 argument_list|(
@@ -470,7 +470,7 @@ block|,
 block|{
 literal|"dialogs-colors"
 block|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 block|,
 name|NC_
 argument_list|(
@@ -496,7 +496,7 @@ block|,
 block|{
 literal|"dialogs-brushes"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -522,7 +522,7 @@ block|,
 block|{
 literal|"dialogs-brush-editor"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_ICON_BRUSH
 block|,
 name|NC_
 argument_list|(
@@ -548,7 +548,7 @@ block|,
 block|{
 literal|"dialogs-dynamics"
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 block|,
 name|NC_
 argument_list|(
@@ -574,7 +574,7 @@ block|,
 block|{
 literal|"dialogs-dynamics-editor"
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_ICON_DYNAMICS
 block|,
 name|NC_
 argument_list|(
@@ -626,7 +626,7 @@ block|,
 block|{
 literal|"dialogs-patterns"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_ICON_PATTERN
 block|,
 name|NC_
 argument_list|(
@@ -652,7 +652,7 @@ block|,
 block|{
 literal|"dialogs-gradients"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|NC_
 argument_list|(
@@ -678,7 +678,7 @@ block|,
 block|{
 literal|"dialogs-gradient-editor"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|NC_
 argument_list|(
@@ -704,7 +704,7 @@ block|,
 block|{
 literal|"dialogs-palettes"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -730,7 +730,7 @@ block|,
 block|{
 literal|"dialogs-palette-editor"
 block|,
-name|GIMP_STOCK_PALETTE
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -756,7 +756,7 @@ block|,
 block|{
 literal|"dialogs-tool-presets"
 block|,
-name|GIMP_STOCK_TOOL_PRESET
+name|GIMP_ICON_TOOL_PRESET
 block|,
 name|NC_
 argument_list|(
@@ -782,7 +782,7 @@ block|,
 block|{
 literal|"dialogs-fonts"
 block|,
-literal|"gtk-select-font"
+name|GIMP_ICON_FONT
 block|,
 name|NC_
 argument_list|(
@@ -808,7 +808,7 @@ block|,
 block|{
 literal|"dialogs-buffers"
 block|,
-name|GIMP_STOCK_BUFFER
+name|GIMP_ICON_BUFFER
 block|,
 name|NC_
 argument_list|(
@@ -834,7 +834,7 @@ block|,
 block|{
 literal|"dialogs-images"
 block|,
-name|GIMP_STOCK_IMAGES
+name|GIMP_ICON_DIALOG_IMAGES
 block|,
 name|NC_
 argument_list|(
@@ -860,7 +860,7 @@ block|,
 block|{
 literal|"dialogs-document-history"
 block|,
-literal|"document-open-recent"
+name|GIMP_ICON_DOCUMENT_OPEN_RECENT
 block|,
 name|NC_
 argument_list|(
@@ -886,7 +886,7 @@ block|,
 block|{
 literal|"dialogs-templates"
 block|,
-name|GIMP_STOCK_TEMPLATE
+name|GIMP_ICON_TEMPLATE
 block|,
 name|NC_
 argument_list|(
@@ -912,7 +912,7 @@ block|,
 block|{
 literal|"dialogs-error-console"
 block|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 block|,
 name|NC_
 argument_list|(
@@ -961,7 +961,7 @@ block|{
 block|{
 literal|"dialogs-preferences"
 block|,
-literal|"preferences-system"
+name|GIMP_ICON_PREFERENCES_SYSTEM
 block|,
 name|NC_
 argument_list|(
@@ -987,7 +987,7 @@ block|,
 block|{
 literal|"dialogs-input-devices"
 block|,
-name|GIMP_STOCK_INPUT_DEVICE
+name|GIMP_ICON_INPUT_DEVICE
 block|,
 name|NC_
 argument_list|(
@@ -1013,7 +1013,7 @@ block|,
 block|{
 literal|"dialogs-keyboard-shortcuts"
 block|,
-name|GIMP_STOCK_CHAR_PICKER
+name|GIMP_ICON_CHAR_PICKER
 block|,
 name|NC_
 argument_list|(
@@ -1039,7 +1039,7 @@ block|,
 block|{
 literal|"dialogs-module-dialog"
 block|,
-literal|"system-run"
+name|GIMP_ICON_SYSTEM_RUN
 block|,
 name|NC_
 argument_list|(
@@ -1065,7 +1065,7 @@ block|,
 block|{
 literal|"dialogs-tips"
 block|,
-name|GIMP_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 block|,
 name|NC_
 argument_list|(
@@ -1091,7 +1091,7 @@ block|,
 block|{
 literal|"dialogs-about"
 block|,
-literal|"help-about"
+name|GIMP_ICON_HELP_ABOUT
 block|,
 if|#
 directive|if
@@ -1148,7 +1148,7 @@ block|,
 block|{
 literal|"dialogs-action-search"
 block|,
-literal|"edit-find"
+name|GIMP_ICON_EDIT_FIND
 block|,
 name|NC_
 argument_list|(

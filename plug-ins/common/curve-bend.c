@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296063940108
+DECL|struct|__anon2bd6d9890108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296063940208
+DECL|struct|__anon2bd6d9890208
 block|{
 DECL|member|y
 name|gint32
@@ -7011,9 +7011,12 @@ expr_stmt|;
 comment|/*  The Reset button  */
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_STOCK_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7097,9 +7100,12 @@ expr_stmt|;
 comment|/*  The Load button  */
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7152,9 +7158,12 @@ expr_stmt|;
 comment|/*  The Save button  */
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

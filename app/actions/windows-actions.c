@@ -570,7 +570,7 @@ block|{
 block|{
 literal|"windows-tabs-position-top"
 block|,
-literal|"to-top"
+name|GIMP_ICON_GO_TOP
 block|,
 name|NC_
 argument_list|(
@@ -596,7 +596,7 @@ block|,
 block|{
 literal|"windows-tabs-position-bottom"
 block|,
-literal|"go-bottom"
+name|GIMP_ICON_GO_BOTTOM
 block|,
 name|NC_
 argument_list|(
@@ -622,7 +622,7 @@ block|,
 block|{
 literal|"windows-tabs-position-left"
 block|,
-literal|"go-first"
+name|GIMP_ICON_GO_FIRST
 block|,
 name|NC_
 argument_list|(
@@ -648,7 +648,7 @@ block|,
 block|{
 literal|"windows-tabs-position-right"
 block|,
-literal|"go-last"
+name|GIMP_ICON_GO_LAST
 block|,
 name|NC_
 argument_list|(
@@ -1423,7 +1423,7 @@ name|entry
 operator|.
 name|icon_name
 operator|=
-name|GIMP_STOCK_IMAGE
+name|GIMP_ICON_IMAGE
 expr_stmt|;
 name|entry
 operator|.

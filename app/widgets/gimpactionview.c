@@ -2336,7 +2336,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297376130108
+DECL|struct|__anon298e2b370108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2579,7 +2579,7 @@ argument_list|(
 literal|"Conflicting Shortcuts"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(

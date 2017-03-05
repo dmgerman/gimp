@@ -419,7 +419,7 @@ name|item_view_class
 operator|->
 name|lock_content_icon_name
 operator|=
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -434,7 +434,7 @@ name|item_view_class
 operator|->
 name|lock_position_icon_name
 operator|=
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_ICON_TOOL_MOVE
 expr_stmt|;
 name|item_view_class
 operator|->

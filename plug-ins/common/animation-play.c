@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b728e0103
+DECL|enum|__anon2b1899bf0103
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278b728e0208
+DECL|struct|__anon2b1899bf0208
 block|{
 DECL|member|duration_index
 name|gint
@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278b728e0308
+DECL|struct|__anon2b1899bf0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -2793,7 +2793,7 @@ block|,
 block|{
 literal|"refresh"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NULL
 block|,
@@ -2962,7 +2962,7 @@ block|,
 block|{
 literal|"detach"
 block|,
-name|GIMP_STOCK_DETACH
+name|GIMP_ICON_DETACH
 block|,
 name|N_
 argument_list|(

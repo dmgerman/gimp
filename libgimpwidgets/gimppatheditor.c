@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f648d20103
+DECL|enum|__anon2b8e6c810103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f648d20203
+DECL|enum|__anon2b8e6c810203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -522,7 +522,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"document-new"
+name|GIMP_ICON_DOCUMENT_NEW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -611,7 +611,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-up"
+name|GIMP_ICON_GO_UP
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -700,7 +700,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"go-down"
+name|GIMP_ICON_GO_DOWN
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -789,7 +789,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

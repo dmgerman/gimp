@@ -382,7 +382,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-channel-edit"
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -564,7 +564,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-channel-new"
 argument_list|,
-name|GIMP_STOCK_CHANNEL
+name|GIMP_ICON_CHANNEL
 argument_list|,
 name|_
 argument_list|(

@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3e8970103
+DECL|enum|__anon292fdd1b0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3e8970203
+DECL|enum|__anon292fdd1b0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3e8970303
+DECL|enum|__anon292fdd1b0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3e8970403
+DECL|enum|__anon292fdd1b0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3e8970508
+DECL|struct|__anon292fdd1b0508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3e8970608
+DECL|struct|__anon292fdd1b0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3e8970708
+DECL|struct|__anon292fdd1b0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6987,9 +6987,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -7024,9 +7027,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

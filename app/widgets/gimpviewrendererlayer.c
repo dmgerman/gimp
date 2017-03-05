@@ -165,7 +165,7 @@ condition|)
 block|{
 name|icon_name
 operator|=
-name|GIMP_STOCK_FLOATING_SELECTION
+name|GIMP_ICON_LAYER_FLOATING_SELECTION
 expr_stmt|;
 block|}
 elseif|else

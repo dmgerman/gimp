@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2921ae8f0103
+DECL|enum|__anon2c352f3e0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2921ae8f0203
+DECL|enum|__anon2c352f3e0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0308
+DECL|struct|__anon2c352f3e0308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0408
+DECL|struct|__anon2c352f3e0408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2921ae8f0503
+DECL|enum|__anon2c352f3e0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0608
+DECL|struct|__anon2c352f3e0608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2921ae8f0708
+DECL|struct|__anon2c352f3e0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0808
+DECL|struct|__anon2c352f3e0808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0908
+DECL|struct|__anon2c352f3e0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0a08
+DECL|struct|__anon2c352f3e0a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0b08
+DECL|struct|__anon2c352f3e0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0c08
+DECL|struct|__anon2c352f3e0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0d08
+DECL|struct|__anon2c352f3e0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921ae8f0e08
+DECL|struct|__anon2c352f3e0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8507,7 +8507,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2921ae8f0f08
+DECL|struct|__anon2c352f3e0f08
 block|{
 DECL|member|values
 name|guchar
@@ -14458,7 +14458,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2921ae8f1008
+DECL|struct|__anon2c352f3e1008
 block|{
 DECL|member|label
 specifier|const
@@ -14476,7 +14476,10 @@ index|[]
 init|=
 block|{
 block|{
-name|GTK_STOCK_NEW
+name|N_
+argument_list|(
+literal|"_New"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -14485,7 +14488,10 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GTK_STOCK_EDIT
+name|N_
+argument_list|(
+literal|"_Edit"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -14494,7 +14500,10 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GTK_STOCK_COPY
+name|N_
+argument_list|(
+literal|"_Copy"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -14503,7 +14512,10 @@ argument_list|)
 block|}
 block|,
 block|{
-name|GTK_STOCK_DELETE
+name|N_
+argument_list|(
+literal|"_Delete"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -14761,7 +14773,9 @@ control|)
 block|{
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
+argument_list|(
+name|gettext
 argument_list|(
 name|buttons
 index|[
@@ -14769,6 +14783,7 @@ name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15608,13 +15623,19 @@ name|gimp_standard_help_func
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|str
 argument_list|,
-name|GTK_STOCK_DELETE
+name|_
+argument_list|(
+literal|"_Delete"
+argument_list|)
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"_Cancel"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

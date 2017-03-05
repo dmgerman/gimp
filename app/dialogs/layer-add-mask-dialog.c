@@ -365,7 +365,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-layer-add-mask"
 argument_list|,
-name|GIMP_STOCK_LAYER_MASK
+name|GIMP_ICON_LAYER_MASK
 argument_list|,
 name|_
 argument_list|(

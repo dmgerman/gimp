@@ -472,7 +472,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|GIMP_STOCK_SCALE
+name|GIMP_ICON_OBJECT_SCALE
 argument_list|,
 name|title
 argument_list|,
@@ -910,7 +910,7 @@ name|box
 init|=
 name|gimp_message_box_new
 argument_list|(
-name|GIMP_STOCK_INFO
+name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|)
 decl_stmt|;
 name|gimp_message_box_set_text

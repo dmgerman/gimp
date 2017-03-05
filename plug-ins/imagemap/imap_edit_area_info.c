@@ -1602,7 +1602,7 @@ name|notebook
 argument_list|,
 name|table
 argument_list|,
-name|GIMP_STOCK_WEB
+name|GIMP_ICON_WEB
 argument_list|,
 name|_
 argument_list|(

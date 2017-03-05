@@ -111,7 +111,7 @@ block|{
 block|{
 literal|"gradient-editor-popup"
 block|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 block|,
 name|NC_
 argument_list|(
@@ -145,7 +145,7 @@ block|,
 block|{
 literal|"gradient-editor-load-left-color"
 block|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 block|,
 name|NC_
 argument_list|(
@@ -158,7 +158,7 @@ block|,
 block|{
 literal|"gradient-editor-save-left-color"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -184,7 +184,7 @@ block|,
 block|{
 literal|"gradient-editor-load-right-color"
 block|,
-literal|"document-revert"
+name|GIMP_ICON_DOCUMENT_REVERT
 block|,
 name|NC_
 argument_list|(
@@ -197,7 +197,7 @@ block|,
 block|{
 literal|"gradient-editor-save-right-color"
 block|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 block|,
 name|NC_
 argument_list|(
@@ -274,7 +274,7 @@ block|,
 block|{
 literal|"gradient-editor-flip"
 block|,
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 block|,
 literal|"flip"
 block|,
@@ -293,7 +293,7 @@ block|,
 block|{
 literal|"gradient-editor-replicate"
 block|,
-name|GIMP_STOCK_DUPLICATE
+name|GIMP_ICON_OBJECT_DUPLICATE
 block|,
 literal|"replicate"
 block|,
@@ -350,7 +350,7 @@ block|,
 block|{
 literal|"gradient-editor-delete"
 block|,
-literal|"edit-delete"
+name|GIMP_ICON_EDIT_DELETE
 block|,
 literal|"delete"
 block|,
@@ -467,7 +467,7 @@ block|{
 block|{
 literal|"gradient-editor-edit-active"
 block|,
-name|GIMP_STOCK_LINKED
+name|GIMP_ICON_LINKED
 block|,
 name|NC_
 argument_list|(
@@ -1605,7 +1605,7 @@ block|{
 block|{
 literal|"gradient-editor-zoom-in"
 block|,
-literal|"zoom-in"
+name|GIMP_ICON_ZOOM_IN
 block|,
 name|N_
 argument_list|(
@@ -1629,7 +1629,7 @@ block|,
 block|{
 literal|"gradient-editor-zoom-out"
 block|,
-literal|"zoom-out"
+name|GIMP_ICON_ZOOM_OUT
 block|,
 name|N_
 argument_list|(
@@ -1653,7 +1653,7 @@ block|,
 block|{
 literal|"gradient-editor-zoom-all"
 block|,
-literal|"zoom-fit-best"
+name|GIMP_ICON_ZOOM_FIT_BEST
 block|,
 name|N_
 argument_list|(

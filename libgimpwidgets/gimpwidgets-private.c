@@ -231,7 +231,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_window_set_default_icon_name
 argument_list|(
-name|GIMP_STOCK_WILBER
+name|GIMP_ICON_WILBER
 argument_list|)
 expr_stmt|;
 name|gimp_widgets_init_foreign_enums

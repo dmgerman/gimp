@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f312a0103
+DECL|enum|__anon2c2c2bbc0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -554,7 +554,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_PERSPECTIVE_CLONE
 argument_list|,
-name|GIMP_STOCK_TOOL_PERSPECTIVE_CLONE
+name|GIMP_ICON_TOOL_PERSPECTIVE_CLONE
 argument_list|,
 name|data
 argument_list|)

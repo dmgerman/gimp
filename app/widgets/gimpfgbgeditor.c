@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c0b790103
+DECL|enum|__anon2addebcd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c0b790203
+DECL|enum|__anon2addebcd0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -119,7 +119,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1c0b790303
+DECL|enum|__anon2addebcd0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -1088,7 +1088,7 @@ name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
-name|GIMP_STOCK_DEFAULT_COLORS
+name|GIMP_ICON_COLORS_DEFAULT
 argument_list|,
 literal|12
 argument_list|)
@@ -1172,7 +1172,7 @@ name|gimp_widget_load_icon
 argument_list|(
 name|widget
 argument_list|,
-name|GIMP_STOCK_SWAP_COLORS
+name|GIMP_ICON_COLORS_SWAP
 argument_list|,
 literal|12
 argument_list|)

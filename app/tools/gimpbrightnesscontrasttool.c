@@ -372,7 +372,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_BRIGHTNESS_CONTRAST
 argument_list|,
-name|GIMP_STOCK_TOOL_BRIGHTNESS_CONTRAST
+name|GIMP_ICON_TOOL_BRIGHTNESS_CONTRAST
 argument_list|,
 name|data
 argument_list|)
@@ -1279,7 +1279,7 @@ name|button
 operator|=
 name|gimp_icon_button_new
 argument_list|(
-name|GIMP_STOCK_TOOL_LEVELS
+name|GIMP_ICON_TOOL_LEVELS
 argument_list|,
 name|_
 argument_list|(

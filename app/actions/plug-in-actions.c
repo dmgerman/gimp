@@ -302,7 +302,7 @@ block|{
 block|{
 literal|"plug-in-reset-all"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(

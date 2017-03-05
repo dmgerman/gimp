@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29417c030103
+DECL|enum|__anon29eadd500103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29417c030203
+DECL|enum|__anon29eadd500203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29417c030303
+DECL|enum|__anon29eadd500303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29417c030403
+DECL|enum|__anon29eadd500403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29417c030503
+DECL|enum|__anon29eadd500503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030608
+DECL|struct|__anon29eadd500608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030708
+DECL|struct|__anon29eadd500708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030808
+DECL|struct|__anon29eadd500808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030908
+DECL|struct|__anon29eadd500908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030a08
+DECL|struct|__anon29eadd500a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030b08
+DECL|struct|__anon29eadd500b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030c08
+DECL|struct|__anon29eadd500c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030d08
+DECL|struct|__anon29eadd500d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030e08
+DECL|struct|__anon29eadd500e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c030f08
+DECL|struct|__anon29eadd500f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c031008
+DECL|struct|__anon29eadd501008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29417c031108
+DECL|struct|__anon29eadd501108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29417c03120a
+DECL|union|__anon29eadd50120a
 block|{
 DECL|member|com
 name|common
@@ -15028,9 +15028,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_OPEN
+name|_
+argument_list|(
+literal|"_Open"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15070,9 +15073,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15346,9 +15352,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_NEW
+name|_
+argument_list|(
+literal|"_New"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15388,9 +15397,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_STOCK_DUPLICATE
+name|_
+argument_list|(
+literal|"D_uplicate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15430,9 +15442,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GTK_STOCK_DELETE
+name|_
+argument_list|(
+literal|"_Delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

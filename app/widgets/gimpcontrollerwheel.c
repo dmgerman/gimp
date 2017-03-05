@@ -733,7 +733,7 @@ name|controller_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_CONTROLLER_WHEEL
+name|GIMP_ICON_CONTROLLER_WHEEL
 expr_stmt|;
 name|controller_class
 operator|->

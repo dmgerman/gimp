@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"error-console-popup"
 block|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 block|,
 name|NC_
 argument_list|(
@@ -102,7 +102,7 @@ block|,
 block|{
 literal|"error-console-clear"
 block|,
-literal|"edit-clear"
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -172,7 +172,7 @@ block|{
 block|{
 literal|"error-console-save-all"
 block|,
-literal|"document-save-as"
+name|GIMP_ICON_DOCUMENT_SAVE_AS
 block|,
 name|NC_
 argument_list|(
@@ -200,7 +200,7 @@ block|,
 block|{
 literal|"error-console-save-selection"
 block|,
-literal|"document-save-as"
+name|GIMP_ICON_DOCUMENT_SAVE_AS
 block|,
 name|NC_
 argument_list|(

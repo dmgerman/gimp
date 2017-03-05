@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27607f060103
+DECL|enum|__anon29fda1e50103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -2076,7 +2076,7 @@ argument_list|(
 literal|"Extension Mismatch"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_ICON_DIALOG_WARNING
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -2387,7 +2387,7 @@ argument_list|(
 literal|"Extension Mismatch"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|save_dialog
 argument_list|,

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894217a0103
+DECL|enum|__anon2c6c8be60103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894217a0203
+DECL|enum|__anon2c6c8be60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1237,7 +1237,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"list-add"
+name|GIMP_ICON_LIST_ADD
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1330,7 +1330,7 @@ name|arrow
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-name|GIMP_STOCK_MENU_LEFT
+name|GIMP_ICON_MENU_LEFT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1394,7 +1394,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 argument_list|,
 name|_
 argument_list|(
@@ -1415,7 +1415,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
@@ -1443,7 +1443,7 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(

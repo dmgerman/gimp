@@ -481,7 +481,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_CROP
 argument_list|,
-name|GIMP_STOCK_TOOL_CROP
+name|GIMP_ICON_TOOL_CROP
 argument_list|,
 name|data
 argument_list|)

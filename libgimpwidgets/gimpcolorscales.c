@@ -374,7 +374,7 @@ name|selector_class
 operator|->
 name|icon_name
 operator|=
-name|GIMP_STOCK_TOOL_OPTIONS
+name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 expr_stmt|;
 name|selector_class
 operator|->

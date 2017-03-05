@@ -105,7 +105,7 @@ block|{
 block|{
 literal|"colormap-popup"
 block|,
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 block|,
 name|NC_
 argument_list|(
@@ -126,7 +126,7 @@ block|,
 block|{
 literal|"colormap-edit-color"
 block|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
@@ -167,7 +167,7 @@ block|{
 block|{
 literal|"colormap-add-color-from-fg"
 block|,
-literal|"list-add"
+name|GIMP_ICON_LIST_ADD
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"colormap-add-color-from-bg"
 block|,
-literal|"list-add"
+name|GIMP_ICON_LIST_ADD
 block|,
 name|NC_
 argument_list|(
@@ -235,7 +235,7 @@ block|{
 block|{
 literal|"colormap-selection-replace"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_ICON_SELECTION_REPLACE
 block|,
 name|NC_
 argument_list|(
@@ -263,7 +263,7 @@ block|,
 block|{
 literal|"colormap-selection-add"
 block|,
-name|GIMP_STOCK_SELECTION_ADD
+name|GIMP_ICON_SELECTION_ADD
 block|,
 name|NC_
 argument_list|(
@@ -291,7 +291,7 @@ block|,
 block|{
 literal|"colormap-selection-subtract"
 block|,
-name|GIMP_STOCK_SELECTION_SUBTRACT
+name|GIMP_ICON_SELECTION_SUBTRACT
 block|,
 name|NC_
 argument_list|(
@@ -319,7 +319,7 @@ block|,
 block|{
 literal|"colormap-selection-intersect"
 block|,
-name|GIMP_STOCK_SELECTION_INTERSECT
+name|GIMP_ICON_SELECTION_INTERSECT
 block|,
 name|NC_
 argument_list|(

@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"sample-points-popup"
 block|,
-name|GIMP_STOCK_SAMPLE_POINT
+name|GIMP_ICON_SAMPLE_POINT
 block|,
 name|NC_
 argument_list|(

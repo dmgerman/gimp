@@ -1464,7 +1464,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|GIMP_STOCK_USER_MANUAL
+name|GIMP_ICON_HELP_USER_MANUAL
 argument_list|,
 name|NULL
 argument_list|,
@@ -2806,7 +2806,7 @@ argument_list|(
 literal|"GIMP user manual is missing"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_USER_MANUAL
+name|GIMP_ICON_HELP_USER_MANUAL
 argument_list|,
 name|NULL
 argument_list|,

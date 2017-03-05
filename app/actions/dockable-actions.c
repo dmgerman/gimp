@@ -221,7 +221,7 @@ block|,
 block|{
 literal|"dockable-detach-tab"
 block|,
-name|GIMP_STOCK_DETACH
+name|GIMP_ICON_DETACH
 block|,
 name|NC_
 argument_list|(

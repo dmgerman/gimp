@@ -330,7 +330,7 @@ block|,
 block|{
 literal|"view-move-to-screen-menu"
 block|,
-name|GIMP_STOCK_MOVE_TO_SCREEN
+name|GIMP_ICON_WINDOW_MOVE_TO_SCREEN
 block|,
 name|NC_
 argument_list|(
@@ -351,7 +351,7 @@ block|,
 block|{
 literal|"view-new"
 block|,
-literal|"window-new"
+name|GIMP_ICON_WINDOW_NEW
 block|,
 name|NC_
 argument_list|(
@@ -380,7 +380,7 @@ block|,
 block|{
 literal|"view-close"
 block|,
-literal|"window-close"
+name|GIMP_ICON_WINDOW_CLOSE
 block|,
 name|NC_
 argument_list|(
@@ -409,7 +409,7 @@ block|,
 block|{
 literal|"view-zoom-fit-in"
 block|,
-literal|"zoom-fit-best"
+name|GIMP_ICON_ZOOM_FIT_BEST
 block|,
 name|NC_
 argument_list|(
@@ -438,7 +438,7 @@ block|,
 block|{
 literal|"view-zoom-fill"
 block|,
-literal|"zoom-fit-best"
+name|GIMP_ICON_ZOOM_FIT_BEST
 block|,
 name|NC_
 argument_list|(
@@ -467,7 +467,7 @@ block|,
 block|{
 literal|"view-zoom-selection"
 block|,
-literal|"gimp-selection"
+name|GIMP_ICON_SELECTION
 block|,
 name|NC_
 argument_list|(
@@ -554,7 +554,7 @@ block|,
 block|{
 literal|"view-navigation-window"
 block|,
-name|GIMP_STOCK_NAVIGATION
+name|GIMP_ICON_DIALOG_NAVIGATION
 block|,
 name|NC_
 argument_list|(
@@ -583,7 +583,7 @@ block|,
 block|{
 literal|"view-display-filters"
 block|,
-name|GIMP_STOCK_DISPLAY_FILTER
+name|GIMP_ICON_DISPLAY_FILTER
 block|,
 name|NC_
 argument_list|(
@@ -612,7 +612,7 @@ block|,
 block|{
 literal|"view-color-management-reset"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(
@@ -670,7 +670,7 @@ block|,
 block|{
 literal|"view-shrink-wrap"
 block|,
-literal|"zoom-fit-best"
+name|GIMP_ICON_ZOOM_FIT_BEST
 block|,
 name|NC_
 argument_list|(
@@ -1330,7 +1330,7 @@ block|,
 block|{
 literal|"view-fullscreen"
 block|,
-literal|"view-fullscreen"
+name|GIMP_ICON_VIEW_FULLSCREEN
 block|,
 name|NC_
 argument_list|(
@@ -1391,7 +1391,7 @@ block|,
 block|{
 literal|"view-zoom-minimum"
 block|,
-literal|"zoom-out"
+name|GIMP_ICON_ZOOM_OUT
 block|,
 literal|"Zoom out as far as possible"
 block|,
@@ -1409,7 +1409,7 @@ block|,
 block|{
 literal|"view-zoom-maximum"
 block|,
-literal|"zoom-in"
+name|GIMP_ICON_ZOOM_IN
 block|,
 literal|"Zoom in as far as possible"
 block|,
@@ -1427,7 +1427,7 @@ block|,
 block|{
 literal|"view-zoom-out"
 block|,
-literal|"zoom-out"
+name|GIMP_ICON_ZOOM_OUT
 block|,
 name|NC_
 argument_list|(
@@ -1455,7 +1455,7 @@ block|,
 block|{
 literal|"view-zoom-in"
 block|,
-literal|"zoom-in"
+name|GIMP_ICON_ZOOM_IN
 block|,
 name|NC_
 argument_list|(
@@ -1483,7 +1483,7 @@ block|,
 block|{
 literal|"view-zoom-out-accel"
 block|,
-name|GIMP_STOCK_CHAR_PICKER
+name|GIMP_ICON_CHAR_PICKER
 block|,
 name|NC_
 argument_list|(
@@ -1511,7 +1511,7 @@ block|,
 block|{
 literal|"view-zoom-in-accel"
 block|,
-name|GIMP_STOCK_CHAR_PICKER
+name|GIMP_ICON_CHAR_PICKER
 block|,
 name|NC_
 argument_list|(
@@ -1539,7 +1539,7 @@ block|,
 block|{
 literal|"view-zoom-out-skip"
 block|,
-literal|"zoom-out"
+name|GIMP_ICON_ZOOM_OUT
 block|,
 literal|"Zoom out a lot"
 block|,
@@ -1557,7 +1557,7 @@ block|,
 block|{
 literal|"view-zoom-in-skip"
 block|,
-literal|"zoom-in"
+name|GIMP_ICON_ZOOM_IN
 block|,
 literal|"Zoom in a lot"
 block|,
@@ -1795,7 +1795,7 @@ block|,
 block|{
 literal|"view-zoom-1-1"
 block|,
-literal|"zoom-original"
+name|GIMP_ICON_ZOOM_ORIGINAL
 block|,
 name|NC_
 argument_list|(
@@ -1821,7 +1821,7 @@ block|,
 block|{
 literal|"view-zoom-1-1-accel"
 block|,
-literal|"zoom-original"
+name|GIMP_ICON_ZOOM_ORIGINAL
 block|,
 name|NC_
 argument_list|(
@@ -1989,7 +1989,7 @@ block|{
 block|{
 literal|"view-flip-horizontally"
 block|,
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 block|,
 name|NC_
 argument_list|(
@@ -2015,7 +2015,7 @@ block|,
 block|{
 literal|"view-flip-vertically"
 block|,
-name|GIMP_STOCK_FLIP_VERTICAL
+name|GIMP_ICON_OBJECT_FLIP_VERTICAL
 block|,
 name|NC_
 argument_list|(
@@ -2071,7 +2071,7 @@ block|,
 block|{
 literal|"view-rotate-reset"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(
@@ -2111,7 +2111,7 @@ block|{
 block|{
 literal|"view-rotate-15"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_ICON_OBJECT_ROTATE_90
 block|,
 name|NC_
 argument_list|(
@@ -2139,7 +2139,7 @@ block|,
 block|{
 literal|"view-rotate-90"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_ICON_OBJECT_ROTATE_90
 block|,
 name|NC_
 argument_list|(
@@ -2167,7 +2167,7 @@ block|,
 block|{
 literal|"view-rotate-180"
 block|,
-name|GIMP_STOCK_ROTATE_180
+name|GIMP_ICON_OBJECT_ROTATE_180
 block|,
 name|NC_
 argument_list|(
@@ -2195,7 +2195,7 @@ block|,
 block|{
 literal|"view-rotate-270"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_ICON_OBJECT_ROTATE_270
 block|,
 name|NC_
 argument_list|(
@@ -2223,7 +2223,7 @@ block|,
 block|{
 literal|"view-rotate-345"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_ICON_OBJECT_ROTATE_270
 block|,
 name|NC_
 argument_list|(
@@ -2579,7 +2579,7 @@ block|,
 block|{
 literal|"view-padding-color-custom"
 block|,
-literal|"gtk-select-color"
+name|GIMP_ICON_PALETTE
 block|,
 name|NC_
 argument_list|(
@@ -2607,7 +2607,7 @@ block|,
 block|{
 literal|"view-padding-color-prefs"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|NC_
 argument_list|(

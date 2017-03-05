@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991307f0103
+DECL|enum|__anon2c9093300103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991307f0203
+DECL|enum|__anon2c9093300203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -381,7 +381,7 @@ name|viewable_class
 operator|->
 name|default_icon_name
 operator|=
-name|GIMP_STOCK_INPUT_DEVICE
+name|GIMP_ICON_INPUT_DEVICE
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -1877,7 +1877,7 @@ condition|)
 block|{
 name|icon_name
 operator|=
-name|GIMP_STOCK_TOOL_ERASER
+name|GIMP_ICON_TOOL_ERASER
 expr_stmt|;
 block|}
 elseif|else
@@ -1893,7 +1893,7 @@ condition|)
 block|{
 name|icon_name
 operator|=
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_ICON_TOOL_PAINTBRUSH
 expr_stmt|;
 block|}
 elseif|else
@@ -1909,7 +1909,7 @@ condition|)
 block|{
 name|icon_name
 operator|=
-name|GIMP_STOCK_TOOL_AIRBRUSH
+name|GIMP_ICON_TOOL_AIRBRUSH
 expr_stmt|;
 block|}
 elseif|else
@@ -1953,7 +1953,7 @@ condition|)
 block|{
 name|icon_name
 operator|=
-name|GIMP_STOCK_CURSOR
+name|GIMP_ICON_CURSOR
 expr_stmt|;
 block|}
 name|g_free

@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c971b630108
+DECL|struct|__anon275b24810108
 block|{
 DECL|member|context
 name|GimpContext
@@ -508,7 +508,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-template-new"
 argument_list|,
-name|GIMP_STOCK_TEMPLATE
+name|GIMP_ICON_TEMPLATE
 argument_list|,
 name|_
 argument_list|(
@@ -798,7 +798,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-template-edit"
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(

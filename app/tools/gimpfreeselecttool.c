@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba84cce0108
+DECL|struct|__anon2a3448f70108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -640,7 +640,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_FREE_SELECT
 argument_list|,
-name|GIMP_STOCK_TOOL_FREE_SELECT
+name|GIMP_ICON_TOOL_FREE_SELECT
 argument_list|,
 name|data
 argument_list|)

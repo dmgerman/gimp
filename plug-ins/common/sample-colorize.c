@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec09280108
+DECL|struct|__anon289204e80108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec09280208
+DECL|struct|__anon289204e80208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec09280308
+DECL|struct|__anon289204e80308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec09280408
+DECL|struct|__anon289204e80408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec09280508
+DECL|struct|__anon289204e80508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6330,9 +6330,9 @@ argument_list|(
 literal|"From reverse gradient"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 operator|-
 literal|1
@@ -6356,9 +6356,9 @@ argument_list|(
 literal|"From gradient"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_STOCK_ID
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|GIMP_STOCK_GRADIENT
+name|GIMP_ICON_GRADIENT
 argument_list|,
 operator|-
 literal|1

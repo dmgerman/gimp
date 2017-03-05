@@ -420,7 +420,7 @@ block|{
 block|{
 literal|"filters-alien-map"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -441,7 +441,7 @@ block|,
 block|{
 literal|"filters-antialias"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -462,7 +462,7 @@ block|,
 block|{
 literal|"filters-apply-canvas"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -483,7 +483,7 @@ block|,
 block|{
 literal|"filters-apply-lens"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -504,7 +504,7 @@ block|,
 block|{
 literal|"filters-bump-map"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -525,7 +525,7 @@ block|,
 block|{
 literal|"filters-c2g"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -546,7 +546,7 @@ block|,
 block|{
 literal|"filters-cartoon"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -567,7 +567,7 @@ block|,
 block|{
 literal|"filters-channel-mixer"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -588,7 +588,7 @@ block|,
 block|{
 literal|"filters-checkerboard"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -609,7 +609,7 @@ block|,
 block|{
 literal|"filters-color-enhance"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -630,7 +630,7 @@ block|,
 block|{
 literal|"filters-color-exchange"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -651,7 +651,7 @@ block|,
 block|{
 literal|"filters-dither"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -672,7 +672,7 @@ block|,
 block|{
 literal|"filters-color-rotate"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -693,7 +693,7 @@ block|,
 block|{
 literal|"filters-color-temperature"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -714,7 +714,7 @@ block|,
 block|{
 literal|"filters-color-to-alpha"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -735,7 +735,7 @@ block|,
 block|{
 literal|"filters-component-extract"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -756,7 +756,7 @@ block|,
 block|{
 literal|"filters-convolution-matrix"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -777,7 +777,7 @@ block|,
 block|{
 literal|"filters-cubism"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -798,7 +798,7 @@ block|,
 block|{
 literal|"filters-deinterlace"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -819,7 +819,7 @@ block|,
 block|{
 literal|"filters-desaturate"
 block|,
-name|GIMP_STOCK_TOOL_DESATURATE
+name|GIMP_ICON_TOOL_DESATURATE
 block|,
 name|NC_
 argument_list|(
@@ -840,7 +840,7 @@ block|,
 block|{
 literal|"filters-difference-of-gaussians"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -861,7 +861,7 @@ block|,
 block|{
 literal|"filters-diffraction-patterns"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -882,7 +882,7 @@ block|,
 block|{
 literal|"filters-displace"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -903,7 +903,7 @@ block|,
 block|{
 literal|"filters-distance-map"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -924,7 +924,7 @@ block|,
 block|{
 literal|"filters-dropshadow"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -945,7 +945,7 @@ block|,
 block|{
 literal|"filters-edge"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -966,7 +966,7 @@ block|,
 block|{
 literal|"filters-edge-laplace"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -987,7 +987,7 @@ block|,
 block|{
 literal|"filters-edge-neon"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1008,7 +1008,7 @@ block|,
 block|{
 literal|"filters-edge-sobel"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1029,7 +1029,7 @@ block|,
 block|{
 literal|"filters-emboss"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1050,7 +1050,7 @@ block|,
 block|{
 literal|"filters-engrave"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1071,7 +1071,7 @@ block|,
 block|{
 literal|"filters-exposure"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1092,7 +1092,7 @@ block|,
 block|{
 literal|"filters-fattal-2002"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1113,7 +1113,7 @@ block|,
 block|{
 literal|"filters-fractal-trace"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1134,7 +1134,7 @@ block|,
 block|{
 literal|"filters-gaussian-blur"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1155,7 +1155,7 @@ block|,
 block|{
 literal|"filters-gaussian-blur-selective"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1176,7 +1176,7 @@ block|,
 block|{
 literal|"filters-gegl-graph"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1197,7 +1197,7 @@ block|,
 block|{
 literal|"filters-grid"
 block|,
-name|GIMP_STOCK_GRID
+name|GIMP_ICON_GRID
 block|,
 name|NC_
 argument_list|(
@@ -1218,7 +1218,7 @@ block|,
 block|{
 literal|"filters-high-pass"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1239,7 +1239,7 @@ block|,
 block|{
 literal|"filters-illusion"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1260,7 +1260,7 @@ block|,
 block|{
 literal|"filters-image-gradient"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1281,7 +1281,7 @@ block|,
 block|{
 literal|"filters-kaleidoscope"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1302,7 +1302,7 @@ block|,
 block|{
 literal|"filters-lens-distortion"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1323,7 +1323,7 @@ block|,
 block|{
 literal|"filters-lens-flare"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1344,7 +1344,7 @@ block|,
 block|{
 literal|"filters-mantiuk-2006"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1365,7 +1365,7 @@ block|,
 block|{
 literal|"filters-maze"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1386,7 +1386,7 @@ block|,
 block|{
 literal|"filters-mono-mixer"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1407,7 +1407,7 @@ block|,
 block|{
 literal|"filters-mosaic"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1428,7 +1428,7 @@ block|,
 block|{
 literal|"filters-motion-blur-circular"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1449,7 +1449,7 @@ block|,
 block|{
 literal|"filters-motion-blur-linear"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1470,7 +1470,7 @@ block|,
 block|{
 literal|"filters-motion-blur-zoom"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1491,7 +1491,7 @@ block|,
 block|{
 literal|"filters-noise-cell"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1512,7 +1512,7 @@ block|,
 block|{
 literal|"filters-noise-cie-lch"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1533,7 +1533,7 @@ block|,
 block|{
 literal|"filters-noise-hsv"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1554,7 +1554,7 @@ block|,
 block|{
 literal|"filters-noise-hurl"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1575,7 +1575,7 @@ block|,
 block|{
 literal|"filters-noise-perlin"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1596,7 +1596,7 @@ block|,
 block|{
 literal|"filters-noise-pick"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1617,7 +1617,7 @@ block|,
 block|{
 literal|"filters-noise-rgb"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1638,7 +1638,7 @@ block|,
 block|{
 literal|"filters-noise-reduction"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1659,7 +1659,7 @@ block|,
 block|{
 literal|"filters-noise-simplex"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1680,7 +1680,7 @@ block|,
 block|{
 literal|"filters-noise-slur"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1701,7 +1701,7 @@ block|,
 block|{
 literal|"filters-noise-solid"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1722,7 +1722,7 @@ block|,
 block|{
 literal|"filters-noise-spread"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1743,7 +1743,7 @@ block|,
 block|{
 literal|"filters-oilify"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1764,7 +1764,7 @@ block|,
 block|{
 literal|"filters-panorama-projection"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1785,7 +1785,7 @@ block|,
 block|{
 literal|"filters-photocopy"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1806,7 +1806,7 @@ block|,
 block|{
 literal|"filters-pixelize"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1827,7 +1827,7 @@ block|,
 block|{
 literal|"filters-plasma"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1848,7 +1848,7 @@ block|,
 block|{
 literal|"filters-polar-coordinates"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1869,7 +1869,7 @@ block|,
 block|{
 literal|"filters-posterize"
 block|,
-name|GIMP_STOCK_TOOL_POSTERIZE
+name|GIMP_ICON_TOOL_POSTERIZE
 block|,
 name|NC_
 argument_list|(
@@ -1890,7 +1890,7 @@ block|,
 block|{
 literal|"filters-red-eye-removal"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1911,7 +1911,7 @@ block|,
 block|{
 literal|"filters-reinhard-2005"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1932,7 +1932,7 @@ block|,
 block|{
 literal|"filters-rgb-clip"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1953,7 +1953,7 @@ block|,
 block|{
 literal|"filters-ripple"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1974,7 +1974,7 @@ block|,
 block|{
 literal|"filters-saturation"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -1995,7 +1995,7 @@ block|,
 block|{
 literal|"filters-semi-flatten"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2016,7 +2016,7 @@ block|,
 block|{
 literal|"filters-sepia"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2037,7 +2037,7 @@ block|,
 block|{
 literal|"filters-shift"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2058,7 +2058,7 @@ block|,
 block|{
 literal|"filters-sinus"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2079,7 +2079,7 @@ block|,
 block|{
 literal|"filters-slic"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2100,7 +2100,7 @@ block|,
 block|{
 literal|"filters-snn-mean"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2121,7 +2121,7 @@ block|,
 block|{
 literal|"filters-softglow"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2142,7 +2142,7 @@ block|,
 block|{
 literal|"filters-stretch-contrast"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2163,7 +2163,7 @@ block|,
 block|{
 literal|"filters-stretch-contrast-hsv"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2184,7 +2184,7 @@ block|,
 block|{
 literal|"filters-stress"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2205,7 +2205,7 @@ block|,
 block|{
 literal|"filters-supernova"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2226,7 +2226,7 @@ block|,
 block|{
 literal|"filters-threshold-alpha"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2247,7 +2247,7 @@ block|,
 block|{
 literal|"filters-tile-glass"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2268,7 +2268,7 @@ block|,
 block|{
 literal|"filters-tile-paper"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2289,7 +2289,7 @@ block|,
 block|{
 literal|"filters-tile-seamless"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2310,7 +2310,7 @@ block|,
 block|{
 literal|"filters-unsharp-mask"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2331,7 +2331,7 @@ block|,
 block|{
 literal|"filters-value-propagate"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2352,7 +2352,7 @@ block|,
 block|{
 literal|"filters-video-degradation"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2373,7 +2373,7 @@ block|,
 block|{
 literal|"filters-vignette"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2394,7 +2394,7 @@ block|,
 block|{
 literal|"filters-waterpixels"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2415,7 +2415,7 @@ block|,
 block|{
 literal|"filters-waves"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2436,7 +2436,7 @@ block|,
 block|{
 literal|"filters-whirl-pinch"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2457,7 +2457,7 @@ block|,
 block|{
 literal|"filters-wind"
 block|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 block|,
 name|NC_
 argument_list|(
@@ -2490,7 +2490,7 @@ block|{
 block|{
 literal|"filters-repeat"
 block|,
-literal|"system-run"
+name|GIMP_ICON_SYSTEM_RUN
 block|,
 name|NC_
 argument_list|(
@@ -2518,7 +2518,7 @@ block|,
 block|{
 literal|"filters-reshow"
 block|,
-name|GIMP_STOCK_RESHOW_FILTER
+name|GIMP_ICON_DIALOG_RESHOW_FILTER
 block|,
 name|NC_
 argument_list|(

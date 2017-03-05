@@ -545,7 +545,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_GEGL
 argument_list|,
-name|GIMP_STOCK_GEGL
+name|GIMP_ICON_GEGL
 argument_list|,
 name|data
 argument_list|)

@@ -510,7 +510,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-convert-indexed"
 argument_list|,
-name|GIMP_STOCK_CONVERT_INDEXED
+name|GIMP_ICON_CONVERT_INDEXED
 argument_list|,
 name|_
 argument_list|(

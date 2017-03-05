@@ -910,7 +910,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-layer-edit"
 argument_list|,
-literal|"gtk-edit"
+name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -1176,7 +1176,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-layer-new"
 argument_list|,
-name|GIMP_STOCK_LAYER
+name|GIMP_ICON_LAYER
 argument_list|,
 name|_
 argument_list|(

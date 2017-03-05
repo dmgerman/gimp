@@ -174,7 +174,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2967590f0103
+DECL|enum|__anon27c39c7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -585,7 +585,7 @@ argument_list|(
 name|status
 argument_list|)
 argument_list|,
-literal|"document-save"
+name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(

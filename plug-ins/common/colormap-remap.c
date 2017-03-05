@@ -345,7 +345,7 @@ specifier|const
 name|guint8
 operator|*
 operator|)
-name|GIMP_STOCK_COLORMAP
+name|GIMP_ICON_COLORMAP
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -1729,7 +1729,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276668fd0103
+DECL|enum|__anon2990886d0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2094,7 +2094,7 @@ block|,
 block|{
 literal|"reset"
 block|,
-name|GIMP_STOCK_RESET
+name|GIMP_ICON_RESET
 block|,
 name|N_
 argument_list|(

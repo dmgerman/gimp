@@ -786,7 +786,7 @@ argument_list|(
 literal|"Reset All Tool Options"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GIMP_ICON_DIALOG_QUESTION
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

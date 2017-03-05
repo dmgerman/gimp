@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"documents-popup"
 block|,
-literal|"document-open-recent"
+name|GIMP_ICON_DOCUMENT_OPEN_RECENT
 block|,
 name|NC_
 argument_list|(
@@ -108,7 +108,7 @@ block|,
 block|{
 literal|"documents-open"
 block|,
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 block|,
 name|NC_
 argument_list|(
@@ -195,7 +195,7 @@ block|,
 block|{
 literal|"documents-copy-location"
 block|,
-literal|"edit-copy"
+name|GIMP_ICON_EDIT_COPY
 block|,
 name|NC_
 argument_list|(
@@ -253,7 +253,7 @@ block|,
 block|{
 literal|"documents-remove"
 block|,
-literal|"list-remove"
+name|GIMP_ICON_LIST_REMOVE
 block|,
 name|NC_
 argument_list|(
@@ -311,7 +311,7 @@ block|,
 block|{
 literal|"documents-recreate-preview"
 block|,
-literal|"view-refresh"
+name|GIMP_ICON_VIEW_REFRESH
 block|,
 name|NC_
 argument_list|(

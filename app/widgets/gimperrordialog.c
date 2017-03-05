@@ -553,7 +553,7 @@ name|TRUE
 expr_stmt|;
 name|icon_name
 operator|=
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_ICON_WILBER_EEK
 expr_stmt|;
 name|domain
 operator|=
