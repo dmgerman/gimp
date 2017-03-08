@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f6dd960103
+DECL|enum|__anon2881a03c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -440,7 +440,7 @@ begin_function_decl
 specifier|static
 specifier|inline
 name|void
-name|composite_func_src_sub_in_core
+name|composite_func_src_in_sub_core
 parameter_list|(
 name|gfloat
 modifier|*
@@ -3850,7 +3850,7 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_cimp
+name|rgba_comp
 operator|=
 operator|*
 name|v_comp
