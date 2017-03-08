@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b02b2c60103
+DECL|enum|__anon28c290320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4182,6 +4182,10 @@ literal|4
 operator|*
 name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
 expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
 name|mask
 operator|+=
 name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
