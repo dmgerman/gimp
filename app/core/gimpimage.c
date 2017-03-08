@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2cde4f0103
+DECL|enum|__anon2b51b3240103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2cde4f0203
+DECL|enum|__anon2b51b3240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9740,7 +9740,7 @@ case|case
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 case|:
 case|case
-name|GIMP_LAYER_MODE_COLOR_ERASE
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 case|:
 name|version
 operator|=
@@ -9865,6 +9865,9 @@ name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
 case|:
 case|case
 name|GIMP_LAYER_MODE_LUMINANCE
+case|:
+case|case
+name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 name|version
 operator|=

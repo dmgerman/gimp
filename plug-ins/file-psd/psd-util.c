@@ -3600,6 +3600,9 @@ break|break;
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
+case|case
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
+case|:
 if|if
 condition|(
 name|CONVERSION_WARNINGS
@@ -3744,7 +3747,7 @@ literal|0
 operator|&&
 name|mode
 operator|<=
-name|GIMP_LAYER_MODE_COLOR_ERASE
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 condition|)
 return|return
 name|layer_mode_effects_names

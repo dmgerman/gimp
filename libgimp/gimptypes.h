@@ -301,7 +301,7 @@ DECL|macro|GIMP_COLOR_ERASE_MODE
 define|#
 directive|define
 name|GIMP_COLOR_ERASE_MODE
-value|GIMP_LAYER_MODE_COLOR_ERASE
+value|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 end_define
 
 begin_define

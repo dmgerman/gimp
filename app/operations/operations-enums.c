@@ -588,11 +588,11 @@ literal|"grain-merge-legacy"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_COLOR_ERASE
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 block|,
-literal|"GIMP_LAYER_MODE_COLOR_ERASE"
+literal|"GIMP_LAYER_MODE_COLOR_ERASE_LEGACY"
 block|,
-literal|"color-erase"
+literal|"color-erase-legacy"
 block|}
 block|,
 block|{
@@ -865,6 +865,14 @@ block|,
 literal|"GIMP_LAYER_MODE_LUMINANCE"
 block|,
 literal|"luminance"
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_COLOR_ERASE
+block|,
+literal|"GIMP_LAYER_MODE_COLOR_ERASE"
+block|,
+literal|"color-erase"
 block|}
 block|,
 block|{
@@ -1194,13 +1202,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_COLOR_ERASE
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color erase"
+literal|"Color erase (legacy)"
 argument_list|)
 block|,
 name|NULL
@@ -1643,6 +1651,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Luminance"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_COLOR_ERASE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Color erase"
 argument_list|)
 block|,
 name|NULL
