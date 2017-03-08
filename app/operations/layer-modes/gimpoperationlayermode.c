@@ -63,9 +63,27 @@ directive|include
 file|"gimpoperationlayermode.h"
 end_include
 
+begin_comment
+comment|/* the maximum number of samples to process in one go.  used to limit  * the size of the buffers we allocate on the stack.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+define|#
+directive|define
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+value|((1<< 19)
+comment|/* 0.5 MiB */
+value|/      \                                           16
+comment|/* bytes per pixel */
+value|/      \                                           2
+comment|/* max number of buffers */
+value|)
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2881a03c0103
+DECL|enum|__anon2b02b2c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4093,20 +4111,14 @@ decl_stmt|;
 name|gfloat
 modifier|*
 name|blend_in
-init|=
-name|in
 decl_stmt|;
 name|gfloat
 modifier|*
 name|blend_layer
-init|=
-name|layer
 decl_stmt|;
 name|gfloat
 modifier|*
 name|blend_out
-init|=
-name|out
 decl_stmt|;
 name|gboolean
 name|composite_needs_in_color
@@ -4133,6 +4145,70 @@ name|blend_to_composite_fish
 init|=
 name|NULL
 decl_stmt|;
+comment|/* make sure we don't process more than GIMP_COMPOSITE_BLEND_MAX_SAMPLES    * at a time, so that we don't overflow the stack if we allocate buffers    * on it.  note that this has to be done with a nested function call,    * because alloca'd buffers remain for the duration of the stack frame.    */
+while|while
+condition|(
+name|samples
+operator|>
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+condition|)
+block|{
+name|gimp_composite_blend
+argument_list|(
+name|layer_mode
+argument_list|,
+name|in
+argument_list|,
+name|layer
+argument_list|,
+name|mask
+argument_list|,
+name|out
+argument_list|,
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+argument_list|,
+name|blend_func
+argument_list|)
+expr_stmt|;
+name|in
+operator|+=
+literal|4
+operator|*
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+expr_stmt|;
+name|layer
+operator|+=
+literal|4
+operator|*
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+expr_stmt|;
+name|mask
+operator|+=
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+expr_stmt|;
+name|out
+operator|+=
+literal|4
+operator|*
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+expr_stmt|;
+name|samples
+operator|-=
+name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
+expr_stmt|;
+block|}
+name|blend_in
+operator|=
+name|in
+expr_stmt|;
+name|blend_layer
+operator|=
+name|layer
+expr_stmt|;
+name|blend_out
+operator|=
+name|out
+expr_stmt|;
 if|if
 condition|(
 name|blend_space
