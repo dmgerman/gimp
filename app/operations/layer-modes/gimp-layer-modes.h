@@ -66,6 +66,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_layer_mode_is_subtractive
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpLayerColorSpace
 name|gimp_layer_mode_get_blend_space
 parameter_list|(
