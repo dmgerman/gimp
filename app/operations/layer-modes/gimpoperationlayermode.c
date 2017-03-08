@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3341fb0103
+DECL|enum|__anon279f9aae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1785,7 +1785,7 @@ block|{
 name|gfloat
 name|layer_alpha
 init|=
-name|layer
+name|comp
 index|[
 name|ALPHA
 index|]
@@ -1869,7 +1869,7 @@ index|[
 name|b
 index|]
 operator|=
-name|layer
+name|comp
 index|[
 name|b
 index|]
@@ -1902,11 +1902,11 @@ name|in
 operator|+=
 literal|4
 expr_stmt|;
-name|out
+name|comp
 operator|+=
 literal|4
 expr_stmt|;
-name|layer
+name|out
 operator|+=
 literal|4
 expr_stmt|;
@@ -2451,7 +2451,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|layer
+name|comp
 index|[
 name|ALPHA
 index|]
@@ -2512,7 +2512,7 @@ index|[
 name|RED
 index|]
 operator|=
-name|layer
+name|comp
 index|[
 name|RED
 index|]
@@ -2522,7 +2522,7 @@ index|[
 name|GREEN
 index|]
 operator|=
-name|layer
+name|comp
 index|[
 name|GREEN
 index|]
@@ -2532,7 +2532,7 @@ index|[
 name|BLUE
 index|]
 operator|=
-name|layer
+name|comp
 index|[
 name|BLUE
 index|]
@@ -2549,11 +2549,11 @@ name|in
 operator|+=
 literal|4
 expr_stmt|;
-name|out
+name|comp
 operator|+=
 literal|4
 expr_stmt|;
-name|layer
+name|out
 operator|+=
 literal|4
 expr_stmt|;
@@ -2636,13 +2636,6 @@ operator|(
 operator|(
 name|uintptr_t
 operator|)
-name|layer
-operator|)
-operator||
-operator|(
-operator|(
-name|uintptr_t
-operator|)
 name|out
 operator|)
 operator|)
@@ -2686,14 +2679,14 @@ decl_stmt|;
 specifier|const
 name|__v4sf
 modifier|*
-name|v_layer
+name|v_comp
 init|=
 operator|(
 specifier|const
 name|__v4sf
 operator|*
 operator|)
-name|layer
+name|comp
 decl_stmt|;
 name|__v4sf
 modifier|*
@@ -2734,7 +2727,7 @@ name|alpha
 decl_stmt|,
 name|rgba_in
 decl_stmt|,
-name|rgba_layer
+name|rgba_comp
 decl_stmt|;
 name|rgba_in
 operator|=
@@ -2742,10 +2735,10 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_layer
+name|rgba_cimp
 operator|=
 operator|*
-name|v_layer
+name|v_comp
 operator|++
 expr_stmt|;
 name|alpha
@@ -2758,7 +2751,7 @@ argument_list|(
 operator|(
 name|__m128i
 operator|)
-name|rgba_layer
+name|rgba_comp
 argument_list|,
 name|_MM_SHUFFLE
 argument_list|(
@@ -2842,7 +2835,7 @@ argument_list|)
 expr_stmt|;
 name|out_pixel
 operator|=
-name|rgba_layer
+name|rgba_comp
 operator|*
 name|alpha
 operator|+
@@ -3225,9 +3218,9 @@ name|composite_func_src_atop
 argument_list|(
 name|in
 argument_list|,
-name|blend_out
+name|layer
 argument_list|,
-name|NULL
+name|blend_out
 argument_list|,
 name|mask
 argument_list|,
@@ -3288,9 +3281,9 @@ name|composite_func_src_in
 argument_list|(
 name|in
 argument_list|,
-name|blend_out
+name|layer
 argument_list|,
-name|NULL
+name|blend_out
 argument_list|,
 name|mask
 argument_list|,
