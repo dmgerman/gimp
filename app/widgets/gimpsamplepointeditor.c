@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c169c640103
+DECL|enum|__anon2797c7640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -624,6 +624,10 @@ operator|+
 literal|1
 argument_list|,
 literal|"has-color-area"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"has-coords"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2085,6 +2089,10 @@ name|pixel
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 block|}

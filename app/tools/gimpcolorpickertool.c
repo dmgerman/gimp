@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -305,6 +311,12 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1166,6 +1178,22 @@ argument_list|,
 name|pixel
 argument_list|,
 name|color
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|floor
+argument_list|(
+name|x
+argument_list|)
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|floor
+argument_list|(
+name|y
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1436,6 +1464,18 @@ name|color_frame1
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_FRAME_MODE_PIXEL
+argument_list|)
+expr_stmt|;
+name|gimp_color_frame_set_has_coords
+argument_list|(
+name|GIMP_COLOR_FRAME
+argument_list|(
+name|picker_tool
+operator|->
+name|color_frame1
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1712,7 +1752,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_info_update (GimpColorPickerTool * picker_tool,gboolean sample_average,const Babl * sample_format,gpointer pixel,const GimpRGB * color)
+DECL|function|gimp_color_picker_tool_info_update (GimpColorPickerTool * picker_tool,gboolean sample_average,const Babl * sample_format,gpointer pixel,const GimpRGB * color,gint x,gint y)
 name|gimp_color_picker_tool_info_update
 parameter_list|(
 name|GimpColorPickerTool
@@ -1734,6 +1774,12 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|)
 block|{
 name|GimpTool
@@ -1801,6 +1847,10 @@ argument_list|,
 name|pixel
 argument_list|,
 name|color
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_color_frame_set_color
@@ -1819,6 +1869,10 @@ argument_list|,
 name|pixel
 argument_list|,
 name|color
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_tool_gui_show
