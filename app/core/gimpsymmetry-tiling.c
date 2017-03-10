@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ec26c0103
+DECL|enum|__anon2a34cdb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1294,11 +1294,7 @@ operator|==
 literal|0
 condition|)
 name|startx
-operator|=
-name|origin
-operator|->
-name|x
-operator|-
+operator|-=
 name|tiling
 operator|->
 name|interval_x
@@ -1334,11 +1330,7 @@ literal|0
 condition|)
 block|{
 name|starty
-operator|=
-name|origin
-operator|->
-name|y
-operator|-
+operator|-=
 name|tiling
 operator|->
 name|interval_y
