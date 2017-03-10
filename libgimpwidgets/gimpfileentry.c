@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9bafb70103
+DECL|enum|__anon296b4cd90103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -483,7 +483,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"document-open"
+name|GIMP_ICON_DOCUMENT_OPEN
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
