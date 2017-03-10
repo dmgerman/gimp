@@ -393,6 +393,12 @@ directive|include
 file|"layer-modes/gimpoperationreplace.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"layer-modes/gimpoperationsplit.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_operations_init (void)
@@ -647,6 +653,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_MERGE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_SPLIT
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

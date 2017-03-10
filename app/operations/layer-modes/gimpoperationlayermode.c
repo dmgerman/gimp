@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4892120103
+DECL|enum|__anon2b2c9bfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10127,6 +10127,9 @@ name|GIMP_LAYER_MODE_ERASE
 case|:
 case|case
 name|GIMP_LAYER_MODE_MERGE
+case|:
+case|case
+name|GIMP_LAYER_MODE_SPLIT
 case|:
 case|case
 name|GIMP_LAYER_MODE_REPLACE
