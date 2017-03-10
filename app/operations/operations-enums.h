@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf54ddb0103
+DECL|enum|__anon287f2f850103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf54ddb0203
+DECL|enum|__anon287f2f850203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf54ddb0303
+DECL|enum|__anon287f2f850303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -371,6 +371,10 @@ DECL|enumerator|GIMP_LAYER_MODE_ERASE
 name|GIMP_LAYER_MODE_ERASE
 block|,
 comment|/*< desc="Erase">*/
+DECL|enumerator|GIMP_LAYER_MODE_MONO_MIX
+name|GIMP_LAYER_MODE_MONO_MIX
+block|,
+comment|/*< desc="Mono mix">*/
 comment|/*  Internal modes, not available to the PDB, must be kept at the end  */
 DECL|enumerator|GIMP_LAYER_MODE_REPLACE
 name|GIMP_LAYER_MODE_REPLACE
@@ -415,7 +419,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bf54ddb0403
+DECL|enum|__anon287f2f850403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -453,7 +457,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bf54ddb0503
+DECL|enum|__anon287f2f850503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -509,7 +513,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2bf54ddb0603
+DECL|enum|__anon287f2f850603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -539,7 +543,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2bf54ddb0703
+DECL|enum|__anon287f2f850703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

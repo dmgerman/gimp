@@ -884,6 +884,14 @@ literal|"erase"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_MONO_MIX
+block|,
+literal|"GIMP_LAYER_MODE_MONO_MIX"
+block|,
+literal|"mono-mix"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_REPLACE
 block|,
 literal|"GIMP_LAYER_MODE_REPLACE"
@@ -1677,6 +1685,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Erase"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_MONO_MIX
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Mono mix"
 argument_list|)
 block|,
 name|NULL
