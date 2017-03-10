@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b51b3240103
+DECL|enum|__anon27da6d260103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b51b3240203
+DECL|enum|__anon27da6d260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9869,6 +9869,9 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
+case|case
+name|GIMP_LAYER_MODE_ERASE
+case|:
 name|version
 operator|=
 name|MAX
@@ -9880,9 +9883,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 comment|/*  Just here instead of default so we get compiler warnings  */
-case|case
-name|GIMP_LAYER_MODE_ERASE
-case|:
 case|case
 name|GIMP_LAYER_MODE_REPLACE
 case|:

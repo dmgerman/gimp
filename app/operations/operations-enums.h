@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d1e6420103
+DECL|enum|__anon2bf54ddb0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d1e6420203
+DECL|enum|__anon2bf54ddb0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d1e6420303
+DECL|enum|__anon2bf54ddb0303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -367,11 +367,11 @@ DECL|enumerator|GIMP_LAYER_MODE_COLOR_ERASE
 name|GIMP_LAYER_MODE_COLOR_ERASE
 block|,
 comment|/*< desc="Color erase">*/
-comment|/*  Internal modes, not available to the PDB, must be kept at the end  */
 DECL|enumerator|GIMP_LAYER_MODE_ERASE
 name|GIMP_LAYER_MODE_ERASE
 block|,
-comment|/*< pdb-skip, desc="Erase">*/
+comment|/*< desc="Erase">*/
+comment|/*  Internal modes, not available to the PDB, must be kept at the end  */
 DECL|enumerator|GIMP_LAYER_MODE_REPLACE
 name|GIMP_LAYER_MODE_REPLACE
 block|,
@@ -415,7 +415,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d1e6420403
+DECL|enum|__anon2bf54ddb0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -453,7 +453,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d1e6420503
+DECL|enum|__anon2bf54ddb0503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -509,7 +509,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon29d1e6420603
+DECL|enum|__anon2bf54ddb0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -539,7 +539,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon29d1e6420703
+DECL|enum|__anon2bf54ddb0703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

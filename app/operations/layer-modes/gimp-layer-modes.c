@@ -2816,7 +2816,7 @@ block|,
 operator|.
 name|context
 operator|=
-name|GIMP_LAYER_MODE_CONTEXT_FADE
+name|GIMP_LAYER_MODE_CONTEXT_ALL
 block|,
 operator|.
 name|paint_composite_mode
