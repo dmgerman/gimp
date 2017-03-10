@@ -892,6 +892,14 @@ literal|"mono-mix"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_MERGE
+block|,
+literal|"GIMP_LAYER_MODE_MERGE"
+block|,
+literal|"merge"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_REPLACE
 block|,
 literal|"GIMP_LAYER_MODE_REPLACE"
@@ -1698,6 +1706,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Mono mix"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_MERGE
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Merge"
 argument_list|)
 block|,
 name|NULL

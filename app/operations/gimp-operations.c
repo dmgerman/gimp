@@ -366,13 +366,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer-modes/gimpoperationdissolve.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer-modes/gimpoperationerase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-modes/gimpoperationdissolve.h"
+file|"layer-modes/gimpoperationmerge.h"
 end_include
 
 begin_include
@@ -636,6 +642,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_ERASE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_MERGE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29476ce70103
+DECL|enum|__anon29b774ae0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29476ce70203
+DECL|enum|__anon29b774ae0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9874,6 +9874,9 @@ name|GIMP_LAYER_MODE_ERASE
 case|:
 case|case
 name|GIMP_LAYER_MODE_MONO_MIX
+case|:
+case|case
+name|GIMP_LAYER_MODE_MERGE
 case|:
 name|version
 operator|=
