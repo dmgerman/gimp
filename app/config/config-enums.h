@@ -17,46 +17,6 @@ name|__CONFIG_ENUMS_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_CURSOR_MODE
-define|#
-directive|define
-name|GIMP_TYPE_CURSOR_MODE
-value|(gimp_cursor_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_cursor_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2790aef60103
-block|{
-DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
-name|GIMP_CURSOR_MODE_TOOL_ICON
-block|,
-comment|/*< desc="Tool icon">*/
-DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
-name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
-block|,
-comment|/*< desc="Tool icon with crosshair">*/
-DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
-name|GIMP_CURSOR_MODE_CROSSHAIR
-comment|/*< desc="Crosshair only">*/
-DECL|typedef|GimpCursorMode
-block|}
-name|GimpCursorMode
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_CANVAS_PADDING_MODE
 define|#
 directive|define
@@ -77,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790aef60203
+DECL|enum|__anon2bcfbf310103
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -108,158 +68,6 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_SPACE_BAR_ACTION
-define|#
-directive|define
-name|GIMP_TYPE_SPACE_BAR_ACTION
-value|(gimp_space_bar_action_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_space_bar_action_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2790aef60303
-block|{
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
-name|GIMP_SPACE_BAR_ACTION_NONE
-block|,
-comment|/*< desc="No action">*/
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_PAN
-name|GIMP_SPACE_BAR_ACTION_PAN
-block|,
-comment|/*< desc="Pan view">*/
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_MOVE
-name|GIMP_SPACE_BAR_ACTION_MOVE
-comment|/*< desc="Switch to Move tool">*/
-DECL|typedef|GimpSpaceBarAction
-block|}
-name|GimpSpaceBarAction
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_ZOOM_QUALITY
-define|#
-directive|define
-name|GIMP_TYPE_ZOOM_QUALITY
-value|(gimp_zoom_quality_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_zoom_quality_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2790aef60403
-block|{
-DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
-name|GIMP_ZOOM_QUALITY_LOW
-block|,
-comment|/*< desc="Low">*/
-DECL|enumerator|GIMP_ZOOM_QUALITY_HIGH
-name|GIMP_ZOOM_QUALITY_HIGH
-comment|/*< desc="High">*/
-DECL|typedef|GimpZoomQuality
-block|}
-name|GimpZoomQuality
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_HELP_BROWSER_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_HELP_BROWSER_TYPE
-value|(gimp_help_browser_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_help_browser_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2790aef60503
-block|{
-DECL|enumerator|GIMP_HELP_BROWSER_GIMP
-name|GIMP_HELP_BROWSER_GIMP
-block|,
-comment|/*< desc="GIMP help browser">*/
-DECL|enumerator|GIMP_HELP_BROWSER_WEB_BROWSER
-name|GIMP_HELP_BROWSER_WEB_BROWSER
-comment|/*< desc="Web browser">*/
-DECL|typedef|GimpHelpBrowserType
-block|}
-name|GimpHelpBrowserType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_WINDOW_HINT
-define|#
-directive|define
-name|GIMP_TYPE_WINDOW_HINT
-value|(gimp_window_hint_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_window_hint_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2790aef60603
-block|{
-DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
-name|GIMP_WINDOW_HINT_NORMAL
-block|,
-comment|/*< desc="Normal window">*/
-DECL|enumerator|GIMP_WINDOW_HINT_UTILITY
-name|GIMP_WINDOW_HINT_UTILITY
-block|,
-comment|/*< desc="Utility window">*/
-DECL|enumerator|GIMP_WINDOW_HINT_KEEP_ABOVE
-name|GIMP_WINDOW_HINT_KEEP_ABOVE
-comment|/*< desc="Keep above">*/
-DECL|typedef|GimpWindowHint
-block|}
-name|GimpWindowHint
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_CURSOR_FORMAT
 define|#
 directive|define
@@ -280,7 +88,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790aef60703
+DECL|enum|__anon2bcfbf310203
 block|{
 DECL|enumerator|GIMP_CURSOR_FORMAT_BITMAP
 name|GIMP_CURSOR_FORMAT_BITMAP
@@ -292,6 +100,46 @@ comment|/*< desc="Fancy">*/
 DECL|typedef|GimpCursorFormat
 block|}
 name|GimpCursorFormat
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CURSOR_MODE
+define|#
+directive|define
+name|GIMP_TYPE_CURSOR_MODE
+value|(gimp_cursor_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_cursor_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcfbf310303
+block|{
+DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
+block|,
+comment|/*< desc="Tool icon">*/
+DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
+block|,
+comment|/*< desc="Tool icon with crosshair">*/
+DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
+name|GIMP_CURSOR_MODE_CROSSHAIR
+comment|/*< desc="Crosshair only">*/
+DECL|typedef|GimpCursorMode
+block|}
+name|GimpCursorMode
 typedef|;
 end_typedef
 
@@ -316,7 +164,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790aef60803
+DECL|enum|__anon2bcfbf310403
 block|{
 DECL|enumerator|GIMP_HANDEDNESS_LEFT
 name|GIMP_HANDEDNESS_LEFT
@@ -332,16 +180,16 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_POSITION
+DECL|macro|GIMP_TYPE_HELP_BROWSER_TYPE
 define|#
 directive|define
-name|GIMP_TYPE_POSITION
-value|(gimp_position_get_type ())
+name|GIMP_TYPE_HELP_BROWSER_TYPE
+value|(gimp_help_browser_type_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_position_get_type
+name|gimp_help_browser_type_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -352,26 +200,18 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790aef60903
+DECL|enum|__anon2bcfbf310503
 block|{
-DECL|enumerator|GIMP_POSITION_TOP
-name|GIMP_POSITION_TOP
+DECL|enumerator|GIMP_HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
 block|,
-comment|/*< desc="Top">*/
-DECL|enumerator|GIMP_POSITION_BOTTOM
-name|GIMP_POSITION_BOTTOM
-block|,
-comment|/*< desc="Bottom">*/
-DECL|enumerator|GIMP_POSITION_LEFT
-name|GIMP_POSITION_LEFT
-block|,
-comment|/*< desc="Left">*/
-DECL|enumerator|GIMP_POSITION_RIGHT
-name|GIMP_POSITION_RIGHT
-comment|/*< desc="Right">*/
-DECL|typedef|GimpPosition
+comment|/*< desc="GIMP help browser">*/
+DECL|enumerator|GIMP_HELP_BROWSER_WEB_BROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
+comment|/*< desc="Web browser">*/
+DECL|typedef|GimpHelpBrowserType
 block|}
-name|GimpPosition
+name|GimpHelpBrowserType
 typedef|;
 end_typedef
 
@@ -396,7 +236,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790aef60a03
+DECL|enum|__anon2bcfbf310603
 block|{
 DECL|enumerator|GIMP_ICON_SIZE_DEFAULT
 name|GIMP_ICON_SIZE_DEFAULT
@@ -420,6 +260,166 @@ comment|/*< desc="Huge size"> */
 DECL|typedef|GimpIconSize
 block|}
 name|GimpIconSize
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_POSITION
+define|#
+directive|define
+name|GIMP_TYPE_POSITION
+value|(gimp_position_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_position_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcfbf310703
+block|{
+DECL|enumerator|GIMP_POSITION_TOP
+name|GIMP_POSITION_TOP
+block|,
+comment|/*< desc="Top">*/
+DECL|enumerator|GIMP_POSITION_BOTTOM
+name|GIMP_POSITION_BOTTOM
+block|,
+comment|/*< desc="Bottom">*/
+DECL|enumerator|GIMP_POSITION_LEFT
+name|GIMP_POSITION_LEFT
+block|,
+comment|/*< desc="Left">*/
+DECL|enumerator|GIMP_POSITION_RIGHT
+name|GIMP_POSITION_RIGHT
+comment|/*< desc="Right">*/
+DECL|typedef|GimpPosition
+block|}
+name|GimpPosition
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_SPACE_BAR_ACTION
+define|#
+directive|define
+name|GIMP_TYPE_SPACE_BAR_ACTION
+value|(gimp_space_bar_action_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_space_bar_action_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcfbf310803
+block|{
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
+name|GIMP_SPACE_BAR_ACTION_NONE
+block|,
+comment|/*< desc="No action">*/
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_PAN
+name|GIMP_SPACE_BAR_ACTION_PAN
+block|,
+comment|/*< desc="Pan view">*/
+DECL|enumerator|GIMP_SPACE_BAR_ACTION_MOVE
+name|GIMP_SPACE_BAR_ACTION_MOVE
+comment|/*< desc="Switch to Move tool">*/
+DECL|typedef|GimpSpaceBarAction
+block|}
+name|GimpSpaceBarAction
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_WINDOW_HINT
+define|#
+directive|define
+name|GIMP_TYPE_WINDOW_HINT
+value|(gimp_window_hint_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_window_hint_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcfbf310903
+block|{
+DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
+name|GIMP_WINDOW_HINT_NORMAL
+block|,
+comment|/*< desc="Normal window">*/
+DECL|enumerator|GIMP_WINDOW_HINT_UTILITY
+name|GIMP_WINDOW_HINT_UTILITY
+block|,
+comment|/*< desc="Utility window">*/
+DECL|enumerator|GIMP_WINDOW_HINT_KEEP_ABOVE
+name|GIMP_WINDOW_HINT_KEEP_ABOVE
+comment|/*< desc="Keep above">*/
+DECL|typedef|GimpWindowHint
+block|}
+name|GimpWindowHint
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_ZOOM_QUALITY
+define|#
+directive|define
+name|GIMP_TYPE_ZOOM_QUALITY
+value|(gimp_zoom_quality_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_zoom_quality_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcfbf310a03
+block|{
+DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
+name|GIMP_ZOOM_QUALITY_LOW
+block|,
+comment|/*< desc="Low">*/
+DECL|enumerator|GIMP_ZOOM_QUALITY_HIGH
+name|GIMP_ZOOM_QUALITY_HIGH
+comment|/*< desc="High">*/
+DECL|typedef|GimpZoomQuality
+block|}
+name|GimpZoomQuality
 typedef|;
 end_typedef
 
