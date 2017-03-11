@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d97db30103
+DECL|enum|__anon2937ceba0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -6175,7 +6175,7 @@ name|GIMP_ICON_SIZE_LARGE
 case|:
 name|tab_border
 operator|*=
-literal|10
+literal|2
 expr_stmt|;
 break|break;
 case|case
@@ -6183,7 +6183,7 @@ name|GIMP_ICON_SIZE_HUGE
 case|:
 name|tab_border
 operator|*=
-literal|30
+literal|3
 expr_stmt|;
 break|break;
 default|default:
