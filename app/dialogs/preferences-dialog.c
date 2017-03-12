@@ -7881,7 +7881,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|icon_size_scale
@@ -11567,7 +11567,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29009c440108
+DECL|struct|__anon27c76ed30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12444,7 +12444,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29009c440208
+DECL|struct|__anon27c76ed30208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12582,7 +12582,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29009c440308
+DECL|struct|__anon27c76ed30308
 block|{
 DECL|member|tree_label
 specifier|const
