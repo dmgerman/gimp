@@ -12,19 +12,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -53,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295378570103
+DECL|enum|__anon2988b2480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -287,14 +299,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpIconSizeScale,gimp_icon_size_scale,GTK_TYPE_FRAME)
+DECL|function|G_DEFINE_TYPE (GimpIconSizeScale,gimp_icon_size_scale,GIMP_TYPE_FRAME)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpIconSizeScale
 argument_list|,
 argument|gimp_icon_size_scale
 argument_list|,
-argument|GTK_TYPE_FRAME
+argument|GIMP_TYPE_FRAME
 argument_list|)
 end_macro
 

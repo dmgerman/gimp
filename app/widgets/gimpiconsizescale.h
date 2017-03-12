@@ -94,7 +94,7 @@ struct|struct
 name|_GimpIconSizeScale
 block|{
 DECL|member|parent_instance
-name|GtkFrame
+name|GimpFrame
 name|parent_instance
 decl_stmt|;
 block|}
@@ -107,7 +107,7 @@ struct|struct
 name|_GimpIconSizeScaleClass
 block|{
 DECL|member|parent_class
-name|GtkFrameClass
+name|GimpFrameClass
 name|parent_class
 decl_stmt|;
 block|}
