@@ -833,7 +833,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_palette_hierarchy_changed (GtkWidget * widget,GtkWidget * previous_tolevel)
+DECL|function|gimp_tool_palette_hierarchy_changed (GtkWidget * widget,GtkWidget * previous_toplevel)
 name|gimp_tool_palette_hierarchy_changed
 parameter_list|(
 name|GtkWidget
@@ -842,7 +842,7 @@ name|widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|previous_tolevel
+name|previous_toplevel
 parameter_list|)
 block|{
 name|GimpToolPalettePrivate
