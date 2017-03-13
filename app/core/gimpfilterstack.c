@@ -432,11 +432,6 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
-name|gimp_filter_stack_update_last_node
-argument_list|(
-name|stack
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|stack
@@ -464,6 +459,11 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_filter_stack_update_last_node
+argument_list|(
+name|stack
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
