@@ -868,12 +868,25 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
+name|GimpColorTransformFlags
+name|flags
+init|=
+literal|0
+decl_stmt|;
 name|format
 operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A double"
 argument_list|)
+expr_stmt|;
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
+expr_stmt|;
+name|flags
+operator||=
+name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
 name|srgb_profile
 operator|=
@@ -892,9 +905,9 @@ name|srgb_profile
 argument_list|,
 name|format
 argument_list|,
-name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 argument_list|,
-literal|0
+name|flags
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -902,6 +915,11 @@ argument_list|(
 name|srgb_profile
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|transform
+condition|)
+block|{
 name|gimp_color_transform_process_pixels
 argument_list|(
 name|transform
@@ -930,6 +948,7 @@ argument_list|(
 name|transform
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_signal_emit_by_name
 argument_list|(
