@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a48790103
+DECL|enum|__anon2bd4a5a20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a48790203
+DECL|enum|__anon2bd4a5a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9871,9 +9871,6 @@ name|GIMP_LAYER_MODE_COLOR_ERASE
 case|:
 case|case
 name|GIMP_LAYER_MODE_ERASE
-case|:
-case|case
-name|GIMP_LAYER_MODE_MONO_MIX
 case|:
 case|case
 name|GIMP_LAYER_MODE_MERGE
