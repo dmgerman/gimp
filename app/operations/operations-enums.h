@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277fb3fc0103
+DECL|enum|__anon2c0f17390103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277fb3fc0203
+DECL|enum|__anon2c0f17390203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277fb3fc0303
+DECL|enum|__anon2c0f17390303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -291,10 +291,10 @@ DECL|enumerator|GIMP_LAYER_MODE_HSV_SATURATION
 name|GIMP_LAYER_MODE_HSV_SATURATION
 block|,
 comment|/*< desc="Saturation (HSV)">*/
-DECL|enumerator|GIMP_LAYER_MODE_HSV_COLOR
-name|GIMP_LAYER_MODE_HSV_COLOR
+DECL|enumerator|GIMP_LAYER_MODE_HSL_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
-comment|/*< desc="Color (HSV)">*/
+comment|/*< desc="Color (HSL)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE
 name|GIMP_LAYER_MODE_HSV_VALUE
 block|,
@@ -423,7 +423,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon277fb3fc0403
+DECL|enum|__anon2c0f17390403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -461,7 +461,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon277fb3fc0503
+DECL|enum|__anon2c0f17390503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -517,7 +517,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon277fb3fc0603
+DECL|enum|__anon2c0f17390603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -547,7 +547,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon277fb3fc0703
+DECL|enum|__anon2c0f17390703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

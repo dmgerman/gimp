@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27926a5c0103
+DECL|enum|__anon2b43ffdd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7320,8 +7320,8 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|blendfun_hsv_color (const float * dest,const float * src,float * out,int samples)
-name|blendfun_hsv_color
+DECL|function|blendfun_hsl_color (const float * dest,const float * src,float * out,int samples)
+name|blendfun_hsl_color
 parameter_list|(
 specifier|const
 name|float
@@ -10393,10 +10393,10 @@ return|return
 name|blendfun_overlay
 return|;
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 case|:
 return|return
-name|blendfun_hsv_color
+name|blendfun_hsl_color
 return|;
 case|case
 name|GIMP_LAYER_MODE_HSV_HUE

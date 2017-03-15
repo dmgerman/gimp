@@ -724,11 +724,11 @@ literal|"hsv-saturation"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
-literal|"GIMP_LAYER_MODE_HSV_COLOR"
+literal|"GIMP_LAYER_MODE_HSL_COLOR"
 block|,
-literal|"hsv-color"
+literal|"hsl-color"
 block|}
 block|,
 block|{
@@ -1439,13 +1439,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSV)"
+literal|"Color (HSL)"
 argument_list|)
 block|,
 name|NULL

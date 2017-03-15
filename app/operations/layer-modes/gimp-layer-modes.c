@@ -2041,7 +2041,7 @@ name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
 operator|.
 name|op_name
@@ -3080,7 +3080,7 @@ name|GIMP_LAYER_MODE_HSV_HUE
 block|,
 name|GIMP_LAYER_MODE_HSV_SATURATION
 block|,
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
 name|GIMP_LAYER_MODE_HSV_VALUE
 block|,
@@ -3373,13 +3373,14 @@ index|[
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
 index|]
 operator|=
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
 index|[
 name|GIMP_LAYER_MODE_GROUP_LEGACY
 index|]
 operator|=
 name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+comment|/* HSV_COLOR_LEGACY actually uses HSL */
 block|}
 block|,
 block|{

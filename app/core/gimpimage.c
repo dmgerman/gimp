@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4a5a20103
+DECL|enum|__anon273c94230103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4a5a20203
+DECL|enum|__anon273c94230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9813,7 +9813,7 @@ case|case
 name|GIMP_LAYER_MODE_HSV_SATURATION
 case|:
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 case|:
 case|case
 name|GIMP_LAYER_MODE_HSV_VALUE

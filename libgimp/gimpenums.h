@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710103
+DECL|enum|__anon29b6a5cf0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710203
+DECL|enum|__anon29b6a5cf0203
 block|{
 DECL|enumerator|GIMP_CONVERT_DITHER_NONE
 name|GIMP_CONVERT_DITHER_NONE
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710303
+DECL|enum|__anon29b6a5cf0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710403
+DECL|enum|__anon29b6a5cf0403
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -196,7 +196,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710503
+DECL|enum|__anon29b6a5cf0503
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -239,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295bc5710603
+DECL|enum|__anon29b6a5cf0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -358,8 +358,8 @@ block|,
 DECL|enumerator|GIMP_LAYER_MODE_HSV_SATURATION
 name|GIMP_LAYER_MODE_HSV_SATURATION
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_HSV_COLOR
-name|GIMP_LAYER_MODE_HSV_COLOR
+DECL|enumerator|GIMP_LAYER_MODE_HSL_COLOR
+name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
 DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE
 name|GIMP_LAYER_MODE_HSV_VALUE
