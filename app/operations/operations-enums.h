@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0f17390103
+DECL|enum|__anon2bbd1eed0103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0f17390203
+DECL|enum|__anon2bbd1eed0203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0f17390303
+DECL|enum|__anon2bbd1eed0303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -209,6 +209,7 @@ DECL|enumerator|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 block|,
 comment|/*< desc="Hard light (legacy)">*/
+comment|/*  Since 2.8 (XCF version 2)  */
 DECL|enumerator|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 block|,
@@ -225,7 +226,7 @@ DECL|enumerator|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 block|,
 comment|/*< desc="Color erase (legacy)">*/
-comment|/*  Since 2.8  */
+comment|/*  Since 2.10 (XCF version 9) */
 DECL|enumerator|GIMP_LAYER_MODE_OVERLAY
 name|GIMP_LAYER_MODE_OVERLAY
 block|,
@@ -246,7 +247,7 @@ DECL|enumerator|GIMP_LAYER_MODE_LCH_LIGHTNESS
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 block|,
 comment|/*< desc="Lightness (LCH)">*/
-comment|/*  Since 2.10  */
+comment|/*  Since 2.10 (XCF version 10)  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
 name|GIMP_LAYER_MODE_NORMAL
 block|,
@@ -423,7 +424,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c0f17390403
+DECL|enum|__anon2bbd1eed0403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -461,7 +462,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c0f17390503
+DECL|enum|__anon2bbd1eed0503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -517,7 +518,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2c0f17390603
+DECL|enum|__anon2bbd1eed0603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
 name|GIMP_LAYER_MODE_AFFECT_NONE
@@ -547,7 +548,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2c0f17390703
+DECL|enum|__anon2bbd1eed0703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
