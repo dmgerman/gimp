@@ -229,7 +229,7 @@ DECL|macro|GIMP_COLOR_MODE
 define|#
 directive|define
 name|GIMP_COLOR_MODE
-value|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+value|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 end_define
 
 begin_define

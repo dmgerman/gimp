@@ -516,11 +516,11 @@ literal|"hsv-saturation-legacy"
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
-literal|"GIMP_LAYER_MODE_HSV_COLOR_LEGACY"
+literal|"GIMP_LAYER_MODE_HSL_COLOR_LEGACY"
 block|,
-literal|"hsv-color-legacy"
+literal|"hsl-color-legacy"
 block|}
 block|,
 block|{
@@ -1101,13 +1101,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
 name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSV) (legacy)"
+literal|"Color (HSL) (legacy)"
 argument_list|)
 block|,
 name|NULL

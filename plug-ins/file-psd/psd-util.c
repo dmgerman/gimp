@@ -3284,7 +3284,7 @@ case|case
 name|GIMP_LAYER_MODE_LCH_COLOR
 case|:
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 case|:
 name|psd_mode
 operator|=

@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3025a90103
+DECL|enum|__anon294b48e70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10704,7 +10704,7 @@ case|case
 name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 case|:
 case|case
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 case|:
 case|case
 name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY

@@ -294,7 +294,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer-modes-legacy/gimpoperationhsvcolorlegacy.h"
+file|"layer-modes-legacy/gimpoperationhslcolorlegacy.h"
 end_include
 
 begin_include
@@ -602,7 +602,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_HSV_COLOR_LEGACY
+name|GIMP_TYPE_OPERATION_HSL_COLOR_LEGACY
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

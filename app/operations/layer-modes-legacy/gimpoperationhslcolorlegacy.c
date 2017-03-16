@@ -42,16 +42,16 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationhsvcolorlegacy.h"
+file|"gimpoperationhslcolorlegacy.h"
 end_include
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationHsvColorLegacy,gimp_operation_hsv_color_legacy,GIMP_TYPE_OPERATION_LAYER_MODE)
+DECL|function|G_DEFINE_TYPE (GimpOperationHslColorLegacy,gimp_operation_hsl_color_legacy,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationHsvColorLegacy
+argument|GimpOperationHslColorLegacy
 argument_list|,
-argument|gimp_operation_hsv_color_legacy
+argument|gimp_operation_hsl_color_legacy
 argument_list|,
 argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
@@ -60,9 +60,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_operation_hsv_color_legacy_class_init
+name|gimp_operation_hsl_color_legacy_class_init
 parameter_list|(
-name|GimpOperationHsvColorLegacyClass
+name|GimpOperationHslColorLegacyClass
 modifier|*
 name|klass
 parameter_list|)
@@ -95,7 +95,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:hsv-color-legacy"
+literal|"gimp:hsl-color-legacy"
 argument_list|,
 literal|"description"
 argument_list|,
@@ -108,7 +108,7 @@ name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_hsv_color_legacy_process
+name|gimp_operation_hsl_color_legacy_process
 expr_stmt|;
 block|}
 end_function
@@ -116,10 +116,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_hsv_color_legacy_init (GimpOperationHsvColorLegacy * self)
-name|gimp_operation_hsv_color_legacy_init
+DECL|function|gimp_operation_hsl_color_legacy_init (GimpOperationHslColorLegacy * self)
+name|gimp_operation_hsl_color_legacy_init
 parameter_list|(
-name|GimpOperationHsvColorLegacy
+name|GimpOperationHslColorLegacy
 modifier|*
 name|self
 parameter_list|)
@@ -128,8 +128,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_hsv_color_legacy_process (GeglOperation * op,void * in_p,void * layer_p,void * mask_p,void * out_p,glong samples,const GeglRectangle * roi,gint level)
-name|gimp_operation_hsv_color_legacy_process
+DECL|function|gimp_operation_hsl_color_legacy_process (GeglOperation * op,void * in_p,void * layer_p,void * mask_p,void * out_p,glong samples,const GeglRectangle * roi,gint level)
+name|gimp_operation_hsl_color_legacy_process
 parameter_list|(
 name|GeglOperation
 modifier|*

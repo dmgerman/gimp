@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/layer-modes-legacy/gimpoperationhsvcolorlegacy.h"
+file|"operations/layer-modes-legacy/gimpoperationhslcolorlegacy.h"
 end_include
 
 begin_include
@@ -881,17 +881,17 @@ name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|}
 block|,
 block|{
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
 operator|.
 name|op_name
 operator|=
-literal|"gimp:hsv-color-legacy"
+literal|"gimp:hsl-color-legacy"
 block|,
 operator|.
 name|function
 operator|=
-name|gimp_operation_hsv_color_legacy_process
+name|gimp_operation_hsl_color_legacy_process
 block|,
 operator|.
 name|flags
@@ -3166,7 +3166,7 @@ name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 block|,
 name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 block|,
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
 name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 block|}
@@ -3379,8 +3379,7 @@ index|[
 name|GIMP_LAYER_MODE_GROUP_LEGACY
 index|]
 operator|=
-name|GIMP_LAYER_MODE_HSV_COLOR_LEGACY
-comment|/* HSV_COLOR_LEGACY actually uses HSL */
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|}
 block|,
 block|{
