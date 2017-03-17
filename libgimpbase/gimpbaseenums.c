@@ -2689,6 +2689,14 @@ literal|"luminance"
 block|}
 block|,
 block|{
+name|GIMP_DESATURATE_VALUE
+block|,
+literal|"GIMP_DESATURATE_VALUE"
+block|,
+literal|"value"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -2711,7 +2719,7 @@ name|NC_
 argument_list|(
 literal|"desaturate-mode"
 argument_list|,
-literal|"Lightness"
+literal|"Lightness (HSL)"
 argument_list|)
 block|,
 name|NULL
@@ -2737,7 +2745,7 @@ name|NC_
 argument_list|(
 literal|"desaturate-mode"
 argument_list|,
-literal|"Average"
+literal|"Average (HSI Intensity)"
 argument_list|)
 block|,
 name|NULL
@@ -2751,6 +2759,19 @@ argument_list|(
 literal|"desaturate-mode"
 argument_list|,
 literal|"Luminance"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_DESATURATE_VALUE
+block|,
+name|NC_
+argument_list|(
+literal|"desaturate-mode"
+argument_list|,
+literal|"Value (HSV)"
 argument_list|)
 block|,
 name|NULL
