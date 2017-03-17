@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a3ae40103
+DECL|enum|__anon294648b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,15 +406,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpEditor
 modifier|*
@@ -986,11 +982,11 @@ name|gimp
 operator|->
 name|config
 argument_list|,
-literal|"notify::icon-size"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 argument_list|)
 argument_list|,
 name|editor
@@ -1097,7 +1093,7 @@ name|config
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 argument_list|)
 argument_list|,
 name|editor
@@ -1503,11 +1499,9 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 argument_list|(
 name|config
-argument_list|,
-name|NULL
 argument_list|,
 name|editor
 argument_list|)
@@ -1829,7 +1823,7 @@ name|config
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 argument_list|)
 argument_list|,
 name|editor
@@ -1874,11 +1868,11 @@ name|gimp
 operator|->
 name|config
 argument_list|,
-literal|"notify::icon-size"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_editor_icon_size_notify
+name|gimp_editor_config_size_changed
 argument_list|)
 argument_list|,
 name|editor
@@ -2425,7 +2419,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1a3ae40208
+DECL|struct|__anon294648b00208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -3811,16 +3805,11 @@ condition|(
 name|config
 condition|)
 block|{
-name|g_object_get
+name|size
+operator|=
+name|gimp_gui_config_detect_icon_size
 argument_list|(
 name|config
-argument_list|,
-literal|"icon-size"
-argument_list|,
-operator|&
-name|size
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3915,16 +3904,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_editor_icon_size_notify (GimpGuiConfig * config,GParamSpec * pspec,GimpEditor * editor)
-name|gimp_editor_icon_size_notify
+DECL|function|gimp_editor_config_size_changed (GimpGuiConfig * config,GimpEditor * editor)
+name|gimp_editor_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpEditor
 modifier|*

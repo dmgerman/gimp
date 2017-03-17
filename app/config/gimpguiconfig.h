@@ -297,6 +297,18 @@ DECL|member|parent_class
 name|GimpDisplayConfigClass
 name|parent_class
 decl_stmt|;
+DECL|member|size_changed
+name|void
+function_decl|(
+modifier|*
+name|size_changed
+function_decl|)
+parameter_list|(
+name|GimpGuiConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -310,6 +322,17 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpIconSize
+name|gimp_gui_config_detect_icon_size
+parameter_list|(
+name|GimpGuiConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

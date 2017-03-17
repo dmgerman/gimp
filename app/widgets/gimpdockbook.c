@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a087a410103
+DECL|enum|__anon2a31004b0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -856,15 +856,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dockbook_tab_icon_size_notify
+name|gimp_dockbook_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpDockbook
 modifier|*
@@ -1565,7 +1561,7 @@ name|config
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dockbook_tab_icon_size_notify
+name|gimp_dockbook_config_size_changed
 argument_list|)
 argument_list|,
 name|dockbook
@@ -3563,7 +3559,7 @@ name|config
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dockbook_tab_icon_size_notify
+name|gimp_dockbook_config_size_changed
 argument_list|)
 argument_list|,
 name|dockbook
@@ -3596,11 +3592,11 @@ name|gimp
 operator|->
 name|config
 argument_list|,
-literal|"notify::icon-size"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dockbook_tab_icon_size_notify
+name|gimp_dockbook_config_size_changed
 argument_list|)
 argument_list|,
 name|dockbook
@@ -6098,7 +6094,9 @@ argument_list|)
 operator|->
 name|gimp
 expr_stmt|;
-name|g_object_get
+name|size
+operator|=
+name|gimp_gui_config_detect_icon_size
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -6106,13 +6104,6 @@ name|gimp
 operator|->
 name|config
 argument_list|)
-argument_list|,
-literal|"icon-size"
-argument_list|,
-operator|&
-name|size
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Match GimpIconSize with GtkIconSize. */
@@ -6224,7 +6215,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_get
+name|size
+operator|=
+name|gimp_gui_config_detect_icon_size
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -6232,13 +6225,6 @@ name|gimp
 operator|->
 name|config
 argument_list|)
-argument_list|,
-literal|"icon-size"
-argument_list|,
-operator|&
-name|size
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Match GimpIconSize with GtkIconSize. */
@@ -6608,16 +6594,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dockbook_tab_icon_size_notify (GimpGuiConfig * config,GParamSpec * pspec,GimpDockbook * dockbook)
-name|gimp_dockbook_tab_icon_size_notify
+DECL|function|gimp_dockbook_config_size_changed (GimpGuiConfig * config,GimpDockbook * dockbook)
+name|gimp_dockbook_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpDockbook
 modifier|*

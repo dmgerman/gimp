@@ -309,15 +309,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpToolPalette
 modifier|*
@@ -536,7 +532,7 @@ name|config
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 argument_list|)
 argument_list|,
 name|palette
@@ -836,7 +832,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -844,8 +840,6 @@ name|gimp
 operator|->
 name|config
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|,
 name|GIMP_TOOL_PALETTE
 argument_list|(
@@ -1281,7 +1275,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 argument_list|)
 argument_list|,
 name|palette
@@ -1577,17 +1571,17 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-literal|"notify::icon-size"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 argument_list|)
 argument_list|,
 name|palette
 argument_list|)
 expr_stmt|;
-name|gimp_tool_palette_icon_size_notify
+name|gimp_tool_palette_config_size_changed
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -1597,8 +1591,6 @@ name|gimp
 operator|->
 name|config
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|,
 name|palette
 argument_list|)
@@ -2071,16 +2063,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_palette_icon_size_notify (GimpGuiConfig * config,GParamSpec * pspec,GimpToolPalette * palette)
-name|gimp_tool_palette_icon_size_notify
+DECL|function|gimp_tool_palette_config_size_changed (GimpGuiConfig * config,GimpToolPalette * palette)
+name|gimp_tool_palette_config_size_changed
 parameter_list|(
 name|GimpGuiConfig
 modifier|*
 name|config
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|,
 name|GimpToolPalette
 modifier|*
@@ -2093,16 +2081,11 @@ decl_stmt|;
 name|GtkIconSize
 name|tool_icon_size
 decl_stmt|;
-name|g_object_get
+name|size
+operator|=
+name|gimp_gui_config_detect_icon_size
 argument_list|(
 name|config
-argument_list|,
-literal|"icon-size"
-argument_list|,
-operator|&
-name|size
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Match GimpIconSize with GtkIconSize for the toolbox icons. */
