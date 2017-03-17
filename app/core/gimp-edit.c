@@ -1729,7 +1729,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|gimp_item_set_offset
+name|gimp_item_translate
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1739,6 +1739,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_start
