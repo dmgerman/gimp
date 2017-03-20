@@ -501,7 +501,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Flip horizontally"
+literal|"Flip drawable horizontally"
 argument_list|)
 block|,
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -529,7 +529,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Flip vertically"
+literal|"Flip drawable vertically"
 argument_list|)
 block|,
 name|GIMP_ORIENTATION_VERTICAL
@@ -569,7 +569,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Rotate 90 degrees to the right"
+literal|"Rotate drawable 90 degrees to the right"
 argument_list|)
 block|,
 name|GIMP_ROTATE_90
@@ -597,7 +597,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Turn upside-down"
+literal|"Turn drawable upside-down"
 argument_list|)
 block|,
 name|GIMP_ROTATE_180
@@ -625,7 +625,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Rotate 90 degrees to the left"
+literal|"Rotate drawable 90 degrees to the left"
 argument_list|)
 block|,
 name|GIMP_ROTATE_270
