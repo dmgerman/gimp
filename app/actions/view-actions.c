@@ -2000,7 +2000,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Flip the view Horizontally"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -2026,7 +2031,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
+literal|"Flip the view Vertically"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -2126,7 +2136,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rotate 15 degrees to the right"
+literal|"Rotate the view 15 degrees to the right"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_NEXT
@@ -2154,7 +2164,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rotate 90 degrees to the right"
+literal|"Rotate the view 90 degrees to the right"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
@@ -2182,7 +2192,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Turn upside-down"
+literal|"Turn the view upside-down"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_LAST
@@ -2210,7 +2220,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rotate 90 degrees to the left"
+literal|"Rotate the view 90 degrees to the left"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
@@ -2238,7 +2248,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Rotate 15 degrees to the left"
+literal|"Rotate the view 15 degrees to the left"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
