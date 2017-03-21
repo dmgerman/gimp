@@ -2004,7 +2004,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Flip the view Horizontally"
+literal|"Flip the view horizontally"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -2035,7 +2035,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Flip the view Vertically"
+literal|"Flip the view vertically"
 argument_list|)
 block|,
 name|G_CALLBACK
