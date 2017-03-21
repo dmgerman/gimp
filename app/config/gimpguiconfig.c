@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc-blurbs.h"
 end_include
 
@@ -100,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3d2cd0103
+DECL|enum|__anon294119b30103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -113,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3d2cd0203
+DECL|enum|__anon294119b30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -438,7 +432,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|g_cclosure_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
