@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933690b0103
+DECL|enum|__anon2c3d6fbb0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2697,7 +2697,7 @@ name|GIMP_PLUG_IN_ERROR
 argument_list|,
 name|GIMP_PLUG_IN_FAILED
 argument_list|,
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"in the invalid menu location \"%s\".\n"
 literal|"The menu path must look like either \"<Prefix>\" "
@@ -3349,7 +3349,7 @@ name|GIMP_PLUG_IN_ERROR
 argument_list|,
 name|GIMP_PLUG_IN_FAILED
 argument_list|,
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-in \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\" "
 literal|"in the invalid menu location \"%s\".\n"
 literal|"Use either \"<Image>\", "
@@ -3476,9 +3476,9 @@ name|GIMP_PLUG_IN_ERROR
 argument_list|,
 name|GIMP_PLUG_IN_FAILED
 argument_list|,
-literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"Plug-in \"%s\"\n(%s)\n\n"
 literal|"attempted to install %s procedure \"%s\" "
-literal|"which does not take the standard %s Plug-In "
+literal|"which does not take the standard %s plug-in's "
 literal|"arguments: (%s)."
 argument_list|,
 name|basename

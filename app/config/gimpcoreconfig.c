@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298609380103
+DECL|enum|__anon288911050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -618,7 +618,7 @@ name|PROP_PLUG_IN_PATH
 argument_list|,
 literal|"plug-in-path"
 argument_list|,
-literal|"Plug-In path"
+literal|"Plug-in path"
 argument_list|,
 name|PLUG_IN_PATH_BLURB
 argument_list|,

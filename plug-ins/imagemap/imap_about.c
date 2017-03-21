@@ -79,7 +79,7 @@ literal|"program-name"
 argument_list|,
 name|_
 argument_list|(
-literal|"Image Map Plug-In"
+literal|"Image Map Plug-in"
 argument_list|)
 argument_list|,
 literal|"version"

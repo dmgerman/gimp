@@ -1023,7 +1023,7 @@ name|use_shm
 block|,
 name|N_
 argument_list|(
-literal|"Do not use shared memory between GIMP and plugins"
+literal|"Do not use shared memory between GIMP and plug-ins"
 argument_list|)
 block|,
 name|NULL

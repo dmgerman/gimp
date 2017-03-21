@@ -407,7 +407,7 @@ name|action_path
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/Filters/Recently Used/Plug-Ins"
+literal|"%s/Filters/Recently Used/Plug-ins"
 argument_list|,
 name|ui_path
 argument_list|)

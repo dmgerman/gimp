@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b93b3610108
+DECL|struct|__anon2ae7d3f20108
 block|{
 DECL|member|filename
 name|gchar
@@ -3023,7 +3023,7 @@ name|fprintf
 argument_list|(
 name|mailpipe
 argument_list|,
-literal|"X-Mailer: GIMP Useless Mail Plug-In %s\n"
+literal|"X-Mailer: GIMP Useless Mail plug-in %s\n"
 argument_list|,
 name|GIMP_VERSION
 argument_list|)

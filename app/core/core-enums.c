@@ -4905,7 +4905,7 @@ name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Plug-In"
+literal|"Plug-in"
 argument_list|)
 block|,
 name|NULL

@@ -184,8 +184,8 @@ argument_list|(
 literal|"Stretch brightness values to cover the full range"
 argument_list|)
 argument_list|,
-literal|"This plugin performs almost the same operation as "
-literal|"the 'contrast autostretch' plugin, except that it "
+literal|"This plug-in performs almost the same operation as "
+literal|"the 'contrast autostretch' plug-in, except that it "
 literal|"won't allow the color channels to normalize "
 literal|"independently.  This is actually what most people "
 literal|"probably want instead of contrast-autostretch; use "
@@ -786,7 +786,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c30f7f0108
+DECL|struct|__anon2944286f0108
 block|{
 DECL|member|lut
 name|guchar

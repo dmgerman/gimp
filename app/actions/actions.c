@@ -948,7 +948,7 @@ literal|"plug-in"
 block|,
 name|N_
 argument_list|(
-literal|"Plug-Ins"
+literal|"Plug-ins"
 argument_list|)
 block|,
 name|GIMP_ICON_PLUGIN

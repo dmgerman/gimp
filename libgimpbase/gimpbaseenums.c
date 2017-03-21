@@ -6907,7 +6907,7 @@ name|NC_
 argument_list|(
 literal|"pdb-proc-type"
 argument_list|,
-literal|"GIMP Plug-In"
+literal|"GIMP Plug-in"
 argument_list|)
 block|,
 name|NULL

@@ -26410,7 +26410,7 @@ literal|"plug-in-laplace"
 argument_list|,
 literal|"High-resolution edge detection"
 argument_list|,
-literal|"This plugin creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
+literal|"This plug-in creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-laplace' for credits."
 argument_list|,
@@ -26780,7 +26780,7 @@ literal|"plug-in-make-seamless"
 argument_list|,
 literal|"Alters edges to make the image seamlessly tileable"
 argument_list|,
-literal|"This plugin creates a seamless tileable from the input drawable."
+literal|"This plug-in creates a seamless tileable from the input drawable."
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:tile-seamless' for credits."
 argument_list|,
@@ -30666,7 +30666,7 @@ literal|"plug-in-semiflatten"
 argument_list|,
 literal|"Replace partial transparency with the current background color"
 argument_list|,
-literal|"This plugin flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color."
+literal|"This plug-in flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -31324,7 +31324,7 @@ literal|"plug-in-sobel"
 argument_list|,
 literal|"Specialized direction-dependent edge detection"
 argument_list|,
-literal|"This plugin calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolute value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled.\""
+literal|"This plug-in calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolute value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled.\""
 argument_list|,
 literal|"Compatibility procedure. Please see 'gegl:edge-sobel' for credits."
 argument_list|,

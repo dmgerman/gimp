@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a71e90103
+DECL|enum|__anon28a3aaa60103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -967,7 +967,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Plug-In Interpreters"
+literal|"Plug-in Interpreters"
 argument_list|)
 argument_list|,
 literal|0.8
@@ -1009,7 +1009,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Plug-In Environment"
+literal|"Plug-in Environment"
 argument_list|)
 argument_list|,
 literal|0.9

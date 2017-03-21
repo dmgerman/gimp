@@ -921,7 +921,7 @@ name|status_callback
 argument_list|(
 name|_
 argument_list|(
-literal|"Searching Plug-Ins"
+literal|"Searching plug-ins"
 argument_list|)
 argument_list|,
 literal|""

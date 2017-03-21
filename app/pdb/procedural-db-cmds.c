@@ -2432,7 +2432,7 @@ literal|"proc-type"
 argument_list|,
 literal|"proc type"
 argument_list|,
-literal|"The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-In', 'GIMP Extension', 'Temporary Procedure' }"
+literal|"The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }"
 argument_list|,
 name|TRUE
 argument_list|,

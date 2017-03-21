@@ -204,7 +204,7 @@ name|PLUG_IN_PROC
 argument_list|,
 literal|"Returns a list of matching filenames"
 argument_list|,
-literal|"This can be useful in scripts and other plugins "
+literal|"This can be useful in scripts and other plug-ins "
 literal|"(e.g., batch-conversion). See the glob(7) manpage "
 literal|"for more info. Note however that this isn't a "
 literal|"full-featured glob implementation. It only handles "

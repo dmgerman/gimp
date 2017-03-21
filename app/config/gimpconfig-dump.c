@@ -628,7 +628,7 @@ literal|"environment variable GIMP2_DATADIR or to the compiled-in default value\
 literal|"@gimpdatadir@.\n"
 literal|".TP\n"
 literal|".I gimp_plug_in_dir\n"
-literal|"Base to paths for architecture-specific plugins and modules, which is set\n"
+literal|"Base to paths for architecture-specific plug-ins and modules, which is set\n"
 literal|"to the value of the environment variable GIMP2_PLUGINDIR or to the\n"
 literal|"compiled-in default value @gimpplugindir@.\n"
 literal|".TP\n"

@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec3ab20108
+DECL|struct|__anon2b6da0fc0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec3ab20203
+DECL|enum|__anon2b6da0fc0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -349,7 +349,7 @@ argument_list|,
 literal|"This is the pnmnlfilt, in gimp's clothing.  "
 literal|"See the pnmnlfilt manpage for details."
 argument_list|,
-literal|"Graeme W. Gill, gimp 0.99 plugin by Eric L. Hernes"
+literal|"Graeme W. Gill, gimp 0.99 plug-in by Eric L. Hernes"
 argument_list|,
 literal|"Graeme W. Gill, Eric L. Hernes"
 argument_list|,

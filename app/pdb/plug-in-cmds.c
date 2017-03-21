@@ -1650,9 +1650,9 @@ name|procedure
 argument_list|,
 literal|"gimp-plugins-query"
 argument_list|,
-literal|"Queries the plugin database for its contents."
+literal|"Queries the plug-in database for its contents."
 argument_list|,
-literal|"This procedure queries the contents of the plugin database."
+literal|"This procedure queries the contents of the plug-in database."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -1699,7 +1699,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1721,7 +1721,7 @@ literal|"menu-path"
 argument_list|,
 literal|"menu path"
 argument_list|,
-literal|"The menu path of the plugin"
+literal|"The menu path of the plug-in"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1737,7 +1737,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1775,7 +1775,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1797,7 +1797,7 @@ literal|"plugin-location"
 argument_list|,
 literal|"plugin location"
 argument_list|,
-literal|"Location of the plugin program"
+literal|"Location of the plug-in program"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1813,7 +1813,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1835,7 +1835,7 @@ literal|"plugin-image-type"
 argument_list|,
 literal|"plugin image type"
 argument_list|,
-literal|"Type of image that this plugin will work on"
+literal|"Type of image that this plug-in will work on"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1851,7 +1851,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1873,7 +1873,7 @@ literal|"plugin-install-time"
 argument_list|,
 literal|"plugin install time"
 argument_list|,
-literal|"Time that the plugin was installed"
+literal|"Time that the plug-in was installed"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1889,7 +1889,7 @@ literal|"num-plugins"
 argument_list|,
 literal|"num plugins"
 argument_list|,
-literal|"The number of plugins"
+literal|"The number of plug-ins"
 argument_list|,
 literal|0
 argument_list|,
@@ -1911,7 +1911,7 @@ literal|"plugin-real-name"
 argument_list|,
 literal|"plugin real name"
 argument_list|,
-literal|"The internal name of the plugin"
+literal|"The internal name of the plug-in"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

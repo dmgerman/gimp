@@ -2241,7 +2241,7 @@ name|undo_desc
 init|=
 name|_
 argument_list|(
-literal|"Plug-In"
+literal|"Plug-in"
 argument_list|)
 decl_stmt|;
 if|if

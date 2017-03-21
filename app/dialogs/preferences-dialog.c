@@ -11567,7 +11567,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c76ed30108
+DECL|struct|__anon2a98d85b0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12444,7 +12444,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c76ed30208
+DECL|struct|__anon2a98d85b0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12582,7 +12582,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c76ed30308
+DECL|struct|__anon2a98d85b0308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -12834,12 +12834,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Plug-Ins"
+literal|"Plug-ins"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Plug-In Folders"
+literal|"Plug-in Folders"
 argument_list|)
 block|,
 literal|"folders-plug-ins"
@@ -12848,7 +12848,7 @@ name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 block|,
 name|N_
 argument_list|(
-literal|"Select Plug-In Folders"
+literal|"Select plug-in Folders"
 argument_list|)
 block|,
 literal|"plug-in-path"

@@ -538,7 +538,7 @@ name|char
 name|gimpenums_doc
 index|[]
 init|=
-literal|"This module provides interfaces to allow you to write gimp plugins"
+literal|"This module provides interfaces to allow you to write gimp plug-ins"
 decl_stmt|;
 end_decl_stmt
 

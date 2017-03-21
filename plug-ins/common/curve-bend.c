@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd6d9890108
+DECL|struct|__anon29859b390108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd6d9890208
+DECL|struct|__anon29859b390208
 block|{
 DECL|member|y
 name|gint32
@@ -2315,7 +2315,7 @@ literal|"mode) If rotation is not 0, the layer is rotated "
 literal|"before and rotated back after the bend operation. "
 literal|"This enables bending in other directions than "
 literal|"vertical. bending usually changes the size of "
-literal|"the handled layer. this plugin sets the offsets "
+literal|"the handled layer. this plug-in sets the offsets "
 literal|"of the handled layer to keep its center at the "
 literal|"same position"
 argument_list|,

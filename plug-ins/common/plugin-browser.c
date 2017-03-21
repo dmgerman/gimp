@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88d3fb0103
+DECL|enum|__anon2ad53c520103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88d3fb0203
+DECL|enum|__anon2ad53c520203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d3fb0308
+DECL|struct|__anon2ad53c520308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d3fb0408
+DECL|struct|__anon2ad53c520408
 block|{
 DECL|member|menu
 name|gchar
@@ -440,7 +440,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Plug-In Browser"
+literal|"_Plug-in Browser"
 argument_list|)
 argument_list|,
 literal|""
@@ -2133,7 +2133,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Plug-In Browser"
+literal|"Plug-in Browser"
 argument_list|)
 argument_list|,
 name|PLUG_IN_ROLE

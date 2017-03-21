@@ -1056,7 +1056,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In '%s' left image undo in inconsistent state, "
+literal|"Plug-in '%s' left image undo in inconsistent state, "
 literal|"closing open undo groups."
 argument_list|,
 name|gimp_procedure_get_label
