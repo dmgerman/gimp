@@ -237,11 +237,11 @@ modifier|*
 name|untitled_file
 decl_stmt|;
 comment|/*  a file saying "Untitled"     */
-DECL|member|xcf_compat_mode
+DECL|member|xcf_compression
 name|gboolean
-name|xcf_compat_mode
+name|xcf_compression
 decl_stmt|;
-comment|/*  if possible, save compat XCF */
+comment|/*  XCF compression enabled?     */
 DECL|member|dirty
 name|gint
 name|dirty

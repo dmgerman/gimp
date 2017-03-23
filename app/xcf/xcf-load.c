@@ -1633,13 +1633,7 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|gimp_image_set_xcf_compat_mode
-argument_list|(
-name|image
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+comment|/* just ditch it, it's unused but shouldn't be re-saved */
 name|gimp_parasite_list_remove
 argument_list|(
 name|private
@@ -2743,6 +2737,15 @@ operator|->
 name|compression
 operator|=
 name|compression
+expr_stmt|;
+name|gimp_image_set_xcf_compression
+argument_list|(
+name|image
+argument_list|,
+name|compression
+operator|>=
+name|COMPRESS_ZLIB
+argument_list|)
 expr_stmt|;
 name|GIMP_LOG
 argument_list|(

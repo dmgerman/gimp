@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fda1e50103
+DECL|enum|__anon2a0c8d820103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -597,7 +597,7 @@ name|CHECK_URI_OK
 case|:
 block|{
 name|gboolean
-name|xcf_compat
+name|xcf_compression
 init|=
 name|FALSE
 decl_stmt|;
@@ -616,27 +616,14 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|GimpSaveDialog
-modifier|*
-name|save_dialog
-init|=
+name|xcf_compression
+operator|=
 name|GIMP_SAVE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-decl_stmt|;
-name|xcf_compat
-operator|=
-name|save_dialog
 operator|->
-name|compat
-operator|&&
-name|gtk_widget_get_sensitive
-argument_list|(
-name|save_dialog
-operator|->
-name|compat_toggle
-argument_list|)
+name|compression
 expr_stmt|;
 block|}
 if|if
@@ -680,7 +667,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|xcf_compat
+name|xcf_compression
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2546,7 +2533,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,GFile * file,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,gboolean xcf_compat,gboolean verbose_cancel)
+DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,GFile * file,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean export_backward,gboolean export_forward,gboolean xcf_compression,gboolean verbose_cancel)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GimpProgress
@@ -2582,7 +2569,7 @@ name|gboolean
 name|export_forward
 parameter_list|,
 name|gboolean
-name|xcf_compat
+name|xcf_compression
 parameter_list|,
 name|gboolean
 name|verbose_cancel
@@ -2637,11 +2624,11 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_set_xcf_compat_mode
+name|gimp_image_set_xcf_compression
 argument_list|(
 name|image
 argument_list|,
-name|xcf_compat
+name|xcf_compression
 argument_list|)
 expr_stmt|;
 name|status

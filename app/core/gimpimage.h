@@ -1043,21 +1043,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_set_xcf_compat_mode
+name|gimp_image_set_xcf_compression
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
 name|gboolean
-name|compat_mode
+name|compression
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_get_xcf_compat_mode
+name|gimp_image_get_xcf_compression
 parameter_list|(
 name|GimpImage
 modifier|*

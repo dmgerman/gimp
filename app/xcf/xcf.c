@@ -1429,7 +1429,7 @@ name|output_file
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_get_xcf_compat_mode
+name|gimp_image_get_xcf_compression
 argument_list|(
 name|image
 argument_list|)
@@ -1438,14 +1438,14 @@ name|info
 operator|.
 name|compression
 operator|=
-name|COMPRESS_RLE
+name|COMPRESS_ZLIB
 expr_stmt|;
 else|else
 name|info
 operator|.
 name|compression
 operator|=
-name|COMPRESS_ZLIB
+name|COMPRESS_RLE
 expr_stmt|;
 name|info
 operator|.

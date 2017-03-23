@@ -76,7 +76,7 @@ name|gboolean
 name|export_forward
 parameter_list|,
 name|gboolean
-name|xcf_compat
+name|xcf_compression
 parameter_list|,
 name|gboolean
 name|verbose_cancel

@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28997d4b0103
+DECL|enum|__anon29d9969e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28997d4b0203
+DECL|enum|__anon29d9969e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10109,15 +10109,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_xcf_compat_mode (GimpImage * image,gboolean compat_mode)
-name|gimp_image_set_xcf_compat_mode
+DECL|function|gimp_image_set_xcf_compression (GimpImage * image,gboolean compression)
+name|gimp_image_set_xcf_compression
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
 name|gboolean
-name|compat_mode
+name|compression
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -10133,17 +10133,17 @@ argument_list|(
 name|image
 argument_list|)
 operator|->
-name|xcf_compat_mode
+name|xcf_compression
 operator|=
-name|compat_mode
+name|compression
 expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_xcf_compat_mode (GimpImage * image)
-name|gimp_image_get_xcf_compat_mode
+DECL|function|gimp_image_get_xcf_compression (GimpImage * image)
+name|gimp_image_get_xcf_compression
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -10166,7 +10166,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|->
-name|xcf_compat_mode
+name|xcf_compression
 return|;
 block|}
 end_function
