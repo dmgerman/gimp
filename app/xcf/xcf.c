@@ -1036,15 +1036,10 @@ name|bytes_per_offset
 operator|=
 literal|4
 expr_stmt|;
-name|info
-operator|.
-name|cp
-operator|+=
 name|xcf_read_int8
 argument_list|(
+operator|&
 name|info
-operator|.
-name|input
 argument_list|,
 operator|(
 name|guint8
