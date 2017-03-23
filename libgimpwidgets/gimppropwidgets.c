@@ -9482,6 +9482,15 @@ name|lower
 argument_list|,
 name|upper
 argument_list|)
+operator|+
+literal|1
+operator|+
+name|gimp_unit_get_scaled_digits
+argument_list|(
+name|unit_value
+argument_list|,
+name|resolution
+argument_list|)
 argument_list|,
 name|update_policy
 argument_list|)
