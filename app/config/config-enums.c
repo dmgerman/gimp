@@ -751,11 +751,19 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_ICON_SIZE_DEFAULT
+name|GIMP_ICON_SIZE_AUTO
 block|,
-literal|"GIMP_ICON_SIZE_DEFAULT"
+literal|"GIMP_ICON_SIZE_AUTO"
 block|,
-literal|"default"
+literal|"auto"
+block|}
+block|,
+block|{
+name|GIMP_ICON_SIZE_THEME
+block|,
+literal|"GIMP_ICON_SIZE_THEME"
+block|,
+literal|"theme"
 block|}
 block|,
 block|{
@@ -807,13 +815,26 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_ICON_SIZE_DEFAULT
+name|GIMP_ICON_SIZE_AUTO
 block|,
 name|NC_
 argument_list|(
 literal|"icon-size"
 argument_list|,
-literal|"Default size"
+literal|"Guess ideal size"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_ICON_SIZE_THEME
+block|,
+name|NC_
+argument_list|(
+literal|"icon-size"
+argument_list|,
+literal|"Theme-set size"
 argument_list|)
 block|,
 name|NULL
