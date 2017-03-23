@@ -378,7 +378,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b74af270103
+DECL|enum|__anon28997d4b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +475,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b74af270203
+DECL|enum|__anon28997d4b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9960,6 +9960,48 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+comment|/* if version is 10 (lots of new layer modes), go to version 11 with    * 64 bit offsets right away    */
+if|if
+condition|(
+name|version
+operator|==
+literal|10
+condition|)
+name|version
+operator|=
+literal|11
+expr_stmt|;
+comment|/* use the image's in-memory size as an upper bound to estimate the    * need for 64 bit file offsets inside the XCF, this is a *very*    * conservative estimate and should never fail    */
+if|if
+condition|(
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+operator|>=
+operator|(
+operator|(
+name|gint64
+operator|)
+literal|1
+operator|<<
+literal|32
+operator|)
+condition|)
+name|version
+operator|=
+name|MAX
+argument_list|(
+literal|11
+argument_list|,
+name|version
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|version
@@ -10035,6 +10077,9 @@ literal|9
 case|:
 case|case
 literal|10
+case|:
+case|case
+literal|11
 case|:
 if|if
 condition|(

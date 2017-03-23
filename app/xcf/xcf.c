@@ -263,7 +263,10 @@ name|xcf_load_image
 block|,
 comment|/* version  9 */
 name|xcf_load_image
+block|,
 comment|/* version 10 */
+name|xcf_load_image
+comment|/* version 11 */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -992,6 +995,12 @@ argument_list|)
 expr_stmt|;
 name|info
 operator|.
+name|bytes_per_offset
+operator|=
+literal|4
+expr_stmt|;
+name|info
+operator|.
 name|progress
 operator|=
 name|progress
@@ -1029,12 +1038,6 @@ expr_stmt|;
 name|success
 operator|=
 name|TRUE
-expr_stmt|;
-name|info
-operator|.
-name|bytes_per_offset
-operator|=
-literal|4
 expr_stmt|;
 name|xcf_read_int8
 argument_list|(
@@ -1118,6 +1121,20 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|info
+operator|.
+name|file_version
+operator|>=
+literal|11
+condition|)
+name|info
+operator|.
+name|bytes_per_offset
+operator|=
+literal|8
+expr_stmt|;
 if|if
 condition|(
 name|success
@@ -1394,6 +1411,12 @@ argument_list|)
 expr_stmt|;
 name|info
 operator|.
+name|bytes_per_offset
+operator|=
+literal|4
+expr_stmt|;
+name|info
+operator|.
 name|progress
 operator|=
 name|progress
@@ -1443,11 +1466,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|info
+operator|.
+name|file_version
+operator|>=
+literal|11
+condition|)
 name|info
 operator|.
 name|bytes_per_offset
 operator|=
-literal|4
+literal|8
 expr_stmt|;
 if|if
 condition|(
