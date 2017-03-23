@@ -1032,6 +1032,12 @@ name|TRUE
 expr_stmt|;
 name|info
 operator|.
+name|bytes_per_offset
+operator|=
+literal|4
+expr_stmt|;
+name|info
+operator|.
 name|cp
 operator|+=
 name|xcf_read_int8
@@ -1441,6 +1447,12 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|info
+operator|.
+name|bytes_per_offset
+operator|=
+literal|4
 expr_stmt|;
 if|if
 condition|(

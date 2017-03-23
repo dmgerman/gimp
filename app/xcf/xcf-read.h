@@ -36,6 +36,24 @@ end_function_decl
 
 begin_function_decl
 name|guint
+name|xcf_read_offset
+parameter_list|(
+name|GInputStream
+modifier|*
+name|input
+parameter_list|,
+name|goffset
+modifier|*
+name|data
+parameter_list|,
+name|gint
+name|count
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guint
 name|xcf_read_float
 parameter_list|(
 name|GInputStream

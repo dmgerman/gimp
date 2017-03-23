@@ -24,7 +24,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|guint
+name|goffset
 name|pos
 parameter_list|,
 name|GError

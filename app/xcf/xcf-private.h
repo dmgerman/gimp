@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abaf2b20103
+DECL|enum|__anon28a182b10103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abaf2b20203
+DECL|enum|__anon28a182b10203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abaf2b20303
+DECL|enum|__anon28a182b10303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abaf2b20403
+DECL|enum|__anon28a182b10403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abaf2b20503
+DECL|enum|__anon28a182b10503
 block|{
 DECL|enumerator|XCF_GROUP_ITEM_EXPANDED
 name|XCF_GROUP_ITEM_EXPANDED
@@ -359,8 +359,12 @@ modifier|*
 name|seekable
 decl_stmt|;
 DECL|member|cp
-name|guint
+name|goffset
 name|cp
+decl_stmt|;
+DECL|member|bytes_per_offset
+name|gint
+name|bytes_per_offset
 decl_stmt|;
 DECL|member|file
 name|GFile
@@ -392,7 +396,7 @@ modifier|*
 name|floating_sel
 decl_stmt|;
 DECL|member|floating_sel_offset
-name|guint
+name|goffset
 name|floating_sel_offset
 decl_stmt|;
 DECL|member|compression

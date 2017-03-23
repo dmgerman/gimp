@@ -642,16 +642,31 @@ value|G_STMT_START {  \   info->cp += xcf_write_int32 (info->output, data, count
 end_define
 
 begin_define
-DECL|macro|xcf_write_zero_int32_check_error (info,count)
+DECL|macro|xcf_write_offset_check_error (info,data,count)
 define|#
 directive|define
-name|xcf_write_zero_int32_check_error
+name|xcf_write_offset_check_error
+parameter_list|(
+name|info
+parameter_list|,
+name|data
+parameter_list|,
+name|count
+parameter_list|)
+value|G_STMT_START {  \   info->cp += xcf_write_offset (info->output, data, count,&tmp_error); \   if (tmp_error)                                                        \     {                                                                   \       g_propagate_error (error, tmp_error);                             \       return FALSE;                                                     \     }                                                                   \   } G_STMT_END
+end_define
+
+begin_define
+DECL|macro|xcf_write_zero_offset_check_error (info,count)
+define|#
+directive|define
+name|xcf_write_zero_offset_check_error
 parameter_list|(
 name|info
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {  \   info->cp += xcf_write_zero_int32 (info->output, count,&tmp_error); \   if (tmp_error)                                                      \     {                                                                 \       g_propagate_error (error, tmp_error);                           \       return FALSE;                                                   \     }                                                                 \   } G_STMT_END
+value|G_STMT_START {  \   info->cp += xcf_write_zero_offset (info->output, count,&tmp_error); \   if (tmp_error)                                                       \     {                                                                  \       g_propagate_error (error, tmp_error);                            \       return FALSE;                                                    \     }                                                                  \   } G_STMT_END
 end_define
 
 begin_define
@@ -765,10 +780,10 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|guint32
@@ -1001,7 +1016,7 @@ name|n_layers
 operator|+
 name|n_channels
 expr_stmt|;
-comment|/* write the property information for the image.    */
+comment|/* write the property information for the image */
 name|xcf_check_error
 argument_list|(
 name|xcf_save_image_props
@@ -1027,7 +1042,7 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write an empty offset table */
-name|xcf_write_zero_int32_check_error
+name|xcf_write_zero_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1082,7 +1097,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1142,7 +1157,9 @@ block|}
 comment|/* skip a '0' in the offset table to indicate the end of the layer    * offsets    */
 name|saved_pos
 operator|+=
-literal|4
+name|info
+operator|->
+name|bytes_per_offset
 expr_stmt|;
 for|for
 control|(
@@ -1181,7 +1198,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -3151,7 +3168,7 @@ case|case
 name|PROP_FLOATING_SELECTION
 case|:
 block|{
-name|guint32
+name|goffset
 name|dummy
 decl_stmt|;
 name|dummy
@@ -3160,7 +3177,9 @@ literal|0
 expr_stmt|;
 name|size
 operator|=
-literal|4
+name|info
+operator|->
+name|bytes_per_offset
 expr_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -3187,7 +3206,7 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -4660,15 +4679,16 @@ operator|>
 literal|0
 condition|)
 block|{
-name|guint32
+name|goffset
 name|base
-decl_stmt|,
+decl_stmt|;
+name|goffset
+name|pos
+decl_stmt|;
+name|guint32
 name|length
 init|=
 literal|0
-decl_stmt|;
-name|long
-name|pos
 decl_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -4677,7 +4697,7 @@ argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the parasite list will take              * we save the file position and write the length later              */
+comment|/* because we don't know how much room the parasite list              * will take we save the file position and write the              * length later              */
 name|pos
 operator|=
 name|info
@@ -4813,15 +4833,16 @@ case|case
 name|PROP_PATHS
 case|:
 block|{
-name|guint32
+name|goffset
 name|base
-decl_stmt|,
+decl_stmt|;
+name|goffset
+name|pos
+decl_stmt|;
+name|guint32
 name|length
 init|=
 literal|0
-decl_stmt|;
-name|glong
-name|pos
 decl_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -4830,7 +4851,7 @@ argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the paths list will take          * we save the file position and write the length later          */
+comment|/* because we don't know how much room the paths list will          * take we save the file position and write the length later          */
 name|pos
 operator|=
 name|info
@@ -5170,15 +5191,16 @@ case|case
 name|PROP_VECTORS
 case|:
 block|{
-name|guint32
+name|goffset
 name|base
-decl_stmt|,
+decl_stmt|;
+name|goffset
+name|pos
+decl_stmt|;
+name|guint32
 name|length
 init|=
 literal|0
-decl_stmt|;
-name|glong
-name|pos
 decl_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -5187,7 +5209,7 @@ argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the paths list will take          * we save the file position and write the length later          */
+comment|/* because we don't know how much room the paths list will          * take we save the file position and write the length later          */
 name|pos
 operator|=
 name|info
@@ -5482,10 +5504,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|guint32
@@ -5535,7 +5557,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -5664,9 +5686,13 @@ name|info
 operator|->
 name|cp
 operator|+
-literal|8
+literal|2
+operator|*
+name|info
+operator|->
+name|bytes_per_offset
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -5683,7 +5709,7 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write a zero layer mask offset */
-name|xcf_write_zero_int32_check_error
+name|xcf_write_zero_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -5744,7 +5770,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -5814,10 +5840,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|guint32
@@ -5867,7 +5893,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -5973,9 +5999,11 @@ name|info
 operator|->
 name|cp
 operator|+
-literal|4
+name|info
+operator|->
+name|bytes_per_offset
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -6022,7 +6050,7 @@ name|gint
 name|tile_size
 parameter_list|)
 block|{
-name|int
+name|gint
 name|levels
 decl_stmt|;
 name|levels
@@ -6076,10 +6104,10 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|guint32
@@ -6178,12 +6206,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|saved_pos
-operator|=
-name|info
-operator|->
-name|cp
-expr_stmt|;
 name|tmp1
 operator|=
 name|xcf_calc_levels
@@ -6219,7 +6241,7 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write an empty offset table */
-name|xcf_write_zero_int32_check_error
+name|xcf_write_zero_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -6262,7 +6284,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -6411,18 +6433,18 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|guint32
+name|goffset
 modifier|*
 name|offset_table
 decl_stmt|;
-name|guint32
+name|goffset
 modifier|*
 name|next_offset
 decl_stmt|;
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|guint32
@@ -6579,7 +6601,7 @@ operator|)
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint32
+name|goffset
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6597,7 +6619,7 @@ operator|)
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint32
+name|goffset
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6613,7 +6635,7 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write an empty offset table */
-name|xcf_write_zero_int32_check_error
+name|xcf_write_zero_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -6773,7 +6795,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_check_error
+name|xcf_write_offset_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -7845,7 +7867,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298502690108
+DECL|struct|__anon291d7d390108
 block|{
 DECL|member|info
 name|XcfInfo

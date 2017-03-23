@@ -41,14 +41,14 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|xcf_seek_pos (XcfInfo * info,guint pos,GError ** error)
+DECL|function|xcf_seek_pos (XcfInfo * info,goffset pos,GError ** error)
 name|xcf_seek_pos
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|guint
+name|goffset
 name|pos
 parameter_list|,
 name|GError

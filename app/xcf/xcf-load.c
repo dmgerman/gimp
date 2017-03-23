@@ -712,10 +712,10 @@ name|has_metadata
 init|=
 name|FALSE
 decl_stmt|;
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|gint
@@ -1702,7 +1702,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -1931,7 +1931,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -3252,7 +3252,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|glong
+name|goffset
 name|base
 init|=
 name|info
@@ -3712,7 +3712,7 @@ case|case
 name|PROP_VECTORS
 case|:
 block|{
-name|guint32
+name|goffset
 name|base
 init|=
 name|info
@@ -3743,7 +3743,9 @@ block|{
 name|g_printerr
 argument_list|(
 literal|"Mismatch in PROP_VECTORS size: "
-literal|"skipping %d bytes.\n"
+literal|"skipping "
+name|G_GOFFSET_FORMAT
+literal|" bytes.\n"
 argument_list|,
 name|base
 operator|+
@@ -3928,16 +3930,12 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
 name|input
 argument_list|,
-operator|(
-name|guint32
-operator|*
-operator|)
 operator|&
 name|info
 operator|->
@@ -4633,7 +4631,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|glong
+name|goffset
 name|base
 init|=
 name|info
@@ -4896,7 +4894,7 @@ case|case
 name|PROP_ITEM_PATH
 case|:
 block|{
-name|glong
+name|goffset
 name|base
 init|=
 name|info
@@ -5666,7 +5664,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|glong
+name|goffset
 name|base
 init|=
 name|info
@@ -5959,10 +5957,10 @@ name|GimpLayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
-name|guint32
+name|goffset
 name|hierarchy_offset
 decl_stmt|;
-name|guint32
+name|goffset
 name|layer_mask_offset
 decl_stmt|;
 name|gboolean
@@ -6385,7 +6383,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -6401,7 +6399,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -6662,7 +6660,7 @@ name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|guint32
+name|goffset
 name|hierarchy_offset
 decl_stmt|;
 name|gint
@@ -6831,7 +6829,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -6936,7 +6934,7 @@ name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|guint32
+name|goffset
 name|hierarchy_offset
 decl_stmt|;
 name|gint
@@ -7112,7 +7110,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -7214,7 +7212,7 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
 decl_stmt|;
 name|gint
@@ -7324,7 +7322,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -7397,12 +7395,13 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
-name|guint32
+name|goffset
 name|saved_pos
 decl_stmt|;
-name|guint32
+name|goffset
 name|offset
-decl_stmt|,
+decl_stmt|;
+name|goffset
 name|offset2
 decl_stmt|;
 name|gint
@@ -7504,7 +7503,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -7606,12 +7605,12 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* read in the offset of the next tile so we can calculate the amount          of data needed for this tile*/
+comment|/* read in the offset of the next tile so we can calculate the amount        * of data needed for this tile        */
 name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -7623,7 +7622,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* if the offset is 0 then we need to read in the maximum possible          allowing for negative compression */
+comment|/* if the offset is 0 then we need to read in the maximum possible        * allowing for negative compression        */
 if|if
 condition|(
 name|offset2
@@ -7840,7 +7839,7 @@ name|info
 operator|->
 name|cp
 operator|+=
-name|xcf_read_int32
+name|xcf_read_offset
 argument_list|(
 name|info
 operator|->
@@ -7875,7 +7874,8 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"encountered garbage after reading level: %d"
+literal|"encountered garbage after reading level: "
+name|G_GOFFSET_FORMAT
 argument_list|,
 name|offset
 argument_list|)
