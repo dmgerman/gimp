@@ -9644,7 +9644,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* The stroke line width physical values could be based on either the    * x or y resolution, some average, or whatever which makes a bit of    * sense. There is no perfect answer. So let's just use whatever.    */
+comment|/* The stroke line width physical values could be based on either the    * x or y resolution, some average, or whatever which makes a bit of    * sense. There is no perfect answer. The actual stroke dialog though    * uses the y resolution on the opened image. So using the y resolution    * of the default image seems like the best compromise in the preferences.    */
 name|table
 operator|=
 name|gimp_stroke_editor_new
@@ -9656,7 +9656,12 @@ argument_list|)
 operator|->
 name|stroke_options
 argument_list|,
-name|yres
+name|gimp_template_get_resolution_y
+argument_list|(
+name|core_config
+operator|->
+name|default_image
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -11568,7 +11573,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29207f8a0108
+DECL|struct|__anon292125f10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12445,7 +12450,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29207f8a0208
+DECL|struct|__anon292125f10208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12583,7 +12588,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29207f8a0308
+DECL|struct|__anon292125f10308
 block|{
 DECL|member|tree_label
 specifier|const
