@@ -4091,12 +4091,6 @@ name|GtkWidget
 modifier|*
 name|editor
 decl_stmt|;
-name|gdouble
-name|xres
-decl_stmt|;
-name|gdouble
-name|yres
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -4151,22 +4145,6 @@ operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|config
-argument_list|)
-expr_stmt|;
-name|gimp_get_monitor_resolution
-argument_list|(
-name|gdk_screen_get_default
-argument_list|()
-argument_list|,
-comment|/* FIXME monitor */
-literal|0
-argument_list|,
-comment|/* FIXME monitor */
-operator|&
-name|xres
-argument_list|,
-operator|&
-name|yres
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -10453,10 +10431,32 @@ operator|=
 name|NULL
 expr_stmt|;
 block|{
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
 name|gchar
 modifier|*
 name|str
 decl_stmt|;
+name|gimp_get_monitor_resolution
+argument_list|(
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
+comment|/* FIXME monitor */
+literal|0
+argument_list|,
+comment|/* FIXME monitor */
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
 name|str
 operator|=
 name|g_strdup_printf
@@ -11573,7 +11573,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292125f10108
+DECL|struct|__anon299ad1360108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12450,7 +12450,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292125f10208
+DECL|struct|__anon299ad1360208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12588,7 +12588,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292125f10308
+DECL|struct|__anon299ad1360308
 block|{
 DECL|member|tree_label
 specifier|const
