@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xcf-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf-write.h"
 end_include
 
@@ -35,12 +47,12 @@ end_include
 
 begin_function
 name|guint
-DECL|function|xcf_write_int32 (GOutputStream * output,const guint32 * data,gint count,GError ** error)
+DECL|function|xcf_write_int32 (XcfInfo * info,const guint32 * data,gint count,GError ** error)
 name|xcf_write_int32
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 specifier|const
 name|guint32
@@ -99,7 +111,7 @@ argument_list|)
 decl_stmt|;
 name|xcf_write_int8
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|(
 specifier|const
@@ -145,12 +157,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_offset (GOutputStream * output,const goffset * data,gint count,GError ** error)
+DECL|function|xcf_write_offset (XcfInfo * info,const goffset * data,gint count,GError ** error)
 name|xcf_write_offset
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 specifier|const
 name|goffset
@@ -209,7 +221,7 @@ argument_list|)
 decl_stmt|;
 name|xcf_write_int8
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|(
 specifier|const
@@ -240,7 +252,9 @@ expr_stmt|;
 return|return
 name|i
 operator|*
-literal|4
+name|info
+operator|->
+name|bytes_per_offset
 return|;
 block|}
 block|}
@@ -248,19 +262,21 @@ block|}
 return|return
 name|count
 operator|*
-literal|4
+name|info
+operator|->
+name|bytes_per_offset
 return|;
 block|}
 end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_zero_offset (GOutputStream * output,gint count,GError ** error)
+DECL|function|xcf_write_zero_offset (XcfInfo * info,gint count,GError ** error)
 name|xcf_write_zero_offset
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 name|gint
 name|count
@@ -303,7 +319,7 @@ expr_stmt|;
 return|return
 name|xcf_write_int8
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|(
 specifier|const
@@ -328,12 +344,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_float (GOutputStream * output,const gfloat * data,gint count,GError ** error)
+DECL|function|xcf_write_float (XcfInfo * info,const gfloat * data,gint count,GError ** error)
 name|xcf_write_float
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 specifier|const
 name|gfloat
@@ -352,7 +368,7 @@ block|{
 return|return
 name|xcf_write_int32
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|(
 specifier|const
@@ -376,12 +392,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_int8 (GOutputStream * output,const guint8 * data,gint count,GError ** error)
+DECL|function|xcf_write_int8 (XcfInfo * info,const guint8 * data,gint count,GError ** error)
 name|xcf_write_int8
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 specifier|const
 name|guint8
@@ -411,6 +427,8 @@ condition|(
 operator|!
 name|g_output_stream_write_all
 argument_list|(
+name|info
+operator|->
 name|output
 argument_list|,
 name|data
@@ -440,6 +458,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|info
+operator|->
+name|cp
+operator|+=
+name|bytes_written
+expr_stmt|;
 return|return
 name|bytes_written
 return|;
@@ -448,12 +472,12 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_string (GOutputStream * output,gchar ** data,gint count,GError ** error)
+DECL|function|xcf_write_string (XcfInfo * info,gchar ** data,gint count,GError ** error)
 name|xcf_write_string
 parameter_list|(
-name|GOutputStream
+name|XcfInfo
 modifier|*
-name|output
+name|info
 parameter_list|,
 name|gchar
 modifier|*
@@ -526,7 +550,7 @@ literal|0
 expr_stmt|;
 name|xcf_write_int32
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|&
 name|tmp
@@ -561,7 +585,7 @@ literal|0
 condition|)
 name|xcf_write_int8
 argument_list|(
-name|output
+name|info
 argument_list|,
 operator|(
 specifier|const
