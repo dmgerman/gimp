@@ -1041,6 +1041,8 @@ name|settings
 operator|=
 name|gimp_operation_config_new
 argument_list|(
+name|gimp
+argument_list|,
 name|procedure
 operator|->
 name|original_name
@@ -1060,10 +1062,17 @@ name|container
 operator|=
 name|gimp_operation_config_get_container
 argument_list|(
+name|gimp
+argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|settings
 argument_list|)
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|gimp_settings_compare
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1081,11 +1090,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  only use the settings if they are automatically created "last used"    *  values, not if they were saved explicitly and have a zero timestamp    */
+comment|/*  only use the settings if they are automatically created "last used"    *  values, not if they were saved explicitly and have a zero timestamp;    *  and if they are not a separator.    */
 if|if
 condition|(
 name|settings
 operator|&&
+operator|(
 name|GIMP_SETTINGS
 argument_list|(
 name|settings
@@ -1094,11 +1104,20 @@ operator|->
 name|time
 operator|==
 literal|0
+operator|||
+operator|!
+name|gimp_object_get_name
+argument_list|(
+name|settings
+argument_list|)
+operator|)
 condition|)
+block|{
 name|settings
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|run_mode

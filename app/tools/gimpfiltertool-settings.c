@@ -168,7 +168,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_filter_tool_real_get_settings_ui (GimpFilterTool * filter_tool,GimpContainer * settings,GFile * settings_file,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
+DECL|function|gimp_filter_tool_real_get_settings_ui (GimpFilterTool * filter_tool,GimpContainer * settings,const gchar * import_dialog_title,const gchar * export_dialog_title,const gchar * file_dialog_help_id,GFile * default_folder,GtkWidget ** settings_box)
 name|gimp_filter_tool_real_get_settings_ui
 parameter_list|(
 name|GimpFilterTool
@@ -178,10 +178,6 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|settings
-parameter_list|,
-name|GFile
-modifier|*
-name|settings_file
 parameter_list|,
 specifier|const
 name|gchar
@@ -287,8 +283,6 @@ operator|->
 name|config
 argument_list|,
 name|settings
-argument_list|,
-name|settings_file
 argument_list|,
 name|import_dialog_title
 argument_list|,

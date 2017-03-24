@@ -304,10 +304,6 @@ name|GimpContainer
 modifier|*
 name|settings
 parameter_list|,
-name|GFile
-modifier|*
-name|settings_file
-parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -193,10 +193,6 @@ name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-name|GFile
-modifier|*
-name|file
-parameter_list|,
 specifier|const
 name|gchar
 modifier|*
