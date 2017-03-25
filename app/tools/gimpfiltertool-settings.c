@@ -435,15 +435,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpFilterToolClass
-modifier|*
-name|klass
-init|=
-name|GIMP_FILTER_TOOL_GET_CLASS
-argument_list|(
-name|filter_tool
-argument_list|)
-decl_stmt|;
 name|gchar
 modifier|*
 name|header
@@ -459,22 +450,22 @@ name|header
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"GIMP %s tool settings"
+literal|"GIMP '%s' settings"
 argument_list|,
-name|klass
+name|filter_tool
 operator|->
-name|settings_name
+name|title
 argument_list|)
 expr_stmt|;
 name|footer
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"end of %s tool settings"
+literal|"end of '%s' settings"
 argument_list|,
-name|klass
+name|filter_tool
 operator|->
-name|settings_name
+name|title
 argument_list|)
 expr_stmt|;
 name|success
