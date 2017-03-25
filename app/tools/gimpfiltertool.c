@@ -1953,13 +1953,24 @@ literal|"color-managed"
 argument_list|,
 name|_
 argument_list|(
-literal|"Apply filter in color managed space (slow)"
+literal|"Convert pixels to built-in sRGB to apply filter (slow)"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Apply filter to the layer's raw pixels"
+literal|"Assume pixels are built-in sRGB (ignore actual image color space)"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|combo
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
