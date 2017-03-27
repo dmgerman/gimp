@@ -451,6 +451,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|quit_close_all_idle
+parameter_list|(
+name|QuitDialog
+modifier|*
+name|private
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -1297,6 +1309,11 @@ modifier|*
 name|private
 parameter_list|)
 block|{
+name|g_idle_remove_by_data
+argument_list|(
+name|private
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|private
@@ -1595,6 +1612,14 @@ argument_list|(
 name|private
 operator|->
 name|ok_button
+argument_list|)
+expr_stmt|;
+comment|/* When no image requires saving anymore, there is no harm in        * assuming completing the original quit or close-all action is        * the expected end-result.        * I don't immediately exit though because of some unfinished        * actions provoking warnings. Let's just close as soon as        * possible with an idle source.        * Also the idle source has another benefit: allowing to change        * one's mind and not exist after the last save, for instance by        * hitting Esc quickly while the last save is in progress.        */
+name|g_idle_add
+argument_list|(
+name|quit_close_all_idle
+argument_list|,
+name|private
 argument_list|)
 expr_stmt|;
 block|}
@@ -2440,6 +2465,32 @@ expr_stmt|;
 block|}
 return|return
 name|show_tip
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|quit_close_all_idle (QuitDialog * private)
+name|quit_close_all_idle
+parameter_list|(
+name|QuitDialog
+modifier|*
+name|private
+parameter_list|)
+block|{
+name|gtk_dialog_response
+argument_list|(
+name|private
+operator|->
+name|dialog
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function
