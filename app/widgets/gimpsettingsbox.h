@@ -220,6 +220,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_settings_box_get_combo
+parameter_list|(
+name|GimpSettingsBox
+modifier|*
+name|box
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_settings_box_add_current
 parameter_list|(
@@ -229,18 +241,6 @@ name|box
 parameter_list|,
 name|gint
 name|max_recent
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_settings_box_get_combo
-parameter_list|(
-name|GimpSettingsBox
-modifier|*
-name|box
 parameter_list|)
 function_decl|;
 end_function_decl
