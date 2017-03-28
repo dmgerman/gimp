@@ -3149,10 +3149,11 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+comment|/*  ugly, see comment in the function  */
+name|gimp_filter_tool_set_has_settings
+argument_list|(
 name|filter_tool
-operator|->
-name|has_settings
-operator|=
+argument_list|,
 operator|!
 name|GTK_IS_LABEL
 argument_list|(
@@ -3160,8 +3161,8 @@ name|tool
 operator|->
 name|options_gui
 argument_list|)
+argument_list|)
 expr_stmt|;
-comment|/* HACK */
 if|if
 condition|(
 name|tool

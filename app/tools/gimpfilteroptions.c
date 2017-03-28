@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277b65820103
+DECL|enum|__anon2c74af2f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -227,7 +227,7 @@ literal|"preview-split"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Split view"
+literal|"Split _view"
 argument_list|)
 argument_list|,
 name|NULL
