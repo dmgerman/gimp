@@ -322,6 +322,13 @@ operator|->
 name|value_type
 argument_list|)
 expr_stmt|;
+name|g_param_value_set_default
+argument_list|(
+name|pspec
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
 return|return
 name|value
 return|;
