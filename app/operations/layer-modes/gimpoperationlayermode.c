@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c50d600103
+DECL|enum|__anon27af82070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4394,45 +4394,7 @@ decl_stmt|;
 name|gint
 name|count
 decl_stmt|;
-comment|/* skip any unblended samples.  the color values of `blend_out` for            * these samples are unconstrained, in particular, they may be NaN,            * but the alpha values should generally be finite, and specifically            * 0 when the source alpha is 0.  when `blend_out == blend_layer`,            * this is the case anyway, but otherwise, we need to manually set            * the unblended samples' alpha to zero.            */
-if|if
-condition|(
-name|blend_out
-operator|==
-name|blend_layer
-condition|)
-block|{
-while|while
-condition|(
-name|i
-operator|<
-name|end
-operator|&&
-operator|(
-name|in
-index|[
-name|i
-index|]
-operator|==
-literal|0.0f
-operator|||
-name|layer
-index|[
-name|i
-index|]
-operator|==
-literal|0.0f
-operator|)
-condition|)
-block|{
-name|i
-operator|+=
-literal|4
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
+comment|/* skip any unblended samples.  the color values of `blend_out` for            * these samples are unconstrained, in particular, they may be NaN,            * but the alpha values should generally be finite, and specifically            * 0 when the source alpha is 0.            */
 while|while
 condition|(
 name|i
@@ -4467,7 +4429,6 @@ name|i
 operator|+=
 literal|4
 expr_stmt|;
-block|}
 block|}
 comment|/* stop if there are no more samples */
 if|if
@@ -4617,13 +4578,6 @@ name|count
 argument_list|)
 expr_stmt|;
 comment|/* make sure the alpha values of `blend_out` are valid for the            * trailing unblended samples.            */
-if|if
-condition|(
-name|blend_out
-operator|!=
-name|blend_layer
-condition|)
-block|{
 for|for
 control|(
 init|;
@@ -4642,7 +4596,6 @@ index|]
 operator|=
 literal|0.0f
 expr_stmt|;
-block|}
 block|}
 block|}
 else|else
