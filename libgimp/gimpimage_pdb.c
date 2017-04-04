@@ -5815,7 +5815,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  **/
+comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  **/
 end_comment
 
 begin_function
@@ -5893,7 +5893,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_tattoo_state:  * @image_ID: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_tattoo_state:  * @image_ID: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

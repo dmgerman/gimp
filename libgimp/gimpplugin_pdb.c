@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpplugin  * @title: gimpplugin  * @short_description: Functions useful for plugins, e.g. registration and progress indicators.  *  * Functions useful for plugins, e.g. registration and progress  * indicators.  **/
+comment|/**  * SECTION: gimpplugin  * @title: gimpplugin  * @short_description: Functions useful for plug-ins, e.g. registration and progress indicators.  *  * Functions useful for plug-ins, e.g. registration and progress  * indicators.  **/
 end_comment
 
 begin_comment
