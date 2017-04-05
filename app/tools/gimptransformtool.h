@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292af1de0103
+DECL|enum|__anon2b0b281e0103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -381,6 +381,12 @@ modifier|*
 name|redo_list
 decl_stmt|;
 comment|/*  list of all undone states,                                           NULL when nothing undone */
+DECL|member|hidden_item
+name|GimpItem
+modifier|*
+name|hidden_item
+decl_stmt|;
+comment|/*  the item that was hidden during                                           the transform                      */
 DECL|member|function
 name|TransformAction
 name|function
