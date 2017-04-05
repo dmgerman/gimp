@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable-transform.h"
 end_include
 
@@ -127,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayermask.h"
 end_include
 
 begin_include
@@ -7986,6 +7986,7 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+comment|/*  hide only complete layers and channels, not layer masks  */
 if|if
 condition|(
 name|options
@@ -7994,7 +7995,13 @@ name|type
 operator|==
 name|GIMP_TRANSFORM_TYPE_LAYER
 operator|&&
-name|GIMP_IS_LAYER
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+operator|&&
+operator|!
+name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|item
 argument_list|)
