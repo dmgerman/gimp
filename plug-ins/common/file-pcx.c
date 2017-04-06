@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29ffe5fb0108
+DECL|struct|__anon296c67fc0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon29ffe5fb0208
+DECL|struct|__anon296c67fc0208
 specifier|static
 struct|struct
 block|{
@@ -1718,7 +1718,7 @@ if|if
 condition|(
 operator|(
 name|width
-operator|<
+operator|<=
 literal|0
 operator|)
 operator|||
@@ -1753,7 +1753,7 @@ if|if
 condition|(
 operator|(
 name|height
-operator|<
+operator|<=
 literal|0
 operator|)
 operator|||
