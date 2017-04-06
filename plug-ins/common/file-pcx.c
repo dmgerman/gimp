@@ -1040,7 +1040,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296c67fc0108
+DECL|struct|__anon2c42a0f80108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1117,7 +1117,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon296c67fc0208
+DECL|struct|__anon2c42a0f80208
 specifier|static
 struct|struct
 block|{
@@ -1789,14 +1789,18 @@ condition|(
 name|bytesperline
 operator|<
 operator|(
+operator|(
 name|width
 operator|*
 name|pcx_header
 operator|.
 name|bpp
+operator|+
+literal|7
 operator|)
 operator|/
 literal|8
+operator|)
 condition|)
 block|{
 name|g_message
