@@ -98,6 +98,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpdebug_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpdisplay_pdb.h>
 end_include
 
