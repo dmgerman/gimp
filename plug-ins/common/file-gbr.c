@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d23a0108
+DECL|struct|__anon2b70f3f80108
 block|{
 DECL|member|description
 name|gchar
@@ -1929,6 +1929,9 @@ block|}
 comment|/* Now there's just raw data left. */
 name|size
 operator|=
+operator|(
+name|gsize
+operator|)
 name|bh
 operator|.
 name|width
@@ -2196,8 +2199,9 @@ name|brush_buf
 operator|=
 name|g_malloc
 argument_list|(
-literal|4
-operator|*
+operator|(
+name|gsize
+operator|)
 name|bh
 operator|.
 name|width
@@ -2205,6 +2209,8 @@ operator|*
 name|bh
 operator|.
 name|height
+operator|*
+literal|4
 argument_list|)
 expr_stmt|;
 for|for
@@ -2342,7 +2348,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27b7d23a020a
+DECL|union|__anon2b70f3f8020a
 block|{
 DECL|member|u
 name|guint16
