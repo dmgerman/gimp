@@ -13303,11 +13303,11 @@ literal|"size"
 argument_list|,
 literal|"Brush size in pixels"
 argument_list|,
-literal|0
+literal|1
 argument_list|,
-name|G_MAXDOUBLE
+literal|10000
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
