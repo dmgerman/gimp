@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cb8360103
+DECL|enum|__anon2773de470103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -6508,6 +6508,15 @@ name|GimpTempBuf
 modifier|*
 name|mask
 decl_stmt|;
+if|if
+condition|(
+name|dynamic_force
+operator|<=
+literal|0.0
+condition|)
+return|return
+name|NULL
+return|;
 name|mask
 operator|=
 name|gimp_brush_core_transform_mask

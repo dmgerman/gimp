@@ -953,7 +953,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon29cfa63f010a
+DECL|union|__anon27dbbf64010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2239,6 +2239,12 @@ argument_list|,
 name|force
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|mask_buf
+condition|)
+return|return;
 comment|/* check that all buffers are of the same size */
 if|if
 condition|(

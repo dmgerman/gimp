@@ -338,7 +338,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c59bc0103
+DECL|enum|__anon2a2faba70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3393,8 +3393,8 @@ operator|(
 name|paint_options
 operator|->
 name|brush_force
-operator|>
-literal|0.0
+operator|!=
+literal|0.5
 operator|)
 condition|)
 return|return
