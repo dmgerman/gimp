@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b721f060103
+DECL|enum|__anon2afc32b50103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -599,6 +599,17 @@ name|name
 condition|)
 return|return
 name|TRUE
+return|;
+comment|/* use this flag to include all ops for testing */
+if|if
+condition|(
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_NO_GEGL_BLACKLIST"
+argument_list|)
+condition|)
+return|return
+name|FALSE
 return|;
 if|if
 condition|(
