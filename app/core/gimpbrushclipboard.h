@@ -108,6 +108,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|mask_only
+name|gboolean
+name|mask_only
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -143,6 +147,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|mask_only
 parameter_list|)
 function_decl|;
 end_function_decl

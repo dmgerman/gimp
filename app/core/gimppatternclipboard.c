@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2749ad230103
+DECL|enum|__anon2c1f44350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -532,7 +532,7 @@ literal|"name"
 argument_list|,
 name|_
 argument_list|(
-literal|"Clipboard"
+literal|"Clipboard Image"
 argument_list|)
 argument_list|,
 literal|"gimp"
