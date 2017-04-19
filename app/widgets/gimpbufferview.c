@@ -591,6 +591,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: enable preview of a clipboard image, not just buffer */
 name|buffer_view
 operator|->
 name|clipboard_view
