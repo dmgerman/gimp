@@ -2459,7 +2459,7 @@ name|c
 operator|=
 literal|'\0'
 expr_stmt|;
-comment|/* We don't care about variants as well. */
+comment|/* We don't care about variants either. */
 name|c
 operator|=
 name|strchr
@@ -2600,7 +2600,6 @@ block|}
 block|}
 else|else
 block|{
-comment|/* Avoid duplicates. */
 name|g_free
 argument_list|(
 name|locale
