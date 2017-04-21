@@ -150,9 +150,13 @@ DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
 decl_stmt|;
-DECL|member|blend_func
-name|GimpBlendFunc
-name|blend_func
+DECL|member|func
+name|GimpLayerModeFunc
+name|func
+decl_stmt|;
+DECL|member|is_last_node
+name|gboolean
+name|is_last_node
 decl_stmt|;
 block|}
 struct|;
