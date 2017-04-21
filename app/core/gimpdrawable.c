@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee98f80103
+DECL|enum|__anon28be9ec20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee98f80203
+DECL|enum|__anon28be9ec20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5200,6 +5200,10 @@ parameter_list|)
 block|{
 name|GeglNode
 modifier|*
+name|input
+decl_stmt|;
+name|GeglNode
+modifier|*
 name|source
 decl_stmt|;
 name|GeglNode
@@ -5244,6 +5248,19 @@ operator|=
 name|gegl_node_new
 argument_list|()
 expr_stmt|;
+name|input
+operator|=
+name|gegl_node_get_input_proxy
+argument_list|(
+name|drawable
+operator|->
+name|private
+operator|->
+name|source_node
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
 name|source
 operator|=
 name|GIMP_DRAWABLE_GET_CLASS
@@ -5272,6 +5289,28 @@ argument_list|(
 name|source
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gegl_node_has_pad
+argument_list|(
+name|source
+argument_list|,
+literal|"input"
+argument_list|)
+condition|)
+block|{
+name|gegl_node_connect_to
+argument_list|(
+name|input
+argument_list|,
+literal|"output"
+argument_list|,
+name|source
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+block|}
 name|filter
 operator|=
 name|gimp_filter_stack_get_graph

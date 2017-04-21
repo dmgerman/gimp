@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4036820103
+DECL|enum|__anon2a1d82630103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4036820203
+DECL|enum|__anon2a1d82630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3413,6 +3413,10 @@ name|node
 decl_stmt|;
 name|GeglNode
 modifier|*
+name|input
+decl_stmt|;
+name|GeglNode
+modifier|*
 name|source
 decl_stmt|;
 name|GeglNode
@@ -3434,6 +3438,15 @@ operator|->
 name|get_node
 argument_list|(
 name|filter
+argument_list|)
+expr_stmt|;
+name|input
+operator|=
+name|gegl_node_get_input_proxy
+argument_list|(
+name|node
+argument_list|,
+literal|"input"
 argument_list|)
 expr_stmt|;
 name|source
@@ -3465,6 +3478,17 @@ argument_list|(
 name|node
 argument_list|,
 name|source
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|input
+argument_list|,
+literal|"output"
+argument_list|,
+name|source
+argument_list|,
+literal|"input"
 argument_list|)
 expr_stmt|;
 name|g_warn_if_fail
