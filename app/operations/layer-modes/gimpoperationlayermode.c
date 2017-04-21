@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f940a0103
+DECL|enum|__anon28e5f5f10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10680,6 +10680,9 @@ name|GIMP_LAYER_MODE_MERGE
 case|:
 case|case
 name|GIMP_LAYER_MODE_SPLIT
+case|:
+case|case
+name|GIMP_LAYER_MODE_PASS_THROUGH
 case|:
 case|case
 name|GIMP_LAYER_MODE_REPLACE

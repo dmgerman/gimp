@@ -900,6 +900,14 @@ literal|"split"
 block|}
 block|,
 block|{
+name|GIMP_LAYER_MODE_PASS_THROUGH
+block|,
+literal|"GIMP_LAYER_MODE_PASS_THROUGH"
+block|,
+literal|"pass-through"
+block|}
+block|,
+block|{
 name|GIMP_LAYER_MODE_REPLACE
 block|,
 literal|"GIMP_LAYER_MODE_REPLACE"
@@ -1719,6 +1727,19 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Split"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_LAYER_MODE_PASS_THROUGH
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Pass through"
 argument_list|)
 block|,
 name|NULL
