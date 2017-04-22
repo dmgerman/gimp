@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c600c010108
+DECL|struct|__anon29ae33710108
 block|{
 DECL|member|scales
 name|gint
@@ -166,7 +166,7 @@ name|wavelet_params
 init|=
 block|{
 literal|5
-comment|/*default scales*/
+comment|/* default scales */
 block|}
 decl_stmt|;
 end_decl_stmt
