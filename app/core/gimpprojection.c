@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimptilehandlervalidate.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptilehandlerprojectable.h"
 end_include
 
 begin_include
@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb5b8f0103
+DECL|enum|__anon2ae1800a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb5b8f0203
+DECL|enum|__anon2ae1800a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1516,10 +1516,6 @@ operator|->
 name|buffer
 condition|)
 block|{
-name|GeglNode
-modifier|*
-name|graph
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -1531,17 +1527,6 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|graph
-operator|=
-name|gimp_projectable_get_graph
-argument_list|(
-name|proj
-operator|->
-name|priv
-operator|->
-name|projectable
-argument_list|)
-expr_stmt|;
 name|format
 operator|=
 name|gimp_projection_get_format
@@ -1597,9 +1582,13 @@ name|validate_handler
 operator|=
 name|GIMP_TILE_HANDLER_VALIDATE
 argument_list|(
-name|gimp_tile_handler_validate_new
+name|gimp_tile_handler_projectable_new
 argument_list|(
-name|graph
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2426,6 +2415,15 @@ argument_list|(
 name|proj
 argument_list|)
 expr_stmt|;
+name|gimp_projectable_begin_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|gimp_projection_chunk_render_iteration
@@ -2434,6 +2432,15 @@ name|proj
 argument_list|)
 condition|)
 empty_stmt|;
+name|gimp_projectable_end_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -2748,6 +2755,15 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gimp_projectable_begin_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2804,6 +2820,15 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_projectable_end_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 comment|/* Asynchronous */
@@ -2990,6 +3015,15 @@ name|retval
 init|=
 name|TRUE
 decl_stmt|;
+name|gimp_projectable_begin_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 do|do
 block|{
 if|if
@@ -3028,6 +3062,15 @@ operator|<
 name|GIMP_PROJECTION_CHUNK_TIME
 condition|)
 do|;
+name|gimp_projectable_end_render
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
+expr_stmt|;
 name|GIMP_LOG
 argument_list|(
 name|PROJECTION
