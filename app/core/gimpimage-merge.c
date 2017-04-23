@@ -2118,9 +2118,16 @@ operator|)
 operator|==
 literal|0
 condition|)
+block|{
+name|g_slist_free
+argument_list|(
+name|reverse_list
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 comment|/*  Start a merge undo group. */
 name|name
 operator|=
