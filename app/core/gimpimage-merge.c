@@ -2215,9 +2215,19 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: could not allocate merge layer."
+literal|"%s: could not allocate merge layer"
 argument_list|,
 name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|reverse_list
 argument_list|)
 expr_stmt|;
 return|return
@@ -2352,6 +2362,16 @@ argument_list|(
 literal|"%s: could not allocate merge layer"
 argument_list|,
 name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|reverse_list
 argument_list|)
 expr_stmt|;
 return|return
