@@ -1034,6 +1034,48 @@ block|}
 end_function
 
 begin_function
+specifier|static
+specifier|inline
+name|gfloat
+DECL|function|odd_powf (gfloat x,gfloat y)
+name|odd_powf
+parameter_list|(
+name|gfloat
+name|x
+parameter_list|,
+name|gfloat
+name|y
+parameter_list|)
+block|{
+if|if
+condition|(
+name|x
+operator|>=
+literal|0.0f
+condition|)
+return|return
+name|powf
+argument_list|(
+name|x
+argument_list|,
+name|y
+argument_list|)
+return|;
+else|else
+return|return
+operator|-
+name|powf
+argument_list|(
+operator|-
+name|x
+argument_list|,
+name|y
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_gegl_dodgeburn (GeglBuffer * src_buffer,const GeglRectangle * src_rect,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble exposure,GimpDodgeBurnType type,GimpTransferMode mode)
 name|gimp_gegl_dodgeburn
@@ -1303,7 +1345,7 @@ operator|*
 name|dest
 operator|++
 operator|=
-name|pow
+name|odd_powf
 argument_list|(
 operator|*
 name|src
@@ -1316,7 +1358,7 @@ operator|*
 name|dest
 operator|++
 operator|=
-name|pow
+name|odd_powf
 argument_list|(
 operator|*
 name|src
@@ -1329,7 +1371,7 @@ operator|*
 name|dest
 operator|++
 operator|=
-name|pow
+name|odd_powf
 argument_list|(
 operator|*
 name|src
