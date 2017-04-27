@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dfcf6e0103
+DECL|enum|__anon2ad054660103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -193,6 +193,16 @@ name|gdouble
 name|end_y
 decl_stmt|;
 comment|/*  ending y coord    */
+DECL|member|undo_stack
+name|GList
+modifier|*
+name|undo_stack
+decl_stmt|;
+DECL|member|redo_stack
+name|GList
+modifier|*
+name|redo_stack
+decl_stmt|;
 DECL|member|line
 name|GimpCanvasItem
 modifier|*
