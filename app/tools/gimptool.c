@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277c85ab0103
+DECL|enum|__anon290df6890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2868,7 +2868,14 @@ name|tool
 operator|->
 name|button_press_coords
 expr_stmt|;
-comment|/*  synthesize a motion event back to the recorded press            *  coordinates            */
+if|if
+condition|(
+name|tool
+operator|->
+name|got_motion_event
+condition|)
+block|{
+comment|/*  if there has been a motion() since button_press(),                *  synthesize a motion() back to the recorded press                *  coordinates                */
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -2890,6 +2897,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
