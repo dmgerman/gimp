@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* This file contains the code necessary for generating on canvas  * previews, by connecting a specified GEGL operation to do the  * processing. It uses drawable filters that allow for non-destructive  * manupulation of drawable data, with live preview on screen.  *  * To create a tool that uses this, see /tools/gimpimagemaptool.c for  * the interface and /tools/gimpcolorbalancetool.c for an example of  * using that interface.  */
+comment|/* This file contains the code necessary for generating on canvas  * previews, by connecting a specified GEGL operation to do the  * processing. It uses drawable filters that allow for non-destructive  * manupulation of drawable data, with live preview on screen.  *  * To create a tool that uses this, see app/tools/gimpfiltertool.c for  * the interface and e.g. app/tools/gimpcolorbalancetool.c for an  * example of using that interface.  */
 end_comment
 
 begin_include
@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc65100103
+DECL|enum|__anon2b029c7b0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH

@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* This file contains a base class for tools that implement on canvas  * preview for non destructive editing. The processing of the pixels can  * be done either by a gegl op or by a C function (apply_func).  *  * For the core side of this, please see /app/core/gimpimagemap.c.  */
+comment|/* This file contains a base class for tools that implement on canvas  * preview for non destructive editing. The processing of the pixels can  * be done either by a gegl op or by a C function (apply_func).  *  * For the core side of this, please see app/core/gimpdrawablefilter.c.  */
 end_comment
 
 begin_include
