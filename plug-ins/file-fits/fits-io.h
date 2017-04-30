@@ -131,8 +131,7 @@ end_comment
 begin_typedef
 DECL|typedef|FitsBitpix8
 typedef|typedef
-name|unsigned
-name|char
+name|guchar
 name|FitsBitpix8
 typedef|;
 end_typedef
@@ -140,7 +139,7 @@ end_typedef
 begin_typedef
 DECL|typedef|FitsBitpix16
 typedef|typedef
-name|short
+name|gint16
 name|FitsBitpix16
 typedef|;
 end_typedef
@@ -148,7 +147,7 @@ end_typedef
 begin_typedef
 DECL|typedef|FitsBitpix32
 typedef|typedef
-name|long
+name|gint32
 name|FitsBitpix32
 typedef|;
 end_typedef
@@ -172,7 +171,7 @@ end_typedef
 begin_typedef
 DECL|typedef|FitsBool
 typedef|typedef
-name|int
+name|gint32
 name|FitsBool
 typedef|;
 end_typedef
@@ -180,7 +179,7 @@ end_typedef
 begin_typedef
 DECL|typedef|FitsLong
 typedef|typedef
-name|long
+name|gint32
 name|FitsLong
 typedef|;
 end_typedef
@@ -207,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b25d56f0103
+DECL|enum|__anon2c52e8d10103
 block|{
 DECL|enumerator|FITS_DATA_TYPE_BITPIX_8
 name|FITS_DATA_TYPE_BITPIX_8
@@ -244,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b25d56f020a
+DECL|union|__anon2c52e8d1020a
 block|{
 DECL|member|bitpix8
 name|FitsBitpix8
@@ -434,7 +433,7 @@ name|FITS_CARD_SIZE
 index|]
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b25d56f0308
+DECL|struct|__anon2c52e8d10308
 block|{
 DECL|member|nan_value
 name|gboolean
