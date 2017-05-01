@@ -823,8 +823,6 @@ name|context
 operator|->
 name|gimp
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_BUFFER
 argument_list|(
 name|viewable

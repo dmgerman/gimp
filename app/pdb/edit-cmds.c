@@ -1047,8 +1047,6 @@ name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_BUFFER
 argument_list|(
 name|paste
@@ -2097,8 +2095,6 @@ operator|=
 name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
-argument_list|,
-name|NULL
 argument_list|,
 name|buffer
 argument_list|)

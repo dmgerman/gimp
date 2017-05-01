@@ -111,13 +111,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpImage
-modifier|*
-name|invoke
-parameter_list|,
 name|GimpBuffer
 modifier|*
-name|paste
+name|buffer
 parameter_list|)
 function_decl|;
 end_function_decl

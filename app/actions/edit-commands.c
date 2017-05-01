@@ -1473,11 +1473,6 @@ name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
 argument_list|,
-name|action_data_get_image
-argument_list|(
-name|data
-argument_list|)
-argument_list|,
 name|GIMP_BUFFER
 argument_list|(
 name|paste
