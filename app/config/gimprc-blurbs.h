@@ -472,7 +472,16 @@ define|#
 directive|define
 name|FILTER_TOOL_MAX_RECENT_BLURB
 define|\
-value|"How many recent settings to keep around in filter tools"
+value|_("How many recent settings to keep around in filter tools.")
+end_define
+
+begin_define
+DECL|macro|FILTER_TOOL_SHOW_COLOR_OPTIONS_BLURB
+define|#
+directive|define
+name|FILTER_TOOL_SHOW_COLOR_OPTIONS_BLURB
+define|\
+value|_("Show advanced color options in filter tools.")
 end_define
 
 begin_define
