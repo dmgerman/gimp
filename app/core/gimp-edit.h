@@ -162,6 +162,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_edit_paste_as_new_image
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpObject
+modifier|*
+name|paste
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*

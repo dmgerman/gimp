@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-new.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpbufferview.h"
 end_include
 
@@ -307,13 +301,16 @@ name|new_image
 decl_stmt|;
 name|new_image
 operator|=
-name|gimp_image_new_from_buffer
+name|gimp_edit_paste_as_new_image
 argument_list|(
 name|context
 operator|->
 name|gimp
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_create_display
