@@ -1725,6 +1725,13 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_active_vectors_handler
+argument_list|(
+name|image
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_invalidate_preview_handler
 argument_list|(
 name|image
