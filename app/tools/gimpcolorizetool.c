@@ -988,6 +988,9 @@ name|_
 argument_list|(
 literal|"Pick color from image"
 argument_list|)
+argument_list|,
+comment|/* pick_abyss = */
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

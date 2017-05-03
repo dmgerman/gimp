@@ -1364,6 +1364,9 @@ argument_list|,
 name|icon_name
 argument_list|,
 name|help
+argument_list|,
+comment|/* pick_abyss = */
+name|FALSE
 argument_list|)
 return|;
 block|}

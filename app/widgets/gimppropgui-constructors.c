@@ -703,6 +703,9 @@ name|_
 argument_list|(
 literal|"Pick coordinates from the image"
 argument_list|)
+argument_list|,
+comment|/* pick_abyss = */
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2895,7 +2898,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15e49f0108
+DECL|struct|__anon28c9e86e0108
 block|{
 DECL|member|tooltip
 specifier|const

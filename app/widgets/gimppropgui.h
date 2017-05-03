@@ -47,6 +47,9 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+parameter_list|,
+name|gboolean
+name|pick_abyss
 parameter_list|)
 function_decl|;
 end_typedef

@@ -1529,6 +1529,9 @@ name|_
 argument_list|(
 literal|"Pick color from the image"
 argument_list|)
+argument_list|,
+comment|/* pick_abyss = */
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1633,7 +1636,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2784ad830108
+DECL|struct|__anon2a9938600108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2214,7 +2217,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2784ad830208
+DECL|struct|__anon2a9938600208
 block|{
 DECL|member|kelvin
 name|gdouble
