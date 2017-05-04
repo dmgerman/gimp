@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d45120103
+DECL|enum|__anon2be3faa70103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d45120203
+DECL|enum|__anon2be3faa70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -557,7 +557,7 @@ name|PROP_DEVICES_SHARE_TOOL
 argument_list|,
 literal|"devices-share-tool"
 argument_list|,
-literal|"Devics share tool"
+literal|"Devices share tool"
 argument_list|,
 name|DEVICES_SHARE_TOOL_BLURB
 argument_list|,
