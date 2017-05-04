@@ -75,7 +75,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_plug_in_manager_register_mime_type
+name|gimp_plug_in_manager_register_mime_types
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -89,7 +89,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 parameter_list|)
 function_decl|;
 end_function_decl

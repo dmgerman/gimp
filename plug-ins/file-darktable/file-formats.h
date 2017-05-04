@@ -88,20 +88,19 @@ argument_list|)
 block|,
 literal|"image/x-canon-cr2,image/x-canon-crw,image/tiff"
 block|,
-comment|// FIXME: only one mime type
 literal|"cr2,crw,tif,tiff"
 block|,
 literal|"0,string,II*\\0\\020\\0\\0\\0CR,"
-comment|// cr2
+comment|/* cr2  */
 literal|"0,string,II\\024\\0\\0\\0HEAPCCDR,"
-comment|// crw
+comment|/* crw  */
 literal|"0,string,MM\\0*\\0\\0\\0\\020\\0272\\0260,"
-comment|// tiff
+comment|/* tiff */
 literal|"0,string,MM\\0*\\0\\0\\021\\064\\0\\04,"
-comment|// tiff
+comment|/* tiff */
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0377\\01"
 block|,
-comment|// tiff
+comment|/* tiff */
 literal|"file-darktable-canon-load"
 block|,
 literal|"Load files in the Canon raw formats via darktable"
@@ -117,7 +116,6 @@ argument_list|)
 block|,
 literal|"image/x-nikon-nef,image/x-nikon-nrw"
 block|,
-comment|// FIXME: only one mime type
 literal|"nef,nrw"
 block|,
 name|NULL
@@ -137,7 +135,6 @@ argument_list|)
 block|,
 literal|"image/x-hasselblad-3fr,image/x-hasselblad-fff"
 block|,
-comment|// FIXME: only one mime type
 literal|"3fr,fff"
 block|,
 name|NULL
@@ -157,7 +154,6 @@ argument_list|)
 block|,
 literal|"image/x-sony-arw,image/x-sony-srf,image/x-sony-sr2"
 block|,
-comment|// FIXME: only one mime type
 literal|"arw,srf,sr2"
 block|,
 name|NULL
@@ -196,7 +192,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-comment|// FIXME: find a mime type
+comment|/* FIXME: find a mime type */
 literal|"cine,cin"
 block|,
 name|NULL
@@ -216,7 +212,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-comment|// FIXME: find a mime type
+comment|/* FIXME: find a mime type */
 literal|"cs1,ia,sti"
 block|,
 name|NULL
@@ -236,14 +232,13 @@ argument_list|)
 block|,
 literal|"image/x-kodak-dc2,image/x-kodak-dcr,image/x-kodak-kdc,image/x-kodak-k25,image/x-kodak-kc2,image/tiff"
 block|,
-comment|// FIXME: only one mime type
 literal|"dc2,dcr,kdc,k25,kc2,tif,tiff"
 block|,
 literal|"0,string,MM\\0*\\0\\0\\021\\0166\\0\\04,"
-comment|// tiff
+comment|/* tiff */
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0174\\01"
 block|,
-comment|// tiff
+comment|/* tiff */
 literal|"file-darktable-kodak-load"
 block|,
 literal|"Load files in the Kodak raw formats via darktable"
@@ -297,7 +292,6 @@ argument_list|)
 block|,
 literal|"image/x-phaseone-cap,image/x-phaseone-iiq"
 block|,
-comment|// FIXME: only one mime type
 literal|"cap,iiq"
 block|,
 name|NULL
@@ -317,7 +311,6 @@ argument_list|)
 block|,
 literal|"image/x-minolta-mdc,image/x-minolta-mrw"
 block|,
-comment|// FIXME: only one mime type
 literal|"mdc,mrw"
 block|,
 name|NULL
@@ -394,7 +387,6 @@ argument_list|)
 block|,
 literal|"image/x-pentax-pef,image/x-pentax-raw"
 block|,
-comment|// FIXME: only one mime type
 literal|"pef,raw"
 block|,
 name|NULL
@@ -414,7 +406,7 @@ argument_list|)
 block|,
 literal|"image/x-pxn"
 block|,
-comment|// FIXME: is that the correct mime type?
+comment|/* FIXME: is that the correct mime type? */
 literal|"pxn"
 block|,
 name|NULL
@@ -434,7 +426,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-comment|// FIXME: find a mime type
+comment|/* FIXME: find a mime type */
 literal|"qtk"
 block|,
 name|NULL
@@ -473,7 +465,6 @@ argument_list|)
 block|,
 literal|"image/x-panasonic-raw,image/x-panasonic-rw2"
 block|,
-comment|// FIXME: only one mime type
 literal|"raw,rw2"
 block|,
 literal|"0,string,IIU\\0"
@@ -493,7 +484,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-comment|// FIXME: find a mime type
+comment|/* FIXME: find a mime type */
 literal|"rdc"
 block|,
 name|NULL

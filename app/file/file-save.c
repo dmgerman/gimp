@@ -867,9 +867,14 @@ name|documents
 argument_list|,
 name|file
 argument_list|,
+name|g_slist_nth_data
+argument_list|(
 name|file_proc
 operator|->
-name|mime_type
+name|mime_types_list
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* only save a thumbnail if we are saving as XCF, see bug #25272 */
@@ -888,9 +893,14 @@ name|gimp_imagefile_save_thumbnail
 argument_list|(
 name|imagefile
 argument_list|,
+name|g_slist_nth_data
+argument_list|(
 name|file_proc
 operator|->
-name|mime_type
+name|mime_types_list
+argument_list|,
+literal|0
+argument_list|)
 argument_list|,
 name|image
 argument_list|,

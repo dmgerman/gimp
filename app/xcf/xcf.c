@@ -394,7 +394,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_mime_type
+name|gimp_plug_in_procedure_set_mime_types
 argument_list|(
 name|proc
 argument_list|,
@@ -659,7 +659,7 @@ argument_list|,
 literal|"0,string,gimp\\040xcf\\040"
 argument_list|)
 expr_stmt|;
-name|gimp_plug_in_procedure_set_mime_type
+name|gimp_plug_in_procedure_set_mime_types
 argument_list|(
 name|proc
 argument_list|,

@@ -807,12 +807,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_types: A comma-separated list of MIME types, such as \"image/jpeg\".  *  * Associates MIME types with a file handler procedure.  *  * Registers MIME types for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure. It is recommended that only one MIME type is registered  * per file procedure; when registering more than one MIME type, GIMP  * will associate the first one with files opened or saved with this  * procedure.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_register_file_handler_mime (const gchar * procedure_name,const gchar * mime_type)
+DECL|function|gimp_register_file_handler_mime (const gchar * procedure_name,const gchar * mime_types)
 name|gimp_register_file_handler_mime
 parameter_list|(
 specifier|const
@@ -823,7 +823,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 parameter_list|)
 block|{
 name|GimpParam
@@ -853,7 +853,7 @@ name|procedure_name
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|mime_type
+name|mime_types
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

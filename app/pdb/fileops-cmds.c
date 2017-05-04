@@ -2210,7 +2210,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 decl_stmt|;
 name|procedure_name
 operator|=
@@ -2224,7 +2224,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|mime_type
+name|mime_types
 operator|=
 name|g_value_get_string
 argument_list|(
@@ -2252,7 +2252,7 @@ argument_list|)
 decl_stmt|;
 name|success
 operator|=
-name|gimp_plug_in_manager_register_mime_type
+name|gimp_plug_in_manager_register_mime_types
 argument_list|(
 name|gimp
 operator|->
@@ -2260,7 +2260,7 @@ name|plug_in_manager
 argument_list|,
 name|canonical
 argument_list|,
-name|mime_type
+name|mime_types
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3959,9 +3959,9 @@ name|procedure
 argument_list|,
 literal|"gimp-register-file-handler-mime"
 argument_list|,
-literal|"Associates a MIME type with a file handler procedure."
+literal|"Associates MIME types with a file handler procedure."
 argument_list|,
-literal|"Registers a MIME type for a file handler procedure. This allows GIMP to determine the MIME type of the file opened or saved using this procedure."
+literal|"Registers MIME types for a file handler procedure. This allows GIMP to determine the MIME type of the file opened or saved using this procedure. It is recommended that only one MIME type is registered per file procedure; when registering more than one MIME type, GIMP will associate the first one with files opened or saved with this procedure."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -4002,11 +4002,11 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
-literal|"mime-type"
+literal|"mime-types"
 argument_list|,
-literal|"mime type"
+literal|"mime types"
 argument_list|,
-literal|"A single MIME type, like for example \"image/jpeg\"."
+literal|"A comma-separated list of MIME types, such as \"image/jpeg\"."
 argument_list|,
 name|FALSE
 argument_list|,

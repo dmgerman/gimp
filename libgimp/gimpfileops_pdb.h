@@ -234,7 +234,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 parameter_list|)
 function_decl|;
 end_function_decl

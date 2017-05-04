@@ -659,8 +659,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_manager_register_mime_type (GimpPlugInManager * manager,const gchar * name,const gchar * mime_type)
-name|gimp_plug_in_manager_register_mime_type
+DECL|function|gimp_plug_in_manager_register_mime_types (GimpPlugInManager * manager,const gchar * name,const gchar * mime_types)
+name|gimp_plug_in_manager_register_mime_types
 parameter_list|(
 name|GimpPlugInManager
 modifier|*
@@ -674,7 +674,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -706,7 +706,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|mime_type
+name|mime_types
 operator|!=
 name|NULL
 argument_list|,
@@ -759,11 +759,11 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_plug_in_procedure_set_mime_type
+name|gimp_plug_in_procedure_set_mime_types
 argument_list|(
 name|file_proc
 argument_list|,
-name|mime_type
+name|mime_types
 argument_list|)
 expr_stmt|;
 return|return

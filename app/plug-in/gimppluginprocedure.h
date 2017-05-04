@@ -187,10 +187,10 @@ name|gchar
 modifier|*
 name|magics
 decl_stmt|;
-DECL|member|mime_type
+DECL|member|mime_types
 name|gchar
 modifier|*
-name|mime_type
+name|mime_types
 decl_stmt|;
 DECL|member|handles_uri
 name|gboolean
@@ -214,6 +214,11 @@ DECL|member|magics_list
 name|GSList
 modifier|*
 name|magics_list
+decl_stmt|;
+DECL|member|mime_types_list
+name|GSList
+modifier|*
+name|mime_types_list
 decl_stmt|;
 DECL|member|thumb_loader
 name|gchar
@@ -489,7 +494,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_procedure_set_mime_type
+name|gimp_plug_in_procedure_set_mime_types
 parameter_list|(
 name|GimpPlugInProcedure
 modifier|*
@@ -498,7 +503,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|mime_ype
+name|mime_ypes
 parameter_list|)
 function_decl|;
 end_function_decl
