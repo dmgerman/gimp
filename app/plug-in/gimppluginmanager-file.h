@@ -112,6 +112,22 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_plug_in_manager_register_handles_raw
+parameter_list|(
+name|GimpPlugInManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_plug_in_manager_register_thumb_loader
 parameter_list|(
 name|GimpPlugInManager

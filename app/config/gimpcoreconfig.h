@@ -354,6 +354,11 @@ DECL|member|import_add_alpha
 name|gboolean
 name|import_add_alpha
 decl_stmt|;
+DECL|member|import_raw_plug_in
+name|gchar
+modifier|*
+name|import_raw_plug_in
+decl_stmt|;
 block|}
 struct|;
 end_struct

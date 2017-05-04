@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d6fbb0103
+DECL|enum|__anon29e84ccf0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -4770,6 +4770,33 @@ expr_stmt|;
 name|proc
 operator|->
 name|handles_uri
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_procedure_set_handles_raw (GimpPlugInProcedure * proc)
+name|gimp_plug_in_procedure_set_handles_raw
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|proc
+operator|->
+name|handles_raw
 operator|=
 name|TRUE
 expr_stmt|;

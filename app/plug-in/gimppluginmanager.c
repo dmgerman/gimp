@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3aaa60103
+DECL|enum|__anon27bb8d870103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -487,6 +487,27 @@ expr_stmt|;
 name|manager
 operator|->
 name|export_procs
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|manager
+operator|->
+name|raw_load_procs
+condition|)
+block|{
+name|g_slist_free
+argument_list|(
+name|manager
+operator|->
+name|raw_load_procs
+argument_list|)
+expr_stmt|;
+name|manager
+operator|->
+name|raw_load_procs
 operator|=
 name|NULL
 expr_stmt|;

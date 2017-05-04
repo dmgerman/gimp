@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288911050103
+DECL|enum|__anon2b3a5c240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -333,6 +333,9 @@ name|PROP_IMPORT_PROMOTE_DITHER
 block|,
 DECL|enumerator|PROP_IMPORT_ADD_ALPHA
 name|PROP_IMPORT_ADD_ALPHA
+block|,
+DECL|enumerator|PROP_IMPORT_RAW_PLUG_IN
+name|PROP_IMPORT_RAW_PLUG_IN
 block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_INSTALL_COLORMAP
@@ -1898,6 +1901,27 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_PATH
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_IMPORT_RAW_PLUG_IN
+argument_list|,
+literal|"import-raw-plug-in"
+argument_list|,
+literal|"Import raw plug-in"
+argument_list|,
+name|IMPORT_RAW_PLUG_IN_BLURB
+argument_list|,
+name|GIMP_CONFIG_PATH_FILE
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_RESTART
+argument_list|)
+expr_stmt|;
 comment|/*  only for backward compatibility:  */
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
@@ -2258,6 +2282,13 @@ argument_list|(
 name|core_config
 operator|->
 name|plug_in_rc_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|core_config
+operator|->
+name|import_raw_plug_in
 argument_list|)
 expr_stmt|;
 if|if
@@ -3308,6 +3339,26 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_IMPORT_RAW_PLUG_IN
+case|:
+name|g_free
+argument_list|(
+name|core_config
+operator|->
+name|import_raw_plug_in
+argument_list|)
+expr_stmt|;
+name|core_config
+operator|->
+name|import_raw_plug_in
+operator|=
+name|g_value_dup_string
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_INSTALL_COLORMAP
 case|:
 case|case
@@ -4066,6 +4117,19 @@ argument_list|,
 name|core_config
 operator|->
 name|import_add_alpha
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_IMPORT_RAW_PLUG_IN
+case|:
+name|g_value_set_string
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|import_raw_plug_in
 argument_list|)
 expr_stmt|;
 break|break;

@@ -56,7 +56,7 @@ DECL|macro|LOAD_THUMB_PROC
 define|#
 directive|define
 name|LOAD_THUMB_PROC
-value|"file-raw-load-thumb"
+value|"file-darktable-load-thumb"
 end_define
 
 begin_function_decl
@@ -541,6 +541,13 @@ argument_list|,
 name|format
 operator|->
 name|mime_type
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_raw
+argument_list|(
+name|format
+operator|->
+name|load_proc
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler

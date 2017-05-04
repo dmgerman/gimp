@@ -530,6 +530,15 @@ value|_("Add an alpha channel to all layers of imported images.")
 end_define
 
 begin_define
+DECL|macro|IMPORT_RAW_PLUG_IN_BLURB
+define|#
+directive|define
+name|IMPORT_RAW_PLUG_IN_BLURB
+define|\
+value|_("Which plug-in to use for importing raw digital camera files.")
+end_define
+
+begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define
