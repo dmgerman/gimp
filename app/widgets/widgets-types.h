@@ -1254,6 +1254,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPlugInView
+typedef|typedef
+name|struct
+name|_GimpPlugInView
+name|GimpPlugInView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPolar
 typedef|typedef
 name|struct
