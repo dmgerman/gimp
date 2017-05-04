@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b029c7b0103
+DECL|enum|__anon2b3f69d70103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2644,6 +2644,9 @@ operator|->
 name|color_managed
 condition|)
 block|{
+name|gboolean
+name|has_input
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -2674,6 +2677,17 @@ decl_stmt|;
 name|guint32
 name|dummy
 decl_stmt|;
+name|has_input
+operator|=
+name|gegl_node_has_pad
+argument_list|(
+name|filter
+operator|->
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
 name|drawable_format
 operator|=
 name|gimp_drawable_get_format
@@ -2683,6 +2697,10 @@ operator|->
 name|drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_input
+condition|)
 name|input_format
 operator|=
 name|gimp_gegl_node_get_format
@@ -2715,6 +2733,10 @@ name|drawable_format
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_input
+condition|)
 name|g_printerr
 argument_list|(
 literal|"filter input format:  %s\n"
@@ -2762,6 +2784,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  convert the filter input/output formats to something we have        *  built-in color profiles for (see the get_color_profile()        *  calls below)        */
+if|if
+condition|(
+name|has_input
+condition|)
 name|input_format
 operator|=
 name|gimp_color_profile_get_format
@@ -2792,6 +2818,10 @@ name|drawable_format
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_input
+condition|)
 name|g_printerr
 argument_list|(
 literal|"profile transform input format:    %s\n"
@@ -2819,6 +2849,10 @@ argument_list|(
 name|managed
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_input
+condition|)
 name|input_profile
 operator|=
 name|gimp_babl_format_get_color_profile
@@ -2835,6 +2869,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|has_input
+operator|&&
 operator|!
 name|gimp_color_transform_can_gegl_copy
 argument_list|(
@@ -2842,6 +2879,7 @@ name|drawable_profile
 argument_list|,
 name|input_profile
 argument_list|)
+operator|)
 operator|||
 operator|!
 name|gimp_color_transform_can_gegl_copy
@@ -2857,6 +2895,11 @@ argument_list|(
 literal|"using gimp:profile-transform\n"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_input
+condition|)
+block|{
 name|gegl_node_set
 argument_list|(
 name|filter
@@ -2886,6 +2929,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 name|gegl_node_set
 argument_list|(
 name|filter
