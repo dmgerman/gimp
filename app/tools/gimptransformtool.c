@@ -7995,6 +7995,10 @@ name|type
 operator|==
 name|GIMP_TRANSFORM_TYPE_LAYER
 operator|&&
+name|options
+operator|->
+name|show_preview
+operator|&&
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|item
