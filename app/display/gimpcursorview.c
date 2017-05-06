@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2badae430103
+DECL|enum|__anon28d320020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2474,9 +2474,11 @@ condition|)
 block|{
 name|unit_digits
 operator|=
-name|gimp_unit_get_digits
+name|gimp_unit_get_scaled_digits
 argument_list|(
 name|unit
+argument_list|,
+name|image_res
 argument_list|)
 expr_stmt|;
 name|unit_str
