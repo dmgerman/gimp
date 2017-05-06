@@ -34,7 +34,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* enumerations from "./display-enums.h" */
+comment|/* enumerations from "display-enums.h" */
 end_comment
 
 begin_function

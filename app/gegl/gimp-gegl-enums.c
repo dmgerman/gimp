@@ -40,7 +40,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* enumerations from "./gimp-gegl-enums.h" */
+comment|/* enumerations from "gimp-gegl-enums.h" */
 end_comment
 
 begin_function

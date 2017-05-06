@@ -34,7 +34,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* enumerations from "./core-enums.h" */
+comment|/* enumerations from "core-enums.h" */
 end_comment
 
 begin_function
@@ -4905,7 +4905,7 @@ name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Plug-in"
+literal|"Plug-In"
 argument_list|)
 block|,
 name|NULL

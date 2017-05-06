@@ -34,7 +34,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/* enumerations from "./gimpbaseenums.h" */
+comment|/* enumerations from "gimpbaseenums.h" */
 end_comment
 
 begin_function
@@ -6907,7 +6907,7 @@ name|NC_
 argument_list|(
 literal|"pdb-proc-type"
 argument_list|,
-literal|"GIMP Plug-in"
+literal|"GIMP Plug-In"
 argument_list|)
 block|,
 name|NULL
