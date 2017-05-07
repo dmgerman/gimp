@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc32b50103
+DECL|enum|__anon27e8c2340103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -389,6 +389,8 @@ block|,
 literal|"gegl:grid"
 block|,
 literal|"gegl:high-pass"
+block|,
+literal|"gegl:hue-chroma"
 block|,
 literal|"gegl:illusion"
 block|,

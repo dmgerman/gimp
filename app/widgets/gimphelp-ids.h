@@ -2686,6 +2686,14 @@ value|"gimp-filter-high-pass"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_HUE_CHROMA
+define|#
+directive|define
+name|GIMP_HELP_FILTER_HUE_CHROMA
+value|"gimp-filter-hue-chroma"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_ILLUSION
 define|#
 directive|define

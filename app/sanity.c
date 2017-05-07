@@ -1768,6 +1768,8 @@ literal|"gegl:grid"
 block|,
 literal|"gegl:high-pass"
 block|,
+literal|"gegl:hue-chroma"
+block|,
 literal|"gegl:illusion"
 block|,
 literal|"gegl:image-gradient"
