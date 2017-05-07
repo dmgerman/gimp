@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27940e320103
+DECL|enum|__anon2c6d8a690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1438,14 +1438,14 @@ name|gimp_config_reset_property
 argument_list|(
 name|object
 argument_list|,
-literal|"font-size-unit"
+literal|"font-size"
 argument_list|)
 expr_stmt|;
 name|gimp_config_reset_property
 argument_list|(
 name|object
 argument_list|,
-literal|"font-size"
+literal|"font-size-unit"
 argument_list|)
 expr_stmt|;
 name|gimp_config_reset_property
