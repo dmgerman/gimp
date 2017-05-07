@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af82070103
+DECL|enum|__anon28c2cc8b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -246,8 +246,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpLayerModeAffectMask
-name|gimp_operation_layer_mode_real_get_affect_mask
+name|GimpLayerCompositeRegion
+name|gimp_operation_layer_mode_real_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -782,9 +782,9 @@ name|gimp_operation_layer_mode_process_pixels
 expr_stmt|;
 name|klass
 operator|->
-name|get_affect_mask
+name|get_affected_region
 operator|=
-name|gimp_operation_layer_mode_real_get_affect_mask
+name|gimp_operation_layer_mode_real_get_affected_region
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -1542,12 +1542,12 @@ name|GIMP_LAYER_COMPOSITE_DST_ATOP
 operator|)
 condition|)
 block|{
-name|GimpLayerModeAffectMask
-name|affect_mask
+name|GimpLayerCompositeRegion
+name|affected_region
 decl_stmt|;
-name|affect_mask
+name|affected_region
 operator|=
-name|gimp_operation_layer_mode_get_affect_mask
+name|gimp_operation_layer_mode_get_affected_region
 argument_list|(
 name|point
 argument_list|)
@@ -1557,9 +1557,9 @@ if|if
 condition|(
 operator|!
 operator|(
-name|affect_mask
+name|affected_region
 operator|&
-name|GIMP_LAYER_MODE_AFFECT_SRC
+name|GIMP_LAYER_COMPOSITE_REGION_SOURCE
 operator|)
 operator|&&
 name|point
@@ -1635,12 +1635,12 @@ operator|==
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 condition|)
 block|{
-name|GimpLayerModeAffectMask
-name|affect_mask
+name|GimpLayerCompositeRegion
+name|affected_region
 decl_stmt|;
-name|affect_mask
+name|affected_region
 operator|=
-name|gimp_operation_layer_mode_get_affect_mask
+name|gimp_operation_layer_mode_get_affected_region
 argument_list|(
 name|point
 argument_list|)
@@ -1650,9 +1650,9 @@ if|if
 condition|(
 operator|!
 operator|(
-name|affect_mask
+name|affected_region
 operator|&
-name|GIMP_LAYER_MODE_AFFECT_DST
+name|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
 operator|)
 condition|)
 block|{
@@ -1773,9 +1773,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpLayerModeAffectMask
-DECL|function|gimp_operation_layer_mode_real_get_affect_mask (GimpOperationLayerMode * layer_mode)
-name|gimp_operation_layer_mode_real_get_affect_mask
+name|GimpLayerCompositeRegion
+DECL|function|gimp_operation_layer_mode_real_get_affected_region (GimpOperationLayerMode * layer_mode)
+name|gimp_operation_layer_mode_real_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -1784,7 +1784,7 @@ parameter_list|)
 block|{
 comment|/* most modes only affect the overlapping regions. */
 return|return
-name|GIMP_LAYER_MODE_AFFECT_NONE
+name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 return|;
 block|}
 end_function
@@ -1794,9 +1794,9 @@ comment|/* public functions */
 end_comment
 
 begin_function
-name|GimpLayerModeAffectMask
-DECL|function|gimp_operation_layer_mode_get_affect_mask (GimpOperationLayerMode * layer_mode)
-name|gimp_operation_layer_mode_get_affect_mask
+name|GimpLayerCompositeRegion
+DECL|function|gimp_operation_layer_mode_get_affected_region (GimpOperationLayerMode * layer_mode)
+name|gimp_operation_layer_mode_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -1810,7 +1810,7 @@ argument_list|(
 name|layer_mode
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_AFFECT_NONE
+name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -1819,7 +1819,7 @@ argument_list|(
 name|layer_mode
 argument_list|)
 operator|->
-name|get_affect_mask
+name|get_affected_region
 argument_list|(
 name|layer_mode
 argument_list|)

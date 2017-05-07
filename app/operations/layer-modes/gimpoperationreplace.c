@@ -29,8 +29,8 @@ end_include
 
 begin_function_decl
 specifier|static
-name|GimpLayerModeAffectMask
-name|gimp_operation_replace_get_affect_mask
+name|GimpLayerCompositeRegion
+name|gimp_operation_replace_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -117,9 +117,9 @@ name|gimp_operation_replace_process
 expr_stmt|;
 name|layer_mode_class
 operator|->
-name|get_affect_mask
+name|get_affected_region
 operator|=
-name|gimp_operation_replace_get_affect_mask
+name|gimp_operation_replace_get_affected_region
 expr_stmt|;
 block|}
 end_function
@@ -662,19 +662,19 @@ end_function
 
 begin_function
 specifier|static
-name|GimpLayerModeAffectMask
-DECL|function|gimp_operation_replace_get_affect_mask (GimpOperationLayerMode * layer_mode)
-name|gimp_operation_replace_get_affect_mask
+name|GimpLayerCompositeRegion
+DECL|function|gimp_operation_replace_get_affected_region (GimpOperationLayerMode * layer_mode)
+name|gimp_operation_replace_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
 name|layer_mode
 parameter_list|)
 block|{
-name|GimpLayerModeAffectMask
-name|affect_mask
+name|GimpLayerCompositeRegion
+name|affected_region
 init|=
-name|GIMP_LAYER_MODE_AFFECT_NONE
+name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 decl_stmt|;
 if|if
 condition|(
@@ -684,13 +684,13 @@ name|opacity
 operator|!=
 literal|0.0
 condition|)
-name|affect_mask
+name|affected_region
 operator||=
-name|GIMP_LAYER_MODE_AFFECT_DST
+name|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
 expr_stmt|;
-comment|/* if opacity != 1.0, or we have a mask, thne we also affect SRC, but this is    * considered the case anyway, so no need for special handling.    */
+comment|/* if opacity != 1.0, or we have a mask, then we also affect SOURCE, but this    * is considered the case anyway, so no need for special handling.    */
 return|return
-name|affect_mask
+name|affected_region
 return|;
 block|}
 end_function

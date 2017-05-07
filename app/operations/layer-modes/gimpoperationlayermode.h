@@ -104,12 +104,12 @@ name|GeglOperationPointComposer3Class
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
-comment|/* Returns the set of inputs that the layer mode affects, apart    * from the overlapping regions.  Returns an empty set by default,    * which is suitable for almost all layer modes.    */
-DECL|member|get_affect_mask
-name|GimpLayerModeAffectMask
+comment|/* Returns the composite region (any combination of the layer and the    * backdrop) that the layer mode affects.  Most modes only affect the    * overlapping region, which is what the function returns by default.    */
+DECL|member|get_affected_region
+name|GimpLayerCompositeRegion
 function_decl|(
 modifier|*
-name|get_affect_mask
+name|get_affected_region
 function_decl|)
 parameter_list|(
 name|GimpOperationLayerMode
@@ -169,8 +169,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpLayerModeAffectMask
-name|gimp_operation_layer_mode_get_affect_mask
+name|GimpLayerCompositeRegion
+name|gimp_operation_layer_mode_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*

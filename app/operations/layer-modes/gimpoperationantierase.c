@@ -29,8 +29,8 @@ end_include
 
 begin_function_decl
 specifier|static
-name|GimpLayerModeAffectMask
-name|gimp_operation_anti_erase_get_affect_mask
+name|GimpLayerCompositeRegion
+name|gimp_operation_anti_erase_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -117,9 +117,9 @@ name|gimp_operation_anti_erase_process
 expr_stmt|;
 name|layer_mode_class
 operator|->
-name|get_affect_mask
+name|get_affected_region
 operator|=
-name|gimp_operation_anti_erase_get_affect_mask
+name|gimp_operation_anti_erase_get_affected_region
 expr_stmt|;
 block|}
 end_function
@@ -569,9 +569,9 @@ end_function
 
 begin_function
 specifier|static
-name|GimpLayerModeAffectMask
-DECL|function|gimp_operation_anti_erase_get_affect_mask (GimpOperationLayerMode * layer_mode)
-name|gimp_operation_anti_erase_get_affect_mask
+name|GimpLayerCompositeRegion
+DECL|function|gimp_operation_anti_erase_get_affected_region (GimpOperationLayerMode * layer_mode)
+name|gimp_operation_anti_erase_get_affected_region
 parameter_list|(
 name|GimpOperationLayerMode
 modifier|*
@@ -579,7 +579,7 @@ name|layer_mode
 parameter_list|)
 block|{
 return|return
-name|GIMP_LAYER_MODE_AFFECT_SRC
+name|GIMP_LAYER_COMPOSITE_REGION_SOURCE
 return|;
 block|}
 end_function

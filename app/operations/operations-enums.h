@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad75d9e0103
+DECL|enum|__anon2bcb78190103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad75d9e0203
+DECL|enum|__anon2bcb78190203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad75d9e0303
+DECL|enum|__anon2bcb78190303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -424,7 +424,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad75d9e0403
+DECL|enum|__anon2bcb78190403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -462,7 +462,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad75d9e0503
+DECL|enum|__anon2bcb78190503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -518,29 +518,38 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2ad75d9e0603
+DECL|enum|__anon2bcb78190603
 block|{
-DECL|enumerator|GIMP_LAYER_MODE_AFFECT_NONE
-name|GIMP_LAYER_MODE_AFFECT_NONE
+DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
+name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 init|=
 literal|0
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_AFFECT_DST
-name|GIMP_LAYER_MODE_AFFECT_DST
+DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
+name|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
 init|=
 literal|1
 operator|<<
 literal|0
 block|,
-DECL|enumerator|GIMP_LAYER_MODE_AFFECT_SRC
-name|GIMP_LAYER_MODE_AFFECT_SRC
+DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_SOURCE
+name|GIMP_LAYER_COMPOSITE_REGION_SOURCE
 init|=
 literal|1
 operator|<<
 literal|1
-DECL|typedef|GimpLayerModeAffectMask
-block|}
-name|GimpLayerModeAffectMask
+block|,
+DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_UNION
+name|GIMP_LAYER_COMPOSITE_REGION_UNION
+init|=
+operator|(
+name|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
+operator||
+name|GIMP_LAYER_COMPOSITE_REGION_SOURCE
+operator|)
+block|, }
+DECL|typedef|GimpLayerCompositeRegion
+name|GimpLayerCompositeRegion
 typedef|;
 end_typedef
 
@@ -548,7 +557,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2ad75d9e0703
+DECL|enum|__anon2bcb78190703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
