@@ -128,6 +128,11 @@ name|GimpLayerCompositeMode
 name|composite_mode
 decl_stmt|;
 comment|/*  layer composite mode       */
+DECL|member|excludes_backdrop
+name|gboolean
+name|excludes_backdrop
+decl_stmt|;
+comment|/*  layer clips backdrop       */
 DECL|member|lock_alpha
 name|gboolean
 name|lock_alpha
@@ -166,7 +171,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon298899a20108
+DECL|struct|__anon2a1d59420108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -207,6 +212,7 @@ DECL|member|parent_class
 name|GimpDrawableClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|opacity_changed
 name|void
 function_decl|(
@@ -267,6 +273,18 @@ modifier|*
 name|layer
 parameter_list|)
 function_decl|;
+DECL|member|excludes_backdrop_changed
+name|void
+function_decl|(
+modifier|*
+name|excludes_backdrop_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
 DECL|member|lock_alpha_changed
 name|void
 function_decl|(
@@ -320,6 +338,19 @@ name|void
 function_decl|(
 modifier|*
 name|show_mask_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
+DECL|member|get_excludes_backdrop
+name|gboolean
+function_decl|(
+modifier|*
+name|get_excludes_backdrop
 function_decl|)
 parameter_list|(
 name|GimpLayer
@@ -733,6 +764,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_layer_get_excludes_backdrop
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_layer_set_lock_alpha
 parameter_list|(
@@ -763,6 +805,21 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_layer_can_lock_alpha
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  protected  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_layer_update_excludes_backdrop
 parameter_list|(
 name|GimpLayer
 modifier|*
