@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be9ec20103
+DECL|enum|__anon27a9234b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be9ec20203
+DECL|enum|__anon27a9234b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1747,17 +1747,6 @@ condition|)
 block|{
 name|GeglNode
 modifier|*
-name|input
-init|=
-name|gegl_node_get_input_proxy
-argument_list|(
-name|node
-argument_list|,
-literal|"input"
-argument_list|)
-decl_stmt|;
-name|GeglNode
-modifier|*
 name|output
 init|=
 name|gegl_node_get_output_proxy
@@ -1777,21 +1766,6 @@ condition|)
 block|{
 name|gegl_node_connect_to
 argument_list|(
-name|input
-argument_list|,
-literal|"output"
-argument_list|,
-name|drawable
-operator|->
-name|private
-operator|->
-name|mode_node
-argument_list|,
-literal|"input"
-argument_list|)
-expr_stmt|;
-name|gegl_node_connect_to
-argument_list|(
 name|drawable
 operator|->
 name|private
@@ -1808,18 +1782,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_node_disconnect
-argument_list|(
-name|drawable
-operator|->
-name|private
-operator|->
-name|mode_node
-argument_list|,
-literal|"input"
-argument_list|)
-expr_stmt|;
-comment|/* The rest handled by GimpFilter */
+comment|/* Handled by GimpFilter */
 block|}
 block|}
 name|GIMP_FILTER_CLASS
@@ -1926,14 +1889,6 @@ argument_list|,
 literal|"output"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_filter_get_visible
-argument_list|(
-name|filter
-argument_list|)
-condition|)
-block|{
 name|gegl_node_connect_to
 argument_list|(
 name|input
@@ -1949,6 +1904,14 @@ argument_list|,
 literal|"input"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_filter_get_visible
+argument_list|(
+name|filter
+argument_list|)
+condition|)
+block|{
 name|gegl_node_connect_to
 argument_list|(
 name|drawable
