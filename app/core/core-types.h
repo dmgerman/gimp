@@ -376,6 +376,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerStack
+typedef|typedef
+name|struct
+name|_GimpLayerStack
+name|GimpLayerStack
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTaggedContainer
 typedef|typedef
 name|struct

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablestack.h"
+file|"gimplayerstack.h"
 end_include
 
 begin_include
@@ -1257,7 +1257,7 @@ name|private
 operator|->
 name|children
 operator|=
-name|gimp_drawable_stack_new
+name|gimp_layer_stack_new
 argument_list|(
 name|GIMP_TYPE_LAYER
 argument_list|)

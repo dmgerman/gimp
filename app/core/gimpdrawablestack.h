@@ -154,6 +154,33 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  protected  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_drawable_stack_update
+parameter_list|(
+name|GimpDrawableStack
+modifier|*
+name|stack
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

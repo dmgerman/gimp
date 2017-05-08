@@ -258,6 +258,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayerstack.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -378,7 +384,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9969e0103
+DECL|enum|__anon2c9ce69e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -475,7 +481,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9969e0203
+DECL|enum|__anon2c9ce69e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3190,7 +3196,7 @@ name|gimp_item_tree_new
 argument_list|(
 name|image
 argument_list|,
-name|GIMP_TYPE_DRAWABLE_STACK
+name|GIMP_TYPE_LAYER_STACK
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|)
