@@ -472,6 +472,14 @@ literal|"hsv"
 block|}
 block|,
 block|{
+name|GIMP_COLOR_FRAME_MODE_LCH
+block|,
+literal|"GIMP_COLOR_FRAME_MODE_LCH"
+block|,
+literal|"lch"
+block|}
+block|,
+block|{
 name|GIMP_COLOR_FRAME_MODE_CMYK
 block|,
 literal|"GIMP_COLOR_FRAME_MODE_CMYK"
@@ -542,6 +550,19 @@ argument_list|(
 literal|"color-frame-mode"
 argument_list|,
 literal|"HSV"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_COLOR_FRAME_MODE_LCH
+block|,
+name|NC_
+argument_list|(
+literal|"color-frame-mode"
+argument_list|,
+literal|"CIE LCH"
 argument_list|)
 block|,
 name|NULL

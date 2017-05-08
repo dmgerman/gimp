@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30103
+DECL|enum|__anon2bd55ac90103
 block|{
 DECL|enumerator|GIMP_ACTIVE_COLOR_FOREGROUND
 name|GIMP_ACTIVE_COLOR_FOREGROUND
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30203
+DECL|enum|__anon2bd55ac90203
 block|{
 DECL|enumerator|GIMP_CIRCLE_BACKGROUND_PLAIN
 name|GIMP_CIRCLE_BACKGROUND_PLAIN
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30303
+DECL|enum|__anon2bd55ac90303
 block|{
 DECL|enumerator|GIMP_COLOR_DIALOG_OK
 name|GIMP_COLOR_DIALOG_OK
@@ -150,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30403
+DECL|enum|__anon2bd55ac90403
 block|{
 DECL|enumerator|GIMP_COLOR_FRAME_MODE_PIXEL
 name|GIMP_COLOR_FRAME_MODE_PIXEL
@@ -168,6 +168,10 @@ DECL|enumerator|GIMP_COLOR_FRAME_MODE_HSV
 name|GIMP_COLOR_FRAME_MODE_HSV
 block|,
 comment|/*< desc="HSV">*/
+DECL|enumerator|GIMP_COLOR_FRAME_MODE_LCH
+name|GIMP_COLOR_FRAME_MODE_LCH
+block|,
+comment|/*< desc="CIE LCH">*/
 DECL|enumerator|GIMP_COLOR_FRAME_MODE_CMYK
 name|GIMP_COLOR_FRAME_MODE_CMYK
 comment|/*< desc="CMYK">*/
@@ -198,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30503
+DECL|enum|__anon2bd55ac90503
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_MODE_NONE
 name|GIMP_COLOR_PICK_MODE_NONE
@@ -242,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30603
+DECL|enum|__anon2bd55ac90603
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_STATE_START
 name|GIMP_COLOR_PICK_STATE_START
@@ -279,7 +283,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30703
+DECL|enum|__anon2bd55ac90703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_SCALE_LINEAR
 name|GIMP_HISTOGRAM_SCALE_LINEAR
@@ -315,7 +319,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30803
+DECL|enum|__anon2bd55ac90803
 block|{
 DECL|enumerator|GIMP_TAB_STYLE_ICON
 name|GIMP_TAB_STYLE_ICON
@@ -383,7 +387,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2de7d30903
+DECL|enum|__anon2bd55ac90903
 block|{
 DECL|enumerator|GIMP_TAG_ENTRY_MODE_QUERY
 name|GIMP_TAG_ENTRY_MODE_QUERY
@@ -404,7 +408,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30a03
+DECL|enum|__anon2bd55ac90a03
 block|{
 DECL|enumerator|GIMP_VIEW_BG_CHECKS
 name|GIMP_VIEW_BG_CHECKS
@@ -421,7 +425,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30b03
+DECL|enum|__anon2bd55ac90b03
 block|{
 DECL|enumerator|GIMP_VIEW_BORDER_BLACK
 name|GIMP_VIEW_BORDER_BLACK
@@ -444,7 +448,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30c03
+DECL|enum|__anon2bd55ac90c03
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -585,7 +589,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30d03
+DECL|enum|__anon2bd55ac90d03
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -605,7 +609,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30e03
+DECL|enum|__anon2bd55ac90e03
 block|{
 DECL|enumerator|GIMP_CURSOR_NONE
 name|GIMP_CURSOR_NONE
@@ -694,7 +698,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d30f03
+DECL|enum|__anon2bd55ac90f03
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -819,7 +823,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d31003
+DECL|enum|__anon2bd55ac91003
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -875,7 +879,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d31103
+DECL|enum|__anon2bd55ac91103
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE
@@ -949,7 +953,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a2de7d31203
+DECL|enum|__anon2bd55ac91203
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
