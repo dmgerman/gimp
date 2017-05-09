@@ -995,6 +995,14 @@ break|break;
 case|case
 name|GIMP_SELECT_CRITERION_LCH_L
 case|:
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"CIE L alpha float"
+argument_list|)
+expr_stmt|;
+break|break;
 case|case
 name|GIMP_SELECT_CRITERION_LCH_C
 case|:
