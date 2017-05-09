@@ -170,7 +170,7 @@ end_define
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_palette_finalize
+name|gimp_tool_palette_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -372,9 +372,9 @@ argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|finalize
+name|dispose
 operator|=
-name|gimp_tool_palette_finalize
+name|gimp_tool_palette_dispose
 expr_stmt|;
 name|widget_class
 operator|->
@@ -474,30 +474,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_palette_finalize (GObject * object)
-name|gimp_tool_palette_finalize
+DECL|function|gimp_tool_palette_dispose (GObject * object)
+name|gimp_tool_palette_dispose
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpToolPalette
-modifier|*
-name|palette
-init|=
-name|GIMP_TOOL_PALETTE
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 name|GimpToolPalettePrivate
 modifier|*
 name|private
 init|=
 name|GET_PRIVATE
 argument_list|(
-name|palette
+name|object
 argument_list|)
 decl_stmt|;
 if|if
@@ -535,7 +526,7 @@ argument_list|(
 name|gimp_tool_palette_config_size_changed
 argument_list|)
 argument_list|,
-name|palette
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -544,7 +535,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|finalize
+name|dispose
 argument_list|(
 name|object
 argument_list|)
