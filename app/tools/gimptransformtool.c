@@ -7999,6 +7999,11 @@ name|options
 operator|->
 name|show_preview
 operator|&&
+name|tr_tool
+operator|->
+name|use_grid
+comment|/* not for flip */
+operator|&&
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|item
