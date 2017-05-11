@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2cc8b0103
+DECL|enum|__anon2b3f940a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1450,6 +1450,9 @@ decl_stmt|;
 name|gboolean
 name|has_aux
 decl_stmt|;
+name|GimpLayerCompositeRegion
+name|included_region
+decl_stmt|;
 comment|/* get the raw values.  this does not increase the reference count. */
 name|input
 operator|=
@@ -1515,6 +1518,19 @@ argument_list|,
 name|result
 argument_list|)
 expr_stmt|;
+name|included_region
+operator|=
+name|gimp_layer_mode_get_included_region
+argument_list|(
+name|point
+operator|->
+name|layer_mode
+argument_list|,
+name|point
+operator|->
+name|composite_mode
+argument_list|)
+expr_stmt|;
 comment|/* if there's no 'input' ... */
 if|if
 condition|(
@@ -1528,17 +1544,9 @@ condition|(
 name|has_aux
 operator|&&
 operator|(
-name|point
-operator|->
-name|composite_mode
-operator|==
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
-operator|||
-name|point
-operator|->
-name|composite_mode
-operator|==
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+name|included_region
+operator|&
+name|GIMP_LAYER_COMPOSITE_REGION_SOURCE
 operator|)
 condition|)
 block|{
@@ -1622,17 +1630,9 @@ block|{
 comment|/* ... and the composite mode includes 'input' ... */
 if|if
 condition|(
-name|point
-operator|->
-name|composite_mode
-operator|==
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
-operator|||
-name|point
-operator|->
-name|composite_mode
-operator|==
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|included_region
+operator|&
+name|GIMP_LAYER_COMPOSITE_REGION_DESTINATION
 condition|)
 block|{
 name|GimpLayerCompositeRegion
