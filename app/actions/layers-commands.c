@@ -782,6 +782,11 @@ argument_list|(
 name|active_tool
 argument_list|)
 condition|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gimp_text_tool_set_layer
 argument_list|(
 name|GIMP_TEXT_TOOL
@@ -792,6 +797,23 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|active_tool
+operator|->
+name|display
+argument_list|)
+expr_stmt|;
+name|gtk_widget_grab_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
