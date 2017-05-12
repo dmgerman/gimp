@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|vectors_vectors_tool_cmd_callback
+name|vectors_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

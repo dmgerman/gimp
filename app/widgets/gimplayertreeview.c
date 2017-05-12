@@ -1027,7 +1027,7 @@ name|item_view_class
 operator|->
 name|activate_action
 operator|=
-literal|"layers-text-tool"
+literal|"layers-edit"
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -2317,7 +2317,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af70e6e0108
+DECL|struct|__anon27f1783c0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af70e6e0208
+DECL|struct|__anon27f1783c0208
 block|{
 DECL|member|mask_column
 name|gint

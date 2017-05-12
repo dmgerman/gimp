@@ -18,7 +18,21 @@ end_define
 
 begin_function_decl
 name|void
-name|layers_text_tool_cmd_callback
+name|layers_edit_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layers_edit_text_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f5dfd50103
+DECL|enum|__anon2ac5e7810103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28f5dfd50208
+DECL|struct|__anon2ac5e7810208
 block|{
 DECL|member|name
 specifier|const
@@ -1799,7 +1799,7 @@ define|#
 directive|define
 name|MENURC_OVER20_UPDATE_PATTERN
 define|\
-value|"\"<Actions>/file/file-export-to\""           "|" \   "\"<Actions>/file/file-export\""              "|" \   "\"<Actions>/edit/edit-paste-as-new\""        "|" \   "\"<Actions>/buffers/buffers-paste-as-new\""  "|" \   "\"<Actions>/tools/tools-value-[1-4]-.*\""
+value|"\"<Actions>/file/file-export-to\""           "|" \   "\"<Actions>/file/file-export\""              "|" \   "\"<Actions>/edit/edit-paste-as-new\""        "|" \   "\"<Actions>/buffers/buffers-paste-as-new\""  "|" \   "\"<Actions>/tools/tools-value-[1-4]-.*\""    "|" \   "\"<Actions>/layers/layers-text-tool\""       "|" \   "\"<Actions>/vectors/vectors-path-tool\""
 end_define
 
 begin_comment
@@ -2031,6 +2031,48 @@ argument_list|,
 name|match
 operator|+
 literal|31
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/layers/layers-text-tool\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/layers/layers-edit\""
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/vectors/vectors-path-tool\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/vectors/vectors-edit\""
 argument_list|)
 expr_stmt|;
 block|}

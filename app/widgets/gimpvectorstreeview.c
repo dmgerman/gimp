@@ -380,7 +380,7 @@ name|iv_class
 operator|->
 name|activate_action
 operator|=
-literal|"vectors-path-tool"
+literal|"vectors-edit"
 expr_stmt|;
 name|iv_class
 operator|->

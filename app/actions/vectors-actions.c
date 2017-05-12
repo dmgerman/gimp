@@ -152,7 +152,7 @@ name|GIMP_HELP_PATH_COLOR_TAG
 block|}
 block|,
 block|{
-literal|"vectors-path-tool"
+literal|"vectors-edit"
 block|,
 name|GIMP_ICON_TOOL_PATH
 block|,
@@ -160,16 +160,21 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Path _Tool"
+literal|"Edit Pa_th"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"vectors-action"
+argument_list|,
+literal|"Edit the active path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|vectors_vectors_tool_cmd_callback
+name|vectors_edit_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TOOL_VECTORS
@@ -1621,7 +1626,7 @@ define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"vectors-path-tool"
+literal|"vectors-edit"
 argument_list|,
 name|vectors
 argument_list|)

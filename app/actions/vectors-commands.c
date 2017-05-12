@@ -398,8 +398,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|vectors_vectors_tool_cmd_callback (GtkAction * action,gpointer data)
-name|vectors_vectors_tool_cmd_callback
+DECL|function|vectors_edit_cmd_callback (GtkAction * action,gpointer data)
+name|vectors_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

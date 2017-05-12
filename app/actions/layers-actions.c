@@ -343,15 +343,15 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"layers-text-tool"
+literal|"layers-edit"
 block|,
-name|GIMP_ICON_TOOL_TEXT
+name|GIMP_ICON_EDIT
 block|,
 name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Te_xt Tool"
+literal|"Default edit action"
 argument_list|)
 block|,
 name|NULL
@@ -360,15 +360,44 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Activate the text tool on this text layer"
+literal|"Activate the default edit action for this type of layer"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|layers_text_tool_cmd_callback
+name|layers_edit_cmd_callback
 argument_list|)
 block|,
-name|GIMP_HELP_TOOL_TEXT
+name|GIMP_HELP_LAYER_EDIT
+block|}
+block|,
+block|{
+literal|"layers-edit-text"
+block|,
+name|GIMP_ICON_EDIT
+block|,
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Edit Te_xt on canvas"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Edit this text layer content on canvas"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|layers_edit_text_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_LAYER_EDIT
 block|}
 block|,
 block|{
@@ -3671,9 +3700,28 @@ name|label
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_label (group, action, label)
+name|SET_SENSITIVE
+argument_list|(
+literal|"layers-edit"
+argument_list|,
+operator|!
+name|ac
+operator|&&
+operator|(
+operator|(
+name|layer
+operator|&&
+operator|!
+name|fs
+operator|)
+operator|||
+name|text_layer
+operator|)
+argument_list|)
+expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
-literal|"layers-text-tool"
+literal|"layers-edit-text"
 argument_list|,
 name|text_layer
 operator|&&
@@ -3683,7 +3731,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-text-tool"
+literal|"layers-edit-text"
 argument_list|,
 name|text_layer
 operator|&&
