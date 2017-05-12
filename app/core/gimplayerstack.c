@@ -722,6 +722,8 @@ argument_list|(
 name|stack
 argument_list|,
 name|index
+operator|+
+literal|1
 argument_list|,
 operator|-
 literal|1
