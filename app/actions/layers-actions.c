@@ -3683,6 +3683,16 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"layers-text-tool"
+argument_list|,
+name|text_layer
+operator|&&
+operator|!
+name|ac
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"layers-edit-attributes"
 argument_list|,
 name|layer
