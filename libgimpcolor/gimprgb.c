@@ -2320,6 +2320,11 @@ DECL|member|has_alpha
 name|gboolean
 name|has_alpha
 decl_stmt|;
+DECL|member|validate
+name|gboolean
+name|validate
+decl_stmt|;
+comment|/* change this to enable [0.0...1.0] */
 DECL|member|default_value
 name|GimpRGB
 name|default_value
@@ -2616,6 +2621,15 @@ modifier|*
 name|value
 parameter_list|)
 block|{
+name|GimpParamSpecRGB
+modifier|*
+name|rgb_spec
+init|=
+name|GIMP_PARAM_SPEC_RGB
+argument_list|(
+name|pspec
+argument_list|)
+decl_stmt|;
 name|GimpRGB
 modifier|*
 name|rgb
@@ -2631,6 +2645,10 @@ name|v_pointer
 decl_stmt|;
 if|if
 condition|(
+name|rgb_spec
+operator|->
+name|validate
+operator|&&
 name|rgb
 condition|)
 block|{
@@ -2672,10 +2690,7 @@ operator|->
 name|b
 operator|||
 operator|(
-name|GIMP_PARAM_SPEC_RGB
-argument_list|(
-name|pspec
-argument_list|)
+name|rgb_spec
 operator|->
 name|has_alpha
 operator|&&
