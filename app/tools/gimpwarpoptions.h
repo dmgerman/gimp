@@ -128,6 +128,10 @@ DECL|member|effect_hardness
 name|gdouble
 name|effect_hardness
 decl_stmt|;
+DECL|member|stroke_spacing
+name|gdouble
+name|stroke_spacing
+decl_stmt|;
 DECL|member|n_animation_frames
 name|gint
 name|n_animation_frames

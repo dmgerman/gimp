@@ -1098,6 +1098,16 @@ argument_list|,
 name|options
 operator|->
 name|effect_hardness
+operator|/
+literal|100.0
+argument_list|,
+literal|"spacing"
+argument_list|,
+name|options
+operator|->
+name|stroke_spacing
+operator|/
+literal|100.0
 argument_list|,
 literal|"stroke"
 argument_list|,
