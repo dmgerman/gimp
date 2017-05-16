@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afa590c0103
+DECL|enum|__anon27e680580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -531,20 +531,21 @@ DECL|variable|color
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_rgba_set_uchar
+name|gimp_rgba_set
 argument_list|(
 operator|&
 name|color
 argument_list|,
-literal|0x80
+literal|1.0
 argument_list|,
-literal|0x80
+literal|0.0
 argument_list|,
-literal|0x80
+literal|1.0
 argument_list|,
-literal|0xff
+literal|1.0
 argument_list|)
 expr_stmt|;
+comment|/* magenta */
 name|object_class
 operator|->
 name|finalize
