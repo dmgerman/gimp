@@ -480,6 +480,14 @@ literal|"lch"
 block|}
 block|,
 block|{
+name|GIMP_COLOR_FRAME_MODE_LAB
+block|,
+literal|"GIMP_COLOR_FRAME_MODE_LAB"
+block|,
+literal|"lab"
+block|}
+block|,
+block|{
 name|GIMP_COLOR_FRAME_MODE_CMYK
 block|,
 literal|"GIMP_COLOR_FRAME_MODE_CMYK"
@@ -563,6 +571,19 @@ argument_list|(
 literal|"color-frame-mode"
 argument_list|,
 literal|"CIE LCH"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_COLOR_FRAME_MODE_LAB
+block|,
+name|NC_
+argument_list|(
+literal|"color-frame-mode"
+argument_list|,
+literal|"CIE LAB"
 argument_list|)
 block|,
 name|NULL
