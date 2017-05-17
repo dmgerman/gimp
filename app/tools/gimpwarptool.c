@@ -834,15 +834,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_motion_mode
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_MOTION_MODE_EXACT
-argument_list|)
-expr_stmt|;
 name|gimp_tool_control_set_dirty_mask
 argument_list|(
 name|tool
