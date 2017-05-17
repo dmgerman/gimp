@@ -563,6 +563,30 @@ literal|"alpha"
 block|}
 block|,
 block|{
+name|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
+block|,
+literal|"GIMP_COLOR_SELECTOR_LCH_LIGHTNESS"
+block|,
+literal|"lch-lightness"
+block|}
+block|,
+block|{
+name|GIMP_COLOR_SELECTOR_LCH_CHROMA
+block|,
+literal|"GIMP_COLOR_SELECTOR_LCH_CHROMA"
+block|,
+literal|"lch-chroma"
+block|}
+block|,
+block|{
+name|GIMP_COLOR_SELECTOR_LCH_HUE
+block|,
+literal|"GIMP_COLOR_SELECTOR_LCH_HUE"
+block|,
+literal|"lch-hue"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -590,7 +614,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Hue"
+literal|"HSV Hue"
 argument_list|)
 block|}
 block|,
@@ -606,7 +630,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Saturation"
+literal|"HSV Saturation"
 argument_list|)
 block|}
 block|,
@@ -622,7 +646,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Value"
+literal|"HSV Value"
 argument_list|)
 block|}
 block|,
@@ -687,6 +711,54 @@ block|,
 name|N_
 argument_list|(
 literal|"Alpha"
+argument_list|)
+block|}
+block|,
+block|{
+name|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
+block|,
+name|NC_
+argument_list|(
+literal|"color-selector-channel"
+argument_list|,
+literal|"_L"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"LCH Lightness"
+argument_list|)
+block|}
+block|,
+block|{
+name|GIMP_COLOR_SELECTOR_LCH_CHROMA
+block|,
+name|NC_
+argument_list|(
+literal|"color-selector-channel"
+argument_list|,
+literal|"_C"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"LCH Chroma"
+argument_list|)
+block|}
+block|,
+block|{
+name|GIMP_COLOR_SELECTOR_LCH_HUE
+block|,
+name|NC_
+argument_list|(
+literal|"color-selector-channel"
+argument_list|,
+literal|"_H"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"LCH Hue"
 argument_list|)
 block|}
 block|,

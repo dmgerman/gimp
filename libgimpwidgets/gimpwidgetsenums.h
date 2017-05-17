@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70103
+DECL|enum|__anon2a07f3fc0103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70203
+DECL|enum|__anon2a07f3fc0203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70303
+DECL|enum|__anon2a07f3fc0303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE:        the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION: the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE:      the value channel  * @GIMP_COLOR_SELECTOR_RED:        the red channel  * @GIMP_COLOR_SELECTOR_GREEN:      the green channel  * @GIMP_COLOR_SELECTOR_BLUE:       the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA:      the alpha channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
+comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE:            the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION:     the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE:          the value channel  * @GIMP_COLOR_SELECTOR_RED:            the red channel  * @GIMP_COLOR_SELECTOR_GREEN:          the green channel  * @GIMP_COLOR_SELECTOR_BLUE:           the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA:          the alpha channel  * @GIMP_COLOR_SELECTOR_LCH_LIGHTNESS:  the lightness channel  * @GIMP_COLOR_SELECTOR_LCH_CHOMA:      the chroma channel  * @GIMP_COLOR_SELECTOR_LCH_HUE:        the hue channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
 end_comment
 
 begin_define
@@ -168,20 +168,20 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70403
+DECL|enum|__anon2a07f3fc0403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
 block|,
-comment|/*< desc="_H", help="Hue">*/
+comment|/*< desc="_H", help="HSV Hue">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_SATURATION
 name|GIMP_COLOR_SELECTOR_SATURATION
 block|,
-comment|/*< desc="_S", help="Saturation">*/
+comment|/*< desc="_S", help="HSV Saturation">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_VALUE
 name|GIMP_COLOR_SELECTOR_VALUE
 block|,
-comment|/*< desc="_V", help="Value">*/
+comment|/*< desc="_V", help="HSV Value">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED
 name|GIMP_COLOR_SELECTOR_RED
 block|,
@@ -196,7 +196,19 @@ block|,
 comment|/*< desc="_B", help="Blue">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_ALPHA
 name|GIMP_COLOR_SELECTOR_ALPHA
+block|,
 comment|/*< desc="_A", help="Alpha">*/
+DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
+name|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
+block|,
+comment|/*< desc="_L", help="LCH Lightness">*/
+DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_CHROMA
+name|GIMP_COLOR_SELECTOR_LCH_CHROMA
+block|,
+comment|/*< desc="_C", help="LCH Chroma">*/
+DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_HUE
+name|GIMP_COLOR_SELECTOR_LCH_HUE
+comment|/*< desc="_H", help="LCH Hue">*/
 DECL|typedef|GimpColorSelectorChannel
 block|}
 name|GimpColorSelectorChannel
@@ -228,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70503
+DECL|enum|__anon2a07f3fc0503
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -268,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70603
+DECL|enum|__anon2a07f3fc0603
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -315,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb227c70703
+DECL|enum|__anon2a07f3fc0703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
