@@ -133,6 +133,11 @@ name|gdouble
 name|cursor_y
 decl_stmt|;
 comment|/* Hold the cursor y position */
+DECL|member|cursor_moved
+name|gboolean
+name|cursor_moved
+decl_stmt|;
+comment|/* Did the cursor move since the last stroke? */
 DECL|member|coords_buffer
 name|GeglBuffer
 modifier|*
