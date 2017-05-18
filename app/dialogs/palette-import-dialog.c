@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290009bf0103
+DECL|enum|__anon2a40f7420103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1658,6 +1658,18 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_scale_entry_set_logarithmic
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|private
+operator|->
+name|num_colors
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
