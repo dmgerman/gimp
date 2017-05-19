@@ -116,10 +116,6 @@ DECL|member|behavior
 name|GimpWarpBehavior
 name|behavior
 decl_stmt|;
-DECL|member|effect_strength
-name|gdouble
-name|effect_strength
-decl_stmt|;
 DECL|member|effect_size
 name|gdouble
 name|effect_size
@@ -127,6 +123,10 @@ decl_stmt|;
 DECL|member|effect_hardness
 name|gdouble
 name|effect_hardness
+decl_stmt|;
+DECL|member|effect_strength
+name|gdouble
+name|effect_strength
 decl_stmt|;
 DECL|member|stroke_spacing
 name|gdouble

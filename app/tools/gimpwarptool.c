@@ -1162,12 +1162,6 @@ name|options
 operator|->
 name|behavior
 argument_list|,
-literal|"strength"
-argument_list|,
-name|options
-operator|->
-name|effect_strength
-argument_list|,
 literal|"size"
 argument_list|,
 name|options
@@ -1181,6 +1175,12 @@ operator|->
 name|effect_hardness
 operator|/
 literal|100.0
+argument_list|,
+literal|"strength"
+argument_list|,
+name|options
+operator|->
+name|effect_strength
 argument_list|,
 literal|"spacing"
 argument_list|,
