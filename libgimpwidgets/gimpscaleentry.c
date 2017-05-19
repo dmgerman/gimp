@@ -95,7 +95,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|gimp_scale_entry_new_internal
 parameter_list|(
@@ -337,7 +337,7 @@ end_function
 
 begin_function
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 DECL|function|gimp_scale_entry_new_internal (gboolean color_scale,GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_id)
 name|gimp_scale_entry_new_internal
@@ -885,10 +885,7 @@ name|binding
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_OBJECT
-argument_list|(
 name|spin_adjustment
-argument_list|)
 return|;
 block|}
 end_function
@@ -963,6 +960,10 @@ name|help_id
 parameter_list|)
 block|{
 return|return
+operator|(
+name|GtkObject
+operator|*
+operator|)
 name|gimp_scale_entry_new_internal
 argument_list|(
 name|FALSE
@@ -1066,6 +1067,10 @@ name|help_id
 parameter_list|)
 block|{
 return|return
+operator|(
+name|GtkObject
+operator|*
+operator|)
 name|gimp_scale_entry_new_internal
 argument_list|(
 name|TRUE
