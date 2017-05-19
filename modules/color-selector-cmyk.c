@@ -1429,7 +1429,7 @@ name|gimp_color_transform_process_pixels
 argument_list|(
 name|module
 operator|->
-name|rgb2cmyk
+name|cmyk2rgb
 argument_list|,
 name|babl_format
 argument_list|(
