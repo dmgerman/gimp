@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6411d00108
+DECL|struct|__anon2b75e8450108
 block|{
 DECL|member|name
 name|gchar
@@ -1785,7 +1785,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6411d00203
+DECL|enum|__anon2b75e8450203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -2148,12 +2148,6 @@ literal|3
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_hsv_clamp
-argument_list|(
-operator|&
-name|hsv
-argument_list|)
-expr_stmt|;
 name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
@@ -2190,12 +2184,6 @@ name|col
 index|[
 literal|3
 index|]
-argument_list|)
-expr_stmt|;
-name|gimp_rgb_clamp
-argument_list|(
-operator|&
-name|color
 argument_list|)
 expr_stmt|;
 block|}
