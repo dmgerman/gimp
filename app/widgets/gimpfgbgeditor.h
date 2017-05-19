@@ -94,7 +94,7 @@ struct|struct
 name|_GimpFgBgEditor
 block|{
 DECL|member|parent_instance
-name|GtkDrawingArea
+name|GtkEventBox
 name|parent_instance
 decl_stmt|;
 DECL|member|context
@@ -148,7 +148,7 @@ struct|struct
 name|_GimpFgBgEditorClass
 block|{
 DECL|member|parent_class
-name|GtkDrawingAreaClass
+name|GtkEventBoxClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */

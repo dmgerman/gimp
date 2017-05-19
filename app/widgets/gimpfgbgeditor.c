@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09e7d90103
+DECL|enum|__anon28e398d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09e7d90203
+DECL|enum|__anon28e398d30203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09e7d90303
+DECL|enum|__anon28e398d30303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -371,7 +371,7 @@ argument|GimpFgBgEditor
 argument_list|,
 argument|gimp_fg_bg_editor
 argument_list|,
-argument|GTK_TYPE_DRAWING_AREA
+argument|GTK_TYPE_EVENT_BOX
 argument_list|)
 end_macro
 
@@ -571,6 +571,16 @@ operator|->
 name|active_color
 operator|=
 name|GIMP_ACTIVE_COLOR_FOREGROUND
+expr_stmt|;
+name|gtk_event_box_set_visible_window
+argument_list|(
+name|GTK_EVENT_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
 argument_list|(
@@ -1081,6 +1091,19 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+name|allocation
+operator|.
+name|x
+argument_list|,
+name|allocation
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
 comment|/*  draw the default colors pixbuf  */
 if|if
 condition|(
@@ -1564,12 +1587,20 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
+name|allocation
+operator|.
+name|x
+operator|+
 operator|(
 name|width
 operator|-
 name|rect_w
 operator|)
 argument_list|,
+name|allocation
+operator|.
+name|y
+operator|+
 operator|(
 name|height
 operator|-
@@ -1799,9 +1830,13 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|allocation
+operator|.
+name|x
 argument_list|,
-literal|0
+name|allocation
+operator|.
+name|y
 argument_list|,
 name|rect_w
 argument_list|,
