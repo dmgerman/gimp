@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1789410103
+DECL|enum|__anon2c09e7d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1789410203
+DECL|enum|__anon2c09e7d90203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1789410303
+DECL|enum|__anon2c09e7d90303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -1476,8 +1476,10 @@ name|rect_w
 argument_list|,
 name|rect_h
 argument_list|)
-operator|/
+operator|*
 literal|2
+operator|/
+literal|3
 decl_stmt|;
 name|cairo_move_to
 argument_list|(
@@ -1713,8 +1715,10 @@ name|rect_w
 argument_list|,
 name|rect_h
 argument_list|)
-operator|/
+operator|*
 literal|2
+operator|/
+literal|3
 decl_stmt|;
 name|cairo_move_to
 argument_list|(
