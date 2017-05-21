@@ -464,7 +464,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b20935a0103
+DECL|enum|__anon27c8a12c0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4254,6 +4254,9 @@ operator|*
 operator|)
 name|params
 expr_stmt|;
+name|gp_lock
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -4277,6 +4280,9 @@ name|msg
 argument_list|,
 name|GP_PROC_RETURN
 argument_list|)
+expr_stmt|;
+name|gp_unlock
+argument_list|()
 expr_stmt|;
 name|proc_return
 operator|=
