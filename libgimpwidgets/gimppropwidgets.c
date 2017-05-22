@@ -4046,7 +4046,7 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
@@ -4116,6 +4116,10 @@ literal|0
 expr_stmt|;
 name|adjustment
 operator|=
+operator|(
+name|GtkAdjustment
+operator|*
+operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
