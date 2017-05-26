@@ -1246,14 +1246,6 @@ value|"gimp-layer-lower-to-bottom"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_INVERT
-define|#
-directive|define
-name|GIMP_HELP_LAYER_INVERT
-value|"gimp-layer-invert"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_LAYER_WHITE_BALANCE
 define|#
 directive|define
@@ -2699,6 +2691,30 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_ILLUSION
 value|"gimp-filter-illusion"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_INVERT_LINEAR
+define|#
+directive|define
+name|GIMP_HELP_FILTER_INVERT_LINEAR
+value|"gimp-filter-invert-linear"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_INVERT_PERCEPTUAL
+define|#
+directive|define
+name|GIMP_HELP_FILTER_INVERT_PERCEPTUAL
+value|"gimp-filter-invert-perceptual"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_INVERT_VALUE
+define|#
+directive|define
+name|GIMP_HELP_FILTER_INVERT_VALUE
+value|"gimp-filter-invert-value"
 end_define
 
 begin_define
