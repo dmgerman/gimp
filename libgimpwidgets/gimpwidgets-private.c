@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -226,6 +232,10 @@ name|_gimp_ensure_modules_func
 operator|=
 name|ensure_modules_func
 expr_stmt|;
+name|babl_init
+argument_list|()
+expr_stmt|;
+comment|/* color selectors use babl */
 name|gimp_icons_init
 argument_list|()
 expr_stmt|;
