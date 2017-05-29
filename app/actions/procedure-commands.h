@@ -92,6 +92,10 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GimpObject
+modifier|*
+name|settings
 parameter_list|)
 function_decl|;
 end_function_decl

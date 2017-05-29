@@ -480,6 +480,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|display
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
