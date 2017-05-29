@@ -503,7 +503,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|procedure_commands_run_procedure
+name|procedure_commands_run_procedure_async
 argument_list|(
 name|procedure
 argument_list|,
