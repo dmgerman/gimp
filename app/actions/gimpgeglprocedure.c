@@ -1037,9 +1037,12 @@ name|GimpTool
 modifier|*
 name|active_tool
 decl_stmt|;
-name|settings
+name|GType
+name|config_type
+decl_stmt|;
+name|config_type
 operator|=
-name|gimp_operation_config_new
+name|gimp_operation_config_get_type
 argument_list|(
 name|gimp
 argument_list|,
@@ -1064,20 +1067,12 @@ name|gimp_operation_config_get_container
 argument_list|(
 name|gimp
 argument_list|,
-name|G_TYPE_FROM_INSTANCE
-argument_list|(
-name|settings
-argument_list|)
+name|config_type
 argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
 name|gimp_settings_compare
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|settings
 argument_list|)
 expr_stmt|;
 comment|/*  the last used settings  */

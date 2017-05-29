@@ -5788,9 +5788,9 @@ name|filter_tool
 operator|->
 name|config
 operator|=
-name|G_OBJECT
+name|g_object_new
 argument_list|(
-name|gimp_operation_config_new
+name|gimp_operation_config_get_type
 argument_list|(
 name|tool_info
 operator|->
@@ -5804,6 +5804,8 @@ name|icon_name
 argument_list|,
 name|GIMP_TYPE_SETTINGS
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_operation_config_sync_node

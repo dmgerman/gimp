@@ -957,10 +957,9 @@ block|}
 end_function
 
 begin_function
-name|GimpObject
-modifier|*
-DECL|function|gimp_operation_config_new (Gimp * gimp,const gchar * operation,const gchar * icon_name,GType parent_type)
-name|gimp_operation_config_new
+name|GType
+DECL|function|gimp_operation_config_get_type (Gimp * gimp,const gchar * operation,const gchar * icon_name,GType parent_type)
+name|gimp_operation_config_get_type
 parameter_list|(
 name|Gimp
 modifier|*
@@ -994,7 +993,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1003,7 +1002,7 @@ name|operation
 operator|!=
 name|NULL
 argument_list|,
-name|NULL
+name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1015,7 +1014,7 @@ argument_list|,
 name|GIMP_TYPE_OBJECT
 argument_list|)
 argument_list|,
-name|NULL
+name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
 name|config_types
@@ -1212,12 +1211,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|g_object_new
-argument_list|(
 name|config_type
-argument_list|,
-name|NULL
-argument_list|)
 return|;
 block|}
 end_function

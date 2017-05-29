@@ -36,9 +36,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpObject
-modifier|*
-name|gimp_operation_config_new
+name|GType
+name|gimp_operation_config_get_type
 parameter_list|(
 name|Gimp
 modifier|*
