@@ -508,6 +508,10 @@ literal|"tool-measure.png"
 block|}
 block|,
 block|{
+literal|"tool-warp.png"
+block|}
+block|,
+block|{
 literal|"tool-hand.png"
 block|}
 block|}
