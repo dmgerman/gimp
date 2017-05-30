@@ -1917,6 +1917,13 @@ directive|if
 literal|0
 comment|/* FIXME have better cursors  */
 block|switch (options->behavior)         {         case GIMP_WARP_BEHAVIOR_MOVE:         case GEGL_WARP_BEHAVIOR_GROW:         case GEGL_WARP_BEHAVIOR_SHRINK:         case GEGL_WARP_BEHAVIOR_SWIRL_CW:         case GEGL_WARP_BEHAVIOR_SWIRL_CCW:         case GEGL_WARP_BEHAVIOR_ERASE:         case GEGL_WARP_BEHAVIOR_SMOOTH:           modifier = GIMP_CURSOR_MODIFIER_MOVE;           break;         }
+else|#
+directive|else
+operator|(
+name|void
+operator|)
+name|options
+expr_stmt|;
 endif|#
 directive|endif
 block|}
