@@ -2500,7 +2500,9 @@ name|shootvals
 operator|.
 name|profile_policy
 argument_list|,
-name|SCREENSHOT_PROFILE_POLICY_MONITOR
+name|shootvals
+operator|.
+name|profile_policy
 argument_list|,
 name|_
 argument_list|(
