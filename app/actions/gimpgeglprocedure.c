@@ -1466,12 +1466,15 @@ end_comment
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_gegl_procedure_new (Gimp * gimp,const gchar * operation,const gchar * name,const gchar * menu_label,const gchar * tooltip,const gchar * icon_name,const gchar * help_id)
+DECL|function|gimp_gegl_procedure_new (Gimp * gimp,GimpRunMode default_run_mode,const gchar * operation,const gchar * name,const gchar * menu_label,const gchar * tooltip,const gchar * icon_name,const gchar * help_id)
 name|gimp_gegl_procedure_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpRunMode
+name|default_run_mode
 parameter_list|,
 specifier|const
 name|gchar
@@ -1569,6 +1572,15 @@ name|GIMP_TYPE_GEGL_PROCEDURE
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|GIMP_GEGL_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+operator|->
+name|default_run_mode
+operator|=
+name|default_run_mode
 expr_stmt|;
 name|GIMP_GEGL_PROCEDURE
 argument_list|(

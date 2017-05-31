@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpProcedure
 name|parent_instance
 decl_stmt|;
+DECL|member|default_run_mode
+name|GimpRunMode
+name|default_run_mode
+decl_stmt|;
 DECL|member|menu_label
 name|gchar
 modifier|*
@@ -162,6 +166,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpRunMode
+name|default_run_mode
 parameter_list|,
 specifier|const
 name|gchar

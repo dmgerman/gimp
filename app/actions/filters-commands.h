@@ -18,7 +18,26 @@ end_define
 
 begin_function_decl
 name|void
-name|filters_filter_cmd_callback
+name|filters_apply_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|operation
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|filters_apply_interactive_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
