@@ -52,6 +52,16 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_decl_stmt
+DECL|variable|gimp_widgets_initialized
+specifier|static
+name|gboolean
+name|gimp_widgets_initialized
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|_gimp_standard_help_func
 name|GimpHelpFunc
 name|_gimp_standard_help_func
@@ -194,12 +204,6 @@ name|GimpEnsureModulesFunc
 name|ensure_modules_func
 parameter_list|)
 block|{
-specifier|static
-name|gboolean
-name|gimp_widgets_initialized
-init|=
-name|FALSE
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|standard_help_func
@@ -253,6 +257,62 @@ name|TRUE
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* clean up babl (in particular, so that the fish cache is constructed) if the  * compiler supports destructors  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_FUNC_ATTRIBUTE_DESTRUCTOR
+end_ifdef
+
+begin_macro
+name|__attribute__
+argument_list|(
+argument|(destructor)
+argument_list|)
+end_macro
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_widgets_exit (void)
+name|gimp_widgets_exit
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|gimp_widgets_initialized
+condition|)
+name|babl_exit
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
+end_elif
+
+begin_warning
+warning|#
+directive|warning
+warning|babl_init() not paired with babl_exit()
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 
