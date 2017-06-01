@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be137100103
+DECL|enum|__anon2b4f83760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3478,7 +3478,7 @@ name|GIMP_COLOR_SELECTOR_LCH_CHROMA
 case|:
 name|multiplier
 operator|=
-literal|100
+literal|200
 expr_stmt|;
 name|from_lch
 operator|=

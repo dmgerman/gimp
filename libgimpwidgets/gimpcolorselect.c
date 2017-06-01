@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3e971f0103
+DECL|enum|__anon29fb4b820103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3e971f0203
+DECL|enum|__anon29fb4b820203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3e971f0303
+DECL|enum|__anon29fb4b820303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -2977,7 +2977,7 @@ index|[
 literal|1
 index|]
 operator|*
-literal|100
+literal|200
 expr_stmt|;
 name|lch
 operator|.
@@ -3033,7 +3033,7 @@ index|[
 literal|2
 index|]
 operator|*
-literal|100
+literal|200
 expr_stmt|;
 break|break;
 case|case
@@ -3050,7 +3050,7 @@ index|[
 literal|0
 index|]
 operator|*
-literal|100
+literal|200
 expr_stmt|;
 name|lch
 operator|.
@@ -3644,7 +3644,7 @@ name|lch
 operator|.
 name|c
 operator|/
-literal|100
+literal|200
 argument_list|,
 literal|0.0
 argument_list|,
@@ -3728,7 +3728,7 @@ name|lch
 operator|.
 name|c
 operator|/
-literal|100
+literal|200
 argument_list|,
 literal|0.0
 argument_list|,
@@ -3752,7 +3752,7 @@ name|lch
 operator|.
 name|c
 operator|/
-literal|100
+literal|200
 argument_list|,
 literal|0.0
 argument_list|,
@@ -6647,7 +6647,7 @@ operator|->
 name|y
 operator|)
 operator|*
-literal|100.0
+literal|200.0
 operator|/
 name|csf
 operator|->
@@ -8836,7 +8836,7 @@ name|c
 operator|=
 name|i
 operator|*
-literal|100.0
+literal|200.0
 operator|/
 name|csf
 operator|->
@@ -9213,7 +9213,7 @@ operator|->
 name|y
 operator|)
 operator|*
-literal|100.0
+literal|200.0
 operator|/
 name|csf
 operator|->
