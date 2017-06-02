@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3a5c240103
+DECL|enum|__anon2bf836090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1915,7 +1915,7 @@ name|IMPORT_RAW_PLUG_IN_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_FILE
 argument_list|,
-name|NULL
+literal|""
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
