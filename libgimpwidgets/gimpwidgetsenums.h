@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0103
+DECL|enum|__anon2c534b870103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0203
+DECL|enum|__anon2c534b870203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0303
+DECL|enum|__anon2c534b870303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE:            the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION:     the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE:          the value channel  * @GIMP_COLOR_SELECTOR_RED:            the red channel  * @GIMP_COLOR_SELECTOR_GREEN:          the green channel  * @GIMP_COLOR_SELECTOR_BLUE:           the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA:          the alpha channel  * @GIMP_COLOR_SELECTOR_LCH_LIGHTNESS:  the lightness channel  * @GIMP_COLOR_SELECTOR_LCH_CHOMA:      the chroma channel  * @GIMP_COLOR_SELECTOR_LCH_HUE:        the hue channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
+comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE:            the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION:     the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE:          the value channel  * @GIMP_COLOR_SELECTOR_RED:            the red channel  * @GIMP_COLOR_SELECTOR_GREEN:          the green channel  * @GIMP_COLOR_SELECTOR_BLUE:           the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA:          the alpha channel  * @GIMP_COLOR_SELECTOR_LCH_LIGHTNESS:  the lightness channel  * @GIMP_COLOR_SELECTOR_LCH_CHROMA:     the chroma channel  * @GIMP_COLOR_SELECTOR_LCH_HUE:        the hue channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
 end_comment
 
 begin_define
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0403
+DECL|enum|__anon2c534b870403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0503
+DECL|enum|__anon2c534b870503
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -280,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0603
+DECL|enum|__anon2c534b870603
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07f3fc0703
+DECL|enum|__anon2c534b870703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN

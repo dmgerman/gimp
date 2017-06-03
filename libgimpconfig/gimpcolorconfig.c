@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e680580103
+DECL|enum|__anon2bf376d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -892,9 +892,9 @@ name|PROP_DISPLAY_MODULE
 argument_list|,
 literal|"display-module"
 argument_list|,
-name|NULL
+literal|"Display module"
 argument_list|,
-name|NULL
+literal|"This property is deprecated and its value ignored"
 argument_list|,
 literal|"CdisplayLcms"
 argument_list|,

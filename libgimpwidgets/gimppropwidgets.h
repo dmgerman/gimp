@@ -356,7 +356,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_prefix
+name|icon_prefix
 parameter_list|,
 name|gint
 name|minimum

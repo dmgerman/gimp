@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cf60d30103
+DECL|enum|__anon29c47e1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cf60d30208
+DECL|struct|__anon29c47e1b0208
 block|{
 DECL|member|id_column
 name|gint
@@ -712,7 +712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_new:  * @id_column:  * @label_column:  *  * Return value: a new #GimpStringComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_string_combo_box_new:  * @model:        a #GtkTreeModel  * @id_column:    the model column of the ID  * @label_column: the modl column of the label  *  * Return value: a new #GimpStringComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

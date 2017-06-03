@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2739b9d60103
+DECL|enum|__anon299aa2a50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2739b9d60203
+DECL|enum|__anon299aa2a50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2444,7 +2444,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_title:  * @button: a #GimpColorButton.  * @color:  the new title.  *  * Sets the @button dialog's title.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_button_set_title:  * @button: a #GimpColorButton.  * @title:  the new title.  *  * Sets the @button dialog's title.  *  * Since: GIMP 2.10  **/
 end_comment
 
 begin_function

@@ -3775,18 +3775,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_will_explode:  * @m:  The matrix that is to be tested.  * @u1: The rectangle's left coordinate.  * @v1: The rectangle's top coordinate.  * @u2: The rectangle's right coordinate.  * @v2: The rectangle's bottom coordinate.  *  * Checks if the given transformation maps a point of the rectangle to  * infinity, or something equally stupid.  *  * Returns: %TRUE if the transformation will fail, %FALSE otherwise  *  * Since: 2.10  */
+comment|/**  * gimp_matrix3_will_explode:  * @matrix: The matrix that is to be tested.  * @u1:     The rectangle's left coordinate.  * @v1:     The rectangle's top coordinate.  * @u2:     The rectangle's right coordinate.  * @v2:     The rectangle's bottom coordinate.  *  * Checks if the given transformation maps a point of the rectangle to  * infinity, or something equally stupid.  *  * Returns: %TRUE if the transformation will fail, %FALSE otherwise  *  * Since: 2.10  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix3_will_explode (const GimpMatrix3 * m,gdouble u1,gdouble v1,gdouble u2,gdouble v2)
+DECL|function|gimp_matrix3_will_explode (const GimpMatrix3 * matrix,gdouble u1,gdouble v1,gdouble u2,gdouble v2)
 name|gimp_matrix3_will_explode
 parameter_list|(
 specifier|const
 name|GimpMatrix3
 modifier|*
-name|m
+name|matrix
 parameter_list|,
 name|gdouble
 name|u1
@@ -3805,7 +3805,7 @@ specifier|const
 name|gdouble
 name|a
 init|=
-name|m
+name|matrix
 operator|->
 name|coeff
 index|[
@@ -3819,7 +3819,7 @@ specifier|const
 name|gdouble
 name|b
 init|=
-name|m
+name|matrix
 operator|->
 name|coeff
 index|[
@@ -3833,7 +3833,7 @@ specifier|const
 name|gdouble
 name|c
 init|=
-name|m
+name|matrix
 operator|->
 name|coeff
 index|[
