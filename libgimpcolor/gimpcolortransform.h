@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c5b8c0103
+DECL|enum|__anon2b3b825c0103
 block|{
 DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
 name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
@@ -340,7 +340,7 @@ modifier|*
 name|src_format
 parameter_list|,
 name|gconstpointer
-name|src
+name|src_pixels
 parameter_list|,
 specifier|const
 name|Babl
@@ -348,7 +348,7 @@ modifier|*
 name|dest_format
 parameter_list|,
 name|gpointer
-name|dest
+name|dest_pixels
 parameter_list|,
 name|gsize
 name|length

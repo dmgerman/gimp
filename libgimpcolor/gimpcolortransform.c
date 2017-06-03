@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288109e20103
+DECL|enum|__anon2c658e7c0103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -467,7 +467,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new:  * @src_profile:  * @src_format:  * @desr_profile:  * @dest_format:  * @rendering_intent:  * @flags:  *  * This function creates an color transform.  *  * Return value: the #GimpColorTransform, or %NULL if no transform is needed  *               to convert between pixels of @src_profile and @dest_profile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new:  * @src_profile:      the source #GimpColorProfile  * @src_format:       the source #Babl format  * @dest_profile:     the destination #GimpColorProfile  * @dest_format:      the destination #Babl format  * @rendering_intent: the rendering intent  * @flags:            transform flags  *  * This function creates an color transform.  *  * Return value: the #GimpColorTransform, or %NULL if no transform is needed  *               to convert between pixels of @src_profile and @dest_profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:  * @src_format:  * @desr_profile:  * @dest_format:  * @proof_profile:  * @proof_intent:  * @display_intent:  * @flags:  *  * This function creates a simulation / proofing color transform.  *  * Return value: the #GimpColorTransform, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:    the source #GimpColorProfile  * @src_format:     the source #Babl format  * @dest_profile:   the destination #GimpColorProfile  * @dest_format:    the destination #Babl format  * @proof_profile:  the proof #GimpColorProfile  * @proof_intent:   the proof intent  * @display_intent: the display intent  * @flags:          transform flags  *  * This function creates a simulation / proofing color transform.  *  * Return value: the #GimpColorTransform, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -964,7 +964,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_process_pixels:  * @transform:  * @src_format:  * @src_pixels:  * @dest_format:  * @dest_pixels:  * @length:  *  * This function transforms a contiguous line of pixels.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_process_pixels:  * @transform:   a #GimpColorTransform  * @src_format:  #Babl format of @src_pixels  * @src_pixels:  pointer to the source pixels  * @dest_format: #Babl format of @dest_pixels  * @dest_pixels: pointer to the destination pixels  * @length:      number of pixels to process  *  * This function transforms a contiguous line of pixels.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1228,7 +1228,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_process_buffer:  * @transform:  * @src_format:  * @src_rect:  * @dest_format:  * @dest_rect:  *  * This function transforms buffer into another buffer.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_process_buffer:  * @transform:   a #GimpColorTransform  * @src_buffer:  source #GeglBuffer  * @src_rect:    rectangle in @src_buffer  * @dest_buffer: destination #GeglBuffer  * @dest_rect:   rectangle in @dest_buffer  *  * This function transforms buffer into another buffer.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1633,7 +1633,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_can_gegl_copy:  * @src_format:  src profile  * @dest_format: dest profile  *  * This function checks if a GimpColorTransform is needed at all.  *  * Return value: %TRUE if pixels can be correctly converted between  *               @src_profile and @dest_profile by simply using  *               gegl_buffer_copy(), babl_process() or similar.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_can_gegl_copy:  * @src_profile:  source #GimpColorProfile  * @dest_profile: destination #GimpColorProfile  *  * This function checks if a GimpColorTransform is needed at all.  *  * Return value: %TRUE if pixels can be correctly converted between  *               @src_profile and @dest_profile by simply using  *               gegl_buffer_copy(), babl_process() or similar.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

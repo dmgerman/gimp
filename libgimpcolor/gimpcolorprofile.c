@@ -1208,7 +1208,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_save_to_file:  * profile: a #GimpColorProfile  * @file:   a #GFile  * @error:  return location for #GError  *  * This function saves @profile to @file as ICC profile.  *  * Return value: %TRUE on success, %FALSE if an error occured.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_save_to_file:  * @profile: a #GimpColorProfile  * @file:    a #GFile  * @error:   return location for #GError  *  * This function saves @profile to @file as ICC profile.  *  * Return value: %TRUE on success, %FALSE if an error occured.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1303,7 +1303,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_icc_profile:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes  * @error:   return location for #GError  *  * This function returns @profile as ICC profile data. The returned  * memory belongs to @profile and must not be modified or freed.  *  * Return value: a pointer to the IIC profile data.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_icc_profile:  * @profile: a #GimpColorProfile  * @length:  return location for the number of bytes  *  * This function returns @profile as ICC profile data. The returned  * memory belongs to @profile and must not be modified or freed.  *  * Return value: a pointer to the IIC profile data.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -4210,7 +4210,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_d65_gray_srgb_trc  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_d65_gray_srgb_trc  *  * This function creates a grayscale #GimpColorProfile with an  * sRGB TRC. See gimp_color_profile_new_rgb_srgb().  *  * Return value: the sRGB-gamma grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
