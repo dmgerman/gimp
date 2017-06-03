@@ -6326,6 +6326,14 @@ name|warpmode
 condition|)
 block|{
 case|case
+literal|0
+case|:
+name|border_behavior
+operator|=
+name|GEGL_ABYSS_NONE
+expr_stmt|;
+break|break;
+case|case
 literal|1
 case|:
 name|border_behavior
@@ -23591,13 +23599,13 @@ literal|"warpmode"
 argument_list|,
 literal|"warpmode"
 argument_list|,
-literal|"Edge detection behavior { WRAP (1), SMEAR (2), BLACK (3) }"
+literal|"Edge detection behavior { NONE (0), WRAP (1), SMEAR (2), BLACK (3) }"
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
