@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
@@ -56,6 +62,30 @@ include|#
 directive|include
 file|"pdb/gimpprocedure.h"
 end_include
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|gint
+name|gimp_filter_history_compare
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|proc1
+parameter_list|,
+name|GimpProcedure
+modifier|*
+name|proc2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|gint
@@ -201,7 +231,7 @@ name|gimp
 operator|->
 name|filter_history
 operator|&&
-name|gimp_procedure_name_compare
+name|gimp_filter_history_compare
 argument_list|(
 name|gimp
 operator|->
@@ -234,7 +264,7 @@ argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|gimp_procedure_name_compare
+name|gimp_filter_history_compare
 argument_list|)
 expr_stmt|;
 if|if
@@ -371,7 +401,7 @@ argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|gimp_procedure_name_compare
+name|gimp_filter_history_compare
 argument_list|)
 expr_stmt|;
 if|if
@@ -457,6 +487,52 @@ name|gimp
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|gint
+DECL|function|gimp_filter_history_compare (GimpProcedure * proc1,GimpProcedure * proc2)
+name|gimp_filter_history_compare
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|proc1
+parameter_list|,
+name|GimpProcedure
+modifier|*
+name|proc2
+parameter_list|)
+block|{
+comment|/*  the procedures can have the same name, but could still be two    *  different filters using the same operation, so also compare    *  their menu labels    */
+return|return
+operator|(
+name|gimp_procedure_name_compare
+argument_list|(
+name|proc1
+argument_list|,
+name|proc2
+argument_list|)
+operator|||
+name|strcmp
+argument_list|(
+name|gimp_procedure_get_menu_label
+argument_list|(
+name|proc1
+argument_list|)
+argument_list|,
+name|gimp_procedure_get_menu_label
+argument_list|(
+name|proc2
+argument_list|)
+argument_list|)
+operator|)
+return|;
 block|}
 end_function
 

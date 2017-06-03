@@ -116,6 +116,11 @@ DECL|member|default_run_mode
 name|GimpRunMode
 name|default_run_mode
 decl_stmt|;
+DECL|member|default_settings
+name|GimpObject
+modifier|*
+name|default_settings
+decl_stmt|;
 DECL|member|menu_label
 name|gchar
 modifier|*
@@ -169,6 +174,10 @@ name|gimp
 parameter_list|,
 name|GimpRunMode
 name|default_run_mode
+parameter_list|,
+name|GimpObject
+modifier|*
+name|default_settings
 parameter_list|,
 specifier|const
 name|gchar
