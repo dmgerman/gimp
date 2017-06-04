@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b49dfee0103
+DECL|enum|__anon2ae9fe1f0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b49dfee0203
+DECL|enum|__anon2ae9fe1f0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -466,6 +466,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|mng_ptr
+name|MNG_DECL
 name|myalloc
 parameter_list|(
 name|mng_size_t
@@ -477,6 +478,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|MNG_DECL
 name|myfree
 parameter_list|(
 name|mng_ptr
@@ -491,6 +493,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|mng_bool
+name|MNG_DECL
 name|myopenstream
 parameter_list|(
 name|mng_handle
@@ -502,6 +505,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|mng_bool
+name|MNG_DECL
 name|myclosestream
 parameter_list|(
 name|mng_handle
@@ -513,6 +517,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|mng_bool
+name|MNG_DECL
 name|mywritedata
 parameter_list|(
 name|mng_handle
@@ -718,6 +723,7 @@ end_comment
 begin_function
 specifier|static
 name|mng_ptr
+name|MNG_DECL
 DECL|function|myalloc (mng_size_t size)
 name|myalloc
 parameter_list|(
@@ -764,6 +770,7 @@ end_function
 begin_function
 specifier|static
 name|void
+name|MNG_DECL
 DECL|function|myfree (mng_ptr ptr,mng_size_t size)
 name|myfree
 parameter_list|(
@@ -785,6 +792,7 @@ end_function
 begin_function
 specifier|static
 name|mng_bool
+name|MNG_DECL
 DECL|function|myopenstream (mng_handle handle)
 name|myopenstream
 parameter_list|(
@@ -801,6 +809,7 @@ end_function
 begin_function
 specifier|static
 name|mng_bool
+name|MNG_DECL
 DECL|function|myclosestream (mng_handle handle)
 name|myclosestream
 parameter_list|(
@@ -817,6 +826,7 @@ end_function
 begin_function
 specifier|static
 name|mng_bool
+name|MNG_DECL
 DECL|function|mywritedata (mng_handle handle,mng_ptr buf,mng_uint32 size,mng_uint32 * written_size)
 name|mywritedata
 parameter_list|(
