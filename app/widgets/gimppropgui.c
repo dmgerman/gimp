@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-color-balance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-constructors.h"
 end_include
 
@@ -1855,7 +1861,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e07d080108
+DECL|struct|__anon2ae0efcc0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1873,6 +1879,12 @@ name|gui_new_funcs
 index|[]
 init|=
 block|{
+block|{
+literal|"GimpColorBalanceConfig"
+block|,
+name|_gimp_prop_gui_new_color_balance
+block|}
+block|,
 block|{
 literal|"GimpGegl-gegl-color-rotate-config"
 block|,
@@ -2623,7 +2635,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27e07d080208
+DECL|struct|__anon2ae0efcc0208
 block|{
 DECL|member|kelvin
 name|gdouble
