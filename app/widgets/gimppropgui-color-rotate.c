@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-constructors.h"
+file|"gimppropgui-generic.h"
 end_include
 
 begin_include

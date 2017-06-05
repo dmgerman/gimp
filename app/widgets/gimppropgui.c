@@ -138,13 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-constructors.h"
+file|"gimppropgui-eval.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppropgui-eval.h"
+file|"gimppropgui-generic.h"
 end_include
 
 begin_include
@@ -1885,7 +1885,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c4d51880108
+DECL|struct|__anon296035650108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2659,7 +2659,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c4d51880208
+DECL|struct|__anon296035650208
 block|{
 DECL|member|kelvin
 name|gdouble

@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-constructors.h"
+file|"gimppropgui-convolution-matrix.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppropgui-convolution-matrix.h"
+file|"gimppropgui-generic.h"
 end_include
 
 begin_include
@@ -787,7 +787,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb995940108
+DECL|struct|__anon28d328bb0108
 block|{
 DECL|member|tooltip
 specifier|const

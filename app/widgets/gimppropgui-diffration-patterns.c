@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-constructors.h"
+file|"gimppropgui-diffration-patterns.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppropgui-diffration-patterns.h"
+file|"gimppropgui-generic.h"
 end_include
 
 begin_include
