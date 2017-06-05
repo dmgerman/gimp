@@ -234,12 +234,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphuesaturationtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -573,8 +567,6 @@ block|,
 name|gimp_dodge_burn_tool_register
 block|,
 comment|/*  color tools  */
-name|gimp_hue_saturation_tool_register
-block|,
 name|gimp_brightness_contrast_tool_register
 block|,
 name|gimp_threshold_tool_register

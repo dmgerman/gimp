@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-hue-saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropwidgets.h"
 end_include
 
@@ -1885,7 +1891,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296035650108
+DECL|struct|__anon299e556c0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1907,6 +1913,12 @@ block|{
 literal|"GimpColorBalanceConfig"
 block|,
 name|_gimp_prop_gui_new_color_balance
+block|}
+block|,
+block|{
+literal|"GimpHueSaturationConfig"
+block|,
+name|_gimp_prop_gui_new_hue_saturation
 block|}
 block|,
 block|{
@@ -2659,7 +2671,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon296035650208
+DECL|struct|__anon299e556c0208
 block|{
 DECL|member|kelvin
 name|gdouble
