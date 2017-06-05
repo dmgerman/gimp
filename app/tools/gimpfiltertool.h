@@ -168,11 +168,6 @@ DECL|member|has_settings
 name|gboolean
 name|has_settings
 decl_stmt|;
-DECL|member|settings_folder
-name|GFile
-modifier|*
-name|settings_folder
-decl_stmt|;
 DECL|member|import_dialog_title
 name|gchar
 modifier|*
@@ -280,11 +275,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|has_settings
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|settings_folder
 parameter_list|,
 name|gchar
 modifier|*
