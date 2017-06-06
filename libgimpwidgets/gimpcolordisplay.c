@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890d0070103
+DECL|enum|__anon2bd315a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890d0070203
+DECL|enum|__anon2bd315a80203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -102,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890d0070308
+DECL|struct|__anon2bd315a80308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -333,9 +333,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"enabled"
 argument_list|,
-name|NULL
+literal|"Enabled"
 argument_list|,
-name|NULL
+literal|"Whether this display filter is enabled"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -355,9 +355,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"color-config"
 argument_list|,
-name|NULL
+literal|"Color Config"
 argument_list|,
-name|NULL
+literal|"The color config used for this filter"
 argument_list|,
 name|GIMP_TYPE_COLOR_CONFIG
 argument_list|,
@@ -377,9 +377,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"color-managed"
 argument_list|,
-name|NULL
+literal|"Color Managed"
 argument_list|,
-name|NULL
+literal|"The color managed pixel source that is filtered"
 argument_list|,
 name|GIMP_TYPE_COLOR_MANAGED
 argument_list|,

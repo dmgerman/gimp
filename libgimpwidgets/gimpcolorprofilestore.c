@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7707530103
+DECL|enum|__anon2b1854940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,9 +336,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"history"
 argument_list|,
-name|NULL
+literal|"History"
 argument_list|,
-name|NULL
+literal|"Filename of the color history used to populate the profile store"
 argument_list|,
 name|NULL
 argument_list|,

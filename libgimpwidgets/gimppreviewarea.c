@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8801430103
+DECL|enum|__anon2bf513a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -422,7 +422,7 @@ argument_list|(
 literal|"Check Size"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"The size of the checkerboard pattern indicating transparency"
 argument_list|,
 name|GIMP_TYPE_CHECK_SIZE
 argument_list|,
@@ -447,7 +447,7 @@ argument_list|(
 literal|"Check Style"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"The colors of the checkerboard pattern indicating transparency"
 argument_list|,
 name|GIMP_TYPE_CHECK_TYPE
 argument_list|,

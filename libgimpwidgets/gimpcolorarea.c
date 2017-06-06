@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a297880103
+DECL|enum|__anon29f4a5ec0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a297880203
+DECL|enum|__anon29f4a5ec0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -648,9 +648,9 @@ name|gimp_param_spec_rgb
 argument_list|(
 literal|"color"
 argument_list|,
-name|NULL
+literal|"Color"
 argument_list|,
-name|NULL
+literal|"The displayed color"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -674,9 +674,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"type"
 argument_list|,
-name|NULL
+literal|"Type"
 argument_list|,
-name|NULL
+literal|"The type of the color area"
 argument_list|,
 name|GIMP_TYPE_COLOR_AREA_TYPE
 argument_list|,
@@ -688,7 +688,7 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpColorArea:drag-type:    *    * The event_mask that should trigger drags.    *    * Since: 2.4    */
+comment|/**    * GimpColorArea:drag-type:    *    * The modifier mask that should trigger drags.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -699,9 +699,9 @@ name|g_param_spec_flags
 argument_list|(
 literal|"drag-mask"
 argument_list|,
-name|NULL
+literal|"Drag Mask"
 argument_list|,
-name|NULL
+literal|"The modifier mask that triggers dragging the color"
 argument_list|,
 name|GDK_TYPE_MODIFIER_TYPE
 argument_list|,
@@ -724,9 +724,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"draw-border"
 argument_list|,
-name|NULL
+literal|"Draw Border"
 argument_list|,
-name|NULL
+literal|"Whether to draw a thin border in the foreground color around the area"
 argument_list|,
 name|FALSE
 argument_list|,

@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d056f0103
+DECL|enum|__anon2b0991800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,9 +282,9 @@ name|g_param_spec_boxed
 argument_list|(
 literal|"color"
 argument_list|,
-name|NULL
+literal|"Color"
 argument_list|,
-name|NULL
+literal|"The displayed color"
 argument_list|,
 name|GIMP_TYPE_RGB
 argument_list|,
@@ -302,9 +302,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"opaque"
 argument_list|,
-name|NULL
+literal|"Opaque"
 argument_list|,
-name|NULL
+literal|"Whether to show transparency"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -324,9 +324,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"icon-size"
 argument_list|,
-name|NULL
+literal|"Icon Size"
 argument_list|,
-name|NULL
+literal|"The cell's size"
 argument_list|,
 literal|0
 argument_list|,

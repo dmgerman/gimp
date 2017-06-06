@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b47740103
+DECL|enum|__anon2ae930a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b47740208
+DECL|struct|__anon2ae930a20208
 block|{
 DECL|member|drawable_ID
 name|gint32
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b47740308
+DECL|struct|__anon2ae930a20308
 block|{
 DECL|member|update
 name|gboolean
@@ -456,9 +456,9 @@ name|g_param_spec_pointer
 argument_list|(
 literal|"drawable"
 argument_list|,
-name|NULL
+literal|"Drawable"
 argument_list|,
-name|NULL
+literal|"Deprecated: use the drawable-id property instead"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -477,9 +477,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"drawable-id"
 argument_list|,
-name|NULL
+literal|"Drawable ID"
 argument_list|,
-name|NULL
+literal|"The drawable this preview is attached to"
 argument_list|,
 operator|-
 literal|1

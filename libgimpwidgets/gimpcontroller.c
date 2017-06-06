@@ -70,7 +70,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276acfd10103
+DECL|enum|__anon28934c3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276acfd10203
+DECL|enum|__anon28934c3e0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -281,9 +281,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"name"
 argument_list|,
-name|NULL
+literal|"Name"
 argument_list|,
-name|NULL
+literal|"The controller's name"
 argument_list|,
 literal|"Unnamed Controller"
 argument_list|,
@@ -303,9 +303,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"state"
 argument_list|,
-name|NULL
+literal|"State"
 argument_list|,
-name|NULL
+literal|"The controller's state, as human-readable string"
 argument_list|,
 literal|"Unknown"
 argument_list|,

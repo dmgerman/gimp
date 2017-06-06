@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aa2a50103
+DECL|enum|__anon28818ee10103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aa2a50203
+DECL|enum|__anon28818ee10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -878,9 +878,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"title"
 argument_list|,
-name|NULL
+literal|"Title"
 argument_list|,
-name|NULL
+literal|"The title to be used for the color selection dialog"
 argument_list|,
 name|NULL
 argument_list|,
@@ -901,9 +901,9 @@ name|gimp_param_spec_rgb
 argument_list|(
 literal|"color"
 argument_list|,
-name|NULL
+literal|"Color"
 argument_list|,
-name|NULL
+literal|"The color displayed in the button's color area"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -927,9 +927,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"type"
 argument_list|,
-name|NULL
+literal|"Type"
 argument_list|,
-name|NULL
+literal|"The type of the button's color area"
 argument_list|,
 name|GIMP_TYPE_COLOR_AREA_TYPE
 argument_list|,
@@ -952,9 +952,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"continuous-update"
 argument_list|,
-name|NULL
+literal|"Contiguous Update"
 argument_list|,
-name|NULL
+literal|"The update policy of the color button"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -975,9 +975,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"area-width"
 argument_list|,
-name|NULL
+literal|"Area Width"
 argument_list|,
-name|NULL
+literal|"The minimum width of the button's GimpColorArea"
 argument_list|,
 literal|1
 argument_list|,
@@ -1002,9 +1002,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"area-height"
 argument_list|,
-name|NULL
+literal|"Area Height"
 argument_list|,
-name|NULL
+literal|"The minimum height of the button's GimpColorArea"
 argument_list|,
 literal|1
 argument_list|,
@@ -1029,9 +1029,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"color-config"
 argument_list|,
-name|NULL
+literal|"Color Config"
 argument_list|,
-name|NULL
+literal|"The color config object used"
 argument_list|,
 name|GIMP_TYPE_COLOR_CONFIG
 argument_list|,
@@ -2444,7 +2444,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_title:  * @button: a #GimpColorButton.  * @title:  the new title.  *  * Sets the @button dialog's title.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_button_set_title:  * @button: a #GimpColorButton.  * @title:  the new title.  *  * Sets the @button dialog's title.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2525,7 +2525,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_title:  * @button: a #GimpColorButton.  *  * Returns: The @button dialog's title.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_button_get_title:  * @button: a #GimpColorButton.  *  * Returns: The @button dialog's title.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3053,7 +3053,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_ui_manager:  * @button: a #GimpColorButton.  *  * Returns: The @button's #GtkUIManager.  *  * Since: GIMP 2.10  **/
+comment|/**  * gimp_color_button_get_ui_manager:  * @button: a #GimpColorButton.  *  * Returns: The @button's #GtkUIManager.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

@@ -123,9 +123,9 @@ name|g_param_spec_double
 argument_list|(
 literal|"label-scale"
 argument_list|,
-name|NULL
+literal|"Label Scale"
 argument_list|,
-name|NULL
+literal|"The scale for the text cell renderer"
 argument_list|,
 literal|0.0
 argument_list|,

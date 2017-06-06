@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5852b0103
+DECL|enum|__anon29907b230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5852b0203
+DECL|enum|__anon29907b230203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -309,9 +309,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"position"
 argument_list|,
-name|NULL
+literal|"Position"
 argument_list|,
-name|NULL
+literal|"The chain's position"
 argument_list|,
 name|GIMP_TYPE_CHAIN_POSITION
 argument_list|,

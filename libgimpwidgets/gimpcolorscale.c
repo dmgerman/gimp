@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27848f440103
+DECL|enum|__anon2be137100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -553,9 +553,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"channel"
 argument_list|,
-name|NULL
+literal|"Channel"
 argument_list|,
-name|NULL
+literal|"The channel which is edited by the color scale"
 argument_list|,
 name|GIMP_TYPE_COLOR_SELECTOR_CHANNEL
 argument_list|,

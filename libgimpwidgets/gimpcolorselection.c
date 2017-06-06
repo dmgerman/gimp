@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2ab2430103
+DECL|enum|__anon2b83493f0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ab2430203
+DECL|enum|__anon2b83493f0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ab2430303
+DECL|enum|__anon2b83493f0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -449,9 +449,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"config"
 argument_list|,
-name|NULL
+literal|"Config"
 argument_list|,
-name|NULL
+literal|"The color config used by this color selection"
 argument_list|,
 name|GIMP_TYPE_COLOR_CONFIG
 argument_list|,

@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9384390103
+DECL|enum|__anon2c31193f0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9384390203
+DECL|enum|__anon2c31193f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9384390303
+DECL|enum|__anon2c31193f0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9384390408
+DECL|struct|__anon2c31193f0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -550,9 +550,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"n-pages"
 argument_list|,
-name|NULL
+literal|"N Pages"
 argument_list|,
-name|NULL
+literal|"The number of pages to open"
 argument_list|,
 literal|0
 argument_list|,
@@ -575,9 +575,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"target"
 argument_list|,
-name|NULL
+literal|"Target"
 argument_list|,
-name|NULL
+literal|"the target to open to"
 argument_list|,
 name|GIMP_TYPE_PAGE_SELECTOR_TARGET
 argument_list|,

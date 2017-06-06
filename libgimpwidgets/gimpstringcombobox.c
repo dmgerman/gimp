@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c47e1b0103
+DECL|enum|__anon27e0d3a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c47e1b0208
+DECL|struct|__anon27e0d3a50208
 block|{
 DECL|member|id_column
 name|gint
@@ -219,9 +219,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"id-column"
 argument_list|,
-name|NULL
+literal|"ID Column"
 argument_list|,
-name|NULL
+literal|"The model column that holds the ID"
 argument_list|,
 literal|0
 argument_list|,
@@ -246,9 +246,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"label-column"
 argument_list|,
-name|NULL
+literal|"Label Column"
 argument_list|,
-name|NULL
+literal|"The model column that holds the label"
 argument_list|,
 literal|0
 argument_list|,
@@ -273,9 +273,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"ellipsize"
 argument_list|,
-name|NULL
+literal|"Ellipsize"
 argument_list|,
-name|NULL
+literal|"Ellipsize mode for the text cell renderer"
 argument_list|,
 name|PANGO_TYPE_ELLIPSIZE_MODE
 argument_list|,

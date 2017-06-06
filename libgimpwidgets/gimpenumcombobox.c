@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1afa840103
+DECL|enum|__anon2b9697510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,9 +165,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"model"
 argument_list|,
-name|NULL
+literal|"Model"
 argument_list|,
-name|NULL
+literal|"The enum store used by this combo box"
 argument_list|,
 name|GIMP_TYPE_ENUM_STORE
 argument_list|,

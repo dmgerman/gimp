@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c022dc00103
+DECL|enum|__anon275572270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c022dc00208
+DECL|struct|__anon275572270208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -300,9 +300,9 @@ name|g_param_spec_gtype
 argument_list|(
 literal|"user-data-type"
 argument_list|,
-name|NULL
+literal|"User Data Type"
 argument_list|,
-name|NULL
+literal|"The GType of the user_data column"
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f730650103
+DECL|enum|__anon2ac59a480103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f730650203
+DECL|enum|__anon2ac59a480203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f730650308
+DECL|struct|__anon2ac59a480308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -684,9 +684,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"update"
 argument_list|,
-name|NULL
+literal|"Update"
 argument_list|,
-name|NULL
+literal|"Whether the preview should update automatically"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -704,9 +704,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"size"
 argument_list|,
-name|NULL
+literal|"Size"
 argument_list|,
-name|NULL
+literal|"The preview's size"
 argument_list|,
 literal|1
 argument_list|,

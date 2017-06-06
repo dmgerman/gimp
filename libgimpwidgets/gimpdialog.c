@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6d3df0103
+DECL|enum|__anon28a1dcf10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -380,9 +380,9 @@ name|g_param_spec_pointer
 argument_list|(
 literal|"help-func"
 argument_list|,
-name|NULL
+literal|"Help Func"
 argument_list|,
-name|NULL
+literal|"The help function to call when F1 is hit"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -401,9 +401,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"help-id"
 argument_list|,
-name|NULL
+literal|"Help ID"
 argument_list|,
-name|NULL
+literal|"The help ID to pass to help-func"
 argument_list|,
 name|NULL
 argument_list|,
@@ -424,9 +424,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"parent"
 argument_list|,
-name|NULL
+literal|"Parent"
 argument_list|,
-name|NULL
+literal|"The dialog's parent widget"
 argument_list|,
 name|GTK_TYPE_WIDGET
 argument_list|,
@@ -1768,7 +1768,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6d3df0208
+DECL|struct|__anon28a1dcf10208
 block|{
 DECL|member|dialog
 name|GtkDialog

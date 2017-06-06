@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42100b0103
+DECL|enum|__anon279866cd0103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42100b0203
+DECL|enum|__anon279866cd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42100b0308
+DECL|struct|__anon279866cd0308
 block|{
 DECL|member|value
 name|gdouble
@@ -296,6 +296,7 @@ name|get_property
 operator|=
 name|gimp_zoom_model_get_property
 expr_stmt|;
+comment|/**    * GimpZoomModel:value:    *    * The zoom factor.    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -306,9 +307,9 @@ name|g_param_spec_double
 argument_list|(
 literal|"value"
 argument_list|,
-literal|"Zoom factor"
+literal|"Value"
 argument_list|,
-name|NULL
+literal|"Zoom factor"
 argument_list|,
 name|ZOOM_MIN
 argument_list|,
@@ -320,6 +321,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpZoomModel:minimum:    *    * The minimum zoom factor.    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -330,9 +332,9 @@ name|g_param_spec_double
 argument_list|(
 literal|"minimum"
 argument_list|,
-literal|"Lower limit for the zoom factor"
+literal|"Minimum"
 argument_list|,
-name|NULL
+literal|"Lower limit for the zoom factor"
 argument_list|,
 name|ZOOM_MIN
 argument_list|,
@@ -344,6 +346,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpZoomModel:maximum:    *    * The maximum zoom factor.    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -354,9 +357,9 @@ name|g_param_spec_double
 argument_list|(
 literal|"maximum"
 argument_list|,
-literal|"Upper limit for the zoom factor"
+literal|"Maximum"
 argument_list|,
-name|NULL
+literal|"Upper limit for the zoom factor"
 argument_list|,
 name|ZOOM_MIN
 argument_list|,
@@ -368,6 +371,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpZoomModel:fraction:    *    * The zoom factor expressed as a fraction.    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -378,9 +382,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"fraction"
 argument_list|,
-literal|"The zoom factor expressed as a fraction"
+literal|"Fraction"
 argument_list|,
-name|NULL
+literal|"The zoom factor expressed as a fraction"
 argument_list|,
 literal|"1:1"
 argument_list|,
@@ -388,6 +392,7 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpZoomModel:percentage:    *    * The zoom factor expressed as percentage.    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -398,9 +403,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"percentage"
 argument_list|,
-literal|"The zoom factor expressed as a percentage"
+literal|"Percentage"
 argument_list|,
-name|NULL
+literal|"The zoom factor expressed as a percentage"
 argument_list|,
 literal|"100%"
 argument_list|,

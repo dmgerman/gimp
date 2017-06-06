@@ -262,9 +262,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"label-bold"
 argument_list|,
-name|NULL
+literal|"Label Bold"
 argument_list|,
-name|NULL
+literal|"Whether the frame's label should be bold"
 argument_list|,
 name|DEFAULT_LABEL_BOLD
 argument_list|,
@@ -280,9 +280,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"label-spacing"
 argument_list|,
-name|NULL
+literal|"Label Spacing"
 argument_list|,
-name|NULL
+literal|"The spacing between the label and the frame content"
 argument_list|,
 literal|0
 argument_list|,

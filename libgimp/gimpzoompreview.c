@@ -68,7 +68,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72a0b20103
+DECL|enum|__anon28f7a7cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b72a0b20208
+DECL|struct|__anon28f7a7cf0208
 block|{
 DECL|member|update
 name|gboolean
@@ -648,9 +648,9 @@ name|g_param_spec_pointer
 argument_list|(
 literal|"drawable"
 argument_list|,
-name|NULL
+literal|"Drawable"
 argument_list|,
-name|NULL
+literal|"Deprecated: use the drawable-id property instead"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -669,9 +669,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"drawable-id"
 argument_list|,
-name|NULL
+literal|"Drawable ID"
 argument_list|,
-name|NULL
+literal|"The drawable this preview is attached to"
 argument_list|,
 operator|-
 literal|1
@@ -698,9 +698,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"model"
 argument_list|,
-name|NULL
+literal|"Model"
 argument_list|,
-name|NULL
+literal|"The zoom preview's GimpZoomModel"
 argument_list|,
 name|GIMP_TYPE_ZOOM_MODEL
 argument_list|,

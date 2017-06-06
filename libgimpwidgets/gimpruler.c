@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b522e190103
+DECL|enum|__anon2ad517540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b522e190208
+DECL|struct|__anon2ad517540208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -192,7 +192,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b522e190308
+DECL|struct|__anon2ad517540308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -831,9 +831,9 @@ name|g_param_spec_double
 argument_list|(
 literal|"font-scale"
 argument_list|,
-name|NULL
+literal|"Font Scale"
 argument_list|,
-name|NULL
+literal|"The size of the used font"
 argument_list|,
 literal|0.0
 argument_list|,

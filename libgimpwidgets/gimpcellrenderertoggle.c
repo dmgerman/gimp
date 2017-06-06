@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6453f80103
+DECL|enum|__anon299f19a30103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6453f80203
+DECL|enum|__anon299f19a30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -447,9 +447,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"icon-name"
 argument_list|,
-name|NULL
+literal|"Icon Name"
 argument_list|,
-name|NULL
+literal|"The icon to display"
 argument_list|,
 name|NULL
 argument_list|,
@@ -469,9 +469,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"stock-id"
 argument_list|,
-name|NULL
+literal|"Stock ID"
 argument_list|,
-name|NULL
+literal|"The icon to display, deprecated"
 argument_list|,
 name|NULL
 argument_list|,
@@ -491,9 +491,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"stock-size"
 argument_list|,
-name|NULL
+literal|"Stock Size"
 argument_list|,
-name|NULL
+literal|"The icon size to use"
 argument_list|,
 literal|0
 argument_list|,
@@ -517,9 +517,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"override-background"
 argument_list|,
-name|NULL
+literal|"Override Background"
 argument_list|,
-name|NULL
+literal|"Draw the background if the row is selected"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1371,9 +1371,11 @@ return|return;
 block|}
 if|if
 condition|(
+operator|(
 name|flags
 operator|&
 name|GTK_CELL_RENDERER_SELECTED
+operator|)
 operator|&&
 name|priv
 operator|->

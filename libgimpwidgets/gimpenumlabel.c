@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a650d0103
+DECL|enum|__anon2bf59ad80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -180,9 +180,9 @@ name|g_param_spec_gtype
 argument_list|(
 literal|"enum-type"
 argument_list|,
-name|NULL
+literal|"Enum Type"
 argument_list|,
-name|NULL
+literal|"The type of the displayed enum"
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -203,9 +203,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"enum-value"
 argument_list|,
-name|NULL
+literal|"Enum Value"
 argument_list|,
-name|NULL
+literal|"The enum value to display"
 argument_list|,
 name|G_MININT
 argument_list|,

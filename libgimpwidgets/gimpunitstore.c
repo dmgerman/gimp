@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5ffad30103
+DECL|enum|__anon2bb694ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ffad30208
+DECL|struct|__anon2bb694ae0208
 block|{
 DECL|member|num_values
 name|gint
@@ -505,9 +505,9 @@ name|g_param_spec_int
 argument_list|(
 literal|"num-values"
 argument_list|,
-name|NULL
+literal|"Num Values"
 argument_list|,
-name|NULL
+literal|"The number of values this store provides"
 argument_list|,
 literal|0
 argument_list|,
@@ -531,9 +531,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"has-pixels"
 argument_list|,
-name|NULL
+literal|"Has Pixels"
 argument_list|,
-name|NULL
+literal|"Whether the store has GIMP_UNIT_PIXELS"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -551,9 +551,9 @@ name|g_param_spec_boolean
 argument_list|(
 literal|"has-percent"
 argument_list|,
-name|NULL
+literal|"Has Percent"
 argument_list|,
-name|NULL
+literal|"Whether the store has GIMP_UNIT_PERCENT"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -571,9 +571,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"short-format"
 argument_list|,
-name|NULL
+literal|"Short Format"
 argument_list|,
-name|NULL
+literal|"Format string for a short label"
 argument_list|,
 literal|"%a"
 argument_list|,
@@ -591,9 +591,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"long-format"
 argument_list|,
-name|NULL
+literal|"Long Format"
 argument_list|,
-name|NULL
+literal|"Format string for a long label"
 argument_list|,
 literal|"%p"
 argument_list|,

@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291941380103
+DECL|enum|__anon28b5bf860103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291941380203
+DECL|enum|__anon28b5bf860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291941380303
+DECL|enum|__anon28b5bf860303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291941380408
+DECL|struct|__anon28b5bf860408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -493,16 +493,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpNumberPairEntryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|entry_signals
 index|[
 name|NUMBERS_CHANGED
@@ -571,18 +561,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|klass
-operator|->
-name|numbers_changed
-operator|=
-name|NULL
-expr_stmt|;
-name|klass
-operator|->
-name|ratio_changed
-operator|=
-name|NULL
-expr_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -601,6 +579,18 @@ name|finalize
 operator|=
 name|gimp_number_pair_entry_finalize
 expr_stmt|;
+name|klass
+operator|->
+name|numbers_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|ratio_changed
+operator|=
+name|NULL
+expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -613,7 +603,7 @@ literal|"left-number"
 argument_list|,
 literal|"Left number"
 argument_list|,
-name|NULL
+literal|"The left number"
 argument_list|,
 name|G_MINDOUBLE
 argument_list|,
@@ -637,7 +627,7 @@ literal|"right-number"
 argument_list|,
 literal|"Right number"
 argument_list|,
-name|NULL
+literal|"The right number"
 argument_list|,
 name|G_MINDOUBLE
 argument_list|,
@@ -661,7 +651,7 @@ literal|"default-left-number"
 argument_list|,
 literal|"Default left number"
 argument_list|,
-name|NULL
+literal|"The default left number"
 argument_list|,
 name|G_MINDOUBLE
 argument_list|,
@@ -685,7 +675,7 @@ literal|"default-right-number"
 argument_list|,
 literal|"Default right number"
 argument_list|,
-name|NULL
+literal|"The default right number"
 argument_list|,
 name|G_MINDOUBLE
 argument_list|,
@@ -839,7 +829,7 @@ literal|"ratio"
 argument_list|,
 literal|"Ratio"
 argument_list|,
-name|NULL
+literal|"The value as ratio"
 argument_list|,
 name|G_MINDOUBLE
 argument_list|,
@@ -863,13 +853,23 @@ literal|"aspect"
 argument_list|,
 literal|"Aspect"
 argument_list|,
-name|NULL
+literal|"The value as aspect"
 argument_list|,
 name|GIMP_TYPE_ASPECT_TYPE
 argument_list|,
 name|GIMP_ASPECT_SQUARE
 argument_list|,
 name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpNumberPairEntryPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

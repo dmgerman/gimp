@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2883dd9c0103
+DECL|enum|__anon28e2a6870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883dd9c0208
+DECL|struct|__anon28e2a6870208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -297,9 +297,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"dialog"
 argument_list|,
-name|NULL
+literal|"Dialog"
 argument_list|,
-name|NULL
+literal|"The dialog to present when selecting profiles from disk"
 argument_list|,
 name|GTK_TYPE_DIALOG
 argument_list|,
@@ -320,9 +320,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"model"
 argument_list|,
-name|NULL
+literal|"Model"
 argument_list|,
-name|NULL
+literal|"The profile store used for this combo box"
 argument_list|,
 name|GIMP_TYPE_COLOR_PROFILE_STORE
 argument_list|,

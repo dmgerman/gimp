@@ -42,7 +42,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0824f80108
+DECL|struct|__anon2b1e923c0108
 block|{
 DECL|member|parent_instance
 name|GtkBox
@@ -82,7 +82,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0824f80203
+DECL|enum|__anon2b1e923c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -243,9 +243,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"icon-name"
 argument_list|,
-name|NULL
+literal|"Icon Name"
 argument_list|,
-name|NULL
+literal|"The icon to show next to the hint"
 argument_list|,
 name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|,
@@ -265,9 +265,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"stock-id"
 argument_list|,
-name|NULL
+literal|"Stock ID"
 argument_list|,
-name|NULL
+literal|"Deprecated: use icon-name instead"
 argument_list|,
 name|GIMP_ICON_DIALOG_INFORMATION
 argument_list|,
@@ -287,9 +287,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"hint"
 argument_list|,
-name|NULL
+literal|"Hint"
 argument_list|,
-name|NULL
+literal|"The hint to display"
 argument_list|,
 name|NULL
 argument_list|,

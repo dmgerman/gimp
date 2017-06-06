@@ -46,7 +46,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpstock  * @title: GimpStock  * @short_description: Prebuilt common menu/toolbar items and  *                     corresponding icons  *  * GIMP registers a set of menu/toolbar items and corresponding icons  * in addition to the standard GTK+ stock items. These can be used  * just like GTK+ stock items. GIMP also overrides a few of the GTK+  * icons (namely the ones in dialog size).  *  * Stock icons may have a RTL variant which gets used for  * right-to-left locales.  **/
+comment|/**  * SECTION: gimpicons  * @title: GimpIcons  * @short_description: Prebuilt common menu/toolbar items and  *                     corresponding icons  *  * GIMP registers a set of menu/toolbar items and corresponding icons  * in addition to the standard GTK+ stock items. These can be used  * just like GTK+ stock items. GIMP also overrides a few of the GTK+  * icons (namely the ones in dialog size).  *  * Stock icons may have a RTL variant which gets used for  * right-to-left locales.  **/
 end_comment
 
 begin_define

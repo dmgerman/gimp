@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0bf5ea0103
+DECL|enum|__anon2b1708d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0bf5ea0208
+DECL|struct|__anon2b1708d60208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -284,9 +284,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"ellipsize"
 argument_list|,
-name|NULL
+literal|"Ellipsize"
 argument_list|,
-name|NULL
+literal|"Ellipsize mode for the used text cell renderer"
 argument_list|,
 name|PANGO_TYPE_ELLIPSIZE_MODE
 argument_list|,
@@ -307,9 +307,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"label"
 argument_list|,
-name|NULL
+literal|"Label"
 argument_list|,
-name|NULL
+literal|"An optional label to be displayed"
 argument_list|,
 name|NULL
 argument_list|,
