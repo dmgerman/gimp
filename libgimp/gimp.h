@@ -653,7 +653,7 @@ name|MAIN
 parameter_list|()
 define|\
 value|struct HINSTANCE__;                                  \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow);                            \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow)                             \    {                                                    \      return gimp_main (&PLUG_IN_INFO, __argc, __argv);  \    }                                                    \                                                         \    int                                                  \    main (int argc, char *argv[])                        \    {                                                    \
-comment|/* Use __argc and __argv here, too, as they work   \       * better with mingw-w64.				\       */
+comment|/* Use __argc and __argv here, too, as they work   \       * better with mingw-w64.                          \       */
 value|\      return gimp_main (&PLUG_IN_INFO, __argc, __argv);  \    }
 end_define
 
