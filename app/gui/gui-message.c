@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"about.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -126,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-message.h"
 end_include
 
@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ac770108
+DECL|struct|__anon2c00d7580108
 block|{
 DECL|member|gimp
 name|Gimp
