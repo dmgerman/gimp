@@ -131,11 +131,6 @@ DECL|member|gamma_hack
 name|gboolean
 name|gamma_hack
 decl_stmt|;
-DECL|member|settings
-name|GFile
-modifier|*
-name|settings
-decl_stmt|;
 block|}
 struct|;
 end_struct
