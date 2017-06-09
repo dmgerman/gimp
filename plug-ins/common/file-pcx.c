@@ -1069,36 +1069,10 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|mono
-specifier|static
-specifier|const
-name|guchar
-name|mono
-index|[
-literal|6
-index|]
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|255
-block|,
-literal|255
-block|,
-literal|255
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd63adc0108
+DECL|struct|__anon2924d12b0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1175,7 +1149,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2bd63adc0208
+DECL|struct|__anon2924d12b0208
 specifier|static
 struct|struct
 block|{
@@ -2130,6 +2104,7 @@ argument_list|,
 name|bytesperline
 argument_list|)
 expr_stmt|;
+comment|/* Monochrome does not mean necessarily B&W. Therefore we still        * want to check the header palette, even for just 2 colors.        * Hopefully the header palette will always be filled with        * meaningful colors and the creator software did not just assume        * B&W by being monochrome.        * Until now test samples showed that even when B&W the header        * palette was correctly filled with these 2 colors and we didn't        * find counter-examples.        * See bug 159947, comment 21 and 23.        */
 name|gimp_image_set_colormap
 argument_list|(
 name|image
@@ -3784,6 +3759,7 @@ name|format
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* Some references explain that 2bpp/1plane and 4bpp/1plane files        * would use the palette at EOF (not the one from the header) if        * we are in version 5 of PCX. Other sources affirm that even in        * version 5, EOF palette must be used only when there are more        * than 16 colors. We go with this second assumption.        * See bug 159947, comment 21 and 23.        */
 if|if
 condition|(
 name|colors
