@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05ceb20103
+DECL|enum|__anon2abeaee60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05ceb20203
+DECL|enum|__anon2abeaee60203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -150,6 +150,18 @@ end_struct
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_canvas_item_dispose
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -362,6 +374,12 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|object_class
+operator|->
+name|dispose
+operator|=
+name|gimp_canvas_item_dispose
+expr_stmt|;
 name|object_class
 operator|->
 name|constructed
@@ -690,6 +708,47 @@ name|parent_class
 argument_list|)
 operator|->
 name|constructed
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_canvas_item_dispose (GObject * object)
+name|gimp_canvas_item_dispose
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpCanvasItem
+modifier|*
+name|item
+init|=
+name|GIMP_CANVAS_ITEM
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
+name|item
+operator|->
+name|private
+operator|->
+name|change_count
+operator|++
+expr_stmt|;
+comment|/* avoid emissions during destruction */
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|dispose
 argument_list|(
 name|object
 argument_list|)
