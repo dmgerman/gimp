@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib/gstdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -60,31 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"operations/gimp-operation-config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpsettings.h"
 end_include
 
 begin_include
@@ -103,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimptoolgui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpfilteroptions.h"
 end_include
 
 begin_include
