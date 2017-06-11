@@ -697,6 +697,11 @@ modifier|*
 name|new_offset_y
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|new_buffer
@@ -916,6 +921,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|orig_buffer
+argument_list|)
+expr_stmt|;
 name|new_buffer
 operator|=
 name|gegl_buffer_new
@@ -931,10 +943,7 @@ argument_list|,
 name|new_height
 argument_list|)
 argument_list|,
-name|gegl_buffer_get_format
-argument_list|(
-name|orig_buffer
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 if|if
@@ -979,12 +988,17 @@ name|new_offset_y
 operator|=
 name|orig_y
 expr_stmt|;
-comment|/*  "Outside" a channel is transparency, not the bg color  */
+comment|/*  Use transparency, rather than the bg color, as the "outside" color of        *  channels, and drawables with an alpha channel.        */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
+argument_list|)
+operator|||
+name|babl_format_has_alpha
+argument_list|(
+name|format
 argument_list|)
 condition|)
 block|{
@@ -1597,6 +1611,11 @@ modifier|*
 name|new_offset_y
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|new_buffer
@@ -1857,6 +1876,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|orig_buffer
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|clip_result
@@ -1912,10 +1938,7 @@ argument_list|,
 name|orig_height
 argument_list|)
 argument_list|,
-name|gegl_buffer_get_format
-argument_list|(
-name|orig_buffer
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1928,12 +1951,17 @@ name|new_offset_y
 operator|=
 name|orig_y
 expr_stmt|;
-comment|/*  "Outside" a channel is transparency, not the bg color  */
+comment|/*  Use transparency, rather than the bg color, as the "outside" color of        *  channels, and drawables with an alpha channel.        */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
+argument_list|)
+operator|||
+name|babl_format_has_alpha
+argument_list|(
+name|format
 argument_list|)
 condition|)
 block|{
@@ -2205,10 +2233,7 @@ argument_list|,
 name|new_height
 argument_list|)
 argument_list|,
-name|gegl_buffer_get_format
-argument_list|(
-name|orig_buffer
-argument_list|)
+name|format
 argument_list|)
 expr_stmt|;
 operator|*
