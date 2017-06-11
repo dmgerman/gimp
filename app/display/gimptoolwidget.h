@@ -143,6 +143,23 @@ modifier|*
 name|widget
 parameter_list|)
 function_decl|;
+DECL|member|status
+name|void
+function_decl|(
+modifier|*
+name|status
+function_decl|)
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status
+parameter_list|)
+function_decl|;
 comment|/*  virtual functions  */
 DECL|member|button_press
 name|gboolean
@@ -355,6 +372,26 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  for subclasses, to add emit status messages  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_tool_widget_status
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  for subclasses, to add and manage their items  */
 end_comment
 
@@ -439,7 +476,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  convenience functions to add specific items  */
+comment|/*  for subclasses, convenience functions to add specific items  */
 end_comment
 
 begin_function_decl
