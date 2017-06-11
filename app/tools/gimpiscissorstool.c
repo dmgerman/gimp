@@ -3471,6 +3471,10 @@ operator|->
 name|y2
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|item
+condition|)
 name|gimp_canvas_item_set_highlight
 argument_list|(
 name|item
