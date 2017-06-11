@@ -116,6 +116,12 @@ DECL|member|flip_type
 name|GimpOrientationType
 name|flip_type
 decl_stmt|;
+comment|/*  options gui  */
+DECL|member|direction_frame
+name|GtkWidget
+modifier|*
+name|direction_frame
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -123,6 +123,11 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
+DECL|member|guide
+name|GimpGuide
+modifier|*
+name|guide
+decl_stmt|;
 block|}
 struct|;
 end_struct

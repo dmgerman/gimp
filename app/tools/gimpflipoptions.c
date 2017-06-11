@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ccbcfc0103
+DECL|enum|__anon27dd0da80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,6 +356,15 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
+name|GimpFlipOptions
+modifier|*
+name|options
+init|=
+name|GIMP_FLIP_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -546,6 +555,12 @@ name|g_free
 argument_list|(
 name|str
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|direction_frame
+operator|=
+name|frame
 expr_stmt|;
 return|return
 name|vbox
