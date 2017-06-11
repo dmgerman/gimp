@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df0c860103
+DECL|enum|__anon28b59cb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df0c860203
+DECL|enum|__anon28b59cb30203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -646,6 +646,19 @@ name|shell
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_ITEM
+case|:
+name|g_value_set_object
+argument_list|(
+name|value
+argument_list|,
+name|private
+operator|->
+name|item
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -712,6 +725,37 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|GimpDisplayShell
+modifier|*
+DECL|function|gimp_tool_widget_get_shell (GimpToolWidget * widget)
+name|gimp_tool_widget_get_shell
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_WIDGET
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|widget
+operator|->
+name|private
+operator|->
+name|shell
+return|;
+block|}
+end_function
 
 begin_function
 name|GimpCanvasItem

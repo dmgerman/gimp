@@ -331,6 +331,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpDisplayShell
+modifier|*
+name|gimp_tool_widget_get_shell
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpCanvasItem
 modifier|*
 name|gimp_tool_widget_get_item
