@@ -22,38 +22,6 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_comment
-comment|/*  possible measure functions  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2921ff2e0103
-block|{
-DECL|enumerator|CREATING
-name|CREATING
-block|,
-DECL|enumerator|ADDING
-name|ADDING
-block|,
-DECL|enumerator|MOVING
-name|MOVING
-block|,
-DECL|enumerator|MOVING_ALL
-name|MOVING_ALL
-block|,
-DECL|enumerator|GUIDING
-name|GUIDING
-block|,
-DECL|enumerator|FINISHED
-name|FINISHED
-DECL|typedef|MeasureFunction
-block|}
-name|MeasureFunction
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_MEASURE_TOOL
 define|#
@@ -155,41 +123,20 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|function
-name|MeasureFunction
-name|function
+DECL|member|compass
+name|GimpToolWidget
+modifier|*
+name|compass
 decl_stmt|;
-comment|/*  function we're performing  */
-DECL|member|mouse_x
-name|gdouble
-name|mouse_x
+DECL|member|grab_widget
+name|GimpToolWidget
+modifier|*
+name|grab_widget
 decl_stmt|;
-comment|/*  pointer x coordinate       */
-DECL|member|mouse_y
-name|gdouble
-name|mouse_y
-decl_stmt|;
-comment|/*  pointer y coordinate       */
-DECL|member|last_x
+DECL|member|n_points
 name|gint
-name|last_x
+name|n_points
 decl_stmt|;
-comment|/*  last x coordinate          */
-DECL|member|last_y
-name|gint
-name|last_y
-decl_stmt|;
-comment|/*  last y coordinate          */
-DECL|member|point
-name|gint
-name|point
-decl_stmt|;
-comment|/*  what are we manipulating?  */
-DECL|member|num_points
-name|gint
-name|num_points
-decl_stmt|;
-comment|/*  how many points?           */
 DECL|member|x
 name|gint
 name|x
@@ -197,34 +144,9 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-comment|/*  three x coordinates        */
 DECL|member|y
 name|gint
 name|y
-index|[
-literal|3
-index|]
-decl_stmt|;
-comment|/*  three y coordinates        */
-DECL|member|angle1
-name|gdouble
-name|angle1
-decl_stmt|;
-comment|/*  first angle                */
-DECL|member|angle2
-name|gdouble
-name|angle2
-decl_stmt|;
-comment|/*  second angle               */
-DECL|member|status_help
-name|gboolean
-name|status_help
-decl_stmt|;
-comment|/*  help is currently in s.bar */
-DECL|member|handles
-name|GimpCanvasItem
-modifier|*
-name|handles
 index|[
 literal|3
 index|]
