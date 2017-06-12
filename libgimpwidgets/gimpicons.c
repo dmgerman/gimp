@@ -1649,6 +1649,7 @@ block|}
 block|,
 block|{
 name|GIMP_STOCK_BUSINESS_CARD
+block|,
 name|NULL
 block|,
 literal|0
@@ -1660,6 +1661,7 @@ block|}
 block|,
 block|{
 name|GIMP_STOCK_DISPLAY
+block|,
 name|NULL
 block|,
 literal|0
@@ -1683,6 +1685,7 @@ block|}
 block|,
 block|{
 name|GIMP_STOCK_SMARTPHONE
+block|,
 name|NULL
 block|,
 literal|0
