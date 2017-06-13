@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05ad8f0103
+DECL|enum|__anon2c1770670103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05ad8f0203
+DECL|enum|__anon2c1770670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2870,7 +2870,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_action_group_remove_action:  * @group:  the #GimpActionGroup to which @action belongs.  * @action: the #GimpAction.  *  * This function removes action from the groupe and clean any  * accelerator this action may have set.  * If you wish only to only remove the action from the group, use  * gtk_action_group_remove_action() instead.  */
+comment|/**  * gimp_action_group_remove_action:  * @group:  the #GimpActionGroup to which @action belongs.  * @action: the #GimpAction.  *  * This function removes @action from @group and clean any  * accelerator this action may have set.  * If you wish to only remove the action from the group, use  * gtk_action_group_remove_action() instead.  */
 end_comment
 
 begin_function
