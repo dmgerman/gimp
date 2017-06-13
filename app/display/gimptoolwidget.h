@@ -143,6 +143,30 @@ modifier|*
 name|widget
 parameter_list|)
 function_decl|;
+DECL|member|snap_offsets
+name|void
+function_decl|(
+modifier|*
+name|snap_offsets
+function_decl|)
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
 DECL|member|status
 name|void
 function_decl|(
@@ -372,8 +396,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  for subclasses, to add emit status messages  */
+comment|/*  for subclasses, to notify the handling tool  */
 end_comment
+
+begin_function_decl
+name|void
+name|gimp_tool_widget_snap_offsets
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
