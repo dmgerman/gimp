@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c986800103
+DECL|enum|__anon2ab3c8830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2833,7 +2833,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_transform_guides_set (GimpCanvasItem * guides,const GimpMatrix3 * transform,GimpGuidesType type,gint n_guides)
+DECL|function|gimp_canvas_transform_guides_set (GimpCanvasItem * guides,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,GimpGuidesType type,gint n_guides)
 name|gimp_canvas_transform_guides_set
 parameter_list|(
 name|GimpCanvasItem
@@ -2844,6 +2844,18 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|transform
+parameter_list|,
+name|gdouble
+name|x1
+parameter_list|,
+name|gdouble
+name|y1
+parameter_list|,
+name|gdouble
+name|x2
+parameter_list|,
+name|gdouble
+name|y2
 parameter_list|,
 name|GimpGuidesType
 name|type
@@ -2872,6 +2884,22 @@ argument_list|,
 literal|"transform"
 argument_list|,
 name|transform
+argument_list|,
+literal|"x1"
+argument_list|,
+name|x1
+argument_list|,
+literal|"y1"
+argument_list|,
+name|y1
+argument_list|,
+literal|"x2"
+argument_list|,
+name|x2
+argument_list|,
+literal|"y2"
+argument_list|,
+name|y2
 argument_list|,
 literal|"type"
 argument_list|,
