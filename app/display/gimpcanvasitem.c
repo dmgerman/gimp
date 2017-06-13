@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abeaee60103
+DECL|enum|__anon2b0b636d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abeaee60203
+DECL|enum|__anon2b0b636d0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1496,6 +1496,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|item
+operator|->
+name|private
+operator|->
+name|visible
+condition|)
 return|return
 name|GIMP_CANVAS_ITEM_GET_CLASS
 argument_list|(
@@ -1510,6 +1518,9 @@ name|x
 argument_list|,
 name|y
 argument_list|)
+return|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function
