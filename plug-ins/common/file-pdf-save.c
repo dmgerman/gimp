@@ -72,6 +72,14 @@ value|"file-pdf-save"
 end_define
 
 begin_define
+DECL|macro|SAVE2_PROC
+define|#
+directive|define
+name|SAVE2_PROC
+value|"file-pdf-save2"
+end_define
+
+begin_define
 DECL|macro|SAVE_MULTI_PROC
 define|#
 directive|define
@@ -158,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c455c70103
+DECL|enum|__anon29bef4230103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -180,7 +188,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c455c70203
+DECL|enum|__anon29bef4230203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -217,18 +225,10 @@ name|SaveArgs
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|SA_ARG_COUNT_DEFAULT
-define|#
-directive|define
-name|SA_ARG_COUNT_DEFAULT
-value|5
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c455c70303
+DECL|enum|__anon29bef4230303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -248,9 +248,6 @@ block|,
 DECL|enumerator|SMA_APPLY_MASKS
 name|SMA_APPLY_MASKS
 block|,
-DECL|enumerator|SMA_LAYERS_AS_PAGES
-name|SMA_LAYERS_AS_PAGES
-block|,
 DECL|enumerator|SMA_FILENAME
 name|SMA_FILENAME
 block|,
@@ -268,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c455c70408
+DECL|struct|__anon29bef4230408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -295,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c455c70508
+DECL|struct|__anon29bef4230508
 block|{
 DECL|member|images
 name|gint32
@@ -324,7 +321,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c455c70608
+DECL|struct|__anon29bef4230608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -343,7 +340,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c455c70703
+DECL|enum|__anon29bef4230703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -363,7 +360,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c455c70808
+DECL|struct|__anon29bef4230808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -826,13 +823,85 @@ literal|"apply-masks"
 block|,
 literal|"Apply layer masks before saving. TRUE or FALSE (Keeping them will not change the output)"
 block|}
+block|}
+decl_stmt|;
+DECL|variable|save2_args
+specifier|static
+name|GimpParamDef
+name|save2_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"Run mode"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to save the image in"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"raw-filename"
+block|,
+literal|"The name of the file to save the image in"
+block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"layers_as_pages"
+literal|"vectorize"
 block|,
-literal|"Layers as pages"
+literal|"Convert bitmaps to vector graphics where possible. TRUE or FALSE"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"ignore-hidden"
+block|,
+literal|"Omit hidden layers and layers with zero opacity. TRUE or FALSE"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"apply-masks"
+block|,
+literal|"Apply layer masks before saving. TRUE or FALSE (Keeping them will not change the output)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"layers-as-pages"
+block|,
+literal|"Layers as pages. TRUE or FALSE"
 block|}
 block|}
 decl_stmt|;
@@ -892,14 +961,6 @@ literal|"Apply layer masks before saving. TRUE or FALSE (Keeping them will not c
 block|}
 block|,
 block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"layers_as_pages"
-block|,
-literal|"Layers as pages"
-block|}
-block|,
-block|{
 name|GIMP_PDB_STRING
 block|,
 literal|"filename"
@@ -956,6 +1017,46 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
+name|SAVE2_PROC
+argument_list|,
+literal|"Save files in PDF format"
+argument_list|,
+literal|"Saves files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
+literal|"of different platforms, and is a distant cousin of "
+literal|"PostScript.\n"
+literal|"This procedure adds an extra parameter to "
+literal|"file-pdf-save to save layers as pages."
+argument_list|,
+literal|"Barak Itkin, Lionel N., Jehan"
+argument_list|,
+literal|"Copyright Barak Itkin, Lionel N., Jehan"
+argument_list|,
+literal|"August 2009, 2017"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Portable Document Format"
+argument_list|)
+argument_list|,
+literal|"RGB*, GRAY*, INDEXED*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save2_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save2_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
 name|SAVE_MULTI_PROC
 argument_list|,
 literal|"Save files in PDF format"
@@ -1000,14 +1101,14 @@ endif|#
 directive|endif
 name|gimp_register_file_handler_mime
 argument_list|(
-name|SAVE_PROC
+name|SAVE2_PROC
 argument_list|,
 literal|"application/pdf"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-name|SAVE_PROC
+name|SAVE2_PROC
 argument_list|,
 literal|"pdf"
 argument_list|,
@@ -2248,6 +2349,15 @@ condition|(
 name|optimize
 operator|.
 name|layers_as_pages
+operator|&&
+name|g_strcmp0
+argument_list|(
+name|name
+argument_list|,
+name|SAVE2_PROC
+argument_list|)
+operator|==
+literal|0
 condition|)
 name|cairo_show_page
 argument_list|(
@@ -2272,6 +2382,15 @@ block|}
 comment|/* We are done with this image - Show it!        * Unless that's a multi-page to avoid blank page at the end        */
 if|if
 condition|(
+name|g_strcmp0
+argument_list|(
+name|name
+argument_list|,
+name|SAVE2_PROC
+argument_list|)
+operator|!=
+literal|0
+operator|||
 operator|!
 name|optimize
 operator|.
@@ -2430,31 +2549,39 @@ name|image
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|g_str_equal
 argument_list|(
 name|name
 argument_list|,
 name|SAVE_PROC
 argument_list|)
+operator|&&
+name|nparams
+operator|==
+name|SA_ARG_COUNT
+operator|-
+literal|1
+operator|)
+operator|||
+operator|(
+name|g_str_equal
+argument_list|(
+name|name
+argument_list|,
+name|SAVE2_PROC
+argument_list|)
+operator|&&
+name|nparams
+operator|==
+name|SA_ARG_COUNT
+operator|)
 condition|)
 block|{
 name|single
 operator|=
 name|TRUE
 expr_stmt|;
-if|if
-condition|(
-name|nparams
-operator|!=
-name|SA_ARG_COUNT
-operator|&&
-name|nparams
-operator|!=
-name|SA_ARG_COUNT_DEFAULT
-condition|)
-return|return
-name|FALSE
-return|;
 operator|*
 name|run_mode
 operator|=
@@ -2495,10 +2622,6 @@ operator|*
 name|run_mode
 operator|==
 name|GIMP_RUN_NONINTERACTIVE
-operator|&&
-name|nparams
-operator|==
-name|SA_ARG_COUNT
 condition|)
 block|{
 name|optimize
@@ -2540,6 +2663,12 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|nparams
+operator|==
+name|SA_ARG_COUNT
+condition|)
 name|optimize
 operator|.
 name|layers_as_pages
@@ -2651,24 +2780,13 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|optimize
-operator|.
-name|layers_as_pages
-operator|=
-name|param
-index|[
-name|SMA_LAYERS_AS_PAGES
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 block|}
 else|else
+block|{
 return|return
 name|FALSE
 return|;
+block|}
 switch|switch
 condition|(
 operator|*
@@ -3421,10 +3539,6 @@ name|apply_c
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|layers_as_pages_c
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|scroll
 decl_stmt|;
 name|GtkWidget
@@ -4050,44 +4164,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|layers_as_pages_c
-operator|=
-name|gtk_check_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Layers as pages"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|layers_as_pages_c
-argument_list|)
-argument_list|,
-name|optimize
-operator|.
-name|layers_as_pages
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|layers_as_pages_c
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show_all
 argument_list|(
 name|window
@@ -4228,18 +4304,6 @@ argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|apply_c
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|optimize
-operator|.
-name|layers_as_pages
-operator|=
-name|gtk_toggle_button_get_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|layers_as_pages_c
 argument_list|)
 argument_list|)
 expr_stmt|;
