@@ -2286,7 +2286,7 @@ endif|#
 directive|endif
 name|abort_message
 operator|=
-name|sanity_check
+name|sanity_check_early
 argument_list|()
 expr_stmt|;
 if|if

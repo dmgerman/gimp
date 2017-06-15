@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3102d0103
+DECL|enum|__anon2b872afb0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3102d0203
+DECL|enum|__anon2b872afb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3026,46 +3026,13 @@ operator|!
 name|mask
 condition|)
 block|{
-if|if
-condition|(
-name|scale
-operator|==
-literal|1.0
-operator|&&
-name|aspect_ratio
-operator|==
-literal|0.0
-operator|&&
-name|angle
-operator|==
-literal|0.0
-operator|&&
-name|hardness
-operator|==
-literal|1.0
-condition|)
-block|{
-name|mask
-operator|=
-name|gimp_temp_buf_copy
-argument_list|(
-name|brush
-operator|->
-name|priv
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 if|#
 directive|if
 literal|0
-comment|/* This code makes sure that brushes using blur for hardness            * (all of them but generated) are blurred once and no more.            * It also makes hardnes dynamics not work for these brushes.            * This is intentional. Confoliving for each stamp is too expensive.*/
-block|if (! brush->priv->blured_mask&&               ! GIMP_IS_BRUSH_GENERATED(brush)&&               ! GIMP_IS_BRUSH_PIPE(brush)&&
+comment|/* This code makes sure that brushes using blur for hardness        * (all of them but generated) are blurred once and no more.        * It also makes hardnes dynamics not work for these brushes.        * This is intentional. Confoliving for each stamp is too expensive.*/
+block|if (! brush->priv->blured_mask&&           ! GIMP_IS_BRUSH_GENERATED(brush)&&           ! GIMP_IS_BRUSH_PIPE(brush)&&
 comment|/*Cant cache pipes. Sanely anway*/
-block|hardness< 1.0)             {                brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                                  1.0,                                                                  0.0,                                                                  0.0,                                                                  hardness);                brush->priv->blur_hardness = hardness;             }            if (brush->priv->blured_mask)             {               effective_hardness = 1.0;
+block|hardness< 1.0)         {            brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blured_mask)         {           effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -3090,7 +3057,6 @@ argument_list|,
 name|effective_hardness
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|op
@@ -3378,45 +3344,12 @@ operator|!
 name|pixmap
 condition|)
 block|{
-if|if
-condition|(
-name|scale
-operator|==
-literal|1.0
-operator|&&
-name|aspect_ratio
-operator|==
-literal|0.0
-operator|&&
-name|angle
-operator|==
-literal|0.0
-operator|&&
-name|hardness
-operator|==
-literal|1.0
-condition|)
-block|{
-name|pixmap
-operator|=
-name|gimp_temp_buf_copy
-argument_list|(
-name|brush
-operator|->
-name|priv
-operator|->
-name|pixmap
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 if|#
 directive|if
 literal|0
-block|if (! brush->priv->blured_pixmap&&              ! GIMP_IS_BRUSH_GENERATED(brush)&&              ! GIMP_IS_BRUSH_PIPE(brush)
+block|if (! brush->priv->blured_pixmap&&          ! GIMP_IS_BRUSH_GENERATED(brush)&&          ! GIMP_IS_BRUSH_PIPE(brush)
 comment|/*Cant cache pipes. Sanely anway*/
-block|&& hardness< 1.0)           {              brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                       1.0,                                                                       0.0,                                                                       0.0,                                                                       hardness);              brush->priv->blur_hardness = hardness;            }            if (brush->priv->blured_pixmap) {             effective_hardness = 1.0;
+block|&& hardness< 1.0)       {          brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blured_pixmap) {         effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -3441,7 +3374,6 @@ argument_list|,
 name|effective_hardness
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|op
