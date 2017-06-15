@@ -217,6 +217,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"sanity.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-debug.h"
 end_include
 
@@ -613,6 +619,11 @@ name|GFile
 modifier|*
 name|gimpdir
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|abort_message
+decl_stmt|;
 if|if
 condition|(
 name|filenames
@@ -855,6 +866,23 @@ operator|->
 name|config
 operator|->
 name|language
+argument_list|)
+expr_stmt|;
+comment|/*  run the late-stage sanity check.  it's important that this check is run    *  after the call to language_init() (see comment in sanity_check_late().)    */
+name|abort_message
+operator|=
+name|sanity_check_late
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|abort_message
+condition|)
+name|app_abort
+argument_list|(
+name|no_interface
+argument_list|,
+name|abort_message
 argument_list|)
 expr_stmt|;
 comment|/*  initialize lowlevel stuff  */
