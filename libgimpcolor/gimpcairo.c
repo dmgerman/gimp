@@ -417,6 +417,15 @@ argument_list|(
 literal|"cairo-ARGB32"
 argument_list|)
 return|;
+case|case
+name|CAIRO_FORMAT_A8
+case|:
+return|return
+name|babl_format
+argument_list|(
+literal|"cairo-A8"
+argument_list|)
+return|;
 default|default:
 break|break;
 block|}
