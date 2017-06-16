@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcde56c0103
+DECL|enum|__anon2a0f2d420103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -150,7 +150,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcde56c0203
+DECL|enum|__anon2a0f2d420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -325,7 +325,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|gint
 name|gimp_tool_line_button_press
 parameter_list|(
 name|GimpToolWidget
@@ -1409,11 +1409,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+literal|1
 return|;
 block|}
 return|return
-name|FALSE
+literal|0
 return|;
 block|}
 end_function

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa155b0103
+DECL|enum|__anon2b2be4f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa155b0203
+DECL|enum|__anon2b2be4f00203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1590,7 +1590,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|gint
 DECL|function|gimp_tool_widget_button_press (GimpToolWidget * widget,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type)
 name|gimp_tool_widget_button_press
 parameter_list|(
@@ -1620,7 +1620,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|FALSE
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1629,7 +1629,7 @@ name|coords
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1661,7 +1661,7 @@ name|press_type
 argument_list|)
 return|;
 return|return
-name|FALSE
+literal|0
 return|;
 block|}
 end_function

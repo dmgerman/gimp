@@ -186,7 +186,7 @@ parameter_list|)
 function_decl|;
 comment|/*  virtual functions  */
 DECL|member|button_press
-name|gboolean
+name|gint
 function_decl|(
 modifier|*
 name|button_press
@@ -620,7 +620,7 @@ comment|/*  for tools, to be called from the respective GimpTool method  *  impl
 end_comment
 
 begin_function_decl
-name|gboolean
+name|gint
 name|gimp_tool_widget_button_press
 parameter_list|(
 name|GimpToolWidget

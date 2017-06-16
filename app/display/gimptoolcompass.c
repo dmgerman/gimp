@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac6fb560103
+DECL|enum|__anon2c369d820103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -160,7 +160,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac6fb560203
+DECL|enum|__anon2c369d820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -191,7 +191,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac6fb560303
+DECL|enum|__anon2c369d820303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -366,7 +366,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|gint
 name|gimp_tool_compass_button_press
 parameter_list|(
 name|GimpToolWidget
@@ -2521,7 +2521,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|gint
 DECL|function|gimp_tool_compass_button_press (GimpToolWidget * widget,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type)
 name|gimp_tool_compass_button_press
 parameter_list|(
@@ -2862,7 +2862,7 @@ name|ADDING
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+literal|1
 return|;
 block|}
 end_function
