@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae25e190103
+DECL|enum|__anon2871a41a0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -330,6 +330,10 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -399,12 +403,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|gint
-name|handle_w
-parameter_list|,
-name|gint
-name|handle_h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3141,12 +3139,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_handle_transform_tool_recalc_matrix (GimpTransformTool * tr_tool)
+DECL|function|gimp_handle_transform_tool_recalc_matrix (GimpTransformTool * tr_tool,GimpToolWidget * widget)
 name|gimp_handle_transform_tool_recalc_matrix
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
 parameter_list|)
 block|{
 name|GimpHandleTransformTool
@@ -4092,18 +4094,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_handle_transform_tool_draw_gui (GimpTransformTool * tr_tool,gint handle_w,gint handle_h)
+DECL|function|gimp_handle_transform_tool_draw_gui (GimpTransformTool * tr_tool)
 name|gimp_handle_transform_tool_draw_gui
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|gint
-name|handle_w
-parameter_list|,
-name|gint
-name|handle_h
 parameter_list|)
 block|{
 name|GimpDrawTool

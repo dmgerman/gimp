@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0b281e0103
+DECL|enum|__anon2c731e010103
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -283,70 +283,6 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  lower right hand coords            */
-DECL|member|cx
-DECL|member|cy
-name|gdouble
-name|cx
-decl_stmt|,
-name|cy
-decl_stmt|;
-comment|/*  center point (for moving)          */
-DECL|member|px
-DECL|member|py
-name|gdouble
-name|px
-decl_stmt|,
-name|py
-decl_stmt|;
-comment|/*  pivot point (for rotation/scaling) */
-DECL|member|aspect
-name|gdouble
-name|aspect
-decl_stmt|;
-comment|/*  original aspect ratio              */
-DECL|member|tx1
-DECL|member|ty1
-name|gdouble
-name|tx1
-decl_stmt|,
-name|ty1
-decl_stmt|;
-comment|/*  transformed handle coords          */
-DECL|member|tx2
-DECL|member|ty2
-name|gdouble
-name|tx2
-decl_stmt|,
-name|ty2
-decl_stmt|;
-DECL|member|tx3
-DECL|member|ty3
-name|gdouble
-name|tx3
-decl_stmt|,
-name|ty3
-decl_stmt|;
-DECL|member|tx4
-DECL|member|ty4
-name|gdouble
-name|tx4
-decl_stmt|,
-name|ty4
-decl_stmt|;
-DECL|member|tcx
-DECL|member|tcy
-name|gdouble
-name|tcx
-decl_stmt|,
-name|tcy
-decl_stmt|;
-DECL|member|tpx
-DECL|member|tpy
-name|gdouble
-name|tpx
-decl_stmt|,
-name|tpy
-decl_stmt|;
 DECL|member|transform
 name|GimpMatrix3
 name|transform
@@ -397,31 +333,26 @@ name|gboolean
 name|use_grid
 decl_stmt|;
 comment|/*  does the tool use the grid         */
-DECL|member|use_corner_handles
-name|gboolean
-name|use_corner_handles
-decl_stmt|;
-comment|/*  uses the corner handles            */
-DECL|member|use_side_handles
-name|gboolean
-name|use_side_handles
-decl_stmt|;
-comment|/*  use handles at midpoints of edges  */
-DECL|member|use_center_handle
-name|gboolean
-name|use_center_handle
-decl_stmt|;
-comment|/*  uses the center handle             */
-DECL|member|use_pivot_handle
-name|gboolean
-name|use_pivot_handle
-decl_stmt|;
-comment|/*  use the pivot point handle         */
 DECL|member|does_perspective
 name|gboolean
 name|does_perspective
 decl_stmt|;
-comment|/*  does the tool do non-affine                                           transformations                    */
+comment|/*  does the tool do non-affine                                        *  transformations                                        */
+DECL|member|widget
+name|GimpToolWidget
+modifier|*
+name|widget
+decl_stmt|;
+DECL|member|grab_widget
+name|GimpToolWidget
+modifier|*
+name|grab_widget
+decl_stmt|;
+DECL|member|preview
+name|GimpCanvasItem
+modifier|*
+name|preview
+decl_stmt|;
 DECL|member|handles
 name|GimpCanvasItem
 modifier|*
@@ -491,6 +422,19 @@ modifier|*
 name|tool
 parameter_list|)
 function_decl|;
+DECL|member|get_widget
+name|GimpToolWidget
+modifier|*
+function_decl|(
+modifier|*
+name|get_widget
+function_decl|)
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
 DECL|member|motion
 name|void
 function_decl|(
@@ -513,6 +457,10 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 DECL|member|get_undo_desc
@@ -582,12 +530,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
-parameter_list|,
-name|gint
-name|handle_w
-parameter_list|,
-name|gint
-name|handle_h
 parameter_list|)
 function_decl|;
 DECL|member|transform
@@ -657,6 +599,10 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
