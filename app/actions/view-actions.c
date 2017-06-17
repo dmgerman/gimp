@@ -1375,7 +1375,12 @@ literal|"view-zoom"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Set zoom factor"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1393,7 +1398,12 @@ literal|"view-zoom-minimum"
 block|,
 name|GIMP_ICON_ZOOM_OUT
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom out as far as possible"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1411,7 +1421,12 @@ literal|"view-zoom-maximum"
 block|,
 name|GIMP_ICON_ZOOM_IN
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom in as far as possible"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1541,7 +1556,12 @@ literal|"view-zoom-out-skip"
 block|,
 name|GIMP_ICON_ZOOM_OUT
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom out a lot"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1559,7 +1579,12 @@ literal|"view-zoom-in-skip"
 block|,
 name|GIMP_ICON_ZOOM_IN
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom in a lot"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2659,7 +2684,12 @@ literal|"view-scroll-horizontal"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Set horizontal scroll offset"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2677,7 +2707,12 @@ literal|"view-scroll-left-border"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll to left border"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2695,7 +2730,12 @@ literal|"view-scroll-right-border"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll to right border"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2713,7 +2753,12 @@ literal|"view-scroll-left"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll left"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2731,7 +2776,12 @@ literal|"view-scroll-right"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll right"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2749,7 +2799,12 @@ literal|"view-scroll-page-left"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll page left"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2767,7 +2822,12 @@ literal|"view-scroll-page-right"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll page right"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2797,7 +2857,12 @@ literal|"view-scroll-vertical"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Set vertical scroll offset"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2815,7 +2880,12 @@ literal|"view-scroll-top-border"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll to top border"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2833,7 +2903,12 @@ literal|"view-scroll-bottom-border"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll to bottom border"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2851,7 +2926,12 @@ literal|"view-scroll-up"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll up"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2869,7 +2949,12 @@ literal|"view-scroll-down"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll down"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2887,7 +2972,12 @@ literal|"view-scroll-page-up"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll page up"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2905,7 +2995,12 @@ literal|"view-scroll-page-down"
 block|,
 name|NULL
 block|,
+name|NC_
+argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Scroll page down"
+argument_list|)
 block|,
 name|NULL
 block|,

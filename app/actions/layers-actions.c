@@ -1499,7 +1499,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Auto"
+literal|"Layer Blend Space: Auto"
 argument_list|)
 block|,
 name|NULL
@@ -1520,7 +1520,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"RGB (linear)"
+literal|"Layer Blend Space: RGB (linear)"
 argument_list|)
 block|,
 name|NULL
@@ -1541,7 +1541,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"RGB (perceptual)"
+literal|"Layer Blend Space: RGB (perceptual)"
 argument_list|)
 block|,
 name|NULL
@@ -1574,7 +1574,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Auto"
+literal|"Layer Composite Space: Auto"
 argument_list|)
 block|,
 name|NULL
@@ -1595,7 +1595,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"RGB (linear)"
+literal|"Layer Composite Space: RGB (linear)"
 argument_list|)
 block|,
 name|NULL
@@ -1616,7 +1616,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"RGB (perceptual)"
+literal|"Layer Composite Space: RGB (perceptual)"
 argument_list|)
 block|,
 name|NULL
@@ -1649,7 +1649,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Auto"
+literal|"Layer Composite Mode: Auto"
 argument_list|)
 block|,
 name|NULL
@@ -1670,7 +1670,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source over"
+literal|"Layer Composite Mode: Source Over"
 argument_list|)
 block|,
 name|NULL
@@ -1691,7 +1691,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source atop"
+literal|"Layer Composite Mode: Source Atop"
 argument_list|)
 block|,
 name|NULL
@@ -1712,7 +1712,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source in"
+literal|"Layer Composite Mode: Source In"
 argument_list|)
 block|,
 name|NULL
@@ -1733,7 +1733,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Destination atop"
+literal|"Layer Composite Mode: Destination Atop"
 argument_list|)
 block|,
 name|NULL
@@ -1776,7 +1776,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Clear color tag"
+literal|"Color Tag: Clear"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_NONE
@@ -1804,7 +1804,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to blue"
+literal|"Color Tag: Set to Blue"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BLUE
@@ -1832,7 +1832,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to green"
+literal|"Color Tag: Set to Green"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GREEN
@@ -1860,7 +1860,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to yellow"
+literal|"Color Tag: Set to Yellow"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_YELLOW
@@ -1888,7 +1888,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to orange"
+literal|"Color Tag: Set to Orange"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_ORANGE
@@ -1916,7 +1916,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to brown"
+literal|"Color Tag: Set to Brown"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BROWN
@@ -1944,7 +1944,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to red"
+literal|"Color Tag: Set to red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED
@@ -1972,7 +1972,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to violet"
+literal|"Color Tag: Set to violet"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_VIOLET
@@ -2000,7 +2000,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Set color tag to gray"
+literal|"Color Tag: Set to gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY
@@ -2467,7 +2467,12 @@ literal|"layers-opacity-set"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Set Opacity"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2485,7 +2490,12 @@ literal|"layers-opacity-transparent"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Completely Transparent"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make Completely Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2503,7 +2513,12 @@ literal|"layers-opacity-opaque"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Completely Opaque"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make Completely Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2521,7 +2536,12 @@ literal|"layers-opacity-decrease"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"More Transparent"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make More Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2539,7 +2559,12 @@ literal|"layers-opacity-increase"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"More Opaque"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make More Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2557,7 +2582,12 @@ literal|"layers-opacity-decrease-skip"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"10% More Transparent"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make 10% More Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2575,7 +2605,12 @@ literal|"layers-opacity-increase-skip"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"10% More Opaque"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Opacity: Make 10% More Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2605,7 +2640,12 @@ literal|"layers-mode-first"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"First Layer Mode"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Mode: Select First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2623,7 +2663,12 @@ literal|"layers-mode-last"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Last Layer Mode"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Mode: Select Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2641,7 +2686,12 @@ literal|"layers-mode-previous"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Previous Layer Mode"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Mode: Select Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2659,7 +2709,12 @@ literal|"layers-mode-next"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Next Layer Mode"
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Mode: Select Next"
+argument_list|)
 block|,
 name|NULL
 block|,

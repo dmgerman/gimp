@@ -388,7 +388,12 @@ literal|"context-palette-foreground-set"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Set Color From Palette"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -406,7 +411,12 @@ literal|"context-palette-foreground-first"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use First Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -424,7 +434,12 @@ literal|"context-palette-foreground-last"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Last Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -442,7 +457,12 @@ literal|"context-palette-foreground-previous"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Previous Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -460,7 +480,12 @@ literal|"context-palette-foreground-next"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Next Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -478,7 +503,12 @@ literal|"context-palette-foreground-previous-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Back Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -496,7 +526,12 @@ literal|"context-palette-foreground-next-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Palette Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Forward Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -525,7 +560,12 @@ literal|"context-palette-background-set"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Set Color From Palette"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -543,7 +583,12 @@ literal|"context-palette-background-first"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use First Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -561,7 +606,12 @@ literal|"context-palette-background-last"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Last Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -579,7 +629,12 @@ literal|"context-palette-background-previous"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Previous Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -597,7 +652,12 @@ literal|"context-palette-background-next"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Next Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -615,7 +675,12 @@ literal|"context-palette-background-previous-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Back Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -633,7 +698,12 @@ literal|"context-palette-background-next-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Palette Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Forward Palette Color"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -662,7 +732,12 @@ literal|"context-colormap-foreground-set"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Set Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -680,7 +755,12 @@ literal|"context-colormap-foreground-first"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use First Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -698,7 +778,12 @@ literal|"context-colormap-foreground-last"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Last Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -716,7 +801,12 @@ literal|"context-colormap-foreground-previous"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Previous Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -734,7 +824,12 @@ literal|"context-colormap-foreground-next"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Next Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -752,7 +847,12 @@ literal|"context-colormap-foreground-previous-skip"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Back Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -770,7 +870,12 @@ literal|"context-colormap-foreground-next-skip"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Foreground Colormap Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Forward Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -799,7 +904,12 @@ literal|"context-colormap-background-set"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Set Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -817,7 +927,12 @@ literal|"context-colormap-background-first"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use First Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -835,7 +950,12 @@ literal|"context-colormap-background-last"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Last Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -853,7 +973,12 @@ literal|"context-colormap-background-previous"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Previous Color From  Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -871,7 +996,12 @@ literal|"context-colormap-background-next"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Next Color From Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -889,7 +1019,12 @@ literal|"context-colormap-background-previous-skip"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Back Color From  Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -907,7 +1042,12 @@ literal|"context-colormap-background-next-skip"
 block|,
 name|GIMP_ICON_COLORMAP
 block|,
-literal|"Background Colormap Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Forward Color From  Colormap"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -936,7 +1076,12 @@ literal|"context-swatch-foreground-set"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Set Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -954,7 +1099,12 @@ literal|"context-swatch-foreground-first"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use First Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -972,7 +1122,12 @@ literal|"context-swatch-foreground-last"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Last Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -990,7 +1145,12 @@ literal|"context-swatch-foreground-previous"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Previous Color From Swatch"
+argument_list|)
 block|,
 literal|"9"
 block|,
@@ -1008,7 +1168,12 @@ literal|"context-swatch-foreground-next"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Use Next Color From Swatch"
+argument_list|)
 block|,
 literal|"0"
 block|,
@@ -1026,7 +1191,12 @@ literal|"context-swatch-foreground-previous-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Back Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1044,7 +1214,12 @@ literal|"context-swatch-foreground-next-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Foreground Swatch Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground: Skip Forward Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1073,7 +1248,12 @@ literal|"context-swatch-background-set"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Set Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1091,7 +1271,12 @@ literal|"context-swatch-background-first"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color First"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use First Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1109,7 +1294,12 @@ literal|"context-swatch-background-last"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Last"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Last Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1127,7 +1317,12 @@ literal|"context-swatch-background-previous"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Previous"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Previous Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1145,7 +1340,12 @@ literal|"context-swatch-background-next"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Next"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Use Next Color From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1163,7 +1363,12 @@ literal|"context-swatch-background-previous-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Skip Back"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Color Back From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1181,7 +1386,12 @@ literal|"context-swatch-background-next-skip"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Background Swatch Color Skip Forward"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background: Skip Color Forward From Swatch"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1211,7 +1421,12 @@ literal|"context-foreground-red-set"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1229,7 +1444,12 @@ literal|"context-foreground-red-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1247,7 +1467,12 @@ literal|"context-foreground-red-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1265,7 +1490,12 @@ literal|"context-foreground-red-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1283,7 +1513,12 @@ literal|"context-foreground-red-increase"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1301,7 +1536,12 @@ literal|"context-foreground-red-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1319,7 +1559,12 @@ literal|"context-foreground-red-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Foreground Red Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Red: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1349,7 +1594,12 @@ literal|"context-foreground-green-set"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1367,7 +1617,12 @@ literal|"context-foreground-green-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1385,7 +1640,12 @@ literal|"context-foreground-green-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1403,7 +1663,12 @@ literal|"context-foreground-green-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1421,7 +1686,12 @@ literal|"context-foreground-green-increase"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1439,7 +1709,12 @@ literal|"context-foreground-green-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1457,7 +1732,12 @@ literal|"context-foreground-green-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Foreground Green Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Green: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1487,7 +1767,12 @@ literal|"context-foreground-blue-set"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1505,7 +1790,12 @@ literal|"context-foreground-blue-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1523,7 +1813,12 @@ literal|"context-foreground-blue-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1541,7 +1836,12 @@ literal|"context-foreground-blue-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1559,7 +1859,12 @@ literal|"context-foreground-blue-increase"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1577,7 +1882,12 @@ literal|"context-foreground-blue-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1595,7 +1905,12 @@ literal|"context-foreground-blue-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Foreground Blue Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Blue: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1625,7 +1940,12 @@ literal|"context-background-red-set"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1643,7 +1963,12 @@ literal|"context-background-red-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1661,7 +1986,12 @@ literal|"context-background-red-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1679,7 +2009,12 @@ literal|"context-background-red-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1697,7 +2032,12 @@ literal|"context-background-red-increase"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1715,7 +2055,12 @@ literal|"context-background-red-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1733,7 +2078,12 @@ literal|"context-background-red-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_RED
 block|,
-literal|"Background Red Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Red: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1763,7 +2113,12 @@ literal|"context-background-green-set"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1781,7 +2136,12 @@ literal|"context-background-green-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1799,7 +2159,12 @@ literal|"context-background-green-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1817,7 +2182,12 @@ literal|"context-background-green-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1835,7 +2205,12 @@ literal|"context-background-green-increase"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1853,7 +2228,12 @@ literal|"context-background-green-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1871,7 +2251,12 @@ literal|"context-background-green-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_GREEN
 block|,
-literal|"Background Green Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Green: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1901,7 +2286,12 @@ literal|"context-background-blue-set"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1919,7 +2309,12 @@ literal|"context-background-blue-minimum"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1937,7 +2332,12 @@ literal|"context-background-blue-maximum"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1955,7 +2355,12 @@ literal|"context-background-blue-decrease"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1973,7 +2378,12 @@ literal|"context-background-blue-increase"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1991,7 +2401,12 @@ literal|"context-background-blue-decrease-skip"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2009,7 +2424,12 @@ literal|"context-background-blue-increase-skip"
 block|,
 name|GIMP_ICON_CHANNEL_BLUE
 block|,
-literal|"Background Blue Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Blue: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2039,7 +2459,12 @@ literal|"context-foreground-hue-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2057,7 +2482,12 @@ literal|"context-foreground-hue-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2075,7 +2505,12 @@ literal|"context-foreground-hue-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2093,7 +2528,12 @@ literal|"context-foreground-hue-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2111,7 +2551,12 @@ literal|"context-foreground-hue-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2129,7 +2574,12 @@ literal|"context-foreground-hue-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2147,7 +2597,12 @@ literal|"context-foreground-hue-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Hue Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Hue: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2177,7 +2632,12 @@ literal|"context-foreground-saturation-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2195,7 +2655,12 @@ literal|"context-foreground-saturation-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2213,7 +2678,12 @@ literal|"context-foreground-saturation-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2231,7 +2701,12 @@ literal|"context-foreground-saturation-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2249,7 +2724,12 @@ literal|"context-foreground-saturation-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2267,7 +2747,12 @@ literal|"context-foreground-saturation-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2285,7 +2770,12 @@ literal|"context-foreground-saturation-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Saturation Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Saturation: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2315,7 +2805,12 @@ literal|"context-foreground-value-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2333,7 +2828,12 @@ literal|"context-foreground-value-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2351,7 +2851,12 @@ literal|"context-foreground-value-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2369,7 +2874,12 @@ literal|"context-foreground-value-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2387,7 +2897,12 @@ literal|"context-foreground-value-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2405,7 +2920,12 @@ literal|"context-foreground-value-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2423,7 +2943,12 @@ literal|"context-foreground-value-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Foreground Value Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Foreground Value: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2453,7 +2978,12 @@ literal|"context-background-hue-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2471,7 +3001,12 @@ literal|"context-background-hue-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2489,7 +3024,12 @@ literal|"context-background-hue-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2507,7 +3047,12 @@ literal|"context-background-hue-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2525,7 +3070,12 @@ literal|"context-background-hue-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2543,7 +3093,12 @@ literal|"context-background-hue-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2561,7 +3116,12 @@ literal|"context-background-hue-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Hue Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Hue: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2591,7 +3151,12 @@ literal|"context-background-saturation-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2609,7 +3174,12 @@ literal|"context-background-saturation-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2627,7 +3197,12 @@ literal|"context-background-saturation-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2645,7 +3220,12 @@ literal|"context-background-saturation-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2663,7 +3243,12 @@ literal|"context-background-saturation-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2681,7 +3266,12 @@ literal|"context-background-saturation-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation :Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2699,7 +3289,12 @@ literal|"context-background-saturation-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Saturation Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Saturation: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2729,7 +3324,12 @@ literal|"context-background-value-set"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Set"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2747,7 +3347,12 @@ literal|"context-background-value-minimum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Minimum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2765,7 +3370,12 @@ literal|"context-background-value-maximum"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Maximum"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2783,7 +3393,12 @@ literal|"context-background-value-decrease"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Decrease"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Decrease by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2801,7 +3416,12 @@ literal|"context-background-value-increase"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Increase"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Increase by 1%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2819,7 +3439,12 @@ literal|"context-background-value-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Decrease 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Decrease by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2837,7 +3462,12 @@ literal|"context-background-value-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_HUE_SATURATION
 block|,
-literal|"Background Value Increase 10%"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Background Value: Increase by 10%"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2867,7 +3497,12 @@ literal|"context-opacity-set"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Set Transparency"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Set Transparency"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2885,7 +3520,12 @@ literal|"context-opacity-transparent"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Completely Transparent"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make Completely Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2903,7 +3543,12 @@ literal|"context-opacity-opaque"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"Completely Opaque"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make Completely Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2921,7 +3566,12 @@ literal|"context-opacity-decrease"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"More Transparent"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make 1% More Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2939,7 +3589,12 @@ literal|"context-opacity-increase"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"More Opaque"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make 1% More Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2957,7 +3612,12 @@ literal|"context-opacity-decrease-skip"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"10% More Transparent"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make 10% More Transparent"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2975,7 +3635,12 @@ literal|"context-opacity-increase-skip"
 block|,
 name|GIMP_ICON_TRANSPARENCY
 block|,
-literal|"10% More Opaque"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Opacity: Make 10% More Opaque"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3005,7 +3670,12 @@ literal|"context-paint-mode-first"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"First Paint Mode"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Paint Mode: Select First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3023,7 +3693,12 @@ literal|"context-paint-mode-last"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Last Paint Mode"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Paint Mode: Select Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3041,7 +3716,12 @@ literal|"context-paint-mode-previous"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Previous Paint Mode"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Paint Mode: Select Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3059,7 +3739,12 @@ literal|"context-paint-mode-next"
 block|,
 name|GIMP_ICON_TOOL_PENCIL
 block|,
-literal|"Next Paint Mode"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Paint Mode: Select Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3089,7 +3774,12 @@ literal|"context-tool-select-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOLS
 block|,
-literal|"Select Tool by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Selection: Choose by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3107,7 +3797,12 @@ literal|"context-tool-select-first"
 block|,
 name|GIMP_ICON_DIALOG_TOOLS
 block|,
-literal|"First Tool"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3125,7 +3820,12 @@ literal|"context-tool-select-last"
 block|,
 name|GIMP_ICON_DIALOG_TOOLS
 block|,
-literal|"Last Tool"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3143,7 +3843,12 @@ literal|"context-tool-select-previous"
 block|,
 name|GIMP_ICON_DIALOG_TOOLS
 block|,
-literal|"Previous Tool"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3161,7 +3866,12 @@ literal|"context-tool-select-next"
 block|,
 name|GIMP_ICON_DIALOG_TOOLS
 block|,
-literal|"Next Tool"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Tool Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3191,7 +3901,12 @@ literal|"context-brush-select-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Select Brush by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Selection: Select by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3209,7 +3924,12 @@ literal|"context-brush-select-first"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"First Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3227,7 +3947,12 @@ literal|"context-brush-select-last"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Last Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3245,7 +3970,12 @@ literal|"context-brush-select-previous"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Previous Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3263,7 +3993,12 @@ literal|"context-brush-select-next"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Next Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3293,7 +4028,12 @@ literal|"context-pattern-select-set"
 block|,
 name|GIMP_ICON_PATTERN
 block|,
-literal|"Select Pattern by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Pattern Selection: Select by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3311,7 +4051,12 @@ literal|"context-pattern-select-first"
 block|,
 name|GIMP_ICON_PATTERN
 block|,
-literal|"First Pattern"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Pattern Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3329,7 +4074,12 @@ literal|"context-pattern-select-last"
 block|,
 name|GIMP_ICON_PATTERN
 block|,
-literal|"Last Pattern"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Pattern Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3347,7 +4097,12 @@ literal|"context-pattern-select-previous"
 block|,
 name|GIMP_ICON_PATTERN
 block|,
-literal|"Previous Pattern"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Pattern Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3365,7 +4120,12 @@ literal|"context-pattern-select-next"
 block|,
 name|GIMP_ICON_PATTERN
 block|,
-literal|"Next Pattern"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Pattern Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3395,7 +4155,12 @@ literal|"context-palette-select-set"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Select Palette by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Palette Selection: Select by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3413,7 +4178,12 @@ literal|"context-palette-select-first"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"First Palette"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Palette Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3431,7 +4201,12 @@ literal|"context-palette-select-last"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Last Palette"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Palette Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3449,7 +4224,12 @@ literal|"context-palette-select-previous"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Previous Palette"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Palette Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3467,7 +4247,12 @@ literal|"context-palette-select-next"
 block|,
 name|GIMP_ICON_PALETTE
 block|,
-literal|"Next Palette"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Palette Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3497,7 +4282,12 @@ literal|"context-gradient-select-set"
 block|,
 name|GIMP_ICON_GRADIENT
 block|,
-literal|"Select Gradient by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Gradient Selection: Select by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3515,7 +4305,12 @@ literal|"context-gradient-select-first"
 block|,
 name|GIMP_ICON_GRADIENT
 block|,
-literal|"First Gradient"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Gradient Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3533,7 +4328,12 @@ literal|"context-gradient-select-last"
 block|,
 name|GIMP_ICON_GRADIENT
 block|,
-literal|"Last Gradient"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Gradient Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3551,7 +4351,12 @@ literal|"context-gradient-select-previous"
 block|,
 name|GIMP_ICON_GRADIENT
 block|,
-literal|"Previous Gradient"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Gradient Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3569,7 +4374,12 @@ literal|"context-gradient-select-next"
 block|,
 name|GIMP_ICON_GRADIENT
 block|,
-literal|"Next Gradient"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Gradient Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3599,7 +4409,12 @@ literal|"context-font-select-set"
 block|,
 name|GIMP_ICON_FONT
 block|,
-literal|"Select Font by Index"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Font Selection: Select by Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3617,7 +4432,12 @@ literal|"context-font-select-first"
 block|,
 name|GIMP_ICON_FONT
 block|,
-literal|"First Font"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Font Selection: Switch to First"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3635,7 +4455,12 @@ literal|"context-font-select-last"
 block|,
 name|GIMP_ICON_FONT
 block|,
-literal|"Last Font"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Font Selection: Switch to Last"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3653,7 +4478,12 @@ literal|"context-font-select-previous"
 block|,
 name|GIMP_ICON_FONT
 block|,
-literal|"Previous Font"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Font Selection: Switch to Previous"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3671,7 +4501,12 @@ literal|"context-font-select-next"
 block|,
 name|GIMP_ICON_FONT
 block|,
-literal|"Next Font"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Font Selection: Switch to Next"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3701,7 +4536,12 @@ literal|"context-brush-spacing-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Spacing"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3719,7 +4559,12 @@ literal|"context-brush-spacing-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Minimum Spacing"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3737,7 +4582,12 @@ literal|"context-brush-spacing-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Maximum Spacing"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3755,7 +4605,12 @@ literal|"context-brush-spacing-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Spacing"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3773,7 +4628,12 @@ literal|"context-brush-spacing-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Spacing"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3791,7 +4651,12 @@ literal|"context-brush-spacing-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Spacing More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3809,7 +4674,12 @@ literal|"context-brush-spacing-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Spacing More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spacing (Editor): Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3839,7 +4709,12 @@ literal|"context-brush-shape-circle"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Circular Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Shape (Editor): Use Circular"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3857,7 +4732,12 @@ literal|"context-brush-shape-square"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Square Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Shape (Editor): Use Square"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3875,7 +4755,12 @@ literal|"context-brush-shape-diamond"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Diamond Brush"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Shape (Editor): Use Diamond"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3905,7 +4790,12 @@ literal|"context-brush-radius-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Radius"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3923,7 +4813,12 @@ literal|"context-brush-radius-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Minimum Radius"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3941,7 +4836,12 @@ literal|"context-brush-radius-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Maximum Radius"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3959,7 +4859,12 @@ literal|"context-brush-radius-decrease-less"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Radius Less"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Decrease by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3977,7 +4882,12 @@ literal|"context-brush-radius-increase-less"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Radius Less"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Increase by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3995,7 +4905,12 @@ literal|"context-brush-radius-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Radius"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4013,7 +4928,12 @@ literal|"context-brush-radius-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Radius"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4031,7 +4951,12 @@ literal|"context-brush-radius-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Radius More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4049,7 +4974,12 @@ literal|"context-brush-radius-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Radius More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4067,7 +4997,12 @@ literal|"context-brush-radius-decrease-percent"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Radius Relative"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4085,7 +5020,12 @@ literal|"context-brush-radius-increase-percent"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Radius Relative"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Radius (Editor): Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4115,7 +5055,12 @@ literal|"context-brush-spikes-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Spikes"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4133,7 +5078,12 @@ literal|"context-brush-spikes-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Minimum Spikes"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4151,7 +5101,12 @@ literal|"context-brush-spikes-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Maximum Spikes"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4169,7 +5124,12 @@ literal|"context-brush-spikes-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Spikes"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4187,7 +5147,12 @@ literal|"context-brush-spikes-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Spikes"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4205,7 +5170,12 @@ literal|"context-brush-spikes-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Spikes More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Decrease by 4"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4223,7 +5193,12 @@ literal|"context-brush-spikes-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Spikes More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Spikes (Editor): Increase by 4"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4253,7 +5228,12 @@ literal|"context-brush-hardness-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Hardness"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4271,7 +5251,12 @@ literal|"context-brush-hardness-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Minimum Hardness"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4289,7 +5274,12 @@ literal|"context-brush-hardness-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Maximum Hardness"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4307,7 +5297,12 @@ literal|"context-brush-hardness-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Hardness"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Decrease by 0.01"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4325,7 +5320,12 @@ literal|"context-brush-hardness-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Hardness"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Increase by 0.01"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4343,7 +5343,12 @@ literal|"context-brush-hardness-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Hardness More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Decrease by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4361,7 +5366,12 @@ literal|"context-brush-hardness-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Hardness More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Hardness (Editor): Increase by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4391,7 +5401,12 @@ literal|"context-brush-aspect-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Aspect"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4409,7 +5424,12 @@ literal|"context-brush-aspect-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Minimum Aspect"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4427,7 +5447,12 @@ literal|"context-brush-aspect-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Maximum Aspect"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4445,7 +5470,12 @@ literal|"context-brush-aspect-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Aspect"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Decrease by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4463,7 +5493,12 @@ literal|"context-brush-aspect-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Aspect"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Increase by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4481,7 +5516,12 @@ literal|"context-brush-aspect-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Decrease Aspect More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4499,7 +5539,12 @@ literal|"context-brush-aspect-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Increase Aspect More"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Aspect Ratio (Editor): Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4529,7 +5574,12 @@ literal|"context-brush-angle-set"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Set Brush Angle"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4547,7 +5597,12 @@ literal|"context-brush-angle-minimum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Horizontal"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Make Horizontal"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4565,7 +5620,12 @@ literal|"context-brush-angle-maximum"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Vertical"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Make Vertical"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4583,7 +5643,12 @@ literal|"context-brush-angle-decrease"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Rotate Right"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Rotate Right by 1Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4601,7 +5666,12 @@ literal|"context-brush-angle-increase"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Rotate Left"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Rotate Left by 1Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4619,7 +5689,12 @@ literal|"context-brush-angle-decrease-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Rotate Right 15Â°"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Rotate Right by 15Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -4637,7 +5712,12 @@ literal|"context-brush-angle-increase-skip"
 block|,
 name|GIMP_ICON_BRUSH
 block|,
-literal|"Rotate Left 15Â°"
+name|NC_
+argument_list|(
+literal|"context-action"
+argument_list|,
+literal|"Brush Angle (Editor): Rotate Left by 15Â°"
+argument_list|)
 block|,
 name|NULL
 block|,

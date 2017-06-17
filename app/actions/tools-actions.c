@@ -554,7 +554,12 @@ literal|"tools-airbrush-rate-set"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Set Airrush Rate"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Set "
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -572,7 +577,12 @@ literal|"tools-airbrush-rate-minimum"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Minimum Rate"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -590,7 +600,12 @@ literal|"tools-airbrush-rate-maximum"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Maximum Rate"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -608,7 +623,12 @@ literal|"tools-airbrush-rate-decrease"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Decrease Rate"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -626,7 +646,12 @@ literal|"tools-airbrush-rate-increase"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Increase Rate"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -644,7 +669,12 @@ literal|"tools-airbrush-rate-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Decrease Rate More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -662,7 +692,12 @@ literal|"tools-airbrush-rate-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Increase Rate More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Rate: Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -692,7 +727,12 @@ literal|"tools-airbrush-flow-set"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Set Airrush Flow"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -710,7 +750,12 @@ literal|"tools-airbrush-flow-minimum"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Minimum Flow"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Set to Minimum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -728,7 +773,12 @@ literal|"tools-airbrush-flow-maximum"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Maximum Flow"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Set to Maximum"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -746,7 +796,12 @@ literal|"tools-airbrush-flow-decrease"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Decrease Flow"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -764,7 +819,12 @@ literal|"tools-airbrush-flow-increase"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Increase Flow"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -782,7 +842,12 @@ literal|"tools-airbrush-flow-decrease-skip"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Decrease Flow More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -800,7 +865,12 @@ literal|"tools-airbrush-flow-increase-skip"
 block|,
 name|GIMP_ICON_TOOL_AIRBRUSH
 block|,
-literal|"Increase Flow More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Airbrush Flow: Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1010,7 +1080,12 @@ literal|"tools-opacity-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Opacity"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1028,7 +1103,12 @@ literal|"tools-opacity-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Opacity To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Set to Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1046,7 +1126,12 @@ literal|"tools-opacity-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Opacity"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Minimize "
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1064,7 +1149,12 @@ literal|"tools-opacity-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Opacity"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1082,7 +1172,12 @@ literal|"tools-opacity-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Opacity"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Decrease by 1"
+argument_list|)
 block|,
 literal|"less"
 block|,
@@ -1100,7 +1195,12 @@ literal|"tools-opacity-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Opacity"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Increase by 1"
+argument_list|)
 block|,
 literal|"greater"
 block|,
@@ -1118,7 +1218,12 @@ literal|"tools-opacity-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Opacity More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Decrease by 10"
+argument_list|)
 block|,
 literal|"<primary>less"
 block|,
@@ -1136,7 +1241,12 @@ literal|"tools-opacity-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Opacity More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Increase by 10"
+argument_list|)
 block|,
 literal|"<primary>greater"
 block|,
@@ -1154,7 +1264,12 @@ literal|"tools-opacity-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Opacity Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1172,7 +1287,12 @@ literal|"tools-opacity-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Opacity Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Opacity: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1202,7 +1322,12 @@ literal|"tools-size-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Size"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1220,7 +1345,12 @@ literal|"tools-size-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Size To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Set to Default Value"
+argument_list|)
 block|,
 literal|"backslash"
 block|,
@@ -1238,7 +1368,12 @@ literal|"tools-size-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Size"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1256,7 +1391,12 @@ literal|"tools-size-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Size"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1274,7 +1414,12 @@ literal|"tools-size-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Size"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Decrease by 1"
+argument_list|)
 block|,
 literal|"bracketleft"
 block|,
@@ -1292,7 +1437,12 @@ literal|"tools-size-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Size"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Increase by 1"
+argument_list|)
 block|,
 literal|"bracketright"
 block|,
@@ -1310,7 +1460,12 @@ literal|"tools-size-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Size More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Decrease by 10"
+argument_list|)
 block|,
 literal|"<shift>bracketleft"
 block|,
@@ -1328,7 +1483,12 @@ literal|"tools-size-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Size More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Increase by 10"
+argument_list|)
 block|,
 literal|"<shift>bracketright"
 block|,
@@ -1346,7 +1506,12 @@ literal|"tools-size-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Size Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1364,7 +1529,12 @@ literal|"tools-size-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Size Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Size: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1394,7 +1564,12 @@ literal|"tools-aspect-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Aspect Ratio"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1412,7 +1587,12 @@ literal|"tools-aspect-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Aspect Ratio To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Set To Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1430,7 +1610,12 @@ literal|"tools-aspect-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Aspect Ratio"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1448,7 +1633,12 @@ literal|"tools-aspect-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Aspect Ratio"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1466,7 +1656,12 @@ literal|"tools-aspect-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Aspect Ratio"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Decrease by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1484,7 +1679,12 @@ literal|"tools-aspect-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Aspect Ratio"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Increase by 0.1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1502,7 +1702,12 @@ literal|"tools-aspect-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Aspect Ratio More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1520,7 +1725,12 @@ literal|"tools-aspect-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Aspect Ratio More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1538,7 +1748,12 @@ literal|"tools-aspect-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Aspect Ratio Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1556,7 +1771,12 @@ literal|"tools-aspect-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Aspect Ratio Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Aspect Ratio: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1586,7 +1806,12 @@ literal|"tools-angle-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Angle"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1604,7 +1829,12 @@ literal|"tools-angle-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Angle To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Set Angle To Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1622,7 +1852,12 @@ literal|"tools-angle-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Angle"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1640,7 +1875,12 @@ literal|"tools-angle-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Angle"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1658,7 +1898,12 @@ literal|"tools-angle-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Angle"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Decrease by 1Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1676,7 +1921,12 @@ literal|"tools-angle-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Angle"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Increase by 1Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1694,7 +1944,12 @@ literal|"tools-angle-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Angle More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Decrease by 15Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1712,7 +1967,12 @@ literal|"tools-angle-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Angle More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Increase by 15Â°"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1730,7 +1990,12 @@ literal|"tools-angle-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Angle Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1748,7 +2013,12 @@ literal|"tools-angle-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Angle Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Angle: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1778,7 +2048,12 @@ literal|"tools-spacing-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Spacing"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1796,7 +2071,12 @@ literal|"tools-spacing-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Spacing To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Set To Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1814,7 +2094,12 @@ literal|"tools-spacing-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Spacing"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1832,7 +2117,12 @@ literal|"tools-spacing-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Spacing"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1850,7 +2140,12 @@ literal|"tools-spacing-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Spacing"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1868,7 +2163,12 @@ literal|"tools-spacing-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Spacing"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1886,7 +2186,12 @@ literal|"tools-spacing-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Spacing More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1904,7 +2209,12 @@ literal|"tools-spacing-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Spacing More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1922,7 +2232,12 @@ literal|"tools-spacing-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Spacing Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1940,7 +2255,12 @@ literal|"tools-spacing-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Spacing Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Spacing: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1970,7 +2290,12 @@ literal|"tools-hardness-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Hardness"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1988,7 +2313,12 @@ literal|"tools-hardness-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Hardness To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Set to Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2006,7 +2336,12 @@ literal|"tools-hardness-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Hardness"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2024,7 +2359,12 @@ literal|"tools-hardness-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Hardness"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2042,7 +2382,12 @@ literal|"tools-hardness-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Hardness"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2060,7 +2405,12 @@ literal|"tools-hardness-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Hardness"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2078,7 +2428,12 @@ literal|"tools-hardness-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Hardness More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2096,7 +2451,12 @@ literal|"tools-hardness-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Hardness More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2114,7 +2474,12 @@ literal|"tools-hardness-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Hardness Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2132,7 +2497,12 @@ literal|"tools-hardness-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Hardness Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Hardness: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2162,7 +2532,12 @@ literal|"tools-force-set"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Force"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Set"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2180,7 +2555,12 @@ literal|"tools-force-set-to-default"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Set Force To Default Value"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Set to Default Value"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2198,7 +2578,12 @@ literal|"tools-force-minimum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Minimize Force"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Minimize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2216,7 +2601,12 @@ literal|"tools-force-maximum"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Maximize Force"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Maximize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2234,7 +2624,12 @@ literal|"tools-force-decrease"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Force"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Decrease by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2252,7 +2647,12 @@ literal|"tools-force-increase"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Force"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Increase by 1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2270,7 +2670,12 @@ literal|"tools-force-decrease-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Force More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Decrease by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2288,7 +2693,12 @@ literal|"tools-force-increase-skip"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Force More"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Increase by 10"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2306,7 +2716,12 @@ literal|"tools-force-decrease-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Decrease Force Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Decrease Relative"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -2324,7 +2739,12 @@ literal|"tools-force-increase-percent"
 block|,
 name|GIMP_ICON_DIALOG_TOOL_OPTIONS
 block|,
-literal|"Increase Force Relative"
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Tool's Force: Increase Relative"
+argument_list|)
 block|,
 name|NULL
 block|,

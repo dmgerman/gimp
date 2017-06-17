@@ -825,7 +825,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Clear color tag"
+literal|"Color Tag: Clear"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_NONE
@@ -853,7 +853,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to blue"
+literal|"Color Tag: Set to Blue"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BLUE
@@ -881,7 +881,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to green"
+literal|"Color Tag: Set to Green"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GREEN
@@ -909,7 +909,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to yellow"
+literal|"Color Tag: Set to Yellow"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_YELLOW
@@ -937,7 +937,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to orange"
+literal|"Color Tag: Set to Orange"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_ORANGE
@@ -965,7 +965,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to brown"
+literal|"Color Tag: Set to Brown"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BROWN
@@ -993,7 +993,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to red"
+literal|"Color Tag: Set to Red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED
@@ -1021,7 +1021,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to violet"
+literal|"Color Tag: Set to Violet"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_VIOLET
@@ -1049,7 +1049,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Set color tag to gray"
+literal|"Color Tag: Set to gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY
