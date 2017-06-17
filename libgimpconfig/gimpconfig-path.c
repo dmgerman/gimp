@@ -1893,7 +1893,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon2b82e58b0108
+DECL|struct|__anon28eb3fde0108
 block|{
 DECL|member|id
 specifier|const
