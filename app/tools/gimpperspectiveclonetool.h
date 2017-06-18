@@ -32,6 +32,96 @@ begin_comment
 comment|/* for TransInfo */
 end_comment
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b79c3130103
+block|{
+DECL|enumerator|TRANSFORM_CREATING
+name|TRANSFORM_CREATING
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NONE
+name|TRANSFORM_HANDLE_NONE
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NW_P
+name|TRANSFORM_HANDLE_NW_P
+block|,
+comment|/* perspective handles */
+DECL|enumerator|TRANSFORM_HANDLE_NE_P
+name|TRANSFORM_HANDLE_NE_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SW_P
+name|TRANSFORM_HANDLE_SW_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_SE_P
+name|TRANSFORM_HANDLE_SE_P
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_NW
+name|TRANSFORM_HANDLE_NW
+block|,
+comment|/* north west */
+DECL|enumerator|TRANSFORM_HANDLE_NE
+name|TRANSFORM_HANDLE_NE
+block|,
+comment|/* north east */
+DECL|enumerator|TRANSFORM_HANDLE_SW
+name|TRANSFORM_HANDLE_SW
+block|,
+comment|/* south west */
+DECL|enumerator|TRANSFORM_HANDLE_SE
+name|TRANSFORM_HANDLE_SE
+block|,
+comment|/* south east */
+DECL|enumerator|TRANSFORM_HANDLE_N
+name|TRANSFORM_HANDLE_N
+block|,
+comment|/* north      */
+DECL|enumerator|TRANSFORM_HANDLE_S
+name|TRANSFORM_HANDLE_S
+block|,
+comment|/* south      */
+DECL|enumerator|TRANSFORM_HANDLE_E
+name|TRANSFORM_HANDLE_E
+block|,
+comment|/* east       */
+DECL|enumerator|TRANSFORM_HANDLE_W
+name|TRANSFORM_HANDLE_W
+block|,
+comment|/* west       */
+DECL|enumerator|TRANSFORM_HANDLE_CENTER
+name|TRANSFORM_HANDLE_CENTER
+block|,
+comment|/* for moving */
+DECL|enumerator|TRANSFORM_HANDLE_PIVOT
+name|TRANSFORM_HANDLE_PIVOT
+block|,
+comment|/* pivot for rotation and scaling */
+DECL|enumerator|TRANSFORM_HANDLE_N_S
+name|TRANSFORM_HANDLE_N_S
+block|,
+comment|/* shearing handles */
+DECL|enumerator|TRANSFORM_HANDLE_S_S
+name|TRANSFORM_HANDLE_S_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_E_S
+name|TRANSFORM_HANDLE_E_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_W_S
+name|TRANSFORM_HANDLE_W_S
+block|,
+DECL|enumerator|TRANSFORM_HANDLE_ROTATION
+name|TRANSFORM_HANDLE_ROTATION
+block|,
+comment|/* rotation handle */
+DECL|enumerator|TRANSFORM_HANDLE_NUM
+name|TRANSFORM_HANDLE_NUM
+comment|/* keep this last so *handles[] is the right size */
+DECL|typedef|TransformAction
+block|}
+name|TransformAction
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_PERSPECTIVE_CLONE_TOOL
 define|#

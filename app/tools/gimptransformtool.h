@@ -22,96 +22,6 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c731e010103
-block|{
-DECL|enumerator|TRANSFORM_CREATING
-name|TRANSFORM_CREATING
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_NONE
-name|TRANSFORM_HANDLE_NONE
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_NW_P
-name|TRANSFORM_HANDLE_NW_P
-block|,
-comment|/* perspective handles */
-DECL|enumerator|TRANSFORM_HANDLE_NE_P
-name|TRANSFORM_HANDLE_NE_P
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_SW_P
-name|TRANSFORM_HANDLE_SW_P
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_SE_P
-name|TRANSFORM_HANDLE_SE_P
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_NW
-name|TRANSFORM_HANDLE_NW
-block|,
-comment|/* north west */
-DECL|enumerator|TRANSFORM_HANDLE_NE
-name|TRANSFORM_HANDLE_NE
-block|,
-comment|/* north east */
-DECL|enumerator|TRANSFORM_HANDLE_SW
-name|TRANSFORM_HANDLE_SW
-block|,
-comment|/* south west */
-DECL|enumerator|TRANSFORM_HANDLE_SE
-name|TRANSFORM_HANDLE_SE
-block|,
-comment|/* south east */
-DECL|enumerator|TRANSFORM_HANDLE_N
-name|TRANSFORM_HANDLE_N
-block|,
-comment|/* north      */
-DECL|enumerator|TRANSFORM_HANDLE_S
-name|TRANSFORM_HANDLE_S
-block|,
-comment|/* south      */
-DECL|enumerator|TRANSFORM_HANDLE_E
-name|TRANSFORM_HANDLE_E
-block|,
-comment|/* east       */
-DECL|enumerator|TRANSFORM_HANDLE_W
-name|TRANSFORM_HANDLE_W
-block|,
-comment|/* west       */
-DECL|enumerator|TRANSFORM_HANDLE_CENTER
-name|TRANSFORM_HANDLE_CENTER
-block|,
-comment|/* for moving */
-DECL|enumerator|TRANSFORM_HANDLE_PIVOT
-name|TRANSFORM_HANDLE_PIVOT
-block|,
-comment|/* pivot for rotation and scaling */
-DECL|enumerator|TRANSFORM_HANDLE_N_S
-name|TRANSFORM_HANDLE_N_S
-block|,
-comment|/* shearing handles */
-DECL|enumerator|TRANSFORM_HANDLE_S_S
-name|TRANSFORM_HANDLE_S_S
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_E_S
-name|TRANSFORM_HANDLE_E_S
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_W_S
-name|TRANSFORM_HANDLE_W_S
-block|,
-DECL|enumerator|TRANSFORM_HANDLE_ROTATION
-name|TRANSFORM_HANDLE_ROTATION
-block|,
-comment|/* rotation handle */
-DECL|enumerator|TRANSFORM_HANDLE_NUM
-name|TRANSFORM_HANDLE_NUM
-comment|/* keep this last so *handles[] is the right size */
-DECL|typedef|TransformAction
-block|}
-name|TransformAction
-typedef|;
-end_typedef
-
 begin_comment
 comment|/* This is not the number of items in the enum above, but the max size  * of the enums at the top of each transformation tool, stored in  * trans_info and related  */
 end_comment
@@ -227,46 +137,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|curx
-name|gdouble
-name|curx
-decl_stmt|;
-comment|/*  current x coord                    */
-DECL|member|cury
-name|gdouble
-name|cury
-decl_stmt|;
-comment|/*  current y coord                    */
-DECL|member|lastx
-name|gdouble
-name|lastx
-decl_stmt|;
-comment|/*  last x coord                       */
-DECL|member|lasty
-name|gdouble
-name|lasty
-decl_stmt|;
-comment|/*  last y coord                       */
-DECL|member|previousx
-name|gdouble
-name|previousx
-decl_stmt|;
-comment|/*  previous x coord                   */
-DECL|member|previousy
-name|gdouble
-name|previousy
-decl_stmt|;
-comment|/*  previous y coord                   */
-DECL|member|mousex
-name|gdouble
-name|mousex
-decl_stmt|;
-comment|/*  x coord where mouse was clicked    */
-DECL|member|mousey
-name|gdouble
-name|mousey
-decl_stmt|;
-comment|/*  y coord where mouse was clicked    */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -323,16 +193,6 @@ modifier|*
 name|hidden_item
 decl_stmt|;
 comment|/*  the item that was hidden during                                           the transform                      */
-DECL|member|function
-name|TransformAction
-name|function
-decl_stmt|;
-comment|/*  current tool activity              */
-DECL|member|use_grid
-name|gboolean
-name|use_grid
-decl_stmt|;
-comment|/*  does the tool use the grid         */
 DECL|member|does_perspective
 name|gboolean
 name|does_perspective
@@ -352,14 +212,6 @@ DECL|member|preview
 name|GimpCanvasItem
 modifier|*
 name|preview
-decl_stmt|;
-DECL|member|handles
-name|GimpCanvasItem
-modifier|*
-name|handles
-index|[
-name|TRANSFORM_HANDLE_NUM
-index|]
 decl_stmt|;
 DECL|member|progress_text
 specifier|const
@@ -435,18 +287,6 @@ modifier|*
 name|tool
 parameter_list|)
 function_decl|;
-DECL|member|motion
-name|void
-function_decl|(
-modifier|*
-name|motion
-function_decl|)
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
 DECL|member|recalc_matrix
 name|void
 function_decl|(
@@ -469,62 +309,6 @@ modifier|*
 function_decl|(
 modifier|*
 name|get_undo_desc
-function_decl|)
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-DECL|member|pick_function
-name|TransformAction
-function_decl|(
-modifier|*
-name|pick_function
-function_decl|)
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tool
-parameter_list|,
-specifier|const
-name|GimpCoords
-modifier|*
-name|coords
-parameter_list|,
-name|GdkModifierType
-name|state
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-function_decl|;
-DECL|member|cursor_update
-name|void
-function_decl|(
-modifier|*
-name|cursor_update
-function_decl|)
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|,
-name|GimpCursorType
-modifier|*
-name|cursor
-parameter_list|,
-name|GimpCursorModifier
-modifier|*
-name|modifier
-parameter_list|)
-function_decl|;
-DECL|member|draw_gui
-name|void
-function_decl|(
-modifier|*
-name|draw_gui
 function_decl|)
 parameter_list|(
 name|GimpTransformTool

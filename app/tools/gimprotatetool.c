@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e762ce0103
+DECL|enum|__anon27c564340103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -493,12 +493,6 @@ name|_
 argument_list|(
 literal|"Rotating"
 argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
-name|use_grid
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 end_function

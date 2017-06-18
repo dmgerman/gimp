@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c37d7b40103
+DECL|enum|__anon2b884f810103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -405,12 +405,6 @@ name|_
 argument_list|(
 literal|"Perspective transformation"
 argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
-name|use_grid
-operator|=
-name|TRUE
 expr_stmt|;
 name|tr_tool
 operator|->

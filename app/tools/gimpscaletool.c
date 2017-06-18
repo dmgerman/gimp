@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf7bc830103
+DECL|enum|__anon279401800103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -447,12 +447,6 @@ name|_
 argument_list|(
 literal|"Scaling"
 argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
-name|use_grid
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 end_function
