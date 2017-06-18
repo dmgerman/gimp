@@ -134,10 +134,6 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-DECL|member|matrix_recalculation
-name|gboolean
-name|matrix_recalculation
-decl_stmt|;
 DECL|member|saved_handle_mode
 name|GimpTransformHandleMode
 name|saved_handle_mode
