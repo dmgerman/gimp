@@ -213,6 +213,16 @@ name|GimpCanvasItem
 modifier|*
 name|preview
 decl_stmt|;
+DECL|member|boundary_in
+name|GimpCanvasItem
+modifier|*
+name|boundary_in
+decl_stmt|;
+DECL|member|boundary_out
+name|GimpCanvasItem
+modifier|*
+name|boundary_out
+decl_stmt|;
 DECL|member|progress_text
 specifier|const
 name|gchar
