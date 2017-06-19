@@ -223,6 +223,11 @@ name|GimpCanvasItem
 modifier|*
 name|boundary_out
 decl_stmt|;
+DECL|member|strokes
+name|GPtrArray
+modifier|*
+name|strokes
+decl_stmt|;
 DECL|member|progress_text
 specifier|const
 name|gchar
