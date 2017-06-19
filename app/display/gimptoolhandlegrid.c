@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec34370103
+DECL|enum|__anon28b504fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3025,7 +3025,7 @@ index|[
 name|i
 index|]
 operator|+
-name|diff_y
+name|diff_x
 expr_stmt|;
 name|newpos_y
 index|[
