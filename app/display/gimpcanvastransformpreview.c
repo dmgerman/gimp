@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcbf2bd0103
+DECL|enum|__anon27fa31db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2220,7 +2220,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_transform_preview_new (GimpDisplayShell * shell,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean perspective,gdouble opacity)
+DECL|function|gimp_canvas_transform_preview_new (GimpDisplayShell * shell,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean perspective)
 name|gimp_canvas_transform_preview_new
 parameter_list|(
 name|GimpDisplayShell
@@ -2250,9 +2250,6 @@ name|y2
 parameter_list|,
 name|gboolean
 name|perspective
-parameter_list|,
-name|gdouble
-name|opacity
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2320,17 +2317,6 @@ argument_list|,
 literal|"perspective"
 argument_list|,
 name|perspective
-argument_list|,
-literal|"opacity"
-argument_list|,
-name|CLAMP
-argument_list|(
-name|opacity
-argument_list|,
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -645,9 +645,6 @@ name|y2
 parameter_list|,
 name|gboolean
 name|perspective
-parameter_list|,
-name|gdouble
-name|opacity
 parameter_list|)
 function_decl|;
 end_function_decl
