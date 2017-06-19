@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3faa70103
+DECL|enum|__anon2bb1503b0103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3faa70203
+DECL|enum|__anon2bb1503b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,9 +222,6 @@ name|PROP_CURSOR_HANDEDNESS
 block|,
 DECL|enumerator|PROP_PLAYGROUND_NPD_TOOL
 name|PROP_PLAYGROUND_NPD_TOOL
-block|,
-DECL|enumerator|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
-name|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
 block|,
 DECL|enumerator|PROP_PLAYGROUND_SEAMLESS_CLONE_TOOL
 name|PROP_PLAYGROUND_SEAMLESS_CLONE_TOOL
@@ -1148,25 +1145,6 @@ argument_list|,
 literal|"Playground N-Point Deformation tool"
 argument_list|,
 name|PLAYGROUND_NPD_TOOL_BLURB
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-operator||
-name|GIMP_CONFIG_PARAM_RESTART
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
-argument_list|,
-literal|"playground-handle-transform-tool"
-argument_list|,
-literal|"Playground Handle Transform tool"
-argument_list|,
-name|PLAYGROUND_HANDLE_TRANSFORM_TOOL_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2209,19 +2187,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
-case|:
-name|gui_config
-operator|->
-name|playground_handle_transform_tool
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_PLAYGROUND_SEAMLESS_CLONE_TOOL
 case|:
 name|gui_config
@@ -2844,19 +2809,6 @@ argument_list|,
 name|gui_config
 operator|->
 name|playground_npd_tool
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_PLAYGROUND_HANDLE_TRANSFORM_TOOL
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|gui_config
-operator|->
-name|playground_handle_transform_tool
 argument_list|)
 expr_stmt|;
 break|break;
