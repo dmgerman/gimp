@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14cf980103
+DECL|enum|__anon27ee04530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8858,7 +8858,10 @@ operator|(
 name|handle
 operator|!=
 name|GIMP_TRANSFORM_HANDLE_NONE
+operator|&&
+name|proximity
 operator|)
+block|{
 name|gimp_tool_widget_status
 argument_list|(
 name|widget
@@ -8868,8 +8871,21 @@ argument_list|(
 name|handle
 argument_list|)
 argument_list|)
-expr_stmt|;
+block|;     }
 end_expr_stmt
+
+begin_else
+else|else
+block|{
+name|gimp_tool_widget_status
+argument_list|(
+name|widget
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_else
 
 begin_expr_stmt
 name|private
