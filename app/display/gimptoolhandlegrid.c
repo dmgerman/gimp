@@ -75,17 +75,9 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_TOOL_HANDLE_SIZE_CIRCLE
-define|#
-directive|define
-name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
-value|13
-end_define
-
 begin_enum
 enum|enum
-DECL|enum|__anon278c0d3f0103
+DECL|enum|__anon28a31f410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1256,9 +1248,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+name|GIMP_CANVAS_HANDLE_SIZE_CIRCLE
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+name|GIMP_CANVAS_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
@@ -3745,7 +3737,7 @@ DECL|macro|HANDLE_DIAMETER
 define|#
 directive|define
 name|HANDLE_DIAMETER
-value|(2 * GIMP_TOOL_HANDLE_SIZE_CIRCLE)
+value|(2 * GIMP_CANVAS_HANDLE_SIZE_CIRCLE)
 DECL|macro|POINT_GRAB_THRESHOLD_SQ
 define|#
 directive|define
@@ -3804,7 +3796,7 @@ operator|*
 name|HANDLE_DIAMETER
 operator|)
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_CIRCLE
+name|GIMP_CANVAS_HANDLE_SIZE_CIRCLE
 argument_list|,
 name|HANDLE_DIAMETER
 argument_list|)

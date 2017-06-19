@@ -89,22 +89,9 @@ name|MIN_HANDLE_SIZE
 value|6
 end_define
 
-begin_define
-DECL|macro|GIMP_TOOL_HANDLE_SIZE_LARGE
-define|#
-directive|define
-name|GIMP_TOOL_HANDLE_SIZE_LARGE
-value|25
-end_define
-
-begin_comment
-DECL|macro|GIMP_TOOL_HANDLE_SIZE_LARGE
-comment|/* FIXME */
-end_comment
-
 begin_enum
 enum|enum
-DECL|enum|__anon278e2d120103
+DECL|enum|__anon2bc317e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10429,7 +10416,7 @@ literal|3
 argument_list|,
 name|MIN_HANDLE_SIZE
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_LARGE
+name|GIMP_CANVAS_HANDLE_SIZE_LARGE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -10447,7 +10434,7 @@ literal|3
 argument_list|,
 name|MIN_HANDLE_SIZE
 argument_list|,
-name|GIMP_TOOL_HANDLE_SIZE_LARGE
+name|GIMP_CANVAS_HANDLE_SIZE_LARGE
 argument_list|)
 expr_stmt|;
 block|}
