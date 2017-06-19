@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3448f70108
+DECL|struct|__anon2c5f413c0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -4728,6 +4728,8 @@ argument_list|,
 name|priv
 operator|->
 name|n_points
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)

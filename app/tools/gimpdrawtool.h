@@ -738,6 +738,10 @@ parameter_list|,
 name|gint
 name|n_points
 parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
+parameter_list|,
 name|gboolean
 name|filled
 parameter_list|)
@@ -760,6 +764,10 @@ name|points
 parameter_list|,
 name|gint
 name|n_points
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
 parameter_list|,
 name|gboolean
 name|filled

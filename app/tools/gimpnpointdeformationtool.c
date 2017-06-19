@@ -3261,6 +3261,8 @@ index|]
 argument_list|,
 literal|5
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

@@ -2802,7 +2802,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled)
+DECL|function|gimp_draw_tool_add_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,GimpMatrix3 * transform,gboolean filled)
 name|gimp_draw_tool_add_lines
 parameter_list|(
 name|GimpDrawTool
@@ -2816,6 +2816,10 @@ name|points
 parameter_list|,
 name|gint
 name|n_points
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
 parameter_list|,
 name|gboolean
 name|filled
@@ -2863,6 +2867,8 @@ name|points
 argument_list|,
 name|n_points
 argument_list|,
+name|transform
+argument_list|,
 name|filled
 argument_list|)
 expr_stmt|;
@@ -2887,7 +2893,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled)
+DECL|function|gimp_draw_tool_add_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,GimpMatrix3 * transform,gboolean filled)
 name|gimp_draw_tool_add_strokes
 parameter_list|(
 name|GimpDrawTool
@@ -2901,6 +2907,10 @@ name|points
 parameter_list|,
 name|gint
 name|n_points
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
 parameter_list|,
 name|gboolean
 name|filled
@@ -2947,6 +2957,8 @@ argument_list|,
 name|points
 argument_list|,
 name|n_points
+argument_list|,
+name|transform
 argument_list|,
 name|filled
 argument_list|)

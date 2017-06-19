@@ -3784,6 +3784,8 @@ name|points
 argument_list|,
 name|len
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
