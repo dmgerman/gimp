@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc317e60103
+DECL|enum|__anon2c14cf980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10447,7 +10447,7 @@ end_comment
 begin_function
 name|GimpToolWidget
 modifier|*
-DECL|function|gimp_tool_transform_grid_new (GimpDisplayShell * shell,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,GimpGuidesType guide_type,gint n_guides)
+DECL|function|gimp_tool_transform_grid_new (GimpDisplayShell * shell,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_tool_transform_grid_new
 parameter_list|(
 name|GimpDisplayShell
@@ -10470,12 +10470,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|GimpGuidesType
-name|guide_type
-parameter_list|,
-name|gint
-name|n_guides
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -10516,14 +10510,6 @@ argument_list|,
 literal|"y2"
 argument_list|,
 name|y2
-argument_list|,
-literal|"guide-type"
-argument_list|,
-name|guide_type
-argument_list|,
-literal|"n-guides"
-argument_list|,
-name|n_guides
 argument_list|,
 name|NULL
 argument_list|)

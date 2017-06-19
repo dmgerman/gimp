@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b7c3260103
+DECL|enum|__anon2c1f482e0103
 block|{
 DECL|enumerator|ORIENTATION
 name|ORIENTATION
@@ -872,18 +872,6 @@ expr_stmt|;
 name|g_object_set
 argument_list|(
 name|widget
-argument_list|,
-literal|"guide-type"
-argument_list|,
-name|options
-operator|->
-name|grid_type
-argument_list|,
-literal|"n-guides"
-argument_list|,
-name|options
-operator|->
-name|grid_size
 argument_list|,
 literal|"inside-function"
 argument_list|,

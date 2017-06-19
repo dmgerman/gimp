@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf5a03f0103
+DECL|enum|__anon28c7bfca0103
 block|{
 DECL|enumerator|GIMP_TRANSFORM_HANDLE_NONE
 name|GIMP_TRANSFORM_HANDLE_NONE
@@ -271,12 +271,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|GimpGuidesType
-name|guide_type
-parameter_list|,
-name|gint
-name|n_guides
 parameter_list|)
 function_decl|;
 end_function_decl

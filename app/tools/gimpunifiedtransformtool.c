@@ -99,7 +99,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3a8c990103
+DECL|enum|__anon2a16ab160103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -964,14 +964,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|y2
-argument_list|,
-name|options
-operator|->
-name|grid_type
-argument_list|,
-name|options
-operator|->
-name|grid_size
 argument_list|)
 expr_stmt|;
 name|g_object_set

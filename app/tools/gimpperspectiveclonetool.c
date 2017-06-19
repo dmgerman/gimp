@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e9c5c0103
+DECL|enum|__anon2ae5a8e40103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -903,10 +903,6 @@ argument_list|,
 name|clone_tool
 operator|->
 name|y2
-argument_list|,
-name|GIMP_GUIDES_NONE
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_set
