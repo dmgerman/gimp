@@ -647,6 +647,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpCanvasItem
+modifier|*
+name|gimp_tool_widget_add_path
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|GimpBezierDesc
+modifier|*
+name|desc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  for tools, to be called from the respective GimpTool method  *  implementations  */
 end_comment
