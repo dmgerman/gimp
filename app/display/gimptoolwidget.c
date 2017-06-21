@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvaspath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvastransformguides.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286deff10103
+DECL|enum|__anon28d0e96e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286deff10203
+DECL|enum|__anon28d0e96e0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
