@@ -126,6 +126,11 @@ name|GtkWidget
 modifier|*
 name|to_selection_button
 decl_stmt|;
+DECL|member|fill_button
+name|GtkWidget
+modifier|*
+name|fill_button
+decl_stmt|;
 DECL|member|stroke_button
 name|GtkWidget
 modifier|*
