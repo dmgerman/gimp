@@ -193,6 +193,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_polygon_set_points
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|polygon
+parameter_list|,
+specifier|const
+name|GimpVector2
+modifier|*
+name|points
+parameter_list|,
+name|gint
+name|n_points
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
