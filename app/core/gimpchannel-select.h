@@ -210,6 +210,7 @@ parameter_list|,
 name|gint
 name|n_points
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|points

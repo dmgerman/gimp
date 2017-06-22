@@ -1003,7 +1003,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_polygon (GimpChannel * channel,const gchar * undo_desc,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
+DECL|function|gimp_channel_select_polygon (GimpChannel * channel,const gchar * undo_desc,gint n_points,const GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y,gboolean push_undo)
 name|gimp_channel_select_polygon
 parameter_list|(
 name|GimpChannel
@@ -1018,6 +1018,7 @@ parameter_list|,
 name|gint
 name|n_points
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|points
