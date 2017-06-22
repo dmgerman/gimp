@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-pick-layer.h"
+file|"gimpimage-pick-item.h"
 end_include
 
 begin_include

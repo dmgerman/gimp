@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-pick-layer.h"
+file|"core/gimpimage-pick-item.h"
 end_include
 
 begin_include
