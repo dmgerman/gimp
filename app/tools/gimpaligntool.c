@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-guides.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-pick-item.h"
 end_include
 
@@ -1176,7 +1170,7 @@ operator|&&
 operator|(
 name|guide
 operator|=
-name|gimp_image_find_guide
+name|gimp_image_pick_guide
 argument_list|(
 name|image
 argument_list|,
@@ -1852,7 +1846,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|&&
-name|gimp_image_find_guide
+name|gimp_image_pick_guide
 argument_list|(
 name|image
 argument_list|,

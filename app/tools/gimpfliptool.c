@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-guides.h"
+file|"core/gimpimage-pick-item.h"
 end_include
 
 begin_include
@@ -784,7 +784,7 @@ name|snap_distance
 decl_stmt|;
 name|guide
 operator|=
-name|gimp_image_find_guide
+name|gimp_image_pick_guide
 argument_list|(
 name|image
 argument_list|,

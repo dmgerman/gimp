@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-pick-item.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-sample-points.h"
 end_include
 
@@ -179,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af83a2c0103
+DECL|enum|__anon2b16d2370103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1237,7 +1243,7 @@ name|snap_distance
 decl_stmt|;
 name|sample_point
 operator|=
-name|gimp_image_find_sample_point
+name|gimp_image_pick_sample_point
 argument_list|(
 name|image
 argument_list|,
