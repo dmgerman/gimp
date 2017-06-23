@@ -1081,9 +1081,10 @@ operator|!=
 name|item
 condition|)
 block|{
-comment|/* we are only interested in toplevel items that are not            * item's ancestor            */
+comment|/* we are only interested in toplevel items that are not            * item's ancestor and same level items.            */
 if|if
 condition|(
+operator|(
 operator|!
 name|gimp_viewable_get_parent
 argument_list|(
@@ -1092,6 +1093,23 @@ argument_list|(
 name|other
 argument_list|)
 argument_list|)
+operator|||
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|other
+argument_list|)
+argument_list|)
+operator|==
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+operator|)
 operator|&&
 operator|!
 name|gimp_viewable_is_ancestor
