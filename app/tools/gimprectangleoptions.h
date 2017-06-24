@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b55faf60103
+DECL|enum|__anon2871af070103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -257,7 +257,7 @@ name|gboolean
 name|fixed_rule_active
 decl_stmt|;
 DECL|member|fixed_rule
-name|GimpRectangleToolFixedRule
+name|GimpRectangleFixedRule
 name|fixed_rule
 decl_stmt|;
 DECL|member|desired_fixed_width
@@ -421,7 +421,7 @@ name|GimpRectangleOptions
 modifier|*
 name|rectangle_options
 parameter_list|,
-name|GimpRectangleToolFixedRule
+name|GimpRectangleFixedRule
 name|fixed_rule
 parameter_list|)
 function_decl|;

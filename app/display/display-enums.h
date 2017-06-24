@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40103
+DECL|enum|__anon2bb6197e0103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40203
+DECL|enum|__anon2bb6197e0203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40303
+DECL|enum|__anon2bb6197e0303
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -151,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40403
+DECL|enum|__anon2bb6197e0403
 block|{
 DECL|enumerator|GIMP_GUIDES_NONE
 name|GIMP_GUIDES_NONE
@@ -211,7 +211,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40503
+DECL|enum|__anon2bb6197e0503
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -263,7 +263,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40603
+DECL|enum|__anon2bb6197e0603
 block|{
 DECL|enumerator|GIMP_HANDLE_ANCHOR_CENTER
 name|GIMP_HANDLE_ANCHOR_CENTER
@@ -318,7 +318,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40703
+DECL|enum|__anon2bb6197e0703
 block|{
 DECL|enumerator|GIMP_PATH_STYLE_DEFAULT
 name|GIMP_PATH_STYLE_DEFAULT
@@ -355,7 +355,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40803
+DECL|enum|__anon2bb6197e0803
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -372,16 +372,16 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
+DECL|macro|GIMP_TYPE_RECTANGLE_FIXED_RULE
 define|#
 directive|define
-name|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
-value|(gimp_rectangle_tool_fixed_rule_get_type ())
+name|GIMP_TYPE_RECTANGLE_FIXED_RULE
+value|(gimp_rectangle_fixed_rule_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_rectangle_tool_fixed_rule_get_type
+name|gimp_rectangle_fixed_rule_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -392,27 +392,27 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40903
+DECL|enum|__anon2bb6197e0903
 block|{
-DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+DECL|enumerator|GIMP_RECTANGLE_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 block|,
 comment|/*< desc="Aspect ratio">*/
-DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+DECL|enumerator|GIMP_RECTANGLE_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 block|,
 comment|/*< desc="Width">*/
-DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+DECL|enumerator|GIMP_RECTANGLE_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 block|,
 comment|/*< desc="Height">*/
-DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_SIZE
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+DECL|enumerator|GIMP_RECTANGLE_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 block|,
 comment|/*< desc="Size">*/
-DECL|typedef|GimpRectangleToolFixedRule
+DECL|typedef|GimpRectangleFixedRule
 block|}
-name|GimpRectangleToolFixedRule
+name|GimpRectangleFixedRule
 typedef|;
 end_typedef
 
@@ -437,7 +437,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40a03
+DECL|enum|__anon2bb6197e0a03
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -471,7 +471,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40b03
+DECL|enum|__anon2bb6197e0b03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FUNCTION_MOVE
 name|GIMP_TRANSFORM_FUNCTION_MOVE
@@ -514,7 +514,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40c03
+DECL|enum|__anon2bb6197e0c03
 block|{
 DECL|enumerator|GIMP_HANDLE_MODE_ADD_TRANSFORM
 name|GIMP_HANDLE_MODE_ADD_TRANSFORM
@@ -554,7 +554,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40d03
+DECL|enum|__anon2bb6197e0d03
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -594,7 +594,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276ffad40e03
+DECL|enum|__anon2bb6197e0e03
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS

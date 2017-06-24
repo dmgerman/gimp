@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c400f310103
+DECL|enum|__anon2c67add50103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -243,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c400f310203
+DECL|enum|__anon2c67add50203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c400f310303
+DECL|enum|__anon2c67add50303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3996,7 +3996,7 @@ name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 argument_list|)
 condition|)
 block|{
@@ -13143,7 +13143,7 @@ name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 argument_list|)
 condition|)
 block|{
@@ -13270,7 +13270,7 @@ name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 argument_list|)
 condition|)
 block|{
@@ -13304,7 +13304,7 @@ name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 argument_list|)
 condition|)
 block|{
@@ -13327,7 +13327,7 @@ name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 argument_list|)
 condition|)
 block|{

@@ -1415,8 +1415,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_rectangle_tool_fixed_rule_get_type (void)
-name|gimp_rectangle_tool_fixed_rule_get_type
+DECL|function|gimp_rectangle_fixed_rule_get_type (void)
+name|gimp_rectangle_fixed_rule_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -1429,33 +1429,33 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 block|,
-literal|"GIMP_RECTANGLE_TOOL_FIXED_ASPECT"
+literal|"GIMP_RECTANGLE_FIXED_ASPECT"
 block|,
 literal|"aspect"
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 block|,
-literal|"GIMP_RECTANGLE_TOOL_FIXED_WIDTH"
+literal|"GIMP_RECTANGLE_FIXED_WIDTH"
 block|,
 literal|"width"
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 block|,
-literal|"GIMP_RECTANGLE_TOOL_FIXED_HEIGHT"
+literal|"GIMP_RECTANGLE_FIXED_HEIGHT"
 block|,
 literal|"height"
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 block|,
-literal|"GIMP_RECTANGLE_TOOL_FIXED_SIZE"
+literal|"GIMP_RECTANGLE_FIXED_SIZE"
 block|,
 literal|"size"
 block|}
@@ -1477,11 +1477,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 block|,
 name|NC_
 argument_list|(
-literal|"rectangle-tool-fixed-rule"
+literal|"rectangle-fixed-rule"
 argument_list|,
 literal|"Aspect ratio"
 argument_list|)
@@ -1490,11 +1490,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 block|,
 name|NC_
 argument_list|(
-literal|"rectangle-tool-fixed-rule"
+literal|"rectangle-fixed-rule"
 argument_list|,
 literal|"Width"
 argument_list|)
@@ -1503,11 +1503,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 block|,
 name|NC_
 argument_list|(
-literal|"rectangle-tool-fixed-rule"
+literal|"rectangle-fixed-rule"
 argument_list|,
 literal|"Height"
 argument_list|)
@@ -1516,11 +1516,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 block|,
 name|NC_
 argument_list|(
-literal|"rectangle-tool-fixed-rule"
+literal|"rectangle-fixed-rule"
 argument_list|,
 literal|"Size"
 argument_list|)
@@ -1556,7 +1556,7 @@ name|type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpRectangleToolFixedRule"
+literal|"GimpRectangleFixedRule"
 argument_list|,
 name|values
 argument_list|)
@@ -1565,7 +1565,7 @@ name|gimp_type_set_translation_context
 argument_list|(
 name|type
 argument_list|,
-literal|"rectangle-tool-fixed-rule"
+literal|"rectangle-fixed-rule"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

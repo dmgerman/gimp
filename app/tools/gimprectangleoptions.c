@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761a5260103
+DECL|enum|__anon296668540103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -579,9 +579,9 @@ argument_list|(
 literal|"Choose what has to be locked"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
+name|GIMP_TYPE_RECTANGLE_FIXED_RULE
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 argument_list|,
 name|GIMP_CONFIG_PARAM_FLAGS
 operator||
@@ -2260,13 +2260,13 @@ name|private
 operator|->
 name|fixed_rule
 operator|==
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 operator|||
 name|private
 operator|->
 name|fixed_rule
 operator|==
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 operator|)
 operator|)
 argument_list|)
@@ -2288,13 +2288,13 @@ name|private
 operator|->
 name|fixed_rule
 operator|==
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 operator|||
 name|private
 operator|->
 name|fixed_rule
 operator|==
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 operator|)
 operator|)
 argument_list|)
@@ -2336,7 +2336,7 @@ name|fixed_rule
 condition|)
 block|{
 case|case
-name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_FIXED_ASPECT
 case|:
 name|gtk_widget_show
 argument_list|(
@@ -2347,7 +2347,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_FIXED_WIDTH
 case|:
 name|gtk_widget_show
 argument_list|(
@@ -2358,7 +2358,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_FIXED_HEIGHT
 case|:
 name|gtk_widget_show
 argument_list|(
@@ -2369,7 +2369,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_FIXED_SIZE
 case|:
 name|gtk_widget_show
 argument_list|(
@@ -3958,14 +3958,14 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_options_fixed_rule_active (GimpRectangleOptions * rectangle_options,GimpRectangleToolFixedRule fixed_rule)
+DECL|function|gimp_rectangle_options_fixed_rule_active (GimpRectangleOptions * rectangle_options,GimpRectangleFixedRule fixed_rule)
 name|gimp_rectangle_options_fixed_rule_active
 parameter_list|(
 name|GimpRectangleOptions
 modifier|*
 name|rectangle_options
 parameter_list|,
-name|GimpRectangleToolFixedRule
+name|GimpRectangleFixedRule
 name|fixed_rule
 parameter_list|)
 block|{
