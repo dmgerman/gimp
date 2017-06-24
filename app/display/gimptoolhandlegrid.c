@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294568840103
+DECL|enum|__anon28f5b0970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3705,7 +3705,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,

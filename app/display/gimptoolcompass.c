@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf0a6300103
+DECL|enum|__anon28ec8cc70103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -147,7 +147,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf0a6300203
+DECL|enum|__anon28ec8cc70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf0a6300303
+DECL|enum|__anon28ec8cc70303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -3700,7 +3700,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -3743,7 +3743,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -3861,7 +3861,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -3901,7 +3901,7 @@ name|GDK_MOD1_MASK
 operator|)
 condition|)
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -3914,7 +3914,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,

@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293b67200103
+DECL|enum|__anon27c1237c0103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -199,7 +199,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon293b67200203
+DECL|enum|__anon27c1237c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,7 +218,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293b67200303
+DECL|enum|__anon27c1237c0303
 block|{
 DECL|enumerator|BEGIN_CHANGE
 name|BEGIN_CHANGE
@@ -1942,7 +1942,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|GIMP_TOOL_WIDGET
 argument_list|(
@@ -5221,7 +5221,7 @@ operator|!
 name|proximity
 condition|)
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|GIMP_TOOL_WIDGET
 argument_list|(
@@ -5617,7 +5617,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|GIMP_TOOL_WIDGET
 argument_list|(

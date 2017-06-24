@@ -153,7 +153,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon294548cd0103
+DECL|enum|__anon2bf7c0880103
 block|{
 DECL|enumerator|COMMIT
 name|COMMIT
@@ -3239,7 +3239,7 @@ condition|(
 name|status_text
 condition|)
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -3250,7 +3250,7 @@ block|}
 block|}
 else|else
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,

@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee04530103
+DECL|enum|__anon2c83f8ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5455,7 +5455,7 @@ operator|&
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tool_widget_snap_offsets
+name|gimp_tool_widget_set_snap_offsets
 argument_list|(
 name|widget
 argument_list|,
@@ -5485,7 +5485,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_tool_widget_snap_offsets
+name|gimp_tool_widget_set_snap_offsets
 argument_list|(
 name|widget
 argument_list|,
@@ -5601,7 +5601,7 @@ operator|->
 name|handle
 return|;
 block|}
-name|gimp_tool_widget_snap_offsets
+name|gimp_tool_widget_set_snap_offsets
 argument_list|(
 name|widget
 argument_list|,
@@ -8862,7 +8862,7 @@ operator|&&
 name|proximity
 operator|)
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
@@ -8877,7 +8877,7 @@ end_expr_stmt
 begin_else
 else|else
 block|{
-name|gimp_tool_widget_status
+name|gimp_tool_widget_set_status
 argument_list|(
 name|widget
 argument_list|,
