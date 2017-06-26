@@ -547,7 +547,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4597,7 +4597,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_polygon_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * cursor_modifier)
+DECL|function|gimp_tool_polygon_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * modifier)
 name|gimp_tool_polygon_get_cursor
 parameter_list|(
 name|GimpToolWidget
@@ -4622,7 +4622,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 block|{
 name|GimpToolPolygon
@@ -4653,7 +4653,7 @@ argument_list|)
 condition|)
 block|{
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;

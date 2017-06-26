@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c1237c0103
+DECL|enum|__anon2b4136770103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -199,7 +199,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1237c0203
+DECL|enum|__anon2b4136770203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,7 +218,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1237c0303
+DECL|enum|__anon2b4136770303
 block|{
 DECL|enumerator|BEGIN_CHANGE
 name|BEGIN_CHANGE
@@ -583,7 +583,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4928,7 +4928,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_path_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * cursor_modifier)
+DECL|function|gimp_tool_path_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * modifier)
 name|gimp_tool_path_get_cursor
 parameter_list|(
 name|GimpToolWidget
@@ -4953,7 +4953,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 block|{
 name|GimpToolPath
@@ -4979,7 +4979,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
@@ -5006,7 +5006,7 @@ case|case
 name|VECTORS_CREATE_STROKE
 case|:
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_CONTROL
 expr_stmt|;
@@ -5023,7 +5023,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_ANCHOR
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
@@ -5037,7 +5037,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_ANCHOR
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MINUS
 expr_stmt|;
@@ -5051,7 +5051,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_SEGMENT
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MINUS
 expr_stmt|;
@@ -5065,7 +5065,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_CONTROL
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -5079,7 +5079,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_CONTROL
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MINUS
 expr_stmt|;
@@ -5093,7 +5093,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_ANCHOR
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -5107,7 +5107,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_SEGMENT
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -5119,7 +5119,7 @@ case|case
 name|VECTORS_MOVE_VECTORS
 case|:
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -5133,7 +5133,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_ANCHOR
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -5147,14 +5147,14 @@ operator|=
 name|GIMP_TOOL_CURSOR_PATHS_SEGMENT
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_JOIN
 expr_stmt|;
 break|break;
 default|default:
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_BAD
 expr_stmt|;

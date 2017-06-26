@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83f8ba0103
+DECL|enum|__anon29fa61850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -643,7 +643,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8907,7 +8907,7 @@ end_expr_stmt
 begin_function
 unit|}  static
 name|gboolean
-DECL|function|gimp_tool_transform_grid_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * cursor_modifier)
+DECL|function|gimp_tool_transform_grid_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * modifier)
 name|gimp_tool_transform_grid_get_cursor
 parameter_list|(
 name|GimpToolWidget
@@ -8932,7 +8932,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 block|{
 name|GimpToolTransformGrid
@@ -9765,7 +9765,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_ROTATE
 expr_stmt|;
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;

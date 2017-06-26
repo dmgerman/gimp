@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae5ad40103
+DECL|enum|__anon2b79ff1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -275,7 +275,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae5ad40203
+DECL|enum|__anon2b79ff1a0203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -289,7 +289,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae5ad40303
+DECL|enum|__anon2b79ff1a0303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -332,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae5ad40403
+DECL|enum|__anon2b79ff1a0403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -885,7 +885,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl

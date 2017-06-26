@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2754faa40103
+DECL|enum|__anon2a05f15b0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -116,7 +116,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2754faa40203
+DECL|enum|__anon2a05f15b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -439,7 +439,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1879,7 +1879,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_line_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * cursor_modifier)
+DECL|function|gimp_tool_line_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * modifier)
 name|gimp_tool_line_get_cursor
 parameter_list|(
 name|GimpToolWidget
@@ -1904,7 +1904,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 block|{
 name|GimpToolLine
@@ -1934,7 +1934,7 @@ name|POINT_BOTH
 condition|)
 block|{
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;

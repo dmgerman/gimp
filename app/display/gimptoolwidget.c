@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27571e7b0103
+DECL|enum|__anon294f90c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27571e7b0203
+DECL|enum|__anon294f90c80203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -3091,7 +3091,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_tool_widget_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * cursor_modifier)
+DECL|function|gimp_tool_widget_get_cursor (GimpToolWidget * widget,const GimpCoords * coords,GdkModifierType state,GimpCursorType * cursor,GimpToolCursorType * tool_cursor,GimpCursorModifier * modifier)
 name|gimp_tool_widget_get_cursor
 parameter_list|(
 name|GimpToolWidget
@@ -3116,7 +3116,7 @@ name|tool_cursor
 parameter_list|,
 name|GimpCursorModifier
 modifier|*
-name|cursor_modifier
+name|modifier
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -3155,7 +3155,7 @@ name|GimpToolCursorType
 name|my_tool_cursor
 decl_stmt|;
 name|GimpCursorModifier
-name|my_cursor_modifier
+name|my_modifier
 decl_stmt|;
 if|if
 condition|(
@@ -3177,12 +3177,12 @@ name|tool_cursor
 expr_stmt|;
 if|if
 condition|(
-name|cursor_modifier
+name|modifier
 condition|)
-name|my_cursor_modifier
+name|my_modifier
 operator|=
 operator|*
-name|cursor_modifier
+name|modifier
 expr_stmt|;
 if|if
 condition|(
@@ -3206,7 +3206,7 @@ operator|&
 name|my_tool_cursor
 argument_list|,
 operator|&
-name|my_cursor_modifier
+name|my_modifier
 argument_list|)
 condition|)
 block|{
@@ -3230,12 +3230,12 @@ name|my_tool_cursor
 expr_stmt|;
 if|if
 condition|(
-name|cursor_modifier
+name|modifier
 condition|)
 operator|*
-name|cursor_modifier
+name|modifier
 operator|=
-name|my_cursor_modifier
+name|my_modifier
 expr_stmt|;
 return|return
 name|TRUE
