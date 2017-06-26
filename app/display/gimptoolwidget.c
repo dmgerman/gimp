@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dfe4f0103
+DECL|enum|__anon2b26f2770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dfe4f0203
+DECL|enum|__anon2b26f2770203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -2320,7 +2320,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_tool_widget_add_corner (GimpToolWidget * widget,gdouble x1,gdouble y1,gdouble x2,gdouble y2,GimpHandleAnchor anchor,gint width,gint height,gboolean outside)
+DECL|function|gimp_tool_widget_add_corner (GimpToolWidget * widget,gdouble x,gdouble y,gdouble width,gdouble height,GimpHandleAnchor anchor,gint corner_width,gint corner_height,gboolean outside)
 name|gimp_tool_widget_add_corner
 parameter_list|(
 name|GimpToolWidget
@@ -2328,25 +2328,25 @@ modifier|*
 name|widget
 parameter_list|,
 name|gdouble
-name|x1
+name|x
 parameter_list|,
 name|gdouble
-name|y1
+name|y
 parameter_list|,
 name|gdouble
-name|x2
+name|width
 parameter_list|,
 name|gdouble
-name|y2
+name|height
 parameter_list|,
 name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
-name|width
+name|corner_width
 parameter_list|,
 name|gint
-name|height
+name|corner_height
 parameter_list|,
 name|gboolean
 name|outside
@@ -2376,23 +2376,19 @@ name|private
 operator|->
 name|shell
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
-argument_list|,
-name|x2
-operator|-
-name|x1
-argument_list|,
-name|y2
-operator|-
-name|y1
-argument_list|,
-name|anchor
+name|y
 argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+name|anchor
+argument_list|,
+name|corner_width
+argument_list|,
+name|corner_height
 argument_list|,
 name|outside
 argument_list|)
