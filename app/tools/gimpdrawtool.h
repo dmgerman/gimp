@@ -164,6 +164,11 @@ name|guint64
 name|last_draw_time
 decl_stmt|;
 comment|/*  time of last draw(), monotonically      */
+DECL|member|widget
+name|GimpToolWidget
+modifier|*
+name|widget
+decl_stmt|;
 DECL|member|preview
 name|GimpCanvasItem
 modifier|*
@@ -328,6 +333,21 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_draw_tool_set_widget
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
