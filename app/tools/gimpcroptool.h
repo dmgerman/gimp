@@ -128,6 +128,16 @@ name|GimpImage
 modifier|*
 name|current_image
 decl_stmt|;
+DECL|member|rectangle
+name|GimpToolWidget
+modifier|*
+name|rectangle
+decl_stmt|;
+DECL|member|grab_widget
+name|GimpToolWidget
+modifier|*
+name|grab_widget
+decl_stmt|;
 block|}
 struct|;
 end_struct
