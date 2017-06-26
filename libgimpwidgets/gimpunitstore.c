@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb694ae0103
+DECL|enum|__anon273d7eb60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb694ae0208
+DECL|struct|__anon273d7eb60208
 block|{
 DECL|member|num_values
 name|gint
