@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26f2770103
+DECL|enum|__anon27571e7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26f2770203
+DECL|enum|__anon27571e7b0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -3068,14 +3068,14 @@ argument_list|(
 name|widget
 argument_list|)
 operator|->
-name|motion_modifier
+name|hover_modifier
 condition|)
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
 argument_list|)
 operator|->
-name|motion_modifier
+name|hover_modifier
 argument_list|(
 name|widget
 argument_list|,
