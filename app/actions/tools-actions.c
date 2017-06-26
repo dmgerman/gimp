@@ -558,7 +558,7 @@ name|NC_
 argument_list|(
 literal|"tools-action"
 argument_list|,
-literal|"Airbrush Rate: Set "
+literal|"Airbrush Rate: Set"
 argument_list|)
 block|,
 name|NULL
@@ -1130,7 +1130,7 @@ name|NC_
 argument_list|(
 literal|"tools-action"
 argument_list|,
-literal|"Tool's Opacity: Minimize "
+literal|"Tool's Opacity: Minimize"
 argument_list|)
 block|,
 name|NULL

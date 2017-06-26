@@ -977,7 +977,7 @@ name|NC_
 argument_list|(
 literal|"context-action"
 argument_list|,
-literal|"Background: Use Previous Color From  Colormap"
+literal|"Background: Use Previous Color From Colormap"
 argument_list|)
 block|,
 name|NULL
@@ -1023,7 +1023,7 @@ name|NC_
 argument_list|(
 literal|"context-action"
 argument_list|,
-literal|"Background: Skip Back Color From  Colormap"
+literal|"Background: Skip Back Color From Colormap"
 argument_list|)
 block|,
 name|NULL
@@ -1046,7 +1046,7 @@ name|NC_
 argument_list|(
 literal|"context-action"
 argument_list|,
-literal|"Background: Skip Forward Color From  Colormap"
+literal|"Background: Skip Forward Color From Colormap"
 argument_list|)
 block|,
 name|NULL

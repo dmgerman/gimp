@@ -1487,7 +1487,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Hue-_Chroma..."
+literal|"Hue-_Chroma..."
 argument_list|)
 block|,
 name|NULL
