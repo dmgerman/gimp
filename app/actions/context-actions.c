@@ -3270,7 +3270,7 @@ name|NC_
 argument_list|(
 literal|"context-action"
 argument_list|,
-literal|"Background Saturation :Decrease by 10%"
+literal|"Background Saturation: Decrease by 10%"
 argument_list|)
 block|,
 name|NULL
