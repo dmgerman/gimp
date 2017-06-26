@@ -1920,15 +1920,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control
-argument_list|(
-name|tool
-argument_list|,
-name|GIMP_TOOL_ACTION_HALT
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -3409,6 +3400,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_blend_tool_halt
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
