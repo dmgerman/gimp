@@ -106,6 +106,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpRectangleSelectToolPrivate
+typedef|typedef
+name|struct
+name|_GimpRectangleSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpRectangleSelectToolClass
 typedef|typedef
 name|struct
@@ -123,9 +132,10 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
-DECL|member|priv
-name|gpointer
-name|priv
+DECL|member|private
+name|GimpRectangleSelectToolPrivate
+modifier|*
+name|private
 decl_stmt|;
 block|}
 struct|;
@@ -167,6 +177,10 @@ name|gint
 name|h
 parameter_list|)
 function_decl|;
+DECL|member|draw_ellipse
+name|gboolean
+name|draw_ellipse
+decl_stmt|;
 block|}
 struct|;
 end_struct
