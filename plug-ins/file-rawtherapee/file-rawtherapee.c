@@ -3,9 +3,11 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * file-rawtherapee.c -- raw file format plug-in that uses RawTherapee  * Copyright (C) 2012 Simon Budig<simon@gimp.org>  * Copyright (C) 2016 Tobias Ellinghaus<me@houz.org>  * Copyright (C) 2017 Alberto Griggio<alberto.griggio@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_comment
-comment|//#include "config.h"
-end_comment
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -17,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -43,9 +39,11 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
-begin_comment
-comment|//#include "libgimp/stdplugins-intl.h"
-end_comment
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_include
 include|#
@@ -578,7 +576,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|//  INIT_I18N ();
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1001,7 +1001,7 @@ name|argv
 argument_list|,
 name|NULL
 argument_list|,
-comment|//                     G_SPAWN_STDOUT_TO_DEV_NULL |
+comment|/*G_SPAWN_STDOUT_TO_DEV_NULL |*/
 name|G_SPAWN_STDERR_TO_DEV_NULL
 operator||
 name|G_SPAWN_SEARCH_PATH
@@ -1047,7 +1047,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-comment|// if (rawtherapee_stdout) printf ("%s\n", rawtherapee_stdout);
+comment|/*if (rawtherapee_stdout) printf ("%s\n", rawtherapee_stdout);*/
 name|g_free
 argument_list|(
 name|rawtherapee_stdout
@@ -1118,17 +1118,6 @@ argument_list|(
 literal|"pp3"
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|size
-init|=
-name|g_strdup_printf
-argument_list|(
-literal|"%d"
-argument_list|,
-name|thumb_size
-argument_list|)
-decl_stmt|;
 name|FILE
 modifier|*
 name|thumb_pp3_f
@@ -1139,11 +1128,6 @@ name|thumb_pp3
 argument_list|,
 literal|"w"
 argument_list|)
-decl_stmt|;
-name|gboolean
-name|pp3_ok
-init|=
-name|FALSE
 decl_stmt|;
 name|gchar
 modifier|*

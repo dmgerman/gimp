@@ -67,28 +67,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|N_ (s)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|s
-parameter_list|)
-value|s
-end_define
-
-begin_define
-DECL|macro|_ (s)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|s
-parameter_list|)
-value|s
-end_define
-
 begin_decl_stmt
 DECL|variable|file_formats
 specifier|static
