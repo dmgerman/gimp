@@ -2005,6 +2005,16 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_draw_tool_set_widget
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_clear_object
 argument_list|(
 operator|&
