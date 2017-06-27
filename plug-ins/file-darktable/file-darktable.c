@@ -97,6 +97,16 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|query
 parameter_list|(
 name|void
@@ -191,7 +201,7 @@ name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
-name|NULL
+name|init
 block|,
 comment|/* init_proc */
 name|NULL
@@ -432,8 +442,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
-name|query
+DECL|function|init (void)
+name|init
 parameter_list|(
 name|void
 parameter_list|)
@@ -857,6 +867,19 @@ name|LOAD_THUMB_PROC
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|query (void)
+name|query
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/* query() is run only the first time for efficiency. Yet this plugin    * is dependent on the presence of darktable which may be installed    * or uninstalled between GIMP startups. Therefore we should move the    * usual gimp_install_procedure() to init() so that the check is done    * at every startup instead.    */
 block|}
 end_function
 
