@@ -1494,7 +1494,7 @@ name|argv
 argument_list|,
 name|NULL
 argument_list|,
-comment|//                     G_SPAWN_STDOUT_TO_DEV_NULL |
+comment|/*G_SPAWN_STDOUT_TO_DEV_NULL |*/
 name|G_SPAWN_STDERR_TO_DEV_NULL
 operator||
 operator|(
@@ -1546,7 +1546,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-comment|// if (darktable_stdout) printf ("%s\n", darktable_stdout);
+comment|/*if (darktable_stdout) printf ("%s\n", darktable_stdout);*/
 name|g_free
 argument_list|(
 name|darktable_stdout
