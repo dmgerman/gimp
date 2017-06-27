@@ -134,10 +134,10 @@ name|GimpVectorMode
 name|saved_mode
 decl_stmt|;
 comment|/* used by modifier_key()            */
-DECL|member|path
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|path
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget

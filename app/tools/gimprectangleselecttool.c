@@ -191,10 +191,10 @@ DECL|member|press_y
 name|gdouble
 name|press_y
 decl_stmt|;
-DECL|member|rectangle
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|rectangle
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget
@@ -995,7 +995,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1011,7 +1011,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|GIMP_TOOL_RECTANGLE_CREATING
@@ -1047,7 +1047,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|GIMP_TOOL_RECTANGLE_CREATING
@@ -1060,7 +1060,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1078,7 +1078,7 @@ name|grab_widget
 operator|=
 name|private
 operator|->
-name|rectangle
+name|widget
 expr_stmt|;
 block|}
 name|private
@@ -1106,7 +1106,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1593,7 +1593,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1608,7 +1608,7 @@ name|gimp_tool_widget_key_press
 argument_list|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|kevent
 argument_list|)
@@ -1677,7 +1677,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1690,7 +1690,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1775,7 +1775,7 @@ if|if
 condition|(
 name|private
 operator|->
-name|rectangle
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1788,7 +1788,7 @@ name|gimp_tool_widget_get_cursor
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -2569,7 +2569,7 @@ name|display
 expr_stmt|;
 name|private
 operator|->
-name|rectangle
+name|widget
 operator|=
 name|widget
 operator|=
@@ -2753,7 +2753,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 condition|)
 block|{
 name|gdouble
@@ -2776,7 +2776,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 operator|&
@@ -2936,7 +2936,7 @@ name|g_object_set
 argument_list|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -3267,7 +3267,7 @@ argument_list|(
 operator|&
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 expr_stmt|;
 name|tool
@@ -3383,7 +3383,7 @@ condition|(
 operator|!
 name|priv
 operator|->
-name|rectangle
+name|widget
 condition|)
 return|return;
 if|if
@@ -3405,7 +3405,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|priv
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|G_OBJECT
@@ -3517,7 +3517,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|private
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|shrink_merged

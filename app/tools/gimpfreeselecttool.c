@@ -109,10 +109,10 @@ DECL|member|operation_at_start
 name|GimpChannelOps
 name|operation_at_start
 decl_stmt|;
-DECL|member|polygon
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|polygon
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget
@@ -711,7 +711,7 @@ argument_list|(
 operator|&
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -794,7 +794,7 @@ name|operation
 expr_stmt|;
 name|private
 operator|->
-name|polygon
+name|widget
 operator|=
 name|gimp_tool_polygon_new
 argument_list|(
@@ -810,14 +810,14 @@ argument_list|)
 argument_list|,
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -833,7 +833,7 @@ name|g_signal_connect
 argument_list|(
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|,
 literal|"response"
 argument_list|,
@@ -885,7 +885,7 @@ if|if
 condition|(
 name|private
 operator|->
-name|polygon
+name|widget
 condition|)
 block|{
 specifier|const
@@ -902,7 +902,7 @@ name|GIMP_TOOL_POLYGON
 argument_list|(
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|)
 argument_list|,
 operator|&
@@ -982,7 +982,7 @@ argument_list|(
 operator|&
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1141,14 +1141,14 @@ if|if
 condition|(
 name|priv
 operator|->
-name|polygon
+name|widget
 condition|)
 block|{
 name|gimp_tool_widget_hover
 argument_list|(
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1237,7 +1237,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|polygon
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1250,7 +1250,7 @@ name|gimp_tool_widget_get_cursor
 argument_list|(
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1365,7 +1365,7 @@ condition|(
 operator|!
 name|private
 operator|->
-name|polygon
+name|widget
 condition|)
 comment|/* not tool->display, we have a subclass */
 block|{
@@ -1398,7 +1398,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1414,7 +1414,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|private
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1432,7 +1432,7 @@ name|grab_widget
 operator|=
 name|private
 operator|->
-name|polygon
+name|widget
 expr_stmt|;
 block|}
 name|gimp_tool_control_activate
@@ -1688,7 +1688,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|polygon
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1702,7 +1702,7 @@ name|gimp_tool_widget_key_press
 argument_list|(
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|kevent
 argument_list|)
@@ -1759,7 +1759,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|polygon
+name|widget
 operator|&&
 name|display
 operator|==
@@ -1772,7 +1772,7 @@ name|gimp_tool_widget_hover_modifier
 argument_list|(
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|key
 argument_list|,
@@ -1848,14 +1848,14 @@ if|if
 condition|(
 name|priv
 operator|->
-name|polygon
+name|widget
 condition|)
 block|{
 name|gimp_tool_widget_motion_modifier
 argument_list|(
 name|priv
 operator|->
-name|polygon
+name|widget
 argument_list|,
 name|key
 argument_list|,

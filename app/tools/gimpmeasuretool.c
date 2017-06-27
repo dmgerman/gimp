@@ -768,7 +768,7 @@ condition|(
 operator|!
 name|measure
 operator|->
-name|compass
+name|widget
 condition|)
 block|{
 name|gimp_measure_tool_start
@@ -784,7 +784,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -800,7 +800,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -818,7 +818,7 @@ name|grab_widget
 operator|=
 name|measure
 operator|->
-name|compass
+name|widget
 expr_stmt|;
 block|}
 comment|/*  create the info window if necessary  */
@@ -1510,7 +1510,7 @@ literal|0
 expr_stmt|;
 name|measure
 operator|->
-name|compass
+name|widget
 operator|=
 name|gimp_tool_compass_new
 argument_list|(
@@ -1572,14 +1572,14 @@ argument_list|)
 argument_list|,
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1595,7 +1595,7 @@ name|g_signal_connect
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 literal|"response"
 argument_list|,
@@ -1611,7 +1611,7 @@ name|g_signal_connect
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 literal|"status"
 argument_list|,
@@ -1627,7 +1627,7 @@ name|g_signal_connect
 argument_list|(
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|,
 literal|"create-guides"
 argument_list|,
@@ -1726,7 +1726,7 @@ argument_list|(
 operator|&
 name|measure
 operator|->
-name|compass
+name|widget
 argument_list|)
 expr_stmt|;
 name|g_clear_object

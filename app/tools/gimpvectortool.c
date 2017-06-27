@@ -862,7 +862,7 @@ argument_list|(
 operator|&
 name|vector_tool
 operator|->
-name|path
+name|widget
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -1028,7 +1028,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|vector_tool
 operator|->
-name|path
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1044,7 +1044,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|vector_tool
 operator|->
-name|path
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1062,7 +1062,7 @@ name|grab_widget
 operator|=
 name|vector_tool
 operator|->
-name|path
+name|widget
 expr_stmt|;
 block|}
 name|gimp_tool_control_activate
@@ -1436,7 +1436,7 @@ operator|||
 operator|!
 name|vector_tool
 operator|->
-name|path
+name|widget
 condition|)
 block|{
 name|GimpToolCursorType
@@ -1569,7 +1569,7 @@ name|display
 expr_stmt|;
 name|vector_tool
 operator|->
-name|path
+name|widget
 operator|=
 name|widget
 operator|=
@@ -1786,7 +1786,7 @@ argument_list|(
 operator|&
 name|vector_tool
 operator|->
-name|path
+name|widget
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2610,7 +2610,7 @@ name|GIMP_TOOL_PATH
 argument_list|(
 name|vector_tool
 operator|->
-name|path
+name|widget
 argument_list|)
 argument_list|,
 name|vectors

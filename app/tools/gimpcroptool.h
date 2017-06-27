@@ -128,10 +128,10 @@ name|GimpImage
 modifier|*
 name|current_image
 decl_stmt|;
-DECL|member|rectangle
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|rectangle
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget

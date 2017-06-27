@@ -158,10 +158,10 @@ name|GList
 modifier|*
 name|redo_stack
 decl_stmt|;
-DECL|member|line
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|line
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget

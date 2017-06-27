@@ -1339,7 +1339,7 @@ condition|(
 operator|!
 name|blend_tool
 operator|->
-name|line
+name|widget
 condition|)
 block|{
 name|gimp_blend_tool_start
@@ -1355,7 +1355,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1396,7 +1396,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -1414,7 +1414,7 @@ name|grab_widget
 operator|=
 name|blend_tool
 operator|->
-name|line
+name|widget
 expr_stmt|;
 name|blend_tool
 operator|->
@@ -1804,7 +1804,7 @@ operator|||
 operator|!
 name|blend_tool
 operator|->
-name|line
+name|widget
 condition|)
 block|{
 name|gimp_tool_set_cursor
@@ -2058,7 +2058,7 @@ name|g_object_set
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -2198,7 +2198,7 @@ name|g_object_set
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -2629,7 +2629,7 @@ name|y
 expr_stmt|;
 name|blend_tool
 operator|->
-name|line
+name|widget
 operator|=
 name|gimp_tool_line_new
 argument_list|(
@@ -2661,14 +2661,14 @@ argument_list|)
 argument_list|,
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -2684,7 +2684,7 @@ name|g_signal_connect
 argument_list|(
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|,
 literal|"response"
 argument_list|,
@@ -2985,7 +2985,7 @@ argument_list|(
 operator|&
 name|blend_tool
 operator|->
-name|line
+name|widget
 argument_list|)
 expr_stmt|;
 name|tool

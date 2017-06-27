@@ -123,10 +123,10 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|compass
+DECL|member|widget
 name|GimpToolWidget
 modifier|*
-name|compass
+name|widget
 decl_stmt|;
 DECL|member|grab_widget
 name|GimpToolWidget

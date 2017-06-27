@@ -867,7 +867,7 @@ name|gimp_tool_widget_hover
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -883,7 +883,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|GIMP_TOOL_RECTANGLE_CREATING
@@ -896,7 +896,7 @@ name|gimp_tool_widget_button_press
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|,
 name|coords
 argument_list|,
@@ -914,7 +914,7 @@ name|grab_widget
 operator|=
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 expr_stmt|;
 block|}
 name|gimp_tool_control_activate
@@ -1108,7 +1108,7 @@ if|if
 condition|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 condition|)
 block|{
 if|if
@@ -1140,7 +1140,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|gimp_crop_tool_get_constraint
@@ -1358,7 +1358,7 @@ name|display
 expr_stmt|;
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 operator|=
 name|widget
 operator|=
@@ -1578,7 +1578,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 operator|&
@@ -1887,7 +1887,7 @@ argument_list|(
 operator|&
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1940,7 +1940,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 decl_stmt|;
 name|GimpRectangleOptions
@@ -2226,7 +2226,7 @@ name|GIMP_TOOL_RECTANGLE
 argument_list|(
 name|crop_tool
 operator|->
-name|rectangle
+name|widget
 argument_list|)
 argument_list|,
 name|shrink_merged
