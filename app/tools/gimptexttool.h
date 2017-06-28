@@ -177,6 +177,16 @@ DECL|member|drawing_blocked
 name|gboolean
 name|drawing_blocked
 decl_stmt|;
+DECL|member|widget
+name|GimpToolWidget
+modifier|*
+name|widget
+decl_stmt|;
+DECL|member|grab_widget
+name|GimpToolWidget
+modifier|*
+name|grab_widget
+decl_stmt|;
 comment|/* text editor state: */
 DECL|member|style_overlay
 name|GtkWidget

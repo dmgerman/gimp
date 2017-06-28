@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprectangletool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptextoptions.h"
 end_include
 
@@ -1036,7 +1030,7 @@ decl_stmt|;
 name|GtkRequisition
 name|requisition
 decl_stmt|;
-name|gint
+name|gdouble
 name|x
 decl_stmt|,
 name|y
@@ -1054,6 +1048,8 @@ expr_stmt|;
 name|g_object_get
 argument_list|(
 name|text_tool
+operator|->
+name|widget
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -2041,14 +2037,6 @@ break|break;
 case|case
 name|GDK_KEY_Escape
 case|:
-name|gimp_rectangle_tool_cancel
-argument_list|(
-name|GIMP_RECTANGLE_TOOL
-argument_list|(
-name|text_tool
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_tool_control
 argument_list|(
 name|GIMP_TOOL
@@ -2610,7 +2598,7 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|gint
+name|gdouble
 name|off_x
 decl_stmt|,
 name|off_y
@@ -2656,6 +2644,8 @@ expr_stmt|;
 name|g_object_get
 argument_list|(
 name|text_tool
+operator|->
+name|widget
 argument_list|,
 literal|"x1"
 argument_list|,
