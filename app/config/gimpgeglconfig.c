@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe5d470103
+DECL|enum|__anon27575ebf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -434,7 +434,7 @@ name|num_processors
 operator|=
 literal|1
 expr_stmt|;
-name|GIMP_CONFIG_PROP_UINT
+name|GIMP_CONFIG_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
@@ -719,7 +719,7 @@ name|gegl_config
 operator|->
 name|num_processors
 operator|=
-name|g_value_get_uint
+name|g_value_get_int
 argument_list|(
 name|value
 argument_list|)
@@ -836,7 +836,7 @@ break|break;
 case|case
 name|PROP_NUM_PROCESSORS
 case|:
-name|g_value_set_uint
+name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,

@@ -97,7 +97,7 @@ modifier|*
 name|swap_path
 decl_stmt|;
 DECL|member|num_processors
-name|guint
+name|gint
 name|num_processors
 decl_stmt|;
 DECL|member|tile_cache_size
