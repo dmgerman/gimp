@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2fa62a0103
+DECL|enum|__anon296bcdc30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -290,7 +290,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2fa62a0203
+DECL|enum|__anon296bcdc30203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -304,7 +304,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fa62a0303
+DECL|enum|__anon296bcdc30303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fa62a0403
+DECL|enum|__anon296bcdc30403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13278,23 +13278,39 @@ name|rectangle
 argument_list|,
 literal|"x1"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|offset_x
 argument_list|,
 literal|"y1"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|offset_y
 argument_list|,
 literal|"x2"
 argument_list|,
+call|(
+name|gdouble
+call|)
+argument_list|(
 name|offset_x
 operator|+
 name|width
+argument_list|)
 argument_list|,
 literal|"y2"
 argument_list|,
+call|(
+name|gdouble
+call|)
+argument_list|(
 name|offset_y
 operator|+
 name|height
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
