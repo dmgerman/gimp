@@ -124,14 +124,6 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|not setting GeglConfig:threads
-endif|#
-directive|endif
 name|g_object_set
 argument_list|(
 name|gegl_config
@@ -146,12 +138,12 @@ name|config
 operator|->
 name|tile_cache_size
 argument_list|,
-if|#
-directive|if
-literal|0
-argument_list|"threads",         config->num_processors,
-endif|#
-directive|endif
+literal|"threads"
+argument_list|,
+name|config
+operator|->
+name|num_processors
+argument_list|,
 literal|"use-opencl"
 argument_list|,
 name|config
@@ -256,12 +248,20 @@ modifier|*
 name|config
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|g_object_set (gegl_config (),                 "threads", config->num_processors,                 NULL);
-endif|#
-directive|endif
+name|g_object_set
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|,
+literal|"threads"
+argument_list|,
+name|config
+operator|->
+name|num_processors
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

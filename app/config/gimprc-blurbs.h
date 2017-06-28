@@ -678,7 +678,7 @@ define|#
 directive|define
 name|NUM_PROCESSORS_BLURB
 define|\
-value|_("Sets how many processors GIMP should try to use simultaneously.")
+value|_("Sets how many threads GIMP should use for operations that support it.")
 end_define
 
 begin_define

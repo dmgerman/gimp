@@ -4554,7 +4554,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of _processors to use:"
+literal|"Number of _threads to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4565,6 +4565,61 @@ argument_list|,
 literal|4
 argument_list|,
 name|size_group
+argument_list|)
+expr_stmt|;
+name|vbox2
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_HINT_BOX
+argument_list|,
+literal|"icon-name"
+argument_list|,
+name|GIMP_ICON_DIALOG_WARNING
+argument_list|,
+literal|"hint"
+argument_list|,
+name|_
+argument_list|(
+literal|"Threading support is not yet stable.\n"
+literal|"Setting this to greater than one might\n"
+literal|"result in image errors or crashes."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|vbox2
+argument_list|,
+literal|1
+argument_list|,
+literal|2
+argument_list|,
+literal|5
+argument_list|,
+literal|6
+argument_list|,
+name|GTK_FILL
+operator||
+name|GTK_EXPAND
+argument_list|,
+name|GTK_FILL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox2
 argument_list|)
 expr_stmt|;
 endif|#
@@ -11807,7 +11862,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon291163200108
+DECL|struct|__anon2bf36ee70108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12684,7 +12739,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291163200208
+DECL|struct|__anon2bf36ee70208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12822,7 +12877,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291163200308
+DECL|struct|__anon2bf36ee70308
 block|{
 DECL|member|tree_label
 specifier|const

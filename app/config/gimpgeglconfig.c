@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b542ad30103
+DECL|enum|__anon28fe5d470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -422,6 +422,18 @@ argument_list|,
 name|GIMP_MAX_NUM_THREADS
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|Defaulting # of threads to 1
+endif|#
+directive|endif
+name|num_processors
+operator|=
+literal|1
+expr_stmt|;
 name|GIMP_CONFIG_PROP_UINT
 argument_list|(
 name|object_class
@@ -430,7 +442,7 @@ name|PROP_NUM_PROCESSORS
 argument_list|,
 literal|"num-processors"
 argument_list|,
-literal|"Number of processors to use"
+literal|"Number of threads to use"
 argument_list|,
 name|NUM_PROCESSORS_BLURB
 argument_list|,
