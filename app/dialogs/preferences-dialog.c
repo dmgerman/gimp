@@ -5997,25 +5997,6 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
-literal|"playground-handle-transform-tool"
-argument_list|,
-name|_
-argument_list|(
-literal|"_Handle Transform tool"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
 literal|"playground-seamless-clone-tool"
 argument_list|,
 name|_
@@ -11826,7 +11807,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b325b310108
+DECL|struct|__anon291163200108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -12703,7 +12684,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b325b310208
+DECL|struct|__anon291163200208
 block|{
 DECL|member|property_name
 specifier|const
@@ -12841,7 +12822,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b325b310308
+DECL|struct|__anon291163200308
 block|{
 DECL|member|tree_label
 specifier|const
