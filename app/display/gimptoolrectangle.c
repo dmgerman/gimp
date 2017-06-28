@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bcdc30103
+DECL|enum|__anon289bf8ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -230,6 +230,9 @@ name|PROP_PRECISION
 block|,
 DECL|enumerator|PROP_NARROW_MODE
 name|PROP_NARROW_MODE
+block|,
+DECL|enumerator|PROP_FORCE_NARROW_MODE
+name|PROP_FORCE_NARROW_MODE
 block|,
 DECL|enumerator|PROP_DRAW_ELLIPSE
 name|PROP_DRAW_ELLIPSE
@@ -290,7 +293,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bcdc30203
+DECL|enum|__anon289bf8ba0203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -304,7 +307,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296bcdc30303
+DECL|enum|__anon289bf8ba0303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -347,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296bcdc30403
+DECL|enum|__anon289bf8ba0403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -507,6 +510,11 @@ comment|/* Whether or not the rectangle is in a 'narrow situation' i.e. it is   
 DECL|member|narrow_mode
 name|gboolean
 name|narrow_mode
+decl_stmt|;
+comment|/* This boolean allows to always set narrow mode */
+DECL|member|force_narrow_mode
+name|gboolean
+name|force_narrow_mode
 decl_stmt|;
 comment|/* Whether or not to draw an ellipse inside the rectangle */
 DECL|member|draw_ellipse
@@ -1785,6 +1793,28 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
+name|PROP_FORCE_NARROW_MODE
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"force-narrow-mode"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
 name|PROP_DRAW_ELLIPSE
 argument_list|,
 name|g_param_spec_boolean
@@ -2866,6 +2896,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_FORCE_NARROW_MODE
+case|:
+name|private
+operator|->
+name|force_narrow_mode
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_DRAW_ELLIPSE
 case|:
 name|private
@@ -3246,6 +3289,19 @@ argument_list|,
 name|private
 operator|->
 name|narrow_mode
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_FORCE_NARROW_MODE
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|private
+operator|->
+name|force_narrow_mode
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5128,7 +5184,20 @@ name|y2
 operator|=
 name|snapped_y
 expr_stmt|;
-comment|/* Created rectangles should not be started in narrow-mode */
+comment|/* Unless forced, created rectangles should not be started in        * narrow-mode        */
+if|if
+condition|(
+name|private
+operator|->
+name|force_narrow_mode
+condition|)
+name|private
+operator|->
+name|narrow_mode
+operator|=
+name|TRUE
+expr_stmt|;
+else|else
 name|private
 operator|->
 name|narrow_mode
@@ -7359,6 +7428,19 @@ name|visible_rectangle_height
 argument_list|)
 expr_stmt|;
 comment|/* Determine if we are in narrow-mode or not. */
+if|if
+condition|(
+name|private
+operator|->
+name|force_narrow_mode
+condition|)
+name|private
+operator|->
+name|narrow_mode
+operator|=
+name|TRUE
+expr_stmt|;
+else|else
 name|private
 operator|->
 name|narrow_mode
