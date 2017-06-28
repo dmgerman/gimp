@@ -78,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpmenufactory.h"
 end_include
 
@@ -138,25 +126,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprectangleoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89e16f0103
+DECL|enum|__anon29251c650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
-init|=
-name|GIMP_RECTANGLE_OPTIONS_PROP_LAST
-operator|+
-literal|1
 block|,
 DECL|enumerator|PROP_FONT_SIZE
 name|PROP_FONT_SIZE
@@ -375,7 +353,7 @@ argument|gimp_text_options
 argument_list|,
 argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_text_options_config_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 NULL)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_text_options_config_iface_init)
 argument_list|)
 end_macro
 
@@ -434,27 +412,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_text_options_get_property
-expr_stmt|;
-comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop, Text and the Rectangle Select tools.    */
-name|GIMP_CONFIG_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
-argument_list|,
-literal|"highlight"
-argument_list|,
-name|_
-argument_list|(
-literal|"Highlight"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_PROP_UNIT
 argument_list|(
@@ -810,11 +767,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_options_install_properties
-argument_list|(
-name|object_class
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1138,13 +1090,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_rectangle_options_get_property
+name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
 name|object
 argument_list|,
 name|property_id
-argument_list|,
-name|value
 argument_list|,
 name|pspec
 argument_list|)
@@ -1381,13 +1331,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_rectangle_options_set_property
+name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
 name|object
 argument_list|,
 name|property_id
-argument_list|,
-name|value
 argument_list|,
 name|pspec
 argument_list|)
