@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e4e250103
+DECL|enum|__anon29cdcf870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e4e250203
+DECL|enum|__anon29cdcf870203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -310,7 +310,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290e4e250303
+DECL|enum|__anon29cdcf870303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290e4e250403
+DECL|enum|__anon29cdcf870403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -6140,17 +6140,33 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GimpToolRectanglePrivate
+modifier|*
+name|private
+init|=
+name|rectangle
+operator|->
+name|private
+decl_stmt|;
 name|GimpRectangleFunction
 name|function
 init|=
 name|GIMP_TOOL_RECTANGLE_DEAD
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|if (private->suppress_updates)     {       private->suppress_updates--;       return;     }
-endif|#
-directive|endif
+if|if
+condition|(
+name|private
+operator|->
+name|suppress_updates
+condition|)
+block|{
+name|private
+operator|->
+name|suppress_updates
+operator|--
+expr_stmt|;
+return|return;
+block|}
 if|if
 condition|(
 operator|!
@@ -6766,13 +6782,13 @@ argument_list|(
 name|rectangle
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
 comment|/*  Evil hack to suppress oper updates. We do this because we don't    *  want the rectangle tool to change function while the rectangle    *  is being resized or moved using the keyboard.    */
-block|private->suppress_updates = 2;
-endif|#
-directive|endif
+name|private
+operator|->
+name|suppress_updates
+operator|=
+literal|2
+expr_stmt|;
 return|return
 name|TRUE
 return|;
