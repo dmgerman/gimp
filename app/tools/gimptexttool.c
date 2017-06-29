@@ -3775,6 +3775,13 @@ literal|"force-narrow-mode"
 argument_list|,
 name|TRUE
 argument_list|,
+literal|"status-title"
+argument_list|,
+name|_
+argument_list|(
+literal|"Text box: "
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

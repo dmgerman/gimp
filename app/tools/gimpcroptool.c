@@ -1367,6 +1367,20 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|widget
+argument_list|,
+literal|"status-title"
+argument_list|,
+name|_
+argument_list|(
+literal|"Crop to: "
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_set_widget
 argument_list|(
 name|GIMP_DRAW_TOOL
