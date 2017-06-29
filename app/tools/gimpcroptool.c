@@ -876,7 +876,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* HACK: force CREATING on a newly created rectangle; otherwise,        * the above binding of properties would cause the rectangle to        * start with the size from tool options.        */
+comment|/* HACK: force CREATING on a newly created rectangle; otherwise,        * property bindings would cause the rectangle to start with the        * size from tool options.        */
 name|gimp_tool_rectangle_set_function
 argument_list|(
 name|GIMP_TOOL_RECTANGLE
@@ -1393,6 +1393,11 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
+name|GBinding
+modifier|*
+name|binding
+init|=
 name|g_object_bind_property
 argument_list|(
 name|G_OBJECT
@@ -1419,7 +1424,21 @@ name|G_BINDING_SYNC_CREATE
 operator||
 name|G_BINDING_BIDIRECTIONAL
 argument_list|)
+decl_stmt|;
+name|crop_tool
+operator|->
+name|bindings
+operator|=
+name|g_list_prepend
+argument_list|(
+name|crop_tool
+operator|->
+name|bindings
+argument_list|,
+name|binding
+argument_list|)
 expr_stmt|;
+block|}
 name|g_signal_connect
 argument_list|(
 name|widget
@@ -1871,6 +1890,25 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/*  disconnect bindings manually so they are really gone *now*, we    *  might be in the middle of a signal emission that keeps the    *  widget and its bindings alive.    */
+name|g_list_free_full
+argument_list|(
+name|crop_tool
+operator|->
+name|bindings
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_object_unref
+argument_list|)
+expr_stmt|;
+name|crop_tool
+operator|->
+name|bindings
+operator|=
+name|NULL
 expr_stmt|;
 name|gimp_draw_tool_set_widget
 argument_list|(

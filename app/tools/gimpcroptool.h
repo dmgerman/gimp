@@ -138,6 +138,11 @@ name|GimpToolWidget
 modifier|*
 name|grab_widget
 decl_stmt|;
+DECL|member|bindings
+name|GList
+modifier|*
+name|bindings
+decl_stmt|;
 block|}
 struct|;
 end_struct
