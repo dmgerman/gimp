@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ddf6150103
+DECL|enum|__anon2bd3ecdc0103
 block|{
 DECL|enumerator|GIMP_TOOL_RECTANGLE_DEAD
 name|GIMP_TOOL_RECTANGLE_DEAD
@@ -353,6 +353,17 @@ specifier|const
 name|gchar
 modifier|*
 name|height_property
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_tool_rectangle_rectangle_is_first
+parameter_list|(
+name|GimpToolRectangle
+modifier|*
+name|rectangle
 parameter_list|)
 function_decl|;
 end_function_decl

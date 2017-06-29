@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a9ca500103
+DECL|enum|__anon2b1bbd850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,7 +293,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a9ca500203
+DECL|enum|__anon2b1bbd850203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -307,7 +307,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9ca500303
+DECL|enum|__anon2b1bbd850303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9ca500403
+DECL|enum|__anon2b1bbd850403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -410,6 +410,11 @@ struct|struct
 name|_GimpToolRectanglePrivate
 block|{
 comment|/* The following members are "constants", that is, variables that are setup    * during gimp_tool_rectangle_button_press and then only read.    */
+comment|/* Whether or not the rectangle currently being rubber-banded is the    * first one created with this instance, this determines if we can    * undo it on button_release.    */
+DECL|member|is_first
+name|gboolean
+name|is_first
+decl_stmt|;
 comment|/* Whether or not the rectangle currently being rubber-banded was    * created from scatch.    */
 DECL|member|is_new
 name|gboolean
@@ -5152,6 +5157,41 @@ if|if
 condition|(
 name|private
 operator|->
+name|x1
+operator|==
+name|private
+operator|->
+name|x2
+operator|&&
+name|private
+operator|->
+name|y1
+operator|==
+name|private
+operator|->
+name|y2
+condition|)
+block|{
+name|private
+operator|->
+name|is_first
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|private
+operator|->
+name|is_first
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|private
+operator|->
 name|function
 operator|==
 name|GIMP_TOOL_RECTANGLE_CREATING
@@ -5403,16 +5443,53 @@ block|{
 case|case
 name|GIMP_BUTTON_RELEASE_NO_MOTION
 case|:
-comment|/* Treat a long click without movement like a normal change */
+comment|/* If the first created rectangle was not expanded, halt the        * tool...        */
+if|if
+condition|(
+name|gimp_tool_rectangle_rectangle_is_first
+argument_list|(
+name|rectangle
+argument_list|)
+condition|)
+block|{
+name|response
+operator|=
+name|GIMP_TOOL_WIDGET_RESPONSE_CANCEL
+expr_stmt|;
+break|break;
+block|}
+comment|/* ...else fallthrough and treat a long click without movement        * like a normal change        */
 case|case
 name|GIMP_BUTTON_RELEASE_NORMAL
 case|:
+comment|/* If a normal click-drag-release actually created a rectangle        * with content...        */
+if|if
+condition|(
+name|private
+operator|->
+name|x1
+operator|!=
+name|private
+operator|->
+name|x2
+operator|&&
+name|private
+operator|->
+name|y1
+operator|!=
+name|private
+operator|->
+name|y2
+condition|)
+block|{
 name|gimp_tool_rectangle_change_complete
 argument_list|(
 name|rectangle
 argument_list|)
 expr_stmt|;
 break|break;
+block|}
+comment|/* ...else fallthrough and undo the operation, we can't have        * zero-extent rectangles        */
 case|case
 name|GIMP_BUTTON_RELEASE_CANCEL
 case|:
@@ -5456,7 +5533,7 @@ expr_stmt|;
 comment|/* If the first created rectangle was canceled, halt the tool */
 if|if
 condition|(
-name|gimp_tool_rectangle_rectangle_is_new
+name|gimp_tool_rectangle_rectangle_is_first
 argument_list|(
 name|rectangle
 argument_list|)
@@ -13121,6 +13198,40 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_tool_rectangle_rectangle_is_first:  * @rectangle:  *  * Returns: %TRUE if the user is creating the first rectangle with  * this instance from scratch, %FALSE if modifying an existing  * rectangle, or creating a new rectangle, discarding the existing  * one. This function is only meaningful in _motion and  * _button_release.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_tool_rectangle_rectangle_is_first (GimpToolRectangle * rectangle)
+name|gimp_tool_rectangle_rectangle_is_first
+parameter_list|(
+name|GimpToolRectangle
+modifier|*
+name|rectangle
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_RECTANGLE
+argument_list|(
+name|rectangle
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|rectangle
+operator|->
+name|private
+operator|->
+name|is_first
+return|;
 block|}
 end_function
 
