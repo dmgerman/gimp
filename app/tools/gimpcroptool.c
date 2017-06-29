@@ -854,7 +854,7 @@ name|gimp_tool_control
 argument_list|(
 name|tool
 argument_list|,
-name|GIMP_TOOL_ACTION_COMMIT
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|tool
 operator|->
