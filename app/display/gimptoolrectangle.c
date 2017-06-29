@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27920ec60103
+DECL|enum|__anon290e4e250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27920ec60203
+DECL|enum|__anon290e4e250203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -310,7 +310,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27920ec60303
+DECL|enum|__anon290e4e250303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27920ec60403
+DECL|enum|__anon290e4e250403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2370,6 +2370,14 @@ operator|->
 name|function
 operator|=
 name|GIMP_TOOL_RECTANGLE_CREATING
+expr_stmt|;
+name|rectangle
+operator|->
+name|private
+operator|->
+name|is_first
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -5335,41 +5343,6 @@ if|if
 condition|(
 name|private
 operator|->
-name|x1
-operator|==
-name|private
-operator|->
-name|x2
-operator|&&
-name|private
-operator|->
-name|y1
-operator|==
-name|private
-operator|->
-name|y2
-condition|)
-block|{
-name|private
-operator|->
-name|is_first
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-else|else
-block|{
-name|private
-operator|->
-name|is_first
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|private
-operator|->
 name|function
 operator|==
 name|GIMP_TOOL_RECTANGLE_CREATING
@@ -5778,6 +5751,12 @@ name|gimp_tool_rectangle_changed
 argument_list|(
 name|widget
 argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|is_first
+operator|=
+name|FALSE
 expr_stmt|;
 comment|/*  emit response at the end, so everything is up to date even if    *  a signal handler decides hot to shut down the rectangle    */
 if|if
