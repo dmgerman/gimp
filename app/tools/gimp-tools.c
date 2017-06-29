@@ -777,6 +777,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|tool_manager_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -832,11 +837,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|tool_manager_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
