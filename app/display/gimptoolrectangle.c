@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bf8ba0103
+DECL|enum|__anon29b547570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,7 +293,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bf8ba0203
+DECL|enum|__anon29b547570203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -307,7 +307,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289bf8ba0303
+DECL|enum|__anon29b547570303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289bf8ba0403
+DECL|enum|__anon29b547570403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5355,6 +5355,11 @@ name|rectangle
 operator|->
 name|private
 decl_stmt|;
+name|gint
+name|response
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|private
@@ -5368,11 +5373,6 @@ argument_list|(
 name|widget
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|rectangle
 argument_list|)
 expr_stmt|;
 comment|/* On button release, we are not rubber-banding the rectangle any longer. */
@@ -5457,16 +5457,10 @@ argument_list|(
 name|rectangle
 argument_list|)
 condition|)
-block|{
-name|gimp_tool_widget_response
-argument_list|(
-name|widget
-argument_list|,
+name|response
+operator|=
 name|GIMP_TOOL_WIDGET_RESPONSE_CANCEL
-argument_list|)
 expr_stmt|;
-return|return;
-block|}
 break|break;
 case|case
 name|GIMP_BUTTON_RELEASE_CLICK
@@ -5480,16 +5474,10 @@ name|function
 operator|!=
 name|GIMP_TOOL_RECTANGLE_DEAD
 condition|)
-block|{
-name|gimp_tool_widget_response
-argument_list|(
-name|widget
-argument_list|,
+name|response
+operator|=
 name|GIMP_TOOL_WIDGET_RESPONSE_CONFIRM
-argument_list|)
 expr_stmt|;
-return|return;
-block|}
 break|break;
 case|case
 name|GIMP_BUTTON_RELEASE_NO_MOTION
@@ -5539,9 +5527,18 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+comment|/*  emit response at the end, so everything is up to date even if    *  a signal handler decides hot to shut down the rectangle    */
+if|if
+condition|(
+name|response
+operator|!=
+literal|0
+condition|)
+name|gimp_tool_widget_response
 argument_list|(
-name|rectangle
+name|widget
+argument_list|,
+name|response
 argument_list|)
 expr_stmt|;
 block|}
