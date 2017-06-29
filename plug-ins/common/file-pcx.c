@@ -1072,7 +1072,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2924d12b0108
+DECL|struct|__anon2962f1c70108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1149,7 +1149,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2924d12b0208
+DECL|struct|__anon2962f1c70208
 specifier|static
 struct|struct
 block|{
@@ -4590,6 +4590,9 @@ name|guchar
 modifier|*
 name|line
 decl_stmt|;
+name|gint
+name|x
+decl_stmt|;
 name|line
 operator|=
 operator|(
@@ -4613,9 +4616,8 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|gint
 name|x
-init|=
+operator|=
 literal|0
 init|;
 name|x
