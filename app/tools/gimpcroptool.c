@@ -621,6 +621,19 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_CROP
 argument_list|)
 expr_stmt|;
+name|gimp_draw_tool_set_default_status
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Click-Drag to draw a crop rectangle"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -972,18 +985,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|display
-argument_list|,
-name|_
-argument_list|(
-literal|"Click or press Enter to crop"
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|crop_tool
@@ -1013,6 +1014,18 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|_
+argument_list|(
+literal|"Click or press Enter to crop"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
