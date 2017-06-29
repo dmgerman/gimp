@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b547570103
+DECL|enum|__anon29a9ca500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -293,7 +293,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b547570203
+DECL|enum|__anon29a9ca500203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -307,7 +307,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b547570303
+DECL|enum|__anon29a9ca500303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b547570403
+DECL|enum|__anon29a9ca500403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5401,6 +5401,10 @@ name|release_type
 condition|)
 block|{
 case|case
+name|GIMP_BUTTON_RELEASE_NO_MOTION
+case|:
+comment|/* Treat a long click without movement like a normal change */
+case|case
 name|GIMP_BUTTON_RELEASE_NORMAL
 case|:
 name|gimp_tool_rectangle_change_complete
@@ -5478,10 +5482,6 @@ name|response
 operator|=
 name|GIMP_TOOL_WIDGET_RESPONSE_CONFIRM
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_BUTTON_RELEASE_NO_MOTION
-case|:
 break|break;
 block|}
 comment|/* We must update this. */
