@@ -130,7 +130,7 @@ struct|struct
 name|_GimpOperationScalarMultiplyClass
 block|{
 DECL|member|parent_class
-name|GeglOperationPointComposerClass
+name|GeglOperationPointFilterClass
 name|parent_class
 decl_stmt|;
 block|}
