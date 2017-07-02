@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cdcf870103
+DECL|enum|__anon2900dcb10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cdcf870203
+DECL|enum|__anon2900dcb10203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -310,7 +310,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cdcf870303
+DECL|enum|__anon2900dcb10303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cdcf870403
+DECL|enum|__anon2900dcb10403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -1941,7 +1941,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Rectangle :"
+literal|"Rectangle: "
 argument_list|)
 argument_list|,
 name|GIMP_PARAM_READWRITE

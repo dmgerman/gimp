@@ -2614,7 +2614,7 @@ argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"Rectangle :"
+literal|"Rectangle: "
 argument_list|)
 argument_list|,
 name|NULL
