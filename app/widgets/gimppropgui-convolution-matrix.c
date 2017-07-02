@@ -486,7 +486,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_convolution_matrix (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_convolution_matrix (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator)
 name|_gimp_prop_gui_new_convolution_matrix
 parameter_list|(
 name|GObject
@@ -512,8 +512,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 block|{
 name|GtkWidget
@@ -787,7 +790,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d328bb0108
+DECL|struct|__anon2a95a1ad0108
 block|{
 DECL|member|tooltip
 specifier|const
@@ -1204,6 +1207,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -1240,6 +1245,8 @@ argument_list|,
 name|area
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1329,7 +1336,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1373,7 +1382,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

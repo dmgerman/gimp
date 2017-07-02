@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimppropgui.c  * Copyright (C) 2002-2014  Michael Natterer<mitch@gimp.org>  *                          Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimppropgui.c  * Copyright (C) 2002-2017  Michael Natterer<mitch@gimp.org>  *                          Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -133,6 +133,12 @@ begin_include
 include|#
 directive|include
 file|"gimppropgui-diffration-patterns.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppropgui-spiral.h"
 end_include
 
 begin_include
@@ -299,7 +305,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_widget_new (GObject * config,const gchar * property_name,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator,const gchar ** label)
+DECL|function|gimp_prop_widget_new (GObject * config,const gchar * property_name,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator,const gchar ** label)
 name|gimp_prop_widget_new
 parameter_list|(
 name|GObject
@@ -322,8 +328,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|,
 specifier|const
 name|gchar
@@ -371,7 +380,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|,
 name|label
 argument_list|)
@@ -382,7 +393,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_widget_new_from_pspec (GObject * config,GParamSpec * pspec,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator,const gchar ** label)
+DECL|function|gimp_prop_widget_new_from_pspec (GObject * config,GParamSpec * pspec,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator,const gchar ** label)
 name|gimp_prop_widget_new_from_pspec
 parameter_list|(
 name|GObject
@@ -404,8 +415,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|,
 specifier|const
 name|gchar
@@ -1675,7 +1689,7 @@ name|button
 operator|=
 name|create_picker_func
 argument_list|(
-name|picker_creator
+name|creator
 argument_list|,
 name|pspec
 operator|->
@@ -1881,8 +1895,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 function_decl|;
 end_typedef
@@ -1891,7 +1908,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299e556c0108
+DECL|struct|__anon29477bd10108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1946,6 +1963,12 @@ name|_gimp_prop_gui_new_diffraction_patterns
 block|}
 block|,
 block|{
+literal|"GimpGegl-gegl-spiral-config"
+block|,
+name|_gimp_prop_gui_new_spiral
+block|}
+block|,
+block|{
 name|NULL
 block|,
 name|_gimp_prop_gui_new_generic
@@ -1957,7 +1980,7 @@ end_struct
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_gui_new (GObject * config,GType owner_type,GParamFlags flags,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|gimp_prop_gui_new (GObject * config,GType owner_type,GParamFlags flags,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator)
 name|gimp_prop_gui_new
 parameter_list|(
 name|GObject
@@ -1981,8 +2004,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2225,7 +2251,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2671,7 +2699,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon299e556c0208
+DECL|struct|__anon29477bd10208
 block|{
 DECL|member|kelvin
 name|gdouble

@@ -143,7 +143,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_generic (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_generic (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator)
 name|_gimp_prop_gui_new_generic
 parameter_list|(
 name|GObject
@@ -169,8 +169,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 block|{
 name|GtkWidget
@@ -362,7 +365,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|,
 operator|&
 name|label_x
@@ -382,7 +387,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|,
 operator|&
 name|label_y
@@ -700,7 +707,7 @@ name|button
 operator|=
 name|create_picker_func
 argument_list|(
-name|picker_creator
+name|creator
 argument_list|,
 name|pspec_name
 argument_list|,
@@ -783,7 +790,9 @@ name|context
 argument_list|,
 name|create_picker_func
 argument_list|,
-name|picker_creator
+name|create_controller_func
+argument_list|,
+name|creator
 argument_list|,
 operator|&
 name|label

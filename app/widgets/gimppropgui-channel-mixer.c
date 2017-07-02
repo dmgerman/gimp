@@ -60,7 +60,7 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_prop_gui_new_channel_mixer (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,gpointer picker_creator)
+DECL|function|_gimp_prop_gui_new_channel_mixer (GObject * config,GParamSpec ** param_specs,guint n_param_specs,GeglRectangle * area,GimpContext * context,GimpCreatePickerFunc create_picker_func,GimpCreateControllerFunc create_controller_func,gpointer creator)
 name|_gimp_prop_gui_new_channel_mixer
 parameter_list|(
 name|GObject
@@ -86,8 +86,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 block|{
 name|GtkWidget
@@ -233,6 +236,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -274,6 +279,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -310,6 +317,8 @@ argument_list|,
 name|area
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -411,6 +420,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -452,6 +463,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -488,6 +501,8 @@ argument_list|,
 name|area
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -589,6 +604,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -625,6 +642,8 @@ argument_list|,
 name|area
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -671,6 +690,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|label
 argument_list|)
@@ -707,6 +728,8 @@ argument_list|,
 name|area
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

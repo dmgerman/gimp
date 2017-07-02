@@ -44,8 +44,11 @@ parameter_list|,
 name|GimpCreatePickerFunc
 name|create_picker_func
 parameter_list|,
+name|GimpCreateControllerFunc
+name|create_controller_func
+parameter_list|,
 name|gpointer
-name|picker_creator
+name|creator
 parameter_list|)
 function_decl|;
 end_function_decl
