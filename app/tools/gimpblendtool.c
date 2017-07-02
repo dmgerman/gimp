@@ -2652,6 +2652,22 @@ operator|->
 name|end_y
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|blend_tool
+operator|->
+name|widget
+argument_list|,
+literal|"status-title"
+argument_list|,
+name|_
+argument_list|(
+literal|"Blend: "
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_set_widget
 argument_list|(
 name|GIMP_DRAW_TOOL
