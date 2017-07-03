@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-spiral.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppropgui-eval.h"
 end_include
 
@@ -169,6 +163,18 @@ begin_include
 include|#
 directive|include
 file|"gimppropgui-hue-saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppropgui-spiral.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppropgui-supernova.h"
 end_include
 
 begin_include
@@ -1935,7 +1941,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b5505f60108
+DECL|struct|__anon2968a1860108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1993,6 +1999,12 @@ block|{
 literal|"GimpGegl-gegl-spiral-config"
 block|,
 name|_gimp_prop_gui_new_spiral
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-supernova-config"
+block|,
+name|_gimp_prop_gui_new_supernova
 block|}
 block|,
 block|{
@@ -2726,7 +2738,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b5505f60208
+DECL|struct|__anon2968a1860208
 block|{
 DECL|member|kelvin
 name|gdouble
