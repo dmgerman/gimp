@@ -191,7 +191,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,7 +208,7 @@ name|line
 parameter_list|,
 name|gint
 modifier|*
-name|slider_count
+name|n_sliders
 parameter_list|)
 function_decl|;
 end_function_decl

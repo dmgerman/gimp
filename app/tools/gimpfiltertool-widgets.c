@@ -182,7 +182,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -747,7 +747,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_filter_tool_set_slider_line (Controller * controller,GeglRectangle * area,gdouble x1,gdouble y1,gdouble x2,gdouble y2,const GimpControllerSlider * sliders,gint slider_count)
+DECL|function|gimp_filter_tool_set_slider_line (Controller * controller,GeglRectangle * area,gdouble x1,gdouble y1,gdouble x2,gdouble y2,const GimpControllerSlider * sliders,gint n_sliders)
 name|gimp_filter_tool_set_slider_line
 parameter_list|(
 name|Controller
@@ -776,7 +776,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -893,7 +893,7 @@ argument_list|)
 argument_list|,
 name|sliders
 argument_list|,
-name|slider_count
+name|n_sliders
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -951,7 +951,7 @@ modifier|*
 name|sliders
 decl_stmt|;
 name|gint
-name|slider_count
+name|n_sliders
 decl_stmt|;
 name|gint
 name|off_x
@@ -1009,7 +1009,7 @@ name|widget
 argument_list|)
 argument_list|,
 operator|&
-name|slider_count
+name|n_sliders
 argument_list|)
 expr_stmt|;
 name|gimp_filter_tool_get_drawable_area
@@ -1077,7 +1077,7 @@ name|y2
 argument_list|,
 name|sliders
 argument_list|,
-name|slider_count
+name|n_sliders
 argument_list|)
 expr_stmt|;
 block|}

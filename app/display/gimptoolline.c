@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a34451c0103
+DECL|enum|__anon295314320103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34451c0203
+DECL|enum|__anon295314320203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3684,7 +3684,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_line_set_sliders (GimpToolLine * line,const GimpControllerSlider * sliders,gint slider_count)
+DECL|function|gimp_tool_line_set_sliders (GimpToolLine * line,const GimpControllerSlider * sliders,gint n_sliders)
 name|gimp_tool_line_set_sliders
 parameter_list|(
 name|GimpToolLine
@@ -3697,7 +3697,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 block|{
 name|GimpToolLinePrivate
@@ -3714,12 +3714,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|slider_count
+name|n_sliders
 operator|==
 literal|0
 operator|||
 operator|(
-name|slider_count
+name|n_sliders
 operator|>
 literal|0
 operator|&&
@@ -3741,7 +3741,7 @@ name|private
 operator|->
 name|sliders
 argument_list|,
-name|slider_count
+name|n_sliders
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -3754,7 +3754,7 @@ name|data
 argument_list|,
 name|sliders
 argument_list|,
-name|slider_count
+name|n_sliders
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -3782,7 +3782,7 @@ begin_function
 specifier|const
 name|GimpControllerSlider
 modifier|*
-DECL|function|gimp_tool_line_get_sliders (GimpToolLine * line,gint * slider_count)
+DECL|function|gimp_tool_line_get_sliders (GimpToolLine * line,gint * n_sliders)
 name|gimp_tool_line_get_sliders
 parameter_list|(
 name|GimpToolLine
@@ -3791,7 +3791,7 @@ name|line
 parameter_list|,
 name|gint
 modifier|*
-name|slider_count
+name|n_sliders
 parameter_list|)
 block|{
 name|GimpToolLinePrivate
@@ -3816,10 +3816,10 @@ name|private
 expr_stmt|;
 if|if
 condition|(
-name|slider_count
+name|n_sliders
 condition|)
 operator|*
-name|slider_count
+name|n_sliders
 operator|=
 name|private
 operator|->

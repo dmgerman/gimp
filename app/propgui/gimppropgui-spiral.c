@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a583b050103
+DECL|enum|__anon277b59080103
 block|{
 DECL|enumerator|GEGL_SPIRAL_TYPE_LINEAR
 name|GEGL_SPIRAL_TYPE_LINEAR
@@ -88,7 +88,7 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|slider_line_callback (GObject * config,GeglRectangle * area,gdouble x1,gdouble y1,gdouble x2,gdouble y2,const GimpControllerSlider * sliders,gint slider_count)
+DECL|function|slider_line_callback (GObject * config,GeglRectangle * area,gdouble x1,gdouble y1,gdouble x2,gdouble y2,const GimpControllerSlider * sliders,gint n_sliders)
 name|slider_line_callback
 parameter_list|(
 name|GObject
@@ -117,7 +117,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 block|{
 name|GeglSpiralType
@@ -445,7 +445,7 @@ literal|2
 index|]
 decl_stmt|;
 name|gint
-name|slider_count
+name|n_sliders
 init|=
 literal|0
 decl_stmt|;
@@ -573,7 +573,7 @@ block|{
 case|case
 name|GEGL_SPIRAL_TYPE_LINEAR
 case|:
-name|slider_count
+name|n_sliders
 operator|=
 literal|1
 expr_stmt|;
@@ -616,7 +616,7 @@ break|break;
 case|case
 name|GEGL_SPIRAL_TYPE_LOGARITHMIC
 case|:
-name|slider_count
+name|n_sliders
 operator|=
 literal|2
 expr_stmt|;
@@ -711,7 +711,7 @@ name|y2
 argument_list|,
 name|sliders
 argument_list|,
-name|slider_count
+name|n_sliders
 argument_list|)
 expr_stmt|;
 block|}

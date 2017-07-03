@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2769d40b0103
+DECL|enum|__anon2be3b9050103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_TYPE_LINE
 name|GIMP_CONTROLLER_TYPE_LINE
@@ -49,7 +49,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2769d40b0208
+DECL|struct|__anon2be3b9050208
 block|{
 DECL|member|value
 name|gdouble
@@ -138,7 +138,7 @@ modifier|*
 name|sliders
 parameter_list|,
 name|gint
-name|slider_count
+name|n_sliders
 parameter_list|)
 function_decl|;
 end_typedef
