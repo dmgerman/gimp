@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include
@@ -790,7 +790,7 @@ comment|/* rotate / flip buttons */
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a95a1ad0108
+DECL|struct|__anon2792a8660108
 block|{
 DECL|member|tooltip
 specifier|const

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include
@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b31cbfb0103
+DECL|enum|__anon2c6426060103
 block|{
 DECL|enumerator|GIMP_PROP_EVAL_FAILED
 name|GIMP_PROP_EVAL_FAILED

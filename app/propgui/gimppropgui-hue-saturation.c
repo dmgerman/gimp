@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include
@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppropwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimppropgui-hue-saturation.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppropwidgets.h"
 end_include
 
 begin_include
@@ -420,7 +420,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2ba7c63d0108
+DECL|struct|__anon296465cc0108
 block|{
 DECL|member|label
 specifier|const

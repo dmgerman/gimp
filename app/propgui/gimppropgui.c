@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include
@@ -84,19 +84,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcolorpanel.h"
+file|"widgets/gimpcolorpanel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpmessagebox.h"
+file|"widgets/gimpmessagebox.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpspinscale.h"
+file|"widgets/gimpspinscale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimppropwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -157,18 +169,6 @@ begin_include
 include|#
 directive|include
 file|"gimppropgui-hue-saturation.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -1935,7 +1935,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e2f3540108
+DECL|struct|__anon2b5505f60108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2726,7 +2726,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon28e2f3540208
+DECL|struct|__anon2b5505f60208
 block|{
 DECL|member|kelvin
 name|gdouble

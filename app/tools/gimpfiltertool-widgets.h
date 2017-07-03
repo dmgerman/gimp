@@ -16,16 +16,6 @@ directive|define
 name|__GIMP_FILTER_TOOL_WIDGETS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"widgets/gimppropgui.h"
-end_include
-
-begin_comment
-comment|/* FIXME remove */
-end_comment
-
 begin_function_decl
 name|GimpToolWidget
 modifier|*

@@ -30,8 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui/propgui-types.h"
 end_include
+
+begin_comment
+comment|/* ugly, but what the heck */
+end_comment
 
 begin_include
 include|#
@@ -54,13 +58,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmenufactory.h"
+file|"propgui/gimppropgui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppropgui.h"
+file|"gimpmenufactory.h"
 end_include
 
 begin_include

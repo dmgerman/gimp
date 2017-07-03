@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include

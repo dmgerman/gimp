@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropgui.h"
+file|"propgui/gimppropgui.h"
 end_include
 
 begin_include

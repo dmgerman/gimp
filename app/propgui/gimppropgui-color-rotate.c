@@ -30,13 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"propgui-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimppropwidgets.h"
 end_include
 
 begin_include
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimppropgui-generic.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppropwidgets.h"
 end_include
 
 begin_include
