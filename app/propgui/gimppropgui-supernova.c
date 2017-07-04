@@ -57,6 +57,12 @@ directive|include
 file|"gimppropgui-supernova.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function
 specifier|static
 name|void
@@ -424,6 +430,11 @@ argument_list|(
 name|creator
 argument_list|,
 name|GIMP_CONTROLLER_TYPE_LINE
+argument_list|,
+name|_
+argument_list|(
+literal|"Supernova: "
+argument_list|)
 argument_list|,
 operator|(
 name|GCallback

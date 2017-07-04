@@ -28,6 +28,11 @@ parameter_list|,
 name|GimpControllerType
 name|controller_type
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status_title
+parameter_list|,
 name|GCallback
 name|callback
 parameter_list|,

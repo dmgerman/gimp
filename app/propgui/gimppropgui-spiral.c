@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277b59080103
+DECL|enum|__anon2b78a86d0103
 block|{
 DECL|enumerator|GEGL_SPIRAL_TYPE_LINEAR
 name|GEGL_SPIRAL_TYPE_LINEAR
@@ -834,6 +834,11 @@ argument_list|(
 name|creator
 argument_list|,
 name|GIMP_CONTROLLER_TYPE_SLIDER_LINE
+argument_list|,
+name|_
+argument_list|(
+literal|"Spiral: "
+argument_list|)
 argument_list|,
 operator|(
 name|GCallback

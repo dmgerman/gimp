@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be3b9050103
+DECL|enum|__anon299edd2c0103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_TYPE_LINE
 name|GIMP_CONTROLLER_TYPE_LINE
@@ -49,7 +49,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3b9050208
+DECL|struct|__anon299edd2c0208
 block|{
 DECL|member|value
 name|gdouble
@@ -191,6 +191,11 @@ name|creator
 parameter_list|,
 name|GimpControllerType
 name|controller_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status_title
 parameter_list|,
 name|GCallback
 name|callback

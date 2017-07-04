@@ -2573,7 +2573,7 @@ end_function
 begin_function
 specifier|static
 name|GCallback
-DECL|function|gimp_operation_tool_add_controller (GimpOperationTool * op_tool,GimpControllerType controller_type,GCallback callback,gpointer callback_data,gpointer * set_func_data)
+DECL|function|gimp_operation_tool_add_controller (GimpOperationTool * op_tool,GimpControllerType controller_type,const gchar * status_title,GCallback callback,gpointer callback_data,gpointer * set_func_data)
 name|gimp_operation_tool_add_controller
 parameter_list|(
 name|GimpOperationTool
@@ -2582,6 +2582,11 @@ name|op_tool
 parameter_list|,
 name|GimpControllerType
 name|controller_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status_title
 parameter_list|,
 name|GCallback
 name|callback
@@ -2617,6 +2622,8 @@ argument_list|(
 name|filter_tool
 argument_list|,
 name|controller_type
+argument_list|,
+name|status_title
 argument_list|,
 name|callback
 argument_list|,

@@ -210,7 +210,7 @@ end_comment
 begin_function
 name|GimpToolWidget
 modifier|*
-DECL|function|gimp_filter_tool_create_widget (GimpFilterTool * filter_tool,GimpControllerType controller_type,GCallback callback,gpointer callback_data,GCallback * set_func,gpointer * set_func_data)
+DECL|function|gimp_filter_tool_create_widget (GimpFilterTool * filter_tool,GimpControllerType controller_type,const gchar * status_title,GCallback callback,gpointer callback_data,GCallback * set_func,gpointer * set_func_data)
 name|gimp_filter_tool_create_widget
 parameter_list|(
 name|GimpFilterTool
@@ -219,6 +219,11 @@ name|filter_tool
 parameter_list|,
 name|GimpControllerType
 name|controller_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|status_title
 parameter_list|,
 name|GCallback
 name|callback
@@ -342,6 +347,19 @@ argument_list|,
 literal|500
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|controller
+operator|->
+name|widget
+argument_list|,
+literal|"status-title"
+argument_list|,
+name|status_title
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|controller
@@ -390,6 +408,19 @@ argument_list|,
 literal|500
 argument_list|,
 literal|500
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|controller
+operator|->
+name|widget
+argument_list|,
+literal|"status-title"
+argument_list|,
+name|status_title
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
