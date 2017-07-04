@@ -332,7 +332,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|tool_manager_get_undo_desc_active
+name|tool_manager_can_undo_active
 parameter_list|(
 name|Gimp
 modifier|*
@@ -349,7 +349,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|tool_manager_get_redo_desc_active
+name|tool_manager_can_redo_active
 parameter_list|(
 name|Gimp
 modifier|*

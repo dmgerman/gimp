@@ -531,7 +531,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|gimp_iscissors_tool_get_undo_desc
+name|gimp_iscissors_tool_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -549,7 +549,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|gimp_iscissors_tool_get_redo_desc
+name|gimp_iscissors_tool_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1379,15 +1379,15 @@ name|gimp_iscissors_tool_cursor_update
 expr_stmt|;
 name|tool_class
 operator|->
-name|get_undo_desc
+name|can_undo
 operator|=
-name|gimp_iscissors_tool_get_undo_desc
+name|gimp_iscissors_tool_can_undo
 expr_stmt|;
 name|tool_class
 operator|->
-name|get_redo_desc
+name|can_redo
 operator|=
-name|gimp_iscissors_tool_get_redo_desc
+name|gimp_iscissors_tool_can_redo
 expr_stmt|;
 name|tool_class
 operator|->
@@ -4623,8 +4623,8 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_iscissors_tool_get_undo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_iscissors_tool_get_undo_desc
+DECL|function|gimp_iscissors_tool_can_undo (GimpTool * tool,GimpDisplay * display)
+name|gimp_iscissors_tool_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4674,8 +4674,8 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_iscissors_tool_get_redo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_iscissors_tool_get_redo_desc
+DECL|function|gimp_iscissors_tool_can_redo (GimpTool * tool,GimpDisplay * display)
+name|gimp_iscissors_tool_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4747,7 +4747,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_iscissors_tool_get_undo_desc
+name|gimp_iscissors_tool_can_undo
 argument_list|(
 name|tool
 argument_list|,
@@ -4869,7 +4869,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_iscissors_tool_get_redo_desc
+name|gimp_iscissors_tool_can_redo
 argument_list|(
 name|tool
 argument_list|,

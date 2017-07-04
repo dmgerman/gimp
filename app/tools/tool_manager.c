@@ -1671,8 +1671,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|tool_manager_get_undo_desc_active (Gimp * gimp,GimpDisplay * display)
-name|tool_manager_get_undo_desc_active
+DECL|function|tool_manager_can_undo_active (Gimp * gimp,GimpDisplay * display)
+name|tool_manager_can_undo_active
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1712,7 +1712,7 @@ name|active_tool
 condition|)
 block|{
 return|return
-name|gimp_tool_get_undo_desc
+name|gimp_tool_can_undo
 argument_list|(
 name|tool_manager
 operator|->
@@ -1732,8 +1732,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|tool_manager_get_redo_desc_active (Gimp * gimp,GimpDisplay * display)
-name|tool_manager_get_redo_desc_active
+DECL|function|tool_manager_can_redo_active (Gimp * gimp,GimpDisplay * display)
+name|tool_manager_can_redo_active
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1773,7 +1773,7 @@ name|active_tool
 condition|)
 block|{
 return|return
-name|gimp_tool_get_redo_desc
+name|gimp_tool_can_redo
 argument_list|(
 name|tool_manager
 operator|->

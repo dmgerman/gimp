@@ -344,7 +344,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_warp_tool_get_undo_desc
+name|gimp_warp_tool_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -361,7 +361,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_warp_tool_get_redo_desc
+name|gimp_warp_tool_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -846,15 +846,15 @@ name|gimp_warp_tool_cursor_update
 expr_stmt|;
 name|tool_class
 operator|->
-name|get_undo_desc
+name|can_undo
 operator|=
-name|gimp_warp_tool_get_undo_desc
+name|gimp_warp_tool_can_undo
 expr_stmt|;
 name|tool_class
 operator|->
-name|get_redo_desc
+name|can_redo
 operator|=
-name|gimp_warp_tool_get_redo_desc
+name|gimp_warp_tool_can_redo
 expr_stmt|;
 name|tool_class
 operator|->
@@ -1959,8 +1959,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_warp_tool_get_undo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_warp_tool_get_undo_desc
+DECL|function|gimp_warp_tool_can_undo (GimpTool * tool,GimpDisplay * display)
+name|gimp_warp_tool_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -2044,8 +2044,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_warp_tool_get_redo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_warp_tool_get_redo_desc
+DECL|function|gimp_warp_tool_can_redo (GimpTool * tool,GimpDisplay * display)
+name|gimp_warp_tool_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4609,7 +4609,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_warp_tool_get_undo_desc
+name|gimp_warp_tool_can_undo
 argument_list|(
 name|tool
 argument_list|,

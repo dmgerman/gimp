@@ -1358,7 +1358,7 @@ condition|)
 block|{
 name|tool_undo
 operator|=
-name|tool_manager_get_undo_desc_active
+name|tool_manager_can_undo_active
 argument_list|(
 name|image
 operator|->
@@ -1369,7 +1369,7 @@ argument_list|)
 expr_stmt|;
 name|tool_redo
 operator|=
-name|tool_manager_get_redo_desc_active
+name|tool_manager_can_redo_active
 argument_list|(
 name|image
 operator|->

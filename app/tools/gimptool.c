@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290df6890103
+DECL|enum|__anon276ef3350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -519,7 +519,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_real_get_undo_desc
+name|gimp_tool_real_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -537,7 +537,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|gimp_tool_real_get_redo_desc
+name|gimp_tool_real_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -827,15 +827,15 @@ name|gimp_tool_real_cursor_update
 expr_stmt|;
 name|klass
 operator|->
-name|get_undo_desc
+name|can_undo
 operator|=
-name|gimp_tool_real_get_undo_desc
+name|gimp_tool_real_can_undo
 expr_stmt|;
 name|klass
 operator|->
-name|get_redo_desc
+name|can_redo
 operator|=
-name|gimp_tool_real_get_redo_desc
+name|gimp_tool_real_can_redo
 expr_stmt|;
 name|klass
 operator|->
@@ -1770,8 +1770,8 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_real_get_undo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_tool_real_get_undo_desc
+DECL|function|gimp_tool_real_can_undo (GimpTool * tool,GimpDisplay * display)
+name|gimp_tool_real_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1793,8 +1793,8 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_real_get_redo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_tool_real_get_redo_desc
+DECL|function|gimp_tool_real_can_redo (GimpTool * tool,GimpDisplay * display)
+name|gimp_tool_real_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4364,8 +4364,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_get_undo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_tool_get_undo_desc
+DECL|function|gimp_tool_can_undo (GimpTool * tool,GimpDisplay * display)
+name|gimp_tool_can_undo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4410,7 +4410,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|get_undo_desc
+name|can_undo
 argument_list|(
 name|tool
 argument_list|,
@@ -4427,8 +4427,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_tool_get_redo_desc (GimpTool * tool,GimpDisplay * display)
-name|gimp_tool_get_redo_desc
+DECL|function|gimp_tool_can_redo (GimpTool * tool,GimpDisplay * display)
+name|gimp_tool_can_redo
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4473,7 +4473,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|get_redo_desc
+name|can_redo
 argument_list|(
 name|tool
 argument_list|,
