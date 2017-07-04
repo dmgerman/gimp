@@ -178,12 +178,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|blurb
+name|label
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help
+name|tooltip
 parameter_list|,
 specifier|const
 name|gchar
