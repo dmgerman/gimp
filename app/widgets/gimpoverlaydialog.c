@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1699c0103
+DECL|enum|__anon28fd45a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1699c0203
+DECL|enum|__anon28fd45a70203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -2153,7 +2153,7 @@ literal|"title"
 argument_list|,
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|,
 literal|"icon-name"
 argument_list|,

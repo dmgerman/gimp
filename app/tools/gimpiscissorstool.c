@@ -5411,11 +5411,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|gimp_tool_get_undo_desc
+argument_list|(
 name|tool
-operator|->
-name|tool_info
-operator|->
-name|blurb
+argument_list|)
 argument_list|,
 name|iscissors
 operator|->

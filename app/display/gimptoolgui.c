@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8dc9a40103
+DECL|enum|__anon2c338ef00103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -951,7 +951,7 @@ name|title
 operator|=
 name|tool_info
 operator|->
-name|blurb
+name|label
 expr_stmt|;
 if|if
 condition|(
@@ -962,7 +962,7 @@ name|description
 operator|=
 name|tool_info
 operator|->
-name|blurb
+name|label
 expr_stmt|;
 if|if
 condition|(
@@ -1194,7 +1194,7 @@ name|private
 operator|->
 name|tool_info
 operator|->
-name|blurb
+name|label
 expr_stmt|;
 name|g_object_set
 argument_list|(
@@ -1282,7 +1282,7 @@ name|private
 operator|->
 name|tool_info
 operator|->
-name|help
+name|tooltip
 expr_stmt|;
 if|if
 condition|(

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9763d0103
+DECL|enum|__anon2754e59a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1437,7 +1437,7 @@ name|g_strdup
 argument_list|(
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|)
 else|:
 name|NULL

@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad16f340103
+DECL|enum|__anon2c7e96ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2106,7 +2106,7 @@ name|tool
 operator|->
 name|tool_info
 operator|->
-name|blurb
+name|label
 return|;
 block|}
 end_function

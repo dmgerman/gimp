@@ -1128,7 +1128,7 @@ argument_list|)
 argument_list|,
 name|tool_info
 operator|->
-name|help
+name|tooltip
 argument_list|,
 name|tool_info
 operator|->

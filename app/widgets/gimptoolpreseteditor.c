@@ -1433,7 +1433,7 @@ argument_list|)
 argument_list|,
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_image_set_from_icon_name

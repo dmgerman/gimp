@@ -3691,7 +3691,7 @@ name|tooltip
 operator|=
 name|tool_info
 operator|->
-name|help
+name|tooltip
 expr_stmt|;
 name|entry
 operator|.

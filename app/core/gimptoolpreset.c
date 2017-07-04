@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f5a9d0103
+DECL|enum|__anon2a44dfc30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2240,7 +2240,7 @@ literal|"name"
 argument_list|,
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|,
 literal|"icon-name"
 argument_list|,

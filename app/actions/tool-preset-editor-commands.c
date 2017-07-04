@@ -196,11 +196,11 @@ argument_list|)
 argument_list|,
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|,
 name|preset_tool
 operator|->
-name|blurb
+name|label
 argument_list|)
 expr_stmt|;
 return|return;

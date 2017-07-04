@@ -327,7 +327,7 @@ name|title
 operator|=
 name|tool_info
 operator|->
-name|blurb
+name|label
 expr_stmt|;
 if|if
 condition|(
@@ -338,7 +338,7 @@ name|description
 operator|=
 name|tool_info
 operator|->
-name|help
+name|tooltip
 expr_stmt|;
 if|if
 condition|(

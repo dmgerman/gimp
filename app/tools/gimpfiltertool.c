@@ -5808,7 +5808,7 @@ name|tool
 operator|->
 name|tool_info
 operator|->
-name|blurb
+name|label
 argument_list|)
 expr_stmt|;
 if|if
