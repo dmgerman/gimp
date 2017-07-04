@@ -186,16 +186,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|has_settings
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|import_dialog_title
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|export_dialog_title
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -609,7 +599,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_threshold_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id,gboolean * has_settings,gchar ** import_dialog_title,gchar ** export_dialog_title)
+DECL|function|gimp_threshold_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id,gboolean * has_settings)
 name|gimp_threshold_tool_get_operation
 parameter_list|(
 name|GimpFilterTool
@@ -644,16 +634,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|has_settings
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|import_dialog_title
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|export_dialog_title
 parameter_list|)
 block|{
 operator|*
@@ -671,28 +651,6 @@ operator|*
 name|has_settings
 operator|=
 name|TRUE
-expr_stmt|;
-operator|*
-name|import_dialog_title
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"Import Threshold Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-operator|*
-name|export_dialog_title
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"Export Threshold Settings"
-argument_list|)
-argument_list|)
 expr_stmt|;
 return|return
 name|g_strdup
