@@ -256,9 +256,13 @@ name|import_title
 argument_list|,
 name|export_title
 argument_list|,
+name|gimp_tool_get_help_id
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
 name|filter_tool
-operator|->
-name|help_id
+argument_list|)
+argument_list|)
 argument_list|,
 name|settings_folder
 argument_list|,

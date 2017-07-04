@@ -272,21 +272,6 @@ modifier|*
 modifier|*
 name|description
 parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|undo_desc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|icon_name
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|help_id
-parameter_list|,
 name|gboolean
 modifier|*
 name|has_settings
@@ -1029,7 +1014,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_levels_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gchar ** undo_desc,gchar ** icon_name,gchar ** help_id,gboolean * has_settings)
+DECL|function|gimp_levels_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gboolean * has_settings)
 name|gimp_levels_tool_get_operation
 parameter_list|(
 name|GimpFilterTool
@@ -1045,21 +1030,6 @@ name|gchar
 modifier|*
 modifier|*
 name|description
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|undo_desc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|icon_name
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|help_id
 parameter_list|,
 name|gboolean
 modifier|*
