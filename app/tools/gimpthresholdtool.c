@@ -161,11 +161,6 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|title
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
 name|description
 parameter_list|,
 name|gboolean
@@ -584,17 +579,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_threshold_tool_get_operation (GimpFilterTool * filter_tool,gchar ** title,gchar ** description,gboolean * has_settings)
+DECL|function|gimp_threshold_tool_get_operation (GimpFilterTool * filter_tool,gchar ** description,gboolean * has_settings)
 name|gimp_threshold_tool_get_operation
 parameter_list|(
 name|GimpFilterTool
 modifier|*
 name|filter_tool
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|title
 parameter_list|,
 name|gchar
 modifier|*

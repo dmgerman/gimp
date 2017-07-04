@@ -139,11 +139,6 @@ name|GimpContainer
 modifier|*
 name|settings
 decl_stmt|;
-DECL|member|title
-name|gchar
-modifier|*
-name|title
-decl_stmt|;
 DECL|member|description
 name|gchar
 modifier|*
@@ -232,11 +227,6 @@ parameter_list|(
 name|GimpFilterTool
 modifier|*
 name|filter_tool
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|title
 parameter_list|,
 name|gchar
 modifier|*

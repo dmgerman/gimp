@@ -217,9 +217,13 @@ argument_list|(
 literal|"Import '%s' Settings"
 argument_list|)
 argument_list|,
+name|gimp_tool_get_label
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
 name|filter_tool
-operator|->
-name|title
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|export_title
@@ -231,9 +235,13 @@ argument_list|(
 literal|"Export '%s' Settings"
 argument_list|)
 argument_list|,
+name|gimp_tool_get_label
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
 name|filter_tool
-operator|->
-name|title
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|box
@@ -448,6 +456,15 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|filter_tool
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|header
@@ -465,9 +482,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"GIMP '%s' settings"
 argument_list|,
-name|filter_tool
-operator|->
-name|title
+name|gimp_tool_get_label
+argument_list|(
+name|tool
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|footer
@@ -476,9 +494,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"end of '%s' settings"
 argument_list|,
-name|filter_tool
-operator|->
-name|title
+name|gimp_tool_get_label
+argument_list|(
+name|tool
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|success

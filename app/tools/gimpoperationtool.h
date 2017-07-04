@@ -117,11 +117,6 @@ name|gchar
 modifier|*
 name|operation
 decl_stmt|;
-DECL|member|title
-name|gchar
-modifier|*
-name|title
-decl_stmt|;
 DECL|member|description
 name|gchar
 modifier|*
