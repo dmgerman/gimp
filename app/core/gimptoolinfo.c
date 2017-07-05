@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf934a70103
+DECL|enum|__anon2b1df7610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -708,6 +708,10 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|tooltip
+condition|)
 operator|*
 name|tooltip
 operator|=
