@@ -139,18 +139,6 @@ name|NO_CLICK_TIME_AVAILABLE
 value|0
 end_define
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|enum {   PROP_0,   PROP_X1,   PROP_Y1,   PROP_X2,   PROP_Y2 };
-endif|#
-directive|endif
-end_endif
-
 begin_struct
 DECL|struct|_GimpToolPolygonPrivate
 struct|struct
@@ -692,12 +680,6 @@ name|get_cursor
 operator|=
 name|gimp_tool_polygon_get_cursor
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|g_object_class_install_property (object_class, PROP_X1,                                    g_param_spec_double ("x1", NULL, NULL,                                                         -GIMP_MAX_IMAGE_SIZE,                                                         GIMP_MAX_IMAGE_SIZE, 0,                                                         GIMP_PARAM_READWRITE |                                                         G_PARAM_CONSTRUCT));    g_object_class_install_property (object_class, PROP_Y1,                                    g_param_spec_double ("y1", NULL, NULL,                                                         -GIMP_MAX_IMAGE_SIZE,                                                         GIMP_MAX_IMAGE_SIZE, 0,                                                         GIMP_PARAM_READWRITE |                                                         G_PARAM_CONSTRUCT));    g_object_class_install_property (object_class, PROP_X2,                                    g_param_spec_double ("x2", NULL, NULL,                                                         -GIMP_MAX_IMAGE_SIZE,                                                         GIMP_MAX_IMAGE_SIZE, 0,                                                         GIMP_PARAM_READWRITE |                                                         G_PARAM_CONSTRUCT));    g_object_class_install_property (object_class, PROP_Y2,                                    g_param_spec_double ("y2", NULL, NULL,                                                         -GIMP_MAX_IMAGE_SIZE,                                                         GIMP_MAX_IMAGE_SIZE, 0,                                                         GIMP_PARAM_READWRITE |                                                         G_PARAM_CONSTRUCT));
-endif|#
-directive|endif
 name|g_type_class_add_private
 argument_list|(
 name|klass
@@ -991,12 +973,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|case PROP_X1:       private->x1 = g_value_get_double (value);       break;     case PROP_Y1:       private->y1 = g_value_get_double (value);       break;     case PROP_X2:       private->x2 = g_value_get_double (value);       break;     case PROP_Y2:       private->y2 = g_value_get_double (value);       break;
-endif|#
-directive|endif
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -1039,12 +1015,6 @@ condition|(
 name|property_id
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|case PROP_X1:       g_value_set_double (value, private->x1);       break;     case PROP_Y1:       g_value_set_double (value, private->y1);       break;     case PROP_X2:       g_value_set_double (value, private->x2);       break;     case PROP_Y2:       g_value_set_double (value, private->y2);       break;
-endif|#
-directive|endif
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
