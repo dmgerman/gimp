@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e6bd7f0108
+DECL|struct|__anon2a2f4db80108
 block|{
 DECL|member|tag
 name|gchar
@@ -1471,9 +1471,6 @@ index|[
 literal|128
 index|]
 decl_stmt|;
-name|gimp_metadata_register_xmp_namespaces
-argument_list|()
-expr_stmt|;
 name|gettimeofday
 argument_list|(
 operator|&
