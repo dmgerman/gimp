@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0103
+DECL|enum|__anon2783c1d10103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0203
+DECL|enum|__anon2783c1d10203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0303
+DECL|enum|__anon2783c1d10303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0403
+DECL|enum|__anon2783c1d10403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0503
+DECL|enum|__anon2783c1d10503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0603
+DECL|enum|__anon2783c1d10603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0703
+DECL|enum|__anon2783c1d10703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0803
+DECL|enum|__anon2783c1d10803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0903
+DECL|enum|__anon2783c1d10903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0a03
+DECL|enum|__anon2783c1d10a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02912a0b03
+DECL|enum|__anon2783c1d10b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -2511,17 +2511,6 @@ comment|/* Plus and IPTC extension tags */
 end_comment
 
 begin_decl_stmt
-DECL|variable|licensor_items
-specifier|static
-specifier|const
-name|int
-name|licensor_items
-init|=
-literal|8
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|licensor_header
 specifier|static
 specifier|const
@@ -2569,17 +2558,6 @@ name|USE_TAGS
 end_ifdef
 
 begin_decl_stmt
-DECL|variable|imagesupplier_items
-specifier|static
-specifier|const
-name|int
-name|imagesupplier_items
-init|=
-literal|2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|imagesupplier_header
 specifier|static
 specifier|const
@@ -2614,17 +2592,6 @@ directive|endif
 end_endif
 
 begin_decl_stmt
-DECL|variable|imagecreator_items
-specifier|static
-specifier|const
-name|int
-name|imagecreator_items
-init|=
-literal|2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|imagecreator_header
 specifier|static
 specifier|const
@@ -2650,17 +2617,6 @@ literal|"/plus:ImageCreatorName"
 block|,
 literal|"/plus:ImageCreatorID"
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|copyrightowner_items
-specifier|static
-specifier|const
-name|int
-name|copyrightowner_items
-init|=
-literal|2
 decl_stmt|;
 end_decl_stmt
 
@@ -2694,17 +2650,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|registryid_items
-specifier|static
-specifier|const
-name|int
-name|registryid_items
-init|=
-literal|2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|registryid_header
 specifier|static
 specifier|const
@@ -2730,17 +2675,6 @@ literal|"/Iptc4xmpExt:RegOrgId"
 block|,
 literal|"/Iptc4xmpExt:RegItemId"
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|artworkorobject_items
-specifier|static
-specifier|const
-name|int
-name|artworkorobject_items
-init|=
-literal|6
 decl_stmt|;
 end_decl_stmt
 
@@ -2778,17 +2712,6 @@ literal|"/Iptc4xmpExt:AOCopyrightNotice"
 block|,
 literal|"/Iptc4xmpExt:AOCreator"
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|locationshown_items
-specifier|static
-specifier|const
-name|int
-name|locationshown_items
-init|=
-literal|6
 decl_stmt|;
 end_decl_stmt
 
@@ -2834,17 +2757,6 @@ ifdef|#
 directive|ifdef
 name|USE_TAGS
 end_ifdef
-
-begin_decl_stmt
-DECL|variable|locationcreated_items
-specifier|static
-specifier|const
-name|int
-name|locationcreated_items
-init|=
-literal|6
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|locationcreated_header
