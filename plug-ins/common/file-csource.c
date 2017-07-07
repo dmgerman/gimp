@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ef25990108
+DECL|struct|__anon2b694ee80108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -2776,21 +2776,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|config
-operator|->
-name|rgb565
-condition|?
-literal|2
-else|:
-operator|(
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
-operator|)
+name|bpp
 argument_list|)
 condition|)
 goto|goto
@@ -2831,21 +2817,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|config
-operator|->
-name|rgb565
-condition|?
-literal|2
-else|:
-operator|(
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
-operator|)
+name|bpp
 argument_list|)
 condition|)
 goto|goto
@@ -2866,7 +2838,7 @@ name|error
 argument_list|,
 literal|"#define %s_WIDTH (%u)\n"
 literal|"#define %s_HEIGHT (%u)\n"
-literal|"#define %s_BYTES_PER_PIXEL (%u) /* 3:RGB, 4:RGBA */\n"
+literal|"#define %s_BYTES_PER_PIXEL (%u) /* 2:RGB16, 3:RGB, 4:RGBA */\n"
 argument_list|,
 name|macro_name
 argument_list|,
@@ -2878,13 +2850,7 @@ name|height
 argument_list|,
 name|macro_name
 argument_list|,
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
+name|bpp
 argument_list|)
 condition|)
 block|{
@@ -3434,13 +3400,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
+name|bpp
 argument_list|)
 condition|)
 goto|goto
