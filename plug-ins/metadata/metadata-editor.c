@@ -19422,10 +19422,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_metadata_add_xmp_history
 argument_list|(
-name|GEXIV2_METADATA
-argument_list|(
 name|g_metadata
-argument_list|)
 argument_list|,
 literal|"metadata"
 argument_list|)

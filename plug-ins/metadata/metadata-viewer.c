@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af377f0103
+DECL|enum|__anon2b2e903e0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af377f0203
+DECL|enum|__anon2b2e903e0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af377f0303
+DECL|enum|__anon2b2e903e0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -480,7 +480,10 @@ name|metadata_viewer_dialog
 argument_list|(
 name|image_ID
 argument_list|,
+name|GEXIV2_METADATA
+argument_list|(
 name|metadata
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
