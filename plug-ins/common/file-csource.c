@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b694ee80108
+DECL|struct|__anon28c01cf30108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -876,6 +876,41 @@ end_function
 begin_function
 specifier|static
 name|gboolean
+DECL|function|diff2_rgb565 (guint8 * ip)
+name|diff2_rgb565
+parameter_list|(
+name|guint8
+modifier|*
+name|ip
+parameter_list|)
+block|{
+return|return
+name|ip
+index|[
+literal|0
+index|]
+operator|!=
+name|ip
+index|[
+literal|2
+index|]
+operator|||
+name|ip
+index|[
+literal|1
+index|]
+operator|!=
+name|ip
+index|[
+literal|3
+index|]
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
 DECL|function|diff2_rgb (guint8 * ip)
 name|diff2_rgb
 parameter_list|(
@@ -977,7 +1012,7 @@ begin_function
 specifier|static
 name|guint8
 modifier|*
-DECL|function|rl_encode_rgbx (guint8 * bp,guint8 * ip,guint8 * limit,guint n_ch)
+DECL|function|rl_encode_rgbx (guint8 * bp,guint8 * ip,guint8 * limit,guint bpp)
 name|rl_encode_rgbx
 parameter_list|(
 name|guint8
@@ -993,7 +1028,7 @@ modifier|*
 name|limit
 parameter_list|,
 name|guint
-name|n_ch
+name|bpp
 parameter_list|)
 block|{
 name|gboolean
@@ -1005,14 +1040,6 @@ parameter_list|(
 name|guint8
 modifier|*
 parameter_list|)
-init|=
-name|n_ch
-operator|>
-literal|3
-condition|?
-name|diff2_rgba
-operator|:
-name|diff2_rgb
 function_decl|;
 name|guint8
 modifier|*
@@ -1020,8 +1047,42 @@ name|ilimit
 init|=
 name|limit
 operator|-
-name|n_ch
+name|bpp
 decl_stmt|;
+switch|switch
+condition|(
+name|bpp
+condition|)
+block|{
+case|case
+literal|2
+case|:
+name|diff2_pix
+operator|=
+name|diff2_rgb565
+expr_stmt|;
+break|break;
+case|case
+literal|3
+case|:
+name|diff2_pix
+operator|=
+name|diff2_rgb
+expr_stmt|;
+break|break;
+case|case
+literal|4
+case|:
+name|diff2_pix
+operator|=
+name|diff2_rgba
+expr_stmt|;
+break|break;
+default|default:
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
+block|}
 while|while
 condition|(
 name|ip
@@ -1058,7 +1119,7 @@ literal|1
 decl_stmt|;
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 while|while
 condition|(
@@ -1078,7 +1139,7 @@ condition|)
 block|{
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 name|l
 operator|+=
@@ -1098,7 +1159,7 @@ condition|)
 block|{
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 name|l
 operator|+=
@@ -1121,14 +1182,14 @@ name|s_ip
 argument_list|,
 name|l
 operator|*
-name|n_ch
+name|bpp
 argument_list|)
 expr_stmt|;
 name|bp
 operator|+=
 name|l
 operator|*
-name|n_ch
+name|bpp
 expr_stmt|;
 block|}
 else|else
@@ -1140,7 +1201,7 @@ literal|2
 decl_stmt|;
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 while|while
 condition|(
@@ -1161,7 +1222,7 @@ condition|)
 block|{
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 name|l
 operator|+=
@@ -1184,16 +1245,16 @@ name|bp
 argument_list|,
 name|ip
 argument_list|,
-name|n_ch
+name|bpp
 argument_list|)
 expr_stmt|;
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 name|bp
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 block|}
 if|if
@@ -1217,16 +1278,16 @@ name|bp
 argument_list|,
 name|ip
 argument_list|,
-name|n_ch
+name|bpp
 argument_list|)
 expr_stmt|;
 name|ip
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 name|bp
 operator|+=
-name|n_ch
+name|bpp
 expr_stmt|;
 block|}
 block|}
@@ -1337,7 +1398,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gboolean
-DECL|function|save_rle_decoder (GOutputStream * output,const gchar * macro_name,const gchar * s_uint,const gchar * s_uint_8,guint n_ch,GError ** error)
+DECL|function|save_rle_decoder (GOutputStream * output,const gchar * macro_name,const gchar * s_uint,const gchar * s_uint_8,guint bpp,GError ** error)
 name|save_rle_decoder
 parameter_list|(
 name|GOutputStream
@@ -1360,7 +1421,7 @@ modifier|*
 name|s_uint_8
 parameter_list|,
 name|guint
-name|n_ch
+name|bpp
 parameter_list|,
 name|GError
 modifier|*
@@ -1418,7 +1479,7 @@ literal|"      if (__l& 128) { __l = __l - 128; \\\n"
 literal|"        do { memcpy (__ip, __rd, 4); __ip += 4; } while (--__l); __rd += 4; \\\n"
 literal|"      } else { __l *= 4; memcpy (__ip, __rd, __l); \\\n"
 literal|"               __ip += __l; __rd += __l; } } \\\n"
-literal|"  } else { /* RGB */ \\\n"
+literal|"  } else if (__bpp == 3) { /* RGB */ \\\n"
 literal|"    while (__ip< __il) { %s __l = *(__rd++); \\\n"
 argument_list|,
 name|s_uint
@@ -1433,6 +1494,22 @@ argument_list|,
 literal|"      if (__l& 128) { __l = __l - 128; \\\n"
 literal|"        do { memcpy (__ip, __rd, 3); __ip += 3; } while (--__l); __rd += 3; \\\n"
 literal|"      } else { __l *= 3; memcpy (__ip, __rd, __l); \\\n"
+literal|"               __ip += __l; __rd += __l; } } \\\n"
+literal|"  } else { /* RGB16 */ \\\n"
+literal|"    while (__ip< __il) { %s __l = *(__rd++); \\\n"
+argument_list|,
+name|s_uint
+argument_list|)
+operator|&&
+name|print
+argument_list|(
+name|output
+argument_list|,
+name|error
+argument_list|,
+literal|"      if (__l& 128) { __l = __l - 128; \\\n"
+literal|"        do { memcpy (__ip, __rd, 2); __ip += 2; } while (--__l); __rd += 2; \\\n"
+literal|"      } else { __l *= 2; memcpy (__ip, __rd, __l); \\\n"
 literal|"               __ip += __l; __rd += __l; } } \\\n"
 literal|"  } } while (0)\n"
 argument_list|)
@@ -2630,13 +2707,7 @@ literal|"guint8"
 else|:
 literal|"unsigned char"
 argument_list|,
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
+name|bpp
 argument_list|,
 name|error
 argument_list|)
@@ -3309,13 +3380,7 @@ name|s_uint
 argument_list|,
 name|s_uint_8
 argument_list|,
-name|config
-operator|->
-name|alpha
-condition|?
-literal|4
-else|:
-literal|3
+name|bpp
 argument_list|,
 name|error
 argument_list|)
@@ -3655,30 +3720,6 @@ operator|!
 name|active
 argument_list|)
 expr_stmt|;
-name|widget
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"set-insensitive-2"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|widget
-condition|)
-name|gtk_widget_set_sensitive
-argument_list|(
-name|widget
-argument_list|,
-operator|!
-name|active
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3716,10 +3757,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toggle
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|rle_toggle
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4127,8 +4164,6 @@ name|use_macros
 argument_list|)
 expr_stmt|;
 comment|/* Use RLE    */
-name|rle_toggle
-operator|=
 name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
@@ -4279,7 +4314,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* RLE and alpha settings are not used with RGB-565 */
+comment|/* Alpha setting is not used with RGB-565 */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -4288,18 +4323,6 @@ name|toggle
 argument_list|)
 argument_list|,
 literal|"set-insensitive-1"
-argument_list|,
-name|rle_toggle
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"set-insensitive-2"
 argument_list|,
 name|alpha_toggle
 argument_list|)
