@@ -1669,7 +1669,7 @@ literal|"2017"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Edit metadata"
+literal|"Edit Metadata"
 argument_list|)
 argument_list|,
 literal|"*"
