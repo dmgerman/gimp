@@ -1653,11 +1653,11 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Edit metadata"
+literal|"Edit metadata (IPTC, GPS, DICOM)"
 argument_list|)
 argument_list|,
 literal|"Edit metadata information attached to the "
-literal|"current image.   Some or all of this metadata "
+literal|"current image. Some or all of this metadata "
 literal|"will be saved in the file, depending on the output "
 literal|"file format."
 argument_list|,
@@ -1669,7 +1669,7 @@ literal|"2017"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Edit Metadata"
+literal|"Edit metadata"
 argument_list|)
 argument_list|,
 literal|"*"
@@ -2104,7 +2104,10 @@ name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Metadata Editor: %s"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)

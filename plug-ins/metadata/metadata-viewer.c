@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e903e0103
+DECL|enum|__anon2c83b15a0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e903e0203
+DECL|enum|__anon2c83b15a0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e903e0303
+DECL|enum|__anon2c83b15a0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -645,7 +645,10 @@ name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Metadata Viewer: %s"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
