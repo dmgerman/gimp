@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa61850103
+DECL|enum|__anon28bf4e300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4989,7 +4989,7 @@ name|scalemult
 argument_list|(
 name|o
 index|[
-literal|2
+literal|0
 index|]
 argument_list|,
 literal|3.0
@@ -4997,7 +4997,7 @@ argument_list|)
 argument_list|,
 name|o
 index|[
-literal|0
+literal|2
 index|]
 argument_list|)
 argument_list|,
