@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a707d0103
+DECL|enum|__anon2a0bf0680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4965,11 +4965,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|display
-operator|==
+name|gimp_tool_can_undo
+argument_list|(
 name|tool
-operator|->
+argument_list|,
 name|display
+argument_list|)
 condition|)
 return|return
 name|GIMP_TOOL_GET_CLASS
@@ -5026,11 +5027,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|display
-operator|==
+name|gimp_tool_can_redo
+argument_list|(
 name|tool
-operator|->
+argument_list|,
 name|display
+argument_list|)
 condition|)
 return|return
 name|GIMP_TOOL_GET_CLASS
