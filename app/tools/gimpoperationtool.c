@@ -306,10 +306,6 @@ name|gchar
 modifier|*
 modifier|*
 name|description
-parameter_list|,
-name|gboolean
-modifier|*
-name|has_settings
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1069,7 +1065,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_operation_tool_get_operation (GimpFilterTool * filter_tool,gchar ** description,gboolean * has_settings)
+DECL|function|gimp_operation_tool_get_operation (GimpFilterTool * filter_tool,gchar ** description)
 name|gimp_operation_tool_get_operation
 parameter_list|(
 name|GimpFilterTool
@@ -1080,10 +1076,6 @@ name|gchar
 modifier|*
 modifier|*
 name|description
-parameter_list|,
-name|gboolean
-modifier|*
-name|has_settings
 parameter_list|)
 block|{
 name|GimpOperationTool
@@ -1104,11 +1096,6 @@ name|op_tool
 operator|->
 name|description
 argument_list|)
-expr_stmt|;
-operator|*
-name|has_settings
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|g_strdup
@@ -2325,20 +2312,6 @@ operator|&
 name|op_tool
 operator|->
 name|options_gui
-argument_list|)
-expr_stmt|;
-comment|/*  ugly, see comment in the function  */
-name|gimp_filter_tool_set_has_settings
-argument_list|(
-name|filter_tool
-argument_list|,
-operator|!
-name|GTK_IS_LABEL
-argument_list|(
-name|op_tool
-operator|->
-name|options_gui
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

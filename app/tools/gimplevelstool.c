@@ -266,10 +266,6 @@ name|gchar
 modifier|*
 modifier|*
 name|description
-parameter_list|,
-name|gboolean
-modifier|*
-name|has_settings
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1009,7 +1005,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_levels_tool_get_operation (GimpFilterTool * filter_tool,gchar ** description,gboolean * has_settings)
+DECL|function|gimp_levels_tool_get_operation (GimpFilterTool * filter_tool,gchar ** description)
 name|gimp_levels_tool_get_operation
 parameter_list|(
 name|GimpFilterTool
@@ -1020,10 +1016,6 @@ name|gchar
 modifier|*
 modifier|*
 name|description
-parameter_list|,
-name|gboolean
-modifier|*
-name|has_settings
 parameter_list|)
 block|{
 operator|*
@@ -1036,11 +1028,6 @@ argument_list|(
 literal|"Adjust Color Levels"
 argument_list|)
 argument_list|)
-expr_stmt|;
-operator|*
-name|has_settings
-operator|=
-name|TRUE
 expr_stmt|;
 return|return
 name|g_strdup
