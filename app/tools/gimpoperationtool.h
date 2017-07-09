@@ -184,7 +184,7 @@ name|gimp_operation_tool_set_operation
 parameter_list|(
 name|GimpOperationTool
 modifier|*
-name|tool
+name|op_tool
 parameter_list|,
 specifier|const
 name|gchar
