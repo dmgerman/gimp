@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b541e010103
+DECL|enum|__anon277a707d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2826,6 +2826,7 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_COMMIT
 case|:
+comment|/*  always HALT after COMMIT here and not in each tool individually;        *  some tools interact with their subclasses (e.g. filter tool        *  and operation tool), and it's essential that COMMIT runs        *  through the entire class hierarchy before HALT        */
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -2836,6 +2837,20 @@ argument_list|(
 name|tool
 argument_list|,
 name|action
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+name|GIMP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)

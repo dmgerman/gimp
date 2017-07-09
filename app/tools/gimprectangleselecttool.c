@@ -3139,11 +3139,6 @@ name|redo
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_rectangle_select_tool_halt
-argument_list|(
-name|rect_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

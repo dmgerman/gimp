@@ -5583,15 +5583,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control
-argument_list|(
-name|tool
-argument_list|,
-name|GIMP_TOOL_ACTION_HALT
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 name|gimp_tool_control

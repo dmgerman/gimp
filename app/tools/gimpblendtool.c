@@ -3100,11 +3100,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_blend_tool_halt
-argument_list|(
-name|blend_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

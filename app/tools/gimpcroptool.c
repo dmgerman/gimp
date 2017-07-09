@@ -1830,11 +1830,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_crop_tool_halt
-argument_list|(
-name|crop_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

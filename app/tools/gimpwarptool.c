@@ -1109,22 +1109,17 @@ name|tool
 operator|->
 name|display
 condition|)
-block|{
-name|gimp_tool_pop_status
+name|gimp_tool_control
 argument_list|(
 name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|tool
 operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_warp_tool_halt
-argument_list|(
-name|wt
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -1689,7 +1684,9 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* fall thru */
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_KEY_Escape
 case|:

@@ -4470,11 +4470,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_filter_tool_halt
-argument_list|(
-name|filter_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

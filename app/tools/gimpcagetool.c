@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935809d0103
+DECL|enum|__anon29a13b310103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -2324,15 +2324,6 @@ argument_list|(
 name|tool
 argument_list|,
 name|GIMP_TOOL_ACTION_COMMIT
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control
-argument_list|(
-name|tool
-argument_list|,
-name|GIMP_TOOL_ACTION_HALT
 argument_list|,
 name|display
 argument_list|)
