@@ -6503,6 +6503,9 @@ decl_stmt|;
 name|goffset
 name|offset
 decl_stmt|;
+name|goffset
+name|max_data_length
+decl_stmt|;
 name|guint32
 name|width
 decl_stmt|;
@@ -6598,6 +6601,18 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
+comment|/* maximal allowable size of on-disk tile data.  make it somewhat bigger than    * the uncompressed tile size, to allow for the possibility of negative    * compression.  xcf_load_level() enforces this limit.    */
+name|max_data_length
+operator|=
+name|XCF_TILE_WIDTH
+operator|*
+name|XCF_TILE_HEIGHT
+operator|*
+name|bpp
+operator|*
+name|XCF_TILE_MAX_DATA_LENGTH_FACTOR
+comment|/* = 1.5, currently */
+expr_stmt|;
 comment|/* allocate a temporary buffer to store the rle data before it is    * written to disk    */
 if|if
 condition|(
@@ -6611,13 +6626,7 @@ name|rlebuf
 operator|=
 name|g_alloca
 argument_list|(
-name|XCF_TILE_WIDTH
-operator|*
-name|XCF_TILE_HEIGHT
-operator|*
-name|bpp
-operator|*
-literal|1.5
+name|max_data_length
 argument_list|)
 expr_stmt|;
 name|n_tile_rows
@@ -6824,6 +6833,40 @@ case|:
 name|g_warning
 argument_list|(
 literal|"xcf: fractal compression unimplemented"
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+comment|/* make sure the on-disk tile data didn't end up being too big.        * xcf_load_level() would refuse to load the file if it did.        */
+if|if
+condition|(
+name|info
+operator|->
+name|cp
+operator|<
+name|offset
+operator|||
+name|info
+operator|->
+name|cp
+operator|-
+name|offset
+operator|>
+name|max_data_length
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"xcf: invalid tile data length: %"
+name|G_GOFFSET_FORMAT
+argument_list|,
+name|info
+operator|->
+name|cp
+operator|-
+name|offset
 argument_list|)
 expr_stmt|;
 return|return
@@ -7954,7 +7997,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f54b70108
+DECL|struct|__anon28f5ff370108
 block|{
 DECL|member|info
 name|XcfInfo

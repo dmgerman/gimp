@@ -7170,6 +7170,9 @@ decl_stmt|;
 name|goffset
 name|offset2
 decl_stmt|;
+name|goffset
+name|max_data_length
+decl_stmt|;
 name|gint
 name|n_tile_rows
 decl_stmt|;
@@ -7252,6 +7255,18 @@ condition|)
 return|return
 name|FALSE
 return|;
+comment|/* maximal allowable size of on-disk tile data.  make it somewhat bigger than    * the uncompressed tile size, to allow for the possibility of negative    * compression.    */
+name|max_data_length
+operator|=
+name|XCF_TILE_WIDTH
+operator|*
+name|XCF_TILE_HEIGHT
+operator|*
+name|bpp
+operator|*
+name|XCF_TILE_MAX_DATA_LENGTH_FACTOR
+comment|/* = 1.5, currently */
+expr_stmt|;
 comment|/* read in the first tile offset.    *  if it is '0', then this tile level is empty    *  and we can simply return.    */
 name|xcf_read_offset
 argument_list|(
@@ -7375,15 +7390,8 @@ name|offset2
 operator|=
 name|offset
 operator|+
-name|XCF_TILE_WIDTH
-operator|*
-name|XCF_TILE_WIDTH
-operator|*
-name|bpp
-operator|*
-literal|1.5
+name|max_data_length
 expr_stmt|;
-comment|/* 1.5 is probably more                                            than we need to allow */
 comment|/* seek to the tile offset */
 if|if
 condition|(
@@ -7400,6 +7408,46 @@ condition|)
 return|return
 name|FALSE
 return|;
+if|if
+condition|(
+name|offset2
+operator|<
+name|offset
+operator|||
+name|offset2
+operator|-
+name|offset
+operator|>
+name|max_data_length
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|info
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|info
+operator|->
+name|progress
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"invalid tile data length: %"
+name|G_GOFFSET_FORMAT
+argument_list|,
+name|offset2
+operator|-
+name|offset
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 comment|/* get the tile from the tile manager */
 name|gimp_gegl_buffer_get_tile_rect
 argument_list|(
