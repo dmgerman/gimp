@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c75b6b0103
+DECL|enum|__anon2ab363aa0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c75b6b0203
+DECL|enum|__anon2ab363aa0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c75b6b0303
+DECL|enum|__anon2ab363aa0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -223,9 +223,9 @@ parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GExiv2Metadata
+name|GimpMetadata
 modifier|*
-name|metadata
+name|g_metadata
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -380,7 +380,7 @@ literal|"Hartmut Kuhse, Michael Natterer, Ben Touchette"
 argument_list|,
 literal|"Hartmut Kuhse, Michael Natterer, Ben Touchette"
 argument_list|,
-literal|"2013, 2016"
+literal|"2013, 2017"
 argument_list|,
 name|N_
 argument_list|(
@@ -552,10 +552,7 @@ name|metadata_viewer_dialog
 argument_list|(
 name|image_ID
 argument_list|,
-name|GEXIV2_METADATA
-argument_list|(
 name|metadata
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -587,15 +584,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|metadata_viewer_dialog (gint32 image_id,GExiv2Metadata * metadata)
+DECL|function|metadata_viewer_dialog (gint32 image_id,GimpMetadata * g_metadata)
 name|metadata_viewer_dialog
 parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GExiv2Metadata
+name|GimpMetadata
 modifier|*
-name|metadata
+name|g_metadata
 parameter_list|)
 block|{
 name|GtkBuilder
@@ -632,6 +629,17 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|GExiv2Metadata
+modifier|*
+name|metadata
+decl_stmt|;
+name|metadata
+operator|=
+name|GEXIV2_METADATA
+argument_list|(
+name|g_metadata
+argument_list|)
+expr_stmt|;
 name|builder
 operator|=
 name|gtk_builder_new
@@ -1042,44 +1050,10 @@ operator|++
 operator|)
 condition|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|tag_label
-decl_stmt|;
 name|gchar
 modifier|*
 name|value
 decl_stmt|;
-name|tag_label
-operator|=
-name|gexiv2_metadata_get_tag_label
-argument_list|(
-name|tag
-argument_list|)
-expr_stmt|;
-comment|/* skip private tags */
-if|if
-condition|(
-name|g_strcmp0
-argument_list|(
-name|tag_label
-argument_list|,
-literal|""
-argument_list|)
-operator|==
-literal|0
-operator|||
-name|g_strcmp0
-argument_list|(
-name|tag_label
-argument_list|,
-name|NULL
-argument_list|)
-operator|==
-literal|0
-condition|)
-continue|continue;
 name|gtk_list_store_append
 argument_list|(
 name|store
