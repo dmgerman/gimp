@@ -978,9 +978,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpObject
+name|GObject
 modifier|*
-name|settings
+name|config
 decl_stmt|;
 name|GeglNode
 modifier|*
@@ -1014,7 +1014,7 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|settings
+name|config
 operator|=
 name|g_value_get_object
 argument_list|(
@@ -1043,11 +1043,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|settings
+name|config
 condition|)
 name|gimp_operation_config_sync_node
 argument_list|(
-name|settings
+name|config
 argument_list|,
 name|node
 argument_list|)

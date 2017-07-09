@@ -2666,7 +2666,7 @@ expr_stmt|;
 comment|/* Initially sync all of the properties */
 name|gimp_operation_config_sync_node
 argument_list|(
-name|GIMP_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 argument_list|)

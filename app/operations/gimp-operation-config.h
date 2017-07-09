@@ -119,7 +119,7 @@ begin_function_decl
 name|void
 name|gimp_operation_config_sync_node
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,
@@ -134,7 +134,7 @@ begin_function_decl
 name|void
 name|gimp_operation_config_connect_node
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,
@@ -151,7 +151,7 @@ modifier|*
 modifier|*
 name|gimp_operation_config_list_properties
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,

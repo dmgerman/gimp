@@ -1759,10 +1759,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_config_sync_node (GimpObject * config,GeglNode * node)
+DECL|function|gimp_operation_config_sync_node (GObject * config,GeglNode * node)
 name|gimp_operation_config_sync_node
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,
@@ -1788,7 +1788,7 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_OBJECT
+name|G_IS_OBJECT
 argument_list|(
 name|config
 argument_list|)
@@ -2059,10 +2059,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_config_connect_node (GimpObject * config,GeglNode * node)
+DECL|function|gimp_operation_config_connect_node (GObject * config,GeglNode * node)
 name|gimp_operation_config_connect_node
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,
@@ -2088,7 +2088,7 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_OBJECT
+name|G_IS_OBJECT
 argument_list|(
 name|config
 argument_list|)
@@ -2311,10 +2311,10 @@ begin_function
 name|GParamSpec
 modifier|*
 modifier|*
-DECL|function|gimp_operation_config_list_properties (GimpObject * config,GType owner_type,GParamFlags flags,guint * n_pspecs)
+DECL|function|gimp_operation_config_list_properties (GObject * config,GType owner_type,GParamFlags flags,guint * n_pspecs)
 name|gimp_operation_config_list_properties
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|config
 parameter_list|,
@@ -2344,7 +2344,7 @@ name|j
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_OBJECT
+name|G_IS_OBJECT
 argument_list|(
 name|config
 argument_list|)
@@ -2507,10 +2507,7 @@ parameter_list|)
 block|{
 name|gimp_operation_config_sync_node
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|config
-argument_list|)
 argument_list|,
 name|node
 argument_list|)

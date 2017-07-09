@@ -1947,7 +1947,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ac40b190108
+DECL|struct|__anon2c4b2db70108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2094,10 +2094,7 @@ name|param_specs
 operator|=
 name|gimp_operation_config_list_properties
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|config
-argument_list|)
 argument_list|,
 name|owner_type
 argument_list|,
@@ -2656,7 +2653,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2ac40b190208
+DECL|struct|__anon2c4b2db70208
 block|{
 DECL|member|kelvin
 name|gdouble
