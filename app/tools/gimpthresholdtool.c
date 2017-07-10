@@ -1379,7 +1379,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|GIMP_FILTER_TOOL
+name|GIMP_TOOL
 argument_list|(
 name|data
 argument_list|)

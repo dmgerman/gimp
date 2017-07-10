@@ -114,11 +114,6 @@ DECL|member|parent_instance
 name|GimpColorTool
 name|parent_instance
 decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 DECL|member|operation
 name|GeglNode
 modifier|*

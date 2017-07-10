@@ -4434,7 +4434,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|GIMP_FILTER_TOOL
+name|GIMP_TOOL
 argument_list|(
 name|data
 argument_list|)
@@ -4511,7 +4511,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_stretch_callback (GtkWidget * widget,GimpLevelsTool * tool)
+DECL|function|levels_stretch_callback (GtkWidget * widget,GimpLevelsTool * levels_tool)
 name|levels_stretch_callback
 parameter_list|(
 name|GtkWidget
@@ -4520,16 +4520,25 @@ name|widget
 parameter_list|,
 name|GimpLevelsTool
 modifier|*
-name|tool
+name|levels_tool
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|levels_tool
+argument_list|)
+decl_stmt|;
 name|GimpFilterTool
 modifier|*
 name|filter_tool
 init|=
 name|GIMP_FILTER_TOOL
 argument_list|(
-name|tool
+name|levels_tool
 argument_list|)
 decl_stmt|;
 name|gimp_levels_config_stretch
@@ -4541,13 +4550,13 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-name|tool
+name|levels_tool
 operator|->
 name|histogram
 argument_list|,
 name|gimp_drawable_is_rgb
 argument_list|(
-name|filter_tool
+name|tool
 operator|->
 name|drawable
 argument_list|)
