@@ -1551,6 +1551,8 @@ if|if
 condition|(
 operator|!
 name|success
+operator|&&
+name|my_error
 condition|)
 name|g_propagate_prefixed_error
 argument_list|(
