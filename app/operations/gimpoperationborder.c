@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793e8050103
+DECL|enum|__anon2a44e7c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -304,6 +304,12 @@ operator|->
 name|get_cached_region
 operator|=
 name|gimp_operation_border_get_cached_region
+expr_stmt|;
+name|operation_class
+operator|->
+name|threaded
+operator|=
+name|FALSE
 expr_stmt|;
 name|filter_class
 operator|->
