@@ -3413,7 +3413,7 @@ argument_list|)
 decl_stmt|;
 name|GimpCanvasGroup
 modifier|*
-name|fill_group
+name|group
 decl_stmt|;
 name|PangoLayout
 modifier|*
@@ -3447,9 +3447,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|fill_group
+name|group
 operator|=
-name|gimp_draw_tool_add_fill_group
+name|gimp_draw_tool_add_stroke_group
 argument_list|(
 name|draw_tool
 argument_list|)
@@ -3458,7 +3458,7 @@ name|gimp_canvas_item_set_highlight
 argument_list|(
 name|GIMP_CANVAS_ITEM
 argument_list|(
-name|fill_group
+name|group
 argument_list|)
 argument_list|,
 name|TRUE
@@ -3560,7 +3560,7 @@ name|gimp_draw_tool_push_group
 argument_list|(
 name|draw_tool
 argument_list|,
-name|fill_group
+name|group
 argument_list|)
 expr_stmt|;
 do|do
@@ -3667,7 +3667,7 @@ name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|rect
 operator|.
