@@ -304,7 +304,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757110f0108
+DECL|struct|__anon28e0ce380108
 block|{
 DECL|member|name
 specifier|const
@@ -327,7 +327,6 @@ DECL|variable|script_constants
 specifier|static
 specifier|const
 name|NamedConstant
-specifier|const
 name|script_constants
 index|[]
 init|=

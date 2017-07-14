@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761c0650103
+DECL|enum|__anon2be409ff0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761c0650203
+DECL|enum|__anon2be409ff0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761c0650308
+DECL|struct|__anon2be409ff0308
 block|{
 DECL|member|image_type
 name|RawType
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761c0650408
+DECL|struct|__anon2be409ff0408
 block|{
 DECL|member|run
 name|gboolean
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761c0650508
+DECL|struct|__anon2be409ff0508
 block|{
 DECL|member|file_offset
 name|gint32
@@ -345,7 +345,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761c0650608
+DECL|struct|__anon2be409ff0608
 block|{
 DECL|member|fp
 name|FILE
@@ -4456,12 +4456,12 @@ decl_stmt|;
 name|GimpImageType
 name|ltype
 init|=
-name|GIMP_RGB
+name|GIMP_RGB_IMAGE
 decl_stmt|;
 name|GimpImageBaseType
 name|itype
 init|=
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 decl_stmt|;
 name|goffset
 name|size

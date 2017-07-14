@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a29541c0108
+DECL|struct|__anon2b399cb10108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -8494,7 +8494,7 @@ block|{
 name|GimpBucketFillMode
 name|fill_mode
 init|=
-name|FILL_NONE
+name|GIMP_BUCKET_FILL_FG
 decl_stmt|;
 name|Style
 modifier|*

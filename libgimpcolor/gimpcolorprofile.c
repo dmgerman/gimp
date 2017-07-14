@@ -2773,8 +2773,12 @@ name|GimpMatrix3
 name|matrix
 init|=
 block|{
+block|{
+block|{
 literal|0
 block|, }
+block|}
+block|}
 decl_stmt|;
 name|cmsCIEXYZ
 modifier|*

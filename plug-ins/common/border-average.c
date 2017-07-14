@@ -407,6 +407,10 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpRGB
 name|result_color
+init|=
+block|{
+literal|0.0
+block|, }
 decl_stmt|;
 name|GimpRunMode
 name|run_mode

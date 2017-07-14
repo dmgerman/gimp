@@ -1100,7 +1100,7 @@ name|g_file_query_file_type
 argument_list|(
 name|child
 argument_list|,
-name|G_FILE_CREATE_NONE
+name|G_FILE_QUERY_INFO_NONE
 argument_list|,
 name|NULL
 argument_list|)

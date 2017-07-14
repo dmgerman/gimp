@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7d3f20108
+DECL|struct|__anon295bfc460108
 block|{
 DECL|member|filename
 name|gchar
@@ -1406,10 +1406,6 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|mail_info
-operator|.
-name|subject
-operator|&&
 name|strlen
 argument_list|(
 name|mail_info
@@ -1441,10 +1437,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|mail_info
-operator|.
-name|comment
-operator|&&
 name|strlen
 argument_list|(
 name|mail_info
@@ -1476,10 +1468,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|mail_info
-operator|.
-name|receipt
-operator|&&
 name|strlen
 argument_list|(
 name|mail_info

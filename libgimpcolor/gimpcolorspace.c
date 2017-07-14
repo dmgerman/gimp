@@ -3918,10 +3918,7 @@ name|saturation
 operator|=
 name|value
 expr_stmt|;
-name|value
-operator|=
-name|value
-expr_stmt|;
+comment|/*value      = value;*/
 block|}
 else|else
 block|{
