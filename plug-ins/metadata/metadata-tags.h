@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10103
+DECL|enum|__anon27b2530e0103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10203
+DECL|enum|__anon27b2530e0203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10303
+DECL|enum|__anon27b2530e0303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10403
+DECL|enum|__anon27b2530e0403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10503
+DECL|enum|__anon27b2530e0503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10603
+DECL|enum|__anon27b2530e0603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10703
+DECL|enum|__anon27b2530e0703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10803
+DECL|enum|__anon27b2530e0803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10903
+DECL|enum|__anon27b2530e0903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10a03
+DECL|enum|__anon27b2530e0a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1d10b03
+DECL|enum|__anon27b2530e0b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -1493,7 +1493,6 @@ DECL|variable|equivalent_metadata_tags
 specifier|static
 specifier|const
 name|metadata_tag
-specifier|const
 name|equivalent_metadata_tags
 index|[]
 init|=

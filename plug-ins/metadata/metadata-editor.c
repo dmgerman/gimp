@@ -23141,7 +23141,7 @@ name|alt_d
 operator|*
 literal|12
 operator|*
-literal|2.54d
+literal|2.54
 operator|)
 operator|/
 literal|100
@@ -25006,7 +25006,7 @@ operator|*
 operator|(
 literal|12
 operator|*
-literal|2.54d
+literal|2.54
 operator|)
 operator|)
 operator|/
@@ -25069,7 +25069,7 @@ name|alt_d
 operator|=
 name|alt_d
 operator|*
-literal|3.28d
+literal|3.28
 expr_stmt|;
 name|g_snprintf
 argument_list|(

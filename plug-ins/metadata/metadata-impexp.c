@@ -548,6 +548,11 @@ name|mode
 argument_list|)
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|value
+decl_stmt|;
 name|value
 operator|=
 name|get_tag_ui_text
@@ -851,6 +856,11 @@ name|mode
 argument_list|)
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|value
+decl_stmt|;
 name|xmldata
 operator|=
 name|g_strconcat

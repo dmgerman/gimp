@@ -622,14 +622,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|set_tag_ui (metadata_editor * args,int index,gchar * name,gchar * value,gchar * mode)
+DECL|function|set_tag_ui (metadata_editor * args,gint index,gchar * name,gchar * value,gchar * mode)
 name|set_tag_ui
 parameter_list|(
 name|metadata_editor
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|index
 parameter_list|,
 name|gchar
@@ -835,10 +835,6 @@ name|mode
 argument_list|)
 condition|)
 block|{
-name|GtkTreePath
-modifier|*
-name|path
-decl_stmt|;
 name|GtkTreeModel
 modifier|*
 name|treemodel
@@ -849,12 +845,6 @@ name|liststore
 decl_stmt|;
 name|GtkTreeIter
 name|iter
-decl_stmt|;
-name|gchar
-name|tag
-index|[
-literal|1024
-index|]
 decl_stmt|;
 name|gint
 name|number_of_rows
@@ -2752,6 +2742,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|get_tag_ui_text (metadata_editor * args,gchar * name,gchar * mode)
@@ -3539,9 +3530,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gint
-name|types
-decl_stmt|;
 name|has_data
 operator|=
 name|TRUE
@@ -4730,9 +4718,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gint
-name|types
-decl_stmt|;
 name|has_data
 operator|=
 name|TRUE
@@ -4862,9 +4847,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gint
-name|types
-decl_stmt|;
 name|has_data
 operator|=
 name|TRUE
@@ -4994,9 +4976,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gint
-name|types
-decl_stmt|;
 name|has_data
 operator|=
 name|TRUE
@@ -5126,9 +5105,6 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gint
-name|types
-decl_stmt|;
 name|has_data
 operator|=
 name|TRUE
