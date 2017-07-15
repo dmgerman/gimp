@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6eff260103
+DECL|enum|__anon2976bca40103
 block|{
 DECL|enumerator|PRE_CLICKED
 name|PRE_CLICKED
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6eff260203
+DECL|enum|__anon2976bca40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -502,27 +502,14 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|cell
-operator|->
-name|renderer
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|cell
 operator|->
 name|renderer
 argument_list|)
 expr_stmt|;
-name|cell
-operator|->
-name|renderer
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

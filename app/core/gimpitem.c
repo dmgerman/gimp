@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3e50a0103
+DECL|enum|__anon2bc1715d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -186,7 +186,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3e50a0203
+DECL|enum|__anon2bc1715d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1515,27 +1515,14 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|private
-operator|->
-name|parasites
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|private
 operator|->
 name|parasites
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|parasites
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

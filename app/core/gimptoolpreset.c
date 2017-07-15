@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44dfc30103
+DECL|enum|__anon27d691740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1719,18 +1719,13 @@ argument_list|,
 name|preset
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|preset
 operator|->
 name|tool_options
 argument_list|)
-expr_stmt|;
-name|preset
-operator|->
-name|tool_options
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 if|if

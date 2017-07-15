@@ -233,17 +233,9 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|->
-name|private
-operator|->
-name|shadow
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|drawable
 operator|->
 name|private
@@ -251,15 +243,6 @@ operator|->
 name|shadow
 argument_list|)
 expr_stmt|;
-name|drawable
-operator|->
-name|private
-operator|->
-name|shadow
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 block|}
 end_function
 

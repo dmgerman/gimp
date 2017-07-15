@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f68610103
+DECL|enum|__anon291cd7f10103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f68610203
+DECL|enum|__anon291cd7f10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -349,27 +349,14 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|action
-operator|->
-name|procedure
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|action
 operator|->
 name|procedure
 argument_list|)
 expr_stmt|;
-name|action
-operator|->
-name|procedure
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

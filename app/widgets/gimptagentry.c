@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dad5710103
+DECL|enum|__anon294038150103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -144,7 +144,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dad5710203
+DECL|enum|__anon294038150203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1081,18 +1081,13 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|entry
 operator|->
 name|container
 argument_list|)
-expr_stmt|;
-name|entry
-operator|->
-name|container
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 if|if

@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894ed730103
+DECL|enum|__anon2ba686470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894ed730208
+DECL|struct|__anon2ba686470208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -2442,27 +2442,14 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|private
-operator|->
-name|menubar_manager
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|private
 operator|->
 name|menubar_manager
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|menubar_manager
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|private

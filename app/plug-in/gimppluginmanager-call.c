@@ -1143,18 +1143,15 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  main_loop is quit in gimp_plug_in_handle_extension_ack()  */
-name|g_main_loop_unref
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|plug_in
 operator|->
 name|ext_main_loop
+argument_list|,
+name|g_main_loop_unref
 argument_list|)
-expr_stmt|;
-name|plug_in
-operator|->
-name|ext_main_loop
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 comment|/* If this plug-in is requested to run synchronously,        * wait for its return values        */
@@ -1205,18 +1202,15 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  main_loop is quit in gimp_plug_in_handle_proc_return()  */
-name|g_main_loop_unref
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|proc_frame
 operator|->
 name|main_loop
+argument_list|,
+name|g_main_loop_unref
 argument_list|)
-expr_stmt|;
-name|proc_frame
-operator|->
-name|main_loop
-operator|=
-name|NULL
 expr_stmt|;
 name|return_vals
 operator|=

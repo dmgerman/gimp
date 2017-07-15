@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d89bbf0103
+DECL|enum|__anon2a074ad40103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d89bbf0203
+DECL|enum|__anon2a074ad40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -469,27 +469,14 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|node
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|private
 operator|->
 name|node
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|node
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

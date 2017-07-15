@@ -1261,14 +1261,11 @@ operator|==
 name|gimp
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|global_action_factory
 argument_list|)
-expr_stmt|;
-name|global_action_factory
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

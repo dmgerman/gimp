@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c58b7b0103
+DECL|enum|__anon295d007d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c58b7b0203
+DECL|enum|__anon295d007d0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -815,27 +815,14 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|private
-operator|->
-name|paint_options
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|private
 operator|->
 name|paint_options
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|paint_options
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

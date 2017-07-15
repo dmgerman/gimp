@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa99860103
+DECL|enum|__anon277838890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -966,21 +966,16 @@ argument_list|(
 name|brush
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gbrush
-operator|->
-name|priv
-operator|->
-name|mask
-condition|)
-name|gimp_temp_buf_unref
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|gbrush
 operator|->
 name|priv
 operator|->
 name|mask
+argument_list|,
+name|gimp_temp_buf_unref
 argument_list|)
 expr_stmt|;
 name|gbrush

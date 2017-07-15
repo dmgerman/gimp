@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b636d0103
+DECL|enum|__anon2bc997100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b636d0203
+DECL|enum|__anon2bc997100203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1971,26 +1971,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-elseif|else
-if|if
-condition|(
-name|private
-operator|->
-name|change_region
-condition|)
+else|else
 block|{
-name|cairo_region_destroy
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|private
 operator|->
 name|change_region
+argument_list|,
+name|cairo_region_destroy
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|change_region
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 block|}

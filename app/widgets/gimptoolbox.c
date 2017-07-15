@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d0afd70103
+DECL|enum|__anon290b59180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1675,17 +1675,9 @@ name|in_destruction
 operator|=
 name|TRUE
 expr_stmt|;
-if|if
-condition|(
-name|toolbox
-operator|->
-name|p
-operator|->
-name|context
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|toolbox
 operator|->
 name|p
@@ -1693,15 +1685,6 @@ operator|->
 name|context
 argument_list|)
 expr_stmt|;
-name|toolbox
-operator|->
-name|p
-operator|->
-name|context
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

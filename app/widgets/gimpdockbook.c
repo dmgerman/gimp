@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31004b0103
+DECL|enum|__anon28fd28210103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1508,17 +1508,9 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|dockbook
-operator|->
-name|p
-operator|->
-name|ui_manager
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|dockbook
 operator|->
 name|p
@@ -1526,15 +1518,6 @@ operator|->
 name|ui_manager
 argument_list|)
 expr_stmt|;
-name|dockbook
-operator|->
-name|p
-operator|->
-name|ui_manager
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|dockbook
@@ -1559,10 +1542,7 @@ name|gimp
 operator|->
 name|config
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_dockbook_config_size_changed
-argument_list|)
 argument_list|,
 name|dockbook
 argument_list|)

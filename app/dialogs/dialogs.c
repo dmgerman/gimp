@@ -2338,21 +2338,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|global_recent_docks
-condition|)
-block|{
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|global_recent_docks
 argument_list|)
 expr_stmt|;
-name|global_recent_docks
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 block|}
 end_function
 
