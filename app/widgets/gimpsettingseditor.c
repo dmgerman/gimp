@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278bb2600103
+DECL|enum|__anon29a1109b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -764,7 +764,7 @@ name|GIMP_ICON_DOCUMENT_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"Import settings from a file"
+literal|"Import presets from a file"
 argument_list|)
 argument_list|,
 name|NULL
@@ -794,7 +794,7 @@ name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Export the selected settings to a file"
+literal|"Export the selected presets to a file"
 argument_list|)
 argument_list|,
 name|NULL
@@ -824,7 +824,7 @@ name|GIMP_ICON_EDIT_DELETE
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete the selected settings"
+literal|"Delete the selected preset"
 argument_list|)
 argument_list|,
 name|NULL

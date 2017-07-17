@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2765b6620103
+DECL|enum|__anon298080910103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2765b6620203
+DECL|enum|__anon298080910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1199,7 +1199,7 @@ name|combo
 argument_list|,
 name|_
 argument_list|(
-literal|"Pick a setting from the list"
+literal|"Pick a preset from the list"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1334,7 +1334,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Add settings to favorites"
+literal|"Save the current settings as named preset"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1421,6 +1421,18 @@ argument_list|(
 name|arrow
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Manage presets"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|button
@@ -1469,7 +1481,7 @@ name|GIMP_ICON_DOCUMENT_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"_Import Settings from File..."
+literal|"_Import Current Settings from File..."
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -1490,7 +1502,7 @@ name|GIMP_ICON_DOCUMENT_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"_Export Settings to File..."
+literal|"_Export Current Settings to File..."
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -1518,7 +1530,7 @@ name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(
-literal|"_Manage Settings..."
+literal|"_Manage Saved Presets..."
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -2449,7 +2461,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Add Settings to Favorites"
+literal|"Save Settings as Named Preset"
 argument_list|)
 argument_list|,
 name|toplevel
@@ -2460,7 +2472,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter a name for the settings"
+literal|"Enter a name for the preset"
 argument_list|)
 argument_list|,
 name|_
@@ -2637,7 +2649,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Manage Saved Settings"
+literal|"Manage Saved Presets"
 argument_list|)
 argument_list|,
 literal|"gimp-settings-editor-dialog"
