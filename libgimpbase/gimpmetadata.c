@@ -1191,6 +1191,8 @@ operator|=
 name|g_malloc0
 argument_list|(
 name|DALLOC
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -2415,7 +2417,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon288090540108
+DECL|struct|__anon28db6cea0108
 block|{
 DECL|member|name
 name|gchar
