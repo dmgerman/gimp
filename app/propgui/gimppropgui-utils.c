@@ -167,7 +167,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon28c4996a0108
+DECL|struct|__anon2878ffac0108
 block|{
 DECL|member|kelvin
 name|gdouble
@@ -388,6 +388,19 @@ name|menu
 argument_list|)
 argument_list|,
 name|button
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Choose from a list of common "
+literal|"color temperatures"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
