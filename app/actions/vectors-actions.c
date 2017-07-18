@@ -1328,7 +1328,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select _Top Vectors"
+literal|"Select _Top Path"
 argument_list|)
 block|,
 name|NULL
@@ -1337,14 +1337,14 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select the topmost vector"
+literal|"Select the topmost path"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_VECTORS_TOP
+name|GIMP_HELP_PATH_TOP
 block|}
 block|,
 block|{
@@ -1356,7 +1356,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select _Bottom Vectors"
+literal|"Select _Bottom Path"
 argument_list|)
 block|,
 name|NULL
@@ -1365,14 +1365,14 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select the bottommost vector"
+literal|"Select the bottommost path"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_VECTORS_BOTTOM
+name|GIMP_HELP_PATH_BOTTOM
 block|}
 block|,
 block|{
@@ -1384,7 +1384,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select _Previous Vectors"
+literal|"Select _Previous Path"
 argument_list|)
 block|,
 name|NULL
@@ -1393,14 +1393,14 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select the vector above the current vector"
+literal|"Select the path above the current path"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_VECTORS_PREVIOUS
+name|GIMP_HELP_PATH_PREVIOUS
 block|}
 block|,
 block|{
@@ -1412,7 +1412,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select _Next Vector"
+literal|"Select _Next Path"
 argument_list|)
 block|,
 name|NULL
@@ -1421,14 +1421,14 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Select the vector below the current vector"
+literal|"Select the vector below the current path"
 argument_list|)
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
 name|FALSE
 block|,
-name|GIMP_HELP_VECTORS_NEXT
+name|GIMP_HELP_PATH_NEXT
 block|}
 block|}
 decl_stmt|;
@@ -1624,45 +1624,11 @@ name|prev
 init|=
 name|NULL
 decl_stmt|;
-name|gboolean
-name|fs
-init|=
-name|FALSE
-decl_stmt|;
-comment|/*  floating sel           */
-name|gboolean
-name|ac
-init|=
-name|FALSE
-decl_stmt|;
-comment|/*  active channel         */
 if|if
 condition|(
 name|image
 condition|)
 block|{
-name|fs
-operator|=
-operator|(
-name|gimp_image_get_floating_selection
-argument_list|(
-name|image
-argument_list|)
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
-name|ac
-operator|=
-operator|(
-name|gimp_image_get_active_channel
-argument_list|(
-name|image
-argument_list|)
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 name|n_vectors
 operator|=
 name|gimp_image_get_n_vectors
@@ -2035,12 +2001,6 @@ literal|"vectors-select-top"
 argument_list|,
 name|vectors
 operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
-operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
@@ -2049,12 +2009,6 @@ argument_list|(
 literal|"vectors-select-bottom"
 argument_list|,
 name|vectors
-operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
 operator|&&
 name|next
 argument_list|)
@@ -2065,12 +2019,6 @@ literal|"vectors-select-previous"
 argument_list|,
 name|vectors
 operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
-operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
@@ -2079,12 +2027,6 @@ argument_list|(
 literal|"vectors-select-next"
 argument_list|,
 name|vectors
-operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
 operator|&&
 name|next
 argument_list|)
