@@ -78,7 +78,7 @@ DECL|macro|GIMP_MAX_NUM_THREADS
 define|#
 directive|define
 name|GIMP_MAX_NUM_THREADS
-value|64
+value|G_PARAM_SPEC_INT (g_object_class_find_property (G_OBJECT_GET_CLASS (gegl_config()), \                                                                              "threads"))->maximum
 end_define
 
 begin_define
@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925e2af0103
+DECL|enum|__anon2b3165db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
