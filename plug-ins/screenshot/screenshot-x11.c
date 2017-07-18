@@ -3007,11 +3007,19 @@ expr_stmt|;
 comment|/* FIXME: Some time might have passed until we get here.    *        The cursor image should be grabbed together with the screenshot.    */
 if|if
 condition|(
+operator|(
 name|shootvals
 operator|->
 name|shoot_type
 operator|==
 name|SHOOT_ROOT
+operator|||
+name|shootvals
+operator|->
+name|shoot_type
+operator|==
+name|SHOOT_WINDOW
+operator|)
 operator|&&
 name|shootvals
 operator|->

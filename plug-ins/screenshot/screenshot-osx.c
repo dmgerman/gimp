@@ -199,6 +199,16 @@ name|mode
 operator|=
 literal|"-iw"
 expr_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|->
+name|show_cursor
+condition|)
+name|cursor
+operator|=
+literal|"-C"
+expr_stmt|;
 break|break;
 case|case
 name|SHOOT_ROOT
