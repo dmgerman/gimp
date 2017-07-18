@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29859b390108
+DECL|struct|__anon2acabbd10108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29859b390208
+DECL|struct|__anon2acabbd10208
 block|{
 DECL|member|y
 name|gint32
@@ -6642,8 +6642,10 @@ name|cd
 operator|->
 name|outline
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"curve-border"
+argument_list|,
 literal|"_Upper"
 argument_list|)
 argument_list|,
@@ -6652,8 +6654,10 @@ argument_list|,
 operator|&
 name|upper
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"curve-border"
+argument_list|,
 literal|"_Lower"
 argument_list|)
 argument_list|,
