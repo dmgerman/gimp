@@ -1848,6 +1848,10 @@ name|tool_type
 argument_list|,
 name|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|)
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_SMUDGE_TOOL
 condition|)
 block|{
 name|inner_frame

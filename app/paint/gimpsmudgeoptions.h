@@ -107,6 +107,14 @@ DECL|member|rate
 name|gdouble
 name|rate
 decl_stmt|;
+DECL|member|flow
+name|gdouble
+name|flow
+decl_stmt|;
+DECL|member|no_erasing
+name|gboolean
+name|no_erasing
+decl_stmt|;
 block|}
 struct|;
 end_struct
