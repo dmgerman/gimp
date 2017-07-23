@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0103
+DECL|enum|__anon2c501ade0103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0203
+DECL|enum|__anon2c501ade0203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0303
+DECL|enum|__anon2c501ade0303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0403
+DECL|enum|__anon2c501ade0403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0503
+DECL|enum|__anon2c501ade0503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0603
+DECL|enum|__anon2c501ade0603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0703
+DECL|enum|__anon2c501ade0703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0803
+DECL|enum|__anon2c501ade0803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0903
+DECL|enum|__anon2c501ade0903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0a03
+DECL|enum|__anon2c501ade0a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2530e0b03
+DECL|enum|__anon2c501ade0b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -1750,31 +1750,46 @@ block|{
 block|{
 literal|"http://cv.iptc.org/newscodes/digitalsourcetype/digitalCapture"
 block|,
+name|N_
+argument_list|(
 literal|"Original digital capture of a real life scene"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm"
 block|,
+name|N_
+argument_list|(
 literal|"Digitised from a negative on film"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm"
 block|,
+name|N_
+argument_list|(
 literal|"Digitised from a positive on film"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://cv.iptc.org/newscodes/digitalsourcetype/print"
 block|,
+name|N_
+argument_list|(
 literal|"Digitised from a print on non-transparent medium"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage"
 block|,
+name|N_
+argument_list|(
 literal|"Created by software"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1796,25 +1811,37 @@ block|{
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/MR-NON"
 block|,
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/MR-NAP"
 block|,
+name|N_
+argument_list|(
 literal|"Not Applicable"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/MR-NAP"
 block|,
+name|N_
+argument_list|(
 literal|"Unlimited Model Releases"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/MR-LPR"
 block|,
+name|N_
+argument_list|(
 literal|"Limited or Incomplete Model Releases"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1836,25 +1863,37 @@ block|{
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/PR-NON"
 block|,
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/PR-NAP"
 block|,
+name|N_
+argument_list|(
 literal|"Not Applicable"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/PR-NAP"
 block|,
+name|N_
+argument_list|(
 literal|"Unlimited Property Releases"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/PR-LPR"
 block|,
+name|N_
+argument_list|(
 literal|"Limited or Incomplete Property Releases"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1876,79 +1915,118 @@ block|{
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-UNK"
 block|,
+name|N_
+argument_list|(
 literal|"Age Unknown"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A25"
 block|,
+name|N_
+argument_list|(
 literal|"Age 25 or Over"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A24"
 block|,
+name|N_
+argument_list|(
 literal|"Age 24"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A23"
 block|,
+name|N_
+argument_list|(
 literal|"Age 23"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A22"
 block|,
+name|N_
+argument_list|(
 literal|"Age 22"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A21"
 block|,
+name|N_
+argument_list|(
 literal|"Age 21"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A20"
 block|,
+name|N_
+argument_list|(
 literal|"Age 20"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A19"
 block|,
+name|N_
+argument_list|(
 literal|"Age 19"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A18"
 block|,
+name|N_
+argument_list|(
 literal|"Age 18"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A17"
 block|,
+name|N_
+argument_list|(
 literal|"Age 17"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A16"
 block|,
+name|N_
+argument_list|(
 literal|"Age 16"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-A15"
 block|,
+name|N_
+argument_list|(
 literal|"Age 15"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/AG-U14"
 block|,
+name|N_
+argument_list|(
 literal|"Age 14 or Under"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1968,23 +2046,50 @@ name|urgency
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"High"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"2"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"3"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"4"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Normal"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"6"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"7"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Low"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2006,21 +2111,30 @@ block|{
 operator|-
 literal|1
 block|,
+name|N_
+argument_list|(
 literal|"Unknown"
+argument_list|)
 block|}
 block|,
 comment|// DO NOT SAVE
 block|{
 name|TRUE
 block|,
+name|N_
+argument_list|(
 literal|"Copyrighted"
+argument_list|)
 block|}
 block|,
 comment|// TRUE
 block|{
 name|FALSE
 block|,
+name|N_
+argument_list|(
 literal|"Public Domain"
+argument_list|)
 block|}
 block|,
 comment|// FALSE
@@ -2044,37 +2158,55 @@ block|{
 block|{
 literal|""
 block|,
+name|N_
+argument_list|(
 literal|"Select a value"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/work"
 block|,
+name|N_
+argument_list|(
 literal|"Work"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/cell"
 block|,
+name|N_
+argument_list|(
 literal|"Cell"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/fax"
 block|,
+name|N_
+argument_list|(
 literal|"Fax"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/home"
 block|,
+name|N_
+argument_list|(
 literal|"Home"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"http://ns.useplus.org/ldf/vocab/pager"
 block|,
+name|N_
+argument_list|(
 literal|"Pager"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2096,25 +2228,37 @@ block|{
 block|{
 literal|""
 block|,
+name|N_
+argument_list|(
 literal|"Select a value"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"male"
 block|,
+name|N_
+argument_list|(
 literal|"Male"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"female"
 block|,
+name|N_
+argument_list|(
 literal|"Female"
+argument_list|)
 block|}
 block|,
 block|{
 literal|"other"
 block|,
+name|N_
+argument_list|(
 literal|"Other"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -2134,11 +2278,20 @@ name|gpsaltref
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Unknown"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Above Sea Level"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Below Sea Level"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2157,11 +2310,20 @@ name|gpslatref
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Unknown"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"North"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"South"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2180,11 +2342,20 @@ name|gpslngref
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Unknown"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"East"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"West"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
