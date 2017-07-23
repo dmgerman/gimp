@@ -104,7 +104,7 @@ name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|time
-name|guint
+name|gint64
 name|time
 decl_stmt|;
 block|}
