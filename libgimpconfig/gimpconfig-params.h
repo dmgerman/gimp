@@ -185,6 +185,52 @@ define|default, flags) \   g_object_class_install_property (class, id,\         
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_PROP_INT64 (class,id,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_CONFIG_PROP_INT64
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   g_object_class_install_property (class, id,\                                    g_param_spec_int64 (name, nick, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_PROP_UINT64 (class,id,name,nick,blurb,min,max,default,flags)
+define|#
+directive|define
+name|GIMP_CONFIG_PROP_UINT64
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|nick
+parameter_list|,
+name|blurb
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default, flags) \   g_object_class_install_property (class, id,\                                    g_param_spec_uint64 (name, nick, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_define
 DECL|macro|GIMP_CONFIG_PROP_UNIT (class,id,name,nick,blurb,pixels,percent,default,flags)
 define|#
 directive|define
