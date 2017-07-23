@@ -1401,7 +1401,7 @@ DECL|macro|GEXIV2_REQUIRED_MICRO
 define|#
 directive|define
 name|GEXIV2_REQUIRED_MICRO
-value|3
+value|6
 name|gint
 name|gexiv2_version
 init|=
