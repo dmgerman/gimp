@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"display/display-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/widgets-types.h"
 end_include
 
@@ -29,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299edd2c0103
+DECL|enum|__anon2bb14dde0103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_TYPE_LINE
 name|GIMP_CONTROLLER_TYPE_LINE
@@ -49,25 +55,87 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299edd2c0208
+DECL|struct|__anon2bb14dde0208
 block|{
 DECL|member|value
 name|gdouble
 name|value
 decl_stmt|;
+comment|/*  slider value                           */
 DECL|member|min
 name|gdouble
 name|min
 decl_stmt|;
+comment|/*  minimal allowable slider value         */
 DECL|member|max
 name|gdouble
 name|max
 decl_stmt|;
+comment|/*  maximal allowable slider value         */
+DECL|member|visible
+name|gboolean
+name|visible
+range|:
+literal|1
+decl_stmt|;
+comment|/*  slider is visible                      */
+DECL|member|selectable
+name|gboolean
+name|selectable
+range|:
+literal|1
+decl_stmt|;
+comment|/*  slider is selectable                   */
+DECL|member|movable
+name|gboolean
+name|movable
+range|:
+literal|1
+decl_stmt|;
+comment|/*  slider movable                         */
+DECL|member|removable
+name|gboolean
+name|removable
+range|:
+literal|1
+decl_stmt|;
+comment|/*  slider is removable                    */
+DECL|member|autohide
+name|gboolean
+name|autohide
+range|:
+literal|1
+decl_stmt|;
+comment|/*  whether to autohide the slider         */
+DECL|member|type
+name|GimpHandleType
+name|type
+decl_stmt|;
+comment|/*  slider handle type                     */
+DECL|member|size
+name|gdouble
+name|size
+decl_stmt|;
+comment|/*  slider handle size, as a fraction of   *                                    *  the default size                       */
+DECL|member|data
+name|gpointer
+name|data
+decl_stmt|;
+comment|/*  user data                              */
 DECL|typedef|GimpControllerSlider
 block|}
 name|GimpControllerSlider
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_CONTROLLER_SLIDER_DEFAULT
+define|#
+directive|define
+name|GIMP_CONTROLLER_SLIDER_DEFAULT
+define|\
+value|((const GimpControllerSlider) {                                              \     .value      = 0.0,                                                         \     .min        = 0.0,                                                         \     .max        = 1.0,                                                         \                                                                                \     .visible    = TRUE,                                                        \     .selectable = TRUE,                                                        \     .movable    = TRUE,                                                        \     .removable  = FALSE,                                                       \                                                                                \     .autohide   = FALSE,                                                       \     .type       = GIMP_HANDLE_FILLED_DIAMOND,                                  \     .size       = 1.0,                                                         \                                                                                \     .data       = NULL                                                         \   })
+end_define
 
 begin_comment
 comment|/*  function types  */

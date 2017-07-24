@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af052d70103
+DECL|enum|__anon29c526d90103
 block|{
 DECL|enumerator|GEGL_SPIRAL_TYPE_LINEAR
 name|GEGL_SPIRAL_TYPE_LINEAR
@@ -586,6 +586,13 @@ name|sliders
 index|[
 literal|0
 index|]
+operator|=
+name|GIMP_CONTROLLER_SLIDER_DEFAULT
+expr_stmt|;
+name|sliders
+index|[
+literal|0
+index|]
 operator|.
 name|min
 operator|=
@@ -626,6 +633,13 @@ operator|=
 literal|2
 expr_stmt|;
 comment|/* balance */
+name|sliders
+index|[
+literal|0
+index|]
+operator|=
+name|GIMP_CONTROLLER_SLIDER_DEFAULT
+expr_stmt|;
 name|sliders
 index|[
 literal|0
@@ -671,6 +685,13 @@ literal|4.0
 argument_list|)
 expr_stmt|;
 comment|/* base */
+name|sliders
+index|[
+literal|1
+index|]
+operator|=
+name|GIMP_CONTROLLER_SLIDER_DEFAULT
+expr_stmt|;
 name|sliders
 index|[
 literal|1
