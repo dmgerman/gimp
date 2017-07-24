@@ -45,23 +45,23 @@ name|gchar
 modifier|*
 name|magic
 decl_stmt|;
-DECL|member|load_proc
+DECL|member|load_proc_format
 specifier|const
 name|gchar
 modifier|*
-name|load_proc
+name|load_proc_format
 decl_stmt|;
-DECL|member|load_blurb
+DECL|member|load_blurb_format
 specifier|const
 name|gchar
 modifier|*
-name|load_blurb
+name|load_blurb_format
 decl_stmt|;
-DECL|member|load_help
+DECL|member|load_help_format
 specifier|const
 name|gchar
 modifier|*
-name|load_help
+name|load_help_format
 decl_stmt|;
 block|}
 struct|;
@@ -101,11 +101,11 @@ comment|/* tiff */
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0377\\01"
 block|,
 comment|/* tiff */
-literal|"file-darktable-canon-load"
+literal|"file-%s-canon-load"
 block|,
-literal|"Load files in the Canon raw formats via darktable"
+literal|"Load files in the Canon raw formats via %s"
 block|,
-literal|"This plug-in loads files in Canon's raw formats by calling darktable."
+literal|"This plug-in loads files in Canon's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -120,11 +120,11 @@ literal|"nef,nrw"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-nikon-load"
+literal|"file-%s-nikon-load"
 block|,
-literal|"Load files in the Nikon raw formats via darktable"
+literal|"Load files in the Nikon raw formats via %s"
 block|,
-literal|"This plug-in loads files in Nikon's raw formats by calling darktable."
+literal|"This plug-in loads files in Nikon's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -139,11 +139,11 @@ literal|"3fr,fff"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-hasselblad-load"
+literal|"file-%s-hasselblad-load"
 block|,
-literal|"Load files in the Hasselblad raw formats via darktable"
+literal|"Load files in the Hasselblad raw formats via %s"
 block|,
-literal|"This plug-in loads files in Hasselblad's raw formats by calling darktable."
+literal|"This plug-in loads files in Hasselblad's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -158,11 +158,11 @@ literal|"arw,srf,sr2"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-sony-load"
+literal|"file-%s-sony-load"
 block|,
-literal|"Load files in the Sony raw formats via darktable"
+literal|"Load files in the Sony raw formats via %s"
 block|,
-literal|"This plug-in loads files in Sony's raw formats by calling darktable."
+literal|"This plug-in loads files in Sony's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -177,11 +177,11 @@ literal|"bay"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-bay-load"
+literal|"file-%s-bay-load"
 block|,
-literal|"Load files in the BAY raw format via darktable"
+literal|"Load files in the BAY raw format via %s"
 block|,
-literal|"This plug-in loads files in Casio's raw BAY format by calling darktable."
+literal|"This plug-in loads files in Casio's raw BAY format by calling %s."
 block|}
 block|,
 block|{
@@ -197,11 +197,11 @@ literal|"cine,cin"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-cine-load"
+literal|"file-%s-cine-load"
 block|,
-literal|"Load files in the CINE raw format via darktable"
+literal|"Load files in the CINE raw format via %s"
 block|,
-literal|"This plug-in loads files in Phantom Software's raw CINE format by calling darktable."
+literal|"This plug-in loads files in Phantom Software's raw CINE format by calling %s."
 block|}
 block|,
 block|{
@@ -217,11 +217,11 @@ literal|"cs1,ia,sti"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-sinar-load"
+literal|"file-%s-sinar-load"
 block|,
-literal|"Load files in the Sinar raw formats via darktable"
+literal|"Load files in the Sinar raw formats via %s"
 block|,
-literal|"This plug-in loads files in Sinar's raw formats by calling darktable."
+literal|"This plug-in loads files in Sinar's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -239,11 +239,11 @@ comment|/* tiff */
 literal|"0,string,II*\\0\\0\\03\\0\\0\\0174\\01"
 block|,
 comment|/* tiff */
-literal|"file-darktable-kodak-load"
+literal|"file-%s-kodak-load"
 block|,
-literal|"Load files in the Kodak raw formats via darktable"
+literal|"Load files in the Kodak raw formats via %s"
 block|,
-literal|"This plug-in loads files in Kodak's raw formats by calling darktable."
+literal|"This plug-in loads files in Kodak's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -258,11 +258,11 @@ literal|"dng"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-dng-load"
+literal|"file-%s-dng-load"
 block|,
-literal|"Load files in the DNG raw format via darktable"
+literal|"Load files in the DNG raw format via %s"
 block|,
-literal|"This plug-in loads files in the Adobe Digital Negative DNG format by calling darktable."
+literal|"This plug-in loads files in the Adobe Digital Negative DNG format by calling %s."
 block|}
 block|,
 block|{
@@ -277,11 +277,11 @@ literal|"erf"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-erf-load"
+literal|"file-%s-erf-load"
 block|,
-literal|"Load files in the ERF raw format via darktable"
+literal|"Load files in the ERF raw format via %s"
 block|,
-literal|"This plug-in loads files in Epson's raw ERF format by calling darktable."
+literal|"This plug-in loads files in Epson's raw ERF format by calling %s."
 block|}
 block|,
 block|{
@@ -296,11 +296,11 @@ literal|"cap,iiq"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-phaseone-load"
+literal|"file-%s-phaseone-load"
 block|,
-literal|"Load files in the Phase One raw formats via darktable"
+literal|"Load files in the Phase One raw formats via %s"
 block|,
-literal|"This plug-in loads files in Phase One's raw formats by calling darktable."
+literal|"This plug-in loads files in Phase One's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -315,11 +315,11 @@ literal|"mdc,mrw"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-minolta-load"
+literal|"file-%s-minolta-load"
 block|,
-literal|"Load files in the Minolta raw formats via darktable"
+literal|"Load files in the Minolta raw formats via %s"
 block|,
-literal|"This plug-in loads files in Minolta's raw formats by calling darktable."
+literal|"This plug-in loads files in Minolta's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -334,11 +334,11 @@ literal|"mef"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-mef-load"
+literal|"file-%s-mef-load"
 block|,
-literal|"Load files in the MEF raw format via darktable"
+literal|"Load files in the MEF raw format via %s"
 block|,
-literal|"This plug-in loads files in Mamiya's raw MEF format by calling darktable."
+literal|"This plug-in loads files in Mamiya's raw MEF format by calling %s."
 block|}
 block|,
 block|{
@@ -353,11 +353,11 @@ literal|"mos"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-mos-load"
+literal|"file-%s-mos-load"
 block|,
-literal|"Load files in the MOS raw format via darktable"
+literal|"Load files in the MOS raw format via %s"
 block|,
-literal|"This plug-in loads files in Leaf's raw MOS format by calling darktable."
+literal|"This plug-in loads files in Leaf's raw MOS format by calling %s."
 block|}
 block|,
 block|{
@@ -372,11 +372,11 @@ literal|"orf"
 block|,
 literal|"0,string,IIRO,0,string,MMOR,0,string,IIRS"
 block|,
-literal|"file-darktable-orf-load"
+literal|"file-%s-orf-load"
 block|,
-literal|"Load files in the ORF raw format via darktable"
+literal|"Load files in the ORF raw format via %s"
 block|,
-literal|"This plug-in loads files in Olympus' raw ORF format by calling darktable."
+literal|"This plug-in loads files in Olympus' raw ORF format by calling %s."
 block|}
 block|,
 block|{
@@ -391,11 +391,11 @@ literal|"pef,raw"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-pef-load"
+literal|"file-%s-pef-load"
 block|,
-literal|"Load files in the PEF raw format via darktable"
+literal|"Load files in the PEF raw format via %s"
 block|,
-literal|"This plug-in loads files in Pentax' raw PEF format by calling darktable."
+literal|"This plug-in loads files in Pentax' raw PEF format by calling %s."
 block|}
 block|,
 block|{
@@ -411,11 +411,11 @@ literal|"pxn"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-pxn-load"
+literal|"file-%s-pxn-load"
 block|,
-literal|"Load files in the PXN raw format via darktable"
+literal|"Load files in the PXN raw format via %s"
 block|,
-literal|"This plug-in loads files in Logitech's raw PXN format by calling darktable."
+literal|"This plug-in loads files in Logitech's raw PXN format by calling %s."
 block|}
 block|,
 block|{
@@ -431,11 +431,11 @@ literal|"qtk"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-qtk-load"
+literal|"file-%s-qtk-load"
 block|,
-literal|"Load files in the QTK raw format via darktable"
+literal|"Load files in the QTK raw format via %s"
 block|,
-literal|"This plug-in loads files in Apple's QuickTake QTK raw format by calling darktable."
+literal|"This plug-in loads files in Apple's QuickTake QTK raw format by calling %s."
 block|}
 block|,
 block|{
@@ -450,11 +450,11 @@ literal|"raf"
 block|,
 literal|"0,string,FUJIFILMCCD-RAW"
 block|,
-literal|"file-darktable-raf-load"
+literal|"file-%s-raf-load"
 block|,
-literal|"Load files in the RAF raw format via darktable"
+literal|"Load files in the RAF raw format via %s"
 block|,
-literal|"This plug-in loads files in Fujifilm's raw RAF format by calling darktable."
+literal|"This plug-in loads files in Fujifilm's raw RAF format by calling %s."
 block|}
 block|,
 block|{
@@ -469,11 +469,11 @@ literal|"raw,rw2"
 block|,
 literal|"0,string,IIU\\0"
 block|,
-literal|"file-darktable-panasonic-load"
+literal|"file-%s-panasonic-load"
 block|,
-literal|"Load files in the Panasonic raw formats via darktable"
+literal|"Load files in the Panasonic raw formats via %s"
 block|,
-literal|"This plug-in loads files in Panasonic's raw formats by calling darktable."
+literal|"This plug-in loads files in Panasonic's raw formats by calling %s."
 block|}
 block|,
 block|{
@@ -489,11 +489,11 @@ literal|"rdc"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-rdc-load"
+literal|"file-%s-rdc-load"
 block|,
-literal|"Load files in the RDC raw format via darktable"
+literal|"Load files in the RDC raw format via %s"
 block|,
-literal|"This plug-in loads files in Digital Foto Maker's raw RDC format by calling darktable."
+literal|"This plug-in loads files in Digital Foto Maker's raw RDC format by calling %s."
 block|}
 block|,
 block|{
@@ -508,11 +508,11 @@ literal|"rwl"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-rwl-load"
+literal|"file-%s-rwl-load"
 block|,
-literal|"Load files in the RWL raw format via darktable"
+literal|"Load files in the RWL raw format via %s"
 block|,
-literal|"This plug-in loads files in Leica's raw RWL format by calling darktable."
+literal|"This plug-in loads files in Leica's raw RWL format by calling %s."
 block|}
 block|,
 block|{
@@ -527,11 +527,11 @@ literal|"srw"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-srw-load"
+literal|"file-%s-srw-load"
 block|,
-literal|"Load files in the SRW raw format via darktable"
+literal|"Load files in the SRW raw format via %s"
 block|,
-literal|"This plug-in loads files in Samsung's raw SRW format by calling darktable."
+literal|"This plug-in loads files in Samsung's raw SRW format by calling %s."
 block|}
 block|,
 block|{
@@ -546,11 +546,11 @@ literal|"x3f"
 block|,
 literal|"0,string,FOVb"
 block|,
-literal|"file-darktable-x3f-load"
+literal|"file-%s-x3f-load"
 block|,
-literal|"Load files in the X3F raw format via darktable"
+literal|"Load files in the X3F raw format via %s"
 block|,
-literal|"This plug-in loads files in Sigma's raw X3F format by calling darktable."
+literal|"This plug-in loads files in Sigma's raw X3F format by calling %s."
 block|}
 block|,
 block|{
@@ -565,11 +565,11 @@ literal|"ari"
 block|,
 name|NULL
 block|,
-literal|"file-darktable-ari-load"
+literal|"file-%s-ari-load"
 block|,
-literal|"Load files in the ARI raw format via darktable"
+literal|"Load files in the ARI raw format via %s"
 block|,
-literal|"This plug-in loads files in Arriflex' raw ARI format by calling darktable."
+literal|"This plug-in loads files in Arriflex' raw ARI format by calling %s."
 block|}
 block|}
 decl_stmt|;
