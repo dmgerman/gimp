@@ -86,21 +86,15 @@ argument_list|(
 literal|"Raw Canon"
 argument_list|)
 block|,
-literal|"image/x-canon-cr2,image/x-canon-crw,image/tiff"
+literal|"image/x-canon-cr2,image/x-canon-crw"
 block|,
-literal|"cr2,crw,tif,tiff"
+literal|"cr2,crw"
 block|,
 literal|"0,string,II*\\0\\020\\0\\0\\0CR,"
 comment|/* cr2  */
-literal|"0,string,II\\024\\0\\0\\0HEAPCCDR,"
-comment|/* crw  */
-literal|"0,string,MM\\0*\\0\\0\\0\\020\\0272\\0260,"
-comment|/* tiff */
-literal|"0,string,MM\\0*\\0\\0\\021\\064\\0\\04,"
-comment|/* tiff */
-literal|"0,string,II*\\0\\0\\03\\0\\0\\0377\\01"
+literal|"0,string,II\\024\\0\\0\\0HEAPCCDR"
 block|,
-comment|/* tiff */
+comment|/* crw  */
 literal|"file-%s-canon-load"
 block|,
 literal|"Load files in the Canon raw formats via %s"
@@ -230,15 +224,12 @@ argument_list|(
 literal|"Raw Kodak"
 argument_list|)
 block|,
-literal|"image/x-kodak-dc2,image/x-kodak-dcr,image/x-kodak-kdc,image/x-kodak-k25,image/x-kodak-kc2,image/tiff"
+literal|"image/x-kodak-dc2,image/x-kodak-dcr,image/x-kodak-kdc,image/x-kodak-k25,image/x-kodak-kc2"
 block|,
-literal|"dc2,dcr,kdc,k25,kc2,tif,tiff"
+literal|"dc2,dcr,kdc,k25,kc2"
 block|,
-literal|"0,string,MM\\0*\\0\\0\\021\\0166\\0\\04,"
-comment|/* tiff */
-literal|"0,string,II*\\0\\0\\03\\0\\0\\0174\\01"
+name|NULL
 block|,
-comment|/* tiff */
 literal|"file-%s-kodak-load"
 block|,
 literal|"Load files in the Kodak raw formats via %s"
