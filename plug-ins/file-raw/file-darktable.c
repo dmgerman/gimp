@@ -1619,9 +1619,9 @@ name|lua_file
 init|=
 name|gimp_data_directory_file
 argument_list|(
-literal|"file-darktable"
+literal|"file-raw"
 argument_list|,
-literal|"export-on-exit.lua"
+literal|"file-darktable-export-on-exit.lua"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1924,9 +1924,9 @@ name|lua_file
 init|=
 name|gimp_data_directory_file
 argument_list|(
-literal|"file-darktable"
+literal|"file-raw"
 argument_list|,
-literal|"get-size.lua"
+literal|"file-darktable-get-size.lua"
 argument_list|,
 name|NULL
 argument_list|)
