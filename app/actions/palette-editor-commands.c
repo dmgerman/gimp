@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppaletteview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor-commands.h"
 end_include
 
@@ -374,6 +380,10 @@ operator|->
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpPaletteEntry
+modifier|*
+name|entry
+decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
@@ -402,9 +412,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|color
+name|entry
 operator|=
 name|gimp_palette_add_entry
 argument_list|(
@@ -417,6 +425,18 @@ name|NULL
 argument_list|,
 operator|&
 name|color
+argument_list|)
+expr_stmt|;
+name|gimp_palette_view_select_entry
+argument_list|(
+name|GIMP_PALETTE_VIEW
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
