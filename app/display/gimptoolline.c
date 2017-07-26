@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294494f60103
+DECL|enum|__anon2bf8b7970103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon294494f60203
+DECL|enum|__anon2bf8b7970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1774,7 +1774,7 @@ operator|++
 control|)
 block|{
 name|gdouble
-name|t
+name|value
 decl_stmt|;
 name|gdouble
 name|x
@@ -1792,7 +1792,7 @@ modifier|*
 modifier|*
 name|grip
 decl_stmt|;
-name|t
+name|value
 operator|=
 name|gimp_tool_line_get_slider
 argument_list|(
@@ -1819,7 +1819,7 @@ operator|->
 name|x1
 operator|)
 operator|*
-name|t
+name|value
 expr_stmt|;
 name|y
 operator|=
@@ -1837,7 +1837,7 @@ operator|->
 name|y1
 operator|)
 operator|*
-name|t
+name|value
 expr_stmt|;
 name|circle
 operator|=
@@ -2965,7 +2965,7 @@ modifier|*
 name|slider
 decl_stmt|;
 name|gdouble
-name|t
+name|value
 decl_stmt|;
 name|slider
 operator|=
@@ -2979,7 +2979,7 @@ name|slider_index
 argument_list|)
 expr_stmt|;
 comment|/* project the cursor position onto the line */
-name|t
+name|value
 operator|=
 operator|(
 name|private
@@ -3017,7 +3017,7 @@ operator|->
 name|y1
 operator|)
 expr_stmt|;
-name|t
+name|value
 operator|/=
 name|length_sqr
 expr_stmt|;
@@ -3025,22 +3025,22 @@ if|if
 condition|(
 name|constrain
 condition|)
-name|t
+name|value
 operator|=
 name|RINT
 argument_list|(
 literal|12.0
 operator|*
-name|t
+name|value
 argument_list|)
 operator|/
 literal|12.0
 expr_stmt|;
-name|t
+name|value
 operator|=
 name|CLAMP
 argument_list|(
-name|t
+name|value
 argument_list|,
 name|slider
 operator|->
@@ -3051,22 +3051,22 @@ operator|->
 name|max
 argument_list|)
 expr_stmt|;
-name|t
+name|value
 operator|=
 name|CLAMP
 argument_list|(
-name|t
+name|value
 argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|t
+name|value
 operator|=
 name|fabs
 argument_list|(
-name|t
+name|value
 argument_list|)
 expr_stmt|;
 comment|/* avoid negative zero */
@@ -3074,7 +3074,7 @@ name|slider
 operator|->
 name|value
 operator|=
-name|t
+name|value
 expr_stmt|;
 name|g_object_set
 argument_list|(
