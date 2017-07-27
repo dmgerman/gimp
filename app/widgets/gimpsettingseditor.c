@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1109b0103
+DECL|enum|__anon295a02fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1531,7 +1531,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|guint
+name|gint64
 name|t
 decl_stmt|;
 name|g_object_get
@@ -1558,6 +1558,9 @@ name|object
 argument_list|,
 literal|"time"
 argument_list|,
+operator|(
+name|gint64
+operator|)
 literal|0
 argument_list|,
 name|NULL

@@ -3976,6 +3976,9 @@ name|config
 argument_list|,
 literal|"time"
 argument_list|,
+operator|(
+name|gint64
+operator|)
 literal|0
 argument_list|,
 name|NULL
