@@ -74,14 +74,6 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_MAX_NUM_THREADS
-define|#
-directive|define
-name|GIMP_MAX_NUM_THREADS
-value|G_PARAM_SPEC_INT (g_object_class_find_property (G_OBJECT_GET_CLASS (gegl_config()), \                                                                              "threads"))->maximum
-end_define
-
-begin_define
 DECL|macro|GIMP_MAX_MEM_PROCESS
 define|#
 directive|define
@@ -91,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3165db0103
+DECL|enum|__anon29624b5c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -323,7 +315,10 @@ name|klass
 argument_list|)
 decl_stmt|;
 name|gint
-name|num_processors
+name|n_threads
+decl_stmt|;
+name|gint
+name|max_n_threads
 decl_stmt|;
 name|guint64
 name|memory_size
@@ -397,7 +392,7 @@ operator||
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
-name|num_processors
+name|n_threads
 operator|=
 name|g_get_num_processors
 argument_list|()
@@ -405,21 +400,37 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
-name|num_processors
-operator|=
-name|num_processors
-operator|*
+name|n_threads
+operator|*=
 literal|2
 expr_stmt|;
 endif|#
 directive|endif
-name|num_processors
+name|max_n_threads
+operator|=
+name|G_PARAM_SPEC_INT
+argument_list|(
+name|g_object_class_find_property
+argument_list|(
+name|G_OBJECT_GET_CLASS
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|)
+argument_list|,
+literal|"threads"
+argument_list|)
+argument_list|)
+operator|->
+name|maximum
+expr_stmt|;
+name|n_threads
 operator|=
 name|MIN
 argument_list|(
-name|num_processors
+name|n_threads
 argument_list|,
-name|GIMP_MAX_NUM_THREADS
+name|max_n_threads
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -430,7 +441,7 @@ directive|warning
 warning|Defaulting # of threads to 1
 endif|#
 directive|endif
-name|num_processors
+name|n_threads
 operator|=
 literal|1
 expr_stmt|;
@@ -448,9 +459,9 @@ name|NUM_PROCESSORS_BLURB
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_MAX_NUM_THREADS
+name|max_n_threads
 argument_list|,
-name|num_processors
+name|n_threads
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
