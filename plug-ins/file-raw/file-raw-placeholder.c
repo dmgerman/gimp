@@ -478,11 +478,11 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"There is no RAW loader installed to open '%s' files\n"
+literal|"There is no RAW loader installed to open '%s' files.\n"
 literal|"\n"
 literal|"GIMP currently supports these RAW loaders:\n"
-literal|"darktable (http://www.darktable.org/)\n"
-literal|"RawTherapee (http://rawtherapee.com/)\n"
+literal|"- darktable (http://www.darktable.org/), at least 1.7\n"
+literal|"- RawTherapee (http://rawtherapee.com/), at least 5.2\n"
 literal|"\n"
 literal|"Please install one of them in order to "
 literal|"load RAW files."
