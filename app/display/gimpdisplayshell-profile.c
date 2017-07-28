@@ -291,11 +291,6 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"gimp_display_shell_profile_update\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -359,28 +354,12 @@ literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 block|}
-name|g_printerr
-argument_list|(
-literal|"src_profile: %s\n"
-literal|"src_format:  %s\n"
-literal|"dest_format: %s\n"
-argument_list|,
-name|gimp_color_profile_get_label
-argument_list|(
-name|src_profile
-argument_list|)
-argument_list|,
-name|babl_get_name
-argument_list|(
-name|src_format
-argument_list|)
-argument_list|,
-name|babl_get_name
-argument_list|(
-name|dest_format
-argument_list|)
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("src_profile: %s\n"               "src_format:  %s\n"               "dest_format: %s\n",               gimp_color_profile_get_label (src_profile),               babl_get_name (src_format),               babl_get_name (dest_format));
+endif|#
+directive|endif
 name|shell
 operator|->
 name|profile_transform
