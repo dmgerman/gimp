@@ -517,7 +517,7 @@ define|#
 directive|define
 name|IMPORT_PROMOTE_DITHER_BLURB
 define|\
-value|_("When promoting imported images to floating point precision, also add " \   "minimal noise in order do distribute color values a bit.")
+value|_("When promoting imported images to floating point precision, also add " \   "minimal noise in order to distribute color values a bit.")
 end_define
 
 begin_define
