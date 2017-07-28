@@ -3086,6 +3086,14 @@ value|"gimp-filter-softglow"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_SPIRAL
+define|#
+directive|define
+name|GIMP_HELP_FILTER_SPIRAL
+value|"gimp-filter-spiral"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_STRETCH_CONTRAST
 define|#
 directive|define
