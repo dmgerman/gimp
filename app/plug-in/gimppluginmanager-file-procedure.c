@@ -66,13 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2774d2850103
+DECL|enum|__anon2c0a71eb0103
 block|{
 comment|/*  positive values indicate the lenght of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE
@@ -559,8 +565,10 @@ operator|!=
 name|FILE_MATCH_NONE
 condition|)
 block|{
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
+name|MAGIC_MATCH
+argument_list|,
 literal|"magic match %d on %s\n"
 argument_list|,
 name|match_val
@@ -605,8 +613,10 @@ condition|(
 name|best_file_proc
 condition|)
 block|{
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
+name|MAGIC_MATCH
+argument_list|,
 literal|"best magic match on %s\n"
 argument_list|,
 name|gimp_object_get_name
