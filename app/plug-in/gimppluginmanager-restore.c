@@ -3451,7 +3451,7 @@ argument_list|(
 name|config_plug_in
 argument_list|)
 expr_stmt|;
-comment|/* if no raw loader was configured, or the configured raw loader    * wasn't found, default to the first loader that is not the    * placeolder, if any    */
+comment|/* if no raw loader was configured, or the configured raw loader    * wasn't found, default to the first loader that is not the    * placeholder, if any    */
 if|if
 condition|(
 operator|!
