@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-formats.h"
+file|"file-raw-formats.h"
 end_include
 
 begin_include
