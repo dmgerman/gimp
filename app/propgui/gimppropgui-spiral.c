@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b78a86d0103
+DECL|enum|__anon2c4222cc0103
 block|{
 DECL|enumerator|GEGL_SPIRAL_TYPE_LINEAR
 name|GEGL_SPIRAL_TYPE_LINEAR
@@ -303,12 +303,16 @@ argument_list|,
 literal|1000000.0
 argument_list|)
 expr_stmt|;
-comment|/* keep "balance" fixed when changing "base".  a bit ugly :P */
+comment|/* keep "balance" fixed when changing "base", or when "base" is 1, in          * which case there's no inverse mapping for the slider value, and we          * can get NaN.          */
 if|if
 condition|(
 name|base
 operator|==
 name|old_base
+operator|&&
+name|base
+operator|>
+literal|1.0
 condition|)
 block|{
 name|balance
