@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2911f3720103
+DECL|enum|__anon2aef6cba0103
 block|{
 comment|/* POINT_NONE evaluates to FALSE */
 DECL|enumerator|POINT_NONE
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911f3720203
+DECL|enum|__anon2aef6cba0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2968,6 +2968,21 @@ name|t
 operator|/=
 name|length_sqr
 expr_stmt|;
+if|if
+condition|(
+name|constrain
+condition|)
+name|t
+operator|=
+name|RINT
+argument_list|(
+literal|12.0
+operator|*
+name|t
+argument_list|)
+operator|/
+literal|12.0
+expr_stmt|;
 name|t
 operator|=
 name|CLAMP
@@ -2994,21 +3009,14 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|constrain
-condition|)
 name|t
 operator|=
-name|RINT
+name|fabs
 argument_list|(
-literal|24.0
-operator|*
 name|t
 argument_list|)
-operator|/
-literal|24.0
 expr_stmt|;
+comment|/* avoid negative zero */
 name|slider
 operator|->
 name|value
