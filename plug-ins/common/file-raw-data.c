@@ -114,11 +114,11 @@ value|"file-raw-save"
 end_define
 
 begin_define
-DECL|macro|SAVE_DEFAULTS_PROC
+DECL|macro|SAVE_PROC2
 define|#
 directive|define
-name|SAVE_DEFAULTS_PROC
-value|"file-raw-save-defaults"
+name|SAVE_PROC2
+value|"file-raw-save2"
 end_define
 
 begin_define
@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be409ff0103
+DECL|enum|__anon2c4e7d980103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be409ff0203
+DECL|enum|__anon2c4e7d980203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be409ff0308
+DECL|struct|__anon2c4e7d980308
 block|{
 DECL|member|image_type
 name|RawType
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be409ff0408
+DECL|struct|__anon2c4e7d980408
 block|{
 DECL|member|run
 name|gboolean
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be409ff0508
+DECL|struct|__anon2c4e7d980508
 block|{
 DECL|member|file_offset
 name|gint32
@@ -345,7 +345,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be409ff0608
+DECL|struct|__anon2c4e7d980608
 block|{
 DECL|member|fp
 name|FILE
@@ -937,18 +937,18 @@ index|[]
 init|=
 block|{
 name|COMMON_SAVE_ARGS
-block|,
-name|CONFIG_ARGS
 block|}
 decl_stmt|;
 specifier|static
 specifier|const
 name|GimpParamDef
-name|save_args_defaults
+name|save_args2
 index|[]
 init|=
 block|{
 name|COMMON_SAVE_ARGS
+block|,
+name|CONFIG_ARGS
 block|}
 decl_stmt|;
 specifier|static
@@ -1024,7 +1024,8 @@ name|SAVE_PROC
 argument_list|,
 literal|"Dump images to disk in raw format"
 argument_list|,
-literal|"Dump images to disk in raw format"
+literal|"This plug-in dumps images to disk in raw format, "
+literal|"using the default settings stored as a parasite."
 argument_list|,
 literal|"timecop, pg@futureware.at"
 argument_list|,
@@ -1053,23 +1054,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_save_handler
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-literal|"data"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|SAVE_DEFAULTS_PROC
+name|SAVE_PROC2
 argument_list|,
 literal|"Dump images to disk in raw format"
 argument_list|,
-literal|"This plug-in dumps images to disk in raw format, "
-literal|"using the default settings stored as a parasite."
+literal|"Dump images to disk in raw format"
 argument_list|,
 literal|"BjÃ¶rn Kautler, Bjoern@Kautler.net"
 argument_list|,
@@ -1088,19 +1079,19 @@ name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|save_args_defaults
+name|save_args2
 argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|save_args_defaults
+name|save_args2
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-name|SAVE_DEFAULTS_PROC
+name|SAVE_PROC2
 argument_list|,
 literal|"data,raw"
 argument_list|,
@@ -1565,7 +1556,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|SAVE_DEFAULTS_PROC
+name|SAVE_PROC2
 argument_list|)
 operator|==
 literal|0
