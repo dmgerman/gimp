@@ -494,7 +494,7 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_gradient_get_color_at
+name|gimp_gradient_segment_get_left_flat_color
 argument_list|(
 name|gradient
 argument_list|,
@@ -508,14 +508,6 @@ argument_list|,
 name|editor
 operator|->
 name|control_sel_l
-argument_list|,
-name|editor
-operator|->
-name|control_sel_l
-operator|->
-name|left
-argument_list|,
-name|FALSE
 argument_list|,
 operator|&
 name|color
@@ -1125,7 +1117,7 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_gradient_get_color_at
+name|gimp_gradient_segment_get_right_flat_color
 argument_list|(
 name|gradient
 argument_list|,
@@ -1139,14 +1131,6 @@ argument_list|,
 name|editor
 operator|->
 name|control_sel_r
-argument_list|,
-name|editor
-operator|->
-name|control_sel_r
-operator|->
-name|right
-argument_list|,
-name|FALSE
 argument_list|,
 operator|&
 name|color
