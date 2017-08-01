@@ -136,6 +136,16 @@ DECL|member|dither
 name|gboolean
 name|dither
 decl_stmt|;
+DECL|member|instant
+name|gboolean
+name|instant
+decl_stmt|;
+comment|/*  options gui  */
+DECL|member|instant_toggle
+name|GtkWidget
+modifier|*
+name|instant_toggle
+decl_stmt|;
 block|}
 struct|;
 end_struct
