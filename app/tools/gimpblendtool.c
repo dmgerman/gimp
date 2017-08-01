@@ -2816,6 +2816,11 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_blend_tool_editor_start
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
