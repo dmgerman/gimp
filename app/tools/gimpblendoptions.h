@@ -140,11 +140,25 @@ DECL|member|instant
 name|gboolean
 name|instant
 decl_stmt|;
+DECL|member|modify_active
+name|gboolean
+name|modify_active
+decl_stmt|;
 comment|/*  options gui  */
 DECL|member|instant_toggle
 name|GtkWidget
 modifier|*
 name|instant_toggle
+decl_stmt|;
+DECL|member|modify_active_frame
+name|GtkWidget
+modifier|*
+name|modify_active_frame
+decl_stmt|;
+DECL|member|modify_active_hint
+name|GtkWidget
+modifier|*
+name|modify_active_hint
 decl_stmt|;
 block|}
 struct|;

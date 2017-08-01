@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpblendtool-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolcontrol.h"
 end_include
 
@@ -3856,6 +3862,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_blend_tool_editor_gradient_changed
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -199,6 +199,11 @@ name|GimpDrawableFilter
 modifier|*
 name|filter
 decl_stmt|;
+comment|/*  editor  */
+DECL|member|block_handlers_count
+name|gint
+name|block_handlers_count
+decl_stmt|;
 block|}
 struct|;
 end_struct
