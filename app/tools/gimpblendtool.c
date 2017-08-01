@@ -3220,6 +3220,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_blend_tool_editor_line_changed
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
