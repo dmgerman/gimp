@@ -807,6 +807,25 @@ comment|/*  * If the second segment is NULL, these functions will process  * unt
 end_comment
 
 begin_function_decl
+name|gint
+name|gimp_gradient_segment_range_get_n_segments
+parameter_list|(
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|range_l
+parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|range_r
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_gradient_segment_range_compress
 parameter_list|(
