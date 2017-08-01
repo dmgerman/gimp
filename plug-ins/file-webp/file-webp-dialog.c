@@ -1362,6 +1362,16 @@ argument_list|,
 name|label_kf
 argument_list|)
 expr_stmt|;
+name|show_maxkeyframe_hints
+argument_list|(
+name|adj_kf
+argument_list|,
+name|GTK_LABEL
+argument_list|(
+name|label_kf
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* minimize-size checkbox */
 name|toggle_minsize
 operator|=
