@@ -2534,6 +2534,15 @@ name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_blend_tool_editor_options_notify
+argument_list|(
+name|blend_tool
+argument_list|,
+name|options
+argument_list|,
+name|pspec
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3688,6 +3697,11 @@ operator|->
 name|filter
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_blend_tool_editor_gradient_dirty
+argument_list|(
+name|blend_tool
 argument_list|)
 expr_stmt|;
 block|}
