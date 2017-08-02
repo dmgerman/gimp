@@ -647,6 +647,15 @@ block|{
 comment|/*  foreign toplevels without constructor  */
 name|FOREIGN
 argument_list|(
+literal|"gimp-blend-tool-dialog"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
 literal|"gimp-brightness-contrast-tool-dialog"
 argument_list|,
 name|TRUE

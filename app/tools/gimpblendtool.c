@@ -2868,6 +2868,11 @@ argument_list|(
 name|blend_tool
 argument_list|)
 decl_stmt|;
+name|gimp_blend_tool_editor_halt
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|blend_tool

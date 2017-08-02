@@ -209,6 +209,11 @@ DECL|member|block_handlers_count
 name|gint
 name|block_handlers_count
 decl_stmt|;
+DECL|member|gui
+name|GimpToolGui
+modifier|*
+name|gui
+decl_stmt|;
 block|}
 struct|;
 end_struct
