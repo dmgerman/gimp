@@ -5966,7 +5966,12 @@ block|{
 block|{
 name|GIMP_GRADIENT_COLOR_FIXED
 block|,
-literal|"GIMP_GRADIENT_COLOR_FIXED"
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"Fixed"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5974,7 +5979,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_COLOR_FOREGROUND
 block|,
-literal|"GIMP_GRADIENT_COLOR_FOREGROUND"
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"FG"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5982,7 +5992,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_COLOR_FOREGROUND_TRANSPARENT
 block|,
-literal|"GIMP_GRADIENT_COLOR_FOREGROUND_TRANSPARENT"
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"FG (t)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5990,7 +6005,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_COLOR_BACKGROUND
 block|,
-literal|"GIMP_GRADIENT_COLOR_BACKGROUND"
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"BG"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -5998,7 +6018,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_COLOR_BACKGROUND_TRANSPARENT
 block|,
-literal|"GIMP_GRADIENT_COLOR_BACKGROUND_TRANSPARENT"
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"BG (t)"
+argument_list|)
 block|,
 name|NULL
 block|}
