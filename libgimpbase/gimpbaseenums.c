@@ -3355,7 +3355,12 @@ block|{
 block|{
 name|GIMP_GRADIENT_SEGMENT_RGB
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_RGB"
+name|NC_
+argument_list|(
+literal|"gradient-segment-color"
+argument_list|,
+literal|"RGB"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3363,7 +3368,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_HSV_CCW
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_HSV_CCW"
+name|NC_
+argument_list|(
+literal|"gradient-segment-color"
+argument_list|,
+literal|"HSV (ccw)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3371,7 +3381,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_HSV_CW
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_HSV_CW"
+name|NC_
+argument_list|(
+literal|"gradient-segment-color"
+argument_list|,
+literal|"HSV (cw)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3512,7 +3527,12 @@ block|{
 block|{
 name|GIMP_GRADIENT_SEGMENT_LINEAR
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_LINEAR"
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Linear"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3520,7 +3540,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_CURVED
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_CURVED"
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Curved"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3528,7 +3553,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_SINE
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_SINE"
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Sinusoidal"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3536,7 +3566,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING"
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Spherical (inc)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3544,7 +3579,12 @@ block|,
 block|{
 name|GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING
 block|,
-literal|"GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING"
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Spherical (dec)"
+argument_list|)
 block|,
 name|NULL
 block|}
