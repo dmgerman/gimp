@@ -71,6 +71,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_blend_tool_editor_fg_bg_changed
+parameter_list|(
+name|GimpBlendTool
+modifier|*
+name|blend_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_blend_tool_editor_gradient_dirty
 parameter_list|(
 name|GimpBlendTool

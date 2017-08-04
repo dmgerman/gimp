@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6a1f70103
+DECL|enum|__anon2b0833550103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6a1f70208
+DECL|struct|__anon2b0833550208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -9446,6 +9446,24 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_blend_tool_editor_update_gui
+argument_list|(
+name|blend_tool
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_blend_tool_editor_fg_bg_changed (GimpBlendTool * blend_tool)
+name|gimp_blend_tool_editor_fg_bg_changed
+parameter_list|(
+name|GimpBlendTool
+modifier|*
+name|blend_tool
+parameter_list|)
+block|{
 name|gimp_blend_tool_editor_update_gui
 argument_list|(
 name|blend_tool
