@@ -29,6 +29,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_drawable_has_filters
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_add_filter
 parameter_list|(
