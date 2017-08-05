@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc9db60103
+DECL|enum|__anon28eb5b8f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc9db60203
+DECL|enum|__anon28eb5b8f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3764,6 +3764,8 @@ name|priv
 operator|->
 name|validate_handler
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|x
 argument_list|,
 name|y
@@ -3771,6 +3773,7 @@ argument_list|,
 name|w
 argument_list|,
 name|h
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3807,6 +3810,8 @@ name|priv
 operator|->
 name|validate_handler
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|x
 argument_list|,
 name|y
@@ -3814,6 +3819,7 @@ argument_list|,
 name|w
 argument_list|,
 name|h
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_node_blit_buffer

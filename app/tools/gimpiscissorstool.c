@@ -7715,6 +7715,8 @@ argument_list|(
 name|handler
 argument_list|)
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 literal|0
 argument_list|,
 literal|0
@@ -7727,6 +7729,7 @@ argument_list|,
 name|gegl_buffer_get_height
 argument_list|(
 name|buffer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
