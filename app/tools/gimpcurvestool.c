@@ -869,6 +869,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|histogram
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_view_set_background

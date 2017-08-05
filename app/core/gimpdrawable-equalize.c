@@ -98,7 +98,7 @@ name|selection
 decl_stmt|;
 name|GimpHistogram
 modifier|*
-name|hist
+name|histogram
 decl_stmt|;
 name|GeglNode
 modifier|*
@@ -140,7 +140,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|hist
+name|histogram
 operator|=
 name|gimp_histogram_new
 argument_list|(
@@ -151,7 +151,9 @@ name|gimp_drawable_calculate_histogram
 argument_list|(
 name|drawable
 argument_list|,
-name|hist
+name|histogram
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|equalize
@@ -166,7 +168,7 @@ literal|"gimp:equalize"
 argument_list|,
 literal|"histogram"
 argument_list|,
-name|hist
+name|histogram
 argument_list|,
 name|NULL
 argument_list|)
@@ -220,7 +222,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|hist
+name|histogram
 argument_list|)
 expr_stmt|;
 block|}

@@ -550,6 +550,8 @@ argument_list|,
 name|t_tool
 operator|->
 name|histogram
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_view_set_histogram

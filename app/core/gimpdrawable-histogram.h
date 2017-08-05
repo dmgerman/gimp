@@ -27,6 +27,9 @@ parameter_list|,
 name|GimpHistogram
 modifier|*
 name|histogram
+parameter_list|,
+name|gboolean
+name|with_filters
 parameter_list|)
 function_decl|;
 end_function_decl
