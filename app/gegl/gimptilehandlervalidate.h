@@ -242,6 +242,7 @@ name|GimpTileHandlerValidate
 modifier|*
 name|validate
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|rect
@@ -257,6 +258,7 @@ name|GimpTileHandlerValidate
 modifier|*
 name|validate
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|rect

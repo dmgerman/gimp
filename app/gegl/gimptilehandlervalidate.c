@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c50e0103
+DECL|enum|__anon28c9341f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1330,13 +1330,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_handler_validate_invalidate (GimpTileHandlerValidate * validate,GeglRectangle * rect)
+DECL|function|gimp_tile_handler_validate_invalidate (GimpTileHandlerValidate * validate,const GeglRectangle * rect)
 name|gimp_tile_handler_validate_invalidate
 parameter_list|(
 name|GimpTileHandlerValidate
 modifier|*
 name|validate
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|rect
@@ -1553,13 +1554,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_handler_validate_undo_invalidate (GimpTileHandlerValidate * validate,GeglRectangle * rect)
+DECL|function|gimp_tile_handler_validate_undo_invalidate (GimpTileHandlerValidate * validate,const GeglRectangle * rect)
 name|gimp_tile_handler_validate_undo_invalidate
 parameter_list|(
 name|GimpTileHandlerValidate
 modifier|*
 name|validate
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|rect
