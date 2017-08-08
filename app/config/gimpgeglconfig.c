@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29624b5c0103
+DECL|enum|__anon2b8314ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -397,15 +397,6 @@ operator|=
 name|g_get_num_processors
 argument_list|()
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
-name|n_threads
-operator|*=
-literal|2
-expr_stmt|;
-endif|#
-directive|endif
 name|max_n_threads
 operator|=
 name|G_PARAM_SPEC_INT
@@ -432,18 +423,6 @@ name|n_threads
 argument_list|,
 name|max_n_threads
 argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|Defaulting # of threads to 1
-endif|#
-directive|endif
-name|n_threads
-operator|=
-literal|1
 expr_stmt|;
 name|GIMP_CONFIG_PROP_INT
 argument_list|(
