@@ -2347,6 +2347,23 @@ name|g_ascii_strncasecmp
 argument_list|(
 name|psd_mode
 argument_list|,
+literal|"pass"
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+condition|)
+comment|/* Pass through (CS)*/
+return|return
+name|GIMP_LAYER_MODE_PASS_THROUGH
+return|;
+if|if
+condition|(
+name|g_ascii_strncasecmp
+argument_list|(
+name|psd_mode
+argument_list|,
 literal|"norm"
 argument_list|,
 literal|4
@@ -3033,6 +3050,20 @@ condition|(
 name|layer_mode
 condition|)
 block|{
+case|case
+name|GIMP_LAYER_MODE_PASS_THROUGH
+case|:
+name|psd_mode
+operator|=
+name|g_strndup
+argument_list|(
+literal|"pass"
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+comment|/* Pass through (CS) */
+break|break;
 case|case
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
 case|:
@@ -3730,6 +3761,7 @@ block|,
 literal|"GRAIN MERGE"
 block|,
 literal|"COLOR ERASE"
+literal|"PASS THROUGH"
 block|}
 decl_stmt|;
 specifier|static

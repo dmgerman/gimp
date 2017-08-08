@@ -878,6 +878,17 @@ literal|"hMix"
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_LAYER_MODE_PASS_THROUGH
+case|:
+name|strcpy
+argument_list|(
+name|psdMode
+argument_list|,
+literal|"pass"
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 block|{
 specifier|const
