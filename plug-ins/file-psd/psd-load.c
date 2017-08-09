@@ -8074,6 +8074,21 @@ argument_list|,
 name|layer_composite
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: use perceptual blending and compositing                        * unconditionally for now                        */
+name|gimp_layer_set_blend_space
+argument_list|(
+name|layer_id
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_composite_space
+argument_list|(
+name|layer_id
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+argument_list|)
+expr_stmt|;
 name|gimp_layer_set_opacity
 argument_list|(
 name|layer_id
@@ -8548,6 +8563,21 @@ argument_list|(
 name|layer_id
 argument_list|,
 name|layer_composite
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: use perceptual blending and compositing for all layers                * for now                */
+name|gimp_layer_set_blend_space
+argument_list|(
+name|layer_id
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_composite_space
+argument_list|(
+name|layer_id
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 argument_list|)
 expr_stmt|;
 name|IFDBG

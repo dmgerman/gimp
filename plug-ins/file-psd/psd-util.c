@@ -2339,7 +2339,7 @@ condition|)
 operator|*
 name|layer_composite
 operator|=
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_SRC_OVER
 expr_stmt|;
 if|if
 condition|(
@@ -2355,9 +2355,20 @@ operator|==
 literal|0
 condition|)
 comment|/* Pass through (CS)*/
+block|{
+if|if
+condition|(
+name|layer_composite
+condition|)
+operator|*
+name|layer_composite
+operator|=
+name|GIMP_LAYER_COMPOSITE_AUTO
+expr_stmt|;
 return|return
 name|GIMP_LAYER_MODE_PASS_THROUGH
 return|;
+block|}
 if|if
 condition|(
 name|g_ascii_strncasecmp
@@ -2383,7 +2394,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 return|;
 block|}
 if|if
@@ -2902,7 +2913,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 return|;
 block|}
 if|if
@@ -2950,7 +2961,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 return|;
 block|}
 if|if
@@ -2992,7 +3003,7 @@ operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
 expr_stmt|;
 return|return
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 return|;
 block|}
 end_function
