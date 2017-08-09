@@ -2423,7 +2423,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
