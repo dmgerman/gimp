@@ -1385,6 +1385,12 @@ decl_stmt|;
 name|gint
 name|lastfound
 decl_stmt|;
+name|gint
+name|count
+decl_stmt|;
+name|int
+name|ii
+decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -1642,9 +1648,8 @@ literal|0
 expr_stmt|;
 for|for
 control|(
-name|gint
 name|count
-init|=
+operator|=
 literal|1
 init|;
 name|count
@@ -1661,9 +1666,8 @@ literal|0
 expr_stmt|;
 for|for
 control|(
-name|int
 name|ii
-init|=
+operator|=
 literal|0
 init|;
 name|ii
@@ -2417,7 +2421,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon28db6cea0108
+DECL|struct|__anon2b0d1b140108
 block|{
 DECL|member|name
 name|gchar
