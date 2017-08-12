@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fda4990103
+DECL|enum|__anon2b1f14c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fda4990208
+DECL|struct|__anon2b1f14c40208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -144,6 +144,13 @@ decl_stmt|;
 DECL|member|gradient_cache_size
 name|gint
 name|gradient_cache_size
+decl_stmt|;
+else|#
+directive|else
+DECL|member|last_seg
+name|GimpGradientSegment
+modifier|*
+name|last_seg
 decl_stmt|;
 endif|#
 directive|endif
@@ -196,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fda4990308
+DECL|struct|__anon2b1f14c40308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3392,6 +3399,10 @@ index|]
 expr_stmt|;
 else|#
 directive|else
+name|rbd
+operator|->
+name|last_seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|rbd
@@ -3400,7 +3411,9 @@ name|gradient
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|rbd
+operator|->
+name|last_seg
 argument_list|,
 name|factor
 argument_list|,
@@ -3856,6 +3869,12 @@ ifdef|#
 directive|ifdef
 name|USE_GRADIENT_CACHE
 block|{
+name|GimpGradientSegment
+modifier|*
+name|last_seg
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3931,6 +3950,8 @@ operator|-
 literal|1
 argument_list|)
 decl_stmt|;
+name|last_seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|rbd
@@ -3939,7 +3960,7 @@ name|gradient
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|last_seg
 argument_list|,
 name|factor
 argument_list|,
