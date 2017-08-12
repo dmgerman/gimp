@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0833550103
+DECL|enum|__anon2995ca9a0103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0833550208
+DECL|struct|__anon2995ca9a0208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -9048,7 +9048,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_blend_tool_editor_line_changed (GimpBlendTool * blend_tool)
 name|gimp_blend_tool_editor_line_changed
 parameter_list|(
@@ -9111,7 +9111,9 @@ argument_list|(
 name|blend_tool
 argument_list|)
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 operator|!
@@ -9123,7 +9125,9 @@ name|offset
 operator|==
 literal|1.0
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|sliders
 operator|=
 name|gimp_tool_line_get_sliders
@@ -9145,7 +9149,9 @@ name|n_sliders
 operator|==
 literal|0
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 comment|/* update the midpoints first, since moving the gradient stops may change the    * gradient's midpoints w.r.t. the sliders, but not the other way around.    */
 for|for
 control|(
@@ -9451,6 +9457,9 @@ argument_list|(
 name|blend_tool
 argument_list|)
 expr_stmt|;
+return|return
+name|changed
+return|;
 block|}
 end_function
 
