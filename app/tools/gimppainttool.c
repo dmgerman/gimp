@@ -2852,7 +2852,7 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-literal|"%.1f %s, %.2f\302\260.  %s"
+literal|"%.1f %s, %.2f\302\260. %s"
 argument_list|,
 name|pixel_dist
 argument_list|,
@@ -2944,7 +2944,7 @@ argument_list|(
 name|format_str
 argument_list|)
 argument_list|,
-literal|"%%.%df %s, %%.2f\302\260.  %%s"
+literal|"%%.%df %s, %%.2f\302\260. %%s"
 argument_list|,
 name|digits
 argument_list|,
