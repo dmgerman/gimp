@@ -45,20 +45,20 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_operation_normal_process_sse4 (GeglOperation * operation,void * in,void * aux,void * mask_p,void * out,glong samples,const GeglRectangle * roi,gint level)
+DECL|function|gimp_operation_normal_process_sse4 (GeglOperation * op,void * in_p,void * layer_p,void * mask_p,void * out_p,glong samples,const GeglRectangle * roi,gint level)
 name|gimp_operation_normal_process_sse4
 parameter_list|(
 name|GeglOperation
 modifier|*
-name|operation
+name|op
 parameter_list|,
 name|void
 modifier|*
-name|in
+name|in_p
 parameter_list|,
 name|void
 modifier|*
-name|aux
+name|layer_p
 parameter_list|,
 name|void
 modifier|*
@@ -66,7 +66,7 @@ name|mask_p
 parameter_list|,
 name|void
 modifier|*
-name|out
+name|out_p
 parameter_list|,
 name|glong
 name|samples
@@ -88,21 +88,21 @@ operator|(
 operator|(
 name|uintptr_t
 operator|)
-name|in
+name|in_p
 operator|)
 operator||
 operator|(
 operator|(
 name|uintptr_t
 operator|)
-name|aux
+name|layer_p
 operator|)
 operator||
 operator|(
 operator|(
 name|uintptr_t
 operator|)
-name|out
+name|out_p
 operator|)
 operator|)
 operator|&
@@ -110,17 +110,17 @@ literal|0x0F
 condition|)
 block|{
 return|return
-name|gimp_operation_normal_process_core
+name|gimp_operation_normal_process
 argument_list|(
-name|operation
+name|op
 argument_list|,
-name|in
+name|in_p
 argument_list|,
-name|aux
+name|layer_p
 argument_list|,
 name|mask_p
 argument_list|,
-name|out
+name|out_p
 argument_list|,
 name|samples
 argument_list|,
@@ -137,10 +137,9 @@ modifier|*
 name|layer_mode
 init|=
 operator|(
-name|GimpOperationLayerMode
-operator|*
+name|gpointer
 operator|)
-name|operation
+name|op
 decl_stmt|;
 name|gfloat
 name|opacity
@@ -165,19 +164,19 @@ specifier|const
 name|__v4sf
 operator|*
 operator|)
-name|in
+name|in_p
 decl_stmt|;
 specifier|const
 name|__v4sf
 modifier|*
-name|v_aux
+name|v_layer
 init|=
 operator|(
 specifier|const
 name|__v4sf
 operator|*
 operator|)
-name|aux
+name|layer_p
 decl_stmt|;
 name|__v4sf
 modifier|*
@@ -187,7 +186,7 @@ operator|(
 name|__v4sf
 operator|*
 operator|)
-name|out
+name|out_p
 decl_stmt|;
 specifier|const
 name|__v4sf
@@ -211,7 +210,7 @@ switch|switch
 condition|(
 name|layer_mode
 operator|->
-name|composite_mode
+name|real_composite_mode
 condition|)
 block|{
 case|case
@@ -229,7 +228,7 @@ block|{
 name|__v4sf
 name|rgba_in
 decl_stmt|,
-name|rgba_aux
+name|rgba_layer
 decl_stmt|,
 name|alpha
 decl_stmt|;
@@ -239,10 +238,10 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_aux
+name|rgba_layer
 operator|=
 operator|*
-name|v_aux
+name|v_layer
 operator|++
 expr_stmt|;
 comment|/* expand alpha */
@@ -256,7 +255,7 @@ argument_list|(
 operator|(
 name|__m128i
 operator|)
-name|rgba_aux
+name|rgba_layer
 argument_list|,
 name|_MM_SHUFFLE
 argument_list|(
@@ -278,7 +277,7 @@ block|{
 name|__v4sf
 name|mask_alpha
 decl_stmt|;
-comment|/* multiply aux's alpha by the mask */
+comment|/* multiply layer's alpha by the mask */
 name|mask_alpha
 operator|=
 name|_mm_set1_ps
@@ -360,7 +359,7 @@ expr_stmt|;
 comment|/* out(color) = src * src_a + dst * a_term */
 name|out_pixel
 operator|=
-name|rgba_aux
+name|rgba_layer
 operator|*
 name|alpha
 operator|+
@@ -424,7 +423,7 @@ block|{
 name|__v4sf
 name|rgba_in
 decl_stmt|,
-name|rgba_aux
+name|rgba_layer
 decl_stmt|,
 name|alpha
 decl_stmt|;
@@ -434,10 +433,10 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_aux
+name|rgba_layer
 operator|=
 operator|*
-name|v_aux
+name|v_layer
 operator|++
 expr_stmt|;
 comment|/* expand alpha */
@@ -451,7 +450,7 @@ argument_list|(
 operator|(
 name|__m128i
 operator|)
-name|rgba_aux
+name|rgba_layer
 argument_list|,
 name|_MM_SHUFFLE
 argument_list|(
@@ -473,7 +472,7 @@ block|{
 name|__v4sf
 name|mask_alpha
 decl_stmt|;
-comment|/* multiply aux's alpha by the mask */
+comment|/* multiply layer's alpha by the mask */
 name|mask_alpha
 operator|=
 name|_mm_set1_ps
@@ -543,7 +542,7 @@ operator|=
 name|rgba_in
 operator|+
 operator|(
-name|rgba_aux
+name|rgba_layer
 operator|-
 name|rgba_in
 operator|)
@@ -592,7 +591,7 @@ block|{
 name|__v4sf
 name|rgba_in
 decl_stmt|,
-name|rgba_aux
+name|rgba_layer
 decl_stmt|,
 name|alpha
 decl_stmt|;
@@ -605,10 +604,10 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_aux
+name|rgba_layer
 operator|=
 operator|*
-name|v_aux
+name|v_layer
 operator|++
 expr_stmt|;
 comment|/* expand alpha */
@@ -622,7 +621,7 @@ argument_list|(
 operator|(
 name|__m128i
 operator|)
-name|rgba_aux
+name|rgba_layer
 argument_list|,
 name|_MM_SHUFFLE
 argument_list|(
@@ -644,7 +643,7 @@ block|{
 name|__v4sf
 name|mask_alpha
 decl_stmt|;
-comment|/* multiply aux's alpha by the mask */
+comment|/* multiply layer's alpha by the mask */
 name|mask_alpha
 operator|=
 name|_mm_set1_ps
@@ -681,7 +680,7 @@ block|{
 comment|/* out(color) = src */
 name|out_pixel
 operator|=
-name|rgba_aux
+name|rgba_layer
 expr_stmt|;
 block|}
 else|else
@@ -723,7 +722,7 @@ block|{
 name|__v4sf
 name|rgba_in
 decl_stmt|,
-name|rgba_aux
+name|rgba_layer
 decl_stmt|,
 name|alpha
 decl_stmt|;
@@ -736,10 +735,10 @@ operator|*
 name|v_in
 operator|++
 expr_stmt|;
-name|rgba_aux
+name|rgba_layer
 operator|=
 operator|*
-name|v_aux
+name|v_layer
 operator|++
 expr_stmt|;
 comment|/* expand alpha */
@@ -753,7 +752,7 @@ argument_list|(
 operator|(
 name|__m128i
 operator|)
-name|rgba_aux
+name|rgba_layer
 argument_list|,
 name|_MM_SHUFFLE
 argument_list|(
@@ -775,7 +774,7 @@ block|{
 name|__v4sf
 name|mask_alpha
 decl_stmt|;
-comment|/* multiply aux's alpha by the mask */
+comment|/* multiply layer's alpha by the mask */
 name|mask_alpha
 operator|=
 name|_mm_set1_ps
@@ -837,7 +836,7 @@ block|{
 comment|/* out(color) = src */
 name|out_pixel
 operator|=
-name|rgba_aux
+name|rgba_layer
 expr_stmt|;
 block|}
 else|else

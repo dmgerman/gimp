@@ -138,6 +138,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerModeBlendFunc
+name|gimp_layer_mode_get_blend_function
+parameter_list|(
+name|GimpLayerMode
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpLayerModeContext
 name|gimp_layer_mode_get_context
 parameter_list|(
@@ -227,16 +237,6 @@ specifier|const
 name|Babl
 modifier|*
 name|preferred_format
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpLayerCompositeRegion
-name|gimp_layer_mode_get_affected_region
-parameter_list|(
-name|GimpLayerMode
-name|mode
 parameter_list|)
 function_decl|;
 end_function_decl

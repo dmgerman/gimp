@@ -139,6 +139,10 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  protected  */
+end_comment
+
 begin_function_decl
 name|gboolean
 name|gimp_operation_normal_process
@@ -153,7 +157,7 @@ name|in
 parameter_list|,
 name|void
 modifier|*
-name|aux
+name|layer
 parameter_list|,
 name|void
 modifier|*
@@ -177,43 +181,11 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_operation_normal_process_core
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|op
-parameter_list|,
-name|void
-modifier|*
-name|in
-parameter_list|,
-name|void
-modifier|*
-name|aux
-parameter_list|,
-name|void
-modifier|*
-name|mask
-parameter_list|,
-name|void
-modifier|*
-name|out
-parameter_list|,
-name|glong
-name|samples
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|roi
-parameter_list|,
-name|gint
-name|level
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+name|COMPILE_SSE2_INTRINISICS
+end_if
 
 begin_function_decl
 name|gboolean
@@ -229,7 +201,7 @@ name|in
 parameter_list|,
 name|void
 modifier|*
-name|aux
+name|layer
 parameter_list|,
 name|void
 modifier|*
@@ -253,6 +225,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* COMPILE_SSE2_INTRINISICS */
+end_comment
+
+begin_if
+if|#
+directive|if
+name|COMPILE_SSE4_1_INTRINISICS
+end_if
+
 begin_function_decl
 name|gboolean
 name|gimp_operation_normal_process_sse4
@@ -267,7 +254,7 @@ name|in
 parameter_list|,
 name|void
 modifier|*
-name|aux
+name|layer
 parameter_list|,
 name|void
 modifier|*
@@ -290,6 +277,15 @@ name|level
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* COMPILE_SSE4_1_INTRINISICS */
+end_comment
 
 begin_endif
 endif|#
