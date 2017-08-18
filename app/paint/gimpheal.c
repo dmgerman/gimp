@@ -626,7 +626,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y'A float"
+literal|"YA float"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -640,7 +640,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+literal|"RGBA float"
 argument_list|)
 expr_stmt|;
 else|else
@@ -847,7 +847,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y'A float"
+literal|"YA float"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -861,7 +861,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+literal|"RGBA float"
 argument_list|)
 expr_stmt|;
 else|else
@@ -1078,7 +1078,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon28818a7d010a
+DECL|union|__anon2a2045ba010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2395,7 +2395,6 @@ block|{
 comment|/* this generally means that the source point has hit the edge        * of the layer, so it is not an error and we should not        * complain, just don't do anything        */
 return|return;
 block|}
-comment|/*  heal should work in perceptual space, use R'G'B' instead of RGB  */
 name|src_copy
 operator|=
 name|gegl_buffer_new
@@ -2417,7 +2416,7 @@ argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A float"
+literal|"RGBA float"
 argument_list|)
 argument_list|)
 expr_stmt|;
