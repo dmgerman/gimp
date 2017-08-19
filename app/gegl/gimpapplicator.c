@@ -173,7 +173,7 @@ name|applicator
 operator|->
 name|paint_mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|applicator
 operator|->

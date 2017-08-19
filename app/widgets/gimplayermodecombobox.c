@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296afbff0103
+DECL|enum|__anon2b40fac50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -312,7 +312,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -997,7 +997,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 return|return

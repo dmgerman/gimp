@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fb2a00103
+DECL|enum|__anon2ad118130103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fb2a00203
+DECL|enum|__anon2ad118130203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2221,7 +2221,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_READABLE
 argument_list|)
@@ -2397,7 +2397,7 @@ name|layer
 operator|->
 name|mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|layer
 operator|->
@@ -10103,7 +10103,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 return|return

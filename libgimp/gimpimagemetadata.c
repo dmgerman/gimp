@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f4db80108
+DECL|struct|__anon2b845dde0108
 block|{
 DECL|member|tag
 name|gchar
@@ -2376,7 +2376,7 @@ name|pixbuf
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 literal|0.0
 argument_list|,

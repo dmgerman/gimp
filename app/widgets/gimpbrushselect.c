@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3eb500103
+DECL|enum|__anon2b2b53720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -369,7 +369,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_WRITABLE
 operator||
