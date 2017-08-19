@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900dcb10103
+DECL|enum|__anon2ae453100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900dcb10203
+DECL|enum|__anon2ae453100203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -310,7 +310,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2900dcb10303
+DECL|enum|__anon2ae453100303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2900dcb10403
+DECL|enum|__anon2ae453100403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -9816,6 +9816,9 @@ operator|->
 name|function
 condition|)
 block|{
+case|case
+name|GIMP_TOOL_RECTANGLE_CREATING
+case|:
 name|gimp_tool_widget_set_snap_offsets
 argument_list|(
 name|widget
