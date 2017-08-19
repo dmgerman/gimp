@@ -288,6 +288,15 @@ value|"Snap to the active path by default in new image windows."
 end_define
 
 begin_define
+DECL|macro|DEFAULT_NEW_LAYER_MODE_BLURB
+define|#
+directive|define
+name|DEFAULT_NEW_LAYER_MODE_BLURB
+define|\
+value|_("The default layer mode for newly created layers and images.")
+end_define
+
+begin_define
 DECL|macro|DEFAULT_THRESHOLD_BLURB
 define|#
 directive|define
