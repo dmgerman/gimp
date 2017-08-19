@@ -1085,6 +1085,11 @@ operator|=
 literal|"gimp:layer-mode"
 block|,
 operator|.
+name|blend_function
+operator|=
+name|gimp_operation_layer_mode_blend_color_erase
+block|,
+operator|.
 name|flags
 operator|=
 name|GIMP_LAYER_MODE_FLAG_LEGACY
