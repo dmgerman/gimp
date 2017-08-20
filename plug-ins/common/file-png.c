@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6396110108
+DECL|struct|__anon2986bd520108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6396110208
+DECL|struct|__anon2986bd520208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6396110308
+DECL|struct|__anon2986bd520308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -3583,7 +3583,8 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|gimp_get_default_new_layer_mode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

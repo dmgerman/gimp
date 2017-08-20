@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae33710108
+DECL|struct|__anon2c08ccc40108
 block|{
 DECL|member|scales
 name|gint
@@ -695,7 +695,7 @@ name|gimp_layer_set_mode
 argument_list|(
 name|blur_id
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible

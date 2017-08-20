@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1efea20108
+DECL|struct|__anon2a472f590108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1efea20208
+DECL|struct|__anon2a472f590208
 block|{
 DECL|member|url
 name|char
@@ -2223,7 +2223,8 @@ name|pixbuf
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|gimp_get_default_new_layer_mode
+argument_list|()
 argument_list|,
 literal|0.0
 argument_list|,

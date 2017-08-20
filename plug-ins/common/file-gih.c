@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2c2ed0108
+DECL|struct|__anon2bb0ddcd0108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2c2ed0208
+DECL|struct|__anon2bb0ddcd0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2703,7 +2703,8 @@ name|image_type
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|gimp_get_default_new_layer_mode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_free

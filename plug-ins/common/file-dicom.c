@@ -2329,7 +2329,8 @@ operator|)
 argument_list|,
 literal|100
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|gimp_get_default_new_layer_mode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
@@ -3112,7 +3113,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975f58a0108
+DECL|struct|__anon293e93740108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5648,7 +5649,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2975f58a0208
+DECL|struct|__anon293e93740208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5776,7 +5777,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2975f58a0308
+DECL|struct|__anon293e93740308
 struct|struct
 block|{
 DECL|member|DICOM
