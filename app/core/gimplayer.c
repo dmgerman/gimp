@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad118130103
+DECL|enum|__anon2773a0f00103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad118130203
+DECL|enum|__anon2773a0f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2942,7 +2942,7 @@ condition|)
 block|{
 name|visible_mode
 operator|=
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 expr_stmt|;
 name|visible_blend_space
 operator|=
@@ -2950,11 +2950,29 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 expr_stmt|;
 name|visible_composite_space
 operator|=
-name|GIMP_LAYER_COLOR_SPACE_AUTO
+name|layer
+operator|->
+name|composite_space
 expr_stmt|;
 name|visible_composite_mode
 operator|=
 name|GIMP_LAYER_COMPOSITE_AUTO
+expr_stmt|;
+comment|/* This makes sure that masks of LEGACY-mode layers are        * composited in PERCEPTUAL space, and non-LEGACY layers in        * LINEAR space, or whatever composite space was chosen in the        * layer attributes dialog        */
+if|if
+condition|(
+name|visible_composite_space
+operator|==
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+condition|)
+name|visible_composite_space
+operator|=
+name|gimp_layer_mode_get_composite_space
+argument_list|(
+name|layer
+operator|->
+name|mode
+argument_list|)
 expr_stmt|;
 block|}
 else|else
