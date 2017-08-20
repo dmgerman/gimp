@@ -3951,9 +3951,9 @@ name|babl_process
 argument_list|(
 name|babl_fish
 argument_list|(
-literal|"RGBA gfloat"
+literal|"RGBA float"
 argument_list|,
-literal|"Y gfloat"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|layer
@@ -3967,9 +3967,9 @@ name|babl_process
 argument_list|(
 name|babl_fish
 argument_list|(
-literal|"RGBA gfloat"
+literal|"RGBA float"
 argument_list|,
-literal|"Y gfloat"
+literal|"Y float"
 argument_list|)
 argument_list|,
 name|in
