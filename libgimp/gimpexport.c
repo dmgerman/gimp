@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4b8f0108
+DECL|struct|__anon2b319f270108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -188,7 +188,7 @@ operator|<=
 literal|1
 condition|)
 block|{
-comment|/* if there is only one (or zero) visible layer, add a new transparent          layer that has the same size as the canvas.  The merge that follows          will ensure that the offset, opacity and size are correct */
+comment|/* if there is only one (or zero) visible layer, add a new        * transparent layer that has the same size as the canvas.  The        * merge that follows will ensure that the offset, opacity and        * size are correct        */
 name|transp
 operator|=
 name|gimp_layer_new
@@ -217,7 +217,7 @@ literal|1
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
