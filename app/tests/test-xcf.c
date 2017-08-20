@@ -183,6 +183,10 @@ directive|include
 file|"gimp-app-test-utils.h"
 end_include
 
+begin_comment
+comment|/* we continue to use LEGACY layers for testing, so we can use the  * same test image for all tests, including loading  * files/gimp-2-6-file.xcf which can't have any non-LEGACY modes  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_MAINIMAGE_WIDTH
 define|#
