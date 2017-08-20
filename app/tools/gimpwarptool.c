@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-apply-operation.h"
 end_include
 
@@ -4714,7 +4720,13 @@ name|gimp_layer_set_mode
 argument_list|(
 name|layer
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_new_layer_mode
 argument_list|,
 name|FALSE
 argument_list|)

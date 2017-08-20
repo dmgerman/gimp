@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -685,7 +691,11 @@ name|name
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_new_layer_mode
 argument_list|,
 name|profile
 argument_list|)

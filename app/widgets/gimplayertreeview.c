@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -2317,7 +2323,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1783c0108
+DECL|struct|__anon2a192ba00108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2677,7 +2683,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1783c0208
+DECL|struct|__anon2a192ba00208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3592,7 +3598,13 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_new_layer_mode
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -3748,7 +3760,13 @@ name|NULL
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_new_layer_mode
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
