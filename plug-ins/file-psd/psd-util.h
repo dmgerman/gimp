@@ -201,7 +201,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayerMode
+name|void
 name|psd_to_gimp_blend_mode
 parameter_list|(
 specifier|const
@@ -209,23 +209,23 @@ name|gchar
 modifier|*
 name|psd_mode
 parameter_list|,
-name|GimpLayerCompositeMode
+name|LayerModeInfo
 modifier|*
-name|layer_composite
+name|mode_info
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_to_psd_blend_mode
 parameter_list|(
-name|GimpLayerMode
-name|layer_mode
-parameter_list|,
-name|GimpLayerCompositeMode
-name|layer_composite
+specifier|const
+name|LayerModeInfo
+modifier|*
+name|mode_info
 parameter_list|)
 function_decl|;
 end_function_decl
