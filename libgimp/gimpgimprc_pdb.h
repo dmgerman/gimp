@@ -114,6 +114,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerMode
+name|gimp_get_default_new_layer_mode
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_get_theme_dir
