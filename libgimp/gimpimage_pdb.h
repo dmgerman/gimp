@@ -147,6 +147,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerMode
+name|gimp_image_get_default_new_layer_mode
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_width
 parameter_list|(

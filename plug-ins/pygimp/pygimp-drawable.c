@@ -9678,8 +9678,7 @@ decl_stmt|;
 name|GimpLayerMode
 name|mode
 init|=
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|GIMP_LAYER_MODE_NORMAL
 decl_stmt|;
 if|if
 condition|(
@@ -10337,8 +10336,7 @@ decl_stmt|;
 name|GimpLayerMode
 name|mode
 init|=
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|GIMP_LAYER_MODE_NORMAL
 decl_stmt|;
 if|if
 condition|(

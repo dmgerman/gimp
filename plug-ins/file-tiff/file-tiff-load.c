@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68deae0108
+DECL|struct|__anon28b1fed60108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68deae0208
+DECL|struct|__anon28b1fed60208
 block|{
 DECL|member|ID
 name|gint32
@@ -3058,8 +3058,10 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3114,8 +3116,10 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

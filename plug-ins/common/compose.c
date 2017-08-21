@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e9620108
+DECL|struct|__anon2b7476c70108
 block|{
 union|union
-DECL|union|__anon27b8e962020a
+DECL|union|__anon2b7476c7020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e9620308
+DECL|struct|__anon2b7476c70308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e9620408
+DECL|struct|__anon2b7476c70408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e9620508
+DECL|struct|__anon2b7476c70508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e9620608
+DECL|struct|__anon2b7476c70608
 block|{
 DECL|member|width
 DECL|member|height
@@ -4413,8 +4413,10 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image_ID
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

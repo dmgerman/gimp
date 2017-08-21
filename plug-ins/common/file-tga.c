@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae4c920103
+DECL|enum|__anon292d4fb40103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -4435,8 +4435,10 @@ name|dtype
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image_ID
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer

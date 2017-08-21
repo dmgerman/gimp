@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6013000108
+DECL|struct|__anon2bbf1da40108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1112,8 +1112,12 @@ name|img_type
 argument_list|,
 literal|100.0
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|gfig_context
+operator|->
+name|image_id
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill

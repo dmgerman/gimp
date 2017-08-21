@@ -2179,8 +2179,10 @@ name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image_id
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

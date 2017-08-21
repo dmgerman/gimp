@@ -117,10 +117,6 @@ DECL|member|default_threshold
 name|gint
 name|default_threshold
 decl_stmt|;
-DECL|member|default_new_layer_mode
-name|GimpLayerMode
-name|default_new_layer_mode
-decl_stmt|;
 DECL|member|plug_in_path
 name|gchar
 modifier|*

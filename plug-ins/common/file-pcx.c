@@ -1072,7 +1072,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bacac5f0108
+DECL|struct|__anon2b26d1eb0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1149,7 +1149,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2bacac5f0208
+DECL|struct|__anon2b26d1eb0208
 specifier|static
 struct|struct
 block|{
@@ -1976,8 +1976,10 @@ name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2013,8 +2015,10 @@ name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -134,6 +134,11 @@ name|GimpPrecision
 name|precision
 decl_stmt|;
 comment|/*  image's precision            */
+DECL|member|new_layer_mode
+name|GimpLayerMode
+name|new_layer_mode
+decl_stmt|;
+comment|/*  default mode of new layers   */
 DECL|member|colormap
 name|guchar
 modifier|*

@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ea6c10108
+DECL|struct|__anon29f57d2d0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ea6c10208
+DECL|struct|__anon29f57d2d0208
 block|{
 DECL|member|val
 name|gint
@@ -877,7 +877,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ea6c10308
+DECL|struct|__anon29f57d2d0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -4452,8 +4452,10 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|gimp_get_default_new_layer_mode
-argument_list|()
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image_ID
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
