@@ -3961,12 +3961,17 @@ block|{
 name|gchar
 name|naxisn
 index|[
-literal|10
+literal|16
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|naxisn
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|naxisn
+argument_list|)
 argument_list|,
 literal|"NAXIS%d"
 argument_list|,
@@ -4845,12 +4850,17 @@ block|{
 name|gchar
 name|naxisn
 index|[
-literal|9
+literal|16
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|naxisn
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|naxisn
+argument_list|)
 argument_list|,
 literal|"NAXIS%-3d"
 argument_list|,
@@ -5412,9 +5422,14 @@ name|hdulist
 return|;
 name|err_missing
 label|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|errmsg
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|errmsg
+argument_list|)
 argument_list|,
 literal|"fits_decode_header: missing/invalid %s card"
 argument_list|,
@@ -6820,9 +6835,14 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|msg
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|msg
+argument_list|)
 argument_list|,
 literal|"fits_decode_card (warning): Missing value indicator "
 literal|"'= ' for %8.8s"
