@@ -98,7 +98,7 @@ DECL|macro|DEFAULT_BRUSH
 define|#
 directive|define
 name|DEFAULT_BRUSH
-value|"Round Fuzzy"
+value|"2. Hardness 050"
 end_define
 
 begin_define
@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6d2f90103
+DECL|enum|__anon288854390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
