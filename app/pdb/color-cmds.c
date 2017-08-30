@@ -4415,17 +4415,17 @@ name|procedure
 argument_list|,
 literal|"gimp-invert"
 argument_list|,
-literal|"Invert the contents of the specified drawable."
+literal|"Deprecated: Use 'gimp-drawable-invert-non-linear' instead."
 argument_list|,
-literal|"This procedure inverts the contents of the specified drawable. Each intensity channel is inverted independently. The inverted intensity is given as inten' = (255 - inten)."
+literal|"Deprecated: Use 'gimp-drawable-invert-non-linear' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-invert-non-linear"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

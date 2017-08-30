@@ -247,7 +247,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_drawable_invert
+name|gimp_drawable_invert_linear
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_drawable_invert_non_linear
 parameter_list|(
 name|gint32
 name|drawable_ID

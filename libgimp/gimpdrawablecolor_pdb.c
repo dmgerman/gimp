@@ -945,13 +945,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_invert:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable.  *  * This procedure inverts the contents of the specified drawable. Each  * intensity channel is inverted independently. The inverted intensity  * is given as inten' = (255 - inten).  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_invert_linear:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable in linear light.  *  * This procedure inverts the contents of the specified drawable. Each  * component inverted independently. This procedure works on linear RGB  * or Gray values.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_invert (gint32 drawable_ID)
-name|gimp_drawable_invert
+DECL|function|gimp_drawable_invert_linear (gint32 drawable_ID)
+name|gimp_drawable_invert_linear
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -973,7 +973,74 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp-drawable-invert"
+literal|"gimp-drawable-invert-linear"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_invert_non_linear:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable in perceptual space.  *  * This procedure inverts the contents of the specified drawable. Each  * intensity channel is inverted independently. The inverted intensity  * is given as inten' = (255 - inten).  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_invert_non_linear (gint32 drawable_ID)
+name|gimp_drawable_invert_non_linear
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-drawable-invert-non-linear"
 argument_list|,
 operator|&
 name|nreturn_vals

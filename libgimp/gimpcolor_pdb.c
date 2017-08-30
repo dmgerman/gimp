@@ -637,7 +637,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Invert the contents of the specified drawable.  *  * This procedure inverts the contents of the specified drawable. Each  * intensity channel is inverted independently. The inverted intensity  * is given as inten' = (255 - inten).  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_invert_non_linear() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
