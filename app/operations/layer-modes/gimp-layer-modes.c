@@ -2646,7 +2646,7 @@ block|,
 operator|.
 name|op_name
 operator|=
-literal|"gimp:replace"
+literal|"gimp:pass-through"
 block|,
 operator|.
 name|flags

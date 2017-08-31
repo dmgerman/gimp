@@ -396,6 +396,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer-modes/gimpoperationpassthrough.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer-modes/gimpoperationreplace.h"
 end_include
 
@@ -768,6 +774,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_SPLIT
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_PASS_THROUGH
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
