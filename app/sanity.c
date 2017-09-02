@@ -1247,7 +1247,7 @@ DECL|macro|LCMS_REQUIRED_MINOR
 define|#
 directive|define
 name|LCMS_REQUIRED_MINOR
-value|7
+value|8
 name|gint
 name|lcms_version
 init|=
