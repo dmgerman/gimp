@@ -541,7 +541,7 @@ begin_function_decl
 specifier|const
 name|Babl
 modifier|*
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 parameter_list|(
 specifier|const
 name|Babl

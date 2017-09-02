@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28921a8f0103
+DECL|enum|__anon297e4b1d0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2751,7 +2751,7 @@ name|has_input
 condition|)
 name|input_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|input_format
 argument_list|,
@@ -2761,7 +2761,7 @@ argument_list|)
 expr_stmt|;
 name|output_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|output_format
 argument_list|,

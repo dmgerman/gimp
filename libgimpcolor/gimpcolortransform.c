@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c2e820103
+DECL|enum|__anon28c8ae020103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -604,7 +604,7 @@ name|priv
 operator|->
 name|src_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|src_format
 argument_list|,
@@ -616,7 +616,7 @@ name|priv
 operator|->
 name|dest_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|dest_format
 argument_list|,
@@ -859,7 +859,7 @@ name|priv
 operator|->
 name|src_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|src_format
 argument_list|,
@@ -871,7 +871,7 @@ name|priv
 operator|->
 name|dest_format
 operator|=
-name|gimp_color_profile_get_format
+name|gimp_color_profile_get_lcms_format
 argument_list|(
 name|dest_format
 argument_list|,
