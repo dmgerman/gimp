@@ -212,6 +212,14 @@ begin_comment
 comment|/**  * SECTION: gimpmetadata  * @title: gimpmetadata  * @short_description: Basic functions for handling #GimpMetadata objects.  * @see_also: gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish(),  *            gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish().  *  * Basic functions for handling #GimpMetadata objects.  **/
 end_comment
 
+begin_define
+DECL|macro|GIMP_METADATA_ERROR
+define|#
+directive|define
+name|GIMP_METADATA_ERROR
+value|gimp_metadata_error_quark ()
+end_define
+
 begin_function_decl
 specifier|static
 name|GQuark
@@ -2421,7 +2429,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2b0d1b140108
+DECL|struct|__anon2bd3a3840108
 block|{
 DECL|member|name
 name|gchar
@@ -2602,8 +2610,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|1001
 argument_list|,
@@ -3601,8 +3608,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -3784,8 +3790,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -4108,8 +4113,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -4281,8 +4285,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -4440,8 +4443,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|gimp_metadata_error_quark
-argument_list|()
+name|GIMP_METADATA_ERROR
 argument_list|,
 literal|0
 argument_list|,
