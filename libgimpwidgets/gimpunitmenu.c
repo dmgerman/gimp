@@ -97,7 +97,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c60580103
+DECL|enum|__anon2c1805a40103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c60580203
+DECL|enum|__anon2c1805a40203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -327,27 +327,16 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|menu
-operator|->
-name|format
-condition|)
-block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|menu
 operator|->
 name|format
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|menu
-operator|->
-name|format
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

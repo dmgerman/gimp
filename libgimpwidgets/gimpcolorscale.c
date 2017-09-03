@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f83760103
+DECL|enum|__anon2b82fb870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -786,25 +786,15 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|scale
-operator|->
-name|buf
-condition|)
-block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|scale
 operator|->
 name|buf
+argument_list|,
+name|g_free
 argument_list|)
-expr_stmt|;
-name|scale
-operator|->
-name|buf
-operator|=
-name|NULL
 expr_stmt|;
 name|scale
 operator|->
@@ -824,7 +814,6 @@ name|rowstride
 operator|=
 literal|0
 expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

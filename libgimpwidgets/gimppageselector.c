@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c31193f0103
+DECL|enum|__anon2bf9e0bf0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c31193f0203
+DECL|enum|__anon2bf9e0bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c31193f0303
+DECL|enum|__anon2bf9e0bf0303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c31193f0408
+DECL|struct|__anon2bf9e0bf0408
 block|{
 DECL|member|n_pages
 name|gint
@@ -1338,14 +1338,9 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|priv
-operator|->
-name|default_thumbnail
-condition|)
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|priv
 operator|->
 name|default_thumbnail
