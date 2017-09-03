@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprogress.h"
 end_include
 
@@ -3581,6 +3587,9 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
+name|GIMP_TIMER_START
+argument_list|()
+expr_stmt|;
 name|gimp_color_transform_process_buffer
 argument_list|(
 name|transform
@@ -3592,6 +3601,11 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|)
+expr_stmt|;
+name|GIMP_TIMER_END
+argument_list|(
+literal|"converting buffer"
 argument_list|)
 expr_stmt|;
 name|g_object_unref
