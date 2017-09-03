@@ -218,7 +218,7 @@ end_function_decl
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_drawable_invert_non_linear
+argument|gimp_drawable_invert
 argument_list|)
 end_macro
 

@@ -637,7 +637,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_invert_non_linear() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_invert:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_drawable_invert() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

@@ -4415,17 +4415,17 @@ name|procedure
 argument_list|,
 literal|"gimp-invert"
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-invert-non-linear' instead."
+literal|"Deprecated: Use 'gimp-drawable-invert' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-drawable-invert-non-linear' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-drawable-invert' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-drawable-invert-non-linear"
+literal|""
+argument_list|,
+literal|"gimp-drawable-invert"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
