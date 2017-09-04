@@ -4353,6 +4353,22 @@ operator|>=
 literal|0
 condition|)
 block|{
+name|gint
+name|maskWidth
+init|=
+name|gimp_drawable_width
+argument_list|(
+name|mask
+argument_list|)
+decl_stmt|;
+name|gint
+name|maskHeight
+init|=
+name|gimp_drawable_height
+argument_list|(
+name|mask
+argument_list|)
+decl_stmt|;
 name|gboolean
 name|apply
 init|=
@@ -4389,7 +4405,7 @@ name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
-literal|0
+name|offset_y
 argument_list|,
 literal|"Layer mask top"
 argument_list|)
@@ -4398,7 +4414,7 @@ name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
-literal|0
+name|offset_x
 argument_list|,
 literal|"Layer mask left"
 argument_list|)
@@ -4407,10 +4423,9 @@ name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
-name|gimp_drawable_height
-argument_list|(
-name|mask
-argument_list|)
+name|offset_y
+operator|+
+name|maskHeight
 argument_list|,
 literal|"Layer mask bottom"
 argument_list|)
@@ -4419,10 +4434,9 @@ name|write_gint32
 argument_list|(
 name|fd
 argument_list|,
-name|gimp_drawable_width
-argument_list|(
-name|mask
-argument_list|)
+name|offset_x
+operator|+
+name|maskWidth
 argument_list|,
 literal|"Layer mask right"
 argument_list|)
@@ -4439,7 +4453,7 @@ expr_stmt|;
 name|flags
 operator|=
 operator|(
-literal|1
+literal|0
 operator||
 comment|/* position relative to layer */
 operator|(
