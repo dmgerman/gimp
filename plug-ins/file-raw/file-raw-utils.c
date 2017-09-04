@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gdk/gdk.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -307,7 +313,7 @@ name|GDK_WINDOWING_WIN32
 argument_list|)
 if|if
 condition|(
-name|registry_key_base
+name|win32_registry_key_base
 condition|)
 block|{
 comment|/* Look for the application in the Windows registry. */
@@ -340,7 +346,7 @@ name|registry_key
 operator|=
 name|g_strconcat
 argument_list|(
-name|registry_key_base
+name|win32_registry_key_base
 argument_list|,
 name|suffix
 argument_list|,
@@ -354,7 +360,7 @@ name|registry_key
 operator|=
 name|g_strconcat
 argument_list|(
-name|registry_key_base
+name|win32_registry_key_base
 argument_list|,
 literal|".exe"
 argument_list|,
