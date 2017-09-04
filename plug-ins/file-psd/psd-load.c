@@ -8188,9 +8188,9 @@ index|]
 operator|->
 name|opacity
 operator|*
-literal|100
+literal|100.0
 operator|/
-literal|255
+literal|255.0
 argument_list|)
 expr_stmt|;
 comment|/* Flags */

@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"psd.h"
 end_include
 
@@ -4193,6 +4199,8 @@ argument_list|)
 expr_stmt|;
 name|layerOpacity
 operator|=
+name|RINT
+argument_list|(
 operator|(
 name|gimp_layer_get_opacity
 argument_list|(
@@ -4210,6 +4218,7 @@ literal|255.0
 operator|)
 operator|/
 literal|100.0
+argument_list|)
 expr_stmt|;
 name|IFDBG
 name|printf
