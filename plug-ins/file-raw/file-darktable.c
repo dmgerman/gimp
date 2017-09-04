@@ -1649,7 +1649,7 @@ name|lua_script_escaped
 init|=
 name|g_strescape
 argument_list|(
-name|lua_script_escaped
+name|lua_script
 argument_list|,
 literal|""
 argument_list|)
@@ -1660,7 +1660,7 @@ name|lua_quoted
 init|=
 name|g_shell_quote
 argument_list|(
-name|lua_script
+name|lua_script_escaped
 argument_list|)
 decl_stmt|;
 name|gchar
