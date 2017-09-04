@@ -8100,6 +8100,19 @@ operator|-
 literal|1
 condition|)
 block|{
+comment|/* Set the layer name.  Note that we do this even for group-end                * markers, to avoid having the default group name collide with                * subsequent layers; the real group name is set by the group                * start marker.                */
+name|gimp_item_set_name
+argument_list|(
+name|layer_id
+argument_list|,
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 comment|/* Set the layer properties (skip this for layer group end                * markers; we set their properties when processing the start                * marker.)                */
 if|if
 condition|(
@@ -8113,19 +8126,6 @@ operator|!=
 literal|3
 condition|)
 block|{
-comment|/* Name */
-name|gimp_item_set_name
-argument_list|(
-name|layer_id
-argument_list|,
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 comment|/* Mode */
 name|psd_to_gimp_blend_mode
 argument_list|(
