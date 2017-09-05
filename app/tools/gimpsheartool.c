@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29febe250103
+DECL|enum|__anon2b62f6000103
 block|{
 DECL|enumerator|ORIENTATION
 name|ORIENTATION
@@ -1316,17 +1316,6 @@ name|SHEAR_X
 index|]
 condition|)
 block|{
-if|if
-condition|(
-name|tr_tool
-operator|->
-name|trans_info
-index|[
-name|ORIENTATION
-index|]
-operator|==
-name|GIMP_ORIENTATION_UNKNOWN
-condition|)
 name|tr_tool
 operator|->
 name|trans_info
@@ -1345,6 +1334,16 @@ index|]
 operator|=
 name|value
 expr_stmt|;
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|SHEAR_Y
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+comment|/* can only shear in one axis */
 name|gimp_transform_tool_push_internal_undo
 argument_list|(
 name|tr_tool
@@ -1398,17 +1397,6 @@ name|SHEAR_Y
 index|]
 condition|)
 block|{
-if|if
-condition|(
-name|tr_tool
-operator|->
-name|trans_info
-index|[
-name|ORIENTATION
-index|]
-operator|==
-name|GIMP_ORIENTATION_UNKNOWN
-condition|)
 name|tr_tool
 operator|->
 name|trans_info
@@ -1427,6 +1415,16 @@ index|]
 operator|=
 name|value
 expr_stmt|;
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|SHEAR_X
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+comment|/* can only shear in one axis */
 name|gimp_transform_tool_push_internal_undo
 argument_list|(
 name|tr_tool
