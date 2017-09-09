@@ -4694,6 +4694,7 @@ name|Babl
 modifier|*
 name|space
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|babl_error
@@ -4753,6 +4754,8 @@ operator|->
 name|priv
 operator|->
 name|length
+argument_list|,
+name|BABL_ICC_INTENT_RELATIVE_COLORIMETRIC
 argument_list|,
 operator|&
 name|babl_error
