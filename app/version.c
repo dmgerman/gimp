@@ -426,6 +426,13 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+literal|"C compiler:\n%s"
+argument_list|,
+name|CC_VERSION
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
