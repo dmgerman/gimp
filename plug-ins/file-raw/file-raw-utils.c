@@ -138,6 +138,26 @@ condition|(
 name|mac_bundle_id
 condition|)
 block|{
+name|CFStringRef
+name|bundle_id
+decl_stmt|;
+comment|/* For macOS, attempt searching for an app bundle first. */
+name|bundle_id
+operator|=
+name|CFStringCreateWithCString
+argument_list|(
+name|NULL
+argument_list|,
+name|mac_bundle_id
+argument_list|,
+name|kCFStringEncodingUTF8
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|bundle_id
+condition|)
+block|{
 name|OSStatus
 name|status
 decl_stmt|;
@@ -146,17 +166,13 @@ name|bundle_url
 init|=
 name|NULL
 decl_stmt|;
-comment|/* For macOS, attempt searching for a darktable app bundle first. */
 name|status
 operator|=
 name|LSFindApplicationForInfo
 argument_list|(
 name|kLSUnknownCreator
 argument_list|,
-name|CFSTR
-argument_list|(
-name|mac_bundle_id
-argument_list|)
+name|bundle_id
 argument_list|,
 name|NULL
 argument_list|,
@@ -228,7 +244,7 @@ argument_list|,
 name|kCFURLPOSIXPathStyle
 argument_list|)
 expr_stmt|;
-comment|/* This gets us the length in UTF16 characters, we multiply by 2            * to make sure we have a buffer big enough to fit the UTF8 string.            */
+comment|/* This gets us the length in UTF16 characters, we multiply by 2                * to make sure we have a buffer big enough to fit the UTF8 string.                */
 name|len
 operator|=
 name|CFStringGetLength
@@ -302,6 +318,12 @@ condition|)
 return|return
 name|ret
 return|;
+block|}
+name|CFRelease
+argument_list|(
+name|bundle_id
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* else, app bundle was not found, try path search as last resort. */
 block|}
