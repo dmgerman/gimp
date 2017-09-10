@@ -4755,8 +4755,6 @@ name|priv
 operator|->
 name|length
 argument_list|,
-name|BABL_ICC_INTENT_RELATIVE_COLORIMETRIC
-argument_list|,
 operator|&
 name|babl_error
 argument_list|)
