@@ -61,6 +61,14 @@ value|"file-pdf-load"
 end_define
 
 begin_define
+DECL|macro|LOAD2_PROC
+define|#
+directive|define
+name|LOAD2_PROC
+value|"file-pdf-load2"
+end_define
+
+begin_define
 DECL|macro|LOAD_THUMB_PROC
 define|#
 directive|define
@@ -99,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae06260108
+DECL|struct|__anon2b86e30b0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -112,6 +120,11 @@ decl_stmt|;
 DECL|member|antialias
 name|gboolean
 name|antialias
+decl_stmt|;
+DECL|member|PDF_password
+name|gchar
+modifier|*
+name|PDF_password
 decl_stmt|;
 DECL|typedef|PdfLoadVals
 block|}
@@ -132,6 +145,8 @@ literal|100.00
 block|,
 comment|/* 100 dpi   */
 name|TRUE
+block|,
+name|NULL
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -139,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae06260208
+DECL|struct|__anon2b86e30b0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -264,6 +279,13 @@ name|GError
 modifier|*
 modifier|*
 name|error
+parameter_list|,
+name|gchar
+modifier|*
+name|PDF_password
+parameter_list|,
+name|GimpRunMode
+name|run_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -717,7 +739,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae06260303
+DECL|enum|__anon2b86e30b0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -956,6 +978,47 @@ decl_stmt|;
 specifier|static
 specifier|const
 name|GimpParamDef
+name|load2_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to load"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"raw-filename"
+block|,
+literal|"The name entered"
+block|}
+block|,
+comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Use anti-aliasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }, */
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"pdf-password"
+block|,
+literal|"The password to decrypt the encrypted PDF file"
+block|}
+block|}
+decl_stmt|;
+specifier|static
+specifier|const
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
@@ -1082,16 +1145,59 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|LOAD2_PROC
+argument_list|,
+literal|"Load file in PDF format"
+argument_list|,
+literal|"Loads files in Adobe's Portable Document Format. "
+literal|"PDF is designed to be easily processed by a variety "
+literal|"of different platforms, and is a distant cousin of "
+literal|"PostScript.\n"
+literal|"This procedure adds an extra parameter to "
+literal|"file-pdf-load to open encrypted PDF."
+argument_list|,
+literal|"Nathan Summers, Lionel N."
+argument_list|,
+literal|"Nathan Summers, Lionel N."
+argument_list|,
+literal|"2005, 2017"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Portable Document Format"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load2_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|load2_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-name|LOAD_PROC
+name|LOAD2_PROC
 argument_list|,
 literal|"application/pdf"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-name|LOAD_PROC
+name|LOAD2_PROC
 argument_list|,
 literal|"pdf"
 argument_list|,
@@ -1139,7 +1245,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_thumbnail_loader
 argument_list|(
-name|LOAD_PROC
+name|LOAD2_PROC
 argument_list|,
 name|LOAD_THUMB_PROC
 argument_list|)
@@ -1180,7 +1286,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|6
+literal|7
 index|]
 decl_stmt|;
 name|GimpRunMode
@@ -1263,6 +1369,15 @@ name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD2_PROC
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|PdfSelectedPages
@@ -1283,6 +1398,18 @@ case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve last settings */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
 name|gimp_get_data
 argument_list|(
 name|LOAD_PROC
@@ -1291,6 +1418,29 @@ operator|&
 name|loadvals
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD2_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|gimp_get_data
+argument_list|(
+name|LOAD2_PROC
+argument_list|,
+operator|&
+name|loadvals
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
@@ -1313,6 +1463,12 @@ name|d_string
 argument_list|,
 operator|&
 name|error
+argument_list|,
+name|loadvals
+operator|.
+name|PDF_password
+argument_list|,
+name|run_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -1343,6 +1499,20 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
+comment|// gimp_set_data (LOAD_PROC,&loadvals, sizeof(loadvals));
+block|{
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
 name|gimp_set_data
 argument_list|(
 name|LOAD_PROC
@@ -1356,6 +1526,35 @@ name|loadvals
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD2_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|gimp_set_data
+argument_list|(
+name|LOAD2_PROC
+argument_list|,
+operator|&
+name|loadvals
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|loadvals
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -1384,6 +1583,12 @@ name|d_string
 argument_list|,
 operator|&
 name|error
+argument_list|,
+name|loadvals
+operator|.
+name|PDF_password
+argument_list|,
+name|run_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -1618,6 +1823,19 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* Possibly retrieve last settings */
+comment|// gimp_get_data (LOAD_PROC,&loadvals);
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
 name|gimp_get_data
 argument_list|(
 name|LOAD_PROC
@@ -1626,6 +1844,29 @@ operator|&
 name|loadvals
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD2_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|gimp_get_data
+argument_list|(
+name|LOAD2_PROC
+argument_list|,
+operator|&
+name|loadvals
+argument_list|)
+expr_stmt|;
+block|}
 name|doc
 operator|=
 name|open_document
@@ -1641,6 +1882,12 @@ name|d_string
 argument_list|,
 operator|&
 name|error
+argument_list|,
+name|loadvals
+operator|.
+name|PDF_password
+argument_list|,
+name|run_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -1974,7 +2221,7 @@ begin_function
 specifier|static
 name|PopplerDocument
 modifier|*
-DECL|function|open_document (const gchar * filename,GError ** load_error)
+DECL|function|open_document (const gchar * filename,GError ** load_error,gchar * PDF_password,GimpRunMode run_mode)
 name|open_document
 parameter_list|(
 specifier|const
@@ -1986,6 +2233,13 @@ name|GError
 modifier|*
 modifier|*
 name|load_error
+parameter_list|,
+name|gchar
+modifier|*
+name|PDF_password
+parameter_list|,
+name|GimpRunMode
+name|run_mode
 parameter_list|)
 block|{
 name|PopplerDocument
@@ -2070,12 +2324,19 @@ argument_list|(
 name|mapped_file
 argument_list|)
 argument_list|,
-name|NULL
+name|PDF_password
 argument_list|,
 operator|&
 name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
+block|{
 name|label
 operator|=
 name|gtk_label_new
@@ -2336,6 +2597,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* We can't g_mapped_file_unref(mapped_file) as apparently doc has    * references to data in there. No big deal, this is just a    * short-lived plug-in.    */
 if|if
 condition|(
@@ -4044,7 +4306,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae06260408
+DECL|struct|__anon2b86e30b0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4069,7 +4331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae06260508
+DECL|struct|__anon2b86e30b0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
