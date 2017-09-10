@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa9ae00108
+DECL|struct|__anon2a19b1ef0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa9ae00208
+DECL|struct|__anon2a19b1ef0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -740,7 +740,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa9ae00303
+DECL|enum|__anon2a19b1ef0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -973,7 +973,6 @@ literal|"raw-filename"
 block|,
 literal|"The name entered"
 block|}
-comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Use anti-aliasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }     */
 block|}
 decl_stmt|;
 specifier|static
@@ -2404,16 +2403,17 @@ while|while
 condition|(
 name|error
 operator|&&
-name|strcmp
-argument_list|(
 name|error
 operator|->
-name|message
-argument_list|,
-literal|"Document is encrypted"
-argument_list|)
+name|domain
 operator|==
-literal|0
+name|POPPLER_ERROR
+operator|&&
+name|error
+operator|->
+name|code
+operator|==
+name|POPPLER_ERROR_ENCRYPTED
 condition|)
 block|{
 name|GtkWidget
@@ -4359,7 +4359,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa9ae00408
+DECL|struct|__anon2a19b1ef0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4384,7 +4384,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa9ae00508
+DECL|struct|__anon2a19b1ef0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
