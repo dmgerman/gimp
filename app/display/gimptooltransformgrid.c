@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c59b0cf0103
+DECL|enum|__anon28dc772d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9258,7 +9258,7 @@ decl_stmt|;
 name|gdouble
 name|angle
 index|[
-literal|8
+literal|9
 index|]
 decl_stmt|;
 name|gint
