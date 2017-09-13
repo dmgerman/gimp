@@ -4157,6 +4157,20 @@ operator|->
 name|gui
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_matrix3_is_identity
+argument_list|(
+operator|&
+name|tr_tool
+operator|->
+name|transform
+argument_list|)
+condition|)
+block|{
+comment|/* No need to commit an identity transformation! */
+return|return;
+block|}
 name|gimp_set_busy
 argument_list|(
 name|display
