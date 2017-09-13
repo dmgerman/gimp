@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279646860103
+DECL|enum|__anon2c420ba50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5977,6 +5977,15 @@ block|{
 if|if
 condition|(
 operator|!
+name|channel
+operator|->
+name|empty
+condition|)
+block|{
+comment|/* Don't push an undo if the channel was already empty. */
+if|if
+condition|(
+operator|!
 name|undo_desc
 condition|)
 name|undo_desc
@@ -5995,6 +6004,7 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
