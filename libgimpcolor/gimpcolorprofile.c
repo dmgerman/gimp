@@ -4671,7 +4671,7 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_color_profile_get_format (GimpColorProfile * profile,const Babl * format,GError ** error)
+DECL|function|gimp_color_profile_get_format (GimpColorProfile * profile,const Babl * format,GimpColorRenderingIntent intent,GError ** error)
 name|gimp_color_profile_get_format
 parameter_list|(
 name|GimpColorProfile
@@ -4682,6 +4682,9 @@ specifier|const
 name|Babl
 modifier|*
 name|format
+parameter_list|,
+name|GimpColorRenderingIntent
+name|intent
 parameter_list|,
 name|GError
 modifier|*
@@ -4754,6 +4757,8 @@ operator|->
 name|priv
 operator|->
 name|length
+argument_list|,
+name|intent
 argument_list|,
 operator|&
 name|babl_error

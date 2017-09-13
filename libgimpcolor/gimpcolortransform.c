@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761ffe10103
+DECL|enum|__anon2a9e5f350103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -565,6 +565,8 @@ name|src_profile
 argument_list|,
 name|src_format
 argument_list|,
+name|BABL_ICC_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -604,6 +606,8 @@ argument_list|(
 name|dest_profile
 argument_list|,
 name|dest_format
+argument_list|,
+name|rendering_intent
 argument_list|,
 operator|&
 name|error

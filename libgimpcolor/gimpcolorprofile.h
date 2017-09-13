@@ -552,6 +552,9 @@ name|Babl
 modifier|*
 name|format
 parameter_list|,
+name|GimpColorRenderingIntent
+name|intent
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
