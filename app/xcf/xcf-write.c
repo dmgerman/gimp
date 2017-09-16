@@ -932,7 +932,7 @@ name|bpc
 condition|)
 block|{
 case|case
-literal|8
+literal|1
 case|:
 return|return
 name|xcf_write_int8
@@ -947,7 +947,7 @@ name|error
 argument_list|)
 return|;
 case|case
-literal|16
+literal|2
 case|:
 return|return
 name|xcf_write_int16
@@ -967,7 +967,7 @@ name|error
 argument_list|)
 return|;
 case|case
-literal|32
+literal|4
 case|:
 return|return
 name|xcf_write_int32
@@ -987,7 +987,7 @@ name|error
 argument_list|)
 return|;
 case|case
-literal|64
+literal|8
 case|:
 return|return
 name|xcf_write_int64
@@ -1055,11 +1055,11 @@ name|bpc
 condition|)
 block|{
 case|case
-literal|8
+literal|1
 case|:
 break|break;
 case|case
-literal|16
+literal|2
 case|:
 block|{
 name|guint16
@@ -1101,7 +1101,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-literal|32
+literal|4
 case|:
 block|{
 name|guint32
@@ -1143,7 +1143,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-literal|64
+literal|8
 case|:
 block|{
 name|guint64
