@@ -164,6 +164,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|xcf_read_from_be
+parameter_list|(
+name|gint
+name|bpc
+parameter_list|,
+name|guint8
+modifier|*
+name|data
+parameter_list|,
+name|gint
+name|count
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
