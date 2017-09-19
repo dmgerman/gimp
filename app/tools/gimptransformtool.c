@@ -4159,6 +4159,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|GIMP_TRANSFORM_TOOL_GET_CLASS
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|recalc_matrix
+operator|&&
 name|gimp_matrix3_is_identity
 argument_list|(
 operator|&
