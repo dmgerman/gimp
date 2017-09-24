@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19b1ef0108
+DECL|struct|__anon2c0b911e0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19b1ef0208
+DECL|struct|__anon2c0b911e0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -740,7 +740,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19b1ef0303
+DECL|enum|__anon2c0b911e0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -4359,7 +4359,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19b1ef0408
+DECL|struct|__anon2c0b911e0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4384,7 +4384,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19b1ef0508
+DECL|struct|__anon2c0b911e0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -4946,6 +4946,12 @@ name|label
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Since selecting none will be equivalent to selecting all, this is    * only useful as a feedback for the default behavior of selecting all    * pages. */
+name|gimp_page_selector_select_all
+argument_list|(
+name|selector
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|selector
