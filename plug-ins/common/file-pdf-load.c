@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a76cc0108
+DECL|struct|__anon2974fdfb0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a76cc0208
+DECL|struct|__anon2974fdfb0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -740,7 +740,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a76cc0303
+DECL|enum|__anon2974fdfb0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1013,7 +1013,24 @@ literal|"pdf-password"
 block|,
 literal|"The password to decrypt the encrypted PDF file"
 block|}
-comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Use anti-aliasing" },     { GIMP_PDB_INT32,     "n-pages",      "Number of pages to load (0 for all)" },     { GIMP_PDB_INT32ARRAY,"pages",        "The pages to load"                }, */
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"n-pages"
+block|,
+literal|"Number of pages to load (0 for all)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"pages"
+block|,
+literal|"The pages to load in the expected order"
+block|}
+block|,
+comment|/* XXX: Nice to have API at some point, but needs work     { GIMP_PDB_INT32,     "resolution",   "Resolution to rasterize to (dpi)" },     { GIMP_PDB_INT32,     "antialiasing", "Use anti-aliasing" }, */
 block|}
 decl_stmt|;
 specifier|static
@@ -1113,7 +1130,10 @@ argument_list|,
 literal|"Loads files in Adobe's Portable Document Format. "
 literal|"PDF is designed to be easily processed by a variety "
 literal|"of different platforms, and is a distant cousin of "
-literal|"PostScript."
+literal|"PostScript.\n"
+literal|"If the PDF document has multiple pages, only the first "
+literal|"page will be loaded. Call file_pdf_load2() to load "
+literal|"several pages as layers."
 argument_list|,
 literal|"Nathan Summers"
 argument_list|,
@@ -1155,8 +1175,9 @@ literal|"Loads files in Adobe's Portable Document Format. "
 literal|"PDF is designed to be easily processed by a variety "
 literal|"of different platforms, and is a distant cousin of "
 literal|"PostScript.\n"
-literal|"This procedure adds an extra parameter to "
-literal|"file-pdf-load to open encrypted PDF."
+literal|"This procedure adds extra parameters to "
+literal|"file-pdf-load to open encrypted PDF and to allow "
+literal|"multiple page loading."
 argument_list|,
 literal|"Nathan Summers, Lionel N."
 argument_list|,
@@ -1664,6 +1685,19 @@ condition|(
 name|test_page
 condition|)
 block|{
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD2_PROC
+argument_list|)
+operator|!=
+literal|0
+condition|)
+block|{
+comment|/* For retrocompatibility, file-pdf-load always                        * just loads the first page. */
 name|pages
 operator|.
 name|n_pages
@@ -1695,6 +1729,211 @@ argument_list|(
 name|test_page
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|gint
+name|doc_n_pages
+decl_stmt|;
+name|doc_n_pages
+operator|=
+name|poppler_document_get_n_pages
+argument_list|(
+name|doc
+argument_list|)
+expr_stmt|;
+comment|/* The number of imported pages may be bigger than                        * the number of pages from the original document.                        * Indeed it is possible to duplicate some pages                        * by setting the same number several times in the                        * "pages" argument.                        * Not ceiling this value is *not* an error.                        */
+name|pages
+operator|.
+name|n_pages
+operator|=
+name|param
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+if|if
+condition|(
+name|pages
+operator|.
+name|n_pages
+operator|<=
+literal|0
+condition|)
+block|{
+name|pages
+operator|.
+name|n_pages
+operator|=
+name|doc_n_pages
+expr_stmt|;
+name|pages
+operator|.
+name|pages
+operator|=
+name|g_new
+argument_list|(
+name|gint
+argument_list|,
+name|pages
+operator|.
+name|n_pages
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|pages
+operator|.
+name|n_pages
+condition|;
+name|i
+operator|++
+control|)
+name|pages
+operator|.
+name|pages
+index|[
+name|i
+index|]
+operator|=
+name|i
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pages
+operator|.
+name|pages
+operator|=
+name|g_new
+argument_list|(
+name|gint
+argument_list|,
+name|pages
+operator|.
+name|n_pages
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|pages
+operator|.
+name|n_pages
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|i
+index|]
+operator|>=
+name|doc_n_pages
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+name|g_set_error
+argument_list|(
+operator|&
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"PDF document '%s' has %d pages. Page %d is out of range."
+argument_list|)
+argument_list|,
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|,
+name|doc_n_pages
+argument_list|,
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+else|else
+block|{
+name|pages
+operator|.
+name|pages
+index|[
+name|i
+index|]
+operator|=
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
+block|}
+block|}
+name|g_object_unref
+argument_list|(
+name|test_page
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -4359,7 +4598,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a76cc0408
+DECL|struct|__anon2974fdfb0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4384,7 +4623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a76cc0508
+DECL|struct|__anon2974fdfb0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
