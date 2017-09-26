@@ -100,6 +100,32 @@ name|THUMBNAIL_SIZE
 value|128
 end_define
 
+begin_define
+DECL|macro|GIMP_PLUGIN_PDF_LOAD_ERROR
+define|#
+directive|define
+name|GIMP_PLUGIN_PDF_LOAD_ERROR
+value|gimp_plugin_pdf_load_error_quark ()
+end_define
+
+begin_function
+specifier|static
+name|GQuark
+DECL|function|gimp_plugin_pdf_load_error_quark (void)
+name|gimp_plugin_pdf_load_error_quark
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|g_quark_from_static_string
+argument_list|(
+literal|"gimp-plugin-pdf-load-error-quark"
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* Structs for the load dialog */
 end_comment
@@ -107,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c00137a0108
+DECL|struct|__anon29aa142e0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -154,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c00137a0208
+DECL|struct|__anon29aa142e0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -740,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00137a0303
+DECL|enum|__anon29aa142e0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1869,7 +1895,7 @@ argument_list|(
 operator|&
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUGIN_PDF_LOAD_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -2574,7 +2600,7 @@ name|g_set_error
 argument_list|(
 name|load_error
 argument_list|,
-literal|0
+name|GIMP_PLUGIN_PDF_LOAD_ERROR
 argument_list|,
 literal|0
 argument_list|,
@@ -4603,7 +4629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c00137a0408
+DECL|struct|__anon29aa142e0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4628,7 +4654,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c00137a0508
+DECL|struct|__anon29aa142e0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
