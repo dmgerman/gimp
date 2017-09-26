@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974fdfb0108
+DECL|struct|__anon2c00137a0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974fdfb0208
+DECL|struct|__anon2c00137a0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -740,7 +740,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2974fdfb0303
+DECL|enum|__anon2c00137a0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1873,9 +1873,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|_
+comment|/* TRANSLATORS: first argument is file name,                                                 * second is out-of-range page number, third is                                                 * number of pages. Specify order as in English if needed.                                                 */
+name|ngettext
 argument_list|(
-literal|"PDF document '%s' has %d pages. Page %d is out of range."
+literal|"PDF document '%1$s' has a single page. Page %2$d is out of range."
+argument_list|,
+literal|"PDF document '%1$s' has %3$d pages. Page %2$d is out of range."
+argument_list|,
+name|doc_n_pages
 argument_list|)
 argument_list|,
 name|param
@@ -1886,8 +1891,6 @@ operator|.
 name|data
 operator|.
 name|d_string
-argument_list|,
-name|doc_n_pages
 argument_list|,
 name|param
 index|[
@@ -1900,6 +1903,8 @@ name|d_int32array
 index|[
 name|i
 index|]
+argument_list|,
+name|doc_n_pages
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4598,7 +4603,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974fdfb0408
+DECL|struct|__anon2c00137a0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4623,7 +4628,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974fdfb0508
+DECL|struct|__anon2c00137a0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
