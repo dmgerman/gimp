@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9464b0108
+DECL|struct|__anon29bd9f670108
 block|{
 DECL|member|scales
 name|gint
@@ -736,7 +736,10 @@ argument_list|(
 name|scale_name
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale %d"
+argument_list|)
 argument_list|,
 name|id
 operator|+
@@ -849,7 +852,10 @@ name|gimp_item_set_name
 argument_list|(
 name|new_scale_id
 argument_list|,
-literal|"residual"
+name|_
+argument_list|(
+literal|"Residual"
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
