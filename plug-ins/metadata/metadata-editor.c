@@ -24691,7 +24691,10 @@ name|file_dialog
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Import Metadata File"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -24816,7 +24819,10 @@ name|file_dialog
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Export Metadata File"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
