@@ -317,7 +317,9 @@ index|[
 name|b
 index|]
 operator|>
-literal|0.5
+literal|128.0
+operator|/
+literal|255.0
 condition|)
 block|{
 name|comp
@@ -340,7 +342,9 @@ index|[
 name|b
 index|]
 operator|-
-literal|0.5
+literal|128.0
+operator|/
+literal|255.0
 operator|)
 operator|*
 literal|2.0

@@ -320,7 +320,9 @@ index|[
 name|b
 index|]
 operator|-
-literal|0.5
+literal|128.0
+operator|/
+literal|255.0
 decl_stmt|;
 name|out
 index|[
