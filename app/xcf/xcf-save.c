@@ -7198,6 +7198,8 @@ argument_list|,
 name|tile_size
 operator|/
 name|bpp
+operator|*
+name|n_components
 argument_list|)
 expr_stmt|;
 block|}
@@ -7800,6 +7802,8 @@ argument_list|,
 name|tile_size
 operator|/
 name|bpp
+operator|*
+name|n_components
 argument_list|)
 expr_stmt|;
 block|}
@@ -8112,7 +8116,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7f0c40108
+DECL|struct|__anon288cf5c40108
 block|{
 DECL|member|info
 name|XcfInfo

@@ -8252,6 +8252,8 @@ argument_list|,
 name|tile_size
 operator|/
 name|bpp
+operator|*
+name|n_components
 argument_list|)
 expr_stmt|;
 block|}
@@ -8590,6 +8592,8 @@ argument_list|,
 name|tile_size
 operator|/
 name|bpp
+operator|*
+name|n_components
 argument_list|)
 expr_stmt|;
 block|}
