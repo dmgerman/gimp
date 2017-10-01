@@ -7064,6 +7064,8 @@ name|tile_data
 argument_list|,
 name|tile_size
 operator|/
+name|bpp
+operator|*
 name|n_components
 argument_list|)
 expr_stmt|;
@@ -8116,7 +8118,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288cf5c40108
+DECL|struct|__anon2aced7d30108
 block|{
 DECL|member|info
 name|XcfInfo
