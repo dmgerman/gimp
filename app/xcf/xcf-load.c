@@ -8251,7 +8251,7 @@ name|tile_data
 argument_list|,
 name|tile_size
 operator|/
-name|n_components
+name|bpp
 argument_list|)
 expr_stmt|;
 block|}
@@ -8589,7 +8589,7 @@ name|tile_data
 argument_list|,
 name|tile_size
 operator|/
-name|n_components
+name|bpp
 argument_list|)
 expr_stmt|;
 block|}
