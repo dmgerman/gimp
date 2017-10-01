@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa066640103
+DECL|enum|__anon2c4de0580103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa066640203
+DECL|enum|__anon2c4de0580203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9862,7 +9862,7 @@ name|layers
 argument_list|)
 expr_stmt|;
 comment|/* version 6 for new metadata has been dropped since they are    * saved through parasites, which is compatible with older versions.    */
-comment|/* need version 7 for high bit depth images */
+comment|/* need version 7 for != 8-bit gamma images */
 if|if
 condition|(
 name|gimp_image_get_precision
@@ -9877,6 +9877,25 @@ operator|=
 name|MAX
 argument_list|(
 literal|7
+argument_list|,
+name|version
+argument_list|)
+expr_stmt|;
+comment|/* need version 12 for> 8-bit images for proper endian swapping */
+if|if
+condition|(
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+operator|>
+name|GIMP_PRECISION_U8_GAMMA
+condition|)
+name|version
+operator|=
+name|MAX
+argument_list|(
+literal|12
 argument_list|,
 name|version
 argument_list|)
@@ -10015,6 +10034,9 @@ literal|10
 case|:
 case|case
 literal|11
+case|:
+case|case
+literal|12
 case|:
 if|if
 condition|(
