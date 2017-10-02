@@ -116,7 +116,8 @@ name|GtkWidget
 modifier|*
 name|gimp_language_combo_box_new
 parameter_list|(
-name|void
+name|gboolean
+name|manual_l18n
 parameter_list|)
 function_decl|;
 end_function_decl

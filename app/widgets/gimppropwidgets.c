@@ -3701,7 +3701,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6aab20108
+DECL|struct|__anon2b41fd200108
 block|{
 DECL|member|config
 name|GObject
@@ -4647,7 +4647,9 @@ return|;
 name|combo
 operator|=
 name|gimp_language_combo_box_new
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(

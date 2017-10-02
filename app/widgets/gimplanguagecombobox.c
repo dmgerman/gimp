@@ -142,10 +142,11 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_language_combo_box_new (void)
+DECL|function|gimp_language_combo_box_new (gboolean manual_l18n)
 name|gimp_language_combo_box_new
 parameter_list|(
-name|void
+name|gboolean
+name|manual_l18n
 parameter_list|)
 block|{
 name|GtkWidget
@@ -159,7 +160,9 @@ decl_stmt|;
 name|store
 operator|=
 name|gimp_translation_store_new
-argument_list|()
+argument_list|(
+name|manual_l18n
+argument_list|)
 expr_stmt|;
 name|combo
 operator|=

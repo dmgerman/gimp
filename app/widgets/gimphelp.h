@@ -90,6 +90,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_help_get_installed_languages
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
