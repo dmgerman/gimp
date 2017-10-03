@@ -4739,7 +4739,7 @@ argument_list|)
 expr_stmt|;
 name|space
 operator|=
-name|babl_space_from_icc
+name|babl_icc_make_space
 argument_list|(
 operator|(
 specifier|const
@@ -4758,6 +4758,9 @@ name|priv
 operator|->
 name|length
 argument_list|,
+operator|(
+name|BablIccIntent
+operator|)
 name|intent
 argument_list|,
 operator|&
