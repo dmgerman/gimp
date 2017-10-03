@@ -111,6 +111,11 @@ name|gimp_translation_store_new
 parameter_list|(
 name|gboolean
 name|manual_l18n
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|empty_label
 parameter_list|)
 function_decl|;
 end_function_decl

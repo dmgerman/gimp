@@ -139,14 +139,23 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_language_combo_box_new:  * @manual_l18n: get only the sublist of manual languages.  * @empty_label: the label for empty language code.  *  * Returns a combo box containing all GUI localization languages if  * @manual_l18n is #FALSE, or all manual localization languages  * otherwise. If @empty_label is not #NULL, an entry with this label  * will be created for the language code "", otherwise if @empty_label  * is #NULL and @manual_l18n is #FALSE, the entry will be "System  * Language" localized in itself (not in the GUI language).  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_language_combo_box_new (gboolean manual_l18n)
+DECL|function|gimp_language_combo_box_new (gboolean manual_l18n,const gchar * empty_label)
 name|gimp_language_combo_box_new
 parameter_list|(
 name|gboolean
 name|manual_l18n
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|empty_label
 parameter_list|)
 block|{
 name|GtkWidget
@@ -162,6 +171,8 @@ operator|=
 name|gimp_translation_store_new
 argument_list|(
 name|manual_l18n
+argument_list|,
+name|empty_label
 argument_list|)
 expr_stmt|;
 name|combo

@@ -3197,6 +3197,11 @@ operator|=
 name|gimp_language_combo_box_new
 argument_list|(
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Available manuals..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_combo_box_set_active
