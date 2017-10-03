@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bd65e0103
+DECL|enum|__anon2a8f8c1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -358,7 +358,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|sublist
+name|GIMP_TRANSLATION_STORE
+argument_list|(
+name|object
+argument_list|)
+operator|->
+name|manual_l18n
 operator|&&
 name|GIMP_TRANSLATION_STORE
 argument_list|(
@@ -409,7 +414,12 @@ block|{
 if|if
 condition|(
 operator|!
-name|sublist
+name|GIMP_TRANSLATION_STORE
+argument_list|(
+name|object
+argument_list|)
+operator|->
+name|manual_l18n
 operator|||
 name|g_list_find_custom
 argument_list|(
