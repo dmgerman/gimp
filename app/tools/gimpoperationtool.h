@@ -128,10 +128,9 @@ modifier|*
 name|aux_inputs
 decl_stmt|;
 comment|/* dialog */
-DECL|member|options_box
-name|GtkWidget
-modifier|*
-name|options_box
+DECL|member|options_box_ref
+name|GWeakRef
+name|options_box_ref
 decl_stmt|;
 DECL|member|options_gui_ref
 name|GWeakRef
