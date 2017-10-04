@@ -133,10 +133,9 @@ name|GtkWidget
 modifier|*
 name|options_box
 decl_stmt|;
-DECL|member|options_gui
-name|GtkWidget
-modifier|*
-name|options_gui
+DECL|member|options_gui_ref
+name|GWeakRef
+name|options_gui_ref
 decl_stmt|;
 block|}
 struct|;
