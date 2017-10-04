@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f2c3f0108
+DECL|struct|__anon2b8303a40108
 block|{
 DECL|member|value
 name|gdouble
@@ -72,13 +72,13 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpEevlOptions:  * @unit_resolver_proc: Unit resolver callback.  * @data:               Data passed to unit resolver.  */
+comment|/**  * GimpEevlOptions:  * @unit_resolver_proc: Unit resolver callback.  * @data:               Data passed to unit resolver.  * @ratio_expressions:  Allow ratio expressions  * @ratio_invert:       Invert ratios  * @ratio_quantity:     Quantity to multiply ratios by  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f2c3f0208
+DECL|struct|__anon2b8303a40208
 block|{
 DECL|member|unit_resolver_proc
 name|GimpEevlUnitResolverProc
@@ -87,6 +87,18 @@ decl_stmt|;
 DECL|member|data
 name|gpointer
 name|data
+decl_stmt|;
+DECL|member|ratio_expressions
+name|gboolean
+name|ratio_expressions
+decl_stmt|;
+DECL|member|ratio_invert
+name|gboolean
+name|ratio_invert
+decl_stmt|;
+DECL|member|ratio_quantity
+name|GimpEevlQuantity
+name|ratio_quantity
 decl_stmt|;
 DECL|typedef|GimpEevlOptions
 block|}
@@ -100,7 +112,7 @@ define|#
 directive|define
 name|GIMP_EEVL_OPTIONS_INIT
 define|\
-value|((const GimpEevlOptions)                                                     \   {                                                                            \     .unit_resolver_proc = NULL,                                                \     .data               = NULL                                                 \   })
+value|((const GimpEevlOptions)                                                     \   {                                                                            \     .unit_resolver_proc = NULL,                                                \     .data               = NULL,                                                \                                                                                \     .ratio_expressions  = FALSE,                                               \     .ratio_invert       = FALSE,                                               \     .ratio_quantity     = {0.0, 0}                                             \   })
 end_define
 
 begin_function_decl
