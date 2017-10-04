@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b064b690103
+DECL|enum|__anon29524d6b0103
 block|{
 DECL|enumerator|GIMP_EEVL_TOKEN_NUM
 name|GIMP_EEVL_TOKEN_NUM
@@ -82,21 +82,21 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b064b690208
+DECL|struct|__anon29524d6b0208
 block|{
 DECL|member|type
 name|GimpEevlTokenType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b064b69030a
+DECL|union|__anon29524d6b030a
 block|{
 DECL|member|fl
 name|gdouble
 name|fl
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b064b690408
+DECL|struct|__anon29524d6b0408
 block|{
 DECL|member|c
 specifier|const
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b064b690508
+DECL|struct|__anon29524d6b0508
 block|{
 DECL|member|string
 specifier|const
@@ -131,13 +131,9 @@ name|gchar
 modifier|*
 name|string
 decl_stmt|;
-DECL|member|unit_resolver_proc
-name|GimpEevlUnitResolverProc
-name|unit_resolver_proc
-decl_stmt|;
-DECL|member|data
-name|gpointer
-name|data
+DECL|member|options
+name|GimpEevlOptions
+name|options
 decl_stmt|;
 DECL|member|current_token
 name|GimpEevlToken
@@ -179,11 +175,10 @@ name|gchar
 modifier|*
 name|string
 parameter_list|,
-name|GimpEevlUnitResolverProc
-name|unit_resolver_proc
-parameter_list|,
-name|gpointer
-name|data
+specifier|const
+name|GimpEevlOptions
+modifier|*
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -402,12 +397,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_eevl_evaluate:  * @string:             The NULL-terminated string to be evaluated.  * @unit_resolver_proc: Unit resolver callback.  * @result:             Result of evaluation.  * @data:               Data passed to unit resolver.  * @error_pos:          Will point to the positon within the string,  *                      before which the parse / evaluation error  *                      occurred. Will be set to null of no error occurred.  * @error_message:      Will point to a static string with a semi-descriptive  *                      error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two means in^2).  **/
+comment|/**  * gimp_eevl_evaluate:  * @string:        The NULL-terminated string to be evaluated.  * @options:       Evaluations options.  * @result:        Result of evaluation.  * @error_pos:     Will point to the positon within the string,  *                 before which the parse / evaluation error  *                 occurred. Will be set to null of no error occurred.  * @error_message: Will point to a static string with a semi-descriptive  *                 error message if parsing / evaluation failed.  *  * Evaluates the given arithmetic expression, along with an optional dimension  * analysis, and basic unit conversions.  *  * All units conversions factors are relative to some implicit  * base-unit (which in GIMP is inches). This is also the unit of the  * returned value.  *  * Returns: A #GimpEevlQuantity with a value given in the base unit along with  * the order of the dimension (i.e. if the base unit is inches, a dimension  * order of two means in^2).  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_eevl_evaluate (const gchar * string,GimpEevlUnitResolverProc unit_resolver_proc,GimpEevlQuantity * result,gpointer data,const gchar ** error_pos,GError ** error)
+DECL|function|gimp_eevl_evaluate (const gchar * string,const GimpEevlOptions * options,GimpEevlQuantity * result,const gchar ** error_pos,GError ** error)
 name|gimp_eevl_evaluate
 parameter_list|(
 specifier|const
@@ -415,15 +410,14 @@ name|gchar
 modifier|*
 name|string
 parameter_list|,
-name|GimpEevlUnitResolverProc
-name|unit_resolver_proc
+specifier|const
+name|GimpEevlOptions
+modifier|*
+name|options
 parameter_list|,
 name|GimpEevlQuantity
 modifier|*
 name|result
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|,
 specifier|const
 name|gchar
@@ -457,6 +451,17 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|options
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|options
+operator|->
 name|unit_resolver_proc
 operator|!=
 name|NULL
@@ -494,9 +499,7 @@ name|eva
 argument_list|,
 name|string
 argument_list|,
-name|unit_resolver_proc
-argument_list|,
-name|data
+name|options
 argument_list|)
 expr_stmt|;
 if|if
@@ -561,7 +564,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eevl_init (GimpEevl * eva,const gchar * string,GimpEevlUnitResolverProc unit_resolver_proc,gpointer data)
+DECL|function|gimp_eevl_init (GimpEevl * eva,const gchar * string,const GimpEevlOptions * options)
 name|gimp_eevl_init
 parameter_list|(
 name|GimpEevl
@@ -573,11 +576,10 @@ name|gchar
 modifier|*
 name|string
 parameter_list|,
-name|GimpEevlUnitResolverProc
-name|unit_resolver_proc
-parameter_list|,
-name|gpointer
-name|data
+specifier|const
+name|GimpEevlOptions
+modifier|*
+name|options
 parameter_list|)
 block|{
 name|eva
@@ -588,15 +590,10 @@ name|string
 expr_stmt|;
 name|eva
 operator|->
-name|unit_resolver_proc
+name|options
 operator|=
-name|unit_resolver_proc
-expr_stmt|;
-name|eva
-operator|->
-name|data
-operator|=
-name|data
+operator|*
+name|options
 expr_stmt|;
 name|eva
 operator|->
@@ -678,6 +675,8 @@ argument_list|)
 expr_stmt|;
 name|eva
 operator|->
+name|options
+operator|.
 name|unit_resolver_proc
 argument_list|(
 name|NULL
@@ -687,6 +686,8 @@ name|default_unit_factor
 argument_list|,
 name|eva
 operator|->
+name|options
+operator|.
 name|data
 argument_list|)
 expr_stmt|;
@@ -812,6 +813,8 @@ name|default_unit_factor
 decl_stmt|;
 name|eva
 operator|->
+name|options
+operator|.
 name|unit_resolver_proc
 argument_list|(
 name|NULL
@@ -821,6 +824,8 @@ name|default_unit_factor
 argument_list|,
 name|eva
 operator|->
+name|options
+operator|.
 name|data
 argument_list|)
 expr_stmt|;
@@ -1271,6 +1276,8 @@ if|if
 condition|(
 name|eva
 operator|->
+name|options
+operator|.
 name|unit_resolver_proc
 argument_list|(
 name|identifier
@@ -1280,6 +1287,8 @@ name|result
 argument_list|,
 name|eva
 operator|->
+name|options
+operator|.
 name|data
 argument_list|)
 condition|)

@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b510cfc0103
+DECL|enum|__anon28c640f10103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -4506,6 +4506,11 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
+name|GimpEevlOptions
+name|options
+init|=
+name|GIMP_EEVL_OPTIONS_INIT
+decl_stmt|;
 name|gboolean
 name|success
 init|=
@@ -4549,6 +4554,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|options
+operator|.
+name|unit_resolver_proc
+operator|=
+name|gimp_size_entry_eevl_unit_resolver
+expr_stmt|;
+name|options
+operator|.
+name|data
+operator|=
+name|data
+expr_stmt|;
 name|success
 operator|=
 name|gimp_eevl_evaluate
@@ -4561,12 +4578,11 @@ name|spinner
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_size_entry_eevl_unit_resolver
+operator|&
+name|options
 argument_list|,
 operator|&
 name|result
-argument_list|,
-name|data
 argument_list|,
 operator|&
 name|error_pos

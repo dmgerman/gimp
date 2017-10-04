@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8372ff0108
+DECL|struct|__anon279f2c3f0108
 block|{
 DECL|member|value
 name|gdouble
@@ -71,6 +71,38 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpEevlOptions:  * @unit_resolver_proc: Unit resolver callback.  * @data:               Data passed to unit resolver.  */
+end_comment
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon279f2c3f0208
+block|{
+DECL|member|unit_resolver_proc
+name|GimpEevlUnitResolverProc
+name|unit_resolver_proc
+decl_stmt|;
+DECL|member|data
+name|gpointer
+name|data
+decl_stmt|;
+DECL|typedef|GimpEevlOptions
+block|}
+name|GimpEevlOptions
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_EEVL_OPTIONS_INIT
+define|#
+directive|define
+name|GIMP_EEVL_OPTIONS_INIT
+define|\
+value|((const GimpEevlOptions)                                                     \   {                                                                            \     .unit_resolver_proc = NULL,                                                \     .data               = NULL                                                 \   })
+end_define
+
 begin_function_decl
 name|gboolean
 name|gimp_eevl_evaluate
@@ -80,15 +112,14 @@ name|gchar
 modifier|*
 name|string
 parameter_list|,
-name|GimpEevlUnitResolverProc
-name|unit_resolver_proc
+specifier|const
+name|GimpEevlOptions
+modifier|*
+name|options
 parameter_list|,
 name|GimpEevlQuantity
 modifier|*
 name|result
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|,
 specifier|const
 name|gchar
