@@ -280,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e8f100108
+DECL|struct|__anon2b7925e80108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1712,7 +1712,7 @@ expr_stmt|;
 comment|/* Find 'Width' or 'Height' GtkTextEntry in tool options */
 name|size_entry
 operator|=
-name|gimp_rectangle_options_get_width_entry
+name|gimp_rectangle_options_get_size_entry
 argument_list|(
 name|rectangle_options
 argument_list|)
