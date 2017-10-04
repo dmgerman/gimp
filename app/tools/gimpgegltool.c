@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67a3b70103
+DECL|enum|__anon29b772a20103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1621,6 +1621,24 @@ name|_
 argument_list|(
 literal|"Select an operation from the list above"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|o_tool
+operator|->
+name|options_gui
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|o_tool
+operator|->
+name|options_gui
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
