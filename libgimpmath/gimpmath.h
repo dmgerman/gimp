@@ -136,7 +136,7 @@ name|SIGNED_ROUND
 parameter_list|(
 name|x
 parameter_list|)
-value|((int) ((((x)< 0) ? (x) - 0.5 : (x) + 0.5)))
+value|((int) RINT (x))
 comment|/**  * SQR:  * @x: the value to be squared.  *  * This macro squares its argument @x.  **/
 DECL|macro|SQR (x)
 define|#
