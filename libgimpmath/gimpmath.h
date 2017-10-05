@@ -97,9 +97,15 @@ begin_expr_stmt
 name|G_BEGIN_DECLS
 comment|/**  * SECTION: gimpmath  * @title: GimpMath  * @short_description: Mathematical definitions and macros.  *  * Mathematical definitions and macros for use both by the GIMP  * application and plug-ins. These macros should be used rather than  * the ones from&lt;math.h&gt; for enhanced portability.  **/
 comment|/**  * RINT:  * @x: the value to be rounded  *  * This macro rounds its argument @x to an integer value in floating  * point format. Use RINT() instead of rint().  **/
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|HAVE_RINT
+argument_list|)
+operator|&&
+literal|0
+comment|/* note:  rint() depends on the current floating-point rounding mode.  when the  * rounding mode is FE_TONEAREST, it, in parctice, breaks ties to even.  this  * is different from 'floor (x + 0.5)', which breaks ties up.  in other words  * 'rint (2.5) == 2.0', while 'floor (2.5 + 0.5) == 3.0'.  this is asking for  * trouble, so let's just use the latter.  */
 DECL|macro|RINT (x)
 define|#
 directive|define
