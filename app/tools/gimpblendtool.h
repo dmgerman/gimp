@@ -128,6 +128,11 @@ name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
+DECL|member|tentative_gradient
+name|GimpGradient
+modifier|*
+name|tentative_gradient
+decl_stmt|;
 DECL|member|start_x
 name|gdouble
 name|start_x
@@ -243,6 +248,25 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  protected functions  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_blend_tool_set_tentative_gradient
+parameter_list|(
+name|GimpBlendTool
+modifier|*
+name|blend_tool
+parameter_list|,
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
