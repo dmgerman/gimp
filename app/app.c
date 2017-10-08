@@ -140,6 +140,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimplangrc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimprc.h"
 end_include
 
@@ -624,6 +630,16 @@ name|gchar
 modifier|*
 name|abort_message
 decl_stmt|;
+name|GimpLangRc
+modifier|*
+name|temprc
+decl_stmt|;
+name|gchar
+modifier|*
+name|language
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|filenames
@@ -711,6 +727,45 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+comment|/* Language needs to be determined first, before any GimpContext is    * instanciated (which happens when the Gimp object is created)    * because its properties need to be properly localized in the    * settings language (if different from system language). Otherwise we    * end up with pieces of GUI always using the system language (cf. bug    * 787457). Therefore we do a first pass on "gimprc" file for the sole    * purpose of getting the settings language, so that we can initialize    * it before anything else.    */
+name|temprc
+operator|=
+name|gimp_lang_rc_new
+argument_list|(
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
+argument_list|,
+name|be_verbose
+argument_list|)
+expr_stmt|;
+name|language
+operator|=
+name|gimp_lang_rc_get_language
+argument_list|(
+name|temprc
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|temprc
+argument_list|)
+expr_stmt|;
+comment|/*  change the locale if a language if specified  */
+name|language_init
+argument_list|(
+name|language
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|language
+condition|)
+name|g_free
+argument_list|(
+name|language
+argument_list|)
+expr_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|gimp
 operator|=
@@ -856,16 +911,6 @@ argument_list|,
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
-argument_list|)
-expr_stmt|;
-comment|/*  change the locale if a language if specified  */
-name|language_init
-argument_list|(
-name|gimp
-operator|->
-name|config
-operator|->
-name|language
 argument_list|)
 expr_stmt|;
 comment|/*  run the late-stage sanity check.  it's important that this check is run    *  after the call to language_init() (see comment in sanity_check_late().)    */

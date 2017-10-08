@@ -90,6 +90,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLangRc
+typedef|typedef
+name|struct
+name|_GimpLangRc
+name|GimpLangRc
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPluginConfig
 typedef|typedef
 name|struct
