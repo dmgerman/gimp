@@ -271,6 +271,9 @@ name|psd_lmode_layer
 parameter_list|(
 name|gint32
 name|idLayer
+parameter_list|,
+name|gboolean
+name|section_divider
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -607,11 +610,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|psd_lmode_layer (gint32 idLayer)
+DECL|function|psd_lmode_layer (gint32 idLayer,gboolean section_divider)
 name|psd_lmode_layer
 parameter_list|(
 name|gint32
 name|idLayer
+parameter_list|,
+name|gboolean
+name|section_divider
 parameter_list|)
 block|{
 name|LayerModeInfo
@@ -661,6 +667,9 @@ operator|.
 name|mode
 operator|==
 name|GIMP_LAYER_MODE_PASS_THROUGH
+operator|&&
+operator|!
+name|section_divider
 condition|)
 name|mode_info
 operator|.
@@ -4176,6 +4185,8 @@ name|i
 index|]
 operator|.
 name|id
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|IFDBG
@@ -4287,6 +4298,23 @@ condition|)
 name|flags
 operator||=
 literal|2
+expr_stmt|;
+if|if
+condition|(
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
+operator|.
+name|type
+operator|!=
+name|PSD_LAYER_TYPE_LAYER
+condition|)
+name|flags
+operator||=
+literal|0x18
 expr_stmt|;
 name|IFDBG
 name|printf
@@ -4531,6 +4559,19 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
+operator|.
+name|type
+operator|!=
+name|PSD_LAYER_TYPE_GROUP_END
+condition|)
 name|layerName
 operator|=
 name|gimp_item_get_name
@@ -4543,6 +4584,14 @@ name|i
 index|]
 operator|.
 name|id
+argument_list|)
+expr_stmt|;
+else|else
+name|layerName
+operator|=
+name|g_strdup
+argument_list|(
+literal|"</Layer group>"
 argument_list|)
 expr_stmt|;
 name|write_pascalstring
@@ -4573,6 +4622,11 @@ argument_list|,
 name|layerName
 argument_list|,
 literal|"luni extra data block"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|layerName
 argument_list|)
 expr_stmt|;
 comment|/* Layer color tag */
@@ -4666,12 +4720,9 @@ decl_stmt|;
 name|gint32
 name|type
 decl_stmt|;
-name|gboolean
-name|pass_through
-decl_stmt|;
 name|size
 operator|=
-literal|4
+literal|12
 expr_stmt|;
 if|if
 condition|(
@@ -4695,10 +4746,9 @@ name|type
 operator|=
 literal|3
 expr_stmt|;
-comment|/* pass-through groups use normal mode in their layer record; the            * pass-through mode is specified in their section divider resource.            */
-name|pass_through
+name|blendMode
 operator|=
-name|gimp_layer_get_mode
+name|psd_lmode_layer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4708,17 +4758,9 @@ name|i
 index|]
 operator|.
 name|id
+argument_list|,
+name|TRUE
 argument_list|)
-operator|==
-name|GIMP_LAYER_MODE_PASS_THROUGH
-expr_stmt|;
-if|if
-condition|(
-name|pass_through
-condition|)
-name|size
-operator|+=
-literal|8
 expr_stmt|;
 name|xfwrite
 argument_list|(
@@ -4749,19 +4791,26 @@ argument_list|,
 literal|"section divider type"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|pass_through
-condition|)
 name|xfwrite
 argument_list|(
 name|fd
 argument_list|,
-literal|"8BIMpass"
+literal|"8BIM"
 argument_list|,
-literal|8
+literal|4
 argument_list|,
-literal|"section divider blend mode"
+literal|"section divider blend mode signature"
+argument_list|)
+expr_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+name|blendMode
+argument_list|,
+literal|4
+argument_list|,
+literal|"section divider blend mode key"
 argument_list|)
 expr_stmt|;
 block|}
