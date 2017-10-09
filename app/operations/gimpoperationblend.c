@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fede470103
+DECL|enum|__anon2bcbab340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fede470208
+DECL|struct|__anon2bcbab340208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fede470308
+DECL|struct|__anon2bcbab340308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -4254,6 +4254,37 @@ operator|.
 name|rightmost_color
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|rbd
+operator|.
+name|reverse
+condition|)
+block|{
+name|GimpRGB
+name|temp
+decl_stmt|;
+name|temp
+operator|=
+name|rbd
+operator|.
+name|leftmost_color
+expr_stmt|;
+name|rbd
+operator|.
+name|leftmost_color
+operator|=
+name|rbd
+operator|.
+name|rightmost_color
+expr_stmt|;
+name|rbd
+operator|.
+name|rightmost_color
+operator|=
+name|temp
+expr_stmt|;
+block|}
 block|}
 comment|/* Render the gradient! */
 if|if
