@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcbab340103
+DECL|enum|__anon2940918b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbab340208
+DECL|struct|__anon2940918b0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbab340308
+DECL|struct|__anon2940918b0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3336,7 +3336,7 @@ comment|/* Blend the colors */
 if|if
 condition|(
 name|factor
-operator|<
+operator|<=
 literal|0.0
 condition|)
 block|{
@@ -3352,7 +3352,7 @@ elseif|else
 if|if
 condition|(
 name|factor
-operator|>
+operator|>=
 literal|1.0
 condition|)
 block|{
