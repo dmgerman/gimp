@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f65e70108
+DECL|struct|__anon2c52cf6d0108
 block|{
 DECL|member|name
 specifier|const
@@ -2094,6 +2094,11 @@ block|{
 name|n
 operator|=
 operator|*
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|src
 expr_stmt|;
 name|src
