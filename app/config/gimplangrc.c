@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288344fd0103
+DECL|enum|__anon2afa46a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -920,7 +920,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_lang_rc_get_language:  * @lang_rc:  a #GimpLangRc object.  *  * This function looks up the language set in `gimprc`.  * If no language property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Return value: a newly allocated string representing the language or  *               %NULL if the key couldn't be found.  **/
+comment|/**  * gimp_lang_rc_get_language:  * @lang_rc:  a #GimpLangRc object.  *  * This function looks up the language set in `gimprc`.  *  * Return value: a newly allocated string representing the language or  *               %NULL if the key couldn't be found.  **/
 end_comment
 
 begin_function
