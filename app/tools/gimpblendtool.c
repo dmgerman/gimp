@@ -2730,6 +2730,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_blend_tool_set_tentative_gradient
+argument_list|(
+name|blend_tool
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|context
