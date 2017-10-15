@@ -132,7 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropgui-diffration-patterns.h"
+file|"gimppropgui-diffraction-patterns.h"
 end_include
 
 begin_include
@@ -1812,7 +1812,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7e61a40108
+DECL|struct|__anon2b8ae71f0108
 block|{
 DECL|member|config_type
 specifier|const
