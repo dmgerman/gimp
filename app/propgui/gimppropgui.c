@@ -1608,6 +1608,10 @@ argument_list|)
 argument_list|,
 comment|/* pick_abyss = */
 name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1812,7 +1816,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8ae71f0108
+DECL|struct|__anon2b70cd960108
 block|{
 DECL|member|config_type
 specifier|const

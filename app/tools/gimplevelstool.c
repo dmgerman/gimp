@@ -1187,6 +1187,10 @@ name|help
 argument_list|,
 comment|/* pick_abyss = */
 name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}

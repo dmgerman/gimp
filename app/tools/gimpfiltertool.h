@@ -507,6 +507,12 @@ name|tooltip
 parameter_list|,
 name|gboolean
 name|pick_abyss
+parameter_list|,
+name|GimpPickerCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl
