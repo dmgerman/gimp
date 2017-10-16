@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-color-to-alpha.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-convolution-matrix.h"
 end_include
 
@@ -1816,7 +1822,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b70cd960108
+DECL|struct|__anon28dac2d00108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1850,6 +1856,12 @@ block|{
 literal|"GimpGegl-gegl-color-rotate-config"
 block|,
 name|_gimp_prop_gui_new_color_rotate
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-color-to-alpha-plus-config"
+block|,
+name|_gimp_prop_gui_new_color_to_alpha
 block|}
 block|,
 block|{
