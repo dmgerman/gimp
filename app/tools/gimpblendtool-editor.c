@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7314060103
+DECL|enum|__anon2c3e48f70103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7314060208
+DECL|struct|__anon2c3e48f70208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -1210,6 +1210,11 @@ name|gimp_blend_tool_set_tentative_gradient
 argument_list|(
 name|blend_tool
 argument_list|,
+name|tentative_gradient
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|tentative_gradient
 argument_list|)
 expr_stmt|;
