@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b795510103
+DECL|enum|__anon2b7314060103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b795510208
+DECL|struct|__anon2b7314060208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
