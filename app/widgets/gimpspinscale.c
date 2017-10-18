@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e76ba70103
+DECL|enum|__anon2bf3ad930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e76ba70203
+DECL|enum|__anon2bf3ad930203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -2454,7 +2454,7 @@ expr_stmt|;
 if|if
 condition|(
 name|x
-operator|>
+operator|>=
 name|layout_x
 operator|&&
 name|x
@@ -2466,7 +2466,7 @@ operator|.
 name|width
 operator|&&
 name|y
-operator|>
+operator|>=
 name|layout_y
 operator|&&
 name|y
@@ -2486,7 +2486,7 @@ elseif|else
 if|if
 condition|(
 name|y
-operator|>
+operator|>=
 name|allocation
 operator|.
 name|height
