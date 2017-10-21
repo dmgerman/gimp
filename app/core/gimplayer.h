@@ -171,7 +171,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2964a0d40108
+DECL|struct|__anon2b287f620108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -913,6 +913,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerColorSpace
+name|gimp_layer_get_real_blend_space
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_layer_set_composite_space
 parameter_list|(
@@ -941,6 +952,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayerColorSpace
+name|gimp_layer_get_real_composite_space
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_layer_set_composite_mode
 parameter_list|(
@@ -960,6 +982,17 @@ end_function_decl
 begin_function_decl
 name|GimpLayerCompositeMode
 name|gimp_layer_get_composite_mode
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpLayerCompositeMode
+name|gimp_layer_get_real_composite_mode
 parameter_list|(
 name|GimpLayer
 modifier|*
