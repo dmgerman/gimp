@@ -160,6 +160,9 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|background
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|)
 function_decl|;
 end_function_decl

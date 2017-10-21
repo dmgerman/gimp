@@ -1111,7 +1111,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_flatten (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GimpRGB * background)
+DECL|function|gimp_gegl_apply_flatten (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GimpRGB * background,GimpLayerColorSpace composite_space)
 name|gimp_gegl_apply_flatten
 parameter_list|(
 name|GeglBuffer
@@ -1135,6 +1135,9 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|background
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|)
 block|{
 name|GeglNode
@@ -1181,6 +1184,8 @@ operator|=
 name|gimp_gegl_create_flatten_node
 argument_list|(
 name|background
+argument_list|,
+name|composite_space
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_apply_operation

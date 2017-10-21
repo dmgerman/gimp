@@ -2247,6 +2247,11 @@ name|gimp_gegl_create_flatten_node
 argument_list|(
 operator|&
 name|bg
+argument_list|,
+name|gimp_layer_get_real_composite_space
+argument_list|(
+name|bottom_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|position

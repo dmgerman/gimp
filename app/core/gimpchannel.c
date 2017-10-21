@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c420ba50103
+DECL|enum|__anon2ac6ae3b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2879,6 +2879,8 @@ name|new_buffer
 argument_list|,
 operator|&
 name|background
+argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_set_buffer_full

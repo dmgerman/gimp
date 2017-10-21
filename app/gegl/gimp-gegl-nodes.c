@@ -42,13 +42,16 @@ end_include
 begin_function
 name|GeglNode
 modifier|*
-DECL|function|gimp_gegl_create_flatten_node (const GimpRGB * background)
+DECL|function|gimp_gegl_create_flatten_node (const GimpRGB * background,GimpLayerColorSpace composite_space)
 name|gimp_gegl_create_flatten_node
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
 name|background
+parameter_list|,
+name|GimpLayerColorSpace
+name|composite_space
 parameter_list|)
 block|{
 name|GeglNode
@@ -80,6 +83,19 @@ argument_list|(
 name|background
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|composite_space
+operator|==
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+operator|||
+name|composite_space
+operator|==
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 argument_list|,
 name|NULL
 argument_list|)
@@ -145,6 +161,12 @@ argument_list|,
 literal|"operation"
 argument_list|,
 literal|"gegl:over"
+argument_list|,
+literal|"srgb"
+argument_list|,
+name|composite_space
+operator|==
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 argument_list|,
 name|NULL
 argument_list|)
