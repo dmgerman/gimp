@@ -8301,6 +8301,34 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
+comment|/* For layer groups, expand or collapse the group */
+if|if
+condition|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|group_type
+operator|!=
+literal|0
+condition|)
+block|{
+name|gimp_item_set_expanded
+argument_list|(
+name|layer_id
+argument_list|,
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|group_type
+operator|==
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/* Insert the layer */
 if|if
