@@ -6486,6 +6486,12 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gint32
+name|active_layer_id
+init|=
+operator|-
+literal|1
+decl_stmt|;
 name|gint
 name|lidx
 decl_stmt|;
@@ -8366,7 +8372,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Set the active layer */
+comment|/* Remember the active layer ID */
 if|if
 condition|(
 name|lidx
@@ -8376,12 +8382,9 @@ operator|->
 name|layer_state
 condition|)
 block|{
-name|gimp_image_set_active_layer
-argument_list|(
-name|image_id
-argument_list|,
+name|active_layer_id
+operator|=
 name|layer_id
-argument_list|)
 expr_stmt|;
 block|}
 comment|/* Set the layer data */
@@ -9286,6 +9289,20 @@ argument_list|(
 name|parent_group_stack
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* Set the active layer */
+if|if
+condition|(
+name|active_layer_id
+operator|>=
+literal|0
+condition|)
+name|gimp_image_set_active_layer
+argument_list|(
+name|image_id
+argument_list|,
+name|active_layer_id
 argument_list|)
 expr_stmt|;
 return|return
