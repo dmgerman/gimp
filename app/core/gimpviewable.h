@@ -189,6 +189,18 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+DECL|member|expanded_changed
+name|void
+function_decl|(
+modifier|*
+name|expanded_changed
+function_decl|)
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
 comment|/*  virtual functions  */
 DECL|member|get_size
 name|gboolean
@@ -458,6 +470,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_viewable_size_changed
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_viewable_expanded_changed
 parameter_list|(
 name|GimpViewable
 modifier|*
