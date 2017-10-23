@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40fac50103
+DECL|enum|__anon2a214c120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1552,6 +1552,19 @@ argument_list|,
 operator|&
 name|new_mode
 argument_list|)
+operator|&&
+operator|(
+name|gimp_layer_mode_get_context
+argument_list|(
+name|new_mode
+argument_list|)
+operator|&
+name|combo
+operator|->
+name|priv
+operator|->
+name|context
+operator|)
 condition|)
 block|{
 name|gimp_int_combo_box_set_active
