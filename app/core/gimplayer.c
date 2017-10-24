@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a67b30103
+DECL|enum|__anon27fe0cfc0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a67b30203
+DECL|enum|__anon27fe0cfc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9222,6 +9222,20 @@ expr_stmt|;
 name|gimp_context_get_background
 argument_list|(
 name|context
+argument_list|,
+operator|&
+name|background
+argument_list|)
+expr_stmt|;
+name|gimp_pickable_srgb_to_image_color
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+operator|&
+name|background
 argument_list|,
 operator|&
 name|background
