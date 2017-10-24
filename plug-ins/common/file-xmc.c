@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33c6890108
+DECL|struct|__anon2ac3b8300108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a33c6890208
+DECL|struct|__anon2ac3b8300208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3439,7 +3439,7 @@ condition|(
 name|ntoc
 operator|>
 operator|(
-name|G_MAXINT32
+name|G_MAXUINT32
 operator|/
 sizeof|sizeof
 argument_list|(
@@ -9187,7 +9187,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a33c6890308
+DECL|struct|__anon2ac3b8300308
 block|{
 DECL|member|size
 name|guint32
