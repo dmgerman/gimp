@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwindowstrategy.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28805c2a0103
+DECL|enum|__anon2988c8c90103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2218,12 +2224,9 @@ name|pick_state
 operator|!=
 name|GIMP_COLOR_PICK_STATE_START
 condition|)
-name|gimp_dockable_blink_cancel
-argument_list|(
-name|GIMP_DOCKABLE
+name|gimp_widget_blink_cancel
 argument_list|(
 name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette_editor

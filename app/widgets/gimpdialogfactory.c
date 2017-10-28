@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0adb10103
+DECL|enum|__anon2c2896730103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2339,9 +2339,9 @@ argument_list|,
 name|num
 argument_list|)
 expr_stmt|;
-name|gimp_dockable_blink
+name|gimp_widget_blink
 argument_list|(
-name|dockable
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
