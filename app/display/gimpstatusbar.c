@@ -4673,6 +4673,19 @@ comment|/*  move_to_front =  */
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|severity
+operator|>=
+name|GIMP_MESSAGE_WARNING
+condition|)
+name|gimp_widget_blink
+argument_list|(
+name|statusbar
+operator|->
+name|label
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
