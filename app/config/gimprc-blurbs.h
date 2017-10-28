@@ -333,6 +333,33 @@ value|"Sets the environ search path."
 end_define
 
 begin_define
+DECL|macro|ERROR_CONSOLE_HIGHLIGHT_ERROR_BLURB
+define|#
+directive|define
+name|ERROR_CONSOLE_HIGHLIGHT_ERROR_BLURB
+define|\
+value|"Highlight error console on errors"
+end_define
+
+begin_define
+DECL|macro|ERROR_CONSOLE_HIGHLIGHT_INFO_BLURB
+define|#
+directive|define
+name|ERROR_CONSOLE_HIGHLIGHT_INFO_BLURB
+define|\
+value|"Highlight error console on messages"
+end_define
+
+begin_define
+DECL|macro|ERROR_CONSOLE_HIGHLIGHT_WARNING_BLURB
+define|#
+directive|define
+name|ERROR_CONSOLE_HIGHLIGHT_WARNING_BLURB
+define|\
+value|"Highlight error console on warnings"
+end_define
+
+begin_define
 DECL|macro|FRACTALEXPLORER_PATH_BLURB
 define|#
 directive|define

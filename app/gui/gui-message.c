@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c00d7580108
+DECL|struct|__anon2bf861a90108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -559,18 +559,33 @@ modifier|*
 name|message
 parameter_list|)
 block|{
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dockable
 init|=
 name|NULL
 decl_stmt|;
-comment|/* try to avoid raising the error console for not so severe messages */
+comment|/* avoid raising the error console for unhighlighted messages */
 if|if
 condition|(
+operator|!
+name|config
+operator|->
+name|error_console_highlight
+index|[
 name|severity
-operator|<
-name|GIMP_MESSAGE_ERROR
+index|]
 condition|)
 block|{
 name|GtkWidget

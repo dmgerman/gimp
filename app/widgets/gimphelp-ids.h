@@ -4294,6 +4294,14 @@ value|"gimp-errors-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_ERRORS_HIGHLIGHT
+define|#
+directive|define
+name|GIMP_HELP_ERRORS_HIGHLIGHT
+value|"gimp-errors-highlight"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_ERRORS_CLEAR
 define|#
 directive|define
