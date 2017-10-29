@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc772d0103
+DECL|enum|__anon29802de30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -307,6 +307,11 @@ name|gdouble
 name|cury
 decl_stmt|;
 comment|/*  current y coord                    */
+DECL|member|button_down
+name|gdouble
+name|button_down
+decl_stmt|;
+comment|/*  is the mouse button pressed        */
 DECL|member|mousex
 name|gdouble
 name|mousex
@@ -625,27 +630,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_transform_grid_motion_modifier
-parameter_list|(
-name|GimpToolWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkModifierType
-name|key
-parameter_list|,
-name|gboolean
-name|press
-parameter_list|,
-name|GdkModifierType
-name|state
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_tool_transform_grid_hover_modifier
 parameter_list|(
 name|GimpToolWidget
@@ -847,12 +831,6 @@ operator|->
 name|hover
 operator|=
 name|gimp_tool_transform_grid_hover
-expr_stmt|;
-name|widget_class
-operator|->
-name|motion_modifier
-operator|=
-name|gimp_tool_transform_grid_motion_modifier
 expr_stmt|;
 name|widget_class
 operator|->
@@ -5413,6 +5391,12 @@ name|private
 decl_stmt|;
 name|private
 operator|->
+name|button_down
+operator|=
+name|TRUE
+expr_stmt|;
+name|private
+operator|->
 name|mousex
 operator|=
 name|coords
@@ -5703,7 +5687,31 @@ parameter_list|,
 name|GimpButtonReleaseType
 name|release_type
 parameter_list|)
-block|{ }
+block|{
+name|GimpToolTransformGrid
+modifier|*
+name|grid
+init|=
+name|GIMP_TOOL_TRANSFORM_GRID
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
+name|GimpToolTransformGridPrivate
+modifier|*
+name|private
+init|=
+name|grid
+operator|->
+name|private
+decl_stmt|;
+name|private
+operator|->
+name|button_down
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -9097,8 +9105,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_transform_grid_motion_modifier (GimpToolWidget * widget,GdkModifierType key,gboolean press,GdkModifierType state)
-name|gimp_tool_transform_grid_motion_modifier
+DECL|function|gimp_tool_transform_grid_hover_modifier (GimpToolWidget * widget,GdkModifierType key,gboolean press,GdkModifierType state)
+name|gimp_tool_transform_grid_hover_modifier
 parameter_list|(
 name|GimpToolWidget
 modifier|*
@@ -9145,6 +9153,13 @@ argument_list|,
 name|key
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|private
+operator|->
+name|button_down
+condition|)
+block|{
 comment|/*  send a non-motion to update the grid with the new constraints  */
 name|coords
 operator|.
@@ -9175,35 +9190,6 @@ name|state
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_tool_transform_grid_hover_modifier (GimpToolWidget * widget,GdkModifierType key,gboolean press,GdkModifierType state)
-name|gimp_tool_transform_grid_hover_modifier
-parameter_list|(
-name|GimpToolWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkModifierType
-name|key
-parameter_list|,
-name|gboolean
-name|press
-parameter_list|,
-name|GdkModifierType
-name|state
-parameter_list|)
-block|{
-name|gimp_tool_transform_grid_modifier
-argument_list|(
-name|widget
-argument_list|,
-name|key
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
