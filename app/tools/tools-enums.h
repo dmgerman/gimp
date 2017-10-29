@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee027a0103
+DECL|enum|__anon290f61850103
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee027a0203
+DECL|enum|__anon290f61850203
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee027a0303
+DECL|enum|__anon290f61850303
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -137,6 +137,43 @@ name|GIMP_TOOL_ACTION_COMMIT
 DECL|typedef|GimpToolAction
 block|}
 name|GimpToolAction
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TOOL_ACTIVE_MODIFIERS
+define|#
+directive|define
+name|GIMP_TYPE_TOOL_ACTIVE_MODIFIERS
+value|(gimp_tool_active_modifiers_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_tool_active_modifiers_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon290f61850403
+block|{
+DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
+name|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
+block|,
+DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_SAME
+name|GIMP_TOOL_ACTIVE_MODIFIERS_SAME
+block|,
+DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_SEPARATE
+name|GIMP_TOOL_ACTIVE_MODIFIERS_SEPARATE
+block|, }
+DECL|typedef|GimpToolActiveModifiers
+name|GimpToolActiveModifiers
 typedef|;
 end_typedef
 
@@ -161,7 +198,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee027a0403
+DECL|enum|__anon290f61850503
 block|{
 DECL|enumerator|GIMP_MATTING_DRAW_MODE_FOREGROUND
 name|GIMP_MATTING_DRAW_MODE_FOREGROUND
@@ -202,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee027a0503
+DECL|enum|__anon290f61850603
 block|{
 DECL|enumerator|GIMP_WARP_BEHAVIOR_MOVE
 name|GIMP_WARP_BEHAVIOR_MOVE
@@ -245,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bee027a0603
+DECL|enum|__anon290f61850703
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -275,7 +312,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bee027a0703
+DECL|enum|__anon290f61850803
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -314,7 +351,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bee027a0803
+DECL|enum|__anon290f61850903
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
