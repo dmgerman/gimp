@@ -33,12 +33,6 @@ directive|include
 file|"gimpcompatenums.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimputils.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|_gimp_unit_vtable
 name|GimpUnitVtable
@@ -87,7 +81,7 @@ operator|=
 operator|*
 name|vtable
 expr_stmt|;
-name|gimp_base_compat_enum_init
+name|gimp_base_compat_enums_init
 argument_list|()
 expr_stmt|;
 name|gimp_base_initialized
@@ -99,8 +93,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_base_compat_enum_init (void)
-name|gimp_base_compat_enum_init
+DECL|function|gimp_base_compat_enums_init (void)
+name|gimp_base_compat_enums_init
 parameter_list|(
 name|void
 parameter_list|)
