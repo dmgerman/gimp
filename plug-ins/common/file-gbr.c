@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6622a20108
+DECL|struct|__anon2afc56420108
 block|{
 DECL|member|description
 name|gchar
@@ -1539,9 +1539,14 @@ name|bh
 operator|.
 name|height
 operator|/
+name|MAX
+argument_list|(
+literal|4
+argument_list|,
 name|bh
 operator|.
 name|bytes
+argument_list|)
 operator|<
 literal|1
 operator|)
@@ -2385,7 +2390,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b6622a2020a
+DECL|union|__anon2afc5642020a
 block|{
 DECL|member|u
 name|guint16
