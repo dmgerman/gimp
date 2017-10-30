@@ -955,7 +955,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_FILE_CREATE_REPLACE_DESTINATION
+name|G_FILE_CREATE_NONE
 argument_list|,
 name|NULL
 argument_list|,
