@@ -113,7 +113,7 @@ begin_function
 specifier|static
 name|GimpGradient
 modifier|*
-DECL|function|gradient_get (Gimp * gimp,const gchar * name,gboolean writable,gint segment,GimpGradientSegment ** seg,GError ** error)
+DECL|function|gradient_get (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,gint segment,GimpGradientSegment ** seg,GError ** error)
 name|gradient_get
 parameter_list|(
 name|Gimp
@@ -125,8 +125,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|gint
 name|segment
@@ -152,7 +152,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|writable
+name|access
 argument_list|,
 name|error
 argument_list|)
@@ -232,7 +232,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)
@@ -531,7 +531,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -705,7 +705,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -866,7 +866,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_RENAME
 argument_list|,
 name|error
 argument_list|)
@@ -1012,7 +1012,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1157,7 +1157,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1347,7 +1347,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1658,7 +1658,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1934,7 +1934,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -2150,7 +2150,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|segment
 argument_list|,
@@ -2322,7 +2322,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -2538,7 +2538,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|segment
 argument_list|,
@@ -2697,7 +2697,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -2882,7 +2882,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|segment
 argument_list|,
@@ -3054,7 +3054,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -3239,7 +3239,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|segment
 argument_list|,
@@ -3411,7 +3411,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -3596,7 +3596,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|segment
 argument_list|,
@@ -3768,7 +3768,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,
@@ -3938,7 +3938,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|segment
 argument_list|,

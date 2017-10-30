@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278c7ef00103
+DECL|enum|__anon2bb2b3790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1826,6 +1826,15 @@ name|data_editable
 operator|=
 name|editable
 expr_stmt|;
+name|gimp_docked_title_changed
+argument_list|(
+name|GIMP_DOCKED
+argument_list|(
+name|editor
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_editable_set_editable
 argument_list|(
 name|GTK_EDITABLE
@@ -1836,17 +1845,18 @@ name|name_entry
 argument_list|)
 argument_list|,
 name|editable
-argument_list|)
-expr_stmt|;
-name|gimp_docked_title_changed
+operator|&&
+name|gimp_viewable_is_name_editable
 argument_list|(
-name|GIMP_DOCKED
+name|GIMP_VIEWABLE
 argument_list|(
 name|editor
+operator|->
+name|data
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

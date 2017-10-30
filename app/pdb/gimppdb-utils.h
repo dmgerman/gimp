@@ -30,8 +30,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -55,8 +55,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -80,8 +80,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -105,8 +105,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -152,8 +152,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -177,8 +177,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*

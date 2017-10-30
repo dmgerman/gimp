@@ -334,7 +334,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -526,7 +526,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_RENAME
 argument_list|,
 name|error
 argument_list|)
@@ -672,7 +672,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -811,7 +811,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -954,7 +954,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1100,7 +1100,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1318,7 +1318,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -1464,7 +1464,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)
@@ -1617,7 +1617,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)
@@ -1781,7 +1781,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)
@@ -1946,7 +1946,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -2130,7 +2130,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)
@@ -2271,7 +2271,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|FALSE
+name|GIMP_PDB_DATA_ACCESS_READ
 argument_list|,
 name|error
 argument_list|)
@@ -2458,7 +2458,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|TRUE
+name|GIMP_PDB_DATA_ACCESS_WRITE
 argument_list|,
 name|error
 argument_list|)

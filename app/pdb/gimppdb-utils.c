@@ -176,7 +176,7 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_pdb_get_brush (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_brush (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_brush
 parameter_list|(
 name|Gimp
@@ -188,8 +188,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -296,7 +296,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|writable
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_WRITE
+operator|)
 operator|&&
 operator|!
 name|gimp_data_is_writable
@@ -328,6 +332,45 @@ return|return
 name|NULL
 return|;
 block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_RENAME
+operator|)
+operator|&&
+operator|!
+name|gimp_viewable_is_name_editable
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Brush '%s' is not renamable"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 return|return
 name|brush
 return|;
@@ -337,7 +380,7 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_pdb_get_generated_brush (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_generated_brush (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_generated_brush
 parameter_list|(
 name|Gimp
@@ -349,8 +392,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -394,7 +437,7 @@ name|gimp
 argument_list|,
 name|name
 argument_list|,
-name|writable
+name|access
 argument_list|,
 name|error
 argument_list|)
@@ -445,7 +488,7 @@ end_function
 begin_function
 name|GimpDynamics
 modifier|*
-DECL|function|gimp_pdb_get_dynamics (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_dynamics (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_dynamics
 parameter_list|(
 name|Gimp
@@ -457,8 +500,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -565,7 +608,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|writable
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_WRITE
+operator|)
 operator|&&
 operator|!
 name|gimp_data_is_writable
@@ -597,6 +644,45 @@ return|return
 name|NULL
 return|;
 block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_RENAME
+operator|)
+operator|&&
+operator|!
+name|gimp_viewable_is_name_editable
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|dynamics
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Paint dynamics '%s' is not renamable"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 return|return
 name|dynamics
 return|;
@@ -606,7 +692,7 @@ end_function
 begin_function
 name|GimpMybrush
 modifier|*
-DECL|function|gimp_pdb_get_mybrush (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_mybrush (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_mybrush
 parameter_list|(
 name|Gimp
@@ -618,8 +704,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -726,7 +812,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|writable
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_WRITE
+operator|)
 operator|&&
 operator|!
 name|gimp_data_is_writable
@@ -749,6 +839,45 @@ argument_list|,
 name|_
 argument_list|(
 literal|"MyPaint brush '%s' is not editable"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_RENAME
+operator|)
+operator|&&
+operator|!
+name|gimp_viewable_is_name_editable
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"MyPaint brush '%s' is not renamable"
 argument_list|)
 argument_list|,
 name|name
@@ -890,7 +1019,7 @@ end_function
 begin_function
 name|GimpGradient
 modifier|*
-DECL|function|gimp_pdb_get_gradient (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_gradient (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_gradient
 parameter_list|(
 name|Gimp
@@ -902,8 +1031,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -1010,7 +1139,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|writable
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_WRITE
+operator|)
 operator|&&
 operator|!
 name|gimp_data_is_writable
@@ -1042,6 +1175,45 @@ return|return
 name|NULL
 return|;
 block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_RENAME
+operator|)
+operator|&&
+operator|!
+name|gimp_viewable_is_name_editable
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gradient
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Gradient '%s' is not renamable"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 return|return
 name|gradient
 return|;
@@ -1051,7 +1223,7 @@ end_function
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_pdb_get_palette (Gimp * gimp,const gchar * name,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_get_palette (Gimp * gimp,const gchar * name,GimpPDBDataAccess access,GError ** error)
 name|gimp_pdb_get_palette
 parameter_list|(
 name|Gimp
@@ -1063,8 +1235,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|writable
+name|GimpPDBDataAccess
+name|access
 parameter_list|,
 name|GError
 modifier|*
@@ -1171,7 +1343,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|writable
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_WRITE
+operator|)
 operator|&&
 operator|!
 name|gimp_data_is_writable
@@ -1194,6 +1370,45 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Palette '%s' is not editable"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|access
+operator|&
+name|GIMP_PDB_DATA_ACCESS_RENAME
+operator|)
+operator|&&
+operator|!
+name|gimp_viewable_is_name_editable
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|palette
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_ERROR_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Palette '%s' is not renamable"
 argument_list|)
 argument_list|,
 name|name

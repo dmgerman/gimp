@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e36f10103
+DECL|enum|__anon2bd6d4c60103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e36f10203
+DECL|enum|__anon2bd6d4c60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1429,6 +1429,15 @@ parameter_list|)
 block|{
 return|return
 name|gimp_data_is_writable
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|)
+operator|&&
+operator|!
+name|gimp_data_is_internal
 argument_list|(
 name|GIMP_DATA
 argument_list|(
