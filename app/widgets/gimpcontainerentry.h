@@ -97,6 +97,11 @@ DECL|member|parent_instance
 name|GtkEntry
 name|parent_instance
 decl_stmt|;
+DECL|member|viewable
+name|GimpViewable
+modifier|*
+name|viewable
+decl_stmt|;
 block|}
 struct|;
 end_struct
