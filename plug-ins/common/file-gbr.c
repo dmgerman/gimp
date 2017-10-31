@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1554df0108
+DECL|struct|__anon29a55e510108
 block|{
 DECL|member|description
 name|gchar
@@ -1938,6 +1938,7 @@ name|gimp_any_to_utf8
 argument_list|(
 name|temp
 argument_list|,
+name|size
 operator|-
 literal|1
 argument_list|,
@@ -2393,7 +2394,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c1554df020a
+DECL|union|__anon29a55e51020a
 block|{
 DECL|member|u
 name|guint16

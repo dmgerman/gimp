@@ -1474,6 +1474,14 @@ name|gimp_any_to_utf8
 argument_list|(
 name|temp
 argument_list|,
+name|ph
+operator|.
+name|header_size
+operator|-
+sizeof|sizeof
+argument_list|(
+name|PatternHeader
+argument_list|)
 operator|-
 literal|1
 argument_list|,
