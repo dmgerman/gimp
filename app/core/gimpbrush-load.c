@@ -556,7 +556,7 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
-name|gint
+name|gsize
 name|bn_size
 decl_stmt|;
 name|BrushHeader
@@ -948,6 +948,30 @@ return|return
 name|NULL
 return|;
 block|}
+if|if
+condition|(
+name|header
+operator|.
+name|header_size
+operator|<
+sizeof|sizeof
+argument_list|(
+name|BrushHeader
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Unsupported brush format"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 comment|/*  Read in the brush name  */
 if|if
 condition|(
@@ -1266,7 +1290,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon273bf065010a
+DECL|union|__anon2a21edc7010a
 block|{
 DECL|member|u
 name|guint16
