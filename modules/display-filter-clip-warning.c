@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2937b4680103
+DECL|enum|__anon2b0e24630103
 block|{
 DECL|enumerator|WARNING_SHADOW
 name|WARNING_SHADOW
@@ -261,7 +261,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937b4680203
+DECL|enum|__anon2b0e24630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -528,27 +528,6 @@ name|set_property
 operator|=
 name|cdisplay_clip_warning_set_property
 expr_stmt|;
-name|display_class
-operator|->
-name|name
-operator|=
-name|_
-argument_list|(
-literal|"Clip Warning"
-argument_list|)
-expr_stmt|;
-name|display_class
-operator|->
-name|help_id
-operator|=
-literal|"gimp-colordisplay-clip-warning"
-expr_stmt|;
-name|display_class
-operator|->
-name|icon_name
-operator|=
-literal|"gimp-warning"
-expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -795,6 +774,27 @@ name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
+expr_stmt|;
+name|display_class
+operator|->
+name|name
+operator|=
+name|_
+argument_list|(
+literal|"Clip Warning"
+argument_list|)
+expr_stmt|;
+name|display_class
+operator|->
+name|help_id
+operator|=
+literal|"gimp-colordisplay-clip-warning"
+expr_stmt|;
+name|display_class
+operator|->
+name|icon_name
+operator|=
+literal|"gimp-warning"
 expr_stmt|;
 name|display_class
 operator|->
@@ -1225,19 +1225,6 @@ name|GeglBufferIterator
 modifier|*
 name|iter
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%d x %d\n"
-argument_list|,
-name|area
-operator|->
-name|width
-argument_list|,
-name|area
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
