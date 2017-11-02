@@ -97,6 +97,11 @@ DECL|member|parent_instance
 name|GtkBox
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|stack
 name|GimpColorDisplayStack
 modifier|*
@@ -209,6 +214,10 @@ name|GtkWidget
 modifier|*
 name|gimp_color_display_editor_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpColorDisplayStack
 modifier|*
 name|stack

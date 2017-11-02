@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ac7990108
+DECL|struct|__anon291c21510108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -407,6 +407,12 @@ name|editor
 operator|=
 name|gimp_color_display_editor_new
 argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|,
 name|shell
 operator|->
 name|filter_stack
