@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294799650103
+DECL|enum|__anon2b52b9870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294799650203
+DECL|enum|__anon2b52b9870203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -3135,6 +3135,12 @@ name|relative_change
 operator|=
 name|FALSE
 expr_stmt|;
+name|private
+operator|->
+name|pointer_warp
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|event
@@ -3278,12 +3284,6 @@ name|event
 operator|->
 name|y_root
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|pointer_warp
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|TRUE
@@ -3578,10 +3578,6 @@ expr_stmt|;
 comment|/* when applying a relative change, we wrap the pointer around the left        * and right edges of the current monitor, so that the adjustment is not        * limited by the monitor geometry.  when the pointer reaches one of the        * monitor edges, we move it one pixel away from the opposite edge, so        * that it can be subsequently moved in the other direction, and adjust        * start_x accordingly.        *        * unfortunately, we can't rely on gdk_display_warp_pointer() to actually        * move the pointer (for example, it doesn't work on wayland), and        * there's no easy way to tell whether the pointer moved or not.  in        * particular, even when the pointer doesn't move, gdk still simulates a        * motion event, and reports the "new" pointer position until a real        * motion event occurs.        *        * in order not to erroneously adjust start_x when        * gdk_display_warp_pointer() fails, we remember that we *tried* to warp        * the pointer, and defer the actual adjustment of start_x until a future        * motion event, where the pointer's x coordinate is different from the        * one passed to gdk_display_warp_pointer().  when that happens, we        * "guess" whether the pointer got warped or not by comparing its x        * coordinate to the one passed to gdk_display_warp_pointer(): if their        * difference is less than half the monitor width, then we assume the        * pointer got warped (otherwise, the user must have very quickly moved        * the mouse across half the screen.)  yes, this is an ugly ugly hack :)        */
 if|if
 condition|(
-name|private
-operator|->
-name|relative_change
-operator|&&
 name|private
 operator|->
 name|pointer_warp
