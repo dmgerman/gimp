@@ -634,10 +634,15 @@ name|GimpColorDisplayStack
 modifier|*
 name|filter_stack
 decl_stmt|;
-comment|/* color display conversion stuff    */
+comment|/*  color display conversion stuff     */
 DECL|member|filter_idle_id
 name|guint
 name|filter_idle_id
+decl_stmt|;
+DECL|member|filter_transform
+name|GimpColorTransform
+modifier|*
+name|filter_transform
 decl_stmt|;
 DECL|member|filter_format
 specifier|const
