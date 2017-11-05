@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae096fa0103
+DECL|enum|__anon2b04c5c80103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -341,7 +341,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae096fa0203
+DECL|enum|__anon2b04c5c80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -747,7 +747,10 @@ argument_list|(
 literal|"Deficiency"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Color deficiency type"
+argument_list|)
 argument_list|,
 name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
 argument_list|,

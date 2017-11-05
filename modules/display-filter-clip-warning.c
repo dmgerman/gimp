@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e24630103
+DECL|enum|__anon28dd879d0103
 block|{
 DECL|enumerator|WARNING_SHADOW
 name|WARNING_SHADOW
@@ -261,7 +261,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e24630203
+DECL|enum|__anon28dd879d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -744,7 +744,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Include alpha component in the warnings"
+literal|"Include alpha component in the warning"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1021,10 +1021,10 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-DECL|macro|SET_PTR_MEMBER (member,value)
+DECL|macro|SET_MEMBER_PTR (member,value)
 define|#
 directive|define
-name|SET_PTR_MEMBER
+name|SET_MEMBER_PTR
 parameter_list|(
 name|member
 parameter_list|,
@@ -1032,10 +1032,10 @@ name|value
 parameter_list|)
 define|\
 value|cdisplay_clip_warning_set_member (clip_warning,                              \                                     pspec->name,                               \&clip_warning->member,                     \                                     (value),                                   \                                     sizeof (clip_warning->member))
-DECL|macro|SET_VAL_MEMBER (member,type,value)
+DECL|macro|SET_MEMBER_VAL (member,type,value)
 define|#
 directive|define
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 parameter_list|(
 name|member
 parameter_list|,
@@ -1044,7 +1044,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|SET_PTR_MEMBER (member,&(type) {value})
+value|SET_MEMBER_PTR (member,&(type) {value})
 switch|switch
 condition|(
 name|property_id
@@ -1053,7 +1053,7 @@ block|{
 case|case
 name|PROP_SHOW_SHADOWS
 case|:
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 argument_list|(
 name|show_shadows
 argument_list|,
@@ -1069,7 +1069,7 @@ break|break;
 case|case
 name|PROP_SHADOWS_COLOR
 case|:
-name|SET_PTR_MEMBER
+name|SET_MEMBER_PTR
 argument_list|(
 name|shadows_color
 argument_list|,
@@ -1083,7 +1083,7 @@ break|break;
 case|case
 name|PROP_SHOW_HIGHLIGHTS
 case|:
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 argument_list|(
 name|show_highlights
 argument_list|,
@@ -1099,7 +1099,7 @@ break|break;
 case|case
 name|PROP_HIGHLIGHTS_COLOR
 case|:
-name|SET_PTR_MEMBER
+name|SET_MEMBER_PTR
 argument_list|(
 name|highlights_color
 argument_list|,
@@ -1113,7 +1113,7 @@ break|break;
 case|case
 name|PROP_SHOW_NAN
 case|:
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 argument_list|(
 name|show_nan
 argument_list|,
@@ -1129,7 +1129,7 @@ break|break;
 case|case
 name|PROP_NAN_COLOR
 case|:
-name|SET_PTR_MEMBER
+name|SET_MEMBER_PTR
 argument_list|(
 name|nan_color
 argument_list|,
@@ -1143,7 +1143,7 @@ break|break;
 case|case
 name|PROP_INCLUDE_ALPHA
 case|:
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 argument_list|(
 name|include_alpha
 argument_list|,
@@ -1159,7 +1159,7 @@ break|break;
 case|case
 name|PROP_OPAQUE
 case|:
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 argument_list|(
 name|opaque
 argument_list|,
@@ -1186,10 +1186,10 @@ break|break;
 block|}
 undef|#
 directive|undef
-name|SET_PTR_MEMBER
+name|SET_MEMBER_PTR
 undef|#
 directive|undef
-name|SET_VAL_MEMBER
+name|SET_MEMBER_VAL
 block|}
 end_function
 

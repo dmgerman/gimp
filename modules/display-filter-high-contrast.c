@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca101d0103
+DECL|enum|__anon29ae3bb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -400,7 +400,7 @@ literal|"contrast"
 argument_list|,
 name|_
 argument_list|(
-literal|"Contrast"
+literal|"Contrast cycles"
 argument_list|)
 argument_list|,
 name|NULL
