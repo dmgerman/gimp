@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd86870103
+DECL|enum|__anon2c0237440103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -485,6 +485,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_data_is_copyable
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_data_copy
 parameter_list|(
@@ -495,6 +506,17 @@ parameter_list|,
 name|GimpData
 modifier|*
 name|src_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_data_is_duplicatable
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
