@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a262d10103
+DECL|enum|__anon2a21ed0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -309,13 +309,16 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpData
-modifier|*
-name|gimp_dynamics_duplicate
+name|void
+name|gimp_dynamics_copy
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GimpData
+modifier|*
+name|src_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -463,9 +466,9 @@ name|gimp_dynamics_get_extension
 expr_stmt|;
 name|data_class
 operator|->
-name|duplicate
+name|copy
 operator|=
-name|gimp_dynamics_duplicate
+name|gimp_dynamics_copy
 expr_stmt|;
 name|GIMP_CONFIG_PROP_STRING
 argument_list|(
@@ -1567,48 +1570,44 @@ end_function
 
 begin_function
 specifier|static
-name|GimpData
-modifier|*
-DECL|function|gimp_dynamics_duplicate (GimpData * data)
-name|gimp_dynamics_duplicate
+name|void
+DECL|function|gimp_dynamics_copy (GimpData * data,GimpData * src_data)
+name|gimp_dynamics_copy
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|)
-block|{
+parameter_list|,
 name|GimpData
 modifier|*
-name|dest
-init|=
-name|g_object_new
+name|src_data
+parameter_list|)
+block|{
+name|gimp_data_freeze
 argument_list|(
-name|GIMP_TYPE_DYNAMICS
-argument_list|,
-name|NULL
+name|data
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_config_copy
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|data
+name|src_data
 argument_list|)
 argument_list|,
 name|GIMP_CONFIG
 argument_list|(
-name|dest
+name|data
 argument_list|)
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-return|return
-name|GIMP_DATA
+name|gimp_data_thaw
 argument_list|(
-name|dest
+name|data
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 

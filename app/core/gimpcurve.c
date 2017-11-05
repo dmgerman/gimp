@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276db1c60103
+DECL|enum|__anon27b6cbb10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -334,13 +334,16 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpData
-modifier|*
-name|gimp_curve_duplicate
+name|void
+name|gimp_curve_data_copy
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GimpData
+modifier|*
+name|src_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -417,7 +420,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_curve_copy
+name|gimp_curve_config_copy
 parameter_list|(
 name|GimpConfig
 modifier|*
@@ -615,9 +618,9 @@ name|gimp_curve_get_extension
 expr_stmt|;
 name|data_class
 operator|->
-name|duplicate
+name|copy
 operator|=
-name|gimp_curve_duplicate
+name|gimp_curve_data_copy
 expr_stmt|;
 name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
@@ -805,7 +808,7 @@ name|iface
 operator|->
 name|copy
 operator|=
-name|gimp_curve_copy
+name|gimp_curve_config_copy
 expr_stmt|;
 block|}
 end_function
@@ -1790,48 +1793,44 @@ end_function
 
 begin_function
 specifier|static
-name|GimpData
-modifier|*
-DECL|function|gimp_curve_duplicate (GimpData * data)
-name|gimp_curve_duplicate
+name|void
+DECL|function|gimp_curve_data_copy (GimpData * data,GimpData * src_data)
+name|gimp_curve_data_copy
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GimpData
+modifier|*
+name|src_data
 parameter_list|)
 block|{
-name|GimpCurve
-modifier|*
-name|new
-init|=
-name|g_object_new
+name|gimp_data_freeze
 argument_list|(
-name|GIMP_TYPE_CURVE
-argument_list|,
-name|NULL
+name|data
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_config_copy
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|data
+name|src_data
 argument_list|)
 argument_list|,
 name|GIMP_CONFIG
 argument_list|(
-name|new
+name|data
 argument_list|)
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-return|return
-name|GIMP_DATA
+name|gimp_data_thaw
 argument_list|(
-name|new
+name|data
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -2038,8 +2037,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curve_copy (GimpConfig * src,GimpConfig * dest,GParamFlags flags)
-name|gimp_curve_copy
+DECL|function|gimp_curve_config_copy (GimpConfig * src,GimpConfig * dest,GParamFlags flags)
+name|gimp_curve_config_copy
 parameter_list|(
 name|GimpConfig
 modifier|*

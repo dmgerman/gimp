@@ -1088,14 +1088,6 @@ decl_stmt|,
 modifier|*
 name|orig
 decl_stmt|;
-name|gimp_data_freeze
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|gradient
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gradient
@@ -1123,10 +1115,7 @@ name|NULL
 expr_stmt|;
 name|orig
 operator|=
-name|GIMP_GRADIENT
-argument_list|(
 name|src_gradient
-argument_list|)
 operator|->
 name|segments
 expr_stmt|;
@@ -1196,7 +1185,7 @@ name|segments
 operator|=
 name|head
 expr_stmt|;
-name|gimp_data_thaw
+name|gimp_data_dirty
 argument_list|(
 name|GIMP_DATA
 argument_list|(
