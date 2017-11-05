@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a57c490103
+DECL|enum|__anon2c069d940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1095,6 +1095,27 @@ argument_list|(
 name|src_data
 argument_list|)
 decl_stmt|;
+name|gimp_data_freeze
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_brush_set_spacing
+argument_list|(
+name|GIMP_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+name|gimp_brush_get_spacing
+argument_list|(
+name|GIMP_BRUSH
+argument_list|(
+name|src_brush
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|brush
 operator|->
 name|shape
@@ -1143,7 +1164,7 @@ name|src_brush
 operator|->
 name|angle
 expr_stmt|;
-name|gimp_data_dirty
+name|gimp_data_thaw
 argument_list|(
 name|data
 argument_list|)
