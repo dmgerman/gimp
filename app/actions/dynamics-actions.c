@@ -469,12 +469,10 @@ literal|"dynamics-duplicate"
 argument_list|,
 name|dynamics
 operator|&&
-name|GIMP_DATA_GET_CLASS
+name|gimp_data_is_duplicatable
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|duplicate
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

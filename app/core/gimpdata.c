@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6d4c60103
+DECL|enum|__anon2ad452320103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6d4c60203
+DECL|enum|__anon2ad452320203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3982,6 +3982,39 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_data_is_copyable (GimpData * data)
+name|gimp_data_is_copyable
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DATA
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|copy
+operator|!=
+name|NULL
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * gimp_data_copy:  * @data:     a #GimpData object  * @src_data: the #GimpData object to copy from  *  * Copies @src_data to @data.  Only the object data is  copied:  the  * name, file name, preview, etc. are not copied.  **/
 end_comment
@@ -4066,6 +4099,57 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_data_is_duplicatable (GimpData * data)
+name|gimp_data_is_duplicatable
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DATA
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|duplicate
+operator|==
+name|gimp_data_real_duplicate
+condition|)
+return|return
+name|gimp_data_is_copyable
+argument_list|(
+name|data
+argument_list|)
+return|;
+else|else
+return|return
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|duplicate
+operator|!=
+name|NULL
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * gimp_data_duplicate:  * @data: a #GimpData object  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
 end_comment
@@ -4093,12 +4177,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_DATA_GET_CLASS
+name|gimp_data_is_duplicatable
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|duplicate
 condition|)
 block|{
 name|GimpData
