@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b216f40103
+DECL|enum|__anon28d6fb130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -838,6 +838,9 @@ decl_stmt|;
 name|gint
 name|n_bins
 decl_stmt|;
+name|gint
+name|temp
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_HISTOGRAM
@@ -1212,7 +1215,7 @@ name|c
 parameter_list|,
 name|i
 parameter_list|)
-value|(priv->values[(c) * priv->n_bins + \                                  (gint) (CLAMP ((i), 0.0, 1.0) * \                                          (priv->n_bins - 0.0001))])
+value|(*(temp = SIGNED_ROUND ((i) * (priv->n_bins - 1)),    \&priv->values[(c) * priv->n_bins +                 \                                     CLAMP (temp, 0, priv->n_bins - 1)]))
 while|while
 condition|(
 name|gegl_buffer_iterator_next
