@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6fb130103
+DECL|enum|__anon27de8a3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -838,6 +838,9 @@ decl_stmt|;
 name|gint
 name|n_bins
 decl_stmt|;
+name|gfloat
+name|n_bins_1f
+decl_stmt|;
 name|gint
 name|temp
 decl_stmt|;
@@ -1206,6 +1209,14 @@ argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
+name|n_bins_1f
+operator|=
+name|priv
+operator|->
+name|n_bins
+operator|-
+literal|1
+expr_stmt|;
 DECL|macro|VALUE (c,i)
 define|#
 directive|define
@@ -1215,7 +1226,7 @@ name|c
 parameter_list|,
 name|i
 parameter_list|)
-value|(*(temp = SIGNED_ROUND ((i) * (priv->n_bins - 1)),    \&priv->values[(c) * priv->n_bins +                 \                                     CLAMP (temp, 0, priv->n_bins - 1)]))
+value|(*(temp = SIGNED_ROUND (MIN ((i) * n_bins_1f, n_bins_1f)), \&priv->values[(c) * priv->n_bins + MAX (temp, 0)]))
 while|while
 condition|(
 name|gegl_buffer_iterator_next
