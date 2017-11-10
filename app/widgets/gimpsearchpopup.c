@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29144d360103
+DECL|enum|__anon293727870103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29144d360203
+DECL|enum|__anon293727870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2593,11 +2593,6 @@ name|action
 argument_list|)
 condition|)
 block|{
-name|gtk_action_activate
-argument_list|(
-name|action
-argument_list|)
-expr_stmt|;
 comment|/* Close the search popup on activation. */
 name|GIMP_POPUP_CLASS
 argument_list|(
@@ -2610,6 +2605,11 @@ name|GIMP_POPUP
 argument_list|(
 name|popup
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_action_activate
+argument_list|(
+name|action
 argument_list|)
 expr_stmt|;
 block|}
