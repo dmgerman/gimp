@@ -5590,7 +5590,17 @@ operator|!=
 name|old_height
 condition|)
 block|{
-comment|/* set the offset first, so the graph is in the right state when        * the projection is reallocated, see bug #730550.        */
+comment|/* update our offset *before* calling gimp_pickable_flush(), so        * that if our graph isn't constructed yet, the offset node picks        * up the right coordinates in gimp_group_layer_get_graph().        */
+name|gimp_item_set_offset
+argument_list|(
+name|item
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
+expr_stmt|;
+comment|/* ... or, if the graph is already constructed, set the offset        * node's coordinates first, so the graph is in the right state        * when the projection is reallocated, see bug #730550.        */
 if|if
 condition|(
 name|private
@@ -5724,15 +5734,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_item_set_offset
-argument_list|(
-name|item
-argument_list|,
-name|x
-argument_list|,
-name|y
-argument_list|)
-expr_stmt|;
 comment|/*  invalidate the entire projection since the position of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
 name|gimp_projectable_invalidate
 argument_list|(
