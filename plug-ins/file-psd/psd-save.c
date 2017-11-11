@@ -3618,6 +3618,10 @@ name|gint
 name|mask
 decl_stmt|;
 comment|/* Layer mask */
+name|gint
+name|depth
+decl_stmt|;
+comment|/* Layer group nesting depth */
 name|glong
 name|eof_pos
 decl_stmt|;
@@ -3726,6 +3730,10 @@ name|nLayers
 argument_list|,
 literal|"Layer structure count"
 argument_list|)
+expr_stmt|;
+name|depth
+operator|=
+literal|0
 expr_stmt|;
 comment|/* Layer records section */
 comment|/* GIMP layers must be written in reverse order */
@@ -4737,6 +4745,7 @@ name|type
 operator|==
 name|PSD_LAYER_TYPE_GROUP_START
 condition|)
+block|{
 name|type
 operator|=
 name|gimp_item_get_expanded
@@ -4755,11 +4764,20 @@ literal|1
 else|:
 literal|2
 expr_stmt|;
+name|depth
+operator|--
+expr_stmt|;
+block|}
 else|else
+block|{
 name|type
 operator|=
 literal|3
 expr_stmt|;
+name|depth
+operator|++
+expr_stmt|;
+block|}
 name|blendMode
 operator|=
 name|psd_lmode_layer
@@ -4776,6 +4794,17 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|type
+operator|<
+literal|3
+operator|||
+name|depth
+operator|<=
+literal|5
+condition|)
+block|{
 name|xfwrite
 argument_list|(
 name|fd
@@ -4787,6 +4816,22 @@ argument_list|,
 literal|"section divider"
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* layer groups whose nesting depth is above 5 are only supported                * by Photoshop CS5 and up, and their end markers use the                * (undocumented) "lsdk" key, instead of "lsct".                */
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+literal|"8BIMlsdk"
+argument_list|,
+literal|8
+argument_list|,
+literal|"nested section divider"
+argument_list|)
+expr_stmt|;
+block|}
 name|write_gint32
 argument_list|(
 name|fd
