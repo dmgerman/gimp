@@ -120,6 +120,14 @@ DECL|member|use_info_window
 name|gboolean
 name|use_info_window
 decl_stmt|;
+DECL|member|frame1_mode
+name|GimpColorFrameMode
+name|frame1_mode
+decl_stmt|;
+DECL|member|frame2_mode
+name|GimpColorFrameMode
+name|frame2_mode
+decl_stmt|;
 block|}
 struct|;
 end_struct
