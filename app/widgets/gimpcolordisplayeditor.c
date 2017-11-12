@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2870f1d10103
+DECL|enum|__anon28a49e2d0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2870f1d10203
+DECL|enum|__anon28a49e2d0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -607,6 +607,20 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_GTYPE
+argument_list|)
+expr_stmt|;
+name|gtk_tree_sortable_set_sort_column_id
+argument_list|(
+name|GTK_TREE_SORTABLE
+argument_list|(
+name|editor
+operator|->
+name|src
+argument_list|)
+argument_list|,
+name|SRC_COLUMN_NAME
+argument_list|,
+name|GTK_SORT_ASCENDING
 argument_list|)
 expr_stmt|;
 name|tv
