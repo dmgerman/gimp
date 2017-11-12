@@ -240,7 +240,7 @@ name|NC_
 argument_list|(
 literal|"buffers-action"
 argument_list|,
-literal|"Paste Buffer _Into"
+literal|"Paste Buffer _Into The Selection"
 argument_list|)
 block|,
 name|NULL
@@ -268,7 +268,7 @@ name|NC_
 argument_list|(
 literal|"buffers-action"
 argument_list|,
-literal|"Paste Buffer Into In Place"
+literal|"Paste Buffer Into The Selection In Place"
 argument_list|)
 block|,
 name|NULL
