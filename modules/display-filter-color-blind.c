@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b04c5c80103
+DECL|enum|__anon2b1b52600103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -76,24 +76,24 @@ name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
 block|,
 DECL|enumerator|COLORBLIND_DEFICIENCY_TRITANOPIA
 name|COLORBLIND_DEFICIENCY_TRITANOPIA
-DECL|typedef|ColorblindDeficiency
+DECL|typedef|ColorblindDeficiencyType
 block|}
-name|ColorblindDeficiency
+name|ColorblindDeficiencyType
 typedef|;
 end_typedef
 
 begin_define
-DECL|macro|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
+DECL|macro|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY_TYPE
 define|#
 directive|define
-name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
-value|(cdisplay_colorblind_deficiency_type)
+name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY_TYPE
+value|(cdisplay_colorblind_deficiency_type_type)
 end_define
 
 begin_function_decl
 specifier|static
 name|GType
-name|cdisplay_colorblind_deficiency_register_type
+name|cdisplay_colorblind_deficiency_type_register_type
 parameter_list|(
 name|GTypeModule
 modifier|*
@@ -200,10 +200,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|DEFAULT_DEFICIENCY
+DECL|macro|DEFAULT_DEFICIENCY_TYPE
 define|#
 directive|define
-name|DEFAULT_DEFICIENCY
+name|DEFAULT_DEFICIENCY_TYPE
 value|COLORBLIND_DEFICIENCY_DEUTERANOPIA
 end_define
 
@@ -294,9 +294,9 @@ DECL|member|parent_instance
 name|GimpColorDisplay
 name|parent_instance
 decl_stmt|;
-DECL|member|deficiency
-name|ColorblindDeficiency
-name|deficiency
+DECL|member|type
+name|ColorblindDeficiencyType
+name|type
 decl_stmt|;
 DECL|member|a1
 DECL|member|b1
@@ -341,13 +341,13 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04c5c80203
+DECL|enum|__anon2b1b52600203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_DEFICIENCY
-name|PROP_DEFICIENCY
+DECL|enumerator|PROP_TYPE
+name|PROP_TYPE
 block|}
 enum|;
 end_enum
@@ -444,13 +444,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_colorblind_set_deficiency
+name|cdisplay_colorblind_set_type
 parameter_list|(
 name|CdisplayColorblind
 modifier|*
 name|colorblind
 parameter_list|,
-name|ColorblindDeficiency
+name|ColorblindDeficiencyType
 name|value
 parameter_list|)
 function_decl|;
@@ -590,7 +590,7 @@ end_macro
 begin_decl_stmt
 specifier|static
 name|GType
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 init|=
 literal|0
 decl_stmt|;
@@ -632,7 +632,7 @@ argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
-name|cdisplay_colorblind_deficiency_register_type
+name|cdisplay_colorblind_deficiency_type_register_type
 argument_list|(
 name|module
 argument_list|)
@@ -646,8 +646,8 @@ end_function
 begin_function
 specifier|static
 name|GType
-DECL|function|cdisplay_colorblind_deficiency_register_type (GTypeModule * module)
-name|cdisplay_colorblind_deficiency_register_type
+DECL|function|cdisplay_colorblind_deficiency_type_register_type (GTypeModule * module)
+name|cdisplay_colorblind_deficiency_type_register_type
 parameter_list|(
 name|GTypeModule
 modifier|*
@@ -657,23 +657,23 @@ block|{
 if|if
 condition|(
 operator|!
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 condition|)
 block|{
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 operator|=
 name|g_type_module_register_enum
 argument_list|(
 name|module
 argument_list|,
-literal|"CDisplayColorblindDeficiency"
+literal|"CDisplayColorblindDeficiencyType"
 argument_list|,
 name|enum_values
 argument_list|)
 expr_stmt|;
 name|gimp_type_set_translation_domain
 argument_list|(
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
@@ -681,14 +681,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 argument_list|,
 name|enum_descs
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|cdisplay_colorblind_deficiency_type
+name|cdisplay_colorblind_deficiency_type_type
 return|;
 block|}
 end_function
@@ -738,23 +738,23 @@ name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_DEFICIENCY
+name|PROP_TYPE
 argument_list|,
-literal|"deficiency"
+literal|"type"
 argument_list|,
 name|_
 argument_list|(
-literal|"Deficiency"
+literal|"Type"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Color deficiency type"
+literal|"Color vision deficiency type"
 argument_list|)
 argument_list|,
-name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
+name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY_TYPE
 argument_list|,
-name|DEFAULT_DEFICIENCY
+name|DEFAULT_DEFICIENCY_TYPE
 argument_list|,
 literal|0
 argument_list|)
@@ -858,7 +858,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DEFICIENCY
+name|PROP_TYPE
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -866,7 +866,7 @@ name|value
 argument_list|,
 name|colorblind
 operator|->
-name|deficiency
+name|type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -923,9 +923,9 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DEFICIENCY
+name|PROP_TYPE
 case|:
-name|cdisplay_colorblind_set_deficiency
+name|cdisplay_colorblind_set_type
 argument_list|(
 name|colorblind
 argument_list|,
@@ -1202,7 +1202,7 @@ switch|switch
 condition|(
 name|colorblind
 operator|->
-name|deficiency
+name|type
 condition|)
 block|{
 case|case
@@ -1649,7 +1649,7 @@ switch|switch
 condition|(
 name|colorblind
 operator|->
-name|deficiency
+name|type
 condition|)
 block|{
 case|case
@@ -2154,14 +2154,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_colorblind_set_deficiency (CdisplayColorblind * colorblind,ColorblindDeficiency value)
-name|cdisplay_colorblind_set_deficiency
+DECL|function|cdisplay_colorblind_set_type (CdisplayColorblind * colorblind,ColorblindDeficiencyType value)
+name|cdisplay_colorblind_set_type
 parameter_list|(
 name|CdisplayColorblind
 modifier|*
 name|colorblind
 parameter_list|,
-name|ColorblindDeficiency
+name|ColorblindDeficiencyType
 name|value
 parameter_list|)
 block|{
@@ -2171,7 +2171,7 @@ name|value
 operator|!=
 name|colorblind
 operator|->
-name|deficiency
+name|type
 condition|)
 block|{
 name|GEnumClass
@@ -2182,7 +2182,7 @@ name|enum_class
 operator|=
 name|g_type_class_peek
 argument_list|(
-name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
+name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY_TYPE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2198,7 +2198,7 @@ condition|)
 return|return;
 name|colorblind
 operator|->
-name|deficiency
+name|type
 operator|=
 name|value
 expr_stmt|;
@@ -2209,7 +2209,7 @@ argument_list|(
 name|colorblind
 argument_list|)
 argument_list|,
-literal|"deficiency"
+literal|"type"
 argument_list|)
 expr_stmt|;
 name|gimp_color_display_changed
