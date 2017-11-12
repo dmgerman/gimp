@@ -907,7 +907,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"Create a new layer from the content of the clipboard"
+literal|"Create a new layer from the content of the clipboard "
 literal|"and place it at its original position"
 argument_list|)
 block|,
