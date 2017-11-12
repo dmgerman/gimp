@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -762,6 +768,11 @@ literal|"buffers"
 argument_list|,
 literal|"buffers-paste"
 argument_list|,
+literal|"buffers-paste-in-place"
+argument_list|,
+name|gimp_get_extend_selection_mask
+argument_list|()
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -782,6 +793,11 @@ literal|"buffers"
 argument_list|,
 literal|"buffers-paste-into"
 argument_list|,
+literal|"buffers-paste-into-in-place"
+argument_list|,
+name|gimp_get_extend_selection_mask
+argument_list|()
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -801,6 +817,11 @@ argument_list|,
 literal|"buffers"
 argument_list|,
 literal|"buffers-paste-as-new-layer"
+argument_list|,
+literal|"buffers-paste-as-new-layer-in-place"
+argument_list|,
+name|gimp_get_extend_selection_mask
+argument_list|()
 argument_list|,
 name|NULL
 argument_list|)

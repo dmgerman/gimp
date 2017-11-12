@@ -278,6 +278,14 @@ value|"gimp-edit-paste"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_IN_PLACE
+value|"gimp-edit-paste-in-place"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_PASTE_INTO
 define|#
 directive|define
@@ -286,11 +294,27 @@ value|"gimp-edit-paste-into"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_INTO_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_INTO_IN_PLACE
+value|"gimp-edit-paste-into-in-place"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 define|#
 directive|define
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
 value|"gimp-edit-paste-as-new-layer"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER_IN_PLACE
+value|"gimp-edit-paste-as-new-layer-in-place"
 end_define
 
 begin_define
@@ -4022,6 +4046,14 @@ value|"gimp-buffer-paste"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BUFFER_PASTE_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_BUFFER_PASTE_IN_PLACE
+value|"gimp-buffer-paste-in-place"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BUFFER_PASTE_INTO
 define|#
 directive|define
@@ -4030,11 +4062,27 @@ value|"gimp-buffer-paste-into"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BUFFER_PASTE_INTO_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_BUFFER_PASTE_INTO_IN_PLACE
+value|"gimp-buffer-paste-into-in-place"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
 define|#
 directive|define
 name|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER
 value|"gimp-buffer-paste-as-new-layer"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER_IN_PLACE
+define|#
+directive|define
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW_LAYER_IN_PLACE
+value|"gimp-buffer-paste-as-new-layer-in-place"
 end_define
 
 begin_define
