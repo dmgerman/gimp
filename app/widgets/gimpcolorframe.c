@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a81c760103
+DECL|enum|__anon29c82a510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1731,16 +1731,6 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-name|g_object_notify
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|"mode"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2380,6 +2370,16 @@ expr_stmt|;
 name|gimp_color_frame_update
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+literal|"mode"
 argument_list|)
 expr_stmt|;
 block|}
