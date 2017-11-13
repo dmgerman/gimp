@@ -137,6 +137,15 @@ DECL|member|save_selection
 name|gboolean
 name|save_selection
 decl_stmt|;
+DECL|member|highlight
+name|gboolean
+name|highlight
+index|[
+name|GIMP_MESSAGE_ERROR
+operator|+
+literal|1
+index|]
+decl_stmt|;
 block|}
 struct|;
 end_struct

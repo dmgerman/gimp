@@ -284,15 +284,6 @@ DECL|member|last_tip_shown
 name|gint
 name|last_tip_shown
 decl_stmt|;
-DECL|member|error_console_highlight
-name|gboolean
-name|error_console_highlight
-index|[
-name|GIMP_MESSAGE_ERROR
-operator|+
-literal|1
-index|]
-decl_stmt|;
 block|}
 struct|;
 end_struct
