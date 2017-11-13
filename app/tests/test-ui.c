@@ -242,7 +242,7 @@ DECL|macro|GIMP_UI_WINDOW_POSITION_EPSILON
 define|#
 directive|define
 name|GIMP_UI_WINDOW_POSITION_EPSILON
-value|25
+value|30
 end_define
 
 begin_define
