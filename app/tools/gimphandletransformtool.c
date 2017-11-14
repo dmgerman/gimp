@@ -109,7 +109,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4f0510103
+DECL|enum|__anon29d6032d0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -466,12 +466,6 @@ name|_
 argument_list|(
 literal|"Handle transformation"
 argument_list|)
-expr_stmt|;
-name|tr_tool
-operator|->
-name|does_perspective
-operator|=
-name|TRUE
 expr_stmt|;
 name|ht_tool
 operator|->

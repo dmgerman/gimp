@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa31db0103
+DECL|enum|__anon2b8421460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,9 +175,6 @@ name|PROP_X2
 block|,
 DECL|enumerator|PROP_Y2
 name|PROP_Y2
-block|,
-DECL|enumerator|PROP_PERSPECTIVE
-name|PROP_PERSPECTIVE
 block|,
 DECL|enumerator|PROP_OPACITY
 name|PROP_OPACITY
@@ -221,10 +218,6 @@ name|gdouble
 name|x2
 decl_stmt|,
 name|y2
-decl_stmt|;
-DECL|member|perspective
-name|gboolean
-name|perspective
 decl_stmt|;
 DECL|member|opacity
 name|gdouble
@@ -776,26 +769,6 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PERSPECTIVE
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"perspective"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_class_install_property
-argument_list|(
-name|object_class
-argument_list|,
 name|PROP_OPACITY
 argument_list|,
 name|g_param_spec_double
@@ -981,19 +954,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PERSPECTIVE
-case|:
-name|private
-operator|->
-name|perspective
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_OPACITY
 case|:
 name|private
@@ -1081,19 +1041,6 @@ operator|&
 name|private
 operator|->
 name|transform
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_PERSPECTIVE
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|private
-operator|->
-name|perspective
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1735,9 +1682,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+name|gimp_matrix3_is_affine
+argument_list|(
+operator|&
 name|private
 operator|->
-name|perspective
+name|transform
+argument_list|)
 condition|)
 block|{
 comment|/* approximate perspective transform by subdivision        *        * increase number of columns/rows to increase precision        */
@@ -2220,7 +2172,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_transform_preview_new (GimpDisplayShell * shell,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean perspective)
+DECL|function|gimp_canvas_transform_preview_new (GimpDisplayShell * shell,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_canvas_transform_preview_new
 parameter_list|(
 name|GimpDisplayShell
@@ -2247,9 +2199,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|perspective
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2313,10 +2262,6 @@ argument_list|,
 literal|"y2"
 argument_list|,
 name|y2
-argument_list|,
-literal|"perspective"
-argument_list|,
-name|perspective
 argument_list|,
 name|NULL
 argument_list|)

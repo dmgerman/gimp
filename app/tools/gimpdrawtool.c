@@ -4347,7 +4347,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_transform_preview (GimpDrawTool * draw_tool,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean perspective)
+DECL|function|gimp_draw_tool_add_transform_preview (GimpDrawTool * draw_tool,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_add_transform_preview
 parameter_list|(
 name|GimpDrawTool
@@ -4374,9 +4374,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|perspective
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -4434,8 +4431,6 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
-argument_list|,
-name|perspective
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_preview

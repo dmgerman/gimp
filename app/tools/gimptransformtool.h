@@ -193,11 +193,6 @@ modifier|*
 name|hidden_item
 decl_stmt|;
 comment|/*  the item that was hidden during                                           the transform                      */
-DECL|member|does_perspective
-name|gboolean
-name|does_perspective
-decl_stmt|;
-comment|/*  does the tool do non-affine                                        *  transformations                                        */
 DECL|member|widget
 name|GimpToolWidget
 modifier|*

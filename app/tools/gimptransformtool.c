@@ -2848,10 +2848,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|y2
-argument_list|,
-name|tr_tool
-operator|->
-name|does_perspective
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
