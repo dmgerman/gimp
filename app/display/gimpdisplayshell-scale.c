@@ -1084,7 +1084,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function figures out the context of the zoom and behaves  * appropriatley thereafter.  *  **/
+comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, out or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function figures out the context of the zoom and behaves  * appropriately thereafter.  *  **/
 end_comment
 
 begin_function
