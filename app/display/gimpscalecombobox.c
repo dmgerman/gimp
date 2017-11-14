@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa3bb10103
+DECL|enum|__anon27c7982e0103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa3bb10203
+DECL|enum|__anon27c7982e0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -513,7 +513,7 @@ literal|1.0
 argument_list|,
 literal|"width-chars"
 argument_list|,
-literal|7
+literal|5
 argument_list|,
 literal|"truncate-multiline"
 argument_list|,
@@ -1843,6 +1843,10 @@ name|GtkListStore
 modifier|*
 name|store
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|entry
+decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
@@ -1851,6 +1855,9 @@ name|iter_valid
 decl_stmt|;
 name|gboolean
 name|persistent
+decl_stmt|;
+name|gint
+name|n_digits
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2088,6 +2095,50 @@ name|combo_box
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Update entry size appropriately. */
+name|entry
+operator|=
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|n_digits
+operator|=
+operator|(
+name|gint
+operator|)
+name|floor
+argument_list|(
+name|log10
+argument_list|(
+name|scale
+argument_list|)
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|entry
+argument_list|,
+literal|"width-chars"
+argument_list|,
+name|MAX
+argument_list|(
+literal|5
+argument_list|,
+name|n_digits
+operator|+
+literal|4
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
