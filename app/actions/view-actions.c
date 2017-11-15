@@ -531,7 +531,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Othe_r..."
+literal|"Othe_r rotation angle..."
 argument_list|)
 block|,
 name|NULL
@@ -1982,7 +1982,7 @@ name|NC_
 argument_list|(
 literal|"view-zoom-action"
 argument_list|,
-literal|"Othe_r..."
+literal|"Othe_r zoom factor..."
 argument_list|)
 block|,
 name|NULL
