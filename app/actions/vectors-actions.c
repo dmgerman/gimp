@@ -698,7 +698,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"_Visible"
+literal|"Toggle path _visibility"
 argument_list|)
 block|,
 name|NULL

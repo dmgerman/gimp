@@ -1351,7 +1351,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"_Visible"
+literal|"Toggle layer _visibility"
 argument_list|)
 block|,
 name|NULL

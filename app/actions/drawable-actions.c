@@ -210,7 +210,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"_Visible"
+literal|"Toggle drawable _visibility"
 argument_list|)
 block|,
 name|NULL
@@ -219,7 +219,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Toggle visibility"
+literal|"Toggle drawable visibility"
 argument_list|)
 block|,
 name|G_CALLBACK

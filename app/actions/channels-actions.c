@@ -427,7 +427,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"_Visible"
+literal|"Toggle channel _visibility"
 argument_list|)
 block|,
 name|NULL
