@@ -195,6 +195,16 @@ name|GtkWidget
 modifier|*
 name|rotate_label
 decl_stmt|;
+DECL|member|horizontal_flip_icon
+name|GtkWidget
+modifier|*
+name|horizontal_flip_icon
+decl_stmt|;
+DECL|member|vertical_flip_icon
+name|GtkWidget
+modifier|*
+name|vertical_flip_icon
+decl_stmt|;
 DECL|member|label
 name|GtkWidget
 modifier|*
