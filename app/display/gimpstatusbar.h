@@ -190,6 +190,11 @@ name|GtkWidget
 modifier|*
 name|scale_combo
 decl_stmt|;
+DECL|member|rotate_label
+name|GtkWidget
+modifier|*
+name|rotate_label
+decl_stmt|;
 DECL|member|label
 name|GtkWidget
 modifier|*
