@@ -210,17 +210,12 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"Toggle drawable _visibility"
+literal|"Toggle Drawable _Visibility"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"drawable-action"
-argument_list|,
-literal|"Toggle drawable visibility"
-argument_list|)
+name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -273,7 +268,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"L_ock pixels"
+literal|"L_ock Pixels"
 argument_list|)
 block|,
 name|NULL
@@ -304,7 +299,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"L_ock position of drawable"
+literal|"L_ock Position of Drawable"
 argument_list|)
 block|,
 name|NULL

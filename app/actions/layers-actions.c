@@ -351,7 +351,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Default edit action"
+literal|"Default Edit Action"
 argument_list|)
 block|,
 name|NULL
@@ -1351,7 +1351,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Toggle layer _visibility"
+literal|"Toggle Layer _Visibility"
 argument_list|)
 block|,
 name|NULL
@@ -1404,7 +1404,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"L_ock pixels"
+literal|"L_ock Pixels"
 argument_list|)
 block|,
 name|NULL
@@ -1430,7 +1430,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"L_ock position"
+literal|"L_ock Position"
 argument_list|)
 block|,
 name|NULL

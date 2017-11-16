@@ -698,7 +698,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Toggle path _visibility"
+literal|"Toggle Path _Visibility"
 argument_list|)
 block|,
 name|NULL
@@ -751,7 +751,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"L_ock strokes"
+literal|"L_ock Strokes"
 argument_list|)
 block|,
 name|NULL
@@ -777,7 +777,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"L_ock position"
+literal|"L_ock Position"
 argument_list|)
 block|,
 name|NULL

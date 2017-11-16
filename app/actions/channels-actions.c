@@ -427,7 +427,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Toggle channel _visibility"
+literal|"Toggle Channel _Visibility"
 argument_list|)
 block|,
 name|NULL
@@ -480,7 +480,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"L_ock pixels"
+literal|"L_ock Pixels"
 argument_list|)
 block|,
 name|NULL
@@ -506,7 +506,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"L_ock position"
+literal|"L_ock Position"
 argument_list|)
 block|,
 name|NULL
