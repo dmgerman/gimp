@@ -2861,7 +2861,7 @@ name|seg
 decl_stmt|;
 name|seg
 operator|=
-name|g_slice_new
+name|g_slice_new0
 argument_list|(
 name|GimpGradientSegment
 argument_list|)
