@@ -722,7 +722,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Channel Color Tag: Set to  Red"
+literal|"Channel Color Tag: Set to Red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED

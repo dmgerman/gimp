@@ -1944,7 +1944,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Color Tag: Set to red"
+literal|"Layer Color Tag: Set to Red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED
@@ -1972,7 +1972,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Color Tag: Set to violet"
+literal|"Layer Color Tag: Set to Violet"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_VIOLET
@@ -2000,7 +2000,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Color Tag: Set to gray"
+literal|"Layer Color Tag: Set to Gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY

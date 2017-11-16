@@ -1049,7 +1049,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Path Color Tag: Set to gray"
+literal|"Path Color Tag: Set to Gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY
