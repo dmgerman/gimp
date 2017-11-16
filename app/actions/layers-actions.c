@@ -1760,17 +1760,7 @@ block|{
 block|{
 literal|"layers-color-tag-none"
 block|,
-name|GIMP_ICON_CLOSE
-comment|/* abused */
-block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"None"
-argument_list|)
-block|,
-name|NULL
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
@@ -1778,6 +1768,10 @@ literal|"layers-action"
 argument_list|,
 literal|"Layer Color Tag: Clear"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_NONE
 block|,
@@ -1795,17 +1789,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Blue"
+literal|"Layer Color Tag: Set to Blue"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Blue"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_BLUE
 block|,
@@ -1823,17 +1812,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Green"
+literal|"Layer Color Tag: Set to Green"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Green"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_GREEN
 block|,
@@ -1851,17 +1835,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Yellow"
+literal|"Layer Color Tag: Set to Yellow"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Yellow"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_YELLOW
 block|,
@@ -1879,17 +1858,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Orange"
+literal|"Layer Color Tag: Set to Orange"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Orange"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_ORANGE
 block|,
@@ -1907,17 +1881,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Brown"
+literal|"Layer Color Tag: Set to Brown"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Brown"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_BROWN
 block|,
@@ -1935,17 +1904,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Red"
+literal|"Layer Color Tag: Set to Red"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Red"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_RED
 block|,
@@ -1963,17 +1927,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Violet"
+literal|"Layer Color Tag: Set to Violet"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Violet"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_VIOLET
 block|,
@@ -1991,17 +1950,12 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Gray"
+literal|"Layer Color Tag: Set to Gray"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"layers-action"
-argument_list|,
-literal|"Layer Color Tag: Set to Gray"
-argument_list|)
+name|NULL
 block|,
 name|GIMP_COLOR_TAG_GRAY
 block|,
