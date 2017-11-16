@@ -304,7 +304,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"L_ock position of channel"
+literal|"L_ock position of drawable"
 argument_list|)
 block|,
 name|NULL
