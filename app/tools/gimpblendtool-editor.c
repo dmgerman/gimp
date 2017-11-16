@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3e48f70103
+DECL|enum|__anon2c6faeee0103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e48f70208
+DECL|struct|__anon2c6faeee0208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -10083,6 +10083,30 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
+comment|/*  update the undo actions / menu items  */
+if|if
+condition|(
+operator|!
+name|blend_tool
+operator|->
+name|flush_idle_id
+condition|)
+block|{
+name|blend_tool
+operator|->
+name|flush_idle_id
+operator|=
+name|g_idle_add
+argument_list|(
+operator|(
+name|GSourceFunc
+operator|)
+name|gimp_blend_tool_editor_flush_idle
+argument_list|,
+name|blend_tool
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
