@@ -236,17 +236,12 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"_Linked"
+literal|"Toggle Drawable _Linked State"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NC_
-argument_list|(
-literal|"drawable-action"
-argument_list|,
-literal|"Toggle the linked state"
-argument_list|)
+name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -268,7 +263,7 @@ name|NC_
 argument_list|(
 literal|"drawable-action"
 argument_list|,
-literal|"L_ock Pixels"
+literal|"L_ock Pixels of Drawable"
 argument_list|)
 block|,
 name|NULL

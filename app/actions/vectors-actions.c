@@ -724,7 +724,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"_Linked"
+literal|"Toggle Path _Linked State"
 argument_list|)
 block|,
 name|NULL
@@ -751,7 +751,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"L_ock Strokes"
+literal|"L_ock Strokes of Path"
 argument_list|)
 block|,
 name|NULL
@@ -777,7 +777,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"L_ock Position"
+literal|"L_ock Position of Path"
 argument_list|)
 block|,
 name|NULL
@@ -825,7 +825,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Clear"
+literal|"Path Color Tag: Clear"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_NONE
@@ -853,7 +853,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Blue"
+literal|"Path Color Tag: Set to Blue"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BLUE
@@ -881,7 +881,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Green"
+literal|"Path Color Tag: Set to Green"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GREEN
@@ -909,7 +909,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Yellow"
+literal|"Path Color Tag: Set to Yellow"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_YELLOW
@@ -937,7 +937,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Orange"
+literal|"Path Color Tag: Set to Orange"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_ORANGE
@@ -965,7 +965,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Brown"
+literal|"Path Color Tag: Set to Brown"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BROWN
@@ -993,7 +993,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Red"
+literal|"Path Color Tag: Set to Red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED
@@ -1021,7 +1021,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to Violet"
+literal|"Path Color Tag: Set to Violet"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_VIOLET
@@ -1049,7 +1049,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Color Tag: Set to gray"
+literal|"Path Color Tag: Set to gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY

@@ -453,7 +453,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"_Linked"
+literal|"Toggle Channel _Linked State"
 argument_list|)
 block|,
 name|NULL
@@ -480,7 +480,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"L_ock Pixels"
+literal|"L_ock Pixels of Channel"
 argument_list|)
 block|,
 name|NULL
@@ -506,7 +506,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"L_ock Position"
+literal|"L_ock Position of Channel"
 argument_list|)
 block|,
 name|NULL
@@ -554,7 +554,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Clear"
+literal|"Channel Color Tag: Clear"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_NONE
@@ -582,7 +582,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Blue"
+literal|"Channel Color Tag: Set to Blue"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BLUE
@@ -610,7 +610,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Green"
+literal|"Channel Color Tag: Set to Green"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GREEN
@@ -638,7 +638,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Yellow"
+literal|"Channel Color Tag: Set to Yellow"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_YELLOW
@@ -666,7 +666,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Orange"
+literal|"Channel Color Tag: Set to Orange"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_ORANGE
@@ -694,7 +694,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Brown"
+literal|"Channel Color Tag: Set to Brown"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_BROWN
@@ -722,7 +722,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to  Red"
+literal|"Channel Color Tag: Set to  Red"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_RED
@@ -750,7 +750,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Violet"
+literal|"Channel Color Tag: Set to Violet"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_VIOLET
@@ -778,7 +778,7 @@ name|NC_
 argument_list|(
 literal|"channels-action"
 argument_list|,
-literal|"Color Tag: Set to Gray"
+literal|"Channel Color Tag: Set to Gray"
 argument_list|)
 block|,
 name|GIMP_COLOR_TAG_GRAY
