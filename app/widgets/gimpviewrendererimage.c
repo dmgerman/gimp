@@ -195,13 +195,6 @@ name|rendererimage
 operator|->
 name|channel
 argument_list|)
-operator|&&
-name|gimp_image_get_component_visible
-argument_list|(
-name|image
-argument_list|,
-name|GIMP_CHANNEL_ALPHA
-argument_list|)
 operator|)
 condition|)
 block|{
