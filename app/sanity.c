@@ -1993,6 +1993,8 @@ comment|/*  "gegl:matting-levin",*/
 comment|/* XXX: do we want to require this? */
 literal|"gegl:maze"
 block|,
+literal|"gegl:median-blur"
+block|,
 literal|"gegl:mirrors"
 block|,
 literal|"gegl:mono-mixer"

@@ -1668,6 +1668,27 @@ name|GIMP_HELP_FILTER_MAZE
 block|}
 block|,
 block|{
+literal|"filters-median-blur"
+block|,
+name|GIMP_ICON_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"_Median Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:median-blur"
+block|,
+name|GIMP_HELP_FILTER_MEDIAN_BLUR
+block|}
+block|,
+block|{
 literal|"filters-mono-mixer"
 block|,
 name|GIMP_ICON_GEGL
