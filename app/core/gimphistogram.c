@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de8a3f0103
+DECL|enum|__anon2c1d78140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -841,7 +841,7 @@ decl_stmt|;
 name|gfloat
 name|n_bins_1f
 decl_stmt|;
-name|gint
+name|gfloat
 name|temp
 decl_stmt|;
 name|g_return_if_fail
@@ -1226,7 +1226,7 @@ name|c
 parameter_list|,
 name|i
 parameter_list|)
-value|(*(temp = SIGNED_ROUND (MIN ((i) * n_bins_1f, n_bins_1f)), \&priv->values[(c) * priv->n_bins + MAX (temp, 0)]))
+value|(*(temp = (i) * n_bins_1f,                                  \&priv->values[(c) * priv->n_bins +                       \                                     SIGNED_ROUND (SAFE_CLAMP (temp,            \                                                               0.0f,            \                                                               n_bins_1f))]))
 while|while
 condition|(
 name|gegl_buffer_iterator_next
