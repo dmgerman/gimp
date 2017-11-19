@@ -170,6 +170,19 @@ parameter_list|(
 name|a
 parameter_list|)
 value|CLAMP(a,0,255)
+comment|/**  * SAFE_CLAMP:  * @x:    the value to be limited.  * @low:  the lower limit.  * @high: the upper limit.  *  * Ensures that @x is between the limits set by @low and @high,  * even if @x is NaN. If @low is greater than @high, or if either  * of them is NaN, the result is undefined.  *  * Since: 2.10  **/
+DECL|macro|SAFE_CLAMP (x,low,high)
+define|#
+directive|define
+name|SAFE_CLAMP
+parameter_list|(
+name|x
+parameter_list|,
+name|low
+parameter_list|,
+name|high
+parameter_list|)
+value|((x)> (low) ? (x)< (high) ? (x) : (high) : (low))
 comment|/**  * gimp_deg_to_rad:  * @angle: the angle to be converted.  *  * This macro converts its argument @angle from degree to radian.  **/
 DECL|macro|gimp_deg_to_rad (angle)
 define|#
