@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4de0580103
+DECL|enum|__anon28a16e530103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4de0580203
+DECL|enum|__anon28a16e530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13013,6 +13013,14 @@ argument_list|,
 name|GIMP_DIRTY_ALL
 argument_list|)
 expr_stmt|;
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -13063,6 +13071,14 @@ argument_list|,
 literal|0
 argument_list|,
 name|GIMP_DIRTY_ALL
+argument_list|)
+expr_stmt|;
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
