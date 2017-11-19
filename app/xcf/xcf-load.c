@@ -6719,6 +6719,16 @@ name|channel
 return|;
 name|error
 label|:
+comment|/* don't unref the selection of a partially loaded XCF */
+if|if
+condition|(
+name|channel
+operator|!=
+name|gimp_image_get_mask
+argument_list|(
+name|image
+argument_list|)
+condition|)
 name|g_object_unref
 argument_list|(
 name|channel
