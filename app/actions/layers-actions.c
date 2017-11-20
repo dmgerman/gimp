@@ -1498,12 +1498,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Blend Space: Auto"
+literal|"Auto"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Blend Space: Auto"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 block|,
@@ -1519,12 +1524,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Blend Space: RGB (linear)"
+literal|"RGB (linear)"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Blend Space: RGB (linear)"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|,
@@ -1540,12 +1550,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Blend Space: RGB (perceptual)"
+literal|"RGB (perceptual)"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Blend Space: RGB (perceptual)"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|,
@@ -1573,12 +1588,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Space: Auto"
+literal|"Auto"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Space: Auto"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 block|,
@@ -1594,12 +1614,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Space: RGB (linear)"
+literal|"RGB (linear)"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Space: RGB (linear)"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 block|,
@@ -1615,12 +1640,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Space: RGB (perceptual)"
+literal|"RGB (perceptual)"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Space: RGB (perceptual)"
+argument_list|)
 block|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 block|,
@@ -1648,12 +1678,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Auto"
+literal|"Auto"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Mode: Auto"
+argument_list|)
 block|,
 name|GIMP_LAYER_COMPOSITE_AUTO
 block|,
@@ -1669,12 +1704,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source Over"
+literal|"Source Over"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Mode: Source Over"
+argument_list|)
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_OVER
 block|,
@@ -1690,12 +1730,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source Atop"
+literal|"Source Atop"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Mode: Source Atop"
+argument_list|)
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_ATOP
 block|,
@@ -1711,12 +1756,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source In"
+literal|"Source In"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Mode: Source In"
+argument_list|)
 block|,
 name|GIMP_LAYER_COMPOSITE_SRC_IN
 block|,
@@ -1732,12 +1782,17 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Destination Atop"
+literal|"Destination Atop"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|NC_
+argument_list|(
+literal|"layers-action"
+argument_list|,
+literal|"Layer Composite Mode: Destination Atop"
+argument_list|)
 block|,
 name|GIMP_LAYER_COMPOSITE_DST_ATOP
 block|,
