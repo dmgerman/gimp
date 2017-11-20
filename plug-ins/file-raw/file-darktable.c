@@ -373,6 +373,21 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+comment|/* allow the user to have some insight into why darktable may fail. */
+name|gboolean
+name|debug_prints
+init|=
+name|g_getenv
+argument_list|(
+literal|"DARKTABLE_DEBUG"
+argument_list|)
+operator|!=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|debug_prints
+condition|)
 name|printf
 argument_list|(
 literal|"[%s] trying to call '%s'\n"
@@ -485,7 +500,11 @@ block|}
 block|}
 block|}
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|debug_prints
+condition|)
 name|printf
 argument_list|(
 literal|"[%s] g_spawn_sync failed\n"
@@ -495,9 +514,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|error
+name|debug_prints
 condition|)
 block|{
+if|if
+condition|(
+name|error
+condition|)
 name|printf
 argument_list|(
 literal|"[%s] error: %s\n"
@@ -509,12 +532,6 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_error_free
-argument_list|(
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|darktable_stdout
@@ -554,6 +571,16 @@ argument_list|,
 name|__FILE__
 argument_list|,
 name|have_darktable
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|error
+condition|)
+name|g_error_free
+argument_list|(
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1365,6 +1392,17 @@ name|darktable_stdout
 init|=
 name|NULL
 decl_stmt|;
+comment|/* allow the user to have some insight into why darktable may fail. */
+name|gboolean
+name|debug_prints
+init|=
+name|g_getenv
+argument_list|(
+literal|"DARKTABLE_DEBUG"
+argument_list|)
+operator|!=
+name|NULL
+decl_stmt|;
 comment|/* linear sRGB for now as GIMP uses that internally in many places anyway */
 name|gboolean
 name|search_path
@@ -1519,7 +1557,22 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*if (darktable_stdout) printf ("%s\n", darktable_stdout);*/
+if|if
+condition|(
+name|debug_prints
+operator|&&
+name|darktable_stdout
+operator|&&
+operator|*
+name|darktable_stdout
+condition|)
+name|printf
+argument_list|(
+literal|"%s\n"
+argument_list|,
+name|darktable_stdout
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|darktable_stdout
