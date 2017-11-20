@@ -1760,8 +1760,7 @@ block|{
 block|{
 literal|"layers-color-tag-none"
 block|,
-name|GIMP_ICON_CLOSE
-comment|/* abused */
+name|GIMP_ICON_EDIT_CLEAR
 block|,
 name|NC_
 argument_list|(
