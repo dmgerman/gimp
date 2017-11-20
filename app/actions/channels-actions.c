@@ -126,8 +126,7 @@ block|,
 block|{
 literal|"channels-color-tag-menu"
 block|,
-name|GIMP_ICON_CLOSE
-comment|/* abused */
+name|NULL
 block|,
 name|NC_
 argument_list|(
