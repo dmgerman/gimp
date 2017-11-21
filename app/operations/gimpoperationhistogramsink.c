@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29adb61c0103
+DECL|enum|__anon2ba6bad00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -710,7 +710,11 @@ return|;
 block|}
 name|input
 operator|=
-name|gegl_operation_context_get_source
+operator|(
+name|GeglBuffer
+operator|*
+operator|)
+name|gegl_operation_context_dup_object
 argument_list|(
 name|context
 argument_list|,
@@ -719,7 +723,11 @@ argument_list|)
 expr_stmt|;
 name|aux
 operator|=
-name|gegl_operation_context_get_source
+operator|(
+name|GeglBuffer
+operator|*
+operator|)
+name|gegl_operation_context_dup_object
 argument_list|(
 name|context
 argument_list|,
