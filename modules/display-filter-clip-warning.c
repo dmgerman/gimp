@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e3b910103
+DECL|enum|__anon2926f2180103
 block|{
 DECL|enumerator|WARNING_SHADOW
 name|WARNING_SHADOW
@@ -261,7 +261,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e3b910203
+DECL|enum|__anon2926f2180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -794,7 +794,7 @@ name|display_class
 operator|->
 name|icon_name
 operator|=
-literal|"gimp-warning"
+name|GIMP_ICON_DISPLAY_FILTER_CLIP_WARNING
 expr_stmt|;
 name|display_class
 operator|->

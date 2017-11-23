@@ -500,6 +500,11 @@ define|#
 directive|define
 name|GIMP_ICON_DISPLAY_FILTER
 value|"gimp-display-filter"
+DECL|macro|GIMP_ICON_DISPLAY_FILTER_CLIP_WARNING
+define|#
+directive|define
+name|GIMP_ICON_DISPLAY_FILTER_CLIP_WARNING
+value|"gimp-display-filter-clip-warning"
 DECL|macro|GIMP_ICON_DISPLAY_FILTER_COLORBLIND
 define|#
 directive|define
