@@ -120,10 +120,6 @@ DECL|member|parent_instance
 name|GeglTileHandler
 name|parent_instance
 decl_stmt|;
-DECL|member|mutex
-name|GMutex
-name|mutex
-decl_stmt|;
 DECL|member|graph
 name|GeglNode
 modifier|*
