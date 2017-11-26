@@ -1103,6 +1103,13 @@ literal|9
 index|]
 operator|==
 literal|'v'
+operator|&&
+name|id
+index|[
+literal|13
+index|]
+operator|==
+literal|'\0'
 condition|)
 block|{
 name|info
