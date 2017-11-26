@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278bf26b0103
+DECL|enum|__anon2998ccf20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -562,6 +562,21 @@ operator|->
 name|get_affected_region
 operator|=
 name|NULL
+expr_stmt|;
+comment|/* XXX: temporarily disable multithreaded compositing.  see bug #790810.  */
+if|if
+condition|(
+operator|!
+name|g_getenv
+argument_list|(
+literal|"GIMP_MULTITHREADED_COMPOSITING"
+argument_list|)
+condition|)
+name|operation_class
+operator|->
+name|threaded
+operator|=
+name|FALSE
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
