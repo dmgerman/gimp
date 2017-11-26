@@ -2929,6 +2929,11 @@ name|word
 argument_list|)
 expr_stmt|;
 block|}
+name|g_match_info_free
+argument_list|(
+name|matches
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|buf
