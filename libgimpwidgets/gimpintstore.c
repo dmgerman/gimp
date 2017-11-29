@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275572270103
+DECL|enum|__anon2b837ecf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275572270208
+DECL|struct|__anon2b837ecf0208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -469,6 +469,13 @@ name|user_data_type
 else|:
 name|G_TYPE_POINTER
 operator|)
+expr_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_ABBREV
+index|]
+operator|=
+name|G_TYPE_STRING
 expr_stmt|;
 name|gtk_list_store_set_column_types
 argument_list|(
