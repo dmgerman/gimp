@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bfb8d50103
+DECL|enum|__anon2c1cc17c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -446,6 +446,11 @@ name|gchar
 modifier|*
 name|desc
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|abbrev
+decl_stmt|;
 name|gchar
 modifier|*
 name|stripped
@@ -453,6 +458,20 @@ decl_stmt|;
 name|desc
 operator|=
 name|gimp_enum_value_get_desc
+argument_list|(
+name|GIMP_ENUM_STORE
+argument_list|(
+name|store
+argument_list|)
+operator|->
+name|enum_class
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|abbrev
+operator|=
+name|gimp_enum_value_get_abbrev
 argument_list|(
 name|GIMP_ENUM_STORE
 argument_list|(
@@ -496,6 +515,10 @@ argument_list|,
 name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|stripped
+argument_list|,
+name|GIMP_INT_STORE_ABBREV
+argument_list|,
+name|abbrev
 argument_list|,
 operator|-
 literal|1
