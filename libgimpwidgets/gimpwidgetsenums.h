@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870103
+DECL|enum|__anon2c1725d40103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870203
+DECL|enum|__anon2c1725d40203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870303
+DECL|enum|__anon2c1725d40303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870403
+DECL|enum|__anon2c1725d40403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870503
+DECL|enum|__anon2c1725d40503
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -280,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870603
+DECL|enum|__anon2c1725d40603
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c534b870703
+DECL|enum|__anon2c1725d40703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -359,6 +359,47 @@ comment|/*< skip>*/
 DECL|typedef|GimpZoomType
 block|}
 name|GimpZoomType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/**  * GimpIntComboBoxLayout:  * @GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY:   show icons only  * @GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED: show abbreviated labels  * @GIMP_INT_COMBO_BOX_LAYOUT_FULL:        show full labels  *  * Possible layouts for #GimpIntComboBox.  **/
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_INT_COMBO_BOX_LAYOUT
+define|#
+directive|define
+name|GIMP_TYPE_INT_COMBO_BOX_LAYOUT
+value|(gimp_int_combo_box_layout_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_int_combo_box_layout_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c1725d40803
+block|{
+DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
+name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
+block|,
+DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
+name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
+block|,
+DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_FULL
+name|GIMP_INT_COMBO_BOX_LAYOUT_FULL
+DECL|typedef|GimpIntComboBoxLayout
+block|}
+name|GimpIntComboBoxLayout
 typedef|;
 end_typedef
 
