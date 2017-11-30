@@ -3885,12 +3885,40 @@ name|NC_
 argument_list|(
 literal|"gradient-type"
 argument_list|,
+literal|"Conical (symmetric)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Conical (symmetric)".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_CONICAL_SYMMETRIC
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Conical (sym)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-type"
+argument_list|,
+literal|"Conical (asymmetric)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Conical (asymmetric)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
 block|,
@@ -3950,12 +3978,40 @@ name|NC_
 argument_list|(
 literal|"gradient-type"
 argument_list|,
+literal|"Spiral (clockwise)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Spiral (clockwise)".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_SPIRAL_CLOCKWISE
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Spiral (cw)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-type"
+argument_list|,
+literal|"Spiral (counter-clockwise)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Spiral (counter-clockwise)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|,
