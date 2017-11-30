@@ -6058,13 +6058,13 @@ name|NC_
 argument_list|(
 literal|"gradient-color"
 argument_list|,
-literal|"Foreground color (transarent)"
+literal|"Foreground color (transparent)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
-comment|/* Translators: this is an abbreviated version of "Foreground color (transarent)".        Keep it short. */
+comment|/* Translators: this is an abbreviated version of "Foreground color (transparent)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_COLOR_FOREGROUND_TRANSPARENT
 block|,
