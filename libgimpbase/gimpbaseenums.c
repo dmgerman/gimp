@@ -3372,12 +3372,40 @@ name|NC_
 argument_list|(
 literal|"gradient-segment-color"
 argument_list|,
+literal|"HSV (counter-clockwise hue)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "HSV (counter-clockwise hue)".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_SEGMENT_HSV_CCW
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-segment-color"
+argument_list|,
 literal|"HSV (ccw)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_SEGMENT_HSV_CW
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-segment-color"
+argument_list|,
+literal|"HSV (clockwise hue)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "HSV (clockwise hue)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_SEGMENT_HSV_CW
 block|,
@@ -3570,12 +3598,40 @@ name|NC_
 argument_list|(
 literal|"gradient-segment-type"
 argument_list|,
+literal|"Spherical (increasing)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Spherical (increasing)".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
 literal|"Spherical (inc)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Spherical (decreasing)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Spherical (decreasing)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING
 block|,

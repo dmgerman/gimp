@@ -6031,12 +6031,40 @@ name|NC_
 argument_list|(
 literal|"gradient-color"
 argument_list|,
+literal|"Foreground"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Foreground".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_COLOR_FOREGROUND
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
 literal|"FG"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_COLOR_FOREGROUND_TRANSPARENT
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"Foreground (transarent)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Foreground (transarent)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_COLOR_FOREGROUND_TRANSPARENT
 block|,
@@ -6057,12 +6085,40 @@ name|NC_
 argument_list|(
 literal|"gradient-color"
 argument_list|,
+literal|"Background"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Background".        Keep it short. */
+block|{
+name|GIMP_GRADIENT_COLOR_BACKGROUND
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
 literal|"BG"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
+block|{
+name|GIMP_GRADIENT_COLOR_BACKGROUND_TRANSPARENT
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-color"
+argument_list|,
+literal|"Background (transparent)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Background (transparent)".        Keep it short. */
 block|{
 name|GIMP_GRADIENT_COLOR_BACKGROUND_TRANSPARENT
 block|,
