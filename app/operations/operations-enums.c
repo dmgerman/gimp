@@ -952,6 +952,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Normal (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_NORMAL_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Normal (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_DISSOLVE
 block|,
@@ -978,6 +992,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Behind (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_BEHIND_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Behind (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 block|,
@@ -986,6 +1014,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Multiply (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Multiply (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Multiply (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1004,6 +1046,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Screen (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_SCREEN_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Screen (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 block|,
@@ -1012,6 +1068,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Old broken Overlay"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Old broken Overlay".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_OVERLAY_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Old Overlay"
 argument_list|)
 block|,
 name|NULL
@@ -1030,6 +1100,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Difference (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Difference (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
 block|,
@@ -1038,6 +1122,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Addition (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Addition (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_ADDITION_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Addition (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1056,6 +1154,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Subtract (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Subtract (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 block|,
@@ -1064,6 +1176,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Darken only (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Darken only (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Darken only (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1082,6 +1208,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Lighten only (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Lighten only (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 block|,
@@ -1090,6 +1230,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Hue (HSV) (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Hue (HSV) (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hue (HSV) (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1108,6 +1262,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Saturation (HSV) (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Saturation (HSV) (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
@@ -1116,6 +1284,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Color (HSL) (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Color (HSL) (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Color (HSL) (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1134,6 +1316,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Value (HSV) (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Value (HSV) (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 block|,
@@ -1142,6 +1338,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Divide (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Divide (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_DIVIDE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Divide (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1160,6 +1370,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Dodge (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_DODGE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Dodge (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_BURN_LEGACY
 block|,
@@ -1168,6 +1392,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Burn (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Burn (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_BURN_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Burn (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1186,6 +1424,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Hard light (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Hard light (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 block|,
@@ -1194,6 +1446,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Soft light (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Soft light (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Soft light (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1212,6 +1478,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Grain extract (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Grain extract (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 block|,
@@ -1225,6 +1505,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Grain merge (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Grain merge (l)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 block|,
@@ -1233,6 +1527,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Color erase (legacy)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Color erase (legacy)".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Color erase (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1654,6 +1962,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/* Translators: this is an abbreviated version of "Luma/Luminance darken only".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_LUMA_DARKEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luma darken only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
 block|,
@@ -1662,6 +1984,20 @@ argument_list|(
 literal|"layer-mode"
 argument_list|,
 literal|"Luma/Luminance lighten only"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+comment|/* Translators: this is an abbreviated version of "Luma/Luminance lighten only".        Keep it short. */
+block|{
+name|GIMP_LAYER_MODE_LUMA_LIGHTEN_ONLY
+block|,
+name|NC_
+argument_list|(
+literal|"layer-mode"
+argument_list|,
+literal|"Luma lighten only"
 argument_list|)
 block|,
 name|NULL
