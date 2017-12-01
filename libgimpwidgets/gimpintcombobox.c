@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a8290c0103
+DECL|enum|__anon297229260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -65,7 +65,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a8290c0208
+DECL|struct|__anon297229260208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -351,11 +351,9 @@ literal|"Combo box layout"
 argument_list|,
 name|GIMP_TYPE_INT_COMBO_BOX_LAYOUT
 argument_list|,
-name|GIMP_INT_COMBO_BOX_LAYOUT_FULL
+name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
 argument_list|,
 name|GIMP_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -383,12 +381,18 @@ modifier|*
 name|combo_box
 parameter_list|)
 block|{
+name|GimpIntComboBoxPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|GtkListStore
 modifier|*
 name|store
 decl_stmt|;
 name|combo_box
 operator|->
+name|priv
+operator|=
 name|priv
 operator|=
 name|G_TYPE_INSTANCE_GET_PRIVATE
@@ -422,6 +426,12 @@ name|g_object_unref
 argument_list|(
 name|store
 argument_list|)
+expr_stmt|;
+name|priv
+operator|->
+name|layout
+operator|=
+name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
 expr_stmt|;
 name|gimp_int_combo_box_create_cells
 argument_list|(
@@ -1824,7 +1834,7 @@ argument_list|(
 name|combo_box
 argument_list|)
 argument_list|,
-name|GIMP_INT_COMBO_BOX_LAYOUT_FULL
+name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
 argument_list|)
 expr_stmt|;
 return|return
