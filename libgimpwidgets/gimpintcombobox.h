@@ -412,7 +412,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
 name|GimpIntComboBoxLayout
 name|gimp_int_combo_box_get_layout
 parameter_list|(
