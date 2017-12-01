@@ -1516,12 +1516,6 @@ operator|==
 name|GTK_STATE_INSENSITIVE
 condition|)
 block|{
-name|GdkGCValues
-name|orig
-decl_stmt|;
-name|GdkColor
-name|fore
-decl_stmt|;
 name|GdkGC
 modifier|*
 name|copy
@@ -1530,6 +1524,12 @@ name|gdk_gc_new
 argument_list|(
 name|window
 argument_list|)
+decl_stmt|;
+name|GdkGCValues
+name|orig
+decl_stmt|;
+name|GdkColor
+name|fore
 decl_stmt|;
 name|guint16
 name|r
