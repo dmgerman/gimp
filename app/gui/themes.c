@@ -222,6 +222,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|pixbuf_style_type_class
+specifier|static
+name|gpointer
+name|pixbuf_style_type_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -243,9 +253,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|themerc
-decl_stmt|;
-name|gpointer
-name|pixbuf_style_type_class
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -279,11 +286,6 @@ operator|->
 name|draw_layout
 operator|=
 name|themes_draw_layout
-expr_stmt|;
-name|g_type_class_unref
-argument_list|(
-name|pixbuf_style_type_class
-argument_list|)
 expr_stmt|;
 block|}
 name|config
@@ -590,6 +592,21 @@ name|themes_hash
 argument_list|)
 expr_stmt|;
 name|themes_hash
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|pixbuf_style_type_class
+condition|)
+block|{
+name|g_type_class_unref
+argument_list|(
+name|pixbuf_style_type_class
+argument_list|)
+expr_stmt|;
+name|pixbuf_style_type_class
 operator|=
 name|NULL
 expr_stmt|;
