@@ -263,6 +263,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* This is a "quick'n dirty" trick to get appropriate colors for    * themes in GTK+2, and in particular dark themes which would display    * insensitive items with a barely readable layout.    * This piece of code partly duplicates code from GTK+2 (slightly    * modified to get readable insensitive items) and will likely have to    * be removed for GIMP 3.    * See https://bugzilla.gnome.org/show_bug.cgi?id=770424    */
+if|if
+condition|(
+name|g_type_from_name
+argument_list|(
+literal|"PixbufStyle"
+argument_list|)
+condition|)
+block|{
 name|pixbuf_style_type_class
 operator|=
 name|g_type_class_ref
@@ -287,6 +295,7 @@ name|draw_layout
 operator|=
 name|themes_draw_layout
 expr_stmt|;
+block|}
 block|}
 name|config
 operator|=
