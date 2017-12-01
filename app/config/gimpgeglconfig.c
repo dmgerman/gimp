@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8314ec0103
+DECL|enum|__anon2ad194c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ literal|"Use OpenCL"
 argument_list|,
 name|USE_OPENCL_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
