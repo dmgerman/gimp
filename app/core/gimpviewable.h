@@ -201,6 +201,18 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+DECL|member|ancestry_changed
+name|void
+function_decl|(
+modifier|*
+name|ancestry_changed
+function_decl|)
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
 comment|/*  virtual functions  */
 DECL|member|get_size
 name|gboolean
@@ -849,6 +861,17 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|parent
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_viewable_get_depth
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|)
 function_decl|;
 end_function_decl
