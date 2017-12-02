@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d4fb40103
+DECL|enum|__anon2b7a476c0103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -4847,12 +4847,11 @@ specifier|const
 name|Babl
 modifier|*
 name|format
+init|=
+name|NULL
 decl_stmt|;
 name|GimpImageType
 name|dtype
-decl_stmt|;
-name|gint
-name|bpp
 decl_stmt|;
 name|gint
 name|width
@@ -4918,13 +4917,6 @@ expr_stmt|;
 name|dtype
 operator|=
 name|gimp_drawable_type
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -5741,7 +5733,7 @@ name|guchar
 argument_list|,
 name|width
 operator|*
-name|bpp
+name|out_bpp
 argument_list|)
 expr_stmt|;
 name|data
@@ -5853,7 +5845,7 @@ name|pixels
 argument_list|,
 name|width
 argument_list|,
-name|bpp
+name|out_bpp
 argument_list|,
 literal|0
 argument_list|)
@@ -5875,7 +5867,7 @@ name|pixels
 argument_list|,
 name|width
 argument_list|,
-name|bpp
+name|out_bpp
 argument_list|,
 literal|1
 argument_list|)
@@ -5948,7 +5940,7 @@ name|pixels
 argument_list|,
 name|width
 operator|*
-name|bpp
+name|out_bpp
 argument_list|)
 expr_stmt|;
 block|}
