@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae1800a0103
+DECL|enum|__anon275440c90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae1800a0203
+DECL|enum|__anon275440c90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -258,6 +258,10 @@ DECL|member|validate_handler
 name|GimpTileHandlerValidate
 modifier|*
 name|validate_handler
+decl_stmt|;
+DECL|member|priority
+name|gint
+name|priority
 decl_stmt|;
 DECL|member|update_region
 name|cairo_region_t
@@ -1991,6 +1995,68 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_projection_set_priority (GimpProjection * proj,gint priority)
+name|gimp_projection_set_priority
+parameter_list|(
+name|GimpProjection
+modifier|*
+name|proj
+parameter_list|,
+name|gint
+name|priority
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PROJECTION
+argument_list|(
+name|proj
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|proj
+operator|->
+name|priv
+operator|->
+name|priority
+operator|=
+name|priority
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_projection_get_priority (GimpProjection * proj)
+name|gimp_projection_get_priority
+parameter_list|(
+name|GimpProjection
+modifier|*
+name|proj
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PROJECTION
+argument_list|(
+name|proj
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|proj
+operator|->
+name|priv
+operator|->
+name|priority
+return|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_projection_set_priority_rect (GimpProjection * proj,gint x,gint y,gint w,gint h)
 name|gimp_projection_set_priority_rect
 parameter_list|(
@@ -2923,6 +2989,12 @@ operator|=
 name|g_idle_add_full
 argument_list|(
 name|GIMP_PRIORITY_PROJECTION_IDLE
+operator|+
+name|proj
+operator|->
+name|priv
+operator|->
+name|priority
 argument_list|,
 name|gimp_projection_chunk_render_callback
 argument_list|,
