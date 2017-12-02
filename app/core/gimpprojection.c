@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon275440c90103
+DECL|enum|__anon2bc247d30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275440c90203
+DECL|enum|__anon2bc247d30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2821,15 +2821,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimp_projectable_begin_render
-argument_list|(
-name|proj
-operator|->
-name|priv
-operator|->
-name|projectable
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -2886,15 +2877,6 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_projectable_end_render
-argument_list|(
-name|proj
-operator|->
-name|priv
-operator|->
-name|projectable
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 comment|/* Asynchronous */
