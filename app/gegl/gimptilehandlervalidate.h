@@ -235,6 +235,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpTileHandlerValidate
+modifier|*
+name|gimp_tile_handler_validate_get_assigned
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_handler_validate_invalidate
 parameter_list|(

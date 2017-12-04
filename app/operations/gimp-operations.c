@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationbuffersourcevalidate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationcagecoefcalc.h"
 end_include
 
@@ -528,6 +534,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_BORDER
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_BUFFER_SOURCE_VALIDATE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
