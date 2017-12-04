@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a9234b0103
+DECL|enum|__anon29d2e47c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a9234b0203
+DECL|enum|__anon29d2e47c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3868,7 +3868,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:buffer-source"
+literal|"gimp:buffer-source-validate"
 argument_list|,
 literal|"buffer"
 argument_list|,
