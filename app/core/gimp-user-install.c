@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6ec7060103
+DECL|enum|__anon27a22e030103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6ec7060208
+DECL|struct|__anon27a22e030208
 block|{
 DECL|member|name
 specifier|const
@@ -1799,7 +1799,7 @@ define|#
 directive|define
 name|MENURC_OVER20_UPDATE_PATTERN
 define|\
-value|"\"<Actions>/buffers/buffers-paste-as-new\""  "|" \   "\"<Actions>/edit/edit-paste-as-new\""        "|" \   "\"<Actions>/file/file-export\""              "|" \   "\"<Actions>/file/file-export-to\""           "|" \   "\"<Actions>/layers/layers-text-tool\""       "|" \   "\"<Actions>/tools/tools-value-[1-4]-.*\""    "|" \   "\"<Actions>/vectors/vectors-path-tool\""
+value|"\"<Actions>/buffers/buffers-paste-as-new\""  "|" \   "\"<Actions>/edit/edit-paste-as-new\""        "|" \   "\"<Actions>/file/file-export\""              "|" \   "\"<Actions>/file/file-export-to\""           "|" \   "\"<Actions>/layers/layers-text-tool\""       "|" \   "\"<Actions>/plug-in/plug-in-gauss\""         "|" \   "\"<Actions>/tools/tools-value-[1-4]-.*\""    "|" \   "\"<Actions>/vectors/vectors-path-tool\""
 end_define
 
 begin_comment
@@ -1939,6 +1939,28 @@ argument_list|(
 name|new_value
 argument_list|,
 literal|"\"<Actions>/layers/layers-edit\""
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* plug-in-gauss doesn't exist anymore since commit ff59aebbe88.    * The expected replacement would be filters-gaussian-blur which is    * gegl:gaussian-blur operation. See also bug 775931.    */
+elseif|else
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|match
+argument_list|,
+literal|"\"<Actions>/plug-in/plug-in-gauss\""
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_string_append
+argument_list|(
+name|new_value
+argument_list|,
+literal|"\"<Actions>/filters/filters-gaussian-blur\""
 argument_list|)
 expr_stmt|;
 block|}
