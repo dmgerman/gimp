@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd48c90103
+DECL|enum|__anon29922a980103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -156,7 +156,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_stack_drawable_visible
+name|gimp_drawable_stack_drawable_active
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -374,11 +374,11 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"visibility-changed"
+literal|"active-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_drawable_stack_drawable_visible
+name|gimp_drawable_stack_drawable_active
 argument_list|)
 argument_list|,
 name|container
@@ -425,15 +425,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
 argument_list|)
 condition|)
-name|gimp_drawable_stack_drawable_visible
+name|gimp_drawable_stack_drawable_active
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -484,15 +484,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
 argument_list|)
 condition|)
-name|gimp_drawable_stack_drawable_visible
+name|gimp_drawable_stack_drawable_active
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -548,15 +548,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
 argument_list|)
 condition|)
-name|gimp_drawable_stack_drawable_visible
+name|gimp_drawable_stack_drawable_active
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -711,9 +711,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
+argument_list|(
+name|GIMP_FILTER
 argument_list|(
 name|item
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -758,8 +761,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_stack_drawable_visible (GimpItem * item,GimpDrawableStack * stack)
-name|gimp_drawable_stack_drawable_visible
+DECL|function|gimp_drawable_stack_drawable_active (GimpItem * item,GimpDrawableStack * stack)
+name|gimp_drawable_stack_drawable_active
 parameter_list|(
 name|GimpItem
 modifier|*

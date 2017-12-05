@@ -109,7 +109,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_layer_stack_layer_visible
+name|gimp_layer_stack_layer_active
 parameter_list|(
 name|GimpLayer
 modifier|*
@@ -152,7 +152,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|ignore_visible
+name|ignore_active
 parameter_list|,
 name|gboolean
 name|ignore_excludes_backdrop
@@ -313,11 +313,11 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"visibility-changed"
+literal|"active-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_layer_stack_layer_visible
+name|gimp_layer_stack_layer_active
 argument_list|)
 argument_list|,
 name|container
@@ -425,9 +425,9 @@ name|index
 decl_stmt|;
 name|update_backdrop
 operator|=
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
@@ -518,9 +518,9 @@ name|index
 decl_stmt|;
 name|update_backdrop
 operator|=
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|object
 argument_list|)
@@ -636,8 +636,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_stack_layer_visible (GimpLayer * layer,GimpLayerStack * stack)
-name|gimp_layer_stack_layer_visible
+DECL|function|gimp_layer_stack_layer_active (GimpLayer * layer,GimpLayerStack * stack)
+name|gimp_layer_stack_layer_active
 parameter_list|(
 name|GimpLayer
 modifier|*
@@ -694,7 +694,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_stack_update_backdrop (GimpLayerStack * stack,GimpLayer * layer,gboolean ignore_visible,gboolean ignore_excludes_backdrop)
+DECL|function|gimp_layer_stack_update_backdrop (GimpLayerStack * stack,GimpLayer * layer,gboolean ignore_active,gboolean ignore_excludes_backdrop)
 name|gimp_layer_stack_update_backdrop
 parameter_list|(
 name|GimpLayerStack
@@ -706,7 +706,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|ignore_visible
+name|ignore_active
 parameter_list|,
 name|gboolean
 name|ignore_excludes_backdrop
@@ -715,11 +715,11 @@ block|{
 if|if
 condition|(
 operator|(
-name|ignore_visible
+name|ignore_active
 operator|||
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|layer
 argument_list|)
@@ -881,9 +881,12 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
+argument_list|(
+name|GIMP_FILTER
 argument_list|(
 name|item
+argument_list|)
 argument_list|)
 condition|)
 block|{

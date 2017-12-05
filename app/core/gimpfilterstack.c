@@ -165,7 +165,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_filter_stack_filter_visible
+name|gimp_filter_stack_filter_active
 parameter_list|(
 name|GimpFilter
 modifier|*
@@ -320,11 +320,11 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"visibility-changed"
+literal|"active-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_filter_stack_filter_visible
+name|gimp_filter_stack_filter_active
 argument_list|)
 argument_list|,
 name|container
@@ -421,7 +421,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -502,7 +502,7 @@ name|stack
 operator|->
 name|graph
 operator|&&
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -542,7 +542,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -606,7 +606,7 @@ name|stack
 operator|->
 name|graph
 operator|&&
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -634,7 +634,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -814,7 +814,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -966,7 +966,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter_above
 argument_list|)
@@ -1114,7 +1114,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter_above
 argument_list|)
@@ -1234,7 +1234,7 @@ condition|(
 operator|!
 name|found_last
 operator|&&
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -1269,8 +1269,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_filter_stack_filter_visible (GimpFilter * filter,GimpFilterStack * stack)
-name|gimp_filter_stack_filter_visible
+DECL|function|gimp_filter_stack_filter_active (GimpFilter * filter,GimpFilterStack * stack)
+name|gimp_filter_stack_filter_active
 parameter_list|(
 name|GimpFilter
 modifier|*
@@ -1290,7 +1290,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -1347,7 +1347,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)

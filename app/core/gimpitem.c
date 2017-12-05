@@ -161,10 +161,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1715d0103
+DECL|enum|__anon2b0981b80103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
+block|,
+DECL|enumerator|VISIBILITY_CHANGED
+name|VISIBILITY_CHANGED
 block|,
 DECL|enumerator|LINKED_CHANGED
 name|LINKED_CHANGED
@@ -186,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1715d0203
+DECL|enum|__anon2b0981b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -208,6 +211,9 @@ name|PROP_OFFSET_X
 block|,
 DECL|enumerator|PROP_OFFSET_Y
 name|PROP_OFFSET_Y
+block|,
+DECL|enumerator|PROP_VISIBLE
+name|PROP_VISIBLE
 block|,
 DECL|enumerator|PROP_LINKED
 name|PROP_LINKED
@@ -242,24 +248,24 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  provides a unique ID     */
+comment|/*  provides a unique ID        */
 DECL|member|tattoo
 name|guint32
 name|tattoo
 decl_stmt|;
-comment|/*  provides a permanent ID  */
+comment|/*  provides a permanent ID     */
 DECL|member|image
 name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-comment|/*  item owner               */
+comment|/*  item owner                  */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*
 name|parasites
 decl_stmt|;
-comment|/*  Plug-in parasite data    */
+comment|/*  Plug-in parasite data       */
 DECL|member|width
 DECL|member|height
 name|gint
@@ -267,7 +273,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-comment|/*  size in pixels           */
+comment|/*  size in pixels              */
 DECL|member|offset_x
 DECL|member|offset_y
 name|gint
@@ -275,46 +281,60 @@ name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-comment|/*  pixel offset in image    */
+comment|/*  pixel offset in image       */
+DECL|member|visible
+name|guint
+name|visible
+range|:
+literal|1
+decl_stmt|;
+comment|/*  item visibility             */
+DECL|member|bind_visible_to_active
+name|guint
+name|bind_visible_to_active
+range|:
+literal|1
+decl_stmt|;
+comment|/*  visibility bound to active  */
 DECL|member|linked
 name|guint
 name|linked
 range|:
 literal|1
 decl_stmt|;
-comment|/*  control linkage          */
+comment|/*  control linkage             */
 DECL|member|lock_content
 name|guint
 name|lock_content
 range|:
 literal|1
 decl_stmt|;
-comment|/*  content editability      */
+comment|/*  content editability         */
 DECL|member|lock_position
 name|guint
 name|lock_position
 range|:
 literal|1
 decl_stmt|;
-comment|/*  content movability       */
+comment|/*  content movability          */
 DECL|member|removed
 name|guint
 name|removed
 range|:
 literal|1
 decl_stmt|;
-comment|/*  removed from the image?  */
+comment|/*  removed from the image?     */
 DECL|member|color_tag
 name|GimpColorTag
 name|color_tag
 decl_stmt|;
-comment|/*  color tag                */
+comment|/*  color tag                   */
 DECL|member|offset_nodes
 name|GList
 modifier|*
 name|offset_nodes
 decl_stmt|;
-comment|/*  offset nodes to manage   */
+comment|/*  offset nodes to manage      */
 block|}
 struct|;
 end_struct
@@ -725,6 +745,40 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_signals
 index|[
+name|VISIBILITY_CHANGED
+index|]
+operator|=
+name|g_signal_new
+argument_list|(
+literal|"visibility-changed"
+argument_list|,
+name|G_TYPE_FROM_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+name|G_SIGNAL_RUN_FIRST
+argument_list|,
+name|G_STRUCT_OFFSET
+argument_list|(
+name|GimpItemClass
+argument_list|,
+name|visibility_changed
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|gimp_marshal_VOID__VOID
+argument_list|,
+name|G_TYPE_NONE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_item_signals
+index|[
 name|LINKED_CHANGED
 index|]
 operator|=
@@ -910,6 +964,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|removed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|visibility_changed
 operator|=
 name|NULL
 expr_stmt|;
@@ -1253,6 +1313,26 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
+name|PROP_VISIBLE
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"visible"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|GIMP_PARAM_READABLE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
 name|PROP_LINKED
 argument_list|,
 name|g_param_spec_boolean
@@ -1378,6 +1458,18 @@ name|parasites
 operator|=
 name|gimp_parasite_list_new
 argument_list|()
+expr_stmt|;
+name|private
+operator|->
+name|visible
+operator|=
+name|TRUE
+expr_stmt|;
+name|private
+operator|->
+name|bind_visible_to_active
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -1713,6 +1805,19 @@ argument_list|,
 name|private
 operator|->
 name|offset_y
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_VISIBLE
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|private
+operator|->
+name|visible
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7992,7 +8097,25 @@ name|item
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_filter_set_visible
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|visible
+operator|=
+name|visible
+expr_stmt|;
+if|if
+condition|(
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|bind_visible_to_active
+condition|)
+name|gimp_filter_set_active
 argument_list|(
 name|GIMP_FILTER
 argument_list|(
@@ -8000,6 +8123,28 @@ name|item
 argument_list|)
 argument_list|,
 name|visible
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|item
+argument_list|,
+name|gimp_item_signals
+index|[
+name|VISIBILITY_CHANGED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+literal|"visible"
 argument_list|)
 expr_stmt|;
 block|}
@@ -8027,13 +8172,12 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_filter_get_visible
-argument_list|(
-name|GIMP_FILTER
+name|GET_PRIVATE
 argument_list|(
 name|item
 argument_list|)
-argument_list|)
+operator|->
+name|visible
 return|;
 block|}
 end_function
@@ -8058,15 +8202,98 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_item_get_visible
+argument_list|(
+name|item
+argument_list|)
+condition|)
+block|{
+name|GimpItem
+modifier|*
+name|parent
+decl_stmt|;
+name|parent
+operator|=
+name|GIMP_ITEM
+argument_list|(
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
 return|return
-name|gimp_filter_is_visible
+name|gimp_item_is_visible
+argument_list|(
+name|parent
+argument_list|)
+return|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_item_bind_visible_to_active (GimpItem * item,gboolean bind)
+name|gimp_item_bind_visible_to_active
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gboolean
+name|bind
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|bind_visible_to_active
+operator|=
+name|bind
+expr_stmt|;
+if|if
+condition|(
+name|bind
+condition|)
+name|gimp_filter_set_active
 argument_list|(
 name|GIMP_FILTER
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|gimp_item_get_visible
+argument_list|(
+name|item
 argument_list|)
-return|;
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

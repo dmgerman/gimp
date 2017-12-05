@@ -53,10 +53,10 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6957a60103
+DECL|enum|__anon2aeefb3f0103
 block|{
-DECL|enumerator|VISIBILITY_CHANGED
-name|VISIBILITY_CHANGED
+DECL|enumerator|ACTIVE_CHANGED
+name|ACTIVE_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -66,13 +66,13 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6957a60203
+DECL|enum|__anon2aeefb3f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_VISIBLE
-name|PROP_VISIBLE
+DECL|enumerator|PROP_ACTIVE
+name|PROP_ACTIVE
 block|,
 DECL|enumerator|PROP_IS_LAST_NODE
 name|PROP_IS_LAST_NODE
@@ -99,9 +99,9 @@ name|GeglNode
 modifier|*
 name|node
 decl_stmt|;
-DECL|member|visible
+DECL|member|active
 name|guint
-name|visible
+name|active
 range|:
 literal|1
 decl_stmt|;
@@ -287,12 +287,12 @@ argument_list|)
 decl_stmt|;
 name|gimp_filter_signals
 index|[
-name|VISIBILITY_CHANGED
+name|ACTIVE_CHANGED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"visibility-changed"
+literal|"active-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -305,7 +305,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpFilterClass
 argument_list|,
-name|visibility_changed
+name|active_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -345,7 +345,7 @@ name|gimp_filter_get_memsize
 expr_stmt|;
 name|klass
 operator|->
-name|visibility_changed
+name|active_changed
 operator|=
 name|NULL
 expr_stmt|;
@@ -359,11 +359,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_VISIBLE
+name|PROP_ACTIVE
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"visible"
+literal|"active"
 argument_list|,
 name|NULL
 argument_list|,
@@ -430,7 +430,7 @@ argument_list|)
 decl_stmt|;
 name|private
 operator|->
-name|visible
+name|active
 operator|=
 name|TRUE
 expr_stmt|;
@@ -516,9 +516,9 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_VISIBLE
+name|PROP_ACTIVE
 case|:
-name|gimp_filter_set_visible
+name|gimp_filter_set_active
 argument_list|(
 name|filter
 argument_list|,
@@ -595,7 +595,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_VISIBLE
+name|PROP_ACTIVE
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -603,7 +603,7 @@ name|value
 argument_list|,
 name|private
 operator|->
-name|visible
+name|active
 argument_list|)
 expr_stmt|;
 break|break;
@@ -861,15 +861,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_filter_set_visible (GimpFilter * filter,gboolean visible)
-name|gimp_filter_set_visible
+DECL|function|gimp_filter_set_active (GimpFilter * filter,gboolean active)
+name|gimp_filter_set_active
 parameter_list|(
 name|GimpFilter
 modifier|*
 name|filter
 parameter_list|,
 name|gboolean
-name|visible
+name|active
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -880,9 +880,9 @@ name|filter
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|visible
+name|active
 operator|=
-name|visible
+name|active
 condition|?
 name|TRUE
 else|:
@@ -890,9 +890,9 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|visible
+name|active
 operator|!=
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
@@ -903,9 +903,9 @@ argument_list|(
 name|filter
 argument_list|)
 operator|->
-name|visible
+name|active
 operator|=
-name|visible
+name|active
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -913,7 +913,7 @@ name|filter
 argument_list|,
 name|gimp_filter_signals
 index|[
-name|VISIBILITY_CHANGED
+name|ACTIVE_CHANGED
 index|]
 argument_list|,
 literal|0
@@ -926,7 +926,7 @@ argument_list|(
 name|filter
 argument_list|)
 argument_list|,
-literal|"visible"
+literal|"active"
 argument_list|)
 expr_stmt|;
 block|}
@@ -935,8 +935,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_filter_get_visible (GimpFilter * filter)
-name|gimp_filter_get_visible
+DECL|function|gimp_filter_get_active (GimpFilter * filter)
+name|gimp_filter_get_active
 parameter_list|(
 name|GimpFilter
 modifier|*
@@ -959,72 +959,7 @@ argument_list|(
 name|filter
 argument_list|)
 operator|->
-name|visible
-return|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|gimp_filter_is_visible (GimpFilter * filter)
-name|gimp_filter_is_visible
-parameter_list|(
-name|GimpFilter
-modifier|*
-name|filter
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_FILTER
-argument_list|(
-name|filter
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_filter_get_visible
-argument_list|(
-name|filter
-argument_list|)
-condition|)
-block|{
-name|GimpFilter
-modifier|*
-name|parent
-decl_stmt|;
-name|parent
-operator|=
-name|GIMP_FILTER
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|filter
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|parent
-condition|)
-return|return
-name|gimp_filter_is_visible
-argument_list|(
-name|parent
-argument_list|)
-return|;
-return|return
-name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
+name|active
 return|;
 block|}
 end_function

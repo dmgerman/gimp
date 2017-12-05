@@ -830,7 +830,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_group_layer_child_visibility_changed
+name|gimp_group_layer_child_active_changed
 parameter_list|(
 name|GimpLayer
 modifier|*
@@ -1569,11 +1569,11 @@ name|private
 operator|->
 name|children
 argument_list|,
-literal|"visibility-changed"
+literal|"active-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_group_layer_child_visibility_changed
+name|gimp_group_layer_child_active_changed
 argument_list|)
 argument_list|,
 name|group
@@ -4465,7 +4465,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|GimpItem
+name|GimpFilter
 modifier|*
 name|child
 init|=
@@ -4475,7 +4475,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
 name|child
 argument_list|)
@@ -5235,9 +5235,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|child
 argument_list|)
@@ -5287,9 +5287,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|child
 argument_list|)
@@ -5366,8 +5366,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_child_visibility_changed (GimpLayer * child,GimpGroupLayer * group)
-name|gimp_group_layer_child_visibility_changed
+DECL|function|gimp_group_layer_child_active_changed (GimpLayer * child,GimpGroupLayer * group)
+name|gimp_group_layer_child_active_changed
 parameter_list|(
 name|GimpLayer
 modifier|*
@@ -5413,9 +5413,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_item_get_visible
+name|gimp_filter_get_active
 argument_list|(
-name|GIMP_ITEM
+name|GIMP_FILTER
 argument_list|(
 name|child
 argument_list|)

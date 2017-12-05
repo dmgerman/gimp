@@ -117,11 +117,11 @@ name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */
-DECL|member|visibility_changed
+DECL|member|active_changed
 name|void
 function_decl|(
 modifier|*
-name|visibility_changed
+name|active_changed
 function_decl|)
 parameter_list|(
 name|GimpFilter
@@ -196,21 +196,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_filter_set_visible
+name|gimp_filter_set_active
 parameter_list|(
 name|GimpFilter
 modifier|*
 name|filter
 parameter_list|,
 name|gboolean
-name|visible
+name|active
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_filter_get_visible
+name|gimp_filter_get_active
 parameter_list|(
 name|GimpFilter
 modifier|*
@@ -221,7 +221,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_filter_is_visible
+name|gimp_filter_is_active
 parameter_list|(
 name|GimpFilter
 modifier|*

@@ -197,7 +197,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|gimp_filter_is_visible
+name|gimp_filter_get_active
 argument_list|(
 name|filter
 argument_list|)
