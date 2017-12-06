@@ -220,17 +220,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_filter_is_active
-parameter_list|(
-name|GimpFilter
-modifier|*
-name|filter
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_filter_set_is_last_node
 parameter_list|(
