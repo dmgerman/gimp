@@ -8336,42 +8336,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* Insert the layer */
-if|if
-condition|(
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|group_type
-operator|==
-literal|0
-operator|||
-comment|/* normal layer */
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|group_type
-operator|==
-literal|3
-comment|/* group layer end marker */
-condition|)
-block|{
-name|gimp_image_insert_layer
-argument_list|(
-name|image_id
-argument_list|,
-name|layer_id
-argument_list|,
-name|parent_group_id
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* Remember the active layer ID */
 if|if
 condition|(
@@ -9209,6 +9173,42 @@ name|pixels
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+comment|/* Insert the layer */
+if|if
+condition|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|group_type
+operator|==
+literal|0
+operator|||
+comment|/* normal layer */
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|group_type
+operator|==
+literal|3
+comment|/* group layer end marker */
+condition|)
+block|{
+name|gimp_image_insert_layer
+argument_list|(
+name|image_id
+argument_list|,
+name|layer_id
+argument_list|,
+name|parent_group_id
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 for|for
