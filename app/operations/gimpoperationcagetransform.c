@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2d04e0103
+DECL|enum|__anon28d614620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -431,7 +431,7 @@ name|get_bounding_box
 operator|=
 name|gimp_operation_cage_transform_get_bounding_box
 expr_stmt|;
-comment|/* XXX Temporarily disable multi-threading on this operation until it    * is fixed. See bug 787663.    */
+comment|/* XXX Temporarily disable multi-threading on this operation because    * it is much faster when single-threaded. See bug 787663.    */
 name|operation_class
 operator|->
 name|threaded
@@ -1644,6 +1644,7 @@ name|ymin
 decl_stmt|,
 name|ymax
 decl_stmt|;
+comment|/* Stop recursion if all 3 vertices of the triangle are outside the    * ROI (left/right or above/below).    */
 if|if
 condition|(
 name|p1_d
