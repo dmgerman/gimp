@@ -107,58 +107,78 @@ DECL|member|opacity
 name|gdouble
 name|opacity
 decl_stmt|;
-comment|/*  layer opacity              */
+comment|/*  layer opacity                     */
 DECL|member|mode
 name|GimpLayerMode
 name|mode
 decl_stmt|;
-comment|/*  layer combination mode     */
+comment|/*  layer combination mode            */
 DECL|member|blend_space
 name|GimpLayerColorSpace
 name|blend_space
 decl_stmt|;
-comment|/*  layer blend space          */
+comment|/*  layer blend space                 */
 DECL|member|composite_space
 name|GimpLayerColorSpace
 name|composite_space
 decl_stmt|;
-comment|/*  layer composite space      */
+comment|/*  layer composite space             */
 DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
 decl_stmt|;
-comment|/*  layer composite mode       */
+comment|/*  layer composite mode              */
+DECL|member|effective_mode
+name|GimpLayerMode
+name|effective_mode
+decl_stmt|;
+comment|/*  layer effective combination mode  */
+DECL|member|effective_blend_space
+name|GimpLayerColorSpace
+name|effective_blend_space
+decl_stmt|;
+comment|/*  layer effective blend space       */
+DECL|member|effective_composite_space
+name|GimpLayerColorSpace
+name|effective_composite_space
+decl_stmt|;
+comment|/*  layer effective composite space   */
+DECL|member|effective_composite_mode
+name|GimpLayerCompositeMode
+name|effective_composite_mode
+decl_stmt|;
+comment|/*  layer effective composite mode    */
 DECL|member|excludes_backdrop
 name|gboolean
 name|excludes_backdrop
 decl_stmt|;
-comment|/*  layer clips backdrop       */
+comment|/*  layer clips backdrop              */
 DECL|member|lock_alpha
 name|gboolean
 name|lock_alpha
 decl_stmt|;
-comment|/*  lock the alpha channel     */
+comment|/*  lock the alpha channel            */
 DECL|member|mask
 name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  possible layer mask        */
+comment|/*  possible layer mask               */
 DECL|member|apply_mask
 name|gboolean
 name|apply_mask
 decl_stmt|;
-comment|/*  controls mask application  */
+comment|/*  controls mask application         */
 DECL|member|edit_mask
 name|gboolean
 name|edit_mask
 decl_stmt|;
-comment|/*  edit mask or layer?        */
+comment|/*  edit mask or layer?               */
 DECL|member|show_mask
 name|gboolean
 name|show_mask
 decl_stmt|;
-comment|/*  show mask or layer?        */
+comment|/*  show mask or layer?               */
 DECL|member|layer_offset_node
 name|GeglNode
 modifier|*
@@ -171,7 +191,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b287f620108
+DECL|struct|__anon2a948f0b0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -266,6 +286,18 @@ name|void
 function_decl|(
 modifier|*
 name|composite_mode_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+DECL|member|effective_mode_changed
+name|void
+function_decl|(
+modifier|*
+name|effective_mode_changed
 function_decl|)
 parameter_list|(
 name|GimpLayer
@@ -549,6 +581,34 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|)
+function_decl|;
+DECL|member|get_effective_mode
+name|void
+function_decl|(
+modifier|*
+name|get_effective_mode
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpLayerMode
+modifier|*
+name|mode
+parameter_list|,
+name|GimpLayerColorSpace
+modifier|*
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+modifier|*
+name|composite_space
+parameter_list|,
+name|GimpLayerCompositeMode
+modifier|*
+name|composite_mode
 parameter_list|)
 function_decl|;
 DECL|member|get_excludes_backdrop
@@ -1002,6 +1062,33 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_layer_get_effective_mode
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpLayerMode
+modifier|*
+name|mode
+parameter_list|,
+name|GimpLayerColorSpace
+modifier|*
+name|blend_space
+parameter_list|,
+name|GimpLayerColorSpace
+modifier|*
+name|composite_space
+parameter_list|,
+name|GimpLayerCompositeMode
+modifier|*
+name|composite_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_layer_get_excludes_backdrop
 parameter_list|(
@@ -1054,6 +1141,17 @@ end_function_decl
 begin_comment
 comment|/*  protected  */
 end_comment
+
+begin_function_decl
+name|void
+name|gimp_layer_update_effective_mode
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
