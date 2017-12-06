@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e6f6040103
+DECL|enum|__anon2c42e4eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -430,6 +430,13 @@ operator|->
 name|get_bounding_box
 operator|=
 name|gimp_operation_cage_transform_get_bounding_box
+expr_stmt|;
+comment|/* XXX Temporarily disable multi-threading on this operation until it    * is fixed. See bug 787663.    */
+name|operation_class
+operator|->
+name|threaded
+operator|=
+name|FALSE
 expr_stmt|;
 name|filter_class
 operator|->
