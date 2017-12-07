@@ -179,6 +179,8 @@ name|value
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_set_action_color
@@ -332,6 +334,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|tag_color
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

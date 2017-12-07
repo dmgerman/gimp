@@ -4145,7 +4145,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_get_color_tag_color (GimpColorTag color_tag,GimpRGB * color)
+DECL|function|gimp_get_color_tag_color (GimpColorTag color_tag,GimpRGB * color,gboolean inherited)
 name|gimp_get_color_tag_color
 parameter_list|(
 name|GimpColorTag
@@ -4154,12 +4154,15 @@ parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gboolean
+name|inherited
 parameter_list|)
 block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b5a235a0108
+DECL|struct|__anon2a9dbd610108
 block|{
 DECL|member|r
 name|guchar
@@ -4269,6 +4272,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|color_tag
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|colors
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|color_tag
@@ -4304,6 +4319,33 @@ argument_list|,
 literal|255
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|inherited
+condition|)
+block|{
+name|gimp_rgb_composite
+argument_list|(
+name|color
+argument_list|,
+operator|&
+operator|(
+name|GimpRGB
+operator|)
+block|{
+literal|1.0
+block|,
+literal|1.0
+block|,
+literal|1.0
+block|,
+literal|0.2
+block|}
+argument_list|,
+name|GIMP_RGB_COMPOSITE_NORMAL
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
@@ -4796,7 +4838,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5a235a0208
+DECL|struct|__anon2a9dbd610208
 block|{
 DECL|member|timeout_id
 name|gint

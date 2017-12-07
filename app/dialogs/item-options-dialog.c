@@ -1067,6 +1067,8 @@ name|color_tag
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|FALSE
 argument_list|)
 condition|)
 block|{

@@ -1770,6 +1770,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpColorTag
+name|gimp_item_get_merged_color_tag
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_item_set_lock_content
 parameter_list|(
