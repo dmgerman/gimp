@@ -2800,6 +2800,13 @@ break|break;
 case|case
 name|GIMP_TRANSLATE_MODE_FLOATING_SEL
 case|:
+if|if
+condition|(
+name|edit_select
+operator|->
+name|segs_in
+condition|)
+block|{
 name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
@@ -2823,6 +2830,7 @@ operator|->
 name|cuml_y
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 comment|/* Mark the center because we snap to it */
