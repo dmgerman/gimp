@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4be5a50103
+DECL|enum|__anon29a178e40103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -147,6 +147,10 @@ decl_stmt|;
 DECL|member|state
 name|MattingState
 name|state
+decl_stmt|;
+DECL|member|in_double_click
+name|gboolean
+name|in_double_click
 decl_stmt|;
 DECL|member|last_coords
 name|GimpCoords
