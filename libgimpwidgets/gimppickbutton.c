@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba246030103
+DECL|enum|__anon2c8a22d70103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -87,12 +87,32 @@ enum|;
 end_enum
 
 begin_comment
-comment|/* entry points to gimppickbutton-{default,quartz}.c */
+comment|/* entry points to gimppickbutton-{default,kwin,quartz}.c */
 end_comment
 
 begin_function_decl
 name|void
 name|_gimp_pick_button_default_pick
+parameter_list|(
+name|GimpPickButton
+modifier|*
+name|button
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|_gimp_pick_button_kwin_available
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|_gimp_pick_button_kwin_pick
 parameter_list|(
 name|GimpPickButton
 modifier|*
@@ -413,6 +433,20 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
+if|if
+condition|(
+name|_gimp_pick_button_kwin_available
+argument_list|()
+condition|)
+name|_gimp_pick_button_kwin_pick
+argument_list|(
+name|GIMP_PICK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
 name|_gimp_pick_button_default_pick
 argument_list|(
 name|GIMP_PICK_BUTTON
