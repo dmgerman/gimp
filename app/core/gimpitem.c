@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278445920103
+DECL|enum|__anon27dd2a980103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278445920203
+DECL|enum|__anon27dd2a980203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2305,6 +2305,22 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|new_name
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_set_expanded
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|new_item
+argument_list|)
+argument_list|,
+name|gimp_viewable_get_expanded
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
