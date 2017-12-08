@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickbutton-default.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetsutils.h"
 end_include
 
@@ -212,17 +218,6 @@ parameter_list|,
 name|gint
 name|y_root
 parameter_list|,
-name|GimpPickButton
-modifier|*
-name|button
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|_gimp_pick_button_default_pick
-parameter_list|(
 name|GimpPickButton
 modifier|*
 name|button

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickbutton-quartz.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursors/gimp-color-picker-cursors.c"
 end_include
 
@@ -81,17 +87,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_function_decl
-name|void
-name|_gimp_pick_button_quartz_pick
-parameter_list|(
-name|GimpPickButton
-modifier|*
-name|button
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_decl_stmt
 unit|@
