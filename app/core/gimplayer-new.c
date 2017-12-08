@@ -218,17 +218,6 @@ name|format
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|opacity
-operator|=
-name|CLAMP
-argument_list|(
-name|opacity
-argument_list|,
-name|GIMP_OPACITY_TRANSPARENT
-argument_list|,
-name|GIMP_OPACITY_OPAQUE
-argument_list|)
-expr_stmt|;
 name|gimp_layer_set_opacity
 argument_list|(
 name|layer
