@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27988cf70108
+DECL|struct|__anon29b77b790108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27988cf70208
+DECL|struct|__anon29b77b790208
 typedef|typedef
 struct|struct
 block|{
@@ -1501,7 +1501,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* Get the device context for the selected      * window.  Create a memory DC to use for the      * Bit copy.      */
+comment|/* Get the device context for the selected        * window.  Create a memory DC to use for the        * Bit copy.        */
 name|hdcSrc
 operator|=
 name|GetDCEx
@@ -2289,7 +2289,7 @@ name|buttonDown
 operator|=
 literal|0
 expr_stmt|;
-comment|/* If we have mouse captured      * we do this stuff.      */
+comment|/* If we have mouse captured        * we do this stuff.        */
 if|if
 condition|(
 name|mouseCaptured
@@ -2364,7 +2364,7 @@ break|break;
 case|case
 name|WM_MOUSEMOVE
 case|:
-comment|/* If the mouse is captured, show      * the window which is tracking      * under the mouse position.      */
+comment|/* If the mouse is captured, show        * the window which is tracking        * under the mouse position.        */
 if|if
 condition|(
 name|mouseCaptured
@@ -2421,7 +2421,7 @@ operator|=
 name|currentHwnd
 expr_stmt|;
 block|}
-comment|/* If the mouse has not been captured,        * try to figure out if we should capture        * the mouse.        */
+comment|/* If the mouse has not been captured,            * try to figure out if we should capture            * the mouse.            */
 block|}
 elseif|else
 if|if
@@ -2447,7 +2447,7 @@ operator|&
 name|cursorPos
 argument_list|)
 expr_stmt|;
-comment|/* Check if within the rectangle formed        * by the bitmap        */
+comment|/* Check if within the rectangle formed            * by the bitmap            */
 if|if
 condition|(
 name|PtInRect
@@ -2501,7 +2501,7 @@ decl_stmt|;
 name|PAINTSTRUCT
 name|ps
 decl_stmt|;
-comment|/* If the mouse is not captured draw        * the cursor image        */
+comment|/* If the mouse is not captured draw            * the cursor image            */
 if|if
 condition|(
 operator|!
