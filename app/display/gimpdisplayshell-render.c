@@ -1209,6 +1209,16 @@ operator|-
 name|xfer_src_y
 argument_list|)
 expr_stmt|;
+name|cairo_pattern_set_filter
+argument_list|(
+name|cairo_get_source
+argument_list|(
+name|cr
+argument_list|)
+argument_list|,
+name|CAIRO_FILTER_FAST
+argument_list|)
+expr_stmt|;
 name|cairo_paint
 argument_list|(
 name|cr
