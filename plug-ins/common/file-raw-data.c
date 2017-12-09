@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c6b400103
+DECL|enum|__anon29d407860103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -242,7 +242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c6b400203
+DECL|enum|__anon29d407860203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c6b400308
+DECL|struct|__anon29d407860308
 block|{
 DECL|member|image_type
 name|RawType
@@ -281,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c6b400408
+DECL|struct|__anon29d407860408
 block|{
 DECL|member|run
 name|gboolean
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c6b400508
+DECL|struct|__anon29d407860508
 block|{
 DECL|member|file_offset
 name|gint32
@@ -357,7 +357,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c6b400608
+DECL|struct|__anon29d407860608
 block|{
 DECL|member|fp
 name|FILE
@@ -7601,6 +7601,7 @@ condition|(
 name|is_hgt
 condition|)
 block|{
+comment|/* Translators: Digital Elevation Model (DEM) is a technical term        * used for 3D surface modeling or relief map; so it must be        * translated by the proper technical term in your language.        */
 name|frame
 operator|=
 name|gimp_frame_new
