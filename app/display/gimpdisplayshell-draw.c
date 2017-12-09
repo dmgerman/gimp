@@ -723,7 +723,10 @@ name|ceil
 argument_list|(
 name|h
 operator|/
+name|floor
+argument_list|(
 name|chunk_height
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|n_cols
@@ -732,7 +735,10 @@ name|ceil
 argument_list|(
 name|w
 operator|/
+name|floor
+argument_list|(
 name|chunk_width
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
