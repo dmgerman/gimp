@@ -686,12 +686,16 @@ name|chunk_width
 operator|=
 name|chunk_height
 operator|=
+operator|(
 name|MIN
 argument_list|(
 name|chunk_width
 argument_list|,
 name|chunk_height
 argument_list|)
+operator|-
+literal|1.0
+operator|)
 operator|/
 operator|(
 name|fabs
