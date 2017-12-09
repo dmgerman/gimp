@@ -244,7 +244,7 @@ if|if
 condition|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 operator|>
 literal|0
 condition|)
@@ -252,7 +252,7 @@ name|screenshot_delay
 argument_list|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 argument_list|)
 expr_stmt|;
 name|method
@@ -280,6 +280,21 @@ break|break;
 case|case
 name|SHOOT_REGION
 case|:
+if|if
+condition|(
+name|shootvals
+operator|->
+name|select_delay
+operator|>
+literal|0
+condition|)
+name|screenshot_delay
+argument_list|(
+name|shootvals
+operator|->
+name|select_delay
+argument_list|)
+expr_stmt|;
 name|retval
 operator|=
 name|g_dbus_proxy_call_sync
@@ -431,7 +446,7 @@ if|if
 condition|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 operator|>
 literal|0
 condition|)
@@ -439,7 +454,7 @@ name|screenshot_delay
 argument_list|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 argument_list|)
 expr_stmt|;
 break|break;
@@ -450,7 +465,7 @@ if|if
 condition|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 operator|>
 literal|0
 condition|)
@@ -458,7 +473,7 @@ name|screenshot_delay
 argument_list|(
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 argument_list|)
 expr_stmt|;
 name|method

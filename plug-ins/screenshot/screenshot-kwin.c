@@ -162,6 +162,8 @@ operator|(
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
 operator||
 name|SCREENSHOT_CAN_SHOOT_POINTER
+operator||
+name|SCREENSHOT_CAN_PICK_WINDOW
 operator|)
 return|;
 comment|/* TODO: SCREENSHOT_CAN_SHOOT_REGION.    * The KDE API has "screenshotArea" method but no method to get    * coordinates could be found. See below.    */
@@ -247,6 +249,21 @@ block|{
 case|case
 name|SHOOT_ROOT
 case|:
+if|if
+condition|(
+name|shootvals
+operator|->
+name|screenshot_delay
+operator|>
+literal|0
+condition|)
+name|screenshot_delay
+argument_list|(
+name|shootvals
+operator|->
+name|screenshot_delay
+argument_list|)
+expr_stmt|;
 name|method
 operator|=
 literal|"screenshotFullscreen"
@@ -312,6 +329,21 @@ break|break;
 case|case
 name|SHOOT_WINDOW
 case|:
+if|if
+condition|(
+name|shootvals
+operator|->
+name|select_delay
+operator|>
+literal|0
+condition|)
+name|screenshot_delay
+argument_list|(
+name|shootvals
+operator|->
+name|select_delay
+argument_list|)
+expr_stmt|;
 comment|/* XXX I expected "screenshotWindowUnderCursor" method to be the        * right one, but it returns nothing, nor is there a file        * descriptor in argument. So I don't understand how to grab the        * screenshot. Also "interactive" changes the cursor to a        * crosshair, waiting for click, which is more helpful than        * immediate screenshot under cursor.        */
 name|method
 operator|=
