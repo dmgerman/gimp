@@ -188,7 +188,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c126f90103
+DECL|enum|__anon290f3b380103
 block|{
 DECL|enumerator|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
 name|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
@@ -219,7 +219,7 @@ end_function
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c126f90203
+DECL|enum|__anon290f3b380203
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -289,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c126f90303
+DECL|enum|__anon290f3b380303
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c126f90408
+DECL|struct|__anon290f3b380408
 block|{
 DECL|member|image_type
 name|RawType
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c126f90508
+DECL|struct|__anon290f3b380508
 block|{
 DECL|member|run
 name|gboolean
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c126f90608
+DECL|struct|__anon290f3b380608
 block|{
 DECL|member|file_offset
 name|gint32
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c126f90708
+DECL|struct|__anon290f3b380708
 block|{
 DECL|member|fp
 name|FILE
@@ -1128,7 +1128,14 @@ name|LOAD_HGT_PROC
 argument_list|,
 literal|"Load HGT data as images"
 argument_list|,
-literal|"Load Digital Elevation Data in HGT format as images"
+literal|"Load Digital Elevation Model data in HGT format "
+literal|"from the Shuttle Radar Topography Mission as "
+literal|"images. Though the output image will be RGB, all "
+literal|"colors are grayscale by default and the contrast "
+literal|"will be quite low on most earth relief. Therefore "
+literal|"You will likely want to remap elevation to colors "
+literal|"as a second step, for instance with the \"Gradient "
+literal|"Map\" plug-in."
 argument_list|,
 literal|""
 argument_list|,
