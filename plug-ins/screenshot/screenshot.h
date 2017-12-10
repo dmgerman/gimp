@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c61760103
+DECL|enum|__anon2893a41b0103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
@@ -47,7 +47,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c61760203
+DECL|enum|__anon2893a41b0203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -77,12 +77,21 @@ literal|0x1
 operator|<<
 literal|3
 block|,
+comment|/* SHOOT_WINDOW mode only: it window selection requires active click. */
 DECL|enumerator|SCREENSHOT_CAN_PICK_WINDOW
 name|SCREENSHOT_CAN_PICK_WINDOW
 init|=
 literal|0x1
 operator|<<
 literal|4
+block|,
+comment|/* SHOOT_WINDOW + SCREENSHOT_CAN_PICK_WINDOW only: if a delay can be    * inserted in-between selection click and actual snapshot. */
+DECL|enumerator|SCREENSHOT_CAN_DELAY_WINDOW_SHOT
+name|SCREENSHOT_CAN_DELAY_WINDOW_SHOT
+init|=
+literal|0x1
+operator|<<
+literal|5
 DECL|typedef|ScreenshotCapabilities
 block|}
 name|ScreenshotCapabilities
@@ -92,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c61760303
+DECL|enum|__anon2893a41b0303
 block|{
 DECL|enumerator|SCREENSHOT_PROFILE_POLICY_MONITOR
 name|SCREENSHOT_PROFILE_POLICY_MONITOR
@@ -108,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c61760403
+DECL|enum|__anon2893a41b0403
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -127,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c61760508
+DECL|struct|__anon2893a41b0508
 block|{
 DECL|member|shoot_type
 name|ShootType

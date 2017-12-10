@@ -2435,6 +2435,8 @@ operator||=
 name|SCREENSHOT_CAN_SHOOT_REGION
 operator||
 name|SCREENSHOT_CAN_PICK_WINDOW
+operator||
+name|SCREENSHOT_CAN_DELAY_WINDOW_SHOT
 expr_stmt|;
 return|return
 name|capabilities
