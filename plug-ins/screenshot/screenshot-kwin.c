@@ -249,6 +249,15 @@ operator|->
 name|screenshot_delay
 argument_list|)
 expr_stmt|;
+else|else
+block|{
+comment|/* As an exception, I force a delay of at least 0.5 seconds            * for KWin. Because of windows effect slowly fading out, the            * screenshot plug-in GUI was constantly visible (with            * transparency as it is fading out) in 0s-delay screenshots.            */
+name|g_usleep
+argument_list|(
+literal|500000
+argument_list|)
+expr_stmt|;
+block|}
 name|method
 operator|=
 literal|"screenshotFullscreen"
