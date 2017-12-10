@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b77b790108
+DECL|struct|__anon2bdf6ea50108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b77b790208
+DECL|struct|__anon2bdf6ea50208
 typedef|typedef
 struct|struct
 block|{
@@ -501,7 +501,7 @@ name|delay
 operator|=
 name|shootvals
 operator|->
-name|select_delay
+name|screenshot_delay
 expr_stmt|;
 if|if
 condition|(
