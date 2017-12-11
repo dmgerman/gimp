@@ -769,7 +769,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Wheel"
+literal|"Wheel/Rotation"
 argument_list|)
 argument_list|)
 expr_stmt|;

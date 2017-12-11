@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba06dfd0103
+DECL|enum|__anon2b412d4d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba06dfd0203
+DECL|enum|__anon2b412d4d0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ba06dfd0308
+DECL|struct|__anon2b412d4d0308
 block|{
 DECL|member|use_property
 specifier|const
@@ -250,7 +250,7 @@ literal|"wheel-curve"
 block|,
 name|N_
 argument_list|(
-literal|"Wheel"
+literal|"Wheel / Rotation"
 argument_list|)
 block|,
 block|{

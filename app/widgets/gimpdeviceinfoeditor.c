@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999344c0103
+DECL|enum|__anon29747ae10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999344c0203
+DECL|enum|__anon29747ae10203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999344c0303
+DECL|enum|__anon29747ae10303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999344c0403
+DECL|enum|__anon29747ae10403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -463,10 +463,10 @@ argument_list|(
 literal|"Y tilt"
 argument_list|)
 block|,
-comment|/* Wheel as in mouse or input device wheel */
+comment|/* Wheel as in mouse or input device wheel.    * Some pens use the same axis for their rotation feature.    * See bug 791455.    */
 name|N_
 argument_list|(
-literal|"Wheel"
+literal|"Wheel/Rotation"
 argument_list|)
 block|}
 decl_stmt|;
