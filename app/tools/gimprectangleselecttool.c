@@ -2659,6 +2659,8 @@ init|=
 block|{
 literal|"highlight"
 block|,
+literal|"highlight-opacity"
+block|,
 literal|"guide"
 block|,
 literal|"round-corners"
@@ -3356,6 +3358,8 @@ argument_list|(
 name|shell
 argument_list|,
 name|NULL
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_options_disconnect

@@ -1229,6 +1229,9 @@ specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
+parameter_list|,
+name|double
+name|opacity
 parameter_list|)
 function_decl|;
 end_function_decl

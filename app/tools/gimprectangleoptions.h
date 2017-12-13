@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fe31e30103
+DECL|enum|__anon2c071a590103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -32,6 +32,9 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_SHRINK_MERGED
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
 name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
+block|,
+DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT_OPACITY
+name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT_OPACITY
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_GUIDE
 name|GIMP_RECTANGLE_OPTIONS_PROP_GUIDE
@@ -223,6 +226,10 @@ decl_stmt|;
 DECL|member|highlight
 name|gboolean
 name|highlight
+decl_stmt|;
+DECL|member|highlight_opacity
+name|gdouble
+name|highlight_opacity
 decl_stmt|;
 DECL|member|guide
 name|GimpGuidesType

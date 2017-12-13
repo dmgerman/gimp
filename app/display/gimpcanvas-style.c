@@ -731,7 +731,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|0.5
+literal|1.0
 block|}
 decl_stmt|;
 end_decl_stmt

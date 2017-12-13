@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290acc500103
+DECL|enum|__anon29fb38d00103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -210,6 +210,33 @@ literal|"Dim everything outside selection"
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_DOUBLE
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT_OPACITY
+argument_list|,
+literal|"highlight-opacity"
+argument_list|,
+name|_
+argument_list|(
+literal|"Highlight opacity"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"How much to dim everything outside selection"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)

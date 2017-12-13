@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292254310103
+DECL|enum|__anon27966e3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292254310203
+DECL|enum|__anon27966e3a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7669,12 +7669,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_highlight:  * @shell:     a #GimpDisplayShell  * @highlight: a rectangle in image coordinates that should be brought out  *  * This function sets an area of the image that should be  * accentuated. The actual implementation is to dim all pixels outside  * this rectangle. Passing %NULL for @highlight unsets the rectangle.  **/
+comment|/**  * gimp_display_shell_set_highlight:  * @shell:     a #GimpDisplayShell  * @highlight: a rectangle in image coordinates that should be brought out  * @opacity:   how much to hide the unselected area  *  * This function sets an area of the image that should be  * accentuated. The actual implementation is to dim all pixels outside  * this rectangle. Passing %NULL for @highlight unsets the rectangle.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_highlight (GimpDisplayShell * shell,const GdkRectangle * highlight)
+DECL|function|gimp_display_shell_set_highlight (GimpDisplayShell * shell,const GdkRectangle * highlight,gdouble opacity)
 name|gimp_display_shell_set_highlight
 parameter_list|(
 name|GimpDisplayShell
@@ -7685,6 +7685,9 @@ specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -7728,6 +7731,19 @@ argument_list|,
 name|highlight
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|shell
+operator|->
+name|passe_partout
+argument_list|,
+literal|"opacity"
+argument_list|,
+name|opacity
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_set_visible

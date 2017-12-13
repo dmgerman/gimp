@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a096ab00103
+DECL|enum|__anon2abd57d50103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY
@@ -219,6 +219,33 @@ literal|"Dim everything outside selection"
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_DOUBLE
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT_OPACITY
+argument_list|,
+literal|"highlight-opacity"
+argument_list|,
+name|_
+argument_list|(
+literal|"Highlight opacity"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"How much to dim everything outside selection"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
