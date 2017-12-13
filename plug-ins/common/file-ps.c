@@ -133,14 +133,6 @@ value|"file-eps-load"
 end_define
 
 begin_define
-DECL|macro|LOAD_PDF_PROC
-define|#
-directive|define
-name|LOAD_PDF_PROC
-value|"file-pdf-load"
-end_define
-
-begin_define
 DECL|macro|LOAD_PS_SETARGS_PROC
 define|#
 directive|define
@@ -219,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb68ada0108
+DECL|struct|__anon27fcf8140108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb68ada0208
+DECL|struct|__anon27fcf8140208
 block|{
 DECL|member|width
 DECL|member|height
@@ -976,9 +968,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|loadPDF
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1016,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb68ada0308
+DECL|struct|__anon27fcf8140308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1988,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb68ada0408
+DECL|struct|__anon27fcf8140408
 block|{
 DECL|member|eol
 name|goffset
@@ -2683,67 +2672,6 @@ argument_list|,
 literal|"0,string,%!,0,long,0xc5d0d3c6"
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|HAVE_POPPLER
-name|gimp_install_procedure
-argument_list|(
-name|LOAD_PDF_PROC
-argument_list|,
-literal|"load PDF documents"
-argument_list|,
-literal|"load PDF documents"
-argument_list|,
-literal|"Peter Kirchgessner<peter@kirchgessner.net>"
-argument_list|,
-literal|"Peter Kirchgessner"
-argument_list|,
-name|dversio
-argument_list|,
-name|N_
-argument_list|(
-literal|"PDF document"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_args
-argument_list|)
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_return_vals
-argument_list|)
-argument_list|,
-name|load_args
-argument_list|,
-name|load_return_vals
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|LOAD_PDF_PROC
-argument_list|,
-literal|"application/pdf"
-argument_list|)
-expr_stmt|;
-name|gimp_register_magic_load_handler
-argument_list|(
-name|LOAD_PDF_PROC
-argument_list|,
-literal|"pdf"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,%PDF"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|gimp_install_procedure
 argument_list|(
 name|LOAD_PS_SETARGS_PROC
@@ -2825,18 +2753,6 @@ argument_list|,
 name|LOAD_PS_THUMB_PROC
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|HAVE_POPPLER
-name|gimp_register_thumbnail_loader
-argument_list|(
-name|LOAD_PDF_PROC
-argument_list|,
-name|LOAD_PS_THUMB_PROC
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|gimp_install_procedure
 argument_list|(
 name|SAVE_PS_PROC
@@ -3261,15 +3177,6 @@ name|LOAD_EPS_PROC
 argument_list|)
 operator|==
 literal|0
-operator|||
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-name|LOAD_PDF_PROC
-argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 switch|switch
@@ -3302,15 +3209,6 @@ operator|.
 name|data
 operator|.
 name|d_string
-argument_list|,
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-name|LOAD_PDF_PROC
-argument_list|)
-operator|==
-literal|0
 argument_list|)
 condition|)
 name|status
@@ -15054,16 +14952,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_dialog (const gchar * filename,gboolean loadPDF)
+DECL|function|load_dialog (const gchar * filename)
 name|load_dialog
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|loadPDF
 parameter_list|)
 block|{
 name|GtkWidget
@@ -15741,8 +15636,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|loadPDF
-operator|||
 name|page_count
 operator|==
 literal|0
@@ -16364,8 +16257,6 @@ block|}
 elseif|else
 if|if
 condition|(
-name|loadPDF
-operator|||
 name|page_count
 operator|==
 literal|0
