@@ -795,6 +795,47 @@ name|window_id
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_WINDOW
+operator|&&
+operator|!
+operator|(
+name|capabilities
+operator|&
+name|SCREENSHOT_CAN_SHOOT_WINDOW
+operator|)
+operator|)
+operator|||
+operator|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_REGION
+operator|&&
+operator|!
+operator|(
+name|capabilities
+operator|&
+name|SCREENSHOT_CAN_SHOOT_REGION
+operator|)
+operator|)
+condition|)
+block|{
+comment|/* Shoot root is the only type of shoot which is definitely            * shared by all screenshot backends (basically just snap the            * whole display setup).            */
+name|shootvals
+operator|.
+name|shoot_type
+operator|=
+name|SHOOT_ROOT
+expr_stmt|;
+block|}
 comment|/* Get information from the dialog */
 if|if
 condition|(
@@ -1915,6 +1956,13 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  Single window  */
+if|if
+condition|(
+name|capabilities
+operator|&
+name|SCREENSHOT_CAN_SHOOT_WINDOW
+condition|)
+block|{
 name|button
 operator|=
 name|gtk_radio_button_new_with_mnemonic
@@ -2240,6 +2288,7 @@ operator|==
 name|SHOOT_WINDOW
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Whole screen  */
 name|button
 operator|=

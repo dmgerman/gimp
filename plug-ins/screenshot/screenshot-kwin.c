@@ -163,6 +163,8 @@ name|SCREENSHOT_CAN_SHOOT_DECORATIONS
 operator||
 name|SCREENSHOT_CAN_SHOOT_POINTER
 operator||
+name|SCREENSHOT_CAN_SHOOT_WINDOW
+operator||
 name|SCREENSHOT_CAN_PICK_WINDOW
 operator|)
 return|;

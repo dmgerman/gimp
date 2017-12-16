@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f086b0103
+DECL|enum|__anon2bff96920103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
@@ -50,7 +50,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f086b0203
+DECL|enum|__anon2bff96920203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -95,6 +95,13 @@ init|=
 literal|0x1
 operator|<<
 literal|5
+block|,
+DECL|enumerator|SCREENSHOT_CAN_SHOOT_WINDOW
+name|SCREENSHOT_CAN_SHOOT_WINDOW
+init|=
+literal|0x1
+operator|<<
+literal|6
 DECL|typedef|ScreenshotCapabilities
 block|}
 name|ScreenshotCapabilities
@@ -104,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f086b0303
+DECL|enum|__anon2bff96920303
 block|{
 DECL|enumerator|SCREENSHOT_PROFILE_POLICY_MONITOR
 name|SCREENSHOT_PROFILE_POLICY_MONITOR
@@ -120,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f086b0403
+DECL|enum|__anon2bff96920403
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -139,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f086b0508
+DECL|struct|__anon2bff96920508
 block|{
 DECL|member|shoot_type
 name|ShootType

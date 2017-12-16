@@ -335,7 +335,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdf6ea50108
+DECL|struct|__anon2918270c0108
 typedef|typedef
 struct|struct
 block|{
@@ -382,7 +382,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdf6ea50208
+DECL|struct|__anon2918270c0208
 typedef|typedef
 struct|struct
 block|{
@@ -457,6 +457,8 @@ block|{
 return|return
 operator|(
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
+operator||
+name|SCREENSHOT_CAN_SHOOT_WINDOW
 operator|)
 return|;
 block|}
