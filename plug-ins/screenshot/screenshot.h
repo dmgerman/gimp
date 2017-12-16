@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2893a41b0103
+DECL|enum|__anon275f086b0103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
@@ -29,6 +29,9 @@ name|SCREENSHOT_BACKEND_OSX
 block|,
 DECL|enumerator|SCREENSHOT_BACKEND_WIN32
 name|SCREENSHOT_BACKEND_WIN32
+block|,
+DECL|enumerator|SCREENSHOT_BACKEND_FREEDESKTOP
+name|SCREENSHOT_BACKEND_FREEDESKTOP
 block|,
 DECL|enumerator|SCREENSHOT_BACKEND_GNOME_SHELL
 name|SCREENSHOT_BACKEND_GNOME_SHELL
@@ -47,7 +50,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2893a41b0203
+DECL|enum|__anon275f086b0203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -101,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2893a41b0303
+DECL|enum|__anon275f086b0303
 block|{
 DECL|enumerator|SCREENSHOT_PROFILE_POLICY_MONITOR
 name|SCREENSHOT_PROFILE_POLICY_MONITOR
@@ -117,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2893a41b0403
+DECL|enum|__anon275f086b0403
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -136,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893a41b0508
+DECL|struct|__anon275f086b0508
 block|{
 DECL|member|shoot_type
 name|ShootType
