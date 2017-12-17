@@ -633,12 +633,17 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to open '%s' for writing"
+literal|"Unable to open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1902,12 +1907,17 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to open '%s' for writing"
+literal|"Unable to open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
