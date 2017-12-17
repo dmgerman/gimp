@@ -411,7 +411,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|/*  keep compat enum code in sync with tools/pdbgen/enumcode.pl  */
+comment|/*  keep compat enum code in sync with pdb/enumcode.pl  */
 name|quark
 operator|=
 name|g_quark_from_static_string
