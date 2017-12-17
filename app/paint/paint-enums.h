@@ -23,7 +23,7 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in pdb,    and gimp-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen,    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1542d10103
+DECL|enum|__anon29aded2c0103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c1542d10203
+DECL|enum|__anon29aded2c0203
 block|{
 DECL|enumerator|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c1542d10303
+DECL|enum|__anon29aded2c0303
 block|{
 DECL|enumerator|GIMP_SOURCE_ALIGN_NO
 name|GIMP_SOURCE_ALIGN_NO
@@ -175,7 +175,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon2c1542d10403
+DECL|enum|__anon29aded2c0403
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
