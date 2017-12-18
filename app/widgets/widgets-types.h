@@ -1227,6 +1227,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMeter
+typedef|typedef
+name|struct
+name|_GimpMeter
+name|GimpMeter
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOverlayBox
 typedef|typedef
 name|struct
