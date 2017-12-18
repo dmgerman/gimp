@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dashboard-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"debug-actions.h"
 end_include
 
@@ -566,6 +572,21 @@ block|,
 name|cursor_info_actions_setup
 block|,
 name|cursor_info_actions_update
+block|}
+block|,
+block|{
+literal|"dashboard"
+block|,
+name|N_
+argument_list|(
+literal|"Dashboard"
+argument_list|)
+block|,
+name|GIMP_ICON_DIALOG_DASHBOARD
+block|,
+name|dashboard_actions_setup
+block|,
+name|dashboard_actions_update
 block|}
 block|,
 block|{

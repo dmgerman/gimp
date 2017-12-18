@@ -245,6 +245,15 @@ name|GimpToolOptionsEditor
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpDashboard
+typedef|typedef
+name|struct
+name|_GimpDashboard
+name|GimpDashboard
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  GimpDataEditor widgets  */
 end_comment

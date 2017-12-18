@@ -426,6 +426,11 @@ define|#
 directive|define
 name|GIMP_ICON_DIALOG_CHANNELS
 value|"gimp-channels"
+DECL|macro|GIMP_ICON_DIALOG_DASHBOARD
+define|#
+directive|define
+name|GIMP_ICON_DIALOG_DASHBOARD
+value|"gimp-dashboard"
 DECL|macro|GIMP_ICON_DIALOG_DEVICE_STATUS
 define|#
 directive|define
