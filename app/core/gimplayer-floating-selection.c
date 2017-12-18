@@ -1090,7 +1090,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GIMP_BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY_LINEAR
 argument_list|,
 operator|&
 name|layer

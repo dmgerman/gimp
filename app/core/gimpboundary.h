@@ -21,17 +21,25 @@ comment|/* half intensity for mask */
 end_comment
 
 begin_define
-DECL|macro|GIMP_BOUNDARY_HALF_WAY
+DECL|macro|GIMP_BOUNDARY_HALF_WAY_PERCEPTUAL
 define|#
 directive|define
-name|GIMP_BOUNDARY_HALF_WAY
+name|GIMP_BOUNDARY_HALF_WAY_PERCEPTUAL
 value|0.5
+end_define
+
+begin_define
+DECL|macro|GIMP_BOUNDARY_HALF_WAY_LINEAR
+define|#
+directive|define
+name|GIMP_BOUNDARY_HALF_WAY_LINEAR
+value|0.214041
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287c246d0103
+DECL|enum|__anon28f74e7c0103
 block|{
 DECL|enumerator|GIMP_BOUNDARY_WITHIN_BOUNDS
 name|GIMP_BOUNDARY_WITHIN_BOUNDS
