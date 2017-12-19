@@ -140,7 +140,7 @@ end_define
 
 begin_comment
 DECL|macro|LOW_SWAP_SPACE_WARNING_ON
-comment|/* times swap limit */
+comment|/* of swap limit */
 end_comment
 
 begin_define
@@ -154,7 +154,7 @@ end_define
 
 begin_comment
 DECL|macro|LOW_SWAP_SPACE_WARNING_OFF
-comment|/* times swap limit */
+comment|/* of swap limit */
 end_comment
 
 begin_define
@@ -179,6 +179,14 @@ define|#
 directive|define
 name|SWAP_SIZE_COLOR
 value|{0.8, 0.6, 0.4, 1.0}
+end_define
+
+begin_define
+DECL|macro|SWAP_LED_COLOR
+define|#
+directive|define
+name|SWAP_LED_COLOR
+value|{0.8, 0.4, 0.4, 1.0}
 end_define
 
 begin_function_decl
@@ -1292,15 +1300,7 @@ operator|&
 operator|(
 name|GimpRGB
 operator|)
-block|{
-literal|0.8
-block|,
-literal|0.4
-block|,
-literal|0.4
-block|,
-literal|1.0
-block|}
+name|SWAP_LED_COLOR
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2692,6 +2692,11 @@ argument_list|,
 literal|"gimp-dashboard"
 argument_list|)
 expr_stmt|;
+name|gimp_dashboard_update
+argument_list|(
+name|dashboard
+argument_list|)
+expr_stmt|;
 name|g_mutex_lock
 argument_list|(
 operator|&
@@ -2908,6 +2913,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|swap_limit
+condition|)
+block|{
+if|if
+condition|(
 operator|!
 name|seen_low_swap_space
 operator|&&
@@ -2990,6 +3000,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
 name|end_time
 operator|=
 name|g_get_monotonic_time
@@ -3002,7 +3013,6 @@ operator|/
 literal|1000
 expr_stmt|;
 block|}
-elseif|else
 if|if
 condition|(
 name|dashboard
