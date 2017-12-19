@@ -108,11 +108,6 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-DECL|member|box
-name|GtkWidget
-modifier|*
-name|box
-decl_stmt|;
 DECL|member|cache_meter
 name|GtkWidget
 modifier|*

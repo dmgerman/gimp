@@ -507,10 +507,6 @@ expr_stmt|;
 comment|/* we put the dashboard inside an event box, so that it gets its own window,    * which reduces the overhead of updating the ui, since it gets updated    * frequently.  unfortunately, this means that the dashboard's background    * color may be a bit off for some themes.    */
 name|box
 operator|=
-name|dashboard
-operator|->
-name|box
-operator|=
 name|gtk_event_box_new
 argument_list|()
 expr_stmt|;
