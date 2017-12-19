@@ -648,21 +648,53 @@ operator|->
 name|scale_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|scale
+operator|!=
+name|shell
+operator|->
+name|scale_x
+condition|)
 name|chunk_width
-operator|*=
+operator|=
+operator|(
+name|chunk_width
+operator|-
+literal|1.0
+operator|)
+operator|*
+operator|(
 name|shell
 operator|->
 name|scale_x
 operator|/
 name|scale
+operator|)
 expr_stmt|;
+if|if
+condition|(
+name|scale
+operator|!=
+name|shell
+operator|->
+name|scale_y
+condition|)
 name|chunk_height
-operator|*=
+operator|=
+operator|(
+name|chunk_height
+operator|-
+literal|1.0
+operator|)
+operator|*
+operator|(
 name|shell
 operator|->
 name|scale_y
 operator|/
 name|scale
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -881,10 +913,12 @@ name|iw
 decl_stmt|,
 name|ih
 decl_stmt|;
-comment|/* map chunk from screen space to image space */
-name|gimp_display_shell_untransform_bounds
+comment|/* map chunk from screen space to scaled image space */
+name|gimp_display_shell_untransform_bounds_with_scale
 argument_list|(
 name|shell
+argument_list|,
+name|scale
 argument_list|,
 name|x1
 argument_list|,
@@ -912,8 +946,6 @@ operator|=
 name|floor
 argument_list|(
 name|ix1
-operator|*
-name|scale
 argument_list|)
 expr_stmt|;
 name|iy
@@ -921,8 +953,6 @@ operator|=
 name|floor
 argument_list|(
 name|iy1
-operator|*
-name|scale
 argument_list|)
 expr_stmt|;
 name|iw
@@ -930,8 +960,6 @@ operator|=
 name|ceil
 argument_list|(
 name|ix2
-operator|*
-name|scale
 argument_list|)
 operator|-
 name|ix
@@ -941,8 +969,6 @@ operator|=
 name|ceil
 argument_list|(
 name|iy2
-operator|*
-name|scale
 argument_list|)
 operator|-
 name|iy
@@ -975,7 +1001,7 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-comment|/* transform to image space, and apply uneven scaling */
+comment|/* transform to scaled image space, and apply uneven scaling */
 if|if
 condition|(
 name|shell
