@@ -151,9 +151,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Raise the dashboard when the swap size approaches its limit"
+literal|"dashboard-action"
+argument_list|,
+literal|"Raise the dashboard when "
+literal|"the swap size approaches its limit"
 argument_list|)
 block|,
 name|G_CALLBACK
