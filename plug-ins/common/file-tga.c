@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a40ddaf0103
+DECL|enum|__anon2c7759bf0103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -2116,6 +2116,12 @@ operator|.
 name|alphaBits
 operator|!=
 literal|1
+operator|&&
+name|info
+operator|.
+name|alphaBits
+operator|!=
+literal|0
 operator|)
 operator|||
 operator|(
