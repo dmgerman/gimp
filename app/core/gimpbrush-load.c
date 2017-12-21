@@ -960,8 +960,14 @@ name|BrushHeader
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Unsupported brush format"
@@ -1290,7 +1296,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2a21edc7010a
+DECL|union|__anon290c67cf010a
 block|{
 DECL|member|u
 name|guint16

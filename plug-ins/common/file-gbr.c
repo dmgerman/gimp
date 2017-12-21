@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff90380108
+DECL|struct|__anon2c1554df0108
 block|{
 DECL|member|description
 name|gchar
@@ -1634,8 +1634,14 @@ name|BrushHeader
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Unsupported brush format"
@@ -2387,7 +2393,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ff9038020a
+DECL|union|__anon2c1554df020a
 block|{
 DECL|member|u
 name|guint16
