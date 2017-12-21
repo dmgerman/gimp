@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010103
+DECL|enum|__anon2c53ba300103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010203
+DECL|enum|__anon2c53ba300203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010303
+DECL|enum|__anon2c53ba300303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010403
+DECL|enum|__anon2c53ba300403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010503
+DECL|enum|__anon2c53ba300503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010603
+DECL|enum|__anon2c53ba300603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010703
+DECL|enum|__anon2c53ba300703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010803
+DECL|enum|__anon2c53ba300803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010903
+DECL|enum|__anon2c53ba300903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010a03
+DECL|enum|__anon2c53ba300a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010b03
+DECL|enum|__anon2c53ba300b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010c03
+DECL|enum|__anon2c53ba300c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010d03
+DECL|enum|__anon2c53ba300d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010e03
+DECL|enum|__anon2c53ba300e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545010f03
+DECL|enum|__anon2c53ba300f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011003
+DECL|enum|__anon2c53ba301003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011103
+DECL|enum|__anon2c53ba301103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011203
+DECL|enum|__anon2c53ba301203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011303
+DECL|enum|__anon2c53ba301303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011403
+DECL|enum|__anon2c53ba301403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011503
+DECL|enum|__anon2c53ba301503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011603
+DECL|enum|__anon2c53ba301603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011703
+DECL|enum|__anon2c53ba301703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011803
+DECL|enum|__anon2c53ba301803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011903
+DECL|enum|__anon2c53ba301903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011a03
+DECL|enum|__anon2c53ba301a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011b03
+DECL|enum|__anon2c53ba301b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011c03
+DECL|enum|__anon2c53ba301c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011d03
+DECL|enum|__anon2c53ba301d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011e03
+DECL|enum|__anon2c53ba301e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d545011f03
+DECL|enum|__anon2c53ba301f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d545012008
+DECL|struct|__anon2c53ba302008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1708,7 +1708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d545012108
+DECL|struct|__anon2c53ba302108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -2149,7 +2149,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|read_block_header (FILE * f,guint32 * init_len,guint32 * total_len)
+DECL|function|read_block_header (FILE * f,guint32 * init_len,guint32 * total_len,GError ** error)
 name|read_block_header
 parameter_list|(
 name|FILE
@@ -2163,6 +2163,11 @@ parameter_list|,
 name|guint32
 modifier|*
 name|total_len
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guchar
@@ -2254,9 +2259,18 @@ literal|1
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading block header"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2282,17 +2296,35 @@ name|IFDBG
 argument_list|(
 literal|3
 argument_list|)
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid block header at %ld"
+argument_list|)
 argument_list|,
 name|header_start
 argument_list|)
 expr_stmt|;
 else|else
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid block header"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2806,7 +2838,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|try_fseek (FILE * f,glong pos,gint whence)
+DECL|function|try_fseek (FILE * f,glong pos,gint whence,GError ** error)
 name|try_fseek
 parameter_list|(
 name|FILE
@@ -2818,6 +2850,11 @@ name|pos
 parameter_list|,
 name|gint
 name|whence
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 if|if
@@ -2834,9 +2871,21 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
+name|_
 argument_list|(
 literal|"Seek error: %s"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2863,7 +2912,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_creator_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
+DECL|function|read_creator_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia,GError ** error)
 name|read_creator_block
 parameter_list|(
 name|FILE
@@ -2879,6 +2928,11 @@ parameter_list|,
 name|PSPimage
 modifier|*
 name|ia
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|long
@@ -3042,9 +3096,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading creator keyword chunk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3066,9 +3129,18 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid keyword chunk header"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3132,9 +3204,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading creator keyword data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3159,9 +3240,18 @@ operator|!=
 literal|'\0'
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Creator keyword data not nul-terminated"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3268,9 +3358,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading creator keyword data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3327,6 +3426,8 @@ argument_list|,
 name|length
 argument_list|,
 name|SEEK_CUR
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -4041,7 +4142,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|read_channel_data (FILE * f,PSPimage * ia,guchar ** pixels,guint bytespp,guint offset,GeglBuffer * buffer,guint32 compressed_len)
+DECL|function|read_channel_data (FILE * f,PSPimage * ia,guchar ** pixels,guint bytespp,guint offset,GeglBuffer * buffer,guint32 compressed_len,GError ** error)
 name|read_channel_data
 parameter_list|(
 name|FILE
@@ -4069,6 +4170,11 @@ name|buffer
 parameter_list|,
 name|guint32
 name|compressed_len
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -4559,9 +4665,18 @@ operator|!=
 name|Z_OK
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"zlib error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4619,9 +4734,18 @@ operator|!=
 name|Z_STREAM_END
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"zlib error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|inflateEnd
@@ -4716,7 +4840,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_layer_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
+DECL|function|read_layer_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia,GError ** error)
 name|read_layer_block
 parameter_list|(
 name|FILE
@@ -4732,6 +4856,11 @@ parameter_list|,
 name|PSPimage
 modifier|*
 name|ia
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -4888,6 +5017,8 @@ name|sub_init_len
 argument_list|,
 operator|&
 name|sub_total_len
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -4908,9 +5039,18 @@ operator|!=
 name|PSP_LAYER_BLOCK
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid layer sub-block %s, should be LAYER"
+argument_list|)
 argument_list|,
 name|block_name
 argument_list|(
@@ -5212,9 +5352,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading layer information chunk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5479,9 +5628,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading layer information chunk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5650,9 +5808,18 @@ operator|)
 condition|)
 comment|/* w * h< 2^29 */
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid layer dimensions: %dx%d"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -5900,9 +6067,18 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error creating layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5995,6 +6171,8 @@ operator|+
 name|sub_init_len
 argument_list|,
 name|SEEK_SET
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -6096,6 +6274,8 @@ name|channel_init_len
 argument_list|,
 operator|&
 name|channel_total_len
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -6123,9 +6303,18 @@ operator|!=
 name|PSP_CHANNEL_BLOCK
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid layer sub-block %s, should be CHANNEL"
+argument_list|)
 argument_list|,
 name|block_name
 argument_list|(
@@ -6220,9 +6409,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading channel information chunk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -6265,9 +6463,18 @@ operator|>
 name|PSP_DIB_USER_MASK
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid bitmap type %d in channel information chunk"
+argument_list|)
 argument_list|,
 name|bitmap_type
 argument_list|)
@@ -6284,9 +6491,18 @@ operator|>
 name|PSP_CHANNEL_BLUE
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Invalid channel type %d in channel information chunk"
+argument_list|)
 argument_list|,
 name|channel_type
 argument_list|)
@@ -6355,6 +6571,8 @@ operator|+
 name|channel_init_len
 argument_list|,
 name|SEEK_SET
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -6387,6 +6605,8 @@ argument_list|,
 name|buffer
 argument_list|,
 name|compressed_len
+argument_list|,
+name|error
 argument_list|)
 operator|==
 operator|-
@@ -6409,6 +6629,8 @@ operator|+
 name|channel_total_len
 argument_list|,
 name|SEEK_SET
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -6471,6 +6693,8 @@ operator|+
 name|total_len
 argument_list|,
 name|SEEK_SET
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -6490,7 +6714,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_tube_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
+DECL|function|read_tube_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia,GError ** error)
 name|read_tube_block
 parameter_list|(
 name|FILE
@@ -6506,6 +6730,11 @@ parameter_list|,
 name|PSPimage
 modifier|*
 name|ia
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint16
@@ -6665,9 +6894,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
 argument_list|(
 literal|"Error reading tube data chunk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -7342,6 +7580,8 @@ name|block_init_len
 argument_list|,
 operator|&
 name|block_total_len
+argument_list|,
+name|error
 argument_list|)
 operator|)
 operator|!=
@@ -7581,6 +7821,8 @@ name|block_total_len
 argument_list|,
 operator|&
 name|ia
+argument_list|,
+name|error
 argument_list|)
 operator|==
 operator|-
@@ -7610,6 +7852,8 @@ name|block_total_len
 argument_list|,
 operator|&
 name|ia
+argument_list|,
+name|error
 argument_list|)
 operator|==
 operator|-
@@ -7654,6 +7898,8 @@ name|block_total_len
 argument_list|,
 operator|&
 name|ia
+argument_list|,
+name|error
 argument_list|)
 operator|==
 operator|-
@@ -7740,6 +7986,8 @@ operator|+
 name|block_total_len
 argument_list|,
 name|SEEK_SET
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
