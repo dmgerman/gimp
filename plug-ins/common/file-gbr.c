@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3df11a0108
+DECL|struct|__anon299a80190108
 block|{
 DECL|member|description
 name|gchar
@@ -1851,6 +1851,15 @@ operator|||
 name|bytes_read
 operator|!=
 name|size
+operator|||
+name|temp
+index|[
+name|size
+operator|-
+literal|1
+index|]
+operator|!=
+literal|'\0'
 condition|)
 block|{
 name|g_set_error
@@ -2348,7 +2357,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b3df11a020a
+DECL|union|__anon299a8019020a
 block|{
 DECL|member|u
 name|guint16
