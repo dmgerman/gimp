@@ -129,7 +129,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0103
+DECL|enum|__anon27d545010103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +258,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0203
+DECL|enum|__anon27d545010203
 typedef|typedef
 enum|enum
 block|{
@@ -327,7 +327,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0303
+DECL|enum|__anon27d545010303
 typedef|typedef
 enum|enum
 block|{
@@ -352,7 +352,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0403
+DECL|enum|__anon27d545010403
 typedef|typedef
 enum|enum
 block|{
@@ -435,7 +435,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0503
+DECL|enum|__anon27d545010503
 typedef|typedef
 enum|enum
 block|{
@@ -480,7 +480,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0603
+DECL|enum|__anon27d545010603
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0703
+DECL|enum|__anon27d545010703
 typedef|typedef
 enum|enum
 block|{
@@ -539,7 +539,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0803
+DECL|enum|__anon27d545010803
 typedef|typedef
 enum|enum
 block|{
@@ -572,7 +572,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0903
+DECL|enum|__anon27d545010903
 typedef|typedef
 enum|enum
 block|{
@@ -666,7 +666,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0a03
+DECL|enum|__anon27d545010a03
 typedef|typedef
 enum|enum
 block|{
@@ -752,7 +752,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0b03
+DECL|enum|__anon27d545010b03
 typedef|typedef
 enum|enum
 block|{
@@ -808,7 +808,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0c03
+DECL|enum|__anon27d545010c03
 typedef|typedef
 enum|enum
 block|{
@@ -849,7 +849,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0d03
+DECL|enum|__anon27d545010d03
 typedef|typedef
 enum|enum
 block|{
@@ -881,7 +881,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0e03
+DECL|enum|__anon27d545010e03
 typedef|typedef
 enum|enum
 block|{
@@ -909,7 +909,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d0f03
+DECL|enum|__anon27d545010f03
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1003
+DECL|enum|__anon27d545011003
 typedef|typedef
 enum|enum
 block|{
@@ -992,7 +992,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1103
+DECL|enum|__anon27d545011103
 typedef|typedef
 enum|enum
 block|{
@@ -1064,7 +1064,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1203
+DECL|enum|__anon27d545011203
 typedef|typedef
 enum|enum
 block|{
@@ -1089,7 +1089,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1303
+DECL|enum|__anon27d545011303
 typedef|typedef
 enum|enum
 block|{
@@ -1137,7 +1137,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1403
+DECL|enum|__anon27d545011403
 typedef|typedef
 enum|enum
 block|{
@@ -1169,7 +1169,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1503
+DECL|enum|__anon27d545011503
 typedef|typedef
 enum|enum
 block|{
@@ -1197,7 +1197,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1603
+DECL|enum|__anon27d545011603
 typedef|typedef
 enum|enum
 block|{
@@ -1229,7 +1229,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1703
+DECL|enum|__anon27d545011703
 typedef|typedef
 enum|enum
 block|{
@@ -1251,7 +1251,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1803
+DECL|enum|__anon27d545011803
 typedef|typedef
 enum|enum
 block|{
@@ -1287,7 +1287,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1903
+DECL|enum|__anon27d545011903
 typedef|typedef
 enum|enum
 block|{
@@ -1320,7 +1320,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1a03
+DECL|enum|__anon27d545011a03
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1b03
+DECL|enum|__anon27d545011b03
 typedef|typedef
 enum|enum
 block|{
@@ -1396,7 +1396,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1c03
+DECL|enum|__anon27d545011c03
 typedef|typedef
 enum|enum
 block|{
@@ -1418,7 +1418,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1d03
+DECL|enum|__anon27d545011d03
 typedef|typedef
 enum|enum
 block|{
@@ -1442,7 +1442,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1e03
+DECL|enum|__anon27d545011e03
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774a65d1f03
+DECL|enum|__anon27d545011f03
 typedef|typedef
 enum|enum
 block|{
@@ -1545,7 +1545,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774a65d2008
+DECL|struct|__anon27d545012008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1708,7 +1708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774a65d2108
+DECL|struct|__anon27d545012108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -7192,9 +7192,18 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Error reading file header"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Error reading file header."
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -7215,9 +7224,18 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Incorrect file signature"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Incorrect file signature."
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -7242,58 +7260,34 @@ comment|/* I only have the documentation for file format version 3.0,    * but P
 if|if
 condition|(
 name|psp_ver_major
-operator|<
+operator|!=
 literal|3
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Unsupported PSP file format version "
-literal|"%d.%d, only knows 3.0 (and later?)"
-argument_list|,
+operator|&&
 name|psp_ver_major
-argument_list|,
-name|psp_ver_minor
-argument_list|)
-expr_stmt|;
-goto|goto
-name|error
-goto|;
-block|}
-elseif|else
-if|if
-condition|(
-operator|(
-name|psp_ver_major
-operator|==
-literal|3
-operator|)
-operator|||
-operator|(
-name|psp_ver_major
-operator|==
+operator|!=
 literal|4
-operator|)
-operator|||
-operator|(
+operator|&&
 name|psp_ver_major
-operator|==
+operator|!=
 literal|5
-operator|)
-operator|||
-operator|(
+operator|&&
 name|psp_ver_major
-operator|==
+operator|!=
 literal|6
-operator|)
 condition|)
-empty_stmt|;
-comment|/* OK */
-else|else
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Unsupported PSP file format version %d.%d"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unsupported PSP file format version %d.%d."
+argument_list|)
 argument_list|,
 name|psp_ver_major
 argument_list|,
@@ -7415,9 +7409,18 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Duplicate General Image Attributes block"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Duplicate General Image Attributes block."
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -7540,9 +7543,18 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Missing General Image Attributes block"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Missing General Image Attributes block."
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -7805,9 +7817,18 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Exporting not implemented yet"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Exporting not implemented yet."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
