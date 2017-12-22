@@ -284,6 +284,9 @@ name|end_y
 parameter_list|,
 name|gint
 name|n_snap_lines
+parameter_list|,
+name|gdouble
+name|offset_angle
 parameter_list|)
 function_decl|;
 end_function_decl

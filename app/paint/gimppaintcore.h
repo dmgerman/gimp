@@ -658,6 +658,9 @@ name|options
 parameter_list|,
 name|gboolean
 name|constrain_15_degrees
+parameter_list|,
+name|gdouble
+name|constrain_offset_angle
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -1431,6 +1437,11 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|constrain
+argument_list|,
+name|gimp_display_shell_get_constrained_line_offset_angle
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2651,6 +2662,11 @@ name|constrain_mask
 operator|)
 operator|!=
 literal|0
+argument_list|,
+name|gimp_display_shell_get_constrained_line_offset_angle
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dx

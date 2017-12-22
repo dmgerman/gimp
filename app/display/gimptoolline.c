@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolline.h"
 end_include
 
@@ -192,7 +198,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2954cb4f0103
+DECL|enum|__anon2af8ff670103
 block|{
 DECL|enumerator|GRAB_NONE
 name|GRAB_NONE
@@ -210,7 +216,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2954cb4f0203
+DECL|enum|__anon2af8ff670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2954cb4f0303
+DECL|enum|__anon2af8ff670303
 block|{
 DECL|enumerator|CAN_ADD_SLIDER
 name|CAN_ADD_SLIDER
@@ -4964,8 +4970,17 @@ if|if
 condition|(
 name|constrain
 condition|)
-name|gimp_constrain_line
+block|{
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|GIMP_TOOL_WIDGET
+argument_list|(
+name|line
+argument_list|)
+argument_list|)
+argument_list|,
 name|private
 operator|->
 name|x2
@@ -4983,6 +4998,7 @@ argument_list|,
 name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_set
 argument_list|(
 name|line
@@ -5008,8 +5024,17 @@ if|if
 condition|(
 name|constrain
 condition|)
-name|gimp_constrain_line
+block|{
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|GIMP_TOOL_WIDGET
+argument_list|(
+name|line
+argument_list|)
+argument_list|)
+argument_list|,
 name|private
 operator|->
 name|x1
@@ -5027,6 +5052,7 @@ argument_list|,
 name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_set
 argument_list|(
 name|line

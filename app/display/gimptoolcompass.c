@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolcompass.h"
 end_include
 
@@ -120,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277cf9b50103
+DECL|enum|__anon2c76e6210103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -147,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon277cf9b50203
+DECL|enum|__anon2c76e6210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,7 +184,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277cf9b50303
+DECL|enum|__anon2c76e6210303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -3301,8 +3307,13 @@ operator|->
 name|point
 index|]
 decl_stmt|;
-name|gimp_constrain_line
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|new_x
 index|[
 literal|0
@@ -4100,8 +4111,14 @@ if|if
 condition|(
 name|press
 condition|)
-name|gimp_constrain_line
+block|{
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|private
 operator|->
 name|x
@@ -4125,6 +4142,7 @@ argument_list|,
 name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
+block|}
 name|new_x
 index|[
 name|private

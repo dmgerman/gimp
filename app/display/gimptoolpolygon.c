@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolpolygon.h"
 end_include
 
@@ -2958,8 +2964,16 @@ argument_list|,
 name|segment_index
 argument_list|)
 expr_stmt|;
-name|gimp_constrain_line
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|GIMP_TOOL_WIDGET
+argument_list|(
+name|polygon
+argument_list|)
+argument_list|)
+argument_list|,
 name|start_point_x
 argument_list|,
 name|start_point_y
@@ -4468,8 +4482,13 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_constrain_line
+name|gimp_display_shell_constrain_line
 argument_list|(
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|start_point_x
 argument_list|,
 name|start_point_y

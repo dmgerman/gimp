@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29191b7d0103
+DECL|enum|__anon2987db5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2795,7 +2795,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_round_line (GimpPaintCore * core,GimpPaintOptions * paint_options,gboolean constrain_15_degrees)
+DECL|function|gimp_paint_core_round_line (GimpPaintCore * core,GimpPaintOptions * paint_options,gboolean constrain_15_degrees,gdouble constrain_offset_angle)
 name|gimp_paint_core_round_line
 parameter_list|(
 name|GimpPaintCore
@@ -2808,6 +2808,9 @@ name|paint_options
 parameter_list|,
 name|gboolean
 name|constrain_15_degrees
+parameter_list|,
+name|gdouble
+name|constrain_offset_angle
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2938,6 +2941,8 @@ operator|.
 name|y
 argument_list|,
 name|GIMP_CONSTRAIN_LINE_15_DEGREES
+argument_list|,
+name|constrain_offset_angle
 argument_list|)
 expr_stmt|;
 block|}

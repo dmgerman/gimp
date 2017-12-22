@@ -2196,12 +2196,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_constrain_line:  * @start_x:  * @start_y:  * @end_x:  * @end_y:  * @n_snap_lines: Number evenly disributed lines to snap to.  *  * Projects a line onto the specified subset of evenly radially  * distributed lines. @n_lines of 2 makes the line snap horizontally  * or vertically. @n_lines of 4 snaps on 45 degree steps. @n_lines of  * 12 on 15 degree steps. etc.  **/
+comment|/**  * gimp_constrain_line:  * @start_x:  * @start_y:  * @end_x:  * @end_y:  * @n_snap_lines: Number evenly disributed lines to snap to.  * @offset_angle: The angle by which to offset the lines, in degrees.  *  * Projects a line onto the specified subset of evenly radially  * distributed lines. @n_lines of 2 makes the line snap horizontally  * or vertically. @n_lines of 4 snaps on 45 degree steps. @n_lines of  * 12 on 15 degree steps. etc.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_constrain_line (gdouble start_x,gdouble start_y,gdouble * end_x,gdouble * end_y,gint n_snap_lines)
+DECL|function|gimp_constrain_line (gdouble start_x,gdouble start_y,gdouble * end_x,gdouble * end_y,gint n_snap_lines,gdouble offset_angle)
 name|gimp_constrain_line
 parameter_list|(
 name|gdouble
@@ -2220,6 +2220,9 @@ name|end_y
 parameter_list|,
 name|gint
 name|n_snap_lines
+parameter_list|,
+name|gdouble
+name|offset_angle
 parameter_list|)
 block|{
 name|GimpVector2
@@ -2283,6 +2286,14 @@ operator|*
 name|G_PI
 operator|/
 name|n_snap_lines
+expr_stmt|;
+name|angle
+operator|+=
+name|offset_angle
+operator|*
+name|G_PI
+operator|/
+literal|180.0
 expr_stmt|;
 name|gimp_vector2_set
 argument_list|(
