@@ -338,7 +338,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c4b200103
+DECL|enum|__anon2aea96ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -992,7 +992,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep brush appearance fixed realtive to the view"
+literal|"Keep brush appearance fixed relative to the view"
 argument_list|)
 argument_list|,
 name|DEFAULT_BRUSH_LOCK_TO_VIEW
