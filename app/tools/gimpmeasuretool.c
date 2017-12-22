@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimptoolcompass.h"
 end_include
 
@@ -1905,6 +1911,10 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+name|gchar
+modifier|*
+name|status
+decl_stmt|;
 name|gint
 name|ax
 decl_stmt|,
@@ -2333,6 +2343,25 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
+name|status
+operator|=
+name|gimp_display_shell_get_line_status
+argument_list|(
+name|shell
+argument_list|,
+literal|""
+argument_list|,
+literal|""
+argument_list|,
+name|ax
+argument_list|,
+name|ay
+argument_list|,
+name|bx
+argument_list|,
+name|by
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|shell
@@ -2351,16 +2380,9 @@ argument_list|)
 argument_list|,
 name|display
 argument_list|,
-literal|"%.1f %s, %.2f\302\260 (%d Ã %d)"
+literal|"%s (%d Ã %d)"
 argument_list|,
-name|pixel_distance
-argument_list|,
-name|_
-argument_list|(
-literal|"pixels"
-argument_list|)
-argument_list|,
-name|pixel_angle
+name|status
 argument_list|,
 name|pixel_width
 argument_list|,
@@ -2379,16 +2401,9 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-literal|"%%.%df %s, %%.2f\302\260 (%%.%df Ã %%.%df)"
+literal|"%s (%%.%df Ã %%.%df)"
 argument_list|,
-name|unit_distance_digits
-argument_list|,
-name|gimp_unit_get_plural
-argument_list|(
-name|shell
-operator|->
-name|unit
-argument_list|)
+name|status
 argument_list|,
 name|unit_width_digits
 argument_list|,
@@ -2406,16 +2421,17 @@ name|display
 argument_list|,
 name|format
 argument_list|,
-name|unit_distance
-argument_list|,
-name|unit_angle
-argument_list|,
 name|unit_width
 argument_list|,
 name|unit_height
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|status
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|measure
