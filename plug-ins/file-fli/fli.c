@@ -42,10 +42,10 @@ comment|/*  * To avoid endian-problems I wrote these functions:  */
 end_comment
 
 begin_function
-DECL|function|fli_read_char (FILE * f)
 specifier|static
 name|unsigned
 name|char
+DECL|function|fli_read_char (FILE * f)
 name|fli_read_char
 parameter_list|(
 name|FILE
@@ -76,10 +76,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_short (FILE * f)
 specifier|static
 name|unsigned
 name|short
+DECL|function|fli_read_short (FILE * f)
 name|fli_read_short
 parameter_list|(
 name|FILE
@@ -129,10 +129,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_long (FILE * f)
 specifier|static
 name|unsigned
 name|long
+DECL|function|fli_read_long (FILE * f)
 name|fli_read_long
 parameter_list|(
 name|FILE
@@ -200,9 +200,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_char (FILE * f,unsigned char b)
 specifier|static
 name|void
+DECL|function|fli_write_char (FILE * f,unsigned char b)
 name|fli_write_char
 parameter_list|(
 name|FILE
@@ -230,9 +230,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_short (FILE * f,unsigned short w)
 specifier|static
 name|void
+DECL|function|fli_write_short (FILE * f,unsigned short w)
 name|fli_write_short
 parameter_list|(
 name|FILE
@@ -289,9 +289,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_long (FILE * f,unsigned long l)
 specifier|static
 name|void
+DECL|function|fli_write_long (FILE * f,unsigned long l)
 name|fli_write_long
 parameter_list|(
 name|FILE
@@ -374,8 +374,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_header (FILE * f,s_fli_header * fli_header)
 name|void
+DECL|function|fli_read_header (FILE * f,s_fli_header * fli_header)
 name|fli_read_header
 parameter_list|(
 name|FILE
@@ -552,8 +552,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_header (FILE * f,s_fli_header * fli_header)
 name|void
+DECL|function|fli_write_header (FILE * f,s_fli_header * fli_header)
 name|fli_write_header
 parameter_list|(
 name|FILE
@@ -743,8 +743,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap)
 name|void
+DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap)
 name|fli_read_frame
 parameter_list|(
 name|FILE
@@ -1049,8 +1049,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap,unsigned short codec_mask)
 name|void
+DECL|function|fli_write_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap,unsigned short codec_mask)
 name|fli_write_frame
 parameter_list|(
 name|FILE
@@ -1159,7 +1159,7 @@ name|chunks
 operator|=
 literal|0
 expr_stmt|;
-comment|/* 	 * create color chunk 	 */
+comment|/*    * create color chunk    */
 if|if
 condition|(
 name|fli_header
@@ -1232,7 +1232,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|if (codec_mask& W_COLOR) { 		if (fli_write_color(f, fli_header, old_cmap, cmap)) fli_frame.chunks++; 	} 	if (codec_mask& W_COLOR_2) { 		if (fli_write_color_2(f, fli_header, old_cmap, cmap)) fli_frame.chunks++; 	}
+block|if (codec_mask& W_COLOR)     {       if (fli_write_color (f, fli_header, old_cmap, cmap))         fli_frame.chunks++;     }   if (codec_mask& W_COLOR_2)     {       if (fli_write_color_2 (f, fli_header, old_cmap, cmap))         fli_frame.chunks++;     }
 endif|#
 directive|endif
 comment|/* create bitmap chunk */
@@ -1345,8 +1345,8 @@ comment|/*  * palette chunks from the classical Autodesk Animator.  */
 end_comment
 
 begin_function
-DECL|function|fli_read_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|void
+DECL|function|fli_read_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|fli_read_color
 parameter_list|(
 name|FILE
@@ -1588,8 +1588,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|int
+DECL|function|fli_write_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|fli_write_color
 parameter_list|(
 name|FILE
@@ -2086,8 +2086,8 @@ comment|/*  * palette chunks from Autodesk Animator pro  */
 end_comment
 
 begin_function
-DECL|function|fli_read_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|void
+DECL|function|fli_read_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|fli_read_color_2
 parameter_list|(
 name|FILE
@@ -2321,8 +2321,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|int
+DECL|function|fli_write_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|fli_write_color_2
 parameter_list|(
 name|FILE
@@ -2807,8 +2807,8 @@ comment|/*  * completely black frame  */
 end_comment
 
 begin_function
-DECL|function|fli_read_black (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_read_black (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_read_black
 parameter_list|(
 name|FILE
@@ -2844,8 +2844,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_black (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_write_black (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_write_black
 parameter_list|(
 name|FILE
@@ -2903,8 +2903,8 @@ comment|/*  * Uncompressed frame  */
 end_comment
 
 begin_function
-DECL|function|fli_read_copy (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_read_copy (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_read_copy
 parameter_list|(
 name|FILE
@@ -2940,8 +2940,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_copy (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_write_copy (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_write_copy
 parameter_list|(
 name|FILE
@@ -3076,8 +3076,8 @@ comment|/*  * This is a RLE algorithm, used for the first image of an animation 
 end_comment
 
 begin_function
-DECL|function|fli_read_brun (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_read_brun (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_read_brun
 parameter_list|(
 name|FILE
@@ -3295,8 +3295,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_brun (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|void
+DECL|function|fli_write_brun (FILE * f,s_fli_header * fli_header,unsigned char * framebuf)
 name|fli_write_brun
 parameter_list|(
 name|FILE
@@ -3763,8 +3763,8 @@ comment|/*  * This is the delta-compression method from the classic Autodesk  * 
 end_comment
 
 begin_function
-DECL|function|fli_read_lc (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|void
+DECL|function|fli_read_lc (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|fli_read_lc
 parameter_list|(
 name|FILE
@@ -4066,8 +4066,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_lc (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|void
+DECL|function|fli_write_lc (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|fli_write_lc
 parameter_list|(
 name|FILE
@@ -4793,8 +4793,8 @@ comment|/*  * This is an enhanced version of the old delta-compression used by  
 end_comment
 
 begin_function
-DECL|function|fli_read_lc_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|void
+DECL|function|fli_read_lc_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * framebuf)
 name|fli_read_lc_2
 parameter_list|(
 name|FILE
