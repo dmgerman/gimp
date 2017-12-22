@@ -613,7 +613,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"wb+"
+literal|"w+b"
 argument_list|)
 operator|)
 operator|==
