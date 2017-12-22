@@ -1188,6 +1188,10 @@ name|angle
 argument_list|,
 name|brush_core
 operator|->
+name|reflect
+argument_list|,
+name|brush_core
+operator|->
 name|hardness
 argument_list|,
 operator|&

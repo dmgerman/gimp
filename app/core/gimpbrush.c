@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afab0f30103
+DECL|enum|__anon2b8d858a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afab0f30203
+DECL|enum|__anon2b8d858a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1352,6 +1352,8 @@ argument_list|)
 operator|/
 literal|360.0
 argument_list|,
+name|FALSE
+argument_list|,
 name|gimp_brush_generated_get_hardness
 argument_list|(
 name|gen_brush
@@ -1373,6 +1375,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+name|FALSE
 argument_list|,
 literal|1.0
 argument_list|)
@@ -1436,6 +1440,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+name|FALSE
 argument_list|,
 literal|1.0
 argument_list|)
@@ -2589,7 +2595,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_transform_size (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gint * width,gint * height)
+DECL|function|gimp_brush_transform_size (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gint * width,gint * height)
 name|gimp_brush_transform_size
 parameter_list|(
 name|GimpBrush
@@ -2604,6 +2610,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gint
 modifier|*
@@ -2715,6 +2724,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2727,7 +2738,7 @@ begin_function
 specifier|const
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_transform_mask (GimpBrush * brush,GeglNode * op,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_transform_mask (GimpBrush * brush,GeglNode * op,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -2746,6 +2757,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -2794,6 +2808,8 @@ name|scale
 argument_list|,
 name|aspect_ratio
 argument_list|,
+name|reflect
+argument_list|,
 name|angle
 argument_list|,
 operator|&
@@ -2825,6 +2841,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|hardness
 argument_list|)
 expr_stmt|;
@@ -2840,7 +2858,7 @@ literal|0
 comment|/* This code makes sure that brushes using blur for hardness        * (all of them but generated) are blurred once and no more.        * It also makes hardnes dynamics not work for these brushes.        * This is intentional. Confoliving for each stamp is too expensive.*/
 block|if (! brush->priv->blured_mask&&           ! GIMP_IS_BRUSH_GENERATED(brush)&&           ! GIMP_IS_BRUSH_PIPE(brush)&&
 comment|/*Cant cache pipes. Sanely anway*/
-block|hardness< 1.0)         {            brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blured_mask)         {           effective_hardness = 1.0;
+block|hardness< 1.0)         {            brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              FALSE,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blured_mask)         {           effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -2861,6 +2879,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|effective_hardness
 argument_list|)
@@ -3018,6 +3038,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|effective_hardness
 argument_list|)
 expr_stmt|;
@@ -3032,7 +3054,7 @@ begin_function
 specifier|const
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,GeglNode * op,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,GeglNode * op,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_transform_pixmap
 parameter_list|(
 name|GimpBrush
@@ -3051,6 +3073,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -3114,6 +3139,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 operator|&
 name|width
 argument_list|,
@@ -3143,6 +3170,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|hardness
 argument_list|)
 expr_stmt|;
@@ -3157,7 +3186,7 @@ directive|if
 literal|0
 block|if (! brush->priv->blured_pixmap&&          ! GIMP_IS_BRUSH_GENERATED(brush)&&          ! GIMP_IS_BRUSH_PIPE(brush)
 comment|/*Cant cache pipes. Sanely anway*/
-block|&& hardness< 1.0)       {          brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blured_pixmap) {         effective_hardness = 1.0;
+block|&& hardness< 1.0)       {          brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   FALSE,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blured_pixmap) {         effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -3178,6 +3207,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|effective_hardness
 argument_list|)
@@ -3335,6 +3366,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|effective_hardness
 argument_list|)
 expr_stmt|;
@@ -3349,7 +3382,7 @@ begin_function
 specifier|const
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_brush_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness,gint * width,gint * height)
+DECL|function|gimp_brush_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness,gint * width,gint * height)
 name|gimp_brush_transform_boundary
 parameter_list|(
 name|GimpBrush
@@ -3364,6 +3397,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -3428,6 +3464,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|width
 argument_list|,
@@ -3458,6 +3496,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|hardness
 argument_list|)
 expr_stmt|;
@@ -3483,6 +3523,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|hardness
 argument_list|,
@@ -3522,6 +3564,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|hardness
 argument_list|)

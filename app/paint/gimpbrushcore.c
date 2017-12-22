@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c84fdd70103
+DECL|enum|__anon29890d390103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3576,6 +3576,10 @@ name|core
 operator|->
 name|angle
 argument_list|,
+name|core
+operator|->
+name|reflect
+argument_list|,
 operator|&
 name|brush_width
 argument_list|,
@@ -6200,6 +6204,10 @@ name|angle
 argument_list|,
 name|core
 operator|->
+name|reflect
+argument_list|,
+name|core
+operator|->
 name|hardness
 argument_list|)
 expr_stmt|;
@@ -6296,6 +6304,10 @@ argument_list|,
 name|core
 operator|->
 name|angle
+argument_list|,
+name|core
+operator|->
+name|reflect
 argument_list|,
 name|core
 operator|->
@@ -6603,6 +6615,14 @@ literal|1
 expr_stmt|;
 name|core
 operator|->
+name|aspect_ratio
+operator|=
+name|paint_options
+operator|->
+name|brush_aspect_ratio
+expr_stmt|;
+name|core
+operator|->
 name|angle
 operator|=
 name|paint_options
@@ -6611,11 +6631,9 @@ name|brush_angle
 expr_stmt|;
 name|core
 operator|->
-name|aspect_ratio
+name|reflect
 operator|=
-name|paint_options
-operator|->
-name|brush_aspect_ratio
+name|FALSE
 expr_stmt|;
 name|core
 operator|->

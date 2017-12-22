@@ -150,17 +150,21 @@ DECL|member|scale
 name|gdouble
 name|scale
 decl_stmt|;
+DECL|member|aspect_ratio
+name|gdouble
+name|aspect_ratio
+decl_stmt|;
 DECL|member|angle
 name|gdouble
 name|angle
 decl_stmt|;
+DECL|member|reflect
+name|gboolean
+name|reflect
+decl_stmt|;
 DECL|member|hardness
 name|gdouble
 name|hardness
-decl_stmt|;
-DECL|member|aspect_ratio
-name|gdouble
-name|aspect_ratio
 decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush

@@ -159,7 +159,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_real_transform_size (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gint * width,gint * height)
+DECL|function|gimp_brush_real_transform_size (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gint * width,gint * height)
 name|gimp_brush_real_transform_size
 parameter_list|(
 name|GimpBrush
@@ -174,6 +174,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gint
 modifier|*
@@ -210,6 +213,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 operator|&
 name|matrix
 argument_list|)
@@ -242,7 +247,7 @@ end_comment
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_real_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -257,6 +262,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -472,6 +480,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 operator|&
 name|matrix
 argument_list|)
@@ -562,7 +572,9 @@ name|scale
 argument_list|,
 name|aspect_ratio
 argument_list|,
-literal|1.0
+literal|0.0
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|unrotated_matrix
@@ -1185,7 +1197,7 @@ end_comment
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_real_transform_pixmap
 parameter_list|(
 name|GimpBrush
@@ -1200,6 +1212,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -1415,6 +1430,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 operator|&
 name|matrix
 argument_list|)
@@ -1505,7 +1522,9 @@ name|scale
 argument_list|,
 name|aspect_ratio
 argument_list|,
-literal|1.0
+literal|0.0
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|unrotated_matrix
@@ -2238,7 +2257,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_transform_matrix (gdouble width,gdouble height,gdouble scale,gdouble aspect_ratio,gdouble angle,GimpMatrix3 * matrix)
+DECL|function|gimp_brush_transform_matrix (gdouble width,gdouble height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,GimpMatrix3 * matrix)
 name|gimp_brush_transform_matrix
 parameter_list|(
 name|gdouble
@@ -2255,6 +2274,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|GimpMatrix3
 modifier|*
@@ -2382,6 +2404,20 @@ operator|*
 name|G_PI
 operator|*
 name|angle
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|reflect
+condition|)
+name|gimp_matrix3_scale
+argument_list|(
+name|matrix
+argument_list|,
+operator|-
+literal|1.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gimp_matrix3_translate
@@ -2694,7 +2730,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon275354e30108
+DECL|struct|__anon28c40b2a0108
 block|{
 DECL|member|sum
 name|gint
@@ -2921,7 +2957,7 @@ modifier|*
 name|p
 decl_stmt|;
 struct|struct
-DECL|struct|__anon275354e30208
+DECL|struct|__anon28c40b2a0208
 block|{
 DECL|member|sum
 name|gint
@@ -3268,7 +3304,7 @@ name|gfloat
 name|n_y
 decl_stmt|;
 struct|struct
-DECL|struct|__anon275354e30308
+DECL|struct|__anon28c40b2a0308
 block|{
 DECL|member|weighted_sum
 name|gfloat

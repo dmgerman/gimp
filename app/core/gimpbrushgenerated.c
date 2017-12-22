@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83fa9a0103
+DECL|enum|__anon28e4e3bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,6 +222,9 @@ parameter_list|,
 name|gdouble
 name|angle
 parameter_list|,
+name|gboolean
+name|reflect
+parameter_list|,
 name|gint
 modifier|*
 name|width
@@ -251,6 +254,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -285,6 +291,9 @@ name|aspect_ratio
 parameter_list|,
 name|gfloat
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|GimpVector2
 modifier|*
@@ -323,6 +332,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle_in_degrees
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gint
 modifier|*
@@ -1015,6 +1027,8 @@ name|brush
 operator|->
 name|angle
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|gbrush
 operator|->
@@ -1175,7 +1189,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gint * width,gint * height)
+DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gint * width,gint * height)
 name|gimp_brush_generated_transform_size
 parameter_list|(
 name|GimpBrush
@@ -1190,6 +1204,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gint
 modifier|*
@@ -1293,6 +1310,8 @@ name|ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -1313,7 +1332,7 @@ begin_function
 specifier|static
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -1328,6 +1347,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -1418,6 +1440,10 @@ name|brush
 operator|->
 name|angle
 operator|&&
+name|reflect
+operator|==
+name|FALSE
+operator|&&
 name|hardness
 operator|==
 name|brush
@@ -1459,6 +1485,8 @@ argument_list|,
 name|ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|NULL
 argument_list|,
@@ -1832,7 +1860,7 @@ begin_function
 specifier|static
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_brush_generated_calc (GimpBrushGenerated * brush,GimpBrushGeneratedShape shape,gfloat radius,gint spikes,gfloat hardness,gfloat aspect_ratio,gfloat angle,GimpVector2 * xaxis,GimpVector2 * yaxis)
+DECL|function|gimp_brush_generated_calc (GimpBrushGenerated * brush,GimpBrushGeneratedShape shape,gfloat radius,gint spikes,gfloat hardness,gfloat aspect_ratio,gfloat angle,gboolean reflect,GimpVector2 * xaxis,GimpVector2 * yaxis)
 name|gimp_brush_generated_calc
 parameter_list|(
 name|GimpBrushGenerated
@@ -1856,6 +1884,9 @@ name|aspect_ratio
 parameter_list|,
 name|gfloat
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|GimpVector2
 modifier|*
@@ -1928,6 +1959,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 operator|&
 name|width
@@ -2320,7 +2353,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_get_size (GimpBrushGenerated * gbrush,GimpBrushGeneratedShape shape,gfloat radius,gint spikes,gfloat hardness,gfloat aspect_ratio,gdouble angle_in_degrees,gint * width,gint * height,gdouble * _s,gdouble * _c,GimpVector2 * _x_axis,GimpVector2 * _y_axis)
+DECL|function|gimp_brush_generated_get_size (GimpBrushGenerated * gbrush,GimpBrushGeneratedShape shape,gfloat radius,gint spikes,gfloat hardness,gfloat aspect_ratio,gdouble angle_in_degrees,gboolean reflect,gint * width,gint * height,gdouble * _s,gdouble * _c,GimpVector2 * _x_axis,GimpVector2 * _y_axis)
 name|gimp_brush_generated_get_size
 parameter_list|(
 name|GimpBrushGenerated
@@ -2344,6 +2377,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle_in_degrees
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gint
 modifier|*
@@ -2430,6 +2466,15 @@ argument_list|(
 name|angle_in_degrees
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|reflect
+condition|)
+name|c
+operator|=
+operator|-
+name|c
 expr_stmt|;
 name|short_radius
 operator|=

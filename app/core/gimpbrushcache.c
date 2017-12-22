@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a2b1cf0103
+DECL|enum|__anon2aea16b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,6 +97,10 @@ decl_stmt|;
 DECL|member|angle
 name|gdouble
 name|angle
+decl_stmt|;
+DECL|member|reflect
+name|gboolean
+name|reflect
 decl_stmt|;
 DECL|member|hardness
 name|gdouble
@@ -640,7 +644,7 @@ end_function
 
 begin_function
 name|gconstpointer
-DECL|function|gimp_brush_cache_get (GimpBrushCache * cache,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_cache_get (GimpBrushCache * cache,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_cache_get
 parameter_list|(
 name|GimpBrushCache
@@ -665,6 +669,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -745,6 +752,12 @@ operator|->
 name|angle
 operator|==
 name|angle
+operator|&&
+name|unit
+operator|->
+name|reflect
+operator|==
+name|reflect
 operator|&&
 name|unit
 operator|->
@@ -849,7 +862,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_cache_add (GimpBrushCache * cache,gpointer data,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_cache_add (GimpBrushCache * cache,gpointer data,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_cache_add
 parameter_list|(
 name|GimpBrushCache
@@ -877,6 +890,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -1042,6 +1058,12 @@ operator|->
 name|angle
 operator|=
 name|angle
+expr_stmt|;
+name|unit
+operator|->
+name|reflect
+operator|=
+name|reflect
 expr_stmt|;
 name|unit
 operator|->

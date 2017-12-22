@@ -34,6 +34,9 @@ parameter_list|,
 name|gdouble
 name|angle
 parameter_list|,
+name|gboolean
+name|reflect
+parameter_list|,
 name|gdouble
 name|hardness
 parameter_list|,

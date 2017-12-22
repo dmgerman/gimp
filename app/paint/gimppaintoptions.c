@@ -338,7 +338,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2ae530103
+DECL|enum|__anon2ae58a4b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3582,6 +3582,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|height

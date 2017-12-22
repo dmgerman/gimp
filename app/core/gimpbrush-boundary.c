@@ -67,7 +67,7 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_brush_transform_boundary_exact (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_transform_boundary_exact (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_transform_boundary_exact
 parameter_list|(
 name|GimpBrush
@@ -82,6 +82,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -105,6 +108,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|hardness
 argument_list|)
@@ -246,7 +251,7 @@ begin_function
 specifier|static
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_brush_transform_boundary_approx (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
+DECL|function|gimp_brush_transform_boundary_approx (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_transform_boundary_approx
 parameter_list|(
 name|GimpBrush
@@ -261,6 +266,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -277,6 +285,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|hardness
 argument_list|)
 return|;
@@ -286,7 +296,7 @@ end_function
 begin_function
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_brush_real_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness,gint * width,gint * height)
+DECL|function|gimp_brush_real_transform_boundary (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness,gint * width,gint * height)
 name|gimp_brush_real_transform_boundary
 parameter_list|(
 name|GimpBrush
@@ -301,6 +311,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|,
 name|gdouble
 name|hardness
@@ -321,6 +334,8 @@ argument_list|,
 name|scale
 argument_list|,
 name|aspect_ratio
+argument_list|,
+name|reflect
 argument_list|,
 name|angle
 argument_list|,
@@ -353,6 +368,8 @@ name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
+name|reflect
+argument_list|,
 name|hardness
 argument_list|)
 return|;
@@ -367,6 +384,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|hardness
 argument_list|)
