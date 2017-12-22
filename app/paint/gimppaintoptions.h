@@ -246,10 +246,6 @@ DECL|member|brush_size
 name|gdouble
 name|brush_size
 decl_stmt|;
-DECL|member|brush_zoom
-name|gboolean
-name|brush_zoom
-decl_stmt|;
 DECL|member|brush_angle
 name|gdouble
 name|brush_angle
@@ -289,6 +285,10 @@ decl_stmt|;
 DECL|member|brush_link_hardness
 name|gboolean
 name|brush_link_hardness
+decl_stmt|;
+DECL|member|brush_lock_to_view
+name|gboolean
+name|brush_lock_to_view
 decl_stmt|;
 DECL|member|application_mode
 name|GimpPaintApplicationMode

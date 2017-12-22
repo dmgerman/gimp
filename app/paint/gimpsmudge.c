@@ -1761,7 +1761,7 @@ if|if
 condition|(
 name|paint_options
 operator|->
-name|brush_zoom
+name|brush_lock_to_view
 condition|)
 name|max_view_scale
 operator|=

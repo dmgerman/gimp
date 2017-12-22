@@ -1289,7 +1289,7 @@ name|frame
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the "Link size to zoom" toggle  */
+comment|/*  the "Lock brush to view" toggle  */
 if|if
 condition|(
 name|g_type_is_a
@@ -1310,12 +1310,9 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"brush-zoom"
+literal|"brush-lock-to-view"
 argument_list|,
-name|_
-argument_list|(
-literal|"Lock brush size to zoom"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

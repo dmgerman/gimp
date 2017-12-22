@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d858a0103
+DECL|enum|__anon28dbfffd0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d858a0203
+DECL|enum|__anon28dbfffd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2662,25 +2662,14 @@ name|aspect_ratio
 operator|==
 literal|0.0
 operator|&&
-operator|(
-operator|(
+name|fmod
+argument_list|(
 name|angle
+argument_list|,
+literal|0.5
+argument_list|)
 operator|==
 literal|0.0
-operator|)
-operator|||
-operator|(
-name|angle
-operator|==
-literal|0.5
-operator|)
-operator|||
-operator|(
-name|angle
-operator|==
-literal|1.0
-operator|)
-operator|)
 condition|)
 block|{
 operator|*

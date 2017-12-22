@@ -1186,11 +1186,21 @@ DECL|member|xscale
 name|gdouble
 name|xscale
 decl_stmt|;
-comment|/* the view scale */
+comment|/* the view scale                */
 DECL|member|yscale
 name|gdouble
 name|yscale
 decl_stmt|;
+DECL|member|angle
+name|gdouble
+name|angle
+decl_stmt|;
+comment|/* the view rotation angle       */
+DECL|member|reflect
+name|gboolean
+name|reflect
+decl_stmt|;
+comment|/* whether the view is reflected */
 DECL|member|extended
 name|gboolean
 name|extended
