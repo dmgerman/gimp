@@ -784,7 +784,7 @@ block|{
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* 	   * check for valid parameters: 	   * (Or can I trust GIMP ?) 	   */
+comment|/*            * check for valid parameters:            * (Or can I trust GIMP ?)            */
 if|if
 condition|(
 operator|(
