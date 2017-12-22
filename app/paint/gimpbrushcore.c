@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3a9d770103
+DECL|enum|__anon2c84fdd70103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1399,12 +1399,7 @@ condition|(
 name|paint_options
 operator|->
 name|brush_zoom
-condition|)
-block|{
-name|scale
-operator|=
-name|scale
-operator|/
+operator|&&
 name|MAX
 argument_list|(
 name|current_coords
@@ -1413,13 +1408,31 @@ name|xscale
 argument_list|,
 name|current_coords
 operator|.
+name|yscale
+argument_list|)
+operator|>
+literal|0
+condition|)
+block|{
+name|scale
+operator|/=
+name|MAX
+argument_list|(
+name|current_coords
+operator|.
 name|xscale
+argument_list|,
+name|current_coords
+operator|.
+name|yscale
 argument_list|)
 expr_stmt|;
-comment|/*Cap transform result for brushes or OOM can occur*/
+comment|/* Cap transform result for brushes or OOM can occur */
 if|if
 condition|(
 operator|(
+name|scale
+operator|*
 name|MAX
 argument_list|(
 name|width
