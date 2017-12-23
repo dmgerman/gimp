@@ -977,6 +977,16 @@ literal|"Nothing to crop."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|shadow_buffer
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|drawable_buffer
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|linear_buf
