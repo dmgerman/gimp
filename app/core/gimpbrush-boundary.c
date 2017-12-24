@@ -335,9 +335,9 @@ name|scale
 argument_list|,
 name|aspect_ratio
 argument_list|,
-name|reflect
-argument_list|,
 name|angle
+argument_list|,
+name|reflect
 argument_list|,
 name|width
 argument_list|,
