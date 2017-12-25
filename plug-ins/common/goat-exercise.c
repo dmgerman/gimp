@@ -157,9 +157,9 @@ argument_list|)
 argument_list|,
 literal|"takes a goat for a walk"
 argument_list|,
-literal|"Ãyvind KOlÃ¥s<pippinp@gimp.org>"
+literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
-literal|"Ãyvind KOlÃ¥s<pippinp@gimp.org>"
+literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
 literal|"21march 2012"
 argument_list|,
