@@ -191,7 +191,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Color Enhance"
+literal|"_Color Enhance (legacy)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -988,7 +988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa47340108
+DECL|struct|__anon2a318dec0108
 block|{
 DECL|member|vhi
 name|gdouble

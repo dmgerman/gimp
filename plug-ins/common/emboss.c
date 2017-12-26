@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276027b90103
+DECL|enum|__anon2b8407cf0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276027b90208
+DECL|struct|__anon2b8407cf0208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -411,7 +411,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Emboss..."
+literal|"_Emboss (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

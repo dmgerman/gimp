@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0970350108
+DECL|struct|__anon29defd1a0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -411,7 +411,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Ca_rtoon..."
+literal|"Ca_rtoon (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

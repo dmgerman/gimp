@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2911f18b0108
+DECL|struct|__anon29ac94600108
 block|{
 DECL|member|inner
 name|gdouble
@@ -454,7 +454,7 @@ literal|"1995-2004"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Difference of Gaussians..."
+literal|"_Difference of Gaussians (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

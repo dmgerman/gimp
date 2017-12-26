@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e6a8b0108
+DECL|struct|__anon28ac3d2f0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -424,7 +424,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Oili_fy..."
+literal|"Oili_fy (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

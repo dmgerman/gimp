@@ -107,7 +107,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946c8b20108
+DECL|struct|__anon28ee3f510108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -419,7 +419,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Softglow..."
+literal|"_Softglow (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

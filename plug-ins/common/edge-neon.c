@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b039e540108
+DECL|struct|__anon27dda28e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -404,7 +404,7 @@ literal|"2002"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Neon..."
+literal|"_Neon (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

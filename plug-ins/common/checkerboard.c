@@ -300,7 +300,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Checkerboard..."
+literal|"_Checkerboard (legacy)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -637,7 +637,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29adb5870108
+DECL|struct|__anon2773182f0108
 block|{
 DECL|member|fg
 name|guchar
