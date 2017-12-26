@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a22e030103
+DECL|enum|__anon277e2fcf0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27a22e030208
+DECL|struct|__anon277e2fcf0208
 block|{
 DECL|member|name
 specifier|const
@@ -2502,6 +2502,18 @@ goto|goto
 name|error
 goto|;
 block|}
+block|}
+else|else
+block|{
+name|user_install_dir_copy
+argument_list|(
+name|install
+argument_list|,
+name|name
+argument_list|,
+name|dirname
+argument_list|)
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(
