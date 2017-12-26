@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e832e60103
+DECL|enum|__anon29c2cbba0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e832e60208
+DECL|struct|__anon29c2cbba0208
 block|{
 DECL|member|name
 specifier|const
@@ -2109,6 +2109,15 @@ block|}
 comment|/* Should not happen. Just in case we match something unexpected by    * mistake.    */
 else|else
 block|{
+name|g_message
+argument_list|(
+literal|"(WARNING) %s: invalid match \"%s\""
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|match
+argument_list|)
+expr_stmt|;
 name|g_string_append
 argument_list|(
 name|new_value
@@ -2338,6 +2347,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|g_message
+argument_list|(
+literal|"(WARNING) %s: invalid match \"%s\""
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|match
+argument_list|)
+expr_stmt|;
 name|g_string_append
 argument_list|(
 name|new_value
