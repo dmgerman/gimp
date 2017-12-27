@@ -196,7 +196,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c2cbba0103
+DECL|enum|__anon2b2e895d0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -215,7 +215,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29c2cbba0208
+DECL|struct|__anon2b2e895d0208
 block|{
 DECL|member|name
 specifier|const
@@ -543,6 +543,9 @@ parameter_list|(
 name|GimpUserInstall
 modifier|*
 name|install
+parameter_list|,
+name|gint
+name|level
 parameter_list|,
 specifier|const
 name|gchar
@@ -2378,12 +2381,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|user_install_dir_copy (GimpUserInstall * install,const gchar * source,const gchar * base,const gchar * update_pattern,GRegexEvalCallback update_callback)
+DECL|function|user_install_dir_copy (GimpUserInstall * install,gint level,const gchar * source,const gchar * base,const gchar * update_pattern,GRegexEvalCallback update_callback)
 name|user_install_dir_copy
 parameter_list|(
 name|GimpUserInstall
 modifier|*
 name|install
+parameter_list|,
+name|gint
+name|level
 parameter_list|,
 specifier|const
 name|gchar
@@ -2431,15 +2437,29 @@ name|gchar
 modifier|*
 name|dirname
 decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
 name|GError
 modifier|*
 name|error
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+name|level
+operator|>=
+literal|5
+condition|)
+block|{
+comment|/* Config migration is recursive, but we can't go on forever,        * since we may fall into recursive symlinks in particular (which        * is a security risk to fill a disk, and would also block GIMP        * forever at migration stage).        * Let's just break the recursivity at 5 levels, which is just an        * arbitrary value (but I don't think there should be any data        * deeper than this).        */
+goto|goto
+name|error
+goto|;
+block|}
 block|{
 name|gchar
 modifier|*
@@ -2623,6 +2643,10 @@ block|{
 name|user_install_dir_copy
 argument_list|(
 name|install
+argument_list|,
+name|level
+operator|+
+literal|1
 argument_list|,
 name|name
 argument_list|,
@@ -3250,6 +3274,8 @@ block|}
 name|user_install_dir_copy
 argument_list|(
 name|install
+argument_list|,
+literal|0
 argument_list|,
 name|source
 argument_list|,
