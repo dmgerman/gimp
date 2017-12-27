@@ -116,6 +116,11 @@ DECL|member|use_info_window
 name|gboolean
 name|use_info_window
 decl_stmt|;
+DECL|member|auto_straighten
+name|GtkWidget
+modifier|*
+name|auto_straighten
+decl_stmt|;
 block|}
 struct|;
 end_struct
