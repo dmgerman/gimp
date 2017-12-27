@@ -1785,6 +1785,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_COLOR_PICKER
 value|"gimp-tool-color-picker"
+DECL|macro|GIMP_STOCK_TOOL_COLOR_TEMPERATURE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_COLOR_TEMPERATURE
+value|"gimp-tool-color-temperature"
 DECL|macro|GIMP_STOCK_TOOL_COLORIZE
 define|#
 directive|define
