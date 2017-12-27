@@ -935,7 +935,7 @@ block|,
 block|{
 literal|"filters-color-temperature"
 block|,
-name|GIMP_STOCK_TOOL_COLOR_TEMPERATURE
+name|GIMP_ICON_TOOL_COLOR_TEMPERATURE
 block|,
 name|NC_
 argument_list|(

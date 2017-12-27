@@ -1206,6 +1206,11 @@ define|#
 directive|define
 name|GIMP_ICON_TOOL_COLOR_PICKER
 value|"gimp-tool-color-picker"
+DECL|macro|GIMP_ICON_TOOL_COLOR_TEMPERATURE
+define|#
+directive|define
+name|GIMP_ICON_TOOL_COLOR_TEMPERATURE
+value|"gimp-tool-color-temperature"
 DECL|macro|GIMP_ICON_TOOL_CROP
 define|#
 directive|define
