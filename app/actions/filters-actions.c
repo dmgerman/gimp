@@ -524,7 +524,7 @@ block|,
 block|{
 literal|"filters-invert-value"
 block|,
-name|GIMP_ICON_GEGL
+name|GIMP_ICON_INVERT
 block|,
 name|NC_
 argument_list|(
