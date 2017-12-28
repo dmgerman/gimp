@@ -1313,7 +1313,7 @@ block|,
 block|{
 literal|"filters-exposure"
 block|,
-name|GIMP_ICON_GEGL
+name|GIMP_ICON_TOOL_EXPOSURE
 block|,
 name|NC_
 argument_list|(
