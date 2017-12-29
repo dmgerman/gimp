@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a4de40108
+DECL|struct|__anon2c08054d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a4de40208
+DECL|struct|__anon2c08054d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a4de40308
+DECL|struct|__anon2c08054d0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1163,6 +1163,8 @@ index|]
 decl_stmt|;
 name|GimpRunMode
 name|run_mode
+init|=
+name|GIMP_RUN_NONINTERACTIVE
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -1181,6 +1183,10 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|nparams
+condition|)
 name|run_mode
 operator|=
 name|param
