@@ -124,7 +124,36 @@ argument_list|,
 literal|"History Duration"
 argument_list|)
 block|}
+block|,
+block|{
+literal|"dashboard-reset"
+block|,
+name|GIMP_ICON_RESET
+block|,
+name|NC_
+argument_list|(
+literal|"dashboard-action"
+argument_list|,
+literal|"Reset"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dashboard-action"
+argument_list|,
+literal|"Reset cumulative data"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|dashboard_reset_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_DASHBOARD_RESET
 block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -528,9 +557,10 @@ define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 switch|switch
 condition|(
+name|gimp_dashboard_get_update_interval
+argument_list|(
 name|dashboard
-operator|->
-name|update_interval
+argument_list|)
 condition|)
 block|{
 case|case
@@ -591,9 +621,10 @@ break|break;
 block|}
 switch|switch
 condition|(
+name|gimp_dashboard_get_history_duration
+argument_list|(
 name|dashboard
-operator|->
-name|history_duration
+argument_list|)
 condition|)
 block|{
 case|case
@@ -656,9 +687,10 @@ name|SET_ACTIVE
 argument_list|(
 literal|"dashboard-low-swap-space-warning"
 argument_list|,
+name|gimp_dashboard_get_low_swap_space_warning
+argument_list|(
 name|dashboard
-operator|->
-name|low_swap_space_warning
+argument_list|)
 argument_list|)
 expr_stmt|;
 undef|#

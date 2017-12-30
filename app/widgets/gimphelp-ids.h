@@ -4838,6 +4838,14 @@ value|"gimp-dashboard-history-duration"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DASHBOARD_RESET
+define|#
+directive|define
+name|GIMP_HELP_DASHBOARD_RESET
+value|"gimp-dashboard-reset"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DASHBOARD_LOW_SWAP_SPACE_WARNING
 define|#
 directive|define

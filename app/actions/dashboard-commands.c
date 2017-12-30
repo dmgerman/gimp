@@ -161,6 +161,36 @@ end_function
 
 begin_function
 name|void
+DECL|function|dashboard_reset_cmd_callback (GtkAction * action,gpointer data)
+name|dashboard_reset_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDashboard
+modifier|*
+name|dashboard
+init|=
+name|GIMP_DASHBOARD
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
+name|gimp_dashboard_reset
+argument_list|(
+name|dashboard
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|dashboard_low_swap_space_warning_cmd_callback (GtkAction * action,gpointer data)
 name|dashboard_low_swap_space_warning_cmd_callback
 parameter_list|(
