@@ -904,32 +904,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|current_layer
-argument_list|)
-condition|)
-block|{
-name|g_set_error_literal
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_ERROR
-argument_list|,
-name|GIMP_FAILED
-argument_list|,
-name|_
-argument_list|(
-literal|"Cannot merge down a floating selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
 for|for
 control|(
 name|list
@@ -1126,6 +1100,24 @@ literal|"Merge Down"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_layer_is_floating_sel
+argument_list|(
+name|current_layer
+argument_list|)
+condition|)
+block|{
+comment|/* Merging down a floating selection is basically equivalent to        * anchoring it.        */
+name|floating_sel_anchor
+argument_list|(
+name|current_layer
+argument_list|)
+expr_stmt|;
+comment|/* layer is already set to the right layer below the floating        * selection, on which we anchored. This will be the return value.        */
+block|}
+else|else
+block|{
 name|layer
 operator|=
 name|gimp_image_merge_layers
@@ -1147,6 +1139,7 @@ argument_list|,
 name|merge_type
 argument_list|)
 expr_stmt|;
+block|}
 name|g_slist_free
 argument_list|(
 name|merge_list
