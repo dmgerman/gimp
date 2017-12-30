@@ -172,7 +172,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ae9440103
+DECL|enum|__anon274f7c270103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ae9440203
+DECL|enum|__anon274f7c270203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ae9440303
+DECL|enum|__anon274f7c270303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -464,7 +464,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon297ae944040a
+DECL|union|__anon274f7c27040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -475,7 +475,7 @@ name|guint64
 name|size
 decl_stmt|;
 struct|struct
-DECL|struct|__anon297ae9440508
+DECL|struct|__anon274f7c270508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -490,7 +490,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon297ae9440608
+DECL|struct|__anon274f7c270608
 block|{
 DECL|member|antecedent
 name|gint
@@ -1124,7 +1124,7 @@ name|description
 operator|=
 name|N_
 argument_list|(
-literal|"Maximal tile cache occupied size during this session"
+literal|"Maximal tile cache occupied size"
 argument_list|)
 block|,
 operator|.
