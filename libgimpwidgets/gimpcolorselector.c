@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a10ba80103
+DECL|enum|__anon27a86dbb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -363,7 +363,7 @@ name|selector
 operator|->
 name|channel
 operator|=
-name|GIMP_COLOR_SELECTOR_HUE
+name|GIMP_COLOR_SELECTOR_RED
 expr_stmt|;
 block|}
 end_function
@@ -1072,7 +1072,7 @@ argument_list|(
 name|selector
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_SELECTOR_HUE
+name|GIMP_COLOR_SELECTOR_RED
 argument_list|)
 expr_stmt|;
 return|return
