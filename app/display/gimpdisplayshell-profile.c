@@ -471,15 +471,11 @@ name|gint
 name|w
 init|=
 name|GIMP_DISPLAY_RENDER_BUF_WIDTH
-operator|*
-name|GIMP_DISPLAY_RENDER_MAX_SCALE
 decl_stmt|;
 name|gint
 name|h
 init|=
 name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-operator|*
-name|GIMP_DISPLAY_RENDER_MAX_SCALE
 decl_stmt|;
 name|shell
 operator|->
