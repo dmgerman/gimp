@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1503b0103
+DECL|enum|__anon27e71cd00103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1503b0203
+DECL|enum|__anon27e71cd00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -541,7 +541,7 @@ literal|"Save device status"
 argument_list|,
 name|SAVE_DEVICE_STATUS_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -626,7 +626,7 @@ literal|"Save tool options"
 argument_list|,
 name|SAVE_TOOL_OPTIONS_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
