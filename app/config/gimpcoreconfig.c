@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288854390103
+DECL|enum|__anon28a43d740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -870,29 +870,14 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* FIXME these are useful dirs, disabled until we figure how to    * properly generate a default gimprc    */
-block|dir1 = g_build_filename (DATADIR, "mypaint", "brushes", NULL);   dir2 = g_build_filename (g_get_user_data_dir (), "mypaint", "brushes", NULL);
-endif|#
-directive|endif
 name|path
 operator|=
 name|g_build_path
 argument_list|(
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|,
-literal|"/usr/share/mypaint/brushes"
+name|MYPAINT_BRUSHES_DIR
 argument_list|,
-literal|"/usr/local/share/mypaint/brushes"
-argument_list|,
-if|#
-directive|if
-literal|0
-argument_list|dir1,                        dir2,
-endif|#
-directive|endif
 literal|"~/.mypaint/brushes"
 argument_list|,
 name|NULL
@@ -924,25 +909,12 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|g_free (dir1);
-endif|#
-directive|endif
 name|path
 operator|=
 name|g_build_path
 argument_list|(
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|,
-if|#
-directive|if
-literal|0
-comment|/* FIXME see above */
-argument_list|dir2,
-endif|#
-directive|endif
 literal|"~/.mypaint/brushes"
 argument_list|,
 name|NULL
@@ -974,12 +946,6 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|g_free (dir2);
-endif|#
-directive|endif
 name|path
 operator|=
 name|gimp_config_build_data_path
