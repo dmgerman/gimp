@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29250e030103
+DECL|enum|__anon278b71960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -540,7 +540,7 @@ name|CURSOR_MODE_BLURB
 argument_list|,
 name|GIMP_TYPE_CURSOR_MODE
 argument_list|,
-name|GIMP_CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
