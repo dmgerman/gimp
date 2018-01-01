@@ -259,14 +259,7 @@ name|gint
 name|tile_height
 decl_stmt|;
 name|gint
-name|scanlines
-decl_stmt|;
-name|gint
 name|i
-decl_stmt|,
-name|start
-decl_stmt|,
-name|end
 decl_stmt|;
 name|cmsHTRANSFORM
 name|cmyk_transform
@@ -1165,6 +1158,19 @@ operator|.
 name|output_height
 condition|)
 block|{
+name|gint
+name|start
+decl_stmt|,
+name|end
+decl_stmt|;
+name|gint
+name|scanlines
+decl_stmt|;
+name|gboolean
+name|image_truncated
+init|=
+name|FALSE
+decl_stmt|;
 name|start
 operator|=
 name|cinfo
@@ -1196,6 +1202,25 @@ name|end
 operator|-
 name|start
 expr_stmt|;
+comment|/*  in case of error we now jump here, so pertially loaded imaged        *  don't get discarded        */
+if|if
+condition|(
+name|setjmp
+argument_list|(
+name|jerr
+operator|.
+name|setjmp_buffer
+argument_list|)
+condition|)
+block|{
+name|image_truncated
+operator|=
+name|TRUE
+expr_stmt|;
+goto|goto
+name|set_buffer
+goto|;
+block|}
 for|for
 control|(
 name|i
@@ -1247,6 +1272,8 @@ argument_list|,
 name|cmyk_transform
 argument_list|)
 expr_stmt|;
+name|set_buffer
+label|:
 name|gegl_buffer_set
 argument_list|(
 name|buffer
@@ -1273,6 +1300,14 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_truncated
+condition|)
+comment|/*  jumping to finish skips jpeg_finish_decompress(), its state          *  might be broken by whatever caused the loading failure          */
+goto|goto
+name|finish
+goto|;
 if|if
 condition|(
 operator|!
@@ -1314,6 +1349,8 @@ name|cinfo
 argument_list|)
 expr_stmt|;
 comment|/* We can ignore the return value since suspension is not possible    * with the stdio data source.    */
+name|finish
+label|:
 if|if
 condition|(
 name|cmyk_transform
