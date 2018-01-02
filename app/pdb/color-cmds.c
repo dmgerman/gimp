@@ -594,6 +594,10 @@ name|high_input
 operator|/
 literal|255.0
 argument_list|,
+literal|"clamp-input"
+argument_list|,
+name|TRUE
+argument_list|,
 literal|"gamma"
 argument_list|,
 name|gamma
@@ -609,6 +613,10 @@ argument_list|,
 name|high_output
 operator|/
 literal|255.0
+argument_list|,
+literal|"clamp-input"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)

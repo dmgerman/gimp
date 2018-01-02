@@ -274,6 +274,9 @@ parameter_list|,
 name|gdouble
 name|high_input
 parameter_list|,
+name|gboolean
+name|clamp_input
+parameter_list|,
 name|gdouble
 name|gamma
 parameter_list|,
@@ -282,6 +285,9 @@ name|low_output
 parameter_list|,
 name|gdouble
 name|high_output
+parameter_list|,
+name|gboolean
+name|clamp_output
 parameter_list|)
 function_decl|;
 end_function_decl

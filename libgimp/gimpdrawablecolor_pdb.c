@@ -1019,12 +1019,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @gamma: Gamma adjustment factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  *  * Modifies intensity levels in the specified drawable.  *  * This tool allows intensity levels in the specified drawable to be  * remapped according to a set of parameters. The low/high input levels  * specify an initial mapping from the source intensities. The gamma  * value determines how intensities between the low and high input  * intensities are interpolated. A gamma value of 1.0 results in a  * linear interpolation. Higher gamma values result in more high-level  * intensities. Lower gamma values result in more low-level  * intensities. The low/high output levels constrain the final  * intensity mapping--that is, no final intensity will be lower than  * the low output level and no final intensity will be higher than the  * high output level. This tool is only valid on RGB color and  * grayscale images.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_levels:  * @drawable_ID: The drawable.  * @channel: The channel to modify.  * @low_input: Intensity of lowest input.  * @high_input: Intensity of highest input.  * @clamp_input: Clamp input values before applying output levels.  * @gamma: Gamma adjustment factor.  * @low_output: Intensity of lowest output.  * @high_output: Intensity of highest output.  * @clamp_output: Clamp final output values.  *  * Modifies intensity levels in the specified drawable.  *  * This tool allows intensity levels in the specified drawable to be  * remapped according to a set of parameters. The low/high input levels  * specify an initial mapping from the source intensities. The gamma  * value determines how intensities between the low and high input  * intensities are interpolated. A gamma value of 1.0 results in a  * linear interpolation. Higher gamma values result in more high-level  * intensities. Lower gamma values result in more low-level  * intensities. The low/high output levels constrain the final  * intensity mapping--that is, no final intensity will be lower than  * the low output level and no final intensity will be higher than the  * high output level. This tool is only valid on RGB color and  * grayscale images.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_levels (gint32 drawable_ID,GimpHistogramChannel channel,gdouble low_input,gdouble high_input,gdouble gamma,gdouble low_output,gdouble high_output)
+DECL|function|gimp_drawable_levels (gint32 drawable_ID,GimpHistogramChannel channel,gdouble low_input,gdouble high_input,gboolean clamp_input,gdouble gamma,gdouble low_output,gdouble high_output,gboolean clamp_output)
 name|gimp_drawable_levels
 parameter_list|(
 name|gint32
@@ -1039,6 +1039,9 @@ parameter_list|,
 name|gdouble
 name|high_input
 parameter_list|,
+name|gboolean
+name|clamp_input
+parameter_list|,
 name|gdouble
 name|gamma
 parameter_list|,
@@ -1047,6 +1050,9 @@ name|low_output
 parameter_list|,
 name|gdouble
 name|high_output
+parameter_list|,
+name|gboolean
+name|clamp_output
 parameter_list|)
 block|{
 name|GimpParam
@@ -1086,6 +1092,10 @@ name|GIMP_PDB_FLOAT
 argument_list|,
 name|high_input
 argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|clamp_input
+argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|gamma
@@ -1097,6 +1107,10 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|high_output
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|clamp_output
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
