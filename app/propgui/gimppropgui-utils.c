@@ -167,7 +167,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2878ffac0108
+DECL|struct|__anon2c8a20920108
 block|{
 DECL|member|kelvin
 name|gdouble
@@ -203,11 +203,11 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|3000
+literal|2700
 block|,
 name|N_
 argument_list|(
-literal|"3,000 K â Soft (or warm) white compact fluorescent lamps"
+literal|"2,700 K - Soft (or warm) LED lamps"
 argument_list|)
 block|}
 block|,
@@ -216,7 +216,7 @@ literal|3000
 block|,
 name|N_
 argument_list|(
-literal|"3,300 K â Incandescent lamps"
+literal|"3,000 K â Soft (or warm) white compact fluorescent lamps"
 argument_list|)
 block|}
 block|,
@@ -230,11 +230,29 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|3300
+block|,
+name|N_
+argument_list|(
+literal|"3,300 K â Incandescent lamps"
+argument_list|)
+block|}
+block|,
+block|{
 literal|3350
 block|,
 name|N_
 argument_list|(
 literal|"3,350 K â Studio \"CP\" light"
+argument_list|)
+block|}
+block|,
+block|{
+literal|4000
+block|,
+name|N_
+argument_list|(
+literal|"4,000 K - Cold (daylight) LED lamps"
 argument_list|)
 block|}
 block|,
