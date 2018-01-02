@@ -630,6 +630,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_color_profile_chooser_dialog_connect_path
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

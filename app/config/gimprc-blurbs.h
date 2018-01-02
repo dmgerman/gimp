@@ -117,6 +117,15 @@ value|_("How to handle embedded color profiles when opening a file.")
 end_define
 
 begin_define
+DECL|macro|COLOR_PROFILE_PATH_BLURB
+define|#
+directive|define
+name|COLOR_PROFILE_PATH_BLURB
+define|\
+value|_("Sets the default folder path for all color profile file dialogs.")
+end_define
+
+begin_define
 DECL|macro|CURSOR_MODE_BLURB
 define|#
 directive|define

@@ -5341,6 +5341,10 @@ name|row
 operator|++
 argument_list|,
 name|size_group
+argument_list|,
+name|object
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 name|button
@@ -5547,6 +5551,10 @@ name|row
 operator|++
 argument_list|,
 name|size_group
+argument_list|,
+name|object
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 name|prefs_enum_combo_box_add
@@ -5836,6 +5844,10 @@ name|row
 operator|++
 argument_list|,
 name|size_group
+argument_list|,
+name|object
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 name|prefs_profile_combo_box_add
@@ -5865,6 +5877,10 @@ name|row
 operator|++
 argument_list|,
 name|size_group
+argument_list|,
+name|object
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 name|prefs_profile_combo_box_add
@@ -5894,6 +5910,10 @@ name|row
 operator|++
 argument_list|,
 name|size_group
+argument_list|,
+name|object
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 comment|/*  Policies  */
@@ -8832,6 +8852,62 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Color profile policy:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|size_group
+argument_list|)
+expr_stmt|;
+comment|/*  All color profile chooser dialogs  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Color Profile File Dialogs"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|table
+operator|=
+name|prefs_table_new
+argument_list|(
+literal|1
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_file_chooser_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"color-profile-path"
+argument_list|,
+name|_
+argument_list|(
+literal|"Profile folder:"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Select Default Folder for Color Profiles"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -12376,7 +12452,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c149b9d0108
+DECL|struct|__anon2a0e5c1e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13253,7 +13329,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c149b9d0208
+DECL|struct|__anon2a0e5c1e0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13391,7 +13467,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c149b9d0308
+DECL|struct|__anon2a0e5c1e0308
 block|{
 DECL|member|tree_label
 specifier|const

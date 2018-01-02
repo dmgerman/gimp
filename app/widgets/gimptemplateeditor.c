@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3bd7d0103
+DECL|enum|__anon2b6780960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2523,6 +2523,17 @@ name|_
 argument_list|(
 literal|"Choose A Color Profile"
 argument_list|)
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|private
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|,
+literal|"color-profile-path"
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

@@ -3701,7 +3701,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f809e20108
+DECL|struct|__anon299d121e0108
 block|{
 DECL|member|config
 name|GObject
@@ -5271,7 +5271,7 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_profile_combo_box_new (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title)
+DECL|function|gimp_prop_profile_combo_box_new (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title,GObject * profile_path_config,const gchar * profile_path_property_name)
 name|gimp_prop_profile_combo_box_new
 parameter_list|(
 name|GObject
@@ -5291,6 +5291,15 @@ specifier|const
 name|gchar
 modifier|*
 name|dialog_title
+parameter_list|,
+name|GObject
+modifier|*
+name|profile_path_config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|profile_path_property_name
 parameter_list|)
 block|{
 name|GParamSpec
@@ -5385,6 +5394,21 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_OPEN
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|profile_path_config
+operator|&&
+name|profile_path_property_name
+condition|)
+name|gimp_color_profile_chooser_dialog_connect_path
+argument_list|(
+name|dialog
+argument_list|,
+name|profile_path_config
+argument_list|,
+name|profile_path_property_name
 argument_list|)
 expr_stmt|;
 if|if

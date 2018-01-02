@@ -1440,7 +1440,7 @@ end_endif
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_profile_combo_box_add (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_profile_combo_box_add (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group,GObject * profile_path_config,const gchar * profile_path_property_name)
 name|prefs_profile_combo_box_add
 parameter_list|(
 name|GObject
@@ -1476,6 +1476,15 @@ parameter_list|,
 name|GtkSizeGroup
 modifier|*
 name|group
+parameter_list|,
+name|GObject
+modifier|*
+name|profile_path_config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|profile_path_property_name
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1491,6 +1500,10 @@ argument_list|,
 name|profile_store
 argument_list|,
 name|dialog_title
+argument_list|,
+name|profile_path_config
+argument_list|,
+name|profile_path_property_name
 argument_list|)
 decl_stmt|;
 if|if

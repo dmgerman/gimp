@@ -539,6 +539,15 @@ parameter_list|,
 name|GtkSizeGroup
 modifier|*
 name|group
+parameter_list|,
+name|GObject
+modifier|*
+name|profile_path_config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|profile_path_property_name
 parameter_list|)
 function_decl|;
 end_function_decl

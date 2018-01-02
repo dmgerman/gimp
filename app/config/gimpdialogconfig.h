@@ -118,6 +118,11 @@ DECL|member|color_profile_policy
 name|GimpColorProfilePolicy
 name|color_profile_policy
 decl_stmt|;
+DECL|member|color_profile_path
+name|gchar
+modifier|*
+name|color_profile_path
+decl_stmt|;
 DECL|member|image_convert_profile_intent
 name|GimpColorRenderingIntent
 name|image_convert_profile_intent

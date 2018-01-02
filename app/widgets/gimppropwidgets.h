@@ -400,6 +400,15 @@ specifier|const
 name|gchar
 modifier|*
 name|dialog_title
+parameter_list|,
+name|GObject
+modifier|*
+name|profile_path_config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|profile_path_property_name
 parameter_list|)
 function_decl|;
 end_function_decl
