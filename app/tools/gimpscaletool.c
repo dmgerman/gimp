@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298404e80103
+DECL|enum|__anon29796f140103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -319,7 +319,7 @@ argument_list|(
 literal|"_Scale"
 argument_list|)
 argument_list|,
-literal|"<shift>T"
+literal|"<shift>S"
 argument_list|,
 name|NULL
 argument_list|,

@@ -99,7 +99,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb8b2d90103
+DECL|enum|__anon276ea1800103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -286,7 +286,7 @@ argument_list|(
 literal|"_Unified Transform"
 argument_list|)
 argument_list|,
-literal|"<shift>L"
+literal|"<shift>T"
 argument_list|,
 name|NULL
 argument_list|,

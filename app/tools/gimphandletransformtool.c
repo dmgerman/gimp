@@ -109,7 +109,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d6032d0103
+DECL|enum|__anon2a2af7380103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -350,7 +350,7 @@ argument_list|(
 literal|"_Handle Transform"
 argument_list|)
 argument_list|,
-literal|"<ctrl><shift>H"
+literal|"<shift>L"
 argument_list|,
 name|NULL
 argument_list|,

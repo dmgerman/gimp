@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b62f6000103
+DECL|enum|__anon2790ccf30103
 block|{
 DECL|enumerator|ORIENTATION
 name|ORIENTATION
@@ -310,7 +310,7 @@ argument_list|(
 literal|"S_hear"
 argument_list|)
 argument_list|,
-literal|"<shift>S"
+literal|"<shift>H"
 argument_list|,
 name|NULL
 argument_list|,
