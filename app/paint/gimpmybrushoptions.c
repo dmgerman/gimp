@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c91a25a0103
+DECL|enum|__anon27917b4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,6 +87,9 @@ name|PROP_HARDNESS
 block|,
 DECL|enumerator|PROP_ERASER
 name|PROP_ERASER
+block|,
+DECL|enumerator|PROP_NO_ERASING
+name|PROP_NO_ERASING
 block|}
 enum|;
 end_enum
@@ -341,6 +344,29 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_NO_ERASING
+argument_list|,
+literal|"no-erasing"
+argument_list|,
+name|_
+argument_list|(
+literal|"No erasing effect"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Never decrease alpha of existing pixels"
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -473,6 +499,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_NO_ERASING
+case|:
+name|options
+operator|->
+name|no_erasing
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -573,6 +612,19 @@ argument_list|,
 name|options
 operator|->
 name|eraser
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_NO_ERASING
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|no_erasing
 argument_list|)
 expr_stmt|;
 break|break;

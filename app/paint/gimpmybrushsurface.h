@@ -46,6 +46,10 @@ name|paint_mask_x
 parameter_list|,
 name|gint
 name|paint_mask_y
+parameter_list|,
+name|GimpMybrushOptions
+modifier|*
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl

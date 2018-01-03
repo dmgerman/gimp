@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmybrushoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmybrushsurface.h"
 end_include
 
@@ -91,6 +97,11 @@ decl_stmt|;
 DECL|member|component_mask
 name|GimpComponentMask
 name|component_mask
+decl_stmt|;
+DECL|member|options
+name|GimpMybrushOptions
+modifier|*
+name|options
 decl_stmt|;
 block|}
 struct|;
@@ -2294,6 +2305,26 @@ block|}
 block|}
 if|if
 condition|(
+name|surface
+operator|->
+name|options
+operator|->
+name|no_erasing
+condition|)
+name|a
+operator|=
+name|MAX
+argument_list|(
+name|a
+argument_list|,
+name|pixel
+index|[
+name|ALPHA
+index|]
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|component_mask
 operator|!=
 name|GIMP_COMPONENT_MASK_ALL
@@ -2544,7 +2575,7 @@ end_function
 begin_function
 name|GimpMybrushSurface
 modifier|*
-DECL|function|gimp_mypaint_surface_new (GeglBuffer * buffer,GimpComponentMask component_mask,GeglBuffer * paint_mask,gint paint_mask_x,gint paint_mask_y)
+DECL|function|gimp_mypaint_surface_new (GeglBuffer * buffer,GimpComponentMask component_mask,GeglBuffer * paint_mask,gint paint_mask_x,gint paint_mask_y,GimpMybrushOptions * options)
 name|gimp_mypaint_surface_new
 parameter_list|(
 name|GeglBuffer
@@ -2563,6 +2594,10 @@ name|paint_mask_x
 parameter_list|,
 name|gint
 name|paint_mask_y
+parameter_list|,
+name|GimpMybrushOptions
+modifier|*
+name|options
 parameter_list|)
 block|{
 name|GimpMybrushSurface
@@ -2631,6 +2666,12 @@ operator|->
 name|component_mask
 operator|=
 name|component_mask
+expr_stmt|;
+name|surface
+operator|->
+name|options
+operator|=
+name|options
 expr_stmt|;
 name|surface
 operator|->

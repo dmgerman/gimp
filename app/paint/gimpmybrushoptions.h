@@ -119,6 +119,10 @@ DECL|member|eraser
 name|gboolean
 name|eraser
 decl_stmt|;
+DECL|member|no_erasing
+name|gboolean
+name|no_erasing
+decl_stmt|;
 block|}
 struct|;
 end_struct

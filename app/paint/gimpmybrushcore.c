@@ -832,6 +832,11 @@ argument_list|,
 name|paint_core
 operator|->
 name|mask_y_offset
+argument_list|,
+name|GIMP_MYBRUSH_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_mybrush_core_create_brushes
