@@ -6861,7 +6861,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* gimp_display_shell_compress_motion:  *  * This function walks the GDK event queue, seeking motion events at the  * front of the queue corresponding to the same widget as, and having  * similar characteristics to, `initial_event`.   If it finds any it will  * remove them from the queue, and return the most recent motion event.  * Otherwise it will return NULL.  *  * If `next_event` is non-NULL upon return, the caller must dispatch and  * free this event after handling the motion event.  *  * The gimp_display_shell_compress_motion function source may be re-used under  * the XFree86-style license.<adam@gimp.org>  */
+comment|/* gimp_display_shell_compress_motion:  *  * This function walks the GDK event queue, seeking motion events at the  * front of the queue corresponding to the same widget as, and having  * similar characteristics to, `initial_event`.   If it finds any it will  * remove them from the queue, and return the most recent motion event.  * Otherwise it will return NULL.  *  * If `*next_event` is non-NULL upon return, the caller must dispatch and  * free this event after handling the motion event.  *  * The gimp_display_shell_compress_motion function source may be re-used under  * the XFree86-style license.<adam@gimp.org>  */
 end_comment
 
 begin_function
@@ -6936,7 +6936,6 @@ name|event
 condition|)
 block|{
 comment|/* Do nothing */
-break|break;
 block|}
 elseif|else
 if|if
