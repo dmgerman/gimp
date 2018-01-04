@@ -2161,6 +2161,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* hack to make the operation tools always invisible */
+if|if
+condition|(
+name|tool_type
+operator|==
+name|GIMP_TYPE_OPERATION_TOOL
+condition|)
+name|tool_info
+operator|->
+name|hidden
+operator|=
+name|TRUE
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT

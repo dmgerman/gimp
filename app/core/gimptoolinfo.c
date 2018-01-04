@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f5a750103
+DECL|enum|__anon2985f4bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -577,10 +577,17 @@ name|tool_info
 operator|->
 name|visible
 operator|=
+operator|(
 name|g_value_get_boolean
 argument_list|(
 name|value
 argument_list|)
+operator|&&
+operator|!
+name|tool_info
+operator|->
+name|hidden
+operator|)
 expr_stmt|;
 break|break;
 default|default:

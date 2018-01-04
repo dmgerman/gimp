@@ -150,6 +150,11 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
+DECL|member|hidden
+name|gboolean
+name|hidden
+decl_stmt|;
+comment|/* can't be made visible */
 DECL|member|visible
 name|gboolean
 name|visible
