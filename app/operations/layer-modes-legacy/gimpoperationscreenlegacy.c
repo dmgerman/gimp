@@ -266,7 +266,7 @@ name|ALPHA
 index|]
 operator|+
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|in
 index|[
@@ -310,10 +310,10 @@ block|{
 name|gfloat
 name|comp
 init|=
-literal|1.0
+literal|1.0f
 operator|-
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|in
 index|[
@@ -322,7 +322,7 @@ index|]
 operator|)
 operator|*
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|layer
 index|[
@@ -345,7 +345,7 @@ name|b
 index|]
 operator|*
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|ratio
 operator|)

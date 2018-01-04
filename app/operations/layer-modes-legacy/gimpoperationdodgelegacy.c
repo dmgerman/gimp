@@ -266,7 +266,7 @@ name|ALPHA
 index|]
 operator|+
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|in
 index|[
@@ -316,7 +316,7 @@ name|b
 index|]
 operator|/
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|layer
 index|[
@@ -330,7 +330,7 @@ name|MIN
 argument_list|(
 name|comp
 argument_list|,
-literal|1.0
+literal|1.0f
 argument_list|)
 expr_stmt|;
 name|out
@@ -348,7 +348,7 @@ name|b
 index|]
 operator|*
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|ratio
 operator|)

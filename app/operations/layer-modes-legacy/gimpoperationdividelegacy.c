@@ -266,7 +266,7 @@ name|ALPHA
 index|]
 operator|+
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|in
 index|[
@@ -354,7 +354,7 @@ name|b
 index|]
 operator|*
 operator|(
-literal|1.0
+literal|1.0f
 operator|-
 name|ratio
 operator|)
@@ -371,9 +371,9 @@ index|[
 name|b
 index|]
 argument_list|,
-literal|0.0
+literal|0.0f
 argument_list|,
-literal|1.0
+literal|1.0f
 argument_list|)
 expr_stmt|;
 block|}
