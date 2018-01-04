@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"../operations-types.h"
 end_include
 
@@ -326,9 +332,11 @@ operator|)
 decl_stmt|;
 name|comp
 operator|=
-name|MIN
+name|SAFE_CLAMP
 argument_list|(
 name|comp
+argument_list|,
+literal|0.0f
 argument_list|,
 literal|1.0f
 argument_list|)
