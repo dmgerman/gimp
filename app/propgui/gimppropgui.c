@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-shadows-highlights.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-spiral.h"
 end_include
 
@@ -1836,7 +1842,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon295bfc790108
+DECL|struct|__anon290166e80108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1894,6 +1900,12 @@ block|{
 literal|"GimpGegl-gegl-diffraction-patterns-config"
 block|,
 name|_gimp_prop_gui_new_diffraction_patterns
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-shadows-highlights-config"
+block|,
+name|_gimp_prop_gui_new_shadows_highlights
 block|}
 block|,
 block|{

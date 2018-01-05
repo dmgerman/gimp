@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f619a0103
+DECL|enum|__anon29c375e00103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -581,6 +581,8 @@ block|,
 literal|"gegl:saturation"
 block|,
 literal|"gegl:sepia"
+block|,
+literal|"gegl:shadows-highlights"
 block|,
 literal|"gegl:shift"
 block|,
