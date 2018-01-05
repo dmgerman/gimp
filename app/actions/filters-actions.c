@@ -2342,7 +2342,7 @@ block|,
 block|{
 literal|"filters-shadows-highlights"
 block|,
-name|GIMP_ICON_GEGL
+name|GIMP_ICON_TOOL_SHADOWS_HIGHLIGHTS
 block|,
 name|NC_
 argument_list|(

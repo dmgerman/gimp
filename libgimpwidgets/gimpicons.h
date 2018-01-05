@@ -1381,6 +1381,11 @@ define|#
 directive|define
 name|GIMP_ICON_TOOL_SEAMLESS_CLONE
 value|"gimp-tool-seamless-clone"
+DECL|macro|GIMP_ICON_TOOL_SHADOWS_HIGHLIGHTS
+define|#
+directive|define
+name|GIMP_ICON_TOOL_SHADOWS_HIGHLIGHTS
+value|"gimp-tool-shadows-highlights"
 DECL|macro|GIMP_ICON_TOOL_SHEAR
 define|#
 directive|define
