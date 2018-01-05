@@ -30,10 +30,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b82493c0103
+DECL|enum|__anon286dd0010103
 block|{
 DECL|enumerator|GIMP_OPERATION_POINT_FILTER_PROP_0
 name|GIMP_OPERATION_POINT_FILTER_PROP_0
+block|,
+DECL|enumerator|GIMP_OPERATION_POINT_FILTER_PROP_LINEAR
+name|GIMP_OPERATION_POINT_FILTER_PROP_LINEAR
 block|,
 DECL|enumerator|GIMP_OPERATION_POINT_FILTER_PROP_CONFIG
 name|GIMP_OPERATION_POINT_FILTER_PROP_CONFIG
@@ -121,6 +124,10 @@ block|{
 DECL|member|parent_instance
 name|GeglOperationPointFilter
 name|parent_instance
+decl_stmt|;
+DECL|member|linear
+name|gboolean
+name|linear
 decl_stmt|;
 DECL|member|config
 name|GObject

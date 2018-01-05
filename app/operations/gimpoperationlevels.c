@@ -180,6 +180,26 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
+name|GIMP_OPERATION_POINT_FILTER_PROP_LINEAR
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"linear"
+argument_list|,
+literal|"Linear"
+argument_list|,
+literal|"Whether to operate on linear RGB"
+argument_list|,
+name|FALSE
+argument_list|,
+name|G_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
 name|GIMP_OPERATION_POINT_FILTER_PROP_CONFIG
 argument_list|,
 name|g_param_spec_object
