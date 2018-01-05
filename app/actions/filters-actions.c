@@ -2357,7 +2357,7 @@ name|NULL
 block|,
 literal|"gegl:shadows-highlights"
 block|,
-name|GIMP_HELP_FILTER_EXPOSURE
+name|GIMP_HELP_FILTER_SHADOWS_HIGHLIGHTS
 block|}
 block|,
 block|{
