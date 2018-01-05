@@ -107,10 +107,6 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|checkbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|scale
 decl_stmt|;
 specifier|const
@@ -162,7 +158,7 @@ name|gtk_box_new
 argument_list|(
 name|GTK_ORIENTATION_VERTICAL
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|frame
@@ -269,7 +265,7 @@ name|gimp_prop_widget_new
 argument_list|(
 name|config
 argument_list|,
-literal|"shadows_ccorrect"
+literal|"shadows-ccorrect"
 argument_list|,
 name|area
 argument_list|,
@@ -410,7 +406,7 @@ name|gimp_prop_widget_new
 argument_list|(
 name|config
 argument_list|,
-literal|"highlights_ccorrect"
+literal|"highlights-ccorrect"
 argument_list|,
 name|area
 argument_list|,
