@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -388,7 +376,7 @@ if|if
 condition|(
 name|debug_prints
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] trying to call '%s'\n"
 argument_list|,
@@ -584,13 +572,15 @@ if|if
 condition|(
 name|debug_prints
 condition|)
-name|printf
+block|{
+name|g_printf
 argument_list|(
 literal|"[%s] g_spawn_sync failed\n"
 argument_list|,
 name|__FILE__
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|debug_prints
@@ -600,7 +590,7 @@ if|if
 condition|(
 name|error
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] error: %s\n"
 argument_list|,
@@ -618,7 +608,7 @@ operator|&&
 operator|*
 name|darktable_stdout
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] stdout:\n%s\n"
 argument_list|,
@@ -634,7 +624,7 @@ operator|&&
 operator|*
 name|darktable_stderr
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] stderr:\n%s\n"
 argument_list|,
@@ -643,7 +633,7 @@ argument_list|,
 name|darktable_stderr
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] have_darktable: %d\n"
 argument_list|,
@@ -653,12 +643,9 @@ name|have_darktable
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|error
-condition|)
-name|g_error_free
+name|g_clear_error
 argument_list|(
+operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -1695,7 +1682,7 @@ operator|&&
 operator|*
 name|darktable_stdout
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1709,7 +1696,7 @@ operator|&&
 operator|*
 name|darktable_stderr
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"%s\n"
 argument_list|,

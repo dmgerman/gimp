@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -364,11 +352,12 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|int
+name|gint
 name|rtmajor
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|rtminor
 init|=
 literal|0
@@ -1546,13 +1535,11 @@ if|if
 condition|(
 name|thumb_pp3_f
 condition|)
-block|{
 name|fclose
 argument_list|(
 name|thumb_pp3_f
 argument_list|)
 expr_stmt|;
-block|}
 name|g_unlink
 argument_list|(
 name|thumb_pp3
