@@ -366,6 +366,16 @@ define|#
 directive|define
 name|GIMP_ICON_COLOR_SELECTOR_WATER
 value|"gimp-color-water"
+DECL|macro|GIMP_ICON_COLOR_SPACE_LINEAR
+define|#
+directive|define
+name|GIMP_ICON_COLOR_SPACE_LINEAR
+value|"gimp-color-space-linear"
+DECL|macro|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
+define|#
+directive|define
+name|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
+value|"gimp-color-space-perceptual"
 DECL|macro|GIMP_ICON_COLORS_DEFAULT
 define|#
 directive|define
