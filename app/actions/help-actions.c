@@ -88,7 +88,7 @@ block|,
 block|{
 literal|"help-help"
 block|,
-literal|"help-browser"
+literal|"gimp-prefs-help-system"
 block|,
 name|NC_
 argument_list|(
@@ -117,7 +117,7 @@ block|,
 block|{
 literal|"help-context-help"
 block|,
-literal|"help-browser"
+literal|"gimp-prefs-help-system"
 block|,
 name|NC_
 argument_list|(

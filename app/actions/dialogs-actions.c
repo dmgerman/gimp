@@ -1174,7 +1174,7 @@ block|,
 block|{
 literal|"dialogs-action-search"
 block|,
-name|GIMP_ICON_EDIT_FIND
+name|GIMP_ICON_TOOL_ZOOM
 block|,
 name|NC_
 argument_list|(
