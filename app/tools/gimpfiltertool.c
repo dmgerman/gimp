@@ -5814,6 +5814,11 @@ operator|->
 name|filter
 argument_list|)
 expr_stmt|;
+name|gimp_filter_tool_remove_guide
+argument_list|(
+name|filter_tool
+argument_list|)
+expr_stmt|;
 block|}
 name|g_clear_object
 argument_list|(
