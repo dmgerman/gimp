@@ -3110,6 +3110,14 @@ value|"gimp-filter-sepia"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_SHADOWS_HIGHLIGHTS
+define|#
+directive|define
+name|GIMP_HELP_FILTER_SHADOWS_HIGHLIGHTS
+value|"gimp-filter-shadows-highlights"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_SHIFT
 define|#
 directive|define
