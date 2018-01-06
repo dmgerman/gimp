@@ -132,13 +132,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcurveview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcurveview.h"
+file|"widgets/gimppropwidgets.h"
 end_include
 
 begin_include
@@ -2031,9 +2037,10 @@ argument_list|(
 name|hbox2
 argument_list|)
 expr_stmt|;
-name|button
+comment|/*  The linear/perceptual radio buttons  */
+name|hbox2
 operator|=
-name|gimp_prop_check_button_new
+name|gimp_prop_boolean_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2042,17 +2049,19 @@ argument_list|)
 argument_list|,
 literal|"linear"
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_mode
+name|GIMP_ICON_COLOR_SPACE_LINEAR
+argument_list|,
+name|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
+argument_list|,
+name|_
 argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|button
+literal|"Adjust curves in linear light"
 argument_list|)
 argument_list|,
-name|FALSE
+name|_
+argument_list|(
+literal|"Adjust curves perceptually"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -2062,7 +2071,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|button
+name|hbox2
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2073,7 +2082,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|hbox2
 argument_list|)
 expr_stmt|;
 name|frame_vbox

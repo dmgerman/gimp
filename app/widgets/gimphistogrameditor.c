@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsessioninfo-aux.h"
 end_include
 
@@ -113,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a97b960103
+DECL|enum|__anon296cb4490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -499,10 +505,6 @@ name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|table
 decl_stmt|;
 name|gint
@@ -580,7 +582,7 @@ name|gtk_box_new
 argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -738,9 +740,9 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-name|button
+name|menu
 operator|=
-name|gimp_prop_check_button_new
+name|gimp_prop_boolean_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -749,17 +751,19 @@ argument_list|)
 argument_list|,
 literal|"linear"
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_mode
+name|GIMP_ICON_COLOR_SPACE_LINEAR
+argument_list|,
+name|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
+argument_list|,
+name|_
 argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|button
+literal|"Show values in linear space"
 argument_list|)
 argument_list|,
-name|FALSE
+name|_
+argument_list|(
+literal|"Show values in perceptual space"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -769,7 +773,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|button
+name|menu
 argument_list|,
 name|FALSE
 argument_list|,
@@ -780,19 +784,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-literal|"This button switches between a histogram in "
-literal|"sRGB (gamma corrected) space and a histogram "
-literal|"in linear space. Also, it's horrible UI and "
-literal|"needs to be changed."
-argument_list|,
-name|NULL
+name|menu
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
