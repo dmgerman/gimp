@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83219e0108
+DECL|struct|__anon2c1e128f0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c83219e0208
+DECL|struct|__anon2c1e128f0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -7552,8 +7552,8 @@ name|_
 argument_list|(
 literal|"Your cursor was successfully exported but it contains one or "
 literal|"more frames whose width or height is more than %ipx, "
-literal|"a historical max dimension value in X11.\n"
-literal|"It may be unsupported by some environments."
+literal|"a historical max dimension value for X bitmap cursors.\n"
+literal|"It might be unsupported by some environments."
 argument_list|)
 argument_list|,
 name|MAX_BITMAP_CURSOR_SIZE
@@ -9203,7 +9203,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c83219e0308
+DECL|struct|__anon2c1e128f0308
 block|{
 DECL|member|size
 name|guint32
