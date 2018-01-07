@@ -195,7 +195,7 @@ value|"image/x-xcursor"
 end_define
 
 begin_comment
-comment|/* The maximum dimension of Xcursor which is fully supported in any  * environments. This is defined on line 59 of xcursorint.h in  * libXcursor source code. Make sure this is about dimensions(width  * and height) not about nominal size despite of it's name.  */
+comment|/* The maximum dimension of Xcursor which is fully supported in any  * environments. This is defined on line 59 of xcursorint.h in  * libXcursor source code. Make sure this is about dimensions (width  * and height) not about nominal size despite of it's name.  *  * As of 2018, this macro still exists in libXCursor codebase, but I am  * unsure how far this restriction is enforced since this is a very low  * max dimension for today's displays. Therefore our code will not  * enforce this value anymore, but only warn about possible  * incompatibilities when using higher values.  */
 end_comment
 
 begin_define
@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3b8300108
+DECL|struct|__anon2b8545ac0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac3b8300208
+DECL|struct|__anon2b8545ac0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -7551,8 +7551,9 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Your cursor was successfully exported but it contains one or "
-literal|"more frames whose width or height is more than %ipx.\n"
-literal|"It will clutter the screen in some environments."
+literal|"more frames whose width or height is more than %ipx, "
+literal|"a historical max dimension value in X11.\n"
+literal|"It may be unsupported by some environments."
 argument_list|)
 argument_list|,
 name|MAX_BITMAP_CURSOR_SIZE
@@ -8967,23 +8968,34 @@ operator|>
 literal|8
 condition|)
 comment|/* too large number should be clamped */
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Your cursor was successfully exported but it contains one or "
+literal|"more frames whose size is over 8 digits.\n"
+literal|"We clamped it to %dpx. You should check the exported cursor."
+argument_list|)
+argument_list|,
+name|MAX_BITMAP_CURSOR_SIZE
+argument_list|)
+expr_stmt|;
 name|size
 operator|=
 name|MAX_BITMAP_CURSOR_SIZE
 expr_stmt|;
+block|}
 else|else
+block|{
 name|size
 operator|=
-name|MIN
-argument_list|(
-name|MAX_BITMAP_CURSOR_SIZE
-argument_list|,
 name|atoi
 argument_list|(
 name|digits
 argument_list|)
-argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 else|else
@@ -9107,6 +9119,10 @@ operator|&&
 name|size
 operator|!=
 literal|64
+operator|&&
+name|size
+operator|!=
+literal|96
 condition|)
 block|{
 comment|/* if the size is different from these values, we warn about it after          successfully saving because gnome-appearance-properties only support          them. */
@@ -9187,7 +9203,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2ac3b8300308
+DECL|struct|__anon2b8545ac0308
 block|{
 DECL|member|size
 name|guint32
