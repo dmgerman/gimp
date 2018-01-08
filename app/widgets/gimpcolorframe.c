@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2739c8e50103
+DECL|enum|__anon28a40ece0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -878,6 +878,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: X for the X coordinate. */
 name|label
 operator|=
 name|gtk_label_new
@@ -988,6 +989,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: Y for the Y coordinate. */
 name|label
 operator|=
 name|gtk_label_new
@@ -2668,6 +2670,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* TRANSLATORS: n/a for Not Available. */
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2683,6 +2686,7 @@ literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: n/a for Not Available. */
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2905,6 +2909,7 @@ operator|==
 name|GIMP_GRAY
 condition|)
 block|{
+comment|/* TRANSLATORS: V for Value (grayscale) */
 name|names
 index|[
 literal|0
@@ -2919,6 +2924,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|1
@@ -2932,6 +2938,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* TRANSLATORS: R for Red (RGB) */
 name|names
 index|[
 literal|0
@@ -2942,6 +2949,7 @@ argument_list|(
 literal|"R:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: G for Green (RGB) */
 name|names
 index|[
 literal|1
@@ -2952,6 +2960,7 @@ argument_list|(
 literal|"G:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: B for Blue (RGB) */
 name|names
 index|[
 literal|2
@@ -2966,6 +2975,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|3
@@ -3082,6 +3092,7 @@ case|:
 case|case
 name|GIMP_COLOR_FRAME_MODE_RGB_U8
 case|:
+comment|/* TRANSLATORS: R for Red (RGB) */
 name|names
 index|[
 literal|0
@@ -3092,6 +3103,7 @@ argument_list|(
 literal|"R:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: G for Green (RGB) */
 name|names
 index|[
 literal|1
@@ -3102,6 +3114,7 @@ argument_list|(
 literal|"G:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: B for Blue (RGB) */
 name|names
 index|[
 literal|2
@@ -3116,6 +3129,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|3
@@ -3126,6 +3140,7 @@ argument_list|(
 literal|"A:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: Hex for Hexadecimal (representation of a color) */
 name|names
 index|[
 literal|4
@@ -3336,6 +3351,7 @@ break|break;
 case|case
 name|GIMP_COLOR_FRAME_MODE_HSV
 case|:
+comment|/* TRANSLATORS: H for Hue (HSV color space) */
 name|names
 index|[
 literal|0
@@ -3346,6 +3362,7 @@ argument_list|(
 literal|"H:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: S for Saturation (HSV color space) */
 name|names
 index|[
 literal|1
@@ -3356,6 +3373,7 @@ argument_list|(
 literal|"S:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: V for Value (HSV color space) */
 name|names
 index|[
 literal|2
@@ -3370,6 +3388,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|3
@@ -3490,6 +3509,7 @@ break|break;
 case|case
 name|GIMP_COLOR_FRAME_MODE_LCH
 case|:
+comment|/* TRANSLATORS: L for Lightness (LCH color space) */
 name|names
 index|[
 literal|0
@@ -3500,6 +3520,7 @@ argument_list|(
 literal|"L:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: C for Chroma (LCH color space) */
 name|names
 index|[
 literal|1
@@ -3510,6 +3531,7 @@ argument_list|(
 literal|"C:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: H for Hue (LCH color space) */
 name|names
 index|[
 literal|2
@@ -3524,6 +3546,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|3
@@ -3669,6 +3692,7 @@ break|break;
 case|case
 name|GIMP_COLOR_FRAME_MODE_LAB
 case|:
+comment|/* TRANSLATORS: L for Lightness (Lab color space) */
 name|names
 index|[
 literal|0
@@ -3679,6 +3703,7 @@ argument_list|(
 literal|"L:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: a* color channel in Lab color space */
 name|names
 index|[
 literal|1
@@ -3689,6 +3714,7 @@ argument_list|(
 literal|"A:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: b* color channel in Lab color space */
 name|names
 index|[
 literal|2
@@ -3703,6 +3729,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|3
@@ -3848,6 +3875,7 @@ break|break;
 case|case
 name|GIMP_COLOR_FRAME_MODE_CMYK
 case|:
+comment|/* TRANSLATORS: C for Cyan (CMYK) */
 name|names
 index|[
 literal|0
@@ -3858,6 +3886,7 @@ argument_list|(
 literal|"C:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: M for Magenta (CMYK) */
 name|names
 index|[
 literal|1
@@ -3868,6 +3897,7 @@ argument_list|(
 literal|"M:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: Y for Yellow (CMYK) */
 name|names
 index|[
 literal|2
@@ -3878,6 +3908,7 @@ argument_list|(
 literal|"Y:"
 argument_list|)
 expr_stmt|;
+comment|/* TRANSLATORS: K for Key/black (CMYK) */
 name|names
 index|[
 literal|3
@@ -3892,6 +3923,7 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+comment|/* TRANSLATORS: A for Alpha (color transparency) */
 name|names
 index|[
 literal|4
