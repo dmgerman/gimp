@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3e3a30103
+DECL|enum|__anon2a02234f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3016,13 +3016,16 @@ name|sample_format
 argument_list|)
 condition|)
 block|{
+comment|/* TRANSLATORS: Index of the color in the palette. */
 name|names
 index|[
 literal|4
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Indexed color"
+argument_list|,
 literal|"Index:"
 argument_list|)
 expr_stmt|;
@@ -4341,8 +4344,10 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"Color value"
+argument_list|,
 literal|"n/a"
 argument_list|)
 argument_list|)
