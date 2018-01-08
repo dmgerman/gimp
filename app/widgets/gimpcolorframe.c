@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a40ece0103
+DECL|enum|__anon27b3e3a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -883,8 +883,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"Coordinates"
+argument_list|,
 literal|"X:"
 argument_list|)
 argument_list|)
@@ -994,8 +996,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"Coordinates"
+argument_list|,
 literal|"Y:"
 argument_list|)
 argument_list|)
@@ -2680,8 +2684,10 @@ operator|->
 name|coords_label_x
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"Coordinates"
+argument_list|,
 literal|"n/a"
 argument_list|)
 argument_list|)
@@ -2696,8 +2702,10 @@ operator|->
 name|coords_label_y
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"Coordinates"
+argument_list|,
 literal|"n/a"
 argument_list|)
 argument_list|)
@@ -2915,8 +2923,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Grayscale"
+argument_list|,
 literal|"V:"
 argument_list|)
 expr_stmt|;
@@ -2930,8 +2940,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -2944,8 +2956,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"R:"
 argument_list|)
 expr_stmt|;
@@ -2955,8 +2969,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"G:"
 argument_list|)
 expr_stmt|;
@@ -2966,8 +2982,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"B:"
 argument_list|)
 expr_stmt|;
@@ -2981,8 +2999,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3098,8 +3118,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"R:"
 argument_list|)
 expr_stmt|;
@@ -3109,8 +3131,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"G:"
 argument_list|)
 expr_stmt|;
@@ -3120,8 +3144,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"RGB"
+argument_list|,
 literal|"B:"
 argument_list|)
 expr_stmt|;
@@ -3135,8 +3161,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3146,8 +3174,10 @@ index|[
 literal|4
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Color representation"
+argument_list|,
 literal|"Hex:"
 argument_list|)
 expr_stmt|;
@@ -3357,8 +3387,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"HSV color space"
+argument_list|,
 literal|"H:"
 argument_list|)
 expr_stmt|;
@@ -3368,8 +3400,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"HSV color space"
+argument_list|,
 literal|"S:"
 argument_list|)
 expr_stmt|;
@@ -3379,8 +3413,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"HSV color space"
+argument_list|,
 literal|"V:"
 argument_list|)
 expr_stmt|;
@@ -3394,8 +3430,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3515,8 +3553,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"LCH color space"
+argument_list|,
 literal|"L:"
 argument_list|)
 expr_stmt|;
@@ -3526,8 +3566,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"LCH color space"
+argument_list|,
 literal|"C:"
 argument_list|)
 expr_stmt|;
@@ -3537,8 +3579,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"LCH color space"
+argument_list|,
 literal|"H:"
 argument_list|)
 expr_stmt|;
@@ -3552,8 +3596,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3698,8 +3744,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Lab color space"
+argument_list|,
 literal|"L:"
 argument_list|)
 expr_stmt|;
@@ -3709,8 +3757,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Lab color space"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3720,8 +3770,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Lab color space"
+argument_list|,
 literal|"B:"
 argument_list|)
 expr_stmt|;
@@ -3735,8 +3787,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
@@ -3881,8 +3935,10 @@ index|[
 literal|0
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"CMYK"
+argument_list|,
 literal|"C:"
 argument_list|)
 expr_stmt|;
@@ -3892,8 +3948,10 @@ index|[
 literal|1
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"CMYK"
+argument_list|,
 literal|"M:"
 argument_list|)
 expr_stmt|;
@@ -3903,8 +3961,10 @@ index|[
 literal|2
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"CMYK"
+argument_list|,
 literal|"Y:"
 argument_list|)
 expr_stmt|;
@@ -3914,8 +3974,10 @@ index|[
 literal|3
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"CMYK"
+argument_list|,
 literal|"K:"
 argument_list|)
 expr_stmt|;
@@ -3929,8 +3991,10 @@ index|[
 literal|4
 index|]
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"Alpha channel"
+argument_list|,
 literal|"A:"
 argument_list|)
 expr_stmt|;
