@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a02234f0103
+DECL|enum|__anon2a17f7af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3741,7 +3741,7 @@ break|break;
 case|case
 name|GIMP_COLOR_FRAME_MODE_LAB
 case|:
-comment|/* TRANSLATORS: L for Lightness (Lab color space) */
+comment|/* TRANSLATORS: L* for Lightness (Lab color space) */
 name|names
 index|[
 literal|0
@@ -3751,7 +3751,7 @@ name|C_
 argument_list|(
 literal|"Lab color space"
 argument_list|,
-literal|"L:"
+literal|"L*:"
 argument_list|)
 expr_stmt|;
 comment|/* TRANSLATORS: a* color channel in Lab color space */
@@ -3764,7 +3764,7 @@ name|C_
 argument_list|(
 literal|"Lab color space"
 argument_list|,
-literal|"A:"
+literal|"a*:"
 argument_list|)
 expr_stmt|;
 comment|/* TRANSLATORS: b* color channel in Lab color space */
@@ -3777,7 +3777,7 @@ name|C_
 argument_list|(
 literal|"Lab color space"
 argument_list|,
-literal|"B:"
+literal|"b*:"
 argument_list|)
 expr_stmt|;
 if|if
