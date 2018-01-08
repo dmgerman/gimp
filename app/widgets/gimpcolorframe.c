@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a17f7af0103
+DECL|enum|__anon2a44277d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3560,7 +3560,7 @@ name|C_
 argument_list|(
 literal|"LCH color space"
 argument_list|,
-literal|"L:"
+literal|"L*:"
 argument_list|)
 expr_stmt|;
 comment|/* TRANSLATORS: C for Chroma (LCH color space) */
@@ -3573,10 +3573,10 @@ name|C_
 argument_list|(
 literal|"LCH color space"
 argument_list|,
-literal|"C:"
+literal|"C*:"
 argument_list|)
 expr_stmt|;
-comment|/* TRANSLATORS: H for Hue (LCH color space) */
+comment|/* TRANSLATORS: H for Hue angle (LCH color space) */
 name|names
 index|[
 literal|2
@@ -3586,7 +3586,7 @@ name|C_
 argument_list|(
 literal|"LCH color space"
 argument_list|,
-literal|"H:"
+literal|"h\302\260:"
 argument_list|)
 expr_stmt|;
 if|if
