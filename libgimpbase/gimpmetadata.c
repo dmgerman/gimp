@@ -1119,6 +1119,23 @@ literal|"Failed to register XMP namespace 'DICOM'\n"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|gexiv2_metadata_register_xmp_namespace
+argument_list|(
+literal|"http://darktable.sf.net/"
+argument_list|,
+literal|"darktable"
+argument_list|)
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"Failed to register XMP namespace 'darktable'\n"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Usage example Xmp.GIMP.tagname */
 if|if
 condition|(
@@ -2317,9 +2334,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gexiv2_metadata_new
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2429,7 +2443,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2bd3a3840108
+DECL|struct|__anon2c2dea530108
 block|{
 DECL|member|name
 name|gchar
