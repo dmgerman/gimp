@@ -1942,11 +1942,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"modifier key\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tr_tool
