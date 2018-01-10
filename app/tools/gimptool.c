@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eadbd70103
+DECL|enum|__anon275deb850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3331,6 +3331,15 @@ operator|->
 name|active_modifier_state
 operator|!=
 literal|0
+operator|&&
+name|gimp_tool_control_get_active_modifiers
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+operator|!=
+name|GIMP_TOOL_ACTIVE_MODIFIERS_SAME
 condition|)
 block|{
 name|gimp_tool_control_activate
@@ -3360,6 +3369,12 @@ block|}
 name|tool
 operator|->
 name|button_press_state
+operator|=
+literal|0
+expr_stmt|;
+name|tool
+operator|->
+name|active_modifier_state
 operator|=
 literal|0
 expr_stmt|;
@@ -4672,6 +4687,18 @@ block|}
 name|tool
 operator|->
 name|active_modifier_state
+operator|=
+name|state
+expr_stmt|;
+if|if
+condition|(
+name|active_modifiers
+operator|==
+name|GIMP_TOOL_ACTIVE_MODIFIERS_SAME
+condition|)
+name|tool
+operator|->
+name|modifier_state
 operator|=
 name|state
 expr_stmt|;
