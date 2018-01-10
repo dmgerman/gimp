@@ -269,7 +269,7 @@ DECL|macro|DEFAULT_EXIF
 define|#
 directive|define
 name|DEFAULT_EXIF
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -285,7 +285,7 @@ DECL|macro|DEFAULT_XMP
 define|#
 directive|define
 name|DEFAULT_XMP
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -293,7 +293,7 @@ DECL|macro|DEFAULT_IPTC
 define|#
 directive|define
 name|DEFAULT_IPTC
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a371f0108
+DECL|struct|__anon2aca44630108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a371f0208
+DECL|struct|__anon2aca44630208
 block|{
 DECL|member|run
 name|gboolean

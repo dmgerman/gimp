@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b5dcf50108
+DECL|struct|__anon29a31e390108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b5dcf50208
+DECL|struct|__anon29a31e390208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b5dcf50308
+DECL|struct|__anon29a31e390308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -664,13 +664,13 @@ name|TRUE
 block|,
 literal|9
 block|,
-name|TRUE
+name|FALSE
 block|,
 comment|/* save exif       */
-name|TRUE
+name|FALSE
 block|,
 comment|/* save xmp        */
-name|TRUE
+name|FALSE
 block|,
 comment|/* save iptc        */
 name|TRUE
