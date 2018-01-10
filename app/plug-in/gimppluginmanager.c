@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc3b7a0103
+DECL|enum|__anon2c76b3b50103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -738,30 +738,28 @@ expr_stmt|;
 comment|/* FIXME manager->shm */
 name|memsize
 operator|+=
-name|gimp_object_get_memsize
+comment|/* FIXME */
+name|gimp_g_object_get_memsize
 argument_list|(
-name|GIMP_OBJECT
+name|G_OBJECT
 argument_list|(
 name|manager
 operator|->
 name|interpreter_db
 argument_list|)
-argument_list|,
-name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|gimp_object_get_memsize
+comment|/* FIXME */
+name|gimp_g_object_get_memsize
 argument_list|(
-name|GIMP_OBJECT
+name|G_OBJECT
 argument_list|(
 name|manager
 operator|->
 name|environ_table
 argument_list|)
-argument_list|,
-name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize

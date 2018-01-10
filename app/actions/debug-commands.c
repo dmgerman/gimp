@@ -1067,6 +1067,11 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|GimpProjection
 modifier|*
 name|projection
@@ -1118,6 +1123,7 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
