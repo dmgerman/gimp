@@ -2058,7 +2058,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_6
+name|export_exif
 argument_list|,
 literal|1
 argument_list|,
@@ -2082,7 +2082,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_7
+name|export_xmp
 argument_list|,
 literal|1
 argument_list|,
@@ -2106,7 +2106,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_8
+name|export_iptc
 argument_list|,
 literal|1
 argument_list|,
@@ -2589,7 +2589,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_6
+name|export_exif
 argument_list|,
 literal|1
 argument_list|,
@@ -2612,7 +2612,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_7
+name|export_xmp
 argument_list|,
 literal|1
 argument_list|,
@@ -2635,7 +2635,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_8
+name|export_iptc
 argument_list|,
 literal|1
 argument_list|,

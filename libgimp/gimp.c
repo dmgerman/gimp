@@ -464,7 +464,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8a12c0103
+DECL|enum|__anon2773577c0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -890,6 +890,36 @@ name|gboolean
 name|_show_help_button
 init|=
 name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_export_exif
+specifier|static
+name|gboolean
+name|_export_exif
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_export_xmp
+specifier|static
+name|gboolean
+name|_export_xmp
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_export_iptc
+specifier|static
+name|gboolean
+name|_export_iptc
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -4665,6 +4695,60 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_export_exif (void)
+name|gimp_export_exif
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_export_exif
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_export_xmp:  *  * Returns whether file plug-ins should default to exporting XMP  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export XMP.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_export_xmp (void)
+name|gimp_export_xmp
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_export_xmp
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_export_iptc:  *  * Returns whether file plug-ins should default to exporting IPTC  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export IPTC.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_export_iptc (void)
+name|gimp_export_iptc
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_export_iptc
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: 2.2  **/
 end_comment
 
@@ -6321,6 +6405,36 @@ operator|=
 name|config
 operator|->
 name|show_help_button
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|_export_exif
+operator|=
+name|config
+operator|->
+name|export_exif
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|_export_xmp
+operator|=
+name|config
+operator|->
+name|export_xmp
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|_export_iptc
+operator|=
+name|config
+operator|->
+name|export_iptc
 condition|?
 name|TRUE
 else|:
