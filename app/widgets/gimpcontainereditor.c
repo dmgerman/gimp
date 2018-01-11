@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2746673f0103
+DECL|enum|__anon2c83b45d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1088,6 +1088,7 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  Connect "select-item" with G_CONNECT_AFTER because it's a    *  RUN_LAST signal and the default handler selecting the row must    *  run before signal connections. See bug #784176.    */
 name|g_signal_connect_object
 argument_list|(
 name|editor
@@ -1103,7 +1104,7 @@ argument_list|)
 argument_list|,
 name|editor
 argument_list|,
-literal|0
+name|G_CONNECT_AFTER
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
