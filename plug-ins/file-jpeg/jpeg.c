@@ -1307,6 +1307,11 @@ break|break;
 default|default:
 break|break;
 block|}
+comment|/* Initialize with hardcoded defaults */
+name|load_defaults
+argument_list|()
+expr_stmt|;
+comment|/* Override the defaults with preferences. */
 name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
@@ -1402,8 +1407,8 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* load defaults from gimp parasite */
-name|load_defaults
+comment|/* Override preferences from JPG export defaults (if saved). */
+name|load_parasite
 argument_list|()
 expr_stmt|;
 switch|switch

@@ -2763,7 +2763,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 nLayers,gint32 * allLayers,gint32 image_ID,gint32 drawable_ID,WebPSaveParams * params,GError ** error)
+DECL|function|save_image (const gchar * filename,gint32 nLayers,gint32 * allLayers,gint32 image_ID,gint32 drawable_ID,GimpMetadata * metadata,GimpMetadataSaveFlags metadata_flags,WebPSaveParams * params,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -2784,6 +2784,13 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
+name|GimpMetadata
+modifier|*
+name|metadata
+parameter_list|,
+name|GimpMetadataSaveFlags
+name|metadata_flags
+parameter_list|,
 name|WebPSaveParams
 modifier|*
 name|params
@@ -2794,21 +2801,14 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpMetadata
+name|GFile
 modifier|*
-name|metadata
-decl_stmt|;
-name|GimpMetadataSaveFlags
-name|metadata_flags
+name|file
 decl_stmt|;
 name|gboolean
 name|status
 init|=
 name|FALSE
-decl_stmt|;
-name|GFile
-modifier|*
-name|file
 decl_stmt|;
 if|if
 condition|(
@@ -2902,18 +2902,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|metadata
-operator|=
-name|gimp_image_metadata_save_prepare
-argument_list|(
-name|image_ID
-argument_list|,
-literal|"image/webp"
-argument_list|,
-operator|&
-name|metadata_flags
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|metadata

@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a31e390108
+DECL|struct|__anon2a329b500108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a31e390208
+DECL|struct|__anon2a329b500208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a31e390308
+DECL|struct|__anon2a329b500308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -587,7 +587,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|load_defaults
+name|load_parasite
 parameter_list|(
 name|void
 parameter_list|)
@@ -597,7 +597,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|save_defaults
+name|save_parasite
 parameter_list|(
 name|void
 parameter_list|)
@@ -1571,6 +1571,12 @@ break|break;
 default|default:
 break|break;
 block|}
+comment|/* Initialize with hardcoded defaults */
+name|pngvals
+operator|=
+name|defaults
+expr_stmt|;
+comment|/* Override the defaults with preferences. */
 name|metadata
 operator|=
 name|gimp_image_metadata_save_prepare
@@ -1631,7 +1637,8 @@ operator|)
 operator|!=
 literal|0
 expr_stmt|;
-name|load_defaults
+comment|/* Override preferences from PNG export defaults (if saved). */
+name|load_parasite
 argument_list|()
 expr_stmt|;
 switch|switch
@@ -1642,7 +1649,7 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/* possibly retrieve data */
+comment|/* Finally possibly retrieve data from previous run. */
 name|gimp_get_data
 argument_list|(
 name|SAVE_PROC
@@ -2096,7 +2103,11 @@ operator|==
 literal|0
 condition|)
 block|{
-name|load_defaults
+name|pngvals
+operator|=
+name|defaults
+expr_stmt|;
+name|load_parasite
 argument_list|()
 expr_stmt|;
 operator|*
@@ -2201,7 +2212,11 @@ operator|==
 literal|9
 condition|)
 block|{
-name|load_defaults
+name|pngvals
+operator|=
+name|defaults
+expr_stmt|;
+name|load_parasite
 argument_list|()
 expr_stmt|;
 name|pngvals
@@ -2321,7 +2336,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|save_defaults
+name|save_parasite
 argument_list|()
 expr_stmt|;
 block|}
@@ -9087,7 +9102,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|save_defaults
+name|save_parasite
 argument_list|)
 argument_list|,
 operator|&
@@ -9168,8 +9183,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_defaults (void)
-name|load_defaults
+DECL|function|load_parasite (void)
+name|load_parasite
 parameter_list|(
 name|void
 parameter_list|)
@@ -9178,11 +9193,6 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-comment|/* initialize with hardcoded defaults */
-name|pngvals
-operator|=
-name|defaults
-expr_stmt|;
 name|parasite
 operator|=
 name|gimp_get_parasite
@@ -9327,8 +9337,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_defaults (void)
-name|save_defaults
+DECL|function|save_parasite (void)
+name|save_parasite
 parameter_list|(
 name|void
 parameter_list|)
@@ -9445,7 +9455,13 @@ modifier|*
 name|pg
 parameter_list|)
 block|{
-name|load_defaults
+comment|/* initialize with hardcoded defaults */
+name|pngvals
+operator|=
+name|defaults
+expr_stmt|;
+comment|/* Override with parasite. */
+name|load_parasite
 argument_list|()
 expr_stmt|;
 DECL|macro|SET_ACTIVE (field)

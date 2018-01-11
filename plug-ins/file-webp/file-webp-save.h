@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d1f080108
+DECL|struct|__anon29a0cffc0108
 block|{
 DECL|member|preset
 name|WebPPreset
@@ -100,6 +100,13 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GimpMetadata
+modifier|*
+name|metadata
+parameter_list|,
+name|GimpMetadataSaveFlags
+name|metadata_flags
 parameter_list|,
 name|WebPSaveParams
 modifier|*
