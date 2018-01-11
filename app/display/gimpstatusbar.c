@@ -6116,7 +6116,7 @@ name|text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%.2f\xC2\xB0"
+literal|" %.2f\xC2\xB0"
 argument_list|,
 name|shell
 operator|->
