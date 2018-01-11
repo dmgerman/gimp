@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a34612b0108
+DECL|struct|__anon279d181e0108
 block|{
 DECL|member|tag
 name|gchar
@@ -554,7 +554,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_prepare:  * @image_ID:        The image  * @mime_type:       The saved file's mime-type  * @available_flags: Value of @flags which would save all available  *                   metadata in @image_ID when passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @available_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image. The suggested  * value for GIMP_METADATA_SAVE_THUMBNAIL is determined by whether  * there was a thumbnail in the previously imported image.  * It is up to the calling application to update @available_flags in  * order to remove any unwanted metadata before exporting.  *  * Returns: The image's metadata, prepared for saving.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_prepare:  * @image_ID:        The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image and the preferences  * for metadata exporting.  * The calling application may still update @available_flags, for  * instance to follow the settings from a previous export in the same  * session, or a previous export of the same image. But it should not  * override the preferences without a good reason since it is a data  * leak.  *  * The suggested value for GIMP_METADATA_SAVE_THUMBNAIL is determined by  * whether there was a thumbnail in the previously imported image.  *  * Returns: The image's metadata, prepared for saving.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -710,6 +710,10 @@ comment|/* Exif */
 if|if
 condition|(
 operator|!
+name|gimp_export_exif
+argument_list|()
+operator|||
+operator|!
 name|gexiv2_metadata_has_exif
 argument_list|(
 name|g2metadata
@@ -842,6 +846,10 @@ expr_stmt|;
 comment|/* XMP */
 if|if
 condition|(
+operator|!
+name|gimp_export_xmp
+argument_list|()
+operator|||
 operator|!
 name|gexiv2_metadata_has_xmp
 argument_list|(
@@ -976,6 +984,10 @@ block|}
 comment|/* IPTC */
 if|if
 condition|(
+operator|!
+name|gimp_export_xmp
+argument_list|()
+operator|||
 operator|!
 name|gexiv2_metadata_has_iptc
 argument_list|(
