@@ -548,6 +548,33 @@ value|_("Which plug-in to use for importing raw digital camera files.")
 end_define
 
 begin_define
+DECL|macro|EXPORT_METADATA_EXIF_BLURB
+define|#
+directive|define
+name|EXPORT_METADATA_EXIF_BLURB
+define|\
+value|_("Export Exif metadata by default.")
+end_define
+
+begin_define
+DECL|macro|EXPORT_METADATA_XMP_BLURB
+define|#
+directive|define
+name|EXPORT_METADATA_XMP_BLURB
+define|\
+value|_("Export XMP metadata by default.")
+end_define
+
+begin_define
+DECL|macro|EXPORT_METADATA_IPTC_BLURB
+define|#
+directive|define
+name|EXPORT_METADATA_IPTC_BLURB
+define|\
+value|_("Export IPTC metadata by default.")
+end_define
+
+begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define

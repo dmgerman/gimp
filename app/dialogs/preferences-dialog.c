@@ -6042,7 +6042,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Image Import"
+literal|"Image Import& Export"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PREFS_DIALOG
@@ -6181,6 +6181,109 @@ argument_list|,
 literal|0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  Export Policies  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Export Policies"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"export-metadata-exif"
+argument_list|,
+name|_
+argument_list|(
+literal|"Export Exif metadata by default when available"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"export-metadata-xmp"
+argument_list|,
+name|_
+argument_list|(
+literal|"Export XMP metadata by default when available"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"export-metadata-iptc"
+argument_list|,
+name|_
+argument_list|(
+literal|"Export IPTC metadata by default when available"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|hbox
+operator|=
+name|prefs_hint_box_new
+argument_list|(
+name|GIMP_ICON_DIALOG_WARNING
+argument_list|,
+name|_
+argument_list|(
+literal|"Metadata can contain sensitive information."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  Raw Image Importer  */
@@ -12473,7 +12576,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ae868c90108
+DECL|struct|__anon2b9dd2a90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13350,7 +13453,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae868c90208
+DECL|struct|__anon2b9dd2a90208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13488,7 +13591,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae868c90308
+DECL|struct|__anon2b9dd2a90308
 block|{
 DECL|member|tree_label
 specifier|const
