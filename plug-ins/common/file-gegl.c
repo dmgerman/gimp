@@ -225,6 +225,32 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"Radiance RGBE"
+argument_list|)
+block|,
+literal|"image/vnd.radiance"
+block|,
+literal|"hdr"
+block|,
+literal|"0,string,?#RADIANCE\x0a"
+block|,
+literal|"file-gegl-load-rgbe"
+block|,
+literal|"Load files in the RGBE file format"
+block|,
+literal|"This procedure loads images in the RGBE format, using gegl:load"
+block|,
+comment|/* no RGBE saving */
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"OpenEXR image"
 argument_list|)
 block|,
