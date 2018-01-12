@@ -232,7 +232,7 @@ literal|"image/vnd.radiance"
 block|,
 literal|"hdr"
 block|,
-literal|"0,string,?#RADIANCE\x0a"
+literal|"0,string,?#"
 block|,
 literal|"file-gegl-load-rgbe"
 block|,
