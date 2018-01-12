@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e71cd00103
+DECL|enum|__anon29879a180103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e71cd00203
+DECL|enum|__anon29879a180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3041,13 +3041,13 @@ name|display_config
 operator|->
 name|monitor_xres
 operator|<
-literal|300.0
+literal|250.0
 operator|||
 name|display_config
 operator|->
 name|monitor_yres
 operator|<
-literal|300.0
+literal|250.0
 condition|)
 name|size
 operator|=
