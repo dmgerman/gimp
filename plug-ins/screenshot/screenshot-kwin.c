@@ -198,6 +198,8 @@ block|{
 name|gchar
 modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
 specifier|const
 name|gchar
@@ -507,6 +509,10 @@ return|;
 block|}
 name|failure
 label|:
+if|if
+condition|(
+name|filename
+condition|)
 name|g_free
 argument_list|(
 name|filename
