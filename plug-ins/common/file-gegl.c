@@ -234,18 +234,17 @@ literal|"hdr"
 block|,
 literal|"0,string,?#"
 block|,
-literal|"file-gegl-load-rgbe"
+literal|"file-load-rgbe"
 block|,
 literal|"Load files in the RGBE file format"
 block|,
 literal|"This procedure loads images in the RGBE format, using gegl:load"
 block|,
-comment|/* no RGBE saving */
-name|NULL
+literal|"file-save-rgbe"
 block|,
-name|NULL
+literal|"Saves files in the RGBE file format"
 block|,
-name|NULL
+literal|"This procedure exports images in the RGBE format, using gegl:save"
 block|}
 block|,
 block|{
