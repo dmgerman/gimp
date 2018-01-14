@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d599d0103
+DECL|enum|__anon2905d4d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -243,7 +243,10 @@ literal|"color"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP Threshold operation"
+name|_
+argument_list|(
+literal|"Reduce image to two colors using a threshold"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

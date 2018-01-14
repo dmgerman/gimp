@@ -304,7 +304,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold Tool: Reduce image to two colors using a threshold"
+literal|"Reduce image to two colors using a threshold"
 argument_list|)
 argument_list|,
 name|N_

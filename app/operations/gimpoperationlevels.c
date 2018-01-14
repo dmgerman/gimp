@@ -51,6 +51,12 @@ directive|include
 file|"gimpoperationlevels.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|gboolean
@@ -165,7 +171,10 @@ literal|"color"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP Levels operation"
+name|_
+argument_list|(
+literal|"Adjust color levels"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

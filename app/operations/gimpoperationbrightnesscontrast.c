@@ -57,6 +57,12 @@ directive|include
 file|"gimpoperationbrightnesscontrast.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|gboolean
@@ -171,7 +177,10 @@ literal|"color"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP Brightness-Contrast operation"
+name|_
+argument_list|(
+literal|"Adjust brightness and contrast"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -570,7 +570,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Levels Tool: Adjust color levels"
+literal|"Adjust color levels"
 argument_list|)
 argument_list|,
 name|N_
