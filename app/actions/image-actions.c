@@ -1176,7 +1176,7 @@ name|NC_
 argument_list|(
 literal|"image-convert-action"
 argument_list|,
-literal|"Convert the image to preceptual (sRGB) gamma"
+literal|"Convert the image to perceptual (sRGB) gamma"
 argument_list|)
 block|,
 name|FALSE
