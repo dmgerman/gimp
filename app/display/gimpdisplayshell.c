@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27966e3a0103
+DECL|enum|__anon2b4375850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27966e3a0203
+DECL|enum|__anon2b4375850203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2325,6 +2325,17 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|shell
+operator|->
+name|vrule
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_IMAGE_WINDOW_RULER
+argument_list|)
+expr_stmt|;
 comment|/*  set the rulers as track widgets for each other, so we don't end up    *  with one ruler wrongly being stuck a few pixels off while we are    *  hovering the other    */
 name|gimp_ruler_add_track_widget
 argument_list|(
@@ -2352,17 +2363,6 @@ argument_list|,
 name|shell
 operator|->
 name|hrule
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|shell
-operator|->
-name|vrule
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_HELP_IMAGE_WINDOW_RULER
 argument_list|)
 expr_stmt|;
 name|gimp_devices_add_widget
