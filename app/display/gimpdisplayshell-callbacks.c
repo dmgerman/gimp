@@ -449,6 +449,21 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  HACK: remove with GTK+ 3.x: this unconditionally maps the    *  rulers, if configured to be hidden they are never visible to the    *  user because they will be hidden again right away.    *    *  For some obscure reason, having the rulers mapped once prevents    *  crashes with tablets and on-canvas dialogs. See bug #784480 and    *  all its duplicates.    */
+name|gtk_widget_show
+argument_list|(
+name|shell
+operator|->
+name|hrule
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|shell
+operator|->
+name|vrule
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
