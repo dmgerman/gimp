@@ -1535,7 +1535,7 @@ DECL|macro|BABL_REQUIRED_MICRO
 define|#
 directive|define
 name|BABL_REQUIRED_MICRO
-value|38
+value|40
 name|babl_get_version
 argument_list|(
 operator|&
