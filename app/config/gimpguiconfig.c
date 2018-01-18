@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c610c460103
+DECL|enum|__anon2b26dbb60103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c610c460203
+DECL|enum|__anon2b26dbb60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
