@@ -1018,6 +1018,19 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Retrieve the return status for the last procedure call.  */
+end_comment
+
+begin_function_decl
+name|GimpPDBStatusType
+name|gimp_get_pdb_status
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Return various constants given by the GIMP core at plug-in config time.  */
 end_comment
 

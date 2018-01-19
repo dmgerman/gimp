@@ -464,7 +464,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2773577c0103
+DECL|enum|__anon2c6335560103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4528,6 +4528,24 @@ return|return
 literal|"invalid return status"
 return|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_get_pdb_status:  *  * Retrieves the status from the last procedure call.  *  * Return value: the #GimpPDBStatusType.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|GimpPDBStatusType
+DECL|function|gimp_get_pdb_status (void)
+name|gimp_get_pdb_status
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|pdb_error_status
+return|;
 block|}
 end_function
 
