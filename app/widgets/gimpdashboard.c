@@ -236,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b6ef330103
+DECL|enum|__anon2c54729c0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b6ef330203
+DECL|enum|__anon2c54729c0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -332,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b6ef330303
+DECL|enum|__anon2c54729c0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -569,7 +569,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon29b6ef33040a
+DECL|union|__anon2c54729c040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -581,7 +581,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon29b6ef330508
+DECL|struct|__anon2c54729c0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -596,7 +596,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon29b6ef330608
+DECL|struct|__anon2c54729c0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -3180,7 +3180,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-literal|"dashboard-field"
+literal|"dashboard-variable"
 argument_list|,
 name|variable_info
 operator|->
