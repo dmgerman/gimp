@@ -1766,10 +1766,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* Forward the return status of the underlining plug-in for the        * given format.        */
 operator|*
 name|status
 operator|=
-name|GIMP_PDB_EXECUTION_ERROR
+name|gimp_get_pdb_status
+argument_list|()
 expr_stmt|;
 name|g_set_error
 argument_list|(
