@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90103
+DECL|enum|__anon2bff452d0103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90203
+DECL|enum|__anon2bff452d0203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90303
+DECL|enum|__anon2bff452d0303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90403
+DECL|enum|__anon2bff452d0403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -216,6 +216,50 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/**  * GimpColorSelectorModel:  * @GIMP_COLOR_SELECTOR_RGB:            RGB color model  * @GIMP_COLOR_SELECTOR_LCH:            CIELCh color model  * @GIMP_COLOR_SELECTOR_HSV:            HSV color model  *  * An enum to specify the types of color spaces edited in  * #GimpColorSelector widgets.  **/
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_SELECTOR_MODEL
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_SELECTOR_MODEL
+value|(gimp_color_selector_model_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_color_selector_model_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bff452d0503
+block|{
+DECL|enumerator|GIMP_COLOR_SELECTOR_RGB
+name|GIMP_COLOR_SELECTOR_RGB
+block|,
+comment|/*< desc="RGB", help="RGB color model">*/
+DECL|enumerator|GIMP_COLOR_SELECTOR_LCH
+name|GIMP_COLOR_SELECTOR_LCH
+block|,
+comment|/*< desc="LCH", help="CIELCh color model">*/
+DECL|enumerator|GIMP_COLOR_SELECTOR_HSV
+name|GIMP_COLOR_SELECTOR_HSV
+comment|/*< desc="HSV", help="HSV color model">*/
+DECL|typedef|GimpColorSelectorModel
+block|}
+name|GimpColorSelectorModel
+typedef|;
+end_typedef
+
+begin_comment
 comment|/**  * GimpPageSelectorTarget:  * @GIMP_PAGE_SELECTOR_TARGET_LAYERS: import as layers of one image  * @GIMP_PAGE_SELECTOR_TARGET_IMAGES: import as separate images  *  * Import targets for #GimpPageSelector.  **/
 end_comment
 
@@ -240,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90503
+DECL|enum|__anon2bff452d0603
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -280,7 +324,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90603
+DECL|enum|__anon2bff452d0703
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -327,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90703
+DECL|enum|__anon2bff452d0803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -387,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e96b90803
+DECL|enum|__anon2bff452d0903
 block|{
 DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
 name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
