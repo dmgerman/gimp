@@ -3464,6 +3464,11 @@ operator|!
 name|levels_tool
 operator|->
 name|channel_menu
+operator|||
+operator|!
+name|levels_tool
+operator|->
+name|histogram_view
 condition|)
 return|return;
 if|if
