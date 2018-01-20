@@ -236,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54729c0103
+DECL|enum|__anon2c74be2f0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54729c0203
+DECL|enum|__anon2c74be2f0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -332,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54729c0303
+DECL|enum|__anon2c74be2f0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -569,7 +569,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2c54729c040a
+DECL|union|__anon2c74be2f040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -581,7 +581,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon2c54729c0508
+DECL|struct|__anon2c74be2f0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -596,7 +596,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2c54729c0608
+DECL|struct|__anon2c74be2f0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -6712,7 +6712,7 @@ operator|&
 name|process_exit_time
 argument_list|,
 operator|&
-name|process_system_time
+name|process_kernel_time
 argument_list|,
 operator|&
 name|process_user_time
