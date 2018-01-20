@@ -3049,6 +3049,11 @@ operator|!
 name|curves_tool
 operator|->
 name|channel_menu
+operator|||
+operator|!
+name|curves_tool
+operator|->
+name|graph
 condition|)
 return|return;
 if|if
