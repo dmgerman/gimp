@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62c3d20103
+DECL|enum|__anon2c2b5ef00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
