@@ -3280,6 +3280,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|visible
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|writable
 init|=
 name|FALSE
@@ -3644,6 +3649,16 @@ operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|visible
+operator|=
+name|gimp_item_get_visible
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -4244,6 +4259,8 @@ name|fs
 operator|&&
 operator|!
 name|ac
+operator|&&
+name|visible
 operator|&&
 name|next_visible
 argument_list|)
