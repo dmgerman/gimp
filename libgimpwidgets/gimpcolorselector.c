@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f7dcb0103
+DECL|enum|__anon2c11cd980103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1136,8 +1136,12 @@ case|case
 name|GIMP_COLOR_SELECTOR_ALPHA
 case|:
 comment|/* Alpha channel does not change the color model. */
+break|break;
 default|default:
 comment|/* Should not happen. */
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -1318,6 +1322,9 @@ expr_stmt|;
 break|break;
 default|default:
 comment|/* Should not happen. */
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 block|}

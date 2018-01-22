@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f954670103
+DECL|enum|__anon276f00250103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f954670203
+DECL|enum|__anon276f00250203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f954670303
+DECL|enum|__anon276f00250303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -2014,6 +2014,9 @@ expr_stmt|;
 break|break;
 default|default:
 comment|/* Should not happen. */
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 name|end_channel
