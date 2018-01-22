@@ -4009,8 +4009,10 @@ name|TRUE
 argument_list|)
 return|;
 block|}
-name|g_assert_not_reached
-argument_list|()
+name|g_return_val_if_reached
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|NULL

@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a16e530103
+DECL|enum|__anon28d2c7490103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a16e530203
+DECL|enum|__anon28d2c7490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6312,8 +6312,10 @@ name|TRUE
 argument_list|)
 return|;
 block|}
-name|g_assert_not_reached
-argument_list|()
+name|g_return_val_if_reached
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|NULL

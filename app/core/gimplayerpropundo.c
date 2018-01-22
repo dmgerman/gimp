@@ -294,7 +294,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -544,7 +544,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}

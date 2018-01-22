@@ -302,6 +302,10 @@ name|alignment
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 block|}
 name|object_list
 operator|=
@@ -1186,7 +1190,7 @@ name|object_height
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}

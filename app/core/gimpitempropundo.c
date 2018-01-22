@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276181c10103
+DECL|enum|__anon288c7cdf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -524,7 +524,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -1196,7 +1196,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 block|}

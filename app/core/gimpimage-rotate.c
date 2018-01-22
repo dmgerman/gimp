@@ -417,7 +417,7 @@ literal|0
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|g_return_if_reached
 argument_list|()
 expr_stmt|;
 return|return;
@@ -1012,6 +1012,10 @@ case|case
 name|GIMP_ROTATE_180
 case|:
 return|return;
+default|default:
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 block|}
 name|gimp_item_get_offset
 argument_list|(
