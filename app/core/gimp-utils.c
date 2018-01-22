@@ -1782,7 +1782,7 @@ return|;
 block|}
 block|}
 block|}
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|to
 operator|-
@@ -1793,6 +1793,8 @@ operator|<=
 name|string
 operator|->
 name|len
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

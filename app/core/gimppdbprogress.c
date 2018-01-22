@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5d5ef0103
+DECL|enum|__anon2c12065a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -680,7 +680,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PDB
 argument_list|(
@@ -690,7 +690,7 @@ name|pdb
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(

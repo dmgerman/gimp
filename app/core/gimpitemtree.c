@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292480e60103
+DECL|enum|__anon276b1ef20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -506,7 +506,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
@@ -516,7 +516,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|g_type_is_a
 argument_list|(
@@ -528,7 +528,7 @@ name|GIMP_TYPE_ITEM_STACK
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|g_type_is_a
 argument_list|(
@@ -540,7 +540,7 @@ name|GIMP_TYPE_ITEM
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|private
 operator|->

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296f1d420103
+DECL|enum|__anon27f6fda50103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296f1d420203
+DECL|enum|__anon27f6fda50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -698,7 +698,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(

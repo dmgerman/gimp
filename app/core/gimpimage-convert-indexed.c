@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28a135b50103
+DECL|enum|__anon28aee7d20103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a135b50208
+DECL|struct|__anon28aee7d20208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a135b50308
+DECL|struct|__anon28aee7d20308
 block|{
 DECL|member|used_count
 name|glong
@@ -7302,7 +7302,7 @@ name|lb
 operator|+
 literal|1
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b1
 operator|->
@@ -7311,9 +7311,11 @@ operator|>=
 name|b1
 operator|->
 name|Rmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b2
 operator|->
@@ -7322,6 +7324,8 @@ operator|>=
 name|b2
 operator|->
 name|Rmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7349,7 +7353,7 @@ name|lb
 operator|+
 literal|1
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b1
 operator|->
@@ -7358,9 +7362,11 @@ operator|>=
 name|b1
 operator|->
 name|Gmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b2
 operator|->
@@ -7369,6 +7375,8 @@ operator|>=
 name|b2
 operator|->
 name|Gmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7396,7 +7404,7 @@ name|lb
 operator|+
 literal|1
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b1
 operator|->
@@ -7405,9 +7413,11 @@ operator|>=
 name|b1
 operator|->
 name|Bmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|b2
 operator|->
@@ -7416,6 +7426,8 @@ operator|>=
 name|b2
 operator|->
 name|Bmin
+argument_list|,
+name|numboxes
 argument_list|)
 expr_stmt|;
 break|break;

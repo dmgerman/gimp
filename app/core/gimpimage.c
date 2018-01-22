@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2c7490103
+DECL|enum|__anon27da5e290103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2c7490203
+DECL|enum|__anon27da5e290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3628,7 +3628,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(

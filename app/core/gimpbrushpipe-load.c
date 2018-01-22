@@ -970,7 +970,7 @@ name|i
 index|]
 expr_stmt|;
 block|}
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|pipe
 operator|->
@@ -984,6 +984,8 @@ literal|1
 index|]
 operator|==
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|pipe

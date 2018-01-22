@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41c39d0103
+DECL|enum|__anon28b8c9b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -303,7 +303,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|sample_point_undo
 operator|->

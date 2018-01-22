@@ -2349,11 +2349,14 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_assert
+comment|/* Not cool, we leak memory if we return, but anyway that is          * never supposed to happen. If we see this warning, a bug has          * to be fixed!          */
+name|g_return_val_if_fail
 argument_list|(
 name|new_height
 operator|==
 name|orig_width
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -2484,11 +2487,14 @@ name|j
 decl_stmt|,
 name|k
 decl_stmt|;
-name|g_assert
+comment|/* Not cool, we leak memory if we return, but anyway that is          * never supposed to happen. If we see this warning, a bug has          * to be fixed!          */
+name|g_return_val_if_fail
 argument_list|(
 name|new_width
 operator|==
 name|orig_width
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|src_rect
@@ -2698,11 +2704,14 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_assert
+comment|/* Not cool, we leak memory if we return, but anyway that is          * never supposed to happen. If we see this warning, a bug has          * to be fixed!          */
+name|g_return_val_if_fail
 argument_list|(
 name|new_width
 operator|==
 name|orig_height
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|src_rect

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c7cdf0103
+DECL|enum|__anon2bf6c8720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -497,7 +497,7 @@ case|:
 case|case
 name|GIMP_UNDO_PARASITE_REMOVE
 case|:
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|item_prop_undo
 operator|->

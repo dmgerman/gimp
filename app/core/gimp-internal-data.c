@@ -985,8 +985,8 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* we bypass gimp_data_save() and call the data's save() virtual function    * directly, since gimp_data_save() is a nop for internal data.    *    * FIXME:  we save the data whether it's dirty or not, since it might not    * exist on disk.  currently, we only use this for cheap data, such as    * gradients, so this is not a big concern, but if we save more expensive     * data in the future, we should fix this.    */
-name|g_assert
+comment|/* we bypass gimp_data_save() and call the data's save() virtual function    * directly, since gimp_data_save() is a nop for internal data.    *    * FIXME:  we save the data whether it's dirty or not, since it might not    * exist on disk.  currently, we only use this for cheap data, such as    * gradients, so this is not a big concern, but if we save more expensive    * data in the future, we should fix this.    */
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_DATA_GET_CLASS
 argument_list|(
@@ -994,6 +994,8 @@ name|data
 argument_list|)
 operator|->
 name|save
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|success

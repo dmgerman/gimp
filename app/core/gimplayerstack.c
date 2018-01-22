@@ -296,7 +296,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|g_type_is_a
 argument_list|(
@@ -791,7 +791,7 @@ name|GList
 modifier|*
 name|iter
 decl_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|first
 operator|>=
