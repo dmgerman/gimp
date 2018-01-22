@@ -1822,6 +1822,18 @@ argument_list|(
 name|top_layer
 argument_list|)
 expr_stmt|;
+comment|/*  Make sure the image's graph is constructed, so that top-level layers have    *  a parent node.    */
+operator|(
+name|void
+operator|)
+name|gimp_projectable_get_graph
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Build our graph inside the top-layer's parent node  */
 name|source_node
 operator|=
@@ -2426,18 +2438,6 @@ argument_list|,
 name|x1
 argument_list|,
 name|y1
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure the image's graph is constructed, so that top-level layers have    *  a parent node.    */
-operator|(
-name|void
-operator|)
-name|gimp_projectable_get_graph
-argument_list|(
-name|GIMP_PROJECTABLE
-argument_list|(
-name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|offset_node
