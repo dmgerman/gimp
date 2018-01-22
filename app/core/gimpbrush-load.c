@@ -1300,7 +1300,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28a745dc010a
+DECL|union|__anon2af47960010a
 block|{
 DECL|member|u
 name|guint16
@@ -2354,7 +2354,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in brush file: "
-literal|"Brush size value currupt."
+literal|"Brush size value corrupt."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3188,7 +3188,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parse error in brush file: "
-literal|"Brush size value currupt."
+literal|"Brush size value corrupt."
 argument_list|)
 argument_list|)
 expr_stmt|;
