@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29924c770103
+DECL|enum|__anon290f7dcb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1070,7 +1070,7 @@ name|model
 init|=
 name|selector
 operator|->
-name|channel
+name|model
 decl_stmt|;
 name|selector
 operator|->
