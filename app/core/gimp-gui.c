@@ -626,7 +626,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_show_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
+DECL|function|gimp_show_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message,const gchar * trace)
 name|gimp_show_message
 parameter_list|(
 name|Gimp
@@ -649,6 +649,11 @@ specifier|const
 name|gchar
 modifier|*
 name|message
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|trace
 parameter_list|)
 block|{
 specifier|const
@@ -656,6 +661,10 @@ name|gchar
 modifier|*
 name|desc
 init|=
+name|trace
+condition|?
+literal|"Error"
+else|:
 literal|"Message"
 decl_stmt|;
 name|g_return_if_fail
@@ -726,6 +735,8 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
+argument_list|,
+name|trace
 argument_list|)
 expr_stmt|;
 return|return;
@@ -784,6 +795,17 @@ argument_list|,
 name|desc
 argument_list|,
 name|message
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|trace
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Back trace:\n%s\n\n"
+argument_list|,
+name|trace
 argument_list|)
 expr_stmt|;
 block|}

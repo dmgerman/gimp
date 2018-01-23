@@ -778,6 +778,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCriticalDialog
+typedef|typedef
+name|struct
+name|_GimpCriticalDialog
+name|GimpCriticalDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpErrorDialog
 typedef|typedef
 name|struct

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcriticaldialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdashboard.h"
 end_include
 
@@ -824,6 +830,40 @@ argument_list|(
 name|_
 argument_list|(
 literal|"GIMP Message"
+argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_critical_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
+name|dialogs_critical_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
+parameter_list|,
+name|gint
+name|view_size
+parameter_list|)
+block|{
+return|return
+name|gimp_critical_dialog_new
+argument_list|(
+name|_
+argument_list|(
+literal|"GIMP critical error"
 argument_list|)
 argument_list|)
 return|;

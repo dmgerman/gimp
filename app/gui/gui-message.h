@@ -40,6 +40,11 @@ specifier|const
 name|gchar
 modifier|*
 name|message
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|trace
 parameter_list|)
 function_decl|;
 end_function_decl
