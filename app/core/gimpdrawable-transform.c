@@ -1554,6 +1554,16 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+operator|*
+name|new_x
+operator|=
+name|x
+expr_stmt|;
+operator|*
+name|new_y
+operator|=
+name|y
+expr_stmt|;
 name|g_return_if_reached
 argument_list|()
 expr_stmt|;

@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da5e290103
+DECL|enum|__anon2ae7d9dd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da5e290203
+DECL|enum|__anon2ae7d9dd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6317,9 +6317,6 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
-name|NULL
-return|;
 block|}
 end_function
 
