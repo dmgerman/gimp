@@ -4984,9 +4984,9 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|G_OS_UNIX
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -12616,7 +12616,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c85c05c0108
+DECL|struct|__anon28d84bb10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13493,7 +13493,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c85c05c0208
+DECL|struct|__anon28d84bb10208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13631,7 +13631,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c85c05c0308
+DECL|struct|__anon28d84bb10308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -899,12 +899,17 @@ condition|(
 name|use_handler
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|G_OS_UNIX
+ifndef|#
+directive|ifndef
+name|GIMP_CONSOLE_COMPILATION
 if|if
 condition|(
 name|generate_backtrace
+operator|&&
+operator|!
+name|the_errors_gimp
+operator|->
+name|no_interface
 condition|)
 block|{
 comment|/* If enabled (it is disabled by default), the GUI preference            * takes precedence over the command line argument.            */
@@ -1135,12 +1140,9 @@ name|trace
 init|=
 name|NULL
 decl_stmt|;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|G_OS_UNIX
-argument_list|)
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|gchar
 modifier|*
 name|args
@@ -1187,12 +1189,9 @@ return|return
 name|NULL
 return|;
 comment|/* This works only on UNIX systems. On Windows, we'll have to find    * another method, probably with DrMingW.    */
-if|#
-directive|if
-name|defined
-argument_list|(
-name|G_OS_UNIX
-argument_list|)
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|g_snprintf
 argument_list|(
 name|pid
