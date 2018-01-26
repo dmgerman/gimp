@@ -654,6 +654,10 @@ condition|)
 block|{
 name|pathext
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|g_getenv
 argument_list|(
 literal|"PATHEXT"

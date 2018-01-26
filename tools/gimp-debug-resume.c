@@ -136,6 +136,10 @@ name|printf
 argument_list|(
 literal|"Resuming Thread: %u\n"
 argument_list|,
+operator|(
+name|unsigned
+name|int
+operator|)
 name|te32
 operator|.
 name|th32ThreadID
@@ -255,6 +259,10 @@ name|printf
 argument_list|(
 literal|"PID:\t%u\t%s\n"
 argument_list|,
+operator|(
+name|unsigned
+name|int
+operator|)
 name|pe32
 operator|.
 name|th32ProcessID
@@ -352,7 +360,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"invalid: %s\n"
+literal|"invalid: %lu\n"
 argument_list|,
 name|pid
 argument_list|)
@@ -365,7 +373,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-literal|"process: %u\n"
+literal|"process: %lu\n"
 argument_list|,
 name|pid
 argument_list|)
