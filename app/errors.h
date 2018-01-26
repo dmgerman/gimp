@@ -51,6 +51,11 @@ name|use_debug_handler
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|backtrace_file
 parameter_list|)
 function_decl|;
 end_function_decl

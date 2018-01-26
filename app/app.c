@@ -520,7 +520,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,GFile * alternate_system_gimprc,GFile * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,gboolean show_playground,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|app_run (const gchar * full_prog_name,const gchar ** filenames,GFile * alternate_system_gimprc,GFile * alternate_gimprc,const gchar * session_name,const gchar * batch_interpreter,const gchar ** batch_commands,gboolean as_new,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean use_debug_handler,gboolean show_playground,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode,const gchar * backtrace_file)
 name|app_run
 parameter_list|(
 specifier|const
@@ -596,6 +596,11 @@ name|stack_trace_mode
 parameter_list|,
 name|GimpPDBCompatMode
 name|pdb_compat_mode
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|backtrace_file
 parameter_list|)
 block|{
 name|GimpInitStatusFunc
@@ -821,6 +826,8 @@ argument_list|,
 name|use_debug_handler
 argument_list|,
 name|stack_trace_mode
+argument_list|,
+name|backtrace_file
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */

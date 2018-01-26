@@ -151,6 +151,11 @@ name|stack_trace_mode
 parameter_list|,
 name|GimpPDBCompatMode
 name|pdb_compat_mode
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|backtrace_file
 parameter_list|)
 function_decl|;
 end_function_decl

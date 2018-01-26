@@ -1413,6 +1413,12 @@ name|user_gimprc_file
 init|=
 name|NULL
 decl_stmt|;
+name|gchar
+modifier|*
+name|backtrace_file
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1639,10 +1645,6 @@ name|gchar
 modifier|*
 name|dir
 decl_stmt|;
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
 comment|/* This has to be the non-roaming directory (i.e., the local        directory) as backtraces correspond to the binaries on this        system. */
 name|dir
 operator|=
@@ -1688,7 +1690,7 @@ argument_list|,
 name|t
 argument_list|)
 expr_stmt|;
-name|path
+name|backtrace_file
 operator|=
 name|g_build_filename
 argument_list|(
@@ -1714,12 +1716,7 @@ argument_list|()
 expr_stmt|;
 name|ExcHndlSetLogFileNameA
 argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
+name|backtrace_file
 argument_list|)
 expr_stmt|;
 block|}
@@ -2369,6 +2366,17 @@ argument_list|,
 name|stack_trace_mode
 argument_list|,
 name|pdb_compat_mode
+argument_list|,
+name|backtrace_file
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|backtrace_file
+condition|)
+name|g_free
+argument_list|(
+name|backtrace_file
 argument_list|)
 expr_stmt|;
 if|if

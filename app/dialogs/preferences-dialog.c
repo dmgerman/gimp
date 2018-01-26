@@ -5219,6 +5219,7 @@ expr_stmt|;
 comment|/***************/
 comment|/*  Debugging  */
 comment|/***************/
+comment|/* No debugging preferences are needed on win32. Either GIMP has been    * built with DrMinGW support (HAVE_EXCHNDL) or not. If it has, then    * the backtracing is enabled and can't be disabled. It assume it will    * work only upon a crash.    */
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
@@ -12969,7 +12970,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27b04c4f0108
+DECL|struct|__anon2c031bb30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13846,7 +13847,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b04c4f0208
+DECL|struct|__anon2c031bb30208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13984,7 +13985,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b04c4f0308
+DECL|struct|__anon2c031bb30308
 block|{
 DECL|member|tree_label
 specifier|const

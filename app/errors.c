@@ -181,6 +181,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|backtrace_file
+specifier|static
+name|gchar
+modifier|*
+name|backtrace_file
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -297,7 +308,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|errors_init (Gimp * gimp,const gchar * _full_prog_name,gboolean _use_debug_handler,GimpStackTraceMode _stack_trace_mode)
+DECL|function|errors_init (Gimp * gimp,const gchar * _full_prog_name,gboolean _use_debug_handler,GimpStackTraceMode _stack_trace_mode,const gchar * _backtrace_file)
 name|errors_init
 parameter_list|(
 name|Gimp
@@ -314,6 +325,11 @@ name|_use_debug_handler
 parameter_list|,
 name|GimpStackTraceMode
 name|_stack_trace_mode
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|_backtrace_file
 parameter_list|)
 block|{
 specifier|const
@@ -443,6 +459,13 @@ argument_list|(
 name|_full_prog_name
 argument_list|)
 expr_stmt|;
+name|backtrace_file
+operator|=
+name|g_strdup
+argument_list|(
+name|_backtrace_file
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -513,6 +536,15 @@ block|{
 name|the_errors_gimp
 operator|=
 name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|backtrace_file
+condition|)
+name|g_free
+argument_list|(
+name|backtrace_file
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -917,7 +949,7 @@ name|gchar
 modifier|*
 name|args
 index|[
-literal|6
+literal|7
 index|]
 init|=
 block|{
@@ -938,6 +970,8 @@ name|gchar
 operator|*
 operator|)
 name|message
+block|,
+name|backtrace_file
 block|,
 name|NULL
 block|}
