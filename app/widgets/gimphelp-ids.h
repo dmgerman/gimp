@@ -4438,6 +4438,14 @@ value|"gimp-prefs-new-image"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_DEBUGGING
+define|#
+directive|define
+name|GIMP_HELP_PREFS_DEBUGGING
+value|"gimp-prefs-debugging"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_DEFAULT_GRID
 define|#
 directive|define
