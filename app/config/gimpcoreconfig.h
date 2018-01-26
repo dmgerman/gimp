@@ -371,6 +371,10 @@ DECL|member|export_metadata_iptc
 name|gboolean
 name|export_metadata_iptc
 decl_stmt|;
+DECL|member|generate_backtrace
+name|gboolean
+name|generate_backtrace
+decl_stmt|;
 block|}
 struct|;
 end_struct

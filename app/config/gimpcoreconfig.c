@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5108850103
+DECL|enum|__anon2b19cd9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,6 +345,9 @@ name|PROP_EXPORT_METADATA_XMP
 block|,
 DECL|enumerator|PROP_EXPORT_METADATA_IPTC
 name|PROP_EXPORT_METADATA_IPTC
+block|,
+DECL|enumerator|PROP_GENERATE_BACKTRACE
+name|PROP_GENERATE_BACKTRACE
 block|,
 comment|/* ignored, only for backward compatibility: */
 DECL|enumerator|PROP_INSTALL_COLORMAP
@@ -1948,6 +1951,32 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_GENERATE_BACKTRACE
+argument_list|,
+literal|"generate-backtrace"
+argument_list|,
+literal|"Try generating backtrace upon errors"
+argument_list|,
+name|GENERATE_BACKTRACE_BLURB
+argument_list|,
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|TRUE
+argument_list|,
+else|#
+directive|else
+name|FALSE
+argument_list|,
+endif|#
+directive|endif
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 comment|/*  only for backward compatibility:  */
 name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
@@ -3409,6 +3438,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_GENERATE_BACKTRACE
+case|:
+name|core_config
+operator|->
+name|generate_backtrace
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_INSTALL_COLORMAP
 case|:
 case|case
@@ -4219,6 +4261,19 @@ argument_list|,
 name|core_config
 operator|->
 name|export_metadata_iptc
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_GENERATE_BACKTRACE
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|generate_backtrace
 argument_list|)
 expr_stmt|;
 break|break;

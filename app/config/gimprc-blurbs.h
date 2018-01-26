@@ -575,6 +575,15 @@ value|_("Export IPTC metadata by default.")
 end_define
 
 begin_define
+DECL|macro|GENERATE_BACKTRACE_BLURB
+define|#
+directive|define
+name|GENERATE_BACKTRACE_BLURB
+define|\
+value|_("Try generating debug data for bug reporting when appropriate.")
+end_define
+
+begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define

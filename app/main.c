@@ -2301,9 +2301,7 @@ name|abort_message
 argument_list|)
 expr_stmt|;
 name|gimp_init_signal_handlers
-argument_list|(
-name|stack_trace_mode
-argument_list|)
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

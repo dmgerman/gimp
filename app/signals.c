@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"errors.h"
 end_include
 
@@ -70,11 +76,10 @@ end_endif
 
 begin_function
 name|void
-DECL|function|gimp_init_signal_handlers (GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_init_signal_handlers (void)
 name|gimp_init_signal_handlers
 parameter_list|(
-name|GimpStackTraceMode
-name|stack_trace_mode
+name|void
 parameter_list|)
 block|{
 ifndef|#
@@ -128,13 +133,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|stack_trace_mode
-operator|!=
-name|GIMP_STACK_TRACE_NEVER
-condition|)
-block|{
 comment|/* these are handled by gimp_fatal_error() */
 name|gimp_signal_private
 argument_list|(
@@ -163,7 +161,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Ignore SIGPIPE because plug_in.c handles broken pipes */
 name|gimp_signal_private
 argument_list|(
