@@ -878,6 +878,9 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 if|if
 condition|(
 name|critical
@@ -888,6 +891,9 @@ literal|0
 condition|)
 name|kill
 argument_list|(
+operator|(
+name|pid_t
+operator|)
 name|critical
 operator|->
 name|pid
@@ -895,6 +901,8 @@ argument_list|,
 name|SIGINT
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|critical
@@ -984,7 +992,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_critical_dialog_add (GtkWidget * dialog,const gchar * message,const gchar * trace,gboolean is_fatal,const gchar * program,pid_t pid)
+DECL|function|gimp_critical_dialog_add (GtkWidget * dialog,const gchar * message,const gchar * trace,gboolean is_fatal,const gchar * program,gint pid)
 name|gimp_critical_dialog_add
 parameter_list|(
 name|GtkWidget
@@ -1009,7 +1017,7 @@ name|gchar
 modifier|*
 name|program
 parameter_list|,
-name|pid_t
+name|gint
 name|pid
 parameter_list|)
 block|{

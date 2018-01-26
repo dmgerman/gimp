@@ -24,43 +24,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<signal.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdarg.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/wait.h>
 end_include
 
 begin_ifdef
@@ -893,6 +857,11 @@ name|generate_backtrace
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|eek_handled
+init|=
+name|FALSE
+decl_stmt|;
 comment|/* GIMP has 2 ways to handle termination signals and fatal errors: one    * is the stack trace mode which is set at start as command line    * option --stack-trace-mode, this won't change for the length of the    * session and outputs a trace in terminal; the other is set in    * preferences, outputs a trace in a GUI and can change anytime during    * the session.    * The GUI backtrace has priority if it is set.    */
 name|g_object_get
 argument_list|(
@@ -909,9 +878,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
+comment|/* Let's just always output on stdout at least so that there is a    * trace if the rest fails. */
 name|g_printerr
 argument_list|(
 literal|"%s: %s: %s\n"
@@ -926,6 +893,18 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|HAVE_EXCHNDL
+argument_list|)
 if|if
 condition|(
 name|use_handler
@@ -1036,10 +1015,22 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|eek_handled
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
-else|else
 endif|#
 directive|endif
+comment|/* !GIMP_CONSOLE_COMPILATION */
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+if|if
+condition|(
+operator|!
+name|eek_handled
+condition|)
 block|{
 switch|switch
 condition|(
@@ -1123,10 +1114,36 @@ default|default:
 break|break;
 block|}
 block|}
+endif|#
+directive|endif
+comment|/* ! G_OS_WIN32 */
 block|}
-else|#
-directive|else
+endif|#
+directive|endif
+comment|/* ! G_OS_WIN32 || HAVE_EXCHNDL */
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_CONSOLE_COMPILATION
+argument_list|)
 comment|/* g_on_error_* don't do anything reasonable on Win32. */
+if|if
+condition|(
+operator|!
+name|eek_handled
+operator|&&
+operator|!
+name|the_errors_gimp
+operator|->
+name|no_interface
+condition|)
 name|MessageBox
 argument_list|(
 name|NULL
@@ -1149,7 +1166,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* ! G_OS_WIN32 */
 name|exit
 argument_list|(
 name|EXIT_FAILURE

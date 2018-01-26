@@ -122,7 +122,7 @@ modifier|*
 name|program
 decl_stmt|;
 DECL|member|pid
-name|pid_t
+name|gint
 name|pid
 decl_stmt|;
 block|}
@@ -191,7 +191,7 @@ name|gchar
 modifier|*
 name|program
 parameter_list|,
-name|pid_t
+name|gint
 name|pid
 parameter_list|)
 function_decl|;
