@@ -33,6 +33,14 @@ directive|include
 file|"gimp-transform-utils.h"
 end_include
 
+begin_define
+DECL|macro|EPSILON
+define|#
+directive|define
+name|EPSILON
+value|1e-6
+end_define
+
 begin_function
 name|void
 DECL|function|gimp_transform_get_rotate_center (gint x,gint y,gint width,gint height,gboolean auto_center,gdouble * center_x,gdouble * center_y)
@@ -1518,6 +1526,8 @@ block|{
 comment|/* make sure that (r,r) is not 0 */
 if|if
 condition|(
+name|fabs
+argument_list|(
 name|matrix
 index|[
 name|p
@@ -1529,8 +1539,9 @@ name|t
 operator|+
 name|r
 index|]
-operator|==
-literal|0.0
+argument_list|)
+operator|<=
+name|EPSILON
 condition|)
 block|{
 comment|/* we need to permutate rows */
@@ -1564,6 +1575,8 @@ return|;
 block|}
 if|if
 condition|(
+name|fabs
+argument_list|(
 name|matrix
 index|[
 name|p
@@ -1575,8 +1588,9 @@ name|t
 operator|+
 name|r
 index|]
-operator|!=
-literal|0.0
+argument_list|)
+operator|>
+name|EPSILON
 condition|)
 break|break;
 block|}
