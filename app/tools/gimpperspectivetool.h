@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
+file|"gimpgenerictransformtool.h"
 end_include
 
 begin_define
@@ -109,19 +109,8 @@ struct|struct
 name|_GimpPerspectiveTool
 block|{
 DECL|member|parent_instance
-name|GimpTransformTool
+name|GimpGenericTransformTool
 name|parent_instance
-decl_stmt|;
-DECL|member|label
-name|GtkWidget
-modifier|*
-name|label
-index|[
-literal|3
-index|]
-index|[
-literal|3
-index|]
 decl_stmt|;
 block|}
 struct|;
@@ -133,7 +122,7 @@ struct|struct
 name|_GimpPerspectiveToolClass
 block|{
 DECL|member|parent_class
-name|GimpTransformToolClass
+name|GimpGenericTransformToolClass
 name|parent_class
 decl_stmt|;
 block|}
