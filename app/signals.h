@@ -35,7 +35,10 @@ begin_function_decl
 name|void
 name|gimp_init_signal_handlers
 parameter_list|(
-name|void
+name|gchar
+modifier|*
+modifier|*
+name|backtrace_file
 parameter_list|)
 function_decl|;
 end_function_decl
