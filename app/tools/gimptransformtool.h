@@ -158,6 +158,11 @@ name|GimpMatrix3
 name|transform
 decl_stmt|;
 comment|/*  transformation matrix              */
+DECL|member|transform_valid
+name|gboolean
+name|transform_valid
+decl_stmt|;
+comment|/*  whether the matrix is valid        */
 DECL|member|trans_info
 name|TransInfo
 name|trans_info
