@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae530760103
+DECL|enum|__anon2c542bff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1151,6 +1151,24 @@ argument_list|,
 operator|&
 name|ty
 argument_list|)
+expr_stmt|;
+name|tx
+operator|=
+name|floor
+argument_list|(
+name|tx
+argument_list|)
+operator|+
+literal|0.5
+expr_stmt|;
+name|ty
+operator|=
+name|floor
+argument_list|(
+name|ty
+argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 switch|switch
 condition|(
