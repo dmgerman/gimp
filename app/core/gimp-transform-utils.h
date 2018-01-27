@@ -353,6 +353,27 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_transform_matrix_generic
+parameter_list|(
+name|GimpMatrix3
+modifier|*
+name|matrix
+parameter_list|,
+specifier|const
+name|GimpVector2
+modifier|*
+name|input_points
+parameter_list|,
+specifier|const
+name|GimpVector2
+modifier|*
+name|output_points
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_transform_polygon_is_convex
 parameter_list|(
 name|gdouble

@@ -93,6 +93,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGenericTransformTool
+typedef|typedef
+name|struct
+name|_GimpGenericTransformTool
+name|GimpGenericTransformTool
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaintTool
 typedef|typedef
 name|struct
