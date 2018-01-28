@@ -863,7 +863,7 @@ name|gimp_critical_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP critical error"
+literal|"GIMP Debug"
 argument_list|)
 argument_list|)
 return|;
