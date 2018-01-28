@@ -120,6 +120,22 @@ name|GIMP_CRITICAL_RESPONSE_RESTART
 value|3
 end_define
 
+begin_define
+DECL|macro|BUTTON1_TEXT
+define|#
+directive|define
+name|BUTTON1_TEXT
+value|"Copy bug information"
+end_define
+
+begin_define
+DECL|macro|BUTTON2_TEXT
+define|#
+directive|define
+name|BUTTON2_TEXT
+value|"Open bug tracker"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -263,26 +279,6 @@ name|GtkTextBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|button1
-init|=
-name|_
-argument_list|(
-literal|"Copy bug information"
-argument_list|)
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|button2
-init|=
-name|_
-argument_list|(
-literal|"Open bug tracker"
-argument_list|)
-decl_stmt|;
 name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
@@ -300,11 +296,17 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|button1
+name|_
+argument_list|(
+name|BUTTON1_TEXT
+argument_list|)
 argument_list|,
 name|GIMP_CRITICAL_RESPONSE_CLIPBOARD
 argument_list|,
-name|button2
+name|_
+argument_list|(
+name|BUTTON2_TEXT
+argument_list|)
 argument_list|,
 name|GIMP_CRITICAL_RESPONSE_URL
 argument_list|,
@@ -383,7 +385,7 @@ expr_stmt|;
 comment|/* The error label. */
 name|dialog
 operator|->
-name|label
+name|top_label
 operator|=
 name|gtk_label_new
 argument_list|(
@@ -396,7 +398,7 @@ name|GTK_LABEL
 argument_list|(
 name|dialog
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|,
 name|GTK_JUSTIFY_CENTER
@@ -408,7 +410,7 @@ name|GTK_LABEL
 argument_list|(
 name|dialog
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|,
 name|TRUE
@@ -425,7 +427,7 @@ argument_list|)
 argument_list|,
 name|dialog
 operator|->
-name|label
+name|top_label
 argument_list|,
 name|FALSE
 argument_list|,
@@ -459,7 +461,7 @@ name|GTK_LABEL
 argument_list|(
 name|dialog
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|,
 name|attrs
@@ -474,7 +476,7 @@ name|gtk_widget_show
 argument_list|(
 name|dialog
 operator|->
-name|label
+name|top_label
 argument_list|)
 expr_stmt|;
 comment|/* Generic "report a bug" instructions. */
@@ -485,9 +487,9 @@ argument_list|(
 literal|"%s\n"
 literal|" \xe2\x80\xa2 %s %s\n"
 literal|" \xe2\x80\xa2 %s %s\n"
-literal|" \xe2\x80\xa2 %s \n"
-literal|" \xe2\x80\xa2 %s \n"
-literal|" \xe2\x80\xa2 %s \n"
+literal|" \xe2\x80\xa2 %s\n"
+literal|" \xe2\x80\xa2 %s\n"
+literal|" \xe2\x80\xa2 %s\n"
 literal|" \xe2\x80\xa2 %s\n\n"
 literal|"%s"
 argument_list|,
@@ -502,14 +504,20 @@ argument_list|(
 literal|"Copy the bug information to clipboard by clicking: "
 argument_list|)
 argument_list|,
-name|button1
+name|_
+argument_list|(
+name|BUTTON1_TEXT
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Open our bug tracker in browser by clicking: "
 argument_list|)
 argument_list|,
-name|button2
+name|_
+argument_list|(
+name|BUTTON2_TEXT
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -540,7 +548,9 @@ literal|"bugs is the best way to make your software awesome."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|widget
+name|dialog
+operator|->
+name|bottom_label
 operator|=
 name|gtk_label_new
 argument_list|(
@@ -556,7 +566,9 @@ name|gtk_label_set_selectable
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|widget
+name|dialog
+operator|->
+name|bottom_label
 argument_list|)
 argument_list|,
 name|TRUE
@@ -571,7 +583,9 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|widget
+name|dialog
+operator|->
+name|bottom_label
 argument_list|,
 name|FALSE
 argument_list|,
@@ -582,7 +596,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|widget
+name|dialog
+operator|->
+name|bottom_label
 argument_list|)
 expr_stmt|;
 comment|/* Bug details for developers. */
@@ -1451,7 +1467,7 @@ name|GTK_LABEL
 argument_list|(
 name|critical
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|)
 operator|||
@@ -1463,7 +1479,7 @@ name|GTK_LABEL
 argument_list|(
 name|critical
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1505,7 +1521,7 @@ name|GTK_LABEL
 argument_list|(
 name|critical
 operator|->
-name|label
+name|top_label
 argument_list|)
 argument_list|,
 name|text
@@ -1516,6 +1532,91 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|is_fatal
+condition|)
+block|{
+comment|/* Same text as before except that we don't need the last point        * about saving and restarting since anyway we are crashing and        * manual saving is not possible anymore (or even advisable since        * if it fails, one may corrupt files).        */
+name|text
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s\n"
+literal|" \xe2\x80\xa2 %s %s\n"
+literal|" \xe2\x80\xa2 %s %s\n"
+literal|" \xe2\x80\xa2 %s\n"
+literal|" \xe2\x80\xa2 %s\n"
+literal|" \xe2\x80\xa2 %s\n\n"
+literal|"%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"To help us improve GIMP, you can report the bug with "
+literal|"these simple steps:"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Copy the bug information to clipboard by clicking: "
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+name|BUTTON1_TEXT
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Open our bug tracker in browser by clicking: "
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+name|BUTTON2_TEXT
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Create a login if you don't have one yet."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Paste the clipboard text in a new bug report."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Add relevant information in English in the bug report "
+literal|"explaining what you were doing when this error occurred."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Note: you can also close the dialog directly but reporting "
+literal|"bugs is the best way to make your software awesome."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|critical
+operator|->
+name|bottom_label
+argument_list|)
+argument_list|,
+name|text
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* The details text is untranslated on purpose. This is the message    * meant to go to clipboard for the bug report. It has to be in    * English.    */
 name|buffer
 operator|=

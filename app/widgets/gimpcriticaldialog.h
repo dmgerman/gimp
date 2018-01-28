@@ -106,10 +106,15 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-DECL|member|label
+DECL|member|top_label
 name|GtkWidget
 modifier|*
-name|label
+name|top_label
+decl_stmt|;
+DECL|member|bottom_label
+name|GtkWidget
+modifier|*
+name|bottom_label
 decl_stmt|;
 DECL|member|details
 name|GtkWidget
