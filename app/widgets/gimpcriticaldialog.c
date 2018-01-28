@@ -1471,14 +1471,14 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* First critical error. Let's just display it. */
+comment|/* First error. Let's just display it. */
 name|text
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP encountered a critical error: %s"
+literal|"GIMP encountered an error: %s"
 argument_list|)
 argument_list|,
 name|message
