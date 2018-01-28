@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gio/gio.h>
 end_include
 
@@ -138,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde8d5a0108
+DECL|struct|__anon2792f5a30108
 block|{
 DECL|member|a
 DECL|member|b
