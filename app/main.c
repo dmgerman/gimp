@@ -204,12 +204,6 @@ directive|include
 file|"unique.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"version.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -272,6 +266,12 @@ begin_include
 include|#
 directive|include
 file|"gimp-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-version.h"
 end_include
 
 begin_function_decl

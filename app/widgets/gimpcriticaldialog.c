@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"version.h"
+file|"gimp-intl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimp-version.h"
 end_include
 
 begin_typedef
