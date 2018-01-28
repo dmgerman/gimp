@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d410910103
+DECL|enum|__anon29795dca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1825,6 +1825,10 @@ argument_list|,
 literal|"operation"
 argument_list|,
 literal|"gegl:transform"
+argument_list|,
+literal|"near-z"
+argument_list|,
+name|GIMP_TRANSFORM_NEAR_Z
 argument_list|,
 literal|"sampler"
 argument_list|,

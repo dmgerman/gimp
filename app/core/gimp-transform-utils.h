@@ -16,6 +16,14 @@ directive|define
 name|__GIMP_TRANSFORM_UTILS_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TRANSFORM_NEAR_Z
+define|#
+directive|define
+name|GIMP_TRANSFORM_NEAR_Z
+value|0.02
+end_define
+
 begin_function_decl
 name|void
 name|gimp_transform_get_rotate_center

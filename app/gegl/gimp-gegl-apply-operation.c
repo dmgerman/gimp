@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-transform-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp-utils.h"
 end_include
 
@@ -2794,6 +2800,10 @@ argument_list|,
 literal|"operation"
 argument_list|,
 literal|"gegl:transform"
+argument_list|,
+literal|"near-z"
+argument_list|,
+name|GIMP_TRANSFORM_NEAR_Z
 argument_list|,
 literal|"sampler"
 argument_list|,

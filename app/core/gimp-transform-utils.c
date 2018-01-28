@@ -41,14 +41,6 @@ name|EPSILON
 value|1e-6
 end_define
 
-begin_define
-DECL|macro|NEAR_Z
-define|#
-directive|define
-name|NEAR_Z
-value|0.02
-end_define
-
 begin_function
 name|void
 DECL|function|gimp_transform_get_rotate_center (gint x,gint y,gint width,gint height,gboolean auto_center,gdouble * center_x,gdouble * center_y)
@@ -2724,7 +2716,7 @@ name|curr
 operator|.
 name|z
 operator|>=
-name|NEAR_Z
+name|GIMP_TRANSFORM_NEAR_Z
 operator|)
 expr_stmt|;
 for|for
@@ -2956,7 +2948,7 @@ name|next
 operator|.
 name|z
 operator|>=
-name|NEAR_Z
+name|GIMP_TRANSFORM_NEAR_Z
 operator|)
 expr_stmt|;
 if|if
@@ -2974,7 +2966,7 @@ name|curr
 operator|.
 name|z
 operator|-
-name|NEAR_Z
+name|GIMP_TRANSFORM_NEAR_Z
 operator|)
 operator|/
 operator|(
@@ -3018,7 +3010,7 @@ operator|*
 name|ratio
 operator|)
 operator|/
-name|NEAR_Z
+name|GIMP_TRANSFORM_NEAR_Z
 block|,
 operator|(
 name|curr
@@ -3038,7 +3030,7 @@ operator|*
 name|ratio
 operator|)
 operator|/
-name|NEAR_Z
+name|GIMP_TRANSFORM_NEAR_Z
 block|}
 expr_stmt|;
 block|}
