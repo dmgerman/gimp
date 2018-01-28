@@ -170,6 +170,9 @@ name|type
 parameter_list|,
 name|gint
 name|n_guides
+parameter_list|,
+name|gboolean
+name|clip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,6 +207,9 @@ name|type
 parameter_list|,
 name|gint
 name|n_guides
+parameter_list|,
+name|gboolean
+name|clip
 parameter_list|)
 function_decl|;
 end_function_decl

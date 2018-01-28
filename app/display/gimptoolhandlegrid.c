@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6647c50103
+DECL|enum|__anon28e4b6cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4785,6 +4785,10 @@ argument_list|,
 literal|"y2"
 argument_list|,
 name|y2
+argument_list|,
+literal|"clip-guides"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)

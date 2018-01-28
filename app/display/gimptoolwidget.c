@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78bab60103
+DECL|enum|__anon297ffa340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78bab60203
+DECL|enum|__anon297ffa340203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -2590,7 +2590,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_tool_widget_add_transform_guides (GimpToolWidget * widget,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,GimpGuidesType type,gint n_guides)
+DECL|function|gimp_tool_widget_add_transform_guides (GimpToolWidget * widget,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2,GimpGuidesType type,gint n_guides,gboolean clip)
 name|gimp_tool_widget_add_transform_guides
 parameter_list|(
 name|GimpToolWidget
@@ -2619,6 +2619,9 @@ name|type
 parameter_list|,
 name|gint
 name|n_guides
+parameter_list|,
+name|gboolean
+name|clip
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -2658,6 +2661,8 @@ argument_list|,
 name|type
 argument_list|,
 name|n_guides
+argument_list|,
+name|clip
 argument_list|)
 expr_stmt|;
 name|gimp_tool_widget_add_item
