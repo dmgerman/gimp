@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c76e6210103
+DECL|enum|__anon2af855ac0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -153,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76e6210203
+DECL|enum|__anon2af855ac0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,7 +184,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76e6210303
+DECL|enum|__anon2af855ac0303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -2294,7 +2294,7 @@ name|x
 index|[
 literal|1
 index|]
-operator|>=
+operator|>
 name|private
 operator|->
 name|x
