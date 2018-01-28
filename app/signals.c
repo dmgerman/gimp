@@ -273,15 +273,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_signal_private
 argument_list|(
-name|SIGABRT
-argument_list|,
-name|gimp_sigfatal_handler
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_signal_private
-argument_list|(
 name|SIGTERM
 argument_list|,
 name|gimp_sigfatal_handler
@@ -290,6 +281,15 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* these are handled by gimp_fatal_error() */
+name|gimp_signal_private
+argument_list|(
+name|SIGABRT
+argument_list|,
+name|gimp_sigfatal_handler
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_signal_private
 argument_list|(
 name|SIGBUS
@@ -438,9 +438,6 @@ case|case
 name|SIGQUIT
 case|:
 case|case
-name|SIGABRT
-case|:
-case|case
 name|SIGTERM
 case|:
 name|gimp_terminate
@@ -452,6 +449,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|SIGABRT
+case|:
 case|case
 name|SIGBUS
 case|:
