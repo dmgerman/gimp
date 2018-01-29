@@ -125,7 +125,7 @@ DECL|macro|BUTTON1_TEXT
 define|#
 directive|define
 name|BUTTON1_TEXT
-value|"Copy bug information"
+value|_("Copy bug information")
 end_define
 
 begin_define
@@ -133,7 +133,7 @@ DECL|macro|BUTTON2_TEXT
 define|#
 directive|define
 name|BUTTON2_TEXT
-value|"Open bug tracker"
+value|_("Open bug tracker")
 end_define
 
 begin_function_decl
@@ -296,17 +296,11 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON1_TEXT
-argument_list|)
 argument_list|,
 name|GIMP_CRITICAL_RESPONSE_CLIPBOARD
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON2_TEXT
-argument_list|)
 argument_list|,
 name|GIMP_CRITICAL_RESPONSE_URL
 argument_list|,
@@ -504,20 +498,14 @@ argument_list|(
 literal|"Copy the bug information to clipboard by clicking: "
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON1_TEXT
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Open our bug tracker in browser by clicking: "
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON2_TEXT
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1561,20 +1549,14 @@ argument_list|(
 literal|"Copy the bug information to clipboard by clicking: "
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON1_TEXT
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Open our bug tracker in browser by clicking: "
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 name|BUTTON2_TEXT
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
