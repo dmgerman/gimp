@@ -1139,6 +1139,19 @@ name|gimp
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|g_main_loop_unref
 argument_list|(
 name|loop
