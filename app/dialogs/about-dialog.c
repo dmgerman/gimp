@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"git-version.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -124,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d721790108
+DECL|struct|__anon2bb090430108
 block|{
 DECL|member|dialog
 name|GtkWidget
