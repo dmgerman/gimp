@@ -22,13 +22,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<gegl.h>
 end_include
 
 begin_ifdef
@@ -87,15 +87,6 @@ directive|include
 file|"gimp-version.h"
 end_include
 
-begin_typedef
-DECL|typedef|GimpCriticalDialog
-typedef|typedef
-name|struct
-name|_GimpCriticalDialog
-name|GimpCriticalDialog
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_CRITICAL_RESPONSE_CLIPBOARD
 define|#
@@ -125,7 +116,7 @@ DECL|macro|BUTTON1_TEXT
 define|#
 directive|define
 name|BUTTON1_TEXT
-value|_("Copy bug information")
+value|_("Copy Bug Information")
 end_define
 
 begin_define
@@ -133,7 +124,7 @@ DECL|macro|BUTTON2_TEXT
 define|#
 directive|define
 name|BUTTON2_TEXT
-value|_("Open bug tracker")
+value|_("Open Bug Tracker")
 end_define
 
 begin_function_decl
@@ -342,7 +333,19 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|dialog
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -386,7 +389,21 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_justify
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|dialog
+operator|->
+name|top_label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_ellipsize
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -395,7 +412,7 @@ operator|->
 name|top_label
 argument_list|)
 argument_list|,
-name|GTK_JUSTIFY_CENTER
+name|PANGO_ELLIPSIZE_END
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_selectable
@@ -484,8 +501,7 @@ literal|" \xe2\x80\xa2 %s %s\n"
 literal|" \xe2\x80\xa2 %s\n"
 literal|" \xe2\x80\xa2 %s\n"
 literal|" \xe2\x80\xa2 %s\n"
-literal|" \xe2\x80\xa2 %s\n\n"
-literal|"%s"
+literal|" \xe2\x80\xa2 %s"
 argument_list|,
 name|_
 argument_list|(
@@ -495,14 +511,14 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Copy the bug information to clipboard by clicking: "
+literal|"Copy the bug information to the clipboard by clicking: "
 argument_list|)
 argument_list|,
 name|BUTTON1_TEXT
 argument_list|,
 name|_
 argument_list|(
-literal|"Open our bug tracker in browser by clicking: "
+literal|"Open our bug tracker in the browser by clicking: "
 argument_list|)
 argument_list|,
 name|BUTTON2_TEXT
@@ -528,12 +544,6 @@ argument_list|(
 literal|"This error may have left GIMP in an inconsistent state. "
 literal|"It is advised to save your work and restart GIMP."
 argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Note: you can also close the dialog directly but reporting "
-literal|"bugs is the best way to make your software awesome."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -548,6 +558,20 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|text
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|dialog
+operator|->
+name|bottom_label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_selectable
@@ -589,6 +613,87 @@ operator|->
 name|bottom_label
 argument_list|)
 expr_stmt|;
+name|widget
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"You can also close the dialog directly but "
+literal|"reporting bugs is the best way to make your "
+literal|"software awesome."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|dialog
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|widget
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|attrs
+operator|=
+name|pango_attr_list_new
+argument_list|()
+expr_stmt|;
+name|attr
+operator|=
+name|pango_attr_style_new
+argument_list|(
+name|PANGO_STYLE_ITALIC
+argument_list|)
+expr_stmt|;
+name|pango_attr_list_insert
+argument_list|(
+name|attrs
+argument_list|,
+name|attr
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_attributes
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|attrs
+argument_list|)
+expr_stmt|;
+name|pango_attr_list_unref
+argument_list|(
+name|attrs
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 comment|/* Bug details for developers. */
 name|widget
 operator|=
@@ -597,6 +702,26 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|widget
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|200
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1209,7 +1334,7 @@ name|gchar
 modifier|*
 name|url
 decl_stmt|;
-comment|/* XXX Ideally I'd find a way to prefill the bug report            * through the URL or with POST data. But I could not find            * any. Anyway since we may soon ditch bugzilla to follow            * GNOME infrastructure changes, I don't want to waste too            * much time digging into it.            */
+comment|/* XXX Ideally I'd find a way to prefill the bug report          * through the URL or with POST data. But I could not find          * any. Anyway since we may soon ditch bugzilla to follow          * GNOME infrastructure changes, I don't want to waste too          * much time digging into it.          */
 name|url
 operator|=
 literal|"https://bugzilla.gnome.org/enter_bug.cgi?product=GIMP"
@@ -1245,7 +1370,7 @@ decl_stmt|;
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/* It is unneeded to kill the process on Win32. This was run            * as an async call and the main process should already be            * dead by now.            */
+comment|/* It is unneeded to kill the process on Win32. This was run          * as an async call and the main process should already be          * dead by now.          */
 if|if
 condition|(
 name|critical
@@ -1531,12 +1656,11 @@ operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n"
-literal|" \xe2\x80\xa2 %s %s\n"
-literal|" \xe2\x80\xa2 %s %s\n"
+literal|" \xe2\x80\xa2 %s \"%s\"\n"
+literal|" \xe2\x80\xa2 %s \"%s\"\n"
 literal|" \xe2\x80\xa2 %s\n"
 literal|" \xe2\x80\xa2 %s\n"
-literal|" \xe2\x80\xa2 %s\n\n"
-literal|"%s"
+literal|" \xe2\x80\xa2 %s"
 argument_list|,
 name|_
 argument_list|(
@@ -1546,14 +1670,14 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Copy the bug information to clipboard by clicking: "
+literal|"Copy the bug information to the clipboard by clicking: "
 argument_list|)
 argument_list|,
 name|BUTTON1_TEXT
 argument_list|,
 name|_
 argument_list|(
-literal|"Open our bug tracker in browser by clicking: "
+literal|"Open our bug tracker in the browser by clicking: "
 argument_list|)
 argument_list|,
 name|BUTTON2_TEXT
@@ -1572,12 +1696,6 @@ name|_
 argument_list|(
 literal|"Add relevant information in English in the bug report "
 literal|"explaining what you were doing when this error occurred."
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Note: you can also close the dialog directly but reporting "
-literal|"bugs is the best way to make your software awesome."
 argument_list|)
 argument_list|)
 expr_stmt|;

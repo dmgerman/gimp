@@ -84,6 +84,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CRITICAL_DIALOG, GimpCritical
 end_define
 
 begin_typedef
+DECL|typedef|GimpCriticalDialog
+typedef|typedef
+name|struct
+name|_GimpCriticalDialog
+name|GimpCriticalDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCriticalDialogClass
 typedef|typedef
 name|struct
