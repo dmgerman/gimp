@@ -257,41 +257,11 @@ parameter_list|()
 value|0
 end_define
 
-begin_comment
-comment|/* This is a hack for Windows known directory support.  * DATADIR (autotools-generated constant) is a type defined in objidl.h  * so we must #undef it before including shlobj.h in order to avoid a  * name clash. */
-end_comment
-
-begin_decl_stmt
-DECL|variable|datadir
-specifier|static
-specifier|const
-name|char
-modifier|*
-name|datadir
-init|=
-name|DATADIR
-decl_stmt|;
-end_decl_stmt
-
-begin_undef
-undef|#
-directive|undef
-name|DATADIR
-end_undef
-
 begin_include
 include|#
 directive|include
 file|<shlobj.h>
 end_include
-
-begin_define
-DECL|macro|DATADIR
-define|#
-directive|define
-name|DATADIR
-value|datadir
-end_define
 
 begin_comment
 comment|/* Constant available since Shell32.dll 4.72 */
@@ -1387,7 +1357,7 @@ name|gimp_env_get_dir
 argument_list|(
 literal|"GIMP3_DATADIR"
 argument_list|,
-name|DATADIR
+name|GIMPDATADIR
 argument_list|,
 name|tmp
 argument_list|)
@@ -1537,7 +1507,7 @@ name|gimp_env_get_dir
 argument_list|(
 literal|"GIMP3_SYSCONFDIR"
 argument_list|,
-name|SYSCONFDIR
+name|GIMPSYSCONFDIR
 argument_list|,
 name|tmp
 argument_list|)

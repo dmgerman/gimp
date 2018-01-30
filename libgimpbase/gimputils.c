@@ -86,16 +86,6 @@ name|G_OS_WIN32
 argument_list|)
 end_if
 
-begin_comment
-comment|/* This is a hack for Windows known directory support.  * DATADIR (autotools-generated constant) is a type defined in objidl.h  * so we must #undef it before including shlobj.h in order to avoid a  * name clash. */
-end_comment
-
-begin_undef
-undef|#
-directive|undef
-name|DATADIR
-end_undef
-
 begin_include
 include|#
 directive|include
