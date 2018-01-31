@@ -264,6 +264,10 @@ name|version
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|widget
 decl_stmt|;
 name|GtkTextBuffer
@@ -325,8 +329,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|dialog
-operator|->
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -340,8 +342,6 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -361,8 +361,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|dialog
-operator|->
 name|vbox
 argument_list|,
 name|TRUE
@@ -374,8 +372,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 expr_stmt|;
@@ -431,8 +427,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -590,8 +584,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -641,8 +633,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -728,8 +718,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
 name|vbox
 argument_list|)
 argument_list|,

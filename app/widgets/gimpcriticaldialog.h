@@ -110,11 +110,6 @@ DECL|member|parent_instance
 name|GtkDialog
 name|parent_instance
 decl_stmt|;
-DECL|member|vbox
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
 DECL|member|top_label
 name|GtkWidget
 modifier|*
