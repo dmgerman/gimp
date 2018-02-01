@@ -5232,9 +5232,9 @@ argument_list|(
 name|prefs_box
 argument_list|)
 argument_list|,
-comment|/* TODO: icon needed. */
-literal|"gimp-prefs-debugging"
+literal|"gimp-wilber-eek"
 argument_list|,
+comment|/* TODO: icon needed. */
 name|_
 argument_list|(
 literal|"Debugging"
@@ -5267,17 +5267,14 @@ literal|"hint"
 argument_list|,
 name|_
 argument_list|(
-literal|"We hope you will never need these settings, "
-literal|"but as any software, bugs and crash can occur. "
-literal|"If it happens, you can help us by reporting bugs."
+literal|"We hope you will never need these "
+literal|"settings, but as all software, GIMP "
+literal|"has bugs, and crashes can occur. If it "
+literal|"happens, you can help us by reporting "
+literal|"bugs."
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5296,13 +5293,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 name|vbox2
 operator|=
 name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Bug reporting"
+literal|"Bug Reporting"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -5323,7 +5325,7 @@ literal|"generate-backtrace"
 argument_list|,
 name|_
 argument_list|(
-literal|"Try generating debug data for bug reporting when appropriate."
+literal|"Try generating debug data for bug reporting when appropriate"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -12970,7 +12972,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c031bb30108
+DECL|struct|__anon2c5da1740108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13847,7 +13849,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c031bb30208
+DECL|struct|__anon2c5da1740208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13985,7 +13987,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c031bb30308
+DECL|struct|__anon2c5da1740308
 block|{
 DECL|member|tree_label
 specifier|const
