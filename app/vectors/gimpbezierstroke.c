@@ -7839,6 +7839,7 @@ name|closed
 condition|)
 block|{
 comment|/* connect the first and last strokes */
+comment|/* remove the first anchor, which is a synthetic control point */
 name|gimp_anchor_free
 argument_list|(
 name|g_queue_pop_head
@@ -7849,6 +7850,7 @@ name|anchors
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* remove the last anchor, which is the same anchor point as the            * first anchor            */
 name|gimp_anchor_free
 argument_list|(
 name|g_queue_pop_tail
@@ -7866,7 +7868,7 @@ operator|==
 name|last_stroke
 condition|)
 block|{
-comment|/* the result is a single stroke.  remove the superfluous                * anchors, and close the stroke.                */
+comment|/* the result is a single stroke.  move the last anchor, which is                * an orphan control point, to the front, to fill in the removed                * control point of the first anchor, and close the stroke.                */
 name|g_queue_push_head
 argument_list|(
 name|first_stroke

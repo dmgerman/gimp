@@ -4418,7 +4418,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* clips the cubic bezier segment, defined by the four control points 'bezier',  * to the halfplane 'ax + by + c>= 0'.  *  * returns the clipped set of bezier segments in 'c_bezier', and their count in  * 'n_c_bezier'.  the minimal possible number of clipped segments is 0, which  * happens when the entire segment is clipped.  the maximal possible number of  * clipped segments is 2.  *  * if the first clipped segment is an initial segment of 'bezier', sets  * '*start_in' to TRUE, otherwise to FALSE.  if the last transformed segment is  * a final segment of 'bezier', sets '*end_in' to TRUE, otherwise to FALSE.  *  * 'c_bezier' may not alias 'bezier'.  */
+comment|/* clips the cubic bezier segment, defined by the four control points 'bezier',  * to the halfplane 'ax + by + c>= 0'.  *  * returns the clipped set of bezier segments in 'c_bezier', and their count in  * 'n_c_bezier'.  the minimal possible number of clipped segments is 0, which  * happens when the entire segment is clipped.  the maximal possible number of  * clipped segments is 2.  *  * if the first clipped segment is an initial segment of 'bezier', sets  * '*start_in' to TRUE, otherwise to FALSE.  if the last clipped segment is a  * final segment of 'bezier', sets '*end_in' to TRUE, otherwise to FALSE.  *  * 'c_bezier' may not alias 'bezier'.  */
 end_comment
 
 begin_function
