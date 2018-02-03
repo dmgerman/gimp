@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969aa1a0103
+DECL|enum|__anon2987db640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -724,6 +724,10 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|matrix
+parameter_list|,
+name|GQueue
+modifier|*
+name|ret_strokes
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4580,6 +4584,8 @@ name|stroke
 argument_list|,
 operator|&
 name|matrix
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4668,6 +4674,8 @@ name|stroke
 argument_list|,
 operator|&
 name|matrix
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4777,14 +4785,20 @@ name|stroke
 argument_list|,
 operator|&
 name|matrix
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* transforms 'stroke' by 'matrix'.  due to clipping, the transformation may  * result in multiple strokes.  *  * if 'ret_strokes' is not NULL, the transformed strokes are appended to the  * queue, and 'stroke' is left in an unspecified state.  one of the resulting  * strokes may alias 'stroke'.  *  * if 'ret_strokes' is NULL, the transformation is performed in-place.  if the  * transformation results in multiple strokes (which, atm, can only happen for  * non-affine transformation), the result is undefined.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_stroke_transform (GimpStroke * stroke,const GimpMatrix3 * matrix)
+DECL|function|gimp_stroke_transform (GimpStroke * stroke,const GimpMatrix3 * matrix,GQueue * ret_strokes)
 name|gimp_stroke_transform
 parameter_list|(
 name|GimpStroke
@@ -4795,6 +4809,10 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|matrix
+parameter_list|,
+name|GQueue
+modifier|*
+name|ret_strokes
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -4815,6 +4833,8 @@ argument_list|(
 name|stroke
 argument_list|,
 name|matrix
+argument_list|,
+name|ret_strokes
 argument_list|)
 expr_stmt|;
 block|}
@@ -4823,7 +4843,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_real_transform (GimpStroke * stroke,const GimpMatrix3 * matrix)
+DECL|function|gimp_stroke_real_transform (GimpStroke * stroke,const GimpMatrix3 * matrix,GQueue * ret_strokes)
 name|gimp_stroke_real_transform
 parameter_list|(
 name|GimpStroke
@@ -4834,6 +4854,10 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|matrix
+parameter_list|,
+name|GQueue
+modifier|*
+name|ret_strokes
 parameter_list|)
 block|{
 name|GList
@@ -4897,6 +4921,28 @@ operator|->
 name|position
 operator|.
 name|y
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|ret_strokes
+condition|)
+block|{
+name|stroke
+operator|->
+name|ID
+operator|=
+literal|0
+expr_stmt|;
+name|g_queue_push_tail
+argument_list|(
+name|ret_strokes
+argument_list|,
+name|g_object_ref
+argument_list|(
+name|stroke
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c59bd7d0108
+DECL|struct|__anon2bc0315b0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -228,7 +228,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c59bd7d0208
+DECL|struct|__anon2bc0315b0208
 block|{
 DECL|member|id
 name|gchar
@@ -2146,6 +2146,8 @@ argument_list|,
 name|handler
 operator|->
 name|transform
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -6245,7 +6247,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c59bd7d0308
+DECL|struct|__anon2bc0315b0308
 block|{
 DECL|member|strokes
 name|GList

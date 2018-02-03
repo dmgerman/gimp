@@ -854,6 +854,10 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|matrix
+parameter_list|,
+name|GQueue
+modifier|*
+name|ret_strokes
 parameter_list|)
 function_decl|;
 DECL|member|get_draw_anchors
@@ -1658,6 +1662,10 @@ specifier|const
 name|GimpMatrix3
 modifier|*
 name|matrix
+parameter_list|,
+name|GQueue
+modifier|*
+name|ret_strokes
 parameter_list|)
 function_decl|;
 end_function_decl
