@@ -972,7 +972,9 @@ name|gchar
 modifier|*
 name|gimpdebug
 init|=
-literal|"gimpdebug-2.0.exe"
+literal|"gimp-debug-tool-"
+name|GIMP_TOOL_VERSION
+literal|".exe"
 decl_stmt|;
 elif|#
 directive|elif
@@ -985,7 +987,8 @@ name|gchar
 modifier|*
 name|gimpdebug
 init|=
-literal|"gimpdebug-2.0"
+literal|"gimp-debug-tool-"
+name|GIMP_TOOL_VERSION
 decl_stmt|;
 else|#
 directive|else
@@ -995,7 +998,8 @@ modifier|*
 name|gimpdebug
 init|=
 name|LIBEXECDIR
-literal|"/gimpdebug-2.0"
+literal|"/gimp-debug-tool-"
+name|GIMP_TOOL_VERSION
 decl_stmt|;
 endif|#
 directive|endif

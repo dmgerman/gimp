@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * This widget is particular that I want to be able to use it internally  * but also from an alternate tool (gimpdebug). It means that the  * implementation must stay as generic glib/GTK+ as possible.  */
+comment|/*  * This widget is particular that I want to be able to use it  * internally but also from an alternate tool (gimp-debug-tool). It  * means that the implementation must stay as generic glib/GTK+ as  * possible.  */
 end_comment
 
 begin_include
@@ -873,7 +873,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* XXX This is taken straight from plug-ins/common/web-browser.c  * This really sucks but this class also needs to be called by  * tools/gimpdebug.c as a separate process and therefore cannot make use  * of the PDB. Anyway shouldn't we just move this as a utils function?  * Why does such basic feature as opening a URL in a cross-platform way  * need to be a plug-in?  */
+comment|/* XXX This is taken straight from plug-ins/common/web-browser.c  *  * This really sucks but this class also needs to be called by  * tools/gimp-debug-tool.c as a separate process and therefore cannot  * make use of the PDB. Anyway shouldn't we just move this as a utils  * function?  Why does such basic feature as opening a URL in a  * cross-platform way need to be a plug-in?  */
 end_comment
 
 begin_function
