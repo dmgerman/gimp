@@ -347,7 +347,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  *  * Creates a #GtkCheckButton that displays and sets the specified  * boolean property.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  *  * Creates a #GtkCheckButton that displays and sets the specified  * boolean property.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -528,6 +528,12 @@ name|GParamSpec
 modifier|*
 name|param_spec
 decl_stmt|;
+name|gboolean
+name|value
+decl_stmt|;
+name|gboolean
+name|v
+decl_stmt|;
 name|param_spec
 operator|=
 name|get_param_spec
@@ -544,6 +550,37 @@ operator|!
 name|param_spec
 condition|)
 return|return;
+name|value
+operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
+block|{
 name|g_object_set
 argument_list|(
 name|config
@@ -552,13 +589,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|gtk_toggle_button_get_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -571,6 +602,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -700,7 +732,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresonding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresonding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -945,6 +977,12 @@ decl_stmt|;
 name|gint
 name|true_value
 decl_stmt|;
+name|gint
+name|value
+decl_stmt|;
+name|gint
+name|v
+decl_stmt|;
 name|param_spec
 operator|=
 name|get_param_spec
@@ -991,14 +1029,9 @@ literal|"true-value"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_set
-argument_list|(
-name|config
-argument_list|,
-name|param_spec
-operator|->
-name|name
-argument_list|,
+name|value
+operator|=
+operator|(
 name|gtk_toggle_button_get_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -1010,6 +1043,38 @@ condition|?
 name|true_value
 else|:
 name|false_value
+operator|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -1032,6 +1097,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1286,7 +1352,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_int_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @store:         #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_int_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @store:         #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1442,7 +1508,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_pointer_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of GType/gpointer property controlled by combo box.  * @store:         #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  * Values are GType/gpointer data, and therefore must be stored in the  * "user-data" column, instead of the usual "value" column.  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_pointer_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of GType/gpointer property controlled by combo box.  * @store:         #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  * Values are GType/gpointer data, and therefore must be stored in the  * "user-data" column, instead of the usual "value" column.  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -1619,7 +1685,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by combo box.  * @minimum:       Smallest allowed value of enum.  * @maximum:       Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpEnumComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by combo box.  * @minimum:       Smallest allowed value of enum.  * @maximum:       Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpEnumComboBox widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -1956,6 +2022,29 @@ name|value
 argument_list|)
 condition|)
 block|{
+name|gint
+name|v
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -2092,6 +2181,29 @@ name|value
 argument_list|)
 condition|)
 block|{
+name|gpointer
+name|v
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -2225,7 +2337,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_boolean_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by combo box.  * @true_text:     Label used for entry corresponding to %TRUE value.  * @false_text:    Label used for entry corresponding to %FALSE value.  *  * Creates a #GtkComboBox widget to display and set the specified  * boolean property.  The combo box will have two entries, one  * displaying the @true_text label, the other displaying the  * @false_text label.  *  * Return value: The newly created #GtkComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_boolean_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by combo box.  * @true_text:     Label used for entry corresponding to %TRUE value.  * @false_text:    Label used for entry corresponding to %FALSE value.  *  * Creates a #GtkComboBox widget to display and set the specified  * boolean property.  The combo box will have two entries, one  * displaying the @true_text label, the other displaying the  * @false_text label.  *  * Return value: The newly created #GtkComboBox widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -2440,6 +2552,29 @@ name|value
 argument_list|)
 condition|)
 block|{
+name|gint
+name|v
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -2573,7 +2708,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @title:         Label for the frame holding the buttons  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @title:         Label for the frame holding the buttons  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -2798,7 +2933,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_radio_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  * If you want to assign a label to the group of radio buttons, use  * gimp_prop_enum_radio_frame_new() instead of this function.  *  * Return value: A #GtkVBox containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_radio_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  * If you want to assign a label to the group of radio buttons, use  * gimp_prop_enum_radio_frame_new() instead of this function.  *  * Return value: A #GtkVBox containing the radio buttons.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -3028,7 +3163,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_label_new:  * @config:         Object to which property is attached.  * @property_name:  Name of enum property to be displayed.  *  * Return value: The newly created #GimpEnumLabel widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_label_new:  * @config:         Object to which property is attached.  * @property_name:  Name of enum property to be displayed.  *  * Return value: The newly created #GimpEnumLabel widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -3203,7 +3338,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_boolean_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by the radio buttons.  * @title:         Label for the frame.  * @true_text:     Label for the button corresponding to %TRUE.  * @false_text:    Label for the button corresponding to %FALSE.  *  * Creates a pair of radio buttons which function to set and display  * the specified boolean property.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_boolean_radio_frame_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property controlled by the radio buttons.  * @title:         Label for the frame.  * @true_text:     Label for the button corresponding to %TRUE.  * @false_text:    Label for the button corresponding to %FALSE.  *  * Creates a pair of radio buttons which function to set and display  * the specified boolean property.  * If @title is #NULL, the @property_name's nick will be used as label  * of the returned frame.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -3392,7 +3527,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since GIMP 2.4  *  * Deprecated: GIMP 2.10  */
+comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since: 2.4  *  * Deprecated: 2.10  */
 end_comment
 
 begin_function
@@ -3440,7 +3575,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_icon_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @icon_prefix:   The prefix of the group of icon names to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with named icons, which  * function to set and display the value of the specified Enum  * property.  The icon name for each icon is created by appending the  * enum_value's nick to the given @icon_prefix.  See  * gimp_enum_icon_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumiconbox containing the radio buttons.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_enum_icon_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @icon_prefix:   The prefix of the group of icon names to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with named icons, which  * function to set and display the value of the specified Enum  * property.  The icon name for each icon is created by appending the  * enum_value's nick to the given @icon_prefix.  See  * gimp_enum_icon_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumiconbox containing the radio buttons.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3671,6 +3806,9 @@ decl_stmt|;
 name|gint
 name|value
 decl_stmt|;
+name|gint
+name|v
+decl_stmt|;
 name|param_spec
 operator|=
 name|get_param_spec
@@ -3702,6 +3840,26 @@ literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -3817,7 +3975,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_spin_button_new:  * @config:            Object to which property is attached.  * @property_name:     Name of double property controlled by the spin button.  * @step_increment:    Step size.  * @page_increment:    Page size.  * @digits:            Number of digits after decimal point to display.  *  * Creates a spin button to set and display the value of the  * specified double property.  *  * Return value: A new #libgimpwidgets-gimpspinbutton.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_spin_button_new:  * @config:            Object to which property is attached.  * @property_name:     Name of double property controlled by the spin button.  * @step_increment:    Step size.  * @page_increment:    Page size.  * @digits:            Number of digits after decimal point to display.  *  * Creates a spin button to set and display the value of the  * specified double property.  *  * Return value: A new #libgimpwidgets-gimpspinbutton.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -4010,7 +4168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_hscale_new:  * @config:         Object to which property is attached.  * @property_name:  Name of integer or double property controlled by the scale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  *  * Creates a horizontal scale to control the value of the specified  * integer or double property.  *  * Return value: A new #GtkScale.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_hscale_new:  * @config:         Object to which property is attached.  * @property_name:  Name of integer or double property controlled by the scale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  *  * Creates a horizontal scale to control the value of the specified  * integer or double property.  *  * Return value: A new #GtkScale.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -4203,7 +4361,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned object.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned object.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -4726,7 +4884,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @table:         The #GtkTable the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property,  * which should represent an "opacity" variable with range 0 to 100.  * See gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @table:         The #GtkTable the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property,  * which should represent an "opacity" variable with range 0 to 100.  * See gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -5656,7 +5814,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_memsize_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of memsize property.  *  * Creates a #GimpMemsizeEntry (spin button and option menu) to set  * and display the value of the specified memsize property.  See  * gimp_memsize_entry_new() for more information.  *  * Return value:  A new #GimpMemsizeEntry.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_memsize_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of memsize property.  *  * Creates a #GimpMemsizeEntry (spin button and option menu) to set  * and display the value of the specified memsize property.  See  * gimp_memsize_entry_new() for more information.  *  * Return value:  A new #GimpMemsizeEntry.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -5856,6 +6014,12 @@ name|GParamSpec
 modifier|*
 name|param_spec
 decl_stmt|;
+name|guint64
+name|value
+decl_stmt|;
+name|guint64
+name|v
+decl_stmt|;
 name|param_spec
 operator|=
 name|get_param_spec
@@ -5880,6 +6044,33 @@ name|param_spec
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|value
+operator|=
+name|gimp_memsize_entry_get_value
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -5888,10 +6079,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|gimp_memsize_entry_get_value
-argument_list|(
-name|entry
-argument_list|)
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -6014,7 +6202,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_label_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  *  * Creates a #GtkLabel to display the value of the specified property.  * The property should be a string property or at least transformable  * to a string.  If the user should be able to edit the string, use  * gimp_prop_entry_new() instead.  *  * Return value:  A new #GtkLabel widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_label_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  *  * Creates a #GtkLabel to display the value of the specified property.  * The property should be a string property or at least transformable  * to a string.  If the user should be able to edit the string, use  * gimp_prop_entry_new() instead.  *  * Return value:  A new #GtkLabel widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -6359,7 +6547,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of string.  *  * Creates a #GtkEntry to set and display the value of the specified  * string property.  *  * Return value:  A new #GtkEntry widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of string.  *  * Creates a #GtkEntry to set and display the value of the specified  * string property.  *  * Return value:  A new #GtkEntry widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -6567,7 +6755,11 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|text
+name|value
+decl_stmt|;
+name|gchar
+modifier|*
+name|v
 decl_stmt|;
 name|param_spec
 operator|=
@@ -6585,7 +6777,7 @@ operator|!
 name|param_spec
 condition|)
 return|return;
-name|text
+name|value
 operator|=
 name|gtk_entry_get_text
 argument_list|(
@@ -6595,6 +6787,30 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|v
+argument_list|,
+name|value
+argument_list|)
+condition|)
+block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|config
@@ -6612,7 +6828,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|text
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -6624,6 +6840,12 @@ argument_list|,
 name|gimp_prop_entry_notify
 argument_list|,
 name|entry
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|v
 argument_list|)
 expr_stmt|;
 block|}
@@ -6755,7 +6977,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_text_buffer_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of text (in characters).  *  * Creates a #GtkTextBuffer to set and display the value of the  * specified string property.  Unless the string is expected to  * contain multiple lines or a large amount of text, use  * gimp_prop_entry_new() instead.  See #GtkTextView for information on  * how to insert a text buffer into a visible widget.  *  * If @max_len is 0 or negative, the text buffer allows an unlimited  * number of characters to be entered.  *  * Return value:  A new #GtkTextBuffer.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_text_buffer_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @max_len:       Maximum allowed length of text (in characters).  *  * Creates a #GtkTextBuffer to set and display the value of the  * specified string property.  Unless the string is expected to  * contain multiple lines or a large amount of text, use  * gimp_prop_entry_new() instead.  See #GtkTextView for information on  * how to insert a text buffer into a visible widget.  *  * If @max_len is 0 or negative, the text buffer allows an unlimited  * number of characters to be entered.  *  * Return value:  A new #GtkTextBuffer.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -7092,6 +7314,34 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gchar
+modifier|*
+name|v
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|v
+argument_list|,
+name|text
+argument_list|)
+condition|)
+block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|config
@@ -7121,6 +7371,12 @@ argument_list|,
 name|gimp_prop_text_buffer_notify
 argument_list|,
 name|text_buffer
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|v
 argument_list|)
 expr_stmt|;
 block|}
@@ -7258,7 +7514,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_string_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @model:         #GtkTreeStore holding list of values  * @id_column:     column in @store that holds string IDs  * @label_column:  column in @store that holds labels to use in the combo-box  *  * Creates a #GimpStringComboBox widget to display and set the  * specified property.  The contents of the widget are determined by  * @store.  *  * Return value: The newly created #GimpStringComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_string_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of int property controlled by combo box.  * @model:         #GtkTreeStore holding list of values  * @id_column:     column in @store that holds string IDs  * @label_column:  column in @store that holds labels to use in the combo-box  *  * Creates a #GimpStringComboBox widget to display and set the  * specified property.  The contents of the widget are determined by  * @store.  *  * Return value: The newly created #GimpStringComboBox widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -7451,6 +7707,10 @@ name|gchar
 modifier|*
 name|value
 decl_stmt|;
+name|gchar
+modifier|*
+name|v
+decl_stmt|;
 name|param_spec
 operator|=
 name|get_param_spec
@@ -7477,6 +7737,29 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_strcmp0
+argument_list|(
+name|v
+argument_list|,
+name|value
+argument_list|)
+condition|)
 name|g_object_set
 argument_list|(
 name|config
@@ -7493,6 +7776,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|v
 argument_list|)
 expr_stmt|;
 block|}
@@ -7641,7 +7929,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_file_chooser_button_new:  * @config:        object to which property is attached.  * @property_name: name of path property.  * @title:         the title of the browse dialog.  * @action:        the open mode for the widget.  *  * Creates a #GtkFileChooserButton to edit the specified path property.  *  * Note that #GtkFileChooserButton implements the #GtkFileChooser  * interface; you can use the #GtkFileChooser API with it.  *  * Return value:  A new #GtkFileChooserButton.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_file_chooser_button_new:  * @config:        object to which property is attached.  * @property_name: name of path property.  * @title:         the title of the browse dialog.  * @action:        the open mode for the widget.  *  * Creates a #GtkFileChooserButton to edit the specified path property.  *  * Note that #GtkFileChooserButton implements the #GtkFileChooser  * interface; you can use the #GtkFileChooser API with it.  *  * Return value:  A new #GtkFileChooserButton.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -7739,7 +8027,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_file_chooser_button_new_with_dialog:  * @config:        object to which property is attached.  * @property_name: name of path property.  * @dialog:        the #GtkFileChooserDialog widget to use.  *  * Creates a #GtkFileChooserButton to edit the specified path property.  *  * The button uses @dialog as it's file-picking window. Note that @dialog  * must be a #GtkFileChooserDialog (or subclass) and must not have  * %GTK_DIALOG_DESTROY_WITH_PARENT set.  *  * Note that #GtkFileChooserButton implements the #GtkFileChooser  * interface; you can use the #GtkFileChooser API with it.  *  * Return value:  A new #GtkFileChooserButton.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_file_chooser_button_new_with_dialog:  * @config:        object to which property is attached.  * @property_name: name of path property.  * @dialog:        the #GtkFileChooserDialog widget to use.  *  * Creates a #GtkFileChooserButton to edit the specified path property.  *  * The button uses @dialog as it's file-picking window. Note that @dialog  * must be a #GtkFileChooserDialog (or subclass) and must not have  * %GTK_DIALOG_DESTROY_WITH_PARENT set.  *  * Note that #GtkFileChooserButton implements the #GtkFileChooser  * interface; you can use the #GtkFileChooser API with it.  *  * Return value:  A new #GtkFileChooserButton.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -8035,13 +8323,13 @@ name|file
 decl_stmt|;
 name|gchar
 modifier|*
-name|path
+name|value
 init|=
 name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|value
+name|v
 decl_stmt|;
 name|param_spec
 operator|=
@@ -8071,7 +8359,7 @@ condition|(
 name|file
 condition|)
 block|{
-name|path
+name|value
 operator|=
 name|gimp_file_get_config_path
 argument_list|(
@@ -8095,28 +8383,19 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
+name|v
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
-name|path
-operator|&&
-name|value
-operator|&&
-name|strcmp
+name|g_strcmp0
 argument_list|(
-name|path
+name|v
 argument_list|,
 name|value
 argument_list|)
-operator|==
-literal|0
-operator|)
 condition|)
 block|{
 name|g_signal_handlers_block_by_func
@@ -8136,7 +8415,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|path
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -8153,12 +8432,12 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|path
+name|value
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|value
+name|v
 argument_list|)
 expr_stmt|;
 block|}
@@ -9244,7 +9523,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_size_entry_new:  * @config:             Object to which property is attached.  * @property_name:      Name of int or double property.  * @property_is_pixel:  When %TRUE, the property value is in pixels,  *                      and in the selected unit otherwise.  * @unit_property_name: Name of unit property.  * @unit_format:        A printf-like unit-format string as is used with  *                      gimp_unit_menu_new().  * @update_policy:      How the automatic pixel<-> real-world-unit  *                      calculations should be done.  * @resolution:         The resolution (in dpi) for the field.  *  * Creates a #GimpSizeEntry to set and display the specified double or  * int property, and its associated unit property.  Note that this  * function is only suitable for creating a size entry holding a  * single value.  Use gimp_prop_coordinates_new() to create a size  * entry holding two values.  *  * Return value:  A new #GimpSizeEntry widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_size_entry_new:  * @config:             Object to which property is attached.  * @property_name:      Name of int or double property.  * @property_is_pixel:  When %TRUE, the property value is in pixels,  *                      and in the selected unit otherwise.  * @unit_property_name: Name of unit property.  * @unit_format:        A printf-like unit-format string as is used with  *                      gimp_unit_menu_new().  * @update_policy:      How the automatic pixel<-> real-world-unit  *                      calculations should be done.  * @resolution:         The resolution (in dpi) for the field.  *  * Creates a #GimpSizeEntry to set and display the specified double or  * int property, and its associated unit property.  Note that this  * function is only suitable for creating a size entry holding a  * single value.  Use gimp_prop_coordinates_new() to create a size  * entry holding two values.  *  * Return value:  A new #GimpSizeEntry widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -10372,7 +10651,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_coordinates_new:  * @config:             Object to which property is attached.  * @x_property_name:    Name of int or double property for X coordinate.  * @y_property_name:    Name of int or double property for Y coordinate.  * @unit_property_name: Name of unit property.  * @unit_format:        A printf-like unit-format string as is used with  *                      gimp_unit_menu_new().  * @update_policy:      How the automatic pixel<-> real-world-unit  *                      calculations should be done.  * @xresolution:        The resolution (in dpi) for the X coordinate.  * @yresolution:        The resolution (in dpi) for the Y coordinate.  * @has_chainbutton:    Whether to add a chainbutton to the size entry.  *  * Creates a #GimpSizeEntry to set and display two double or int  * properties, which will usually represent X and Y coordinates, and  * their associated unit property.  *  * Return value:  A new #GimpSizeEntry widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_coordinates_new:  * @config:             Object to which property is attached.  * @x_property_name:    Name of int or double property for X coordinate.  * @y_property_name:    Name of int or double property for Y coordinate.  * @unit_property_name: Name of unit property.  * @unit_format:        A printf-like unit-format string as is used with  *                      gimp_unit_menu_new().  * @update_policy:      How the automatic pixel<-> real-world-unit  *                      calculations should be done.  * @xresolution:        The resolution (in dpi) for the X coordinate.  * @yresolution:        The resolution (in dpi) for the Y coordinate.  * @has_chainbutton:    Whether to add a chainbutton to the size entry.  *  * Creates a #GimpSizeEntry to set and display two double or int  * properties, which will usually represent X and Y coordinates, and  * their associated unit property.  *  * Return value:  A new #GimpSizeEntry widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -12096,7 +12375,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_color_area_new:  * @config:        Object to which property is attached.  * @property_name: Name of RGB property.  * @width:         Width of color area.  * @height:        Height of color area.  * @type:          How transparency is represented.  *  * Creates a #GimpColorArea to set and display the value of an RGB  * property.  *  * Return value:  A new #GimpColorArea widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_color_area_new:  * @config:        Object to which property is attached.  * @property_name: Name of RGB property.  * @width:         Width of color area.  * @height:        Height of color area.  * @type:          How transparency is represented.  *  * Creates a #GimpColorArea to set and display the value of an RGB  * property.  *  * Return value:  A new #GimpColorArea widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -12448,7 +12727,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_unit_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of Unit property.  *  * Creates a #GimpUnitComboBox to set and display the value of a Unit  * property.  See gimp_unit_combo_box_new() for more information.  *  * Return value:  A new #GimpUnitComboBox widget.  *  * Since GIMP 2.8  */
+comment|/**  * gimp_prop_unit_combo_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of Unit property.  *  * Creates a #GimpUnitComboBox to set and display the value of a Unit  * property.  See gimp_unit_combo_box_new() for more information.  *  * Return value:  A new #GimpUnitComboBox widget.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -12697,7 +12976,10 @@ modifier|*
 name|param_spec
 decl_stmt|;
 name|GimpUnit
-name|unit
+name|value
+decl_stmt|;
+name|GimpUnit
+name|v
 decl_stmt|;
 name|param_spec
 operator|=
@@ -12715,7 +12997,7 @@ operator|!
 name|param_spec
 condition|)
 return|return;
-name|unit
+name|value
 operator|=
 name|gimp_unit_combo_box_get_active
 argument_list|(
@@ -12725,6 +13007,27 @@ name|combo
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|v
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|v
+operator|!=
+name|value
+condition|)
+block|{
 comment|/* FIXME gimp_unit_menu_update (menu,&unit); */
 name|g_signal_handlers_block_by_func
 argument_list|(
@@ -12743,7 +13046,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|unit
+name|value
 argument_list|,
 name|NULL
 argument_list|)
@@ -12757,6 +13060,7 @@ argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -12877,7 +13181,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_unit_menu_new:  * @config:        Object to which property is attached.  * @property_name: Name of Unit property.  * @unit_format:   A printf-like format string which is used to create  *                 the unit strings.  *  * Creates a #GimpUnitMenu to set and display the value of a Unit  * property.  See gimp_unit_menu_new() for more information.  *  * Return value:  A new #GimpUnitMenu widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_unit_menu_new:  * @config:        Object to which property is attached.  * @property_name: Name of Unit property.  * @unit_format:   A printf-like format string which is used to create  *                 the unit strings.  *  * Creates a #GimpUnitMenu to set and display the value of a Unit  * property.  See gimp_unit_menu_new() for more information.  *  * Return value:  A new #GimpUnitMenu widget.  *  * Since: 2.4  *  * Deprecated: 2.10  */
 end_comment
 
 begin_function
@@ -13265,7 +13569,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_stock_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired stock image.  *  * Creates a widget to display a stock image representing the value of the  * specified string property, which should encode a Stock ID.  * See gtk_image_new_from_stock() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.4  *  * Deprecated: GIMP 2.10  */
+comment|/**  * gimp_prop_stock_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired stock image.  *  * Creates a widget to display a stock image representing the value of the  * specified string property, which should encode a Stock ID.  * See gtk_image_new_from_stock() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since: 2.4  *  * Deprecated: 2.10  */
 end_comment
 
 begin_function
@@ -13301,7 +13605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_icon_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_icon_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -13548,7 +13852,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_expander_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property.  * @label:         Label for expander.  *  * Creates a #GtkExpander controlled by the specified boolean property.  * A value of %TRUE for the property corresponds to the expanded state  * for the widget.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GtkExpander widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_expander_new:  * @config:        Object to which property is attached.  * @property_name: Name of boolean property.  * @label:         Label for expander.  *  * Creates a #GtkExpander controlled by the specified boolean property.  * A value of %TRUE for the property corresponds to the expanded state  * for the widget.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GtkExpander widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function
