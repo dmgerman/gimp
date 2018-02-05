@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be8dd300103
+DECL|enum|__anon2c2f8b930103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be8dd300203
+DECL|enum|__anon2c2f8b930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8364,10 +8364,26 @@ operator|!
 name|mask
 condition|)
 return|return;
-comment|/*  APPLY can only be done to layers with an alpha channel  */
-if|if
-condition|(
+comment|/*  APPLY can not be done to group layers  */
+name|g_return_if_fail
+argument_list|(
 operator|!
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+operator|||
+name|mode
+operator|==
+name|GIMP_MASK_DISCARD
+argument_list|)
+expr_stmt|;
+comment|/*  APPLY can only be done to layers with an alpha channel  */
+name|g_return_if_fail
+argument_list|(
 name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
@@ -8375,9 +8391,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-condition|)
-name|g_return_if_fail
-argument_list|(
+operator|||
 name|mode
 operator|==
 name|GIMP_MASK_DISCARD
