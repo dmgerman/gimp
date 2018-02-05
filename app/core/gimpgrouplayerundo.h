@@ -112,6 +112,15 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
+DECL|member|prev_suspended_mask_buffer
+name|GeglBuffer
+modifier|*
+name|prev_suspended_mask_buffer
+decl_stmt|;
+DECL|member|prev_suspended_mask_bounds
+name|GeglRectangle
+name|prev_suspended_mask_bounds
+decl_stmt|;
 DECL|member|prev_type
 name|GimpImageBaseType
 name|prev_type

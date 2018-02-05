@@ -4557,9 +4557,6 @@ name|ac
 operator|&&
 operator|!
 name|mask
-operator|&&
-operator|!
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -4573,9 +4570,6 @@ name|fs
 operator|&&
 operator|!
 name|ac
-operator|&&
-operator|!
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -4592,9 +4586,6 @@ name|ac
 operator|&&
 operator|!
 name|mask
-operator|&&
-operator|!
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
