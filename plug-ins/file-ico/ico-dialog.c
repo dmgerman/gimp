@@ -1080,6 +1080,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+break|break;
 default|default:
 name|g_return_if_reached
 argument_list|()

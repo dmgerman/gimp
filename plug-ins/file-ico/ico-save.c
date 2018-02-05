@@ -1915,6 +1915,8 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+comment|/* It is possible to count the colors of indexed image more easily        * with gimp_image_get_colormap(), but counting only the colors        * actually used will allow more efficient bpp if possible. */
+break|break;
 default|default:
 name|g_return_val_if_reached
 argument_list|(
@@ -2488,6 +2490,7 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+break|break;
 default|default:
 name|g_return_if_reached
 argument_list|()
