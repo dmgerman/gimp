@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d64d4e0103
+DECL|enum|__anon27b8d7400103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d64d4e0203
+DECL|enum|__anon27b8d7400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9845,6 +9845,7 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|version
 operator|=
 name|MAX
@@ -9854,6 +9855,24 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+comment|/* need version 13 for group layers with masks */
+if|if
+condition|(
+name|gimp_layer_get_mask
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+name|version
+operator|=
+name|MAX
+argument_list|(
+literal|13
+argument_list|,
+name|version
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|g_list_free
 argument_list|(
@@ -10036,6 +10055,9 @@ literal|11
 case|:
 case|case
 literal|12
+case|:
+case|case
+literal|13
 case|:
 if|if
 condition|(
