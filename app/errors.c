@@ -1312,6 +1312,7 @@ name|trace
 init|=
 name|NULL
 decl_stmt|;
+comment|/* This works only on UNIX systems. On Windows, we'll have to find    * another method, probably with DrMingW.    */
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
@@ -1348,22 +1349,6 @@ index|[
 literal|16
 index|]
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* Though we should theoretically ask with GIMP_STACK_TRACE_QUERY, we    * just assume yes right now. TODO: improve this!    */
-if|if
-condition|(
-name|stack_trace_mode
-operator|==
-name|GIMP_STACK_TRACE_NEVER
-condition|)
-return|return
-name|NULL
-return|;
-comment|/* This works only on UNIX systems. On Windows, we'll have to find    * another method, probably with DrMingW.    */
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|g_snprintf
 argument_list|(
 name|pid
