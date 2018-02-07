@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e62d20103
+DECL|enum|__anon29a157a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -606,7 +606,7 @@ operator|->
 name|buffer
 condition|)
 block|{
-name|g_signal_connect
+name|gegl_buffer_signal_connect
 argument_list|(
 name|buffer_source_validate
 operator|->
