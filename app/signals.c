@@ -141,6 +141,9 @@ name|gchar
 modifier|*
 name|dir
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 comment|/* This has to be the non-roaming directory (i.e., the local      directory) as backtraces correspond to the binaries on this      system. */
 name|dir
 operator|=
@@ -158,6 +161,22 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|dir
+operator|=
+name|g_build_filename
+argument_list|(
+name|gimp_directory
+argument_list|()
+argument_list|,
+literal|"CrashLog"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Ensure the path exists. */
 name|g_mkdir_with_parents
 argument_list|(
@@ -180,8 +199,7 @@ literal|"%s-crash-%"
 name|G_GUINT64_FORMAT
 literal|".txt"
 argument_list|,
-name|g_get_prgname
-argument_list|()
+name|PACKAGE_NAME
 argument_list|,
 name|t
 argument_list|)
