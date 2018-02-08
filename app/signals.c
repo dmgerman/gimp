@@ -130,13 +130,6 @@ modifier|*
 name|backtrace_file
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-comment|/* Use Dr. Mingw (dumps backtrace on crash) if it is available. Do    * nothing otherwise on Win32.    * The user won't get any stack trace from glib anyhow.    * Without Dr. MinGW, It's better to let Windows inform about the    * program error, and offer debugging (if the user has installed MSVC    * or some other compiler that knows how to install itself as a    * handler for program errors).    */
-ifdef|#
-directive|ifdef
-name|HAVE_EXCHNDL
 name|time_t
 name|t
 decl_stmt|;
@@ -148,19 +141,6 @@ name|gchar
 modifier|*
 name|dir
 decl_stmt|;
-comment|/* Order is very important here. We need to add our signal handler    * first, then run ExcHndlInit() which will add its own handler, so    * that ExcHnl's handler runs first since that's in FILO order.    */
-if|if
-condition|(
-operator|!
-name|g_prevExceptionFilter
-condition|)
-name|g_prevExceptionFilter
-operator|=
-name|SetUnhandledExceptionFilter
-argument_list|(
-name|gimp_sigfatal_handler
-argument_list|)
-expr_stmt|;
 comment|/* This has to be the non-roaming directory (i.e., the local      directory) as backtraces correspond to the binaries on this      system. */
 name|dir
 operator|=
@@ -226,6 +206,26 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|dir
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* Use Dr. Mingw (dumps backtrace on crash) if it is available. Do    * nothing otherwise on Win32.    * The user won't get any stack trace from glib anyhow.    * Without Dr. MinGW, It's better to let Windows inform about the    * program error, and offer debugging (if the user has installed MSVC    * or some other compiler that knows how to install itself as a    * handler for program errors).    */
+ifdef|#
+directive|ifdef
+name|HAVE_EXCHNDL
+comment|/* Order is very important here. We need to add our signal handler    * first, then run ExcHndlInit() which will add its own handler, so    * that ExcHnl's handler runs first since that's in FILO order.    */
+if|if
+condition|(
+operator|!
+name|g_prevExceptionFilter
+condition|)
+name|g_prevExceptionFilter
+operator|=
+name|SetUnhandledExceptionFilter
+argument_list|(
+name|gimp_sigfatal_handler
 argument_list|)
 expr_stmt|;
 name|ExcHndlInit
