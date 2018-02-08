@@ -371,9 +371,9 @@ DECL|member|export_metadata_iptc
 name|gboolean
 name|export_metadata_iptc
 decl_stmt|;
-DECL|member|generate_backtrace
-name|gboolean
-name|generate_backtrace
+DECL|member|debug_policy
+name|GimpDebugPolicy
+name|debug_policy
 decl_stmt|;
 block|}
 struct|;
