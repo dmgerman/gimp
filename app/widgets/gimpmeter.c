@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d672d0103
+DECL|enum|__anon2959fa160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d672d0208
+DECL|struct|__anon2959fa160208
 block|{
 DECL|member|active
 name|gboolean
@@ -1706,14 +1706,6 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gtk_widget_is_drawable
-argument_list|(
-name|widget
-argument_list|)
-condition|)
-block|{
 name|GtkAllocation
 name|allocation
 decl_stmt|;
@@ -1756,6 +1748,17 @@ decl_stmt|;
 name|gint
 name|k
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gtk_widget_is_drawable
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|g_mutex_lock
 argument_list|(
 operator|&
@@ -2449,7 +2452,7 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-comment|/* translate to history bottom-right, and scale so that the                * x-axis points left, and has a length of one sample, and the                * y-axis points up, and has a length of the history window.                */
+comment|/* translate to history bottom-right, and scale so that the            * x-axis points left, and has a length of one sample, and            * the y-axis points up, and has a length of the history            * window.            */
 name|cairo_translate
 argument_list|(
 name|cr
@@ -3336,7 +3339,6 @@ operator|->
 name|mutex
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|FALSE
 return|;
