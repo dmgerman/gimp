@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2f6840103
+DECL|enum|__anon2af0ee070103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae2f6840203
+DECL|enum|__anon2af0ee070203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5973,14 +5973,32 @@ name|gint
 name|offset_y
 parameter_list|)
 block|{
-name|gboolean
-name|old_linear
+name|GeglBuffer
+modifier|*
+name|old_buffer
 init|=
-name|gimp_drawable_get_linear
+name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
+name|gint
+name|old_linear
+init|=
+operator|-
+literal|1
+decl_stmt|;
+if|if
+condition|(
+name|old_buffer
+condition|)
+name|old_linear
+operator|=
+name|gimp_drawable_get_linear
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
 argument_list|(
 name|parent_class
@@ -6003,6 +6021,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|old_linear
+operator|>=
+literal|0
+operator|&&
 name|gimp_filter_peek_node
 argument_list|(
 name|GIMP_FILTER
