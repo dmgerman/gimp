@@ -179,6 +179,12 @@ name|gboolean
 name|show_mask
 decl_stmt|;
 comment|/*  show mask or layer?               */
+DECL|member|move_stack
+name|GSList
+modifier|*
+name|move_stack
+decl_stmt|;
+comment|/*  ancestors affected by move        */
 DECL|member|layer_offset_node
 name|GeglNode
 modifier|*
@@ -191,7 +197,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2a948f0b0108
+DECL|struct|__anon2acdc3200108
 block|{
 DECL|member|drawable
 name|GimpDrawable
