@@ -1064,7 +1064,13 @@ case|case
 name|GIMP_PASTE_TYPE_FLOATING
 case|:
 case|case
+name|GIMP_PASTE_TYPE_FLOATING_IN_PLACE
+case|:
+case|case
 name|GIMP_PASTE_TYPE_FLOATING_INTO
+case|:
+case|case
+name|GIMP_PASTE_TYPE_FLOATING_INTO_IN_PLACE
 case|:
 comment|/*  when pasting as floating selection, get rid of the layer mask,            *  and make sure the layer has the right format            */
 if|if
