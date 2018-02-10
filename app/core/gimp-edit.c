@@ -1002,7 +1002,13 @@ case|case
 name|GIMP_PASTE_TYPE_FLOATING
 case|:
 case|case
+name|GIMP_PASTE_TYPE_FLOATING_IN_PLACE
+case|:
+case|case
 name|GIMP_PASTE_TYPE_FLOATING_INTO
+case|:
+case|case
+name|GIMP_PASTE_TYPE_FLOATING_INTO_IN_PLACE
 case|:
 comment|/*  when pasting as floating selection, force creation of a            *  plain layer, so gimp_item_convert() will collapse a            *  group layer            */
 name|layer_type
@@ -1012,6 +1018,9 @@ expr_stmt|;
 break|break;
 case|case
 name|GIMP_PASTE_TYPE_NEW_LAYER
+case|:
+case|case
+name|GIMP_PASTE_TYPE_NEW_LAYER_IN_PLACE
 case|:
 name|layer_type
 operator|=
