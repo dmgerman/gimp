@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b412d4d0103
+DECL|enum|__anon2989dd140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b412d4d0203
+DECL|enum|__anon2989dd140203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b412d4d0308
+DECL|struct|__anon2989dd140308
 block|{
 DECL|member|use_property
 specifier|const
@@ -735,7 +735,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DYNAMICS_OUTPUT
 argument_list|(

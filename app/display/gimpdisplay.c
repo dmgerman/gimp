@@ -162,7 +162,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7cc0b0103
+DECL|enum|__anon2a20fdb60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -860,19 +860,6 @@ operator|=
 name|ID
 expr_stmt|;
 block|}
-break|break;
-case|case
-name|PROP_ID
-case|:
-case|case
-name|PROP_IMAGE
-case|:
-case|case
-name|PROP_SHELL
-case|:
-name|g_assert_not_reached
-argument_list|()
-expr_stmt|;
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID

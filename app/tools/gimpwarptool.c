@@ -4436,7 +4436,7 @@ argument_list|(
 name|op
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|parent
 operator|!=

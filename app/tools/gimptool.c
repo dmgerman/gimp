@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b816fc20103
+DECL|enum|__anon2c3f18df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -994,7 +994,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_TOOL_INFO
 argument_list|(

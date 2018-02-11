@@ -754,7 +754,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_TOOL_INFO
 argument_list|(
@@ -764,7 +764,7 @@ name|tool_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_PAINT_INFO
 argument_list|(
@@ -797,7 +797,7 @@ name|tool_info
 operator|->
 name|paint_info
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|g_type_is_a
 argument_list|(

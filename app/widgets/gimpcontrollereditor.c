@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4bad90103
+DECL|enum|__anon2a0a85eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4bad90203
+DECL|enum|__anon2a0a85eb0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -676,7 +676,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTROLLER_INFO
 argument_list|(

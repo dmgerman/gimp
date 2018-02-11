@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1545560103
+DECL|enum|__anon2bf2407f0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1545560203
+DECL|enum|__anon2bf2407f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -668,7 +668,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 operator|(
 name|info

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e71040103
+DECL|enum|__anon2c037b5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,7 +645,7 @@ break|break;
 case|case
 name|GIMP_UNDO_IMAGE_GRID
 case|:
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_GRID
 argument_list|(
@@ -718,7 +718,7 @@ case|:
 case|case
 name|GIMP_UNDO_PARASITE_REMOVE
 case|:
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|image_undo
 operator|->

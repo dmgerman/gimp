@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8027e70103
+DECL|enum|__anon2b8c639a0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -944,7 +944,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|BRUSH_CORE_SUBSAMPLE
 operator|==

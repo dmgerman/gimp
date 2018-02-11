@@ -3516,7 +3516,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 operator|(
 name|GimpLayerMode

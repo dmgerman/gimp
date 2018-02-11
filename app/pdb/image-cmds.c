@@ -7470,7 +7470,7 @@ name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 operator|>=

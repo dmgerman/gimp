@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a827a0103
+DECL|enum|__anon28fc73d10103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a827a0208
+DECL|struct|__anon28fc73d10208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -1170,7 +1170,7 @@ name|slider
 condition|)
 block|{
 comment|/* see comment in gimp_blend_tool_editor_delete_stop() */
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|info
 operator|->
@@ -2349,7 +2349,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -3246,7 +3246,7 @@ operator|&
 name|n_sliders
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|handle
 operator|>=
@@ -3316,7 +3316,7 @@ modifier|*
 name|blend_tool
 parameter_list|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -3412,7 +3412,7 @@ operator|->
 name|modify_active
 condition|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|gimp_blend_tool_editor_is_gradient_editable
 argument_list|(
@@ -3467,7 +3467,7 @@ argument_list|,
 name|custom
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -3476,7 +3476,7 @@ operator|==
 name|custom
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|gimp_blend_tool_editor_is_gradient_editable
 argument_list|(
@@ -3705,7 +3705,7 @@ name|BlendInfo
 modifier|*
 name|info
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|gimp_blend_tool_editor_handle_is_stop
 argument_list|(
@@ -3743,7 +3743,7 @@ name|slider
 condition|)
 block|{
 comment|/* when removing a stop that was added as part of the current action,        * restore the original gradient at the beginning of the action, rather        * than deleting the stop from the current gradient, so that the affected        * midpoint returns to its state at the beginning of the action, instead        * of being reset.        *        * note that this assumes that the gradient hasn't changed in any other        * way during the action, which is ugly, but currently always true.        */
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|info
 operator|->
@@ -3857,7 +3857,7 @@ name|GimpControllerSlider
 modifier|*
 name|sliders
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|gimp_blend_tool_editor_handle_is_midpoint
 argument_list|(
@@ -7065,7 +7065,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -7179,7 +7179,7 @@ name|right_color_type
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -8373,7 +8373,7 @@ block|{
 name|gint
 name|selection
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -8382,7 +8382,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -8427,7 +8427,7 @@ name|GIMP_TOOL_LINE_HANDLE_NONE
 condition|)
 block|{
 comment|/* we're undoing a stop addition operation */
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|gimp_blend_tool_editor_handle_is_stop
 argument_list|(
@@ -9991,7 +9991,7 @@ name|BlendInfo
 modifier|*
 name|new_info
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -10000,7 +10000,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -10157,7 +10157,7 @@ name|BlendInfo
 modifier|*
 name|new_info
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->
@@ -10166,7 +10166,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_tool
 operator|->

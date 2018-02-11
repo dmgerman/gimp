@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bde48d80103
+DECL|enum|__anon2b2a73220103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde48d80208
+DECL|struct|__anon2b2a73220208
 block|{
 DECL|member|progress
 name|GimpProgress
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde48d80308
+DECL|struct|__anon2b2a73220308
 block|{
 DECL|member|mode
 name|RemoteCopyMode
@@ -1391,7 +1391,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -1482,7 +1482,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}

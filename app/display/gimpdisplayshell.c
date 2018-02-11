@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4375850103
+DECL|enum|__anon29a3ab140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4375850203
+DECL|enum|__anon29a3ab140203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1643,7 +1643,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_UI_MANAGER
 argument_list|(
@@ -1653,7 +1653,7 @@ name|popup_manager
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(

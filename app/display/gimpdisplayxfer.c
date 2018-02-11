@@ -201,7 +201,7 @@ name|RTreeNode
 modifier|*
 name|node
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|x
 operator|>=
@@ -218,7 +218,7 @@ operator|.
 name|w
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|y
 operator|>=
@@ -1257,7 +1257,7 @@ name|RTreeNode
 modifier|*
 name|node
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|w
 operator|<=
@@ -1350,7 +1350,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|node
 operator|!=

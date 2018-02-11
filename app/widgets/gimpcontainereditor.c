@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83b45d0103
+DECL|enum|__anon29153fdc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -850,7 +850,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTAINER
 argument_list|(
@@ -862,7 +862,7 @@ name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -968,7 +968,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}

@@ -198,7 +198,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0216cf0103
+DECL|enum|__anon29af7fbc0103
 block|{
 DECL|enumerator|GRAB_NONE
 name|GRAB_NONE
@@ -216,7 +216,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0216cf0203
+DECL|enum|__anon29af7fbc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0216cf0303
+DECL|enum|__anon29af7fbc0303
 block|{
 DECL|enumerator|CAN_ADD_SLIDER
 name|CAN_ADD_SLIDER
@@ -4553,7 +4553,7 @@ name|line
 operator|->
 name|private
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|slider
 operator|>=
@@ -4635,7 +4635,7 @@ operator|->
 name|end_handle
 return|;
 default|default:
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|handle
 operator|>=
@@ -4960,7 +4960,7 @@ block|{
 case|case
 name|GIMP_TOOL_LINE_HANDLE_NONE
 case|:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 case|case

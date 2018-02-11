@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc997100103
+DECL|enum|__anon2acc3af70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc997100203
+DECL|enum|__anon2acc3af70203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -681,7 +681,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(

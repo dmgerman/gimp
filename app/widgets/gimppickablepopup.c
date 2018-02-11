@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274837ac0103
+DECL|enum|__anon2c1712d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -559,7 +559,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(

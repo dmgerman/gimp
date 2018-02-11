@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1472f40103
+DECL|enum|__anon2ad61a720103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1472f40203
+DECL|enum|__anon2ad61a720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1098,7 +1098,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
@@ -1108,7 +1108,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONFIG
 argument_list|(
@@ -1118,7 +1118,7 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTAINER
 argument_list|(

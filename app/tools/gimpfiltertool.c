@@ -4597,7 +4597,7 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|filter_tool
 operator|->

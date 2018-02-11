@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3c64d50103
+DECL|enum|__anon2b65248c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -792,7 +792,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DATA_FACTORY
 argument_list|(
@@ -804,7 +804,7 @@ name|factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|factory_view
 operator|->

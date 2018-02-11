@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1770670103
+DECL|enum|__anon2b30144b0103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1770670203
+DECL|enum|__anon2b30144b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -477,7 +477,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(

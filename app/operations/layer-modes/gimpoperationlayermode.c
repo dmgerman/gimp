@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278bf26b0103
+DECL|enum|__anon2a4af0be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1967,7 +1967,7 @@ operator|!=
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 condition|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|composite_space
 operator|>=
@@ -1978,7 +1978,7 @@ operator|<
 literal|4
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|blend_space
 operator|>=

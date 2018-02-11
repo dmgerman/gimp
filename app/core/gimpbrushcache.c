@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294809460103
+DECL|enum|__anon2ae6c3a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -315,7 +315,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|cache
 operator|->

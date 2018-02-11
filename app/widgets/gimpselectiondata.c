@@ -3577,7 +3577,7 @@ operator|=
 name|c
 expr_stmt|;
 block|}
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|out
 operator|-

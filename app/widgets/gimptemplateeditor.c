@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6780960103
+DECL|enum|__anon2a8c1aa00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -622,7 +622,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|private
 operator|->
@@ -631,7 +631,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|private
 operator|->

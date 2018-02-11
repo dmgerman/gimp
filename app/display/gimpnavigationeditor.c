@@ -2377,7 +2377,7 @@ name|vsbdata
 expr_stmt|;
 break|break;
 block|}
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|adj
 operator|!=

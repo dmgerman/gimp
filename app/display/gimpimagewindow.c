@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba686470103
+DECL|enum|__anon27e79cf20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba686470208
+DECL|struct|__anon27e79cf20208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1692,7 +1692,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
@@ -1702,7 +1702,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
@@ -7599,7 +7599,7 @@ argument_list|(
 name|window
 argument_list|)
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|private
 operator|->

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274dd7300103
+DECL|enum|__anon2bf7d9190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,7 +398,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
@@ -411,7 +411,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|GEGL_IS_BUFFER
 argument_list|(

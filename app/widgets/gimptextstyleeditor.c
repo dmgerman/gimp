@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4837ff0103
+DECL|enum|__anon299c0d0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1451,7 +1451,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
@@ -1461,7 +1461,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_FONT_LIST
 argument_list|(
@@ -1471,7 +1471,7 @@ name|fonts
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_TEXT
 argument_list|(
@@ -1481,7 +1481,7 @@ name|text
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_TEXT_BUFFER
 argument_list|(

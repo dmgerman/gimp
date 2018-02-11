@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a35de470103
+DECL|enum|__anon2b5459660103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a35de470203
+DECL|enum|__anon2b5459660203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35de470308
+DECL|struct|__anon2b5459660308
 block|{
 DECL|member|state
 name|TipsParserState
@@ -1372,7 +1372,7 @@ modifier|*
 name|markup_name
 parameter_list|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|parser
 operator|->
@@ -1452,7 +1452,7 @@ modifier|*
 name|parser
 parameter_list|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|parser
 operator|->

@@ -156,6 +156,26 @@ name|GimpTemplate
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* for now these are defines, but can be turned into something  * fancier for nicer debugging  */
+end_comment
+
+begin_define
+DECL|macro|gimp_assert
+define|#
+directive|define
+name|gimp_assert
+value|g_assert
+end_define
+
+begin_define
+DECL|macro|gimp_assert_not_reached
+define|#
+directive|define
+name|gimp_assert_not_reached
+value|g_assert_not_reached
+end_define
+
 begin_endif
 endif|#
 directive|endif

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b9cce0103
+DECL|enum|__anon29647e5e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1674,7 +1674,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b9cce0208
+DECL|struct|__anon29647e5e0208
 block|{
 DECL|member|view_size
 name|gint
@@ -1865,7 +1865,7 @@ operator|==
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 operator|==
@@ -1879,7 +1879,7 @@ name|GIMP_TYPE_VIEW_RENDERER
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 operator|==
@@ -1893,7 +1893,7 @@ name|G_TYPE_STRING
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 operator|==
@@ -1907,7 +1907,7 @@ name|PANGO_TYPE_ATTR_LIST
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_SENSITIVE
 operator|==
@@ -1921,7 +1921,7 @@ name|G_TYPE_BOOLEAN
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_USER_DATA
 operator|==

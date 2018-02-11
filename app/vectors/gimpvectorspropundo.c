@@ -174,7 +174,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_VECTORS
 argument_list|(
@@ -199,7 +199,7 @@ name|undo_type
 condition|)
 block|{
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -252,7 +252,7 @@ name|undo_type
 condition|)
 block|{
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}

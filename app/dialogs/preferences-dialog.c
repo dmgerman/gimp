@@ -13142,7 +13142,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c70e2d00108
+DECL|struct|__anon29f4f6850108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13202,7 +13202,7 @@ struct|;
 name|gint
 name|format
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|G_N_ELEMENTS
 argument_list|(
@@ -14019,7 +14019,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c70e2d00208
+DECL|struct|__anon29f4f6850208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14157,7 +14157,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c70e2d00308
+DECL|struct|__anon29f4f6850308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff99030103
+DECL|enum|__anon293d24010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -817,7 +817,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_DATA_FACTORY
 argument_list|(
@@ -827,7 +827,7 @@ name|data_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(

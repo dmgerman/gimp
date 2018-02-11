@@ -1782,7 +1782,7 @@ return|;
 block|}
 block|}
 block|}
-name|g_return_val_if_fail
+name|gimp_assert
 argument_list|(
 name|to
 operator|-
@@ -1793,8 +1793,6 @@ operator|<=
 name|string
 operator|->
 name|len
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

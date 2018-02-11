@@ -200,7 +200,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(

@@ -116,7 +116,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|info
 operator|->

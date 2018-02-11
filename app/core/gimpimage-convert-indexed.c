@@ -418,7 +418,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28aee7d20103
+DECL|enum|__anon2c701d470103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1514,7 +1514,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aee7d20208
+DECL|struct|__anon2c701d470208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1750,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aee7d20308
+DECL|struct|__anon2c701d470308
 block|{
 DECL|member|used_count
 name|glong
@@ -7002,7 +7002,7 @@ comment|/*   boxp->Rhalferror = RSDF(dummyqo.cmap[0].red);   boxp->Ghalferror = 
 comment|/*   boxp->Rhalferror = (RSDF(dummyqo.cmap[0].red) + (Rmin+Rmax)/2)/2;   boxp->Ghalferror = (GSDF(dummyqo.cmap[0].green) + (Gmin+Gmax)/2)/2;   boxp->Bhalferror = (BSDF(dummyqo.cmap[0].blue) + (Bmin+Bmax)/2)/2;   */
 endif|#
 directive|endif
-comment|/*   fprintf(stderr, " %d,%d", dummyqo.cmap[0].blue, boxp->Bmax);    g_assert(boxp->Rhalferror>= boxp->Rmin);   g_assert(boxp->Rhalferror< boxp->Rmax);   g_assert(boxp->Ghalferror>= boxp->Gmin);   g_assert(boxp->Ghalferror< boxp->Gmax);   g_assert(boxp->Bhalferror>= boxp->Bmin);   g_assert(boxp->Bhalferror< boxp->Bmax);*/
+comment|/*   fprintf(stderr, " %d,%d", dummyqo.cmap[0].blue, boxp->Bmax);    gimp_assert (boxp->Rhalferror>= boxp->Rmin);   gimp_assert (boxp->Rhalferror< boxp->Rmax);   gimp_assert (boxp->Ghalferror>= boxp->Gmin);   gimp_assert (boxp->Ghalferror< boxp->Gmax);   gimp_assert (boxp->Bhalferror>= boxp->Bmin);   gimp_assert (boxp->Bhalferror< boxp->Bmax);*/
 comment|/*boxp->error = (sqrt((double)(boxp->error/ccount)));*/
 comment|/*  boxp->rerror = (sqrt((double)((boxp->rerror)/ccount)));   boxp->gerror = (sqrt((double)((boxp->gerror)/ccount)));   boxp->berror = (sqrt((double)((boxp->berror)/ccount)));*/
 comment|/*printf(":%lld / %ld: ", boxp->error, ccount);   printf("(%d-%d-%d)(%d-%d-%d)(%d-%d-%d)\n",          Rmin, boxp->Rhalferror, Rmax,          Gmin, boxp->Ghalferror, Gmax,          Bmin, boxp->Bhalferror, Bmax          );          fflush(stdout);*/

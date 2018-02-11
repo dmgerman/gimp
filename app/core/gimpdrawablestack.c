@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7a71f0103
+DECL|enum|__anon28ca7e6d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -343,7 +343,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|gimp_assert
 argument_list|(
 name|g_type_is_a
 argument_list|(

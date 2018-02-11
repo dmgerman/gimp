@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29939b380103
+DECL|enum|__anon28ef6c900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6938,7 +6938,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 comment|/* when the keep aspect transformation constraint is enabled,        * the translation shall only be along the diagonal that runs        * trough this corner point.        */
@@ -7256,7 +7256,7 @@ literal|2
 expr_stmt|;
 block|}
 else|else
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 name|opp_l
@@ -7656,7 +7656,7 @@ literal|1
 expr_stmt|;
 block|}
 else|else
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 if|if
@@ -7918,7 +7918,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 if|if
@@ -8389,7 +8389,7 @@ literal|"Click-Drag to rotate"
 argument_list|)
 return|;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -10107,7 +10107,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}

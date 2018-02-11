@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4819e90103
+DECL|enum|__anon2c704cd50103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4819e90208
+DECL|struct|__anon2c704cd50208
 block|{
 DECL|member|state
 name|IsoCodesParserState
@@ -1823,7 +1823,7 @@ modifier|*
 name|parser
 parameter_list|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|parser
 operator|->

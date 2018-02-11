@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29256f0a0103
+DECL|enum|__anon2b128c100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1454,7 +1454,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}

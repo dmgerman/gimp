@@ -570,7 +570,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b615e6c0103
+DECL|enum|__anon29c9a6f60103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -592,7 +592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b615e6c0208
+DECL|struct|__anon29c9a6f60208
 block|{
 DECL|member|states
 name|GSList
@@ -628,7 +628,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b615e6c0308
+DECL|struct|__anon29c9a6f60308
 block|{
 DECL|member|text
 name|gchar
@@ -1024,7 +1024,7 @@ name|attribute_value
 init|=
 name|NULL
 decl_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|peek_state
 argument_list|(
@@ -1265,7 +1265,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
@@ -1319,7 +1319,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|peek_state
 argument_list|(
@@ -1352,7 +1352,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|peek_state
 argument_list|(
@@ -1401,7 +1401,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|peek_state
 argument_list|(
@@ -1424,7 +1424,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
@@ -1575,7 +1575,7 @@ block|{
 case|case
 name|STATE_START
 case|:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 comment|/* gmarkup shouldn't do this */
@@ -1642,7 +1642,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;

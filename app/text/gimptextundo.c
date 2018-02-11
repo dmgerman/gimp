@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277cb3000103
+DECL|enum|__anon2c3aac840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -362,7 +362,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|GIMP_IS_TEXT_LAYER
 argument_list|(
@@ -407,7 +407,7 @@ operator|->
 name|pspec
 condition|)
 block|{
-name|g_assert
+name|gimp_assert
 argument_list|(
 name|text_undo
 operator|->
@@ -514,7 +514,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
@@ -1097,7 +1097,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_assert_not_reached
+name|gimp_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
