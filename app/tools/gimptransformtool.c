@@ -1458,6 +1458,12 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_COMMIT
 case|:
+if|if
+condition|(
+name|tool
+operator|->
+name|display
+condition|)
 name|gimp_transform_tool_commit
 argument_list|(
 name|tr_tool
