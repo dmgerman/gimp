@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52b9870103
+DECL|enum|__anon2894b7ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b52b9870203
+DECL|enum|__anon2894b7ca0203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -2532,12 +2532,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_spin_scale_update_target (GtkWidget * widget,gdouble x,gdouble y)
+DECL|function|gimp_spin_scale_update_target (GtkWidget * widget,GdkWindow * window,gdouble x,gdouble y)
 name|gimp_spin_scale_update_target
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkWindow
+modifier|*
+name|window
 parameter_list|,
 name|gdouble
 name|x
@@ -2585,18 +2589,6 @@ init|=
 name|gtk_widget_get_display
 argument_list|(
 name|widget
-argument_list|)
-decl_stmt|;
-name|GdkWindow
-modifier|*
-name|window
-init|=
-name|gtk_entry_get_text_window
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GdkCursor
@@ -2686,12 +2678,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_spin_scale_clear_target (GtkWidget * widget)
+DECL|function|gimp_spin_scale_clear_target (GtkWidget * widget,GdkWindow * window)
 name|gimp_spin_scale_clear_target
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkWindow
+modifier|*
+name|window
 parameter_list|)
 block|{
 name|GimpSpinScalePrivate
@@ -2712,18 +2708,6 @@ operator|!=
 name|TARGET_NONE
 condition|)
 block|{
-name|GdkWindow
-modifier|*
-name|window
-init|=
-name|gtk_entry_get_text_window
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|private
 operator|->
 name|target
@@ -3162,6 +3146,10 @@ name|widget
 argument_list|,
 name|event
 operator|->
+name|window
+argument_list|,
+name|event
+operator|->
 name|x
 argument_list|,
 name|event
@@ -3404,6 +3392,10 @@ name|widget
 argument_list|,
 name|event
 operator|->
+name|window
+argument_list|,
+name|event
+operator|->
 name|x
 argument_list|,
 name|event
@@ -3415,6 +3407,10 @@ else|else
 name|gimp_spin_scale_clear_target
 argument_list|(
 name|widget
+argument_list|,
+name|event
+operator|->
+name|window
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
@@ -3898,6 +3894,10 @@ name|widget
 argument_list|,
 name|event
 operator|->
+name|window
+argument_list|,
+name|event
+operator|->
 name|x
 argument_list|,
 name|event
@@ -3978,6 +3978,10 @@ block|{
 name|gimp_spin_scale_clear_target
 argument_list|(
 name|widget
+argument_list|,
+name|event
+operator|->
+name|window
 argument_list|)
 expr_stmt|;
 block|}
