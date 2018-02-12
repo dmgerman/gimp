@@ -466,6 +466,12 @@ block|{
 case|case
 name|GIMP_MESSAGE_ERROR
 case|:
+case|case
+name|GIMP_MESSAGE_BUG_WARNING
+case|:
+case|case
+name|GIMP_MESSAGE_BUG_CRITICAL
+case|:
 comment|/* error messages are never handled here */
 break|break;
 case|case

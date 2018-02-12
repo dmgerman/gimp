@@ -4134,6 +4134,15 @@ case|:
 return|return
 name|GIMP_ICON_DIALOG_ERROR
 return|;
+case|case
+name|GIMP_MESSAGE_BUG_WARNING
+case|:
+case|case
+name|GIMP_MESSAGE_BUG_CRITICAL
+case|:
+return|return
+name|GIMP_ICON_WILBER_EEK
+return|;
 block|}
 name|g_return_val_if_reached
 argument_list|(
@@ -4162,7 +4171,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0ef2fa0108
+DECL|struct|__anon29e4184e0108
 block|{
 DECL|member|r
 name|guchar
@@ -4838,7 +4847,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ef2fa0208
+DECL|struct|__anon29e4184e0208
 block|{
 DECL|member|timeout_id
 name|gint

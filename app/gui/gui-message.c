@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288932880108
+DECL|struct|__anon2c53b1400108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -450,8 +450,8 @@ case|:
 if|if
 condition|(
 name|severity
-operator|==
-name|GIMP_MESSAGE_ERROR
+operator|>=
+name|GIMP_MESSAGE_BUG_WARNING
 condition|)
 block|{
 name|g_mutex_lock
@@ -1164,15 +1164,26 @@ operator|=
 name|GTK_MESSAGE_ERROR
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_MESSAGE_BUG_WARNING
+case|:
+case|case
+name|GIMP_MESSAGE_BUG_CRITICAL
+case|:
+name|type
+operator|=
+name|GTK_MESSAGE_OTHER
+expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
 name|severity
-operator|==
-name|GIMP_MESSAGE_ERROR
+operator|>=
+name|GIMP_MESSAGE_BUG_WARNING
 condition|)
 block|{
-comment|/* Process differently errors.        * The reason is that this will take significant place, and cannot        * be processed as a progress message or in the global dialog. It        * will require its own dedicated dialog which will encourage        * people to report the bug.        */
+comment|/* Process differently programming errors.        * The reason is that we will generate traces, which will take        * significant place, and cannot be processed as a progress        * message or in the global dialog. It will require its own        * dedicated dialog which will encourage people to report the bug.        */
 name|gboolean
 name|gui_error
 init|=
