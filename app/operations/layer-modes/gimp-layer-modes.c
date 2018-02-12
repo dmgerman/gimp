@@ -18,7 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"../operations-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gegl/gimp-babl.h"
 end_include
 
 begin_include
@@ -4594,37 +4606,27 @@ block|{
 case|case
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 case|:
-comment|/* compositing is color-space agnostic.  try to return the preferred        * format, and fall back to linear.        */
+comment|/* compositing is color-space agnostic.  return a format that has a fast        * conversion path to/from the preferred format.        */
 if|if
 condition|(
+name|gimp_babl_format_get_linear
+argument_list|(
 name|preferred_format
-operator|==
+argument_list|)
+condition|)
+return|return
 name|babl_format
 argument_list|(
 literal|"RGBA float"
 argument_list|)
-operator|||
-name|preferred_format
-operator|==
+return|;
+else|else
+return|return
 name|babl_format
 argument_list|(
 literal|"R'G'B'A float"
 argument_list|)
-condition|)
-block|{
-return|return
-name|preferred_format
 return|;
-block|}
-else|else
-block|{
-return|return
-name|babl_format
-argument_list|(
-literal|"RGBA float"
-argument_list|)
-return|;
-block|}
 case|case
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
