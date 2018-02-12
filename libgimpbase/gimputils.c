@@ -27,12 +27,6 @@ directive|include
 file|<stdio.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/wait.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -114,10 +108,33 @@ directive|include
 file|<shlobj.h>
 end_include
 
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
+
+begin_comment
+comment|/* For waitpid() */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<sys/wait.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 begin_include
 include|#
