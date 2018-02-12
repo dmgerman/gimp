@@ -2249,6 +2249,13 @@ argument_list|,
 name|active_item
 argument_list|)
 expr_stmt|;
+name|gimp_item_start_move
+argument_list|(
+name|active_item
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*  fallthru  */
 case|case
 name|GIMP_TRANSLATE_MODE_FLOATING_SEL
