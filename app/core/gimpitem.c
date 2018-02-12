@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab998e90103
+DECL|enum|__anon2b20d39d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab998e90203
+DECL|enum|__anon2b20d39d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4661,18 +4661,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|gimp_item_is_attached
-argument_list|(
-name|item
-argument_list|)
-condition|)
-name|push_undo
-operator|=
-name|FALSE
-expr_stmt|;
-if|if
-condition|(
 name|GIMP_ITEM_GET_CLASS
 argument_list|(
 name|item
@@ -4715,18 +4703,6 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_item_is_attached
-argument_list|(
-name|item
-argument_list|)
-condition|)
-name|push_undo
-operator|=
-name|FALSE
 expr_stmt|;
 if|if
 condition|(
