@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c639a0103
+DECL|enum|__anon278de35e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3785,7 +3785,10 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
-name|NULL
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

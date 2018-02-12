@@ -1701,9 +1701,9 @@ name|layer_mode
 operator|.
 name|blend_space
 argument_list|,
-name|gegl_buffer_get_format
+name|gimp_temp_buf_get_format
 argument_list|(
-name|src_buffer
+name|paint_buf
 argument_list|)
 argument_list|)
 expr_stmt|;

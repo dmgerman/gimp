@@ -1071,7 +1071,10 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
-name|NULL
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf
@@ -2306,7 +2309,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2dde500103
+DECL|enum|__anon286d705f0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
