@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aefc8b0108
+DECL|struct|__anon295be7620108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -160,11 +160,6 @@ DECL|member|message
 name|gchar
 modifier|*
 name|message
-decl_stmt|;
-DECL|member|trace
-name|gchar
-modifier|*
-name|trace
 decl_stmt|;
 DECL|member|handler
 name|GObject
@@ -213,11 +208,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,11 +237,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -273,11 +258,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -306,7 +286,7 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gui_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message,const gchar * trace)
+DECL|function|gui_message (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gui_message
 parameter_list|(
 name|Gimp
@@ -329,11 +309,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 block|{
 switch|switch
@@ -357,8 +332,6 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
-argument_list|,
-name|trace
 argument_list|)
 condition|)
 return|return;
@@ -424,19 +397,6 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|->
-name|trace
-operator|=
-name|trace
-condition|?
-name|g_strdup
-argument_list|(
-name|trace
-argument_list|)
-else|:
-name|NULL
-expr_stmt|;
-name|data
-operator|->
 name|handler
 operator|=
 name|handler
@@ -480,8 +440,6 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
-argument_list|,
-name|trace
 argument_list|)
 condition|)
 return|return;
@@ -502,8 +460,6 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
-argument_list|,
-name|trace
 argument_list|)
 expr_stmt|;
 break|break;
@@ -555,10 +511,6 @@ argument_list|,
 name|data
 operator|->
 name|message
-argument_list|,
-name|data
-operator|->
-name|trace
 argument_list|)
 condition|)
 block|{
@@ -575,10 +527,6 @@ argument_list|,
 name|data
 operator|->
 name|message
-argument_list|,
-name|data
-operator|->
-name|trace
 argument_list|)
 expr_stmt|;
 block|}
@@ -594,19 +542,6 @@ argument_list|(
 name|data
 operator|->
 name|message
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|data
-operator|->
-name|trace
-condition|)
-name|g_free
-argument_list|(
-name|data
-operator|->
-name|trace
 argument_list|)
 expr_stmt|;
 if|if
@@ -631,7 +566,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_message_error_console (Gimp * gimp,GimpMessageSeverity severity,const gchar * domain,const gchar * message,const gchar * trace)
+DECL|function|gui_message_error_console (Gimp * gimp,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gui_message_error_console
 parameter_list|(
 name|Gimp
@@ -650,18 +585,12 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|dockable
 decl_stmt|;
-comment|/* TODO: right now the error console does nothing with the trace. */
 name|dockable
 operator|=
 name|gimp_dialog_factory_find_widget
@@ -1076,7 +1005,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_message_error_dialog (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message,const gchar * trace)
+DECL|function|gui_message_error_dialog (Gimp * gimp,GObject * handler,GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gui_message_error_dialog
 parameter_list|(
 name|Gimp
@@ -1099,11 +1028,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1147,18 +1071,51 @@ break|break;
 block|}
 if|if
 condition|(
-name|trace
+name|severity
+operator|==
+name|GIMP_MESSAGE_ERROR
 condition|)
 block|{
-comment|/* Process differently when traces are included.        * The reason is that this will take significant place, and cannot        * be processed as a progress message or in the global dialog. It        * will require its own dedicated dialog which will encourage        * people to report the bug.        */
-name|gchar
-modifier|*
-name|text
-decl_stmt|;
+comment|/* Process differently errors.        * The reason is that this will take significant place, and cannot        * be processed as a progress message or in the global dialog. It        * will require its own dedicated dialog which will encourage        * people to report the bug.        */
 name|dialog
 operator|=
 name|global_critical_dialog
 argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|gimp_critical_dialog_want_errors
+argument_list|(
+name|dialog
+argument_list|)
+condition|)
+block|{
+name|gchar
+modifier|*
+name|text
+decl_stmt|;
+name|gchar
+modifier|*
+name|trace
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|gimp_critical_dialog_want_traces
+argument_list|(
+name|dialog
+argument_list|)
+condition|)
+name|gimp_print_stack_trace
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|trace
+argument_list|)
 expr_stmt|;
 name|text
 operator|=
@@ -1186,19 +1143,45 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|text
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|trace
+condition|)
+name|g_free
+argument_list|(
+name|trace
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
+else|else
+block|{
+comment|/* Since we overrided glib default's WARNING and CRITICAL            * handler, if we decide not to handle this error in the end,            * let's just print it in terminal in a similar fashion as            * glib's default handler (though without the fancy terminal            * colors right now).            */
+name|g_printerr
+argument_list|(
+literal|"%s-ERROR: %s\n"
+argument_list|,
+name|domain
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
 block|}
 elseif|else
 if|if
@@ -1378,7 +1361,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_message_console (GimpMessageSeverity severity,const gchar * domain,const gchar * message,const gchar * trace)
+DECL|function|gui_message_console (GimpMessageSeverity severity,const gchar * domain,const gchar * message)
 name|gui_message_console
 parameter_list|(
 name|GimpMessageSeverity
@@ -1393,11 +1376,6 @@ specifier|const
 name|gchar
 modifier|*
 name|message
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|trace
 parameter_list|)
 block|{
 name|gchar
@@ -1425,17 +1403,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|formatted_message
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|trace
-condition|)
-name|g_printerr
-argument_list|(
-literal|"Stack trace:\n%s\n\n"
-argument_list|,
-name|trace
 argument_list|)
 expr_stmt|;
 block|}

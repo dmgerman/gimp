@@ -192,8 +192,6 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

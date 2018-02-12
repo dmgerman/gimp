@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa63810103
+DECL|enum|__anon2c9b4f250103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa63810203
+DECL|enum|__anon2c9b4f250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4515,8 +4515,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|message
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4587,8 +4585,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|message
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
