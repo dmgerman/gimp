@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53b1400108
+DECL|struct|__anon2923c9ca0108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1274,12 +1274,37 @@ return|;
 block|}
 else|else
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|reason
+init|=
+literal|"Message"
+decl_stmt|;
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_MESSAGE_SEVERITY
+argument_list|,
+name|severity
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|reason
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* Since we overrided glib default's WARNING and CRITICAL            * handler, if we decide not to handle this error in the end,            * let's just print it in terminal in a similar fashion as            * glib's default handler (though without the fancy terminal            * colors right now).            */
 name|g_printerr
 argument_list|(
-literal|"%s-ERROR: %s\n"
+literal|"%s-%s: %s\n"
 argument_list|,
 name|domain
+argument_list|,
+name|reason
 argument_list|,
 name|message
 argument_list|)
