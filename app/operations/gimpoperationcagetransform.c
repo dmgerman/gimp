@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b73d8dc0103
+DECL|enum|__anon29fc8c3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2592,6 +2592,15 @@ name|GimpCagePoint
 modifier|*
 name|point
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|coef_buf
+operator|!=
+name|NULL
+argument_list|,
+name|result
+argument_list|)
+expr_stmt|;
 name|gegl_buffer_sample
 argument_list|(
 name|coef_buf
