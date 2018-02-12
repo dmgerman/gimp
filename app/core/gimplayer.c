@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0ee070103
+DECL|enum|__anon2be6b25e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0ee070203
+DECL|enum|__anon2be6b25e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4733,14 +4733,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GSList
-modifier|*
-name|ancestors
-decl_stmt|;
-name|GSList
-modifier|*
-name|iter
-decl_stmt|;
 if|if
 condition|(
 name|GIMP_ITEM_CLASS
@@ -4762,6 +4754,21 @@ argument_list|,
 name|push_undo
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|->
+name|move_stack
+condition|)
+block|{
+name|GSList
+modifier|*
+name|ancestors
+decl_stmt|;
+name|GSList
+modifier|*
+name|iter
+decl_stmt|;
 name|ancestors
 operator|=
 name|layer
@@ -4826,6 +4833,7 @@ argument_list|(
 name|ancestors
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
