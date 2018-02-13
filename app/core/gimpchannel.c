@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29592bb80103
+DECL|enum|__anon2a08b3fb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4583,6 +4583,11 @@ argument_list|,
 name|offset_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|buffer
+condition|)
+block|{
 name|gegl_buffer_signal_connect
 argument_list|(
 name|buffer
@@ -4648,6 +4653,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
