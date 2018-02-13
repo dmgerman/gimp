@@ -5081,24 +5081,6 @@ name|channel
 operator|=
 name|mask
 expr_stmt|;
-operator|(
-operator|*
-name|channel
-operator|)
-operator|->
-name|boundary_known
-operator|=
-name|FALSE
-expr_stmt|;
-operator|(
-operator|*
-name|channel
-operator|)
-operator|->
-name|bounds_known
-operator|=
-name|FALSE
-expr_stmt|;
 comment|/* Don't restore info->active_channel because the              * selection can't be the active channel              */
 block|}
 break|break;
