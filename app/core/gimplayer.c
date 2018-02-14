@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6774250103
+DECL|enum|__anon29d1d48d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6774250203
+DECL|enum|__anon29d1d48d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6030,8 +6030,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|buffer
-operator|&&
 name|gimp_filter_peek_node
 argument_list|(
 name|GIMP_FILTER
@@ -6041,17 +6039,12 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gboolean
-name|new_linear
-init|=
+if|if
+condition|(
 name|gimp_drawable_get_linear
 argument_list|(
 name|drawable
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|new_linear
 operator|!=
 name|old_linear
 condition|)
