@@ -2918,7 +2918,7 @@ name|gimp_rectangle_select_tool_update_option_defaults
 argument_list|(
 name|rect_tool
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start
