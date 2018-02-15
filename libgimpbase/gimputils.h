@@ -408,7 +408,7 @@ modifier|*
 name|prog_name
 parameter_list|,
 name|gpointer
-name|fd
+name|stream
 parameter_list|,
 name|gchar
 modifier|*

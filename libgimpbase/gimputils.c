@@ -2950,12 +2950,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_print_stack_trace:  * @prog_name: the program to attach to.  * @fd: a #FILE * file descriptor.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @fd or  * returned as a newly allocated string in @trace, if not #NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Return value: #TRUE if a stack trace could be generated, #FALSE  * otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_print_stack_trace:  * @prog_name: the program to attach to.  * @stream: a #FILE * stream.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @stream or  * returned as a newly allocated string in @trace, if not #NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Return value: #TRUE if a stack trace could be generated, #FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_print_stack_trace (const gchar * prog_name,gpointer fd,gchar ** trace)
+DECL|function|gimp_print_stack_trace (const gchar * prog_name,gpointer stream,gchar ** trace)
 name|gimp_print_stack_trace
 parameter_list|(
 specifier|const
@@ -2964,7 +2964,7 @@ modifier|*
 name|prog_name
 parameter_list|,
 name|gpointer
-name|fd
+name|stream
 parameter_list|,
 name|gchar
 modifier|*
@@ -3267,11 +3267,11 @@ literal|'\0'
 expr_stmt|;
 if|if
 condition|(
-name|fd
+name|stream
 condition|)
 name|g_fprintf
 argument_list|(
-name|fd
+name|stream
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -3393,11 +3393,11 @@ control|)
 block|{
 if|if
 condition|(
-name|fd
+name|stream
 condition|)
 name|g_fprintf
 argument_list|(
-name|fd
+name|stream
 argument_list|,
 literal|"%s\n"
 argument_list|,
@@ -3479,7 +3479,7 @@ operator|(
 name|FILE
 operator|*
 operator|)
-name|fd
+name|stream
 argument_list|)
 argument_list|)
 expr_stmt|;
