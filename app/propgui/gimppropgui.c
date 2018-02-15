@@ -1842,7 +1842,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon290166e80108
+DECL|struct|__anon27b94d920108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1879,7 +1879,7 @@ name|_gimp_prop_gui_new_color_rotate
 block|}
 block|,
 block|{
-literal|"GimpGegl-gegl-color-to-alpha-plus-config"
+literal|"GimpGegl-gegl-color-to-alpha-config"
 block|,
 name|_gimp_prop_gui_new_color_to_alpha
 block|}
