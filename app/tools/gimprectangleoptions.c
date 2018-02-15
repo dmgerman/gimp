@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b4d6c0103
+DECL|enum|__anon2be1a5e50103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3905,7 +3905,20 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|2
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_prop_widget_set_factor
+argument_list|(
+name|scale
+argument_list|,
+literal|100.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|frame
