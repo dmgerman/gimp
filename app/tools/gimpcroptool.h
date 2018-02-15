@@ -128,6 +128,11 @@ name|GimpImage
 modifier|*
 name|current_image
 decl_stmt|;
+DECL|member|current_layer
+name|GimpLayer
+modifier|*
+name|current_layer
+decl_stmt|;
 DECL|member|widget
 name|GimpToolWidget
 modifier|*
