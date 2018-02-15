@@ -3475,6 +3475,10 @@ name|n_symbols
 argument_list|,
 name|fileno
 argument_list|(
+operator|(
+name|FILE
+operator|*
+operator|)
 name|fd
 argument_list|)
 argument_list|)
