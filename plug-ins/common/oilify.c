@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ac3d2f0108
+DECL|struct|__anon2c7387590108
 block|{
 DECL|member|mask_size
 name|gdouble

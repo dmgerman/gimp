@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29564d460108
+DECL|struct|__anon299f08bf0108
 block|{
 DECL|member|lum_threshold
 name|gdouble

@@ -252,7 +252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b25ec0108
+DECL|struct|__anon27a5c51e0108
 block|{
 DECL|member|hwidth
 name|gint
