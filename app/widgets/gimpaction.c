@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29adda020103
+DECL|enum|__anon27f062500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1190,6 +1190,7 @@ block|,
 literal|"tools-transform-preview-opacity-"
 block|,
 literal|"tools-warp-effect-size-"
+block|,
 literal|"tools-warp-effect-hardness-"
 block|}
 decl_stmt|;
