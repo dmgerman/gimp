@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b744060103
+DECL|enum|__anon2895841c0103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -92,7 +92,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b744060208
+DECL|struct|__anon2895841c0208
 block|{
 DECL|member|action_name
 name|gchar
@@ -112,7 +112,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27b744060308
+DECL|struct|__anon2895841c0308
 block|{
 DECL|member|items
 name|GList
@@ -1088,7 +1088,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* gimp_action_history_is_excluded_action:  *  * Returns whether an action should be excluded from history.  *  * Some actions should not be logged in the history, but should  * otherwise appear in the search results, since they correspond  * to different functions at different times.  */
+comment|/* gimp_action_history_is_excluded_action:  *  * Returns whether an action should be excluded from history.  *  * Some actions should not be logged in the history, but should  * otherwise appear in the search results, since they correspond  * to different functions at different times, or since their  * label may interfere with more relevant, but less frequent,  * actions.  */
 end_comment
 
 begin_function
@@ -1114,6 +1114,42 @@ name|TRUE
 return|;
 return|return
 operator|(
+name|g_strcmp0
+argument_list|(
+name|action_name
+argument_list|,
+literal|"edit-undo"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|g_strcmp0
+argument_list|(
+name|action_name
+argument_list|,
+literal|"edit-strong-undo"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|g_strcmp0
+argument_list|(
+name|action_name
+argument_list|,
+literal|"edit-redo"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|g_strcmp0
+argument_list|(
+name|action_name
+argument_list|,
+literal|"edit-strong-redo"
+argument_list|)
+operator|==
+literal|0
+operator|||
 name|g_strcmp0
 argument_list|(
 name|action_name
