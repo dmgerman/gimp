@@ -100,7 +100,19 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_action_history_excluded_action
+name|gimp_action_history_is_blacklisted_action
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|action_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_action_history_is_excluded_action
 parameter_list|(
 specifier|const
 name|gchar
