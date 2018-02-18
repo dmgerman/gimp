@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcc4400103
+DECL|enum|__anon2c71bff60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcc4400203
+DECL|enum|__anon2c71bff60203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fcc4400303
+DECL|enum|__anon2c71bff60303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fcc4400403
+DECL|enum|__anon2c71bff60403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -12423,6 +12423,11 @@ block|{
 case|case
 name|GIMP_RECTANGLE_CONSTRAIN_IMAGE
 case|:
+if|if
+condition|(
+name|image
+condition|)
+block|{
 operator|*
 name|min_x
 operator|=
@@ -12449,10 +12454,15 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_RECTANGLE_CONSTRAIN_DRAWABLE
 case|:
+if|if
+condition|(
+name|image
+condition|)
 block|{
 name|GimpItem
 modifier|*
@@ -12466,6 +12476,11 @@ name|image
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|item
+condition|)
+block|{
 name|gimp_item_get_offset
 argument_list|(
 name|item
@@ -12497,6 +12512,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 default|default:
