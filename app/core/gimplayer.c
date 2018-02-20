@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1d48d0103
+DECL|enum|__anon2b7f34f90103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1d48d0203
+DECL|enum|__anon2b7f34f90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8963,6 +8963,14 @@ decl_stmt|;
 if|if
 condition|(
 name|push_undo
+operator|&&
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 condition|)
 name|gimp_image_undo_push_layer_mask_apply
 argument_list|(
