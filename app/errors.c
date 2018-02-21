@@ -445,9 +445,10 @@ argument_list|(
 name|_full_prog_name
 argument_list|)
 expr_stmt|;
+comment|/* Create parent directories for both the crash and backup files. */
 name|backtrace_file
 operator|=
-name|g_strdup
+name|g_path_get_dirname
 argument_list|(
 name|_backtrace_file
 argument_list|)
@@ -462,6 +463,29 @@ argument_list|,
 literal|"backups"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_mkdir_with_parents
+argument_list|(
+name|backtrace_file
+argument_list|,
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|backtrace_file
+argument_list|)
+expr_stmt|;
+name|backtrace_file
+operator|=
+name|g_strdup
+argument_list|(
+name|_backtrace_file
 argument_list|)
 expr_stmt|;
 name|g_mkdir_with_parents
@@ -997,6 +1021,8 @@ operator|!
 name|the_errors_gimp
 operator|->
 name|no_interface
+operator|&&
+name|backtrace_file
 condition|)
 block|{
 name|FILE
@@ -1339,6 +1365,11 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* Let's try to back-up all unsaved images!    * It is not 100%: when I tested with various bugs created on purpose,    * I had cases where saving failed. I am not sure if this is because    * of some memory management along the way to XCF saving or some other    * messed up state of GIMP, but this is normal not to expect too much    * during a crash.    * Nevertheless in various test cases, I had successful backups XCF of    * the work in progress. Yeah!    */
+if|if
+condition|(
+name|backup_path
+condition|)
+block|{
 comment|/* The index of 'XXX' in backup_path string. */
 name|num_idx
 operator|=
@@ -1403,7 +1434,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* This is a trick because we want to avoid any memory        * allocation when the process is abnormally terminated.        * We just assume that you'll never have more than 1000 images        * open (which is already far fetched).        */
+comment|/* This is a trick because we want to avoid any memory            * allocation when the process is abnormally terminated.            * We just assume that you'll never have more than 1000 images            * open (which is already far fetched).            */
 name|backup_path
 index|[
 name|num_idx
@@ -1505,6 +1536,7 @@ expr_stmt|;
 name|i
 operator|++
 expr_stmt|;
+block|}
 block|}
 name|exit
 argument_list|(

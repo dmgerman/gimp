@@ -817,19 +817,6 @@ argument_list|(
 name|use_cpu_accel
 argument_list|)
 expr_stmt|;
-name|errors_init
-argument_list|(
-name|gimp
-argument_list|,
-name|full_prog_name
-argument_list|,
-name|use_debug_handler
-argument_list|,
-name|stack_trace_mode
-argument_list|,
-name|backtrace_file
-argument_list|)
-expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 name|gimpdir
 operator|=
@@ -909,6 +896,20 @@ block|}
 name|g_object_unref
 argument_list|(
 name|gimpdir
+argument_list|)
+expr_stmt|;
+comment|/* Initialize the error handling after creating/migrating the config    * directory because it will create some folders for backup and crash    * logs in advance. Therefore running this before    * gimp_user_install_new() would break migration as well as initial    * folder creations.    */
+name|errors_init
+argument_list|(
+name|gimp
+argument_list|,
+name|full_prog_name
+argument_list|,
+name|use_debug_handler
+argument_list|,
+name|stack_trace_mode
+argument_list|,
+name|backtrace_file
 argument_list|)
 expr_stmt|;
 name|gimp_load_config

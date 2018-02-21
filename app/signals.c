@@ -177,14 +177,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* Ensure the path exists. */
-name|g_mkdir_with_parents
-argument_list|(
-name|dir
-argument_list|,
-literal|0700
-argument_list|)
-expr_stmt|;
 name|time
 argument_list|(
 operator|&
