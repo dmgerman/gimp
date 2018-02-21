@@ -1076,7 +1076,7 @@ literal|"x"
 argument_list|)
 condition|)
 block|{
-name|gint
+name|gdouble
 name|min
 init|=
 name|MAX
@@ -1086,7 +1086,7 @@ argument_list|,
 name|off_x
 argument_list|)
 decl_stmt|;
-name|gint
+name|gdouble
 name|max
 init|=
 name|MIN
@@ -1126,7 +1126,7 @@ literal|"y"
 argument_list|)
 condition|)
 block|{
-name|gint
+name|gdouble
 name|min
 init|=
 name|MAX
@@ -1136,7 +1136,7 @@ argument_list|,
 name|off_y
 argument_list|)
 decl_stmt|;
-name|gint
+name|gdouble
 name|max
 init|=
 name|MIN
@@ -1842,7 +1842,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27b94d920108
+DECL|struct|__anon2a245e1e0108
 block|{
 DECL|member|config_type
 specifier|const
