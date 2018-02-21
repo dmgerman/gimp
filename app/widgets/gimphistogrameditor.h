@@ -126,9 +126,9 @@ DECL|member|idle_id
 name|guint
 name|idle_id
 decl_stmt|;
-DECL|member|valid
+DECL|member|recompute
 name|gboolean
-name|valid
+name|recompute
 decl_stmt|;
 DECL|member|menu
 name|GtkWidget
