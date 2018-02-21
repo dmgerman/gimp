@@ -3560,6 +3560,15 @@ condition|(
 name|input
 condition|)
 block|{
+name|GInputStream
+modifier|*
+name|buffered
+init|=
+name|g_buffered_input_stream_new
+argument_list|(
+name|input
+argument_list|)
+decl_stmt|;
 name|data_list
 operator|=
 name|loader
@@ -3570,7 +3579,7 @@ name|context
 argument_list|,
 name|file
 argument_list|,
-name|input
+name|buffered
 argument_list|,
 operator|&
 name|error
@@ -3626,6 +3635,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|buffered
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|input
