@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cb4490103
+DECL|enum|__anon27f996e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1241,6 +1241,12 @@ operator|->
 name|histogram
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
+name|valid
+operator|=
+name|FALSE
+expr_stmt|;
 name|gimp_histogram_view_set_histogram
 argument_list|(
 name|view
@@ -1605,6 +1611,12 @@ operator|->
 name|histogram
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
+name|valid
+operator|=
+name|FALSE
+expr_stmt|;
 name|gimp_histogram_view_set_histogram
 argument_list|(
 name|view
@@ -1782,6 +1794,12 @@ name|editor
 operator|->
 name|histogram
 argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|valid
+operator|=
+name|FALSE
 expr_stmt|;
 name|gimp_histogram_view_set_histogram
 argument_list|(
