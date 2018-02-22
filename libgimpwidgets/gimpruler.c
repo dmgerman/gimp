@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a290d0103
+DECL|enum|__anon28c5bac30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275a290d0208
+DECL|struct|__anon28c5bac30208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -191,7 +191,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275a290d0308
+DECL|struct|__anon28c5bac30308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -5560,12 +5560,15 @@ name|GimpUnit
 name|unit
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|if (unit == GIMP_UNIT_INCH)     return&ruler_metric_inches;
-endif|#
-directive|endif
+if|if
+condition|(
+name|FALSE
+condition|)
+comment|/* unit == GIMP_UNIT_INCH */
+return|return
+operator|&
+name|ruler_metric_inches
+return|;
 return|return
 operator|&
 name|ruler_metric_decimal
