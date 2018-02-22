@@ -1152,7 +1152,7 @@ argument_list|)
 expr_stmt|;
 name|has_backtrace
 operator|=
-name|gimp_print_stack_trace
+name|gimp_stack_trace_print
 argument_list|(
 operator|(
 specifier|const
@@ -1257,7 +1257,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_on_error_query
+name|gimp_stack_trace_query
 argument_list|(
 operator|(
 specifier|const
@@ -1292,7 +1292,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_print_stack_trace
+name|gimp_stack_trace_print
 argument_list|(
 operator|(
 specifier|const

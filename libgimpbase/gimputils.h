@@ -400,7 +400,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_print_stack_trace
+name|gimp_stack_trace_available
+parameter_list|(
+name|gboolean
+name|optimal
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_stack_trace_print
 parameter_list|(
 specifier|const
 name|gchar
@@ -420,22 +430,12 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_on_error_query
+name|gimp_stack_trace_query
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|prog_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_utils_backtrace_available
-parameter_list|(
-name|gboolean
-name|optimal
 parameter_list|)
 function_decl|;
 end_function_decl

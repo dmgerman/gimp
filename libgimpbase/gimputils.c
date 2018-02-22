@@ -2997,13 +2997,81 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_print_stack_trace:  * @prog_name: the program to attach to.  * @stream: a #FILE * stream.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @stream or  * returned as a newly allocated string in @trace, if not #NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Return value: #TRUE if a stack trace could be generated, #FALSE  * otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_stack_trace_available:  * @optimal: whether we get optimal traces.  *  * Returns #TRUE if we have dependencies to generate backtraces. If  * @optimal is #TRUE, the function will return #TRUE only when we  * are able to generate optimal traces (i.e. with GDB or LLDB);  * otherwise we return #TRUE even if only backtrace() API is available.  *  * On Win32, we return TRUE if Dr. Mingw is built-in, FALSE otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_print_stack_trace (const gchar * prog_name,gpointer stream,gchar ** trace)
-name|gimp_print_stack_trace
+DECL|function|gimp_stack_trace_available (gboolean optimal)
+name|gimp_stack_trace_available
+parameter_list|(
+name|gboolean
+name|optimal
+parameter_list|)
+block|{
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+if|if
+condition|(
+name|gimp_utils_gdb_available
+argument_list|(
+literal|7
+argument_list|,
+literal|0
+argument_list|)
+operator|||
+name|gimp_utils_lldb_available
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+ifdef|#
+directive|ifdef
+name|HAVE_EXECINFO_H
+if|if
+condition|(
+operator|!
+name|optimal
+condition|)
+return|return
+name|TRUE
+return|;
+endif|#
+directive|endif
+else|#
+directive|else
+comment|/* G_OS_WIN32 */
+ifdef|#
+directive|ifdef
+name|HAVE_EXCHNDL
+return|return
+name|TRUE
+return|;
+endif|#
+directive|endif
+endif|#
+directive|endif
+comment|/* G_OS_WIN32 */
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_stack_trace_print:  * @prog_name: the program to attach to.  * @stream: a #FILE * stream.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @stream or  * returned as a newly allocated string in @trace, if not #NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Return value: #TRUE if a stack trace could be generated, #FALSE  * otherwise.  *  * Since: 2.10  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_stack_trace_print (const gchar * prog_name,gpointer stream,gchar ** trace)
+name|gimp_stack_trace_print
 parameter_list|(
 specifier|const
 name|gchar
@@ -3587,13 +3655,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_on_error_query:  * @prog_name: the program to attach to.  *  * This is mostly the same as g_on_error_query() except that we use our  * own backtrace function, much more complete.  * @prog_name must be the current program name (argv[0]).  * It does nothing on Win32.  *  * Since: 2.10  **/
+comment|/**  * gimp_stack_trace_query:  * @prog_name: the program to attach to.  *  * This is mostly the same as g_on_error_query() except that we use our  * own backtrace function, much more complete.  * @prog_name must be the current program name (argv[0]).  * It does nothing on Win32.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_on_error_query (const gchar * prog_name)
-name|gimp_on_error_query
+DECL|function|gimp_stack_trace_query (const gchar * prog_name)
+name|gimp_stack_trace_query
 parameter_list|(
 specifier|const
 name|gchar
@@ -3750,7 +3818,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_print_stack_trace
+name|gimp_stack_trace_print
 argument_list|(
 name|prog_name
 argument_list|,
@@ -3778,74 +3846,6 @@ name|retry
 goto|;
 endif|#
 directive|endif
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_utils_backtrace_available:  * @optimal: whether we get optimal traces.  *  * Returns #TRUE if we have dependencies to generate backtraces. If  * @optimal is #TRUE, the function will return #TRUE only when we  * are able to generate optimal traces (i.e. with GDB or LLDB);  * otherwise we return #TRUE even if only backtrace() API is available.  *  * On Win32, we return TRUE if Dr. Mingw is built-in, FALSE otherwise.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_utils_backtrace_available (gboolean optimal)
-name|gimp_utils_backtrace_available
-parameter_list|(
-name|gboolean
-name|optimal
-parameter_list|)
-block|{
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-if|if
-condition|(
-name|gimp_utils_gdb_available
-argument_list|(
-literal|7
-argument_list|,
-literal|0
-argument_list|)
-operator|||
-name|gimp_utils_lldb_available
-argument_list|(
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-condition|)
-return|return
-name|TRUE
-return|;
-ifdef|#
-directive|ifdef
-name|HAVE_EXECINFO_H
-if|if
-condition|(
-operator|!
-name|optimal
-condition|)
-return|return
-name|TRUE
-return|;
-endif|#
-directive|endif
-else|#
-directive|else
-comment|/* G_OS_WIN32 */
-ifdef|#
-directive|ifdef
-name|HAVE_EXCHNDL
-return|return
-name|TRUE
-return|;
-endif|#
-directive|endif
-endif|#
-directive|endif
-comment|/* G_OS_WIN32 */
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 

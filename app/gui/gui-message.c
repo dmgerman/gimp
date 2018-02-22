@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923c9ca0108
+DECL|struct|__anon2b0838f40108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -489,7 +489,7 @@ name|gen_trace
 condition|)
 block|{
 comment|/* We need to create the trace here because for multi-thread            * errors (i.e. non-GIMP ones), the backtrace after a idle            * function will simply be useless. It needs to happen in the            * buggy thread to be meaningful.            */
-name|gimp_print_stack_trace
+name|gimp_stack_trace_print
 argument_list|(
 name|NULL
 argument_list|,

@@ -5257,7 +5257,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_utils_backtrace_available
+name|gimp_stack_trace_available
 argument_list|(
 name|TRUE
 argument_list|)
@@ -12798,7 +12798,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2954456a0108
+DECL|struct|__anon2c7d087f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13675,7 +13675,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2954456a0208
+DECL|struct|__anon2c7d087f0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13813,7 +13813,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2954456a0308
+DECL|struct|__anon2c7d087f0308
 block|{
 DECL|member|tree_label
 specifier|const
