@@ -47,11 +47,16 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/*  random actions that don't fit in any category  */
+DECL|macro|GIMP_ICON_ATTACH
+define|#
+directive|define
+name|GIMP_ICON_ATTACH
+value|"gimp-attach"
 DECL|macro|GIMP_ICON_DETACH
 define|#
 directive|define
 name|GIMP_ICON_DETACH
-value|"gtk-convert"
+value|"gimp-detach"
 DECL|macro|GIMP_ICON_INVERT
 define|#
 directive|define
