@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b5bf860103
+DECL|enum|__anon288806830103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b5bf860203
+DECL|enum|__anon288806830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b5bf860303
+DECL|enum|__anon288806830303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5bf860408
+DECL|struct|__anon288806830408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2498,20 +2498,11 @@ argument_list|,
 name|right_value
 argument_list|)
 expr_stmt|;
-name|priv
-operator|->
-name|user_override
-operator|=
-name|TRUE
-expr_stmt|;
-name|g_object_notify
-argument_list|(
-name|G_OBJECT
+name|gimp_number_pair_entry_set_user_override
 argument_list|(
 name|entry
-argument_list|)
 argument_list|,
-literal|"user-override"
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2520,33 +2511,11 @@ break|break;
 case|case
 name|PARSE_CLEAR
 case|:
-name|gimp_number_pair_entry_set_values
+name|gimp_number_pair_entry_set_user_override
 argument_list|(
 name|entry
 argument_list|,
-name|priv
-operator|->
-name|default_left_number
-argument_list|,
-name|priv
-operator|->
-name|default_right_number
-argument_list|)
-expr_stmt|;
-name|priv
-operator|->
-name|user_override
-operator|=
 name|FALSE
-expr_stmt|;
-name|g_object_notify
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-literal|"user-override"
 argument_list|)
 expr_stmt|;
 break|break;
