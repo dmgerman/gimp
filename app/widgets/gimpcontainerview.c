@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55859a0103
+DECL|enum|__anon28b60c9c0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1111,6 +1111,26 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|private
+operator|->
+name|name_changed_handler
+argument_list|,
+name|gimp_tree_handler_disconnect
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|private
+operator|->
+name|expanded_changed_handler
+argument_list|,
+name|gimp_tree_handler_disconnect
+argument_list|)
+expr_stmt|;
 name|g_slice_free
 argument_list|(
 name|GimpContainerViewPrivate
