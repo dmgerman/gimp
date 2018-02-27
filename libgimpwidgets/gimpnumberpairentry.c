@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288806830103
+DECL|enum|__anon2b8c9a870103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288806830203
+DECL|enum|__anon2b8c9a870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288806830303
+DECL|enum|__anon2b8c9a870303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288806830408
+DECL|struct|__anon2b8c9a870408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2878,6 +2878,34 @@ name|gchar
 modifier|*
 name|end
 decl_stmt|;
+comment|/* skip over whitespace */
+while|while
+condition|(
+name|g_unichar_isspace
+argument_list|(
+name|g_utf8_get_char
+argument_list|(
+name|text
+argument_list|)
+argument_list|)
+condition|)
+name|text
+operator|=
+name|g_utf8_next_char
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+comment|/* check if clear */
+if|if
+condition|(
+operator|!
+operator|*
+name|text
+condition|)
+return|return
+name|PARSE_CLEAR
+return|;
 comment|/* try to parse a number */
 name|new_left_number
 operator|=
@@ -2896,7 +2924,7 @@ operator|==
 name|text
 condition|)
 return|return
-name|PARSE_CLEAR
+name|PARSE_INVALID
 return|;
 else|else
 name|text
