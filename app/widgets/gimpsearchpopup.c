@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293727870103
+DECL|enum|__anon28bf804a0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293727870203
+DECL|enum|__anon28bf804a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1249,6 +1249,22 @@ argument_list|,
 name|GTK_ENTRY_ICON_PRIMARY
 argument_list|,
 literal|"edit-find"
+argument_list|)
+expr_stmt|;
+name|gtk_entry_set_icon_activatable
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|popup
+operator|->
+name|priv
+operator|->
+name|keyword_entry
+argument_list|)
+argument_list|,
+name|GTK_ENTRY_ICON_PRIMARY
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
