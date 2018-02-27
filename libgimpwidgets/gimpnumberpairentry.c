@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c9a870103
+DECL|enum|__anon2a11fa330103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c9a870203
+DECL|enum|__anon2a11fa330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c9a870303
+DECL|enum|__anon2a11fa330303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c9a870408
+DECL|struct|__anon2a11fa330408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2742,6 +2742,16 @@ argument_list|,
 name|gimp_number_pair_entry_changed
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_number_pair_entry_modify_font
+argument_list|(
+name|entry
+argument_list|,
+operator|!
+name|priv
+operator|->
+name|user_override
 argument_list|)
 expr_stmt|;
 block|}
