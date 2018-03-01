@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-recursive-transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-shadows-highlights.h"
 end_include
 
@@ -1842,7 +1848,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a245e1e0108
+DECL|struct|__anon29c4094e0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1900,6 +1906,12 @@ block|{
 literal|"GimpGegl-gegl-diffraction-patterns-config"
 block|,
 name|_gimp_prop_gui_new_diffraction_patterns
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-recursive-transform-config"
+block|,
+name|_gimp_prop_gui_new_recursive_transform
 block|}
 block|,
 block|{
