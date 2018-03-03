@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6426060103
+DECL|enum|__anon2c5560eb0103
 block|{
 DECL|enumerator|GIMP_PROP_EVAL_FAILED
 name|GIMP_PROP_EVAL_FAILED
@@ -2982,6 +2982,7 @@ condition|)
 block|{
 name|g_free
 argument_list|(
+operator|*
 name|ref_key
 argument_list|)
 expr_stmt|;
