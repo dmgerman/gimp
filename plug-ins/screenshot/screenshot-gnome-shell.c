@@ -510,6 +510,10 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|NULL
+expr_stmt|;
 name|retval
 operator|=
 name|g_dbus_proxy_call_sync
