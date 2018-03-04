@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ffd4d0103
+DECL|enum|__anon2c2393a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -788,7 +788,7 @@ argument_list|,
 operator|&
 name|hsv
 argument_list|,
-name|GIMP_COLOR_SELECTOR_HUE
+name|GIMP_COLOR_SELECTOR_RED
 argument_list|)
 expr_stmt|;
 name|gimp_color_selector_set_show_alpha
