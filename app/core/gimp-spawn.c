@@ -331,6 +331,15 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|argv
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|HAVE_VFORK
