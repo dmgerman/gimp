@@ -3500,6 +3500,25 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|PR_SET_PTRACER
+comment|/* Clear ptrace permission set above */
+name|prctl
+argument_list|(
+name|PR_SET_PTRACER
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 while|while
 condition|(
 operator|(
