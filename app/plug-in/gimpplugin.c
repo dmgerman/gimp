@@ -918,7 +918,7 @@ name|gchar
 modifier|*
 name|args
 index|[
-literal|9
+literal|11
 index|]
 decl_stmt|;
 name|gchar
