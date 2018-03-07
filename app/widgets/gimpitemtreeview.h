@@ -530,6 +530,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_item_tree_view_get_delete_button
+parameter_list|(
+name|GimpItemTreeView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_item_tree_view_get_drop_index
 parameter_list|(
