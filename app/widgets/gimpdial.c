@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf60e2c0103
+DECL|enum|__anon29ec0e410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf60e2c0203
+DECL|enum|__anon29ec0e410203
 block|{
 DECL|enumerator|DIAL_TARGET_NONE
 name|DIAL_TARGET_NONE
@@ -1840,7 +1840,7 @@ operator|-
 name|alpha
 argument_list|)
 expr_stmt|;
-name|gimp_cairo_add_arc
+name|gimp_cairo_arc
 argument_list|(
 name|cr
 argument_list|,

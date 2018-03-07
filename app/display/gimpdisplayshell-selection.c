@@ -1166,7 +1166,7 @@ operator|->
 name|rotate_transform
 argument_list|)
 expr_stmt|;
-name|gimp_cairo_add_segments
+name|gimp_cairo_segments
 argument_list|(
 name|cr
 argument_list|,

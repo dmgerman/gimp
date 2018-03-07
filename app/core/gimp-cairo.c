@@ -66,8 +66,8 @@ end_decl_stmt
 begin_function
 name|cairo_pattern_t
 modifier|*
-DECL|function|gimp_cairo_stipple_pattern_create (const GimpRGB * fg,const GimpRGB * bg,gint index,gdouble offset_x,gdouble offset_y)
-name|gimp_cairo_stipple_pattern_create
+DECL|function|gimp_cairo_pattern_create_stipple (const GimpRGB * fg,const GimpRGB * bg,gint index,gdouble offset_x,gdouble offset_y)
+name|gimp_cairo_pattern_create_stipple
 parameter_list|(
 specifier|const
 name|GimpRGB
@@ -372,8 +372,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_cairo_add_arc (cairo_t * cr,gdouble center_x,gdouble center_y,gdouble radius,gdouble start_angle,gdouble slice_angle)
-name|gimp_cairo_add_arc
+DECL|function|gimp_cairo_arc (cairo_t * cr,gdouble center_x,gdouble center_y,gdouble radius,gdouble start_angle,gdouble slice_angle)
+name|gimp_cairo_arc
 parameter_list|(
 name|cairo_t
 modifier|*
@@ -456,8 +456,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_cairo_add_segments (cairo_t * cr,GimpSegment * segs,gint n_segs)
-name|gimp_cairo_add_segments
+DECL|function|gimp_cairo_segments (cairo_t * cr,GimpSegment * segs,gint n_segs)
+name|gimp_cairo_segments
 parameter_list|(
 name|cairo_t
 modifier|*

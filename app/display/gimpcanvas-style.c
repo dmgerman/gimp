@@ -978,7 +978,7 @@ name|active
 condition|)
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|active_fg
@@ -996,7 +996,7 @@ expr_stmt|;
 else|else
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|normal_fg
@@ -1194,7 +1194,7 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|fg
@@ -1228,7 +1228,7 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|fg
@@ -1441,7 +1441,7 @@ condition|)
 block|{
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|layer_mask_fg
@@ -1471,7 +1471,7 @@ condition|)
 block|{
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|layer_group_fg
@@ -1491,7 +1491,7 @@ else|else
 block|{
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|layer_fg
@@ -1577,7 +1577,7 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|selection_out_fg
@@ -1665,7 +1665,7 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 argument_list|(
 operator|&
 name|selection_in_fg

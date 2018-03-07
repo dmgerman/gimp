@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276115770103
+DECL|enum|__anon2c2826180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1812,7 +1812,7 @@ literal|2.0
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_cairo_add_arc
+name|gimp_cairo_arc
 argument_list|(
 name|cr
 argument_list|,
@@ -1868,7 +1868,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_cairo_add_arc
+name|gimp_cairo_arc
 argument_list|(
 name|cr
 argument_list|,

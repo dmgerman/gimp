@@ -19,7 +19,7 @@ end_define
 begin_function_decl
 name|cairo_pattern_t
 modifier|*
-name|gimp_cairo_stipple_pattern_create
+name|gimp_cairo_pattern_create_stipple
 parameter_list|(
 specifier|const
 name|GimpRGB
@@ -45,7 +45,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_cairo_add_arc
+name|gimp_cairo_arc
 parameter_list|(
 name|cairo_t
 modifier|*
@@ -71,7 +71,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_cairo_add_segments
+name|gimp_cairo_segments
 parameter_list|(
 name|cairo_t
 modifier|*

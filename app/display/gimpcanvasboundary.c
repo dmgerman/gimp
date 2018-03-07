@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c45f4150103
+DECL|enum|__anon2b80b9090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1253,7 +1253,7 @@ operator|&
 name|n_segs
 argument_list|)
 expr_stmt|;
-name|gimp_cairo_add_segments
+name|gimp_cairo_segments
 argument_list|(
 name|cr
 argument_list|,
