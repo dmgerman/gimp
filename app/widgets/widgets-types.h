@@ -1119,6 +1119,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHighlightableButton
+typedef|typedef
+name|struct
+name|_GimpHighlightableButton
+name|GimpHighlightableButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpHistogramBox
 typedef|typedef
 name|struct
