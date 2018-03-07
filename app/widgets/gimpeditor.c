@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphighlightablebutton.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -121,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a07fb0103
+DECL|enum|__anon2c7280790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2037,7 +2043,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_button_new
+name|gimp_highlightable_button_new
 argument_list|()
 expr_stmt|;
 name|gtk_button_set_relief
@@ -2365,7 +2371,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287a07fb0208
+DECL|struct|__anon2c7280790208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2694,7 +2700,7 @@ expr_stmt|;
 else|else
 name|button
 operator|=
-name|gimp_button_new
+name|gimp_highlightable_button_new
 argument_list|()
 expr_stmt|;
 name|gtk_button_set_relief
