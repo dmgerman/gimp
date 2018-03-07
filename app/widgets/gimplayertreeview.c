@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -85,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayer-floating-selection.h"
 end_include
 
 begin_include
@@ -2409,7 +2421,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2dccd0108
+DECL|struct|__anon2892fe2a0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2769,7 +2781,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2dccd0208
+DECL|struct|__anon2892fe2a0208
 block|{
 DECL|member|mask_column
 name|gint
@@ -4092,6 +4104,15 @@ argument_list|,
 name|floating_sel
 operator|!=
 name|NULL
+operator|&&
+operator|!
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
+name|floating_sel
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_highlightable_button_set_highlight
