@@ -73,6 +73,12 @@ directive|include
 file|<windows.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif
@@ -368,6 +374,18 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 name|argv
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|argv
+index|[
+literal|0
+index|]
 operator|!=
 name|NULL
 argument_list|,
