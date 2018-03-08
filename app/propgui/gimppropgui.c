@@ -1611,9 +1611,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_prop_gui_bind_tooltip
 argument_list|(
-name|widget
-argument_list|,
 name|button
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 if|if
@@ -1848,7 +1848,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29c4094e0108
+DECL|struct|__anon2a17f9800108
 block|{
 DECL|member|config_type
 specifier|const
