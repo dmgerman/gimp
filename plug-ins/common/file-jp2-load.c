@@ -115,11 +115,19 @@ file|<openjpeg.h>
 end_include
 
 begin_define
-DECL|macro|LOAD_PROC
+DECL|macro|LOAD_JP2_PROC
 define|#
 directive|define
-name|LOAD_PROC
+name|LOAD_JP2_PROC
 value|"file-jp2-load"
+end_define
+
+begin_define
+DECL|macro|LOAD_J2K_PROC
+define|#
+directive|define
+name|LOAD_J2K_PROC
+value|"file-j2k-load"
 end_define
 
 begin_define
@@ -179,6 +187,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|OPJ_CODEC_FORMAT
+name|format
 parameter_list|,
 name|GError
 modifier|*
@@ -275,15 +286,15 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|LOAD_PROC
+name|LOAD_JP2_PROC
 argument_list|,
 literal|"Loads JPEG 2000 images."
 argument_list|,
 literal|"The JPEG 2000 image loader."
 argument_list|,
-literal|"Aurimas JuÅ¡ka"
+literal|"Mukund Sivaraman"
 argument_list|,
-literal|"Aurimas JuÅ¡ka, Florian Traverse"
+literal|"Mukund Sivaraman"
 argument_list|,
 literal|"2009"
 argument_list|,
@@ -311,22 +322,79 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+comment|/*    * XXX: more complete magic number would be:    * "0,string,\x00\x00\x00\x0C\x6A\x50\x20\x20\x0D\x0A\x87\x0A"    * But the '\0' character makes problem in a 0-terminated string    * obviously, as well as some other space characters, it would seem.    * The below smaller version seems ok and not interfering with other    * formats.    */
 name|gimp_register_magic_load_handler
 argument_list|(
-name|LOAD_PROC
+name|LOAD_JP2_PROC
 argument_list|,
-literal|"jp2,jpc,jpx,j2k,jpf"
+literal|"jp2"
 argument_list|,
 literal|""
 argument_list|,
-literal|"4,string,jP,0,string,\xff\x4f\xff\x51\x00"
+literal|"3,string,\x0CjP"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-name|LOAD_PROC
+name|LOAD_JP2_PROC
 argument_list|,
 literal|"image/jp2"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|LOAD_J2K_PROC
+argument_list|,
+literal|"Loads JPEG 2000 codestream."
+argument_list|,
+literal|"The JPEG 2000 codestream loader."
+argument_list|,
+literal|"Jehan"
+argument_list|,
+literal|"Jehan"
+argument_list|,
+literal|"2009"
+argument_list|,
+name|N_
+argument_list|(
+literal|"JPEG 2000 codestream"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|load_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+name|LOAD_J2K_PROC
+argument_list|,
+literal|"j2k,j2c"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,\xff\x4f\xff\x51\x00"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+name|LOAD_J2K_PROC
+argument_list|,
+literal|"image/x-jp2-codestream"
 argument_list|)
 expr_stmt|;
 block|}
@@ -442,7 +510,16 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|LOAD_PROC
+name|LOAD_JP2_PROC
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_J2K_PROC
 argument_list|)
 operator|==
 literal|0
@@ -481,6 +558,17 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_JP2_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
 name|image_ID
 operator|=
 name|load_image
@@ -493,6 +581,29 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|OPJ_CODEC_JP2
+argument_list|,
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+else|else
+comment|/* strcmp (name, LOAD_J2K_PROC) == 0 */
+name|image_ID
+operator|=
+name|load_image
+argument_list|(
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|,
+name|OPJ_CODEC_J2K
 argument_list|,
 operator|&
 name|error
@@ -4484,13 +4595,16 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,GError ** error)
+DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|OPJ_CODEC_FORMAT
+name|format
 parameter_list|,
 name|GError
 modifier|*
@@ -4636,7 +4750,7 @@ name|codec
 operator|=
 name|opj_create_decompress
 argument_list|(
-name|OPJ_CODEC_JP2
+name|format
 argument_list|)
 expr_stmt|;
 name|opj_set_default_decoder_parameters
