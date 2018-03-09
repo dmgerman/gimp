@@ -5056,6 +5056,38 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* Sometimes the color space is not set at this point, which        * sucks. It seems to happen in particular with codestream images        * (.j2c or .j2k) which, if I understand well, are meant to be        * embedded by other files. So maybe that means that the color        * space information is in this container file?        * For now, let's just assume RGB/RGBA space when this happens,        * but this is not ideal. We should instead pop-up a dialog asking        * one to specify the color space in interactive mode (and add a        * parameter for the API.        * TODO!        */
+name|base_type
+operator|=
+name|GIMP_RGB
+expr_stmt|;
+if|if
+condition|(
+name|num_components
+operator|==
+literal|3
+condition|)
+block|{
+name|image_type
+operator|=
+name|GIMP_RGB_IMAGE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|num_components
+operator|==
+literal|4
+condition|)
+block|{
+name|image_type
+operator|=
+name|GIMP_RGBA_IMAGE
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_set_error
 argument_list|(
 name|error
@@ -5078,6 +5110,7 @@ expr_stmt|;
 goto|goto
 name|out
 goto|;
+block|}
 block|}
 comment|/* FIXME */
 comment|/*  base_type = GIMP_GRAY;   base_type = GIMP_RGB;   image_type = GIMP_GRAYA_IMAGE;   image_type = GIMP_GRAY_IMAGE;   image_type = GIMP_RGBA_IMAGE;   image_type = GIMP_RGB_IMAGE; */
