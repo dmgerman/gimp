@@ -4772,7 +4772,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode JP2 image in '%s'."
+literal|"Couldn't decompress JP2 image in '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4889,7 +4889,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode JP2 image in '%s'."
+literal|"Couldn't convert YUV JP2 image '%s' to RGB."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4934,7 +4934,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode JP2 image in '%s'."
+literal|"Couldn't convert CMYK JP2 image in '%s' to RGB."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4977,7 +4977,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode JP2 image in '%s'."
+literal|"Couldn't convert YCC JP2 image in '%s' to RGB."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5066,7 +5066,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode JP2 image in '%s'."
+literal|"Unsupported color space in JP2 image '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
