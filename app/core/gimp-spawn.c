@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib-object.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -83,12 +89,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
 
 begin_include
 include|#
