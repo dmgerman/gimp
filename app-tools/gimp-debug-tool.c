@@ -125,7 +125,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"Usage: gimpdebug-2.0 [PROGRAM] [PID] [REASON] [MESSAGE] [BT_FILE]\n"
+literal|"Usage: gimp-debug-tool-2.0 [PROGRAM] [PID] [REASON] [MESSAGE] [BT_FILE]\n"
 argument_list|)
 expr_stmt|;
 name|exit
