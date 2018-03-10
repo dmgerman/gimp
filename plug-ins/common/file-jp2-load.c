@@ -4630,8 +4630,6 @@ decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
-init|=
-name|NULL
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -4687,6 +4685,10 @@ operator|=
 name|NULL
 expr_stmt|;
 name|image
+operator|=
+name|NULL
+expr_stmt|;
+name|profile
 operator|=
 name|NULL
 expr_stmt|;
@@ -5372,8 +5374,6 @@ name|out
 goto|;
 block|}
 block|}
-comment|/* FIXME */
-comment|/*  base_type = GIMP_GRAY;   base_type = GIMP_RGB;   image_type = GIMP_GRAYA_IMAGE;   image_type = GIMP_GRAY_IMAGE;   image_type = GIMP_RGBA_IMAGE;   image_type = GIMP_RGB_IMAGE; */
 name|width
 operator|=
 name|image
@@ -5663,12 +5663,6 @@ name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|matrix = jas_matrix_create (1, width);    for (i = 0; i< height; i++)     {       for (j = 0; j< num_components; j++)         {           const int channel_prec = 8;            jas_image_readcmpt (image, components[j], 0, i, width, 1, matrix);            if (jas_image_cmptprec (image, components[j])>= channel_prec)             {               int shift = MAX (jas_image_cmptprec (image, components[j]) - channel_prec, 0);                for (k = 0; k< width; k++)                 {                   pixels[k * num_components + j] = jas_matrix_get (matrix, 0, k)>> shift;                 }             }           else             {               int mul = 1<< (channel_prec - jas_image_cmptprec (image, components[j]));                for (k = 0; k< width; k++)                 {                   pixels[k * num_components + j] = jas_matrix_get (matrix, 0, k) * mul;                 }              }         }        gegl_buffer_set (buffer, GEGL_RECTANGLE (0, i, width, 1), 0,                        NULL, pixels, GEGL_AUTO_ROWSTRIDE);     }
-endif|#
-directive|endif
 name|free
 argument_list|(
 name|pixels
