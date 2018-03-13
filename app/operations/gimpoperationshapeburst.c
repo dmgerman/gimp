@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c89b200103
+DECL|enum|__anon2aca70b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -295,6 +295,13 @@ operator|->
 name|get_cached_region
 operator|=
 name|gimp_operation_shapeburst_get_cached_region
+expr_stmt|;
+comment|/* This operation is currently broken when multi-threaded.    * Cf. bug 781621. FIXME.    */
+name|operation_class
+operator|->
+name|threaded
+operator|=
+name|FALSE
 expr_stmt|;
 name|filter_class
 operator|->
