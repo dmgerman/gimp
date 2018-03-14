@@ -309,13 +309,14 @@ operator|<=
 name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 condition|)
 block|{
+comment|/* Legacy blend used "manhattan" metric to compute distance.        * API needs to stay compatible.        */
 name|shapeburst
 operator|=
 name|gimp_drawable_blend_shapeburst_distmap
 argument_list|(
 name|drawable
 argument_list|,
-name|TRUE
+name|GIMP_DISTANCE_METRIC_MANHATTAN
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(
@@ -513,15 +514,15 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_blend_shapeburst_distmap (GimpDrawable * drawable,gboolean legacy_shapeburst,const GeglRectangle * region,GimpProgress * progress)
+DECL|function|gimp_drawable_blend_shapeburst_distmap (GimpDrawable * drawable,GimpDistanceMetric metric,const GeglRectangle * region,GimpProgress * progress)
 name|gimp_drawable_blend_shapeburst_distmap
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gboolean
-name|legacy_shapeburst
+name|GimpDistanceMetric
+name|metric
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -822,14 +823,9 @@ literal|"normalize"
 argument_list|,
 name|TRUE
 argument_list|,
-comment|/* Legacy blend used "manhattan"                                      * metric to compute distance, vs.                                      * "euclidean". API needs to stay                                      * compatible.                                      */
 literal|"metric"
 argument_list|,
-name|legacy_shapeburst
-condition|?
-literal|1
-else|:
-literal|0
+name|metric
 argument_list|,
 name|NULL
 argument_list|)

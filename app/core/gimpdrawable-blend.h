@@ -90,8 +90,8 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gboolean
-name|legacy_shapeburst
+name|GimpDistanceMetric
+name|metric
 parameter_list|,
 specifier|const
 name|GeglRectangle
