@@ -45,8 +45,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_over (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_over
+DECL|function|gimp_operation_layer_mode_composite_union (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_union
 parameter_list|(
 specifier|const
 name|gfloat
@@ -308,8 +308,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_atop (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_atop
+DECL|function|gimp_operation_layer_mode_composite_clip_to_backdrop (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_clip_to_backdrop
 parameter_list|(
 specifier|const
 name|gfloat
@@ -489,8 +489,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_dst_atop (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_dst_atop
+DECL|function|gimp_operation_layer_mode_composite_clip_to_layer (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_clip_to_layer
 parameter_list|(
 specifier|const
 name|gfloat
@@ -712,8 +712,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_in (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_in
+DECL|function|gimp_operation_layer_mode_composite_intersection (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_intersection
 parameter_list|(
 specifier|const
 name|gfloat
@@ -883,8 +883,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_over_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_over_sub
+DECL|function|gimp_operation_layer_mode_composite_union_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_union_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -1166,8 +1166,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_atop_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_atop_sub
+DECL|function|gimp_operation_layer_mode_composite_clip_to_backdrop_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_clip_to_backdrop_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -1385,8 +1385,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_dst_atop_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_dst_atop_sub
+DECL|function|gimp_operation_layer_mode_composite_clip_to_layer_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_clip_to_layer_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -1641,8 +1641,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_in_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_in_sub
+DECL|function|gimp_operation_layer_mode_composite_intersection_sub (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_intersection_sub
 parameter_list|(
 specifier|const
 name|gfloat

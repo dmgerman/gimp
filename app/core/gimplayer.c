@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f34f90103
+DECL|enum|__anon27cc082e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7f34f90203
+DECL|enum|__anon27cc082e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11154,7 +11154,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 argument_list|)
 expr_stmt|;
 if|if

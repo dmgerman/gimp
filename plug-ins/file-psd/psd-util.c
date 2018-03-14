@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52cf6d0108
+DECL|struct|__anon2963a1c80108
 block|{
 DECL|member|name
 specifier|const
@@ -2961,7 +2961,7 @@ name|mode_info
 operator|->
 name|composite_mode
 operator|=
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 expr_stmt|;
 for|for
 control|(
@@ -3171,7 +3171,7 @@ name|mode_info
 operator|->
 name|composite_mode
 operator|!=
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 condition|)
 block|{
 if|if
@@ -3181,7 +3181,7 @@ condition|)
 name|g_message
 argument_list|(
 literal|"Unsupported composite mode: %s. "
-literal|"Composite mode reverts to src-over"
+literal|"Composite mode reverts to union"
 argument_list|,
 name|get_enum_value_nick
 argument_list|(

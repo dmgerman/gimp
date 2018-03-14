@@ -4925,7 +4925,7 @@ operator|!
 name|no_pass_through_strength_reduction
 condition|)
 block|{
-comment|/* we perform the strength-reduction if:        *        *   - the group has no active children;        *        *   or,        *        *     - the group has a single active child; or,        *        *     - the effective mode of all the active children is normal, their        *       effective composite mode is src-over, and their effective        *       blend and composite spaces are equal;        *        *   - and,        *        *     - the group's opacity is 100%, and it has no mask; or,        *        *     - the group's composite space equals the active children's        *       composite space.        */
+comment|/* we perform the strength-reduction if:        *        *   - the group has no active children;        *        *   or,        *        *     - the group has a single active child; or,        *        *     - the effective mode of all the active children is normal, their        *       effective composite mode is UNION, and their effective blend and        *       composite spaces are equal;        *        *   - and,        *        *     - the group's opacity is 100%, and it has no mask; or,        *        *     - the group's composite space equals the active children's        *       composite space.        */
 name|GList
 modifier|*
 name|list
@@ -5072,7 +5072,7 @@ operator|||
 operator|*
 name|composite_mode
 operator|!=
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 condition|)
 block|{
 name|reduce

@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_over
+name|gimp_operation_layer_mode_composite_union
 parameter_list|(
 specifier|const
 name|gfloat
@@ -55,7 +55,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_atop
+name|gimp_operation_layer_mode_composite_clip_to_backdrop
 parameter_list|(
 specifier|const
 name|gfloat
@@ -92,7 +92,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_dst_atop
+name|gimp_operation_layer_mode_composite_clip_to_layer
 parameter_list|(
 specifier|const
 name|gfloat
@@ -129,7 +129,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_in
+name|gimp_operation_layer_mode_composite_intersection
 parameter_list|(
 specifier|const
 name|gfloat
@@ -166,7 +166,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_over_sub
+name|gimp_operation_layer_mode_composite_union_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -203,7 +203,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_atop_sub
+name|gimp_operation_layer_mode_composite_clip_to_backdrop_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -240,7 +240,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_dst_atop_sub
+name|gimp_operation_layer_mode_composite_clip_to_layer_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -277,7 +277,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_in_sub
+name|gimp_operation_layer_mode_composite_intersection_sub
 parameter_list|(
 specifier|const
 name|gfloat
@@ -320,7 +320,7 @@ end_if
 
 begin_function_decl
 name|void
-name|gimp_operation_layer_mode_composite_src_atop_sse2
+name|gimp_operation_layer_mode_composite_clip_to_backdrop_sse2
 parameter_list|(
 specifier|const
 name|gfloat

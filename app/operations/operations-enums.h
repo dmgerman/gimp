@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287e71230103
+DECL|enum|__anon2b054c380103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,27 +82,27 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287e71230203
+DECL|enum|__anon2b054c380203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
 block|,
 comment|/*< desc="Auto">*/
-DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_OVER
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+DECL|enumerator|GIMP_LAYER_COMPOSITE_UNION
+name|GIMP_LAYER_COMPOSITE_UNION
 block|,
-comment|/*< desc="Source over">*/
-DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_ATOP
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+comment|/*< desc="Union">*/
+DECL|enumerator|GIMP_LAYER_COMPOSITE_CLIP_TO_BACKDROP
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_BACKDROP
 block|,
-comment|/*< desc="Source atop">*/
-DECL|enumerator|GIMP_LAYER_COMPOSITE_DST_ATOP
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+comment|/*< desc="Clip to backdrop">*/
+DECL|enumerator|GIMP_LAYER_COMPOSITE_CLIP_TO_LAYER
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_LAYER
 block|,
-comment|/*< desc="Destination atop">*/
-DECL|enumerator|GIMP_LAYER_COMPOSITE_SRC_IN
-name|GIMP_LAYER_COMPOSITE_SRC_IN
-comment|/*< desc="Source in">*/
+comment|/*< desc="Clip to layer">*/
+DECL|enumerator|GIMP_LAYER_COMPOSITE_INTERSECTION
+name|GIMP_LAYER_COMPOSITE_INTERSECTION
+comment|/*< desc="Intersection">*/
 DECL|typedef|GimpLayerCompositeMode
 block|}
 name|GimpLayerCompositeMode
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287e71230303
+DECL|enum|__anon2b054c380303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -428,7 +428,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon287e71230403
+DECL|enum|__anon2b054c380403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -466,7 +466,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon287e71230503
+DECL|enum|__anon2b054c380503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -522,7 +522,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon287e71230603
+DECL|enum|__anon2b054c380603
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
@@ -561,7 +561,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon287e71230703
+DECL|enum|__anon2b054c380703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY

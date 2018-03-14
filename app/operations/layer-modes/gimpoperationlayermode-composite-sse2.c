@@ -61,8 +61,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_composite_src_atop_sse2 (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
-name|gimp_operation_layer_mode_composite_src_atop_sse2
+DECL|function|gimp_operation_layer_mode_composite_clip_to_backdrop_sse2 (const gfloat * in,const gfloat * layer,const gfloat * comp,const gfloat * mask,gfloat opacity,gfloat * out,gint samples)
+name|gimp_operation_layer_mode_composite_clip_to_backdrop_sse2
 parameter_list|(
 specifier|const
 name|gfloat
@@ -124,7 +124,7 @@ operator|&
 literal|0x0F
 condition|)
 block|{
-name|gimp_operation_layer_mode_composite_src_atop
+name|gimp_operation_layer_mode_composite_clip_to_backdrop
 argument_list|(
 name|in
 argument_list|,

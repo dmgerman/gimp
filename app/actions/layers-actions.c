@@ -1696,7 +1696,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"layers-composite-mode-src-over"
+literal|"layers-composite-mode-union"
 block|,
 name|NULL
 block|,
@@ -1704,7 +1704,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source Over"
+literal|"Union"
 argument_list|)
 block|,
 name|NULL
@@ -1713,16 +1713,16 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source Over"
+literal|"Layer Composite Mode: Union"
 argument_list|)
 block|,
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 block|,
 name|NULL
 block|}
 block|,
 block|{
-literal|"layers-composite-mode-src-atop"
+literal|"layers-composite-mode-clip-to-backdrop"
 block|,
 name|NULL
 block|,
@@ -1730,7 +1730,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source Atop"
+literal|"Clip to Backdrop"
 argument_list|)
 block|,
 name|NULL
@@ -1739,16 +1739,16 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source Atop"
+literal|"Layer Composite Mode: Clip to Backdrop"
 argument_list|)
 block|,
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_BACKDROP
 block|,
 name|NULL
 block|}
 block|,
 block|{
-literal|"layers-composite-mode-src-in"
+literal|"layers-composite-mode-clip-to-layer"
 block|,
 name|NULL
 block|,
@@ -1756,7 +1756,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Source In"
+literal|"Clip to Layer"
 argument_list|)
 block|,
 name|NULL
@@ -1765,16 +1765,16 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Source In"
+literal|"Layer Composite Mode: Clip to Layer"
 argument_list|)
 block|,
-name|GIMP_LAYER_COMPOSITE_SRC_IN
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_LAYER
 block|,
 name|NULL
 block|}
 block|,
 block|{
-literal|"layers-composite-mode-dst-atop"
+literal|"layers-composite-mode-intersection"
 block|,
 name|NULL
 block|,
@@ -1782,7 +1782,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Destination Atop"
+literal|"Intersection"
 argument_list|)
 block|,
 name|NULL
@@ -1791,10 +1791,10 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Layer Composite Mode: Destination Atop"
+literal|"Layer Composite Mode: Intersection"
 argument_list|)
 block|,
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+name|GIMP_LAYER_COMPOSITE_INTERSECTION
 block|,
 name|NULL
 block|}
@@ -3561,35 +3561,35 @@ literal|"layers-composite-mode-auto"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 case|:
 name|action
 operator|=
-literal|"layers-composite-mode-src-over"
+literal|"layers-composite-mode-union"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_BACKDROP
 case|:
 name|action
 operator|=
-literal|"layers-composite-mode-src-atop"
+literal|"layers-composite-mode-clip-to-backdrop"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_IN
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_LAYER
 case|:
 name|action
 operator|=
-literal|"layers-composite-mode-src-in"
+literal|"layers-composite-mode-clip-to-layer"
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+name|GIMP_LAYER_COMPOSITE_INTERSECTION
 case|:
 name|action
 operator|=
-literal|"layers-composite-mode-dst-atop"
+literal|"layers-composite-mode-intersection"
 expr_stmt|;
 break|break;
 block|}
@@ -4509,7 +4509,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-composite-mode-src-over"
+literal|"layers-composite-mode-union"
 argument_list|,
 name|layer
 operator|&&
@@ -4518,7 +4518,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-composite-mode-src-atop"
+literal|"layers-composite-mode-clip-to-backdrop"
 argument_list|,
 name|layer
 operator|&&
@@ -4527,7 +4527,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-composite-mode-src-in"
+literal|"layers-composite-mode-clip-to-layer"
 argument_list|,
 name|layer
 operator|&&
@@ -4536,7 +4536,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-composite-mode-dst-atop"
+literal|"layers-composite-mode-intersection"
 argument_list|,
 name|layer
 operator|&&

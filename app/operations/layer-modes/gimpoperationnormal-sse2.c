@@ -214,7 +214,7 @@ name|real_composite_mode
 condition|)
 block|{
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_OVER
+name|GIMP_LAYER_COMPOSITE_UNION
 case|:
 case|case
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -443,7 +443,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_ATOP
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_BACKDROP
 case|:
 while|while
 condition|(
@@ -642,7 +642,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_DST_ATOP
+name|GIMP_LAYER_COMPOSITE_CLIP_TO_LAYER
 case|:
 while|while
 condition|(
@@ -804,7 +804,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_LAYER_COMPOSITE_SRC_IN
+name|GIMP_LAYER_COMPOSITE_INTERSECTION
 case|:
 while|while
 condition|(
