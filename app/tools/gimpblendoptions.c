@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21530f0103
+DECL|enum|__anon29ac6d120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1089,6 +1089,15 @@ argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
+name|blend_options_gradient_type_notify
+argument_list|(
+name|options
+argument_list|,
+name|NULL
+argument_list|,
+name|combo
+argument_list|)
+expr_stmt|;
 comment|/*  the offset scale  */
 name|scale
 operator|=
@@ -1553,7 +1562,7 @@ name|options
 operator|->
 name|gradient_type
 operator|<
-literal|6
+name|GIMP_GRADIENT_SHAPEBURST_ANGULAR
 argument_list|)
 expr_stmt|;
 block|}
