@@ -5453,6 +5453,10 @@ condition|(
 name|shell
 operator|->
 name|space_release_pending
+operator|||
+name|shell
+operator|->
+name|scrolling
 condition|)
 return|return;
 if|if
