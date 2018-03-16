@@ -4751,9 +4751,6 @@ decl_stmt|;
 name|gint
 name|num_components
 decl_stmt|;
-name|gint
-name|colorspace_family
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|buffer
@@ -5740,6 +5737,7 @@ operator|<<
 name|shift
 expr_stmt|;
 else|else
+comment|/* precision_actual> 32 */
 name|temp
 operator|=
 name|image
@@ -5763,7 +5761,6 @@ operator|-
 name|shift
 operator|)
 expr_stmt|;
-comment|/*precision_actual> 32*/
 name|c
 operator|=
 operator|(
