@@ -734,10 +734,6 @@ DECL|member|inferior_ignore_mode
 name|gboolean
 name|inferior_ignore_mode
 decl_stmt|;
-DECL|member|space_pressed
-name|gboolean
-name|space_pressed
-decl_stmt|;
 DECL|member|space_release_pending
 name|gboolean
 name|space_release_pending
