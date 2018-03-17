@@ -316,7 +316,7 @@ name|gimp_drawable_blend_shapeburst_distmap
 argument_list|(
 name|drawable
 argument_list|,
-name|GIMP_DISTANCE_METRIC_MANHATTAN
+name|GEGL_DISTANCE_MANHATTAN
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(
@@ -514,14 +514,14 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_blend_shapeburst_distmap (GimpDrawable * drawable,GimpDistanceMetric metric,const GeglRectangle * region,GimpProgress * progress)
+DECL|function|gimp_drawable_blend_shapeburst_distmap (GimpDrawable * drawable,GeglDistanceMetric metric,const GeglRectangle * region,GimpProgress * progress)
 name|gimp_drawable_blend_shapeburst_distmap
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDistanceMetric
+name|GeglDistanceMetric
 name|metric
 parameter_list|,
 specifier|const

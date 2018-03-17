@@ -121,7 +121,7 @@ name|GimpGradientType
 name|gradient_type
 decl_stmt|;
 DECL|member|distance_metric
-name|GimpDistanceMetric
+name|GeglDistanceMetric
 name|distance_metric
 decl_stmt|;
 DECL|member|supersample

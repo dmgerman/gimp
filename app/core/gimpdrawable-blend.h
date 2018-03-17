@@ -90,7 +90,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDistanceMetric
+name|GeglDistanceMetric
 name|metric
 parameter_list|,
 specifier|const

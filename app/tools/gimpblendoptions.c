@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7bf8e10103
+DECL|enum|__anon29add1c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -328,9 +328,9 @@ argument_list|(
 literal|"Metric to use for the distance calculation"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_DISTANCE_METRIC
+name|GEGL_TYPE_DISTANCE_METRIC
 argument_list|,
-name|GIMP_DISTANCE_METRIC_EUCLIDEAN
+name|GEGL_DISTANCE_EUCLIDEAN
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
