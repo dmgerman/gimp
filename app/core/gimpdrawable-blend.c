@@ -316,7 +316,7 @@ name|gimp_drawable_blend_shapeburst_distmap
 argument_list|(
 name|drawable
 argument_list|,
-name|GEGL_DISTANCE_MANHATTAN
+name|GEGL_DISTANCE_METRIC_MANHATTAN
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(

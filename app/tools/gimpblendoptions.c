@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29add1c20103
+DECL|enum|__anon2bb061fc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ argument_list|)
 argument_list|,
 name|GEGL_TYPE_DISTANCE_METRIC
 argument_list|,
-name|GEGL_DISTANCE_EUCLIDEAN
+name|GEGL_DISTANCE_METRIC_EUCLIDEAN
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
