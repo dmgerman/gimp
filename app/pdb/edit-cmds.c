@@ -3616,6 +3616,13 @@ name|context
 argument_list|,
 name|gradient
 argument_list|,
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+operator|->
+name|distance_metric
+argument_list|,
 name|paint_mode
 argument_list|,
 name|gradient_type

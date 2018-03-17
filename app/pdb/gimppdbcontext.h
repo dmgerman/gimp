@@ -170,6 +170,10 @@ name|GimpStrokeOptions
 modifier|*
 name|stroke_options
 decl_stmt|;
+DECL|member|distance_metric
+name|GeglDistanceMetric
+name|distance_metric
+decl_stmt|;
 block|}
 struct|;
 end_struct

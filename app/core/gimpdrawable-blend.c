@@ -99,7 +99,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GeglDistanceMetric metric,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
@@ -113,6 +113,9 @@ parameter_list|,
 name|GimpGradient
 modifier|*
 name|gradient
+parameter_list|,
+name|GeglDistanceMetric
+name|metric
 parameter_list|,
 name|GimpLayerMode
 name|paint_mode
@@ -309,14 +312,13 @@ operator|<=
 name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 condition|)
 block|{
-comment|/* Legacy blend used "manhattan" metric to compute distance.        * API needs to stay compatible.        */
 name|shapeburst
 operator|=
 name|gimp_drawable_blend_shapeburst_distmap
 argument_list|(
 name|drawable
 argument_list|,
-name|GEGL_DISTANCE_METRIC_MANHATTAN
+name|metric
 argument_list|,
 name|GEGL_RECTANGLE
 argument_list|(

@@ -1086,6 +1086,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglDistanceMetric
+name|gimp_context_get_distance_metric
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_context_set_distance_metric
+parameter_list|(
+name|GeglDistanceMetric
+name|metric
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

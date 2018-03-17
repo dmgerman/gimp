@@ -32,6 +32,9 @@ name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
+name|GeglDistanceMetric
+name|metric
+parameter_list|,
 name|GimpLayerMode
 name|paint_mode
 parameter_list|,
