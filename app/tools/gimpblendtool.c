@@ -3320,15 +3320,6 @@ argument_list|(
 name|blend_tool
 argument_list|)
 decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-init|=
-name|GIMP_CONTEXT
-argument_list|(
-name|options
-argument_list|)
-decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -3395,7 +3386,7 @@ name|tool
 operator|->
 name|drawable
 argument_list|,
-name|context
+name|options
 operator|->
 name|distance_metric
 argument_list|,

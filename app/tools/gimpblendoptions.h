@@ -120,6 +120,10 @@ DECL|member|gradient_type
 name|GimpGradientType
 name|gradient_type
 decl_stmt|;
+DECL|member|distance_metric
+name|GeglDistanceMetric
+name|distance_metric
+decl_stmt|;
 DECL|member|supersample
 name|gboolean
 name|supersample
