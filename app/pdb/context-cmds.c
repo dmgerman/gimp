@@ -18252,9 +18252,9 @@ literal|"Get the distance metric used in some computations."
 argument_list|,
 literal|"This procedure returns the distance metric in the current context. See 'gimp-context-set-distance-metric' to know more about its usage."
 argument_list|,
-literal|"Ed Swartz"
+literal|"Jehan"
 argument_list|,
-literal|"Ed Swartz"
+literal|"Jehan"
 argument_list|,
 literal|"2018"
 argument_list|,
@@ -18321,9 +18321,9 @@ literal|"Set the distance metric used in some computations."
 argument_list|,
 literal|"This procedure modifies the distance metric used in some computations, such as 'gimp-edit-blend'. In particular, it does not change the metric used in generic distance computation on canvas, as in the Measure tool."
 argument_list|,
-literal|"Ed Swartz"
+literal|"Jehan"
 argument_list|,
-literal|"Ed Swartz"
+literal|"Jehan"
 argument_list|,
 literal|"2018"
 argument_list|,
