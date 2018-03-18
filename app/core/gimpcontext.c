@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e210e0103
+DECL|enum|__anon2b8a6e420103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e210e0203
+DECL|enum|__anon2b8a6e420203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4180,6 +4180,19 @@ argument_list|,
 name|object
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_paint_info
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|gimp_paint_info_get_standard
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
