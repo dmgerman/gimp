@@ -50,6 +50,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_filter_tool_reset_widget
+parameter_list|(
+name|GimpFilterTool
+modifier|*
+name|filter_tool
+parameter_list|,
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
