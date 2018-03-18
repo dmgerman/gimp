@@ -5818,7 +5818,7 @@ literal|"gimp-edit-blend"
 argument_list|,
 literal|"Blend between the starting and ending coordinates with the specified blend mode and gradient type."
 argument_list|,
-literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type. It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type."
+literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type. It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type. For shapeburst gradient types, the context's distance metric is also relevant and can be updated with 'gimp-context-set-distance-metric'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
