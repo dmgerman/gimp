@@ -5131,6 +5131,20 @@ name|babl_model
 argument_list|(
 literal|"CIE Lab alpha"
 argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"CIE LCH(ab)"
+argument_list|)
+operator|||
+name|model
+operator|==
+name|babl_model
+argument_list|(
+literal|"CIE LCH(ab) alpha"
+argument_list|)
 condition|)
 block|{
 if|if
