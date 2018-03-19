@@ -1332,6 +1332,11 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
+name|private
+operator|->
+name|n_colors
+operator|++
+expr_stmt|;
 if|if
 condition|(
 name|private
@@ -1348,11 +1353,6 @@ name|n_colors
 operator|-
 literal|1
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|n_colors
-operator|++
 expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
