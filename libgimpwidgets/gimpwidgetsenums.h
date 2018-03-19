@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0103
+DECL|enum|__anon2771be2d0103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0203
+DECL|enum|__anon2771be2d0203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0303
+DECL|enum|__anon2771be2d0303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0403
+DECL|enum|__anon2771be2d0403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -240,18 +240,18 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0503
+DECL|enum|__anon2771be2d0503
 block|{
-DECL|enumerator|GIMP_COLOR_SELECTOR_RGB
-name|GIMP_COLOR_SELECTOR_RGB
+DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_RGB
+name|GIMP_COLOR_SELECTOR_MODEL_RGB
 block|,
 comment|/*< desc="RGB", help="RGB color model">*/
-DECL|enumerator|GIMP_COLOR_SELECTOR_LCH
-name|GIMP_COLOR_SELECTOR_LCH
+DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_LCH
+name|GIMP_COLOR_SELECTOR_MODEL_LCH
 block|,
 comment|/*< desc="LCH", help="CIELCh color model">*/
-DECL|enumerator|GIMP_COLOR_SELECTOR_HSV
-name|GIMP_COLOR_SELECTOR_HSV
+DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_HSV
+name|GIMP_COLOR_SELECTOR_MODEL_HSV
 comment|/*< desc="HSV", help="HSV color model">*/
 DECL|typedef|GimpColorSelectorModel
 block|}
@@ -284,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0603
+DECL|enum|__anon2771be2d0603
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -324,7 +324,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0703
+DECL|enum|__anon2771be2d0703
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0803
+DECL|enum|__anon2771be2d0803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -431,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff452d0903
+DECL|enum|__anon2771be2d0903
 block|{
 DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
 name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY

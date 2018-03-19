@@ -176,10 +176,6 @@ DECL|member|hsv
 name|GimpHSV
 name|hsv
 decl_stmt|;
-DECL|member|model
-name|GimpColorSelectorModel
-name|model
-decl_stmt|;
 DECL|member|channel
 name|GimpColorSelectorChannel
 name|channel
@@ -372,11 +368,11 @@ modifier|*
 name|icon_name
 decl_stmt|;
 comment|/*  another virtual function  */
-DECL|member|set_model
+DECL|member|set_model_visible
 name|void
 function_decl|(
 modifier|*
-name|set_model
+name|set_model_visible
 function_decl|)
 parameter_list|(
 name|GimpColorSelector
@@ -385,14 +381,17 @@ name|selector
 parameter_list|,
 name|GimpColorSelectorModel
 name|model
+parameter_list|,
+name|gboolean
+name|visible
 parameter_list|)
 function_decl|;
 comment|/*  another signal  */
-DECL|member|model_changed
+DECL|member|model_visible_changed
 name|void
 function_decl|(
 modifier|*
-name|model_changed
+name|model_visible_changed
 function_decl|)
 parameter_list|(
 name|GimpColorSelector
@@ -401,6 +400,9 @@ name|selector
 parameter_list|,
 name|GimpColorSelectorModel
 name|model
+parameter_list|,
+name|gboolean
+name|visible
 parameter_list|)
 function_decl|;
 block|}
@@ -583,7 +585,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_color_selector_set_model
+name|gimp_color_selector_set_model_visible
 parameter_list|(
 name|GimpColorSelector
 modifier|*
@@ -591,17 +593,23 @@ name|selector
 parameter_list|,
 name|GimpColorSelectorModel
 name|model
+parameter_list|,
+name|gboolean
+name|visible
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpColorSelectorModel
-name|gimp_color_selector_get_model
+name|gboolean
+name|gimp_color_selector_get_model_visible
 parameter_list|(
 name|GimpColorSelector
 modifier|*
 name|selector
+parameter_list|,
+name|GimpColorSelectorModel
+name|model
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -624,6 +632,20 @@ parameter_list|(
 name|GimpColorSelector
 modifier|*
 name|selector
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_color_selector_model_visible_changed
+parameter_list|(
+name|GimpColorSelector
+modifier|*
+name|selector
+parameter_list|,
+name|GimpColorSelectorModel
+name|model
 parameter_list|)
 function_decl|;
 end_function_decl

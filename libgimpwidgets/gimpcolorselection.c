@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b2be3e0103
+DECL|enum|__anon2bc1d0290103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2be3e0203
+DECL|enum|__anon2bc1d0290203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2be3e0303
+DECL|enum|__anon2bc1d0290303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -403,7 +403,7 @@ index|]
 init|=
 block|{
 literal|0
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
