@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28887c030103
+DECL|enum|__anon27666fcc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1972,7 +1972,7 @@ name|GIMP_DEBUG_POLICY_WARNING
 argument_list|,
 else|#
 directive|else
-name|GIMP_DEBUG_POLICY_CRITICAL
+name|GIMP_DEBUG_POLICY_FATAL
 argument_list|,
 endif|#
 directive|endif
