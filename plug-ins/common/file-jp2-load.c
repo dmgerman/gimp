@@ -199,6 +199,9 @@ parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
 parameter_list|,
+name|OPJ_COLOR_SPACE
+name|color_space
+parameter_list|,
 name|gboolean
 name|interactive
 parameter_list|,
@@ -274,7 +277,7 @@ block|{
 specifier|static
 specifier|const
 name|GimpParamDef
-name|load_args
+name|jp2_load_args
 index|[]
 init|=
 block|{
@@ -300,6 +303,46 @@ block|,
 literal|"raw-filename"
 block|,
 literal|"The name entered"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+specifier|const
+name|GimpParamDef
+name|j2k_load_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"filename"
+block|,
+literal|"The name of the file to load."
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"raw-filename"
+block|,
+literal|"The name entered"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"colorspace"
+block|,
+literal|"Color space { UNKNOWN (0), GRAYSCALE (1), RGB (2), CMYK (3), YUV (4), YCC (5) }"
 block|}
 block|,   }
 decl_stmt|;
@@ -344,7 +387,7 @@ name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|load_args
+name|jp2_load_args
 argument_list|)
 argument_list|,
 name|G_N_ELEMENTS
@@ -352,7 +395,7 @@ argument_list|(
 name|load_return_vals
 argument_list|)
 argument_list|,
-name|load_args
+name|jp2_load_args
 argument_list|,
 name|load_return_vals
 argument_list|)
@@ -382,7 +425,12 @@ name|LOAD_J2K_PROC
 argument_list|,
 literal|"Loads JPEG 2000 codestream."
 argument_list|,
-literal|"The JPEG 2000 codestream loader."
+literal|"Loads JPEG 2000 codestream. "
+literal|"If the color space is set to UNKNOWN (0), "
+literal|"we will try to guess, which is only possible "
+literal|"for few spaces (such as grayscale). Most "
+literal|"such calls will fail. You are rather "
+literal|"expected to know the color space of your data."
 argument_list|,
 literal|"Jehan"
 argument_list|,
@@ -401,7 +449,7 @@ name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|load_args
+name|j2k_load_args
 argument_list|)
 argument_list|,
 name|G_N_ELEMENTS
@@ -409,7 +457,7 @@ argument_list|(
 name|load_return_vals
 argument_list|)
 argument_list|,
-name|load_args
+name|j2k_load_args
 argument_list|,
 name|load_return_vals
 argument_list|)
@@ -560,6 +608,11 @@ operator|==
 literal|0
 condition|)
 block|{
+name|OPJ_COLOR_SPACE
+name|color_space
+init|=
+name|OPJ_CLRSPC_UNKNOWN
+decl_stmt|;
 name|gboolean
 name|interactive
 decl_stmt|;
@@ -587,6 +640,76 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_J2K_PROC
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+comment|/* Order is not the same as OpenJPEG enum on purpose,                * since it's better to not rely on a given order or                * on enum values.                */
+switch|switch
+condition|(
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+condition|)
+block|{
+case|case
+literal|1
+case|:
+name|color_space
+operator|=
+name|OPJ_CLRSPC_GRAY
+expr_stmt|;
+break|break;
+case|case
+literal|2
+case|:
+name|color_space
+operator|=
+name|OPJ_CLRSPC_SRGB
+expr_stmt|;
+break|break;
+case|case
+literal|3
+case|:
+name|color_space
+operator|=
+name|OPJ_CLRSPC_CMYK
+expr_stmt|;
+break|break;
+case|case
+literal|4
+case|:
+name|color_space
+operator|=
+name|OPJ_CLRSPC_SYCC
+expr_stmt|;
+break|break;
+case|case
+literal|5
+case|:
+name|color_space
+operator|=
+name|OPJ_CLRSPC_EYCC
+expr_stmt|;
+break|break;
+default|default:
+comment|/* Stays unknown. */
+break|break;
+block|}
+block|}
 name|interactive
 operator|=
 name|FALSE
@@ -619,6 +742,8 @@ name|d_string
 argument_list|,
 name|OPJ_CODEC_JP2
 argument_list|,
+name|color_space
+argument_list|,
 name|interactive
 argument_list|,
 operator|&
@@ -641,6 +766,8 @@ operator|.
 name|d_string
 argument_list|,
 name|OPJ_CODEC_J2K
+argument_list|,
+name|color_space
 argument_list|,
 name|interactive
 argument_list|,
@@ -5186,7 +5313,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,gboolean interactive,GError ** error)
+DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,OPJ_COLOR_SPACE color_space,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -5196,6 +5323,9 @@ name|filename
 parameter_list|,
 name|OPJ_CODEC_FORMAT
 name|format
+parameter_list|,
+name|OPJ_COLOR_SPACE
+name|color_space
 parameter_list|,
 name|gboolean
 name|interactive
@@ -5677,6 +5807,31 @@ name|numcomps
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|image
+operator|->
+name|color_space
+operator|==
+name|OPJ_CLRSPC_UNSPECIFIED
+operator|||
+name|image
+operator|->
+name|color_space
+operator|==
+name|OPJ_CLRSPC_UNKNOWN
+operator|)
+operator|&&
+operator|!
+name|interactive
+condition|)
+name|image
+operator|->
+name|color_space
+operator|=
+name|color_space
+expr_stmt|;
+if|if
+condition|(
 name|image
 operator|->
 name|color_space
@@ -5762,38 +5917,7 @@ block|}
 else|else
 comment|/* ! interactive */
 block|{
-comment|/* Assume RGB/RGBA for now.            * TODO: ADD API parameter.            */
-name|base_type
-operator|=
-name|GIMP_RGB
-expr_stmt|;
-if|if
-condition|(
-name|num_components
-operator|==
-literal|3
-condition|)
-block|{
-name|image_type
-operator|=
-name|GIMP_RGB_IMAGE
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|num_components
-operator|==
-literal|4
-condition|)
-block|{
-name|image_type
-operator|=
-name|GIMP_RGBA_IMAGE
-expr_stmt|;
-block|}
-else|else
-block|{
+comment|/* API call where color space was set to UNKNOWN. We don't            * want to guess or assume anything. It is much better to just            * fail. It is the responsibility of the developer to know its            * data when loading it in a script.            */
 name|g_set_error
 argument_list|(
 name|error
@@ -5804,7 +5928,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Unsupported color space in JP2 image '%s'."
+literal|"Unknown color space in JP2 codestream '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -5816,7 +5940,6 @@ expr_stmt|;
 goto|goto
 name|out
 goto|;
-block|}
 block|}
 block|}
 if|if
