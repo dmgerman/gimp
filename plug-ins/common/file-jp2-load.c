@@ -342,7 +342,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"colorspace"
 block|,
-literal|"Color space { UNKNOWN (0), GRAYSCALE (1), RGB (2), CMYK (3), YUV (4), YCC (5) }"
+literal|"Color space { UNKNOWN (0), GRAYSCALE (1), RGB (2), CMYK (3), YCbCr (4), xvYCC (5) }"
 block|}
 block|,   }
 decl_stmt|;
@@ -5098,28 +5098,28 @@ operator|==
 literal|3
 condition|)
 block|{
-comment|/* Can be RGB, YUC and YCC. */
+comment|/* Can be RGB, YUV and YCC. */
 name|combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"RGB"
+literal|"sRGB"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_SRGB
 argument_list|,
 name|_
 argument_list|(
-literal|"YUC"
+literal|"YCbCr"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_SYCC
 argument_list|,
 name|_
 argument_list|(
-literal|"e-YCC"
+literal|"xvYCC"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_EYCC
@@ -5136,28 +5136,28 @@ operator|==
 literal|4
 condition|)
 block|{
-comment|/* Can be RGB, YUC and YCC with alpha or CMYK. */
+comment|/* Can be RGB, YUV and YCC with alpha or CMYK. */
 name|combo
 operator|=
 name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"RGB"
+literal|"sRGB"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_SRGB
 argument_list|,
 name|_
 argument_list|(
-literal|"YUC"
+literal|"YCbCr"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_SYCC
 argument_list|,
 name|_
 argument_list|(
-literal|"e-YCC"
+literal|"xvYCC"
 argument_list|)
 argument_list|,
 name|OPJ_CLRSPC_EYCC
@@ -5970,7 +5970,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't convert YUV JP2 image '%s' to RGB."
+literal|"Couldn't convert YCbCr JP2 image '%s' to RGB."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6058,7 +6058,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't convert YCC JP2 image in '%s' to RGB."
+literal|"Couldn't convert xvYCC JP2 image in '%s' to RGB."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
