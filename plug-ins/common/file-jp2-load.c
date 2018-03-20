@@ -383,7 +383,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_J2K_PROC
 argument_list|,
-literal|"j2k,j2c"
+literal|"j2k,j2c,jpc"
 argument_list|,
 literal|""
 argument_list|,
