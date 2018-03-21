@@ -69,6 +69,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

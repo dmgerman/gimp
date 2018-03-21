@@ -351,13 +351,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_palettes_add_color_history (Gimp * gimp,GimpRGB * color)
+DECL|function|gimp_palettes_add_color_history (Gimp * gimp,const GimpRGB * color)
 name|gimp_palettes_add_color_history
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
