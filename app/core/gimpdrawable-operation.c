@@ -199,6 +199,8 @@ name|dest_buffer
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow_buffer

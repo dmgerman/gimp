@@ -71,7 +71,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect)
+DECL|function|gimp_gegl_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gboolean crop_input)
 name|gimp_gegl_apply_operation
 parameter_list|(
 name|GeglBuffer
@@ -99,6 +99,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|dest_rect
+parameter_list|,
+name|gboolean
+name|crop_input
 parameter_list|)
 block|{
 name|gimp_gegl_apply_cached_operation
@@ -114,6 +117,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|crop_input
 argument_list|,
 name|NULL
 argument_list|,
@@ -152,7 +157,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancellable)
+DECL|function|gimp_gegl_apply_cached_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gboolean crop_input,GeglBuffer * cache,const GeglRectangle * valid_rects,gint n_valid_rects,gboolean cancellable)
 name|gimp_gegl_apply_cached_operation
 parameter_list|(
 name|GeglBuffer
@@ -180,6 +185,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|dest_rect
+parameter_list|,
+name|gboolean
+name|crop_input
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -441,6 +449,80 @@ argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|crop_input
+condition|)
+block|{
+name|GeglNode
+modifier|*
+name|crop_node
+decl_stmt|;
+name|crop_node
+operator|=
+name|gegl_node_new_child
+argument_list|(
+name|gegl
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:crop"
+argument_list|,
+literal|"x"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|rect
+operator|.
+name|x
+argument_list|,
+literal|"y"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|rect
+operator|.
+name|y
+argument_list|,
+literal|"width"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|rect
+operator|.
+name|width
+argument_list|,
+literal|"height"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+name|rect
+operator|.
+name|height
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gegl_node_connect_to
+argument_list|(
+name|src_node
+argument_list|,
+literal|"output"
+argument_list|,
+name|crop_node
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|src_node
+operator|=
+name|crop_node
+expr_stmt|;
+block|}
 name|operation_src_node
 operator|=
 name|gegl_node_get_producer
@@ -1139,6 +1221,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1241,6 +1325,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1672,6 +1758,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1782,6 +1870,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1899,6 +1989,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1995,6 +2087,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2105,6 +2199,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|dest_rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2196,6 +2292,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2287,6 +2385,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2403,6 +2503,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2523,6 +2625,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2621,6 +2725,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2719,6 +2825,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2832,6 +2940,8 @@ argument_list|,
 name|dest_buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

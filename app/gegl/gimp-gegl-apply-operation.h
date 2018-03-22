@@ -49,6 +49,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|dest_rect
+parameter_list|,
+name|gboolean
+name|crop_input
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -82,6 +85,9 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|dest_rect
+parameter_list|,
+name|gboolean
+name|crop_input
 parameter_list|,
 name|GeglBuffer
 modifier|*

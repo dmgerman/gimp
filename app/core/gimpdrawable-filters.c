@@ -784,6 +784,8 @@ argument_list|,
 operator|&
 name|rect
 argument_list|,
+name|FALSE
+argument_list|,
 name|cache
 argument_list|,
 name|rects

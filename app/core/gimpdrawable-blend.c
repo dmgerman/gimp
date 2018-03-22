@@ -426,6 +426,8 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -861,6 +863,8 @@ argument_list|,
 name|dist_buffer
 argument_list|,
 name|region
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
