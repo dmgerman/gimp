@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27666fcc0103
+DECL|enum|__anon27efc1530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1912,7 +1912,7 @@ literal|"Export Exif metadata"
 argument_list|,
 name|EXPORT_METADATA_EXIF_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1929,7 +1929,7 @@ literal|"Export XMP metadata"
 argument_list|,
 name|EXPORT_METADATA_XMP_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1946,7 +1946,7 @@ literal|"Export IPTC metadata"
 argument_list|,
 name|EXPORT_METADATA_IPTC_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
