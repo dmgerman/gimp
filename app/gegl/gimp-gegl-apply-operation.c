@@ -2601,6 +2601,10 @@ literal|"sampler"
 argument_list|,
 name|interpolation_type
 argument_list|,
+literal|"abyss-policy"
+argument_list|,
+name|GEGL_ABYSS_CLAMP
+argument_list|,
 literal|"x"
 argument_list|,
 name|x
