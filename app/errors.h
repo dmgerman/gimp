@@ -69,6 +69,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GList
+modifier|*
+name|errors_recovered
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 name|void
 name|gimp_fatal_error
