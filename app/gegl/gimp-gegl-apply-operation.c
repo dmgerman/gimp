@@ -1759,7 +1759,7 @@ name|dest_buffer
 argument_list|,
 name|dest_rect
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1871,7 +1871,7 @@ name|dest_buffer
 argument_list|,
 name|dest_rect
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1990,7 +1990,7 @@ name|dest_buffer
 argument_list|,
 name|dest_rect
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2088,7 +2088,7 @@ name|dest_buffer
 argument_list|,
 name|dest_rect
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
