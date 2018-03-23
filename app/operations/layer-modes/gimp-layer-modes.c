@@ -4609,6 +4609,9 @@ case|:
 comment|/* compositing is color-space agnostic.  return a format that has a fast        * conversion path to/from the preferred format.        */
 if|if
 condition|(
+operator|!
+name|preferred_format
+operator|||
 name|gimp_babl_format_get_linear
 argument_list|(
 name|preferred_format
