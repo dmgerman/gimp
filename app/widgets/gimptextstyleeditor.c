@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c0d0b0103
+DECL|enum|__anon29e47dde0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3400,7 +3400,7 @@ if|if
 condition|(
 name|color_tag
 condition|)
-name|gimp_text_tag_get_color
+name|gimp_text_tag_get_fg_color
 argument_list|(
 name|color_tag
 argument_list|,

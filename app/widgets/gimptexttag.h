@@ -58,10 +58,10 @@ value|"font"
 end_define
 
 begin_define
-DECL|macro|GIMP_TEXT_PROP_NAME_COLOR
+DECL|macro|GIMP_TEXT_PROP_NAME_FG_COLOR
 define|#
 directive|define
-name|GIMP_TEXT_PROP_NAME_COLOR
+name|GIMP_TEXT_PROP_NAME_FG_COLOR
 value|"foreground-gdk"
 end_define
 
@@ -119,8 +119,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_text_tag_get_color
+name|gboolean
+name|gimp_text_tag_get_fg_color
 parameter_list|(
 name|GtkTextTag
 modifier|*
@@ -134,7 +134,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_text_tag_get_bg_color
 parameter_list|(
 name|GtkTextTag

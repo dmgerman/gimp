@@ -182,9 +182,9 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_text_tag_get_color (GtkTextTag * tag,GimpRGB * color)
-name|gimp_text_tag_get_color
+name|gboolean
+DECL|function|gimp_text_tag_get_fg_color (GtkTextTag * tag,GimpRGB * color)
+name|gimp_text_tag_get_fg_color
 parameter_list|(
 name|GtkTextTag
 modifier|*
@@ -199,11 +199,19 @@ name|GdkColor
 modifier|*
 name|gdk_color
 decl_stmt|;
+name|gboolean
+name|set
+decl_stmt|;
 name|g_object_get
 argument_list|(
 name|tag
 argument_list|,
-name|GIMP_TEXT_PROP_NAME_COLOR
+literal|"foreground-set"
+argument_list|,
+operator|&
+name|set
+argument_list|,
+name|GIMP_TEXT_PROP_NAME_FG_COLOR
 argument_list|,
 operator|&
 name|gdk_color
@@ -211,6 +219,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|set
+condition|)
 name|gimp_rgb_set_gdk_color
 argument_list|(
 name|color
@@ -223,11 +235,14 @@ argument_list|(
 name|gdk_color
 argument_list|)
 expr_stmt|;
+return|return
+name|set
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_text_tag_get_bg_color (GtkTextTag * tag,GimpRGB * color)
 name|gimp_text_tag_get_bg_color
 parameter_list|(
@@ -244,9 +259,17 @@ name|GdkColor
 modifier|*
 name|gdk_color
 decl_stmt|;
+name|gboolean
+name|set
+decl_stmt|;
 name|g_object_get
 argument_list|(
 name|tag
+argument_list|,
+literal|"background-set"
+argument_list|,
+operator|&
+name|set
 argument_list|,
 name|GIMP_TEXT_PROP_NAME_BG_COLOR
 argument_list|,
@@ -256,6 +279,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|set
+condition|)
 name|gimp_rgb_set_gdk_color
 argument_list|(
 name|color
@@ -268,6 +295,9 @@ argument_list|(
 name|gdk_color
 argument_list|)
 expr_stmt|;
+return|return
+name|set
+return|;
 block|}
 end_function
 
