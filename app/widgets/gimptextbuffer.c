@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ea1a70103
+DECL|enum|__anon290ad1300103
 block|{
 DECL|enumerator|COLOR_APPLIED
 name|COLOR_APPLIED
@@ -7196,7 +7196,7 @@ name|code
 argument_list|,
 name|_
 argument_list|(
-literal|"Writing palette file '%s' failed: %s"
+literal|"Writing text file '%s' failed: %s"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
