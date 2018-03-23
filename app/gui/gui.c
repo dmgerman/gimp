@@ -1353,7 +1353,7 @@ argument_list|)
 argument_list|,
 name|ngettext
 argument_list|(
-literal|"An image was salvaged from the crash. "
+literal|"%d image was salvaged from the crash. "
 literal|"Do you want to try and recover it?"
 argument_list|,
 literal|"%d images were salvaged from the crash. "
@@ -3581,7 +3581,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29258ba70108
+DECL|struct|__anon29760dfd0108
 block|{
 DECL|member|path
 specifier|const
