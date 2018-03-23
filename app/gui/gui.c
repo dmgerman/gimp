@@ -1257,7 +1257,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Images recovery"
+literal|"Image Recovery"
 argument_list|)
 argument_list|,
 literal|"gimp-recovery"
@@ -3581,7 +3581,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbab13d0108
+DECL|struct|__anon29258ba70108
 block|{
 DECL|member|path
 specifier|const
