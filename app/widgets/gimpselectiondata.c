@@ -1465,7 +1465,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"Recieved invalid XCF data: %s"
+literal|"Received invalid XCF data: %s"
 argument_list|,
 name|error
 operator|->

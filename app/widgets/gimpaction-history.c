@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d0e0b40103
+DECL|enum|__anon2aab39dd0103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0e0b40208
+DECL|struct|__anon2aab39dd0208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d0e0b40308
+DECL|struct|__anon2aab39dd0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1330,7 +1330,7 @@ argument_list|,
 name|action_name
 argument_list|)
 expr_stmt|;
-comment|/* If the action is not in the history, insert it    * at the back of the hisory queue, possibly    * replacing the last item.    */
+comment|/* If the action is not in the history, insert it    * at the back of the history queue, possibly    * replacing the last item.    */
 if|if
 condition|(
 operator|!

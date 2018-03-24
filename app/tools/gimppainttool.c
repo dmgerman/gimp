@@ -2360,7 +2360,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/*  reset old stuff here so we are not interferring with the modifiers    *  set by our subclasses    */
+comment|/*  reset old stuff here so we are not interfering with the modifiers    *  set by our subclasses    */
 name|gimp_tool_control_set_cursor_modifier
 argument_list|(
 name|tool

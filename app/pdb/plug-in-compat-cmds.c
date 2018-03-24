@@ -31281,7 +31281,7 @@ literal|"blend-power"
 argument_list|,
 literal|"blend power"
 argument_list|,
-literal|"Power used to strech the blend"
+literal|"Power used to stretch the blend"
 argument_list|,
 operator|-
 name|G_MAXDOUBLE

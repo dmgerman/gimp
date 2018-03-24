@@ -2088,7 +2088,7 @@ operator|>
 literal|0.0f
 condition|)
 block|{
-comment|/* By definition the ratio between each color[] and pixel[] component in a non-pre-multipled blend always sums to 1.0f.                    * Originaly this would have been "(color[n] * alpha * color_a + pixel[n] * dst_alpha * (1.0f - alpha)) / a",                    * instead we only calculate the cheaper term. */
+comment|/* By definition the ratio between each color[] and pixel[] component in a non-pre-multipled blend always sums to 1.0f.                    * Originally this would have been "(color[n] * alpha * color_a + pixel[n] * dst_alpha * (1.0f - alpha)) / a",                    * instead we only calculate the cheaper term. */
 name|float
 name|src_term
 init|=

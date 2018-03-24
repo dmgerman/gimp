@@ -680,7 +680,7 @@ argument_list|(
 name|manager
 argument_list|)
 expr_stmt|;
-comment|/* Gather formated strings of keyboard shortcuts */
+comment|/* Gather formatted strings of keyboard shortcuts */
 for|for
 control|(
 name|group_it

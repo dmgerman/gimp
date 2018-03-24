@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf804a0103
+DECL|enum|__anon29e694e10103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf804a0203
+DECL|enum|__anon29e694e10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1693,7 +1693,7 @@ init|=
 name|gdk_screen_get_default
 argument_list|()
 decl_stmt|;
-comment|/* Save the window height when results are shown so that resizes        * by the user are saved accross searches.        */
+comment|/* Save the window height when results are shown so that resizes        * by the user are saved across searches.        */
 name|window_height
 operator|=
 name|MAX

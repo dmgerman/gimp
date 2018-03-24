@@ -424,7 +424,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29bcfd520103
+DECL|enum|__anon2c05f91e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1512,7 +1512,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bcfd520208
+DECL|struct|__anon2c05f91e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1742,7 +1742,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bcfd520308
+DECL|struct|__anon2c05f91e0308
 block|{
 DECL|member|used_count
 name|glong
@@ -2181,7 +2181,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/* Third pass - rank all used indicies to the beginning of the    * palette.    */
+comment|/* Third pass - rank all used indices to the beginning of the    * palette.    */
 name|palentries
 operator|=
 name|g_new

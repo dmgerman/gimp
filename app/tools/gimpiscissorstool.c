@@ -1510,7 +1510,7 @@ operator|*
 literal|2
 expr_stmt|;
 block|}
-comment|/*  set the 256th index of the direction_values to the hightest cost  */
+comment|/*  set the 256th index of the direction_values to the highest cost  */
 name|direction_value
 index|[
 literal|255

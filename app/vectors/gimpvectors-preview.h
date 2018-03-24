@@ -17,7 +17,7 @@ name|__GIMP_VECTORS_PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual function of GimpVectors -- dont't call directly  */
+comment|/*  *  virtual function of GimpVectors -- don't call directly  */
 end_comment
 
 begin_function_decl

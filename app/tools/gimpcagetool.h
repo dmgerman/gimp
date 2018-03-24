@@ -194,7 +194,7 @@ name|GeglNode
 modifier|*
 name|render_node
 decl_stmt|;
-comment|/* Gegl node graph to render the transfromation */
+comment|/* Gegl node graph to render the transformation */
 DECL|member|cage_node
 name|GeglNode
 modifier|*

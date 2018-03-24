@@ -3647,7 +3647,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Set a default drag dest if not already done. Explicitely set    *  COPY and MOVE for file drag destinations. Some file managers    *  such as Konqueror only offer MOVE by default.    */
+comment|/*  Set a default drag dest if not already done. Explicitly set    *  COPY and MOVE for file drag destinations. Some file managers    *  such as Konqueror only offer MOVE by default.    */
 if|if
 condition|(
 operator|!

@@ -1046,7 +1046,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-comment|/* when the region changes, do we want the operation's on-canvas        * controller to move to a new position, or the operation to        * change its properties to match the on-canvas controller?        *        * decided to leave the on-canvas controler where it is and        * pretend it has changed, so the operation is updated        * accordingly...        */
+comment|/* when the region changes, do we want the operation's on-canvas        * controller to move to a new position, or the operation to        * change its properties to match the on-canvas controller?        *        * decided to leave the on-canvas controller where it is and        * pretend it has changed, so the operation is updated        * accordingly...        */
 if|if
 condition|(
 name|filter_tool

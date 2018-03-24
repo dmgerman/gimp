@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0133350103
+DECL|enum|__anon2b0ab6b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1841,7 +1841,7 @@ name|result
 init|=
 literal|0.0
 decl_stmt|;
-comment|/* angles are additive, so we retun zero for no change. */
+comment|/* angles are additive, so we return zero for no change. */
 name|gint
 name|factors
 init|=

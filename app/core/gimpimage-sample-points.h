@@ -42,7 +42,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  internal sample point adding API, does not check the sample  *  point's position and is publically declared only to be used from  *  undo  */
+comment|/*  internal sample point adding API, does not check the sample  *  point's position and is publicly declared only to be used from  *  undo  */
 end_comment
 
 begin_function_decl

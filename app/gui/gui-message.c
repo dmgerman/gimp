@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0838f40108
+DECL|struct|__anon29b654040108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1297,7 +1297,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Since we overrided glib default's WARNING and CRITICAL            * handler, if we decide not to handle this error in the end,            * let's just print it in terminal in a similar fashion as            * glib's default handler (though without the fancy terminal            * colors right now).            */
+comment|/* Since we overridden glib default's WARNING and CRITICAL            * handler, if we decide not to handle this error in the end,            * let's just print it in terminal in a similar fashion as            * glib's default handler (though without the fancy terminal            * colors right now).            */
 name|g_printerr
 argument_list|(
 literal|"%s-%s: %s\n"

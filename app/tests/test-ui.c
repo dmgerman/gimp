@@ -1282,7 +1282,7 @@ directive|endif
 if|#
 directive|if
 literal|0
-comment|/* Restore the (only avaiable) closed dock and make sure the session    * infos in the global dock factory are increased again    */
+comment|/* Restore the (only available) closed dock and make sure the session    * infos in the global dock factory are increased again    */
 block|gimp_ui_manager_activate_action (gimp_test_utils_get_ui_manager (gimp),                                    "windows",
 comment|/* FIXME: This is severely hardcoded */
 block|"windows-recent-0003");   gimp_test_run_mainloop_until_idle ();   session_infos = gimp_dialog_factory_get_session_infos (gimp_dialog_factory_get_singleton ());   n_session_infos_after_restore = g_list_length (session_infos);   g_assert_cmpint (n_session_infos_after_close,<,                    n_session_infos_after_restore);

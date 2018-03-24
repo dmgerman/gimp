@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933c5780103
+DECL|enum|__anon2c853eea0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2121,7 +2121,7 @@ name|pixel_initial
 operator|+
 name|pixel_dist
 expr_stmt|;
-comment|/* Dont forget to update pixel distance*/
+comment|/* Don't forget to update pixel distance*/
 return|return;
 block|}
 comment|/* Handle dynamic spacing */
@@ -2739,7 +2739,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*  Exception A: If the first stripe's brush position is            *  EXTRApolated into a different pixel square than the            *  ideal starting point, dont't plot it.            */
+comment|/*  Exception A: If the first stripe's brush position is            *  EXTRApolated into a different pixel square than the            *  ideal starting point, don't plot it.            */
 name|s0
 operator|+=
 name|direction
@@ -5195,7 +5195,7 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-comment|/* Zero aspect ratio is special cased to half of all ar range,            * to force dynamics to have any effect. Forcing to full results            * in disapearing stamp if applied to maximum.            */
+comment|/* Zero aspect ratio is special cased to half of all ar range,            * to force dynamics to have any effect. Forcing to full results            * in disappearing stamp if applied to maximum.            */
 if|if
 condition|(
 name|core
@@ -5780,7 +5780,7 @@ argument_list|(
 name|pixmap_format
 argument_list|)
 expr_stmt|;
-comment|/* Point to the approriate scanline */
+comment|/* Point to the appropriate scanline */
 name|b
 operator|=
 operator|(

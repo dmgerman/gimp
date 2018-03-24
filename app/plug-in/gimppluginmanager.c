@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76b3b50103
+DECL|enum|__anon2c76cd300103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1044,7 +1044,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  need to deatch from shared memory, we can't rely on exit()    *  cleaning up behind us (see bug #609026)    */
+comment|/*  need to detach from shared memory, we can't rely on exit()    *  cleaning up behind us (see bug #609026)    */
 if|if
 condition|(
 name|manager

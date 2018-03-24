@@ -247,7 +247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09139f0103
+DECL|enum|__anon2c670bba0103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -905,7 +905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_seamless_clone_tool_start:  * @sc: The GimpSeamlessCloneTool to initialize for usage on the given  *      display  * @display: The display to initialize the tool for  *  * A utility function to initialize a tool for working on a given  * display. At the begining of each function, we can check if the event's  * display is the same as the tool's one, and if not call this. This is  * not required by the gimptool interface or anything like that, but  * this is a convinient way to do all the initialization work in one  * place, and this is how the base class (GimpDrawTool) does that  */
+comment|/**  * gimp_seamless_clone_tool_start:  * @sc: The GimpSeamlessCloneTool to initialize for usage on the given  *      display  * @display: The display to initialize the tool for  *  * A utility function to initialize a tool for working on a given  * display. At the beginning of each function, we can check if the event's  * display is the same as the tool's one, and if not call this. This is  * not required by the gimptool interface or anything like that, but  * this is a convenient way to do all the initialization work in one  * place, and this is how the base class (GimpDrawTool) does that  */
 end_comment
 
 begin_function
@@ -2211,7 +2211,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_seamless_clone_tool_create_render_node:  * @sc: The GimpSeamlessCloneTool to intialize  *  * This function creates a Gegl node graph of the composition which is  * needed to render the drawable. The graph should have an "input" pad  * which will receive the drawable on which the preview is applied, and  * it should also have an "output" pad to which the final result will be  * rendered  */
+comment|/**  * gimp_seamless_clone_tool_create_render_node:  * @sc: The GimpSeamlessCloneTool to initialize  *  * This function creates a Gegl node graph of the composition which is  * needed to render the drawable. The graph should have an "input" pad  * which will receive the drawable on which the preview is applied, and  * it should also have an "output" pad to which the final result will be  * rendered  */
 end_comment
 
 begin_function

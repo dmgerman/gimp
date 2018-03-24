@@ -8279,7 +8279,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e7c5620108
+DECL|struct|__anon293fb5660108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -8594,7 +8594,7 @@ operator|&
 name|closed
 argument_list|)
 expr_stmt|;
-comment|/* if no points are generated because of a faulty path we should        * skip saving the path - this is unfortunately impossible, because        * we already saved the number of paths and I wont start seeking        * around to fix that cruft  */
+comment|/* if no points are generated because of a faulty path we should        * skip saving the path - this is unfortunately impossible, because        * we already saved the number of paths and I won't start seeking        * around to fix that cruft  */
 name|name
 operator|=
 operator|(

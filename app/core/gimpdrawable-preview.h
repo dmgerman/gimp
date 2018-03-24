@@ -17,7 +17,7 @@ name|__GIMP_DRAWABLE__PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual functions of GimpDrawable -- dont't call directly  */
+comment|/*  *  virtual functions of GimpDrawable -- don't call directly  */
 end_comment
 
 begin_function_decl

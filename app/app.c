@@ -753,7 +753,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* Language needs to be determined first, before any GimpContext is    * instanciated (which happens when the Gimp object is created)    * because its properties need to be properly localized in the    * settings language (if different from system language). Otherwise we    * end up with pieces of GUI always using the system language (cf. bug    * 787457). Therefore we do a first pass on "gimprc" file for the sole    * purpose of getting the settings language, so that we can initialize    * it before anything else.    */
+comment|/* Language needs to be determined first, before any GimpContext is    * instantiated (which happens when the Gimp object is created)    * because its properties need to be properly localized in the    * settings language (if different from system language). Otherwise we    * end up with pieces of GUI always using the system language (cf. bug    * 787457). Therefore we do a first pass on "gimprc" file for the sole    * purpose of getting the settings language, so that we can initialize    * it before anything else.    */
 name|temprc
 operator|=
 name|gimp_lang_rc_new

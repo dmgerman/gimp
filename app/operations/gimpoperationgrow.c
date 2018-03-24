@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c3ec2c0103
+DECL|enum|__anon29f9ca580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -843,7 +843,7 @@ name|gint
 name|level
 parameter_list|)
 block|{
-comment|/* Any bugs in this fuction are probably also in thin_region.    * Blame all bugs in this function on jaycox@gimp.org    */
+comment|/* Any bugs in this function are probably also in thin_region.    * Blame all bugs in this function on jaycox@gimp.org    */
 name|GimpOperationGrow
 modifier|*
 name|self

@@ -9661,7 +9661,7 @@ operator|<
 literal|0.00001
 condition|)
 block|{
-comment|/* dont bother with it - endpoint is too close to startpoint */
+comment|/* don't bother with it - endpoint is too close to startpoint */
 return|return;
 block|}
 name|trans_center

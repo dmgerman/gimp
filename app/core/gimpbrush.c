@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e5aa60103
+DECL|enum|__anon275cc9750103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e5aa60203
+DECL|enum|__anon275cc9750203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2846,7 +2846,7 @@ directive|if
 literal|0
 comment|/* This code makes sure that brushes using blur for hardness        * (all of them but generated) are blurred once and no more.        * It also makes hardnes dynamics not work for these brushes.        * This is intentional. Confoliving for each stamp is too expensive.*/
 block|if (! brush->priv->blured_mask&&           ! GIMP_IS_BRUSH_GENERATED(brush)&&           ! GIMP_IS_BRUSH_PIPE(brush)&&
-comment|/*Cant cache pipes. Sanely anway*/
+comment|/*Can't cache pipes. Sanely anyway*/
 block|hardness< 1.0)         {            brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              FALSE,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blured_mask)         {           effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
@@ -3174,7 +3174,7 @@ if|#
 directive|if
 literal|0
 block|if (! brush->priv->blured_pixmap&&          ! GIMP_IS_BRUSH_GENERATED(brush)&&          ! GIMP_IS_BRUSH_PIPE(brush)
-comment|/*Cant cache pipes. Sanely anway*/
+comment|/*Can't cache pipes. Sanely anyway*/
 block|&& hardness< 1.0)       {          brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   FALSE,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blured_pixmap) {         effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}

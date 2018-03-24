@@ -57,7 +57,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  internal guide adding API, does not check the guide's position and  *  is publically declared only to be used from undo  */
+comment|/*  internal guide adding API, does not check the guide's position and  *  is publicly declared only to be used from undo  */
 end_comment
 
 begin_function_decl

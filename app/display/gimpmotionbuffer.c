@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d1d850103
+DECL|enum|__anon2a4ad1e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d1d850203
+DECL|enum|__anon2a4ad1e40203
 block|{
 DECL|enumerator|STROKE
 name|STROKE
@@ -805,7 +805,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_motion_buffer_motion_event:  * @buffer:  * @coords:  * @time:  * @event_fill:  *  * This function evaluates the event to decide if the change is big  * enough to need handling and returns FALSE, if change is less than  * set filter level taking a whole lot of load off any draw tools that  * have no use for these events anyway. If the event is seen fit at  * first look, it is evaluated for speed and smoothed.  Due to lousy  * time resolution of events pretty strong smoothing is applied to  * timestamps for sensible speed result. This function is also ideal  * for other event adjustment like pressure curve or calculating other  * derived dynamics factors like angular velocity calculation from  * tilt values, to allow for even more dynamic brushes. Calculated  * distance to last event is stored in GimpCoords because its a  * sideproduct of velocity calculation and is currently calculated in  * each tool. If they were to use this distance, more resouces on  * recalculating the same value would be saved.  *  * Return value: %TRUE if the motion was significant enough to be  *               processed, %FALSE otherwise.  **/
+comment|/**  * gimp_motion_buffer_motion_event:  * @buffer:  * @coords:  * @time:  * @event_fill:  *  * This function evaluates the event to decide if the change is big  * enough to need handling and returns FALSE, if change is less than  * set filter level taking a whole lot of load off any draw tools that  * have no use for these events anyway. If the event is seen fit at  * first look, it is evaluated for speed and smoothed.  Due to lousy  * time resolution of events pretty strong smoothing is applied to  * timestamps for sensible speed result. This function is also ideal  * for other event adjustment like pressure curve or calculating other  * derived dynamics factors like angular velocity calculation from  * tilt values, to allow for even more dynamic brushes. Calculated  * distance to last event is stored in GimpCoords because its a  * sideproduct of velocity calculation and is currently calculated in  * each tool. If they were to use this distance, more resources on  * recalculating the same value would be saved.  *  * Return value: %TRUE if the motion was significant enough to be  *               processed, %FALSE otherwise.  **/
 end_comment
 
 begin_function

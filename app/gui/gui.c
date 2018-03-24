@@ -1027,7 +1027,7 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-comment|/* Normally this should have been taken care of during command line      * parsing as a post-parse hook of gtk_get_option_group(), using the      * system locales.      * But user config may have overriden the language, therefore we must      * check the widget directions again.      */
+comment|/* Normally this should have been taken care of during command line      * parsing as a post-parse hook of gtk_get_option_group(), using the      * system locales.      * But user config may have overridden the language, therefore we must      * check the widget directions again.      */
 name|gtk_widget_set_default_direction
 argument_list|(
 name|GTK_TEXT_DIR_RTL
@@ -3582,7 +3582,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be7c6290108
+DECL|struct|__anon2bdd6e870108
 block|{
 DECL|member|path
 specifier|const

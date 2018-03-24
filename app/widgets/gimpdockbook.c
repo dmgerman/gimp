@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd28210103
+DECL|enum|__anon29d9d4890103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -3881,7 +3881,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dockbook_add_from_dialog_factory:  * @dockbook:    The #DockBook  * @identifiers: The dockable identifier(s)  * @position:    The insert position  *  * Add a dockable from the dialog factory associated wth the dockbook.  **/
+comment|/**  * gimp_dockbook_add_from_dialog_factory:  * @dockbook:    The #DockBook  * @identifiers: The dockable identifier(s)  * @position:    The insert position  *  * Add a dockable from the dialog factory associated with the dockbook.  **/
 end_comment
 
 begin_function

@@ -147,7 +147,7 @@ DECL|member|event_delay
 name|gboolean
 name|event_delay
 decl_stmt|;
-comment|/* TRUE if theres an unsent event in                                  *  the history buffer                                  */
+comment|/* TRUE if there's an unsent event in                                  *  the history buffer                                  */
 DECL|member|event_delay_timeout
 name|gint
 name|event_delay_timeout

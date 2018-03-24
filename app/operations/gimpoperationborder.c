@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44e7c40103
+DECL|enum|__anon28b84f820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1894,7 +1894,7 @@ argument_list|(
 name|transition
 argument_list|)
 expr_stmt|;
-comment|/* Finnished handling the radius = 1 special case, return here. */
+comment|/* Finished handling the radius = 1 special case, return here. */
 return|return
 name|TRUE
 return|;

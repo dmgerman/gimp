@@ -3416,7 +3416,7 @@ name|GeglNode
 modifier|*
 name|graph
 decl_stmt|;
-comment|/* Wraper to be returned */
+comment|/* Wrapper to be returned */
 name|GeglNode
 modifier|*
 name|input

@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987db5d0103
+DECL|enum|__anon2901e4760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2790,7 +2790,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paint_core_round_line:  * @core:                 the #GimpPaintCore  * @options:              the #GimpPaintOptions to use  * @constrain_15_degrees: the modifier state  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. If @center_pixels is TRUE the endpoints  * get pushed to the center of the pixels. This avoids artefacts  * for e.g. the hard mode. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
+comment|/**  * gimp_paint_core_round_line:  * @core:                 the #GimpPaintCore  * @options:              the #GimpPaintOptions to use  * @constrain_15_degrees: the modifier state  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. If @center_pixels is TRUE the endpoints  * get pushed to the center of the pixels. This avoids artifacts  * for e.g. the hard mode. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
 end_comment
 
 begin_function
@@ -4319,7 +4319,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-comment|/* Paint core has not initalized yet */
+comment|/* Paint core has not initialized yet */
 if|if
 condition|(
 name|smoothing_options
@@ -4384,7 +4384,7 @@ operator|<
 literal|2
 condition|)
 return|return;
-comment|/* Just dont bother, nothing to do */
+comment|/* Just don't bother, nothing to do */
 name|coords
 operator|->
 name|x

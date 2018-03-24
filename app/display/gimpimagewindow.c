@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5357a80103
+DECL|enum|__anon29edff7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5357a80208
+DECL|struct|__anon29edff7b0208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -6690,7 +6690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_window_get_default_dockbook:  * @window:  *  * Gets the default dockbook, which is the dockbook in which new  * dockables should be put in single-window mode.  *  * Returns: The default dockbook for new dockables, or NULL if no  *          dockbook were avaialble.  **/
+comment|/**  * gimp_image_window_get_default_dockbook:  * @window:  *  * Gets the default dockbook, which is the dockbook in which new  * dockables should be put in single-window mode.  *  * Returns: The default dockbook for new dockables, or NULL if no  *          dockbook were available.  **/
 end_comment
 
 begin_function

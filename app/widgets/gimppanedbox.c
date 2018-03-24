@@ -789,7 +789,7 @@ modifier|*
 name|drag_handler
 parameter_list|)
 block|{
-comment|/* Hook us in for drag events. We could abstract this properly and    * put gimp_paned_box_will_handle_drag() in an interface for    * example, but it doesn't feel worth it at this point    *    * Note that we don't have 'else if's because a widget can be both a    * dock and a toolbox for example, in which case we want to set a    * drag handler in two ways    *    * We so need to introduce som abstractions here...    */
+comment|/* Hook us in for drag events. We could abstract this properly and    * put gimp_paned_box_will_handle_drag() in an interface for    * example, but it doesn't feel worth it at this point    *    * Note that we don't have 'else if's because a widget can be both a    * dock and a toolbox for example, in which case we want to set a    * drag handler in two ways    *    * We so need to introduce some abstractions here...    */
 if|if
 condition|(
 name|GIMP_IS_DOCKBOOK
@@ -2066,7 +2066,7 @@ operator|=
 name|grandparent
 expr_stmt|;
 block|}
-comment|/* Deatch the widget and bulid up a new hierarchy */
+comment|/* Detach the widget and build up a new hierarchy */
 name|g_object_ref
 argument_list|(
 name|old_widget

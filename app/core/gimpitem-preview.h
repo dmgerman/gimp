@@ -17,7 +17,7 @@ name|__GIMP_ITEM__PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual functions of GimpItem -- dont't call directly  */
+comment|/*  *  virtual functions of GimpItem -- don't call directly  */
 end_comment
 
 begin_function_decl

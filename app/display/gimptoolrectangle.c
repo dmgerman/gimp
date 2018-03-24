@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c71bff60103
+DECL|enum|__anon291bb25c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c71bff60203
+DECL|enum|__anon291bb25c0203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c71bff60303
+DECL|enum|__anon291bb25c0303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c71bff60403
+DECL|enum|__anon291bb25c0403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5473,7 +5473,7 @@ name|center_y_on_fixed_center
 operator|=
 name|snapped_y
 expr_stmt|;
-comment|/* When the user toggles modifier keys, we want to keep track of        * what coordinates the "other side" should have. If we are        * creating a rectangle, use the current mouse coordinates as        * the coordinate of the "other side", otherwise use the        * immidiate "other side" for that.        */
+comment|/* When the user toggles modifier keys, we want to keep track of        * what coordinates the "other side" should have. If we are        * creating a rectangle, use the current mouse coordinates as        * the coordinate of the "other side", otherwise use the        * immediate "other side" for that.        */
 name|private
 operator|->
 name|other_side_x
@@ -6919,7 +6919,7 @@ block|{
 if|#
 directive|if
 literal|0
-comment|/* Here we want to handle manualy when to update the rectangle, so we        * don't want gimp_tool_rectangle_options_notify to do anything.        */
+comment|/* Here we want to handle manually when to update the rectangle, so we        * don't want gimp_tool_rectangle_options_notify to do anything.        */
 block|g_signal_handlers_block_by_func (options,                                        gimp_tool_rectangle_options_notify,                                        rectangle);
 endif|#
 directive|endif
@@ -8328,7 +8328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_rectangle_coord_outside:  *  * Returns: %TRUE if the coord is outside the rectange bounds  *          including any outside handles.  */
+comment|/**  * gimp_tool_rectangle_coord_outside:  *  * Returns: %TRUE if the coord is outside the rectangle bounds  *          including any outside handles.  */
 end_comment
 
 begin_function
@@ -12527,7 +12527,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_rectangle_handle_general_clamping:  * @rectangle: A #GimpToolRectangle.  *  * Make sure that contraints are applied to the rectangle, either by  * manually doing it, or by looking at the rectangle tool options and  * concluding it will be done later.  */
+comment|/**  * gimp_tool_rectangle_handle_general_clamping:  * @rectangle: A #GimpToolRectangle.  *  * Make sure that constraints are applied to the rectangle, either by  * manually doing it, or by looking at the rectangle tool options and  * concluding it will be done later.  */
 end_comment
 
 begin_function

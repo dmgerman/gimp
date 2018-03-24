@@ -78,9 +78,9 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0a71eb0103
+DECL|enum|__anon28d4b82d0103
 block|{
-comment|/*  positive values indicate the lenght of a matching magic  */
+comment|/*  positive values indicate the length of a matching magic  */
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
 init|=

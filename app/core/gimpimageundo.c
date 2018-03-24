@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c037b5d0103
+DECL|enum|__anon277c974a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1276,7 +1276,7 @@ name|GIMP_GRAY
 operator|)
 condition|)
 block|{
-comment|/* in case ther was no profile undo, we need to emit                  * profile-changed anyway                  */
+comment|/* in case there was no profile undo, we need to emit                  * profile-changed anyway                  */
 name|gimp_color_managed_profile_changed
 argument_list|(
 name|GIMP_COLOR_MANAGED

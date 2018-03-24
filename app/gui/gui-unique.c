@@ -374,7 +374,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b753baa0108
+DECL|struct|__anon2785cb640108
 block|{
 DECL|member|file
 name|GFile
@@ -1247,7 +1247,7 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* Using the event handler is a hack, it is neccesary becuase    * gtkosx_application will drop the file open events if any    * event processing is done before gtkosx_application_ready is    * called, which we unfortuantly can't avoid doing right now.    */
+comment|/* Using the event handler is a hack, it is necessary because    * gtkosx_application will drop the file open events if any    * event processing is done before gtkosx_application_ready is    * called, which we unfortuantly can't avoid doing right now.    */
 name|event_handler
 operator|=
 index|[

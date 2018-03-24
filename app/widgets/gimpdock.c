@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287ff6b20103
+DECL|enum|__anon2c6f1bd90103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2806,7 +2806,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dock_temp_remove:  * @dock:  * @child:  *  * Removes a temporarly child added with gimp_dock_temp_add().  **/
+comment|/**  * gimp_dock_temp_remove:  * @dock:  * @child:  *  * Removes a temporary child added with gimp_dock_temp_add().  **/
 end_comment
 
 begin_function

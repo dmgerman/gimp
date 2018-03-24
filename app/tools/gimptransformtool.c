@@ -3348,7 +3348,7 @@ name|orig_buffer
 condition|)
 block|{
 comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
-comment|/*  always clip the selction and unfloated channels        *  so they keep their size        */
+comment|/*  always clip the selection and unfloated channels        *  so they keep their size        */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL

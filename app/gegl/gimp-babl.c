@@ -1079,11 +1079,11 @@ name|GimpInitStatusFunc
 name|status_callback
 parameter_list|)
 block|{
-comment|/* create a bunch of fishes - to decrease the initial lazy    * intialization cost for some interactions    */
+comment|/* create a bunch of fishes - to decrease the initial lazy    * initialization cost for some interactions    */
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2e39310108
+DECL|struct|__anon27b864400108
 block|{
 DECL|member|from_format
 specifier|const
@@ -1330,7 +1330,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2e39310208
+DECL|struct|__anon27b864400208
 block|{
 DECL|member|name
 specifier|const

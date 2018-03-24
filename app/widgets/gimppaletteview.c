@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af8df830103
+DECL|enum|__anon28be059c0103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -1650,7 +1650,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  private funcions  */
+comment|/*  private functions  */
 end_comment
 
 begin_function

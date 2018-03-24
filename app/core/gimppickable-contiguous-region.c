@@ -710,7 +710,7 @@ condition|(
 name|select_transparent
 condition|)
 block|{
-comment|/*  don't select transparancy if "color" isn't fully transparent            */
+comment|/*  don't select transparency if "color" isn't fully transparent            */
 if|if
 condition|(
 name|start_col
