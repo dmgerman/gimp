@@ -2126,6 +2126,14 @@ decl_stmt|;
 if|if
 condition|(
 name|drawable
+operator|&&
+name|paste_type
+operator|!=
+name|GIMP_PASTE_TYPE_NEW_LAYER
+operator|&&
+name|paste_type
+operator|!=
+name|GIMP_PASTE_TYPE_NEW_LAYER_IN_PLACE
 condition|)
 block|{
 if|if
@@ -2158,10 +2166,6 @@ literal|"Pasted as new layer because the "
 literal|"target is a layer group."
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|paste_type
-operator|=
-name|GIMP_PASTE_TYPE_NEW_LAYER
 expr_stmt|;
 block|}
 elseif|else
@@ -2196,11 +2200,8 @@ literal|"target's pixels are locked."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|paste_type
-operator|=
-name|GIMP_PASTE_TYPE_NEW_LAYER
-expr_stmt|;
 block|}
+comment|/* the actual paste-type conversion happens in gimp_edit_paste() */
 block|}
 name|gimp_display_shell_untransform_viewport
 argument_list|(
