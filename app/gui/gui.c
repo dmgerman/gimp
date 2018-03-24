@@ -1351,9 +1351,10 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
+comment|/* TRANSLATORS: even if English singular form does                               * not use %d, you can use %d for translation in                               * any singular/plural form of your language if                               * suited. It will just work and be replaced by the                               * number of images as expected.                               */
 name|ngettext
 argument_list|(
-literal|"%d image was salvaged from the crash. "
+literal|"An image was salvaged from the crash. "
 literal|"Do you want to try and recover it?"
 argument_list|,
 literal|"%d images were salvaged from the crash. "
@@ -3581,7 +3582,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29760dfd0108
+DECL|struct|__anon295612480108
 block|{
 DECL|member|path
 specifier|const
