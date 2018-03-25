@@ -4459,6 +4459,22 @@ literal|"group-layer-resume-mask"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_START_MOVE"
+block|,
+literal|"group-layer-start-move"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_END_MOVE"
+block|,
+literal|"group-layer-end-move"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_LAYER_CONVERT
 block|,
 literal|"GIMP_UNDO_GROUP_LAYER_CONVERT"
@@ -5529,6 +5545,32 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Resume group layer mask"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Start moving group layer"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"End moving group layer"
 argument_list|)
 block|,
 name|NULL
