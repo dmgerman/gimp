@@ -840,6 +840,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpObjectQueue
+typedef|typedef
+name|struct
+name|_GimpObjectQueue
+name|GimpObjectQueue
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpParasiteList
 typedef|typedef
 name|struct
