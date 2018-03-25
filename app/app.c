@@ -916,7 +916,16 @@ argument_list|(
 name|gimpdir
 argument_list|)
 expr_stmt|;
-comment|/* Initialize the error handling after creating/migrating the config    * directory because it will create some folders for backup and crash    * logs in advance. Therefore running this before    * gimp_user_install_new() would break migration as well as initial    * folder creations.    */
+name|gimp_load_config
+argument_list|(
+name|gimp
+argument_list|,
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
+argument_list|)
+expr_stmt|;
+comment|/* Initialize the error handling after creating/migrating the config    * directory because it will create some folders for backup and crash    * logs in advance. Therefore running this before    * gimp_user_install_new() would break migration as well as initial    * folder creations.    *    * It also needs to be run after gimp_load_config() because error    * handling is based on Preferences. It means that early loading code    * is not handled by our debug code, but that's not a big deal.    */
 name|errors_init
 argument_list|(
 name|gimp
@@ -928,15 +937,6 @@ argument_list|,
 name|stack_trace_mode
 argument_list|,
 name|backtrace_file
-argument_list|)
-expr_stmt|;
-name|gimp_load_config
-argument_list|(
-name|gimp
-argument_list|,
-name|alternate_system_gimprc
-argument_list|,
-name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 comment|/*  run the late-stage sanity check.  it's important that this check is run    *  after the call to language_init() (see comment in sanity_check_late().)    */
