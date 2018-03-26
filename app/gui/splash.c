@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c0ad070108
+DECL|struct|__anon27b992ef0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -395,10 +395,8 @@ name|gdk_screen_get_width
 argument_list|(
 name|screen
 argument_list|)
-operator|*
-literal|2
 operator|/
-literal|3
+literal|2
 expr_stmt|;
 name|max_height
 operator|=
@@ -406,10 +404,8 @@ name|gdk_screen_get_height
 argument_list|(
 name|screen
 argument_list|)
-operator|*
-literal|2
 operator|/
-literal|3
+literal|2
 expr_stmt|;
 name|pixbuf
 operator|=
