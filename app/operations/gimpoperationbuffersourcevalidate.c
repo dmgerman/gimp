@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27675bc60103
+DECL|enum|__anon292354ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1027,6 +1027,9 @@ name|cairo_region_t
 modifier|*
 name|region
 decl_stmt|;
+name|cairo_rectangle_int_t
+name|intersection
+decl_stmt|;
 comment|/* ... intersect it with region and use the result's                        * bounds                        */
 name|region
 operator|=
@@ -1050,7 +1053,7 @@ argument_list|(
 name|region
 argument_list|,
 operator|&
-name|rect
+name|intersection
 argument_list|)
 expr_stmt|;
 name|cairo_region_destroy
@@ -1072,11 +1075,9 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|result
-operator|->
+name|intersection
+operator|.
 name|x
-operator|+
-name|shift_x
 argument_list|)
 operator|/
 name|tile_width
@@ -1097,11 +1098,9 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|result
-operator|->
+name|intersection
+operator|.
 name|y
-operator|+
-name|shift_y
 argument_list|)
 operator|/
 name|tile_height
@@ -1122,15 +1121,13 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|result
-operator|->
+name|intersection
+operator|.
 name|x
 operator|+
-name|result
-operator|->
+name|intersection
+operator|.
 name|width
-operator|+
-name|shift_x
 argument_list|)
 operator|/
 name|tile_width
@@ -1155,15 +1152,13 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|result
-operator|->
+name|intersection
+operator|.
 name|y
 operator|+
-name|result
-operator|->
+name|intersection
+operator|.
 name|height
-operator|+
-name|shift_y
 argument_list|)
 operator|/
 name|tile_height
