@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aead2c30108
+DECL|struct|__anon298cc2ce0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -251,6 +251,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GdkGrabStatus
+name|status
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -332,6 +335,8 @@ operator|->
 name|window
 argument_list|)
 expr_stmt|;
+name|status
+operator|=
 name|gdk_keyboard_grab
 argument_list|(
 name|gtk_widget_get_window
@@ -344,6 +349,19 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|time
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|!=
+name|GDK_GRAB_SUCCESS
+condition|)
+name|g_printerr
+argument_list|(
+literal|"gdk_keyboard_grab failed with status %d\n"
+argument_list|,
+name|status
 argument_list|)
 expr_stmt|;
 block|}

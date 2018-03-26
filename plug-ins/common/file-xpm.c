@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c095bf90108
+DECL|struct|__anon2b7446bf0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c095bf90208
+DECL|struct|__anon2b7446bf0208
 block|{
 DECL|member|r
 name|guchar
@@ -1346,6 +1346,17 @@ operator|=
 name|XOpenDisplay
 argument_list|(
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|display
+operator|==
+name|NULL
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Could not open display\n"
 argument_list|)
 expr_stmt|;
 name|colormap
