@@ -797,11 +797,6 @@ name|icc_data
 argument_list|)
 expr_stmt|;
 block|}
-name|CFRelease
-argument_list|(
-name|color_space
-argument_list|)
-expr_stmt|;
 end_expr_stmt
 
 begin_expr_stmt
