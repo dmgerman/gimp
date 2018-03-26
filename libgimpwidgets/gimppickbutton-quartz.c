@@ -733,7 +733,7 @@ name|NULL
 decl_stmt|;
 name|icc_data
 operator|=
-name|CGColorSpaceCopyICCData
+name|CGColorSpaceCopyICCProfile
 argument_list|(
 name|color_space
 argument_list|)
