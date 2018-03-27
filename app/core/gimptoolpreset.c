@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c84d0103
+DECL|enum|__anon290a0c230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1430,7 +1430,7 @@ expr_stmt|;
 operator|*
 name|expected
 operator|=
-name|G_TOKEN_STRING
+name|G_TOKEN_NONE
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -1462,7 +1462,7 @@ expr_stmt|;
 operator|*
 name|expected
 operator|=
-name|G_TOKEN_STRING
+name|G_TOKEN_NONE
 expr_stmt|;
 name|g_free
 argument_list|(
