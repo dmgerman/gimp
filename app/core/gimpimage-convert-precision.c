@@ -167,6 +167,10 @@ name|GimpObjectQueue
 modifier|*
 name|queue
 decl_stmt|;
+name|GimpProgress
+modifier|*
+name|sub_progress
+decl_stmt|;
 name|GList
 modifier|*
 name|layers
@@ -410,7 +414,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-name|progress
+name|sub_progress
 operator|=
 name|GIMP_PROGRESS
 argument_list|(
@@ -748,7 +752,7 @@ name|mask_dither_type
 argument_list|,
 name|TRUE
 argument_list|,
-name|progress
+name|sub_progress
 argument_list|)
 expr_stmt|;
 block|}
