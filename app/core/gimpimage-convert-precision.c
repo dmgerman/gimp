@@ -701,6 +701,13 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|gimp_progress_set_value
+argument_list|(
+name|sub_progress
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
