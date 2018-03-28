@@ -3582,7 +3582,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295612480108
+DECL|struct|__anon2be7c6290108
 block|{
 DECL|member|path
 specifier|const
@@ -3658,10 +3658,10 @@ name|accel_path
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Actions \"%s\" and \"%s\" use the same accelerator.\n"
-literal|"Disable the accelerator on \"%s\"."
+literal|"  Disabling the accelerator on \"%s\".\n"
 argument_list|,
 name|accel
 operator|->
