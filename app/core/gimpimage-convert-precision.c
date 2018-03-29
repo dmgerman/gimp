@@ -891,12 +891,6 @@ literal|1.0
 operator|/
 literal|256.0
 argument_list|,
-literal|"alpha"
-argument_list|,
-literal|1.0
-operator|/
-literal|256.0
-argument_list|,
 literal|"linear"
 argument_list|,
 name|FALSE
