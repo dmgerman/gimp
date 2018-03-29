@@ -159,6 +159,10 @@ DECL|member|show_playground
 name|gboolean
 name|show_playground
 decl_stmt|;
+DECL|member|show_debug_menu
+name|gboolean
+name|show_debug_menu
+decl_stmt|;
 DECL|member|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -530,6 +534,9 @@ name|console_messages
 parameter_list|,
 name|gboolean
 name|show_playground
+parameter_list|,
+name|gboolean
+name|show_debug_menu
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode

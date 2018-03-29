@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9b4f250103
+DECL|enum|__anon2a359d700103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9b4f250203
+DECL|enum|__anon2a359d700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2438,7 +2438,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,const gchar * session_name,GFile * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean show_playground,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,GFile * default_folder,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,gboolean show_playground,gboolean show_debug_menu,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -2478,6 +2478,9 @@ name|console_messages
 parameter_list|,
 name|gboolean
 name|show_playground
+parameter_list|,
+name|gboolean
+name|show_debug_menu
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -2607,6 +2610,16 @@ operator|->
 name|show_playground
 operator|=
 name|show_playground
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|show_debug_menu
+operator|=
+name|show_debug_menu
 condition|?
 name|TRUE
 else|:

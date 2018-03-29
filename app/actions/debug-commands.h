@@ -16,31 +16,6 @@ directive|define
 name|__DEBUG_COMMANDS_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
-end_ifdef
-
-begin_define
-DECL|macro|ENABLE_DEBUG_MENU
-define|#
-directive|define
-name|ENABLE_DEBUG_MENU
-value|1
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_DEBUG_MENU
-end_ifdef
-
 begin_function_decl
 name|void
 name|debug_mem_profile_cmd_callback
@@ -152,15 +127,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ENABLE_DEBUG_MENU */
-end_comment
 
 begin_endif
 endif|#

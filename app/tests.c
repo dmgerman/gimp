@@ -168,6 +168,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_STACK_TRACE_QUERY
 argument_list|,
 name|GIMP_PDB_COMPAT_OFF
@@ -343,6 +345,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

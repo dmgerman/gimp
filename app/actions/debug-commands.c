@@ -135,12 +135,6 @@ directive|include
 file|"debug-commands.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_DEBUG_MENU
-end_ifdef
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1637,15 +1631,6 @@ name|closure
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ENABLE_DEBUG_MENU */
-end_comment
 
 end_unit
 

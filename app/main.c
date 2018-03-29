@@ -734,6 +734,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|show_debug_menu
+specifier|static
+name|gboolean
+name|show_debug_menu
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|stack_trace_mode
 specifier|static
 name|GimpStackTraceMode
@@ -763,6 +773,16 @@ DECL|variable|show_playground
 specifier|static
 name|gboolean
 name|show_playground
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|show_debug_menu
+specifier|static
+name|gboolean
+name|show_debug_menu
 init|=
 name|FALSE
 decl_stmt|;
@@ -1316,6 +1336,26 @@ block|,
 name|N_
 argument_list|(
 literal|"Show a preferences page with experimental features"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"show-debug-menu"
+block|,
+literal|0
+block|,
+name|G_OPTION_FLAG_HIDDEN
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|show_debug_menu
+block|,
+name|N_
+argument_list|(
+literal|"Show an image submenu with debug actions"
 argument_list|)
 block|,
 name|NULL
@@ -2250,6 +2290,8 @@ argument_list|,
 name|use_debug_handler
 argument_list|,
 name|show_playground
+argument_list|,
+name|show_debug_menu
 argument_list|,
 name|stack_trace_mode
 argument_list|,

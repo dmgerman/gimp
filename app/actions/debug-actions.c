@@ -57,12 +57,6 @@ directive|include
 file|"debug-commands.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_DEBUG_MENU
-end_ifdef
-
 begin_decl_stmt
 DECL|variable|debug_actions
 specifier|static
@@ -218,11 +212,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_function
 name|void
 DECL|function|debug_actions_setup (GimpActionGroup * group)
@@ -233,9 +222,9 @@ modifier|*
 name|group
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|ENABLE_DEBUG_MENU
+name|gint
+name|i
+decl_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
@@ -250,8 +239,52 @@ name|debug_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
+DECL|macro|SET_VISIBLE (action,condition)
+define|#
+directive|define
+name|SET_VISIBLE
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_visible (group, action, (condition) != 0)
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|debug_actions
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+name|SET_VISIBLE
+argument_list|(
+name|debug_actions
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|,
+name|group
+operator|->
+name|gimp
+operator|->
+name|show_debug_menu
+argument_list|)
+expr_stmt|;
+undef|#
+directive|undef
+name|SET_VISIBLE
 block|}
 end_function
 
