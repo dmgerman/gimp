@@ -917,6 +917,10 @@ name|GimpObjectQueue
 modifier|*
 name|queue
 decl_stmt|;
+name|GimpProgress
+modifier|*
+name|sub_progress
+decl_stmt|;
 name|GList
 modifier|*
 name|layers
@@ -954,7 +958,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-name|progress
+name|sub_progress
 operator|=
 name|GIMP_PROGRESS
 argument_list|(
@@ -1035,7 +1039,7 @@ name|gimp_drawable_apply_operation
 argument_list|(
 name|drawable
 argument_list|,
-name|progress
+name|sub_progress
 argument_list|,
 name|_
 argument_list|(
@@ -1049,6 +1053,15 @@ block|}
 name|g_object_unref
 argument_list|(
 name|queue
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_end
+argument_list|(
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_object_unref
