@@ -414,6 +414,13 @@ continue|continue;
 if|if
 condition|(
 operator|!
+name|gtk_action_is_visible
+argument_list|(
+name|action
+argument_list|)
+operator|||
+operator|(
+operator|!
 name|gtk_action_is_sensitive
 argument_list|(
 name|action
@@ -428,6 +435,7 @@ name|config
 argument_list|)
 operator|->
 name|search_show_unavailable
+operator|)
 condition|)
 continue|continue;
 if|if

@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1aced0103
+DECL|enum|__anon28d0e0b40103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1aced0208
+DECL|struct|__anon28d0e0b40208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a1aced0308
+DECL|struct|__anon28d0e0b40308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -995,6 +995,13 @@ continue|continue;
 if|if
 condition|(
 operator|!
+name|gtk_action_is_visible
+argument_list|(
+name|action
+argument_list|)
+operator|||
+operator|(
+operator|!
 name|gtk_action_is_sensitive
 argument_list|(
 name|action
@@ -1004,6 +1011,7 @@ operator|!
 name|config
 operator|->
 name|search_show_unavailable
+operator|)
 condition|)
 continue|continue;
 if|if
