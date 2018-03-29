@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27efc1530103
+DECL|enum|__anon2ba70bb70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -518,12 +518,6 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|gchar        *dir1;   gchar        *dir2;
-endif|#
-directive|endif
 name|GimpRGB
 name|red
 init|=
