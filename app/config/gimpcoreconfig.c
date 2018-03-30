@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298961a60103
+DECL|enum|__anon28b51e6e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -880,13 +880,9 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-name|defined
-name|G_OS_WIN32
-operator|||
-name|defined
-name|PLATFORM_OSX
+ifdef|#
+directive|ifdef
+name|ENABLE_BUNDLED_MYPAINT_BRUSHES
 name|mypaint_brushes
 operator|=
 name|g_build_filename
