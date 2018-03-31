@@ -120,15 +120,6 @@ argument_list|(
 name|paint_mask
 argument_list|)
 decl_stmt|;
-name|GimpTempBuf
-modifier|*
-name|modified_mask
-init|=
-name|gimp_temp_buf_copy
-argument_list|(
-name|paint_mask
-argument_list|)
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -139,14 +130,14 @@ name|width
 operator|=
 name|gimp_temp_buf_get_width
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_temp_buf_get_height
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 expr_stmt|;
 name|roi
@@ -225,7 +216,7 @@ operator|*
 operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 decl_stmt|;
 name|mask_data
@@ -406,7 +397,7 @@ operator|*
 operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 decl_stmt|;
 name|mask_data
@@ -600,7 +591,7 @@ operator|*
 operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 decl_stmt|;
 name|mask_data
@@ -790,7 +781,7 @@ operator|*
 operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
-name|modified_mask
+name|paint_mask
 argument_list|)
 decl_stmt|;
 name|mask_data
@@ -969,11 +960,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_temp_buf_unref
-argument_list|(
-name|modified_mask
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
