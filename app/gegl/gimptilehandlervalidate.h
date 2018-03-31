@@ -144,10 +144,6 @@ DECL|member|tile_height
 name|gint
 name|tile_height
 decl_stmt|;
-DECL|member|max_z
-name|gint
-name|max_z
-decl_stmt|;
 DECL|member|whole_tile
 name|gboolean
 name|whole_tile
