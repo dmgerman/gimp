@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297dfa560103
+DECL|enum|__anon28dd06750103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -302,6 +302,10 @@ name|VARIABLE_CPU_ACTIVE_TIME
 block|,
 endif|#
 directive|endif
+comment|/* misc */
+DECL|enumerator|VARIABLE_MIPMAPED
+name|VARIABLE_MIPMAPED
+block|,
 DECL|enumerator|N_VARIABLES
 name|N_VARIABLES
 block|,
@@ -316,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297dfa560203
+DECL|enum|__anon28dd06750203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -344,7 +348,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297dfa560303
+DECL|enum|__anon28dd06750303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -365,6 +369,9 @@ name|GROUP_CPU
 block|,
 endif|#
 directive|endif
+DECL|enumerator|GROUP_MISC
+name|GROUP_MISC
+block|,
 DECL|enumerator|N_GROUPS
 name|N_GROUPS
 DECL|typedef|Group
@@ -585,7 +592,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon297dfa56040a
+DECL|union|__anon28dd0675040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -597,7 +604,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon297dfa560508
+DECL|struct|__anon28dd06750508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -612,7 +619,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon297dfa560608
+DECL|struct|__anon28dd06750608
 block|{
 DECL|member|antecedent
 name|gint
@@ -1983,10 +1990,55 @@ name|reset_func
 operator|=
 name|gimp_dashboard_reset_cpu_active_time
 block|}
+block|,
 endif|#
 directive|endif
 comment|/* HAVE_CPU_GROUP */
+comment|/* misc variables */
+index|[
+name|VARIABLE_MIPMAPED
+index|]
+operator|=
+block|{
+operator|.
+name|name
+operator|=
+literal|"mipmapped"
+block|,
+operator|.
+name|title
+operator|=
+name|NC_
+argument_list|(
+literal|"dashboard-variable"
+argument_list|,
+literal|"Mipmapped"
+argument_list|)
+block|,
+operator|.
+name|description
+operator|=
+name|N_
+argument_list|(
+literal|"Total size of processed mipmapped data"
+argument_list|)
+block|,
+operator|.
+name|type
+operator|=
+name|VARIABLE_TYPE_SIZE
+block|,
+operator|.
+name|sample_func
+operator|=
+name|gimp_dashboard_sample_gegl_stats
+block|,
+operator|.
+name|data
+operator|=
+literal|"zoom-total"
 block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -2370,10 +2422,79 @@ block|,
 block|{}
 block|}
 block|}
+block|,
 endif|#
 directive|endif
 comment|/* HAVE_CPU_GROUP */
+comment|/* misc group */
+index|[
+name|GROUP_MISC
+index|]
+operator|=
+block|{
+operator|.
+name|name
+operator|=
+literal|"misc"
+block|,
+operator|.
+name|title
+operator|=
+name|NC_
+argument_list|(
+literal|"dashboard-group"
+argument_list|,
+literal|"Misc"
+argument_list|)
+block|,
+operator|.
+name|description
+operator|=
+name|N_
+argument_list|(
+literal|"Miscellaneous information"
+argument_list|)
+block|,
+operator|.
+name|default_active
+operator|=
+name|FALSE
+block|,
+operator|.
+name|default_expanded
+operator|=
+name|FALSE
+block|,
+operator|.
+name|has_meter
+operator|=
+name|FALSE
+block|,
+operator|.
+name|fields
+operator|=
+operator|(
+specifier|const
+name|FieldInfo
+index|[]
+operator|)
+block|{
+block|{
+operator|.
+name|variable
+operator|=
+name|VARIABLE_MIPMAPED
+block|,
+operator|.
+name|default_active
+operator|=
+name|TRUE
 block|}
+block|,
+block|{}
+block|}
+block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
