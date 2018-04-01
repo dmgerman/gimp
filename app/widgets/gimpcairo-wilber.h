@@ -18,6 +18,15 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_cairo_wilber_toggle_pointer_eyes
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_cairo_draw_toolbox_wilber
 parameter_list|(
 name|GtkWidget
