@@ -116,6 +116,10 @@ DECL|member|filter_tool_max_recent
 name|gint
 name|filter_tool_max_recent
 decl_stmt|;
+DECL|member|filter_tool_use_last_settings
+name|gboolean
+name|filter_tool_use_last_settings
+decl_stmt|;
 DECL|member|filter_tool_show_color_options
 name|gboolean
 name|filter_tool_show_color_options

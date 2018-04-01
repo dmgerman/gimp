@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"operations/gimp-operation-config.h"
 end_include
 
@@ -1168,6 +1174,21 @@ if|if
 condition|(
 operator|!
 name|settings
+operator|&&
+operator|(
+name|run_mode
+operator|!=
+name|GIMP_RUN_INTERACTIVE
+operator|||
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|filter_tool_use_last_settings
+operator|)
 condition|)
 block|{
 comment|/*  if we didn't get settings passed, get the last used settings  */

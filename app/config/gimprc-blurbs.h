@@ -485,6 +485,15 @@ value|_("How many recent settings to keep around in filter tools.")
 end_define
 
 begin_define
+DECL|macro|FILTER_TOOL_USE_LAST_SETTINGS_BLURB
+define|#
+directive|define
+name|FILTER_TOOL_USE_LAST_SETTINGS_BLURB
+define|\
+value|_("Default to the last used settings in filter tools.")
+end_define
+
+begin_define
 DECL|macro|FILTER_TOOL_SHOW_COLOR_OPTIONS_BLURB
 define|#
 directive|define

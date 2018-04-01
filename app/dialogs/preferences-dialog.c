@@ -2023,6 +2023,13 @@ name|gimp_config_reset_property
 argument_list|(
 name|config
 argument_list|,
+literal|"filter-tool-use-last-settings"
+argument_list|)
+expr_stmt|;
+name|gimp_config_reset_property
+argument_list|(
+name|config
+argument_list|,
 literal|"filter-tool-show-color-options"
 argument_list|)
 expr_stmt|;
@@ -9691,6 +9698,25 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
+literal|"filter-tool-use-last-settings"
+argument_list|,
+name|_
+argument_list|(
+literal|"Default to the last used settings"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
 literal|"filter-tool-show-color-options"
 argument_list|,
 name|_
@@ -12888,7 +12914,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bafbfea0108
+DECL|struct|__anon2a2f45780108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13765,7 +13791,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bafbfea0208
+DECL|struct|__anon2a2f45780208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13903,7 +13929,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bafbfea0308
+DECL|struct|__anon2a2f45780308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26dbb60103
+DECL|enum|__anon27d470850103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26dbb60203
+DECL|enum|__anon27d470850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,6 +117,9 @@ name|PROP_MOVE_TOOL_CHANGES_ACTIVE
 block|,
 DECL|enumerator|PROP_FILTER_TOOL_MAX_RECENT
 name|PROP_FILTER_TOOL_MAX_RECENT
+block|,
+DECL|enumerator|PROP_FILTER_TOOL_USE_LAST_SETTINGS
+name|PROP_FILTER_TOOL_USE_LAST_SETTINGS
 block|,
 DECL|enumerator|PROP_FILTER_TOOL_SHOW_COLOR_OPTIONS
 name|PROP_FILTER_TOOL_SHOW_COLOR_OPTIONS
@@ -491,6 +494,23 @@ argument_list|,
 literal|255
 argument_list|,
 literal|10
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_FILTER_TOOL_USE_LAST_SETTINGS
+argument_list|,
+literal|"filter-tool-use-last-settings"
+argument_list|,
+literal|"Use last used settings in filters"
+argument_list|,
+name|FILTER_TOOL_USE_LAST_SETTINGS_BLURB
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1614,6 +1634,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_FILTER_TOOL_USE_LAST_SETTINGS
+case|:
+name|gui_config
+operator|->
+name|filter_tool_use_last_settings
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_FILTER_TOOL_SHOW_COLOR_OPTIONS
 case|:
 name|gui_config
@@ -2354,6 +2387,19 @@ argument_list|,
 name|gui_config
 operator|->
 name|filter_tool_max_recent
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_FILTER_TOOL_USE_LAST_SETTINGS
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|gui_config
+operator|->
+name|filter_tool_use_last_settings
 argument_list|)
 expr_stmt|;
 break|break;
