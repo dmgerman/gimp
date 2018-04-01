@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7d48c0103
+DECL|enum|__anon287a019a0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7d48c0203
+DECL|enum|__anon287a019a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1410,11 +1410,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|parasite_name
-argument_list|)
-expr_stmt|;
 name|str
 operator|=
 name|gimp_parasite_data
@@ -1476,13 +1471,18 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Failed to deserialize symmetry parasite: %s"
+literal|"Failed to deserialize symmetry parasite: %s\n"
+literal|"\t- parasite name: %s\n\t- parasite data: %s\n"
 argument_list|,
 name|error
 operator|->
 name|message
+argument_list|,
+name|parasite_name
+argument_list|,
+name|str
 argument_list|)
 expr_stmt|;
 name|g_error_free
@@ -1500,6 +1500,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|parasite_name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|symmetry
