@@ -6439,7 +6439,10 @@ name|default_config
 operator|=
 name|g_object_ref
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_filter_tool_reset
