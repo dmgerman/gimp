@@ -5236,7 +5236,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Debug Policy:"
+literal|"Debug _policy:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -12798,7 +12798,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bf3e7e50108
+DECL|struct|__anon2ad7625e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13675,7 +13675,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf3e7e50208
+DECL|struct|__anon2ad7625e0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13813,7 +13813,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf3e7e50308
+DECL|struct|__anon2ad7625e0308
 block|{
 DECL|member|tree_label
 specifier|const
