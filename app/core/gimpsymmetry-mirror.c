@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b909910103
+DECL|enum|__anon298bb0590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -982,7 +982,7 @@ name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
-operator|>
+operator|>=
 literal|0.0
 operator|&&
 name|g_value_get_double
@@ -1064,7 +1064,7 @@ name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
-operator|>
+operator|>=
 literal|0.0
 operator|&&
 name|g_value_get_double
