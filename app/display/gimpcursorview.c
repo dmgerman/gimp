@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a3e710103
+DECL|enum|__anon27aaf3ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1764,6 +1764,20 @@ name|color_frame_1
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_FRAME_MODE_PIXEL
+argument_list|)
+expr_stmt|;
+name|gimp_color_frame_set_ellipsize
+argument_list|(
+name|GIMP_COLOR_FRAME
+argument_list|(
+name|view
+operator|->
+name|priv
+operator|->
+name|color_frame_1
+argument_list|)
+argument_list|,
+name|PANGO_ELLIPSIZE_END
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
