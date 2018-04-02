@@ -1273,7 +1273,7 @@ argument_list|)
 argument_list|,
 name|GIMP_ICON_DIALOG_DASHBOARD
 argument_list|,
-name|GIMP_HELP_ERRORS_DIALOG
+name|GIMP_HELP_DASHBOARD_DIALOG
 argument_list|,
 name|dialogs_dashboard_new
 argument_list|,
