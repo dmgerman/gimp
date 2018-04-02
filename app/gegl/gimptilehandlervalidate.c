@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279860790103
+DECL|enum|__anon2b0937630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1133,15 +1133,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpTileHandlerValidate
-modifier|*
-name|validate
-init|=
-name|GIMP_TILE_HANDLER_VALIDATE
-argument_list|(
-name|source
-argument_list|)
-decl_stmt|;
 name|gpointer
 name|retval
 decl_stmt|;
