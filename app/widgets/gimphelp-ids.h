@@ -4838,6 +4838,14 @@ value|"gimp-dashboard-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DASHBOARD_GROUPS
+define|#
+directive|define
+name|GIMP_HELP_DASHBOARD_GROUPS
+value|"gimp-dashboard-groups"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DASHBOARD_UPDATE_INTERVAL
 define|#
 directive|define

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdashboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpmenufactory.h"
 end_include
 
@@ -1034,7 +1040,7 @@ literal|"/dashboard-popup"
 argument_list|,
 literal|"dashboard-menu.xml"
 argument_list|,
-name|NULL
+name|gimp_dashboard_menu_setup
 argument_list|,
 name|NULL
 argument_list|)
