@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3ab140103
+DECL|enum|__anon2b1daa080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3ab140203
+DECL|enum|__anon2b1daa080203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2418,6 +2418,22 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_display_shell_canvas_realize
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+literal|"realize"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_canvas_realize_after
 argument_list|)
 argument_list|,
 name|shell
