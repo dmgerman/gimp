@@ -544,13 +544,13 @@ name|GimpChannel
 modifier|*
 name|gimp_channel_new_from_buffer
 parameter_list|(
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
 parameter_list|,
 specifier|const
 name|gchar

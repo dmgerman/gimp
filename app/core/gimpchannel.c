@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29592bb80103
+DECL|enum|__anon29a11b3d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -7113,16 +7113,16 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new_from_buffer (GeglBuffer * buffer,GimpImage * image,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_channel_new_from_buffer (GimpImage * image,GeglBuffer * buffer,const gchar * name,const GimpRGB * color)
 name|gimp_channel_new_from_buffer
 parameter_list|(
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
 parameter_list|,
 specifier|const
 name|gchar
@@ -7145,9 +7145,9 @@ name|dest
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GEGL_IS_BUFFER
+name|GIMP_IS_IMAGE
 argument_list|(
-name|buffer
+name|image
 argument_list|)
 argument_list|,
 name|NULL
@@ -7155,9 +7155,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE
+name|GEGL_IS_BUFFER
 argument_list|(
-name|image
+name|buffer
 argument_list|)
 argument_list|,
 name|NULL
