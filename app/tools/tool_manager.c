@@ -1475,6 +1475,16 @@ condition|(
 name|tool_manager
 operator|->
 name|active_tool
+operator|&&
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool_manager
+operator|->
+name|active_tool
+operator|->
+name|control
+argument_list|)
 condition|)
 block|{
 name|gimp_tool_set_modifier_state
@@ -3139,7 +3149,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7e7a70108
+DECL|struct|__anon2c2633bf0108
 block|{
 DECL|member|sequence
 specifier|const
