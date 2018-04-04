@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c82a00108
+DECL|struct|__anon29530bd30108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c82a00208
+DECL|struct|__anon29530bd30208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c82a00308
+DECL|struct|__anon29530bd30308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2998,7 +2998,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Error creating PNG read struct while exporting '%s'."
+literal|"Error creating PNG read struct while loading '%s'."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
