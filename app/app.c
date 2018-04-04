@@ -1351,6 +1351,11 @@ argument_list|(
 name|loop
 argument_list|)
 expr_stmt|;
+name|gimp_gegl_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|gimp
