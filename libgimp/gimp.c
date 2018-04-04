@@ -166,6 +166,11 @@ directive|include
 file|"libgimpbase/gimpsignal.h"
 end_include
 
+begin_else
+else|#
+directive|else
+end_else
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -188,11 +193,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_else
-else|#
-directive|else
-end_else
 
 begin_include
 include|#
@@ -343,12 +343,46 @@ name|G_WITH_CYGWIN
 argument_list|)
 end_if
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|STRICT
+end_ifdef
+
+begin_undef
+undef|#
+directive|undef
+name|STRICT
+end_undef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|STRICT
 define|#
 directive|define
 name|STRICT
 end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_WIN32_WINNT
+end_ifdef
+
+begin_undef
+undef|#
+directive|undef
+name|_WIN32_WINNT
+end_undef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|_WIN32_WINNT
@@ -464,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecd4f10103
+DECL|enum|__anon28e6f2ff0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1207,7 +1241,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon28ecd4f10203
+DECL|enum|__anon28e6f2ff0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1274,6 +1308,9 @@ name|p_SetDllDirectoryA
 decl_stmt|;
 name|p_SetDllDirectoryA
 operator|=
+operator|(
+name|t_SetDllDirectoryA
+operator|)
 name|GetProcAddress
 argument_list|(
 name|GetModuleHandle
@@ -1604,6 +1641,9 @@ name|p_SetCurrentProcessExplicitAppUserModelID
 decl_stmt|;
 name|p_SetCurrentProcessExplicitAppUserModelID
 operator|=
+operator|(
+name|t_SetCurrentProcessExplicitAppUserModelID
+operator|)
 name|GetProcAddress
 argument_list|(
 name|GetModuleHandle
@@ -5616,8 +5656,12 @@ name|G_LOG_DOMAIN
 argument_list|,
 name|G_LOG_LEVEL_DEBUG
 argument_list|,
-literal|"Debugging (restart externally): %d"
+literal|"Debugging (restart externally): %ld"
 argument_list|,
+operator|(
+name|long
+name|int
+operator|)
 name|opid
 argument_list|)
 expr_stmt|;
@@ -6919,7 +6963,7 @@ condition|)
 block|{
 name|g_error
 argument_list|(
-literal|"MapViewOfFile error: %d... "
+literal|"MapViewOfFile error: %lu... "
 name|ERRMSG_SHM_FAILED
 argument_list|,
 name|GetLastError
@@ -6932,7 +6976,7 @@ else|else
 block|{
 name|g_error
 argument_list|(
-literal|"OpenFileMapping error: %d... "
+literal|"OpenFileMapping error: %lu... "
 name|ERRMSG_SHM_FAILED
 argument_list|,
 name|GetLastError
