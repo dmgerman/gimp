@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd06750103
+DECL|enum|__anon28fad2080103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd06750203
+DECL|enum|__anon28fad2080203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -348,7 +348,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd06750303
+DECL|enum|__anon28fad2080303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -592,7 +592,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28dd0675040a
+DECL|union|__anon28fad208040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -604,7 +604,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon28dd06750508
+DECL|struct|__anon28fad2080508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -619,7 +619,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28dd06750608
+DECL|struct|__anon28fad2080608
 block|{
 DECL|member|antecedent
 name|gint
@@ -7172,6 +7172,10 @@ expr_stmt|;
 if|if
 condition|(
 name|prev_clock
+operator|&&
+name|curr_clock
+operator|!=
+name|prev_clock
 condition|)
 block|{
 name|variable_data
@@ -7407,6 +7411,10 @@ name|dwLowDateTime
 expr_stmt|;
 if|if
 condition|(
+name|prev_time
+operator|&&
+name|curr_time
+operator|!=
 name|prev_time
 condition|)
 block|{
