@@ -7188,7 +7188,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* make sure the values in the file correspond to the values    *  calculated when the TileManager was created.    */
+comment|/* make sure the values in the file correspond to the values    *  calculated when the GeglBuffer was created.    */
 if|if
 condition|(
 name|width
@@ -7573,7 +7573,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* get the tile from the tile manager */
+comment|/* get buffer rectangle to write to */
 name|gimp_gegl_buffer_get_tile_rect
 argument_list|(
 name|buffer
