@@ -124,7 +124,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  maximal width of the string holding the cursor-coordinates  */
+comment|/*  maximal width of the string holding the cursor-coordinates   */
 end_comment
 
 begin_define
@@ -136,7 +136,7 @@ value|256
 end_define
 
 begin_comment
-comment|/*  the spacing of the hbox                                     */
+comment|/*  the spacing of the hbox                                      */
 end_comment
 
 begin_define
@@ -148,7 +148,7 @@ value|1
 end_define
 
 begin_comment
-comment|/*  spacing between the icon and the statusbar label            */
+comment|/*  spacing between the icon and the statusbar label             */
 end_comment
 
 begin_define
@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_comment
-comment|/*  timeout (in milliseconds) for temporary statusbar messages  */
+comment|/*  timeout (in milliseconds) for temporary statusbar messages   */
 end_comment
 
 begin_define
@@ -169,6 +169,18 @@ define|#
 directive|define
 name|MESSAGE_TIMEOUT
 value|8000
+end_define
+
+begin_comment
+comment|/*  minimal interval (in microseconds) between progress updates  */
+end_comment
+
+begin_define
+DECL|macro|MIN_PROGRESS_UPDATE_INTERVAL
+define|#
+directive|define
+name|MIN_PROGRESS_UPDATE_INTERVAL
+value|50000
 end_define
 
 begin_typedef
@@ -2278,6 +2290,13 @@ name|progress_value
 operator|=
 literal|0.0
 expr_stmt|;
+name|statusbar
+operator|->
+name|progress_last_update_time
+operator|=
+name|g_get_monotonic_time
+argument_list|()
+expr_stmt|;
 name|gimp_statusbar_push
 argument_list|(
 name|statusbar
@@ -2697,6 +2716,23 @@ operator|->
 name|progress_active
 condition|)
 block|{
+name|guint64
+name|time
+init|=
+name|g_get_monotonic_time
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|time
+operator|-
+name|statusbar
+operator|->
+name|progress_last_update_time
+operator|>=
+name|MIN_PROGRESS_UPDATE_INTERVAL
+condition|)
+block|{
 name|GtkWidget
 modifier|*
 name|bar
@@ -2707,6 +2743,9 @@ name|progressbar
 decl_stmt|;
 name|GtkAllocation
 name|allocation
+decl_stmt|;
+name|gdouble
+name|diff
 decl_stmt|;
 name|gtk_widget_get_allocation
 argument_list|(
@@ -2722,16 +2761,10 @@ name|progress_value
 operator|=
 name|percentage
 expr_stmt|;
-comment|/* only update the progress bar if this causes a visible change */
-if|if
-condition|(
+name|diff
+operator|=
 name|fabs
 argument_list|(
-name|allocation
-operator|.
-name|width
-operator|*
-operator|(
 name|percentage
 operator|-
 name|gtk_progress_bar_get_fraction
@@ -2741,12 +2774,26 @@ argument_list|(
 name|bar
 argument_list|)
 argument_list|)
-operator|)
 argument_list|)
-operator|>
+expr_stmt|;
+comment|/* only update the progress bar if this causes a visible change */
+if|if
+condition|(
+name|allocation
+operator|.
+name|width
+operator|*
+name|diff
+operator|>=
 literal|1.0
 condition|)
 block|{
+name|statusbar
+operator|->
+name|progress_last_update_time
+operator|=
+name|time
+expr_stmt|;
 name|gtk_progress_bar_set_fraction
 argument_list|(
 name|GTK_PROGRESS_BAR
@@ -2762,6 +2809,7 @@ argument_list|(
 name|bar
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -2831,6 +2879,23 @@ operator|->
 name|progress_active
 condition|)
 block|{
+name|guint64
+name|time
+init|=
+name|g_get_monotonic_time
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|time
+operator|-
+name|statusbar
+operator|->
+name|progress_last_update_time
+operator|>=
+name|MIN_PROGRESS_UPDATE_INTERVAL
+condition|)
+block|{
 name|GtkWidget
 modifier|*
 name|bar
@@ -2839,6 +2904,12 @@ name|statusbar
 operator|->
 name|progressbar
 decl_stmt|;
+name|statusbar
+operator|->
+name|progress_last_update_time
+operator|=
+name|time
+expr_stmt|;
 name|gtk_progress_bar_pulse
 argument_list|(
 name|GTK_PROGRESS_BAR
@@ -2852,6 +2923,7 @@ argument_list|(
 name|bar
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

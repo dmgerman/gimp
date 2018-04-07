@@ -233,6 +233,10 @@ DECL|member|progress_value
 name|gdouble
 name|progress_value
 decl_stmt|;
+DECL|member|progress_last_update_time
+name|guint64
+name|progress_last_update_time
+decl_stmt|;
 block|}
 struct|;
 end_struct
