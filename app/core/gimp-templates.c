@@ -529,7 +529,7 @@ name|dpi
 argument_list|,
 literal|"ppi"
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|g_print
