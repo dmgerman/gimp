@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -93,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b532dbb0103
+DECL|enum|__anon2b2dc9580103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
