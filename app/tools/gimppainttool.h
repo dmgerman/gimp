@@ -217,6 +217,10 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+DECL|member|use_paint_thread
+name|gboolean
+name|use_paint_thread
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -273,6 +273,12 @@ name|get_outline
 operator|=
 name|gimp_mybrush_tool_get_outline
 expr_stmt|;
+name|paint_tool_class
+operator|->
+name|use_paint_thread
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
