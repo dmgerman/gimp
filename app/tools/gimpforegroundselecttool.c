@@ -1308,6 +1308,16 @@ name|display
 operator|=
 name|display
 expr_stmt|;
+comment|/*  enable double click for the FreeSelectTool, because it may have been    *  disabled if the tool has switched to MATTING_STATE_PAINT_TRIMAP,    *  in gimp_foreground_select_tool_set_trimap().    */
+name|gimp_tool_control_set_wants_double_click
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|fg_select
 operator|->
 name|state
@@ -4301,6 +4311,16 @@ name|GIMP_TOOL_CURSOR_PAINTBRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggled
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* disable double click in paint trimap state */
+name|gimp_tool_control_set_wants_double_click
 argument_list|(
 name|tool
 operator|->
