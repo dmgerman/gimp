@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-gegl-mask-combine.h"
 end_include
 
@@ -1307,6 +1313,11 @@ decl_stmt|;
 name|GeglRectangle
 name|rect
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|add_on_format
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1442,6 +1453,32 @@ name|y
 operator|-=
 name|off_y
 expr_stmt|;
+comment|/*  This is a hack: all selections/layer masks/channels are always    *  linear except for channels in 8-bit images. We don't want these    *  "Y' u8" to be converted to "Y float" because that would cause a    *  gamma canversion and give unexpected results for    *  "add/subtract/etc channel from selection". Instead, use all    *  channel values "as-is", which makes no differce except in the    *  8-bit case where we need it.    *    *  See https://bugzilla.gnome.org/show_bug.cgi?id=791519    */
+if|if
+condition|(
+name|gimp_babl_format_get_linear
+argument_list|(
+name|gegl_buffer_get_format
+argument_list|(
+name|add_on
+argument_list|)
+argument_list|)
+condition|)
+name|add_on_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+expr_stmt|;
+else|else
+name|add_on_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' float"
+argument_list|)
+expr_stmt|;
 name|gegl_buffer_iterator_add
 argument_list|(
 name|iter
@@ -1453,10 +1490,7 @@ name|rect
 argument_list|,
 literal|0
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y float"
-argument_list|)
+name|add_on_format
 argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,

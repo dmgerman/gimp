@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon296aa1200103
+DECL|enum|__anon2906959f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296aa1200203
+DECL|enum|__anon2906959f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7852,6 +7852,9 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpPrecision
+name|precision
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -7862,6 +7865,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|precision
+operator|=
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|precision
+operator|==
+name|GIMP_PRECISION_U8_GAMMA
+condition|)
 return|return
 name|gimp_image_get_format
 argument_list|(
@@ -7875,6 +7891,12 @@ name|image
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+return|;
+return|return
+name|gimp_babl_mask_format
+argument_list|(
+name|precision
 argument_list|)
 return|;
 block|}
