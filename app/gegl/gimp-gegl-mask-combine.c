@@ -1316,6 +1316,11 @@ decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
+name|mask_format
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
 name|add_on_format
 decl_stmt|;
 name|gint
@@ -1420,6 +1425,32 @@ name|height
 operator|=
 name|h
 expr_stmt|;
+comment|/*  See below: this additional hack is only needed for the    *  gimp-channel-combine-masks procedure, it's the only place that    *  allows to combine arbitrary channels with each other.    */
+if|if
+condition|(
+name|gimp_babl_format_get_linear
+argument_list|(
+name|gegl_buffer_get_format
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+condition|)
+name|mask_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y float"
+argument_list|)
+expr_stmt|;
+else|else
+name|mask_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' float"
+argument_list|)
+expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -1431,10 +1462,7 @@ name|rect
 argument_list|,
 literal|0
 argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y float"
-argument_list|)
+name|mask_format
 argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
