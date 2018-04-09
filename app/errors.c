@@ -1128,10 +1128,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: %s: %s\n"
 argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
 name|full_prog_name
-argument_list|)
 argument_list|,
 name|reason
 argument_list|,
