@@ -1266,7 +1266,7 @@ operator|->
 name|region_mask
 argument_list|)
 argument_list|,
-name|GIMP_BOUNDARY_HALF_WAY_LINEAR
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|region_sel

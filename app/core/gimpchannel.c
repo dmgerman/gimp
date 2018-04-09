@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a11b3d0103
+DECL|enum|__anon2b5ca5080103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -4949,7 +4949,7 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
-name|GIMP_BOUNDARY_HALF_WAY_LINEAR
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|channel
@@ -5029,7 +5029,7 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
-name|GIMP_BOUNDARY_HALF_WAY_LINEAR
+name|GIMP_BOUNDARY_HALF_WAY
 argument_list|,
 operator|&
 name|channel
