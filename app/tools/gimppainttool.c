@@ -570,12 +570,6 @@ name|draw
 operator|=
 name|gimp_paint_tool_draw
 expr_stmt|;
-name|klass
-operator|->
-name|use_paint_thread
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 end_function
 
