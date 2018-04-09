@@ -181,6 +181,16 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
+DECL|member|display
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 block|}
 struct|;
 end_struct
