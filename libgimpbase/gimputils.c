@@ -3249,7 +3249,7 @@ literal|"-batch"
 block|,
 literal|"-ex"
 block|,
-literal|"backtrace full"
+literal|"thread apply all backtrace"
 block|,
 operator|(
 name|gchar
