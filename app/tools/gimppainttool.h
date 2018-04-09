@@ -191,6 +191,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+DECL|member|outline
+name|GimpCanvasItem
+modifier|*
+name|outline
+decl_stmt|;
 block|}
 struct|;
 end_struct

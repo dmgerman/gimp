@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27caebff0103
+DECL|enum|__anon2be5a3350103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -239,7 +239,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27caebff0203
+DECL|enum|__anon2be5a3350203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7165,6 +7165,38 @@ return|;
 block|}
 return|return
 name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_is_painting (GimpDrawable * drawable)
+name|gimp_drawable_is_painting
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|drawable
+operator|->
+name|private
+operator|->
+name|paint_count
+operator|>
+literal|0
 return|;
 block|}
 end_function
