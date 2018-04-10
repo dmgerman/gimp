@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baacc280103
+DECL|enum|__anon2be095ef0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1305,7 +1305,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2baacc280203
+DECL|enum|__anon2be095ef0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -6057,6 +6057,11 @@ block|}
 endif|#
 directive|endif
 comment|/* Do not end with gimp_quit().    * We want the plug-in to continue its normal crash course, otherwise    * we won't get the "Plug-in crashed" error in GIMP.    */
+name|exit
+argument_list|(
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6355,6 +6360,11 @@ block|}
 break|break;
 block|}
 comment|/* Do not end with gimp_quit().    * We want the plug-in to continue its normal crash course, otherwise    * we won't get the "Plug-in crashed" error in GIMP.    */
+name|exit
+argument_list|(
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
