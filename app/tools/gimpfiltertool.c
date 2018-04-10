@@ -1088,6 +1088,15 @@ operator||
 name|GIMP_DIRTY_ACTIVE_DRAWABLE
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_active_modifiers
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_TOOL_ACTIVE_MODIFIERS_SEPARATE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
