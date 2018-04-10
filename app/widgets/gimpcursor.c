@@ -556,6 +556,10 @@ literal|"modifier-resize.png"
 block|}
 block|,
 block|{
+literal|"modifier-rotate.png"
+block|}
+block|,
+block|{
 literal|"modifier-control.png"
 block|}
 block|,
