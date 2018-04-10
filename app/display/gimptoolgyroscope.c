@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a88a10103
+DECL|enum|__anon27b486820103
 block|{
 DECL|enumerator|MODE_NONE
 name|MODE_NONE
@@ -110,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a88a10203
+DECL|enum|__anon27b486820203
 block|{
 DECL|enumerator|CONSTRAINT_NONE
 name|CONSTRAINT_NONE
@@ -131,7 +131,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a88a10303
+DECL|enum|__anon27b486820303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2814,11 +2814,13 @@ operator||
 name|GDK_MOD1_MASK
 operator|)
 operator|*
+operator|(
 name|private
 operator|->
 name|mode
 operator|==
 name|MODE_NONE
+operator|)
 operator|)
 operator||
 name|gimp_get_toggle_behavior_mask
