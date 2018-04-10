@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-panorama-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-recursive-transform.h"
 end_include
 
@@ -1848,7 +1854,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a17f9800108
+DECL|struct|__anon2b15f8e10108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1906,6 +1912,12 @@ block|{
 literal|"GimpGegl-gegl-diffraction-patterns-config"
 block|,
 name|_gimp_prop_gui_new_diffraction_patterns
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-panorama-projection-config"
+block|,
+name|_gimp_prop_gui_new_panorama_projection
 block|}
 block|,
 block|{
