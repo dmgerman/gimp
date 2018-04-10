@@ -560,6 +560,10 @@ literal|"modifier-rotate.png"
 block|}
 block|,
 block|{
+literal|"modifier-zoom.png"
+block|}
+block|,
+block|{
 literal|"modifier-control.png"
 block|}
 block|,
