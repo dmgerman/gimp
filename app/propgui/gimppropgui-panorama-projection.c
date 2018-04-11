@@ -148,7 +148,7 @@ argument_list|,
 name|CLAMP
 argument_list|(
 literal|100.0
-operator|/
+operator|*
 name|zoom
 argument_list|,
 literal|0.01
@@ -278,9 +278,9 @@ argument_list|,
 operator|-
 name|spin
 argument_list|,
-literal|100.0
-operator|/
 name|zoom
+operator|/
+literal|100.0
 argument_list|,
 name|inverse
 argument_list|)
