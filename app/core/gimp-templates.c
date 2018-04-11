@@ -523,13 +523,13 @@ condition|(
 name|dpi
 condition|)
 block|{
-name|strncpy
+name|memcpy
 argument_list|(
 name|dpi
 argument_list|,
 literal|"ppi"
 argument_list|,
-literal|4
+literal|3
 argument_list|)
 expr_stmt|;
 name|g_print
