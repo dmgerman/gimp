@@ -607,6 +607,13 @@ decl_stmt|;
 name|GimpRGB
 name|foreground
 decl_stmt|;
+name|gimp_symmetry_set_stateful
+argument_list|(
+name|sym
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
 name|context
@@ -821,6 +828,13 @@ break|break;
 case|case
 name|GIMP_PAINT_STATE_FINISH
 case|:
+name|gimp_symmetry_set_stateful
+argument_list|(
+name|sym
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 block|}
@@ -2309,7 +2323,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon286d705f0103
+DECL|enum|__anon2bc9fd240103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

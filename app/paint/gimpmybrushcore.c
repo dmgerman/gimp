@@ -803,6 +803,13 @@ operator|&
 name|fg
 argument_list|)
 expr_stmt|;
+name|gimp_symmetry_set_stateful
+argument_list|(
+name|sym
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|mybrush
 operator|->
 name|private
@@ -888,6 +895,13 @@ break|break;
 case|case
 name|GIMP_PAINT_STATE_FINISH
 case|:
+name|gimp_symmetry_set_stateful
+argument_list|(
+name|sym
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|mypaint_surface_unref
 argument_list|(
 operator|(

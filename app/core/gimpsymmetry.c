@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a019a0103
+DECL|enum|__anon2990d85c0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a019a0203
+DECL|enum|__anon2990d85c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -898,6 +898,32 @@ end_function
 begin_comment
 comment|/***** Public Functions *****/
 end_comment
+
+begin_comment
+comment|/**  * gimp_symmetry_set_stateful:  * @sym:      the #GimpSymmetry  * @stateful: whether the symmetry should be stateful or stateless.  *  * By default, symmetry is made stateless, which means in particular  * that the size of points can change from one stroke to the next, and  * in particular you cannot map the coordinates from a stroke to the  * next. I.e. stroke N at time T+1 is not necessarily the continuation  * of stroke N at time T.  * To obtain corresponding strokes, stateful tools, such as MyPaint  * brushes or the ink tool, need to run this function. They should reset  * to stateless behavior once finished painting.  *  * One of the first consequence of being stateful is that the number of  * strokes cannot be changed, so more strokes than possible on canvas  * may be computed, and oppositely it will be possible to end up in  * cases with missing strokes (e.g. a tiling, theoretically infinite,  * won't be for the ink tool if one draws too far out of canvas).  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_symmetry_set_stateful (GimpSymmetry * symmetry,gboolean stateful)
+name|gimp_symmetry_set_stateful
+parameter_list|(
+name|GimpSymmetry
+modifier|*
+name|symmetry
+parameter_list|,
+name|gboolean
+name|stateful
+parameter_list|)
+block|{
+name|symmetry
+operator|->
+name|stateful
+operator|=
+name|stateful
+expr_stmt|;
+block|}
+end_function
 
 begin_comment
 comment|/**  * gimp_symmetry_set_origin:  * @sym:      the #GimpSymmetry  * @drawable: the #GimpDrawable where painting will happen  * @origin:   new base coordinates.  *  * Set the symmetry to new origin coordinates and drawable.  **/

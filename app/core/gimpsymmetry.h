@@ -143,6 +143,10 @@ name|GList
 modifier|*
 name|strokes
 decl_stmt|;
+DECL|member|stateful
+name|gboolean
+name|stateful
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -242,6 +246,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_symmetry_set_stateful
+parameter_list|(
+name|GimpSymmetry
+modifier|*
+name|symmetry
+parameter_list|,
+name|gboolean
+name|stateful
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
