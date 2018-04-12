@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c013d00103
+DECL|enum|__anon28ca71080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -800,6 +800,22 @@ operator|=
 name|g_value_get_enum
 argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+comment|/* Expected default for corrective transform is to see the        * original image only.        */
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"show-preview"
+argument_list|,
+name|options
+operator|->
+name|direction
+operator|!=
+name|GIMP_TRANSFORM_BACKWARD
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2156,7 +2172,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon29c013d00208
+DECL|struct|__anon28ca71080208
 block|{
 DECL|member|mod
 name|GdkModifierType
