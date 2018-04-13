@@ -117,6 +117,10 @@ DECL|member|gradient_reverse
 name|gboolean
 name|gradient_reverse
 decl_stmt|;
+DECL|member|gradient_blend_color_space
+name|GimpGradientBlendColorSpace
+name|gradient_blend_color_space
+decl_stmt|;
 DECL|member|gradient_repeat
 name|GimpRepeatMode
 name|gradient_repeat

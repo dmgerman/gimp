@@ -2218,6 +2218,10 @@ name|editor
 operator|->
 name|control_sel_r
 argument_list|,
+name|editor
+operator|->
+name|blend_color_space
+argument_list|,
 operator|&
 name|editor
 operator|->
@@ -3823,6 +3827,10 @@ argument_list|,
 name|editor
 operator|->
 name|split_parts
+argument_list|,
+name|editor
+operator|->
+name|blend_color_space
 argument_list|,
 operator|&
 name|editor

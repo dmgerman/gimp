@@ -395,7 +395,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpGradient,gimp_gradient,GIMP_TYPE_DATA,G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,gimp_gradient_tagged_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpGradient
@@ -416,9 +415,33 @@ name|parent_class
 value|gimp_gradient_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|fish_srgb_to_linear_rgb
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|fish_linear_rgb_to_srgb
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|fish_linear_rgb_to_srgb
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_gradient_class_init (GimpGradientClass * klass)
 name|gimp_gradient_class_init
 parameter_list|(
 name|GimpGradientClass
@@ -521,6 +544,36 @@ operator|->
 name|compare
 operator|=
 name|gimp_gradient_compare
+expr_stmt|;
+name|fish_srgb_to_linear_rgb
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"R'G'B' double"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGB double"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|fish_linear_rgb_to_srgb
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format
+argument_list|(
+literal|"RGBA double"
+argument_list|)
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B'A double"
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -916,6 +969,8 @@ argument_list|,
 name|cur_x
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 argument_list|,
 operator|&
 name|color
@@ -1731,13 +1786,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_color_at:  * @gradient: a gradient  * @context:  a context  * @seg:      a segment to seed the search with (or %NULL)  * @pos:      position in the gradient (between 0.0 and 1.0)  * @reverse:  when %TRUE, use the reversed gradient  * @color:    returns the color  *  * If you are iterating over an gradient, you should pass the the  * return value from the last call for @seg.  *  * Return value: the gradient segment the color is from  **/
+comment|/**  * gimp_gradient_get_color_at:  * @gradient:          a gradient  * @context:           a context  * @seg:               a segment to seed the search with (or %NULL)  * @pos:               position in the gradient (between 0.0 and 1.0)  * @reverse:           when %TRUE, use the reversed gradient  * @blend_color_space: color space to use for blending RGB segments  * @color:             returns the color  *  * If you are iterating over an gradient, you should pass the the  * return value from the last call for @seg.  *  * Return value: the gradient segment the color is from  **/
 end_comment
 
 begin_function
 name|GimpGradientSegment
 modifier|*
-DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * seg,gdouble pos,gboolean reverse,GimpRGB * color)
+DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * seg,gdouble pos,gboolean reverse,GimpGradientBlendColorSpace blend_color_space,GimpRGB * color)
 name|gimp_gradient_get_color_at
 parameter_list|(
 name|GimpGradient
@@ -1757,6 +1812,9 @@ name|pos
 parameter_list|,
 name|gboolean
 name|reverse
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -2010,6 +2068,40 @@ operator|==
 name|GIMP_GRADIENT_SEGMENT_RGB
 condition|)
 block|{
+if|if
+condition|(
+name|blend_color_space
+operator|==
+name|GIMP_GRADIENT_BLEND_RGB_LINEAR
+condition|)
+block|{
+name|babl_process
+argument_list|(
+name|fish_srgb_to_linear_rgb
+argument_list|,
+operator|&
+name|left_color
+argument_list|,
+operator|&
+name|left_color
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|babl_process
+argument_list|(
+name|fish_srgb_to_linear_rgb
+argument_list|,
+operator|&
+name|right_color
+argument_list|,
+operator|&
+name|right_color
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 name|rgb
 operator|.
 name|r
@@ -2070,6 +2162,27 @@ operator|)
 operator|*
 name|factor
 expr_stmt|;
+if|if
+condition|(
+name|blend_color_space
+operator|==
+name|GIMP_GRADIENT_BLEND_RGB_LINEAR
+condition|)
+block|{
+name|babl_process
+argument_list|(
+name|fish_linear_rgb_to_srgb
+argument_list|,
+operator|&
+name|rgb
+argument_list|,
+operator|&
+name|rgb
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -2443,7 +2556,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_split_at (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * seg,gdouble pos,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
+DECL|function|gimp_gradient_split_at (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * seg,gdouble pos,GimpGradientBlendColorSpace blend_color_space,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
 name|gimp_gradient_split_at
 parameter_list|(
 name|GimpGradient
@@ -2460,6 +2573,9 @@ name|seg
 parameter_list|,
 name|gdouble
 name|pos
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -2537,6 +2653,8 @@ argument_list|,
 name|pos
 argument_list|,
 name|FALSE
+argument_list|,
+name|blend_color_space
 argument_list|,
 operator|&
 name|color
@@ -3160,7 +3278,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_segment_split_midpoint (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * lseg,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
+DECL|function|gimp_gradient_segment_split_midpoint (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * lseg,GimpGradientBlendColorSpace blend_color_space,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
 name|gimp_gradient_segment_split_midpoint
 parameter_list|(
 name|GimpGradient
@@ -3174,6 +3292,9 @@ parameter_list|,
 name|GimpGradientSegment
 modifier|*
 name|lseg
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -3235,6 +3356,8 @@ name|lseg
 operator|->
 name|middle
 argument_list|,
+name|blend_color_space
+argument_list|,
 name|newl
 argument_list|,
 name|newr
@@ -3245,7 +3368,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_segment_split_uniform (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * lseg,gint parts,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
+DECL|function|gimp_gradient_segment_split_uniform (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * lseg,gint parts,GimpGradientBlendColorSpace blend_color_space,GimpGradientSegment ** newl,GimpGradientSegment ** newr)
 name|gimp_gradient_segment_split_uniform
 parameter_list|(
 name|GimpGradient
@@ -3262,6 +3385,9 @@ name|lseg
 parameter_list|,
 name|gint
 name|parts
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -3462,6 +3588,8 @@ name|left
 argument_list|,
 name|FALSE
 argument_list|,
+name|blend_color_space
+argument_list|,
 operator|&
 name|seg
 operator|->
@@ -3481,6 +3609,8 @@ operator|->
 name|right
 argument_list|,
 name|FALSE
+argument_list|,
+name|blend_color_space
 argument_list|,
 operator|&
 name|seg
@@ -6634,7 +6764,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_segment_range_split_midpoint (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * start_seg,GimpGradientSegment * end_seg,GimpGradientSegment ** final_start_seg,GimpGradientSegment ** final_end_seg)
+DECL|function|gimp_gradient_segment_range_split_midpoint (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * start_seg,GimpGradientSegment * end_seg,GimpGradientBlendColorSpace blend_color_space,GimpGradientSegment ** final_start_seg,GimpGradientSegment ** final_end_seg)
 name|gimp_gradient_segment_range_split_midpoint
 parameter_list|(
 name|GimpGradient
@@ -6652,6 +6782,9 @@ parameter_list|,
 name|GimpGradientSegment
 modifier|*
 name|end_seg
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -6724,6 +6857,8 @@ name|context
 argument_list|,
 name|seg
 argument_list|,
+name|blend_color_space
+argument_list|,
 operator|&
 name|lseg
 argument_list|,
@@ -6776,7 +6911,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_segment_range_split_uniform (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * start_seg,GimpGradientSegment * end_seg,gint parts,GimpGradientSegment ** final_start_seg,GimpGradientSegment ** final_end_seg)
+DECL|function|gimp_gradient_segment_range_split_uniform (GimpGradient * gradient,GimpContext * context,GimpGradientSegment * start_seg,GimpGradientSegment * end_seg,gint parts,GimpGradientBlendColorSpace blend_color_space,GimpGradientSegment ** final_start_seg,GimpGradientSegment ** final_end_seg)
 name|gimp_gradient_segment_range_split_uniform
 parameter_list|(
 name|GimpGradient
@@ -6797,6 +6932,9 @@ name|end_seg
 parameter_list|,
 name|gint
 name|parts
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -6903,6 +7041,8 @@ argument_list|,
 name|seg
 argument_list|,
 name|parts
+argument_list|,
+name|blend_color_space
 argument_list|,
 operator|&
 name|lseg

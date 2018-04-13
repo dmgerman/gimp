@@ -293,6 +293,11 @@ specifier|const
 name|gchar
 modifier|*
 name|reverse_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blend_color_space_prop
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -332,6 +337,11 @@ specifier|const
 name|gchar
 modifier|*
 name|reverse_prop
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blend_color_space_prop
 parameter_list|,
 specifier|const
 name|gchar

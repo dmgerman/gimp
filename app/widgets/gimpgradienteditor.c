@@ -3005,6 +3005,10 @@ name|context
 argument_list|,
 name|seg
 argument_list|,
+name|editor
+operator|->
+name|blend_color_space
+argument_list|,
 operator|&
 name|lseg
 argument_list|,
@@ -4026,6 +4030,8 @@ name|xpos
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|rgb
 argument_list|)
@@ -4251,6 +4257,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|xpos
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

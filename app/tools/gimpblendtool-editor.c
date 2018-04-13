@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fc73d10103
+DECL|enum|__anon2b5fab5f0103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc73d10208
+DECL|struct|__anon2b5fab5f0208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -3594,6 +3594,15 @@ argument_list|(
 name|blend_tool
 argument_list|)
 decl_stmt|;
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+init|=
+name|GIMP_PAINT_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+decl_stmt|;
 name|GimpGradientSegment
 modifier|*
 name|seg
@@ -3629,6 +3638,12 @@ argument_list|,
 name|NULL
 argument_list|,
 name|value
+argument_list|,
+name|paint_options
+operator|->
+name|gradient_options
+operator|->
+name|gradient_blend_color_space
 argument_list|,
 operator|&
 name|seg

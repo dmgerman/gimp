@@ -477,6 +477,8 @@ name|pos
 argument_list|,
 name|reverse
 argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
+argument_list|,
 operator|&
 name|color
 argument_list|)
@@ -740,6 +742,8 @@ operator|*
 name|positions
 argument_list|,
 name|reverse
+argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 argument_list|,
 operator|&
 name|color
@@ -1083,6 +1087,8 @@ argument_list|,
 name|pos
 argument_list|,
 name|reverse
+argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 argument_list|,
 operator|&
 name|color

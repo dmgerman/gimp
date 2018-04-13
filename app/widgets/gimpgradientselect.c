@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc0c490103
+DECL|enum|__anon2a58c4f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -608,6 +608,8 @@ argument_list|,
 name|pos
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 argument_list|,
 operator|&
 name|color

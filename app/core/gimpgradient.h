@@ -250,6 +250,9 @@ parameter_list|,
 name|gboolean
 name|reverse
 parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
@@ -290,6 +293,9 @@ name|seg
 parameter_list|,
 name|gdouble
 name|pos
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -422,6 +428,9 @@ name|GimpGradientSegment
 modifier|*
 name|lseg
 parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
+parameter_list|,
 name|GimpGradientSegment
 modifier|*
 modifier|*
@@ -453,6 +462,9 @@ name|lseg
 parameter_list|,
 name|gint
 name|parts
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*
@@ -1010,6 +1022,9 @@ name|GimpGradientSegment
 modifier|*
 name|end_seg
 parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
+parameter_list|,
 name|GimpGradientSegment
 modifier|*
 modifier|*
@@ -1045,6 +1060,9 @@ name|end_seg
 parameter_list|,
 name|gint
 name|parts
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|GimpGradientSegment
 modifier|*

@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ebc7f40103
+DECL|enum|__anon2c42e3870103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -244,6 +244,10 @@ name|gdouble
 name|control_orig_pos
 decl_stmt|;
 comment|/* Original click position when dragging */
+DECL|member|blend_color_space
+name|GimpGradientBlendColorSpace
+name|blend_color_space
+decl_stmt|;
 comment|/*  Split uniformly dialog  */
 DECL|member|split_parts
 name|gint
