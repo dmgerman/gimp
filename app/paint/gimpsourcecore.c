@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288eb89e0103
+DECL|enum|__anon27b9024f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1582,11 +1582,6 @@ operator|+=
 name|off_y
 expr_stmt|;
 block|}
-name|gimp_pickable_flush
-argument_list|(
-name|src_pickable
-argument_list|)
-expr_stmt|;
 block|}
 name|gimp_brush_core_eval_transform_dynamics
 argument_list|(
