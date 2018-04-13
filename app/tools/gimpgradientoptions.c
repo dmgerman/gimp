@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpblendoptions.h"
+file|"gimpgradientoptions.h"
 end_include
 
 begin_include
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d465810103
+DECL|enum|__anon2a333d0f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -137,7 +137,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_options_set_property
+name|gimp_gradient_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -161,7 +161,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_options_get_property
+name|gimp_gradient_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -184,9 +184,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|blend_options_repeat_gradient_type_notify
+name|gradient_options_repeat_gradient_type_notify
 parameter_list|(
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 parameter_list|,
@@ -204,9 +204,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|blend_options_metric_gradient_type_notify
+name|gradient_options_metric_gradient_type_notify
 parameter_list|(
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 parameter_list|,
@@ -222,12 +222,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpBlendOptions,gimp_blend_options,GIMP_TYPE_PAINT_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpGradientOptions,gimp_gradient_options,GIMP_TYPE_PAINT_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpBlendOptions
+argument|GimpGradientOptions
 argument_list|,
-argument|gimp_blend_options
+argument|gimp_gradient_options
 argument_list|,
 argument|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
@@ -236,9 +236,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_blend_options_class_init
+name|gimp_gradient_options_class_init
 parameter_list|(
-name|GimpBlendOptionsClass
+name|GimpGradientOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -256,13 +256,13 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_blend_options_set_property
+name|gimp_gradient_options_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_blend_options_get_property
+name|gimp_gradient_options_get_property
 expr_stmt|;
 name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
@@ -497,10 +497,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_options_init (GimpBlendOptions * options)
-name|gimp_blend_options_init
+DECL|function|gimp_gradient_options_init (GimpGradientOptions * options)
+name|gimp_gradient_options_init
 parameter_list|(
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 parameter_list|)
@@ -510,8 +510,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_blend_options_set_property
+DECL|function|gimp_gradient_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_gradient_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -530,11 +530,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 init|=
-name|GIMP_BLEND_OPTIONS
+name|GIMP_GRADIENT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -697,8 +697,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_blend_options_get_property
+DECL|function|gimp_gradient_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_gradient_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -716,11 +716,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 init|=
-name|GIMP_BLEND_OPTIONS
+name|GIMP_GRADIENT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -883,8 +883,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_blend_options_gui (GimpToolOptions * tool_options)
-name|gimp_blend_options_gui
+DECL|function|gimp_gradient_options_gui (GimpToolOptions * tool_options)
+name|gimp_gradient_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -909,11 +909,11 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 init|=
-name|GIMP_BLEND_OPTIONS
+name|GIMP_GRADIENT_OPTIONS
 argument_list|(
 name|tool_options
 argument_list|)
@@ -1218,13 +1218,13 @@ literal|"notify::gradient-type"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|blend_options_metric_gradient_type_notify
+name|gradient_options_metric_gradient_type_notify
 argument_list|)
 argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
-name|blend_options_metric_gradient_type_notify
+name|gradient_options_metric_gradient_type_notify
 argument_list|(
 name|options
 argument_list|,
@@ -1300,13 +1300,13 @@ literal|"notify::gradient-type"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|blend_options_repeat_gradient_type_notify
+name|gradient_options_repeat_gradient_type_notify
 argument_list|)
 argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
-name|blend_options_repeat_gradient_type_notify
+name|gradient_options_repeat_gradient_type_notify
 argument_list|(
 name|options
 argument_list|,
@@ -1755,10 +1755,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_options_repeat_gradient_type_notify (GimpBlendOptions * options,GParamSpec * pspec,GtkWidget * repeat_combo)
-name|blend_options_repeat_gradient_type_notify
+DECL|function|gradient_options_repeat_gradient_type_notify (GimpGradientOptions * options,GParamSpec * pspec,GtkWidget * repeat_combo)
+name|gradient_options_repeat_gradient_type_notify
 parameter_list|(
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 parameter_list|,
@@ -1788,10 +1788,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_options_metric_gradient_type_notify (GimpBlendOptions * options,GParamSpec * pspec,GtkWidget * repeat_combo)
-name|blend_options_metric_gradient_type_notify
+DECL|function|gradient_options_metric_gradient_type_notify (GimpGradientOptions * options,GParamSpec * pspec,GtkWidget * repeat_combo)
+name|gradient_options_metric_gradient_type_notify
 parameter_list|(
-name|GimpBlendOptions
+name|GimpGradientOptions
 modifier|*
 name|options
 parameter_list|,

@@ -346,7 +346,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d455f90103
+DECL|enum|__anon29fe3e660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1600,7 +1600,7 @@ name|gradient_options
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 argument_list|)
 expr_stmt|;
 name|options
@@ -1709,7 +1709,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 argument_list|,
 name|options
 operator|->
@@ -1786,7 +1786,7 @@ name|options
 operator|->
 name|jitter_options
 decl_stmt|;
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 modifier|*
 name|gradient_options
 init|=
@@ -2343,7 +2343,7 @@ name|options
 operator|->
 name|jitter_options
 decl_stmt|;
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 modifier|*
 name|gradient_options
 init|=
@@ -3445,7 +3445,7 @@ name|GIMP_DYNAMICS_OUTPUT_COLOR
 argument_list|)
 condition|)
 block|{
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 modifier|*
 name|gradient_options
 init|=

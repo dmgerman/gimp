@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpblendtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrightnesscontrasttool.h"
 end_include
 
@@ -223,6 +217,12 @@ begin_include
 include|#
 directive|include
 file|"gimpgegltool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpgradienttool.h"
 end_include
 
 begin_include
@@ -546,7 +546,7 @@ name|gimp_text_tool_register
 block|,
 name|gimp_bucket_fill_tool_register
 block|,
-name|gimp_blend_tool_register
+name|gimp_gradient_tool_register
 block|,
 name|gimp_pencil_tool_register
 block|,

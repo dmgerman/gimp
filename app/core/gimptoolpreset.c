@@ -82,7 +82,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  The defaults are "everything except color", which is problematic  *  with gradients, which is why we special case the blend tool in  *  gimp_tool_preset_set_options().  */
+comment|/*  The defaults are "everything except color", which is problematic  *  with gradients, which is why we special case the gradient tool in  *  gimp_tool_preset_set_options().  */
 end_comment
 
 begin_define
@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a0c230103
+DECL|enum|__anon2c9728a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1943,7 +1943,7 @@ condition|(
 operator|!
 name|g_strcmp0
 argument_list|(
-literal|"gimp-blend-tool"
+literal|"gimp-gradient-tool"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(

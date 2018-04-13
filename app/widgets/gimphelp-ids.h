@@ -2030,14 +2030,6 @@ value|"gimp-tool-align"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_BLEND
-define|#
-directive|define
-name|GIMP_HELP_TOOL_BLEND
-value|"gimp-tool-blend"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_TOOL_BRIGHTNESS_CONTRAST
 define|#
 directive|define
@@ -2195,6 +2187,14 @@ define|#
 directive|define
 name|GIMP_HELP_TOOL_GEGL
 value|"gimp-tool-gegl"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_GRADIENT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_GRADIENT
+value|"gimp-tool-gradient"
 end_define
 
 begin_define

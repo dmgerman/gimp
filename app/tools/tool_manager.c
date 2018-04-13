@@ -3149,7 +3149,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2633bf0108
+DECL|struct|__anon276fad1c0108
 block|{
 DECL|member|sequence
 specifier|const
@@ -3178,7 +3178,7 @@ name|sequence
 operator|=
 literal|"gimp-warp-tool\0"
 literal|"gimp-iscissors-tool\0"
-literal|"gimp-blend-tool\0"
+literal|"gimp-gradient-tool\0"
 literal|"gimp-vector-tool\0"
 literal|"gimp-ellipse-select-tool\0"
 literal|"gimp-rect-select-tool\0"

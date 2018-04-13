@@ -49,11 +49,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGradientOptions
+DECL|typedef|GimpGradientPaintOptions
 typedef|typedef
 name|struct
-name|_GimpGradientOptions
-name|GimpGradientOptions
+name|_GimpGradientPaintOptions
+name|GimpGradientPaintOptions
 typedef|;
 end_typedef
 
@@ -109,9 +109,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpGradientOptions
+DECL|struct|_GimpGradientPaintOptions
 struct|struct
-name|_GimpGradientOptions
+name|_GimpGradientPaintOptions
 block|{
 DECL|member|gradient_reverse
 name|gboolean
@@ -321,7 +321,7 @@ modifier|*
 name|fade_options
 decl_stmt|;
 DECL|member|gradient_options
-name|GimpGradientOptions
+name|GimpGradientPaintOptions
 modifier|*
 name|gradient_options
 decl_stmt|;

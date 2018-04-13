@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_BLEND_OPTIONS_H__
+name|__GIMP_GRADIENT_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_BLEND_OPTIONS_H__
+DECL|macro|__GIMP_GRADIENT_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_BLEND_OPTIONS_H__
+name|__GIMP_GRADIENT_OPTIONS_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"paint/gimppaintoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_BLEND_OPTIONS
+DECL|macro|GIMP_TYPE_GRADIENT_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_BLEND_OPTIONS
-value|(gimp_blend_options_get_type ())
+name|GIMP_TYPE_GRADIENT_OPTIONS
+value|(gimp_gradient_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_BLEND_OPTIONS (obj)
+DECL|macro|GIMP_GRADIENT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_BLEND_OPTIONS
+name|GIMP_GRADIENT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_BLEND_OPTIONS, GimpBlendOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GRADIENT_OPTIONS, GimpGradientOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_BLEND_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_GRADIENT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_BLEND_OPTIONS_CLASS
+name|GIMP_GRADIENT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BLEND_OPTIONS, GimpBlendOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT_OPTIONS, GimpGradientOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_BLEND_OPTIONS (obj)
+DECL|macro|GIMP_IS_GRADIENT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_BLEND_OPTIONS
+name|GIMP_IS_GRADIENT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BLEND_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GRADIENT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_BLEND_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_GRADIENT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_BLEND_OPTIONS_CLASS
+name|GIMP_IS_GRADIENT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BLEND_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_BLEND_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_GRADIENT_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_BLEND_OPTIONS_GET_CLASS
+name|GIMP_GRADIENT_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BLEND_OPTIONS, GimpBlendOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GRADIENT_OPTIONS, GimpGradientOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpBlendOptions
+DECL|typedef|GimpGradientOptions
 typedef|typedef
 name|struct
-name|_GimpBlendOptions
-name|GimpBlendOptions
+name|_GimpGradientOptions
+name|GimpGradientOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBlendOptionsClass
+DECL|typedef|GimpGradientOptionsClass
 typedef|typedef
 name|struct
 name|_GimpPaintOptionsClass
-name|GimpBlendOptionsClass
+name|GimpGradientOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpBlendOptions
+DECL|struct|_GimpGradientOptions
 struct|struct
-name|_GimpBlendOptions
+name|_GimpGradientOptions
 block|{
 DECL|member|paint_options
 name|GimpPaintOptions
@@ -170,7 +170,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_blend_options_get_type
+name|gimp_gradient_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -181,7 +181,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_blend_options_gui
+name|gimp_gradient_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -196,7 +196,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_BLEND_OPTIONS_H__  */
+comment|/*  __GIMP_GRADIENT_OPTIONS_H__  */
 end_comment
 
 end_unit
