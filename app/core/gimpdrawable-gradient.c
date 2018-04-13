@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-blend.h"
+file|"gimpdrawable-gradient.h"
 end_include
 
 begin_include
@@ -99,8 +99,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GeglDistanceMetric metric,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
-name|gimp_drawable_blend
+DECL|function|gimp_drawable_gradient (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GeglDistanceMetric metric,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
+name|gimp_drawable_gradient
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -314,7 +314,7 @@ condition|)
 block|{
 name|shapeburst
 operator|=
-name|gimp_drawable_blend_shapeburst_distmap
+name|gimp_drawable_gradient_shapeburst_distmap
 argument_list|(
 name|drawable
 argument_list|,
@@ -467,7 +467,7 @@ name|C_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Blend"
+literal|"Gradient"
 argument_list|)
 argument_list|,
 name|opacity
@@ -518,8 +518,8 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_blend_shapeburst_distmap (GimpDrawable * drawable,GeglDistanceMetric metric,const GeglRectangle * region,GimpProgress * progress)
-name|gimp_drawable_blend_shapeburst_distmap
+DECL|function|gimp_drawable_gradient_shapeburst_distmap (GimpDrawable * drawable,GeglDistanceMetric metric,const GeglRectangle * region,GimpProgress * progress)
+name|gimp_drawable_gradient_shapeburst_distmap
 parameter_list|(
 name|GimpDrawable
 modifier|*

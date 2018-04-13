@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-blend.h"
+file|"core/gimpdrawable-gradient.h"
 end_include
 
 begin_include
@@ -3380,7 +3380,7 @@ name|blend_tool
 operator|->
 name|dist_buffer
 operator|=
-name|gimp_drawable_blend_shapeburst_distmap
+name|gimp_drawable_gradient_shapeburst_distmap
 argument_list|(
 name|tool
 operator|->

@@ -76,13 +76,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-blend.h"
+file|"core/gimpdrawable-bucket-fill.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-bucket-fill.h"
+file|"core/gimpdrawable-gradient.h"
 end_include
 
 begin_include
@@ -3547,7 +3547,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Blending"
+literal|"Gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3608,7 +3608,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_drawable_blend
+name|gimp_drawable_gradient
 argument_list|(
 name|drawable
 argument_list|,
