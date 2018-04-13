@@ -343,7 +343,7 @@ name|NULL
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:blend"
+literal|"gimp:gradient"
 argument_list|,
 literal|"context"
 argument_list|,

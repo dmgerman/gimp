@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationblend.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationborder.h"
 end_include
 
@@ -91,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimpoperationflood.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationgradient.h"
 end_include
 
 begin_include
@@ -522,11 +522,6 @@ argument_list|()
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_BLEND
-argument_list|)
-expr_stmt|;
-name|g_type_class_ref
-argument_list|(
 name|GIMP_TYPE_OPERATION_BORDER
 argument_list|)
 expr_stmt|;
@@ -558,6 +553,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_FLOOD
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_GRADIENT
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

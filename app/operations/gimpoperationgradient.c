@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Largely based on gimpdrawable-blend.c  *  * gimpoperationblend.c  * Copyright (C) 2014 Michael Henning<drawoc@darkrefraction.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Largely based on gimpdrawable-gradient.c  *  * gimpoperationgradient.c  * Copyright (C) 2014 Michael Henning<drawoc@darkrefraction.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -54,13 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationblend.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
+file|"gimpoperationgradient.h"
 end_include
 
 begin_comment
@@ -69,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23d71e0103
+DECL|enum|__anon2c2ee7770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -125,7 +119,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23d71e0208
+DECL|struct|__anon2c2ee7770208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -218,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23d71e0308
+DECL|struct|__anon2c2ee7770308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -256,7 +250,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_blend_dispose
+name|gimp_operation_gradient_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -268,7 +262,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_blend_get_property
+name|gimp_operation_gradient_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -291,7 +285,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_blend_set_property
+name|gimp_operation_gradient_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -315,7 +309,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_blend_prepare
+name|gimp_operation_gradient_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -327,7 +321,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GeglRectangle
-name|gimp_operation_blend_get_bounding_box
+name|gimp_operation_gradient_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -598,7 +592,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_blend_process
+name|gimp_operation_gradient_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -624,12 +618,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationBlend,gimp_operation_blend,GEGL_TYPE_OPERATION_FILTER)
+DECL|function|G_DEFINE_TYPE (GimpOperationGradient,gimp_operation_gradient,GEGL_TYPE_OPERATION_FILTER)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationBlend
+argument|GimpOperationGradient
 argument_list|,
-argument|gimp_operation_blend
+argument|gimp_operation_gradient
 argument_list|,
 argument|GEGL_TYPE_OPERATION_FILTER
 argument_list|)
@@ -640,15 +634,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_operation_blend_parent_class
+value|gimp_operation_gradient_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_operation_blend_class_init
+name|gimp_operation_gradient_class_init
 parameter_list|(
-name|GimpOperationBlendClass
+name|GimpOperationGradientClass
 modifier|*
 name|klass
 parameter_list|)
@@ -684,37 +678,37 @@ name|object_class
 operator|->
 name|dispose
 operator|=
-name|gimp_operation_blend_dispose
+name|gimp_operation_gradient_dispose
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_operation_blend_set_property
+name|gimp_operation_gradient_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_operation_blend_get_property
+name|gimp_operation_gradient_get_property
 expr_stmt|;
 name|operation_class
 operator|->
 name|prepare
 operator|=
-name|gimp_operation_blend_prepare
+name|gimp_operation_gradient_prepare
 expr_stmt|;
 name|operation_class
 operator|->
 name|get_bounding_box
 operator|=
-name|gimp_operation_blend_get_bounding_box
+name|gimp_operation_gradient_get_bounding_box
 expr_stmt|;
 name|filter_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_blend_process
+name|gimp_operation_gradient_process
 expr_stmt|;
 name|gegl_operation_class_set_keys
 argument_list|(
@@ -722,7 +716,7 @@ name|operation_class
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"gimp:blend"
+literal|"gimp:gradient"
 argument_list|,
 literal|"categories"
 argument_list|,
@@ -730,7 +724,7 @@ literal|"gimp"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP Blend operation"
+literal|"GIMP Gradient operation"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1110,10 +1104,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_blend_init (GimpOperationBlend * self)
-name|gimp_operation_blend_init
+DECL|function|gimp_operation_gradient_init (GimpOperationGradient * self)
+name|gimp_operation_gradient_init
 parameter_list|(
-name|GimpOperationBlend
+name|GimpOperationGradient
 modifier|*
 name|self
 parameter_list|)
@@ -1123,19 +1117,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_blend_dispose (GObject * object)
-name|gimp_operation_blend_dispose
+DECL|function|gimp_operation_gradient_dispose (GObject * object)
+name|gimp_operation_gradient_dispose
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpOperationBlend
+name|GimpOperationGradient
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_BLEND
+name|GIMP_OPERATION_GRADIENT
 argument_list|(
 name|object
 argument_list|)
@@ -1172,8 +1166,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_blend_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_operation_blend_get_property
+DECL|function|gimp_operation_gradient_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_gradient_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -1191,11 +1185,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationBlend
+name|GimpOperationGradient
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_BLEND
+name|GIMP_OPERATION_GRADIENT
 argument_list|(
 name|object
 argument_list|)
@@ -1418,8 +1412,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_blend_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_operation_blend_set_property
+DECL|function|gimp_operation_gradient_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_gradient_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -1438,11 +1432,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationBlend
+name|GimpOperationGradient
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_BLEND
+name|GIMP_OPERATION_GRADIENT
 argument_list|(
 name|object
 argument_list|)
@@ -1724,8 +1718,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_blend_prepare (GeglOperation * operation)
-name|gimp_operation_blend_prepare
+DECL|function|gimp_operation_gradient_prepare (GeglOperation * operation)
+name|gimp_operation_gradient_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -1750,8 +1744,8 @@ end_function
 begin_function
 specifier|static
 name|GeglRectangle
-DECL|function|gimp_operation_blend_get_bounding_box (GeglOperation * operation)
-name|gimp_operation_blend_get_bounding_box
+DECL|function|gimp_operation_gradient_get_bounding_box (GeglOperation * operation)
+name|gimp_operation_gradient_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -3790,8 +3784,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_blend_process (GeglOperation * operation,GeglBuffer * input,GeglBuffer * output,const GeglRectangle * result,gint level)
-name|gimp_operation_blend_process
+DECL|function|gimp_operation_gradient_process (GeglOperation * operation,GeglBuffer * input,GeglBuffer * output,const GeglRectangle * result,gint level)
+name|gimp_operation_gradient_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -3814,11 +3808,11 @@ name|gint
 name|level
 parameter_list|)
 block|{
-name|GimpOperationBlend
+name|GimpOperationGradient
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_BLEND
+name|GIMP_OPERATION_GRADIENT
 argument_list|(
 name|operation
 argument_list|)
@@ -3912,7 +3906,7 @@ name|gimp_gradient_new
 argument_list|(
 name|NULL
 argument_list|,
-literal|"Blend-Temp"
+literal|"Gradient-Temp"
 argument_list|)
 argument_list|)
 expr_stmt|;
