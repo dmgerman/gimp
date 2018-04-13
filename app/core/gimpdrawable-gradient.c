@@ -99,7 +99,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_gradient (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GeglDistanceMetric metric,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
+DECL|function|gimp_drawable_gradient (GimpDrawable * drawable,GimpContext * context,GimpGradient * gradient,GeglDistanceMetric metric,GimpLayerMode paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,GimpGradientBlendColorSpace blend_color_space,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
 name|gimp_drawable_gradient
 parameter_list|(
 name|GimpDrawable
@@ -134,6 +134,9 @@ name|repeat
 parameter_list|,
 name|gboolean
 name|reverse
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 name|gboolean
 name|supersample
@@ -384,6 +387,10 @@ argument_list|,
 literal|"gradient-reverse"
 argument_list|,
 name|reverse
+argument_list|,
+literal|"gradient-blend-color-space"
+argument_list|,
+name|blend_color_space
 argument_list|,
 literal|"supersample"
 argument_list|,

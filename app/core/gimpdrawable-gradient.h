@@ -53,6 +53,9 @@ parameter_list|,
 name|gboolean
 name|reverse
 parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
+parameter_list|,
 name|gboolean
 name|supersample
 parameter_list|,
