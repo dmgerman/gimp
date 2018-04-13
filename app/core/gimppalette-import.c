@@ -126,7 +126,7 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,GimpContext * context,gboolean reverse,const gchar * palette_name,gint n_colors)
+DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,GimpContext * context,gboolean reverse,GimpGradientBlendColorSpace blend_color_space,const gchar * palette_name,gint n_colors)
 name|gimp_palette_import_from_gradient
 parameter_list|(
 name|GimpGradient
@@ -139,6 +139,9 @@ name|context
 parameter_list|,
 name|gboolean
 name|reverse
+parameter_list|,
+name|GimpGradientBlendColorSpace
+name|blend_color_space
 parameter_list|,
 specifier|const
 name|gchar
@@ -265,6 +268,8 @@ argument_list|,
 name|cur_x
 argument_list|,
 name|reverse
+argument_list|,
+name|blend_color_space
 argument_list|,
 operator|&
 name|color

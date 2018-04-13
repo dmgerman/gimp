@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a40f7420103
+DECL|enum|__anon27ebc1fa0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -3636,6 +3636,8 @@ operator|->
 name|context
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 argument_list|,
 name|palette_name
 argument_list|,
