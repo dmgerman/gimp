@@ -942,7 +942,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_TOOL_CURSOR_BLEND
+name|GIMP_TOOL_CURSOR_GRADIENT
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_action_opacity

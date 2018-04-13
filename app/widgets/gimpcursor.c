@@ -456,7 +456,7 @@ literal|"tool-bucket-fill.png"
 block|}
 block|,
 block|{
-literal|"tool-blend.png"
+literal|"tool-gradient.png"
 block|}
 block|,
 block|{
