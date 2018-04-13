@@ -3507,6 +3507,15 @@ argument_list|,
 name|GIMP_STOCK_QUICK_MASK_ON
 argument_list|)
 expr_stmt|;
+name|register_stock_icon
+argument_list|(
+name|gimp_stock_factory
+argument_list|,
+literal|"gimp-tool-blend"
+argument_list|,
+name|GIMP_STOCK_TOOL_BLEND
+argument_list|)
+expr_stmt|;
 name|gtk_icon_factory_add_default
 argument_list|(
 name|gimp_stock_factory

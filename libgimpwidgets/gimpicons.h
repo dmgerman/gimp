@@ -163,7 +163,7 @@ DECL|macro|GIMP_ICON_GRADIENT
 define|#
 directive|define
 name|GIMP_ICON_GRADIENT
-value|GIMP_ICON_TOOL_BLEND
+value|GIMP_ICON_TOOL_GRADIENT
 DECL|macro|GIMP_ICON_GRID
 define|#
 directive|define
@@ -1186,11 +1186,6 @@ define|#
 directive|define
 name|GIMP_ICON_TOOL_ALIGN
 value|"gimp-tool-align"
-DECL|macro|GIMP_ICON_TOOL_BLEND
-define|#
-directive|define
-name|GIMP_ICON_TOOL_BLEND
-value|"gimp-tool-blend"
 DECL|macro|GIMP_ICON_TOOL_BLUR
 define|#
 directive|define
@@ -1296,6 +1291,11 @@ define|#
 directive|define
 name|GIMP_ICON_TOOL_FUZZY_SELECT
 value|"gimp-tool-fuzzy-select"
+DECL|macro|GIMP_ICON_TOOL_GRADIENT
+define|#
+directive|define
+name|GIMP_ICON_TOOL_GRADIENT
+value|"gimp-tool-gradient"
 DECL|macro|GIMP_ICON_TOOL_HANDLE_TRANSFORM
 define|#
 directive|define
@@ -1789,7 +1789,7 @@ DECL|macro|GIMP_STOCK_TOOL_BLEND
 define|#
 directive|define
 name|GIMP_STOCK_TOOL_BLEND
-value|"gimp-tool-blend"
+value|"gimp-tool-gradient"
 DECL|macro|GIMP_STOCK_TOOL_BLUR
 define|#
 directive|define
