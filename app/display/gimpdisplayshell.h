@@ -734,9 +734,14 @@ DECL|member|inferior_ignore_mode
 name|gboolean
 name|inferior_ignore_mode
 decl_stmt|;
+comment|/* Two states are possible when the shell is grabbed: it can be    * grabbed with space (or space+button1 which is the same state),    * then if space is released but button1 was still pressed, we wait    * for button1 to be released as well.    */
 DECL|member|space_release_pending
 name|gboolean
 name|space_release_pending
+decl_stmt|;
+DECL|member|button1_release_pending
+name|gboolean
+name|button1_release_pending
 decl_stmt|;
 DECL|member|space_shaded_tool
 specifier|const
