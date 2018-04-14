@@ -221,6 +221,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_pdb_context_get_paint_options_list
+parameter_list|(
+name|GimpPDBContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPaintOptions
 modifier|*
 name|gimp_pdb_context_get_paint_options

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be037920103
+DECL|enum|__anon298ee3580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1719,6 +1719,35 @@ name|GIMP_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpContainer
+modifier|*
+DECL|function|gimp_pdb_context_get_paint_options_list (GimpPDBContext * context)
+name|gimp_pdb_context_get_paint_options_list
+parameter_list|(
+name|GimpPDBContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|context
+operator|->
+name|paint_options_list
 return|;
 block|}
 end_function
