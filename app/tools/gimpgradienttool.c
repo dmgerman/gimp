@@ -717,7 +717,7 @@ argument_list|(
 literal|"Gra_dient"
 argument_list|)
 argument_list|,
-literal|"L"
+literal|"G"
 argument_list|,
 name|NULL
 argument_list|,
