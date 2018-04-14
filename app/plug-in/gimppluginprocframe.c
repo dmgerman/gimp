@@ -262,7 +262,10 @@ name|procedure
 condition|?
 name|g_object_ref
 argument_list|(
+name|GIMP_PROCEDURE
+argument_list|(
 name|procedure
+argument_list|)
 argument_list|)
 else|:
 name|NULL
