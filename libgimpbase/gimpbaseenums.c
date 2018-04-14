@@ -3329,6 +3329,14 @@ literal|"rgb-linear"
 block|}
 block|,
 block|{
+name|GIMP_GRADIENT_BLEND_CIE_LAB
+block|,
+literal|"GIMP_GRADIENT_BLEND_CIE_LAB"
+block|,
+literal|"cie-lab"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -3365,6 +3373,19 @@ argument_list|(
 literal|"gradient-blend-color-space"
 argument_list|,
 literal|"Linear RGB"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_GRADIENT_BLEND_CIE_LAB
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-blend-color-space"
+argument_list|,
+literal|"CIE Lab"
 argument_list|)
 block|,
 name|NULL
