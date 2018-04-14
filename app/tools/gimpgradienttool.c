@@ -714,7 +714,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"Blen_d"
+literal|"Gra_dient"
 argument_list|)
 argument_list|,
 literal|"L"
