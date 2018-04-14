@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbef8f0103
+DECL|enum|__anon2ab43d420103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbef8f0208
+DECL|struct|__anon2ab43d420208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -6602,7 +6602,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Gradienting:"
+literal|"Blending:"
 argument_list|)
 argument_list|)
 expr_stmt|;
