@@ -451,12 +451,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|fish_cie_lab_a_to_srgb
+DECL|variable|fish_cie_lab_to_srgb
 specifier|static
 specifier|const
 name|Babl
 modifier|*
-name|fish_cie_lab_a_to_srgb
+name|fish_cie_lab_to_srgb
 init|=
 name|NULL
 decl_stmt|;
@@ -590,12 +590,12 @@ name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"RGBA double"
+literal|"RGB double"
 argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A double"
+literal|"R'G'B' double"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -614,18 +614,18 @@ literal|"CIE Lab double"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fish_cie_lab_a_to_srgb
+name|fish_cie_lab_to_srgb
 operator|=
 name|babl_fish
 argument_list|(
 name|babl_format
 argument_list|(
-literal|"CIE Lab alpha double"
+literal|"CIE Lab double"
 argument_list|)
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"R'G'B'A double"
+literal|"R'G'B' double"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2261,7 +2261,7 @@ name|GIMP_GRADIENT_BLEND_CIE_LAB
 case|:
 name|babl_process
 argument_list|(
-name|fish_cie_lab_a_to_srgb
+name|fish_cie_lab_to_srgb
 argument_list|,
 operator|&
 name|rgb
