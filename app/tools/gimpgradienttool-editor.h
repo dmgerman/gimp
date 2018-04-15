@@ -6,23 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_BLEND_TOOL_EDITOR_H__
+name|__GIMP_GRADIENT_TOOL_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_BLEND_TOOL_EDITOR_H__
+DECL|macro|__GIMP_GRADIENT_TOOL_EDITOR_H__
 define|#
 directive|define
-name|__GIMP_BLEND_TOOL_EDITOR_H__
+name|__GIMP_GRADIENT_TOOL_EDITOR_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_options_notify
+name|gimp_gradient_tool_editor_options_notify
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|,
 name|GimpToolOptions
 modifier|*
@@ -38,66 +38,66 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_start
+name|gimp_gradient_tool_editor_start
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_halt
+name|gimp_gradient_tool_editor_halt
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_blend_tool_editor_line_changed
+name|gimp_gradient_tool_editor_line_changed
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_fg_bg_changed
+name|gimp_gradient_tool_editor_fg_bg_changed
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_gradient_dirty
+name|gimp_gradient_tool_editor_gradient_dirty
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_gradient_changed
+name|gimp_gradient_tool_editor_gradient_changed
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -106,11 +106,11 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_blend_tool_editor_can_undo
+name|gimp_gradient_tool_editor_can_undo
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -119,55 +119,55 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_blend_tool_editor_can_redo
+name|gimp_gradient_tool_editor_can_redo
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_blend_tool_editor_undo
+name|gimp_gradient_tool_editor_undo
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_blend_tool_editor_redo
+name|gimp_gradient_tool_editor_redo
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_start_edit
+name|gimp_gradient_tool_editor_start_edit
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_blend_tool_editor_end_edit
+name|gimp_gradient_tool_editor_end_edit
 parameter_list|(
-name|GimpBlendTool
+name|GimpGradientTool
 modifier|*
-name|blend_tool
+name|gradient_tool
 parameter_list|,
 name|gboolean
 name|cancel
@@ -181,7 +181,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_BLEND_TOOL_EDITOR_H__  */
+comment|/*  __GIMP_GRADIENT_TOOL_EDITOR_H__  */
 end_comment
 
 end_unit
