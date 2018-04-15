@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_GRADIENT_H__
+name|__GIMP_DRAWABLE_BLEND_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_GRADIENT_H__
+DECL|macro|__GIMP_DRAWABLE_BLEND_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_GRADIENT_H__
+name|__GIMP_DRAWABLE_BLEND_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_drawable_gradient
+name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -52,9 +52,6 @@ name|repeat
 parameter_list|,
 name|gboolean
 name|reverse
-parameter_list|,
-name|GimpGradientBlendColorSpace
-name|blend_color_space
 parameter_list|,
 name|gboolean
 name|supersample
@@ -90,7 +87,7 @@ end_function_decl
 begin_function_decl
 name|GeglBuffer
 modifier|*
-name|gimp_drawable_gradient_shapeburst_distmap
+name|gimp_drawable_blend_shapeburst_distmap
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -117,7 +114,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DRAWABLE_GRADIENT_H__ */
+comment|/* __GIMP_DRAWABLE_BLEND_H__ */
 end_comment
 
 end_unit
