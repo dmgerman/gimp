@@ -7777,7 +7777,9 @@ literal|"gimp-text-layer-set-hinting"
 argument_list|,
 literal|"Enable/disable the use of hinting in a text layer."
 argument_list|,
-literal|"This procedure enables or disables hinting on the text of a text layer. If you enable 'auto-hint', FreeType\'s automatic hinter will be used and hinting information from the font will be ignored."
+literal|"This procedure enables or disables hinting on the text of a text layer. If you enable 'auto-hint', FreeType\'s automatic hinter will be used and hinting information from the font will be ignored.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-text-layer-set-hint-style' instead."
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,
