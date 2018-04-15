@@ -179,6 +179,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_clear
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_edit_clear
@@ -188,6 +195,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_fill
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -201,6 +215,13 @@ name|fill_type
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_bucket_fill
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -232,6 +253,13 @@ name|y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_bucket_fill
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -269,6 +297,13 @@ name|y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_gradient_fill
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean
@@ -325,6 +360,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_stroke_selection
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_edit_stroke
@@ -334,6 +376,13 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_edit_stroke_item
+argument_list|)
+end_macro
 
 begin_function_decl
 name|gboolean

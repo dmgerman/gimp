@@ -5182,15 +5182,17 @@ literal|"gimp-edit-clear"
 argument_list|,
 literal|"Clear selected area of drawable."
 argument_list|,
-literal|"This procedure clears the specified drawable. If the drawable has an alpha channel, the cleared pixels will become transparent. If the drawable does not have an alpha channel, cleared pixels will be set to the background color. This procedure only affects regions within a selection if there is a selection active."
+literal|"This procedure clears the specified drawable. If the drawable has an alpha channel, the cleared pixels will become transparent. If the drawable does not have an alpha channel, cleared pixels will be set to the background color. This procedure only affects regions within a selection if there is a selection active.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-clear' instead."
 argument_list|,
-literal|""
+literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
-literal|""
+literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
-literal|""
+literal|"1995-1996"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-clear"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5253,7 +5255,9 @@ literal|"gimp-edit-fill"
 argument_list|,
 literal|"Fill selected area of drawable."
 argument_list|,
-literal|"This procedure fills the specified drawable with the fill mode. If the fill mode is foreground, the current foreground color is used. If the fill mode is background, the current background color is used. Other fill modes should not be used. This procedure only affects regions within a selection if there is a selection active. If you want to fill the whole drawable, regardless of the selection, use 'gimp-drawable-fill'."
+literal|"This procedure fills the specified drawable with the fill mode. If the fill mode is foreground, the current foreground color is used. If the fill mode is background, the current background color is used. Other fill modes should not be used. This procedure only affects regions within a selection if there is a selection active. If you want to fill the whole drawable, regardless of the selection, use 'gimp-drawable-fill'.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-fill' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Raphael Quinet"
 argument_list|,
@@ -5261,7 +5265,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-2000"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-fill"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5344,7 +5348,9 @@ literal|"gimp-edit-bucket-fill"
 argument_list|,
 literal|"Fill the area specified either by the current selection if there is one, or by a seed fill starting at the specified coordinates."
 argument_list|,
-literal|"This tool requires information on the paint application mode, and the fill mode, which can either be in the foreground color, or in the currently active pattern. If there is no selection, a seed fill is executed at the specified coordinates and extends outward in keeping with the threshold parameter. If there is a selection in the target image, the threshold, sample merged, x, and y arguments are unused. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of merged sampling, the x and y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin."
+literal|"This tool requires information on the paint application mode, and the fill mode, which can either be in the foreground color, or in the currently active pattern. If there is no selection, a seed fill is executed at the specified coordinates and extends outward in keeping with the threshold parameter. If there is a selection in the target image, the threshold, sample merged, x, and y arguments are unused. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of merged sampling, the x and y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-bucket-fill' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5352,7 +5358,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-bucket-fill"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5563,7 +5569,9 @@ literal|"gimp-edit-bucket-fill-full"
 argument_list|,
 literal|"Fill the area specified either by the current selection if there is one, or by a seed fill starting at the specified coordinates."
 argument_list|,
-literal|"This tool requires information on the paint application mode, and the fill mode, which can either be in the foreground color, or in the currently active pattern. If there is no selection, a seed fill is executed at the specified coordinates and extends outward in keeping with the threshold parameter. If there is a selection in the target image, the threshold, sample merged, x, and y arguments are unused. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of merged sampling, the x and y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin."
+literal|"This tool requires information on the paint application mode, and the fill mode, which can either be in the foreground color, or in the currently active pattern. If there is no selection, a seed fill is executed at the specified coordinates and extends outward in keeping with the threshold parameter. If there is a selection in the target image, the threshold, sample merged, x, and y arguments are unused. If the sample_merged parameter is TRUE, the data of the composite image will be used instead of that for the specified drawable. This is equivalent to sampling for colors after merging all visible layers. In the case of merged sampling, the x and y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-bucket-fill' instead."
 argument_list|,
 literal|"David Gowers"
 argument_list|,
@@ -5571,7 +5579,7 @@ literal|"David Gowers"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-bucket-fill"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -5820,7 +5828,9 @@ literal|"gimp-edit-blend"
 argument_list|,
 literal|"Blend between the starting and ending coordinates with the specified blend mode and gradient type."
 argument_list|,
-literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type. It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type. For shapeburst gradient types, the context's distance metric is also relevant and can be updated with 'gimp-context-set-distance-metric'."
+literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type. It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type. For shapeburst gradient types, the context's distance metric is also relevant and can be updated with 'gimp-context-set-distance-metric'.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-gradient-fill' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5828,7 +5838,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-gradient-fill"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6209,7 +6219,9 @@ literal|"gimp-edit-stroke"
 argument_list|,
 literal|"Stroke the current selection"
 argument_list|,
-literal|"This procedure strokes the current selection, painting along the selection boundary with the active brush and foreground color. The paint is applied to the specified drawable regardless of the active selection."
+literal|"This procedure strokes the current selection, painting along the selection boundary with the active brush and foreground color. The paint is applied to the specified drawable regardless of the active selection.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-stroke-selection' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -6217,7 +6229,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-stroke-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6280,7 +6292,9 @@ literal|"gimp-edit-stroke-vectors"
 argument_list|,
 literal|"Stroke the specified vectors object"
 argument_list|,
-literal|"This procedure strokes the specified vectors object, painting along the path with the active brush and foreground color."
+literal|"This procedure strokes the specified vectors object, painting along the path with the active brush and foreground color.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-edit-stroke-item' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -6288,7 +6302,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-edit-stroke-item"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

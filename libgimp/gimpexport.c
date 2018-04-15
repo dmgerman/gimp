@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b319f270108
+DECL|struct|__anon28a7051f0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -237,7 +237,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_edit_clear
+name|gimp_drawable_edit_clear
 argument_list|(
 name|transp
 argument_list|)

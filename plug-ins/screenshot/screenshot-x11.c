@@ -1943,7 +1943,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_edit_clear
+name|gimp_drawable_edit_clear
 argument_list|(
 name|layer
 argument_list|)
