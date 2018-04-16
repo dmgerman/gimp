@@ -18089,7 +18089,7 @@ argument_list|,
 literal|"Set the diagonal neighbors setting."
 argument_list|,
 literal|"This procedure modifies the diagonal neighbors setting. If the affected region of an operation is based on a seed point, like when doing a seed fill, then, when this setting is TRUE, all eight neighbors of each pixel are considered when calculating the affected region; in contrast, when this setting is FALSE, only the four orthogonal neighbors of each pixel are considered.\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color'."
+literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Ell"
 argument_list|,
