@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ad90b0108
+DECL|struct|__anon27aea7bd0108
 block|{
 DECL|member|raw
 name|gint
@@ -844,7 +844,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2ad90b0208
+DECL|struct|__anon27aea7bd0208
 block|{
 DECL|member|name
 name|gchar
@@ -4691,7 +4691,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2c2ad90b030a
+DECL|union|__anon27aea7bd030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -6808,7 +6808,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%d %d\n%f\n"
+literal|"%d %d\n%s\n"
 argument_list|,
 name|xres
 argument_list|,
@@ -6818,10 +6818,9 @@ name|G_BYTE_ORDER
 operator|==
 name|G_BIG_ENDIAN
 condition|?
-literal|1.0f
+literal|"1.0"
 else|:
-operator|-
-literal|1.0f
+literal|"-1.0"
 argument_list|)
 expr_stmt|;
 if|if
