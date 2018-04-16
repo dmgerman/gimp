@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppainttool-paint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolcontrol.h"
 end_include
 
@@ -210,7 +216,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_tool_start_paint
+name|gimp_brush_tool_paint_start
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -222,7 +228,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_tool_end_paint
+name|gimp_brush_tool_paint_end
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -234,7 +240,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_tool_flush_paint
+name|gimp_brush_tool_paint_flush
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -411,21 +417,21 @@ name|gimp_brush_tool_options_notify
 expr_stmt|;
 name|paint_tool_class
 operator|->
-name|start_paint
+name|paint_start
 operator|=
-name|gimp_brush_tool_start_paint
+name|gimp_brush_tool_paint_start
 expr_stmt|;
 name|paint_tool_class
 operator|->
-name|end_paint
+name|paint_end
 operator|=
-name|gimp_brush_tool_end_paint
+name|gimp_brush_tool_paint_end
 expr_stmt|;
 name|paint_tool_class
 operator|->
-name|flush_paint
+name|paint_flush
 operator|=
-name|gimp_brush_tool_flush_paint
+name|gimp_brush_tool_paint_flush
 expr_stmt|;
 name|paint_tool_class
 operator|->
@@ -1006,8 +1012,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_tool_start_paint (GimpPaintTool * paint_tool)
-name|gimp_brush_tool_start_paint
+DECL|function|gimp_brush_tool_paint_start (GimpPaintTool * paint_tool)
+name|gimp_brush_tool_paint_start
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -1046,14 +1052,14 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|start_paint
+name|paint_start
 condition|)
 name|GIMP_PAINT_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|start_paint
+name|paint_start
 argument_list|(
 name|paint_tool
 argument_list|)
@@ -1134,8 +1140,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_tool_end_paint (GimpPaintTool * paint_tool)
-name|gimp_brush_tool_end_paint
+DECL|function|gimp_brush_tool_paint_end (GimpPaintTool * paint_tool)
+name|gimp_brush_tool_paint_end
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -1168,14 +1174,14 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|end_paint
+name|paint_end
 condition|)
 name|GIMP_PAINT_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|end_paint
+name|paint_end
 argument_list|(
 name|paint_tool
 argument_list|)
@@ -1186,8 +1192,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_tool_flush_paint (GimpPaintTool * paint_tool)
-name|gimp_brush_tool_flush_paint
+DECL|function|gimp_brush_tool_paint_flush (GimpPaintTool * paint_tool)
+name|gimp_brush_tool_paint_flush
 parameter_list|(
 name|GimpPaintTool
 modifier|*
@@ -1226,14 +1232,14 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|flush_paint
+name|paint_flush
 condition|)
 name|GIMP_PAINT_TOOL_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|flush_paint
+name|paint_flush
 argument_list|(
 name|paint_tool
 argument_list|)
@@ -1540,7 +1546,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_paint_tool_is_painting
+name|gimp_paint_tool_paint_is_active
 argument_list|(
 name|GIMP_PAINT_TOOL
 argument_list|(

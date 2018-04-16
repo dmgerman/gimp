@@ -3387,32 +3387,5 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|gboolean
-DECL|function|gimp_paint_tool_is_painting (GimpPaintTool * tool)
-name|gimp_paint_tool_is_painting
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|tool
-parameter_list|)
-block|{
-return|return
-name|tool
-operator|->
-name|drawable
-operator|!=
-name|NULL
-operator|&&
-name|gimp_drawable_is_painting
-argument_list|(
-name|tool
-operator|->
-name|drawable
-argument_list|)
-return|;
-block|}
-end_function
-
 end_unit
 
