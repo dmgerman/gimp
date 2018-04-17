@@ -13280,6 +13280,7 @@ argument_list|,
 literal|"Set the line width setting."
 argument_list|,
 literal|"This procedure modifies the line width setting for stroking lines.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -13423,6 +13424,7 @@ argument_list|,
 literal|"Set the line width unit setting."
 argument_list|,
 literal|"This procedure modifies the line width unit setting for stroking lines.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -13564,6 +13566,7 @@ argument_list|,
 literal|"Set the line cap style setting."
 argument_list|,
 literal|"This procedure modifies the line cap style setting for stroking lines.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -13703,6 +13706,7 @@ argument_list|,
 literal|"Set the line join style setting."
 argument_list|,
 literal|"This procedure modifies the line join style setting for stroking lines.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -13845,6 +13849,7 @@ literal|"Set the line miter limit setting."
 argument_list|,
 literal|"This procedure modifies the line miter limit setting for stroking lines.\n"
 literal|"A mitered join is converted to a bevelled join if the miter would extend to a distance of more than (miter-limit * line-width) from the actual join point.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -13988,6 +13993,7 @@ argument_list|,
 literal|"Set the line dash offset setting."
 argument_list|,
 literal|"This procedure modifies the line dash offset setting for stroking lines.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -14147,7 +14153,9 @@ argument_list|,
 literal|"Set the line dash pattern setting."
 argument_list|,
 literal|"This procedure modifies the line dash pattern setting for stroking lines.\n"
+literal|"\n"
 literal|"The unit of the dash pattern segments is the actual line width used for the stroke operation, in other words a segment length of 1.0 results in a square segment shape (or gap shape).\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection-', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -16938,7 +16946,8 @@ argument_list|,
 literal|"Set the antialias setting."
 argument_list|,
 literal|"This procedure modifies the antialias setting. If antialiasing is turned on, the edges of selected region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time unless a binary-only selection is wanted.\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item'."
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17073,6 +17082,7 @@ argument_list|,
 literal|"Set the feather setting."
 argument_list|,
 literal|"This procedure modifies the feather setting. If the feather option is enabled, selections will be blurred before combining. The blur is a gaussian blur; its radii can be controlled using 'gimp-context-set-feather-radius'.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-image-select-rectangle', 'gimp-image-select-round-rectangle', 'gimp-image-select-ellipse', 'gimp-image-select-polygon', 'gimp-image-select-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -17234,6 +17244,7 @@ argument_list|,
 literal|"Set the feather radius setting."
 argument_list|,
 literal|"This procedure modifies the feather radius setting.\n"
+literal|"\n"
 literal|"This setting affects all procedures that are affected by 'gimp-context-set-feather'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -17395,7 +17406,8 @@ argument_list|,
 literal|"Set the sample merged setting."
 argument_list|,
 literal|"This procedure modifies the sample merged setting. If an operation depends on the colors of the pixels present in a drawable, like when doing a seed fill, this setting controls whether the pixel data from the specified drawable is used ('sample-merged' is FALSE), or the pixel data from the composite image ('sample-merged' is TRUE. This is equivalent to sampling for colors after merging all visible layers).\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color'."
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17532,7 +17544,8 @@ argument_list|,
 literal|"Set the sample criterion setting."
 argument_list|,
 literal|"This procedure modifies the sample criterion setting. If an operation depends on the colors of the pixels present in a drawable, like when doing a seed fill, this setting controls how color similarity is determined. SELECT_CRITERION_COMPOSITE is the default value.\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color'."
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17673,7 +17686,8 @@ argument_list|,
 literal|"Set the sample threshold setting."
 argument_list|,
 literal|"This procedure modifies the sample threshold setting. If an operation depends on the colors of the pixels present in a drawable, like when doing a seed fill, this setting controls what is \"sufficiently close\" to be considered a similar color. If the sample threshold has not been set explicitly, the default threshold set in gimprc will be used.\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color'."
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -17954,7 +17968,8 @@ argument_list|,
 literal|"Set the sample transparent setting."
 argument_list|,
 literal|"This procedure modifies the sample transparent setting. If an operation depends on the colors of the pixels present in a drawable, like when doing a seed fill, this setting controls whether transparency is considered to be a unique selectable color. When this setting is TRUE, transparent areas can be selected or filled.\n"
-literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color'."
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-image-select-color', 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -18089,6 +18104,7 @@ argument_list|,
 literal|"Set the diagonal neighbors setting."
 argument_list|,
 literal|"This procedure modifies the diagonal neighbors setting. If the affected region of an operation is based on a seed point, like when doing a seed fill, then, when this setting is TRUE, all eight neighbors of each pixel are considered when calculating the affected region; in contrast, when this setting is FALSE, only the four orthogonal neighbors of each pixel are considered.\n"
+literal|"\n"
 literal|"This setting affects the following procedures: 'gimp-image-select-contiguous-color', 'gimp-drawable-edit-bucket-fill'."
 argument_list|,
 literal|"Ell"
@@ -18225,7 +18241,9 @@ literal|"gimp-context-set-distance-metric"
 argument_list|,
 literal|"Set the distance metric used in some computations."
 argument_list|,
-literal|"This procedure modifies the distance metric used in some computations, such as 'gimp-drawable-edit-gradient-fill'. In particular, it does not change the metric used in generic distance computation on canvas, as in the Measure tool."
+literal|"This procedure modifies the distance metric used in some computations, such as 'gimp-drawable-edit-gradient-fill'. In particular, it does not change the metric used in generic distance computation on canvas, as in the Measure tool.\n"
+literal|"\n"
+literal|"This setting affects the following procedures: 'gimp-drawable-edit-gradient-fill'."
 argument_list|,
 literal|"Jehan"
 argument_list|,
@@ -18364,6 +18382,7 @@ argument_list|,
 literal|"Set the interpolation type."
 argument_list|,
 literal|"This procedure modifies the interpolation setting.\n"
+literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix', 'gimp-image-scale', 'gimp-layer-scale'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -18503,6 +18522,7 @@ argument_list|,
 literal|"Set the transform direction."
 argument_list|,
 literal|"This procedure modifies the transform direction setting.\n"
+literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -18642,6 +18662,7 @@ argument_list|,
 literal|"Set the transform resize type."
 argument_list|,
 literal|"This procedure modifies the transform resize setting. When transforming pixels, if the result of a transform operation has a different size than the original area, this setting determines how the resulting area is sized.\n"
+literal|"\n"
 literal|"This setting affects affects the following procedures: 'gimp-item-transform-flip', 'gimp-item-transform-flip-simple', 'gimp-item-transform-perspective', 'gimp-item-transform-rotate', 'gimp-item-transform-rotate-simple', 'gimp-item-transform-scale', 'gimp-item-transform-shear', 'gimp-item-transform-2d', 'gimp-item-transform-matrix'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"

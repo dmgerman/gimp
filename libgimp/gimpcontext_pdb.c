@@ -1439,7 +1439,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_width:  * @line_width: The line width setting.  *  * Set the line width setting.  *  * This procedure modifies the line width setting for stroking lines.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_width:  * @line_width: The line width setting.  *  * Set the line width setting.  *  * This procedure modifies the line width setting for stroking lines.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1579,7 +1579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_width_unit:  * @line_width_unit: The line width setting unit.  *  * Set the line width unit setting.  *  * This procedure modifies the line width unit setting for stroking  * lines.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_width_unit:  * @line_width_unit: The line width setting unit.  *  * Set the line width unit setting.  *  * This procedure modifies the line width unit setting for stroking  * lines.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_cap_style:  * @cap_style: The line cap style setting.  *  * Set the line cap style setting.  *  * This procedure modifies the line cap style setting for stroking  * lines.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_cap_style:  * @cap_style: The line cap style setting.  *  * Set the line cap style setting.  *  * This procedure modifies the line cap style setting for stroking  * lines.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1859,7 +1859,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_join_style:  * @join_style: The line join style setting.  *  * Set the line join style setting.  *  * This procedure modifies the line join style setting for stroking  * lines.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_join_style:  * @join_style: The line join style setting.  *  * Set the line join style setting.  *  * This procedure modifies the line join style setting for stroking  * lines.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1999,7 +1999,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_miter_limit:  * @miter_limit: The line miter limit setting.  *  * Set the line miter limit setting.  *  * This procedure modifies the line miter limit setting for stroking  * lines.  * A mitered join is converted to a bevelled join if the miter would  * extend to a distance of more than (miter-limit * line-width) from  * the actual join point.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_miter_limit:  * @miter_limit: The line miter limit setting.  *  * Set the line miter limit setting.  *  * This procedure modifies the line miter limit setting for stroking  * lines.  * A mitered join is converted to a bevelled join if the miter would  * extend to a distance of more than (miter-limit * line-width) from  * the actual join point.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2139,7 +2139,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_dash_offset:  * @dash_offset: The line dash offset setting.  *  * Set the line dash offset setting.  *  * This procedure modifies the line dash offset setting for stroking  * lines.  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_dash_offset:  * @dash_offset: The line dash offset setting.  *  * Set the line dash offset setting.  *  * This procedure modifies the line dash offset setting for stroking  * lines.  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2337,7 +2337,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection_(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  *  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection_(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -5209,7 +5209,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5349,7 +5349,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius().  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_rectangle(), gimp_image_select_round_rectangle(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius().  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_rectangle(), gimp_image_select_round_rectangle(),  * gimp_image_select_ellipse(), gimp_image_select_polygon(),  * gimp_image_select_item().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5524,7 +5524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting.  * This setting affects all procedures that are affected by  * gimp_context_set_feather().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting.  *  * This setting affects all procedures that are affected by  * gimp_context_set_feather().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5671,7 +5671,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers).  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_sample_merged:  * @sample_merged: The sample merged setting.  *  * Set the sample merged setting.  *  * This procedure modifies the sample merged setting. If an operation  * depends on the colors of the pixels present in a drawable, like when  * doing a seed fill, this setting controls whether the pixel data from  * the specified drawable is used ('sample-merged' is FALSE), or the  * pixel data from the composite image ('sample-merged' is TRUE. This  * is equivalent to sampling for colors after merging all visible  * layers).  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5811,7 +5811,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_sample_criterion:  * @sample_criterion: The sample criterion setting.  *  * Set the sample criterion setting.  *  * This procedure modifies the sample criterion setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls how color  * similarity is determined. SELECT_CRITERION_COMPOSITE is the default  * value.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -5951,7 +5951,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_sample_threshold:  * @sample_threshold: The sample threshold setting.  *  * Set the sample threshold setting.  *  * This procedure modifies the sample threshold setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls what is  * \"sufficiently close\" to be considered a similar color. If the  * sample threshold has not been set explicitly, the default threshold  * set in gimprc will be used.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6231,7 +6231,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_sample_transparent:  * @sample_transparent: The sample transparent setting.  *  * Set the sample transparent setting.  *  * This procedure modifies the sample transparent setting. If an  * operation depends on the colors of the pixels present in a drawable,  * like when doing a seed fill, this setting controls whether  * transparency is considered to be a unique selectable color. When  * this setting is TRUE, transparent areas can be selected or filled.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6371,7 +6371,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_diagonal_neighbors:  * @diagonal_neighbors: The diagonal neighbors setting.  *  * Set the diagonal neighbors setting.  *  * This procedure modifies the diagonal neighbors setting. If the  * affected region of an operation is based on a seed point, like when  * doing a seed fill, then, when this setting is TRUE, all eight  * neighbors of each pixel are considered when calculating the affected  * region; in contrast, when this setting is FALSE, only the four  * orthogonal neighbors of each pixel are considered.  * This setting affects the following procedures:  * gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_diagonal_neighbors:  * @diagonal_neighbors: The diagonal neighbors setting.  *  * Set the diagonal neighbors setting.  *  * This procedure modifies the diagonal neighbors setting. If the  * affected region of an operation is based on a seed point, like when  * doing a seed fill, then, when this setting is TRUE, all eight  * neighbors of each pixel are considered when calculating the affected  * region; in contrast, when this setting is FALSE, only the four  * orthogonal neighbors of each pixel are considered.  *  * This setting affects the following procedures:  * gimp_image_select_contiguous_color(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -6511,7 +6511,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_distance_metric:  * @metric: The distance metric.  *  * Set the distance metric used in some computations.  *  * This procedure modifies the distance metric used in some  * computations, such as gimp_drawable_edit_gradient_fill(). In  * particular, it does not change the metric used in generic distance  * computation on canvas, as in the Measure tool.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_distance_metric:  * @metric: The distance metric.  *  * Set the distance metric used in some computations.  *  * This procedure modifies the distance metric used in some  * computations, such as gimp_drawable_edit_gradient_fill(). In  * particular, it does not change the metric used in generic distance  * computation on canvas, as in the Measure tool.  *  * This setting affects the following procedures:  * gimp_drawable_edit_gradient_fill().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -6651,7 +6651,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix(), gimp_image_scale(),  * gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting.  *  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix(), gimp_image_scale(),  * gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6791,7 +6791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  *  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_perspective(),  * gimp_item_transform_rotate(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6931,7 +6931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_flip_simple(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_rotate_simple(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  *  * This setting affects affects the following procedures:  * gimp_item_transform_flip(), gimp_item_transform_flip_simple(),  * gimp_item_transform_perspective(), gimp_item_transform_rotate(),  * gimp_item_transform_rotate_simple(), gimp_item_transform_scale(),  * gimp_item_transform_shear(), gimp_item_transform_2d(),  * gimp_item_transform_matrix().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
