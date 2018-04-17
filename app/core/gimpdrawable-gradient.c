@@ -337,6 +337,27 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
+comment|/*  in shapeburst mode, make sure the "line" is long enough to        *  span across the selection, so the operation's cache has the        *  right size        */
+name|startx
+operator|=
+name|x
+expr_stmt|;
+name|starty
+operator|=
+name|y
+expr_stmt|;
+name|endx
+operator|=
+name|x
+operator|+
+name|width
+expr_stmt|;
+name|endy
+operator|=
+name|y
+operator|+
+name|height
+expr_stmt|;
 block|}
 name|render
 operator|=
