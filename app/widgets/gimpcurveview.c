@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293c0d2c0103
+DECL|enum|__anon2c1f2a330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293c0d2c0203
+DECL|enum|__anon2c1f2a330203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -149,7 +149,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293c0d2c0308
+DECL|struct|__anon2c1f2a330308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -2315,7 +2315,7 @@ argument_list|,
 operator|&
 name|style
 operator|->
-name|dark
+name|text_aa
 index|[
 name|GTK_STATE_NORMAL
 index|]
