@@ -107,6 +107,21 @@ DECL|member|timeout_id
 name|guint
 name|timeout_id
 decl_stmt|;
+DECL|member|sym
+name|GimpSymmetry
+modifier|*
+name|sym
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+DECL|member|paint_options
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -121,11 +136,11 @@ name|GimpPaintbrushClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */
-DECL|member|timeout
+DECL|member|stamp
 name|void
 function_decl|(
 modifier|*
-name|timeout
+name|stamp
 function_decl|)
 parameter_list|(
 name|GimpAirbrush
@@ -160,6 +175,17 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_airbrush_stamp
+parameter_list|(
+name|GimpAirbrush
+modifier|*
+name|airbrush
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
