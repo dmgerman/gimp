@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-edit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpfilloptions.h"
 end_include
 
@@ -1825,10 +1831,8 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_edit_clear
+name|gimp_drawable_edit_clear
 argument_list|(
-name|image
-argument_list|,
 name|drawable
 argument_list|,
 name|action_data_get_context
@@ -1930,10 +1934,8 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_edit_fill
+name|gimp_drawable_edit_fill
 argument_list|(
-name|image
-argument_list|,
 name|drawable
 argument_list|,
 name|options

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-edit.h"
+file|"core/gimpdrawable-bucket-fill.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-bucket-fill.h"
+file|"core/gimpdrawable-edit.h"
 end_include
 
 begin_include
@@ -746,10 +746,8 @@ operator|->
 name|fill_selection
 condition|)
 block|{
-name|gimp_edit_fill
+name|gimp_drawable_edit_fill
 argument_list|(
-name|image
-argument_list|,
 name|drawable
 argument_list|,
 name|fill_options

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-edit.h"
+file|"core/gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpdrawable-edit.h"
 end_include
 
 begin_include
@@ -889,10 +889,8 @@ name|src_viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_edit_fill
+name|gimp_drawable_edit_fill
 argument_list|(
-name|image
-argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
 name|dest_viewable
@@ -1011,10 +1009,8 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-name|gimp_edit_fill
+name|gimp_drawable_edit_fill
 argument_list|(
-name|image
-argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
 name|dest_viewable
@@ -1235,10 +1231,8 @@ if|if
 condition|(
 name|item
 condition|)
-name|gimp_edit_fill
+name|gimp_drawable_edit_fill
 argument_list|(
-name|image
-argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
 name|item

@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-edit.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpdrawable-edit.h"
 end_include
 
 begin_include
@@ -3167,10 +3167,8 @@ condition|(
 name|cut_image
 condition|)
 block|{
-name|gimp_edit_clear
+name|gimp_drawable_edit_clear
 argument_list|(
-name|image
-argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
 name|pickable

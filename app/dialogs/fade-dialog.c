@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-edit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-fade.h"
 end_include
 
 begin_include
@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0bf8e0108
+DECL|struct|__anon2b0bfc210108
 block|{
 DECL|member|image
 name|GimpImage
@@ -827,7 +827,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_edit_fade
+name|gimp_image_fade
 argument_list|(
 name|private
 operator|->
