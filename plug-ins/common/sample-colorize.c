@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289204e80108
+DECL|struct|__anon2a222d840108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -408,7 +408,7 @@ DECL|member|tol_col_err
 name|float
 name|tol_col_err
 decl_stmt|;
-comment|/* 0.0% up to 100.0%                             * this is used to findout colors of the same                             * colortone, while analyzing sample colors,                             * It does not make much sense for the user to adjust this                             * value. (I used a param file to findout a suitable value)                             */
+comment|/* 0.0% up to 100.0%                             * this is used to find out colors of the same                             * colortone, while analyzing sample colors,                             * It does not make much sense for the user to adjust this                             * value. (I used a param file to find out a suitable value)                             */
 DECL|typedef|t_values
 block|}
 name|t_values
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289204e80208
+DECL|struct|__anon2a222d840208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289204e80308
+DECL|struct|__anon2a222d840308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289204e80408
+DECL|struct|__anon2a222d840408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289204e80508
+DECL|struct|__anon2a222d840508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -684,7 +684,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|g_di
-comment|/* global dialog interface varables */
+comment|/* global dialog interface variables */
 end_comment
 
 begin_decl_stmt
@@ -2383,7 +2383,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/* dont accept layers from indexed images */
+comment|/* don't accept layers from indexed images */
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -13293,7 +13293,7 @@ argument_list|(
 literal|"sample_color_all.ppm"
 argument_list|)
 expr_stmt|;
-comment|/* findout ideal sample colors for each brightness intensity (lum)    * and set g_sample_color_tab to the ideal colors.    */
+comment|/* find out ideal sample colors for each brightness intensity (lum)    * and set g_sample_color_tab to the ideal colors.    */
 name|ideal_samples
 argument_list|()
 expr_stmt|;

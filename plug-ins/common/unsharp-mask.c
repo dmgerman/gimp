@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba4cdc0108
+DECL|struct|__anon2b8c643a0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba4cdc0208
+DECL|struct|__anon2b8c643a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -875,7 +875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This function is written as if it is blurring a row of pixels,  * even though it can operate on colums, too.  There is no difference  * in the processing of the lines, at least to the blur_line function.  */
+comment|/* This function is written as if it is blurring a row of pixels,  * even though it can operate on columns, too.  There is no difference  * in the processing of the lines, at least to the blur_line function.  */
 end_comment
 
 begin_function
@@ -2934,7 +2934,7 @@ operator|-
 operator|*
 name|d
 decl_stmt|;
-comment|/* do tresholding */
+comment|/* do thresholding */
 if|if
 condition|(
 name|abs
@@ -3997,7 +3997,7 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* enlarge the region to avoid artefacts at the edges of the preview */
+comment|/* enlarge the region to avoid artifacts at the edges of the preview */
 name|border
 operator|=
 literal|2.0

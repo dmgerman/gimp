@@ -1254,7 +1254,7 @@ name|offx
 decl_stmt|,
 name|offy
 decl_stmt|,
-comment|/* Layer offets */
+comment|/* Layer offsets */
 name|colors
 decl_stmt|;
 comment|/* Number of colors */

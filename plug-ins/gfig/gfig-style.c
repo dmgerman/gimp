@@ -2473,7 +2473,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Eror: name is NULL in gfig_style_copy."
+literal|"Error: name is NULL in gfig_style_copy."
 argument_list|)
 expr_stmt|;
 if|if

@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5259350108
+DECL|struct|__anon28ec4d800108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5259350208
+DECL|struct|__anon28ec4d800208
 block|{
 DECL|member|elems
 name|gint
@@ -259,7 +259,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|hist0
-comment|/* Less than min treshold */
+comment|/* Less than min threshold */
 end_comment
 
 begin_decl_stmt
@@ -272,7 +272,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|hist255
-comment|/* More than max treshold */
+comment|/* More than max threshold */
 end_comment
 
 begin_decl_stmt
@@ -1236,7 +1236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'despeckle()' - Despeckle an image using a median filter.  *  * A median filter basically collects pixel values in a region around the  * target pixel, sorts them, and uses the median value. This code uses a  * circular row buffer to improve performance.  *  * The adaptive filter is based on the median filter but analizes the histogram  * of the region around the target pixel and adjusts the despeckle diameter  * accordingly.  */
+comment|/*  * 'despeckle()' - Despeckle an image using a median filter.  *  * A median filter basically collects pixel values in a region around the  * target pixel, sorts them, and uses the median value. This code uses a  * circular row buffer to improve performance.  *  * The adaptive filter is based on the median filter but analyzes the histogram  * of the region around the target pixel and adjusts the despeckle diameter  * accordingly.  */
 end_comment
 
 begin_function

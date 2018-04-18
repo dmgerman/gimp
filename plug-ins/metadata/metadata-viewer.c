@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab363aa0103
+DECL|enum|__anon2b1b0fba0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab363aa0203
+DECL|enum|__anon2b1b0fba0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab363aa0303
+DECL|enum|__anon2b1b0fba0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -677,7 +677,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Error occured while loading UI file!\n"
+literal|"Error occurred while loading UI file!\n"
 argument_list|)
 expr_stmt|;
 name|g_printerr

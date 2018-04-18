@@ -166,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2750925d0103
+DECL|enum|__anon2b3e17840103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -188,7 +188,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2750925d0203
+DECL|enum|__anon2b3e17840203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2750925d0303
+DECL|enum|__anon2b3e17840303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2750925d0408
+DECL|struct|__anon2b3e17840408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2750925d0508
+DECL|struct|__anon2b3e17840508
 block|{
 DECL|member|images
 name|gint32
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2750925d0608
+DECL|struct|__anon2b3e17840608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -347,7 +347,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2750925d0703
+DECL|enum|__anon2b3e17840703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -367,7 +367,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2750925d0808
+DECL|struct|__anon2b3e17840808
 block|{
 DECL|member|thumb
 name|GdkPixbuf
@@ -5535,7 +5535,7 @@ name|layer_ID
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME: We can't do a propper histogram on indexed layers! */
+comment|/* FIXME: We can't do a proper histogram on indexed layers! */
 operator|*
 name|single
 operator|=

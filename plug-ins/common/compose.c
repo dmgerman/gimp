@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7476c70108
+DECL|struct|__anon2a2d70a90108
 block|{
 union|union
-DECL|union|__anon2b7476c7020a
+DECL|union|__anon2a2d70a9020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7476c70308
+DECL|struct|__anon2a2d70a90308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7476c70408
+DECL|struct|__anon2a2d70a90408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -207,7 +207,7 @@ name|gint
 name|num_images
 decl_stmt|;
 comment|/*  Number of input images needed            */
-comment|/*  Channel informations                     */
+comment|/*  Channel information                     */
 DECL|member|components
 specifier|const
 name|COMPONENT_DSC
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7476c70508
+DECL|struct|__anon2a2d70a90508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7476c70608
+DECL|struct|__anon2a2d70a90608
 block|{
 DECL|member|width
 DECL|member|height

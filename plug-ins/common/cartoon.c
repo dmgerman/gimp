@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29defd1a0108
+DECL|struct|__anon277440dc0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -3556,7 +3556,7 @@ decl_stmt|;
 name|gdouble
 name|div
 decl_stmt|;
-comment|/*  The constants used in the implemenation of a casual sequence    *  using a 4th order approximation of the gaussian operator    */
+comment|/*  The constants used in the implementation of a casual sequence    *  using a 4th order approximation of the gaussian operator    */
 name|div
 operator|=
 name|sqrt

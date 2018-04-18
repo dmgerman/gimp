@@ -893,7 +893,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_from_icc_profile:  * @data:   pointer to memory containing an ICC profile  * @length: lenght of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_from_icc_profile:  * @data:   pointer to memory containing an ICC profile  * @length: length of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Return value: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1201,7 +1201,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_save_to_file:  * @profile: a #GimpColorProfile  * @file:    a #GFile  * @error:   return location for #GError  *  * This function saves @profile to @file as ICC profile.  *  * Return value: %TRUE on success, %FALSE if an error occured.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_save_to_file:  * @profile: a #GimpColorProfile  * @file:    a #GFile  * @error:   return location for #GError  *  * This function saves @profile to @file as ICC profile.  *  * Return value: %TRUE on success, %FALSE if an error occurred.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1822,7 +1822,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a string containing a multi-line summary of  * @profile's description, model, manufacturer and copyright, to be  * used as detailled information about the profile in a user  * interface.  *  * Return value: the @profile's summary. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_summary:  * @profile: a #GimpColorProfile  *  * This function return a string containing a multi-line summary of  * @profile's description, model, manufacturer and copyright, to be  * used as detailed information about the profile in a user  * interface.  *  * Return value: the @profile's summary. The returned value belongs to  *               @profile and must not be modified or freed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3780,7 +3780,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_rgb_srgb_linear:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write someting smarter here.  *  * Return value: the linear RGB #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_rgb_srgb_linear:  *  * This function creates a profile for babl_model("RGB"). Please  * somebody write something smarter here.  *  * Return value: the linear RGB #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -4385,7 +4385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_d65_gray_srgb_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write someting smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_d65_gray_srgb_gray:  *  * This function creates a profile for babl_model("Y"). Please  * somebody write something smarter here.  *  * Return value: the linear grayscale #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

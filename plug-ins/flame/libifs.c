@@ -7286,7 +7286,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* returns a mean 0 variance 1 random variable    see numerical recipies p 217 */
+comment|/* returns a mean 0 variance 1 random variable    see numerical recipes p 217 */
 end_comment
 
 begin_function

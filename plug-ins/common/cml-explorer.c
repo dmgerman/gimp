@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon292fdd1b0103
+DECL|enum|__anon28d6b5fb0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292fdd1b0203
+DECL|enum|__anon28d6b5fb0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292fdd1b0303
+DECL|enum|__anon28d6b5fb0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292fdd1b0403
+DECL|enum|__anon28d6b5fb0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fdd1b0508
+DECL|struct|__anon28d6b5fb0508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fdd1b0608
+DECL|struct|__anon28d6b5fb0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fdd1b0708
+DECL|struct|__anon28d6b5fb0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1866,7 +1866,7 @@ argument_list|,
 literal|"Make an image of Coupled-Map Lattice (CML). CML is "
 literal|"a kind of Cellula Automata on continuous (value) "
 literal|"domain. In GIMP_RUN_NONINTERACTIVE, the name of a "
-literal|"prameter file is passed as the 4th arg. You can "
+literal|"parameter file is passed as the 4th arg. You can "
 literal|"control CML_explorer via parameter file."
 argument_list|,
 comment|/*  Or do you want to call me with over 50 args? */

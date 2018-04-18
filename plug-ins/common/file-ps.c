@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  *         PK, 31-Aug-2000: Load PS: Add checks for space in filename.  * V 1.12  PK, 19-Jun-2001: Fix problem with command line switch --  *                          (reported by Ferenc Wagner)  * V 1.13  PK, 07-Apr-2002: Fix problem with DOS binary EPS files  * V 1.14  PK, 14-May-2002: Workaround EPS files of Adb. Ill. 8.0  * V 1.15  PK, 04-Oct-2002: Be more accurate with using BoundingBox  * V 1.16  PK, 22-Jan-2004: Don't use popen(), use g_spawn_async_with_pipes()  *                          or g_spawn_sync().  * V 1.17  PK, 19-Sep-2004: Fix problem with interpretation of bounding box  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: don't start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  *         PK, 31-Aug-2000: Load PS: Add checks for space in filename.  * V 1.12  PK, 19-Jun-2001: Fix problem with command line switch --  *                          (reported by Ferenc Wagner)  * V 1.13  PK, 07-Apr-2002: Fix problem with DOS binary EPS files  * V 1.14  PK, 14-May-2002: Workaround EPS files of Adb. Ill. 8.0  * V 1.15  PK, 04-Oct-2002: Be more accurate with using BoundingBox  * V 1.16  PK, 22-Jan-2004: Don't use popen(), use g_spawn_async_with_pipes()  *                          or g_spawn_sync().  * V 1.17  PK, 19-Sep-2004: Fix problem with interpretation of bounding box  */
 end_comment
 
 begin_include
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcf8140108
+DECL|struct|__anon299056de0108
 block|{
 DECL|member|resolution
 name|guint
@@ -286,9 +286,9 @@ block|,
 comment|/* use ppm (color)               */
 literal|1
 block|,
-comment|/* dont use text antialiasing     */
+comment|/* don't use text antialiasing     */
 literal|1
-comment|/* dont use graphics antialiasing */
+comment|/* don't use graphics antialiasing */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcf8140208
+DECL|struct|__anon299056de0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcf8140308
+DECL|struct|__anon299056de0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcf8140408
+DECL|struct|__anon299056de0408
 block|{
 DECL|member|eol
 name|goffset
@@ -7787,7 +7787,7 @@ name|scnd
 operator|-
 literal|'0'
 expr_stmt|;
-comment|/* We dont use the ASCII-versions */
+comment|/* We don't use the ASCII-versions */
 if|if
 condition|(
 operator|(

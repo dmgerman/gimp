@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f171b0108
+DECL|struct|__anon2c2678170108
 block|{
 DECL|member|replace
 name|gint
@@ -353,7 +353,7 @@ literal|0
 block|,
 comment|/* Do autoscale on pixel-values */
 literal|0
-comment|/* Dont compose images */
+comment|/* Don't compose images */
 block|}
 decl_stmt|;
 end_decl_stmt

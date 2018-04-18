@@ -11041,7 +11041,7 @@ operator|>
 literal|0xf4
 condition|)
 block|{
-comment|/* Ignore invalid lead byte and get the next characer */
+comment|/* Ignore invalid lead byte and get the next character */
 name|c
 operator|=
 name|fgetc
@@ -12313,7 +12313,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2989403f0103
+DECL|enum|__anon29e9aff10103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -30721,7 +30721,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2989403f0208
+DECL|struct|__anon29e9aff10208
 specifier|static
 struct|struct
 block|{
@@ -30956,7 +30956,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2989403f0308
+DECL|struct|__anon29e9aff10308
 typedef|typedef
 struct|struct
 block|{

@@ -188,7 +188,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790627f0103
+DECL|enum|__anon2c61e63a0103
 block|{
 DECL|enumerator|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
 name|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
@@ -219,7 +219,7 @@ end_function
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790627f0203
+DECL|enum|__anon2c61e63a0203
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -289,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790627f0303
+DECL|enum|__anon2c61e63a0303
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790627f0408
+DECL|struct|__anon2c61e63a0408
 block|{
 DECL|member|image_type
 name|RawType
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790627f0508
+DECL|struct|__anon2c61e63a0508
 block|{
 DECL|member|run
 name|gboolean
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790627f0608
+DECL|struct|__anon2c61e63a0608
 block|{
 DECL|member|file_offset
 name|gint32
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790627f0708
+DECL|struct|__anon2c61e63a0708
 block|{
 DECL|member|fp
 name|FILE
@@ -1874,7 +1874,7 @@ block|{
 case|case
 literal|0
 case|:
-comment|/* Auto-detection already occured. Let's just check if                    *it was successful.                    */
+comment|/* Auto-detection already occurred. Let's just check if                    *it was successful.                    */
 if|if
 condition|(
 name|runtime

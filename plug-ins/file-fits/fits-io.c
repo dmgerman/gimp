@@ -1576,7 +1576,7 @@ name|k
 operator|&=
 literal|0x7fffffff
 expr_stmt|;
-comment|/* Dont care about the sign bit */
+comment|/* Don't care about the sign bit */
 comment|/* See NOST Definition of the Flexible Image Transport System (FITS), */
 comment|/* Appendix F, IEEE special formats. */
 return|return
@@ -1730,7 +1730,7 @@ name|k
 operator|&=
 literal|0x7fffffff
 expr_stmt|;
-comment|/* Dont care about the sign bit */
+comment|/* Don't care about the sign bit */
 comment|/* See NOST Definition of the Flexible Image Transport System (FITS), */
 comment|/* Appendix F, IEEE special formats. */
 return|return
@@ -5016,7 +5016,7 @@ name|err_return
 goto|;
 block|}
 comment|/* If we have only one dimension, just set the second to size one. */
-comment|/* So we dont have to check for naxis< 2 in some places. */
+comment|/* So we don't have to check for naxis< 2 in some places. */
 if|if
 condition|(
 name|hdulist

@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c352f3e0103
+DECL|enum|__anon298ef6360103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c352f3e0203
+DECL|enum|__anon298ef6360203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0308
+DECL|struct|__anon298ef6360308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0408
+DECL|struct|__anon298ef6360408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c352f3e0503
+DECL|enum|__anon298ef6360503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0608
+DECL|struct|__anon298ef6360608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c352f3e0708
+DECL|struct|__anon298ef6360708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0808
+DECL|struct|__anon298ef6360808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0908
+DECL|struct|__anon298ef6360908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0a08
+DECL|struct|__anon298ef6360a08
 block|{
 DECL|member|init
 name|gint
@@ -959,13 +959,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  * What's the difference between (structure) CalcParams and GFlare ?  * well, radius and lengths are actual length for CalcParams where  * they are typically 0 to 100 for GFlares, and angles are G_PI based  * (radian) for CalcParams where they are degree for GFlares. et cetra.  * This is because convienience for dialog processing and for calculating.  * these conversion is taken place in calc init routines. see below.  */
+comment|/*  * What's the difference between (structure) CalcParams and GFlare ?  * well, radius and lengths are actual length for CalcParams where  * they are typically 0 to 100 for GFlares, and angles are G_PI based  * (radian) for CalcParams where they are degree for GFlares. et cetra.  * This is because convenience for dialog processing and for calculating.  * these conversion is taken place in calc init routines. see below.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0b08
+DECL|struct|__anon298ef6360b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0c08
+DECL|struct|__anon298ef6360c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0d08
+DECL|struct|__anon298ef6360d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c352f3e0e08
+DECL|struct|__anon298ef6360e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8507,7 +8507,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c352f3e0f08
+DECL|struct|__anon298ef6360f08
 block|{
 DECL|member|values
 name|guchar
@@ -10384,7 +10384,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Calc sflare's pixel (RGBA) value  *  *  the sflare (second flares) are needed to be rendered one each  *  sequentially, onto the source image, such as like usual layer  *  operations. So the function takes src_pix as argment.  glow, rays  *  routines don't have src_pix as argment, because of convienience.  *  *  @JAPANESE  *  sflare
+comment|/*  *  Calc sflare's pixel (RGBA) value  *  *  the sflare (second flares) are needed to be rendered one each  *  sequentially, onto the source image, such as like usual layer  *  operations. So the function takes src_pix as argument.  glow, rays  *  routines don't have src_pix as argument, because of convenience.  *  *  @JAPANESE  *  sflare
 comment|$B$OJ#?t$N%U%l%"$r=g$K
 comment|(B(
 comment|$B%l%$%dE*$K
@@ -14458,7 +14458,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2c352f3e1008
+DECL|struct|__anon298ef6361008
 block|{
 DECL|member|label
 specifier|const

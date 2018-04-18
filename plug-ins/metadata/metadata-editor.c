@@ -2052,7 +2052,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Error occured while loading UI file!\n"
+literal|"Error occurred while loading UI file!\n"
 argument_list|)
 expr_stmt|;
 name|g_printerr
@@ -2964,7 +2964,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Error occured while loading UI file!\n"
+literal|"Error occurred while loading UI file!\n"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3315,7 +3315,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ============================================================================  * ==[ SEPCIAL TAGS HANDLERS ]=================================================  * ============================================================================  */
+comment|/* ============================================================================  * ==[ SPECIAL TAGS HANDLERS ]=================================================  * ============================================================================  */
 end_comment
 
 begin_function
@@ -10691,7 +10691,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -11063,7 +11063,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -11435,7 +11435,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -11838,7 +11838,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -17547,7 +17547,7 @@ decl_stmt|;
 name|gint
 name|item
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -17863,7 +17863,7 @@ decl_stmt|;
 name|gint
 name|item
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -18179,7 +18179,7 @@ decl_stmt|;
 name|gint
 name|item
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0
@@ -18495,7 +18495,7 @@ decl_stmt|;
 name|gint
 name|item
 decl_stmt|;
-comment|/* seperate list on commas */
+comment|/* separate list on commas */
 name|store_index
 operator|=
 literal|0

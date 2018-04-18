@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963a1c80108
+DECL|struct|__anon27976d640108
 block|{
 DECL|member|name
 specifier|const
@@ -120,7 +120,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Local varaibles  */
+comment|/*  Local variables  */
 end_comment
 
 begin_comment

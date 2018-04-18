@@ -1939,7 +1939,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"ERROR: verion mismatch\n"
+literal|"ERROR: version mismatch\n"
 argument_list|)
 expr_stmt|;
 name|status

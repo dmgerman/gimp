@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a2e87a0103
+DECL|enum|__anon27796da20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1410,7 +1410,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_set_uri:  * @thumbnail: a #GimpThumbnail object  * @uri: an escaped URI  *  * Sets the location of the image file associated with the #thumbnail.  *  * All informations stored in the #GimpThumbnail are reset.  **/
+comment|/**  * gimp_thumbnail_set_uri:  * @thumbnail: a #GimpThumbnail object  * @uri: an escaped URI  *  * Sets the location of the image file associated with the #thumbnail.  *  * All information stored in the #GimpThumbnail is reset.  **/
 end_comment
 
 begin_function

@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27647d220108
+DECL|struct|__anon29e31e030108
 block|{
 DECL|member|dimensions
 name|dimensions_type
@@ -109,7 +109,7 @@ value|((b).bitmap)
 end_define
 
 begin_comment
-comment|/* These are convenient abbreviations for geting inside the members.  */
+comment|/* These are convenient abbreviations for getting inside the members.  */
 end_comment
 
 begin_define

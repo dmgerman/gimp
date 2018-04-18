@@ -5292,7 +5292,7 @@ operator|!=
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-comment|/* Do not set an error here. The import was simply canceled.            * No error occured. */
+comment|/* Do not set an error here. The import was simply canceled.            * No error occurred. */
 name|color_space
 operator|=
 name|OPJ_CLRSPC_UNKNOWN

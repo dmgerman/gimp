@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784e2600108
+DECL|struct|__anon2767ce4c0108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784e2600208
+DECL|struct|__anon2767ce4c0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -661,7 +661,7 @@ block|,
 comment|/* Numbering on top and bottom */
 literal|0
 block|,
-comment|/* Dont keep max. image height */
+comment|/* Don't keep max. image height */
 literal|0
 block|,
 comment|/* Number of images */
@@ -2877,7 +2877,7 @@ name|length
 operator|=
 name|width
 expr_stmt|;
-comment|/* Check that we dont draw past the image */
+comment|/* Check that we don't draw past the image */
 if|if
 condition|(
 operator|(
@@ -3172,7 +3172,7 @@ name|max_delta
 operator|=
 literal|1
 expr_stmt|;
-comment|/* Numbers dont need the descent. Inquire it and move the text down */
+comment|/* Numbers don't need the descent. Inquire it and move the text down */
 for|for
 control|(
 name|k

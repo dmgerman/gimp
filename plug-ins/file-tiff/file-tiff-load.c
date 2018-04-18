@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1fed60108
+DECL|struct|__anon28ebd3880108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1fed60208
+DECL|struct|__anon28ebd3880208
 block|{
 DECL|member|ID
 name|gint32
@@ -4568,7 +4568,7 @@ case|case
 literal|5
 case|:
 comment|/* open subpath bezier knot, unlinked */
-comment|/* since we already know if the subpath is open                    * or closed and since we don't differenciate between                    * linked and unlinked, just treat all the same...  */
+comment|/* since we already know if the subpath is open                    * or closed and since we don't differentiate between                    * linked and unlinked, just treat all the same...  */
 if|if
 condition|(
 name|pointcount

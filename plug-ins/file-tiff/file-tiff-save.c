@@ -2730,7 +2730,7 @@ block|gint     offset_x, offset_y;      gimp_drawable_offsets (layer,&offset_x,&
 endif|#
 directive|endif
 block|}
-comment|/* The TIFF spec explicitely says ASCII for the image description. */
+comment|/* The TIFF spec explicitly says ASCII for the image description. */
 if|if
 condition|(
 name|image_comment

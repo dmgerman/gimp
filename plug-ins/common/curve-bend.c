@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acabbd10108
+DECL|struct|__anon2c7fe4a60108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acabbd10208
+DECL|struct|__anon2c7fe4a60208
 block|{
 DECL|member|y
 name|gint32
@@ -1837,7 +1837,7 @@ name|GIMP_PDB_INT32
 argument_list|,
 name|FALSE
 argument_list|,
-comment|/* dont rotate the whole image */
+comment|/* don't rotate the whole image */
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
@@ -2279,7 +2279,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"current-step"
 block|,
-literal|"current (for linear iterations this is the layerstack position, otherwise some value inbetween)"
+literal|"current (for linear iterations this is the layerstack position, otherwise some value in between)"
 block|}
 block|,
 block|{
@@ -2482,7 +2482,7 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-comment|/* status variable, use it to check for errors in invocation usualy only      during non-interactive calling */
+comment|/* status variable, use it to check for errors in invocation usually only      during non-interactive calling */
 name|GimpPDBStatusType
 name|status
 init|=
@@ -4019,7 +4019,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-literal|"warnig: BAD points[%d] in file %s are ignored\n"
+literal|"warning: BAD points[%d] in file %s are ignored\n"
 argument_list|,
 name|l_pi
 argument_list|,
@@ -4115,7 +4115,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-literal|"warnig: BAD y_vals[%d] in file %s are ignored\n"
+literal|"warning: BAD y_vals[%d] in file %s are ignored\n"
 argument_list|,
 name|l_ci
 argument_list|,
@@ -12912,7 +12912,7 @@ name|gdouble
 name|current_step
 parameter_list|)
 block|{
-comment|/* get y values of both upper and lower curve,    * and return the iterated value inbetween    */
+comment|/* get y values of both upper and lower curve,    * and return the iterated value in between    */
 name|gdouble
 name|l_y1
 decl_stmt|,
@@ -15281,7 +15281,7 @@ name|l_topshift
 operator|+
 name|l_curvy
 expr_stmt|;
-comment|/* ----------- SMOOTING ------------------ */
+comment|/* ----------- SMOOTHING ------------------ */
 if|if
 condition|(
 name|cd
@@ -16022,7 +16022,7 @@ operator|->
 name|smoothing
 condition|)
 block|{
-comment|/* smooting is on, so we are using a mixed color */
+comment|/* smoothing is on, so we are using a mixed color */
 name|gulong
 name|alpha1
 init|=
@@ -16213,7 +16213,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/* smooting is off, so we are using this color or                              the last color */
+comment|/* smoothing is off, so we are using this color or                              the last color */
 if|if
 condition|(
 name|l_dy

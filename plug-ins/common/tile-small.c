@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a141ac0108
+DECL|struct|__anon28da36000108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a141ac0203
+DECL|enum|__anon28da36000203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a141ac0308
+DECL|struct|__anon28da36000308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a141ac0408
+DECL|struct|__anon28da36000408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -4887,7 +4887,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Given a row then srink it down a bit */
+comment|/* Given a row then shrink it down a bit */
 end_comment
 
 begin_function

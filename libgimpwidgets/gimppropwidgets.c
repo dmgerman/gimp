@@ -732,7 +732,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresonding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since: 2.4  */
+comment|/**  * gimp_prop_enum_check_button_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by checkbutton.  * @label:         Label to give checkbutton (including mnemonic).  * @false_value:   Enum value corresponding to unchecked state.  * @true_value:    Enum value corresponding to checked state.  *  * Creates a #GtkCheckButton that displays and sets the specified  * property of type Enum.  Note that this widget only allows two values  * for the enum, one corresponding to the "checked" state and the  * other to the "unchecked" state.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned button.  *  * Return value: The newly created #GtkCheckButton widget.  *  * Since: 2.4  */
 end_comment
 
 begin_function

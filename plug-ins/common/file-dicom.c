@@ -1576,7 +1576,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Look up type from the dictionary. At the time we dont              support this option... */
+comment|/* Look up type from the dictionary. At the time we don't              support this option... */
 name|gchar
 name|element_length_chars
 index|[
@@ -3115,7 +3115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b5ac20108
+DECL|struct|__anon2ae0eb940108
 block|{
 DECL|member|group_word
 name|guint16
@@ -5651,7 +5651,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2b2b5ac20208
+DECL|struct|__anon2ae0eb940208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5779,7 +5779,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2b2b5ac20308
+DECL|struct|__anon2ae0eb940308
 struct|struct
 block|{
 DECL|member|DICOM

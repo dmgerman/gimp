@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c92ebe90103
+DECL|enum|__anon2a2a867a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -543,7 +543,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_selector_new:  * @selector_type: The #GType of the selector to create.  * @rgb:           The inital color to be edited.  * @hsv:           The same color in HSV.  * @channel:       The selector's initial channel.  *  * Creates a new #GimpColorSelector widget of type @selector_type.  *  * Note that this is mostly internal API to be used by other widgets.  *  * Please use gimp_color_selection_new() for the "GIMP-typical" color  * selection widget. Also see gimp_color_button_new().  *  * Retunn value: the new #GimpColorSelector widget.  **/
+comment|/**  * gimp_color_selector_new:  * @selector_type: The #GType of the selector to create.  * @rgb:           The initial color to be edited.  * @hsv:           The same color in HSV.  * @channel:       The selector's initial channel.  *  * Creates a new #GimpColorSelector widget of type @selector_type.  *  * Note that this is mostly internal API to be used by other widgets.  *  * Please use gimp_color_selection_new() for the "GIMP-typical" color  * selection widget. Also see gimp_color_button_new().  *  * Retunn value: the new #GimpColorSelector widget.  **/
 end_comment
 
 begin_function

@@ -1014,7 +1014,7 @@ name|node
 decl_stmt|;
 name|g_set_application_name
 argument_list|(
-literal|"GIMP documention shooter"
+literal|"GIMP documentation shooter"
 argument_list|)
 expr_stmt|;
 comment|/* If there's no DISPLAY, we silently error out.    * We don't want to break headless builds.    */

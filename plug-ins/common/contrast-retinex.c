@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc144550108
+DECL|struct|__anon2a236f6d0108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc144550203
+DECL|enum|__anon2a236f6d0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc144550308
+DECL|struct|__anon2a236f6d0308
 block|{
 DECL|member|N
 name|gint
@@ -1955,7 +1955,7 @@ operator|==
 literal|2
 condition|)
 block|{
-comment|/* For two filters whe choose the median and maximum scale */
+comment|/* For two filters we choose the median and maximum scale */
 name|scales
 index|[
 literal|0

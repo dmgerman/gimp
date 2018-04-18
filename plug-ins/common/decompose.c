@@ -70,13 +70,13 @@ value|"gimp-decompose"
 end_define
 
 begin_comment
-comment|/* Descrition of a component */
+comment|/* Description of a component */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc2a4c0108
+DECL|struct|__anon29e542a50108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc2a4c0208
+DECL|struct|__anon29e542a50208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc2a4c0308
+DECL|struct|__anon29e542a50308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -3619,7 +3619,7 @@ name|GeglRectangle
 modifier|*
 name|extent
 decl_stmt|;
-comment|/* We are working in linear double precison*/
+comment|/* We are working in linear double precision */
 name|component_format
 operator|=
 name|babl_format_new
@@ -3644,7 +3644,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* We need to enforce linearity here    * If the output is "Y'", the ouput of temp is already ok    * If the output is "Y" , it will enforce gamma-decoding.    * A bit tricky and suboptimal...    */
+comment|/* We need to enforce linearity here    * If the output is "Y'", the output of temp is already ok    * If the output is "Y" , it will enforce gamma-decoding.    * A bit tricky and suboptimal...    */
 if|if
 condition|(
 name|component

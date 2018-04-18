@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d8fe610103
+DECL|enum|__anon2befd39f0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d8fe610208
+DECL|struct|__anon2befd39f0208
 block|{
 DECL|member|max_p
 name|gint
@@ -403,7 +403,7 @@ operator|&
 name|pvals
 argument_list|)
 expr_stmt|;
-comment|/* Since a channel might be selected, we must check wheter RGB or not. */
+comment|/* Since a channel might be selected, we must check whether RGB or not. */
 if|if
 condition|(
 operator|!
@@ -524,7 +524,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d8fe610308
+DECL|struct|__anon2befd39f0308
 block|{
 DECL|member|init_value
 name|gint

@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a479ab90108
+DECL|struct|__anon2bce0b610108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -3709,7 +3709,7 @@ argument_list|(
 name|theta
 argument_list|)
 expr_stmt|;
-comment|/* compute the minimum rectangle at angle theta that bounds the points,      1/2 side lenghs left in axis1, axis2, center in xc, yc */
+comment|/* compute the minimum rectangle at angle theta that bounds the points,      1/2 side lengths left in axis1, axis2, center in xc, yc */
 name|axis1max
 operator|=
 name|axis1min

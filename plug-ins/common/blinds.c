@@ -1431,7 +1431,7 @@ name|gint
 name|available
 decl_stmt|;
 comment|/* Make the row 'shrink' around points along its length */
-comment|/* The bvals.numsegs determins how many segments to slip it in to */
+comment|/* The bvals.numsegs determines how many segments to slip it in to */
 comment|/* The angle is the conceptual 'rotation' of each of these segments */
 comment|/* Note the row is considered to be made up of a two dim array actual    * pixel locations and the RGB color at these locations.    */
 comment|/* In the process copy the src row to the destination row */
@@ -2777,7 +2777,7 @@ literal|1
 expr_stmt|;
 block|}
 comment|/* Hmmm. does this work portably? */
-comment|/* This "swaps the intergers around that are held in in the        * sr& dr arrays.        */
+comment|/* This "swaps" the integers around that are held in in the        * sr& dr arrays.        */
 name|blindsapply
 argument_list|(
 operator|(

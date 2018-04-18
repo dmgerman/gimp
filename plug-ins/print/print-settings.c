@@ -276,7 +276,7 @@ operator|->
 name|unit
 argument_list|)
 expr_stmt|;
-comment|/* Do not save the print resolution when it is the expected image        * resolution so that changing it (i.e. in "print size" dialog)        * is not overrided by any previous prints.        */
+comment|/* Do not save the print resolution when it is the expected image        * resolution so that changing it (i.e. in "print size" dialog)        * is not overridden by any previous prints.        */
 if|if
 condition|(
 operator|(
