@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -3149,7 +3155,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon276fad1c0108
+DECL|struct|__anon2973c41a0108
 block|{
 DECL|member|sequence
 specifier|const
