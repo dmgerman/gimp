@@ -1607,13 +1607,6 @@ name|crop_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_crop_tool_update_option_defaults
-argument_list|(
-name|crop_tool
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|widget

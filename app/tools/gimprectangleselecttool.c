@@ -2886,13 +2886,6 @@ argument_list|,
 name|rect_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_select_tool_update_option_defaults
-argument_list|(
-name|rect_tool
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|widget
