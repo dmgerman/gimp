@@ -96,7 +96,7 @@ init|=
 block|{
 literal|0.0
 block|,
-literal|0.5
+literal|0.8
 block|,
 literal|1.0
 block|,
@@ -385,7 +385,7 @@ init|=
 block|{
 literal|0.0
 block|,
-literal|0.5
+literal|0.8
 block|,
 literal|1.0
 block|,

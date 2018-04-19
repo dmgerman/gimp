@@ -68,12 +68,12 @@ DECL|macro|GIMP_SAMPLE_POINT_DRAW_SIZE
 define|#
 directive|define
 name|GIMP_SAMPLE_POINT_DRAW_SIZE
-value|10
+value|14
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29798cb00103
+DECL|enum|__anon290d35c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -956,11 +956,11 @@ name|cr
 argument_list|,
 name|x
 operator|+
-literal|2.5
+literal|3
 argument_list|,
 name|y
 operator|+
-literal|2.5
+literal|3
 argument_list|)
 expr_stmt|;
 name|pango_cairo_show_layout
@@ -970,7 +970,7 @@ argument_list|,
 name|layout
 argument_list|)
 expr_stmt|;
-name|_gimp_canvas_item_fill
+name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
@@ -1113,7 +1113,7 @@ name|MAX
 argument_list|(
 name|x2
 argument_list|,
-literal|2.5
+literal|3
 operator|+
 name|ink
 operator|.
@@ -1126,7 +1126,7 @@ name|MAX
 argument_list|(
 name|y2
 argument_list|,
-literal|2.5
+literal|3
 operator|+
 name|ink
 operator|.
@@ -1210,6 +1210,21 @@ operator|->
 name|sample_point_style
 condition|)
 block|{
+name|gimp_canvas_set_tool_bg_style
+argument_list|(
+name|gimp_canvas_item_get_canvas
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_stroke_preserve
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|gimp_canvas_set_sample_point_style
 argument_list|(
 name|gimp_canvas_item_get_canvas
