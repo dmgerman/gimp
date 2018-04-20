@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -2514,6 +2520,24 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+comment|/*  When a channel is position-locked, it is also implicitly    *  content-locked because we translate channels by modifying their    *  pixels.    */
+if|if
+condition|(
+operator|(
+name|modify
+operator|&
+name|GIMP_PDB_ITEM_POSITION
+operator|)
+operator|&&
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|item
+argument_list|)
+condition|)
+name|modify
+operator||=
+name|GIMP_PDB_ITEM_CONTENT
 expr_stmt|;
 if|if
 condition|(
