@@ -1939,7 +1939,7 @@ name|FALSE
 return|;
 block|}
 return|return
-name|gimp_pdb_item_is_modifyable
+name|gimp_pdb_item_is_modifiable
 argument_list|(
 name|item
 argument_list|,
@@ -2481,8 +2481,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_modifyable (GimpItem * item,GimpPDBItemModify modify,GError ** error)
-name|gimp_pdb_item_is_modifyable
+DECL|function|gimp_pdb_item_is_modifiable (GimpItem * item,GimpPDBItemModify modify,GError ** error)
+name|gimp_pdb_item_is_modifiable
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -3616,7 +3616,7 @@ condition|(
 operator|!
 name|modify
 operator|||
-name|gimp_pdb_item_is_modifyable
+name|gimp_pdb_item_is_modifiable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

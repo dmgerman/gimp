@@ -2987,7 +2987,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_pdb_item_is_modifyable
+name|gimp_pdb_item_is_modifiable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3168,7 +3168,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_pdb_item_is_modifyable
+name|gimp_pdb_item_is_modifiable
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

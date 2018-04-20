@@ -366,7 +366,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_pdb_item_is_modifyable
+name|gimp_pdb_item_is_modifiable
 parameter_list|(
 name|GimpItem
 modifier|*
