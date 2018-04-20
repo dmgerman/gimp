@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3bac920103
+DECL|enum|__anon2b89eead0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bac920208
+DECL|struct|__anon2b89eead0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bac920308
+DECL|struct|__anon2b89eead0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -3873,6 +3873,16 @@ argument_list|)
 argument_list|)
 operator|*
 literal|4
+expr_stmt|;
+comment|/*  have at least one value in the cache  */
+name|cache_size
+operator|=
+name|MAX
+argument_list|(
+name|cache_size
+argument_list|,
+literal|1
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
