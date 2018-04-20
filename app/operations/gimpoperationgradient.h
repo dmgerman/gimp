@@ -184,6 +184,10 @@ DECL|member|gradient_cache_valid
 name|gboolean
 name|gradient_cache_valid
 decl_stmt|;
+DECL|member|gradient_cache_mutex
+name|GMutex
+name|gradient_cache_mutex
+decl_stmt|;
 block|}
 struct|;
 end_struct

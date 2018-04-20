@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89eead0103
+DECL|enum|__anon298a58f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89eead0208
+DECL|struct|__anon298a58f20208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89eead0308
+DECL|struct|__anon298a58f20308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -1074,7 +1074,16 @@ name|GimpOperationGradient
 modifier|*
 name|self
 parameter_list|)
-block|{ }
+block|{
+name|g_mutex_init
+argument_list|(
+operator|&
+name|self
+operator|->
+name|gradient_cache_mutex
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1121,6 +1130,14 @@ operator|->
 name|gradient_cache
 argument_list|,
 name|g_free
+argument_list|)
+expr_stmt|;
+name|g_mutex_clear
+argument_list|(
+operator|&
+name|self
+operator|->
+name|gradient_cache_mutex
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -3822,6 +3839,14 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|g_mutex_lock
+argument_list|(
+operator|&
+name|self
+operator|->
+name|gradient_cache_mutex
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3993,6 +4018,14 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+name|g_mutex_unlock
+argument_list|(
+operator|&
+name|self
+operator|->
+name|gradient_cache_mutex
+argument_list|)
+expr_stmt|;
 name|rbd
 operator|.
 name|gradient
