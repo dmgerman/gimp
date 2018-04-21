@@ -406,9 +406,6 @@ argument_list|(
 name|themerc
 argument_list|)
 expr_stmt|;
-name|gimp_ui_fix_pixbuf_style
-argument_list|()
-expr_stmt|;
 name|file
 operator|=
 name|g_file_new_for_path
@@ -528,6 +525,9 @@ index|]
 expr_stmt|;
 endif|#
 directive|endif
+name|gimp_ui_fix_pixbuf_style
+argument_list|()
+expr_stmt|;
 name|gimp_ui_initialized
 operator|=
 name|TRUE
