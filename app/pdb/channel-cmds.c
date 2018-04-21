@@ -835,6 +835,16 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel1
+argument_list|)
+argument_list|)
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|channel1
