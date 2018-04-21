@@ -1326,7 +1326,7 @@ literal|"show-playground"
 block|,
 literal|0
 block|,
-name|G_OPTION_FLAG_HIDDEN
+literal|0
 block|,
 name|G_OPTION_ARG_NONE
 block|,

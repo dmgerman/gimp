@@ -6700,6 +6700,51 @@ operator|&
 name|top_iter
 argument_list|)
 expr_stmt|;
+name|hbox
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_HINT_BOX
+argument_list|,
+literal|"icon-name"
+argument_list|,
+name|GIMP_ICON_DIALOG_WARNING
+argument_list|,
+literal|"hint"
+argument_list|,
+name|_
+argument_list|(
+literal|"These features are unfinished, buggy "
+literal|"and may crash GIMP. It is unadvised to "
+literal|"use them unless you really know what "
+literal|"you are doing or you intend to contribute "
+literal|"patches."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -12914,7 +12959,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a2f45780108
+DECL|struct|__anon27f0068c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13791,7 +13836,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2f45780208
+DECL|struct|__anon27f0068c0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13929,7 +13974,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2f45780308
+DECL|struct|__anon27f0068c0308
 block|{
 DECL|member|tree_label
 specifier|const
