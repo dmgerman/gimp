@@ -175,10 +175,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean
@@ -1065,17 +1065,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_translate (GimpItem * item,gint offset_x,gint offset_y,gboolean push_undo)
+DECL|function|gimp_selection_translate (GimpItem * item,gdouble offset_x,gdouble offset_y,gboolean push_undo)
 name|gimp_selection_translate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean

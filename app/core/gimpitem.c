@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1eb36e0103
+DECL|enum|__anon296468820103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1eb36e0203
+DECL|enum|__anon296468820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -594,10 +594,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean
@@ -2578,17 +2578,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_translate (GimpItem * item,gint offset_x,gint offset_y,gboolean push_undo)
+DECL|function|gimp_item_real_translate (GimpItem * item,gdouble offset_x,gdouble offset_y,gboolean push_undo)
 name|gimp_item_real_translate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean
@@ -2612,13 +2612,19 @@ name|private
 operator|->
 name|offset_x
 operator|+
+name|SIGNED_ROUND
+argument_list|(
 name|offset_x
+argument_list|)
 argument_list|,
 name|private
 operator|->
 name|offset_y
 operator|+
+name|SIGNED_ROUND
+argument_list|(
 name|offset_y
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4914,17 +4920,17 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_translate (GimpItem * item,gint offset_x,gint offset_y,gboolean push_undo)
+DECL|function|gimp_item_translate (GimpItem * item,gdouble offset_x,gdouble offset_y,gboolean push_undo)
 name|gimp_item_translate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean

@@ -412,10 +412,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean
@@ -1201,10 +1201,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|,
 name|gboolean
