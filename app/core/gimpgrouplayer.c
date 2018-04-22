@@ -184,9 +184,9 @@ DECL|member|suspended_mask_bounds
 name|GeglRectangle
 name|suspended_mask_bounds
 decl_stmt|;
-DECL|member|moving
+DECL|member|transforming
 name|gint
-name|moving
+name|transforming
 decl_stmt|;
 DECL|member|expanded
 name|gboolean
@@ -451,7 +451,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_group_layer_start_move
+name|gimp_group_layer_start_transform
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -466,7 +466,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_group_layer_end_move
+name|gimp_group_layer_end_transform
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -1308,15 +1308,15 @@ name|gimp_group_layer_convert
 expr_stmt|;
 name|item_class
 operator|->
-name|start_move
+name|start_transform
 operator|=
-name|gimp_group_layer_start_move
+name|gimp_group_layer_start_transform
 expr_stmt|;
 name|item_class
 operator|->
-name|end_move
+name|end_transform
 operator|=
-name|gimp_group_layer_end_move
+name|gimp_group_layer_end_transform
 expr_stmt|;
 name|item_class
 operator|->
@@ -2821,8 +2821,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_start_move (GimpItem * item,gboolean push_undo)
-name|gimp_group_layer_start_move
+DECL|function|gimp_group_layer_start_transform (GimpItem * item,gboolean push_undo)
+name|gimp_group_layer_start_transform
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -2832,7 +2832,7 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|_gimp_group_layer_start_move
+name|_gimp_group_layer_start_transform
 argument_list|(
 name|GIMP_GROUP_LAYER
 argument_list|(
@@ -2849,14 +2849,14 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|start_move
+name|start_transform
 condition|)
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|start_move
+name|start_transform
 argument_list|(
 name|item
 argument_list|,
@@ -2869,8 +2869,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_end_move (GimpItem * item,gboolean push_undo)
-name|gimp_group_layer_end_move
+DECL|function|gimp_group_layer_end_transform (GimpItem * item,gboolean push_undo)
+name|gimp_group_layer_end_transform
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -2887,21 +2887,21 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|end_move
+name|end_transform
 condition|)
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|end_move
+name|end_transform
 argument_list|(
 name|item
 argument_list|,
 name|push_undo
 argument_list|)
 expr_stmt|;
-name|_gimp_group_layer_end_move
+name|_gimp_group_layer_end_transform
 argument_list|(
 name|GIMP_GROUP_LAYER
 argument_list|(
@@ -2971,21 +2971,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/* we implement GimpItem::resize(), instead of GimpLayer::resize(), so that    * GimpLayer doesn't resize the mask.  instead, we temporarily decrement    * private->moving, so that mask resizing is handled by    * gimp_group_layer_update_size().    */
-name|g_return_if_fail
-argument_list|(
-name|private
-operator|->
-name|moving
-operator|>
-literal|0
-argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|moving
-operator|--
-expr_stmt|;
+comment|/* we implement GimpItem::resize(), instead of GimpLayer::resize(), so that    * GimpLayer doesn't resize the mask.  note that gimp_item_resize() calls    * gimp_item_{start,end}_move(), and not gimp_item_{start,end}_transform(),    * so that mask resizing is handled by gimp_group_layer_update_size().    */
 name|x
 operator|=
 name|gimp_item_get_offset_x
@@ -3188,11 +3174,6 @@ name|group
 argument_list|,
 name|TRUE
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|moving
-operator|++
 expr_stmt|;
 block|}
 end_function
@@ -6640,8 +6621,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_group_layer_start_move (GimpGroupLayer * group,gboolean push_undo)
-name|_gimp_group_layer_start_move
+DECL|function|_gimp_group_layer_start_transform (GimpGroupLayer * group,gboolean push_undo)
+name|_gimp_group_layer_start_transform
 parameter_list|(
 name|GimpGroupLayer
 modifier|*
@@ -6706,7 +6687,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_group_layer_start_move
+name|gimp_image_undo_push_group_layer_start_transform
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -6720,7 +6701,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|moving
+name|transforming
 operator|++
 expr_stmt|;
 block|}
@@ -6728,8 +6709,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_group_layer_end_move (GimpGroupLayer * group,gboolean push_undo)
-name|_gimp_group_layer_end_move
+DECL|function|_gimp_group_layer_end_transform (GimpGroupLayer * group,gboolean push_undo)
+name|_gimp_group_layer_end_transform
 parameter_list|(
 name|GimpGroupLayer
 modifier|*
@@ -6782,7 +6763,7 @@ name|g_return_if_fail
 argument_list|(
 name|private
 operator|->
-name|moving
+name|transforming
 operator|>
 literal|0
 argument_list|)
@@ -6803,7 +6784,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_group_layer_end_move
+name|gimp_image_undo_push_group_layer_end_transform
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -6817,14 +6798,14 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|moving
+name|transforming
 operator|--
 expr_stmt|;
 if|if
 condition|(
 name|private
 operator|->
-name|moving
+name|transforming
 operator|==
 literal|0
 condition|)
@@ -7709,7 +7690,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* resize the mask if not moving (in which case, GimpLayer takes care of the    * mask)    */
+comment|/* resize the mask if not transforming (in which case, GimpLayer takes care    * of the mask)    */
 if|if
 condition|(
 name|resize_mask
@@ -7717,7 +7698,7 @@ operator|&&
 operator|!
 name|private
 operator|->
-name|moving
+name|transforming
 condition|)
 name|gimp_group_layer_update_mask_size
 argument_list|(

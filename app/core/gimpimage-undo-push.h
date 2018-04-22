@@ -806,7 +806,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_group_layer_start_move
+name|gimp_image_undo_push_group_layer_start_transform
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -827,7 +827,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_group_layer_end_move
+name|gimp_image_undo_push_group_layer_end_transform
 parameter_list|(
 name|GimpImage
 modifier|*

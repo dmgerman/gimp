@@ -479,6 +479,7 @@ name|item
 argument_list|)
 condition|)
 continue|continue;
+comment|/* note that we call gimp_item_start_move(), and not        * gimp_item_start_transform().  see the comment in gimp_item_resize()        * for more information.        */
 name|gimp_item_start_move
 argument_list|(
 name|item

@@ -289,10 +289,10 @@ case|case
 name|GIMP_UNDO_GROUP_LAYER_SUSPEND_MASK
 case|:
 case|case
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 case|:
 case|case
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 case|:
 break|break;
 case|case
@@ -685,10 +685,10 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 case|:
 case|case
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 case|:
 if|if
 condition|(
@@ -701,7 +701,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 operator|)
 operator|||
 operator|(
@@ -713,12 +713,12 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 operator|)
 condition|)
 block|{
-comment|/*  end group layer move operation  */
-name|_gimp_group_layer_end_move
+comment|/*  end group layer transform operation  */
+name|_gimp_group_layer_end_transform
 argument_list|(
 name|group
 argument_list|,
@@ -728,8 +728,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  start group layer move operation  */
-name|_gimp_group_layer_start_move
+comment|/*  start group layer transform operation  */
+name|_gimp_group_layer_start_transform
 argument_list|(
 name|group
 argument_list|,

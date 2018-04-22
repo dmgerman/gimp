@@ -435,7 +435,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_start_move
+name|gimp_item_start_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -501,7 +501,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_end_move
+name|gimp_item_end_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -615,7 +615,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_start_move
+name|gimp_item_start_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -683,7 +683,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_end_move
+name|gimp_item_end_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -796,7 +796,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_start_move
+name|gimp_item_start_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -866,7 +866,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_end_move
+name|gimp_item_end_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1030,7 +1030,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_start_move
+name|gimp_item_start_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1113,7 +1113,7 @@ argument_list|(
 name|l
 argument_list|)
 control|)
-name|gimp_item_end_move
+name|gimp_item_end_transform
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

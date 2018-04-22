@@ -2897,8 +2897,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_group_layer_start_move (GimpImage * image,const gchar * undo_desc,GimpGroupLayer * group)
-name|gimp_image_undo_push_group_layer_start_move
+DECL|function|gimp_image_undo_push_group_layer_start_transform (GimpImage * image,const gchar * undo_desc,GimpGroupLayer * group)
+name|gimp_image_undo_push_group_layer_start_transform
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2954,7 +2954,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_GROUP_LAYER_UNDO
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -2975,8 +2975,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_group_layer_end_move (GimpImage * image,const gchar * undo_desc,GimpGroupLayer * group)
-name|gimp_image_undo_push_group_layer_end_move
+DECL|function|gimp_image_undo_push_group_layer_end_transform (GimpImage * image,const gchar * undo_desc,GimpGroupLayer * group)
+name|gimp_image_undo_push_group_layer_end_transform
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -3032,7 +3032,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_GROUP_LAYER_UNDO
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 argument_list|,
 name|undo_desc
 argument_list|,

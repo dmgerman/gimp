@@ -248,7 +248,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|_gimp_group_layer_start_move
+name|_gimp_group_layer_start_transform
 parameter_list|(
 name|GimpGroupLayer
 modifier|*
@@ -262,7 +262,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|_gimp_group_layer_end_move
+name|_gimp_group_layer_end_transform
 parameter_list|(
 name|GimpGroupLayer
 modifier|*

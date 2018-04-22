@@ -4467,19 +4467,19 @@ literal|"group-layer-resume-mask"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 block|,
-literal|"GIMP_UNDO_GROUP_LAYER_START_MOVE"
+literal|"GIMP_UNDO_GROUP_LAYER_START_TRANSFORM"
 block|,
-literal|"group-layer-start-move"
+literal|"group-layer-start-transform"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 block|,
-literal|"GIMP_UNDO_GROUP_LAYER_END_MOVE"
+literal|"GIMP_UNDO_GROUP_LAYER_END_TRANSFORM"
 block|,
-literal|"group-layer-end-move"
+literal|"group-layer-end-transform"
 block|}
 block|,
 block|{
@@ -5572,26 +5572,26 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_START_MOVE
+name|GIMP_UNDO_GROUP_LAYER_START_TRANSFORM
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Start moving group layer"
+literal|"Start transforming group layer"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_END_MOVE
+name|GIMP_UNDO_GROUP_LAYER_END_TRANSFORM
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"End moving group layer"
+literal|"End transforming group layer"
 argument_list|)
 block|,
 name|NULL
