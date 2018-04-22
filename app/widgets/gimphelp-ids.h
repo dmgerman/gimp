@@ -2750,10 +2750,10 @@ value|"gimp-filter-gegl"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILTER_GAUSSIAN_GRID
+DECL|macro|GIMP_HELP_FILTER_GRID
 define|#
 directive|define
-name|GIMP_HELP_FILTER_GAUSSIAN_GRID
+name|GIMP_HELP_FILTER_GRID
 value|"gimp-filter-grid"
 end_define
 

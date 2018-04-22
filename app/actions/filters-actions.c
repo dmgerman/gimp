@@ -1496,7 +1496,7 @@ name|NULL
 block|,
 literal|"gegl:grid"
 block|,
-name|GIMP_HELP_FILTER_GAUSSIAN_GRID
+name|GIMP_HELP_FILTER_GRID
 block|}
 block|,
 block|{
