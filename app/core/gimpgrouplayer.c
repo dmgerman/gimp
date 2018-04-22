@@ -6179,6 +6179,7 @@ argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
+comment|/* avoid pushing an undo step if this is a nested suspend_mask() call, since    * the value of 'push_undo' in nested calls should be the same as that passed    * to the outermost call, and only pushing an undo step for the outermost    * call in this case is enough.  we can't support cases where the values of    * 'push_undo' in nested calls are different in a meaningful way, and    * avoiding undo steps for nested calls prevents us from storing multiple    * references to the suspend mask buffer on the undo stack.  while storing    * multiple references to the buffer doesn't waste any memory (since all the    * references are to the same buffer), it does cause the undo stack memory-    * usage estimation to overshoot, potentially resulting in undo steps being    * dropped unnecessarily.    */
 if|if
 condition|(
 operator|!
@@ -6186,6 +6187,12 @@ name|gimp_item_is_attached
 argument_list|(
 name|item
 argument_list|)
+operator|||
+name|private
+operator|->
+name|suspend_mask
+operator|>
+literal|0
 condition|)
 name|push_undo
 operator|=
@@ -6372,6 +6379,7 @@ argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
+comment|/* avoid pushing an undo step if this is a nested resume_mask() call.  see    * the comment in gimp_group_layer_suspend_mask().    */
 if|if
 condition|(
 operator|!
@@ -6379,6 +6387,12 @@ name|gimp_item_is_attached
 argument_list|(
 name|item
 argument_list|)
+operator|||
+name|private
+operator|->
+name|suspend_mask
+operator|>
+literal|1
 condition|)
 name|push_undo
 operator|=
