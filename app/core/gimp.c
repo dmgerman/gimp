@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a359d700103
+DECL|enum|__anon2b6f42a70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a359d700203
+DECL|enum|__anon2b6f42a70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4789,6 +4789,28 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|g_file_query_exists
+argument_list|(
+name|dir
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
+comment|/* Try to make the temp directory if it doesn't exist.        * Ignore any error.        */
+name|g_file_make_directory_with_parents
+argument_list|(
+name|dir
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|file
 operator|=
 name|g_file_get_child
