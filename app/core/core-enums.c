@@ -3979,6 +3979,14 @@ literal|"group-image-item-remove"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_ITEM_REORDER
+block|,
+literal|"GIMP_UNDO_GROUP_IMAGE_ITEM_REORDER"
+block|,
+literal|"group-image-item-reorder"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 block|,
 literal|"GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE"
@@ -4765,6 +4773,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Remove item"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_IMAGE_ITEM_REORDER
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder item"
 argument_list|)
 block|,
 name|NULL

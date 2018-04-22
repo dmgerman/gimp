@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2906959f0103
+DECL|enum|__anon29d8658e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2906959f0203
+DECL|enum|__anon29d8658e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -16377,6 +16377,9 @@ name|GimpItemTree
 modifier|*
 name|tree
 decl_stmt|;
+name|gboolean
+name|result
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -16428,7 +16431,10 @@ expr_stmt|;
 if|if
 condition|(
 name|push_undo
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 operator|!
 name|undo_desc
 condition|)
@@ -16441,8 +16447,26 @@ argument_list|)
 operator|->
 name|reorder_desc
 expr_stmt|;
+name|gimp_image_undo_group_start
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_UNDO_GROUP_IMAGE_ITEM_REORDER
+argument_list|,
+name|undo_desc
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_item_start_move
+argument_list|(
+name|item
+argument_list|,
+name|push_undo
+argument_list|)
+expr_stmt|;
 comment|/*  item and new_parent are type-checked in GimpItemTree    */
-return|return
+name|result
+operator|=
 name|gimp_item_tree_reorder_item
 argument_list|(
 name|tree
@@ -16457,6 +16481,25 @@ name|push_undo
 argument_list|,
 name|undo_desc
 argument_list|)
+expr_stmt|;
+name|gimp_item_end_move
+argument_list|(
+name|item
+argument_list|,
+name|push_undo
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+name|gimp_image_undo_group_end
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+return|return
+name|result
 return|;
 block|}
 end_function
