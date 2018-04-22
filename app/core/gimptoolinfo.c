@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2985f4bf0103
+DECL|enum|__anon29c7602a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -986,9 +986,12 @@ name|tool_options
 operator|=
 name|g_object_ref
 argument_list|(
+name|GIMP_TOOL_OPTIONS
+argument_list|(
 name|paint_info
 operator|->
 name|paint_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
