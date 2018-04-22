@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894b7ca0103
+DECL|enum|__anon291bcc3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2894b7ca0203
+DECL|enum|__anon291bcc3c0203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -1773,7 +1773,7 @@ argument_list|,
 operator|&
 name|style
 operator|->
-name|text
+name|text_aa
 index|[
 name|gtk_widget_get_state
 argument_list|(
@@ -1834,7 +1834,7 @@ argument_list|,
 operator|&
 name|style
 operator|->
-name|text
+name|text_aa
 index|[
 name|gtk_widget_get_state
 argument_list|(
