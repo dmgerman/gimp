@@ -4750,7 +4750,9 @@ literal|"gimp-color-balance"
 argument_list|,
 literal|"Modify the color balance of the specified drawable."
 argument_list|,
-literal|"Modify the color balance of the specified drawable. There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue. Negative values increase the amount of the former, positive values increase the amount of the latter. Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, mid-tones, and highlights in an image to be affected differently. The 'preserve-lum' parameter, if TRUE, ensures that the luminosity of each pixel remains fixed."
+literal|"Modify the color balance of the specified drawable. There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue. Negative values increase the amount of the former, positive values increase the amount of the latter. Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, mid-tones, and highlights in an image to be affected differently. The 'preserve-lum' parameter, if TRUE, ensures that the luminosity of each pixel remains fixed.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-drawable-color-color-balance' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4758,7 +4760,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|NULL
+literal|"gimp-drawable-color-color-balance"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

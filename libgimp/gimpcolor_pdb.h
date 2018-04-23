@@ -288,6 +288,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_drawable_color_color_balance
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_color_balance
