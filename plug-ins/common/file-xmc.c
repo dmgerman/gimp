@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1e128f0108
+DECL|struct|__anon2960cad70108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c1e128f0208
+DECL|struct|__anon2960cad70208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -2952,7 +2952,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Adjust layer position to let hotspot sit on the same point. */
-name|gimp_layer_translate
+name|gimp_item_transform_translate
 argument_list|(
 name|layer_ID
 argument_list|,
@@ -9203,7 +9203,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c1e128f0308
+DECL|struct|__anon2960cad70308
 block|{
 DECL|member|size
 name|guint32

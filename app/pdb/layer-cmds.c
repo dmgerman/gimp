@@ -6904,7 +6904,9 @@ literal|"gimp-layer-translate"
 argument_list|,
 literal|"Translate the layer by the specified offsets."
 argument_list|,
-literal|"This procedure translates the layer by the amounts specified in the x and y arguments. These can be negative, and are considered offsets from the current position. This command only works if the layer has been added to an image. All additional layers contained in the image which have the linked flag set to TRUE w ill also be translated by the specified offsets."
+literal|"This procedure translates the layer by the amounts specified in the x and y arguments. These can be negative, and are considered offsets from the current position. This command only works if the layer has been added to an image. All additional layers contained in the image which have the linked flag set to TRUE w ill also be translated by the specified offsets.\n"
+literal|"\n"
+literal|"Deprecated: Use 'gimp-item-transform-translate' instead."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -6912,7 +6914,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-translate"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

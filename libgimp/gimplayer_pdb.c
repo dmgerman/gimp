@@ -972,7 +972,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_translate:  * @layer_ID: The layer.  * @offx: Offset in x direction.  * @offy: Offset in y direction.  *  * Translate the layer by the specified offsets.  *  * This procedure translates the layer by the amounts specified in the  * x and y arguments. These can be negative, and are considered offsets  * from the current position. This command only works if the layer has  * been added to an image. All additional layers contained in the image  * which have the linked flag set to TRUE w ill also be translated by  * the specified offsets.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_layer_translate:  * @layer_ID: The layer.  * @offx: Offset in x direction.  * @offy: Offset in y direction.  *  * Translate the layer by the specified offsets.  *  * This procedure translates the layer by the amounts specified in the  * x and y arguments. These can be negative, and are considered offsets  * from the current position. This command only works if the layer has  * been added to an image. All additional layers contained in the image  * which have the linked flag set to TRUE w ill also be translated by  * the specified offsets.  *  * Deprecated: Use gimp_item_transform_translate() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

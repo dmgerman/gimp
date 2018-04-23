@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon290d0c460108
+DECL|struct|__anon2c74dc060108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon290d0c460208
+DECL|struct|__anon2c74dc060208
 block|{
 DECL|member|transparent
 name|gint
@@ -4616,7 +4616,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_transform_translate
 argument_list|(
 name|layer_ID
 argument_list|,

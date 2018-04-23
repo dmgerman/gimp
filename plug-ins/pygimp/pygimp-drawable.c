@@ -8209,7 +8209,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_layer_translate
+name|gimp_item_transform_translate
 argument_list|(
 name|self
 operator|->

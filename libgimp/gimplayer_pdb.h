@@ -235,6 +235,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_item_transform_translate
+argument_list|)
+end_macro
+
 begin_function_decl
 name|gboolean
 name|gimp_layer_translate

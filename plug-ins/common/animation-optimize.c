@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba7a8750103
+DECL|enum|__anon2acfb9080103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba7a8750203
+DECL|enum|__anon2acfb9080203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -4333,7 +4333,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_transform_translate
 argument_list|(
 name|new_layer_id
 argument_list|,
