@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpitem-linked.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -126,6 +132,198 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_function
+specifier|static
+name|GimpValueArray
+modifier|*
+DECL|function|item_transform_translate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|item_transform_translate_invoker
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+specifier|const
+name|GimpValueArray
+modifier|*
+name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|GimpValueArray
+modifier|*
+name|return_vals
+decl_stmt|;
+name|GimpItem
+modifier|*
+name|item
+decl_stmt|;
+name|gdouble
+name|off_x
+decl_stmt|;
+name|gdouble
+name|off_y
+decl_stmt|;
+name|item
+operator|=
+name|gimp_value_get_item
+argument_list|(
+name|gimp_value_array_index
+argument_list|(
+name|args
+argument_list|,
+literal|0
+argument_list|)
+argument_list|,
+name|gimp
+argument_list|)
+expr_stmt|;
+name|off_x
+operator|=
+name|g_value_get_double
+argument_list|(
+name|gimp_value_array_index
+argument_list|(
+name|args
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|off_y
+operator|=
+name|g_value_get_double
+argument_list|(
+name|gimp_value_array_index
+argument_list|(
+name|args
+argument_list|,
+literal|2
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_pdb_item_is_modifiable
+argument_list|(
+name|item
+argument_list|,
+name|GIMP_PDB_ITEM_POSITION
+argument_list|,
+name|error
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_item_get_linked
+argument_list|(
+name|item
+argument_list|)
+operator|&&
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
+condition|)
+block|{
+name|gimp_item_linked_translate
+argument_list|(
+name|item
+argument_list|,
+name|off_x
+argument_list|,
+name|off_y
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_item_translate
+argument_list|(
+name|item
+argument_list|,
+name|off_x
+argument_list|,
+name|off_y
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+name|return_vals
+operator|=
+name|gimp_procedure_get_return_values
+argument_list|(
+name|procedure
+argument_list|,
+name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|gimp_value_set_item
+argument_list|(
+name|gimp_value_array_index
+argument_list|(
+name|return_vals
+argument_list|,
+literal|1
+argument_list|)
+argument_list|,
+name|item
+argument_list|)
+expr_stmt|;
+return|return
+name|return_vals
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -3958,6 +4156,147 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
+comment|/*    * gimp-item-transform-translate    */
+name|procedure
+operator|=
+name|gimp_procedure_new
+argument_list|(
+name|item_transform_translate_invoker
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_static_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
+literal|"gimp-item-transform-translate"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_strings
+argument_list|(
+name|procedure
+argument_list|,
+literal|"gimp-item-transform-translate"
+argument_list|,
+literal|"Translate the item by the specified offsets."
+argument_list|,
+literal|"This procedure translates the item by the amounts specified in the off_x and off_y arguments. These can be negative, and are considered offsets from the current position. The offsets will be rounded to the nearest pixel unless the item is a path.\n"
+literal|"\n"
+literal|"If the item is attached to an image and has its linked flag set to TRUE, all additional items contained in the image which have the linked flag set to TRUE will also be translated by the specified offsets."
+argument_list|,
+literal|"Michael Natterer<mitch@gimp.org>"
+argument_list|,
+literal|"Michael Natterer"
+argument_list|,
+literal|"2018"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_item_id
+argument_list|(
+literal|"item"
+argument_list|,
+literal|"item"
+argument_list|,
+literal|"The item"
+argument_list|,
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|g_param_spec_double
+argument_list|(
+literal|"off-x"
+argument_list|,
+literal|"off x"
+argument_list|,
+literal|"Offset in x direction"
+argument_list|,
+operator|-
+name|G_MAXDOUBLE
+argument_list|,
+name|G_MAXDOUBLE
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|g_param_spec_double
+argument_list|(
+literal|"off-y"
+argument_list|,
+literal|"off y"
+argument_list|,
+literal|"Offset in y direction"
+argument_list|,
+operator|-
+name|G_MAXDOUBLE
+argument_list|,
+name|G_MAXDOUBLE
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_return_value
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_item_id
+argument_list|(
+literal|"item"
+argument_list|,
+literal|"item"
+argument_list|,
+literal|"The translated item"
+argument_list|,
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_pdb_register_procedure
+argument_list|(
+name|pdb
+argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 comment|/*    * gimp-item-transform-flip-simple    */
 name|procedure
 operator|=
@@ -3985,6 +4324,7 @@ argument_list|,
 literal|"Flip the specified item either vertically or horizontally."
 argument_list|,
 literal|"This procedure flips the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. If auto_center is set to TRUE, the flip is around the selection's center. Otherwise, the coordinate of the axis needs to be specified. The return value is the ID of the flipped item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and flipped drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -4155,6 +4495,7 @@ argument_list|,
 literal|"Flip the specified item around a given line."
 argument_list|,
 literal|"This procedure flips the specified item. If a selection exists and the item is a drawable , the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. The axis to flip around is specified by specifying two points from that line. The return value is the ID of the flipped item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and flipped drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -4342,6 +4683,7 @@ literal|"Perform a possibly non-affine transformation on the specified item."
 argument_list|,
 literal|"This procedure performs a possibly non-affine transformation on the specified item by allowing the corners of the original bounding box to be arbitrarily remapped to any values. The specified item is remapped if no selection exists or it is not a drawable. However, if a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then remapped as specified. The return value is the ID of the remapped item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and remapped drawable. The 4 coordinates specify the new locations of each corner of the original bounding box. By specifying these values, any affine transformation (rotation, scaling, translation) can be affected. Additionally, these values can be specified such that the resulting transformed item will appear to have\n"
 literal|"been projected via a perspective transform.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -4620,6 +4962,7 @@ argument_list|,
 literal|"Rotate the specified item about given coordinates through the specified angle."
 argument_list|,
 literal|"This function rotates the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and rotated drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -4798,6 +5141,7 @@ argument_list|,
 literal|"Rotate the specified item about given coordinates through the specified angle."
 argument_list|,
 literal|"This function rotates the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and rotated drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -4979,6 +5323,7 @@ argument_list|,
 literal|"Scale the specified item."
 argument_list|,
 literal|"This procedure scales the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then scaled by the specified amount. The return value is the ID of the scaled item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and scaled drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -5165,6 +5510,7 @@ argument_list|,
 literal|"Shear the specified item about its center by the specified magnitude."
 argument_list|,
 literal|"This procedure shears the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then sheard by the specified amount. The return value is the ID of the sheard item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and sheard drawable. The shear type parameter indicates whether the shear will be applied horizontally or vertically. The magnitude can be either positive or negative and indicates the extent (in pixels) to shear by.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -5317,6 +5663,7 @@ argument_list|,
 literal|"Transform the specified item in 2d."
 argument_list|,
 literal|"This procedure transforms the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by scaling the image by the x and y scale factors about the point (source_x, source_y), then rotating around the same point, then translating that point to the new position (dest_x, dest_y). The return value is the ID of the rotated drawable. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and transformed drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -5572,6 +5919,7 @@ argument_list|,
 literal|"Transform the specified item in 2d."
 argument_list|,
 literal|"This procedure transforms the specified item. If a selection exists and the item is a drawable, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by assembling a 3x3 matrix from the coefficients passed. The return value is the ID of the transformed item. If there was no selection or the item is not a drawable, this will be equal to the item ID supplied as input. Otherwise, this will be the newly created and transformed drawable.\n"
+literal|"\n"
 literal|"This procedure is affected by the following context setters: 'gimp-context-set-interpolation', 'gimp-context-set-transform-direction', 'gimp-context-set-transform-resize'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
