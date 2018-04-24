@@ -15012,10 +15012,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gdouble
+name|gint32
 name|period
 decl_stmt|;
-name|gdouble
+name|gint32
 name|amplitude
 decl_stmt|;
 name|gint32
@@ -15033,7 +15033,6 @@ decl_stmt|;
 name|gboolean
 name|tile
 decl_stmt|;
-comment|/* first arg is "image", which is unused. */
 name|drawable
 operator|=
 name|gimp_value_get_drawable
@@ -15215,10 +15214,16 @@ literal|"gegl:ripple"
 argument_list|,
 literal|"amplitude"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|amplitude
 argument_list|,
 literal|"period"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|period
 argument_list|,
 literal|"phi"
@@ -30505,11 +30510,11 @@ literal|"Displace pixels in a ripple pattern"
 argument_list|,
 literal|"Ripples the pixels of the specified drawable. Each row or column will be displaced a certain number of pixels coinciding with the given wave form."
 argument_list|,
-literal|"Brian Degenhardt<bdegenha@ucsd.edu>"
+literal|"Compatibility procedure. Please see 'gegl:ripple' for credits."
 argument_list|,
-literal|"Brian Degenhardt"
+literal|"Compatibility procedure. Please see 'gegl:ripple' for credits."
 argument_list|,
-literal|"1997"
+literal|"2018"
 argument_list|,
 name|NULL
 argument_list|)
@@ -30590,7 +30595,7 @@ literal|"period"
 argument_list|,
 literal|"Period: number of pixels for one wave to complete"
 argument_list|,
-literal|0
+name|G_MININT32
 argument_list|,
 name|G_MAXINT32
 argument_list|,
@@ -30612,7 +30617,7 @@ literal|"amplitude"
 argument_list|,
 literal|"Amplitude: maximum displacement of wave"
 argument_list|,
-literal|0
+name|G_MININT32
 argument_list|,
 name|G_MAXINT32
 argument_list|,
@@ -30630,7 +30635,7 @@ name|gimp_param_spec_int32
 argument_list|(
 literal|"orientation"
 argument_list|,
-literal|"orientatioon"
+literal|"orientation"
 argument_list|,
 literal|"Orientation { ORIENTATION-HORIZONTAL (0), ORIENTATION-VERTICAL (1) }"
 argument_list|,
@@ -30682,7 +30687,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -30700,7 +30705,7 @@ literal|"antialias"
 argument_list|,
 literal|"Antialias { TRUE, FALSE }"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
