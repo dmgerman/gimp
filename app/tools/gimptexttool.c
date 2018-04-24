@@ -4758,6 +4758,7 @@ name|text_tool
 operator|->
 name|layer
 condition|)
+block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|text_tool
@@ -4769,11 +4770,25 @@ argument_list|,
 name|text_tool
 argument_list|)
 expr_stmt|;
+comment|/*  don't try to remove the layer if it is not attached,            *  which can happen if we got here because the layer was            *  somehow deleted from the image (like by the user in the            *  layers dialog).            */
+if|if
+condition|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|text_tool
+operator|->
+name|layer
+argument_list|)
+argument_list|)
+condition|)
 name|gimp_text_tool_remove_empty_text_layer
 argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
+block|}
 name|text_tool
 operator|->
 name|layer
@@ -4784,6 +4799,7 @@ if|if
 condition|(
 name|layer
 condition|)
+block|{
 name|g_signal_connect_object
 argument_list|(
 name|text_tool
@@ -4802,6 +4818,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
