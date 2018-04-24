@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a6e420103
+DECL|enum|__anon294719d70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a6e420203
+DECL|enum|__anon294719d70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -3055,7 +3055,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -10184,7 +10184,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
 expr_stmt|;
 return|return
