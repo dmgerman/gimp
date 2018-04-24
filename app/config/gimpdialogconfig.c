@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275efbe90103
+DECL|enum|__anon2c73c1dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -815,7 +815,7 @@ name|LAYER_NEW_MODE_BLURB
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE
 argument_list|,
-name|GIMP_LAYER_MODE_NORMAL_LEGACY
+name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
