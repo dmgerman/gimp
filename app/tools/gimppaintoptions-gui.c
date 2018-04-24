@@ -607,9 +607,11 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-comment|/*  temp debug foo  */
+comment|/*  temp debug foo, disabled in stable  */
 if|if
 condition|(
+name|FALSE
+operator|&&
 name|g_type_is_a
 argument_list|(
 name|tool_type
