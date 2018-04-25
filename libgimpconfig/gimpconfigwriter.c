@@ -1042,7 +1042,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_open:  * @writer: a #GimpConfigWriter  * @name: name of the element to open  *  * This function writes the opening parentheses followed by @name.  * It also increases the indentation level and sets a mark that  * can be used by gimp_config_writer_revert().  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_open:  * @writer: a #GimpConfigWriter  * @name: name of the element to open  *  * This function writes the opening parenthese followed by @name.  * It also increases the indentation level and sets a mark that  * can be used by gimp_config_writer_revert().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
