@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294719d70103
+DECL|enum|__anon28c9d37c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294719d70203
+DECL|enum|__anon28c9d37c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4218,6 +4218,13 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|gimp_context_set_parent
+argument_list|(
+name|context
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|context
@@ -6468,6 +6475,24 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
+name|g_object_remove_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|context
+operator|->
+name|parent
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|context
+operator|->
+name|parent
+argument_list|)
+expr_stmt|;
 block|}
 name|context
 operator|->
@@ -6480,6 +6505,24 @@ condition|(
 name|parent
 condition|)
 block|{
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|context
+operator|->
+name|parent
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|context
+operator|->
+name|parent
+argument_list|)
+expr_stmt|;
 comment|/*  copy all undefined properties from the new parent  */
 name|gimp_context_copy_properties
 argument_list|(
