@@ -180,6 +180,10 @@ DECL|member|gradient_cache_size
 name|gint
 name|gradient_cache_size
 decl_stmt|;
+DECL|member|gradient_cache_mutex
+name|GMutex
+name|gradient_cache_mutex
+decl_stmt|;
 block|}
 struct|;
 end_struct
