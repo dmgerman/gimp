@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -506,7 +512,10 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
-name|GIMP_LAYER_COMPOSITE_AUTO
+name|gimp_layer_mode_get_paint_composite_mode
+argument_list|(
+name|paint_mode
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

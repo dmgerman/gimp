@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -2423,7 +2429,13 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
-name|GIMP_LAYER_COMPOSITE_AUTO
+name|gimp_layer_mode_get_paint_composite_mode
+argument_list|(
+name|gimp_context_get_paint_mode
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4143,7 +4155,13 @@ name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
-name|GIMP_LAYER_COMPOSITE_AUTO
+name|gimp_layer_mode_get_paint_composite_mode
+argument_list|(
+name|gimp_context_get_paint_mode
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
