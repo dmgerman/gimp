@@ -1146,6 +1146,17 @@ name|starty
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* symmetric conical gradients only span half a revolution, and          * therefore require only half the cache size.          */
+if|if
+condition|(
+name|gradient_type
+operator|==
+name|GIMP_GRADIENT_CONICAL_SYMMETRIC
+condition|)
+name|r
+operator|/=
+literal|2.0
+expr_stmt|;
 name|gimp_vector2_set
 argument_list|(
 operator|&
