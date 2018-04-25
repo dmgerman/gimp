@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf1f900103
+DECL|enum|__anon28ee886f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf1f900208
+DECL|struct|__anon28ee886f0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf1f900308
+DECL|struct|__anon28ee886f0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -4961,32 +4961,6 @@ name|gradient_cache_mutex
 argument_list|)
 expr_stmt|;
 return|return;
-block|}
-switch|switch
-condition|(
-name|self
-operator|->
-name|gradient_type
-condition|)
-block|{
-case|case
-name|GIMP_GRADIENT_CONICAL_SYMMETRIC
-case|:
-case|case
-name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
-case|:
-comment|/*  don't use a gradient cache for conical gradients, since the necessary        *  cache size is not related to the line length        */
-name|g_mutex_unlock
-argument_list|(
-operator|&
-name|self
-operator|->
-name|gradient_cache_mutex
-argument_list|)
-expr_stmt|;
-return|return;
-default|default:
-break|break;
 block|}
 name|cache_size
 operator|=
