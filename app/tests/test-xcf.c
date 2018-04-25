@@ -1442,7 +1442,7 @@ name|FALSE
 comment|/*push_undo*/
 argument_list|)
 expr_stmt|;
-comment|/* Tatto    * We don't bother testing this, not yet at least    */
+comment|/* Tattoo    * We don't bother testing this, not yet at least    */
 comment|/* Resolution */
 name|gimp_image_set_resolution
 argument_list|(

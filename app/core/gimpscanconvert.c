@@ -1144,7 +1144,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render:  * @sc:        a #GimpScanConvert context  * @bufferr:   the #GeglBuffer to render to  * @off_x:     horizontal offset into the @buffer  * @off_y:     vertical offset into the @buffer  * @antialias: whether to apply antialiasiing  *  * This is a wrapper around gimp_scan_convert_render_full() that replaces the  * content of the @buffer with a rendered form of the path passed in.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render:  * @sc:        a #GimpScanConvert context  * @buffer:    the #GeglBuffer to render to  * @off_x:     horizontal offset into the @buffer  * @off_y:     vertical offset into the @buffer  * @antialias: whether to apply antialiasiing  *  * This is a wrapper around gimp_scan_convert_render_full() that replaces the  * content of the @buffer with a rendered form of the path passed in.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function

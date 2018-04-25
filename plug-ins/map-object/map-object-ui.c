@@ -2443,7 +2443,7 @@ name|adj
 argument_list|,
 name|mapvals
 operator|.
-name|pixeltreshold
+name|pixelthreshold
 argument_list|,
 literal|0.001
 argument_list|,
@@ -2501,7 +2501,7 @@ argument_list|,
 operator|&
 name|mapvals
 operator|.
-name|pixeltreshold
+name|pixelthreshold
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data

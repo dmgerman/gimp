@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bb25c0103
+DECL|enum|__anon289da1b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bb25c0203
+DECL|enum|__anon289da1b80203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291bb25c0303
+DECL|enum|__anon289da1b80303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291bb25c0403
+DECL|enum|__anon289da1b80403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -485,7 +485,7 @@ DECL|member|constraint
 name|GimpRectangleConstraint
 name|constraint
 decl_stmt|;
-comment|/* What precision the rectangle will apear to have externally (it    * will always be double internally)    */
+comment|/* What precision the rectangle will appear to have externally (it    * will always be double internally)    */
 DECL|member|precision
 name|GimpRectanglePrecision
 name|precision

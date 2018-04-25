@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e542a50108
+DECL|struct|__anon292ee7840108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e542a50208
+DECL|struct|__anon292ee7840208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e542a50308
+DECL|struct|__anon292ee7840308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2279,7 +2279,7 @@ name|GimpPrecision
 name|precision
 decl_stmt|;
 name|gboolean
-name|requirments
+name|requirements
 init|=
 name|FALSE
 decl_stmt|;
@@ -2425,7 +2425,7 @@ name|babl_name
 argument_list|)
 expr_stmt|;
 block|}
-name|requirments
+name|requirements
 operator||=
 operator|(
 name|gimp_drawable_is_rgb
@@ -2434,7 +2434,7 @@ name|drawable_ID
 argument_list|)
 operator|)
 expr_stmt|;
-name|requirments
+name|requirements
 operator||=
 operator|(
 name|gimp_drawable_is_indexed
@@ -2443,7 +2443,7 @@ name|drawable_ID
 argument_list|)
 operator|)
 expr_stmt|;
-name|requirments
+name|requirements
 operator||=
 operator|(
 name|gimp_drawable_is_gray
@@ -2465,7 +2465,7 @@ operator|&&
 name|decomp_has_alpha
 operator|)
 expr_stmt|;
-name|requirments
+name|requirements
 operator|&=
 operator|(
 operator|!
@@ -2480,7 +2480,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|requirments
+name|requirements
 condition|)
 block|{
 name|g_message

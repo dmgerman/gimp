@@ -1849,7 +1849,7 @@ operator|=
 name|orig_quality
 expr_stmt|;
 block|}
-comment|/* Skip changing subsampling to original if we alredy have best                * setting or if original have worst setting */
+comment|/* Skip changing subsampling to original if we already have best                * setting or if original have worst setting */
 if|if
 condition|(
 operator|!

@@ -68,7 +68,7 @@ name|gint
 name|n_colors
 parameter_list|,
 name|gint
-name|treshold
+name|threshold
 parameter_list|,
 name|gboolean
 name|selection_only

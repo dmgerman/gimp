@@ -63,7 +63,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c7d4050103
+DECL|enum|__anon2b52d5270103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c7d4050203
+DECL|enum|__anon2b52d5270203
 block|{
 DECL|enumerator|MAP_PLANE
 name|MAP_PLANE
@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7d4050308
+DECL|struct|__anon2b52d5270308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7d4050408
+DECL|struct|__anon2b52d5270408
 block|{
 DECL|member|type
 name|LightType
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7d4050508
+DECL|struct|__anon2b52d5270508
 block|{
 DECL|member|viewpoint
 DECL|member|firstaxis
@@ -265,9 +265,9 @@ DECL|member|maxdepth
 name|gdouble
 name|maxdepth
 decl_stmt|;
-DECL|member|pixeltreshold
+DECL|member|pixelthreshold
 name|gdouble
-name|pixeltreshold
+name|pixelthreshold
 decl_stmt|;
 DECL|member|radius
 name|gdouble

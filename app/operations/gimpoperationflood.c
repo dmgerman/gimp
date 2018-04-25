@@ -2503,7 +2503,7 @@ name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* The new water level is the maximum of the curernt ground level,            * and the minimum of the current and previous water levels.  Recall            * that `level` holds the previous water level, and that the current            * water level is never less than the ground level.            */
+comment|/* The new water level is the maximum of the current ground level,            * and the minimum of the current and previous water levels.  Recall            * that `level` holds the previous water level, and that the current            * water level is never less than the ground level.            */
 if|if
 condition|(
 name|level

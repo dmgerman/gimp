@@ -9164,7 +9164,7 @@ block|{
 name|guint32
 name|dummy
 decl_stmt|;
-comment|/* Has extra tatto field */
+comment|/* Has extra tattoo field */
 name|xcf_read_int32
 argument_list|(
 name|info

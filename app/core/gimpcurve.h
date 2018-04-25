@@ -129,7 +129,7 @@ DECL|member|identity
 name|gboolean
 name|identity
 decl_stmt|;
-comment|/* whether the curve is an identiy mapping */
+comment|/* whether the curve is an identity mapping */
 block|}
 struct|;
 end_struct

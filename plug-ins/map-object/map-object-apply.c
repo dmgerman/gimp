@@ -1511,7 +1511,7 @@ name|max_depth
 argument_list|,
 name|mapvals
 operator|.
-name|pixeltreshold
+name|pixelthreshold
 argument_list|,
 name|render
 argument_list|,

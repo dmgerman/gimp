@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fe4a60108
+DECL|struct|__anon28fdd2d00108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fe4a60208
+DECL|struct|__anon28fdd2d00208
 block|{
 DECL|member|y
 name|gint32
@@ -14963,7 +14963,7 @@ name|l_maxy
 operator|=
 literal|0
 expr_stmt|;
-comment|/* allocate array of last values (one element foreach x koordinate) */
+comment|/* allocate array of last values (one element foreach x coordinate) */
 name|last_arr
 operator|=
 name|g_new

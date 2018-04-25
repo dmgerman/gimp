@@ -3639,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_viewport:  * @shell:  a #GimpDisplayShell  * @x:      returns image x coordinate of display upper left corner  * @y:      returns image y coordinate of display upper left corner  * @width:  returns width of display measured in image coordinates  * @height: returns height of display measured in image coordinates  *  * This function calculates the part of the image, im image coordinates,  * that corresponds to the display viewport.  **/
+comment|/**  * gimp_display_shell_untransform_viewport:  * @shell:  a #GimpDisplayShell  * @x:      returns image x coordinate of display upper left corner  * @y:      returns image y coordinate of display upper left corner  * @width:  returns width of display measured in image coordinates  * @height: returns height of display measured in image coordinates  *  * This function calculates the part of the image, in image coordinates,  * that corresponds to the display viewport.  **/
 end_comment
 
 begin_function

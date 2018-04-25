@@ -1683,7 +1683,7 @@ name|c
 decl_stmt|,
 name|d
 decl_stmt|;
-comment|/* Compute Sine, Log ans Spherical transfer function maps */
+comment|/* Compute Sine, Log and Spherical transfer function maps */
 comment|/* ====================================================== */
 name|c
 operator|=

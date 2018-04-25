@@ -2433,7 +2433,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7586050108
+DECL|struct|__anon2aabbe330108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2793,7 +2793,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7586050208
+DECL|struct|__anon2aabbe330208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3019,7 +3019,7 @@ modifier|*
 name|return_drag_action
 parameter_list|)
 block|{
-comment|/* If we are dropping a new layer, check if the destionation image    * has a floating selection.    */
+comment|/* If we are dropping a new layer, check if the destination image    * has a floating selection.    */
 if|if
 condition|(
 name|src_type

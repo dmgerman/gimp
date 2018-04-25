@@ -414,7 +414,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_set_internal:  * @tag: a gimp tag.  * @inernal: desired tag internal status  *  * Set internal status of the tag. Internal tags are usually automatically  * generated and will not be saved into users tag cache.  *  **/
+comment|/**  * gimp_tag_set_internal:  * @tag: a gimp tag.  * @internal: desired tag internal status  *  * Set internal status of the tag. Internal tags are usually automatically  * generated and will not be saved into users tag cache.  *  **/
 end_comment
 
 begin_function

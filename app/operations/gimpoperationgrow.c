@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9ca580103
+DECL|enum|__anon29a3d11e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1814,7 +1814,7 @@ name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* undo the offsets to the pointers so we can free the malloced memmory */
+comment|/* undo the offsets to the pointers so we can free the malloced memory */
 name|circ
 operator|-=
 name|self

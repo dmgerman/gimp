@@ -103,7 +103,7 @@ block|,
 name|NULL
 block|,
 literal|"Invalidates the entire projection, measures the time it takes to "
-literal|"validate (render) the part that is visible in the active diaplay, "
+literal|"validate (render) the part that is visible in the active display, "
 literal|"and print the result to stdout."
 block|,
 name|G_CALLBACK

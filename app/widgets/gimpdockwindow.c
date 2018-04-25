@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4129d60103
+DECL|enum|__anon29ebe88c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2832,7 +2832,7 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Don't add docks with just a singe dockable to the list of    * recently closed dock since those can be brought back through the    * normal Windows->Dockable Dialogs menu    */
+comment|/* Don't add docks with just a single dockable to the list of    * recently closed dock since those can be brought back through the    * normal Windows->Dockable Dialogs menu    */
 if|if
 condition|(
 operator|!

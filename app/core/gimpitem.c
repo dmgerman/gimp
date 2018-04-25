@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296468820103
+DECL|enum|__anon27f7e2a80103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296468820203
+DECL|enum|__anon27f7e2a80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7690,7 +7690,7 @@ argument_list|,
 name|item
 argument_list|)
 expr_stmt|;
-comment|/* Set image before tatoo so that the explicitly set tatoo overrides    * the one implicitly set when setting the image    */
+comment|/* Set image before tattoo so that the explicitly set tattoo overrides    * the one implicitly set when setting the image    */
 name|gimp_item_set_image
 argument_list|(
 name|item

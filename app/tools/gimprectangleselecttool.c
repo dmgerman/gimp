@@ -3212,7 +3212,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* We can conceptually think of a click outside of the                * selection as adding a 0px selection. Behave intuitivly                * for the current selection mode                */
+comment|/* We can conceptually think of a click outside of the                * selection as adding a 0px selection. Behave intuitively                * for the current selection mode                */
 name|operation
 operator|=
 name|gimp_rectangle_select_tool_get_operation

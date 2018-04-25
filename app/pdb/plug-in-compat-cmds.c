@@ -31837,7 +31837,7 @@ literal|"alpha1"
 argument_list|,
 literal|"alpha1"
 argument_list|,
-literal|"alpha for the first color (used if the drawable has an alpha chanel)"
+literal|"alpha for the first color (used if the drawable has an alpha channel)"
 argument_list|,
 literal|0
 argument_list|,
@@ -31859,7 +31859,7 @@ literal|"alpha2"
 argument_list|,
 literal|"alpha2"
 argument_list|,
-literal|"alpha for the second color (used if the drawable has an alpha chanel)"
+literal|"alpha for the second color (used if the drawable has an alpha channel)"
 argument_list|,
 literal|0
 argument_list|,

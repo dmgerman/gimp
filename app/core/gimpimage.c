@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8658e0103
+DECL|enum|__anon2b1325df0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8658e0203
+DECL|enum|__anon2b1325df0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14051,7 +14051,7 @@ operator|&
 name|copy
 argument_list|)
 expr_stmt|;
-comment|/*  We used to push an cantundo on te stack here. This made the undo stack    *  unusable (NULL on the stack) and prevented people from undoing after a    *  save (since most save plug-ins attach an undoable comment parasite).    *  Now we simply attach the parasite without pushing an undo. That way    *  it's undoable but does not block the undo system.   --Sven    */
+comment|/*  We used to push a cantundo on the stack here. This made the undo stack    *  unusable (NULL on the stack) and prevented people from undoing after a    *  save (since most save plug-ins attach an undoable comment parasite).    *  Now we simply attach the parasite without pushing an undo. That way    *  it's undoable but does not block the undo system.   --Sven    */
 name|gimp_parasite_list_add
 argument_list|(
 name|private

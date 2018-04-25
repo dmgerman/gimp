@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e987a0103
+DECL|enum|__anon2ae1d4a80103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -1224,7 +1224,7 @@ block|{
 case|case
 name|CAGE_STATE_INIT
 case|:
-comment|/* No handle yet, we add the first one and swith the tool to        * moving handle state.        */
+comment|/* No handle yet, we add the first one and switch the tool to        * moving handle state.        */
 name|gimp_cage_config_add_cage_point
 argument_list|(
 name|ct

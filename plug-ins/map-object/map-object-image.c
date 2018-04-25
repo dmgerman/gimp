@@ -223,9 +223,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|oldtreshold
+DECL|variable|oldthreshold
 name|gdouble
-name|oldtreshold
+name|oldthreshold
 decl_stmt|;
 end_decl_stmt
 

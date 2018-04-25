@@ -143,7 +143,7 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|gdouble
-name|oldtreshold
+name|oldthreshold
 decl_stmt|;
 end_decl_stmt
 

@@ -65,7 +65,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b41982c0103
+DECL|enum|__anon2a4369380103
 block|{
 DECL|enumerator|XLFD_FOUNDRY
 name|XLFD_FOUNDRY
@@ -687,7 +687,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_get_xlfd_field:  * @fontname: an XLFD fontname  * @field_num: field index  * @buffer: buffer of at least XLFD_MAX_FIELD_LEN chars  *  * Fills the buffer with the specified field from the X Logical Font  * Description name, and returns it. Note: For the charset field, we  * also return the encoding, e.g. 'iso8859-1'.  *  * This function is basically copied from pangox-fontmap.c.  *  * Returns: a pointer to the filled buffer or %NULL if fontname is  * %NULL, the field is longer than XFLD_MAX_FIELD_LEN or it contains  * just an asteriks.  **/
+comment|/**  * gimp_text_get_xlfd_field:  * @fontname: an XLFD fontname  * @field_num: field index  * @buffer: buffer of at least XLFD_MAX_FIELD_LEN chars  *  * Fills the buffer with the specified field from the X Logical Font  * Description name, and returns it. Note: For the charset field, we  * also return the encoding, e.g. 'iso8859-1'.  *  * This function is basically copied from pangox-fontmap.c.  *  * Returns: a pointer to the filled buffer or %NULL if fontname is  * %NULL, the field is longer than XFLD_MAX_FIELD_LEN or it contains  * just an asterisk.  **/
 end_comment
 
 begin_function

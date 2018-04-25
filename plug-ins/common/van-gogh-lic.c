@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be37c300103
+DECL|enum|__anon28a02a700103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be37c300208
+DECL|struct|__anon28a02a700208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -548,7 +548,7 @@ comment|/*     |1 0 -1|     | -1  -2  -1|                  */
 end_comment
 
 begin_comment
-comment|/* (It's a varation of the Sobel kernels, really)  */
+comment|/* (It's a variation of the Sobel kernels, really)  */
 end_comment
 
 begin_comment

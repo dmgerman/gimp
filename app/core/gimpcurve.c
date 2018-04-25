@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6cbb10103
+DECL|enum|__anon298bb6030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4491,7 +4491,7 @@ index|]
 operator|.
 name|y
 expr_stmt|;
-comment|/*    * the x values of the inner control points are fixed at    * x1 = 2/3*x0 + 1/3*x3   and  x2 = 1/3*x0 + 2/3*x3    * this ensures that the x values increase linearily with the    * parameter t and enables us to skip the calculation of the x    * values altogehter - just calculate y(t) evenly spaced.    */
+comment|/*    * the x values of the inner control points are fixed at    * x1 = 2/3*x0 + 1/3*x3   and  x2 = 1/3*x0 + 2/3*x3    * this ensures that the x values increase linearly with the    * parameter t and enables us to skip the calculation of the x    * values altogether - just calculate y(t) evenly spaced.    */
 name|dx
 operator|=
 name|x3
@@ -4751,7 +4751,7 @@ operator|/
 literal|3.0
 expr_stmt|;
 block|}
-comment|/*    * finally calculate the y(t) values for the given bezier values. We can    * use homogenously distributed values for t, since x(t) increases linearily.    */
+comment|/*    * finally calculate the y(t) values for the given bezier values. We can    * use homogenously distributed values for t, since x(t) increases linearly.    */
 for|for
 control|(
 name|i

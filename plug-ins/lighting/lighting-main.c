@@ -500,7 +500,7 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
-name|pixel_treshold
+name|pixel_threshold
 operator|=
 literal|0.25
 expr_stmt|;

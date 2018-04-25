@@ -115,7 +115,7 @@ name|width
 parameter_list|,
 name|gint
 modifier|*
-name|heigth
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl

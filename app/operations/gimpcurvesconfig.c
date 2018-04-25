@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6f22be0103
+DECL|enum|__anon2ac387170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2912,7 +2912,7 @@ name|j
 operator|++
 control|)
 block|{
-comment|/* don't use gimp_curve_get_point() becaue that doesn't            * work when the curve type is GIMP_CURVE_FREE            */
+comment|/* don't use gimp_curve_get_point() because that doesn't            * work when the curve type is GIMP_CURVE_FREE            */
 name|gdouble
 name|x
 init|=

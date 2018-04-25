@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299056de0108
+DECL|struct|__anon2c2212110108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299056de0208
+DECL|struct|__anon2c2212110208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299056de0308
+DECL|struct|__anon2c2212110308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299056de0408
+DECL|struct|__anon2c2212110408
 block|{
 DECL|member|eol
 name|goffset
@@ -2332,7 +2332,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"resolution"
 block|,
-literal|"Resolution to interprete image (dpi)"
+literal|"Resolution to interpret image (dpi)"
 block|}
 block|,
 block|{

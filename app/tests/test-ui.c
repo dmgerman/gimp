@@ -2232,7 +2232,7 @@ comment|/* Remember the multi-window mode size */
 block|gtk_window_get_size (GTK_WINDOW (toplevel),&expected_initial_width,&expected_initial_height);
 comment|/* Switch to single-window mode */
 block|gimp_ui_switch_window_mode (gimp);
-comment|/* Rememeber the single-window mode size */
+comment|/* Remember the single-window mode size */
 block|gtk_window_get_size (GTK_WINDOW (toplevel),&expected_second_width,&expected_second_height);
 comment|/* Make sure they differ, otherwise the test is pointless */
 block|g_assert_cmpint (expected_initial_width,  !=, expected_second_width);   g_assert_cmpint (expected_initial_height, !=, expected_second_height);

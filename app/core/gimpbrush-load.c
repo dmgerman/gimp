@@ -1300,7 +1300,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2af47960010a
+DECL|union|__anon27931fd4010a
 block|{
 DECL|member|u
 name|guint16
@@ -2374,7 +2374,7 @@ case|case
 literal|1
 case|:
 comment|/* computed brush */
-comment|/* FIXME: support it!        *        * We can probabaly feed the info into the generated brush code        * and get a useable brush back. It seems to support the same        * types -akl        */
+comment|/* FIXME: support it!        *        * We can probabaly feed the info into the generated brush code        * and get a usable brush back. It seems to support the same        * types -akl        */
 name|g_printerr
 argument_list|(
 literal|"WARNING: computed brush unsupported, skipping.\n"

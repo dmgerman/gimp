@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892f86a0103
+DECL|enum|__anon2bddf0750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892f86a0203
+DECL|enum|__anon2bddf0750203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -4059,7 +4059,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_description:  * @viewable: viewable object for which to retrieve a description.  * @tooltip:  return loaction for an optional tooltip string.  *  * Retrieves a string containing a description of the viewable object,  * By default, it simply returns the name of the object, but this can  * be overridden by object types that inherit from #GimpViewable.  *  * Returns: a copy of the description string.  This should be freed  *          when it is no longer needed.  **/
+comment|/**  * gimp_viewable_get_description:  * @viewable: viewable object for which to retrieve a description.  * @tooltip:  return location for an optional tooltip string.  *  * Retrieves a string containing a description of the viewable object,  * By default, it simply returns the name of the object, but this can  * be overridden by object types that inherit from #GimpViewable.  *  * Returns: a copy of the description string.  This should be freed  *          when it is no longer needed.  **/
 end_comment
 
 begin_function

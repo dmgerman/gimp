@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b06da8c0108
+DECL|struct|__anon29fcfca40108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b06da8c0208
+DECL|struct|__anon29fcfca40208
 block|{
 DECL|member|run
 name|gboolean
@@ -6188,7 +6188,7 @@ operator|.
 name|smoothing
 argument_list|)
 expr_stmt|;
-comment|/* Don't override quality and subsampling setting if we alredy set it from original */
+comment|/* Don't override quality and subsampling setting if we already set it from original */
 if|if
 condition|(
 operator|!

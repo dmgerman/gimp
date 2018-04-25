@@ -242,7 +242,7 @@ name|MAP_PLANE
 expr_stmt|;
 name|mapvals
 operator|.
-name|pixeltreshold
+name|pixelthreshold
 operator|=
 literal|0.25
 expr_stmt|;

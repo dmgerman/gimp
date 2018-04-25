@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ccb02d0103
+DECL|enum|__anon2a5a06600103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -92,7 +92,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ccb02d0203
+DECL|enum|__anon2a5a06600203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ccb02d0303
+DECL|enum|__anon2a5a06600303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ccb02d0408
+DECL|struct|__anon2a5a06600408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ccb02d0508
+DECL|struct|__anon2a5a06600508
 block|{
 DECL|member|type
 name|LightType
@@ -199,7 +199,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ccb02d0608
+DECL|struct|__anon2a5a06600608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -238,9 +238,9 @@ DECL|member|ref_material
 name|MaterialSettings
 name|ref_material
 decl_stmt|;
-DECL|member|pixel_treshold
+DECL|member|pixel_threshold
 name|gdouble
-name|pixel_treshold
+name|pixel_threshold
 decl_stmt|;
 DECL|member|bumpmax
 DECL|member|bumpmin

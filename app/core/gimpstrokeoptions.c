@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d007d0103
+DECL|enum|__anon29df585f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d007d0203
+DECL|enum|__anon29df585f0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -179,7 +179,7 @@ DECL|member|method
 name|GimpStrokeMethod
 name|method
 decl_stmt|;
-comment|/*  options for medhod == LIBART  */
+comment|/*  options for method == LIBART  */
 DECL|member|width
 name|gdouble
 name|width

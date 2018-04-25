@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bfc460108
+DECL|struct|__anon27a4a3e20108
 block|{
 DECL|member|filename
 name|gchar
@@ -2677,7 +2677,7 @@ return|;
 block|}
 else|else
 block|{
-comment|/* we found somehting, loop back, and look again */
+comment|/* we found something, loop back, and look again */
 operator|*
 name|ext
 operator|=

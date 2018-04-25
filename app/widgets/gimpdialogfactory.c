@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2896730103
+DECL|enum|__anon29b47b700103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2827,7 +2827,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock crated by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that gimp_dockable_get_dockbook (dockable)  * is NULL before trying to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
+comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock created by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that gimp_dockable_get_dockbook (dockable)  * is NULL before trying to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
 end_comment
 
 begin_function

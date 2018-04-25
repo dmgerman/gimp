@@ -225,7 +225,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  public functionss */
+comment|/*  public functions */
 end_comment
 
 begin_function

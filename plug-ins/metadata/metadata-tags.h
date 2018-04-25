@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0103
+DECL|enum|__anon2c299abd0103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0203
+DECL|enum|__anon2c299abd0203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0303
+DECL|enum|__anon2c299abd0303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0403
+DECL|enum|__anon2c299abd0403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0503
+DECL|enum|__anon2c299abd0503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0603
+DECL|enum|__anon2c299abd0603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0703
+DECL|enum|__anon2c299abd0703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0803
+DECL|enum|__anon2c299abd0803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0903
+DECL|enum|__anon2c299abd0903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0a03
+DECL|enum|__anon2c299abd0a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ade0b03
+DECL|enum|__anon2c299abd0b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -2265,7 +2265,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* GPS Altitute Ref */
+comment|/* GPS Altitude Ref */
 end_comment
 
 begin_decl_stmt
@@ -2297,7 +2297,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* GPS Latitute Ref */
+comment|/* GPS Latitude Ref */
 end_comment
 
 begin_decl_stmt
@@ -2329,7 +2329,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* GPS Longitute Ref */
+comment|/* GPS Longitude Ref */
 end_comment
 
 begin_decl_stmt
