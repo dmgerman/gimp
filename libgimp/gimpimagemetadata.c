@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d181e0108
+DECL|struct|__anon2c2e74d50108
 block|{
 DECL|member|tag
 name|gchar
@@ -1556,7 +1556,7 @@ literal|"Xmp.xmp.CreatorTool"
 argument_list|,
 name|N_
 argument_list|(
-literal|"GIMP 2.9/2.10"
+literal|"GIMP 2.10"
 argument_list|)
 argument_list|)
 expr_stmt|;

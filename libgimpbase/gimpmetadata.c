@@ -2106,7 +2106,7 @@ argument_list|)
 argument_list|,
 name|tagstr
 argument_list|,
-literal|"Gimp 2.9/2.10 "
+literal|"Gimp 2.10 "
 if|#
 directive|if
 name|defined
@@ -2443,7 +2443,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2779ca8d0108
+DECL|struct|__anon28c0c8620108
 block|{
 DECL|member|name
 name|gchar
