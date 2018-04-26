@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee886f0103
+DECL|enum|__anon2c7d22440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee886f0208
+DECL|struct|__anon2c7d22440208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee886f0308
+DECL|struct|__anon2c7d22440308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -1707,11 +1707,6 @@ operator|=
 name|g_value_get_enum
 argument_list|(
 name|value
-argument_list|)
-expr_stmt|;
-name|gimp_operation_gradient_invalidate_cache
-argument_list|(
-name|self
 argument_list|)
 expr_stmt|;
 break|break;
