@@ -1817,6 +1817,7 @@ operator|&
 name|modifier
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_tool_control_set_cursor
 argument_list|(
 name|tool
@@ -1835,7 +1836,6 @@ argument_list|,
 name|modifier
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* override the previous if shift or ctrl are down */
 if|if
 condition|(
