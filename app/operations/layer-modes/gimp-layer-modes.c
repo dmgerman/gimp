@@ -2806,6 +2806,8 @@ name|GIMP_LAYER_MODE_MULTIPLY
 block|,
 name|GIMP_LAYER_MODE_BURN
 block|,
+name|GIMP_LAYER_MODE_LINEAR_BURN
+block|,
 name|GIMP_LAYER_MODE_SEPARATOR
 block|,
 name|GIMP_LAYER_MODE_OVERLAY
@@ -2825,6 +2827,8 @@ block|,
 name|GIMP_LAYER_MODE_SEPARATOR
 block|,
 name|GIMP_LAYER_MODE_DIFFERENCE
+block|,
+name|GIMP_LAYER_MODE_EXCLUSION
 block|,
 name|GIMP_LAYER_MODE_SUBTRACT
 block|,
@@ -2855,12 +2859,6 @@ block|,
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 block|,
 name|GIMP_LAYER_MODE_LUMINANCE
-block|,
-name|GIMP_LAYER_MODE_SEPARATOR
-block|,
-name|GIMP_LAYER_MODE_EXCLUSION
-block|,
-name|GIMP_LAYER_MODE_LINEAR_BURN
 block|}
 decl_stmt|;
 end_decl_stmt
