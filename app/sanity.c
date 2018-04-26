@@ -1640,12 +1640,12 @@ DECL|macro|GEGL_REQUIRED_MINOR
 define|#
 directive|define
 name|GEGL_REQUIRED_MINOR
-value|3
+value|4
 DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|34
+value|0
 name|gegl_get_version
 argument_list|(
 operator|&
