@@ -1968,33 +1968,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_user_directory:  * @type: the type of user directory to retrieve  *  * This procedure is deprecated! Use g_get_user_special_dir() instead.  *  * Returns: The path to the specified user directory, or %NULL if the  *          logical ID was not found.  *  * Since: 2.4  **/
-end_comment
-
-begin_function
-specifier|const
-name|gchar
-modifier|*
-DECL|function|gimp_user_directory (GimpUserDirectory type)
-name|gimp_user_directory
-parameter_list|(
-name|GimpUserDirectory
-name|type
-parameter_list|)
-block|{
-return|return
-name|g_get_user_special_dir
-argument_list|(
-operator|(
-name|GUserDirectory
-operator|)
-name|type
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is newly allocated and should be freed with  * g_free() after use. The returned string is in the encoding used for  * filenames by GLib, which isn't necessarily UTF-8. (On Windows it  * always is UTF-8.)  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
 end_comment
 

@@ -438,29 +438,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_memsize_to_string:  * @memsize: A memory size in bytes.  *  * This function is deprecated! Use g_format_size() instead.  *  * Return value: A newly allocated human-readable, translated string.  **/
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_memsize_to_string (guint64 memsize)
-name|gimp_memsize_to_string
-parameter_list|(
-name|guint64
-name|memsize
-parameter_list|)
-block|{
-return|return
-name|g_format_size
-argument_list|(
-name|memsize
-argument_list|)
-return|;
-block|}
-end_function
-
 begin_function
 specifier|static
 name|void

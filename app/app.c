@@ -316,31 +316,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GType
-name|gimp_convert_dither_type_compat_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
 begin_comment
+comment|/*  left here as documentation how to do compat enums  */
+end_comment
+
+begin_comment
+unit|GType gimp_convert_dither_type_compat_get_type (void);
 comment|/* compat cruft */
 end_comment
 
-begin_function_decl
-name|GType
-name|gimp_layer_mode_effects_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* compat cruft */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*  local variables  */
@@ -384,9 +378,12 @@ name|gboolean
 name|no_interface
 parameter_list|)
 block|{
-name|GQuark
-name|quark
-decl_stmt|;
+if|#
+directive|if
+literal|0
+block|GQuark quark;
+endif|#
+directive|endif
 comment|/* disable OpenCL before GEGL is even initialized; this way we only    * enable if wanted in gimprc, instead of always enabling, and then    * disabling again if wanted in gimprc    */
 name|g_object_set
 argument_list|(
@@ -429,40 +426,14 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+if|#
+directive|if
+literal|0
+comment|/*  left here as documentation how to do compat enums  */
 comment|/*  keep compat enum code in sync with pdb/enumcode.pl  */
-name|quark
-operator|=
-name|g_quark_from_static_string
-argument_list|(
-literal|"gimp-compat-enum"
-argument_list|)
-expr_stmt|;
-name|g_type_set_qdata
-argument_list|(
-name|GIMP_TYPE_CONVERT_DITHER_TYPE
-argument_list|,
-name|quark
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|gimp_convert_dither_type_compat_get_type
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|g_type_set_qdata
-argument_list|(
-name|GIMP_TYPE_LAYER_MODE
-argument_list|,
-name|quark
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|gimp_layer_mode_effects_get_type
-argument_list|()
-argument_list|)
-expr_stmt|;
+block|quark = g_quark_from_static_string ("gimp-compat-enum");    g_type_set_qdata (GIMP_TYPE_CONVERT_DITHER_TYPE, quark,                     (gpointer) gimp_convert_dither_type_compat_get_type ());
+endif|#
+directive|endif
 block|}
 end_function
 

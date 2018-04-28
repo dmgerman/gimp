@@ -96,25 +96,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|g_format_size
-argument_list|)
-end_macro
-
-begin_decl_stmt
-name|gchar
-modifier|*
-name|gimp_memsize_to_string
-argument_list|(
-name|guint64
-name|memsize
-argument_list|)
-name|G_GNUC_MALLOC
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */
 end_comment
