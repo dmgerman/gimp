@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a2d58620108
+DECL|struct|__anon2a0407d90108
 block|{
 DECL|member|randomize
 name|gint
@@ -3503,9 +3503,7 @@ literal|"_Randomize"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
+name|g_object_set
 argument_list|(
 name|gtk_bin_get_child
 argument_list|(
@@ -3514,11 +3512,16 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|)
-argument_list|)
+argument_list|,
+literal|"margin-start"
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|"margin-end"
+argument_list|,
+literal|2
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27955c9b0103
+DECL|enum|__anon29bdc5e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -438,18 +438,13 @@ operator|=
 name|gtk_image_new
 argument_list|()
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
+name|gtk_widget_set_valign
 argument_list|(
 name|dialog
 operator|->
 name|icon
-argument_list|)
 argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
+name|GTK_ALIGN_START
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

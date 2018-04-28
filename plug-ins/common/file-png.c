@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d7b720108
+DECL|struct|__anon2a235b1b0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d7b720208
+DECL|struct|__anon2a235b1b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d7b720308
+DECL|struct|__anon2a235b1b0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -5018,16 +5018,11 @@ argument_list|,
 name|GTK_ICON_SIZE_DIALOG
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
+name|gtk_widget_set_valign
 argument_list|(
 name|image
-argument_list|)
 argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
+name|GTK_ALIGN_START
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

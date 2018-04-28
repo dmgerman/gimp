@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ab476e0108
+DECL|struct|__anon2baace700108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -147,7 +147,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ab476e0203
+DECL|enum|__anon2baace700203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -1023,9 +1023,7 @@ literal|"_Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
+name|g_object_set
 argument_list|(
 name|gtk_bin_get_child
 argument_list|(
@@ -1034,11 +1032,16 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|)
-argument_list|)
+argument_list|,
+literal|"margin-start"
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|"margin-end"
+argument_list|,
+literal|2
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

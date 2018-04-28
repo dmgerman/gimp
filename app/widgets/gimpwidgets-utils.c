@@ -825,16 +825,11 @@ argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
+name|gtk_widget_set_halign
 argument_list|(
 name|image
-argument_list|)
 argument_list|,
-literal|1.0
-argument_list|,
-literal|0.5
+name|GTK_ALIGN_END
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4128,7 +4123,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29fe892a0108
+DECL|struct|__anon27e07a3a0108
 block|{
 DECL|member|r
 name|guchar
@@ -4705,7 +4700,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe892a0208
+DECL|struct|__anon27e07a3a0208
 block|{
 DECL|member|timeout_id
 name|gint

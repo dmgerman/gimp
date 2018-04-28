@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6374380103
+DECL|enum|__anon29543dab0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1667,16 +1667,19 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
+name|g_object_set
 argument_list|(
 name|options_gui
-argument_list|)
 argument_list|,
-literal|0
+literal|"margin-top"
 argument_list|,
 literal|4
+argument_list|,
+literal|"margin-bottom"
+argument_list|,
+literal|4
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
