@@ -86,12 +86,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpcolor_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpcontext_pdb.h>
 end_include
 
@@ -123,12 +117,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpdrawableedit_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpdrawabletransform_pdb.h>
 end_include
 
 begin_include
@@ -302,12 +290,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimppaths_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppattern_pdb.h>
 end_include
 
@@ -350,12 +332,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpselectiontools_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimptextlayer_pdb.h>
 end_include
 
@@ -363,12 +339,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimptexttool_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimptransformtools_pdb.h>
 end_include
 
 begin_include

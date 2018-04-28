@@ -1026,27 +1026,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GIMP_DEPRECATED
-name|gint
-name|gimp_context_get_transform_recursion
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GIMP_DEPRECATED
-name|gboolean
-name|gimp_context_set_transform_recursion
-parameter_list|(
-name|gint
-name|transform_recursion
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gdouble
 name|gimp_context_get_ink_size
 parameter_list|(

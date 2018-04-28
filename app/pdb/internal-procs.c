@@ -38,7 +38,7 @@ file|"internal-procs.h"
 end_include
 
 begin_comment
-comment|/* 840 procedures registered total */
+comment|/* 739 procedures registered total */
 end_comment
 
 begin_function
@@ -84,11 +84,6 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_color_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_context_procs
 argument_list|(
 name|pdb
@@ -115,11 +110,6 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|register_drawable_edit_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
-name|register_drawable_transform_procs
 argument_list|(
 name|pdb
 argument_list|)
@@ -269,11 +259,6 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_paths_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_pattern_procs
 argument_list|(
 name|pdb
@@ -314,22 +299,12 @@ argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
-name|register_selection_tools_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
 name|register_text_layer_procs
 argument_list|(
 name|pdb
 argument_list|)
 expr_stmt|;
 name|register_text_tool_procs
-argument_list|(
-name|pdb
-argument_list|)
-expr_stmt|;
-name|register_transform_tools_procs
 argument_list|(
 name|pdb
 argument_list|)
