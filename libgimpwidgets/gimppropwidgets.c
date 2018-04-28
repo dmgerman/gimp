@@ -21,16 +21,6 @@ directive|include
 file|<gegl.h>
 end_include
 
-begin_comment
-comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
-end_comment
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -3451,54 +3441,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|frame
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since: 2.4  *  * Deprecated: 2.10  */
-end_comment
-
-begin_function
-name|GtkWidget
-modifier|*
-DECL|function|gimp_prop_enum_stock_box_new (GObject * config,const gchar * property_name,const gchar * stock_prefix,gint minimum,gint maximum)
-name|gimp_prop_enum_stock_box_new
-parameter_list|(
-name|GObject
-modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_prefix
-parameter_list|,
-name|gint
-name|minimum
-parameter_list|,
-name|gint
-name|maximum
-parameter_list|)
-block|{
-return|return
-name|gimp_prop_enum_icon_box_new
-argument_list|(
-name|config
-argument_list|,
-name|property_name
-argument_list|,
-name|stock_prefix
-argument_list|,
-name|minimum
-argument_list|,
-name|maximum
-argument_list|)
 return|;
 block|}
 end_function
@@ -13094,42 +13036,6 @@ name|image
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/**  * gimp_prop_stock_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired stock image.  *  * Creates a widget to display a stock image representing the value of the  * specified string property, which should encode a Stock ID.  * See gtk_image_new_from_stock() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since: 2.4  *  * Deprecated: 2.10  */
-end_comment
-
-begin_function
-name|GtkWidget
-modifier|*
-DECL|function|gimp_prop_stock_image_new (GObject * config,const gchar * property_name,GtkIconSize icon_size)
-name|gimp_prop_stock_image_new
-parameter_list|(
-name|GObject
-modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-name|GtkIconSize
-name|icon_size
-parameter_list|)
-block|{
-return|return
-name|gimp_prop_icon_image_new
-argument_list|(
-name|config
-argument_list|,
-name|property_name
-argument_list|,
-name|icon_size
-argument_list|)
-return|;
-block|}
-end_function
 
 begin_comment
 comment|/**  * gimp_prop_icon_image_new:  * @config:        Object to which property is attached.  * @property_name: Name of string property.  * @icon_size:     Size of desired icon image.  *  * Creates a widget to display a icon image representing the value of the  * specified string property, which should encode an icon name.  * See gtk_image_new_from_icon_name() for more information.  *  * Return value:  A new #GtkImage widget.  *  * Since: 2.10  */

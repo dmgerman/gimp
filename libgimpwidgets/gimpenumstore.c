@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2cb5130103
+DECL|enum|__anon27c2634e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -864,35 +864,6 @@ block|}
 return|return
 name|store
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: 2.4  *  * Deprecated: GIMP 2.10  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_enum_store_set_stock_prefix (GimpEnumStore * store,const gchar * stock_prefix)
-name|gimp_enum_store_set_stock_prefix
-parameter_list|(
-name|GimpEnumStore
-modifier|*
-name|store
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_prefix
-parameter_list|)
-block|{
-name|gimp_enum_store_set_icon_prefix
-argument_list|(
-name|store
-argument_list|,
-name|stock_prefix
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

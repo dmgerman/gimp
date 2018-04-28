@@ -48,13 +48,13 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_comment
-comment|/**  * GimpIntStoreColumns:  * @GIMP_INT_STORE_VALUE:       the integer value  * @GIMP_INT_STORE_LABEL:       a human-readable label  * @GIMP_INT_STORE_ICON_NAME:   an icon name  * @GIMP_INT_STORE_PIXBUF:      a #GdkPixbuf  * @GIMP_INT_STORE_USER_DATA:   arbitrary user data  * @GIMP_INT_STORE_ABBREV:      an abbreviated label  * @GIMP_INT_STORE_NUM_COLUMNS: the number of columns  * @GIMP_INT_STORE_STOCK_ID:    compat alias for @GIMP_INT_STORE_ICON_NAME  *  * The column types of #GimpIntStore.  **/
+comment|/**  * GimpIntStoreColumns:  * @GIMP_INT_STORE_VALUE:       the integer value  * @GIMP_INT_STORE_LABEL:       a human-readable label  * @GIMP_INT_STORE_ICON_NAME:   an icon name  * @GIMP_INT_STORE_PIXBUF:      a #GdkPixbuf  * @GIMP_INT_STORE_USER_DATA:   arbitrary user data  * @GIMP_INT_STORE_ABBREV:      an abbreviated label  * @GIMP_INT_STORE_NUM_COLUMNS: the number of columns  *  * The column types of #GimpIntStore.  **/
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293f776c0103
+DECL|enum|__anon29ed4b120103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE
@@ -76,12 +76,6 @@ name|GIMP_INT_STORE_ABBREV
 block|,
 DECL|enumerator|GIMP_INT_STORE_NUM_COLUMNS
 name|GIMP_INT_STORE_NUM_COLUMNS
-block|,
-comment|/* deprecated */
-DECL|enumerator|GIMP_INT_STORE_STOCK_ID
-name|GIMP_INT_STORE_STOCK_ID
-init|=
-name|GIMP_INT_STORE_ICON_NAME
 DECL|typedef|GimpIntStoreColumns
 block|}
 name|GimpIntStoreColumns
