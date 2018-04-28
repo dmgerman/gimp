@@ -150,11 +150,6 @@ DECL|member|simulation_intent
 name|GimpColorRenderingIntent
 name|simulation_intent
 decl_stmt|;
-DECL|member|display_module
-name|gchar
-modifier|*
-name|display_module
-decl_stmt|;
 DECL|member|simulation_gamut_check
 name|gboolean
 name|simulation_gamut_check
