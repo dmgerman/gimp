@@ -2813,13 +2813,6 @@ name|flags
 init|=
 literal|0
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"XXXXXX %s XXXXXX\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 name|srgb_profile
 operator|=
 name|gimp_color_profile_new_rgb_srgb
