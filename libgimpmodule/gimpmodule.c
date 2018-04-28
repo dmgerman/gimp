@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e5e810103
+DECL|enum|__anon2c2bb6e10103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1224,43 +1224,6 @@ name|statenames
 index|[
 name|state
 index|]
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_module_register_enum:  * @module:              a module  * @name:                the name of the new enum type  * @const_static_values: the enum values  *  * This function is deprecated! Use g_type_module_register_enum() instead.  *  * Return value: a new enum #GType  **/
-end_comment
-
-begin_function
-name|GType
-DECL|function|gimp_module_register_enum (GTypeModule * module,const gchar * name,const GEnumValue * const_static_values)
-name|gimp_module_register_enum
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-specifier|const
-name|GEnumValue
-modifier|*
-name|const_static_values
-parameter_list|)
-block|{
-return|return
-name|g_type_module_register_enum
-argument_list|(
-name|module
-argument_list|,
-name|name
-argument_list|,
-name|const_static_values
 argument_list|)
 return|;
 block|}

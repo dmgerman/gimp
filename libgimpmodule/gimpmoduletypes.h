@@ -30,29 +30,6 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_DEPRECATED
-end_ifndef
-
-begin_comment
-comment|/*  * GIMP_MODULE_PARAM_SERIALIZE is deprecated, use  * GIMP_CONFIG_PARAM_SERIALIZE instead.  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_MODULE_PARAM_SERIALIZE
-define|#
-directive|define
-name|GIMP_MODULE_PARAM_SERIALIZE
-value|(1<< (0 + G_PARAM_USER_SHIFT))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_typedef
 DECL|typedef|GimpModule
 typedef|typedef
