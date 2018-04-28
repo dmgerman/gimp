@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp3migration.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 

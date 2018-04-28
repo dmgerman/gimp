@@ -27,19 +27,13 @@ directive|include
 file|"gimpbutton.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp3migration.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpbutton  * @title: GimpButton  * @short_description: A #GtkButton with a little extra functionality.  *  * #GimpButton adds an extra signal to the #GtkButton widget that  * allows the callback to distinguish a normal click from a click that  * was performed with modifier keys pressed.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277766d10103
+DECL|enum|__anon297e8d2d0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp3migration.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -81,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e6c810103
+DECL|enum|__anon2a2c25c40103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -97,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e6c810203
+DECL|enum|__anon2a2c25c40203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8

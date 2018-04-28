@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp3migration.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -108,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4846d90103
+DECL|enum|__anon2bf020770103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -177,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4846d90203
+DECL|enum|__anon2bf020770203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -222,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4846d90303
+DECL|enum|__anon2bf020770303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE

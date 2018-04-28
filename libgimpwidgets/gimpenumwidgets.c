@@ -45,12 +45,6 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp3migration.h"
-end_include
-
 begin_comment
 comment|/**  * SECTION: gimpenumwidgets  * @title: GimpEnumWidgets  * @short_description: A set of utility functions to create widgets  *                     based on enums.  *  * A set of utility functions to create widgets based on enums.  **/
 end_comment

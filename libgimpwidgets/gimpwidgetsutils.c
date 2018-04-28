@@ -94,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp3migration.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsizeentry.h"
 end_include
 
@@ -1179,7 +1173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290be04c0108
+DECL|struct|__anon2be3e9440108
 block|{
 DECL|member|widget
 name|GtkWidget

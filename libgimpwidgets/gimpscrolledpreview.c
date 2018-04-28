@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp3migration.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -72,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d62b510108
+DECL|struct|__anon2a3a5d8d0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType

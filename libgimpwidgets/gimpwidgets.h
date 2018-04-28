@@ -347,12 +347,6 @@ directive|include
 file|<libgimpwidgets/gimpzoommodel.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimp3migration.h>
-end_include
-
 begin_undef
 undef|#
 directive|undef
