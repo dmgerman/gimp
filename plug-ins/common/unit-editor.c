@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289114ad0103
+DECL|enum|__anon2ae089c10103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289114ad0208
+DECL|struct|__anon2ae089c10208
 block|{
 DECL|member|title
 specifier|const
@@ -1586,25 +1586,25 @@ name|strlen
 argument_list|(
 name|identifier
 argument_list|)
-operator||
+operator|||
 operator|!
 name|strlen
 argument_list|(
 name|symbol
 argument_list|)
-operator||
+operator|||
 operator|!
 name|strlen
 argument_list|(
 name|abbreviation
 argument_list|)
-operator||
+operator|||
 operator|!
 name|strlen
 argument_list|(
 name|singular
 argument_list|)
-operator||
+operator|||
 operator|!
 name|strlen
 argument_list|(
