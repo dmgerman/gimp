@@ -50,12 +50,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpbrushmenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpbrushselectbutton.h>
 end_include
 
@@ -74,19 +68,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpfontmenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpfontselectbutton.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpgradientmenu.h>
 end_include
 
 begin_include
@@ -116,25 +98,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimppalettemenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppaletteselectbutton.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimppatternmenu.h>
 end_include
 
 begin_include

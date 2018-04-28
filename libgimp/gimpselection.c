@@ -50,27 +50,5 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_selection_clear:  * @image_ID: The image.  *  * This procedure is deprecated! Use gimp_selection_none() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_selection_clear (gint32 image_ID)
-name|gimp_selection_clear
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_selection_none
-argument_list|(
-name|image_ID
-argument_list|)
-return|;
-block|}
-end_function
-
 end_unit
 
