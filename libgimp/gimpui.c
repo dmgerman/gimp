@@ -9,23 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GDK_DISABLE_DEPRECATED
-end_ifdef
-
-begin_undef
-undef|#
-directive|undef
-name|GDK_DISABLE_DEPRECATED
-end_undef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
