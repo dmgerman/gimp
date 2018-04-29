@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -129,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53db7a0103
+DECL|enum|__anon290ea79b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -530,10 +536,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|arrow
-decl_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -586,8 +588,12 @@ expr_stmt|;
 comment|/* Button for adding to color history. */
 name|button
 operator|=
-name|gtk_button_new
-argument_list|()
+name|gimp_icon_button_new
+argument_list|(
+name|GIMP_ICON_LIST_ADD
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -637,30 +643,6 @@ name|gimp_color_history_add_clicked
 argument_list|)
 argument_list|,
 name|dialog
-argument_list|)
-expr_stmt|;
-name|arrow
-operator|=
-name|gtk_arrow_new
-argument_list|(
-name|GTK_ARROW_RIGHT
-argument_list|,
-name|GTK_SHADOW_OUT
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-name|arrow
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|arrow
 argument_list|)
 expr_stmt|;
 comment|/* Color history table. */
