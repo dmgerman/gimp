@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd45a70103
+DECL|enum|__anon275855410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd45a70203
+DECL|enum|__anon275855410203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -2405,7 +2405,7 @@ name|NULL
 return|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|button_text
 argument_list|)

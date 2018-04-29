@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a49e2d0103
+DECL|enum|__anon2bdad2da0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a49e2d0203
+DECL|enum|__anon2bdad2da0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -1550,9 +1550,12 @@ name|editor
 operator|->
 name|reset_button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_ICON_RESET
+name|_
+argument_list|(
+literal|"_Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

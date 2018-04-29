@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9eba60103
+DECL|enum|__anon2ba6de160103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -124,10 +124,10 @@ DECL|member|response_id
 name|gint
 name|response_id
 decl_stmt|;
-DECL|member|stock_id
+DECL|member|button_text
 name|gchar
 modifier|*
-name|stock_id
+name|button_text
 decl_stmt|;
 DECL|member|alternative_position
 name|gint
@@ -366,7 +366,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|button_text
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -860,7 +860,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|button_text
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -996,7 +996,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|stock_id
+name|button_text
 operator|=
 name|va_arg
 argument_list|(
@@ -1007,9 +1007,9 @@ name|gchar
 operator|*
 argument_list|)
 init|;
-name|stock_id
+name|button_text
 condition|;
-name|stock_id
+name|button_text
 operator|=
 name|va_arg
 argument_list|(
@@ -1045,7 +1045,7 @@ name|response_entry_new
 argument_list|(
 name|response_id
 argument_list|,
-name|stock_id
+name|button_text
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2871,7 +2871,7 @@ argument_list|)
 argument_list|,
 name|entry
 operator|->
-name|stock_id
+name|button_text
 argument_list|,
 name|entry
 operator|->
@@ -3043,7 +3043,7 @@ argument_list|)
 argument_list|,
 name|entry
 operator|->
-name|stock_id
+name|button_text
 argument_list|,
 name|entry
 operator|->
@@ -3721,7 +3721,7 @@ begin_function
 specifier|static
 name|ResponseEntry
 modifier|*
-DECL|function|response_entry_new (gint response_id,const gchar * stock_id)
+DECL|function|response_entry_new (gint response_id,const gchar * button_text)
 name|response_entry_new
 parameter_list|(
 name|gint
@@ -3730,7 +3730,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|stock_id
+name|button_text
 parameter_list|)
 block|{
 name|ResponseEntry
@@ -3750,11 +3750,11 @@ name|response_id
 expr_stmt|;
 name|entry
 operator|->
-name|stock_id
+name|button_text
 operator|=
 name|g_strdup
 argument_list|(
-name|stock_id
+name|button_text
 argument_list|)
 expr_stmt|;
 name|entry
@@ -3791,7 +3791,7 @@ name|g_free
 argument_list|(
 name|entry
 operator|->
-name|stock_id
+name|button_text
 argument_list|)
 expr_stmt|;
 name|g_slice_free

@@ -1324,9 +1324,12 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gtk_button_new_with_mnemonic
 argument_list|(
-name|GIMP_ICON_CENTER
+name|_
+argument_list|(
+literal|"C_enter"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
