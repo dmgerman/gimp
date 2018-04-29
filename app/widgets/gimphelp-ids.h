@@ -3054,6 +3054,14 @@ value|"gimp-filter-posterize"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_RECURSIVE_TRANSFORM
+define|#
+directive|define
+name|GIMP_HELP_FILTER_RECURSIVE_TRANSFORM
+value|"gimp-filter-recursive-transform"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_RED_EYE_REMOVAL
 define|#
 directive|define

@@ -2039,6 +2039,8 @@ literal|"gegl:pixelize"
 block|,
 literal|"gegl:polar-coordinates"
 block|,
+literal|"gegl:recursive-transform"
+block|,
 literal|"gegl:red-eye-removal"
 block|,
 literal|"gegl:reinhard05"
