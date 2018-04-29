@@ -5332,14 +5332,6 @@ name|text_tool
 operator|->
 name|editor_dialog
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|image_window
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|GTK_WIDGET

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1d45540103
+DECL|enum|__anon2b97f3f50103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1640,25 +1640,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new_internal:  * @factory:  * @screen:  * @context:  * @ui_manager:  * @identifier:  * @view_size:  * @return_existing:   If %TRUE, (or if the dialog is a singleton),  *                     don't create a new dialog if it exists, instead  *                     return the existing one  * @present:           If %TRUE, the toplevel that contains the dialog (if any)  *                     will be gtk_window_present():ed  * @create_containers: If %TRUE, then containers for the  *                     dialog/dockable will be created as well. If you  *                     want to manage your own containers, pass %FALSE  *  * This is the lowest level dialog factory creation function.  *  * Returns: A created or existing #GtkWidget.  **/
+comment|/**  * gimp_dialog_factory_dialog_new_internal:  * @factory:  * @monitor:  * @context:  * @ui_manager:  * @identifier:  * @view_size:  * @return_existing:   If %TRUE, (or if the dialog is a singleton),  *                     don't create a new dialog if it exists, instead  *                     return the existing one  * @present:           If %TRUE, the toplevel that contains the dialog (if any)  *                     will be gtk_window_present():ed  * @create_containers: If %TRUE, then containers for the  *                     dialog/dockable will be created as well. If you  *                     want to manage your own containers, pass %FALSE  *  * This is the lowest level dialog factory creation function.  *  * Returns: A created or existing #GtkWidget.  **/
 end_comment
 
 begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,GimpContext * context,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean return_existing,gboolean present,gboolean create_containers)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkMonitor * monitor,GimpContext * context,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean return_existing,gboolean present,gboolean create_containers)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpContext
@@ -1836,8 +1833,6 @@ name|gimp_dock_with_window_new
 argument_list|(
 name|factory
 argument_list|,
-name|screen
-argument_list|,
 name|monitor
 argument_list|,
 name|FALSE
@@ -1895,8 +1890,6 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -2213,8 +2206,6 @@ name|factory
 argument_list|,
 name|dialog
 argument_list|,
-name|screen
-argument_list|,
 name|monitor
 argument_list|)
 expr_stmt|;
@@ -2243,7 +2234,13 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|screen
+name|gdk_display_get_default_screen
+argument_list|(
+name|gdk_monitor_get_display
+argument_list|(
+name|monitor
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toplevel
@@ -2386,24 +2383,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @ui_manager:   A #GimpUIManager, if applicable.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @monitor       the #GdkMonitor the dialog should appear on  * @ui_manager:   A #GimpUIManager, if applicable.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean present)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkMonitor * monitor,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean present)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpUIManager
@@ -2434,9 +2428,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|,
 name|NULL
@@ -2455,8 +2449,6 @@ return|return
 name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -2663,24 +2655,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @monitor:      the #GdkMonitor the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,const gchar * identifiers,gint view_size)
+DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkMonitor * monitor,const gchar * identifiers,gint view_size)
 name|gimp_dialog_factory_dialog_raise
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 specifier|const
@@ -2716,9 +2705,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|,
 name|NULL
@@ -2779,8 +2768,6 @@ operator|=
 name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -2887,15 +2874,13 @@ name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
 argument_list|,
-name|gtk_widget_get_screen
+name|gimp_widget_get_monitor
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|dock
 argument_list|)
 argument_list|)
-argument_list|,
-literal|0
 argument_list|,
 name|gimp_dock_get_context
 argument_list|(
@@ -2926,7 +2911,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_add_dialog (GimpDialogFactory * factory,GtkWidget * dialog,GdkScreen * screen,gint monitor)
+DECL|function|gimp_dialog_factory_add_dialog (GimpDialogFactory * factory,GtkWidget * dialog,GdkMonitor * monitor)
 name|gimp_dialog_factory_add_dialog
 parameter_list|(
 name|GimpDialogFactory
@@ -2937,11 +2922,8 @@ name|GtkWidget
 modifier|*
 name|dialog
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -2992,9 +2974,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3229,8 +3211,6 @@ name|gimp_session_info_apply_geometry
 argument_list|(
 name|current_info
 argument_list|,
-name|screen
-argument_list|,
 name|monitor
 argument_list|,
 name|gui_config
@@ -3441,7 +3421,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_add_foreign (GimpDialogFactory * factory,const gchar * identifier,GtkWidget * dialog,GdkScreen * screen,gint monitor)
+DECL|function|gimp_dialog_factory_add_foreign (GimpDialogFactory * factory,const gchar * identifier,GtkWidget * dialog,GdkMonitor * monitor)
 name|gimp_dialog_factory_add_foreign
 parameter_list|(
 name|GimpDialogFactory
@@ -3457,11 +3437,8 @@ name|GtkWidget
 modifier|*
 name|dialog
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -3506,9 +3483,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3596,8 +3573,6 @@ argument_list|(
 name|factory
 argument_list|,
 name|dialog
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)
@@ -5051,18 +5026,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_restore (GimpDialogFactory * factory,GdkScreen * screen,gint monitor)
+DECL|function|gimp_dialog_factory_restore (GimpDialogFactory * factory,GdkMonitor * monitor)
 name|gimp_dialog_factory_restore
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -5111,8 +5083,6 @@ argument_list|(
 name|info
 argument_list|,
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)

@@ -2853,14 +2853,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_get_monitor_resolution (GdkScreen * screen,gint monitor,gdouble * xres,gdouble * yres)
+DECL|function|gimp_get_monitor_resolution (GdkMonitor * monitor,gdouble * xres,gdouble * yres)
 name|gimp_get_monitor_resolution
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gdouble
@@ -2892,9 +2889,9 @@ literal|0.0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2912,10 +2909,8 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_geometry
+name|gdk_monitor_get_geometry
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|,
 operator|&
@@ -2924,19 +2919,15 @@ argument_list|)
 expr_stmt|;
 name|width_mm
 operator|=
-name|gdk_screen_get_monitor_width_mm
+name|gdk_monitor_get_width_mm
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|)
 expr_stmt|;
 name|height_mm
 operator|=
-name|gdk_screen_get_monitor_height_mm
+name|gdk_monitor_get_height_mm
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|)
 expr_stmt|;
@@ -4108,7 +4099,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2923b4510108
+DECL|struct|__anon288c943e0108
 block|{
 DECL|member|r
 name|guchar
@@ -4685,7 +4676,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923b4510208
+DECL|struct|__anon288c943e0208
 block|{
 DECL|member|timeout_id
 name|gint
@@ -4975,24 +4966,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dock_with_window_new:  * @factory: a #GimpDialogFacotry  * @screen:  the #GdkScreen the dock window should appear on  * @toolbox: if %TRUE; gives a "gimp-toolbox-window" with a  *           "gimp-toolbox", "gimp-dock-window"+"gimp-dock"  *           otherwise  *  * Returns: the newly created #GimpDock with the #GimpDockWindow  **/
+comment|/**  * gimp_dock_with_window_new:  * @factory: a #GimpDialogFacotry  * @monitor: the #GdkMonitor the dock window should appear on  * @toolbox: if %TRUE; gives a "gimp-toolbox-window" with a  *           "gimp-toolbox", "gimp-dock-window"+"gimp-dock"  *           otherwise  *  * Returns: the newly created #GimpDock with the #GimpDockWindow  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dock_with_window_new (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,gboolean toolbox)
+DECL|function|gimp_dock_with_window_new (GimpDialogFactory * factory,GdkMonitor * monitor,gboolean toolbox)
 name|gimp_dock_with_window_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gboolean
@@ -5027,9 +5015,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|,
 name|NULL
@@ -5041,8 +5029,6 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -5084,8 +5070,6 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,

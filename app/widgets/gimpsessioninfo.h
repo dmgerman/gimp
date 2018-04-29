@@ -170,11 +170,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;
@@ -188,11 +185,8 @@ name|GimpSessionInfo
 modifier|*
 name|info
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|current_monitor
 parameter_list|,
 name|gboolean

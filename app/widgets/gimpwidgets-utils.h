@@ -308,11 +308,8 @@ begin_function_decl
 name|void
 name|gimp_get_monitor_resolution
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gdouble
@@ -502,11 +499,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gboolean

@@ -320,16 +320,16 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_freedesktop_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_freedesktop_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
 name|screenshot_freedesktop_shoot
 parameter_list|(
 name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -515,12 +515,8 @@ decl_stmt|;
 comment|/* Just assign profile of current monitor. This will work only            * as long as this is a single-display setup.            * We need to figure out how to do better color management for            * portal screenshots.            * TODO!            */
 name|profile
 operator|=
-name|gimp_screen_get_color_profile
+name|gimp_monitor_get_color_profile
 argument_list|(
-name|screen
-argument_list|,
-name|shootvals
-operator|->
 name|monitor
 argument_list|)
 expr_stmt|;

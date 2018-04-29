@@ -868,15 +868,10 @@ name|NULL
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gtk_widget_get_screen
-argument_list|(
-name|entry
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|entry
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&

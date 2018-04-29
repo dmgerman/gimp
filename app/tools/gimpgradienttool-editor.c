@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4be0b00103
+DECL|enum|__anon29a853100103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4be0b00208
+DECL|struct|__anon29a853100208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -8055,14 +8055,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

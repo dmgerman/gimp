@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920a4e60103
+DECL|enum|__anon2c3dd7200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3350,14 +3350,6 @@ operator|=
 name|gimp_dock_with_window_new
 argument_list|(
 name|dialog_factory
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dockable
-argument_list|)
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

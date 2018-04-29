@@ -1000,14 +1000,6 @@ argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|editor
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|GTK_WIDGET

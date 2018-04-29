@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b128c100103
+DECL|enum|__anon2c1353300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1159,11 +1159,8 @@ name|GimpAlignmentType
 name|screen_side
 parameter_list|)
 block|{
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-decl_stmt|;
-name|gint
 name|monitor
 decl_stmt|;
 name|GdkRectangle
@@ -1211,16 +1208,6 @@ operator|!
 name|docks
 condition|)
 return|return;
-name|screen
-operator|=
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dock_columns
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|monitor
 operator|=
 name|gimp_widget_get_monitor
@@ -1231,10 +1218,8 @@ name|dock_columns
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_screen_get_monitor_workarea
+name|gdk_monitor_get_workarea
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|,
 operator|&
@@ -1303,8 +1288,6 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -1567,14 +1550,6 @@ name|NULL
 argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|source_image_window
-argument_list|)
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

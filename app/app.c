@@ -341,23 +341,13 @@ comment|/*  local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|initial_screen
+DECL|variable|initial_monitor
 specifier|static
 name|GObject
 modifier|*
-name|initial_screen
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|initial_monitor
-specifier|static
-name|gint
 name|initial_monitor
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1141,8 +1131,6 @@ name|file
 argument_list|,
 name|as_new
 argument_list|,
-name|initial_screen
-argument_list|,
 name|initial_monitor
 argument_list|,
 operator|&
@@ -1273,8 +1261,6 @@ argument_list|,
 name|file
 argument_list|,
 name|as_new
-argument_list|,
-name|initial_screen
 argument_list|,
 name|initial_monitor
 argument_list|)
@@ -1427,6 +1413,9 @@ name|GimpInitStatusFunc
 name|status_callback
 parameter_list|)
 block|{
+name|gint
+name|dummy
+decl_stmt|;
 comment|/*  Getting the display name for a -1 display returns the initial    *  monitor during startup. Need to call this from a restore_after    *  callback, because before restore(), the GUI can't return anything,    *  after after restore() the initial monitor gets reset.    */
 name|g_free
 argument_list|(
@@ -1438,10 +1427,10 @@ operator|-
 literal|1
 argument_list|,
 operator|&
-name|initial_screen
+name|initial_monitor
 argument_list|,
 operator|&
-name|initial_monitor
+name|dummy
 argument_list|)
 argument_list|)
 expr_stmt|;

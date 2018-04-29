@@ -151,9 +151,6 @@ name|as_new
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpPDBStatusType
@@ -202,9 +199,6 @@ name|file_proc
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpPDBStatusType
@@ -283,9 +277,6 @@ name|as_new
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;

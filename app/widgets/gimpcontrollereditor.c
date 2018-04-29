@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0a85eb0103
+DECL|enum|__anon2a32cf810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0a85eb0203
+DECL|enum|__anon2a32cf810203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2932,11 +2932,6 @@ argument_list|,
 name|editor
 operator|->
 name|edit_dialog
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|button
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

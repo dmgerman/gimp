@@ -134,7 +134,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GdkMonitor
+modifier|*
 name|gimp_widget_get_monitor
 parameter_list|(
 name|GtkWidget
@@ -145,13 +146,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GdkMonitor
+modifier|*
 name|gimp_get_monitor_at_pointer
 parameter_list|(
-name|GdkScreen
-modifier|*
-modifier|*
-name|screen
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -176,13 +175,10 @@ end_function_decl
 begin_function_decl
 name|GimpColorProfile
 modifier|*
-name|gimp_screen_get_color_profile
+name|gimp_monitor_get_color_profile
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;

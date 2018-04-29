@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc30550103
+DECL|enum|__anon28eae34f0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -954,18 +954,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|session_restore (Gimp * gimp,GdkScreen * screen,gint monitor)
+DECL|function|session_restore (Gimp * gimp,GdkMonitor * monitor)
 name|session_restore
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -979,9 +976,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GDK_IS_SCREEN
+name|GDK_IS_MONITOR
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -989,8 +986,6 @@ name|gimp_dialog_factory_restore
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)

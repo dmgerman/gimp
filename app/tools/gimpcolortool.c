@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988c8c90103
+DECL|enum|__anon2b557f2c0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2150,19 +2150,8 @@ case|case
 name|GIMP_COLOR_PICK_MODE_PALETTE
 case|:
 block|{
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-init|=
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gint
 name|monitor
 init|=
 name|gimp_widget_get_monitor
@@ -2196,8 +2185,6 @@ operator|->
 name|gimp
 argument_list|,
 name|dialog_factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,

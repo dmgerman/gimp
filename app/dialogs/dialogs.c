@@ -597,11 +597,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpSessionInfo
@@ -621,11 +618,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpSessionInfo
@@ -1927,25 +1921,22 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * dialogs_restore_dialog:  * @factory:  * @screen:  * @monitor:  * @info:  *  * Creates a top level widget based on the given session info object  * in which other widgets later can be be put, typically also restored  * from the same session info object.  *  * Returns:  **/
+comment|/**  * dialogs_restore_dialog:  * @factory:  * @screen:  * @info:  *  * Creates a top level widget based on the given session info object  * in which other widgets later can be be put, typically also restored  * from the same session info object.  *  * Returns:  **/
 end_comment
 
 begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_restore_dialog (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,GimpSessionInfo * info)
+DECL|function|dialogs_restore_dialog (GimpDialogFactory * factory,GdkMonitor * monitor,GimpSessionInfo * info)
 name|dialogs_restore_dialog
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpSessionInfo
@@ -1991,8 +1982,6 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -2053,25 +2042,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dialogs_restore_window:  * @factory:  * @screen:  * @monitor:  * @info:  *  * "restores" the image window. We don't really restore anything since  * the image window is created earlier, so we just look for and return  * the already-created image window.  *  * Returns:  **/
+comment|/**  * dialogs_restore_window:  * @factory:  * @monitor:  * @info:  *  * "restores" the image window. We don't really restore anything since  * the image window is created earlier, so we just look for and return  * the already-created image window.  *  * Returns:  **/
 end_comment
 
 begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_restore_window (GimpDialogFactory * factory,GdkScreen * screen,gint monitor,GimpSessionInfo * info)
+DECL|function|dialogs_restore_window (GimpDialogFactory * factory,GdkMonitor * monitor,GimpSessionInfo * info)
 name|dialogs_restore_window
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|GimpSessionInfo

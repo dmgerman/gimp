@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0406b0103
+DECL|enum|__anon2bda2e840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0406b0203
+DECL|enum|__anon2bda2e840203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2708,11 +2708,6 @@ argument_list|,
 literal|"gimp-controller-editor-dialog"
 argument_list|,
 name|dialog
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|button
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

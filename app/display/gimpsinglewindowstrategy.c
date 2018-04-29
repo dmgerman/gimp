@@ -111,11 +111,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 specifier|const
@@ -197,7 +194,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_single_window_strategy_show_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkScreen * screen,gint monitor,const gchar * identifiers)
+DECL|function|gimp_single_window_strategy_show_dockable_dialog (GimpWindowStrategy * strategy,Gimp * gimp,GimpDialogFactory * factory,GdkMonitor * monitor,const gchar * identifiers)
 name|gimp_single_window_strategy_show_dockable_dialog
 parameter_list|(
 name|GimpWindowStrategy
@@ -212,11 +209,8 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 specifier|const
@@ -304,8 +298,6 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
 argument_list|,
-name|screen
-argument_list|,
 name|monitor
 argument_list|,
 name|ui_manager
@@ -364,8 +356,6 @@ return|return
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|factory
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,

@@ -174,11 +174,8 @@ name|gchar
 operator|*
 name|help_id
 argument_list|,
-name|GdkScreen
+name|GdkMonitor
 operator|*
-name|screen
-argument_list|,
-name|gint
 name|monitor
 argument_list|,
 name|gboolean
@@ -349,11 +346,8 @@ name|GimpToolGui
 modifier|*
 name|gui
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gboolean

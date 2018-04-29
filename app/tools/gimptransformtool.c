@@ -4983,14 +4983,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|GTK_WIDGET

@@ -189,9 +189,9 @@ specifier|static
 name|GimpPDBStatusType
 name|shoot
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -210,10 +210,10 @@ specifier|static
 name|gboolean
 name|shoot_dialog
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
 modifier|*
-name|screen
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -302,9 +302,6 @@ comment|/* include WM decorations */
 literal|0
 block|,
 comment|/* window ID              */
-literal|0
-block|,
-comment|/* monitor                */
 literal|0
 block|,
 comment|/* select delay           */
@@ -567,9 +564,9 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 init|=
 name|NULL
 decl_stmt|;
@@ -843,7 +840,7 @@ operator|!
 name|shoot_dialog
 argument_list|(
 operator|&
-name|screen
+name|monitor
 argument_list|)
 condition|)
 name|status
@@ -1069,7 +1066,7 @@ name|status
 operator|=
 name|shoot
 argument_list|(
-name|screen
+name|monitor
 argument_list|,
 operator|&
 name|image_ID
@@ -1214,9 +1211,9 @@ condition|)
 block|{
 name|gdk_display_beep
 argument_list|(
-name|gdk_screen_get_display
+name|gdk_monitor_get_display
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1310,12 +1307,12 @@ end_comment
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|shoot (GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|shoot (GdkMonitor * monitor,gint32 * image_ID,GError ** error)
 name|shoot
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -1342,7 +1339,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1366,7 +1363,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1387,7 +1384,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1407,7 +1404,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1427,7 +1424,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1449,7 +1446,7 @@ argument_list|(
 operator|&
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|,
 name|image_ID
 argument_list|,
@@ -1684,13 +1681,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|shoot_dialog (GdkScreen ** screen)
+DECL|function|shoot_dialog (GdkMonitor ** monitor)
 name|shoot_dialog
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
 modifier|*
-name|screen
+name|monitor
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3524,9 +3521,9 @@ condition|)
 block|{
 comment|/* get the screen on which we are running */
 operator|*
-name|screen
+name|monitor
 operator|=
-name|gtk_widget_get_screen
+name|gimp_widget_get_monitor
 argument_list|(
 name|dialog
 argument_list|)

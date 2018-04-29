@@ -177,11 +177,11 @@ parameter_list|,
 name|GObject
 modifier|*
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint
 modifier|*
-name|monitor
+name|monitor_number
 parameter_list|)
 function_decl|;
 DECL|member|get_user_time
@@ -312,9 +312,6 @@ name|scale
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;
@@ -700,9 +697,6 @@ name|scale
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;
@@ -887,11 +881,11 @@ parameter_list|,
 name|GObject
 modifier|*
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint
 modifier|*
-name|monitor
+name|monitor_number
 parameter_list|)
 function_decl|;
 end_function_decl

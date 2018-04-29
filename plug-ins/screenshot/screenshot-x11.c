@@ -117,9 +117,9 @@ name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -152,34 +152,34 @@ end_comment
 begin_function
 specifier|static
 name|guint32
-DECL|function|select_window (ScreenshotValues * shootvals,GdkScreen * screen)
+DECL|function|select_window (ScreenshotValues * shootvals,GdkMonitor * monitor)
 name|select_window
 parameter_list|(
 name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|)
 block|{
 name|Display
 modifier|*
 name|x_dpy
 init|=
-name|GDK_SCREEN_XDISPLAY
+name|GDK_DISPLAY_XDISPLAY
 argument_list|(
-name|screen
+name|gdk_monitor_get_display
+argument_list|(
+name|monitor
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gint
 name|x_scr
 init|=
-name|GDK_SCREEN_XNUMBER
-argument_list|(
-name|screen
-argument_list|)
+literal|0
 decl_stmt|;
 name|Window
 name|x_root
@@ -496,9 +496,9 @@ name|keymap
 operator|=
 name|gdk_keymap_get_for_display
 argument_list|(
-name|gdk_screen_get_display
+name|gdk_monitor_get_display
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1546,12 +1546,12 @@ begin_function
 specifier|static
 name|cairo_region_t
 modifier|*
-DECL|function|window_get_shape (GdkScreen * screen,guint32 window)
+DECL|function|window_get_shape (GdkMonitor * monitor,guint32 window)
 name|window_get_shape
 parameter_list|(
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|guint32
 name|window
@@ -1583,9 +1583,12 @@ name|rects
 operator|=
 name|XShapeGetRectangles
 argument_list|(
-name|GDK_SCREEN_XDISPLAY
+name|GDK_DISPLAY_XDISPLAY
 argument_list|(
-name|screen
+name|gdk_monitor_get_display
+argument_list|(
+name|monitor
+argument_list|)
 argument_list|)
 argument_list|,
 name|window
@@ -2448,16 +2451,16 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_x11_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
 name|screenshot_x11_shoot
 parameter_list|(
 name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -2514,13 +2517,6 @@ name|gint
 name|screen_y
 decl_stmt|;
 name|gint
-name|monitor
-init|=
-name|shootvals
-operator|->
-name|monitor
-decl_stmt|;
-name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2528,14 +2524,19 @@ decl_stmt|;
 comment|/* use default screen if we are running non-interactively */
 if|if
 condition|(
-name|screen
+name|monitor
 operator|==
 name|NULL
 condition|)
-name|screen
+name|monitor
 operator|=
-name|gdk_screen_get_default
+name|gdk_display_get_monitor
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|,
+literal|0
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2574,7 +2575,7 @@ name|select_window
 argument_list|(
 name|shootvals
 argument_list|,
-name|screen
+name|monitor
 argument_list|)
 expr_stmt|;
 if|if
@@ -2605,9 +2606,9 @@ argument_list|)
 expr_stmt|;
 name|display
 operator|=
-name|gdk_screen_get_display
+name|gdk_monitor_get_display
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 expr_stmt|;
 name|screen_rect
@@ -2628,7 +2629,10 @@ name|width
 operator|=
 name|gdk_screen_get_width
 argument_list|(
-name|screen
+name|gdk_display_get_default_screen
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|screen_rect
@@ -2637,7 +2641,10 @@ name|height
 operator|=
 name|gdk_screen_get_height
 argument_list|(
-name|screen
+name|gdk_display_get_default_screen
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2711,9 +2718,9 @@ argument_list|)
 expr_stmt|;
 name|monitor
 operator|=
-name|gdk_screen_get_monitor_at_point
+name|gdk_display_get_monitor_at_point
 argument_list|(
-name|screen
+name|display
 argument_list|,
 name|rect
 operator|.
@@ -2752,7 +2759,10 @@ name|window
 operator|=
 name|gdk_screen_get_root_window
 argument_list|(
-name|screen
+name|gdk_display_get_default_screen
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* FIXME: figure monitor */
@@ -2772,9 +2782,9 @@ argument_list|)
 expr_stmt|;
 name|monitor
 operator|=
-name|gdk_screen_get_monitor_at_window
+name|gdk_display_get_monitor_at_window
 argument_list|(
-name|screen
+name|display
 argument_list|,
 name|window
 argument_list|)
@@ -2868,7 +2878,10 @@ name|window
 operator|=
 name|gdk_screen_get_root_window
 argument_list|(
-name|screen
+name|gdk_display_get_default_screen
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin
@@ -2968,7 +2981,7 @@ name|shape
 operator|=
 name|window_get_shape
 argument_list|(
-name|screen
+name|monitor
 argument_list|,
 name|shootvals
 operator|->
@@ -3059,10 +3072,8 @@ argument_list|)
 expr_stmt|;
 name|profile
 operator|=
-name|gimp_screen_get_color_profile
+name|gimp_monitor_get_color_profile
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|)
 expr_stmt|;

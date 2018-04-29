@@ -174,16 +174,16 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_kwin_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_kwin_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
 name|screenshot_kwin_shoot
 parameter_list|(
 name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -217,13 +217,6 @@ decl_stmt|;
 name|GVariant
 modifier|*
 name|retval
-decl_stmt|;
-name|gint
-name|monitor
-init|=
-name|shootvals
-operator|->
-name|monitor
 decl_stmt|;
 name|gint32
 name|mask
@@ -458,10 +451,8 @@ expr_stmt|;
 comment|/* This is very wrong in multi-display setups since we have no        * idea which profile is to be used. Let's keep it anyway and        * assume always the monitor 0, which will still work in common        * cases.        */
 name|profile
 operator|=
-name|gimp_screen_get_color_profile
+name|gimp_monitor_get_color_profile
 argument_list|(
-name|screen
-argument_list|,
 name|monitor
 argument_list|)
 expr_stmt|;

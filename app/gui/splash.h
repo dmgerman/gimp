@@ -23,12 +23,9 @@ parameter_list|(
 name|gboolean
 name|be_verbose
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
-name|monitor
+name|mointor
 parameter_list|)
 function_decl|;
 end_function_decl

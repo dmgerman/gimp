@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b24810108
+DECL|struct|__anon2c1e99860108
 block|{
 DECL|member|context
 name|GimpContext
@@ -396,15 +396,10 @@ literal|1.0
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|widget
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

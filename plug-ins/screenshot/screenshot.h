@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff96920103
+DECL|enum|__anon2add5fea0103
 block|{
 DECL|enumerator|SCREENSHOT_BACKEND_NONE
 name|SCREENSHOT_BACKEND_NONE
@@ -50,7 +50,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff96920203
+DECL|enum|__anon2add5fea0203
 block|{
 DECL|enumerator|SCREENSHOT_CAN_SHOOT_DECORATIONS
 name|SCREENSHOT_CAN_SHOOT_DECORATIONS
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff96920303
+DECL|enum|__anon2add5fea0303
 block|{
 DECL|enumerator|SCREENSHOT_PROFILE_POLICY_MONITOR
 name|SCREENSHOT_PROFILE_POLICY_MONITOR
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff96920403
+DECL|enum|__anon2add5fea0403
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff96920508
+DECL|struct|__anon2add5fea0508
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -161,7 +161,8 @@ name|guint
 name|window_id
 decl_stmt|;
 DECL|member|monitor
-name|gint
+name|GdkMonitor
+modifier|*
 name|monitor
 decl_stmt|;
 DECL|member|select_delay

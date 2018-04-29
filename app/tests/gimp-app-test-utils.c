@@ -375,8 +375,6 @@ literal|1.0
 comment|/*scale*/
 argument_list|,
 name|NULL
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -987,10 +985,13 @@ argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
-name|gdk_screen_get_default
+name|gdk_display_get_monitor
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
 argument_list|,
 literal|0
+argument_list|)
 argument_list|,
 literal|"gimp-image-new-dialog"
 argument_list|,

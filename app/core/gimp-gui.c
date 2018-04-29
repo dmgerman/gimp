@@ -916,7 +916,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,GObject ** screen,gint * monitor)
+DECL|function|gimp_get_display_name (Gimp * gimp,gint display_ID,GObject ** monitor,gint * monitor_number)
 name|gimp_get_display_name
 parameter_list|(
 name|Gimp
@@ -929,11 +929,11 @@ parameter_list|,
 name|GObject
 modifier|*
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint
 modifier|*
-name|monitor
+name|monitor_number
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -948,7 +948,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|screen
+name|monitor
 operator|!=
 name|NULL
 argument_list|,
@@ -957,7 +957,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|monitor
+name|monitor_number
 operator|!=
 name|NULL
 argument_list|,
@@ -983,20 +983,15 @@ name|gimp
 argument_list|,
 name|display_ID
 argument_list|,
-name|screen
-argument_list|,
 name|monitor
+argument_list|,
+name|monitor_number
 argument_list|)
 return|;
 operator|*
-name|screen
-operator|=
-name|NULL
-expr_stmt|;
-operator|*
 name|monitor
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 return|return
 name|NULL
@@ -1407,7 +1402,7 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * screen,gint monitor)
+DECL|function|gimp_create_display (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GObject * monitor)
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -1426,9 +1421,6 @@ name|scale
 parameter_list|,
 name|GObject
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -1458,13 +1450,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|screen
+name|monitor
 operator|==
 name|NULL
 operator|||
 name|G_IS_OBJECT
 argument_list|(
-name|screen
+name|monitor
 argument_list|)
 argument_list|,
 name|NULL
@@ -1492,8 +1484,6 @@ argument_list|,
 name|unit
 argument_list|,
 name|scale
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)

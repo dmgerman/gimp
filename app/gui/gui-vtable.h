@@ -32,17 +32,13 @@ comment|/*  this function lives in gui.c but must only be used from gui-vtable.c
 end_comment
 
 begin_function_decl
-name|gint
+name|GdkMonitor
+modifier|*
 name|gui_get_initial_monitor
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GdkScreen
-modifier|*
-modifier|*
-name|screen
 parameter_list|)
 function_decl|;
 end_function_decl

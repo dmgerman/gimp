@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a39784e0103
+DECL|enum|__anon2b53db7a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1089,11 +1089,6 @@ argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|dialog
-argument_list|)
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|parent
 argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6de160103
+DECL|enum|__anon2c01c1140103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -269,11 +269,8 @@ name|GimpToolGui
 modifier|*
 name|gui
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 function_decl|;
@@ -806,7 +803,7 @@ end_comment
 begin_function
 name|GimpToolGui
 modifier|*
-DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,const gchar * title,const gchar * description,const gchar * icon_name,const gchar * help_id,GdkScreen * screen,gint monitor,gboolean overlay,...)
+DECL|function|gimp_tool_gui_new (GimpToolInfo * tool_info,const gchar * title,const gchar * description,const gchar * icon_name,const gchar * help_id,GdkMonitor * monitor,gboolean overlay,...)
 name|gimp_tool_gui_new
 parameter_list|(
 name|GimpToolInfo
@@ -833,11 +830,8 @@ name|gchar
 modifier|*
 name|help_id
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gboolean
@@ -1058,8 +1052,6 @@ expr_stmt|;
 name|gimp_tool_gui_create_dialog
 argument_list|(
 name|gui
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)
@@ -2068,18 +2060,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_gui_set_overlay (GimpToolGui * gui,GdkScreen * screen,gint monitor,gboolean overlay)
+DECL|function|gimp_tool_gui_set_overlay (GimpToolGui * gui,GdkMonitor * monitor,gboolean overlay)
 name|gimp_tool_gui_set_overlay
 parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|,
 name|gboolean
@@ -2198,8 +2187,6 @@ expr_stmt|;
 name|gimp_tool_gui_create_dialog
 argument_list|(
 name|gui
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|)
@@ -2775,18 +2762,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_gui_create_dialog (GimpToolGui * gui,GdkScreen * screen,gint monitor)
+DECL|function|gimp_tool_gui_create_dialog (GimpToolGui * gui,GdkMonitor * monitor)
 name|gimp_tool_gui_create_dialog
 parameter_list|(
 name|GimpToolGui
 modifier|*
 name|gui
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-parameter_list|,
-name|gint
 name|monitor
 parameter_list|)
 block|{
@@ -2982,8 +2966,6 @@ argument_list|(
 name|private
 operator|->
 name|tool_info
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,
@@ -3566,11 +3548,6 @@ name|gimp_tool_gui_set_overlay
 argument_list|(
 name|gui
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|dialog
@@ -3695,13 +3672,6 @@ block|}
 name|gimp_tool_gui_set_overlay
 argument_list|(
 name|gui
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|private
-operator|->
-name|dialog
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(

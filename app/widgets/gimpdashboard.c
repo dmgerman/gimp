@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fad2080103
+DECL|enum|__anon2931ae480103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fad2080203
+DECL|enum|__anon2931ae480203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -348,7 +348,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fad2080303
+DECL|enum|__anon2931ae480303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -592,7 +592,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28fad208040a
+DECL|union|__anon2931ae48040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -604,7 +604,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon28fad2080508
+DECL|struct|__anon2931ae480508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -619,7 +619,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28fad2080608
+DECL|struct|__anon2931ae480608
 block|{
 DECL|member|antecedent
 name|gint
@@ -6623,11 +6623,8 @@ operator|->
 name|gimp
 condition|)
 block|{
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
-decl_stmt|;
-name|gint
 name|monitor
 decl_stmt|;
 name|gint
@@ -6720,10 +6717,7 @@ expr_stmt|;
 name|monitor
 operator|=
 name|gimp_get_monitor_at_pointer
-argument_list|(
-operator|&
-name|screen
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_window_strategy_show_dockable_dialog
 argument_list|(
@@ -6743,8 +6737,6 @@ name|gimp
 argument_list|,
 name|gimp_dialog_factory_get_singleton
 argument_list|()
-argument_list|,
-name|screen
 argument_list|,
 name|monitor
 argument_list|,

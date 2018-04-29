@@ -52,17 +52,14 @@ name|gboolean
 name|bottom_align
 decl_stmt|;
 DECL|member|monitor
-name|gint
+name|GdkMonitor
+modifier|*
 name|monitor
 decl_stmt|;
 comment|/*  only valid while restoring and saving the session  */
 DECL|member|open
 name|gboolean
 name|open
-decl_stmt|;
-DECL|member|screen
-name|gint
-name|screen
 decl_stmt|;
 comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info

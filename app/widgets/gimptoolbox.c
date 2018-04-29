@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd43ae90103
+DECL|enum|__anon2baca9470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3401,15 +3401,10 @@ name|FALSE
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|widget
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&

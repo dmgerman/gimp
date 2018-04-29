@@ -220,11 +220,6 @@ name|toolbox
 argument_list|)
 argument_list|)
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|widget
@@ -333,11 +328,6 @@ name|toolbox
 argument_list|)
 argument_list|)
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|widget
@@ -444,11 +434,6 @@ name|GIMP_DOCK
 argument_list|(
 name|toolbox
 argument_list|)
-argument_list|)
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
 argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor

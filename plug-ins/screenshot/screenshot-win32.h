@@ -96,9 +96,9 @@ name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf570080103
+DECL|enum|__anon2b17d12b0103
 block|{
 DECL|enumerator|MONITOR_CHANGED
 name|MONITOR_CHANGED
@@ -88,7 +88,8 @@ struct|struct
 name|_GimpWindowPrivate
 block|{
 DECL|member|monitor
-name|gint
+name|GdkMonitor
+modifier|*
 name|monitor
 decl_stmt|;
 DECL|member|primary_focus_widget
@@ -249,15 +250,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT_INT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|2
+literal|1
 argument_list|,
-name|GDK_TYPE_SCREEN
-argument_list|,
-name|G_TYPE_INT
+name|GDK_TYPE_MONITOR
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -321,15 +320,6 @@ argument_list|,
 name|GimpWindowPrivate
 argument_list|)
 expr_stmt|;
-name|window
-operator|->
-name|private
-operator|->
-name|monitor
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 block|}
 end_function
 
@@ -387,11 +377,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|GdkScreen
+name|GdkDisplay
 modifier|*
-name|screen
+name|display
 init|=
-name|gtk_widget_get_screen
+name|gtk_widget_get_display
 argument_list|(
 name|widget
 argument_list|)
@@ -416,9 +406,9 @@ name|private
 operator|->
 name|monitor
 operator|=
-name|gdk_screen_get_monitor_at_window
+name|gdk_display_get_monitor_at_window
 argument_list|(
-name|screen
+name|display
 argument_list|,
 name|gdk_window
 argument_list|)
@@ -433,8 +423,6 @@ name|MONITOR_CHANGED
 index|]
 argument_list|,
 literal|0
-argument_list|,
-name|screen
 argument_list|,
 name|window
 operator|->
@@ -515,11 +503,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|GdkScreen
+name|GdkDisplay
 modifier|*
-name|screen
+name|display
 init|=
-name|gtk_widget_get_screen
+name|gtk_widget_get_display
 argument_list|(
 name|widget
 argument_list|)
@@ -564,9 +552,9 @@ name|private
 operator|->
 name|monitor
 operator|!=
-name|gdk_screen_get_monitor_at_window
+name|gdk_display_get_monitor_at_window
 argument_list|(
-name|screen
+name|display
 argument_list|,
 name|gdk_window
 argument_list|)

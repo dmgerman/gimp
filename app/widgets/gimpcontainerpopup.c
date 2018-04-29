@@ -1716,11 +1716,6 @@ name|popup
 operator|->
 name|dialog_factory
 argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
 name|button

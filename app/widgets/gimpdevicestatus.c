@@ -174,7 +174,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5724220103
+DECL|enum|__anon2974d09c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2658,11 +2658,6 @@ operator|->
 name|gimp
 argument_list|,
 name|dialog_factory
-argument_list|,
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
 argument_list|,
 name|gimp_widget_get_monitor
 argument_list|(
