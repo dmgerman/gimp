@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b44d9d40103
+DECL|enum|__anon27d6177b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -496,8 +496,10 @@ name|private
 operator|->
 name|scale
 operator|=
-name|gtk_hscale_new_with_range
+name|gtk_scale_new_with_range
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 literal|0.0
 argument_list|,
 literal|3.0

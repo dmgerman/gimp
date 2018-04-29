@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a853100103
+DECL|enum|__anon2af9aa8d0103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a853100208
+DECL|struct|__anon2af9aa8d0208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -6255,8 +6255,10 @@ expr_stmt|;
 comment|/* the action buttons separator */
 name|separator
 operator|=
-name|gtk_hseparator_new
-argument_list|()
+name|gtk_separator_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -6853,8 +6855,10 @@ expr_stmt|;
 comment|/* the action buttons separator */
 name|separator
 operator|=
-name|gtk_hseparator_new
-argument_list|()
+name|gtk_separator_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
