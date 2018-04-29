@@ -117,10 +117,10 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-DECL|member|matrix_table
+DECL|member|matrix_grid
 name|GtkWidget
 modifier|*
-name|matrix_table
+name|matrix_grid
 decl_stmt|;
 DECL|member|matrix_labels
 name|GtkWidget

@@ -63,11 +63,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_table_attach_icon
+name|gimp_grid_attach_icon
 parameter_list|(
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
 name|row
@@ -82,10 +82,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gint
-name|colspan
-parameter_list|,
-name|gboolean
-name|left_align
+name|columns
 parameter_list|)
 function_decl|;
 end_function_decl
