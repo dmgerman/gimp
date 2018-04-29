@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc74b180103
+DECL|enum|__anon2bd4ff090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc74b180203
+DECL|enum|__anon2bd4ff090203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1478,9 +1478,6 @@ name|widget
 argument_list|)
 decl_stmt|;
 name|gint
-name|border_width
-decl_stmt|;
-name|gint
 name|header_minimum
 decl_stmt|;
 name|gint
@@ -1547,10 +1544,6 @@ argument_list|)
 argument_list|,
 name|header_minimum
 argument_list|)
-operator|+
-literal|2
-operator|*
-name|border_width
 expr_stmt|;
 operator|*
 name|natural_width
@@ -1567,10 +1560,6 @@ argument_list|)
 argument_list|,
 name|header_natural
 argument_list|)
-operator|+
-literal|2
-operator|*
-name|border_width
 expr_stmt|;
 block|}
 end_function
@@ -1604,9 +1593,6 @@ name|widget
 argument_list|)
 decl_stmt|;
 name|gint
-name|border_width
-decl_stmt|;
-name|gint
 name|header_minimum
 decl_stmt|;
 name|gint
@@ -1618,16 +1604,6 @@ decl_stmt|;
 name|gint
 name|action_natural
 decl_stmt|;
-name|border_width
-operator|=
-name|gtk_container_get_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -1674,10 +1650,6 @@ operator|+=
 name|header_minimum
 operator|+
 name|action_minimum
-operator|+
-literal|2
-operator|*
-name|border_width
 expr_stmt|;
 operator|*
 name|natural_height
@@ -1685,10 +1657,6 @@ operator|+=
 name|header_natural
 operator|+
 name|action_natural
-operator|+
-literal|2
-operator|*
-name|border_width
 expr_stmt|;
 block|}
 end_function
