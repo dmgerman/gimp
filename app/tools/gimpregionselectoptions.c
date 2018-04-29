@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df94920103
+DECL|enum|__anon278fd4920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -378,14 +378,12 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_DRAW_MASK
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"draw-mask"
 argument_list|,
 name|_
@@ -400,10 +398,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
 name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
