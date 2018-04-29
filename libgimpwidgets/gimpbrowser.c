@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ce80f0103
+DECL|enum|__anon29c5bc430103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -954,12 +954,9 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|gtk_combo_box_set_focus_on_click
-argument_list|(
-name|GTK_COMBO_BOX
+name|gtk_widget_set_focus_on_click
 argument_list|(
 name|combo
-argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1631,9 +1628,6 @@ name|gchar
 modifier|*
 name|search_string
 decl_stmt|;
-name|GDK_THREADS_ENTER
-argument_list|()
-expr_stmt|;
 name|search_string
 operator|=
 name|gtk_entry_get_text
@@ -1678,9 +1672,6 @@ operator|->
 name|search_timeout_id
 operator|=
 literal|0
-expr_stmt|;
-name|GDK_THREADS_LEAVE
-argument_list|()
 expr_stmt|;
 return|return
 name|FALSE
