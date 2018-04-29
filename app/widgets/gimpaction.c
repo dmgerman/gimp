@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f062500103
+DECL|enum|__anon2acd318f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1457,13 +1457,8 @@ operator|->
 name|color_management
 argument_list|)
 expr_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|gtk_widget_get_settings
-argument_list|(
-name|proxy
-argument_list|)
-argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
 operator|&
@@ -1614,13 +1609,8 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|gtk_widget_get_settings
-argument_list|(
-name|proxy
-argument_list|)
-argument_list|,
 name|size
 argument_list|,
 operator|&

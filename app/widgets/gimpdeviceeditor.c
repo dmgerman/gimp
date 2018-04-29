@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b34aa70103
+DECL|enum|__anon2c82d4b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -534,16 +534,8 @@ argument_list|,
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|gtk_widget_get_settings
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|editor
-argument_list|)
-argument_list|)
-argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 operator|&

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291cd7f10103
+DECL|enum|__anon2a4d2ac50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291cd7f10203
+DECL|enum|__anon2a4d2ac50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -622,14 +622,9 @@ condition|(
 name|pixbuf
 condition|)
 block|{
-name|GtkSettings
+name|GtkWidget
 modifier|*
-name|settings
-init|=
-name|gtk_widget_get_settings
-argument_list|(
-name|proxy
-argument_list|)
+name|image
 decl_stmt|;
 name|gint
 name|width
@@ -637,14 +632,8 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|image
-decl_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|settings
-argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
 operator|&

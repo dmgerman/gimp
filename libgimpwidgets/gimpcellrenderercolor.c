@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ba7950103
+DECL|enum|__anon2b655ba00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,13 +690,8 @@ decl_stmt|;
 name|gint
 name|ypad
 decl_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|gtk_widget_get_settings
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
 name|private
 operator|->
 name|size

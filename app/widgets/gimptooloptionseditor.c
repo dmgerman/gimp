@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2754e59a0103
+DECL|enum|__anon2b7b496c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1298,18 +1298,6 @@ name|GtkIconSize
 name|size
 parameter_list|)
 block|{
-name|GtkSettings
-modifier|*
-name|settings
-init|=
-name|gtk_widget_get_settings
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|docked
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|view
@@ -1320,10 +1308,8 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|settings
-argument_list|,
 name|size
 argument_list|,
 operator|&

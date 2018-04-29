@@ -1072,15 +1072,6 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|GtkSettings
-modifier|*
-name|settings
-init|=
-name|gtk_widget_get_settings
-argument_list|(
-name|dialog
-argument_list|)
-decl_stmt|;
 name|gint
 name|w
 decl_stmt|,
@@ -1114,10 +1105,8 @@ operator|->
 name|color_management
 argument_list|)
 expr_stmt|;
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|settings
-argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,
 operator|&

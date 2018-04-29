@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9829ee0103
+DECL|enum|__anon2977e9840103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9829ee0203
+DECL|enum|__anon2977e9840203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1838,13 +1838,8 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gtk_icon_size_lookup_for_settings
+name|gtk_icon_size_lookup
 argument_list|(
-name|gtk_widget_get_settings
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
 name|priv
 operator|->
 name|stock_size
