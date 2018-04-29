@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297229260103
+DECL|enum|__anon298e504e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -65,7 +65,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297229260208
+DECL|struct|__anon298e504e0208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -134,6 +134,18 @@ parameter_list|)
 define|\
 value|((GimpIntComboBoxPrivate *) ((GimpIntComboBox *) (obj))->priv)
 end_define
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_int_combo_box_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -272,6 +284,12 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|object_class
+operator|->
+name|constructed
+operator|=
+name|gimp_int_combo_box_constructed
+expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -433,11 +451,35 @@ name|layout
 operator|=
 name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_int_combo_box_constructed (GObject * object)
+name|gimp_int_combo_box_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructed
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|gimp_int_combo_box_create_cells
 argument_list|(
 name|GIMP_INT_COMBO_BOX
 argument_list|(
-name|combo_box
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
