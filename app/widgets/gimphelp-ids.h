@@ -3166,6 +3166,14 @@ value|"gimp-filter-softglow"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_SPHERIZE
+define|#
+directive|define
+name|GIMP_HELP_FILTER_SPHERIZE
+value|"gimp-filter-spherize"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_SPIRAL
 define|#
 directive|define

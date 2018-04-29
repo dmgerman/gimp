@@ -2073,6 +2073,8 @@ literal|"gegl:snn-mean"
 block|,
 literal|"gegl:softglow"
 block|,
+literal|"gegl:spherize"
+block|,
 literal|"gegl:spiral"
 block|,
 literal|"gegl:stretch-contrast"

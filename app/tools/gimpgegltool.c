@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05eb940103
+DECL|enum|__anon2b6374380103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -597,6 +597,8 @@ block|,
 literal|"gegl:snn-mean"
 block|,
 literal|"gegl:softglow"
+block|,
+literal|"gegl:spherize"
 block|,
 literal|"gegl:spiral"
 block|,
