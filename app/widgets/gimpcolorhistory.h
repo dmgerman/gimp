@@ -94,7 +94,7 @@ struct|struct
 name|_GimpColorHistory
 block|{
 DECL|member|parent_instance
-name|GtkTable
+name|GtkGrid
 name|parent_instance
 decl_stmt|;
 DECL|member|context
@@ -122,7 +122,7 @@ struct|struct
 name|_GimpColorHistoryClass
 block|{
 DECL|member|parent_class
-name|GtkTableClass
+name|GtkGridClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af1a33e0103
+DECL|enum|__anon2c09f0330103
 block|{
 DECL|enumerator|COLOR_SELECTED
 name|COLOR_SELECTED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af1a33e0203
+DECL|enum|__anon2c09f0330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -251,7 +251,7 @@ argument|GimpColorHistory
 argument_list|,
 argument|gimp_color_history
 argument_list|,
-argument|GTK_TYPE_TABLE
+argument|GTK_TYPE_GRID
 argument_list|)
 end_macro
 
@@ -640,29 +640,9 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_table_resize
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|history
-argument_list|)
-argument_list|,
-literal|2
-argument_list|,
-operator|(
-name|history
-operator|->
-name|history_size
-operator|+
-literal|1
-operator|)
-operator|/
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacings
-argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|history
 argument_list|)
@@ -670,9 +650,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|history
 argument_list|)
@@ -773,9 +753,9 @@ argument_list|,
 name|COLOR_AREA_SIZE
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|history
 argument_list|)
@@ -784,14 +764,10 @@ name|button
 argument_list|,
 name|column
 argument_list|,
-name|column
-operator|+
+name|row
+argument_list|,
 literal|1
 argument_list|,
-name|row
-argument_list|,
-name|row
-operator|+
 literal|1
 argument_list|)
 expr_stmt|;
