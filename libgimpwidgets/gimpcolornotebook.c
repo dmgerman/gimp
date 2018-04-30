@@ -474,6 +474,13 @@ name|set_config
 operator|=
 name|gimp_color_notebook_set_config
 expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|widget_class
+argument_list|,
+literal|"GimpColorNotebook"
+argument_list|)
+expr_stmt|;
 name|gtk_widget_class_install_style_property
 argument_list|(
 name|widget_class

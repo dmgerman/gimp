@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67787a0103
+DECL|enum|__anon27ccba780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -531,13 +531,6 @@ name|draw
 operator|=
 name|gimp_color_scale_draw
 expr_stmt|;
-name|gtk_widget_class_set_css_name
-argument_list|(
-name|widget_class
-argument_list|,
-literal|"GimpColorScale"
-argument_list|)
-expr_stmt|;
 comment|/**    * GimpColorScale:channel:    *    * The channel which is edited by the color scale.    *    * Since: 2.8    */
 name|g_object_class_install_property
 argument_list|(
@@ -561,6 +554,13 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|widget_class
+argument_list|,
+literal|"GimpColorScale"
 argument_list|)
 expr_stmt|;
 name|g_type_class_add_private
@@ -745,7 +745,7 @@ literal|"GimpColorScale contents {"
 literal|"  min-width:  24px;"
 literal|"  min-height: 24px;"
 literal|"}\n"
-literal|"GimpColorScale slider {"
+literal|"GimpColorScale contents trough slider {"
 literal|"  min-width:  14px;"
 literal|"  min-height: 14px;"
 literal|"}"
@@ -1042,15 +1042,6 @@ modifier|*
 name|range
 init|=
 name|GTK_RANGE
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
-name|GtkStyleContext
-modifier|*
-name|style
-init|=
-name|gtk_widget_get_style_context
 argument_list|(
 name|widget
 argument_list|)
@@ -4608,6 +4599,10 @@ name|insensitive
 index|[
 literal|4
 index|]
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|guint
 name|x

@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956632f0103
+DECL|enum|__anon29691d060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956632f0203
+DECL|enum|__anon29691d060203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED_U8
 name|GIMP_COLOR_SELECTOR_RED_U8
@@ -877,6 +877,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GtkWidgetClass
+modifier|*
+name|widget_class
+init|=
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|GimpColorSelectorClass
 modifier|*
 name|selector_class
@@ -987,6 +996,13 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|widget_class
+argument_list|,
+literal|"GimpColorScales"
 argument_list|)
 expr_stmt|;
 name|fish_rgb_to_lch
