@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27897a990103
+DECL|enum|__anon2b6e2da90103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -68,10 +68,12 @@ name|gchar
 modifier|*
 name|path
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
@@ -238,7 +240,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_cell_renderer_button_activate (GtkCellRenderer * cell,GdkEvent * event,GtkWidget * widget,const gchar * path,GdkRectangle * background_area,GdkRectangle * cell_area,GtkCellRendererState flags)
+DECL|function|gimp_cell_renderer_button_activate (GtkCellRenderer * cell,GdkEvent * event,GtkWidget * widget,const gchar * path,const GdkRectangle * background_area,const GdkRectangle * cell_area,GtkCellRendererState flags)
 name|gimp_cell_renderer_button_activate
 parameter_list|(
 name|GtkCellRenderer
@@ -258,10 +260,12 @@ name|gchar
 modifier|*
 name|path
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
