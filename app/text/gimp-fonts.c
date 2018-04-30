@@ -275,7 +275,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297ffd950108
+DECL|struct|__anon2948ac910108
 block|{
 DECL|member|config
 name|FcConfig
@@ -1101,6 +1101,7 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+comment|/* XXX: g_win32_locale_filename_from_utf8() may return                * NULL. So we need to check that path is not NULL before                * trying to load with fontconfig.                */
 name|path
 operator|=
 name|tmp
@@ -1109,6 +1110,9 @@ endif|#
 directive|endif
 if|if
 condition|(
+operator|!
+name|path
+operator|||
 name|FcFalse
 operator|==
 name|FcConfigAppFontAddFile
