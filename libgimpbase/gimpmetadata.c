@@ -2443,7 +2443,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon28c0c8620108
+DECL|struct|__anon275e7a410108
 block|{
 DECL|member|name
 name|gchar
@@ -3853,6 +3853,36 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+comment|/* FIXME!    * This call can return NULL.    */
+if|if
+condition|(
+operator|!
+name|filename
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_METADATA_ERROR
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Conversion of the filename to system codepage failed."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 else|#
 directive|else
 name|filename

@@ -1463,6 +1463,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
+comment|/* FIXME: g_win32_locale_filename_from_utf8() can actually return        * NULL (we had actual cases of this). Not sure exactly what        * gimp_locale_directory() should do when this happens. Anyway        * that's really broken, and something should be done some day        * about this!        */
 name|tmp
 operator|=
 name|g_win32_locale_filename_from_utf8
