@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01c1140103
+DECL|enum|__anon27cee42b0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -3623,7 +3623,7 @@ name|overlay
 init|=
 name|FALSE
 decl_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|private
 operator|->
@@ -3631,6 +3631,8 @@ name|vbox
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_get_allocation
