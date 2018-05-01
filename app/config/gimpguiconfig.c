@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d470850103
+DECL|enum|__anon29c091b20103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d470850203
+DECL|enum|__anon29c091b20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -183,6 +183,9 @@ name|PROP_THEME_PATH
 block|,
 DECL|enumerator|PROP_THEME
 name|PROP_THEME
+block|,
+DECL|enumerator|PROP_PREFER_DARK_THEME
+name|PROP_PREFER_DARK_THEME
 block|,
 DECL|enumerator|PROP_ICON_THEME_PATH
 name|PROP_ICON_THEME_PATH
@@ -899,6 +902,23 @@ argument_list|,
 name|THEME_BLURB
 argument_list|,
 name|GIMP_CONFIG_DEFAULT_THEME
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PREFER_DARK_THEME
+argument_list|,
+literal|"prefer-dark-theme"
+argument_list|,
+literal|"Prefer Dark Theme"
+argument_list|,
+name|THEME_BLURB
+argument_list|,
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1934,6 +1954,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_PREFER_DARK_THEME
+case|:
+name|gui_config
+operator|->
+name|prefer_dark_theme
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_ICON_THEME_PATH
 case|:
 name|g_free
@@ -2673,6 +2706,19 @@ argument_list|,
 name|gui_config
 operator|->
 name|theme
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_PREFER_DARK_THEME
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|gui_config
+operator|->
+name|prefer_dark_theme
 argument_list|)
 expr_stmt|;
 break|break;

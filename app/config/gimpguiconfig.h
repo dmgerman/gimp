@@ -206,6 +206,10 @@ name|gchar
 modifier|*
 name|theme
 decl_stmt|;
+DECL|member|prefer_dark_theme
+name|gboolean
+name|prefer_dark_theme
+decl_stmt|;
 DECL|member|icon_theme_path
 name|gchar
 modifier|*
