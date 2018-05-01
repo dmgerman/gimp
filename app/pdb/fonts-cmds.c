@@ -124,6 +124,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|NULL
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return

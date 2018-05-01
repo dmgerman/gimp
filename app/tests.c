@@ -201,6 +201,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimp_status_func_dummy
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -398,6 +400,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimp_status_func_dummy
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

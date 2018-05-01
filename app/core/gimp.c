@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f42a70103
+DECL|enum|__anon29c9e2840103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f42a70203
+DECL|enum|__anon29c9e2840203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3260,9 +3260,13 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_restore:  * @gimp: a #Gimp object  * @error: a #GError for uncessful loading.  *  * This function always succeeds. If present, @error may be filled for  * possible feedback on data which failed to load. It doesn't imply any  * fatale error.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_restore (Gimp * gimp,GimpInitStatusFunc status_callback)
+DECL|function|gimp_restore (Gimp * gimp,GimpInitStatusFunc status_callback,GError ** error)
 name|gimp_restore
 parameter_list|(
 name|Gimp
@@ -3271,6 +3275,11 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3356,6 +3365,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|status_callback
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}

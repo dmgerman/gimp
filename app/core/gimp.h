@@ -615,6 +615,11 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
