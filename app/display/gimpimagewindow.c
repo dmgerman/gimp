@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b93100103
+DECL|enum|__anon2b2bcdf40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1b93100208
+DECL|struct|__anon2b2bcdf40208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -2172,7 +2172,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+comment|/*  HACK: remove with GTK+ 3.x: there is no reason to    *  connect_after() here except the HACK at the end of    *  gimp_display_shell_canvas_realize().    *    *  We need to make sure gimp_display_shell_appearance_update() is    *  called after realize() so the ill-shown rulers are properly    *  hidden again    */
+name|g_signal_connect_after
 argument_list|(
 name|private
 operator|->

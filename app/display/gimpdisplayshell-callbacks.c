@@ -469,48 +469,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_canvas_realize_after (GtkWidget * canvas,GimpDisplayShell * shell)
-name|gimp_display_shell_canvas_realize_after
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|canvas
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-block|{
-name|GimpImageWindow
-modifier|*
-name|window
-init|=
-name|gimp_display_shell_get_window
-argument_list|(
-name|shell
-argument_list|)
-decl_stmt|;
-comment|/*  HACK: see above: must go with GTK+ 3.x too. Restore the rulers'    *  intended visibility again.    */
-name|gimp_image_window_suspend_keep_pos
-argument_list|(
-name|window
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_appearance_update
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_image_window_resume_keep_pos
-argument_list|(
-name|window
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_display_shell_canvas_size_allocate (GtkWidget * widget,GtkAllocation * allocation,GimpDisplayShell * shell)
 name|gimp_display_shell_canvas_size_allocate
 parameter_list|(
