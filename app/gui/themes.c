@@ -1106,7 +1106,7 @@ argument_list|()
 argument_list|,
 literal|"themes"
 argument_list|,
-literal|"Default"
+literal|"System"
 argument_list|,
 literal|"gimp.css"
 argument_list|,
