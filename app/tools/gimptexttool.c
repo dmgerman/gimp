@@ -2210,6 +2210,14 @@ name|text_box_fixed
 operator|=
 name|FALSE
 expr_stmt|;
+comment|/* make sure the text tool has an image, even if the user didn't click        * inside the active drawable, in particular, so that the text style        * editor picks the correct resolution.        */
+name|gimp_text_tool_set_image
+argument_list|(
+name|text_tool
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_text_tool_connect
 argument_list|(
 name|text_tool
