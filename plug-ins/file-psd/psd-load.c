@@ -8316,35 +8316,13 @@ operator|.
 name|visible
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|layer_flags
-operator|.
-name|irrelevant
-operator|&&
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|group_type
-operator|==
+if|#
+directive|if
 literal|0
-condition|)
-block|{
-name|gimp_item_set_visible
-argument_list|(
-name|layer_id
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
+comment|/* according to the spec, the 'irrelevant' flag indicates                    * that the layer's "pixel data is irrelevant to the                    * appearance of the document".  what this seems to mean is                    * not that the layer doesn't contribute to the image, but                    * rather that its appearance can be entirely derived from                    * sources other than the pixel data, such as vector data.                    * in particular, this doesn't mean that the layer is                    * invisible. since we only support raster layers atm, we can                    * just ignore this flag.                    */
+block|if (lyr_a[lidx]->layer_flags.irrelevant&&                       lyr_a[lidx]->group_type == 0)                     {                       gimp_item_set_visible (layer_id, FALSE);                     }
+endif|#
+directive|endif
 comment|/* Position */
 if|if
 condition|(
