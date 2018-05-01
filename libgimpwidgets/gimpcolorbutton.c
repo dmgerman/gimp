@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c542f4c0103
+DECL|enum|__anon2a1fa49a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c542f4c0203
+DECL|enum|__anon2a1fa49a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1877,28 +1877,18 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_popup
+name|gtk_menu_popup_at_pointer
 argument_list|(
 name|GTK_MENU
 argument_list|(
 name|menu
 argument_list|)
 argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
+operator|(
+name|GdkEvent
+operator|*
+operator|)
 name|bevent
-operator|->
-name|button
-argument_list|,
-name|bevent
-operator|->
-name|time
 argument_list|)
 expr_stmt|;
 block|}
