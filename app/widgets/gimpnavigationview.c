@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277af2660103
+DECL|enum|__anon29fa280f0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -795,12 +795,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_navigation_view_grab_pointer (GimpNavigationView * nav_view)
+DECL|function|gimp_navigation_view_grab_pointer (GimpNavigationView * nav_view,GdkEvent * event)
 name|gimp_navigation_view_grab_pointer
 parameter_list|(
 name|GimpNavigationView
 modifier|*
 name|nav_view
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 block|{
 name|GtkWidget
@@ -860,23 +864,26 @@ argument_list|)
 operator|->
 name|event_window
 expr_stmt|;
-name|gdk_pointer_grab
+name|gdk_seat_grab
 argument_list|(
+name|gdk_event_get_seat
+argument_list|(
+name|event
+argument_list|)
+argument_list|,
 name|window
+argument_list|,
+name|GDK_SEAT_CAPABILITY_ALL
 argument_list|,
 name|FALSE
 argument_list|,
-name|GDK_BUTTON_RELEASE_MASK
-operator||
-name|GDK_POINTER_MOTION_HINT_MASK
-operator||
-name|GDK_BUTTON_MOTION_MASK
+name|cursor
+argument_list|,
+name|event
 argument_list|,
 name|NULL
 argument_list|,
-name|cursor
-argument_list|,
-name|GDK_CURRENT_TIME
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1045,6 +1052,12 @@ block|}
 name|gimp_navigation_view_grab_pointer
 argument_list|(
 name|nav_view
+argument_list|,
+operator|(
+name|GdkEvent
+operator|*
+operator|)
+name|bevent
 argument_list|)
 expr_stmt|;
 block|}
@@ -1102,14 +1115,16 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|gdk_display_pointer_ungrab
+name|gdk_seat_ungrab
 argument_list|(
-name|gtk_widget_get_display
+name|gdk_event_get_seat
 argument_list|(
-name|widget
+operator|(
+name|GdkEvent
+operator|*
+operator|)
+name|bevent
 argument_list|)
-argument_list|,
-name|GDK_CURRENT_TIME
 argument_list|)
 expr_stmt|;
 block|}

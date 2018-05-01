@@ -244,6 +244,10 @@ parameter_list|(
 name|GimpTagPopup
 modifier|*
 name|popup
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl

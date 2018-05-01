@@ -135,10 +135,10 @@ DECL|member|subdivisions
 name|gint
 name|subdivisions
 decl_stmt|;
-DECL|member|grab_device
-name|GdkDevice
+DECL|member|grab_seat
+name|GdkSeat
 modifier|*
-name|grab_device
+name|grab_seat
 decl_stmt|;
 block|}
 struct|;

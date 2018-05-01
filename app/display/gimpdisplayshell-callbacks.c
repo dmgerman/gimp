@@ -1260,6 +1260,12 @@ name|shell
 argument_list|,
 name|widget
 argument_list|,
+operator|(
+name|GdkEvent
+operator|*
+operator|)
+name|bevent
+argument_list|,
 name|bevent
 operator|->
 name|x

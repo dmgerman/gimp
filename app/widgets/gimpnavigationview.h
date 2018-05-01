@@ -254,6 +254,10 @@ parameter_list|(
 name|GimpNavigationView
 modifier|*
 name|view
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl

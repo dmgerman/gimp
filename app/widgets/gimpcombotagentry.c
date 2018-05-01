@@ -1147,6 +1147,8 @@ name|entry
 operator|->
 name|popup
 argument_list|)
+argument_list|,
+name|event
 argument_list|)
 expr_stmt|;
 block|}

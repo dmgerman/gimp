@@ -898,7 +898,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_navigation_editor_popup (GimpDisplayShell * shell,GtkWidget * widget,gint click_x,gint click_y)
+DECL|function|gimp_navigation_editor_popup (GimpDisplayShell * shell,GtkWidget * widget,GdkEvent * event,gint click_x,gint click_y)
 name|gimp_navigation_editor_popup
 parameter_list|(
 name|GimpDisplayShell
@@ -908,6 +908,10 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|,
 name|gint
 name|click_x
@@ -1373,6 +1377,8 @@ expr_stmt|;
 name|gimp_navigation_view_grab_pointer
 argument_list|(
 name|view
+argument_list|,
+name|event
 argument_list|)
 expr_stmt|;
 block|}

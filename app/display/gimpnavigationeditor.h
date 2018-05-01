@@ -213,6 +213,10 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
 name|gint
 name|click_x
 parameter_list|,
