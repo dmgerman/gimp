@@ -3697,7 +3697,7 @@ name|checks_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3950,12 +3950,10 @@ name|checks_vbox
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox
@@ -3979,9 +3977,9 @@ argument_list|(
 literal|"Canvas _padding mode:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -4007,9 +4005,9 @@ argument_list|(
 literal|"Select Custom Canvas Padding Color"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -4428,7 +4426,7 @@ name|button2
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4695,38 +4693,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_MP
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|5
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|table
-operator|=
-name|prefs_table_new
-argument_list|(
-literal|4
-argument_list|,
-name|GTK_CONTAINER
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* ENABLE_MP */
 name|prefs_spin_button_add
 argument_list|(
 name|object
@@ -4744,9 +4720,9 @@ argument_list|(
 literal|"Minimal number of _undo levels:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -4765,9 +4741,9 @@ argument_list|(
 literal|"Maximum undo _memory:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -4786,9 +4762,9 @@ argument_list|(
 literal|"Tile cache _size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|2
@@ -4807,9 +4783,9 @@ argument_list|(
 literal|"Maximum _new image size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|3
@@ -4837,9 +4813,9 @@ argument_list|(
 literal|"Number of _threads to use:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|4
@@ -4903,12 +4879,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -4930,9 +4904,9 @@ argument_list|(
 literal|"Size of _thumbnails:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -4951,9 +4925,9 @@ argument_list|(
 literal|"Maximum _filesize for thumbnailing:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -5111,12 +5085,10 @@ argument_list|(
 name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -5140,9 +5112,9 @@ argument_list|(
 literal|"Debug _policy:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -5365,12 +5337,10 @@ argument_list|(
 name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox
@@ -5392,9 +5362,9 @@ argument_list|(
 literal|"Image display _mode:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5421,12 +5391,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|4
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -5455,9 +5423,9 @@ argument_list|(
 literal|"_Monitor profile:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5485,23 +5453,21 @@ literal|"profile"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 name|row
 argument_list|,
-name|row
-operator|+
+literal|1
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -5528,9 +5494,9 @@ argument_list|(
 literal|"_Rendering intent:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5553,23 +5519,21 @@ literal|"Use _black point compensation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 name|row
 argument_list|,
-name|row
-operator|+
+literal|1
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -5602,9 +5566,9 @@ argument_list|(
 literal|"_Optimize image display for:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5631,12 +5595,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|4
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -5665,9 +5627,9 @@ argument_list|(
 literal|"_Soft-proofing profile:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5695,9 +5657,9 @@ argument_list|(
 literal|"Re_ndering intent:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5720,23 +5682,21 @@ literal|"Use black _point compensation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 name|row
 argument_list|,
-name|row
-operator|+
+literal|1
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -5769,9 +5729,9 @@ argument_list|(
 literal|"O_ptimize soft-proofing for:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5789,23 +5749,21 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 name|row
 argument_list|,
-name|row
-operator|+
+literal|1
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -5924,12 +5882,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|3
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -5958,9 +5914,9 @@ argument_list|(
 literal|"_RGB profile:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -5991,9 +5947,9 @@ argument_list|(
 literal|"_Grayscale profile:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -6024,9 +5980,9 @@ argument_list|(
 literal|"_CMYK profile:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|row
@@ -6057,12 +6013,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -6086,9 +6040,9 @@ argument_list|(
 literal|"File Open behaviour:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -6267,12 +6221,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -6296,9 +6248,9 @@ argument_list|(
 literal|"Color profile policy:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -6852,12 +6804,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -6879,9 +6829,9 @@ argument_list|(
 literal|"Default _interpolation:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -7095,12 +7045,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox
@@ -7130,11 +7078,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -7153,8 +7101,6 @@ argument_list|,
 name|combo
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_select_item
@@ -7246,12 +7192,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -7274,9 +7218,9 @@ argument_list|(
 literal|"Set the default Quick Mask color"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -7475,12 +7419,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|3
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -7502,9 +7444,9 @@ argument_list|(
 literal|"_Default layer& channel preview size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -7527,9 +7469,9 @@ argument_list|(
 literal|"_Undo preview size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -7552,9 +7494,9 @@ argument_list|(
 literal|"Na_vigation preview size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|2
@@ -9134,12 +9076,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9163,9 +9103,9 @@ argument_list|(
 literal|"Color profile policy:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9191,12 +9131,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9219,9 +9157,9 @@ argument_list|(
 literal|"Select Default Folder for Color Profiles"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9247,12 +9185,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9274,9 +9210,9 @@ argument_list|(
 literal|"Rendering intent:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9319,12 +9255,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|3
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9346,9 +9280,9 @@ argument_list|(
 literal|"Dither layers:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9371,9 +9305,9 @@ argument_list|(
 literal|"Dither text layers:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -9396,9 +9330,9 @@ argument_list|(
 literal|"Dither channels/masks:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|2
@@ -9424,12 +9358,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9451,9 +9383,9 @@ argument_list|(
 literal|"Colormap:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9478,9 +9410,9 @@ argument_list|(
 literal|"Maximum number of colors:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -9506,12 +9438,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9533,9 +9463,9 @@ argument_list|(
 literal|"Color dithering:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9595,12 +9525,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9624,9 +9552,9 @@ argument_list|(
 literal|"Keep recent settings:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -9690,12 +9618,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9717,9 +9643,9 @@ argument_list|(
 literal|"Fill with:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9742,9 +9668,9 @@ argument_list|(
 literal|"Resize layers:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -9787,12 +9713,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9810,9 +9734,9 @@ argument_list|(
 literal|"Layer name:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9835,9 +9759,9 @@ argument_list|(
 literal|"Fill type:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -9863,12 +9787,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9890,9 +9812,9 @@ argument_list|(
 literal|"Fill with:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9918,12 +9840,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -9945,9 +9865,9 @@ argument_list|(
 literal|"Layer mask type:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -9990,12 +9910,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10017,9 +9935,9 @@ argument_list|(
 literal|"Merged layer size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10079,12 +9997,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10102,9 +10018,9 @@ argument_list|(
 literal|"Channel name:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10128,9 +10044,9 @@ argument_list|(
 literal|"Default New Channel Color and Opacity"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -10161,12 +10077,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10184,9 +10098,9 @@ argument_list|(
 literal|"Path name:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10212,12 +10126,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10240,9 +10152,9 @@ argument_list|(
 literal|"Select Default Folder for Exporting Paths"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10285,12 +10197,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10313,9 +10223,9 @@ argument_list|(
 literal|"Select Default Folder for Importing Paths"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10375,12 +10285,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10404,9 +10312,9 @@ argument_list|(
 literal|"Feather radius:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10432,12 +10340,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10461,9 +10367,9 @@ argument_list|(
 literal|"Grow radius:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10489,12 +10395,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10518,9 +10422,9 @@ argument_list|(
 literal|"Shrink radius:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10563,12 +10467,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10592,9 +10494,9 @@ argument_list|(
 literal|"Border radius:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -10617,9 +10519,9 @@ argument_list|(
 literal|"Border style:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -10662,7 +10564,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|editor
 operator|=
 name|gimp_fill_editor_new
 argument_list|(
@@ -10683,7 +10585,7 @@ argument_list|(
 name|vbox2
 argument_list|)
 argument_list|,
-name|table
+name|editor
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10694,7 +10596,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|editor
 argument_list|)
 expr_stmt|;
 comment|/*  Stroke Options Dialog  */
@@ -10716,7 +10618,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* The stroke line width physical values could be based on either the    * x or y resolution, some average, or whatever which makes a bit of    * sense. There is no perfect answer. The actual stroke dialog though    * uses the y resolution on the opened image. So using the y resolution    * of the default image seems like the best compromise in the preferences.    */
-name|table
+name|editor
 operator|=
 name|gimp_stroke_editor_new
 argument_list|(
@@ -10744,7 +10646,7 @@ argument_list|(
 name|vbox2
 argument_list|)
 argument_list|,
-name|table
+name|editor
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10755,7 +10657,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|editor
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -10855,12 +10757,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|3
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -10890,9 +10790,9 @@ argument_list|(
 literal|"User manual:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -11036,22 +10936,22 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11137,11 +11037,11 @@ name|g_free
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|hbox
@@ -11150,9 +11050,9 @@ literal|1
 argument_list|,
 literal|2
 argument_list|,
-literal|2
+literal|1
 argument_list|,
-literal|3
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11190,12 +11090,10 @@ name|gimp
 argument_list|)
 condition|)
 block|{
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -11219,9 +11117,9 @@ argument_list|(
 literal|"H_elp browser to use:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -11313,12 +11211,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -11359,9 +11255,9 @@ argument_list|(
 literal|"Maximum History Size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -11467,12 +11363,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -11494,9 +11388,9 @@ argument_list|(
 literal|"_Check style:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -11519,9 +11413,9 @@ argument_list|(
 literal|"Check _size:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -12109,12 +12003,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -12136,9 +12028,9 @@ argument_list|(
 literal|"Hint for _docks and toolbox:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -12381,12 +12273,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -12410,9 +12300,9 @@ argument_list|(
 literal|"Marching _ants speed:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -12472,12 +12362,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -12502,9 +12390,9 @@ argument_list|(
 literal|"Initial zoom _ratio:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -12530,12 +12418,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -12557,9 +12443,9 @@ argument_list|(
 literal|"_While space bar is pressed:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -12619,12 +12505,10 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|2
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -12646,9 +12530,9 @@ argument_list|(
 literal|"Pointer _mode:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -12671,9 +12555,9 @@ argument_list|(
 literal|"Pointer _handedness:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|1
@@ -12860,7 +12744,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b9f141e0108
+DECL|struct|__anon2c5fe1310108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13411,12 +13295,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
@@ -13440,9 +13322,9 @@ argument_list|(
 literal|"_Snapping distance:"
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -13737,7 +13619,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b9f141e0208
+DECL|struct|__anon2c5fe1310208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13791,17 +13673,10 @@ argument_list|)
 block|}
 block|}
 struct|;
-name|table
+name|grid
 operator|=
-name|prefs_table_new
+name|prefs_grid_new
 argument_list|(
-name|G_N_ELEMENTS
-argument_list|(
-name|dirs
-argument_list|)
-operator|+
-literal|1
-argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox
@@ -13856,9 +13731,9 @@ operator|.
 name|dialog_title
 argument_list|)
 argument_list|,
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|i
@@ -13875,7 +13750,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b9f141e0308
+DECL|struct|__anon2c5fe1310308
 block|{
 DECL|member|tree_label
 specifier|const

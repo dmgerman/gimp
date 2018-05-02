@@ -166,12 +166,9 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_table_new (gint rows,GtkContainer * parent)
-name|prefs_table_new
+DECL|function|prefs_grid_new (GtkContainer * parent)
+name|prefs_grid_new
 parameter_list|(
-name|gint
-name|rows
-parameter_list|,
 name|GtkContainer
 modifier|*
 name|parent
@@ -179,34 +176,28 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
-name|table
+name|grid
 operator|=
-name|gtk_table_new
-argument_list|(
-name|rows
-argument_list|,
-literal|2
-argument_list|,
-name|FALSE
-argument_list|)
+name|gtk_grid_new
+argument_list|()
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|6
@@ -226,7 +217,7 @@ argument_list|(
 name|parent
 argument_list|)
 argument_list|,
-name|table
+name|grid
 argument_list|,
 name|FALSE
 argument_list|,
@@ -240,16 +231,16 @@ name|gtk_container_add
 argument_list|(
 name|parent
 argument_list|,
-name|table
+name|grid
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|grid
 argument_list|)
 expr_stmt|;
 return|return
-name|table
+name|grid
 return|;
 block|}
 end_function
@@ -713,7 +704,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_widget_add_aligned (GtkWidget * widget,const gchar * text,GtkTable * table,gint table_row,gboolean left_align,GtkSizeGroup * group)
+DECL|function|prefs_widget_add_aligned (GtkWidget * widget,const gchar * text,GtkGrid * grid,gint grid_top,gboolean left_align,GtkSizeGroup * group)
 name|prefs_widget_add_aligned
 parameter_list|(
 name|GtkWidget
@@ -725,12 +716,12 @@ name|gchar
 modifier|*
 name|text
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|gboolean
 name|left_align
@@ -744,13 +735,13 @@ name|GtkWidget
 modifier|*
 name|label
 init|=
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|table
+name|grid
 argument_list|,
 literal|0
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|text
 argument_list|,
@@ -761,8 +752,6 @@ argument_list|,
 name|widget
 argument_list|,
 literal|1
-argument_list|,
-name|left_align
 argument_list|)
 decl_stmt|;
 if|if
@@ -776,6 +765,19 @@ argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|left_align
+operator|==
+name|TRUE
+condition|)
+name|gtk_widget_set_halign
+argument_list|(
+name|widget
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
+expr_stmt|;
 return|return
 name|label
 return|;
@@ -785,7 +787,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_color_button_add (GObject * config,const gchar * property_name,const gchar * label,const gchar * title,GtkTable * table,gint table_row,GtkSizeGroup * group,GimpContext * context)
+DECL|function|prefs_color_button_add (GObject * config,const gchar * property_name,const gchar * label,const gchar * title,GtkGrid * grid,gint grid_top,GtkSizeGroup * group,GimpContext * context)
 name|prefs_color_button_add
 parameter_list|(
 name|GObject
@@ -807,12 +809,12 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -899,9 +901,9 @@ name|button
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|TRUE
 argument_list|,
@@ -918,7 +920,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_entry_add (GObject * config,const gchar * property_name,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_entry_add (GObject * config,const gchar * property_name,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_entry_add
 parameter_list|(
 name|GObject
@@ -935,12 +937,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -971,9 +973,9 @@ name|entry
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|FALSE
 argument_list|,
@@ -989,7 +991,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_spin_button_add (GObject * config,const gchar * property_name,gdouble step_increment,gdouble page_increment,gint digits,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_spin_button_add (GObject * config,const gchar * property_name,gdouble step_increment,gdouble page_increment,gint digits,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_spin_button_add
 parameter_list|(
 name|GObject
@@ -1015,12 +1017,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1054,9 +1056,9 @@ name|button
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1072,7 +1074,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_memsize_entry_add (GObject * config,const gchar * property_name,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_memsize_entry_add (GObject * config,const gchar * property_name,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_memsize_entry_add
 parameter_list|(
 name|GObject
@@ -1089,12 +1091,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1122,9 +1124,9 @@ name|entry
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1140,7 +1142,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_file_chooser_button_add (GObject * config,const gchar * property_name,const gchar * label,const gchar * dialog_title,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_file_chooser_button_add (GObject * config,const gchar * property_name,const gchar * label,const gchar * dialog_title,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_file_chooser_button_add
 parameter_list|(
 name|GObject
@@ -1162,12 +1164,12 @@ name|gchar
 modifier|*
 name|dialog_title
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1201,9 +1203,9 @@ name|button
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1219,7 +1221,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_enum_combo_box_add (GObject * config,const gchar * property_name,gint minimum,gint maximum,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_enum_combo_box_add (GObject * config,const gchar * property_name,gint minimum,gint maximum,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_enum_combo_box_add
 parameter_list|(
 name|GObject
@@ -1242,12 +1244,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1279,9 +1281,9 @@ name|combo
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1297,7 +1299,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_boolean_combo_box_add (GObject * config,const gchar * property_name,const gchar * true_text,const gchar * false_text,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group)
+DECL|function|prefs_boolean_combo_box_add (GObject * config,const gchar * property_name,const gchar * true_text,const gchar * false_text,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group)
 name|prefs_boolean_combo_box_add
 parameter_list|(
 name|GObject
@@ -1324,12 +1326,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1361,9 +1363,9 @@ name|combo
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1451,7 +1453,7 @@ end_endif
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|prefs_profile_combo_box_add (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title,const gchar * label,GtkTable * table,gint table_row,GtkSizeGroup * group,GObject * profile_path_config,const gchar * profile_path_property_name)
+DECL|function|prefs_profile_combo_box_add (GObject * config,const gchar * property_name,GtkListStore * profile_store,const gchar * dialog_title,const gchar * label,GtkGrid * grid,gint grid_top,GtkSizeGroup * group,GObject * profile_path_config,const gchar * profile_path_property_name)
 name|prefs_profile_combo_box_add
 parameter_list|(
 name|GObject
@@ -1477,12 +1479,12 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
-name|table_row
+name|grid_top
 parameter_list|,
 name|GtkSizeGroup
 modifier|*
@@ -1527,9 +1529,9 @@ name|combo
 argument_list|,
 name|label
 argument_list|,
-name|table
+name|grid
 argument_list|,
-name|table_row
+name|grid_top
 argument_list|,
 name|FALSE
 argument_list|,
