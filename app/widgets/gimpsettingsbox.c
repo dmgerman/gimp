@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac26a4b0103
+DECL|enum|__anon28f780ca0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac26a4b0203
+DECL|enum|__anon28f780ca0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -334,11 +334,6 @@ parameter_list|(
 name|GimpSettingsBox
 modifier|*
 name|box
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1471,8 +1466,6 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-name|GIMP_ICON_DOCUMENT_OPEN
-argument_list|,
 name|_
 argument_list|(
 literal|"_Import Current Settings from File..."
@@ -1492,8 +1485,6 @@ name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
 argument_list|,
-name|GIMP_ICON_DOCUMENT_SAVE
-argument_list|,
 name|_
 argument_list|(
 literal|"_Export Current Settings to File..."
@@ -1512,15 +1503,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_settings_box_menu_item_add
 argument_list|(
 name|box
-argument_list|,
-name|GIMP_ICON_EDIT
 argument_list|,
 name|_
 argument_list|(
@@ -2093,17 +2080,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_settings_box_menu_item_add (GimpSettingsBox * box,const gchar * icon_name,const gchar * label,GCallback callback)
+DECL|function|gimp_settings_box_menu_item_add (GimpSettingsBox * box,const gchar * label,GCallback callback)
 name|gimp_settings_box_menu_item_add
 parameter_list|(
 name|GimpSettingsBox
 modifier|*
 name|box
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|icon_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -2132,34 +2114,11 @@ condition|(
 name|label
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|image
-decl_stmt|;
 name|item
 operator|=
-name|gtk_image_menu_item_new_with_mnemonic
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|label
-argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|gtk_image_new_from_icon_name
-argument_list|(
-name|icon_name
-argument_list|,
-name|GTK_ICON_SIZE_MENU
-argument_list|)
-expr_stmt|;
-name|gtk_image_menu_item_set_image
-argument_list|(
-name|GTK_IMAGE_MENU_ITEM
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
-name|image
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

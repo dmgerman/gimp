@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d2ac50103
+DECL|enum|__anon2783727f0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d2ac50203
+DECL|enum|__anon2783727f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -589,7 +589,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_IMAGE_MENU_ITEM
+name|GTK_IS_MENU_ITEM
 argument_list|(
 name|proxy
 argument_list|)
@@ -694,9 +694,9 @@ argument_list|(
 name|pixbuf
 argument_list|)
 expr_stmt|;
-name|gtk_image_menu_item_set_image
+name|gimp_menu_item_set_image
 argument_list|(
-name|GTK_IMAGE_MENU_ITEM
+name|GTK_MENU_ITEM
 argument_list|(
 name|proxy
 argument_list|)

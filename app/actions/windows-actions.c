@@ -1470,15 +1470,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_action_group_set_action_always_show_image
-argument_list|(
-name|group
-argument_list|,
-name|action_name
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|action
 operator|=
 name|gtk_action_group_get_action

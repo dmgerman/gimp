@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-log.h"
 end_include
 
@@ -215,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b02784f0103
+DECL|enum|__anon2b98eb5a0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2224,24 +2230,14 @@ argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
 decl_stmt|;
-name|gtk_image_menu_item_set_image
+name|gimp_menu_item_set_image
 argument_list|(
-name|GTK_IMAGE_MENU_ITEM
+name|GTK_MENU_ITEM
 argument_list|(
 name|parent_menu_widget
 argument_list|)
 argument_list|,
 name|image
-argument_list|)
-expr_stmt|;
-name|gtk_image_menu_item_set_always_show_image
-argument_list|(
-name|GTK_IMAGE_MENU_ITEM
-argument_list|(
-name|parent_menu_widget
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6135,9 +6131,6 @@ block|{
 name|gint
 name|page_num
 decl_stmt|;
-name|GDK_THREADS_ENTER
-argument_list|()
-expr_stmt|;
 name|page_num
 operator|=
 name|gtk_notebook_page_num
@@ -6182,9 +6175,6 @@ operator|->
 name|tab_hover_dockable
 operator|=
 name|NULL
-expr_stmt|;
-name|GDK_THREADS_LEAVE
-argument_list|()
 expr_stmt|;
 return|return
 name|FALSE

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5d1d30103
+DECL|enum|__anon298c92b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -994,6 +994,15 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"ICON NAME: %s\n"
+argument_list|,
+name|selector_class
+operator|->
+name|icon_name
 argument_list|)
 expr_stmt|;
 name|image
