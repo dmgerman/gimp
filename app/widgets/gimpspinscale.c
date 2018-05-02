@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9e26c20103
+DECL|enum|__anon27d310850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9e26c20203
+DECL|enum|__anon27d310850203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -3261,6 +3261,28 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|start_pointer_x
+operator|=
+name|floor
+argument_list|(
+name|event
+operator|->
+name|x_root
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|start_pointer_y
+operator|=
+name|floor
+argument_list|(
+name|event
+operator|->
+name|y_root
 argument_list|)
 expr_stmt|;
 return|return
