@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af9aa8d0103
+DECL|enum|__anon2c3dfbed0103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aa8d0208
+DECL|struct|__anon2c3dfbed0208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -5261,9 +5261,9 @@ argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|se
 argument_list|)
@@ -5271,9 +5271,9 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|se
 argument_list|)
@@ -5296,9 +5296,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|se
 argument_list|)
@@ -5307,9 +5307,9 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 literal|0
+argument_list|,
+literal|1
 argument_list|,
 literal|1
 argument_list|)

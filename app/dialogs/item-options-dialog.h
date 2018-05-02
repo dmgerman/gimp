@@ -177,7 +177,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|item_options_dialog_get_table
+name|item_options_dialog_get_grid
 parameter_list|(
 name|GtkWidget
 modifier|*
