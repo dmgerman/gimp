@@ -3946,7 +3946,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6103430108
+DECL|struct|__anon27c3f54a0108
 block|{
 DECL|member|r
 name|guchar
@@ -4523,7 +4523,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6103430208
+DECL|struct|__anon27c3f54a0208
 block|{
 DECL|member|timeout_id
 name|gint
@@ -4882,6 +4882,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|NULL
+argument_list|,
 operator|(
 name|toolbox
 condition|?
@@ -4921,6 +4923,8 @@ argument_list|,
 name|monitor
 argument_list|,
 name|ui_manager
+argument_list|,
+name|dock_window
 argument_list|,
 operator|(
 name|toolbox

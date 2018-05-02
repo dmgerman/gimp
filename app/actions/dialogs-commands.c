@@ -119,6 +119,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|widget
+argument_list|,
 name|value
 argument_list|,
 operator|-

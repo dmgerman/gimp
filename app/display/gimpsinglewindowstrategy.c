@@ -302,6 +302,11 @@ name|monitor
 argument_list|,
 name|ui_manager
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
 literal|"gimp-toolbox"
 argument_list|,
 operator|-
@@ -358,6 +363,11 @@ argument_list|(
 name|factory
 argument_list|,
 name|monitor
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
 argument_list|,
 name|identifiers
 argument_list|,

@@ -2367,6 +2367,8 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|widget
+argument_list|,
 literal|"gimp-input-devices-dialog"
 argument_list|,
 literal|0
@@ -2399,6 +2401,8 @@ name|gimp_widget_get_monitor
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|widget
 argument_list|,
 literal|"gimp-keyboard-shortcuts-dialog"
 argument_list|,
@@ -12744,7 +12748,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c5fe1310108
+DECL|struct|__anon294f528d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13619,7 +13623,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5fe1310208
+DECL|struct|__anon294f528d0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13750,7 +13754,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5fe1310308
+DECL|struct|__anon294f528d0308
 block|{
 DECL|member|tree_label
 specifier|const

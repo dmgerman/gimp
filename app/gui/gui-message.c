@@ -160,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad737300108
+DECL|struct|__anon28d2a5e40108
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1624,6 +1624,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|NULL
+argument_list|,
 literal|"gimp-error-dialog"
 argument_list|,
 operator|-
@@ -1667,6 +1669,8 @@ name|monitor
 argument_list|,
 name|NULL
 comment|/*ui_manager*/
+argument_list|,
+name|NULL
 argument_list|,
 literal|"gimp-critical-dialog"
 argument_list|,

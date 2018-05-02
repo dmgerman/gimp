@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1353300103
+DECL|enum|__anon2b8c81710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1293,6 +1293,11 @@ name|monitor
 argument_list|,
 name|NULL
 comment|/*ui_manager*/
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|dock_columns
+argument_list|)
 argument_list|,
 operator|(
 name|contains_toolbox

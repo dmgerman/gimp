@@ -182,6 +182,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|widget
+argument_list|,
 literal|"gimp-palette-import-dialog"
 argument_list|,
 operator|-

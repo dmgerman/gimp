@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f433a0103
+DECL|enum|__anon2a0a9db60103
 block|{
 DECL|enumerator|SESSION_INFO_SIDE
 name|SESSION_INFO_SIDE
@@ -1085,6 +1085,8 @@ argument_list|,
 name|monitor
 argument_list|,
 name|ui_manager
+argument_list|,
+name|NULL
 argument_list|,
 name|dock_info
 operator|->

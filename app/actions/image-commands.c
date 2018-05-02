@@ -742,6 +742,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|widget
+argument_list|,
 literal|"gimp-image-new-dialog"
 argument_list|,
 operator|-

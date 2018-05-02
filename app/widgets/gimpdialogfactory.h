@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2749a0b50103
+DECL|enum|__anon2bab61b50103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -476,6 +476,10 @@ name|GimpUIManager
 modifier|*
 name|ui_manager
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -565,6 +569,10 @@ parameter_list|,
 name|GdkMonitor
 modifier|*
 name|monitor
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 specifier|const
 name|gchar

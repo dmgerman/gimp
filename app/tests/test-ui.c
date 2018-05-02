@@ -511,6 +511,8 @@ argument_list|,
 name|NULL
 comment|/*ui_manager*/
 argument_list|,
+name|toplevel
+argument_list|,
 literal|"gimp-tool-options"
 argument_list|,
 operator|-
