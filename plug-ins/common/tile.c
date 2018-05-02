@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c07e0b0108
+DECL|struct|__anon2949c0d00108
 block|{
 DECL|member|new_width
 name|gint
@@ -1769,18 +1769,6 @@ name|frame
 argument_list|)
 argument_list|,
 name|sizeentry
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|sizeentry
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
