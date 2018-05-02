@@ -472,11 +472,6 @@ DECL|member|d_color
 name|GimpRGB
 name|d_color
 decl_stmt|;
-DECL|member|d_region
-name|GimpParamRegion
-name|d_region
-decl_stmt|;
-comment|/* deprecated */
 DECL|member|d_display
 name|gint32
 name|d_display
@@ -513,11 +508,6 @@ DECL|member|d_boundary
 name|gint32
 name|d_boundary
 decl_stmt|;
-DECL|member|d_path
-name|gint32
-name|d_path
-decl_stmt|;
-comment|/* deprecated */
 DECL|member|d_vectors
 name|gint32
 name|d_vectors
