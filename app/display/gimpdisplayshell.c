@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae5b2e90103
+DECL|enum|__anon2b27b8750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae5b2e90203
+DECL|enum|__anon2b27b8750203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -780,23 +780,6 @@ init|=
 block|{
 literal|0
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|display_rc_style
-specifier|static
-specifier|const
-name|gchar
-name|display_rc_style
-index|[]
-init|=
-literal|"style \"check-button-style\"\n"
-literal|"{\n"
-literal|"  GtkToggleButton::child-displacement-x = 0\n"
-literal|"  GtkToggleButton::child-displacement-y = 0\n"
-literal|"}\n"
-literal|"widget \"*\" style \"check-button-style\""
 decl_stmt|;
 end_decl_stmt
 
@@ -1189,9 +1172,11 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_rc_parse_string
+name|gtk_widget_class_set_css_name
 argument_list|(
-name|display_rc_style
+name|widget_class
+argument_list|,
+literal|"GimpDisplayShell"
 argument_list|)
 expr_stmt|;
 block|}
