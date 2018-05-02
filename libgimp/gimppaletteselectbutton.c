@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b406e6b0103
+DECL|enum|__anon2888b90a0103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b406e6b0203
+DECL|enum|__anon2888b90a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1393,9 +1393,6 @@ argument_list|(
 name|palette_button
 argument_list|)
 expr_stmt|;
-name|gtk_widget_push_composite_child
-argument_list|()
-expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new
@@ -1527,9 +1524,6 @@ argument_list|)
 argument_list|,
 name|palette_button
 argument_list|)
-expr_stmt|;
-name|gtk_widget_pop_composite_child
-argument_list|()
 expr_stmt|;
 return|return
 name|button

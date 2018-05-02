@@ -147,7 +147,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d52220103
+DECL|enum|__anon29a5e39b0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -160,7 +160,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d52220203
+DECL|enum|__anon29a5e39b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1958,9 +1958,6 @@ argument_list|(
 name|gradient_button
 argument_list|)
 expr_stmt|;
-name|gtk_widget_push_composite_child
-argument_list|()
-expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new
@@ -2081,9 +2078,6 @@ argument_list|)
 argument_list|,
 name|gradient_button
 argument_list|)
-expr_stmt|;
-name|gtk_widget_pop_composite_child
-argument_list|()
 expr_stmt|;
 return|return
 name|button

@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1274600103
+DECL|enum|__anon29fdaa6a0103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1274600203
+DECL|enum|__anon29fdaa6a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1343,9 +1343,6 @@ argument_list|(
 name|font_button
 argument_list|)
 expr_stmt|;
-name|gtk_widget_push_composite_child
-argument_list|()
-expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new
@@ -1477,9 +1474,6 @@ argument_list|)
 argument_list|,
 name|font_button
 argument_list|)
-expr_stmt|;
-name|gtk_widget_pop_composite_child
-argument_list|()
 expr_stmt|;
 return|return
 name|button
