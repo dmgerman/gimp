@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc77760103
+DECL|enum|__anon2bc0a0380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -911,9 +911,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|entry
 argument_list|)
@@ -922,11 +922,11 @@ name|vbox
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|2
 argument_list|,
-literal|3
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a5e50103
+DECL|enum|__anon2b8d6ffe0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2780,9 +2780,9 @@ argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 operator|*
 name|entry

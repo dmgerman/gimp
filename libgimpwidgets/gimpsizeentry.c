@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b731c8d0103
+DECL|enum|__anon2779acf20103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -337,7 +337,7 @@ argument|GimpSizeEntry
 argument_list|,
 argument|gimp_size_entry
 argument_list|,
-argument|GTK_TYPE_TABLE
+argument|GTK_TYPE_GRID
 argument_list|)
 end_macro
 
@@ -658,7 +658,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string as is used with  *                     gimp_unit_menu_new().  * @menu_show_pixels:  %TRUE if the unit menu should contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: %TRUE if the unit menu should contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       %TRUE if you want an extra "reference value"  *                     spinbutton per input field.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit  *                     calculations should be done.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitComboBox to allow the caller to add labels or a  * #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
+comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string as is used with  *                     gimp_unit_menu_new().  * @menu_show_pixels:  %TRUE if the unit menu should contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: %TRUE if the unit menu should contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       %TRUE if you want an extra "reference value"  *                     spinbutton per input field.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit  *                     calculations should be done.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkGrid and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitComboBox to allow the caller to add labels or a  * #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
 end_comment
 
 begin_function
@@ -754,28 +754,6 @@ operator|->
 name|update_policy
 operator|=
 name|update_policy
-expr_stmt|;
-name|gtk_table_resize
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|gse
-argument_list|)
-argument_list|,
-literal|1
-operator|+
-name|gse
-operator|->
-name|show_refval
-operator|+
-literal|2
-argument_list|,
-name|number_of_fields
-operator|+
-literal|1
-operator|+
-literal|3
-argument_list|)
 expr_stmt|;
 comment|/*  show the 'pixels' menu entry only if we are a 'size' sizeentry and    *  don't have the reference value spinbutton    */
 if|if
@@ -1089,9 +1067,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|gse
 argument_list|)
@@ -1104,21 +1082,15 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|i
-operator|+
-literal|2
-argument_list|,
 name|gse
 operator|->
 name|show_refval
 operator|+
 literal|1
 argument_list|,
-name|gse
-operator|->
-name|show_refval
-operator|+
-literal|2
+literal|1
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1217,9 +1189,9 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|gse
 argument_list|)
@@ -1232,13 +1204,11 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|i
-operator|+
-literal|2
+literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1429,9 +1399,9 @@ argument_list|,
 name|unit
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|gse
 argument_list|)
@@ -1444,33 +1414,15 @@ name|i
 operator|+
 literal|2
 argument_list|,
-name|i
-operator|+
-literal|3
-argument_list|,
 name|gse
 operator|->
 name|show_refval
 operator|+
 literal|1
 argument_list|,
-name|gse
-operator|->
-name|show_refval
-operator|+
-literal|2
+literal|1
 argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1844,7 +1796,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkTable).  *  * Returns: A pointer to the new #GtkLabel widget.  **/
+comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkGrid).  *  * Returns: A pointer to the new #GtkLabel widget.  **/
 end_comment
 
 begin_function
@@ -2019,9 +1971,9 @@ argument_list|,
 name|alignment
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|gse
 argument_list|)
@@ -2030,27 +1982,11 @@ name|label
 argument_list|,
 name|column
 argument_list|,
-name|column
-operator|+
-literal|1
-argument_list|,
 name|row
 argument_list|,
-name|row
-operator|+
 literal|1
 argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5355,7 +5291,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_grab_focus:  * @gse: The sizeentry you want to grab the keyboard focus.  *  * This function is rather ugly and just a workaround for the fact that  * it's impossible to implement gtk_widget_grab_focus() for a #GtkTable.  **/
+comment|/**  * gimp_size_entry_grab_focus:  * @gse: The sizeentry you want to grab the keyboard focus.  *  * This function is rather ugly and just a workaround for the fact that  * it's impossible to implement gtk_widget_grab_focus() for a #GtkGrid (is this actually true after the Table->Grid conversion?).  **/
 end_comment
 
 begin_function

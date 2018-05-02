@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e47dde0103
+DECL|enum|__anon29f3d0c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -894,20 +894,6 @@ argument_list|,
 literal|10
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|editor
-operator|->
-name|size_entry
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

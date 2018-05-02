@@ -11592,9 +11592,9 @@ name|pixels_per_unit
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|entry
 argument_list|)
@@ -11602,9 +11602,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|entry
 argument_list|)
@@ -12860,7 +12860,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a16eb710108
+DECL|struct|__anon2b9f141e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13737,7 +13737,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a16eb710208
+DECL|struct|__anon2b9f141e0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13875,7 +13875,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a16eb710308
+DECL|struct|__anon2b9f141e0308
 block|{
 DECL|member|tree_label
 specifier|const

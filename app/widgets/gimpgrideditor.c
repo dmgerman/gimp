@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89dd8c0103
+DECL|enum|__anon29fa7a3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -789,9 +789,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|sizeentry
 argument_list|)
@@ -799,9 +799,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|sizeentry
 argument_list|)
@@ -998,9 +998,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|sizeentry
 argument_list|)
@@ -1008,9 +1008,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|sizeentry
 argument_list|)
