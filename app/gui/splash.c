@@ -94,7 +94,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e6e420108
+DECL|struct|__anon2bd554a30108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -2112,13 +2112,7 @@ name|color
 operator|->
 name|blue
 operator|=
-operator|(
 name|luminance
-operator|<<
-literal|8
-operator||
-name|luminance
-operator|)
 operator|/
 literal|255.0
 expr_stmt|;
