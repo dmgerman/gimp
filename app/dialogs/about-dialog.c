@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb090430108
+DECL|struct|__anon2778d5540108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -443,7 +443,7 @@ name|pixbuf
 argument_list|,
 literal|"website"
 argument_list|,
-literal|"http://www.gimp.org/"
+literal|"https://www.gimp.org/"
 argument_list|,
 literal|"website-label"
 argument_list|,

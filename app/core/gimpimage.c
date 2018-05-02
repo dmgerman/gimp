@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1325df0103
+DECL|enum|__anon278f8bf80103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1325df0203
+DECL|enum|__anon278f8bf80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -17274,7 +17274,7 @@ name|g_warning
 argument_list|(
 literal|"%s() was called from an undo function while the layer "
 literal|"had a floating selection. Please report this at "
-literal|"http://www.gimp.org/bugs/"
+literal|"https://www.gimp.org/bugs/"
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -18194,7 +18194,7 @@ name|g_warning
 argument_list|(
 literal|"%s() was called from an undo function while the channel "
 literal|"had a floating selection. Please report this at "
-literal|"http://www.gimp.org/bugs/"
+literal|"https://www.gimp.org/bugs/"
 argument_list|,
 name|G_STRFUNC
 argument_list|)
