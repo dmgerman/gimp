@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2164f60103
+DECL|enum|__anon2ae5b2e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2164f60203
+DECL|enum|__anon2ae5b2e90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1559,7 +1559,7 @@ name|lower_hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|inner_table
+name|inner_grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1759,7 +1759,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- main_vbox    *            |    *            +-- upper_hbox    *            |      |    *            |      +-- inner_table    *            |      |      |    *            |      |      +-- origin    *            |      |      +-- hruler    *            |      |      +-- vruler    *            |      |      +-- canvas    *            |      |    *            |      +-- right_vbox    *            |             |    *            |             +-- zoom_on_resize_button    *            |             +-- vscrollbar    *            |    *            +-- lower_hbox    *            |      |    *            |      +-- quick_mask    *            |      +-- hscrollbar    *            |      +-- navbutton    *            |    *            +-- statusbar    *    *  Note that we separate "shell" and "main_vbox", so that we can make    *  "shell" a GtkEventBox, giving it its own window.  This isolates our    *  events from those of our ancestors, avoiding some potential slowdowns,    *  and making things generally smoother.  See bug #778966.    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- main_vbox    *            |    *            +-- upper_hbox    *            |      |    *            |      +-- inner_grid    *            |      |      |    *            |      |      +-- origin    *            |      |      +-- hruler    *            |      |      +-- vruler    *            |      |      +-- canvas    *            |      |    *            |      +-- right_vbox    *            |             |    *            |             +-- zoom_on_resize_button    *            |             +-- vscrollbar    *            |    *            +-- lower_hbox    *            |      |    *            |      +-- quick_mask    *            |      +-- hscrollbar    *            |      +-- navbutton    *            |    *            +-- statusbar    *    *  Note that we separate "shell" and "main_vbox", so that we can make    *  "shell" a GtkEventBox, giving it its own window.  This isolates our    *  events from those of our ancestors, avoiding some potential slowdowns,    *  and making things generally smoother.  See bug #778966.    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the root vbox  */
 name|main_vbox
@@ -1786,7 +1786,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  a hbox for the inner_table and the vertical scrollbar  */
+comment|/*  a hbox for the inner_grid and the vertical scrollbar  */
 name|upper_hbox
 operator|=
 name|gtk_box_new
@@ -1818,40 +1818,10 @@ name|upper_hbox
 argument_list|)
 expr_stmt|;
 comment|/*  the table containing origin, rulers and the canvas  */
-name|inner_table
+name|inner_grid
 operator|=
-name|gtk_table_new
-argument_list|(
-literal|2
-argument_list|,
-literal|2
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|inner_table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|inner_table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
+name|gtk_grid_new
+argument_list|()
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1860,7 +1830,7 @@ argument_list|(
 name|upper_hbox
 argument_list|)
 argument_list|,
-name|inner_table
+name|inner_grid
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1871,7 +1841,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|inner_table
+name|inner_grid
 argument_list|)
 expr_stmt|;
 comment|/*  the vbox containing the color button and the vertical scrollbar  */
@@ -2027,7 +1997,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  create the contents of the inner_table  ********************************/
+comment|/*  create the contents of the inner_grif * ********************************/
 comment|/*  the menu popup button  */
 name|shell
 operator|->
@@ -2935,12 +2905,12 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  pack all the widgets  **************************************************/
-comment|/*  fill the inner_table  */
-name|gtk_table_attach
+comment|/*  fill the inner_grid  */
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|inner_table
+name|inner_grid
 argument_list|)
 argument_list|,
 name|shell
@@ -2949,26 +2919,27 @@ name|origin
 argument_list|,
 literal|0
 argument_list|,
-literal|1
-argument_list|,
 literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_FILL
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_widget_set_hexpand
 argument_list|(
-name|GTK_TABLE
+name|shell
+operator|->
+name|hrule
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_grid_attach
 argument_list|(
-name|inner_table
+name|GTK_GRID
+argument_list|(
+name|inner_grid
 argument_list|)
 argument_list|,
 name|shell
@@ -2977,30 +2948,27 @@ name|hrule
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_widget_set_vexpand
 argument_list|(
-name|GTK_TABLE
+name|shell
+operator|->
+name|vrule
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_grid_attach
 argument_list|(
-name|inner_table
+name|GTK_GRID
+argument_list|(
+name|inner_grid
 argument_list|)
 argument_list|,
 name|shell
@@ -3013,26 +2981,32 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
-name|GTK_FILL
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_widget_set_hexpand
 argument_list|(
-name|GTK_TABLE
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_vexpand
 argument_list|(
-name|inner_table
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_grid_attach
+argument_list|(
+name|GTK_GRID
+argument_list|(
+name|inner_grid
 argument_list|)
 argument_list|,
 name|shell
@@ -3041,27 +3015,11 @@ name|canvas
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|2
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  fill the right_vbox  */
