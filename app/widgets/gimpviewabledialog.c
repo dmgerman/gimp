@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdc5e40103
+DECL|enum|__anon2bae4a010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -968,6 +968,9 @@ decl_stmt|;
 name|va_list
 name|args
 decl_stmt|;
+name|gboolean
+name|use_header_bar
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|viewable
@@ -1038,6 +1041,19 @@ argument_list|(
 literal|"Use of GimpViewableDialog with a NULL viewable is deprecated!"
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|gtk_settings_get_default
+argument_list|()
+argument_list|,
+literal|"gtk-dialogs-use-header"
+argument_list|,
+operator|&
+name|use_header_bar
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|g_object_new
@@ -1079,6 +1095,10 @@ argument_list|,
 literal|"parent"
 argument_list|,
 name|parent
+argument_list|,
+literal|"use-header-bar"
+argument_list|,
+name|use_header_bar
 argument_list|,
 name|NULL
 argument_list|)

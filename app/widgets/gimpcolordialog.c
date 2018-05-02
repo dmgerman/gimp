@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ea79b0103
+DECL|enum|__anon2c4c58400103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -883,6 +883,9 @@ name|gchar
 modifier|*
 name|role
 decl_stmt|;
+name|gboolean
+name|use_header_bar
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|viewable
@@ -961,6 +964,19 @@ name|dialog_identifier
 else|:
 literal|"gimp-color-selector"
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|gtk_settings_get_default
+argument_list|()
+argument_list|,
+literal|"gtk-dialogs-use-header"
+argument_list|,
+operator|&
+name|use_header_bar
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|g_object_new
@@ -998,6 +1014,10 @@ argument_list|,
 literal|"parent"
 argument_list|,
 name|parent
+argument_list|,
+literal|"use-header-bar"
+argument_list|,
+name|use_header_bar
 argument_list|,
 name|NULL
 argument_list|)

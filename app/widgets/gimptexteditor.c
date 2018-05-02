@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc2f080103
+DECL|enum|__anon287fb5d50103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -470,6 +470,9 @@ name|GtkWidget
 modifier|*
 name|scrolled_window
 decl_stmt|;
+name|gboolean
+name|use_header_bar
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|title
@@ -533,6 +536,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_get
+argument_list|(
+name|gtk_settings_get_default
+argument_list|()
+argument_list|,
+literal|"gtk-dialogs-use-header"
+argument_list|,
+operator|&
+name|use_header_bar
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|editor
 operator|=
 name|g_object_new
@@ -558,6 +574,10 @@ argument_list|,
 literal|"help-id"
 argument_list|,
 name|GIMP_HELP_TEXT_EDITOR_DIALOG
+argument_list|,
+literal|"use-header-bar"
+argument_list|,
+name|use_header_bar
 argument_list|,
 name|NULL
 argument_list|)
