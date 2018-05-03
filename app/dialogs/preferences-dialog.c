@@ -7147,6 +7147,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_vexpand
+argument_list|(
+name|editor
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_template_editor_show_advanced
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
@@ -11576,6 +11583,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|hbox
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -12748,7 +12762,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon294f528d0108
+DECL|struct|__anon277b9b150108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13623,7 +13637,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294f528d0208
+DECL|struct|__anon277b9b150208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13754,7 +13768,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294f528d0308
+DECL|struct|__anon277b9b150308
 block|{
 DECL|member|tree_label
 specifier|const
