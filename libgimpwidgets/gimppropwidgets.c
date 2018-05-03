@@ -4232,13 +4232,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned object.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @grid:           The #GtkGrid the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %FALSE if the range of possible values of the  *                  GtkHScale should be the same as of the GtkSpinButton.  * @lower_limit:    The scale's lower boundary if @scale_limits is %TRUE.  * @upper_limit:    The scale's upper boundary if @scale_limits is %TRUE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  * If @label is #NULL, the @property_name's nick will be used as label  * of the returned object.  *  * Note that the @scale_limits boolean is the inverse of  * gimp_scale_entry_new()'s "constrain" parameter.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|GtkAdjustment
 modifier|*
-DECL|function|gimp_prop_scale_entry_new (GObject * config,const gchar * property_name,GtkTable * table,gint column,gint row,const gchar * label,gdouble step_increment,gdouble page_increment,gint digits,gboolean limit_scale,gdouble lower_limit,gdouble upper_limit)
+DECL|function|gimp_prop_scale_entry_new (GObject * config,const gchar * property_name,GtkGrid * grid,gint column,gint row,const gchar * label,gdouble step_increment,gdouble page_increment,gint digits,gboolean limit_scale,gdouble lower_limit,gdouble upper_limit)
 name|gimp_prop_scale_entry_new
 parameter_list|(
 name|GObject
@@ -4250,9 +4250,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
 name|column
@@ -4376,9 +4376,9 @@ condition|)
 block|{
 name|adjustment
 operator|=
-name|gimp_scale_entry_new
+name|gimp_scale_entry_new_grid
 argument_list|(
-name|table
+name|grid
 argument_list|,
 name|column
 argument_list|,
@@ -4420,9 +4420,9 @@ else|else
 block|{
 name|adjustment
 operator|=
-name|gimp_scale_entry_new
+name|gimp_scale_entry_new_grid
 argument_list|(
-name|table
+name|grid
 argument_list|,
 name|column
 argument_list|,
@@ -4755,13 +4755,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @table:         The #GtkTable the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property,  * which should represent an "opacity" variable with range 0 to 100.  * See gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
+comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @grid:          The #GtkGrid the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property,  * which should represent an "opacity" variable with range 0 to 100.  * See gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|GtkAdjustment
 modifier|*
-DECL|function|gimp_prop_opacity_entry_new (GObject * config,const gchar * property_name,GtkTable * table,gint column,gint row,const gchar * label)
+DECL|function|gimp_prop_opacity_entry_new (GObject * config,const gchar * property_name,GtkGrid * grid,gint column,gint row,const gchar * label)
 name|gimp_prop_opacity_entry_new
 parameter_list|(
 name|GObject
@@ -4773,9 +4773,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
 name|column
@@ -4820,7 +4820,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|table
+name|grid
 argument_list|,
 name|column
 argument_list|,

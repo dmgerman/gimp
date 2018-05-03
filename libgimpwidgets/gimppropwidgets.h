@@ -419,9 +419,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
 name|column
@@ -473,9 +473,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
-name|GtkTable
+name|GtkGrid
 modifier|*
-name|table
+name|grid
 parameter_list|,
 name|gint
 name|column
