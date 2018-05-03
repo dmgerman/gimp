@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecb4790103
+DECL|enum|__anon2c75fd790103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE
@@ -176,12 +176,6 @@ DECL|member|priv
 name|GimpIntStorePrivate
 modifier|*
 name|priv
-decl_stmt|;
-comment|/* FIXME MOVE TO PRIVATE */
-DECL|member|empty_iter
-name|GtkTreeIter
-modifier|*
-name|empty_iter
 decl_stmt|;
 block|}
 struct|;
