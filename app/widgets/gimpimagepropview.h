@@ -94,7 +94,7 @@ struct|struct
 name|_GimpImagePropView
 block|{
 DECL|member|parent_instance
-name|GtkTable
+name|GtkGrid
 name|parent_instance
 decl_stmt|;
 DECL|member|image
@@ -187,7 +187,7 @@ struct|struct
 name|_GimpImagePropViewClass
 block|{
 DECL|member|parent_class
-name|GtkTableClass
+name|GtkGridClass
 name|parent_class
 decl_stmt|;
 block|}
