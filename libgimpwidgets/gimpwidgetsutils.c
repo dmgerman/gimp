@@ -662,6 +662,13 @@ name|mnemonic_widget
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_hexpand
+argument_list|(
+name|widget
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_grid_attach
 argument_list|(
 name|grid
@@ -1312,7 +1319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7bc0860108
+DECL|struct|__anon2b7a8dfd0108
 block|{
 DECL|member|widget
 name|GtkWidget
