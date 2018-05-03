@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ca0030103
+DECL|enum|__anon28fd8b690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,15 +61,6 @@ name|PROP_PARENT
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpDialogPrivate
-typedef|typedef
-name|struct
-name|_GimpDialogPrivate
-name|GimpDialogPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpDialogPrivate
@@ -95,14 +86,14 @@ struct|;
 end_struct
 
 begin_define
-DECL|macro|GET_PRIVATE (dialog)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
 name|GET_PRIVATE
 parameter_list|(
-name|dialog
+name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (dialog, \                                                          GIMP_TYPE_DIALOG, \                                                          GimpDialogPrivate)
+value|(((GimpDialog *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -448,6 +439,19 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
+name|dialog
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|dialog
+argument_list|,
+name|GIMP_TYPE_DIALOG
+argument_list|,
+name|GimpDialogPrivate
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -1708,7 +1712,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297ca0030208
+DECL|struct|__anon28fd8b690208
 block|{
 DECL|member|dialog
 name|GtkDialog

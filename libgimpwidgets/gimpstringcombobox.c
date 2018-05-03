@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0d3a50103
+DECL|enum|__anon27a170cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -56,10 +56,10 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpStringComboBoxPrivate
 struct|struct
-DECL|struct|__anon27e0d3a50208
+name|_GimpStringComboBoxPrivate
 block|{
 DECL|member|id_column
 name|gint
@@ -74,22 +74,19 @@ name|GtkCellRenderer
 modifier|*
 name|text_renderer
 decl_stmt|;
-DECL|typedef|GimpStringComboBoxPrivate
 block|}
-name|GimpStringComboBoxPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_STRING_COMBO_BOX_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpStringComboBoxPrivate *) ((GimpStringComboBox *) (obj))->priv)
+value|(((GimpStringComboBox *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -340,7 +337,7 @@ name|GimpStringComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -428,7 +425,7 @@ name|GimpStringComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -525,7 +522,7 @@ name|GimpStringComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -849,7 +846,7 @@ argument_list|)
 expr_stmt|;
 name|column
 operator|=
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -973,7 +970,7 @@ name|column
 decl_stmt|;
 name|column
 operator|=
-name|GIMP_STRING_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)

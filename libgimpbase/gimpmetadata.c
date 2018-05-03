@@ -70,20 +70,20 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpMetadataClass
-typedef|typedef
-name|struct
-name|_GimpMetadataClass
-name|GimpMetadataClass
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpMetadataPrivate
 typedef|typedef
 name|struct
 name|_GimpMetadataPrivate
 name|GimpMetadataPrivate
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMetadataClass
+typedef|typedef
+name|struct
+name|_GimpMetadataClass
+name|GimpMetadataClass
 typedef|;
 end_typedef
 
@@ -2443,7 +2443,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon275e7a410108
+DECL|struct|__anon29411c6b0108
 block|{
 DECL|member|name
 name|gchar

@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ca0120103
+DECL|enum|__anon28b1e5f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -275,15 +275,6 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-DECL|typedef|GimpColorConfigPrivate
-typedef|typedef
-name|struct
-name|_GimpColorConfigPrivate
-name|GimpColorConfigPrivate
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpColorConfigPrivate
 struct|struct
@@ -309,8 +300,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_COLOR_CONFIG, \                                      GimpColorConfigPrivate)
+value|(((GimpColorConfig *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -904,7 +894,21 @@ name|GimpColorConfig
 modifier|*
 name|config
 parameter_list|)
-block|{ }
+block|{
+name|config
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|config
+argument_list|,
+name|GIMP_TYPE_COLOR_CONFIG
+argument_list|,
+name|GimpColorConfigPrivate
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function

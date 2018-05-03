@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b381bc80103
+DECL|enum|__anon2893d9ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,22 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b381bc80208
-block|{
-DECL|member|drawable_ID
-name|gint32
-name|drawable_ID
-decl_stmt|;
-DECL|typedef|GimpDrawablePreviewPrivate
-block|}
-name|GimpDrawablePreviewPrivate
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2b381bc80308
+DECL|struct|__anon2893d9ee0208
 block|{
 DECL|member|x
 name|gint
@@ -108,16 +93,28 @@ name|PreviewSettings
 typedef|;
 end_typedef
 
+begin_struct
+DECL|struct|_GimpDrawablePreviewPrivate
+struct|struct
+name|_GimpDrawablePreviewPrivate
+block|{
+DECL|member|drawable_ID
+name|gint32
+name|drawable_ID
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_define
-DECL|macro|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (preview, \                                GIMP_TYPE_DRAWABLE_PREVIEW, \                                GimpDrawablePreviewPrivate)
+value|(((GimpDrawablePreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -439,6 +436,19 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|preview
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|preview
+argument_list|,
+name|GIMP_TYPE_DRAWABLE_PREVIEW
+argument_list|,
+name|GimpDrawablePreviewPrivate
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|GIMP_PREVIEW
@@ -913,7 +923,7 @@ name|GimpDrawablePreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1150,7 +1160,7 @@ name|GimpDrawablePreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1561,7 +1571,7 @@ name|GimpDrawablePreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2059,7 +2069,7 @@ name|GimpDrawablePreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2461,7 +2471,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2511,7 +2521,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_DRAWABLE_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)

@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e335070103
+DECL|enum|__anon2b87675d0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e335070203
+DECL|enum|__anon2b87675d0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e335070303
+DECL|enum|__anon2b87675d0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,15 +188,6 @@ name|PROP_CONFIG
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorSelectionPrivate
-typedef|typedef
-name|struct
-name|_GimpColorSelectionPrivate
-name|GimpColorSelectionPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorSelectionPrivate
@@ -261,7 +252,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_COLOR_SELECTION, \                                                        GimpColorSelectionPrivate))
+value|(((GimpColorSelection *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -595,11 +586,6 @@ block|{
 name|GimpColorSelectionPrivate
 modifier|*
 name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|selection
-argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -637,6 +623,25 @@ name|GtkSizeGroup
 modifier|*
 name|old_group
 decl_stmt|;
+name|selection
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|selection
+argument_list|,
+name|GIMP_TYPE_COLOR_SELECTION
+argument_list|,
+name|GimpColorSelectionPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|selection
+operator|->
+name|priv
+expr_stmt|;
 name|priv
 operator|->
 name|show_alpha

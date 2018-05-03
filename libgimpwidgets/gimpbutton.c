@@ -33,7 +33,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e8d2d0103
+DECL|enum|__anon2c9c4a570103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -43,15 +43,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpButtonPrivate
-typedef|typedef
-name|struct
-name|_GimpButtonPrivate
-name|GimpButtonPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpButtonPrivate
@@ -74,7 +65,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_BUTTON, \                                                       GimpButtonPrivate)
+value|(((GimpButton *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -249,20 +240,18 @@ modifier|*
 name|button
 parameter_list|)
 block|{
-name|GimpButtonPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
+name|button
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|button
+argument_list|,
+name|GIMP_TYPE_BUTTON
+argument_list|,
+name|GimpButtonPrivate
 argument_list|)
-decl_stmt|;
-name|private
-operator|->
-name|press_state
-operator|=
-literal|0
 expr_stmt|;
 block|}
 end_function

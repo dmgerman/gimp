@@ -63,10 +63,10 @@ name|POPUP_SIZE
 value|100
 end_define
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpScrolledPreviewPrivate
 struct|struct
-DECL|struct|__anon2a3a5d8d0108
+name|_GimpScrolledPreviewPrivate
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -100,22 +100,19 @@ DECL|member|frozen
 name|gint
 name|frozen
 decl_stmt|;
-DECL|typedef|GimpScrolledPreviewPrivate
 block|}
-name|GimpScrolledPreviewPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_SCROLLED_PREVIEW_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpScrolledPreviewPrivate *) ((GimpScrolledPreview *) (obj))->priv)
+value|(((GimpScrolledPreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -526,7 +523,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1258,7 +1255,7 @@ name|GimpScrolledPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1503,7 +1500,7 @@ name|GimpScrolledPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2130,7 +2127,7 @@ name|GimpScrolledPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2209,7 +2206,7 @@ name|GimpScrolledPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3654,7 +3651,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3712,7 +3709,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3753,7 +3750,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_SCROLLED_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)

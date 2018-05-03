@@ -76,7 +76,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2766b6de0103
+DECL|enum|__anon2c0a2c270103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2766b6de0203
+DECL|enum|__anon2c0a2c270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2766b6de0303
+DECL|enum|__anon2c0a2c270303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -125,10 +125,10 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpPageSelectorPrivate
 struct|struct
-DECL|struct|__anon2766b6de0408
+name|_GimpPageSelectorPrivate
 block|{
 DECL|member|n_pages
 name|gint
@@ -163,22 +163,19 @@ name|GdkPixbuf
 modifier|*
 name|default_thumbnail
 decl_stmt|;
-DECL|typedef|GimpPageSelectorPrivate
 block|}
-name|GimpPageSelectorPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_PAGE_SELECTOR_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpPageSelectorPrivate *) ((GimpPageSelector *) (obj))->priv)
+value|(((GimpPageSelector *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -653,7 +650,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -1328,7 +1325,7 @@ name|GimpPageSelectorPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -1380,7 +1377,7 @@ name|GimpPageSelectorPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -1467,7 +1464,7 @@ name|GimpPageSelectorPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -1585,7 +1582,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -1793,7 +1790,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -1844,7 +1841,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -1908,7 +1905,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -1971,7 +1968,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2103,7 +2100,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2230,7 +2227,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2373,7 +2370,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2486,7 +2483,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2532,7 +2529,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2588,7 +2585,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2696,7 +2693,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2809,7 +2806,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -2945,7 +2942,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -3094,7 +3091,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
@@ -3626,7 +3623,7 @@ name|GimpPageSelectorPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_PAGE_SELECTOR_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)

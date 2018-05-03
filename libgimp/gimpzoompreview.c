@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e26de0103
+DECL|enum|__anon2c06641b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -70,6 +70,21 @@ name|PROP_MODEL
 block|}
 enum|;
 end_enum
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon2c06641b0208
+block|{
+DECL|member|update
+name|gboolean
+name|update
+decl_stmt|;
+DECL|typedef|PreviewSettings
+block|}
+name|PreviewSettings
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpZoomPreviewPrivate
@@ -93,31 +108,15 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon289e26de0208
-block|{
-DECL|member|update
-name|gboolean
-name|update
-decl_stmt|;
-DECL|typedef|PreviewSettings
-block|}
-name|PreviewSettings
-typedef|;
-end_typedef
-
 begin_define
-DECL|macro|GIMP_ZOOM_PREVIEW_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpZoomPreviewPrivate *) ((GimpZoomPreview *) (obj))->priv)
+value|(((GimpZoomPreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -767,7 +766,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -910,7 +909,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -1508,7 +1507,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1711,7 +1710,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -2807,7 +2806,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3016,7 +3015,7 @@ name|GimpZoomPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3211,7 +3210,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3247,7 +3246,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -3287,7 +3286,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_ZOOM_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)

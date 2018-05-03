@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aeb87f0103
+DECL|enum|__anon2acdda2d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aeb87f0203
+DECL|enum|__anon2acdda2d0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -98,15 +98,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorDisplayPrivate
-typedef|typedef
-name|struct
-name|_GimpColorDisplayPrivate
-name|GimpColorDisplayPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorDisplayPrivate
@@ -139,7 +130,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_COLOR_DISPLAY, \                                                        GimpColorDisplayPrivate))
+value|(((GimpColorDisplay *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -484,20 +475,18 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GimpColorDisplayPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
+name|display
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|display
+argument_list|,
+name|GIMP_TYPE_COLOR_DISPLAY
+argument_list|,
+name|GimpColorDisplayPrivate
 argument_list|)
-decl_stmt|;
-name|private
-operator|->
-name|enabled
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function

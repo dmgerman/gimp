@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ccba780103
+DECL|enum|__anon2c40b97c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,15 +116,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpColorScalePrivate
-typedef|typedef
-name|struct
-name|_GimpColorScalePrivate
-name|GimpColorScalePrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorScalePrivate
@@ -193,8 +184,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_COLOR_SCALE, \                                      GimpColorScalePrivate)
+value|(((GimpColorScale *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -620,11 +610,6 @@ block|{
 name|GimpColorScalePrivate
 modifier|*
 name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|scale
-argument_list|)
 decl_stmt|;
 name|GtkRange
 modifier|*
@@ -639,6 +624,25 @@ name|GtkCssProvider
 modifier|*
 name|css
 decl_stmt|;
+name|scale
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|scale
+argument_list|,
+name|GIMP_TYPE_COLOR_SCALE
+argument_list|,
+name|GimpColorScalePrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|scale
+operator|->
+name|priv
+expr_stmt|;
 name|gtk_widget_set_can_focus
 argument_list|(
 name|GTK_WIDGET

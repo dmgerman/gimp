@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bfc2440103
+DECL|enum|__anon2755360a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,15 +81,6 @@ name|PROP_HISTORY
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorProfileStorePrivate
-typedef|typedef
-name|struct
-name|_GimpColorProfileStorePrivate
-name|GimpColorProfileStorePrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorProfileStorePrivate
@@ -113,7 +104,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_COLOR_PROFILE_STORE, \                                                       GimpColorProfileStorePrivate)
+value|(((GimpColorProfileStore *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -424,6 +415,19 @@ name|G_TYPE_INT
 comment|/*  GIMP_COLOR_PROFILE_STORE_INDEX      */
 block|}
 decl_stmt|;
+name|store
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|store
+argument_list|,
+name|GIMP_TYPE_COLOR_PROFILE_STORE
+argument_list|,
+name|GimpColorProfileStorePrivate
+argument_list|)
+expr_stmt|;
 name|gtk_list_store_set_column_types
 argument_list|(
 name|GTK_LIST_STORE

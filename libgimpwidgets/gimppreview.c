@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f80a650103
+DECL|enum|__anon29d689510103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f80a650203
+DECL|enum|__anon29d689510203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -91,31 +91,29 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpPreviewPrivate
 struct|struct
-DECL|struct|__anon27f80a650308
+name|_GimpPreviewPrivate
 block|{
 DECL|member|controls
 name|GtkWidget
 modifier|*
 name|controls
 decl_stmt|;
-DECL|typedef|GimpPreviewPrivate
 block|}
-name|GimpPreviewPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_PREVIEW_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_PREVIEW, GimpPreviewPrivate))
+value|(((GimpPreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -415,6 +413,10 @@ name|dest_y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* FIXME G_DEFINE_TYPE */
+end_comment
 
 begin_decl_stmt
 DECL|variable|preview_signals
@@ -735,11 +737,6 @@ block|{
 name|GimpPreviewPrivate
 modifier|*
 name|priv
-init|=
-name|GIMP_PREVIEW_GET_PRIVATE
-argument_list|(
-name|preview
-argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -750,6 +747,25 @@ name|xalign
 init|=
 literal|0.0
 decl_stmt|;
+name|preview
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|preview
+argument_list|,
+name|GIMP_TYPE_PREVIEW
+argument_list|,
+name|GimpPreviewPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|preview
+operator|->
+name|priv
+expr_stmt|;
 name|gtk_orientable_set_orientation
 argument_list|(
 name|GTK_ORIENTABLE
@@ -2957,7 +2973,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)

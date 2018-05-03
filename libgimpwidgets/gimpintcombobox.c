@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e504e0103
+DECL|enum|__anon2ad4d7db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -62,10 +62,10 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpIntComboBoxPrivate
 struct|struct
-DECL|struct|__anon298e504e0208
+name|_GimpIntComboBoxPrivate
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer
@@ -117,22 +117,19 @@ DECL|member|sensitivity_destroy
 name|GDestroyNotify
 name|sensitivity_destroy
 decl_stmt|;
-DECL|typedef|GimpIntComboBoxPrivate
 block|}
-name|GimpIntComboBoxPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_INT_COMBO_BOX_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpIntComboBoxPrivate *) ((GimpIntComboBox *) (obj))->priv)
+value|(((GimpIntComboBox *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -501,7 +498,7 @@ name|GimpIntComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -584,7 +581,7 @@ name|GimpIntComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -706,7 +703,7 @@ name|GimpIntComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -1701,7 +1698,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -1776,7 +1773,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -1817,7 +1814,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -1880,7 +1877,7 @@ name|GIMP_INT_COMBO_BOX_LAYOUT_ABBREVIATED
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -1927,7 +1924,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)
@@ -2092,7 +2089,7 @@ name|GimpIntComboBoxPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_COMBO_BOX_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|combo_box
 argument_list|)

@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5bc430103
+DECL|enum|__anon2b9de7fa0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -67,15 +67,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpBrowserPrivate
-typedef|typedef
-name|struct
-name|_GimpBrowserPrivate
-name|GimpBrowserPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpBrowserPrivate
@@ -132,7 +123,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_BROWSER, \                                                       GimpBrowserPrivate)
+value|(((GimpBrowser *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -343,11 +334,6 @@ block|{
 name|GimpBrowserPrivate
 modifier|*
 name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|browser
-argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -365,6 +351,26 @@ name|GtkWidget
 modifier|*
 name|viewport
 decl_stmt|;
+name|browser
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|browser
+argument_list|,
+name|GIMP_TYPE_BROWSER
+argument_list|,
+name|GimpBrowserPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|browser
+argument_list|)
+expr_stmt|;
 name|gtk_orientable_set_orientation
 argument_list|(
 name|GTK_ORIENTABLE

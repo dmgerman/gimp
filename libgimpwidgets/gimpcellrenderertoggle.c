@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977e9840103
+DECL|enum|__anon2bc1eb6e0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977e9840203
+DECL|enum|__anon2bc1eb6e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,15 +76,6 @@ name|PROP_OVERRIDE_BACKGROUND
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpCellRendererTogglePrivate
-typedef|typedef
-name|struct
-name|_GimpCellRendererTogglePrivate
-name|GimpCellRendererTogglePrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpCellRendererTogglePrivate
@@ -121,8 +112,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_CELL_RENDERER_TOGGLE, \                                      GimpCellRendererTogglePrivate)
+value|(((GimpCellRendererToggle *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -537,7 +527,21 @@ name|GimpCellRendererToggle
 modifier|*
 name|toggle
 parameter_list|)
-block|{ }
+block|{
+name|toggle
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|toggle
+argument_list|,
+name|GIMP_TYPE_CELL_RENDERER_TOGGLE
+argument_list|,
+name|GimpCellRendererTogglePrivate
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function

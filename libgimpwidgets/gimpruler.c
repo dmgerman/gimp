@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b66e35e0103
+DECL|enum|__anon2bf142ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,10 +97,10 @@ begin_comment
 comment|/* All distances below are in 1/72nd's of an inch. (According to  * Adobe that's a point, but points are really 1/72.27 in.)  */
 end_comment
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpRulerPrivate
 struct|struct
-DECL|struct|__anon2b66e35e0208
+name|_GimpRulerPrivate
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -158,28 +158,25 @@ name|GList
 modifier|*
 name|track_widgets
 decl_stmt|;
-DECL|typedef|GimpRulerPrivate
 block|}
-name|GimpRulerPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_RULER_GET_PRIVATE (ruler)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
-name|ruler
+name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (ruler, GIMP_TYPE_RULER, GimpRulerPrivate)
+value|(((GimpRuler *) (obj))->priv)
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66e35e0308
+DECL|struct|__anon2bf142ee0208
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -1053,12 +1050,26 @@ block|{
 name|GimpRulerPrivate
 modifier|*
 name|priv
-init|=
-name|GIMP_RULER_GET_PRIVATE
+decl_stmt|;
+name|ruler
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|ruler
+argument_list|,
+name|GIMP_TYPE_RULER
+argument_list|,
+name|GimpRulerPrivate
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+name|priv
+operator|=
+name|ruler
+operator|->
+name|priv
+expr_stmt|;
 name|gtk_widget_set_has_window
 argument_list|(
 name|GTK_WIDGET
@@ -1080,80 +1091,6 @@ operator|->
 name|unit
 operator|=
 name|GIMP_UNIT_PIXEL
-expr_stmt|;
-name|priv
-operator|->
-name|lower
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|upper
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|position
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|max_size
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|backing_store
-operator|=
-name|NULL
-expr_stmt|;
-name|priv
-operator|->
-name|backing_store_valid
-operator|=
-name|FALSE
-expr_stmt|;
-name|priv
-operator|->
-name|last_pos_rect
-operator|.
-name|x
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|last_pos_rect
-operator|.
-name|y
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|last_pos_rect
-operator|.
-name|width
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|last_pos_rect
-operator|.
-name|height
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|pos_redraw_idle_id
-operator|=
-literal|0
 expr_stmt|;
 block|}
 end_function
@@ -1182,7 +1119,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -1274,7 +1211,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -1449,7 +1386,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -1602,7 +1539,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2081,7 +2018,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2184,7 +2121,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2268,7 +2205,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2341,7 +2278,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2382,7 +2319,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2572,7 +2509,7 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2619,7 +2556,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2775,7 +2712,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2840,7 +2777,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -2995,7 +2932,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -3062,7 +2999,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|widget
 argument_list|)
@@ -3108,7 +3045,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|widget
 argument_list|)
@@ -3167,7 +3104,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -3281,7 +3218,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|widget
 argument_list|)
@@ -3512,7 +3449,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|widget
 argument_list|)
@@ -3615,7 +3552,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -3754,7 +3691,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -4717,7 +4654,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -5072,7 +5009,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -5109,7 +5046,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -5305,7 +5242,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -5561,7 +5498,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|ruler
 argument_list|)
@@ -5642,7 +5579,7 @@ name|GimpRulerPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_RULER_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|widget
 argument_list|)

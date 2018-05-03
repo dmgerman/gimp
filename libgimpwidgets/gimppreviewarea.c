@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b619ad0103
+DECL|enum|__anon2af286a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -121,15 +121,6 @@ define|\
 value|(((((area)->offset_y + (row))& size) ^  \     (((area)->offset_x + (col))& size)) ? dark : light)
 end_define
 
-begin_typedef
-DECL|typedef|GimpPreviewAreaPrivate
-typedef|typedef
-name|struct
-name|_GimpPreviewAreaPrivate
-name|GimpPreviewAreaPrivate
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpPreviewAreaPrivate
 struct|struct
@@ -157,8 +148,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_PREVIEW_AREA, \                                      GimpPreviewAreaPrivate)
+value|(((GimpPreviewArea *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -483,6 +473,19 @@ parameter_list|)
 block|{
 name|area
 operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|area
+argument_list|,
+name|GIMP_TYPE_PREVIEW_AREA
+argument_list|,
+name|GimpPreviewAreaPrivate
+argument_list|)
+expr_stmt|;
+name|area
+operator|->
 name|check_size
 operator|=
 name|DEFAULT_CHECK_SIZE
@@ -492,48 +495,6 @@ operator|->
 name|check_type
 operator|=
 name|DEFAULT_CHECK_TYPE
-expr_stmt|;
-name|area
-operator|->
-name|buf
-operator|=
-name|NULL
-expr_stmt|;
-name|area
-operator|->
-name|colormap
-operator|=
-name|NULL
-expr_stmt|;
-name|area
-operator|->
-name|offset_x
-operator|=
-literal|0
-expr_stmt|;
-name|area
-operator|->
-name|offset_y
-operator|=
-literal|0
-expr_stmt|;
-name|area
-operator|->
-name|width
-operator|=
-literal|0
-expr_stmt|;
-name|area
-operator|->
-name|height
-operator|=
-literal|0
-expr_stmt|;
-name|area
-operator|->
-name|rowstride
-operator|=
-literal|0
 expr_stmt|;
 name|area
 operator|->

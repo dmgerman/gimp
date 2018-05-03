@@ -115,6 +115,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SELECT_BUTTON, GimpSelectButt
 end_define
 
 begin_typedef
+DECL|typedef|GimpSelectButtonPrivate
+typedef|typedef
+name|struct
+name|_GimpSelectButtonPrivate
+name|GimpSelectButtonPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSelectButtonClass
 typedef|typedef
 name|struct
@@ -132,6 +141,12 @@ DECL|member|parent_instance
 name|GtkBox
 name|parent_instance
 decl_stmt|;
+DECL|member|priv
+name|GimpSelectButtonPrivate
+modifier|*
+name|priv
+decl_stmt|;
+comment|/* FIXME MOVE TO PRIVATE */
 DECL|member|temp_callback
 specifier|const
 name|gchar
@@ -235,6 +250,16 @@ name|void
 function_decl|(
 modifier|*
 name|_gimp_reserved7
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved8
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved8
 function_decl|)
 parameter_list|(
 name|void

@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791e0a50103
+DECL|enum|__anon2b55fb6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -52,15 +52,6 @@ name|PROP_ENUM_VALUE
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpEnumLabelPrivate
-typedef|typedef
-name|struct
-name|_GimpEnumLabelPrivate
-name|GimpEnumLabelPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpEnumLabelPrivate
@@ -84,7 +75,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_ENUM_LABEL, \                                                       GimpEnumLabelPrivate)
+value|(((GimpEnumLabel *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -276,7 +267,21 @@ name|GimpEnumLabel
 modifier|*
 name|enum_label
 parameter_list|)
-block|{ }
+block|{
+name|enum_label
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|enum_label
+argument_list|,
+name|GIMP_TYPE_ENUM_LABEL
+argument_list|,
+name|GimpEnumLabelPrivate
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function

@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad1a460103
+DECL|enum|__anon2782a1820103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad1a460203
+DECL|enum|__anon2782a1820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -134,7 +134,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bad1a460303
+DECL|enum|__anon2782a1820303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -150,10 +150,10 @@ name|ParseResult
 typedef|;
 end_typedef
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpNumberPairEntryPrivate
 struct|struct
-DECL|struct|__anon2bad1a460408
+name|_GimpNumberPairEntryPrivate
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -213,22 +213,19 @@ DECL|member|max_valid_value
 name|gdouble
 name|max_valid_value
 decl_stmt|;
-DECL|typedef|GimpNumberPairEntryPrivate
 block|}
-name|GimpNumberPairEntryPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
-DECL|macro|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|((GimpNumberPairEntryPrivate *) ((GimpNumberPairEntry *) (obj))->priv)
+value|(((GimpNumberPairEntry *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -924,7 +921,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1096,14 +1093,12 @@ block|{
 name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
-decl_stmt|;
-name|priv
-operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+init|=
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|priv
@@ -1482,7 +1477,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1555,7 +1550,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1785,7 +1780,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1852,7 +1847,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1923,7 +1918,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -1977,7 +1972,7 @@ condition|)
 return|return;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2058,7 +2053,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2121,7 +2116,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2246,7 +2241,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2328,7 +2323,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2412,28 +2407,24 @@ block|{
 name|GimpNumberPairEntry
 modifier|*
 name|entry
-decl_stmt|;
-name|GimpNumberPairEntryPrivate
-modifier|*
-name|priv
-decl_stmt|;
-name|gboolean
-name|force_user_override
-decl_stmt|;
-name|entry
-operator|=
+init|=
 name|GIMP_NUMBER_PAIR_ENTRY
 argument_list|(
 name|widget
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpNumberPairEntryPrivate
+modifier|*
 name|priv
-operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+init|=
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gboolean
+name|force_user_override
+decl_stmt|;
 name|force_user_override
 operator|=
 name|FALSE
@@ -2643,7 +2634,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2726,7 +2717,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2842,7 +2833,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -2935,7 +2926,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -3236,14 +3227,12 @@ decl_stmt|;
 name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
-decl_stmt|;
-name|priv
-operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+init|=
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -3520,14 +3509,12 @@ decl_stmt|;
 name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
-decl_stmt|;
-name|priv
-operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+init|=
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -3753,7 +3740,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -3831,7 +3818,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
@@ -3886,7 +3873,7 @@ name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)

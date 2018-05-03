@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e87690103
+DECL|enum|__anon2b643a600103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e87690203
+DECL|enum|__anon2b643a600203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -89,15 +89,6 @@ name|NUM_COLUMNS
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorHexEntryPrivate
-typedef|typedef
-name|struct
-name|_GimpColorHexEntryPrivate
-name|GimpColorHexEntryPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorHexEntryPrivate
@@ -120,7 +111,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_COLOR_HEX_ENTRY, \                                                        GimpColorHexEntryPrivate))
+value|(((GimpColorHexEntry *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -317,11 +308,6 @@ block|{
 name|GimpColorHexEntryPrivate
 modifier|*
 name|private
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|entry
-argument_list|)
 decl_stmt|;
 name|GtkEntryCompletion
 modifier|*
@@ -351,6 +337,26 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|entry
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|,
+name|GIMP_TYPE_COLOR_HEX_ENTRY
+argument_list|,
+name|GimpColorHexEntryPrivate
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 comment|/* GtkEntry's minimum size is way too large, set a reasonable one    * for our use case    */
 name|gtk_entry_set_width_chars
 argument_list|(

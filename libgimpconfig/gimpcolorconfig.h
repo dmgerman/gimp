@@ -96,6 +96,15 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_CONFIG))
 end_define
 
 begin_typedef
+DECL|typedef|GimpColorConfigPrivate
+typedef|typedef
+name|struct
+name|_GimpColorConfigPrivate
+name|GimpColorConfigPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorConfigClass
 typedef|typedef
 name|struct
@@ -113,7 +122,12 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
-comment|/*< public>*/
+DECL|member|priv
+name|GimpColorConfigPrivate
+modifier|*
+name|priv
+decl_stmt|;
+comment|/* FIXME MOVE TO PRIVATE */
 DECL|member|mode
 name|GimpColorManagementMode
 name|mode
@@ -171,15 +185,39 @@ name|gchar
 modifier|*
 name|gray_profile
 decl_stmt|;
-comment|/*< private>*/
-comment|/* Padding for future expansion */
-if|#
-directive|if
-operator|(
-name|GLIB_SIZEOF_VOID_P
-operator|==
-literal|8
-operator|)
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpColorConfigClass
+struct|struct
+name|_GimpColorConfigClass
+block|{
+DECL|member|parent_class
+name|GObjectClass
+name|parent_class
+decl_stmt|;
+DECL|member|_gimp_reserved1
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved1
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved2
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved2
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 DECL|member|_gimp_reserved3
 name|void
 function_decl|(
@@ -190,8 +228,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-endif|#
-directive|endif
 DECL|member|_gimp_reserved4
 name|void
 function_decl|(
@@ -242,19 +278,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpColorConfigClass
-struct|struct
-name|_GimpColorConfigClass
-block|{
-DECL|member|parent_class
-name|GObjectClass
-name|parent_class
-decl_stmt|;
 block|}
 struct|;
 end_struct

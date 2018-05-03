@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a867a0103
+DECL|enum|__anon27a5b8460103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -79,15 +79,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorSelectorPrivate
-typedef|typedef
-name|struct
-name|_GimpColorSelectorPrivate
-name|GimpColorSelectorPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorSelectorPrivate
@@ -113,8 +104,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_COLOR_SELECTOR, \                                      GimpColorSelectorPrivate)
+value|(((GimpColorSelector *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -405,12 +395,27 @@ block|{
 name|GimpColorSelectorPrivate
 modifier|*
 name|priv
-init|=
+decl_stmt|;
+name|selector
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|selector
+argument_list|,
+name|GIMP_TYPE_COLOR_SELECTOR
+argument_list|,
+name|GimpColorSelectorPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
 name|GET_PRIVATE
 argument_list|(
 name|selector
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|selector
 operator|->
 name|toggles_visible

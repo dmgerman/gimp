@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eeb03a0103
+DECL|enum|__anon2a560bc40103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -76,15 +76,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorDisplayStackPrivate
-typedef|typedef
-name|struct
-name|_GimpColorDisplayStackPrivate
-name|GimpColorDisplayStackPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorDisplayStackPrivate
@@ -108,7 +99,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_COLOR_DISPLAY_STACK, \                                                        GimpColorDisplayStackPrivate))
+value|(((GimpColorDisplayStack *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -428,20 +419,18 @@ modifier|*
 name|stack
 parameter_list|)
 block|{
-name|GimpColorDisplayStackPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
+name|stack
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|stack
+argument_list|,
+name|GIMP_TYPE_COLOR_DISPLAY_STACK
+argument_list|,
+name|GimpColorDisplayStackPrivate
 argument_list|)
-decl_stmt|;
-name|private
-operator|->
-name|filters
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

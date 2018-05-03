@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a131e0103
+DECL|enum|__anon27ebf7270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,15 +76,6 @@ name|PROP_MODEL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorProfileComboBoxPrivate
-typedef|typedef
-name|struct
-name|_GimpColorProfileComboBoxPrivate
-name|GimpColorProfileComboBoxPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorProfileComboBoxPrivate
@@ -113,7 +104,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_COLOR_PROFILE_COMBO_BOX, \                                                       GimpColorProfileComboBoxPrivate)
+value|(((GimpColorProfileComboBox *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -368,10 +359,25 @@ block|{
 name|GtkCellRenderer
 modifier|*
 name|cell
-init|=
+decl_stmt|;
+name|combo_box
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|combo_box
+argument_list|,
+name|GIMP_TYPE_COLOR_PROFILE_COMBO_BOX
+argument_list|,
+name|GimpColorProfileComboBoxPrivate
+argument_list|)
+expr_stmt|;
+name|cell
+operator|=
 name|gtk_cell_renderer_text_new
 argument_list|()
-decl_stmt|;
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|cell

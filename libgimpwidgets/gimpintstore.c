@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b837ecf0103
+DECL|enum|__anon2792f5580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -56,20 +56,29 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpIntStorePrivate
 struct|struct
-DECL|struct|__anon2b837ecf0208
+name|_GimpIntStorePrivate
 block|{
 DECL|member|user_data_type
 name|GType
 name|user_data_type
 decl_stmt|;
-DECL|typedef|GimpIntStorePrivate
 block|}
-name|GimpIntStorePrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
+
+begin_define
+DECL|macro|GET_PRIVATE (obj)
+define|#
+directive|define
+name|GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(((GimpIntStore *) (obj))->priv)
+end_define
 
 begin_function_decl
 specifier|static
@@ -216,18 +225,6 @@ argument_list|)
 end_macro
 
 begin_define
-DECL|macro|GIMP_INT_STORE_GET_PRIVATE (obj)
-define|#
-directive|define
-name|GIMP_INT_STORE_GET_PRIVATE
-parameter_list|(
-name|obj
-parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, GIMP_TYPE_INT_STORE, GimpIntStorePrivate)
-end_define
-
-begin_define
 DECL|macro|parent_class
 define|#
 directive|define
@@ -371,9 +368,16 @@ parameter_list|)
 block|{
 name|store
 operator|->
-name|empty_iter
+name|priv
 operator|=
-name|NULL
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|store
+argument_list|,
+name|GIMP_TYPE_INT_STORE
+argument_list|,
+name|GimpIntStorePrivate
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -402,7 +406,7 @@ name|GimpIntStorePrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_STORE_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|store
 argument_list|)
@@ -578,7 +582,7 @@ name|GimpIntStorePrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_STORE_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
@@ -642,7 +646,7 @@ name|GimpIntStorePrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_INT_STORE_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)

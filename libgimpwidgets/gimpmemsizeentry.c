@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e25a10103
+DECL|enum|__anon2b895a0e0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -61,15 +61,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpMemsizeEntryPrivate
-typedef|typedef
-name|struct
-name|_GimpMemsizeEntryPrivate
-name|GimpMemsizeEntryPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpMemsizeEntryPrivate
@@ -119,7 +110,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_MEMSIZE_ENTRY, \                                                       GimpMemsizeEntryPrivate)
+value|(((GimpMemsizeEntry *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -289,15 +280,19 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
-name|GimpMemsizeEntryPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
+name|entry
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|entry
+argument_list|,
+name|GIMP_TYPE_MEMSIZE_ENTRY
+argument_list|,
+name|GimpMemsizeEntryPrivate
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gtk_orientable_set_orientation
 argument_list|(
 name|GTK_ORIENTABLE
@@ -317,42 +312,6 @@ argument_list|)
 argument_list|,
 literal|4
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|value
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|lower
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|upper
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|shift
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|adjustment
-operator|=
-name|NULL
-expr_stmt|;
-name|private
-operator|->
-name|menu
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa49a0103
+DECL|enum|__anon2932720f0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fa49a0203
+DECL|enum|__anon2932720f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -216,15 +216,6 @@ name|PROP_COLOR_CONFIG
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorButtonPrivate
-typedef|typedef
-name|struct
-name|_GimpColorButtonPrivate
-name|GimpColorButtonPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorButtonPrivate
@@ -277,7 +268,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_COLOR_BUTTON, \                                                       GimpColorButtonPrivate)
+value|(((GimpColorButton *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -1088,11 +1079,6 @@ block|{
 name|GimpColorButtonPrivate
 modifier|*
 name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|button
-argument_list|)
 decl_stmt|;
 name|GtkActionGroup
 modifier|*
@@ -1101,6 +1087,26 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|button
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|button
+argument_list|,
+name|GIMP_TYPE_COLOR_BUTTON
+argument_list|,
+name|GimpColorButtonPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|color_area

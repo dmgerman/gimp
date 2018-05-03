@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3ea270103
+DECL|enum|__anon2af8d8490103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -57,15 +57,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpOffsetAreaPrivate
-typedef|typedef
-name|struct
-name|_GimpOffsetAreaPrivate
-name|GimpOffsetAreaPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpOffsetAreaPrivate
@@ -116,7 +107,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_OFFSET_AREA, \                                                       GimpOffsetAreaPrivate)
+value|(((GimpOffsetArea *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -342,47 +333,26 @@ block|{
 name|GimpOffsetAreaPrivate
 modifier|*
 name|private
-init|=
+decl_stmt|;
+name|area
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|area
+argument_list|,
+name|GIMP_TYPE_OFFSET_AREA
+argument_list|,
+name|GimpOffsetAreaPrivate
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
 name|GET_PRIVATE
 argument_list|(
 name|area
 argument_list|)
-decl_stmt|;
-name|private
-operator|->
-name|orig_width
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|orig_height
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|width
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|height
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|offset_x
-operator|=
-literal|0
-expr_stmt|;
-name|private
-operator|->
-name|offset_y
-operator|=
-literal|0
 expr_stmt|;
 name|private
 operator|->

@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b655ba00103
+DECL|enum|__anon2aca75270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,15 +81,6 @@ name|PROP_SIZE
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpCellRendererColorPrivate
-typedef|typedef
-name|struct
-name|_GimpCellRendererColorPrivate
-name|GimpCellRendererColorPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpCellRendererColorPrivate
@@ -124,7 +115,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                                       GIMP_TYPE_CELL_RENDERER_COLOR, \                                                       GimpCellRendererColorPrivate)
+value|(((GimpCellRendererColor *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -408,19 +399,25 @@ modifier|*
 name|cell
 parameter_list|)
 block|{
-name|GimpCellRendererColorPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
+name|cell
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|cell
+argument_list|,
+name|GIMP_TYPE_CELL_RENDERER_COLOR
+argument_list|,
+name|GimpCellRendererColorPrivate
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
 operator|&
-name|private
+name|cell
+operator|->
+name|priv
 operator|->
 name|color
 argument_list|,

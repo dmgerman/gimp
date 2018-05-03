@@ -139,6 +139,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_SELECTOR, GimpColorSele
 end_define
 
 begin_typedef
+DECL|typedef|GimpColorSelectorPrivate
+typedef|typedef
+name|struct
+name|_GimpColorSelectorPrivate
+name|GimpColorSelectorPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorClass
 typedef|typedef
 name|struct
@@ -156,6 +165,12 @@ DECL|member|parent_instance
 name|GtkBox
 name|parent_instance
 decl_stmt|;
+DECL|member|priv
+name|GimpColorSelectorPrivate
+modifier|*
+name|priv
+decl_stmt|;
+comment|/* FIXME MOVE TO PRIVATE */
 DECL|member|toggles_visible
 name|gboolean
 name|toggles_visible

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c563350103
+DECL|enum|__anon293602f70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c563350203
+DECL|enum|__anon293602f70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,15 +117,6 @@ name|PROP_DRAW_BORDER
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpColorAreaPrivate
-typedef|typedef
-name|struct
-name|_GimpColorAreaPrivate
-name|GimpColorAreaPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpColorAreaPrivate
@@ -191,8 +182,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (obj, \                                      GIMP_TYPE_COLOR_AREA, \                                      GimpColorAreaPrivate)
+value|(((GimpColorArea *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -798,12 +788,27 @@ block|{
 name|GimpColorAreaPrivate
 modifier|*
 name|priv
-init|=
+decl_stmt|;
+name|area
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|area
+argument_list|,
+name|GIMP_TYPE_COLOR_AREA
+argument_list|,
+name|GimpColorAreaPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
 name|GET_PRIVATE
 argument_list|(
 name|area
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|priv
 operator|->
 name|buf

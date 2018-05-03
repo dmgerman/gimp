@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ecfde0103
+DECL|enum|__anon29ae80870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -68,25 +68,23 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpAspectPreviewPrivate
 struct|struct
-DECL|struct|__anon288ecfde0208
+name|_GimpAspectPreviewPrivate
 block|{
 DECL|member|drawable_ID
 name|gint32
 name|drawable_ID
 decl_stmt|;
-DECL|typedef|GimpAspectPreviewPrivate
 block|}
-name|GimpAspectPreviewPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ecfde0308
+DECL|struct|__anon29ae80870208
 block|{
 DECL|member|update
 name|gboolean
@@ -99,15 +97,14 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_ASPECT_PREVIEW_GET_PRIVATE (obj)
+DECL|macro|GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (preview, \                                GIMP_TYPE_ASPECT_PREVIEW, \                                GimpAspectPreviewPrivate)
+value|(((GimpAspectPreview *) (obj))->priv)
 end_define
 
 begin_function_decl
@@ -465,6 +462,19 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|preview
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|preview
+argument_list|,
+name|GIMP_TYPE_ASPECT_PREVIEW
+argument_list|,
+name|GimpAspectPreviewPrivate
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|GIMP_PREVIEW
@@ -686,7 +696,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -831,7 +841,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1028,7 +1038,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1252,7 +1262,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1327,7 +1337,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)
@@ -1391,7 +1401,7 @@ name|GimpAspectPreviewPrivate
 modifier|*
 name|priv
 init|=
-name|GIMP_ASPECT_PREVIEW_GET_PRIVATE
+name|GET_PRIVATE
 argument_list|(
 name|preview
 argument_list|)

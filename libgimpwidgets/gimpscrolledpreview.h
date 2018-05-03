@@ -121,6 +121,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SCROLLED_PREVIEW, GimpScrolle
 end_define
 
 begin_typedef
+DECL|typedef|GimpScrolledPreviewPrivate
+typedef|typedef
+name|struct
+name|_GimpScrolledPreviewPrivate
+name|GimpScrolledPreviewPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpScrolledPreviewClass
 typedef|typedef
 name|struct
@@ -138,7 +147,12 @@ DECL|member|parent_instance
 name|GimpPreview
 name|parent_instance
 decl_stmt|;
-comment|/*< protected>*/
+DECL|member|priv
+name|GimpScrolledPreviewPrivate
+modifier|*
+name|priv
+decl_stmt|;
+comment|/* FIXME MOVE TO PRIVATE */
 DECL|member|hscr
 name|GtkWidget
 modifier|*
@@ -169,11 +183,6 @@ name|gpointer
 name|nav_gc
 decl_stmt|;
 comment|/* unused */
-comment|/*< private>*/
-DECL|member|priv
-name|gpointer
-name|priv
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -223,6 +232,46 @@ name|void
 function_decl|(
 modifier|*
 name|_gimp_reserved4
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved5
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved5
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved6
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved6
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved7
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved7
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+DECL|member|_gimp_reserved8
+name|void
+function_decl|(
+modifier|*
+name|_gimp_reserved8
 function_decl|)
 parameter_list|(
 name|void
