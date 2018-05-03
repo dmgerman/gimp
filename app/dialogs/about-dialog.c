@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cfa1f0108
+DECL|struct|__anon2ad27f290108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -624,16 +624,6 @@ name|children
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_window_present
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-operator|.
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|dialog
 operator|.
