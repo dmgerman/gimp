@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a832f0103
+DECL|enum|__anon277272280103
 block|{
 DECL|enumerator|COLUMN_TREE_ICON_NAME
 name|COLUMN_TREE_ICON_NAME
@@ -1472,14 +1472,20 @@ argument_list|,
 name|GTK_POLICY_NEVER
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|page_vbox
 argument_list|)
 argument_list|,
 name|scrolled_win
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
