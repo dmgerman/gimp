@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa7a3e0103
+DECL|enum|__anon293343390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -747,6 +747,13 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|hbox
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -954,6 +961,13 @@ argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|hbox
+argument_list|,
+name|GTK_ALIGN_START
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
