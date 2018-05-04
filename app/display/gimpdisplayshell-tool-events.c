@@ -7091,6 +7091,7 @@ operator|!
 name|event
 condition|)
 block|{
+break|break;
 comment|/* Do nothing */
 block|}
 elseif|else
