@@ -123,9 +123,13 @@ directive|include
 file|"gimpdisplayxfer.h"
 end_include
 
-begin_comment
-comment|/* #define GIMP_DISPLAY_RENDER_ENABLE_SCALING 1 */
-end_comment
+begin_define
+DECL|macro|GIMP_DISPLAY_RENDER_ENABLE_SCALING
+define|#
+directive|define
+name|GIMP_DISPLAY_RENDER_ENABLE_SCALING
+value|1
+end_define
 
 begin_comment
 comment|/*  public functions  */
@@ -607,7 +611,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_DISPLAY_RENDER_ENABLE_SCALING
-comment|/* if we had this future API, things would look pretty on hires (retina) */
+comment|/* multiply the image scale-factor by the window scale-factor, and divide    * the cairo scale-factor by the same amount (further down), so that we make    * full use of the screen resolution, even on hidpi displays.    */
 name|scale
 operator|*=
 name|gdk_window_get_scale_factor
