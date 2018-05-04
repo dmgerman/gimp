@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -167,7 +173,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c8a20920108
+DECL|struct|__anon2b8a345b0108
 block|{
 DECL|member|kelvin
 name|gdouble
@@ -895,8 +901,12 @@ parameter_list|)
 block|{
 name|guint32
 name|value
-init|=
-name|g_random_int_range
+decl_stmt|;
+name|value
+operator|=
+name|floor
+argument_list|(
+name|g_random_double_range
 argument_list|(
 name|gtk_adjustment_get_lower
 argument_list|(
@@ -907,8 +917,11 @@ name|gtk_adjustment_get_upper
 argument_list|(
 name|adj
 argument_list|)
+operator|+
+literal|1.0
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|adj
