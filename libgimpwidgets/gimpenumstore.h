@@ -148,12 +148,6 @@ name|GimpEnumStorePrivate
 modifier|*
 name|priv
 decl_stmt|;
-comment|/* FIXME MOVE TO PRIVATE */
-DECL|member|enum_class
-name|GEnumClass
-modifier|*
-name|enum_class
-decl_stmt|;
 block|}
 struct|;
 end_struct

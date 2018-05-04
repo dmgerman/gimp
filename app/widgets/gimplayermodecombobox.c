@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f9ad30103
+DECL|enum|__anon2b81b4bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1124,12 +1124,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_enum_store_add_value (GtkListStore * store,GEnumValue * value)
+DECL|function|gimp_enum_store_add_value (GtkListStore * store,GEnumClass * enum_class,GEnumValue * value)
 name|gimp_enum_store_add_value
 parameter_list|(
 name|GtkListStore
 modifier|*
 name|store
+parameter_list|,
+name|GEnumClass
+modifier|*
+name|enum_class
 parameter_list|,
 name|GEnumValue
 modifier|*
@@ -1161,11 +1165,6 @@ name|desc
 operator|=
 name|gimp_enum_value_get_desc
 argument_list|(
-name|GIMP_ENUM_STORE
-argument_list|(
-name|store
-argument_list|)
-operator|->
 name|enum_class
 argument_list|,
 name|value
@@ -1175,11 +1174,6 @@ name|abbrev
 operator|=
 name|gimp_enum_value_get_abbrev
 argument_list|(
-name|GIMP_ENUM_STORE
-argument_list|(
-name|store
-argument_list|)
-operator|->
 name|enum_class
 argument_list|,
 name|value
@@ -1304,6 +1298,10 @@ name|GtkListStore
 modifier|*
 name|store
 decl_stmt|;
+name|GEnumClass
+modifier|*
+name|enum_class
+decl_stmt|;
 name|GEnumValue
 modifier|*
 name|value
@@ -1362,6 +1360,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|enum_class
+operator|=
+name|g_type_class_ref
+argument_list|(
+name|enum_type
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1403,11 +1408,6 @@ name|value
 operator|=
 name|g_enum_get_value
 argument_list|(
-name|GIMP_ENUM_STORE
-argument_list|(
-name|store
-argument_list|)
-operator|->
 name|enum_class
 argument_list|,
 name|values
@@ -1440,6 +1440,8 @@ name|gimp_enum_store_add_value
 argument_list|(
 name|store
 argument_list|,
+name|enum_class
+argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
@@ -1463,6 +1465,11 @@ name|TRUE
 expr_stmt|;
 block|}
 block|}
+name|g_type_class_unref
+argument_list|(
+name|enum_class
+argument_list|)
+expr_stmt|;
 return|return
 name|store
 return|;

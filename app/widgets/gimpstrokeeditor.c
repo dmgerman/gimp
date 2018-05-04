@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8fc790103
+DECL|enum|__anon2afb40770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -358,6 +358,10 @@ decl_stmt|;
 name|GimpEnumStore
 modifier|*
 name|store
+decl_stmt|;
+name|GEnumClass
+modifier|*
+name|enum_class
 decl_stmt|;
 name|GEnumValue
 modifier|*
@@ -1007,12 +1011,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|enum_class
+operator|=
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_DASH_PRESET
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|value
 operator|=
-name|store
-operator|->
 name|enum_class
 operator|->
 name|values
@@ -1041,8 +1050,6 @@ name|desc
 operator|=
 name|gimp_enum_value_get_desc
 argument_list|(
-name|store
-operator|->
 name|enum_class
 argument_list|,
 name|value
@@ -1084,6 +1091,11 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+name|g_type_class_unref
+argument_list|(
+name|enum_class
+argument_list|)
+expr_stmt|;
 name|box
 operator|=
 name|gimp_enum_combo_box_new_with_model
