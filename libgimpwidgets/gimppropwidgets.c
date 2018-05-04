@@ -6182,6 +6182,13 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|label
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
+expr_stmt|;
 name|set_param_spec
 argument_list|(
 name|G_OBJECT

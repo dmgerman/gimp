@@ -113,10 +113,10 @@ name|GtkWidget
 modifier|*
 name|empty_label
 decl_stmt|;
-DECL|member|table
+DECL|member|grid
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
 DECL|member|color_frames
 name|GtkWidget
