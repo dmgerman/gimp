@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84adf70103
+DECL|enum|__anon279c4ba00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -986,6 +986,31 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* avoid cairo_scale (cr, 0.0, 0.0) */
+if|if
+condition|(
+operator|*
+name|radius_x
+operator|==
+literal|0.0
+condition|)
+operator|*
+name|radius_x
+operator|=
+literal|0.000001
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|radius_y
+operator|==
+literal|0.0
+condition|)
+operator|*
+name|radius_y
+operator|=
+literal|0.000001
+expr_stmt|;
 block|}
 end_function
 
