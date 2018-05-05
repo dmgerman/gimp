@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875f14c0108
+DECL|struct|__anon2b841d0b0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875f14c0208
+DECL|struct|__anon2b841d0b0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2875f14c030a
+DECL|union|__anon2b841d0b030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3199,7 +3199,7 @@ name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3348,33 +3348,27 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  The table to hold port, logfile and listen-to entries  */
-name|table
+comment|/*  The grid to hold port, logfile and listen-to entries  */
+name|grid
 operator|=
-name|gtk_table_new
-argument_list|(
-literal|3
-argument_list|,
-literal|2
-argument_list|,
-name|FALSE
-argument_list|)
+name|gtk_grid_new
+argument_list|()
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_row_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|6
@@ -3387,7 +3381,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-name|table
+name|grid
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3398,7 +3392,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|grid
 argument_list|)
 expr_stmt|;
 comment|/* The server ip to listen to */
@@ -3421,11 +3415,11 @@ argument_list|,
 literal|"127.0.0.1"
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -3446,8 +3440,6 @@ operator|.
 name|ip_entry
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The server port  */
@@ -3470,11 +3462,11 @@ argument_list|,
 literal|"10008"
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -3495,8 +3487,6 @@ operator|.
 name|port_entry
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The server logfile  */
@@ -3507,11 +3497,11 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -3532,8 +3522,6 @@ operator|.
 name|log_entry
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Warning */
