@@ -4625,6 +4625,10 @@ block|}
 name|preview_redraw
 argument_list|()
 expr_stmt|;
+name|_timeout
+operator|=
+literal|0
+expr_stmt|;
 return|return
 name|FALSE
 return|;
