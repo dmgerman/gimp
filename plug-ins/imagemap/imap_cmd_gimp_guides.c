@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_table.h"
+file|"imap_ui_grid.h"
 end_include
 
 begin_include
@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b7ed8f80108
+DECL|struct|__anon2bc3f8140108
 typedef|typedef
 struct|struct
 block|{
@@ -626,7 +626,7 @@ name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|,
 modifier|*
 name|frame
@@ -664,15 +664,11 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|table
+name|grid
 operator|=
-name|default_dialog_add_table
+name|default_dialog_add_grid
 argument_list|(
 name|dialog
-argument_list|,
-literal|3
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|frame
@@ -690,20 +686,20 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|frame
 argument_list|,
 literal|0
 argument_list|,
-literal|1
-argument_list|,
 literal|0
+argument_list|,
+literal|1
 argument_list|,
 literal|1
 argument_list|)
@@ -830,11 +826,11 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|frame
@@ -845,7 +841,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -1005,11 +1001,11 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_grid_attach
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 name|hbox
@@ -1020,7 +1016,7 @@ literal|2
 argument_list|,
 literal|2
 argument_list|,
-literal|3
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1220,7 +1216,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b7ed8f80208
+DECL|struct|__anon2bc3f8140208
 typedef|typedef
 struct|struct
 block|{

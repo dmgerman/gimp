@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7fc200108
+DECL|struct|__anon27e7df2c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -255,17 +255,11 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|default_dialog_add_table
+name|default_dialog_add_grid
 parameter_list|(
 name|DefaultDialog_t
 modifier|*
 name|dialog
-parameter_list|,
-name|gint
-name|rows
-parameter_list|,
-name|gint
-name|cols
 parameter_list|)
 function_decl|;
 end_function_decl
