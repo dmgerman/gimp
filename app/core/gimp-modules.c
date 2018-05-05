@@ -178,16 +178,16 @@ operator|->
 name|no_interface
 condition|)
 return|return;
-comment|/* FIXME, gimp->be_verbose is not yet initialized in init() */
+name|gimp_module_db_set_verbose
+argument_list|(
 name|gimp
 operator|->
 name|module_db
-operator|->
-name|verbose
-operator|=
+argument_list|,
 name|gimp
 operator|->
 name|be_verbose
+argument_list|)
 expr_stmt|;
 name|file
 operator|=
@@ -568,11 +568,12 @@ argument_list|)
 expr_stmt|;
 name|g_list_foreach
 argument_list|(
+name|gimp_module_db_get_modules
+argument_list|(
 name|gimp
 operator|->
 name|module_db
-operator|->
-name|modules
+argument_list|)
 argument_list|,
 name|add_to_inhibit_string
 argument_list|,

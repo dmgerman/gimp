@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4d9740103
+DECL|enum|__anon275a12900103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4d9740203
+DECL|enum|__anon275a12900203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -693,11 +693,12 @@ argument_list|)
 expr_stmt|;
 name|g_list_foreach
 argument_list|(
+name|gimp_module_db_get_modules
+argument_list|(
 name|gimp
 operator|->
 name|module_db
-operator|->
-name|modules
+argument_list|)
 argument_list|,
 name|make_list_item
 argument_list|,
