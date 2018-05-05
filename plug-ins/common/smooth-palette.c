@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae36a750108
+DECL|struct|__anon2b64f3f30108
 block|{
 DECL|member|width
 name|gint
@@ -2249,9 +2249,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
 name|sizeentry
 argument_list|)
@@ -2272,8 +2272,6 @@ argument_list|,
 name|spinbutton
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
