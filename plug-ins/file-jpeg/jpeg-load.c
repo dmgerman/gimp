@@ -2134,9 +2134,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_color_config_get_display_intent
+argument_list|(
 name|config
-operator|->
-name|display_intent
+argument_list|)
 operator|==
 name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
 condition|)
@@ -2158,9 +2159,10 @@ name|rgb_lcms
 argument_list|,
 name|TYPE_RGB_8
 argument_list|,
+name|gimp_color_config_get_display_intent
+argument_list|(
 name|config
-operator|->
-name|display_intent
+argument_list|)
 argument_list|,
 name|flags
 argument_list|)

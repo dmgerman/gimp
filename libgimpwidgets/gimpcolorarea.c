@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293602f70103
+DECL|enum|__anon27863f530103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293602f70203
+DECL|enum|__anon27863f530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1698,6 +1698,9 @@ literal|1.0
 operator|)
 condition|)
 block|{
+name|GimpRGB
+name|color
+decl_stmt|;
 name|gint
 name|side
 init|=
@@ -1762,16 +1765,22 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_color_config_get_out_of_gamut_color
+argument_list|(
+name|priv
+operator|->
+name|config
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
 name|gimp_cairo_set_source_rgb
 argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|priv
-operator|->
-name|config
-operator|->
-name|out_of_gamut_color
+name|color
 argument_list|)
 expr_stmt|;
 name|cairo_fill
