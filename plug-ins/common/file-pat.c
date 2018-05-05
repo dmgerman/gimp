@@ -2461,7 +2461,7 @@ name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
+name|grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2484,23 +2484,17 @@ argument_list|,
 name|SAVE_PROC
 argument_list|)
 expr_stmt|;
-comment|/* The main table */
-name|table
+comment|/* The main grid */
+name|grid
 operator|=
-name|gtk_table_new
-argument_list|(
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-name|FALSE
-argument_list|)
+name|gtk_grid_new
+argument_list|()
 expr_stmt|;
-name|gtk_table_set_col_spacings
+name|gtk_grid_set_column_spacing
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|6
@@ -2510,7 +2504,7 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|12
@@ -2526,7 +2520,7 @@ name|dialog
 argument_list|)
 argument_list|)
 argument_list|,
-name|table
+name|grid
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2537,7 +2531,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|grid
 argument_list|)
 expr_stmt|;
 name|entry
@@ -2575,11 +2569,11 @@ argument_list|,
 name|description
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
+name|gimp_grid_attach_aligned
 argument_list|(
-name|GTK_TABLE
+name|GTK_GRID
 argument_list|(
-name|table
+name|grid
 argument_list|)
 argument_list|,
 literal|0
@@ -2598,8 +2592,6 @@ argument_list|,
 name|entry
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
