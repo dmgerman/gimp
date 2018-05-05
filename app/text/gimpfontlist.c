@@ -389,8 +389,18 @@ argument_list|(
 name|desc
 argument_list|)
 expr_stmt|;
+comment|/* It doesn't look like pango_font_description_to_string() could ever    * return NULL. But just to be double sure and avoid a segfault, I    * check before validating the string.    */
 if|if
 condition|(
+name|name
+operator|&&
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+operator|>
+literal|0
+operator|&&
 name|g_utf8_validate
 argument_list|(
 name|name
