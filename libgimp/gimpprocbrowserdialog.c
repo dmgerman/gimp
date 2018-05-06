@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27420baf0103
+DECL|enum|__anon296f68a30103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27420baf0203
+DECL|enum|__anon296f68a30203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27420baf0303
+DECL|enum|__anon296f68a30303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -153,6 +153,41 @@ name|N_COLUMNS
 block|}
 enum|;
 end_enum
+
+begin_struct
+DECL|struct|_GimpProcBrowserDialogPrivate
+struct|struct
+name|_GimpProcBrowserDialogPrivate
+block|{
+DECL|member|browser
+name|GtkWidget
+modifier|*
+name|browser
+decl_stmt|;
+DECL|member|store
+name|GtkListStore
+modifier|*
+name|store
+decl_stmt|;
+DECL|member|tree_view
+name|GtkWidget
+modifier|*
+name|tree_view
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_define
+DECL|macro|GET_PRIVATE (obj)
+define|#
+directive|define
+name|GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(((GimpProcBrowserDialog *) (obj))->priv)
+end_define
 
 begin_function_decl
 specifier|static
@@ -361,6 +396,16 @@ name|row_activated
 operator|=
 name|NULL
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpProcBrowserDialogPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -375,6 +420,10 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
+name|GimpProcBrowserDialogPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|scrolled_window
@@ -393,6 +442,26 @@ name|parent
 decl_stmt|;
 name|dialog
 operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|dialog
+argument_list|,
+name|GIMP_TYPE_PROC_BROWSER_DIALOG
+argument_list|,
+name|GimpProcBrowserDialogPrivate
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
+name|priv
+operator|->
 name|browser
 operator|=
 name|gimp_browser_new
@@ -402,7 +471,7 @@ name|gimp_browser_add_search_types
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
@@ -463,7 +532,7 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
@@ -484,7 +553,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|,
@@ -497,14 +566,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|,
@@ -558,7 +627,7 @@ name|gimp_browser_get_left_vbox
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
@@ -579,7 +648,7 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 expr_stmt|;
-name|dialog
+name|priv
 operator|->
 name|tree_view
 operator|=
@@ -605,7 +674,7 @@ name|gtk_tree_view_insert_column_with_attributes
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -628,7 +697,7 @@ name|gtk_tree_view_set_headers_visible
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -638,7 +707,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|,
@@ -654,7 +723,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|,
@@ -670,14 +739,14 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 argument_list|,
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -688,7 +757,7 @@ name|gtk_tree_view_get_selection
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -716,7 +785,7 @@ name|gimp_browser_get_right_vbox
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
@@ -841,6 +910,8 @@ name|GIMP_BROWSER
 argument_list|(
 name|dialog
 operator|->
+name|priv
+operator|->
 name|browser
 argument_list|)
 argument_list|,
@@ -900,6 +971,8 @@ name|GTK_TREE_VIEW
 argument_list|(
 name|dialog
 operator|->
+name|priv
+operator|->
 name|tree_view
 argument_list|)
 argument_list|)
@@ -926,6 +999,8 @@ argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
 name|dialog
+operator|->
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -996,6 +1071,8 @@ argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
 name|dialog
+operator|->
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -1094,6 +1171,15 @@ modifier|*
 name|proc_name
 parameter_list|)
 block|{
+name|GimpProcBrowserDialogPrivate
+modifier|*
+name|priv
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|dialog
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|proc_blurb
@@ -1170,7 +1256,7 @@ name|gimp_browser_set_widget
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|browser
 argument_list|)
@@ -1268,6 +1354,15 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
+name|GimpProcBrowserDialogPrivate
+modifier|*
+name|priv
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|dialog
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -1308,7 +1403,7 @@ name|gtk_tree_view_set_model
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -1316,7 +1411,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dialog
+name|priv
 operator|->
 name|store
 operator|=
@@ -1826,7 +1921,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|dialog
+name|priv
 operator|->
 name|store
 operator|=
@@ -1841,14 +1936,14 @@ name|gtk_tree_view_set_model
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
 argument_list|,
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -1856,7 +1951,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -1877,7 +1972,7 @@ control|)
 block|{
 name|gtk_list_store_append
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|,
@@ -1887,7 +1982,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|,
@@ -1915,7 +2010,7 @@ name|gtk_tree_view_columns_autosize
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -1925,7 +2020,7 @@ name|gtk_tree_sortable_set_sort_column_id
 argument_list|(
 name|GTK_TREE_SORTABLE
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -1939,7 +2034,7 @@ name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|store
 argument_list|)
@@ -1954,7 +2049,7 @@ name|gtk_tree_view_get_selection
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -1975,7 +2070,7 @@ name|gtk_tree_view_set_model
 argument_list|(
 name|GTK_TREE_VIEW
 argument_list|(
-name|dialog
+name|priv
 operator|->
 name|tree_view
 argument_list|)
@@ -1983,7 +2078,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dialog
+name|priv
 operator|->
 name|store
 operator|=

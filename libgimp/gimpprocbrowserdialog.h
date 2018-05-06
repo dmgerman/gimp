@@ -146,22 +146,6 @@ name|GimpProcBrowserDialogPrivate
 modifier|*
 name|priv
 decl_stmt|;
-comment|/* FIXME MOVE TO PRIVATE */
-DECL|member|browser
-name|GtkWidget
-modifier|*
-name|browser
-decl_stmt|;
-DECL|member|store
-name|GtkListStore
-modifier|*
-name|store
-decl_stmt|;
-DECL|member|tree_view
-name|GtkWidget
-modifier|*
-name|tree_view
-decl_stmt|;
 block|}
 struct|;
 end_struct
