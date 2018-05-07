@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimppaintoptions.h"
 end_include
 
@@ -68,6 +74,22 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_paintbrush_tool_is_alpha_only
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpPaintbrushTool,gimp_paintbrush_tool,GIMP_TYPE_BRUSH_TOOL)
@@ -148,7 +170,23 @@ name|GimpPaintbrushToolClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|GimpPaintToolClass
+modifier|*
+name|paint_tool_class
+init|=
+name|GIMP_PAINT_TOOL_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
+name|paint_tool_class
+operator|->
+name|is_alpha_only
+operator|=
+name|gimp_paintbrush_tool_is_alpha_only
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -190,6 +228,56 @@ argument_list|,
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_paintbrush_tool_is_alpha_only (GimpPaintTool * paint_tool,GimpDrawable * drawable)
+name|gimp_paintbrush_tool_is_alpha_only
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+init|=
+name|GIMP_PAINT_TOOL_GET_OPTIONS
+argument_list|(
+name|paint_tool
+argument_list|)
+decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+init|=
+name|GIMP_CONTEXT
+argument_list|(
+name|paint_options
+argument_list|)
+decl_stmt|;
+name|GimpLayerMode
+name|paint_mode
+init|=
+name|gimp_context_get_paint_mode
+argument_list|(
+name|context
+argument_list|)
+decl_stmt|;
+return|return
+name|gimp_layer_mode_is_alpha_only
+argument_list|(
+name|paint_mode
+argument_list|)
+return|;
 block|}
 end_function
 
