@@ -450,6 +450,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_container_freeze_count
+parameter_list|(
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_clear
 parameter_list|(

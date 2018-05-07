@@ -100,7 +100,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1d8570103
+DECL|enum|__anon27f3a55c0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -125,7 +125,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1d8570203
+DECL|enum|__anon27f3a55c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f1d8570308
+DECL|struct|__anon27f3a55c0308
 block|{
 DECL|member|signame
 name|gchar
@@ -1286,7 +1286,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f1d8570408
+DECL|struct|__anon27f3a55c0408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2909,6 +2909,36 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_container_freeze_count (GimpContainer * container)
+name|gimp_container_freeze_count
+parameter_list|(
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTAINER
+argument_list|(
+name|container
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|container
+operator|->
+name|priv
+operator|->
+name|freeze_count
 return|;
 block|}
 end_function
