@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b054c380103
+DECL|enum|__anon2924fca00103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b054c380203
+DECL|enum|__anon2924fca00203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b054c380303
+DECL|enum|__anon2924fca00303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
@@ -428,7 +428,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b054c380403
+DECL|enum|__anon2924fca00403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -466,7 +466,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b054c380503
+DECL|enum|__anon2924fca00503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -522,7 +522,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b054c380603
+DECL|enum|__anon2924fca00603
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
@@ -561,7 +561,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b054c380703
+DECL|enum|__anon2924fca00703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
@@ -597,6 +597,13 @@ init|=
 literal|1
 operator|<<
 literal|4
+block|,
+DECL|enumerator|GIMP_LAYER_MODE_FLAG_ALPHA_ONLY
+name|GIMP_LAYER_MODE_FLAG_ALPHA_ONLY
+init|=
+literal|1
+operator|<<
+literal|5
 DECL|typedef|GimpLayerModeFlags
 block|}
 name|GimpLayerModeFlags
