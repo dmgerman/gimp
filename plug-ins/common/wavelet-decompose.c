@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f85b930108
+DECL|struct|__anon27d347690108
 block|{
 DECL|member|scales
 name|gint
@@ -592,6 +592,11 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
+name|gimp_image_freeze_layers
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|wavelet_params
@@ -1035,6 +1040,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|scale_ids
+argument_list|)
+expr_stmt|;
+name|gimp_image_thaw_layers
+argument_list|(
+name|image_id
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
