@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f296f30103
+DECL|enum|__anon27f016720103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f296f30203
+DECL|enum|__anon27f016720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1986,6 +1986,11 @@ operator|->
 name|histogram
 condition|)
 block|{
+name|gint
+name|ii
+init|=
+name|i
+decl_stmt|;
 do|do
 block|{
 name|gdouble
@@ -1999,7 +2004,7 @@ name|histogram
 argument_list|,
 name|channel
 argument_list|,
-name|i
+name|ii
 operator|++
 argument_list|)
 decl_stmt|;
@@ -2016,7 +2021,7 @@ expr_stmt|;
 block|}
 do|while
 condition|(
-name|i
+name|ii
 operator|<
 name|j
 condition|)
@@ -2031,6 +2036,11 @@ operator|->
 name|bg_histogram
 condition|)
 block|{
+name|gint
+name|ii
+init|=
+name|i
+decl_stmt|;
 do|do
 block|{
 name|gdouble
@@ -2044,7 +2054,7 @@ name|bg_histogram
 argument_list|,
 name|channel
 argument_list|,
-name|i
+name|ii
 operator|++
 argument_list|)
 decl_stmt|;
@@ -2061,7 +2071,7 @@ expr_stmt|;
 block|}
 do|while
 condition|(
-name|i
+name|ii
 operator|<
 name|j
 condition|)
