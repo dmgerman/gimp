@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a235b1b0108
+DECL|struct|__anon2794d0560108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a235b1b0208
+DECL|struct|__anon2794d0560208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a235b1b0308
+DECL|struct|__anon2794d0560308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -8712,7 +8712,7 @@ argument_list|(
 name|ui_file
 argument_list|)
 expr_stmt|;
-comment|/* Table */
+comment|/* Grid */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -8729,7 +8729,7 @@ name|gtk_builder_get_object
 argument_list|(
 name|builder
 argument_list|,
-literal|"table"
+literal|"grid"
 argument_list|)
 argument_list|)
 argument_list|,
