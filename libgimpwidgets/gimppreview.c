@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce7e280103
+DECL|enum|__anon2a43006e0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce7e280203
+DECL|enum|__anon2a43006e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2181,8 +2181,13 @@ operator|->
 name|cursor_busy
 argument_list|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gdk_display_flush
+argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|toplevel
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(

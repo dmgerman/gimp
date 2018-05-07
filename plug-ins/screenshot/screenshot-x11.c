@@ -623,8 +623,13 @@ block|}
 undef|#
 directive|undef
 name|X_GRAB_KEY
-name|gdk_flush
-argument_list|()
+name|gdk_display_flush
+argument_list|(
+name|gdk_monitor_get_display
+argument_list|(
+name|monitor
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -3923,7 +3923,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2986525a0108
+DECL|struct|__anon2beed8310108
 block|{
 DECL|member|r
 name|guchar
@@ -4500,7 +4500,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2986525a0208
+DECL|struct|__anon2beed8310208
 block|{
 DECL|member|timeout_id
 name|gint
@@ -5045,8 +5045,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gdk_display_flush
+argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function

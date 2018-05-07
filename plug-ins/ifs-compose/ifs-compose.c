@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1b73dd0103
+DECL|enum|__anon28ef4aaa0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1b73dd0203
+DECL|enum|__anon28ef4aaa0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0308
+DECL|struct|__anon28ef4aaa0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon2c1b73dd040a
+DECL|union|__anon28ef4aaa040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0508
+DECL|struct|__anon28ef4aaa0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0608
+DECL|struct|__anon28ef4aaa0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0708
+DECL|struct|__anon28ef4aaa0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0808
+DECL|struct|__anon28ef4aaa0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0908
+DECL|struct|__anon28ef4aaa0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b73dd0a08
+DECL|struct|__anon28ef4aaa0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4892,8 +4892,11 @@ operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gdk_flush
+name|gdk_display_flush
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(

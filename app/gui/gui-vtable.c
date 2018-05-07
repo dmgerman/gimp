@@ -1170,8 +1170,11 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gdk_flush
+name|gdk_display_flush
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1198,8 +1201,11 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gdk_flush
+name|gdk_display_flush
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 end_function

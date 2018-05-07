@@ -1935,8 +1935,10 @@ argument_list|(
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gdk_display_flush
+argument_list|(
+name|display
+argument_list|)
 expr_stmt|;
 block|}
 end_function

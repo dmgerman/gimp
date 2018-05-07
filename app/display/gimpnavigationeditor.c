@@ -1385,8 +1385,15 @@ operator|->
 name|nav_popup
 argument_list|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gdk_display_flush
+argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|shell
+operator|->
+name|nav_popup
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/* fill in then grab pointer */
 name|gimp_navigation_view_set_motion_offset

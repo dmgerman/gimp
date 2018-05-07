@@ -1217,10 +1217,15 @@ name|monitor
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 comment|/* flush so the beep makes it to the server */
+name|gdk_display_flush
+argument_list|(
+name|gdk_monitor_get_display
+argument_list|(
+name|monitor
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 operator|*

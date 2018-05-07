@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8ccb70108
+DECL|struct|__anon2c039de40108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8ccb70208
+DECL|struct|__anon2c039de40208
 block|{
 DECL|member|run
 name|gboolean
@@ -1015,8 +1015,11 @@ expr_stmt|;
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-name|gdk_flush
+name|gdk_display_flush
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
