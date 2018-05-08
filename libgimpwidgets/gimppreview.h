@@ -617,7 +617,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_get_table
+name|gimp_preview_get_grid
 parameter_list|(
 name|GimpPreview
 modifier|*
