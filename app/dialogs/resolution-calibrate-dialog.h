@@ -24,9 +24,10 @@ name|GtkWidget
 modifier|*
 name|resolution_entry
 parameter_list|,
-name|GdkPixbuf
+specifier|const
+name|gchar
 modifier|*
-name|pixbuf
+name|icon_name
 parameter_list|)
 function_decl|;
 end_function_decl

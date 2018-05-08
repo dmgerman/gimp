@@ -4446,11 +4446,11 @@ value|"gimp-prefs-dialog"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE
+DECL|macro|GIMP_HELP_PREFS_SYSTEM_RESOURCES
 define|#
 directive|define
-name|GIMP_HELP_PREFS_NEW_IMAGE
-value|"gimp-prefs-new-image"
+name|GIMP_HELP_PREFS_SYSTEM_RESOURCES
+value|"gimp-prefs-system-resources"
 end_define
 
 begin_define
@@ -4459,6 +4459,46 @@ define|#
 directive|define
 name|GIMP_HELP_PREFS_DEBUGGING
 value|"gimp-prefs-debugging"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_COLOR_MANAGEMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_COLOR_MANAGEMENT
+value|"gimp-prefs-color-management"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_IMPORT_EXPORT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_IMPORT_EXPORT
+value|"gimp-prefs-import-export"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_PLAYGROUND
+define|#
+directive|define
+name|GIMP_HELP_PREFS_PLAYGROUND
+value|"gimp-prefs-playground"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_TOOL_OPTIONS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_TOOL_OPTIONS
+value|"gimp-prefs-tool-options"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_PREFS_NEW_IMAGE
+value|"gimp-prefs-new-image"
 end_define
 
 begin_define
@@ -4478,14 +4518,6 @@ value|"gimp-prefs-interface"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_HELP
-define|#
-directive|define
-name|GIMP_HELP_PREFS_HELP
-value|"gimp-prefs-help"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_PREFS_THEME
 define|#
 directive|define
@@ -4499,14 +4531,6 @@ define|#
 directive|define
 name|GIMP_HELP_PREFS_ICON_THEME
 value|"gimp-prefs-icon-theme"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PREFS_TOOL_OPTIONS
-define|#
-directive|define
-name|GIMP_HELP_PREFS_TOOL_OPTIONS
-value|"gimp-prefs-tool-options"
 end_define
 
 begin_define
@@ -4526,19 +4550,27 @@ value|"gimp-prefs-dialog-defaults"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_INPUT_DEVICES
+DECL|macro|GIMP_HELP_PREFS_HELP
 define|#
 directive|define
-name|GIMP_HELP_PREFS_INPUT_DEVICES
-value|"gimp-prefs-input-devices"
+name|GIMP_HELP_PREFS_HELP
+value|"gimp-prefs-help"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_INPUT_CONTROLLERS
+DECL|macro|GIMP_HELP_PREFS_DISPLAY
 define|#
 directive|define
-name|GIMP_HELP_PREFS_INPUT_CONTROLLERS
-value|"gimp-prefs-input-controllers"
+name|GIMP_HELP_PREFS_DISPLAY
+value|"gimp-prefs-display"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
+value|"gimp-prefs-window-management"
 end_define
 
 begin_define
@@ -4566,51 +4598,27 @@ value|"gimp-prefs-image-window-title"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_DISPLAY
+DECL|macro|GIMP_HELP_PREFS_IMAGE_WINDOW_SNAPPING
 define|#
 directive|define
-name|GIMP_HELP_PREFS_DISPLAY
-value|"gimp-prefs-display"
+name|GIMP_HELP_PREFS_IMAGE_WINDOW_SNAPPING
+value|"gimp-prefs-image-window-snapping"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_MONITOR
+DECL|macro|GIMP_HELP_PREFS_INPUT_DEVICES
 define|#
 directive|define
-name|GIMP_HELP_PREFS_MONITOR
-value|"gimp-prefs-monitor"
+name|GIMP_HELP_PREFS_INPUT_DEVICES
+value|"gimp-prefs-input-devices"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_COLOR_MANAGEMENT
+DECL|macro|GIMP_HELP_PREFS_INPUT_CONTROLLERS
 define|#
 directive|define
-name|GIMP_HELP_PREFS_COLOR_MANAGEMENT
-value|"gimp-prefs-color-management"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
-define|#
-directive|define
-name|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
-value|"gimp-prefs-window-management"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PREFS_SESSION
-define|#
-directive|define
-name|GIMP_HELP_PREFS_SESSION
-value|"gimp-prefs-session"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PREFS_SYSTEM_RESOURCES
-define|#
-directive|define
-name|GIMP_HELP_PREFS_SYSTEM_RESOURCES
-value|"gimp-prefs-system-resources"
+name|GIMP_HELP_PREFS_INPUT_CONTROLLERS
+value|"gimp-prefs-input-controllers"
 end_define
 
 begin_define

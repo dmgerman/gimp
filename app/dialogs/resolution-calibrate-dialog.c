@@ -103,21 +103,22 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @pixbuf:           an optional #GdkPixbuf for the upper left corner  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be set.  **/
+comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @icon_name:        an optional icon-name for the upper left corner  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be set.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,GdkPixbuf * pixbuf)
+DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,const gchar * icon_name)
 name|resolution_calibrate_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|resolution_entry
 parameter_list|,
-name|GdkPixbuf
+specifier|const
+name|gchar
 modifier|*
-name|pixbuf
+name|icon_name
 parameter_list|)
 block|{
 name|GtkWidget
@@ -167,18 +168,6 @@ argument_list|(
 name|gtk_widget_get_realized
 argument_list|(
 name|resolution_entry
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|pixbuf
-operator|==
-name|NULL
-operator|||
-name|GDK_IS_PIXBUF
-argument_list|(
-name|pixbuf
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -353,16 +342,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|pixbuf
+name|icon_name
 condition|)
 block|{
 name|GtkWidget
 modifier|*
 name|image
 init|=
-name|gtk_image_new_from_pixbuf
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|pixbuf
+name|icon_name
+argument_list|,
+name|GTK_ICON_SIZE_DIALOG
 argument_list|)
 decl_stmt|;
 name|gtk_table_attach
