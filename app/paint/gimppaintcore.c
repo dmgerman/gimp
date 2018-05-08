@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294390260103
+DECL|enum|__anon27bcc88b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,6 +1279,11 @@ argument_list|,
 name|paint_state
 argument_list|,
 name|time
+argument_list|)
+expr_stmt|;
+name|gimp_symmetry_clear_origin
+argument_list|(
+name|sym
 argument_list|)
 expr_stmt|;
 name|g_object_unref

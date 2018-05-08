@@ -281,6 +281,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_symmetry_clear_origin
+parameter_list|(
+name|GimpSymmetry
+modifier|*
+name|symmetry
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpCoords
 modifier|*
 name|gimp_symmetry_get_origin
