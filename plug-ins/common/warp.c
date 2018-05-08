@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0d30e0103
+DECL|enum|__anon2b7c72cd0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0d30e0208
+DECL|struct|__anon2b7c72cd0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1579,7 +1579,6 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-comment|// gtk_table_set_col_spacing (GTK_GRID (grid), 1, 12);
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -2407,7 +2406,6 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-comment|// gtk_table_set_col_spacing (GTK_GRID (grid), 1, 12);
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -2968,7 +2966,6 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-comment|// gtk_table_set_col_spacing (GTK_GRID (grid), 1, 12);
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER

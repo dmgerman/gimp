@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8c8310108
+DECL|struct|__anon28fa0a880108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -3358,8 +3358,6 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-comment|// gtk_table_set_row_spacing (GTK_GRID (grid), 0, 2);
-comment|// gtk_table_set_row_spacing (GTK_GRID (grid), 2, 2);
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -3791,8 +3789,6 @@ operator|=
 name|gtk_grid_new
 argument_list|()
 expr_stmt|;
-comment|// gtk_table_set_col_spacing (GTK_GRID (grid2), 0, 2);
-comment|// gtk_table_set_row_spacing (GTK_GRID (grid2), 0, 4);
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
