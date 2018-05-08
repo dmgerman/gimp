@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab43d420103
+DECL|enum|__anon2b4be0b00103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab43d420208
+DECL|struct|__anon2b4be0b00208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -2273,6 +2273,13 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|selection
+operator|==
+name|GIMP_TOOL_LINE_HANDLE_NONE
+condition|)
+return|return;
 name|x
 operator|=
 name|gimp_size_entry_get_refval
