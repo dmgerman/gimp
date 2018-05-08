@@ -75,6 +75,12 @@ directive|include
 file|"gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprojectable.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_drawable_calculate_histogram (GimpDrawable * drawable,GimpHistogram * histogram,gboolean with_filters)
@@ -380,6 +386,12 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
+name|GimpProjectable
+modifier|*
+name|projectable
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|with_filters
@@ -459,6 +471,20 @@ comment|/*  this would keep the buffer updated across drawable or            *  
 block|g_signal_connect_object (node, "invalidated",                                    G_CALLBACK (gimp_tile_handler_validate_invalidate),                                    validate, G_CONNECT_SWAPPED);
 endif|#
 directive|endif
+if|if
+condition|(
+name|GIMP_IS_PROJECTABLE
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+name|projectable
+operator|=
+name|GIMP_PROJECTABLE
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -468,6 +494,15 @@ name|buffer
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|projectable
+condition|)
+name|gimp_projectable_begin_render
+argument_list|(
+name|projectable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -563,6 +598,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|projectable
+condition|)
+name|gimp_projectable_end_render
+argument_list|(
+name|projectable
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|buffer
