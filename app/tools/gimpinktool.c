@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"operations/layer-modes/gimp-layer-modes.h"
 end_include
 
