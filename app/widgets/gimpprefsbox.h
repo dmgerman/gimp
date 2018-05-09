@@ -165,7 +165,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|notebook_label
+name|page_title
 parameter_list|,
 specifier|const
 name|gchar
