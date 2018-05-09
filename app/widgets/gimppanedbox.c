@@ -2119,6 +2119,16 @@ argument_list|(
 name|orientation
 argument_list|)
 expr_stmt|;
+name|gtk_paned_set_wide_handle
+argument_list|(
+name|GTK_PANED
+argument_list|(
+name|paned
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GTK_IS_PANED

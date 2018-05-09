@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb5f7f80103
+DECL|enum|__anon2c7474070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb5f7f80208
+DECL|struct|__anon2c7474070208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1984,6 +1984,18 @@ argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
+name|gtk_paned_set_wide_handle
+argument_list|(
+name|GTK_PANED
+argument_list|(
+name|private
+operator|->
+name|left_hpane
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2071,6 +2083,18 @@ operator|=
 name|gtk_paned_new
 argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
+name|gtk_paned_set_wide_handle
+argument_list|(
+name|GTK_PANED
+argument_list|(
+name|private
+operator|->
+name|right_hpane
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_paned_pack2
