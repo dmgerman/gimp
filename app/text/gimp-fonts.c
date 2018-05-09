@@ -300,7 +300,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4b94fc0108
+DECL|struct|__anon29ac75e20108
 block|{
 DECL|member|config
 name|FcConfig
@@ -925,6 +925,18 @@ operator|->
 name|next
 control|)
 block|{
+comment|/* The configured directories must exist or be created. */
+name|g_file_make_directory_with_parents
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* Do not use FcConfigAppFontAddDir(). Instead use        * FcConfigAppFontAddFile() with our own recursive loop.        * Otherwise, when some fonts fail to load (e.g. permission        * issues), we end up in weird situations where the fonts are in        * the list, but are unusable and output many errors.        * See bug 748553.        */
 name|gimp_fonts_recursive_add_fontdir
 argument_list|(
