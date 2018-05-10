@@ -15,16 +15,6 @@ directive|include
 file|<gegl.h>
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GDK_MULTIHEAD_SAFE
-end_undef
-
-begin_comment
-comment|/* for gdk_keymap_get_default() */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -903,8 +893,11 @@ name|GdkKeymap
 modifier|*
 name|keymap
 init|=
-name|gdk_keymap_get_default
+name|gdk_keymap_get_for_display
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 decl_stmt|;
 name|gint
 name|i
