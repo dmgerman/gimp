@@ -21,9 +21,7 @@ name|GtkWidget
 modifier|*
 name|about_dialog_create
 parameter_list|(
-name|GimpContext
-modifier|*
-name|context
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
