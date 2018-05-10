@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d39f20103
+DECL|enum|__anon28f6f5a60103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d39f20203
+DECL|enum|__anon28f6f5a60203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d39f20303
+DECL|enum|__anon28f6f5a60303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d39f20403
+DECL|enum|__anon28f6f5a60403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -138,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d39f20508
+DECL|struct|__anon28f6f5a60508
 block|{
 DECL|member|step_x
 name|gint
@@ -396,7 +396,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d39f20608
+DECL|struct|__anon28f6f5a60608
 block|{
 DECL|member|h_style
 name|gint
@@ -2335,7 +2335,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

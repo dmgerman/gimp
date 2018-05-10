@@ -1729,7 +1729,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8543230103
+DECL|enum|__anon2be5ef300103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2472,7 +2472,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

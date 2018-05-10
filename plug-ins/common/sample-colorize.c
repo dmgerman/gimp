@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b2b120108
+DECL|struct|__anon29467fdc0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b2b120208
+DECL|struct|__anon29467fdc0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b2b120308
+DECL|struct|__anon29467fdc0308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b2b120408
+DECL|struct|__anon29467fdc0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b2b120508
+DECL|struct|__anon29467fdc0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6021,7 +6021,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

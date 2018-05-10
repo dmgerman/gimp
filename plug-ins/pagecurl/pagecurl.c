@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e2f760103
+DECL|enum|__anon274bf0030103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e2f760203
+DECL|enum|__anon274bf0030203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e2f760303
+DECL|enum|__anon274bf0030303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e2f760408
+DECL|struct|__anon274bf0030408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -1582,7 +1582,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ce3b170103
+DECL|enum|__anon28e7a7590103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ce3b170203
+DECL|enum|__anon28e7a7590203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14041,7 +14041,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

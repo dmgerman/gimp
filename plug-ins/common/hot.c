@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2c4170108
+DECL|struct|__anon27cdbcf70108
 block|{
 DECL|member|image
 name|gint32
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f2c4170203
+DECL|enum|__anon27cdbcf70203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f2c4170303
+DECL|enum|__anon27cdbcf70303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -167,7 +167,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon29f2c4170408
+DECL|struct|__anon27cdbcf70408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2428,7 +2428,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

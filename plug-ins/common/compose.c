@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e97460108
+DECL|struct|__anon288b146b0108
 block|{
 union|union
-DECL|union|__anon2a3e9746020a
+DECL|union|__anon288b146b020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e97460308
+DECL|struct|__anon288b146b0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e97460408
+DECL|struct|__anon288b146b0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e97460508
+DECL|struct|__anon288b146b0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e97460608
+DECL|struct|__anon288b146b0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -4636,7 +4636,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

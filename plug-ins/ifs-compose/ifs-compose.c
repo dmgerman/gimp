@@ -138,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef4aaa0103
+DECL|enum|__anon2bf96fa80103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef4aaa0203
+DECL|enum|__anon2bf96fa80203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0308
+DECL|struct|__anon2bf96fa80308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon28ef4aaa040a
+DECL|union|__anon2bf96fa8040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0508
+DECL|struct|__anon2bf96fa80508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0608
+DECL|struct|__anon2bf96fa80608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0708
+DECL|struct|__anon2bf96fa80708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0808
+DECL|struct|__anon2bf96fa80808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0908
+DECL|struct|__anon2bf96fa80908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef4aaa0a08
+DECL|struct|__anon2bf96fa80a08
 block|{
 DECL|member|run
 name|gboolean
@@ -3782,7 +3782,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -12388,7 +12388,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -12521,7 +12521,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

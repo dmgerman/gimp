@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420108
+DECL|struct|__anon2bcb4daf0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420208
+DECL|struct|__anon2bcb4daf0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420308
+DECL|struct|__anon2bcb4daf0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420408
+DECL|struct|__anon2bcb4daf0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420508
+DECL|struct|__anon2bcb4daf0508
 block|{
 DECL|member|pull_grid
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420608
+DECL|struct|__anon2bcb4daf0608
 block|{
 DECL|member|name
 specifier|const
@@ -4800,7 +4800,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -7027,7 +7027,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43cf420708
+DECL|struct|__anon2bcb4daf0708
 block|{
 DECL|member|index
 name|gint

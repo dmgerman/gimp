@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b841d0b0108
+DECL|struct|__anon2bdcd32a0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b841d0b0208
+DECL|struct|__anon2bdcd32a0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b841d0b030a
+DECL|union|__anon2bdcd32a030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -3259,7 +3259,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f780ca0103
+DECL|enum|__anon2a2374530103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f780ca0203
+DECL|enum|__anon2a2374530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2940,7 +2940,7 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

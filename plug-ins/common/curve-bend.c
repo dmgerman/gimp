@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca9c230108
+DECL|struct|__anon2aa2c6110108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca9c230208
+DECL|struct|__anon2aa2c6110208
 block|{
 DECL|member|y
 name|gint32
@@ -5600,7 +5600,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -10676,7 +10676,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

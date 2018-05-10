@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bfc210108
+DECL|struct|__anon2ad14eba0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -458,7 +458,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

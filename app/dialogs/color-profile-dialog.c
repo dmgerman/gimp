@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9d3250108
+DECL|struct|__anon2bbe15a00108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -758,7 +758,7 @@ name|dialog
 operator|=
 name|dialog
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

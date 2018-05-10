@@ -103,7 +103,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ee9ff0103
+DECL|enum|__anon298e05f00103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ee9ff0203
+DECL|enum|__anon298e05f00203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ee9ff0308
+DECL|struct|__anon298e05f00308
 block|{
 DECL|member|interlace
 name|gint
@@ -4083,7 +4083,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

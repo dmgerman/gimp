@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebd3880108
+DECL|struct|__anon2aa2b1780108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebd3880208
+DECL|struct|__anon2aa2b1780208
 block|{
 DECL|member|ID
 name|gint32
@@ -414,7 +414,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

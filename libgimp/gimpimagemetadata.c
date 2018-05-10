@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e74d50108
+DECL|struct|__anon29c00dc00108
 block|{
 DECL|member|tag
 name|gchar
@@ -3056,7 +3056,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

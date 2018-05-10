@@ -252,7 +252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5f9ee0108
+DECL|struct|__anon2908160b0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3121,7 +3121,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

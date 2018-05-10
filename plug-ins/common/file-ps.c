@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d05de0108
+DECL|struct|__anon2baa7ee90108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d05de0208
+DECL|struct|__anon2baa7ee90208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d05de0308
+DECL|struct|__anon2baa7ee90308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d05de0408
+DECL|struct|__anon2baa7ee90408
 block|{
 DECL|member|eol
 name|goffset
@@ -15077,7 +15077,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

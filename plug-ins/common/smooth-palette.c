@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b64f3f30108
+DECL|struct|__anon2792a71c0108
 block|{
 DECL|member|width
 name|gint
@@ -2062,7 +2062,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

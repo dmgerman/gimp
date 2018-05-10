@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b20b7240103
+DECL|enum|__anon2a9e2e220103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -2440,7 +2440,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976babb0108
+DECL|struct|__anon27fc20750108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -858,7 +858,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

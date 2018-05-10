@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae4d0f70108
+DECL|struct|__anon2b4509200108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae4d0f70203
+DECL|enum|__anon2b4509200203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -6047,7 +6047,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba670103
+DECL|enum|__anon27c62ad50103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba670203
+DECL|enum|__anon27c62ad50203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670308
+DECL|struct|__anon27c62ad50308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670408
+DECL|struct|__anon27c62ad50408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba670503
+DECL|enum|__anon27c62ad50503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670608
+DECL|struct|__anon27c62ad50608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28eeba670708
+DECL|struct|__anon27c62ad50708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670808
+DECL|struct|__anon27c62ad50808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670908
+DECL|struct|__anon27c62ad50908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670a08
+DECL|struct|__anon27c62ad50a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670b08
+DECL|struct|__anon27c62ad50b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670c08
+DECL|struct|__anon27c62ad50c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1233,7 +1233,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670d08
+DECL|struct|__anon27c62ad50d08
 block|{
 DECL|member|tag
 name|gint
@@ -1310,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba670e08
+DECL|struct|__anon27c62ad50e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8507,7 +8507,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28eeba670f08
+DECL|struct|__anon27c62ad50f08
 block|{
 DECL|member|values
 name|guchar
@@ -11604,7 +11604,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -14446,7 +14446,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon28eeba671008
+DECL|struct|__anon27c62ad51008
 block|{
 DECL|member|label
 specifier|const
@@ -16065,7 +16065,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

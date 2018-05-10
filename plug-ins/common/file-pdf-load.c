@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a39fca0108
+DECL|struct|__anon2b16aee20108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a39fca0208
+DECL|struct|__anon2b16aee20208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a39fca0303
+DECL|enum|__anon2b16aee20303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -4629,7 +4629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a39fca0408
+DECL|struct|__anon2b16aee20408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4654,7 +4654,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a39fca0508
+DECL|struct|__anon2b16aee20508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -4933,7 +4933,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

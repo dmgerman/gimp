@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295766ba0103
+DECL|enum|__anon2b4981af0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295766ba0208
+DECL|struct|__anon2b4981af0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2954,7 +2954,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

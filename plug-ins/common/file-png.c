@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d0560108
+DECL|struct|__anon29e239c70108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d0560208
+DECL|struct|__anon29e239c70208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d0560308
+DECL|struct|__anon29e239c70308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4930,7 +4930,7 @@ argument_list|,
 name|GTK_RESPONSE_YES
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

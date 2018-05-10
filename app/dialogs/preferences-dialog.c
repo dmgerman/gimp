@@ -1280,7 +1280,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -2601,7 +2601,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -4555,7 +4555,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -12762,7 +12762,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon277b9b150108
+DECL|struct|__anon2b2bb8dd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13637,7 +13637,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277b9b150208
+DECL|struct|__anon2b2bb8dd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13768,7 +13768,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277b9b150308
+DECL|struct|__anon2b2bb8dd0308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -153,7 +153,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1157ef0108
+DECL|struct|__anon29b4d0560108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1101,7 +1101,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e56e50103
+DECL|enum|__anon27df38250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1358,7 +1358,7 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

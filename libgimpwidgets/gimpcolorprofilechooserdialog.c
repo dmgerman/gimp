@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -649,7 +655,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

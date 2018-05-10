@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a12900103
+DECL|enum|__anon2c6581230103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a12900203
+DECL|enum|__anon2c6581230203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -467,7 +467,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

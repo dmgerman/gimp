@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932720f0103
+DECL|enum|__anon2b56ddb30103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932720f0203
+DECL|enum|__anon2b56ddb30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2088,7 +2088,7 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

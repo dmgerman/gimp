@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2befd39f0103
+DECL|enum|__anon2a27686b0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befd39f0208
+DECL|struct|__anon2a27686b0208
 block|{
 DECL|member|max_p
 name|gint
@@ -524,7 +524,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2befd39f0308
+DECL|struct|__anon2a27686b0308
 block|{
 DECL|member|init_value
 name|gint
@@ -1029,7 +1029,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

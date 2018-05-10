@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899d8550103
+DECL|enum|__anon2a4118f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899d8550203
+DECL|enum|__anon2a4118f00203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2880,7 +2880,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

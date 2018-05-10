@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975be1f0108
+DECL|struct|__anon298946a50108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975be1f0208
+DECL|struct|__anon298946a50208
 block|{
 DECL|member|elems
 name|gint
@@ -1552,7 +1552,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

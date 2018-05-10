@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b0fba0103
+DECL|enum|__anon2c377b7f0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b0fba0203
+DECL|enum|__anon2c377b7f0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b0fba0303
+DECL|enum|__anon2c377b7f0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -778,7 +778,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907db470108
+DECL|struct|__anon2aafe6530108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2907db470203
+DECL|enum|__anon2aafe6530203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907db470308
+DECL|struct|__anon2aafe6530308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907db470408
+DECL|struct|__anon2aafe6530408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1363,7 +1363,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

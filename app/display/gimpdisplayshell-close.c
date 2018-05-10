@@ -623,7 +623,7 @@ argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

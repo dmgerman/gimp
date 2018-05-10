@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b65e520108
+DECL|struct|__anon2bfa8a690108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b65e520208
+DECL|struct|__anon2bfa8a690208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b65e520303
+DECL|enum|__anon2bfa8a690303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b65e520403
+DECL|enum|__anon2bfa8a690403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b65e520503
+DECL|enum|__anon2bfa8a690503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b65e520603
+DECL|enum|__anon2bfa8a690603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b65e520703
+DECL|enum|__anon2bfa8a690703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b65e520808
+DECL|struct|__anon2bfa8a690808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b65e520908
+DECL|struct|__anon2bfa8a690908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b65e520a08
+DECL|struct|__anon2bfa8a690a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1312,7 +1312,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b65e520b08
+DECL|struct|__anon2bfa8a690b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6162,7 +6162,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
+name|gimp_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
