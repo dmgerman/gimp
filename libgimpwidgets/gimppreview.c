@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901c01d0103
+DECL|enum|__anon27f796b70103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901c01d0203
+DECL|enum|__anon27f796b70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1151,6 +1151,8 @@ argument_list|,
 name|GDK_BUTTON_PRESS_MASK
 operator||
 name|GDK_BUTTON_RELEASE_MASK
+operator||
+name|GDK_SCROLL_MASK
 operator||
 name|GDK_POINTER_MOTION_HINT_MASK
 operator||
