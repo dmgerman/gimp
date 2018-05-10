@@ -399,6 +399,41 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  since we don't know yet what to do about alternative button order,  *  just hide the warnings for now...  */
+end_comment
+
+begin_define
+DECL|macro|gimp_dialog_set_alternative_button_order (d,f...)
+define|#
+directive|define
+name|gimp_dialog_set_alternative_button_order
+parameter_list|(
+name|d
+parameter_list|,
+name|f
+modifier|...
+parameter_list|)
+define|\
+value|G_GNUC_BEGIN_IGNORE_DEPRECATIONS;                      \   gtk_dialog_set_alternative_button_order(d,f);          \   G_GNUC_END_IGNORE_DEPRECATIONS;
+end_define
+
+begin_define
+DECL|macro|gimp_dialog_set_alternative_button_order_from_array (d,n,o)
+define|#
+directive|define
+name|gimp_dialog_set_alternative_button_order_from_array
+parameter_list|(
+name|d
+parameter_list|,
+name|n
+parameter_list|,
+name|o
+parameter_list|)
+define|\
+value|G_GNUC_BEGIN_IGNORE_DEPRECATIONS;                                \   gtk_dialog_set_alternative_button_order_from_array(d,n,o);       \   G_GNUC_END_IGNORE_DEPRECATIONS;
+end_define
+
 begin_macro
 name|G_END_DECLS
 end_macro
