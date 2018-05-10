@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83a23e0103
+DECL|enum|__anon2ba5604c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1013,7 +1013,10 @@ name|context
 argument_list|,
 literal|"parent"
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
 name|parent
+argument_list|)
 argument_list|,
 literal|"use-header-bar"
 argument_list|,
