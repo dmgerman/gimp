@@ -90,6 +90,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DEVICE_MANAGER, GimpDeviceMan
 end_define
 
 begin_typedef
+DECL|typedef|GimpDeviceManagerPrivate
+typedef|typedef
+name|struct
+name|_GimpDeviceManagerPrivate
+name|GimpDeviceManagerPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDeviceManagerClass
 typedef|typedef
 name|struct
@@ -106,6 +115,11 @@ block|{
 DECL|member|parent_instance
 name|GimpList
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpDeviceManagerPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
