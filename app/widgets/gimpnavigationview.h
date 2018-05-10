@@ -153,8 +153,9 @@ name|GimpNavigationView
 modifier|*
 name|view
 parameter_list|,
-name|GdkScrollDirection
-name|direction
+name|GdkEventScroll
+modifier|*
+name|sevent
 parameter_list|)
 function_decl|;
 block|}
