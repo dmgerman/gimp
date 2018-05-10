@@ -144,6 +144,10 @@ specifier|static
 name|gboolean
 name|browser_open_url
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -341,6 +345,8 @@ condition|(
 operator|!
 name|browser_open_url
 argument_list|(
+name|NULL
+argument_list|,
 name|param
 index|[
 literal|0
@@ -421,9 +427,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|browser_open_url (const gchar * url,GError ** error)
+DECL|function|browser_open_url (GtkWindow * window,const gchar * url,GError ** error)
 name|browser_open_url
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -713,15 +723,13 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gtk_show_uri
+name|gtk_show_uri_on_window
 argument_list|(
-name|gdk_screen_get_default
-argument_list|()
+name|window
 argument_list|,
 name|url
 argument_list|,
-name|gtk_get_current_event_time
-argument_list|()
+name|GDK_CURRENT_TIME
 argument_list|,
 name|error
 argument_list|)
