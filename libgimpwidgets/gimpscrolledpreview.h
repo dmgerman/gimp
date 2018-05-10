@@ -341,6 +341,37 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  utility function for scrolled-window like gimp widgets like the canvas  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scroll_adjustment_values
+parameter_list|(
+name|GdkEventScroll
+modifier|*
+name|sevent
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|hadj
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|vadj
+parameter_list|,
+name|gdouble
+modifier|*
+name|hvalue
+parameter_list|,
+name|gdouble
+modifier|*
+name|vvalue
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
