@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa280f0103
+DECL|enum|__anon2ace8e280103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -609,6 +609,8 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
+name|GDK_SCROLL_MASK
+operator||
 name|GDK_POINTER_MOTION_MASK
 operator||
 name|GDK_KEY_PRESS_MASK

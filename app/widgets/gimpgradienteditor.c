@@ -215,7 +215,7 @@ DECL|macro|GRAD_VIEW_EVENT_MASK
 define|#
 directive|define
 name|GRAD_VIEW_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \                               GDK_LEAVE_NOTIFY_MASK        | \                               GDK_POINTER_MOTION_MASK      | \                               GDK_POINTER_MOTION_HINT_MASK | \                               GDK_BUTTON_PRESS_MASK        | \                               GDK_BUTTON_RELEASE_MASK)
+value|(GDK_EXPOSURE_MASK            | \                               GDK_LEAVE_NOTIFY_MASK        | \                               GDK_POINTER_MOTION_MASK      | \                               GDK_POINTER_MOTION_HINT_MASK | \                               GDK_BUTTON_PRESS_MASK        | \                               GDK_BUTTON_RELEASE_MASK      | \                               GDK_SCROLL_MASK)
 end_define
 
 begin_define
@@ -223,7 +223,7 @@ DECL|macro|GRAD_CONTROL_EVENT_MASK
 define|#
 directive|define
 name|GRAD_CONTROL_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \                                  GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \                                  GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK      | \                                  GDK_BUTTON1_MOTION_MASK)
+value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \                                  GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \                                  GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK      | \                                  GDK_SCROLL_MASK              | \                                  GDK_BUTTON1_MOTION_MASK)
 end_define
 
 begin_comment
