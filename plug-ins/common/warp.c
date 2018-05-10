@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7c72cd0103
+DECL|enum|__anon287c7e060103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7c72cd0208
+DECL|struct|__anon287c7e060208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1345,6 +1345,97 @@ end_function
 
 begin_function
 specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|spin_button_new (GtkAdjustment ** adjustment,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,gdouble page_size,gdouble climb_rate,guint digits)
+name|spin_button_new
+parameter_list|(
+name|GtkAdjustment
+modifier|*
+modifier|*
+name|adjustment
+parameter_list|,
+comment|/* return value */
+name|gdouble
+name|value
+parameter_list|,
+name|gdouble
+name|lower
+parameter_list|,
+name|gdouble
+name|upper
+parameter_list|,
+name|gdouble
+name|step_increment
+parameter_list|,
+name|gdouble
+name|page_increment
+parameter_list|,
+name|gdouble
+name|page_size
+parameter_list|,
+name|gdouble
+name|climb_rate
+parameter_list|,
+name|guint
+name|digits
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|spinbutton
+decl_stmt|;
+operator|*
+name|adjustment
+operator|=
+name|gtk_adjustment_new
+argument_list|(
+name|value
+argument_list|,
+name|lower
+argument_list|,
+name|upper
+argument_list|,
+name|step_increment
+argument_list|,
+name|page_increment
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|spinbutton
+operator|=
+name|gtk_spin_button_new
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
+operator|*
+name|adjustment
+argument_list|)
+argument_list|,
+name|climb_rate
+argument_list|,
+name|digits
+argument_list|)
+expr_stmt|;
+name|gtk_spin_button_set_numeric
+argument_list|(
+name|GTK_SPIN_BUTTON
+argument_list|(
+name|spinbutton
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|spinbutton
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|warp_dialog (GimpDrawable * drawable)
 name|warp_dialog
@@ -1611,7 +1702,7 @@ expr_stmt|;
 comment|/*  amount, iter */
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -1707,7 +1798,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -2423,7 +2514,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -2507,7 +2598,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -2591,7 +2682,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -2983,7 +3074,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -3145,7 +3236,7 @@ expr_stmt|;
 comment|/* ---------------------------------------------- */
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
@@ -3232,7 +3323,7 @@ expr_stmt|;
 comment|/* -------------------------------------------------------- */
 name|spinbutton
 operator|=
-name|gimp_spin_button_new
+name|spin_button_new
 argument_list|(
 operator|&
 name|adj
