@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd8b690103
+DECL|enum|__anon2a0f50c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1543,6 +1543,10 @@ operator|||
 name|response_id
 operator|==
 name|GTK_RESPONSE_CANCEL
+operator|||
+name|response_id
+operator|==
+name|GTK_RESPONSE_CLOSE
 operator|)
 condition|)
 block|{
@@ -1712,7 +1716,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd8b690208
+DECL|struct|__anon2a0f50c90208
 block|{
 DECL|member|dialog
 name|GtkDialog
