@@ -768,6 +768,15 @@ comment|/*  misc objects  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpAsync
+typedef|typedef
+name|struct
+name|_GimpAsync
+name|GimpAsync
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBuffer
 typedef|typedef
 name|struct
