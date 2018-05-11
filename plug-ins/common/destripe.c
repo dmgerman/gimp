@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f0bebb0108
+DECL|struct|__anon2a0da6480108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -1721,7 +1721,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2cf360108
+DECL|struct|__anon2c3bd54d0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -5742,7 +5742,7 @@ argument_list|)
 expr_stmt|;
 name|size_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -6341,7 +6341,7 @@ argument_list|)
 expr_stmt|;
 name|size_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -6447,7 +6447,7 @@ argument_list|)
 expr_stmt|;
 name|sectors_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -6577,7 +6577,7 @@ argument_list|)
 expr_stmt|;
 name|radius_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -7878,7 +7878,7 @@ argument_list|)
 expr_stmt|;
 name|size_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

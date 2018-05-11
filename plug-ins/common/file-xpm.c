@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a098a0108
+DECL|struct|__anon2bd2fd7a0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a098a0208
+DECL|struct|__anon2bd2fd7a0208
 block|{
 DECL|member|r
 name|guchar
@@ -3354,7 +3354,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

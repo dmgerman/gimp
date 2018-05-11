@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1793860108
+DECL|struct|__anon293625c10108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1638,7 +1638,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1719,7 +1719,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1800,7 +1800,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1881,7 +1881,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1962,7 +1962,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -2045,7 +2045,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -2126,7 +2126,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -2207,7 +2207,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -2288,7 +2288,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

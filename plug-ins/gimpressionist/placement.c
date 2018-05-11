@@ -456,7 +456,7 @@ argument_list|)
 expr_stmt|;
 name|brush_density_adjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

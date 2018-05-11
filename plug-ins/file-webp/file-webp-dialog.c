@@ -496,7 +496,7 @@ expr_stmt|;
 comment|/* Create the slider for image quality */
 name|quality_scale
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -575,7 +575,7 @@ expr_stmt|;
 comment|/* Create the slider for alpha channel quality */
 name|alpha_quality_scale
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

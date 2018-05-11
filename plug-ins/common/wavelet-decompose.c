@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c2d140108
+DECL|struct|__anon2b3046cf0108
 block|{
 DECL|member|scales
 name|gint
@@ -1408,7 +1408,7 @@ expr_stmt|;
 comment|/* scales */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

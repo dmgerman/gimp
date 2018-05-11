@@ -340,7 +340,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd904e0108
+DECL|struct|__anon2a9a93690108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -1845,7 +1845,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

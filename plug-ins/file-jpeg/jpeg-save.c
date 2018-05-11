@@ -315,7 +315,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c039de40108
+DECL|struct|__anon2b875ab90108
 block|{
 DECL|member|cinfo
 name|struct
@@ -392,7 +392,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c039de40208
+DECL|struct|__anon2b875ab90208
 block|{
 DECL|member|run
 name|gboolean
@@ -3093,7 +3093,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3518,7 +3518,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

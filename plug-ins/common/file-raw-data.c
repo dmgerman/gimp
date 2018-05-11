@@ -188,7 +188,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2632770103
+DECL|enum|__anon291043f80103
 block|{
 DECL|enumerator|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
 name|GIMP_PLUGIN_HGT_LOAD_ARGUMENT_ERROR
@@ -219,7 +219,7 @@ end_function
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2632770203
+DECL|enum|__anon291043f80203
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -289,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2632770303
+DECL|enum|__anon291043f80303
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2632770408
+DECL|struct|__anon291043f80408
 block|{
 DECL|member|image_type
 name|RawType
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2632770508
+DECL|struct|__anon291043f80508
 block|{
 DECL|member|run
 name|gboolean
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2632770608
+DECL|struct|__anon291043f80608
 block|{
 DECL|member|file_offset
 name|gint32
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2632770708
+DECL|struct|__anon291043f80708
 block|{
 DECL|member|fp
 name|FILE
@@ -8542,7 +8542,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -8627,7 +8627,7 @@ condition|)
 block|{
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -8720,7 +8720,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -8974,7 +8974,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

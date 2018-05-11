@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7ec280108
+DECL|struct|__anon29468cfa0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7ec280208
+DECL|struct|__anon29468cfa0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3615,7 +3615,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3693,7 +3693,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3771,7 +3771,7 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

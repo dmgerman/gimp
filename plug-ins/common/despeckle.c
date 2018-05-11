@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298946a50108
+DECL|struct|__anon29d821f20108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298946a50208
+DECL|struct|__anon29d821f20208
 block|{
 DECL|member|elems
 name|gint
@@ -1883,7 +1883,7 @@ expr_stmt|;
 comment|/*    * Box size (diameter) control...    */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1958,7 +1958,7 @@ expr_stmt|;
 comment|/*    * Black level control...    */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -2034,7 +2034,7 @@ expr_stmt|;
 comment|/*    * White level control...    */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

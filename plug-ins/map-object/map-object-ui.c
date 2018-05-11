@@ -2362,7 +2362,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4794,7 +4794,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4897,7 +4897,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5000,7 +5000,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5174,7 +5174,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5256,7 +5256,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5338,7 +5338,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5758,7 +5758,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5850,7 +5850,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -5942,7 +5942,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -6361,7 +6361,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -6459,7 +6459,7 @@ operator|(
 name|GtkAdjustment
 operator|*
 operator|)
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

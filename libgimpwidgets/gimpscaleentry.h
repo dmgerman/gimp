@@ -97,7 +97,7 @@ define|\
 value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton")))
 name|GtkAdjustment
 modifier|*
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 parameter_list|(
 name|GtkGrid
 modifier|*
@@ -163,7 +163,7 @@ end_function_decl
 begin_function_decl
 name|GtkAdjustment
 modifier|*
-name|gimp_color_scale_entry_new_grid
+name|gimp_color_scale_entry_new
 parameter_list|(
 name|GtkGrid
 modifier|*

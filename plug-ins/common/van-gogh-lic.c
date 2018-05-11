@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2743b4c30103
+DECL|enum|__anon27f87fad0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743b4c30208
+DECL|struct|__anon27f87fad0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3408,7 +3408,7 @@ literal|0
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3473,7 +3473,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3538,7 +3538,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3603,7 +3603,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3669,7 +3669,7 @@ argument_list|)
 expr_stmt|;
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

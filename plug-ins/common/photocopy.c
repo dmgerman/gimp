@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d756e0108
+DECL|struct|__anon2951ec390108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -4728,7 +4728,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for pvals.amount  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4807,7 +4807,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for pvals.amount  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4886,7 +4886,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for pvals.amount  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4965,7 +4965,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for pvals.amount  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

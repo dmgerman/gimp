@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b146b0108
+DECL|struct|__anon274f4de30108
 block|{
 union|union
-DECL|union|__anon288b146b020a
+DECL|union|__anon274f4de3020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b146b0308
+DECL|struct|__anon274f4de30308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b146b0408
+DECL|struct|__anon274f4de30408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b146b0508
+DECL|struct|__anon274f4de30508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b146b0608
+DECL|struct|__anon274f4de30608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5417,7 +5417,7 @@ argument_list|)
 expr_stmt|;
 name|scale
 operator|=
-name|gimp_color_scale_entry_new_grid
+name|gimp_color_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

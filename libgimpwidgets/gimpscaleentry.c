@@ -837,14 +837,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_new_grid:  * @grid:                The #GtkGrid the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @constrain:           %TRUE if the range of possible values of the  *                       #GtkSpinButton should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == %FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == %FALSE.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_id:             The widgets' help_id (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkGrid.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
+comment|/**  * gimp_scale_entry_new:  * @grid:                The #GtkGrid the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @constrain:           %TRUE if the range of possible values of the  *                       #GtkSpinButton should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == %FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == %FALSE.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_id:             The widgets' help_id (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkGrid.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
 end_comment
 
 begin_function
 name|GtkAdjustment
 modifier|*
-DECL|function|gimp_scale_entry_new_grid (GtkGrid * grid,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_id)
-name|gimp_scale_entry_new_grid
+DECL|function|gimp_scale_entry_new (GtkGrid * grid,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_id)
+name|gimp_scale_entry_new
 parameter_list|(
 name|GtkGrid
 modifier|*
@@ -949,14 +949,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_entry_new_grid:  * @grid:                The #GtkGrid the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_id:             The widgets' help_id (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GimpColorScale and a  * #GtkSpinButton and attaches them to a 3-column #GtkGrid.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
+comment|/**  * gimp_color_scale_entry_new:  * @grid:                The #GtkGrid the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_id:             The widgets' help_id (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GimpColorScale and a  * #GtkSpinButton and attaches them to a 3-column #GtkGrid.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
 end_comment
 
 begin_function
 name|GtkAdjustment
 modifier|*
-DECL|function|gimp_color_scale_entry_new_grid (GtkGrid * grid,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,const gchar * tooltip,const gchar * help_id)
-name|gimp_color_scale_entry_new_grid
+DECL|function|gimp_color_scale_entry_new (GtkGrid * grid,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,const gchar * tooltip,const gchar * help_id)
+name|gimp_color_scale_entry_new
 parameter_list|(
 name|GtkGrid
 modifier|*

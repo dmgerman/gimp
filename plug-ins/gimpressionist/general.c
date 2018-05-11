@@ -1216,7 +1216,7 @@ argument_list|)
 expr_stmt|;
 name|general_dark_edge_adjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1266,7 +1266,7 @@ argument_list|)
 expr_stmt|;
 name|general_shadow_adjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|general_shadow_depth
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1366,7 +1366,7 @@ argument_list|)
 expr_stmt|;
 name|general_shadow_blur
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1416,7 +1416,7 @@ argument_list|)
 expr_stmt|;
 name|dev_thresh_adjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

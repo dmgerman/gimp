@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291c30110103
+DECL|enum|__anon2ad85f450103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291c30110203
+DECL|enum|__anon2ad85f450203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14225,7 +14225,7 @@ expr_stmt|;
 comment|/* xtiles */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -14322,7 +14322,7 @@ expr_stmt|;
 comment|/* ytiles */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -14485,7 +14485,7 @@ expr_stmt|;
 comment|/* number of blending lines */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -14577,7 +14577,7 @@ expr_stmt|;
 comment|/* blending amount */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

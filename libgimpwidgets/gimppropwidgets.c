@@ -4376,7 +4376,7 @@ condition|)
 block|{
 name|adjustment
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|grid
 argument_list|,
@@ -4420,7 +4420,7 @@ else|else
 block|{
 name|adjustment
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|grid
 argument_list|,

@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293483940108
+DECL|struct|__anon2759c2360108
 block|{
 DECL|member|radius
 name|gdouble
@@ -3598,7 +3598,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for evals.radius  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3688,7 +3688,7 @@ expr_stmt|;
 comment|/*  Label, scale, entry for evals.amount  */
 name|scale_data
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

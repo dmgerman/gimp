@@ -3182,7 +3182,7 @@ name|elements
 operator|->
 name|xmin
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3251,7 +3251,7 @@ name|elements
 operator|->
 name|xmax
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3320,7 +3320,7 @@ name|elements
 operator|->
 name|ymin
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3389,7 +3389,7 @@ name|elements
 operator|->
 name|ymax
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3458,7 +3458,7 @@ name|elements
 operator|->
 name|iter
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3530,7 +3530,7 @@ name|elements
 operator|->
 name|cx
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3602,7 +3602,7 @@ name|elements
 operator|->
 name|cy
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4506,7 +4506,7 @@ name|elements
 operator|->
 name|ncol
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4728,7 +4728,7 @@ name|elements
 operator|->
 name|red
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4799,7 +4799,7 @@ name|elements
 operator|->
 name|green
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -4870,7 +4870,7 @@ name|elements
 operator|->
 name|blue
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

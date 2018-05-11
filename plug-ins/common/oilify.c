@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1bb6c50108
+DECL|struct|__anon27662d3c0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -3369,7 +3369,7 @@ expr_stmt|;
 comment|/*    * Mask-size scale    */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -3608,7 +3608,7 @@ expr_stmt|;
 comment|/*    * Exponent scale    */
 name|adj
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(

@@ -430,7 +430,7 @@ argument_list|)
 expr_stmt|;
 name|sizenumadjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -498,7 +498,7 @@ argument_list|)
 expr_stmt|;
 name|sizefirstadjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -566,7 +566,7 @@ argument_list|)
 expr_stmt|;
 name|sizelastadjust
 operator|=
-name|gimp_scale_entry_new_grid
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
 argument_list|(
