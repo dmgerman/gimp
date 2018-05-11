@@ -726,6 +726,13 @@ operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
 block|}
 name|g_object_unref
 argument_list|(
