@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpasync.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7762260103
+DECL|enum|__anon2ace63ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2043,6 +2049,36 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_histogram_editor_calculate_async_callback (GimpAsync * async,GimpHistogramEditor * editor)
+name|gimp_histogram_editor_calculate_async_callback
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|,
+name|GimpHistogramEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
+if|if
+condition|(
+name|gimp_async_is_finished
+argument_list|(
+name|async
+argument_list|)
+condition|)
+name|gimp_histogram_editor_info_update
+argument_list|(
+name|editor
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_histogram_editor_validate (GimpHistogramEditor * editor)
 name|gimp_histogram_editor_validate
@@ -2071,6 +2107,10 @@ operator|->
 name|drawable
 condition|)
 block|{
+name|GimpAsync
+modifier|*
+name|async
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2113,7 +2153,9 @@ name|histogram
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_drawable_calculate_histogram
+name|async
+operator|=
+name|gimp_drawable_calculate_histogram_async
 argument_list|(
 name|editor
 operator|->
@@ -2124,6 +2166,23 @@ operator|->
 name|histogram
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_async_add_callback
+argument_list|(
+name|async
+argument_list|,
+operator|(
+name|GimpAsyncCallback
+operator|)
+name|gimp_histogram_editor_calculate_async_callback
+argument_list|,
+name|editor
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|async
 argument_list|)
 expr_stmt|;
 block|}
@@ -2142,12 +2201,12 @@ operator|->
 name|histogram
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_histogram_editor_info_update
 argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 name|editor
 operator|->
 name|recompute
