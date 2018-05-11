@@ -287,6 +287,9 @@ parameter_list|,
 name|GimpZoomType
 name|direction
 parameter_list|,
+name|gdouble
+name|delta
+parameter_list|,
 name|GimpNavigationEditor
 modifier|*
 name|editor
@@ -2304,7 +2307,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_zoom (GimpNavigationView * view,GimpZoomType direction,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_zoom (GimpNavigationView * view,GimpZoomType direction,gdouble delta,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_zoom
 parameter_list|(
 name|GimpNavigationView
@@ -2313,6 +2316,9 @@ name|view
 parameter_list|,
 name|GimpZoomType
 name|direction
+parameter_list|,
+name|gdouble
+name|delta
 parameter_list|,
 name|GimpNavigationEditor
 modifier|*
@@ -2352,7 +2358,7 @@ name|shell
 argument_list|,
 name|direction
 argument_list|,
-literal|0.0
+name|delta
 argument_list|,
 name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)

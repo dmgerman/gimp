@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e694e10103
+DECL|enum|__anon2afb70d30103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e694e10203
+DECL|enum|__anon2afb70d30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1347,6 +1347,8 @@ operator||
 name|GDK_BUTTON_PRESS_MASK
 operator||
 name|GDK_SCROLL_MASK
+operator||
+name|GDK_SMOOTH_SCROLL_MASK
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

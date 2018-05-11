@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2881c19a0103
+DECL|enum|__anon2ac6f2e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -737,6 +737,8 @@ operator||
 name|GDK_KEY_RELEASE_MASK
 operator||
 name|GDK_SCROLL_MASK
+operator||
+name|GDK_SMOOTH_SCROLL_MASK
 argument_list|)
 expr_stmt|;
 name|gtk_style_context_add_class

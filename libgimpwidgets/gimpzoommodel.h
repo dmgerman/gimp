@@ -369,6 +369,9 @@ name|zoom_type
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|delta
 parameter_list|)
 function_decl|;
 end_function_decl

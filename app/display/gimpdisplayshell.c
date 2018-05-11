@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27b8750103
+DECL|enum|__anon29d9f11d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27b8750203
+DECL|enum|__anon29d9f11d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1414,6 +1414,8 @@ operator||
 name|GDK_VISIBILITY_NOTIFY_MASK
 operator||
 name|GDK_SCROLL_MASK
+operator||
+name|GDK_SMOOTH_SCROLL_MASK
 operator|)
 argument_list|)
 expr_stmt|;

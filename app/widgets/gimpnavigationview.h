@@ -140,6 +140,9 @@ name|view
 parameter_list|,
 name|GimpZoomType
 name|direction
+parameter_list|,
+name|gdouble
+name|delta
 parameter_list|)
 function_decl|;
 DECL|member|scroll

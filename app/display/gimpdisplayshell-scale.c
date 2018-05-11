@@ -1113,6 +1113,9 @@ decl_stmt|;
 name|gdouble
 name|current_scale
 decl_stmt|;
+name|gdouble
+name|delta
+decl_stmt|;
 name|gboolean
 name|resize_window
 decl_stmt|;
@@ -1145,6 +1148,16 @@ expr_stmt|;
 if|if
 condition|(
 name|zoom_type
+operator|==
+name|GIMP_ZOOM_SMOOTH
+condition|)
+name|delta
+operator|=
+name|new_scale
+expr_stmt|;
+if|if
+condition|(
+name|zoom_type
 operator|!=
 name|GIMP_ZOOM_TO
 condition|)
@@ -1155,6 +1168,8 @@ argument_list|(
 name|zoom_type
 argument_list|,
 name|current_scale
+argument_list|,
+name|delta
 argument_list|)
 expr_stmt|;
 if|if
@@ -2338,6 +2353,8 @@ argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
 name|new_scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*  Since zooming out might skip a zoom step we zoom in            *  again and test if we are small enough.            */
@@ -2354,6 +2371,8 @@ argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
 name|new_scale
+argument_list|,
+literal|0.0
 argument_list|)
 argument_list|)
 expr_stmt|;

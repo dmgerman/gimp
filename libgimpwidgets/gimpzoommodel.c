@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b92a20103
+DECL|enum|__anon2bebfc550103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b92a20203
+DECL|enum|__anon2bebfc550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1087,6 +1087,11 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
+name|gdouble
+name|delta
+init|=
+literal|0.0
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ZOOM_MODEL
@@ -1094,6 +1099,16 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|zoom_type
+operator|==
+name|GIMP_ZOOM_SMOOTH
+condition|)
+name|delta
+operator|=
+name|scale
 expr_stmt|;
 if|if
 condition|(
@@ -1119,6 +1134,8 @@ argument_list|(
 name|zoom_type
 argument_list|,
 name|scale
+argument_list|,
+name|delta
 argument_list|)
 argument_list|,
 name|NULL
@@ -1842,12 +1859,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  * @delta:     the delta from a smooth zoom event  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_zoom_model_zoom_step (GimpZoomType zoom_type,gdouble scale)
+DECL|function|gimp_zoom_model_zoom_step (GimpZoomType zoom_type,gdouble scale,gdouble delta)
 name|gimp_zoom_model_zoom_step
 parameter_list|(
 name|GimpZoomType
@@ -1855,6 +1872,9 @@ name|zoom_type
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|delta
 parameter_list|)
 block|{
 name|gint
@@ -2092,6 +2112,8 @@ argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2101,6 +2123,8 @@ argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2110,6 +2134,8 @@ argument_list|(
 name|GIMP_ZOOM_IN
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|new_scale
@@ -2127,6 +2153,8 @@ argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2136,6 +2164,8 @@ argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2145,6 +2175,8 @@ argument_list|(
 name|GIMP_ZOOM_OUT
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|new_scale
@@ -2171,6 +2203,53 @@ break|break;
 case|case
 name|GIMP_ZOOM_TO
 case|:
+name|new_scale
+operator|=
+name|scale
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ZOOM_SMOOTH
+case|:
+if|if
+condition|(
+name|delta
+operator|>
+literal|0.0
+condition|)
+name|new_scale
+operator|=
+name|scale
+operator|*
+operator|(
+literal|1.0
+operator|+
+literal|0.1
+operator|*
+name|delta
+operator|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|delta
+operator|<
+literal|0.0
+condition|)
+name|new_scale
+operator|=
+name|scale
+operator|/
+operator|(
+literal|1.0
+operator|+
+literal|0.1
+operator|*
+operator|-
+name|delta
+operator|)
+expr_stmt|;
+else|else
 name|new_scale
 operator|=
 name|scale
