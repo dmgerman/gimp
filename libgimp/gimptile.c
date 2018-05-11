@@ -367,28 +367,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_cache_size:  * @kilobytes: new cache size in kilobytes  *  * Sets the size of the tile cache on the plug-in side. The tile cache  * is used to reduce the number of tiles exchanged between the GIMP core  * and the plug-in. See also gimp_tile_cache_ntiles().  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_tile_cache_size (gulong kilobytes)
-name|gimp_tile_cache_size
-parameter_list|(
-name|gulong
-name|kilobytes
-parameter_list|)
-block|{
-name|max_cache_size
-operator|=
-name|kilobytes
-operator|*
-literal|1024
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_tile_cache_ntiles:  * @ntiles: number of tiles that should fit into the cache  *  * Sets the size of the tile cache on the plug-in side. This function  * is similar to gimp_tile_cache_size() but supports specifying the  * number of tiles directly.  *  * If your plug-in access pixels tile-by-tile, it doesn't need a tile  * cache at all. If however the plug-in accesses drawable pixel data  * row-by-row, it should set the tile cache large enough to hold the  * number of tiles per row. Double this size if your plug-in uses  * shadow tiles.  **/
 end_comment
 
@@ -401,8 +379,8 @@ name|gulong
 name|ntiles
 parameter_list|)
 block|{
-name|gimp_tile_cache_size
-argument_list|(
+name|max_cache_size
+operator|=
 operator|(
 name|ntiles
 operator|*
@@ -413,12 +391,7 @@ name|gimp_tile_height
 argument_list|()
 operator|*
 literal|4
-operator|+
-literal|1023
 operator|)
-operator|/
-literal|1024
-argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -153,17 +153,6 @@ end_function_decl
 begin_function_decl
 name|GIMP_DEPRECATED
 name|void
-name|gimp_tile_cache_size
-parameter_list|(
-name|gulong
-name|kilobytes
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GIMP_DEPRECATED
-name|void
 name|gimp_tile_cache_ntiles
 parameter_list|(
 name|gulong
