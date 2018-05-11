@@ -900,13 +900,16 @@ operator|->
 name|linear
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_calculate_histogram
+name|g_object_unref
+argument_list|(
+name|gimp_drawable_calculate_histogram_async
 argument_list|(
 name|drawable
 argument_list|,
 name|histogram
 argument_list|,
 name|FALSE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_view_set_background
@@ -3115,7 +3118,9 @@ operator|->
 name|linear
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_calculate_histogram
+name|g_object_unref
+argument_list|(
+name|gimp_drawable_calculate_histogram_async
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
@@ -3127,6 +3132,7 @@ argument_list|,
 name|histogram
 argument_list|,
 name|FALSE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_histogram_view_set_background
