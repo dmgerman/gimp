@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace63ba0103
+DECL|enum|__anon29b60d750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -367,7 +367,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_histogram_view_expose
+name|gimp_histogram_editor_view_expose
 parameter_list|(
 name|GimpHistogramEditor
 modifier|*
@@ -857,7 +857,7 @@ literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_histogram_view_expose
+name|gimp_histogram_editor_view_expose
 argument_list|)
 argument_list|,
 name|editor
@@ -2105,6 +2105,17 @@ condition|(
 name|editor
 operator|->
 name|drawable
+operator|&&
+comment|/* avoid calculating the histogram of a detached layer.  this can            * happen during gimp_image_remove_layer(), as a result of a pending            * "expose-event" signal (handled in            * gimp_histogram_editor_view_expose()) executed through            * gtk_tree_view_clamp_node_visible(), as a result of the            * GimpLayerTreeView in the Layers dialog receiving the image's            * "active-layer-changed" signal before us.  See bug #795716,            * comment 6.            */
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|editor
+operator|->
+name|drawable
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|GimpAsync
@@ -3060,8 +3071,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_histogram_view_expose (GimpHistogramEditor * editor)
-name|gimp_histogram_view_expose
+DECL|function|gimp_histogram_editor_view_expose (GimpHistogramEditor * editor)
+name|gimp_histogram_editor_view_expose
 parameter_list|(
 name|GimpHistogramEditor
 modifier|*
