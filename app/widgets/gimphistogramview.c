@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f016720103
+DECL|enum|__anon2901411c0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f016720203
+DECL|enum|__anon2901411c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2767,17 +2767,6 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|view
-operator|->
-name|n_bins
-operator|!=
-name|gimp_histogram_n_bins
-argument_list|(
-name|histogram
-argument_list|)
-condition|)
 name|gimp_histogram_view_update_bins
 argument_list|(
 name|view
@@ -2886,6 +2875,18 @@ name|view
 operator|->
 name|bg_histogram
 condition|)
+block|{
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|view
+operator|->
+name|bg_histogram
+argument_list|,
+name|gimp_histogram_view_notify
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|view
@@ -2893,6 +2894,7 @@ operator|->
 name|bg_histogram
 argument_list|)
 expr_stmt|;
+block|}
 name|view
 operator|->
 name|bg_histogram
@@ -2909,17 +2911,20 @@ argument_list|(
 name|histogram
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|view
-operator|->
-name|n_bins
-operator|!=
-name|gimp_histogram_n_bins
+name|g_signal_connect
 argument_list|(
 name|histogram
+argument_list|,
+literal|"notify"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_histogram_view_notify
 argument_list|)
-condition|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 name|gimp_histogram_view_update_bins
 argument_list|(
 name|view
@@ -3385,6 +3390,15 @@ operator|->
 name|bg_histogram
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|new_bins
+operator|!=
+name|view
+operator|->
+name|n_bins
+condition|)
+block|{
 name|view
 operator|->
 name|start
@@ -3471,6 +3485,7 @@ operator|->
 name|end
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
