@@ -1125,7 +1125,7 @@ name|container
 parameter_list|,
 name|GimpPalette
 modifier|*
-name|palatte
+name|palette
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -1161,7 +1161,7 @@ name|context
 parameter_list|,
 name|GimpPalette
 modifier|*
-name|palatte
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9d37c0103
+DECL|enum|__anon2a05458c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9d37c0203
+DECL|enum|__anon2a05458c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

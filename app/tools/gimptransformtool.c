@@ -1273,7 +1273,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-comment|/*  Inizialize the tool-specific trans_info, and adjust the tool dialog  */
+comment|/*  Initialize the tool-specific trans_info, and adjust the tool dialog  */
 name|gimp_transform_tool_prepare
 argument_list|(
 name|tr_tool

@@ -15673,7 +15673,7 @@ literal|"gimp-image-freeze-layers"
 argument_list|,
 literal|"Freeze the image's layer list."
 argument_list|,
-literal|"This procedure freezes the layer list of the image, supressing any updates to the Layers dialog in response to changes to the image's layers. This can significantly improve performance while applying changes affecting the layer list.\n"
+literal|"This procedure freezes the layer list of the image, suppressing any updates to the Layers dialog in response to changes to the image's layers. This can significantly improve performance while applying changes affecting the layer list.\n"
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-layers' should be matched by a corresponding call to 'gimp-image-thaw-layers', undoing its effects."
 argument_list|,
@@ -16164,7 +16164,7 @@ literal|"gimp-image-freeze-channels"
 argument_list|,
 literal|"Freeze the image's channel list."
 argument_list|,
-literal|"This procedure freezes the channel list of the image, supressing any updates to the Channels dialog in response to changes to the image's channels. This can significantly improve performance while applying changes affecting the channel list.\n"
+literal|"This procedure freezes the channel list of the image, suppressing any updates to the Channels dialog in response to changes to the image's channels. This can significantly improve performance while applying changes affecting the channel list.\n"
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-channels' should be matched by a corresponding call to 'gimp-image-thaw-channels', undoing its effects."
 argument_list|,
@@ -16239,7 +16239,7 @@ literal|"Thaw the image's channel list."
 argument_list|,
 literal|"This procedure thaws the channel list of the image, re-enabling updates to the Channels dialog.\n"
 literal|"\n"
-literal|"This procedure should match a corresponing call to 'gimp-image-freeze-channels'."
+literal|"This procedure should match a corresponding call to 'gimp-image-freeze-channels'."
 argument_list|,
 literal|"Ell"
 argument_list|,
@@ -16655,7 +16655,7 @@ literal|"gimp-image-freeze-vectors"
 argument_list|,
 literal|"Freeze the image's vectors list."
 argument_list|,
-literal|"This procedure freezes the vectors list of the image, supressing any updates to the Paths dialog in response to changes to the image's vectors. This can significantly improve performance while applying changes affecting the vectors list.\n"
+literal|"This procedure freezes the vectors list of the image, suppressing any updates to the Paths dialog in response to changes to the image's vectors. This can significantly improve performance while applying changes affecting the vectors list.\n"
 literal|"\n"
 literal|"Each call to 'gimp-image-freeze-vectors' should be matched by a corresponding call to 'gimp-image-thaw-vectors', undoing its effects."
 argument_list|,

@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289da1b80103
+DECL|enum|__anon2b7b3db00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289da1b80203
+DECL|enum|__anon2b7b3db00203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289da1b80303
+DECL|enum|__anon2b7b3db00303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289da1b80403
+DECL|enum|__anon2b7b3db00403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13290,7 +13290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_rectangle_constraint_size_set:  * @width_property:  Option property to set to current constraint width.  * @height_property: Option property to set to current constraint height.  *  * Sets specified rectangle tool options properties to the width and  * height of the current contraint size.  */
+comment|/**  * gimp_tool_rectangle_constraint_size_set:  * @width_property:  Option property to set to current constraint width.  * @height_property: Option property to set to current constraint height.  *  * Sets specified rectangle tool options properties to the width and  * height of the current constraint size.  */
 end_comment
 
 begin_function

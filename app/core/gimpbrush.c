@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275cc9750103
+DECL|enum|__anon2c05541b0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275cc9750203
+DECL|enum|__anon2c05541b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -831,7 +831,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -843,7 +843,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -1797,7 +1797,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -1809,7 +1809,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -1962,7 +1962,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -1974,7 +1974,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 argument_list|,
 name|gimp_temp_buf_unref
 argument_list|)
@@ -2845,9 +2845,9 @@ if|#
 directive|if
 literal|0
 comment|/* This code makes sure that brushes using blur for hardness        * (all of them but generated) are blurred once and no more.        * It also makes hardnes dynamics not work for these brushes.        * This is intentional. Confoliving for each stamp is too expensive.*/
-block|if (! brush->priv->blured_mask&&           ! GIMP_IS_BRUSH_GENERATED(brush)&&           ! GIMP_IS_BRUSH_PIPE(brush)&&
+block|if (! brush->priv->blurred_mask&&           ! GIMP_IS_BRUSH_GENERATED(brush)&&           ! GIMP_IS_BRUSH_PIPE(brush)&&
 comment|/*Can't cache pipes. Sanely anyway*/
-block|hardness< 1.0)         {            brush->priv->blured_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              FALSE,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blured_mask)         {           effective_hardness = 1.0;
+block|hardness< 1.0)         {            brush->priv->blurred_mask = GIMP_BRUSH_GET_CLASS (brush)->transform_mask (brush,                                                              1.0,                                                              0.0,                                                              0.0,                                                              FALSE,                                                              hardness);            brush->priv->blur_hardness = hardness;         }        if (brush->priv->blurred_mask)         {           effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -3173,9 +3173,9 @@ block|{
 if|#
 directive|if
 literal|0
-block|if (! brush->priv->blured_pixmap&&          ! GIMP_IS_BRUSH_GENERATED(brush)&&          ! GIMP_IS_BRUSH_PIPE(brush)
+block|if (! brush->priv->blurred_pixmap&&          ! GIMP_IS_BRUSH_GENERATED(brush)&&          ! GIMP_IS_BRUSH_PIPE(brush)
 comment|/*Can't cache pipes. Sanely anyway*/
-block|&& hardness< 1.0)       {          brush->priv->blured_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   FALSE,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blured_pixmap) {         effective_hardness = 1.0;
+block|&& hardness< 1.0)       {          brush->priv->blurred_pixmap = GIMP_BRUSH_GET_CLASS (brush)->transform_pixmap (brush,                                                                   1.0,                                                                   0.0,                                                                   0.0,                                                                   FALSE,                                                                   hardness);          brush->priv->blur_hardness = hardness;        }        if (brush->priv->blurred_pixmap) {         effective_hardness = 1.0;
 comment|/*Hardness has already been applied*/
 block|}
 endif|#
@@ -3602,7 +3602,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 condition|)
 block|{
 return|return
@@ -3610,7 +3610,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 return|;
 block|}
 return|return
@@ -3659,7 +3659,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 condition|)
 block|{
 return|return
@@ -3667,7 +3667,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 return|;
 block|}
 return|return
@@ -3693,7 +3693,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_clear_pointer (&brush->priv->blured_mask,   gimp_temp_buf_unref);   g_clear_pointer (&brush->priv->blured_pixmap, gimp_temp_buf_unref);    if (brush->priv->mask_cache)     gimp_brush_cache_clear (brush->priv->mask_cache);    if (brush->priv->pixmap_cache)     gimp_brush_cache_clear (brush->priv->pixmap_cache);    if (brush->priv->boundary_cache)     gimp_brush_cache_clear (brush->priv->boundary_cache);
+block|g_clear_pointer (&brush->priv->blurred_mask,   gimp_temp_buf_unref);   g_clear_pointer (&brush->priv->blurred_pixmap, gimp_temp_buf_unref);    if (brush->priv->mask_cache)     gimp_brush_cache_clear (brush->priv->mask_cache);    if (brush->priv->pixmap_cache)     gimp_brush_cache_clear (brush->priv->pixmap_cache);    if (brush->priv->boundary_cache)     gimp_brush_cache_clear (brush->priv->boundary_cache);
 endif|#
 directive|endif
 block|}
@@ -3755,7 +3755,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 condition|)
 return|return
 name|gimp_temp_buf_get_width
@@ -3764,7 +3764,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 argument_list|)
 return|;
 if|if
@@ -3773,7 +3773,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 condition|)
 return|return
 name|gimp_temp_buf_get_width
@@ -3782,7 +3782,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 argument_list|)
 return|;
 return|return
@@ -3824,7 +3824,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 condition|)
 return|return
 name|gimp_temp_buf_get_height
@@ -3833,7 +3833,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_mask
+name|blurred_mask
 argument_list|)
 return|;
 if|if
@@ -3842,7 +3842,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 condition|)
 return|return
 name|gimp_temp_buf_get_height
@@ -3851,7 +3851,7 @@ name|brush
 operator|->
 name|priv
 operator|->
-name|blured_pixmap
+name|blurred_pixmap
 argument_list|)
 return|;
 return|return

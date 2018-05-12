@@ -971,7 +971,7 @@ name|gboolean
 name|shift_down
 parameter_list|)
 block|{
-comment|/* Under contrl point */
+comment|/* Under control point */
 if|if
 condition|(
 operator|!

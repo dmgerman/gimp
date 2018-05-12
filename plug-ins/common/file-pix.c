@@ -687,7 +687,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* The image load falied */
+comment|/* The image load failed */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR

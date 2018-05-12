@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2212110108
+DECL|struct|__anon28c72f0a0108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2212110208
+DECL|struct|__anon28c72f0a0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2212110308
+DECL|struct|__anon28c72f0a0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2212110408
+DECL|struct|__anon28c72f0a0408
 block|{
 DECL|member|eol
 name|goffset
@@ -6118,7 +6118,7 @@ name|c
 operator|==
 literal|'\r'
 condition|)
-comment|/* Got a carriage return. Check next charcater */
+comment|/* Got a carriage return. Check next character */
 block|{
 name|c
 operator|=

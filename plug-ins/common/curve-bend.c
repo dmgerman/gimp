@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdd2d00108
+DECL|struct|__anon2c6229420108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdd2d00208
+DECL|struct|__anon2c6229420208
 block|{
 DECL|member|y
 name|gint32
@@ -14297,7 +14297,7 @@ argument_list|,
 name|stack_position
 argument_list|)
 expr_stmt|;
-comment|/* copy visiblity state */
+comment|/* copy visibility state */
 name|gimp_item_set_visible
 argument_list|(
 name|l_new_layer_id

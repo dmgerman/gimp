@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b47b700103
+DECL|enum|__anon29e363d30103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1773,7 +1773,7 @@ return|return
 name|NULL
 return|;
 block|}
-comment|/*  a singleton dialog is always returned if it already exisits  */
+comment|/*  a singleton dialog is always returned if it already exists  */
 if|if
 condition|(
 name|return_existing

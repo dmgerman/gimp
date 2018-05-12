@@ -1214,7 +1214,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cage_config_add_displacement:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: x displacement value  * @y: y displacement value  *  * Add a displacement for all slected point of the cage.  * This displacement need to be committed to become effective.  */
+comment|/**  * gimp_cage_config_add_displacement:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: x displacement value  * @y: y displacement value  *  * Add a displacement for all selected points of the cage.  * This displacement need to be committed to become effective.  */
 end_comment
 
 begin_function

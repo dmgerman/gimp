@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4b08db0108
+DECL|struct|__anon2978d9db0108
 block|{
 DECL|member|name
 name|gchar
@@ -1350,7 +1350,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of tha data to parse  * @dest: Return location for the parsed data  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of the data to parse  * @dest: Return location for the parsed data  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1825,7 +1825,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b08db0203
+DECL|enum|__anon2978d9db0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d36a540108
+DECL|struct|__anon2b6070660108
 block|{
 DECL|member|paint_tool
 name|GimpPaintTool
@@ -123,7 +123,7 @@ name|GimpPaintToolPaintFunc
 name|func
 decl_stmt|;
 union|union
-DECL|union|__anon28d36a54020a
+DECL|union|__anon2b607066020a
 block|{
 DECL|member|data
 name|gpointer
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d36a540308
+DECL|struct|__anon2b6070660308
 block|{
 DECL|member|coords
 name|GimpCoords
@@ -985,7 +985,7 @@ operator|->
 name|draw_line
 condition|)
 block|{
-comment|/*  If this is a new display, resest the "last stroke's endpoint"        *  because there is none        */
+comment|/*  If this is a new display, reset the "last stroke's endpoint"        *  because there is none        */
 if|if
 condition|(
 name|display

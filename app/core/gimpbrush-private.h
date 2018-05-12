@@ -27,24 +27,24 @@ modifier|*
 name|mask
 decl_stmt|;
 comment|/*  the actual mask                    */
-DECL|member|blured_mask
+DECL|member|blurred_mask
 name|GimpTempBuf
 modifier|*
-name|blured_mask
+name|blurred_mask
 decl_stmt|;
-comment|/*  blured actual mask cached          */
+comment|/*  blurred actual mask cached          */
 DECL|member|pixmap
 name|GimpTempBuf
 modifier|*
 name|pixmap
 decl_stmt|;
 comment|/*  optional pixmap data               */
-DECL|member|blured_pixmap
+DECL|member|blurred_pixmap
 name|GimpTempBuf
 modifier|*
-name|blured_pixmap
+name|blurred_pixmap
 decl_stmt|;
-comment|/*  optional pixmap data blured cache  */
+comment|/*  optional pixmap data blurred cache  */
 DECL|member|blur_hardness
 name|gdouble
 name|blur_hardness

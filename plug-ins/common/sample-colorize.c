@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a222d840108
+DECL|struct|__anon29383d120108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a222d840208
+DECL|struct|__anon29383d120208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a222d840308
+DECL|struct|__anon29383d120308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a222d840408
+DECL|struct|__anon29383d120408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a222d840508
+DECL|struct|__anon29383d120508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -11902,7 +11902,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* get 256 samples of active gradient (optional in invers order) */
+comment|/* get 256 samples of active gradient (optional in inverse order) */
 end_comment
 
 begin_function

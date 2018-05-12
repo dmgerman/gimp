@@ -492,7 +492,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_boundary_find:  * @buffer:    a #GeglBuffer  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        botton side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR parameter can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
+comment|/**  * gimp_boundary_find:  * @buffer:    a #GeglBuffer  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        bottom side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR parameter can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
 end_comment
 
 begin_function

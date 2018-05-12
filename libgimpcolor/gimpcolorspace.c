@@ -2887,7 +2887,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_l_int:  * @red: Red channel  * @green: Green channel  * @blue: Blue channel  *  * Calculates the lightness value of an RGB triplet with the formula  * L = (max(R, G, B) + min (R, G, B)) / 2  *  * Return value: Luminance vaue corresponding to the input RGB value  **/
+comment|/**  * gimp_rgb_to_l_int:  * @red: Red channel  * @green: Green channel  * @blue: Blue channel  *  * Calculates the lightness value of an RGB triplet with the formula  * L = (max(R, G, B) + min (R, G, B)) / 2  *  * Return value: Luminance value corresponding to the input RGB value  **/
 end_comment
 
 begin_function
