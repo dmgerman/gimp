@@ -2539,7 +2539,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_freeze_channels:  * @image_ID: The image.  *  * Freeze the image's channel list.  *  * This procedure freezes the channel list of the image, suppressing any  * updates to the Channels dialog in response to changes to the image's  * channels. This can significantly improve performance while applying  * changes affecting the channel list.  *  * Each call to gimp_image_freeze_channels() should be matched by a  * corresponding call to gimp_image_thaw_channels(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_freeze_channels:  * @image_ID: The image.  *  * Freeze the image's channel list.  *  * This procedure freezes the channel list of the image, suppressing  * any updates to the Channels dialog in response to changes to the  * image's channels. This can significantly improve performance while  * applying changes affecting the channel list.  *  * Each call to gimp_image_freeze_channels() should be matched by a  * corresponding call to gimp_image_thaw_channels(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2916,7 +2916,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_freeze_vectors:  * @image_ID: The image.  *  * Freeze the image's vectors list.  *  * This procedure freezes the vectors list of the image, suppressing any  * updates to the Paths dialog in response to changes to the image's  * vectors. This can significantly improve performance while applying  * changes affecting the vectors list.  *  * Each call to gimp_image_freeze_vectors() should be matched by a  * corresponding call to gimp_image_thaw_vectors(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_freeze_vectors:  * @image_ID: The image.  *  * Freeze the image's vectors list.  *  * This procedure freezes the vectors list of the image, suppressing  * any updates to the Paths dialog in response to changes to the  * image's vectors. This can significantly improve performance while  * applying changes affecting the vectors list.  *  * Each call to gimp_image_freeze_vectors() should be matched by a  * corresponding call to gimp_image_thaw_vectors(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
