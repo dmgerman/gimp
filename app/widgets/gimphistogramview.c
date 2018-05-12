@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901411c0103
+DECL|enum|__anon2c52168b0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901411c0203
+DECL|enum|__anon2c52168b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2767,11 +2767,6 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_view_update_bins
-argument_list|(
-name|view
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|view
@@ -2791,6 +2786,11 @@ name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_histogram_view_update_bins
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_queue_draw
 argument_list|(
@@ -2925,11 +2925,6 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_view_update_bins
-argument_list|(
-name|view
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|view
@@ -2949,6 +2944,11 @@ name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_histogram_view_update_bins
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_queue_draw
 argument_list|(
