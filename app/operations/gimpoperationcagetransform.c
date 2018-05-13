@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc8c3e0103
+DECL|enum|__anon28cc37820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,14 +241,9 @@ name|gfloat
 modifier|*
 name|coef
 parameter_list|,
-specifier|const
-name|Babl
+name|GeglSampler
 modifier|*
-name|format_coef
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|coef_buf
+name|coef_sampler
 parameter_list|,
 name|GimpVector2
 name|coords
@@ -872,6 +867,10 @@ name|Babl
 modifier|*
 name|format_coef
 decl_stmt|;
+name|GeglSampler
+modifier|*
+name|coef_sampler
+decl_stmt|;
 name|GimpVector2
 name|plain_color
 decl_stmt|;
@@ -1214,6 +1213,17 @@ operator|*
 name|n_cage_vertices
 argument_list|)
 expr_stmt|;
+name|coef_sampler
+operator|=
+name|gegl_buffer_sampler_new
+argument_list|(
+name|aux_buf
+argument_list|,
+name|format_coef
+argument_list|,
+name|GEGL_SAMPLER_NEAREST
+argument_list|)
+expr_stmt|;
 comment|/* compute, reverse and interpolate the transformation */
 for|for
 control|(
@@ -1309,9 +1319,7 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
-name|format_coef
-argument_list|,
-name|aux_buf
+name|coef_sampler
 argument_list|,
 name|p3_s
 argument_list|)
@@ -1324,9 +1332,7 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
-name|format_coef
-argument_list|,
-name|aux_buf
+name|coef_sampler
 argument_list|,
 name|p4_s
 argument_list|)
@@ -1395,9 +1401,7 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
-name|format_coef
-argument_list|,
-name|aux_buf
+name|coef_sampler
 argument_list|,
 name|p3_s
 argument_list|)
@@ -1410,9 +1414,7 @@ name|config
 argument_list|,
 name|coef
 argument_list|,
-name|format_coef
-argument_list|,
-name|aux_buf
+name|coef_sampler
 argument_list|,
 name|p4_s
 argument_list|)
@@ -1545,6 +1547,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|g_object_unref
+argument_list|(
+name|coef_sampler
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|coef
@@ -2544,7 +2551,7 @@ end_function
 begin_function
 specifier|static
 name|GimpVector2
-DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,const Babl * format_coef,GeglBuffer * coef_buf,GimpVector2 coords)
+DECL|function|gimp_cage_transform_compute_destination (GimpCageConfig * config,gfloat * coef,GeglSampler * coef_sampler,GimpVector2 coords)
 name|gimp_cage_transform_compute_destination
 parameter_list|(
 name|GimpCageConfig
@@ -2555,14 +2562,9 @@ name|gfloat
 modifier|*
 name|coef
 parameter_list|,
-specifier|const
-name|Babl
+name|GeglSampler
 modifier|*
-name|format_coef
-parameter_list|,
-name|GeglBuffer
-modifier|*
-name|coef_buf
+name|coef_sampler
 parameter_list|,
 name|GimpVector2
 name|coords
@@ -2592,18 +2594,9 @@ name|GimpCagePoint
 modifier|*
 name|point
 decl_stmt|;
-name|g_return_val_if_fail
+name|gegl_sampler_get
 argument_list|(
-name|coef_buf
-operator|!=
-name|NULL
-argument_list|,
-name|result
-argument_list|)
-expr_stmt|;
-name|gegl_buffer_sample
-argument_list|(
-name|coef_buf
+name|coef_sampler
 argument_list|,
 name|coords
 operator|.
@@ -2616,10 +2609,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|coef
-argument_list|,
-name|format_coef
-argument_list|,
-name|GEGL_SAMPLER_NEAREST
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
