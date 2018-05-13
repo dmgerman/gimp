@@ -1495,6 +1495,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|the_errors_gimp
+condition|)
+name|gimp_gui_ungrab
+argument_list|(
+name|the_errors_gimp
+argument_list|)
+expr_stmt|;
 name|gimp_stack_trace_query
 argument_list|(
 operator|(
