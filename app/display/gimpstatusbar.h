@@ -110,7 +110,7 @@ struct|struct
 name|_GimpStatusbar
 block|{
 DECL|member|parent_instance
-name|GtkStatusbar
+name|GtkFrame
 name|parent_instance
 decl_stmt|;
 DECL|member|shell
@@ -247,7 +247,7 @@ struct|struct
 name|_GimpStatusbarClass
 block|{
 DECL|member|parent_class
-name|GtkStatusbarClass
+name|GtkFrameClass
 name|parent_class
 decl_stmt|;
 block|}
