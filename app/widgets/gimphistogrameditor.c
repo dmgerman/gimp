@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b60d750103
+DECL|enum|__anon28ad545e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2224,6 +2224,27 @@ name|recompute
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|editor
+operator|->
+name|idle_id
+condition|)
+block|{
+name|g_source_remove
+argument_list|(
+name|editor
+operator|->
+name|idle_id
+argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|idle_id
+operator|=
+literal|0
+expr_stmt|;
+block|}
 block|}
 return|return
 operator|(
