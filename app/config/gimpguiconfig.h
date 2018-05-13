@@ -156,10 +156,6 @@ DECL|member|show_tooltips
 name|gboolean
 name|show_tooltips
 decl_stmt|;
-DECL|member|tearoff_menus
-name|gboolean
-name|tearoff_menus
-decl_stmt|;
 DECL|member|can_change_accels
 name|gboolean
 name|can_change_accels

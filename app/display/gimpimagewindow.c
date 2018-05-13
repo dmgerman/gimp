@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7474070103
+DECL|enum|__anon2c5219480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7474070208
+DECL|struct|__anon2c5219480208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1686,8 +1686,6 @@ argument_list|,
 literal|"<Image>"
 argument_list|,
 name|window
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object

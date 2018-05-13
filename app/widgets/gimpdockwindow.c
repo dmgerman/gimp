@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9bc2980103
+DECL|enum|__anon2bd312400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1403,10 +1403,6 @@ operator|->
 name|ui_manager_name
 argument_list|,
 name|dock_window
-argument_list|,
-name|config
-operator|->
-name|tearoff_menus
 argument_list|)
 expr_stmt|;
 name|accel_group

@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8aa6810103
+DECL|enum|__anon2bdf5b090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -968,8 +968,6 @@ operator|->
 name|priv
 operator|->
 name|popup_data
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1794,8 +1792,6 @@ argument_list|,
 name|menu_identifier
 argument_list|,
 name|popup_data
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2361,7 +2357,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8aa6810208
+DECL|struct|__anon2bdf5b090208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

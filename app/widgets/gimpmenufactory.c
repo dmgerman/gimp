@@ -762,7 +762,7 @@ end_function
 begin_function
 name|GimpUIManager
 modifier|*
-DECL|function|gimp_menu_factory_manager_new (GimpMenuFactory * factory,const gchar * identifier,gpointer callback_data,gboolean create_tearoff)
+DECL|function|gimp_menu_factory_manager_new (GimpMenuFactory * factory,const gchar * identifier,gpointer callback_data)
 name|gimp_menu_factory_manager_new
 parameter_list|(
 name|GimpMenuFactory
@@ -776,9 +776,6 @@ name|identifier
 parameter_list|,
 name|gpointer
 name|callback_data
-parameter_list|,
-name|gboolean
-name|create_tearoff
 parameter_list|)
 block|{
 name|GList
@@ -870,16 +867,6 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
-argument_list|)
-expr_stmt|;
-name|gtk_ui_manager_set_add_tearoffs
-argument_list|(
-name|GTK_UI_MANAGER
-argument_list|(
-name|manager
-argument_list|)
-argument_list|,
-name|create_tearoff
 argument_list|)
 expr_stmt|;
 name|accel_group

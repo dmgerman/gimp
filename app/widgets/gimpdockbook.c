@@ -221,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fd5ba0103
+DECL|enum|__anon2a313f310103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -3305,8 +3305,6 @@ argument_list|,
 literal|"<Dockable>"
 argument_list|,
 name|dockbook
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect

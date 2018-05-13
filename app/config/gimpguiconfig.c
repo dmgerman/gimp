@@ -94,7 +94,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c091b20103
+DECL|enum|__anon2b6f27620103
 block|{
 DECL|enumerator|SIZE_CHANGED
 name|SIZE_CHANGED
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c091b20203
+DECL|enum|__anon2b6f27620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -147,9 +147,6 @@ name|PROP_SAVE_TOOL_OPTIONS
 block|,
 DECL|enumerator|PROP_SHOW_TOOLTIPS
 name|PROP_SHOW_TOOLTIPS
-block|,
-DECL|enumerator|PROP_TEAROFF_MENUS
-name|PROP_TEAROFF_MENUS
 block|,
 DECL|enumerator|PROP_CAN_CHANGE_ACCELS
 name|PROP_CAN_CHANGE_ACCELS
@@ -671,23 +668,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_RESTART
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_TEAROFF_MENUS
-argument_list|,
-literal|"tearoff-menus"
-argument_list|,
-literal|"Tearoff menus"
-argument_list|,
-name|TEAROFF_MENUS_BLURB
-argument_list|,
-name|TRUE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_PROP_BOOLEAN
@@ -1784,19 +1764,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_TEAROFF_MENUS
-case|:
-name|gui_config
-operator|->
-name|tearoff_menus
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_CAN_CHANGE_ACCELS
 case|:
 name|gui_config
@@ -2550,19 +2517,6 @@ argument_list|,
 name|gui_config
 operator|->
 name|show_tooltips
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_TEAROFF_MENUS
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|gui_config
-operator|->
-name|tearoff_menus
 argument_list|)
 expr_stmt|;
 break|break;

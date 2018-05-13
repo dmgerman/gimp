@@ -1112,15 +1112,6 @@ value|_("Sets the swap file location. GIMP uses a tile based memory allocation "
 end_define
 
 begin_define
-DECL|macro|TEAROFF_MENUS_BLURB
-define|#
-directive|define
-name|TEAROFF_MENUS_BLURB
-define|\
-value|_("When enabled, menus can be torn off.")
-end_define
-
-begin_define
 DECL|macro|CAN_CHANGE_ACCELS_BLURB
 define|#
 directive|define

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287fb5d50103
+DECL|enum|__anon2c94b5310103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -638,8 +638,6 @@ argument_list|,
 literal|"<TextEditor>"
 argument_list|,
 name|editor
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|content_area

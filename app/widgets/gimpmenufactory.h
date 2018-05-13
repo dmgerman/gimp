@@ -245,9 +245,6 @@ name|identifier
 parameter_list|,
 name|gpointer
 name|callback_data
-parameter_list|,
-name|gboolean
-name|create_tearoff
 parameter_list|)
 function_decl|;
 end_function_decl

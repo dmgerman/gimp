@@ -3122,8 +3122,6 @@ argument_list|,
 literal|"<TextTool>"
 argument_list|,
 name|text_tool
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|im_menu
