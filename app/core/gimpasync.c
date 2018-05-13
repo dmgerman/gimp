@@ -37,6 +37,10 @@ begin_comment
 comment|/* GimpAsync represents an asynchronous task.  Both the public and the  * protected interfaces are intentionally minimal at this point, to keep things  * simple.  They may be extended in the future as needed.  *  * Upon creation, a GimpAsync object is in the "running" state.  Once the task  * is complete (and before the object's destruction), it should be transitioned  * to the "stopped" state, using either 'gimp_async_finish()' or  * 'gimp_async_abort()'.  *  * Note that certain GimpAsync functions may be only be called during a certain  * state, or on a certain thread, as detailed for each function.  When  * referring to threads, the "main thread" is the thread running the main loop,  * and the "async thread" is the thread calling 'gimp_async_finish()' or  * 'gimp_async_abort()' (which may be the main thread).  The main thread is  * said to be "synced" with the async thread if both are the same thread, or  * after the execution of any of the callbacks added through  * 'gimp_async_add_callback()' had started, or after calling  * 'gimp_async_wait()' on the main thread.  */
 end_comment
 
+begin_comment
+comment|/* #define TIME_ASYNC_OPS */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpAsyncCallbackInfo
 typedef|typedef
@@ -104,6 +108,15 @@ DECL|member|canceled
 name|gboolean
 name|canceled
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|TIME_ASYNC_OPS
+DECL|member|start_time
+name|guint64
+name|start_time
+decl_stmt|;
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct
@@ -264,6 +277,20 @@ operator|->
 name|callbacks
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|TIME_ASYNC_OPS
+name|async
+operator|->
+name|priv
+operator|->
+name|start_time
+operator|=
+name|g_get_monotonic_time
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -429,6 +456,46 @@ modifier|*
 name|async
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|TIME_ASYNC_OPS
+block|{
+name|guint64
+name|time
+init|=
+name|g_get_monotonic_time
+argument_list|()
+decl_stmt|;
+name|g_printerr
+argument_list|(
+literal|"Asynchronous operation took %g seconds%s\n"
+argument_list|,
+operator|(
+name|time
+operator|-
+name|async
+operator|->
+name|priv
+operator|->
+name|start_time
+operator|)
+operator|/
+literal|1000000.0
+argument_list|,
+name|async
+operator|->
+name|priv
+operator|->
+name|finished
+condition|?
+literal|""
+else|:
+literal|" (aborted)"
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!

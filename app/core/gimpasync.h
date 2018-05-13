@@ -261,6 +261,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_async_abort
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_async_cancel
 parameter_list|(
 name|GimpAsync
@@ -273,17 +284,6 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_async_is_canceled
-parameter_list|(
-name|GimpAsync
-modifier|*
-name|async
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_async_abort
 parameter_list|(
 name|GimpAsync
 modifier|*
