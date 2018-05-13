@@ -2532,6 +2532,37 @@ name|function
 operator|==
 name|SELECTION_SELECT
 condition|)
+block|{
+if|if
+condition|(
+name|gimp_free_select_tool_get_n_points
+argument_list|(
+name|GIMP_FREE_SELECT_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+operator|>
+literal|2
+condition|)
+block|{
+name|status_mode
+operator|=
+name|_
+argument_list|(
+literal|"Roughly outline the object to extract"
+argument_list|)
+expr_stmt|;
+name|status_stage
+operator|=
+name|_
+argument_list|(
+literal|"press Enter to validate."
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|status_stage
 operator|=
 name|_
@@ -2539,6 +2570,8 @@ argument_list|(
 literal|"Roughly outline the object to extract"
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 else|else
 block|{
@@ -2605,7 +2638,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting foreground,"
+literal|"Selecting foreground"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2621,7 +2654,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting background,"
+literal|"Selecting background"
 argument_list|)
 expr_stmt|;
 else|else
@@ -2629,7 +2662,7 @@ name|status_mode
 operator|=
 name|_
 argument_list|(
-literal|"Selecting unknown,"
+literal|"Selecting unknown"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2673,7 +2706,7 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-literal|"%s %s"
+literal|"%s, %s"
 argument_list|,
 name|status_mode
 argument_list|,
