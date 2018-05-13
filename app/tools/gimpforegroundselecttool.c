@@ -2557,7 +2557,7 @@ name|status_stage
 operator|=
 name|_
 argument_list|(
-literal|"press Enter to validate."
+literal|"press Enter to refine."
 argument_list|)
 expr_stmt|;
 block|}
