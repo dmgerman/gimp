@@ -275,11 +275,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|sel_buffer
+DECL|variable|sel_sampler
 specifier|static
-name|GeglBuffer
+name|GeglSampler
 modifier|*
-name|sel_buffer
+name|sel_sampler
 decl_stmt|;
 end_decl_stmt
 
@@ -1495,9 +1495,9 @@ return|return
 literal|0
 return|;
 block|}
-name|gegl_buffer_sample
+name|gegl_sampler_get
 argument_list|(
-name|sel_buffer
+name|sel_sampler
 argument_list|,
 name|col
 operator|+
@@ -1511,13 +1511,6 @@ name|NULL
 argument_list|,
 operator|&
 name|ret
-argument_list|,
-name|babl_format
-argument_list|(
-literal|"Y u8"
-argument_list|)
-argument_list|,
-name|GEGL_SAMPLER_NEAREST
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|)
@@ -1989,6 +1982,10 @@ block|{
 name|gint32
 name|selection_ID
 decl_stmt|;
+name|GeglBuffer
+modifier|*
+name|sel_buffer
+decl_stmt|;
 name|pixel_outline_list_type
 name|olt
 decl_stmt|;
@@ -2051,6 +2048,20 @@ argument_list|(
 name|selection_ID
 argument_list|)
 expr_stmt|;
+name|sel_sampler
+operator|=
+name|gegl_buffer_sampler_new
+argument_list|(
+name|sel_buffer
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+argument_list|,
+name|GEGL_SAMPLER_NEAREST
+argument_list|)
+expr_stmt|;
 name|olt
 operator|=
 name|find_outline_pixels
@@ -2068,6 +2079,11 @@ argument_list|(
 name|splines
 argument_list|,
 name|image_ID
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|sel_sampler
 argument_list|)
 expr_stmt|;
 name|g_object_unref
