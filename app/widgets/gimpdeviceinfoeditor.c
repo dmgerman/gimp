@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293699800103
+DECL|enum|__anon28ef08a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293699800203
+DECL|enum|__anon28ef08a00203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293699800303
+DECL|enum|__anon28ef08a00303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293699800403
+DECL|enum|__anon28ef08a00403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -463,10 +463,25 @@ argument_list|(
 literal|"Y tilt"
 argument_list|)
 block|,
-comment|/* Wheel as in mouse or input device wheel.    * Some pens use the same axis for their rotation feature.    * See bug 791455.    */
+comment|/* Wheel as in mouse or input device wheel.    * Some pens would use the same axis for their rotation feature.    * See bug 791455.    * Yet GTK+ has a different axis since v. 3.22.    * TODO: this should be actually tested with a device having such    * feature.    */
 name|N_
 argument_list|(
-literal|"Wheel/Rotation"
+literal|"Wheel"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Distance"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Rotation"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Slider"
 argument_list|)
 block|}
 decl_stmt|;
