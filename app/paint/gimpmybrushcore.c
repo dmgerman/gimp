@@ -1269,18 +1269,6 @@ name|coords
 operator|->
 name|pressure
 decl_stmt|;
-comment|/* libmypaint expects non-extended devices to default to 0.5 pressure */
-if|if
-condition|(
-operator|!
-name|coords
-operator|->
-name|extended
-condition|)
-name|pressure
-operator|=
-literal|0.5f
-expr_stmt|;
 name|mypaint_brush_stroke_to
 argument_list|(
 name|brush

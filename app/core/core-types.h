@@ -1219,10 +1219,6 @@ name|gboolean
 name|reflect
 decl_stmt|;
 comment|/* whether the view is reflected */
-DECL|member|extended
-name|gboolean
-name|extended
-decl_stmt|;
 block|}
 struct|;
 end_struct
