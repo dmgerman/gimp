@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c30030103
+DECL|enum|__anon293699800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c30030203
+DECL|enum|__anon293699800203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c30030303
+DECL|enum|__anon293699800303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c30030403
+DECL|enum|__anon293699800403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1889,7 +1889,7 @@ name|view
 argument_list|,
 literal|"gimp"
 argument_list|,
-name|GIMP_CONTEXT
+name|GIMP_TOOL_PRESET
 argument_list|(
 name|private
 operator|->

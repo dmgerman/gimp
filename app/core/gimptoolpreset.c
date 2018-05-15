@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9728a10103
+DECL|enum|__anon2a34bcdf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1784,6 +1784,13 @@ operator|(
 name|serialize_props
 operator|&
 name|GIMP_CONTEXT_PROP_MASK_FOREGROUND
+operator|)
+operator|&&
+operator|!
+operator|(
+name|serialize_props
+operator|&
+name|GIMP_CONTEXT_PROP_MASK_BACKGROUND
 operator|)
 condition|)
 name|g_object_set
