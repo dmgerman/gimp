@@ -353,7 +353,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|doCapture
 parameter_list|(
 name|HWND
@@ -378,7 +378,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|doCaptureMagnificationAPI
 parameter_list|(
 name|HWND
@@ -426,7 +426,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|doCaptureBitBlt
 parameter_list|(
 name|HWND
@@ -492,7 +492,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c2e843e0108
+DECL|struct|__anon27a1550d0108
 typedef|typedef
 struct|struct
 block|{
@@ -539,7 +539,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c2e843e0208
+DECL|struct|__anon27a1550d0208
 typedef|typedef
 struct|struct
 block|{
@@ -1629,7 +1629,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|doCapture (HWND selectedHwnd)
 name|doCapture
 parameter_list|(
@@ -1686,7 +1686,15 @@ argument_list|)
 condition|)
 block|{
 comment|/* If for some reason this capture method failed then           *  capture the window with the normal method:           */
-comment|/* Get the device context for the whole screen           * even if we just want to capture a window.           * this will allow to capture applications that           * don't render to their main window's device           * context (e.g. browsers).           */
+name|HWND
+name|previousHwnd
+init|=
+name|GetForegroundWindow
+argument_list|()
+decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
 name|SetForegroundWindow
 argument_list|(
 name|selectedHwnd
@@ -1697,13 +1705,26 @@ argument_list|(
 name|selectedHwnd
 argument_list|)
 expr_stmt|;
-return|return
+name|success
+operator|=
 name|doCaptureBitBlt
 argument_list|(
 name|selectedHwnd
 argument_list|,
 name|rect
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|previousHwnd
+condition|)
+name|SetForegroundWindow
+argument_list|(
+name|previousHwnd
+argument_list|)
+expr_stmt|;
+return|return
+name|success
 return|;
 block|}
 return|return
@@ -1777,7 +1798,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|doCaptureBitBlt (HWND selectedHwnd,RECT rect)
 name|doCaptureBitBlt
 parameter_list|(
@@ -1793,9 +1814,6 @@ name|hdcSrc
 decl_stmt|;
 name|HDC
 name|hdcCompat
-decl_stmt|;
-name|HWND
-name|oldForeground
 decl_stmt|;
 name|HBITMAP
 name|hbm
@@ -2270,7 +2288,7 @@ end_function
 
 begin_function
 specifier|static
-name|BOOL
+name|gboolean
 DECL|function|doCaptureMagnificationAPI (HWND selectedHwnd,RECT rect)
 name|doCaptureMagnificationAPI
 parameter_list|(
