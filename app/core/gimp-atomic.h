@@ -26,6 +26,7 @@ name|gimp_atomic_slist_push_head
 parameter_list|(
 name|GSList
 modifier|*
+specifier|volatile
 modifier|*
 name|list
 parameter_list|,
@@ -41,6 +42,7 @@ name|gimp_atomic_slist_pop_head
 parameter_list|(
 name|GSList
 modifier|*
+specifier|volatile
 modifier|*
 name|list
 parameter_list|)

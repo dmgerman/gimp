@@ -47,11 +47,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_atomic_slist_push_head (GSList ** list,gpointer data)
+DECL|function|gimp_atomic_slist_push_head (GSList * volatile * list,gpointer data)
 name|gimp_atomic_slist_push_head
 parameter_list|(
 name|GSList
 modifier|*
+specifier|volatile
 modifier|*
 name|list
 parameter_list|,
@@ -130,11 +131,12 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|gimp_atomic_slist_pop_head (GSList ** list)
+DECL|function|gimp_atomic_slist_pop_head (GSList * volatile * list)
 name|gimp_atomic_slist_pop_head
 parameter_list|(
 name|GSList
 modifier|*
+specifier|volatile
 modifier|*
 name|list
 parameter_list|)
