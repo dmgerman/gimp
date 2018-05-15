@@ -492,7 +492,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a1550d0108
+DECL|struct|__anon298c7d3b0108
 typedef|typedef
 struct|struct
 block|{
@@ -539,7 +539,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a1550d0208
+DECL|struct|__anon298c7d3b0208
 typedef|typedef
 struct|struct
 block|{
@@ -2407,7 +2407,7 @@ name|NULL
 argument_list|,
 name|doCaptureMagnificationAPI_MonitorEnumProc
 argument_list|,
-name|NULL
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/* If for some reason the array size is 0 then we fill it with the desktop rect */
@@ -2685,13 +2685,13 @@ name|NULL
 argument_list|,
 literal|0x80000000
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -2754,9 +2754,9 @@ name|WS_CHILD
 comment|/*| MS_SHOWMAGNIFIEDCURSOR*/
 comment|/*| WS_VISIBLE*/
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
 name|rect
 operator|.
