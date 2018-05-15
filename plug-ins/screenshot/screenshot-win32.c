@@ -295,17 +295,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rectScreens
-specifier|static
-name|RECT
-modifier|*
-name|rectScreens
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|rectScreensCount
 specifier|static
 name|int
@@ -492,7 +481,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon298c7d3b0108
+DECL|struct|__anon2bf4d0000108
 typedef|typedef
 struct|struct
 block|{
@@ -539,7 +528,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon298c7d3b0208
+DECL|struct|__anon2bf4d0000208
 typedef|typedef
 struct|struct
 block|{
@@ -2204,6 +2193,18 @@ name|LPARAM
 name|dwData
 parameter_list|)
 block|{
+name|RECT
+modifier|*
+modifier|*
+name|rectScreens
+init|=
+operator|(
+name|RECT
+operator|*
+operator|*
+operator|)
+name|dwData
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2215,15 +2216,19 @@ return|;
 if|if
 condition|(
 operator|!
+operator|(
+operator|*
 name|rectScreens
+operator|)
 condition|)
+operator|*
 name|rectScreens
 operator|=
 operator|(
 name|RECT
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -2238,13 +2243,14 @@ operator|)
 argument_list|)
 expr_stmt|;
 else|else
+operator|*
 name|rectScreens
 operator|=
 operator|(
 name|RECT
 operator|*
 operator|)
-name|realloc
+name|g_realloc
 argument_list|(
 name|rectScreens
 argument_list|,
@@ -2262,6 +2268,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|*
 name|rectScreens
 operator|==
 name|NULL
@@ -2269,7 +2276,10 @@ condition|)
 return|return
 name|FALSE
 return|;
+operator|(
+operator|*
 name|rectScreens
+operator|)
 index|[
 name|rectScreensCount
 index|]
@@ -2378,26 +2388,21 @@ operator|==
 name|SW_SHOWMAXIMIZED
 condition|)
 block|{
-comment|/* if this is not the first time we call this function for some reason then we reset the rectScreens array */
+name|RECT
+modifier|*
+name|rectScreens
+init|=
+name|NULL
+decl_stmt|;
+comment|/* if this is not the first time we call this function for some        * reason then we reset the rectScreens count        */
 if|if
 condition|(
 name|rectScreensCount
 condition|)
-block|{
-name|free
-argument_list|(
-name|rectScreens
-argument_list|)
-expr_stmt|;
-name|rectScreens
-operator|=
-name|NULL
-expr_stmt|;
 name|rectScreensCount
 operator|=
 literal|0
 expr_stmt|;
-block|}
 comment|/* Get the screens rects */
 name|EnumDisplayMonitors
 argument_list|(
@@ -2407,7 +2412,11 @@ name|NULL
 argument_list|,
 name|doCaptureMagnificationAPI_MonitorEnumProc
 argument_list|,
-literal|0
+operator|(
+name|LPARAM
+operator|)
+operator|&
+name|rectScreens
 argument_list|)
 expr_stmt|;
 comment|/* If for some reason the array size is 0 then we fill it with the desktop rect */
@@ -2423,7 +2432,7 @@ operator|(
 name|RECT
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -2442,10 +2451,17 @@ argument_list|,
 name|rectScreens
 argument_list|)
 condition|)
+block|{
 comment|/* error: could not get rect screens */
+name|g_free
+argument_list|(
+name|rectScreens
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 name|rectScreensCount
 operator|=
 literal|1
@@ -2645,6 +2661,11 @@ name|i
 index|]
 operator|.
 name|bottom
+expr_stmt|;
+name|g_free
+argument_list|(
+name|rectScreens
+argument_list|)
 expr_stmt|;
 block|}
 name|rect
