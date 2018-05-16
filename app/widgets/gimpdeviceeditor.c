@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275eec130103
+DECL|enum|__anon2bb881420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -899,6 +899,18 @@ name|stack
 operator|=
 name|gtk_stack_new
 argument_list|()
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|private
+operator|->
+name|stack
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
 expr_stmt|;
 name|gtk_stack_set_transition_type
 argument_list|(
