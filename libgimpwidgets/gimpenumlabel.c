@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf59ad80103
+DECL|enum|__anon2c35c3f10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum.  * @value:  *  * Return value: a new #GimpEnumLabel.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum  * @value:     an enum value  *  * Return value: a new #GimpEnumLabel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_label_set_value  * @label: a #GimpEnumLabel  * @value:  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_label_set_value  * @label: a #GimpEnumLabel  * @value: an enum value  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -507,6 +507,11 @@ name|gint
 name|value
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|nick
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -536,7 +541,8 @@ name|value
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+operator|&
+name|nick
 argument_list|,
 operator|&
 name|desc
@@ -566,6 +572,15 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+operator|!
+name|desc
+condition|)
+name|desc
+operator|=
+name|nick
+expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
