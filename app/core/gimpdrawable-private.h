@@ -48,6 +48,11 @@ name|GimpContainer
 modifier|*
 name|filter_stack
 decl_stmt|;
+DECL|member|convert_format
+name|GeglNode
+modifier|*
+name|convert_format
+decl_stmt|;
 DECL|member|floating_selection
 name|GimpLayer
 modifier|*
