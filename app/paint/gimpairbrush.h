@@ -122,6 +122,10 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 decl_stmt|;
+DECL|member|coords
+name|GimpCoords
+name|coords
+decl_stmt|;
 block|}
 struct|;
 end_struct
