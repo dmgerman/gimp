@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ac3140103
+DECL|enum|__anon27b34aa70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -981,6 +987,10 @@ name|GimpContainer
 modifier|*
 name|devices
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1044,6 +1054,19 @@ argument_list|,
 name|devices
 argument_list|)
 expr_stmt|;
+name|context
+operator|=
+name|gimp_context_new
+argument_list|(
+name|private
+operator|->
+name|gimp
+argument_list|,
+literal|"device-editor-list"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_container_view_set_context
 argument_list|(
 name|GIMP_CONTAINER_VIEW
@@ -1053,12 +1076,12 @@ operator|->
 name|treeview
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|private
-operator|->
-name|gimp
+name|context
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
