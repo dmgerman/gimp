@@ -211,6 +211,30 @@ value|0.5
 end_define
 
 begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_DISTANCE
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_DISTANCE
+value|0.0
+end_define
+
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_ROTATION
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_ROTATION
+value|0.0
+end_define
+
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_SLIDER
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_SLIDER
+value|0.0
+end_define
+
+begin_define
 DECL|macro|GIMP_COORDS_DEFAULT_VELOCITY
 define|#
 directive|define
@@ -247,7 +271,7 @@ DECL|macro|GIMP_COORDS_DEFAULT_VALUES
 define|#
 directive|define
 name|GIMP_COORDS_DEFAULT_VALUES
-value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         GIMP_COORDS_DEFAULT_DIRECTION,\                                         GIMP_COORDS_DEFAULT_XSCALE,   \                                         GIMP_COORDS_DEFAULT_YSCALE }
+value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         GIMP_COORDS_DEFAULT_DISTANCE, \                                         GIMP_COORDS_DEFAULT_ROTATION, \                                         GIMP_COORDS_DEFAULT_SLIDER,   \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         GIMP_COORDS_DEFAULT_DIRECTION,\                                         GIMP_COORDS_DEFAULT_XSCALE,   \                                         GIMP_COORDS_DEFAULT_YSCALE }
 end_define
 
 begin_comment
@@ -1168,6 +1192,7 @@ DECL|struct|_GimpCoords
 struct|struct
 name|_GimpCoords
 block|{
+comment|/* axes as reported by the device */
 DECL|member|x
 name|gdouble
 name|x
@@ -1192,6 +1217,19 @@ DECL|member|wheel
 name|gdouble
 name|wheel
 decl_stmt|;
+DECL|member|distance
+name|gdouble
+name|distance
+decl_stmt|;
+DECL|member|rotation
+name|gdouble
+name|rotation
+decl_stmt|;
+DECL|member|slider
+name|gdouble
+name|slider
+decl_stmt|;
+comment|/* synthetic axes */
 DECL|member|velocity
 name|gdouble
 name|velocity
@@ -1200,6 +1238,7 @@ DECL|member|direction
 name|gdouble
 name|direction
 decl_stmt|;
+comment|/* view transform */
 DECL|member|xscale
 name|gdouble
 name|xscale

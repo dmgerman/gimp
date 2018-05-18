@@ -9972,7 +9972,7 @@ decl_stmt|;
 name|gfloat
 name|coords
 index|[
-literal|10
+literal|13
 index|]
 init|=
 name|GIMP_COORDS_DEFAULT_VALUES
