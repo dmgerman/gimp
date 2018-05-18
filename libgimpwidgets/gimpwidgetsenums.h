@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0103
+DECL|enum|__anon29b65ca30103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0203
+DECL|enum|__anon29b65ca30203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0303
+DECL|enum|__anon29b65ca30303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0403
+DECL|enum|__anon29b65ca30403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpColorSelectorModel:  * @GIMP_COLOR_SELECTOR_RGB:            RGB color model  * @GIMP_COLOR_SELECTOR_LCH:            CIELCh color model  * @GIMP_COLOR_SELECTOR_HSV:            HSV color model  *  * An enum to specify the types of color spaces edited in  * #GimpColorSelector widgets.  **/
+comment|/**  * GimpColorSelectorModel:  * @GIMP_COLOR_SELECTOR_MODEL_RGB: RGB color model  * @GIMP_COLOR_SELECTOR_MODEL_LCH: CIELCh color model  * @GIMP_COLOR_SELECTOR_MODEL_HSV: HSV color model  *  * An enum to specify the types of color spaces edited in  * #GimpColorSelector widgets.  *  * Since: 2.10  **/
 end_comment
 
 begin_define
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0503
+DECL|enum|__anon29b65ca30503
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_RGB
 name|GIMP_COLOR_SELECTOR_MODEL_RGB
@@ -284,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0603
+DECL|enum|__anon29b65ca30603
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -324,7 +324,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0703
+DECL|enum|__anon29b65ca30703
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0803
+DECL|enum|__anon29b65ca30803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -431,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2771be2d0903
+DECL|enum|__anon29b65ca30903
 block|{
 DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
 name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
