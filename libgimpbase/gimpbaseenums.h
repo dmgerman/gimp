@@ -23,6 +23,7 @@ end_comment
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/**  * GimpAddMaskType:  * @GIMP_ADD_MASK_WHITE:           White (full opacity)  * @GIMP_ADD_MASK_BLACK:           Black (full transparency)  * @GIMP_ADD_MASK_ALPHA:           Layer's alpha channel  * @GIMP_ADD_MASK_ALPHA_TRANSFER:  Transfer layer's alpha channel  * @GIMP_ADD_MASK_SELECTION:       Selection  * @GIMP_ADD_MASK_COPY:            Grayscale copy of layer  * @GIMP_ADD_MASK_CHANNEL:         Channel  * @GIMP_ADD_WHITE_MASK:           Deprecated alias  * @GIMP_ADD_BLACK_MASK:           Deprecated alias  * @GIMP_ADD_ALPHA_MASK:           Deprecated alias  * @GIMP_ADD_ALPHA_TRANSFER_MASK:  Deprecated alias  * @GIMP_ADD_SELECTION_MASK:       Deprecated alias  * @GIMP_ADD_COPY_MASK:            Deprecated alias  * @GIMP_ADD_CHANNEL_MASK:         Deprecated aliaa  *  * Modes of initialising a layer mask.  **/
 DECL|macro|GIMP_TYPE_ADD_MASK_TYPE
 define|#
 directive|define
@@ -40,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10103
+DECL|enum|__anon2a1f36850103
 block|{
 DECL|enumerator|GIMP_ADD_MASK_WHITE
 name|GIMP_ADD_MASK_WHITE
@@ -123,6 +124,10 @@ name|GimpAddMaskType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpBlendMode:  * @GIMP_BLEND_FG_BG_RGB:      FG to BG (RGB)  * @GIMP_BLEND_FG_BG_HSV:      FG to BG (HSV)  * @GIMP_BLEND_FG_TRANSPARENT: FG to transparent  * @GIMP_BLEND_CUSTOM:         Custom gradient  *  * Types of gradients.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_BLEND_MODE
 define|#
@@ -144,7 +149,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10203
+DECL|enum|__anon2a1f36850203
 block|{
 DECL|enumerator|GIMP_BLEND_FG_BG_RGB
 name|GIMP_BLEND_FG_BG_RGB
@@ -197,6 +202,10 @@ name|GimpBlendMode
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpBrushGeneratedShape:  * @GIMP_BRUSH_GENERATED_CIRCLE:  Circle  * @GIMP_BRUSH_GENERATED_SQUARE:  Square  * @GIMP_BRUSH_GENERATED_DIAMOND: Diamond  *  * Shapes of generated brushes.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 define|#
@@ -218,7 +227,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10303
+DECL|enum|__anon2a1f36850303
 block|{
 DECL|enumerator|GIMP_BRUSH_GENERATED_CIRCLE
 name|GIMP_BRUSH_GENERATED_CIRCLE
@@ -236,6 +245,10 @@ block|}
 name|GimpBrushGeneratedShape
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpBucketFillMode:  * @GIMP_BUCKET_FILL_FG:      FG color fill  * @GIMP_BUCKET_FILL_BG:      BG color fill  * @GIMP_BUCKET_FILL_PATTERN: Pattern fill  *  * Bucket fill modes.  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_BUCKET_FILL_MODE
@@ -258,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10403
+DECL|enum|__anon2a1f36850403
 block|{
 DECL|enumerator|GIMP_BUCKET_FILL_FG
 name|GIMP_BUCKET_FILL_FG
@@ -301,6 +314,10 @@ name|GimpBucketFillMode
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpCapStyle:  * @GIMP_CAP_BUTT:   Butt  * @GIMP_CAP_ROUND:  Round  * @GIMP_CAP_SQUARE: Square  *  * Style of line endings.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CAP_STYLE
 define|#
@@ -322,7 +339,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10503
+DECL|enum|__anon2a1f36850503
 block|{
 DECL|enumerator|GIMP_CAP_BUTT
 name|GIMP_CAP_BUTT
@@ -340,6 +357,10 @@ block|}
 name|GimpCapStyle
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpChannelOps:  * @GIMP_CHANNEL_OP_ADD:       Add to the current selection  * @GIMP_CHANNEL_OP_SUBTRACT:  Subtract from the current selection  * @GIMP_CHANNEL_OP_REPLACE:   Replace the current selection  * @GIMP_CHANNEL_OP_INTERSECT: Intersect with the current selection  *  * Operations to combine channels and selections.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_CHANNEL_OPS
@@ -362,7 +383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10603
+DECL|enum|__anon2a1f36850603
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -385,6 +406,10 @@ name|GimpChannelOps
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpChannelType:  * @GIMP_CHANNEL_RED:     Red  * @GIMP_CHANNEL_GREEN:   Green  * @GIMP_CHANNEL_BLUE:    Blue  * @GIMP_CHANNEL_GRAY:    Gray  * @GIMP_CHANNEL_INDEXED: Indexed  * @GIMP_CHANNEL_ALPHA:   Alpha  *  * Channels (as in color components).  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CHANNEL_TYPE
 define|#
@@ -406,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10703
+DECL|enum|__anon2a1f36850703
 block|{
 DECL|enumerator|GIMP_CHANNEL_RED
 name|GIMP_CHANNEL_RED
@@ -479,6 +504,10 @@ name|GimpChannelType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpCheckSize:  * @GIMP_CHECK_SIZE_SMALL_CHECKS:  Small  * @GIMP_CHECK_SIZE_MEDIUM_CHECKS: Medium  * @GIMP_CHECK_SIZE_LARGE_CHECKS:  Large  *  * Size of the checkerboard indicating transparency.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CHECK_SIZE
 define|#
@@ -501,7 +530,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon295973e10803
+DECL|enum|__anon2a1f36850803
 block|{
 DECL|enumerator|GIMP_CHECK_SIZE_SMALL_CHECKS
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
@@ -526,6 +555,10 @@ name|GimpCheckSize
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpCheckType:  * @GIMP_CHECK_TYPE_LIGHT_CHECKS: Light checks  * @GIMP_CHECK_TYPE_GRAY_CHECKS:  Mid-tone checks  * @GIMP_CHECK_TYPE_DARK_CHECKS:  Dark checks  * @GIMP_CHECK_TYPE_WHITE_ONLY:   White only  * @GIMP_CHECK_TYPE_GRAY_ONLY:    Gray only  * @GIMP_CHECK_TYPE_BLACK_ONLY:   Black only  *  * Color/Brightness of the checkerboard indicating transparency.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CHECK_TYPE
 define|#
@@ -548,7 +581,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon295973e10903
+DECL|enum|__anon2a1f36850903
 block|{
 DECL|enumerator|GIMP_CHECK_TYPE_LIGHT_CHECKS
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
@@ -591,6 +624,10 @@ name|GimpCheckType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpCloneType:  * @GIMP_CLONE_IMAGE:   Image  * @GIMP_CLONE_PATTERN: Pattern  *  * Clone sources.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CLONE_TYPE
 define|#
@@ -612,7 +649,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10a03
+DECL|enum|__anon2a1f36850a03
 block|{
 DECL|enumerator|GIMP_CLONE_IMAGE
 name|GIMP_CLONE_IMAGE
@@ -645,6 +682,10 @@ name|GimpCloneType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpColorTag:  * @GIMP_COLOR_TAG_NONE:   None  * @GIMP_COLOR_TAG_BLUE:   Blue  * @GIMP_COLOR_TAG_GREEN:  Green  * @GIMP_COLOR_TAG_YELLOW: Yellow  * @GIMP_COLOR_TAG_ORANGE: Orange  * @GIMP_COLOR_TAG_BROWN:  Brown  * @GIMP_COLOR_TAG_RED:    Red  * @GIMP_COLOR_TAG_VIOLET: Violet  * @GIMP_COLOR_TAG_GRAY:   Gray  *  * Possible tag colors.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_TAG
 define|#
@@ -666,7 +707,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10b03
+DECL|enum|__anon2a1f36850b03
 block|{
 DECL|enumerator|GIMP_COLOR_TAG_NONE
 name|GIMP_COLOR_TAG_NONE
@@ -709,6 +750,10 @@ name|GimpColorTag
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpComponentType:  * @GIMP_COMPONENT_TYPE_U8:     8-bit integer  * @GIMP_COMPONENT_TYPE_U16:    16-bit integer  * @GIMP_COMPONENT_TYPE_U32:    32-bit integer  * @GIMP_COMPONENT_TYPE_HALF:   16-bit floating point  * @GIMP_COMPONENT_TYPE_FLOAT:  32-bit floating point  * @GIMP_COMPONENT_TYPE_DOUBLE: 64-bit floating point  *  * Encoding types of image components.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_COMPONENT_TYPE
 define|#
@@ -730,7 +775,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10c03
+DECL|enum|__anon2a1f36850c03
 block|{
 DECL|enumerator|GIMP_COMPONENT_TYPE_U8
 name|GIMP_COMPONENT_TYPE_U8
@@ -773,6 +818,10 @@ name|GimpComponentType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpConvertPaletteType:  * @GIMP_CONVERT_PALETTE_GENERATE: Generate optimum palette  * @GIMP_CONVERT_PALETTE_REUSE:    Don't use this one  * @GIMP_CONVERT_PALETTE_WEB:      Use web-optimized palette  * @GIMP_CONVERT_PALETTE_MONO:     Use black and white (1-bit) palette  * @GIMP_CONVERT_PALETTE_CUSTOM:   Use custom palette  *  * Types of palettes for indexed conversion.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CONVERT_PALETTE_TYPE
 define|#
@@ -794,7 +843,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10d03
+DECL|enum|__anon2a1f36850d03
 block|{
 DECL|enumerator|GIMP_CONVERT_PALETTE_GENERATE
 name|GIMP_CONVERT_PALETTE_GENERATE
@@ -857,6 +906,10 @@ name|GimpConvertPaletteType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpConvolveType:  * @GIMP_CONVOLVE_BLUR:    Blur  * @GIMP_CONVOLVE_SHARPEN: Sharpen  *  * Types of convolutions.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_CONVOLVE_TYPE
 define|#
@@ -878,7 +931,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10e03
+DECL|enum|__anon2a1f36850e03
 block|{
 DECL|enumerator|GIMP_CONVOLVE_BLUR
 name|GIMP_CONVOLVE_BLUR
@@ -911,6 +964,10 @@ name|GimpConvolveType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpDesaturateMode:  * @GIMP_DESATURATE_LIGHTNESS: Lightness (HSL)  * @GIMP_DESATURATE_LUMA:      Luma  * @GIMP_DESATURATE_AVERAGE:   Average (HSI Intensity)  * @GIMP_DESATURATE_LUMINANCE: Luminance  * @GIMP_DESATURATE_VALUE:     Value (HSV)  *  * Grayscale conversion methods.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_DESATURATE_MODE
 define|#
@@ -932,7 +989,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e10f03
+DECL|enum|__anon2a1f36850f03
 block|{
 DECL|enumerator|GIMP_DESATURATE_LIGHTNESS
 name|GIMP_DESATURATE_LIGHTNESS
@@ -971,6 +1028,10 @@ name|GimpDesaturateMode
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpDodgeBurnType:  * @GIMP_DODGE_BURN_TYPE_DODGE: Dodge  * @GIMP_DODGE_BURN_TYPE_BURN:  Burn  *  * Methods for the dodge/burn operation.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_DODGE_BURN_TYPE
 define|#
@@ -992,7 +1053,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11003
+DECL|enum|__anon2a1f36851003
 block|{
 DECL|enumerator|GIMP_DODGE_BURN_TYPE_DODGE
 name|GIMP_DODGE_BURN_TYPE_DODGE
@@ -1025,6 +1086,10 @@ name|GimpDodgeBurnType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpFillType:  * @GIMP_FILL_FOREGROUND:  Foreground color  * @GIMP_FILL_BACKGROUND:  Background color  * @GIMP_FILL_WHITE:       White  * @GIMP_FILL_TRANSPARENT: Transparency  * @GIMP_FILL_PATTERN:     Pattern  *  * Types of filling.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_FILL_TYPE
 define|#
@@ -1046,7 +1111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11103
+DECL|enum|__anon2a1f36851103
 block|{
 DECL|enumerator|GIMP_FILL_FOREGROUND
 name|GIMP_FILL_FOREGROUND
@@ -1109,6 +1174,10 @@ name|GimpFillType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpForegroundExtractMode:  * @GIMP_FOREGROUND_EXTRACT_SIOX:    Siox  * @GIMP_FOREGROUND_EXTRACT_MATTING: Matting  *  * Foreground extraxt engines.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_FOREGROUND_EXTRACT_MODE
 define|#
@@ -1130,7 +1199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11203
+DECL|enum|__anon2a1f36851203
 block|{
 DECL|enumerator|GIMP_FOREGROUND_EXTRACT_SIOX
 name|GIMP_FOREGROUND_EXTRACT_SIOX
@@ -1142,6 +1211,10 @@ block|}
 name|GimpForegroundExtractMode
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpGradientBlendColorSpace:  * @GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL: Perceptual RGB  * @GIMP_GRADIENT_BLEND_RGB_LINEAR:     Linear RGB  * @GIMP_GRADIENT_BLEND_CIE_LAB:        CIE Lab  *  * Color space for blending gradients.  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_GRADIENT_BLEND_COLOR_SPACE
@@ -1164,7 +1237,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11303
+DECL|enum|__anon2a1f36851303
 block|{
 DECL|enumerator|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
@@ -1182,6 +1255,10 @@ block|}
 name|GimpGradientBlendColorSpace
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpGradientSegmentColor:  * @GIMP_GRADIENT_SEGMENT_RGB:     RGB  * @GIMP_GRADIENT_SEGMENT_HSV_CCW: HSV (counter-clockwise hue)  * @GIMP_GRADIENT_SEGMENT_HSV_CW:  HSV (clockwise hue)  *  * Coloring types for gradient segments.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_GRADIENT_SEGMENT_COLOR
@@ -1204,7 +1281,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11403
+DECL|enum|__anon2a1f36851403
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_RGB
 name|GIMP_GRADIENT_SEGMENT_RGB
@@ -1222,6 +1299,10 @@ block|}
 name|GimpGradientSegmentColor
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpGradientSegmentType:  * @GIMP_GRADIENT_SEGMENT_LINEAR:            Linear  * @GIMP_GRADIENT_SEGMENT_CURVED:            Curved  * @GIMP_GRADIENT_SEGMENT_SINE:              Sinusoidal  * @GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING: Spherical (increasing)  * @GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING: Spherical (decreasing)  *  * Transition functions for gradient segments.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_GRADIENT_SEGMENT_TYPE
@@ -1244,7 +1325,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11503
+DECL|enum|__anon2a1f36851503
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_LINEAR
 name|GIMP_GRADIENT_SEGMENT_LINEAR
@@ -1271,6 +1352,10 @@ name|GimpGradientSegmentType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpGradientType:  * @GIMP_GRADIENT_LINEAR:               Linear  * @GIMP_GRADIENT_BILINEAR:             Bi-linear  * @GIMP_GRADIENT_RADIAL:               Radial  * @GIMP_GRADIENT_SQUARE:               Square  * @GIMP_GRADIENT_CONICAL_SYMMETRIC:    Conical (symmetric)  * @GIMP_GRADIENT_CONICAL_ASYMMETRIC:   Conical (asymmetric)  * @GIMP_GRADIENT_SHAPEBURST_ANGULAR:   Shaped (angular)  * @GIMP_GRADIENT_SHAPEBURST_SPHERICAL: Shaped (spherical)  * @GIMP_GRADIENT_SHAPEBURST_DIMPLED:   Shaped (dimpled)  * @GIMP_GRADIENT_SPIRAL_CLOCKWISE:     Spiral (clockwise)  * @GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE: Spiral (counter-clockwise)  *  * Gradient shapes.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_GRADIENT_TYPE
 define|#
@@ -1292,7 +1377,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11603
+DECL|enum|__anon2a1f36851603
 block|{
 DECL|enumerator|GIMP_GRADIENT_LINEAR
 name|GIMP_GRADIENT_LINEAR
@@ -1343,6 +1428,10 @@ name|GimpGradientType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpGridStyle:  * @GIMP_GRID_DOTS:          Intersections (dots)  * @GIMP_GRID_INTERSECTIONS: Intersections (crosshairs)  * @GIMP_GRID_ON_OFF_DASH:   Dashed  * @GIMP_GRID_DOUBLE_DASH:   Double dashed  * @GIMP_GRID_SOLID:         Solid  *  * Rendering types for the display grid.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_GRID_STYLE
 define|#
@@ -1364,7 +1453,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11703
+DECL|enum|__anon2a1f36851703
 block|{
 DECL|enumerator|GIMP_GRID_DOTS
 name|GIMP_GRID_DOTS
@@ -1391,6 +1480,10 @@ name|GimpGridStyle
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpHueRange:  * @GIMP_HUE_RANGE_ALL:     All hues  * @GIMP_HUE_RANGE_RED:     Red hues  * @GIMP_HUE_RANGE_YELLOW:  Yellow hues  * @GIMP_HUE_RANGE_GREEN:   Green hues  * @GIMP_HUE_RANGE_CYAN:    Cyan hues  * @GIMP_HUE_RANGE_BLUE:    Blue hues  * @GIMP_HUE_RANGE_MAGENTA: Magenta hues  *  * Hue ranges.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_HUE_RANGE
 define|#
@@ -1412,7 +1505,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11803
+DECL|enum|__anon2a1f36851803
 block|{
 DECL|enumerator|GIMP_HUE_RANGE_ALL
 name|GIMP_HUE_RANGE_ALL
@@ -1488,6 +1581,10 @@ name|GimpHueRange
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpIconType:  * @GIMP_ICON_TYPE_ICON_NAME:     Icon name  * @GIMP_ICON_TYPE_INLINE_PIXBUF: Inline pixbuf  * @GIMP_ICON_TYPE_IMAGE_FILE:    Image file  *  * Icon types for plug-ins to register.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_ICON_TYPE
 define|#
@@ -1509,7 +1606,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11903
+DECL|enum|__anon2a1f36851903
 block|{
 DECL|enumerator|GIMP_ICON_TYPE_ICON_NAME
 name|GIMP_ICON_TYPE_ICON_NAME
@@ -1540,6 +1637,10 @@ name|GimpIconType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpImageBaseType:  * @GIMP_RGB:     RGB color  * @GIMP_GRAY:    Grayscale  * @GIMP_INDEXED: Indexed color  *  * Image color models.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_BASE_TYPE
 define|#
@@ -1561,7 +1662,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11a03
+DECL|enum|__anon2a1f36851a03
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -1579,6 +1680,10 @@ block|}
 name|GimpImageBaseType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpImageType:  * @GIMP_RGB_IMAGE:      RGB  * @GIMP_RGBA_IMAGE:     RGB-alpha  * @GIMP_GRAY_IMAGE:     Grayscale  * @GIMP_GRAYA_IMAGE:    Grayscale-alpha  * @GIMP_INDEXED_IMAGE:  Indexed  * @GIMP_INDEXEDA_IMAGE: Indexed-alpha  *  * Possible drawable types.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_TYPE
@@ -1601,7 +1706,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11b03
+DECL|enum|__anon2a1f36851b03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -1632,6 +1737,10 @@ name|GimpImageType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpInkBlobType:  * @GIMP_INK_BLOB_TYPE_CIRCLE:  Circle  * @GIMP_INK_BLOB_TYPE_SQUARE:  Square  * @GIMP_INK_BLOB_TYPE_DIAMOND: Diamond  *  * Ink tool tips.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_INK_BLOB_TYPE
 define|#
@@ -1653,7 +1762,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11c03
+DECL|enum|__anon2a1f36851c03
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
 name|GIMP_INK_BLOB_TYPE_CIRCLE
@@ -1671,6 +1780,10 @@ block|}
 name|GimpInkBlobType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpInterpolationType:  * @GIMP_INTERPOLATION_NONE:   None  * @GIMP_INTERPOLATION_LINEAR: Linear  * @GIMP_INTERPOLATION_CUBIC:  Cubic  * @GIMP_INTERPOLATION_NOHALO: NoHalo  * @GIMP_INTERPOLATION_LOHALO: LoHalo  *  * Interpolation types.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_INTERPOLATION_TYPE
@@ -1693,7 +1806,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11d03
+DECL|enum|__anon2a1f36851d03
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -1732,6 +1845,10 @@ name|GimpInterpolationType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpJoinStyle:  * @GIMP_JOIN_MITER: Miter  * @GIMP_JOIN_ROUND: Round  * @GIMP_JOIN_BEVEL: Bevel  *  * Line join styles.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_JOIN_STYLE
 define|#
@@ -1753,7 +1870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11e03
+DECL|enum|__anon2a1f36851e03
 block|{
 DECL|enumerator|GIMP_JOIN_MITER
 name|GIMP_JOIN_MITER
@@ -1771,6 +1888,10 @@ block|}
 name|GimpJoinStyle
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpMaskApplyMode:  * @GIMP_MASK_APPLY:   Apply the mask  * @GIMP_MASK_DISCARD: Discard the mask  *  * Layer mask apply modes.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_MASK_APPLY_MODE
@@ -1793,7 +1914,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e11f03
+DECL|enum|__anon2a1f36851f03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1827,7 +1948,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12003
+DECL|enum|__anon2a1f36852003
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1871,7 +1992,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12103
+DECL|enum|__anon2a1f36852103
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -1908,7 +2029,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12203
+DECL|enum|__anon2a1f36852203
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -1942,7 +2063,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12303
+DECL|enum|__anon2a1f36852303
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -1982,7 +2103,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12403
+DECL|enum|__anon2a1f36852403
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -2018,7 +2139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12503
+DECL|enum|__anon2a1f36852503
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -2139,7 +2260,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12603
+DECL|enum|__anon2a1f36852603
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_HANDLER_INTERNAL
 name|GIMP_PDB_ERROR_HANDLER_INTERNAL
@@ -2173,7 +2294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12703
+DECL|enum|__anon2a1f36852703
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -2217,7 +2338,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12803
+DECL|enum|__anon2a1f36852803
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -2260,7 +2381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12903
+DECL|enum|__anon2a1f36852903
 block|{
 DECL|enumerator|GIMP_PRECISION_U8_LINEAR
 name|GIMP_PRECISION_U8_LINEAR
@@ -2360,7 +2481,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12a03
+DECL|enum|__anon2a1f36852a03
 block|{
 DECL|enumerator|GIMP_PROGRESS_COMMAND_START
 name|GIMP_PROGRESS_COMMAND_START
@@ -2406,7 +2527,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12b03
+DECL|enum|__anon2a1f36852b03
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -2450,7 +2571,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12c03
+DECL|enum|__anon2a1f36852c03
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -2487,7 +2608,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12d03
+DECL|enum|__anon2a1f36852d03
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -2527,7 +2648,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12e03
+DECL|enum|__anon2a1f36852e03
 block|{
 DECL|enumerator|GIMP_SELECT_CRITERION_COMPOSITE
 name|GIMP_SELECT_CRITERION_COMPOSITE
@@ -2600,7 +2721,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e12f03
+DECL|enum|__anon2a1f36852f03
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -2636,7 +2757,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13003
+DECL|enum|__anon2a1f36853003
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -2673,7 +2794,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13103
+DECL|enum|__anon2a1f36853103
 block|{
 DECL|enumerator|GIMP_STROKE_LINE
 name|GIMP_STROKE_LINE
@@ -2709,7 +2830,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13203
+DECL|enum|__anon2a1f36853203
 block|{
 DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
 name|GIMP_TEXT_DIRECTION_LTR
@@ -2745,7 +2866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13303
+DECL|enum|__anon2a1f36853303
 block|{
 DECL|enumerator|GIMP_TEXT_HINT_STYLE_NONE
 name|GIMP_TEXT_HINT_STYLE_NONE
@@ -2789,7 +2910,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13403
+DECL|enum|__anon2a1f36853403
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT
@@ -2833,7 +2954,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13503
+DECL|enum|__anon2a1f36853503
 block|{
 DECL|enumerator|GIMP_TRANSFER_SHADOWS
 name|GIMP_TRANSFER_SHADOWS
@@ -2897,7 +3018,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13603
+DECL|enum|__anon2a1f36853603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -2933,7 +3054,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13703
+DECL|enum|__anon2a1f36853703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_RESIZE_ADJUST
 name|GIMP_TRANSFORM_RESIZE_ADJUST
@@ -2960,7 +3081,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon295973e13803
+DECL|enum|__anon2a1f36853803
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -3030,7 +3151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13903
+DECL|enum|__anon2a1f36853903
 block|{
 DECL|enumerator|GIMP_USER_DIRECTORY_DESKTOP
 name|GIMP_USER_DIRECTORY_DESKTOP
@@ -3091,7 +3212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295973e13a03
+DECL|enum|__anon2a1f36853a03
 block|{
 DECL|enumerator|GIMP_VECTORS_STROKE_TYPE_BEZIER
 name|GIMP_VECTORS_STROKE_TYPE_BEZIER
