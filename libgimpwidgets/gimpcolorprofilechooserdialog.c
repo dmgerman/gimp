@@ -1081,7 +1081,7 @@ name|add_shortcut
 argument_list|(
 name|dialog
 argument_list|,
-literal|"/usr/share/color/icc"
+name|COLOR_PROFILE_DIRECTORY
 argument_list|)
 expr_stmt|;
 block|}
