@@ -3385,7 +3385,7 @@ name|GIMP_ZOOM_IN
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_ZOOM_FOCUS_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_POINTER
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3400,7 +3400,7 @@ name|GIMP_ZOOM_OUT
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_ZOOM_FOCUS_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_POINTER
 argument_list|)
 expr_stmt|;
 break|break;

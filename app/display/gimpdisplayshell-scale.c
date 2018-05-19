@@ -1106,8 +1106,15 @@ name|GimpZoomFocus
 name|zoom_focus
 parameter_list|)
 block|{
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|gdouble
 name|current_scale
+decl_stmt|;
+name|gboolean
+name|resize_window
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1152,7 +1159,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|SCALE_EQUALS
 argument_list|(
 name|new_scale
@@ -1160,20 +1166,15 @@ argument_list|,
 name|current_scale
 argument_list|)
 condition|)
-block|{
-name|GimpDisplayConfig
-modifier|*
+return|return;
 name|config
-init|=
+operator|=
 name|shell
 operator|->
 name|display
 operator|->
 name|config
-decl_stmt|;
-name|gboolean
-name|resize_window
-decl_stmt|;
+expr_stmt|;
 comment|/* Resize windows only in multi-window mode */
 name|resize_window
 operator|=
@@ -1196,7 +1197,7 @@ condition|(
 name|resize_window
 condition|)
 block|{
-comment|/* If the window is resized on zoom, simply do the zoom and            * get things rolling            */
+comment|/* If the window is resized on zoom, simply do the zoom and get        * things rolling        */
 name|gimp_zoom_model_zoom
 argument_list|(
 name|shell
@@ -1220,24 +1221,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gboolean
-name|starts_fitting_horiz
-decl_stmt|;
-name|gboolean
-name|starts_fitting_vert
-decl_stmt|;
-name|gboolean
-name|zoom_focus_almost_centered_horiz
-decl_stmt|;
-name|gboolean
-name|zoom_focus_almost_centered_vert
-decl_stmt|;
-name|gboolean
-name|image_center_almost_centered_horiz
-decl_stmt|;
-name|gboolean
-name|image_center_almost_centered_vert
-decl_stmt|;
 name|gdouble
 name|x
 decl_stmt|,
@@ -1288,6 +1271,32 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
+comment|/* skip centering magic if pointer focus was requested */
+if|if
+condition|(
+name|zoom_focus
+operator|!=
+name|GIMP_ZOOM_FOCUS_POINTER
+condition|)
+block|{
+name|gboolean
+name|starts_fitting_horiz
+decl_stmt|;
+name|gboolean
+name|starts_fitting_vert
+decl_stmt|;
+name|gboolean
+name|zoom_focus_almost_centered_horiz
+decl_stmt|;
+name|gboolean
+name|zoom_focus_almost_centered_vert
+decl_stmt|;
+name|gboolean
+name|image_center_almost_centered_horiz
+decl_stmt|;
+name|gboolean
+name|image_center_almost_centered_vert
+decl_stmt|;
 comment|/* If an image axis started to fit due to zooming out or if            * the focus point is as good as in the center, center on            * that axis            */
 name|gimp_display_shell_scale_image_starts_to_fit
 argument_list|(
@@ -3815,7 +3824,6 @@ name|canvas_pointer_y
 expr_stmt|;
 block|}
 block|}
-comment|/* Decide which one to use for each axis */
 if|if
 condition|(
 name|zoom_focus
