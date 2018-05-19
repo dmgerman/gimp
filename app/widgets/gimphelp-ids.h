@@ -494,6 +494,14 @@ value|"gimp-view-dot-for-dot"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_SCROLL_CENTER
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SCROLL_CENTER
+value|"gimp-view-scroll-center"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_ZOOM_REVERT
 define|#
 directive|define

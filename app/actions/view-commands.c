@@ -461,6 +461,45 @@ end_function
 
 begin_function
 name|void
+DECL|function|view_scroll_center_cmd_callback (GtkAction * action,gpointer data)
+name|view_scroll_center_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scroll_center_image
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|view_zoom_fit_in_cmd_callback (GtkAction * action,gpointer data)
 name|view_zoom_fit_in_cmd_callback
 parameter_list|(
