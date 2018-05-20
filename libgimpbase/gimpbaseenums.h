@@ -23,7 +23,7 @@ end_comment
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-comment|/**  * GimpAddMaskType:  * @GIMP_ADD_MASK_WHITE:           White (full opacity)  * @GIMP_ADD_MASK_BLACK:           Black (full transparency)  * @GIMP_ADD_MASK_ALPHA:           Layer's alpha channel  * @GIMP_ADD_MASK_ALPHA_TRANSFER:  Transfer layer's alpha channel  * @GIMP_ADD_MASK_SELECTION:       Selection  * @GIMP_ADD_MASK_COPY:            Grayscale copy of layer  * @GIMP_ADD_MASK_CHANNEL:         Channel  * @GIMP_ADD_WHITE_MASK:           Deprecated alias  * @GIMP_ADD_BLACK_MASK:           Deprecated alias  * @GIMP_ADD_ALPHA_MASK:           Deprecated alias  * @GIMP_ADD_ALPHA_TRANSFER_MASK:  Deprecated alias  * @GIMP_ADD_SELECTION_MASK:       Deprecated alias  * @GIMP_ADD_COPY_MASK:            Deprecated alias  * @GIMP_ADD_CHANNEL_MASK:         Deprecated aliaa  *  * Modes of initialising a layer mask.  **/
+comment|/**  * GimpAddMaskType:  * @GIMP_ADD_MASK_WHITE:           White (full opacity)  * @GIMP_ADD_MASK_BLACK:           Black (full transparency)  * @GIMP_ADD_MASK_ALPHA:           Layer's alpha channel  * @GIMP_ADD_MASK_ALPHA_TRANSFER:  Transfer layer's alpha channel  * @GIMP_ADD_MASK_SELECTION:       Selection  * @GIMP_ADD_MASK_COPY:            Grayscale copy of layer  * @GIMP_ADD_MASK_CHANNEL:         Channel  * @GIMP_ADD_WHITE_MASK:           Deprecated alias for @GIMP_ADD_MASK_WHITE  * @GIMP_ADD_BLACK_MASK:           Deprecated alias for @GIMP_ADD_MASK_BLACK  * @GIMP_ADD_ALPHA_MASK:           Deprecated alias for @GIMP_ADD_MASK_ALPHA  * @GIMP_ADD_ALPHA_TRANSFER_MASK:  Deprecated alias for  *                                 @GIMP_ADD_MASK_ALPHA_TRANSFER  * @GIMP_ADD_SELECTION_MASK:       Deprecated alias for @GIMP_ADD_MASK_SELECTION  * @GIMP_ADD_COPY_MASK:            Deprecated alias for @GIMP_ADD_MASK_COPY  * @GIMP_ADD_CHANNEL_MASK:         Deprecated aliaa for @GIMP_ADD_MASK_CHANNEL  *  * Modes of initialising a layer mask.  **/
 DECL|macro|GIMP_TYPE_ADD_MASK_TYPE
 define|#
 directive|define
@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960103
+DECL|enum|__anon2bb954260103
 block|{
 DECL|enumerator|GIMP_ADD_MASK_WHITE
 name|GIMP_ADD_MASK_WHITE
@@ -125,7 +125,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpBlendMode:  * @GIMP_BLEND_FG_BG_RGB:      FG to BG (RGB)  * @GIMP_BLEND_FG_BG_HSV:      FG to BG (HSV)  * @GIMP_BLEND_FG_TRANSPARENT: FG to transparent  * @GIMP_BLEND_CUSTOM:         Custom gradient  *  * Types of gradients.  **/
+comment|/**  * GimpBlendMode:  * @GIMP_BLEND_FG_BG_RGB:      FG to BG (RGB)  * @GIMP_BLEND_FG_BG_HSV:      FG to BG (HSV)  * @GIMP_BLEND_FG_TRANSPARENT: FG to transparent  * @GIMP_BLEND_CUSTOM:         Custom gradient  * @GIMP_FG_BG_RGB_MODE:       Deprecated alias for @GIMP_BLEND_FG_BG_RGB  * @GIMP_FG_BG_HSV_MODE:       Deprecated alias for @GIMP_BLEND_FG_BG_HSV  * @GIMP_FG_TRANSPARENT_MODE:  Deprecated alias for @GIMP_BLEND_FG_TRANSPARENT  * @GIMP_CUSTOM_MODE:          Deprecated alias for @GIMP_BLEND_CUSTOM  *  * Types of gradients.  **/
 end_comment
 
 begin_define
@@ -149,7 +149,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960203
+DECL|enum|__anon2bb954260203
 block|{
 DECL|enumerator|GIMP_BLEND_FG_BG_RGB
 name|GIMP_BLEND_FG_BG_RGB
@@ -227,7 +227,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960303
+DECL|enum|__anon2bb954260303
 block|{
 DECL|enumerator|GIMP_BRUSH_GENERATED_CIRCLE
 name|GIMP_BRUSH_GENERATED_CIRCLE
@@ -247,7 +247,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpBucketFillMode:  * @GIMP_BUCKET_FILL_FG:      FG color fill  * @GIMP_BUCKET_FILL_BG:      BG color fill  * @GIMP_BUCKET_FILL_PATTERN: Pattern fill  *  * Bucket fill modes.  */
+comment|/**  * GimpBucketFillMode:  * @GIMP_BUCKET_FILL_FG:      FG color fill  * @GIMP_BUCKET_FILL_BG:      BG color fill  * @GIMP_BUCKET_FILL_PATTERN: Pattern fill  * @GIMP_FG_BUCKET_FILL:      Deprecated alias for @GIMP_BUCKET_FILL_FG  * @GIMP_BG_BUCKET_FILL:      Deprecated alias for @GIMP_BUCKET_FILL_BG  * @GIMP_PATTERN_BUCKET_FILL: Deprecated alias for @GIMP_BUCKET_FILL_PATTERN  *  * Bucket fill modes.  */
 end_comment
 
 begin_define
@@ -271,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960403
+DECL|enum|__anon2bb954260403
 block|{
 DECL|enumerator|GIMP_BUCKET_FILL_FG
 name|GIMP_BUCKET_FILL_FG
@@ -339,7 +339,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960503
+DECL|enum|__anon2bb954260503
 block|{
 DECL|enumerator|GIMP_CAP_BUTT
 name|GIMP_CAP_BUTT
@@ -383,7 +383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960603
+DECL|enum|__anon2bb954260603
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpChannelType:  * @GIMP_CHANNEL_RED:     Red  * @GIMP_CHANNEL_GREEN:   Green  * @GIMP_CHANNEL_BLUE:    Blue  * @GIMP_CHANNEL_GRAY:    Gray  * @GIMP_CHANNEL_INDEXED: Indexed  * @GIMP_CHANNEL_ALPHA:   Alpha  *  * Channels (as in color components).  **/
+comment|/**  * GimpChannelType:  * @GIMP_CHANNEL_RED:     Red  * @GIMP_CHANNEL_GREEN:   Green  * @GIMP_CHANNEL_BLUE:    Blue  * @GIMP_CHANNEL_GRAY:    Gray  * @GIMP_CHANNEL_INDEXED: Indexed  * @GIMP_CHANNEL_ALPHA:   Alpha  * @GIMP_RED_CHANNEL:     Deprecated alias for @GIMP_CHANNEL_RED  * @GIMP_GREEN_CHANNEL:   Deprecated alias for @GIMP_CHANNEL_GREEN  * @GIMP_BLUE_CHANNEL:    Deprecated alias for @GIMP_CHANNEL_BLUE  * @GIMP_GRAY_CHANNEL:    Deprecated alias for @GIMP_CHANNEL_GRAY  * @GIMP_INDEXED_CHANNEL: Deprecated alias for @GIMP_CHANNEL_INDEXED  * @GIMP_ALPHA_CHANNEL:   Deprecated alias for @GIMP_CHANNEL_ALPHA  *  * Channels (as in color components).  **/
 end_comment
 
 begin_define
@@ -431,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960703
+DECL|enum|__anon2bb954260703
 block|{
 DECL|enumerator|GIMP_CHANNEL_RED
 name|GIMP_CHANNEL_RED
@@ -530,7 +530,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ac037960803
+DECL|enum|__anon2bb954260803
 block|{
 DECL|enumerator|GIMP_CHECK_SIZE_SMALL_CHECKS
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
@@ -581,7 +581,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ac037960903
+DECL|enum|__anon2bb954260903
 block|{
 DECL|enumerator|GIMP_CHECK_TYPE_LIGHT_CHECKS
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
@@ -625,7 +625,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpCloneType:  * @GIMP_CLONE_IMAGE:   Image  * @GIMP_CLONE_PATTERN: Pattern  *  * Clone sources.  **/
+comment|/**  * GimpCloneType:  * @GIMP_CLONE_IMAGE:   Clone from an image/drawable source  * @GIMP_CLONE_PATTERN: Clone from a pattern source  * @GIMP_IMAGE_CLONE:   Deprecated alias for @GIMP_CLONE_IMAGE  * @GIMP_PATTERN_CLONE: Deprecated alias for @GIMP_CLONE_PATTERN  *  * Clone sources.  **/
 end_comment
 
 begin_define
@@ -649,7 +649,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960a03
+DECL|enum|__anon2bb954260a03
 block|{
 DECL|enumerator|GIMP_CLONE_IMAGE
 name|GIMP_CLONE_IMAGE
@@ -707,7 +707,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960b03
+DECL|enum|__anon2bb954260b03
 block|{
 DECL|enumerator|GIMP_COLOR_TAG_NONE
 name|GIMP_COLOR_TAG_NONE
@@ -775,7 +775,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960c03
+DECL|enum|__anon2bb954260c03
 block|{
 DECL|enumerator|GIMP_COMPONENT_TYPE_U8
 name|GIMP_COMPONENT_TYPE_U8
@@ -819,7 +819,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpConvertPaletteType:  * @GIMP_CONVERT_PALETTE_GENERATE: Generate optimum palette  * @GIMP_CONVERT_PALETTE_REUSE:    Don't use this one  * @GIMP_CONVERT_PALETTE_WEB:      Use web-optimized palette  * @GIMP_CONVERT_PALETTE_MONO:     Use black and white (1-bit) palette  * @GIMP_CONVERT_PALETTE_CUSTOM:   Use custom palette  *  * Types of palettes for indexed conversion.  **/
+comment|/**  * GimpConvertPaletteType:  * @GIMP_CONVERT_PALETTE_GENERATE: Generate optimum palette  * @GIMP_CONVERT_PALETTE_REUSE:    Don't use this one  * @GIMP_CONVERT_PALETTE_WEB:      Use web-optimized palette  * @GIMP_CONVERT_PALETTE_MONO:     Use black and white (1-bit) palette  * @GIMP_CONVERT_PALETTE_CUSTOM:   Use custom palette  * @GIMP_MAKE_PALETTE:             Deprecated alias for  *                                 @GIMP_CONVERT_PALETTE_GENERATE  * @GIMP_REUSE_PALETTE:            Deprecated alias for  *                                 @GIMP_CONVERT_PALETTE_REUSE  * @GIMP_WEB_PALETTE:              Deprecated alias for  *                                 @GIMP_CONVERT_PALETTE_WEB  * @GIMP_MONO_PALETTE:             Deprecated alias for                                    @GIMP_CONVERT_PALETTE_MONO  * @GIMP_CUSTOM_PALETTE:           Deprecated alias for  *                                 @GIMP_CONVERT_PALETTE_CUSTOM  *  * Types of palettes for indexed conversion.  **/
 end_comment
 
 begin_define
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960d03
+DECL|enum|__anon2bb954260d03
 block|{
 DECL|enumerator|GIMP_CONVERT_PALETTE_GENERATE
 name|GIMP_CONVERT_PALETTE_GENERATE
@@ -907,7 +907,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpConvolveType:  * @GIMP_CONVOLVE_BLUR:    Blur  * @GIMP_CONVOLVE_SHARPEN: Sharpen  *  * Types of convolutions.  **/
+comment|/**  * GimpConvolveType:  * @GIMP_CONVOLVE_BLUR:    Blur  * @GIMP_CONVOLVE_SHARPEN: Sharpen  * @GIMP_BLUR_CONVOLVE:    Deprecated alias for @GIMP_CONVOLVE_BLUR  * @GIMP_SHARPEN_CONVOLVE: Deprecated alias for @GIMP_CONVOLVE_SHARPEN  *  * Types of convolutions.  **/
 end_comment
 
 begin_define
@@ -931,7 +931,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960e03
+DECL|enum|__anon2bb954260e03
 block|{
 DECL|enumerator|GIMP_CONVOLVE_BLUR
 name|GIMP_CONVOLVE_BLUR
@@ -965,7 +965,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpDesaturateMode:  * @GIMP_DESATURATE_LIGHTNESS: Lightness (HSL)  * @GIMP_DESATURATE_LUMA:      Luma  * @GIMP_DESATURATE_AVERAGE:   Average (HSI Intensity)  * @GIMP_DESATURATE_LUMINANCE: Luminance  * @GIMP_DESATURATE_VALUE:     Value (HSV)  *  * Grayscale conversion methods.  **/
+comment|/**  * GimpDesaturateMode:  * @GIMP_DESATURATE_LIGHTNESS:  Lightness (HSL)  * @GIMP_DESATURATE_LUMA:       Luma  * @GIMP_DESATURATE_AVERAGE:    Average (HSI Intensity)  * @GIMP_DESATURATE_LUMINANCE:  Luminance  * @GIMP_DESATURATE_VALUE:      Value (HSV)  * @GIMP_DESATURATE_LUMINOSITY: Deprecated alias for @GIMP_DESATURATE_LUMA  *  * Grayscale conversion methods.  **/
 end_comment
 
 begin_define
@@ -989,7 +989,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037960f03
+DECL|enum|__anon2bb954260f03
 block|{
 DECL|enumerator|GIMP_DESATURATE_LIGHTNESS
 name|GIMP_DESATURATE_LIGHTNESS
@@ -1029,7 +1029,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpDodgeBurnType:  * @GIMP_DODGE_BURN_TYPE_DODGE: Dodge  * @GIMP_DODGE_BURN_TYPE_BURN:  Burn  *  * Methods for the dodge/burn operation.  **/
+comment|/**  * GimpDodgeBurnType:  * @GIMP_DODGE_BURN_TYPE_DODGE: Dodge  * @GIMP_DODGE_BURN_TYPE_BURN:  Burn  * @GIMP_DODGE:                 Deprecated alias for @GIMP_DODGE_BURN_TYPE_DODGE  * @GIMP_BURN:                  Deprecated alias for @GIMP_DODGE_BURN_TYPE_BURN  *  * Methods for the dodge/burn operation.  **/
 end_comment
 
 begin_define
@@ -1053,7 +1053,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961003
+DECL|enum|__anon2bb954261003
 block|{
 DECL|enumerator|GIMP_DODGE_BURN_TYPE_DODGE
 name|GIMP_DODGE_BURN_TYPE_DODGE
@@ -1087,7 +1087,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpFillType:  * @GIMP_FILL_FOREGROUND:  Foreground color  * @GIMP_FILL_BACKGROUND:  Background color  * @GIMP_FILL_WHITE:       White  * @GIMP_FILL_TRANSPARENT: Transparency  * @GIMP_FILL_PATTERN:     Pattern  *  * Types of filling.  **/
+comment|/**  * GimpFillType:  * @GIMP_FILL_FOREGROUND:  Foreground color  * @GIMP_FILL_BACKGROUND:  Background color  * @GIMP_FILL_WHITE:       White  * @GIMP_FILL_TRANSPARENT: Transparency  * @GIMP_FILL_PATTERN:     Pattern  * @GIMP_FOREGROUND_FILL:  Deprecated alias for @GIMP_FILL_FOREGROUND  * @GIMP_BACKGROUND_FILL:  Deprecated alias for @GIMP_FILL_BACKGROUND  * @GIMP_WHITE_FILL:       Deprecated alias for @GIMP_FILL_WHITE  * @GIMP_TRANSPARENT_FILL: Deprecated alias for @GIMP_FILL_TRANSPARENT  * @GIMP_PATTERN_FILL:     Deprecated alias for @GIMP_FILL_PATTERN  *  * Types of filling.  **/
 end_comment
 
 begin_define
@@ -1111,7 +1111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961103
+DECL|enum|__anon2bb954261103
 block|{
 DECL|enumerator|GIMP_FILL_FOREGROUND
 name|GIMP_FILL_FOREGROUND
@@ -1199,7 +1199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961203
+DECL|enum|__anon2bb954261203
 block|{
 DECL|enumerator|GIMP_FOREGROUND_EXTRACT_SIOX
 name|GIMP_FOREGROUND_EXTRACT_SIOX
@@ -1237,7 +1237,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961303
+DECL|enum|__anon2bb954261303
 block|{
 DECL|enumerator|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
 name|GIMP_GRADIENT_BLEND_RGB_PERCEPTUAL
@@ -1281,7 +1281,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961403
+DECL|enum|__anon2bb954261403
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_RGB
 name|GIMP_GRADIENT_SEGMENT_RGB
@@ -1325,7 +1325,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961503
+DECL|enum|__anon2bb954261503
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_LINEAR
 name|GIMP_GRADIENT_SEGMENT_LINEAR
@@ -1377,7 +1377,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961603
+DECL|enum|__anon2bb954261603
 block|{
 DECL|enumerator|GIMP_GRADIENT_LINEAR
 name|GIMP_GRADIENT_LINEAR
@@ -1453,7 +1453,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961703
+DECL|enum|__anon2bb954261703
 block|{
 DECL|enumerator|GIMP_GRID_DOTS
 name|GIMP_GRID_DOTS
@@ -1481,7 +1481,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpHueRange:  * @GIMP_HUE_RANGE_ALL:     All hues  * @GIMP_HUE_RANGE_RED:     Red hues  * @GIMP_HUE_RANGE_YELLOW:  Yellow hues  * @GIMP_HUE_RANGE_GREEN:   Green hues  * @GIMP_HUE_RANGE_CYAN:    Cyan hues  * @GIMP_HUE_RANGE_BLUE:    Blue hues  * @GIMP_HUE_RANGE_MAGENTA: Magenta hues  *  * Hue ranges.  **/
+comment|/**  * GimpHueRange:  * @GIMP_HUE_RANGE_ALL:     All hues  * @GIMP_HUE_RANGE_RED:     Red hues  * @GIMP_HUE_RANGE_YELLOW:  Yellow hues  * @GIMP_HUE_RANGE_GREEN:   Green hues  * @GIMP_HUE_RANGE_CYAN:    Cyan hues  * @GIMP_HUE_RANGE_BLUE:    Blue hues  * @GIMP_HUE_RANGE_MAGENTA: Magenta hues  * @GIMP_ALL_HUES:          Deprecated alias for @GIMP_HUE_RANGE_ALL  * @GIMP_RED_HUES:          Deprecated alias for @GIMP_HUE_RANGE_RED  * @GIMP_YELLOW_HUES:       Deprecated alias for @GIMP_HUE_RANGE_YELLOW  * @GIMP_GREEN_HUES:        Deprecated alias for @GIMP_HUE_RANGE_GREEN  * @GIMP_CYAN_HUES:         Deprecated alias for @GIMP_HUE_RANGE_CYAN  * @GIMP_BLUE_HUES:         Deprecated alias for @GIMP_HUE_RANGE_BLUE  * @GIMP_MAGENTA_HUES:      Deprecated alias for @GIMP_HUE_RANGE_MAGENTA  *  * Hue ranges.  **/
 end_comment
 
 begin_define
@@ -1505,7 +1505,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961803
+DECL|enum|__anon2bb954261803
 block|{
 DECL|enumerator|GIMP_HUE_RANGE_ALL
 name|GIMP_HUE_RANGE_ALL
@@ -1582,7 +1582,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpIconType:  * @GIMP_ICON_TYPE_ICON_NAME:     Icon name  * @GIMP_ICON_TYPE_INLINE_PIXBUF: Inline pixbuf  * @GIMP_ICON_TYPE_IMAGE_FILE:    Image file  *  * Icon types for plug-ins to register.  **/
+comment|/**  * GimpIconType:  * @GIMP_ICON_TYPE_ICON_NAME:     Icon name  * @GIMP_ICON_TYPE_INLINE_PIXBUF: Inline pixbuf  * @GIMP_ICON_TYPE_IMAGE_FILE:    Image file  * @GIMP_ICON_TYPE_STOCK_ID:      Deprecated alias for  *                                @GIMP_ICON_TYPE_ICON_NAME, old stock IDs  *                                are interpreted as icon names  *  * Icon types for plug-ins to register.  **/
 end_comment
 
 begin_define
@@ -1606,7 +1606,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961903
+DECL|enum|__anon2bb954261903
 block|{
 DECL|enumerator|GIMP_ICON_TYPE_ICON_NAME
 name|GIMP_ICON_TYPE_ICON_NAME
@@ -1662,7 +1662,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961a03
+DECL|enum|__anon2bb954261a03
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -1706,7 +1706,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961b03
+DECL|enum|__anon2bb954261b03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -1762,7 +1762,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961c03
+DECL|enum|__anon2bb954261c03
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_CIRCLE
 name|GIMP_INK_BLOB_TYPE_CIRCLE
@@ -1782,7 +1782,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpInterpolationType:  * @GIMP_INTERPOLATION_NONE:   None  * @GIMP_INTERPOLATION_LINEAR: Linear  * @GIMP_INTERPOLATION_CUBIC:  Cubic  * @GIMP_INTERPOLATION_NOHALO: NoHalo  * @GIMP_INTERPOLATION_LOHALO: LoHalo  *  * Interpolation types.  **/
+comment|/**  * GimpInterpolationType:  * @GIMP_INTERPOLATION_NONE:    None  * @GIMP_INTERPOLATION_LINEAR:  Linear  * @GIMP_INTERPOLATION_CUBIC:   Cubic  * @GIMP_INTERPOLATION_NOHALO:  NoHalo  * @GIMP_INTERPOLATION_LOHALO:  LoHalo  * @GIMP_INTERPOLATION_LANCZOS: Deprecated alias for @GIMP_INTERPOLATION_NOHALO  *  * Interpolation types.  **/
 end_comment
 
 begin_define
@@ -1806,7 +1806,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961d03
+DECL|enum|__anon2bb954261d03
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -1870,7 +1870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961e03
+DECL|enum|__anon2bb954261e03
 block|{
 DECL|enumerator|GIMP_JOIN_MITER
 name|GIMP_JOIN_MITER
@@ -1914,7 +1914,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037961f03
+DECL|enum|__anon2bb954261f03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1926,6 +1926,10 @@ block|}
 name|GimpMaskApplyMode
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpMergeType:  * @GIMP_EXPAND_AS_NECESSARY:  Expanded as necessary  * @GIMP_CLIP_TO_IMAGE:        Clipped to image  * @GIMP_CLIP_TO_BOTTOM_LAYER: Clipped to bottom layer  * @GIMP_FLATTEN_IMAGE:        Flatten  *  * Types of merging layers.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_MERGE_TYPE
@@ -1948,7 +1952,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962003
+DECL|enum|__anon2bb954262003
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1971,6 +1975,10 @@ name|GimpMergeType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpMessageHandlerType:  * @GIMP_MESSAGE_BOX:   A popup dialog  * @GIMP_CONSOLE:       The terminal  * @GIMP_ERROR_CONSOLE: The error console dockable  *  * How to present messages.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_MESSAGE_HANDLER_TYPE
 define|#
@@ -1992,7 +2000,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962103
+DECL|enum|__anon2bb954262103
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -2007,6 +2015,10 @@ block|}
 name|GimpMessageHandlerType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpOffsetType:  * @GIMP_OFFSET_BACKGROUND:  Background  * @GIMP_OFFSET_TRANSPARENT: Transparent  *  * Background fill types for the offset operation.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_OFFSET_TYPE
@@ -2029,7 +2041,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962203
+DECL|enum|__anon2bb954262203
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -2041,6 +2053,10 @@ block|}
 name|GimpOffsetType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpOrientationType:  * @GIMP_ORIENTATION_HORIZONTAL: Horizontal  * @GIMP_ORIENTATION_VERTICAL:   Vertical  * @GIMP_ORIENTATION_UNKNOWN:    Unknown  *  * Orientations for verious purposes.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_ORIENTATION_TYPE
@@ -2063,7 +2079,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962303
+DECL|enum|__anon2bb954262303
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -2081,6 +2097,10 @@ block|}
 name|GimpOrientationType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpPaintApplicationMode:  * @GIMP_PAINT_CONSTANT:    Constant  * @GIMP_PAINT_INCREMENTAL: Incremental  *  * Paint application modes.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PAINT_APPLICATION_MODE
@@ -2103,7 +2123,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962403
+DECL|enum|__anon2bb954262403
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -2117,6 +2137,10 @@ block|}
 name|GimpPaintApplicationMode
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpPDBArgType:  * @GIMP_PDB_INT32:       32-bit integer  * @GIMP_PDB_INT16:       16-bit integer  * @GIMP_PDB_INT8:        8-bit integer  * @GIMP_PDB_FLOAT:       Float  * @GIMP_PDB_STRING:      String  * @GIMP_PDB_INT32ARRAY:  Array of INT32  * @GIMP_PDB_INT16ARRAY:  Array of INT16  * @GIMP_PDB_INT8ARRAY:   Array of INT8  * @GIMP_PDB_FLOATARRAY:  Array of floats  * @GIMP_PDB_STRINGARRAY: Array of strings  * @GIMP_PDB_COLOR:       Color  * @GIMP_PDB_ITEM:        Item ID  * @GIMP_PDB_DISPLAY:     Display ID  * @GIMP_PDB_IMAGE:       Image ID  * @GIMP_PDB_LAYER:       Layer ID  * @GIMP_PDB_CHANNEL:     Channel ID  * @GIMP_PDB_DRAWABLE:    Drawable ID  * @GIMP_PDB_SELECTION:   Selection ID  * @GIMP_PDB_COLORARRAY:  Array of colors  * @GIMP_PDB_VECTORS:     Vectors (psath) ID  * @GIMP_PDB_PARASITE:    Parasite  * @GIMP_PDB_STATUS:      Procedure return status  * @GIMP_PDB_END:         Marker for last enum value  * @GIMP_PDB_PATH:        Deprecated alias for @GIMP_PDB_VECTORS  * @GIMP_PDB_BOUNDARY:    Deprecated alias for @GIMP_PDB_COLORARRAY  * @GIMP_PDB_REGION:      Deprecated alias for @GIMP_PDB_ITEM  *  * Parameter types of the PDB.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PDB_ARG_TYPE
@@ -2139,7 +2163,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962503
+DECL|enum|__anon2bb954262503
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -2239,6 +2263,10 @@ name|GimpPDBArgType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpPDBErrorHandler:  * @GIMP_PDB_ERROR_HANDLER_INTERNAL: Internal  * @GIMP_PDB_ERROR_HANDLER_PLUGIN:   Plug-In  *  * PDB error handlers.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PDB_ERROR_HANDLER
 define|#
@@ -2260,7 +2288,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962603
+DECL|enum|__anon2bb954262603
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_HANDLER_INTERNAL
 name|GIMP_PDB_ERROR_HANDLER_INTERNAL
@@ -2272,6 +2300,10 @@ block|}
 name|GimpPDBErrorHandler
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpPDBProcType:  * @GIMP_INTERNAL:  Internal GIMP procedure  * @GIMP_PLUGIN:    GIMP Plug-In  * @GIMP_EXTENSION: GIMP Extension  * @GIMP_TEMPORARY: Temporary Procedure  *  * Types of PDB procedures.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PDB_PROC_TYPE
@@ -2294,7 +2326,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962703
+DECL|enum|__anon2bb954262703
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -2317,6 +2349,10 @@ name|GimpPDBProcType
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpPDBStatusType:  * @GIMP_PDB_EXECUTION_ERROR: Execution error  * @GIMP_PDB_CALLING_ERROR:   Calling error  * @GIMP_PDB_PASS_THROUGH:    Pass through  * @GIMP_PDB_SUCCESS:         Success  * @GIMP_PDB_CANCEL:          User cancel  *  * Return status of PDB calls.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PDB_STATUS_TYPE
 define|#
@@ -2338,7 +2374,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962803
+DECL|enum|__anon2bb954262803
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -2359,6 +2395,10 @@ block|}
 name|GimpPDBStatusType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpPrecision:  * @GIMP_PRECISION_U8_LINEAR:     8-bit linear integer  * @GIMP_PRECISION_U8_GAMMA:      8-bit gamma integer  * @GIMP_PRECISION_U16_LINEAR:    16-bit linear integer  * @GIMP_PRECISION_U16_GAMMA:     16-bit gamma integer  * @GIMP_PRECISION_U32_LINEAR:    32-bit linear integer  * @GIMP_PRECISION_U32_GAMMA:     32-bit gamma integer  * @GIMP_PRECISION_HALF_LINEAR:   16-bit linear floating point  * @GIMP_PRECISION_HALF_GAMMA:    16-bit gamma floating point  * @GIMP_PRECISION_FLOAT_LINEAR:  32-bit linear floating point  * @GIMP_PRECISION_FLOAT_GAMMA:   32-bit gamma floating point  * @GIMP_PRECISION_DOUBLE_LINEAR: 64-bit linear floating point  * @GIMP_PRECISION_DOUBLE_GAMMA:  64-bit gamma floating point  *  * Precisions for pixel encoding.  *  * Since: 2.10  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PRECISION
@@ -2381,7 +2421,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962903
+DECL|enum|__anon2bb954262903
 block|{
 DECL|enumerator|GIMP_PRECISION_U8_LINEAR
 name|GIMP_PRECISION_U8_LINEAR
@@ -2460,6 +2500,10 @@ name|GimpPrecision
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpProgressCommand:  * @GIMP_PROGRESS_COMMAND_START:      Start a progress  * @GIMP_PROGRESS_COMMAND_END:        End the progress  * @GIMP_PROGRESS_COMMAND_SET_TEXT:   Set the text  * @GIMP_PROGRESS_COMMAND_SET_VALUE:  Set the percentage  * @GIMP_PROGRESS_COMMAND_PULSE:      Pulse the progress  * @GIMP_PROGRESS_COMMAND_GET_WINDOW: Get the window where the progress is shown  *  * Commands for the progress API.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PROGRESS_COMMAND
 define|#
@@ -2481,7 +2525,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962a03
+DECL|enum|__anon2bb954262a03
 block|{
 DECL|enumerator|GIMP_PROGRESS_COMMAND_START
 name|GIMP_PROGRESS_COMMAND_START
@@ -2506,6 +2550,10 @@ name|GimpProgressCommand
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpRepeatMode:  * @GIMP_REPEAT_NONE:       None (extend)  * @GIMP_REPEAT_SAWTOOTH:   Sawtooth wave  * @GIMP_REPEAT_TRIANGULAR: Triangular wave  * @GIMP_REPEAT_TRUNCATE:   Truncate  *  * Repeat modes for example for gradients.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_REPEAT_MODE
 define|#
@@ -2527,7 +2575,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962b03
+DECL|enum|__anon2bb954262b03
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -2550,6 +2598,10 @@ name|GimpRepeatMode
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpRotationType:  * @GIMP_ROTATE_90:  90 degrees  * @GIMP_ROTATE_180: 180 degrees  * @GIMP_ROTATE_270: 270 degrees  *  * Types of simple rotations.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_ROTATION_TYPE
 define|#
@@ -2571,7 +2623,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962c03
+DECL|enum|__anon2bb954262c03
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -2586,6 +2638,10 @@ block|}
 name|GimpRotationType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpRunMode:  * @GIMP_RUN_INTERACTIVE:    Run interactively  * @GIMP_RUN_NONINTERACTIVE: Run non-interactively  * @GIMP_RUN_WITH_LAST_VALS: Run with last used values  *  * Run modes for plug-ins.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_RUN_MODE
@@ -2608,7 +2664,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962d03
+DECL|enum|__anon2bb954262d03
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -2626,6 +2682,10 @@ block|}
 name|GimpRunMode
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpSelectCriterion:  * @GIMP_SELECT_CRITERION_COMPOSITE: Composite  * @GIMP_SELECT_CRITERION_R:         Red  * @GIMP_SELECT_CRITERION_G:         Green  * @GIMP_SELECT_CRITERION_B:         Blue  * @GIMP_SELECT_CRITERION_H:         Hue (HSV)  * @GIMP_SELECT_CRITERION_S:         Saturation (HSV)  * @GIMP_SELECT_CRITERION_V:         Value (HSV)  * @GIMP_SELECT_CRITERION_A:         Alpha  * @GIMP_SELECT_CRITERION_LCH_L:     Lightness (LCH)  * @GIMP_SELECT_CRITERION_LCH_C:     Chroma (LCH)  * @GIMP_SELECT_CRITERION_LCH_H:     Hue (LCH)  *  * Criterions for color similarity.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_SELECT_CRITERION
@@ -2648,7 +2708,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962e03
+DECL|enum|__anon2bb954262e03
 block|{
 DECL|enumerator|GIMP_SELECT_CRITERION_COMPOSITE
 name|GIMP_SELECT_CRITERION_COMPOSITE
@@ -2700,6 +2760,10 @@ name|GimpSelectCriterion
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpSizeType:  * @GIMP_PIXELS: Pixels  * @GIMP_POINTS: Points  *  * Size types for the old-style text API.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_SIZE_TYPE
 define|#
@@ -2721,7 +2785,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037962f03
+DECL|enum|__anon2bb954262f03
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -2735,6 +2799,10 @@ block|}
 name|GimpSizeType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpStackTraceMode:  * @GIMP_STACK_TRACE_NEVER:  Never  * @GIMP_STACK_TRACE_QUERY:  Ask each time  * @GIMP_STACK_TRACE_ALWAYS: Always  *  * When to generate stack traces in case of an error.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_STACK_TRACE_MODE
@@ -2757,7 +2825,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963003
+DECL|enum|__anon2bb954263003
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -2772,6 +2840,10 @@ block|}
 name|GimpStackTraceMode
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpStrokeMethod:  * @GIMP_STROKE_LINE:         Stroke line  * @GIMP_STROKE_PAINT_METHOD: Stroke with a paint tool  *  * Methods of stroking selections and paths.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_STROKE_METHOD
@@ -2794,7 +2866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963103
+DECL|enum|__anon2bb954263103
 block|{
 DECL|enumerator|GIMP_STROKE_LINE
 name|GIMP_STROKE_LINE
@@ -2808,6 +2880,10 @@ block|}
 name|GimpStrokeMethod
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpTextDirection:  * @GIMP_TEXT_DIRECTION_LTR: From left to right  * @GIMP_TEXT_DIRECTION_RTL: From right to left  *  * Text directions.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_TEXT_DIRECTION
@@ -2830,7 +2906,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963203
+DECL|enum|__anon2bb954263203
 block|{
 DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
 name|GIMP_TEXT_DIRECTION_LTR
@@ -2844,6 +2920,10 @@ block|}
 name|GimpTextDirection
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpTextHintStyle:  * @GIMP_TEXT_HINT_STYLE_NONE:   None  * @GIMP_TEXT_HINT_STYLE_SLIGHT: Slight  * @GIMP_TEXT_HINT_STYLE_MEDIUM: Medium  * @GIMP_TEXT_HINT_STYLE_FULL:   Full  *  * Text hint strengths.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_TEXT_HINT_STYLE
@@ -2866,7 +2946,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963303
+DECL|enum|__anon2bb954263303
 block|{
 DECL|enumerator|GIMP_TEXT_HINT_STYLE_NONE
 name|GIMP_TEXT_HINT_STYLE_NONE
@@ -2889,6 +2969,10 @@ name|GimpTextHintStyle
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpTextJustification:  * @GIMP_TEXT_JUSTIFY_LEFT:   Left justified  * @GIMP_TEXT_JUSTIFY_RIGHT:  Right justified  * @GIMP_TEXT_JUSTIFY_CENTER: Centered  * @GIMP_TEXT_JUSTIFY_FILL:   Filled  *  * Text justifications.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_TEXT_JUSTIFICATION
 define|#
@@ -2910,7 +2994,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963403
+DECL|enum|__anon2bb954263403
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT
@@ -2933,6 +3017,10 @@ name|GimpTextJustification
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpTransferMode:  * @GIMP_TRANSFER_SHADOWS:    Shadows  * @GIMP_TRANSFER_MIDTONES:   Midtones  * @GIMP_TRANSFER_HIGHLIGHTS: Highlights  * @GIMP_SHADOWS:             Deprecated alias for @GIMP_TRANSFER_SHADOWS  * @GIMP_MIDTONES:            Deprecated alias for @GIMP_TRANSFER_MIDTONES  * @GIMP_HIGHLIGHTS:          Deprecated alias for @GIMP_TRANSFER_HIGHLIGHTS  *  * For choosing which brightness ranges to transform.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_TRANSFER_MODE
 define|#
@@ -2954,7 +3042,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963503
+DECL|enum|__anon2bb954263503
 block|{
 DECL|enumerator|GIMP_TRANSFER_SHADOWS
 name|GIMP_TRANSFER_SHADOWS
@@ -2997,6 +3085,10 @@ name|GimpTransferMode
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpTransformDirection:  * @GIMP_TRANSFORM_FORWARD:  Normal (Forward)  * @GIMP_TRANSFORM_BACKWARD: Corrective (Backward)  *  * Transform directions.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_TRANSFORM_DIRECTION
 define|#
@@ -3018,7 +3110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963603
+DECL|enum|__anon2bb954263603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -3032,6 +3124,10 @@ block|}
 name|GimpTransformDirection
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpTransformResize:  * @GIMP_TRANSFORM_RESIZE_ADJUST:           Adjust  * @GIMP_TRANSFORM_RESIZE_CLIP:             Clip  * @GIMP_TRANSFORM_RESIZE_CROP:             Crop to result  * @GIMP_TRANSFORM_RESIZE_CROP_WITH_ASPECT: Crop with aspect  *  * Ways of clipping the result when transforming drawables.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_TRANSFORM_RESIZE
@@ -3054,7 +3150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963703
+DECL|enum|__anon2bb954263703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_RESIZE_ADJUST
 name|GIMP_TRANSFORM_RESIZE_ADJUST
@@ -3077,11 +3173,15 @@ name|GimpTransformResize
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpUnit:  * @GIMP_UNIT_PIXEL:   Pixels  * @GIMP_UNIT_INCH:    Inches  * @GIMP_UNIT_MM:      Millimeters  * @GIMP_UNIT_POINT:   Points  * @GIMP_UNIT_PICA:    Picas  * @GIMP_UNIT_END:     Marker for end-of-builtin-units  * @GIMP_UNIT_PERCENT: Pseudo-unit percent  *  * Units used for dimensions in images.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2ac037963803
+DECL|enum|__anon2bb954263803
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -3130,6 +3230,10 @@ directive|ifndef
 name|GIMP_DISABLE_DEPRECATED
 end_ifndef
 
+begin_comment
+comment|/**  * GimpUserDirectory:  * @GIMP_USER_DIRECTORY_DESKTOP:      Deprecated  * @GIMP_USER_DIRECTORY_DOCUMENTS:    Deprecated  * @GIMP_USER_DIRECTORY_DOWNLOAD:     Deprecated  * @GIMP_USER_DIRECTORY_MUSIC:        Deprecated  * @GIMP_USER_DIRECTORY_PICTURES:     Deprecated  * @GIMP_USER_DIRECTORY_PUBLIC_SHARE: Deprecated  * @GIMP_USER_DIRECTORY_TEMPLATES:    Deprecated  * @GIMP_USER_DIRECTORY_VIDEOS:       Deprecated  *  * Deprecated enum, don't use.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_USER_DIRECTORY
 define|#
@@ -3151,7 +3255,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963903
+DECL|enum|__anon2bb954263903
 block|{
 DECL|enumerator|GIMP_USER_DIRECTORY_DESKTOP
 name|GIMP_USER_DIRECTORY_DESKTOP
@@ -3191,6 +3295,10 @@ begin_comment
 comment|/* !GIMP_DISABLE_DEPRECATED */
 end_comment
 
+begin_comment
+comment|/**  * GimpVectorsStrokeType:  * @GIMP_VECTORS_STROKE_TYPE_BEZIER: A bezier stroke  *  * Possible type of strokes in vectors objects.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_VECTORS_STROKE_TYPE
 define|#
@@ -3212,7 +3320,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac037963a03
+DECL|enum|__anon2bb954263a03
 block|{
 DECL|enumerator|GIMP_VECTORS_STROKE_TYPE_BEZIER
 name|GIMP_VECTORS_STROKE_TYPE_BEZIER

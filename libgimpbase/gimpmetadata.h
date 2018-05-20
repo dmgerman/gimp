@@ -83,10 +83,14 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_METADATA, GimpMetadataClass))
 end_define
 
+begin_comment
+comment|/**  * GimpMetadataLoadFlags:  * @GIMP_METADATA_LOAD_COMMENT:     Load the comment  * @GIMP_METADATA_LOAD_RESOLUTION:  Load the resolution  * @GIMP_METADATA_LOAD_ORIENTATION: Load the orientation (rotation)  * @GIMP_METADATA_LOAD_COLORSPACE:  Load the colorspace  * @GIMP_METADATA_LOAD_ALL:         Load all of the above  *  * What metadata to load when importing images.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b12e00103
+DECL|enum|__anon295184d50103
 block|{
 DECL|enumerator|GIMP_METADATA_LOAD_COMMENT
 name|GIMP_METADATA_LOAD_COMMENT
@@ -126,10 +130,14 @@ name|GimpMetadataLoadFlags
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpMetadataSaveFlags:  * @GIMP_METADATA_SAVE_EXIF:      Save EXIF  * @GIMP_METADATA_SAVE_XMP:       Save XMP  * @GIMP_METADATA_SAVE_IPTC:      Save IPTC  * @GIMP_METADATA_SAVE_THUMBNAIL: Save a thumbnail of the image  * @GIMP_METADATA_SAVE_ALL:       Save all of the above  *  * What kinds of metadata to save when exporting images.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b12e00203
+DECL|enum|__anon295184d50203
 block|{
 DECL|enumerator|GIMP_METADATA_SAVE_EXIF
 name|GIMP_METADATA_SAVE_EXIF
@@ -169,10 +177,14 @@ name|GimpMetadataSaveFlags
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpMetadataColorspace:  * @GIMP_METADATA_COLORSPACE_UNSPECIFIED:  Unspecified  * @GIMP_METADATA_COLORSPACE_UNCALIBRATED: Uncalibrated  * @GIMP_METADATA_COLORSPACE_SRGB:         sRGB  * @GIMP_METADATA_COLORSPACE_ADOBERGB:     Adobe RGB  *  * Well-defined colorspace information available from metadata  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b12e00303
+DECL|enum|__anon295184d50303
 block|{
 DECL|enumerator|GIMP_METADATA_COLORSPACE_UNSPECIFIED
 name|GIMP_METADATA_COLORSPACE_UNSPECIFIED

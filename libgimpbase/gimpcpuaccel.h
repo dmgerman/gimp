@@ -47,10 +47,14 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_comment
+comment|/**  * GimpCpuAccelFlags:  * @GIMP_CPU_ACCEL_NONE:        None  * @GIMP_CPU_ACCEL_X86_MMX:     MMX  * @GIMP_CPU_ACCEL_X86_3DNOW:   3dNow  * @GIMP_CPU_ACCEL_X86_MMXEXT:  MMXEXT  * @GIMP_CPU_ACCEL_X86_SSE:     SSE  * @GIMP_CPU_ACCEL_X86_SSE2:    SSE2  * @GIMP_CPU_ACCEL_X86_SSE3:    SSE3  * @GIMP_CPU_ACCEL_X86_SSSE3:   SSSE3  * @GIMP_CPU_ACCEL_X86_SSE4_1:  SSE4_1  * @GIMP_CPU_ACCEL_X86_SSE4_2:  SSE4_2  * @GIMP_CPU_ACCEL_X86_AVX:     AVX  * @GIMP_CPU_ACCEL_PPC_ALTIVEC: Altivec  *  * Types of detectable CPU accelerations  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b77899d0103
+DECL|enum|__anon2a57e3e30103
 block|{
 DECL|enumerator|GIMP_CPU_ACCEL_NONE
 name|GIMP_CPU_ACCEL_NONE
