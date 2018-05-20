@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddd6800103
+DECL|enum|__anon28b98a5f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3343,14 +3343,19 @@ name|info
 operator|->
 name|device
 condition|)
+block|{
+comment|/*  this should really be        *        *  "is slave, *and* the associated master is gdk_seat_get_pointer()"        *        *  but who knows if future multiple masters will all have their        *  own visible pointer or not, and what the API for figuring        *  that will be, so for now let's simply assume that all        *  devices except floating ones move the pointer on screen.        */
 return|return
-name|gdk_device_get_has_cursor
+name|gdk_device_get_device_type
 argument_list|(
 name|info
 operator|->
 name|device
 argument_list|)
+operator|!=
+name|GDK_DEVICE_TYPE_FLOATING
 return|;
+block|}
 return|return
 name|FALSE
 return|;
