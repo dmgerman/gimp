@@ -640,7 +640,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_icon_info_free
+name|g_object_unref
 argument_list|(
 name|info
 argument_list|)
