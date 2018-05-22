@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deceec0103
+DECL|enum|__anon279f0d510103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -3479,12 +3479,14 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gtk_widget_get_requisition
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|widget
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|width
