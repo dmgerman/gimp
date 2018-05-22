@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5219480103
+DECL|enum|__anon27853fa60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5219480208
+DECL|struct|__anon27853fa60208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1246,6 +1246,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpImageWindow,gimp_image_window,GIMP_TYPE_WINDOW,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,gimp_image_window_dock_container_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,gimp_image_window_session_managed_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpImageWindow
@@ -1266,26 +1267,9 @@ name|parent_class
 value|gimp_image_window_parent_class
 end_define
 
-begin_decl_stmt
-specifier|static
-specifier|const
-name|gchar
-name|image_window_rc_style
-index|[]
-init|=
-literal|"style \"fullscreen-menubar-style\"\n"
-literal|"{\n"
-literal|"  GtkMenuBar::shadow-type      = none\n"
-literal|"  GtkMenuBar::internal-padding = 0\n"
-literal|"}\n"
-literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\"\n"
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_class_init (GimpImageWindowClass * klass)
 name|gimp_image_window_class_init
 parameter_list|(
 name|GimpImageWindowClass
@@ -1460,11 +1444,6 @@ sizeof|sizeof
 argument_list|(
 name|GimpImageWindowPrivate
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse_string
-argument_list|(
-name|image_window_rc_style
 argument_list|)
 expr_stmt|;
 block|}
@@ -3108,25 +3087,6 @@ condition|?
 literal|"TRUE"
 else|:
 literal|"FALSE"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|menubar
-condition|)
-name|gtk_widget_set_name
-argument_list|(
-name|private
-operator|->
-name|menubar
-argument_list|,
-name|fullscreen
-condition|?
-literal|"gimp-menubar-fullscreen"
-else|:
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_window_suspend_keep_pos
