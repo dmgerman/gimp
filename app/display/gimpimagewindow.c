@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27853fa60103
+DECL|enum|__anon278e6e2a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27853fa60208
+DECL|struct|__anon278e6e2a0208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -4811,12 +4811,10 @@ block|{
 name|GdkMonitor
 modifier|*
 name|pointer_monitor
-decl_stmt|;
-name|pointer_monitor
-operator|=
+init|=
 name|gimp_get_monitor_at_pointer
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 comment|/*  If we are supposed to go to a monitor other than where the        *  pointer is, place the window on that monitor manually,        *  otherwise simply let the window manager place the window on        *  the poiner's monitor.        */
 if|if
 condition|(
@@ -4828,12 +4826,6 @@ block|{
 name|GdkRectangle
 name|rect
 decl_stmt|;
-name|gchar
-name|geom
-index|[
-literal|32
-index|]
-decl_stmt|;
 name|gdk_monitor_get_workarea
 argument_list|(
 name|monitor
@@ -4842,17 +4834,12 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: image window placement            *            *  This is ugly beyond description but better than showing            *  the window on the wrong monitor            */
-name|g_snprintf
+name|gtk_window_move
 argument_list|(
-name|geom
-argument_list|,
-sizeof|sizeof
+name|GTK_WINDOW
 argument_list|(
-name|geom
+name|window
 argument_list|)
-argument_list|,
-literal|"%+d%+d"
 argument_list|,
 name|rect
 operator|.
@@ -4867,14 +4854,18 @@ operator|+
 literal|30
 argument_list|)
 expr_stmt|;
-name|gtk_window_parse_geometry
+name|gtk_window_set_geometry_hints
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|geom
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GDK_HINT_USER_POS
 argument_list|)
 expr_stmt|;
 block|}
