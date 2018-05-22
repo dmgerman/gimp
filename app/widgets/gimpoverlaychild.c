@@ -711,9 +711,9 @@ name|window
 operator|=
 name|gdk_window_new
 argument_list|(
-name|gtk_widget_get_root_window
+name|gdk_screen_get_root_window
 argument_list|(
-name|widget
+name|screen
 argument_list|)
 argument_list|,
 operator|&
@@ -793,18 +793,6 @@ argument_list|,
 name|child
 argument_list|)
 expr_stmt|;
-name|gtk_style_context_set_background
-argument_list|(
-name|gtk_widget_get_style_context
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|child
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
 name|gdk_window_show
 argument_list|(
 name|child
@@ -880,7 +868,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_overlay_child_get_preferred_width (GimpOverlayBox * box,GimpOverlayChild * child)
+DECL|function|gimp_overlay_child_get_preferred_width (GimpOverlayBox * box,GimpOverlayChild * child,gint * minimum,gint * natural)
 name|gimp_overlay_child_get_preferred_width
 parameter_list|(
 name|GimpOverlayBox
@@ -890,14 +878,16 @@ parameter_list|,
 name|GimpOverlayChild
 modifier|*
 name|child
+parameter_list|,
+name|gint
+modifier|*
+name|minimum
+parameter_list|,
+name|gint
+modifier|*
+name|natural
 parameter_list|)
 block|{
-name|gint
-name|minimum
-decl_stmt|;
-name|gint
-name|natural
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_OVERLAY_BOX
@@ -919,10 +909,8 @@ name|child
 operator|->
 name|widget
 argument_list|,
-operator|&
 name|minimum
 argument_list|,
-operator|&
 name|natural
 argument_list|)
 expr_stmt|;
@@ -931,7 +919,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_overlay_child_get_preferred_height (GimpOverlayBox * box,GimpOverlayChild * child)
+DECL|function|gimp_overlay_child_get_preferred_height (GimpOverlayBox * box,GimpOverlayChild * child,gint * minimum,gint * natural)
 name|gimp_overlay_child_get_preferred_height
 parameter_list|(
 name|GimpOverlayBox
@@ -941,14 +929,16 @@ parameter_list|,
 name|GimpOverlayChild
 modifier|*
 name|child
+parameter_list|,
+name|gint
+modifier|*
+name|minimum
+parameter_list|,
+name|gint
+modifier|*
+name|natural
 parameter_list|)
 block|{
-name|gint
-name|minimum
-decl_stmt|;
-name|gint
-name|natural
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_OVERLAY_BOX
@@ -970,10 +960,8 @@ name|child
 operator|->
 name|widget
 argument_list|,
-operator|&
 name|minimum
 argument_list|,
-operator|&
 name|natural
 argument_list|)
 expr_stmt|;
