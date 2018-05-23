@@ -2411,6 +2411,13 @@ name|ENTRY_HEIGHT
 expr_stmt|;
 block|}
 break|break;
+case|case
+name|GIMP_ZOOM_SMOOTH
+case|:
+comment|/* can't happen */
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 block|}
 name|zoom_factor
 operator|=
