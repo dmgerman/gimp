@@ -277,7 +277,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|hbox
+name|item
 argument_list|)
 argument_list|,
 literal|"gimp-menu-item-hbox"
@@ -299,7 +299,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|hbox
+name|item
 argument_list|)
 argument_list|,
 literal|"gimp-menu-item-label"
@@ -3923,7 +3923,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon298944c30108
+DECL|struct|__anon29f8779f0108
 block|{
 DECL|member|r
 name|guchar
@@ -4533,7 +4533,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298944c30208
+DECL|struct|__anon29f8779f0208
 block|{
 DECL|member|timeout_id
 name|gint
