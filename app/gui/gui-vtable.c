@@ -1095,22 +1095,14 @@ if|if
 condition|(
 name|display
 condition|)
-block|{
-name|gdk_display_pointer_ungrab
+name|gdk_seat_ungrab
+argument_list|(
+name|gdk_display_get_default_seat
 argument_list|(
 name|display
-argument_list|,
-name|GDK_CURRENT_TIME
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdk_display_keyboard_ungrab
-argument_list|(
-name|display
-argument_list|,
-name|GDK_CURRENT_TIME
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
