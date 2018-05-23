@@ -121,6 +121,14 @@ name|PangoLayout
 modifier|*
 name|layout
 decl_stmt|;
+DECL|member|padding_mode
+name|GimpCanvasPaddingMode
+name|padding_mode
+decl_stmt|;
+DECL|member|padding_color
+name|GimpRGB
+name|padding_color
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -190,15 +198,19 @@ end_empty_stmt
 
 begin_function_decl
 name|void
-name|gimp_canvas_set_bg_color
+name|gimp_canvas_set_padding
 parameter_list|(
 name|GimpCanvas
 modifier|*
 name|canvas
 parameter_list|,
+name|GimpCanvasPaddingMode
+name|padding_mode
+parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
-name|color
+name|padding_color
 parameter_list|)
 function_decl|;
 end_function_decl
