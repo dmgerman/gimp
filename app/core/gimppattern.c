@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppattern.h"
 end_include
 
@@ -634,7 +640,7 @@ argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

@@ -713,7 +713,7 @@ name|image
 argument_list|)
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

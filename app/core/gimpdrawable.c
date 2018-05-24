@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b691a0103
+DECL|enum|__anon27a1a9ef0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -245,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b691a0203
+DECL|enum|__anon27a1a9ef0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2431,7 +2431,7 @@ name|copy_height
 condition|)
 block|{
 comment|/*  Copy the pixels in the intersection  */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3334,7 +3334,7 @@ argument_list|,
 name|new_format
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3715,7 +3715,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3835,7 +3835,7 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3869,7 +3869,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|tmp
 argument_list|,
@@ -7286,7 +7286,7 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|drawable
 operator|->

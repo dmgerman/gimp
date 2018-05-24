@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297825c10103
+DECL|enum|__anon29fe4e590103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4823,7 +4823,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -5020,7 +5020,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

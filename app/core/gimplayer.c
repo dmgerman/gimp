@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04458d0103
+DECL|enum|__anon2b1f7e960103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04458d0203
+DECL|enum|__anon2b1f7e960203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7288,7 +7288,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -8233,7 +8233,7 @@ argument_list|,
 name|component_format
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -8485,7 +8485,7 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src
 argument_list|,
@@ -8599,7 +8599,7 @@ argument_list|,
 name|copy_format
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -8685,7 +8685,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -9873,7 +9873,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(

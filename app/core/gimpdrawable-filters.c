@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-utils.h"
 end_include
 
@@ -555,7 +561,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -709,7 +715,7 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  we have to copy the cached region to the apply_buffer,                    *  because this region is not going to be processed.                    */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|cache
 argument_list|,
@@ -884,7 +890,7 @@ block|}
 else|else
 block|{
 comment|/*  canceled by the user  */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|undo_buffer
 argument_list|,

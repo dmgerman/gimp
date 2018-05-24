@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -3078,7 +3084,7 @@ name|dest_format
 argument_list|)
 expr_stmt|;
 comment|/*  First, copy the pixels, possibly doing INDEXED->RGB and adding alpha  */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

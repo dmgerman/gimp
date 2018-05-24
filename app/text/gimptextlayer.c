@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -173,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75593d0103
+DECL|enum|__anon2a54d7e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3035,7 +3041,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,

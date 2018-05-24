@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-mask.h"
 end_include
 
@@ -5454,7 +5460,7 @@ name|trimap
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|trimap
 argument_list|,
@@ -5564,7 +5570,7 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|trimap
 argument_list|,
@@ -5601,7 +5607,7 @@ name|height
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,

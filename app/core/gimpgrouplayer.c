@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgrouplayer.h"
 end_include
 
@@ -8033,7 +8039,7 @@ condition|(
 name|intersect
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|mask_buffer
 argument_list|,

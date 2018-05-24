@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -1078,7 +1084,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon28818a7d010a
+DECL|union|__anon27f86550010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2421,7 +2427,7 @@ literal|"R'G'B'A float"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -2447,7 +2453,7 @@ name|height
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(

@@ -60,13 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-gegl-nodes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gimp-gegl-utils.h"
 end_include
 
 begin_function
@@ -751,7 +757,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|cache
 argument_list|,

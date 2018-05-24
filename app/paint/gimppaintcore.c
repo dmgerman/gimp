@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bcc88b0103
+DECL|enum|__anon2c15f4690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2187,7 +2187,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|core
 operator|->
@@ -2412,7 +2412,7 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|core
 operator|->

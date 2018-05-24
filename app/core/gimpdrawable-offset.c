@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -486,7 +492,7 @@ operator|&&
 name|height
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -695,7 +701,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -856,7 +862,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,
@@ -995,7 +1001,7 @@ operator|=
 name|dest_y
 expr_stmt|;
 block|}
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

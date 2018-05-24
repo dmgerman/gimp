@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-atomic.h"
 end_include
 
@@ -99,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279508030103
+DECL|enum|__anon2a0fff4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -150,7 +156,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279508030208
+DECL|struct|__anon2a0fff4c0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -199,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279508030308
+DECL|struct|__anon2a0fff4c0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1270,7 +1276,7 @@ operator|=
 operator|*
 name|buffer_rect
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,
@@ -1329,7 +1335,7 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|mask
 argument_list|,

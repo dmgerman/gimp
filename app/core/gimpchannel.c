@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-mask.h"
 end_include
 
@@ -203,7 +209,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288f61ec0103
+DECL|enum|__anon27a540880103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2687,7 +2693,7 @@ name|new_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3183,7 +3189,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -3245,7 +3251,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  copy the temp mask back to the mask  */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|tmp_buffer
 argument_list|,
@@ -4394,7 +4400,7 @@ operator|==
 name|GEGL_DITHER_NONE
 condition|)
 block|{
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -7251,7 +7257,7 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,
@@ -7405,7 +7411,7 @@ name|GIMP_CHANNEL_ALPHA
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -7573,7 +7579,7 @@ argument_list|,
 name|format
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

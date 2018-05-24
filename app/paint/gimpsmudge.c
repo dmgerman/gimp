@@ -1055,7 +1055,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* copy the region under the original painthit. */
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
