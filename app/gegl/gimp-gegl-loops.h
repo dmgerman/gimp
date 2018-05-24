@@ -16,6 +16,34 @@ directive|define
 name|__GIMP_GEGL_LOOPS_H__
 end_define
 
+begin_function_decl
+name|void
+name|gimp_gegl_buffer_copy
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|src_buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|src_rect
+parameter_list|,
+name|GeglAbyssPolicy
+name|abyss_policy
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|dest_rect
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  this is a pretty stupid port of concolve_region() that only works  *  on a linear source buffer  */
 end_comment
