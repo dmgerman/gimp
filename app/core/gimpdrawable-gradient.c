@@ -465,7 +465,12 @@ name|shapeburst
 argument_list|,
 name|progress
 argument_list|,
-name|NULL
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Gradient"
+argument_list|)
 argument_list|,
 name|render
 argument_list|,
