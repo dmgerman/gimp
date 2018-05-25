@@ -1577,12 +1577,13 @@ name|g_list_prepend
 argument_list|(
 name|focus_chain
 argument_list|,
+name|gimp_size_entry_get_unit_combo
+argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
 name|entry
 argument_list|)
-operator|->
-name|unitmenu
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|focus_chain

@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a45a00103
+DECL|enum|__anon2b3d31250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2092,14 +2092,15 @@ name|g_list_prepend
 argument_list|(
 name|focus_chain
 argument_list|,
+name|gimp_size_entry_get_unit_combo
+argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
 name|private
 operator|->
 name|resolution_se
 argument_list|)
-operator|->
-name|unitmenu
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|focus_chain
