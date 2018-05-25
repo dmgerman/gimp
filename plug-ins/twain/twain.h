@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* ======================================================================== *\    Copyright (C) 1991, 1992 TWAIN Working Group: Aldus, Caere, Eastman-Kodak,   Hewlett-Packard and Logitech Corporations.  All rights reserved.    Copyright (C) 1997 TWAIN Working Group: Bell+Howell, Canon, DocuMagix,   Fujitsu, Genoa Technology, Hewlett-Packard, Kofax Imaging Products, and   Ricoh Corporation.  All rights reserved.    Copyright © 1998 TWAIN Working Group: Adobe Systems Incorporated, 	Canon Information Systems, Eastman Kodak Company, 	Fujitsu Computer Products of America, Genoa Technology, 	Hewlett-Packard Company, Intel Corporation, Kofax Image Products, 	JFL Peripheral Solutions Inc., Ricoh Corporation, and Xerox Corporation. 	All rights reserved.    TWAIN.h -  This is the definitive include file for applications and           data sources written to the TWAIN specification.           It defines constants, data structures, messages etc.           for the public interface to TWAIN.    Revision History:     version 1.0, March 6, 1992.  TWAIN 1.0.     version 1.1, January 1993.   Tech Notes 1.1     version 1.5, June 1993.      Specification Update 1.5                                  Change DC to TW                                  Change filename from DC.H to TWAIN.H     version 1.5, July 1993.      Remove spaces from country identifiers      version 1.7, July 1997       Added Capabilities and data structure for                                  document imaging and digital cameras.                                  KHL.     version 1.7, July 1997       Inserted Borland compatibile structure packing                                  directives provided by Mentor.  JMH     version 1.7, Aug 1997        Expanded file tabs to spaces.                                  NOTE: future authors should be sure to have                                  their editors set to automatically expand tabs                                  to spaces (original tab setting was 4 spaces).     version 1.7, Sept 1997       Added job control values                                  Added return codes     version 1.7, Sept 1997       changed definition of pRGBRESPONSE to                                  pTW_RGBRESPONSE     version 1.7  Aug 1998        Added missing TWEI_BARCODEROTATION values                                  TWBCOR_ types JMH     version 1.8  August 1998     Added new types and definitions required                                  for 1.8 Specification JMH \* ======================================================================== */
+comment|/* ======================================================================== *\    Copyright (C) 1991, 1992 TWAIN Working Group: Aldus, Caere, Eastman-Kodak,   Hewlett-Packard and Logitech Corporations.  All rights reserved.    Copyright (C) 1997 TWAIN Working Group: Bell+Howell, Canon, DocuMagix,   Fujitsu, Genoa Technology, Hewlett-Packard, Kofax Imaging Products, and   Ricoh Corporation.  All rights reserved.    Copyright Â© 1998 TWAIN Working Group: Adobe Systems Incorporated, 	Canon Information Systems, Eastman Kodak Company, 	Fujitsu Computer Products of America, Genoa Technology, 	Hewlett-Packard Company, Intel Corporation, Kofax Image Products, 	JFL Peripheral Solutions Inc., Ricoh Corporation, and Xerox Corporation. 	All rights reserved.    TWAIN.h -  This is the definitive include file for applications and           data sources written to the TWAIN specification.           It defines constants, data structures, messages etc.           for the public interface to TWAIN.    Revision History:     version 1.0, March 6, 1992.  TWAIN 1.0.     version 1.1, January 1993.   Tech Notes 1.1     version 1.5, June 1993.      Specification Update 1.5                                  Change DC to TW                                  Change filename from DC.H to TWAIN.H     version 1.5, July 1993.      Remove spaces from country identifiers      version 1.7, July 1997       Added Capabilities and data structure for                                  document imaging and digital cameras.                                  KHL.     version 1.7, July 1997       Inserted Borland compatibile structure packing                                  directives provided by Mentor.  JMH     version 1.7, Aug 1997        Expanded file tabs to spaces.                                  NOTE: future authors should be sure to have                                  their editors set to automatically expand tabs                                  to spaces (original tab setting was 4 spaces).     version 1.7, Sept 1997       Added job control values                                  Added return codes     version 1.7, Sept 1997       changed definition of pRGBRESPONSE to                                  pTW_RGBRESPONSE     version 1.7  Aug 1998        Added missing TWEI_BARCODEROTATION values                                  TWBCOR_ types JMH     version 1.8  August 1998     Added new types and definitions required                                  for 1.8 Specification JMH \* ======================================================================== */
 end_comment
 
 begin_ifndef
@@ -524,7 +524,7 @@ comment|/* Fixed point structure type. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680108
+DECL|struct|__anon2a3509020108
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680208
+DECL|struct|__anon2a3509020208
 typedef|typedef
 struct|struct
 block|{
@@ -589,7 +589,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680308
+DECL|struct|__anon2a3509020308
 typedef|typedef
 struct|struct
 block|{
@@ -642,7 +642,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680408
+DECL|struct|__anon2a3509020408
 typedef|typedef
 struct|struct
 block|{
@@ -682,7 +682,7 @@ comment|/* No DAT.  Defines a frame rectangle in ICAP_UNITS coordinates. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680508
+DECL|struct|__anon2a3509020508
 typedef|typedef
 struct|struct
 block|{
@@ -718,7 +718,7 @@ comment|/* No DAT needed.  Used to manage memory buffers. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680608
+DECL|struct|__anon2a3509020608
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ comment|/* No DAT needed. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680708
+DECL|struct|__anon2a3509020708
 typedef|typedef
 struct|struct
 block|{
@@ -790,7 +790,7 @@ comment|/* No DAT needed.  Describes version of software currently running. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680808
+DECL|struct|__anon2a3509020808
 typedef|typedef
 struct|struct
 block|{
@@ -835,7 +835,7 @@ comment|/* TWON_ARRAY. Container for array of values (a simplified TW_ENUMERATIO
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680908
+DECL|struct|__anon2a3509020908
 typedef|typedef
 struct|struct
 block|{
@@ -872,7 +872,7 @@ comment|/* TWON_ENUMERATION. Container for a collection of values. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680a08
+DECL|struct|__anon2a3509020a08
 typedef|typedef
 struct|struct
 block|{
@@ -919,7 +919,7 @@ comment|/* TWON_ONEVALUE. Container for one value. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680b08
+DECL|struct|__anon2a3509020b08
 typedef|typedef
 struct|struct
 block|{
@@ -947,7 +947,7 @@ comment|/* TWON_RANGE. Container for a range of values. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680c08
+DECL|struct|__anon2a3509020c08
 typedef|typedef
 struct|struct
 block|{
@@ -996,7 +996,7 @@ comment|/* DAT_CAPABILITY. Used by application to get/set capability from/in a d
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680d08
+DECL|struct|__anon2a3509020d08
 typedef|typedef
 struct|struct
 block|{
@@ -1031,7 +1031,7 @@ comment|/* DAT_CIECOLOR. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680e08
+DECL|struct|__anon2a3509020e08
 typedef|typedef
 struct|struct
 block|{
@@ -1098,7 +1098,7 @@ comment|/* DAT_EVENT. For passing events down from the application to the DS. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a680f08
+DECL|struct|__anon2a3509020f08
 typedef|typedef
 struct|struct
 block|{
@@ -1128,7 +1128,7 @@ comment|/* DAT_GRAYRESPONSE */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681008
+DECL|struct|__anon2a3509021008
 typedef|typedef
 struct|struct
 block|{
@@ -1155,7 +1155,7 @@ comment|/* DAT_IDENTITY. Identifies the program/library/code resource. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681108
+DECL|struct|__anon2a3509021108
 typedef|typedef
 struct|struct
 block|{
@@ -1215,7 +1215,7 @@ comment|/* DAT_IMAGEINFO. Application gets detailed image info from DS with this
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681208
+DECL|struct|__anon2a3509021208
 typedef|typedef
 struct|struct
 block|{
@@ -1288,7 +1288,7 @@ comment|/* DAT_IMAGELAYOUT. Provides image layout information in current units. 
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681308
+DECL|struct|__anon2a3509021308
 typedef|typedef
 struct|struct
 block|{
@@ -1327,7 +1327,7 @@ comment|/* DAT_IMAGEMEMXFER. Used to pass image data (e.g. in strips) from DS to
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681408
+DECL|struct|__anon2a3509021408
 typedef|typedef
 struct|struct
 block|{
@@ -1391,7 +1391,7 @@ comment|/* DAT_JPEGCOMPRESSION. Based on JPEG Draft International Std, ver 10918
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681508
+DECL|struct|__anon2a3509021508
 typedef|typedef
 struct|struct
 block|{
@@ -1471,7 +1471,7 @@ comment|/* DAT_PALETTE8. Color palette when TWPT_PALETTE pixels xfer'd in mem bu
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681608
+DECL|struct|__anon2a3509021608
 typedef|typedef
 struct|struct
 block|{
@@ -1509,7 +1509,7 @@ comment|/* DAT_PENDINGXFERS. Used with MSG_ENDXFER to indicate additional data. 
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681708
+DECL|struct|__anon2a3509021708
 typedef|typedef
 struct|struct
 block|{
@@ -1517,7 +1517,7 @@ DECL|member|Count
 name|TW_UINT16
 name|Count
 decl_stmt|;
-DECL|union|__anon29e96a68180a
+DECL|union|__anon2a350902180a
 union|union
 block|{
 DECL|member|EOJ
@@ -1546,7 +1546,7 @@ comment|/* DAT_RGBRESPONSE */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681908
+DECL|struct|__anon2a3509021908
 typedef|typedef
 struct|struct
 block|{
@@ -1573,7 +1573,7 @@ comment|/* DAT_SETUPFILEXFER. Sets up DS to application data transfer via a file
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681a08
+DECL|struct|__anon2a3509021a08
 typedef|typedef
 struct|struct
 block|{
@@ -1607,7 +1607,7 @@ comment|/* DAT_SETUPMEMXFER. Sets up DS to application data transfer via a memor
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681b08
+DECL|struct|__anon2a3509021b08
 typedef|typedef
 struct|struct
 block|{
@@ -1639,7 +1639,7 @@ comment|/* DAT_STATUS. Application gets detailed status info from a data source 
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681c08
+DECL|struct|__anon2a3509021c08
 typedef|typedef
 struct|struct
 block|{
@@ -1669,7 +1669,7 @@ comment|/* DAT_USERINTERFACE. Coordinates UI between application and data source
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681d08
+DECL|struct|__anon2a3509021d08
 typedef|typedef
 struct|struct
 block|{
@@ -1712,7 +1712,7 @@ comment|/*                    across thunk link. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a681e08
+DECL|struct|__anon2a3509021e08
 typedef|typedef
 struct|struct
 block|{
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96a681f08
+DECL|struct|__anon2a3509021f08
 block|{
 DECL|member|destFlag
 name|TW_INT8
@@ -1806,7 +1806,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96a682008
+DECL|struct|__anon2a3509022008
 block|{
 DECL|member|returnCode
 name|TW_UINT16
@@ -1853,7 +1853,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96a682108
+DECL|struct|__anon2a3509022108
 block|{
 DECL|member|Cap
 name|TW_UINT16
@@ -1881,7 +1881,7 @@ comment|/* ---------------------------------------------------------------------
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682208
+DECL|struct|__anon2a3509022208
 typedef|typedef
 struct|struct
 block|{
@@ -1907,7 +1907,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e96a682308
+DECL|struct|__anon2a3509022308
 typedef|typedef
 struct|struct
 block|{
@@ -1943,7 +1943,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e96a682408
+DECL|struct|__anon2a3509022408
 typedef|typedef
 struct|struct
 block|{
@@ -1978,7 +1978,7 @@ comment|/* DAT_AUDIOINFO, information about audio data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682508
+DECL|struct|__anon2a3509022508
 typedef|typedef
 struct|struct
 block|{
@@ -2008,7 +2008,7 @@ comment|/* DAT_DEVICEEVENT, information about events */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682608
+DECL|struct|__anon2a3509022608
 typedef|typedef
 struct|struct
 block|{
@@ -2083,7 +2083,7 @@ comment|/* DAT_FILESYSTEM, information about TWAIN file system */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682708
+DECL|struct|__anon2a3509022708
 typedef|typedef
 struct|struct
 block|{
@@ -2174,7 +2174,7 @@ comment|/* DAT_PASSTHRU, device dependent data to pass through Data Source */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682808
+DECL|struct|__anon2a3509022808
 typedef|typedef
 struct|struct
 block|{
@@ -2224,7 +2224,7 @@ comment|/* DAT_SETUPAUDIOFILEXFER, information required to setup an audio file t
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96a682908
+DECL|struct|__anon2a3509022908
 typedef|typedef
 struct|struct
 block|{

@@ -8,7 +8,7 @@ comment|/*  * XWD-input/output was written by Peter Kirchgessner (peter@kirchges
 end_comment
 
 begin_comment
-comment|/* Event history:  * PK = Peter Kirchgessner, ME = Mattias Engdegård  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  * V 1.94, ME, 27-Feb-00: Remove superfluous little-endian support (format is                           specified as big-endian). Trim magic header  * V 1.95, PK, 02-Jul-01: Fix problem with 8 bit image  */
+comment|/* Event history:  * PK = Peter Kirchgessner, ME = Mattias EngdegÃ¥rd  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  * V 1.94, ME, 27-Feb-00: Remove superfluous little-endian support (format is                           specified as big-endian). Trim magic header  * V 1.95, PK, 02-Jul-01: Fix problem with 8 bit image  */
 end_comment
 
 begin_include
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3dc90108
+DECL|struct|__anon2b3a8c290108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3dc90208
+DECL|struct|__anon2b3a8c290208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3dc90308
+DECL|struct|__anon2b3a8c290308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef3dc90408
+DECL|struct|__anon2b3a8c290408
 block|{
 DECL|member|npixel
 name|gint

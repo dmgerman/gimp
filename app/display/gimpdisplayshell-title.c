@@ -2130,7 +2130,7 @@ break|break;
 block|}
 block|}
 break|break;
-comment|/* Other cool things to be added:                * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * %þ = the answer to everything - (implemented)                */
+comment|/* Other cool things to be added:                * %r = xresolution                * %R = yresolution                * %Ã¸ = image's fractal dimension                * %Ã¾ = the answer to everything - (implemented)                */
 default|default:
 comment|/* format string contains unknown %-sequence, print it literally */
 name|i
