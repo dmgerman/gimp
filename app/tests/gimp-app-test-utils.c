@@ -1002,16 +1002,15 @@ literal|1
 comment|/*view_size*/
 argument_list|)
 expr_stmt|;
-comment|/* Press the focused widget, it should be the Ok button. It will    * take a while for the image to be created so loop for a while    */
-name|gtk_widget_activate
+comment|/* Press the OK button. It will take a while for the image to be    * created so loop for a while    */
+name|gtk_dialog_response
 argument_list|(
-name|gtk_window_get_focus
-argument_list|(
-name|GTK_WINDOW
+name|GTK_DIALOG
 argument_list|(
 name|new_image_dialog
 argument_list|)
-argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
 do|do
