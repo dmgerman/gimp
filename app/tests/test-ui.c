@@ -734,7 +734,7 @@ name|GIMP_TAB_STYLE_ICON_BLURB
 argument_list|,
 operator|==
 argument_list|,
-name|gimp_dockable_get_actual_tab_style
+name|gimp_dockable_get_tab_style
 argument_list|(
 name|dockable
 argument_list|)
@@ -779,7 +779,7 @@ name|GIMP_TAB_STYLE_ICON
 argument_list|,
 operator|==
 argument_list|,
-name|gimp_dockable_get_actual_tab_style
+name|gimp_dockable_get_tab_style
 argument_list|(
 name|dockable
 argument_list|)
@@ -814,7 +814,7 @@ name|GIMP_TAB_STYLE_ICON_BLURB
 argument_list|,
 operator|==
 argument_list|,
-name|gimp_dockable_get_actual_tab_style
+name|gimp_dockable_get_tab_style
 argument_list|(
 name|dockable
 argument_list|)
