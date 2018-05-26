@@ -34,7 +34,7 @@ file|"gimpasync.h"
 end_include
 
 begin_comment
-comment|/* GimpAsync represents an asynchronous task.  Both the public and the  * protected interfaces are intentionally minimal at this point, to keep things  * simple.  They may be extended in the future as needed.  *  * Upon creation, a GimpAsync object is in the "running" state.  Once the task  * is complete (and before the object's destruction), it should be transitioned  * to the "stopped" state, using either 'gimp_async_finish()' or  * 'gimp_async_abort()'.  *  * Note that certain GimpAsync functions may be only be called during a certain  * state, or on a certain thread, as detailed for each function.  When  * referring to threads, the "main thread" is the thread running the main loop,  * and the "async thread" is the thread calling 'gimp_async_finish()' or  * 'gimp_async_abort()' (which may be the main thread).  The main thread is  * said to be "synced" with the async thread if both are the same thread, or  * after the execution of any of the callbacks added through  * 'gimp_async_add_callback()' had started, or after calling  * 'gimp_async_wait()' on the main thread.  */
+comment|/* GimpAsync represents an asynchronous task.  Both the public and the  * protected interfaces are intentionally minimal at this point, to keep things  * simple.  They may be extended in the future as needed.  *  * Upon creation, a GimpAsync object is in the "running" state.  Once the task  * is complete (and before the object's destruction), it should be transitioned  * to the "stopped" state, using either 'gimp_async_finish()' or  * 'gimp_async_abort()'.  *  * Similarly, upon creation, a GimpAsync object is said to be "unsynced".  It  * becomes synced once the execution of any of the completion callbacks added  * through 'gimp_async_add_callback()' had started, after a call to  * 'gimp_async_wait()', or after a successful call to  * 'gimp_async_wait_until()'.  *  * Note that certain GimpAsync functions may only be called during a certain  * state, on a certain thread, or depending on whether or nor the object is  * synced, as detailed for each function.  When referring to threads, the "main  * thread" is the thread running the main loop, and the "async thread" is the  * thread calling 'gimp_async_finish()' or 'gimp_async_abort()' (which may also  * be the main thread).  */
 end_comment
 
 begin_comment
@@ -103,6 +103,10 @@ decl_stmt|;
 DECL|member|finished
 name|gboolean
 name|finished
+decl_stmt|;
+DECL|member|synced
+name|gboolean
+name|synced
 decl_stmt|;
 DECL|member|canceled
 name|gboolean
@@ -580,6 +584,15 @@ modifier|*
 name|async
 parameter_list|)
 block|{
+name|GimpAsyncCallbackInfo
+modifier|*
+name|callback_info
+decl_stmt|;
+name|gboolean
+name|unref_async
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|async
@@ -589,10 +602,6 @@ operator|->
 name|idle_id
 condition|)
 block|{
-name|GimpAsyncCallbackInfo
-modifier|*
-name|callback_info
-decl_stmt|;
 name|g_source_remove
 argument_list|(
 name|async
@@ -609,6 +618,19 @@ operator|->
 name|idle_id
 operator|=
 literal|0
+expr_stmt|;
+name|unref_async
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+name|async
+operator|->
+name|priv
+operator|->
+name|synced
+operator|=
+name|TRUE
 expr_stmt|;
 while|while
 condition|(
@@ -646,12 +668,15 @@ name|callback_info
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|unref_async
+condition|)
 name|g_object_unref
 argument_list|(
 name|async
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -660,7 +685,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/* creates a new GimpAsync object, initially placed in the "running" state. */
+comment|/* creates a new GimpAsync object, initially unsynced and placed in the  * "running" state.  */
 end_comment
 
 begin_function
@@ -684,13 +709,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* checks if 'async' is in the "stopped" state */
+comment|/* checks if 'async' is synced.  *  * may only be called on the main thread.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_async_is_stopped (GimpAsync * async)
-name|gimp_async_is_stopped
+DECL|function|gimp_async_is_synced (GimpAsync * async)
+name|gimp_async_is_synced
 parameter_list|(
 name|GimpAsync
 modifier|*
@@ -712,7 +737,7 @@ name|async
 operator|->
 name|priv
 operator|->
-name|stopped
+name|synced
 return|;
 block|}
 end_function
@@ -794,7 +819,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* same as 'gimp_async_wait()', taking an additional 'end_time' parameter,  * specifying the maximal monotonic time until which to wait for 'async' for  * stop.  *  * returns TRUE if async has transitioned to the "stopped" state, or FALSE if  * the wait was interrupted before the transition.  */
+comment|/* same as 'gimp_async_wait()', taking an additional 'end_time' parameter,  * specifying the maximal monotonic time until which to wait for 'async' to  * stop.  *  * returns TRUE if async has transitioned to the "stopped" state, or FALSE if  * the wait was interrupted before the transition.  */
 end_comment
 
 begin_function
@@ -967,6 +992,14 @@ name|callbacks
 argument_list|)
 condition|)
 block|{
+name|async
+operator|->
+name|priv
+operator|->
+name|synced
+operator|=
+name|TRUE
+expr_stmt|;
 name|g_mutex_unlock
 argument_list|(
 operator|&
@@ -1167,6 +1200,40 @@ block|}
 end_function
 
 begin_comment
+comment|/* checks if 'async' is in the "stopped" state.  *  * may only be called on the async thread.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_async_is_stopped (GimpAsync * async)
+name|gimp_async_is_stopped
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ASYNC
+argument_list|(
+name|async
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|async
+operator|->
+name|priv
+operator|->
+name|stopped
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/* transitions 'async' to the "stopped" state, indicating that the task  * completed normally, possibly providing a result.  *  * 'async' shall be in the "running" state.  *  * may only be called on the async thread.  */
 end_comment
 
@@ -1286,7 +1353,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* checks if 'async' completed normally, using 'gimp_async_finish()' (in  * contrast to 'gimp_async_abort()').  *  * 'async' shall be in the "stopped" state.  *  * may only be called on the async thread, or on the main thread when synced  * with the async thread.  */
+comment|/* checks if 'async' completed normally, using 'gimp_async_finish()' (in  * contrast to 'gimp_async_abort()').  *  * 'async' shall be in the "stopped" state.  *  * may only be called on the async thread, or on the main thread when 'async'  * is synced.  */
 end_comment
 
 begin_function
@@ -1331,7 +1398,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* returns the result of 'async', as passed to 'gimp_async_finish()'.  *  * 'async' shall be in the "stopped" state, and should have completed normally.  *  * may only be called on the async thread, or on the main thread when synced  * with the async thread.  */
+comment|/* returns the result of 'async', as passed to 'gimp_async_finish()'.  *  * 'async' shall be in the "stopped" state, and should have completed normally.  *  * may only be called on the async thread, or on the main thread when 'async'  * synced.  */
 end_comment
 
 begin_function
@@ -1447,7 +1514,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* requests the cancellation of the task managed by 'async'.  *  * note that 'gimp_async_cancel()' doesn't directly cause 'async' to be  * stopped, nor does it cause the main thread to become synced with the async  * thread.  furthermore, 'async' may still complete successfully even when  * cancellation has been requested.  */
+comment|/* requests the cancellation of the task managed by 'async'.  *  * note that 'gimp_async_cancel()' doesn't directly cause 'async' to be  * stopped, nor synced.  furthermore, 'async' may still complete successfully  * even when cancellation has been requested.  */
 end_comment
 
 begin_function

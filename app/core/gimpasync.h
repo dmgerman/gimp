@@ -169,7 +169,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_async_is_stopped
+name|gimp_async_is_synced
 parameter_list|(
 name|GimpAsync
 modifier|*
@@ -233,6 +233,17 @@ name|callback
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_async_is_stopped
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
 parameter_list|)
 function_decl|;
 end_function_decl
