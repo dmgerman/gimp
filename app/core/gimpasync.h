@@ -190,6 +190,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_async_wait_until
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|,
+name|gint64
+name|end_time
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_async_add_callback
 parameter_list|(
