@@ -66,8 +66,8 @@ DECL|macro|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
 define|#
 directive|define
 name|GIMP_COMPOSITE_BLEND_MAX_SAMPLES
-value|((1<< 19)
-comment|/* 0.5 MiB */
+value|((1<< 18)
+comment|/* 256 KiB */
 value|/      \                                           16
 comment|/* bytes per pixel */
 value|/      \                                           2
@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8ab5710103
+DECL|enum|__anon2ae73a4d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
