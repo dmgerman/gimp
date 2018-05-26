@@ -1155,6 +1155,7 @@ name|GIMP_ZOOM_SMOOTH
 condition|)
 name|delta
 operator|=
+operator|-
 name|new_scale
 expr_stmt|;
 if|if
