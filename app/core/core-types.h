@@ -949,6 +949,20 @@ comment|/*  interfaces  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpCancelable
+typedef|typedef
+name|struct
+name|_GimpCancelable
+name|GimpCancelable
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpCancelable
+comment|/* dummy typedef */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpPickable
 typedef|typedef
 name|struct
