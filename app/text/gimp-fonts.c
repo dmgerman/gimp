@@ -594,6 +594,8 @@ name|async
 operator|=
 name|gimp_parallel_run_async
 argument_list|(
+name|TRUE
+argument_list|,
 operator|(
 name|GimpParallelRunAsyncFunc
 operator|)

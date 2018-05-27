@@ -124,6 +124,9 @@ name|GimpAsync
 modifier|*
 name|gimp_parallel_run_async
 parameter_list|(
+name|gboolean
+name|independent
+parameter_list|,
 name|GimpParallelRunAsyncFunc
 name|func
 parameter_list|,
@@ -210,9 +213,11 @@ operator|>
 specifier|inline
 name|GimpAsync
 operator|*
-DECL|function|gimp_parallel_run_async (ParallelRunAsyncFunc func)
+DECL|function|gimp_parallel_run_async (gboolean independent,ParallelRunAsyncFunc func)
 name|gimp_parallel_run_async
 argument_list|(
+argument|gboolean             independent
+argument_list|,
 argument|ParallelRunAsyncFunc func
 argument_list|)
 block|{
@@ -239,6 +244,8 @@ block|;
 return|return
 name|gimp_parallel_run_async
 argument_list|(
+name|independent
+argument_list|,
 index|[]
 operator|(
 name|GimpAsync
