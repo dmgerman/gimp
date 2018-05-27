@@ -87,6 +87,12 @@ directive|include
 file|"gimphistogram.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwaitable.h"
+end_include
+
 begin_define
 DECL|macro|MIN_PARALLEL_SUB_SIZE
 define|#
@@ -105,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fff4c0103
+DECL|enum|__anon2c74ce1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -156,7 +162,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fff4c0208
+DECL|struct|__anon2c74ce1f0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -205,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fff4c0308
+DECL|struct|__anon2c74ce1f0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -905,13 +911,16 @@ name|priv
 operator|->
 name|calculate_async
 condition|)
-name|gimp_async_wait
+name|gimp_waitable_wait
+argument_list|(
+name|GIMP_WAITABLE
 argument_list|(
 name|histogram
 operator|->
 name|priv
 operator|->
 name|calculate_async
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dup
@@ -1051,8 +1060,7 @@ name|priv
 operator|->
 name|calculate_async
 condition|)
-block|{
-name|gimp_async_cancel
+name|gimp_async_cancel_and_wait
 argument_list|(
 name|histogram
 operator|->
@@ -1061,16 +1069,6 @@ operator|->
 name|calculate_async
 argument_list|)
 expr_stmt|;
-name|gimp_async_wait
-argument_list|(
-name|histogram
-operator|->
-name|priv
-operator|->
-name|calculate_async
-argument_list|)
-expr_stmt|;
-block|}
 name|context
 operator|.
 name|histogram
@@ -1222,8 +1220,7 @@ name|priv
 operator|->
 name|calculate_async
 condition|)
-block|{
-name|gimp_async_cancel
+name|gimp_async_cancel_and_wait
 argument_list|(
 name|histogram
 operator|->
@@ -1232,16 +1229,6 @@ operator|->
 name|calculate_async
 argument_list|)
 expr_stmt|;
-name|gimp_async_wait
-argument_list|(
-name|histogram
-operator|->
-name|priv
-operator|->
-name|calculate_async
-argument_list|)
-expr_stmt|;
-block|}
 name|context
 operator|=
 name|g_slice_new0
@@ -1422,8 +1409,7 @@ name|priv
 operator|->
 name|calculate_async
 condition|)
-block|{
-name|gimp_async_cancel
+name|gimp_async_cancel_and_wait
 argument_list|(
 name|histogram
 operator|->
@@ -1432,16 +1418,6 @@ operator|->
 name|calculate_async
 argument_list|)
 expr_stmt|;
-name|gimp_async_wait
-argument_list|(
-name|histogram
-operator|->
-name|priv
-operator|->
-name|calculate_async
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|histogram

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpwaitable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1698,11 +1704,14 @@ decl_stmt|;
 name|gdouble
 name|low
 decl_stmt|;
-name|gimp_async_wait
+name|gimp_waitable_wait
+argument_list|(
+name|GIMP_WAITABLE
 argument_list|(
 name|t_tool
 operator|->
 name|histogram_async
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_get

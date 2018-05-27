@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpwaitable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorbar.h"
 end_include
 
@@ -4910,11 +4916,14 @@ argument_list|(
 name|levels_tool
 argument_list|)
 decl_stmt|;
-name|gimp_async_wait
+name|gimp_waitable_wait
+argument_list|(
+name|GIMP_WAITABLE
 argument_list|(
 name|levels_tool
 operator|->
 name|histogram_async
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_levels_config_stretch

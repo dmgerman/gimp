@@ -180,31 +180,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_async_wait
-parameter_list|(
-name|GimpAsync
-modifier|*
-name|async
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_async_wait_until
-parameter_list|(
-name|GimpAsync
-modifier|*
-name|async
-parameter_list|,
-name|gint64
-name|end_time
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_async_add_callback
 parameter_list|(
 name|GimpAsync
@@ -313,8 +288,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_async_cancel
+name|gboolean
+name|gimp_async_is_canceled
 parameter_list|(
 name|GimpAsync
 modifier|*
@@ -324,8 +299,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_async_is_canceled
+name|void
+name|gimp_async_cancel_and_wait
 parameter_list|(
 name|GimpAsync
 modifier|*
