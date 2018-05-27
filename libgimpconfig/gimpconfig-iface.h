@@ -56,7 +56,7 @@ DECL|macro|GIMP_TYPE_CONFIG
 define|#
 directive|define
 name|GIMP_TYPE_CONFIG
-value|(gimp_config_interface_get_type ())
+value|(gimp_config_get_type ())
 end_define
 
 begin_define
@@ -273,6 +273,23 @@ function_decl|;
 block|}
 struct|;
 end_struct
+
+begin_decl_stmt
+name|GType
+name|gimp_config_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_config_get_type
+argument_list|)
+end_macro
 
 begin_decl_stmt
 name|GType

@@ -89,6 +89,22 @@ begin_comment
 comment|/*  * The GimpConfig serialization and deserialization interface.  */
 end_comment
 
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_config_iface_default_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 specifier|static
 name|void
@@ -96,7 +112,7 @@ name|gimp_config_iface_base_init
 parameter_list|(
 name|GimpConfigInterface
 modifier|*
-name|config_iface
+name|iface
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,10 +218,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 name|GType
-DECL|function|gimp_config_interface_get_type (void)
-name|gimp_config_interface_get_type
+DECL|function|gimp_config_get_type (void)
+name|gimp_config_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -241,6 +261,16 @@ operator|(
 name|GBaseFinalizeFunc
 operator|)
 name|NULL
+block|,
+operator|(
+name|GClassInitFunc
+operator|)
+name|gimp_config_iface_default_init
+block|,
+operator|(
+name|GClassFinalizeFunc
+operator|)
+name|NULL
 block|,       }
 decl_stmt|;
 name|config_iface_type
@@ -272,69 +302,89 @@ block|}
 end_function
 
 begin_function
+name|GType
+DECL|function|gimp_config_interface_get_type (void)
+name|gimp_config_interface_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|gimp_config_get_type
+argument_list|()
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
-DECL|function|gimp_config_iface_base_init (GimpConfigInterface * config_iface)
-name|gimp_config_iface_base_init
+DECL|function|gimp_config_iface_default_init (GimpConfigInterface * iface)
+name|gimp_config_iface_default_init
 parameter_list|(
 name|GimpConfigInterface
 modifier|*
-name|config_iface
+name|iface
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|config_iface
-operator|->
-name|serialize
-condition|)
-block|{
-name|config_iface
+name|iface
 operator|->
 name|serialize
 operator|=
 name|gimp_config_iface_serialize
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|deserialize
 operator|=
 name|gimp_config_iface_deserialize
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|duplicate
 operator|=
 name|gimp_config_iface_duplicate
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|equal
 operator|=
 name|gimp_config_iface_equal
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|reset
 operator|=
 name|gimp_config_iface_reset
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|copy
 operator|=
 name|gimp_config_iface_copy
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_config_iface_base_init (GimpConfigInterface * iface)
+name|gimp_config_iface_base_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
 comment|/*  always set these to NULL since we don't want to inherit them    *  from parent classes    */
-name|config_iface
+name|iface
 operator|->
 name|serialize_property
 operator|=
 name|NULL
 expr_stmt|;
-name|config_iface
+name|iface
 operator|->
 name|deserialize_property
 operator|=
@@ -985,6 +1035,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_comment
 comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error: return location for a possible error  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: 2.4  **/
