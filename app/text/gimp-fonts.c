@@ -375,16 +375,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fonts_load_async_callback (GimpAsync * async,GimpFontList * fonts)
+DECL|function|gimp_fonts_load_async_callback (GimpAsync * async,Gimp * gimp)
 name|gimp_fonts_load_async_callback
 parameter_list|(
 name|GimpAsync
 modifier|*
 name|async
 parameter_list|,
-name|GimpFontList
+name|Gimp
 modifier|*
-name|fonts
+name|gimp
 parameter_list|)
 block|{
 if|if
@@ -394,11 +394,24 @@ argument_list|(
 name|async
 argument_list|)
 condition|)
+block|{
 name|gimp_font_list_restore
 argument_list|(
+name|GIMP_FONT_LIST
+argument_list|(
+name|gimp
+operator|->
 name|fonts
 argument_list|)
+argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
+name|fonts_loading
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -570,6 +583,12 @@ operator|)
 name|g_object_unref
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
+name|fonts_loading
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* We perform font cache initialization in a separate thread, so    * in the case a cache rebuild is to be done it will not block    * the UI.    */
 name|async
 operator|=
@@ -593,8 +612,6 @@ operator|)
 name|gimp_fonts_load_async_callback
 argument_list|,
 name|gimp
-operator|->
-name|fonts
 argument_list|)
 expr_stmt|;
 name|g_object_unref
