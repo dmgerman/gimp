@@ -1004,6 +1004,20 @@ DECL|typedef|GimpTagged
 comment|/* dummy typedef */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpWaitable
+typedef|typedef
+name|struct
+name|_GimpWaitable
+name|GimpWaitable
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpWaitable
+comment|/* dummy typedef */
+end_comment
+
 begin_comment
 comment|/*  non-object types  */
 end_comment
