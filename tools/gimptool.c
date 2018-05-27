@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2b9d5a170108
+DECL|struct|__anon27afec5d0108
 specifier|static
 struct|struct
 block|{
