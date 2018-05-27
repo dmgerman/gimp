@@ -302,21 +302,6 @@ block|}
 end_function
 
 begin_function
-name|GType
-DECL|function|gimp_config_interface_get_type (void)
-name|gimp_config_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|gimp_config_get_type
-argument_list|()
-return|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_config_iface_default_init (GimpConfigInterface * iface)

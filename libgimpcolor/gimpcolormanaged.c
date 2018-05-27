@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac8bbc0103
+DECL|enum|__anon2b5f4def0103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -84,21 +84,6 @@ end_decl_stmt
 begin_comment
 comment|/*  private functions  */
 end_comment
-
-begin_function
-name|GType
-DECL|function|gimp_color_managed_interface_get_type (void)
-name|gimp_color_managed_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|gimp_color_managed_get_type
-argument_list|()
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static

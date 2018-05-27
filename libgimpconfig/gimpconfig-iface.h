@@ -284,23 +284,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_config_get_type
-argument_list|)
-end_macro
-
-begin_decl_stmt
-name|GType
-name|gimp_config_interface_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|gboolean
 name|gimp_config_serialize_to_file
