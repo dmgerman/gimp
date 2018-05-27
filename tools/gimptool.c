@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon27afec5d0108
+DECL|struct|__anon2bc9904b0108
 specifier|static
 struct|struct
 block|{
@@ -1887,7 +1887,7 @@ else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"The source file(%s) doesn't have a \"standard\" C or C++ suffix, "
+literal|"The source file (%s) doesn't have a \"standard\" C or C++ suffix, "
 literal|"and the tool failed to confirm the language of the file.\n"
 literal|"Please be explicit about the language of the file "
 literal|"by renaming it with one of the suffixes: .c .cc .cpp\n"
@@ -1902,6 +1902,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|p
+condition|)
 operator|*
 name|p
 operator|=
