@@ -57,9 +57,6 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpInitStatusFunc
-name|status_callback
-parameter_list|,
 name|GError
 modifier|*
 modifier|*

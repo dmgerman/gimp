@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9e2840103
+DECL|enum|__anon2b184e9c0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9e2840203
+DECL|enum|__anon2b184e9c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3354,7 +3354,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Fonts (this may take a while)"
+literal|"Fonts"
 argument_list|)
 argument_list|,
 literal|0.7
@@ -3363,8 +3363,6 @@ expr_stmt|;
 name|gimp_fonts_load
 argument_list|(
 name|gimp
-argument_list|,
-name|status_callback
 argument_list|,
 name|error
 argument_list|)
