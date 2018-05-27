@@ -1398,7 +1398,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* returns the result of 'async', as passed to 'gimp_async_finish()'.  *  * 'async' shall be in the "stopped" state, and should have completed normally.  *  * may only be called on the async thread, or on the main thread when 'async'  * synced.  */
+comment|/* returns the result of 'async', as passed to 'gimp_async_finish()'.  *  * 'async' shall be in the "stopped" state, and should have completed normally.  *  * may only be called on the async thread, or on the main thread when 'async'  * is synced.  */
 end_comment
 
 begin_function
