@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75d63e0103
+DECL|enum|__anon29ac8bbc0103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -56,20 +56,18 @@ block|}
 enum|;
 end_enum
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_managed_base_init
-parameter_list|(
-name|GimpColorManagedInterface
-modifier|*
-name|iface
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_macro
+name|G_DEFINE_INTERFACE
+argument_list|(
+argument|GimpColorManaged
+argument_list|,
+argument|gimp_color_managed
+argument_list|,
+argument|G_TYPE_OBJECT
+argument_list|)
+end_macro
 
 begin_decl_stmt
-DECL|variable|gimp_color_managed_signals
 specifier|static
 name|guint
 name|gimp_color_managed_signals
@@ -83,6 +81,10 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 name|GType
 DECL|function|gimp_color_managed_interface_get_type (void)
@@ -91,63 +93,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|static
-name|GType
-name|iface_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|iface_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|iface_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpColorManagedInterface
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|gimp_color_managed_base_init
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,       }
-decl_stmt|;
-name|iface_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_INTERFACE
-argument_list|,
-literal|"GimpColorManagedInterface"
-argument_list|,
-operator|&
-name|iface_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_interface_add_prerequisite
-argument_list|(
-name|iface_type
-argument_list|,
-name|G_TYPE_OBJECT
-argument_list|)
-expr_stmt|;
-block|}
 return|return
-name|iface_type
+name|gimp_color_managed_get_type
+argument_list|()
 return|;
 block|}
 end_function
@@ -155,25 +103,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_managed_base_init (GimpColorManagedInterface * iface)
-name|gimp_color_managed_base_init
+DECL|function|gimp_color_managed_default_init (GimpColorManagedInterface * iface)
+name|gimp_color_managed_default_init
 parameter_list|(
 name|GimpColorManagedInterface
 modifier|*
 name|iface
 parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|initialized
-init|=
-name|FALSE
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|initialized
-condition|)
 block|{
 name|gimp_color_managed_signals
 index|[
@@ -209,31 +145,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|iface
-operator|->
-name|get_icc_profile
-operator|=
-name|NULL
-expr_stmt|;
-name|iface
-operator|->
-name|get_color_profile
-operator|=
-name|NULL
-expr_stmt|;
-name|iface
-operator|->
-name|profile_changed
-operator|=
-name|NULL
-expr_stmt|;
-name|initialized
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_comment
 comment|/**  * gimp_color_managed_get_icc_profile:  * @managed: an object the implements the #GimpColorManaged interface  * @len:     return location for the number of bytes in the profile data  *  * Return value: A pointer to a blob of data that represents an ICC  *               color profile.  *  * Since: 2.4  **/
