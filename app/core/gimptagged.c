@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba921970103
+DECL|enum|__anon2c2374910103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -55,19 +55,18 @@ block|}
 enum|;
 end_enum
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_tagged_base_init
-parameter_list|(
-name|gpointer
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_macro
+name|G_DEFINE_INTERFACE
+argument_list|(
+argument|GimpTagged
+argument_list|,
+argument|gimp_tagged
+argument_list|,
+argument|G_TYPE_OBJECT
+argument_list|)
+end_macro
 
 begin_decl_stmt
-DECL|variable|gimp_tagged_signals
 specifier|static
 name|guint
 name|gimp_tagged_signals
@@ -81,86 +80,20 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|GType
-DECL|function|gimp_tagged_interface_get_type (void)
-name|gimp_tagged_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|tagged_iface_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|tagged_iface_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|tagged_iface_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpTaggedInterface
-argument_list|)
-block|,
-name|gimp_tagged_base_init
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,       }
-decl_stmt|;
-name|tagged_iface_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_INTERFACE
-argument_list|,
-literal|"GimpTaggedInterface"
-argument_list|,
-operator|&
-name|tagged_iface_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|tagged_iface_type
-return|;
-block|}
-end_function
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tagged_base_init (gpointer klass)
-name|gimp_tagged_base_init
+DECL|function|gimp_tagged_default_init (GimpTaggedInterface * iface)
+name|gimp_tagged_default_init
 parameter_list|(
-name|gpointer
-name|klass
+name|GimpTaggedInterface
+modifier|*
+name|iface
 parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|initialized
-init|=
-name|FALSE
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|initialized
-condition|)
 block|{
 name|gimp_tagged_signals
 index|[
@@ -228,13 +161,12 @@ argument_list|,
 name|GIMP_TYPE_TAG
 argument_list|)
 expr_stmt|;
-name|initialized
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_comment
 comment|/**  * gimp_tagged_add_tag:  * @tagged: an object that implements the %GimpTagged interface  * @tag:    a %GimpTag  *  * Adds @tag to the @tagged object. The GimpTagged::tag-added signal  * is emitted if and only if the @tag was not already assigned to this  * object.  **/

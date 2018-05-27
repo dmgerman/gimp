@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4ee140103
+DECL|enum|__anon2923d1c70103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -57,7 +57,7 @@ DECL|macro|GIMP_TYPE_CONTAINER_VIEW
 define|#
 directive|define
 name|GIMP_TYPE_CONTAINER_VIEW
-value|(gimp_container_view_interface_get_type ())
+value|(gimp_container_view_get_type ())
 end_define
 
 begin_define
@@ -393,7 +393,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_container_view_interface_get_type
+name|gimp_container_view_get_type
 argument_list|(
 name|void
 argument_list|)

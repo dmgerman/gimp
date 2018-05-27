@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c071a590103
+DECL|enum|__anon289d70e40103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -123,7 +123,7 @@ DECL|macro|GIMP_TYPE_RECTANGLE_OPTIONS
 define|#
 directive|define
 name|GIMP_TYPE_RECTANGLE_OPTIONS
-value|(gimp_rectangle_options_interface_get_type ())
+value|(gimp_rectangle_options_get_type ())
 end_define
 
 begin_define
@@ -390,7 +390,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_rectangle_options_interface_get_type
+name|gimp_rectangle_options_get_type
 argument_list|(
 name|void
 argument_list|)

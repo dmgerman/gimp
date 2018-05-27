@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa6f8b0103
+DECL|enum|__anon2c4a04fa0103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -70,17 +70,9 @@ block|}
 enum|;
 end_enum
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_docked_iface_base_init
-parameter_list|(
-name|GimpDockedInterface
-modifier|*
-name|docked_iface
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -111,8 +103,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|G_DEFINE_INTERFACE
+argument_list|(
+argument|GimpDocked
+argument_list|,
+argument|gimp_docked
+argument_list|,
+argument|GTK_TYPE_WIDGET
+argument_list|)
+end_macro
+
 begin_decl_stmt
-DECL|variable|docked_signals
 specifier|static
 name|guint
 name|docked_signals
@@ -126,118 +128,20 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|GType
-DECL|function|gimp_docked_interface_get_type (void)
-name|gimp_docked_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|docked_iface_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|docked_iface_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|docked_iface_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpDockedInterface
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|gimp_docked_iface_base_init
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,       }
-decl_stmt|;
-name|docked_iface_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_INTERFACE
-argument_list|,
-literal|"GimpDockedInterface"
-argument_list|,
-operator|&
-name|docked_iface_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_interface_add_prerequisite
-argument_list|(
-name|docked_iface_type
-argument_list|,
-name|GTK_TYPE_WIDGET
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|docked_iface_type
-return|;
-block|}
-end_function
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_docked_iface_base_init (GimpDockedInterface * docked_iface)
-name|gimp_docked_iface_base_init
+DECL|function|gimp_docked_default_init (GimpDockedInterface * iface)
+name|gimp_docked_default_init
 parameter_list|(
 name|GimpDockedInterface
 modifier|*
-name|docked_iface
+name|iface
 parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|initialized
-init|=
-name|FALSE
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|docked_iface
-operator|->
-name|get_aux_info
-condition|)
-block|{
-name|docked_iface
-operator|->
-name|get_aux_info
-operator|=
-name|gimp_docked_iface_get_aux_info
-expr_stmt|;
-name|docked_iface
-operator|->
-name|set_aux_info
-operator|=
-name|gimp_docked_iface_set_aux_info
-expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
-name|initialized
-condition|)
 block|{
 name|docked_signals
 index|[
@@ -270,11 +174,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|initialized
+name|iface
+operator|->
+name|get_aux_info
 operator|=
-name|TRUE
+name|gimp_docked_iface_get_aux_info
 expr_stmt|;
-block|}
+name|iface
+operator|->
+name|set_aux_info
+operator|=
+name|gimp_docked_iface_set_aux_info
+expr_stmt|;
 block|}
 end_function
 
@@ -418,6 +329,10 @@ name|NULL
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void

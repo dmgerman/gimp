@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89995a0103
+DECL|enum|__anon27c1415b0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -70,24 +70,18 @@ block|}
 enum|;
 end_enum
 
-begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_progress_iface_base_init
-parameter_list|(
-name|GimpProgressInterface
-modifier|*
-name|progress_iface
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_macro
+name|G_DEFINE_INTERFACE
+argument_list|(
+argument|GimpProgress
+argument_list|,
+argument|gimp_progress
+argument_list|,
+argument|G_TYPE_OBJECT
+argument_list|)
+end_macro
 
 begin_decl_stmt
-DECL|variable|progress_signals
 specifier|static
 name|guint
 name|progress_signals
@@ -101,97 +95,20 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|GType
-DECL|function|gimp_progress_interface_get_type (void)
-name|gimp_progress_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|progress_iface_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|progress_iface_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|progress_iface_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpProgressInterface
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|gimp_progress_iface_base_init
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,       }
-decl_stmt|;
-name|progress_iface_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_INTERFACE
-argument_list|,
-literal|"GimpProgressInterface"
-argument_list|,
-operator|&
-name|progress_iface_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_interface_add_prerequisite
-argument_list|(
-name|progress_iface_type
-argument_list|,
-name|G_TYPE_OBJECT
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|progress_iface_type
-return|;
-block|}
-end_function
+begin_comment
+comment|/*  private functionss  */
+end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_progress_iface_base_init (GimpProgressInterface * progress_iface)
-name|gimp_progress_iface_base_init
+DECL|function|gimp_progress_default_init (GimpProgressInterface * progress_iface)
+name|gimp_progress_default_init
 parameter_list|(
 name|GimpProgressInterface
 modifier|*
 name|progress_iface
 parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|initialized
-init|=
-name|FALSE
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|initialized
-condition|)
 block|{
 name|progress_signals
 index|[
@@ -227,13 +144,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|initialized
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|GimpProgress

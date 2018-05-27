@@ -21,7 +21,7 @@ DECL|macro|GIMP_TYPE_PROJECTABLE
 define|#
 directive|define
 name|GIMP_TYPE_PROJECTABLE
-value|(gimp_projectable_interface_get_type ())
+value|(gimp_projectable_get_type ())
 end_define
 
 begin_define
@@ -250,7 +250,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_projectable_interface_get_type
+name|gimp_projectable_get_type
 argument_list|(
 name|void
 argument_list|)

@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d6ffe0103
+DECL|enum|__anon27980d500103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -114,17 +114,9 @@ block|}
 enum|;
 end_enum
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_rectangle_options_iface_base_init
-parameter_list|(
-name|GimpRectangleOptionsInterface
-modifier|*
-name|rectangle_options_iface
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -222,97 +214,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_rectangle_options_interface_get_type (void)
-name|gimp_rectangle_options_interface_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|iface_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|iface_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|iface_info
-init|=
-block|{
-sizeof|sizeof
+begin_macro
+DECL|function|G_DEFINE_INTERFACE (GimpRectangleOptions,gimp_rectangle_options,GIMP_TYPE_TOOL_OPTIONS)
+name|G_DEFINE_INTERFACE
 argument_list|(
-name|GimpRectangleOptionsInterface
+argument|GimpRectangleOptions
+argument_list|,
+argument|gimp_rectangle_options
+argument_list|,
+argument|GIMP_TYPE_TOOL_OPTIONS
 argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|gimp_rectangle_options_iface_base_init
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,       }
-decl_stmt|;
-name|iface_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_INTERFACE
-argument_list|,
-literal|"GimpRectangleOptionsInterface"
-argument_list|,
-operator|&
-name|iface_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_interface_add_prerequisite
-argument_list|(
-name|iface_type
-argument_list|,
-name|GIMP_TYPE_TOOL_OPTIONS
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|iface_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_options_iface_base_init (GimpRectangleOptionsInterface * iface)
-name|gimp_rectangle_options_iface_base_init
+name|gimp_rectangle_options_default_init
 parameter_list|(
 name|GimpRectangleOptionsInterface
 modifier|*
 name|iface
 parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|initialized
-init|=
-name|FALSE
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|initialized
-condition|)
 block|{
 name|g_object_interface_install_property
 argument_list|(
@@ -962,11 +884,6 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|initialized
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 end_function
 
