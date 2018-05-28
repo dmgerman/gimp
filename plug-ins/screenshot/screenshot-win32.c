@@ -481,7 +481,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bf4d0000108
+DECL|struct|__anon2a3e9bd60108
 typedef|typedef
 struct|struct
 block|{
@@ -528,7 +528,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bf4d0000208
+DECL|struct|__anon2a3e9bd60208
 typedef|typedef
 struct|struct
 block|{
@@ -612,16 +612,16 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|screenshot_win32_shoot (ScreenshotValues * shootvals,GdkScreen * screen,gint32 * image_ID,GError ** error)
+DECL|function|screenshot_win32_shoot (ScreenshotValues * shootvals,GdkMonitor * monitor,gint32 * image_ID,GError ** error)
 name|screenshot_win32_shoot
 parameter_list|(
 name|ScreenshotValues
 modifier|*
 name|shootvals
 parameter_list|,
-name|GdkScreen
+name|GdkMonitor
 modifier|*
-name|screen
+name|monitor
 parameter_list|,
 name|gint32
 modifier|*
@@ -714,12 +714,8 @@ decl_stmt|;
 comment|/* XXX No idea if the "monitor" value is right at all, especially        * considering above comment. Just make so that it at least        * compiles!        */
 name|profile
 operator|=
-name|gimp_screen_get_color_profile
+name|gimp_monitor_get_color_profile
 argument_list|(
-name|screen
-argument_list|,
-name|shootvals
-operator|->
 name|monitor
 argument_list|)
 expr_stmt|;
