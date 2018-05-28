@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3d22f90103
+DECL|enum|__anon2be2ea790103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3d22f90203
+DECL|enum|__anon2be2ea790203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -180,30 +180,6 @@ name|obj
 parameter_list|)
 value|(((GimpPreview *) (obj))->priv)
 end_define
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_class_init
-parameter_list|(
-name|GimpPreviewClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_init
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -479,12 +455,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* FIXME G_DEFINE_TYPE */
-end_comment
+begin_macro
+name|G_DEFINE_ABSTRACT_TYPE
+argument_list|(
+argument|GimpPreview
+argument_list|,
+argument|gimp_preview
+argument_list|,
+argument|GTK_TYPE_BOX
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_preview_parent_class
+end_define
 
 begin_decl_stmt
-DECL|variable|preview_signals
 specifier|static
 name|guint
 name|preview_signals
@@ -497,103 +487,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GtkBoxClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_preview_get_type (void)
-name|gimp_preview_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|preview_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|preview_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|preview_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpPreviewClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_preview_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpPreview
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_preview_init
-block|,       }
-decl_stmt|;
-name|preview_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GTK_TYPE_BOX
-argument_list|,
-literal|"GimpPreview"
-argument_list|,
-operator|&
-name|preview_info
-argument_list|,
-name|G_TYPE_FLAG_ABSTRACT
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|preview_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
