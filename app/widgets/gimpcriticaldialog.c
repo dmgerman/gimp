@@ -740,11 +740,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|text
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"```\n%s\n```"
+argument_list|,
+name|version
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_set_text
 argument_list|(
 name|buffer
 argument_list|,
-name|version
+name|text
 argument_list|,
 operator|-
 literal|1
@@ -753,6 +762,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|version
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1769,7 +1783,7 @@ name|text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"\n> %s\n\nStack trace:\n%s"
+literal|"\n> %s\n\nStack trace:\n```\n%s\n```"
 argument_list|,
 name|message
 argument_list|,
