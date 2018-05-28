@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursors/gimp-color-picker-cursors.c"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 

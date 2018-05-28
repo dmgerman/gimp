@@ -57,12 +57,6 @@ directive|include
 file|"gimppickbutton-quartz.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"cursors/gimp-color-picker-cursors.c"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef

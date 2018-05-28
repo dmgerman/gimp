@@ -27,12 +27,6 @@ directive|include
 file|"gimpcursor.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"cursors/gimp-tool-cursors.c"
-end_include
-
 begin_define
 DECL|macro|cursor_default_x_hot
 define|#
