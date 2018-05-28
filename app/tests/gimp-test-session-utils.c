@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2797e71c0108
+DECL|struct|__anon29c1c64c0108
 block|{
 DECL|member|filename
 name|gchar
@@ -555,7 +555,7 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* Make sure to run this before we use any GIMP functions */
-name|gimp_test_utils_set_gimp2_directory
+name|gimp_test_utils_set_gimp3_directory
 argument_list|(
 literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
 argument_list|,
@@ -638,7 +638,7 @@ name|gimp_test_run_mainloop_until_idle
 argument_list|()
 expr_stmt|;
 comment|/* Change the gimp dir to the output dir so files are written there,    * we don't want to (can't always) write to files in the source    * dir. There is a hook in Makefile.am that makes sure the output    * dir exists    */
-name|gimp_test_utils_set_gimp2_directory
+name|gimp_test_utils_set_gimp3_directory
 argument_list|(
 literal|"GIMP_TESTING_ABS_TOP_BUILDDIR"
 argument_list|,

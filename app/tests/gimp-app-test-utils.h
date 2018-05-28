@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_test_utils_set_gimp2_directory
+name|gimp_test_utils_set_gimp3_directory
 parameter_list|(
 specifier|const
 name|gchar

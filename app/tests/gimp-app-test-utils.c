@@ -220,13 +220,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_utils_set_gimp2_directory:  * @root_env_var: Either "GIMP_TESTING_ABS_TOP_SRCDIR" or  *                "GIMP_TESTING_ABS_TOP_BUILDDIR"  * @subdir:       Subdir, may be %NULL  *  * Sets GIMP2_DIRECTORY to the source dir @root_env_var/@subdir. The  * environment variables is set up by the test runner, see Makefile.am  **/
+comment|/**  * gimp_test_utils_set_gimp3_directory:  * @root_env_var: Either "GIMP_TESTING_ABS_TOP_SRCDIR" or  *                "GIMP_TESTING_ABS_TOP_BUILDDIR"  * @subdir:       Subdir, may be %NULL  *  * Sets GIMP3_DIRECTORY to the source dir @root_env_var/@subdir. The  * environment variables is set up by the test runner, see Makefile.am  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_test_utils_set_gimp2_directory (const gchar * root_env_var,const gchar * subdir)
-name|gimp_test_utils_set_gimp2_directory
+DECL|function|gimp_test_utils_set_gimp3_directory (const gchar * root_env_var,const gchar * subdir)
+name|gimp_test_utils_set_gimp3_directory
 parameter_list|(
 specifier|const
 name|gchar
@@ -245,7 +245,7 @@ name|root_env_var
 argument_list|,
 name|subdir
 argument_list|,
-literal|"GIMP2_DIRECTORY"
+literal|"GIMP3_DIRECTORY"
 comment|/*target_env_var*/
 argument_list|)
 expr_stmt|;
