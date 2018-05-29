@@ -558,6 +558,8 @@ name|success
 operator|=
 name|text_get_extents
 argument_list|(
+name|gimp
+argument_list|,
 name|real_fontname
 argument_list|,
 name|text

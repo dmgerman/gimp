@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimp-fonts.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdb.h"
 end_include
 
@@ -176,6 +182,14 @@ operator|->
 name|pdb
 argument_list|,
 name|font_callback
+argument_list|)
+operator|||
+operator|!
+name|gimp_fonts_wait
+argument_list|(
+name|gimp
+argument_list|,
+name|error
 argument_list|)
 operator|||
 operator|!
@@ -427,6 +441,14 @@ operator|->
 name|pdb
 argument_list|,
 name|font_callback
+argument_list|)
+operator|||
+operator|!
+name|gimp_fonts_wait
+argument_list|(
+name|gimp
+argument_list|,
+name|error
 argument_list|)
 operator|||
 operator|!

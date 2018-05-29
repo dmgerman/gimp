@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpasyncset.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -150,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-fonts.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9735410103
+DECL|enum|__anon2bf755ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2386,41 +2386,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_async_set_is_empty
-argument_list|(
-name|image
-operator|->
-name|gimp
-operator|->
-name|fonts_async_set
-argument_list|)
-condition|)
-block|{
-name|gimp_message_literal
+name|gimp_fonts_wait
 argument_list|(
 name|image
 operator|->
 name|gimp
 argument_list|,
 name|NULL
-argument_list|,
-name|GIMP_MESSAGE_ERROR
-argument_list|,
-name|_
-argument_list|(
-literal|"Fonts are still loading (this may take a while), "
-literal|"text functionality is not available yet."
-argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-elseif|else
 if|if
 condition|(
 name|gimp_container_is_empty

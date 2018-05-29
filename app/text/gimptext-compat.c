@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-fonts.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
@@ -243,6 +249,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_fonts_wait
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
 if|if
 condition|(
 name|border
@@ -456,9 +477,13 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|text_get_extents (const gchar * fontname,const gchar * text,gint * width,gint * height,gint * ascent,gint * descent)
+DECL|function|text_get_extents (Gimp * gimp,const gchar * fontname,const gchar * text,gint * width,gint * height,gint * ascent,gint * descent)
 name|text_get_extents
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -507,6 +532,16 @@ name|rect
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|fontname
 operator|!=
 name|NULL
@@ -523,6 +558,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_fonts_wait
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|fontmap
 operator|=
 name|pango_cairo_font_map_new_for_font_type

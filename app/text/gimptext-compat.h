@@ -66,6 +66,10 @@ begin_function_decl
 name|gboolean
 name|text_get_extents
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
