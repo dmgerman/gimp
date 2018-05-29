@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpasyncset.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -179,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1942700103
+DECL|enum|__anon2c9735410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2382,11 +2388,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_async_set_is_empty
+argument_list|(
 name|image
 operator|->
 name|gimp
 operator|->
-name|fonts_loading
+name|fonts_async_set
+argument_list|)
 condition|)
 block|{
 name|gimp_message_literal

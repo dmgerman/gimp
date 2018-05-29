@@ -289,9 +289,10 @@ name|GimpContainer
 modifier|*
 name|fonts
 decl_stmt|;
-DECL|member|fonts_loading
-name|gboolean
-name|fonts_loading
+DECL|member|fonts_async_set
+name|GimpAsyncSet
+modifier|*
+name|fonts_async_set
 decl_stmt|;
 DECL|member|brush_factory
 name|GimpDataFactory
