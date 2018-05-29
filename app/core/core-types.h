@@ -801,6 +801,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpAsyncSet
+typedef|typedef
+name|struct
+name|_GimpAsyncSet
+name|GimpAsyncSet
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBuffer
 typedef|typedef
 name|struct
