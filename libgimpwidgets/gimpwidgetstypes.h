@@ -46,6 +46,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBusyBox
+typedef|typedef
+name|struct
+name|_GimpBusyBox
+name|GimpBusyBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpButton
 typedef|typedef
 name|struct
