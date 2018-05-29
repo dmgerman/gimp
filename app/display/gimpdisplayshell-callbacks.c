@@ -813,6 +813,18 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+comment|/* undo size request from gimp_display_shell_constructed() */
+name|gtk_widget_set_size_request
+argument_list|(
+name|widget
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
