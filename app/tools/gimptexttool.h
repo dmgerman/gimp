@@ -310,7 +310,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_text_tool_set_layer
 parameter_list|(
 name|GimpTextTool

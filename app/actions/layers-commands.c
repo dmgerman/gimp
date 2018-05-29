@@ -856,10 +856,8 @@ name|active_tool
 argument_list|)
 condition|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
+if|if
+condition|(
 name|gimp_text_tool_set_layer
 argument_list|(
 name|GIMP_TEXT_TOOL
@@ -869,7 +867,12 @@ argument_list|)
 argument_list|,
 name|layer
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|shell
 operator|=
 name|gimp_display_get_shell
@@ -886,6 +889,7 @@ operator|->
 name|canvas
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
