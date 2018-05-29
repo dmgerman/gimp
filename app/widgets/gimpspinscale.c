@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d310850103
+DECL|enum|__anon2b891e6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d310850203
+DECL|enum|__anon2b891e6f0203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -1221,7 +1221,6 @@ name|natural_height
 operator|*=
 literal|1.2
 expr_stmt|;
-return|return;
 block|}
 end_function
 
