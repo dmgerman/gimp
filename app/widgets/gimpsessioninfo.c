@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb68c590103
+DECL|enum|__anon29eaed7f0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb68c590208
+DECL|struct|__anon29eaed7f0208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -2720,6 +2720,36 @@ operator|>
 literal|0
 condition|)
 block|{
+comment|/*  This used to call gtk_window_set_default_size() which worked        *  fine in gtk2 and should continue to work, but doesn't for        *  dock windows. gtk_window_resize() seems to work fine for all        *  windows. Leave this comment here until we figured what's        *  going on...        */
+if|#
+directive|if
+literal|1
+name|gtk_window_resize
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|info
+operator|->
+name|p
+operator|->
+name|widget
+argument_list|)
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|width
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gtk_window_set_default_size
 argument_list|(
 name|GTK_WINDOW
@@ -2744,6 +2774,8 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 name|gtk_window_get_size
 argument_list|(
