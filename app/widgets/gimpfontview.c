@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -331,6 +337,22 @@ name|view
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_container_editor_bind_to_async_set
+argument_list|(
+name|editor
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|fonts_async_set
+argument_list|,
+name|_
+argument_list|(
+literal|"Loading fonts (this may take a while...)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|font_view
