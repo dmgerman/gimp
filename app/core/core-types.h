@@ -945,6 +945,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTriviallyCancelableWaitable
+typedef|typedef
+name|struct
+name|_GimpTriviallyCancelableWaitable
+name|GimpTriviallyCancelableWaitable
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUncancelableWaitable
 typedef|typedef
 name|struct
