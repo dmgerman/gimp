@@ -944,6 +944,15 @@ name|GimpTreeHandler
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpUncancelableWaitable
+typedef|typedef
+name|struct
+name|_GimpUncancelableWaitable
+name|GimpUncancelableWaitable
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  interfaces  */
 end_comment
