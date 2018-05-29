@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27559a650103
+DECL|enum|__anon2c6477ec0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1109,6 +1109,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|_icon_theme_dir
+specifier|static
+name|gchar
+modifier|*
+name|_icon_theme_dir
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|progname
 specifier|static
 specifier|const
@@ -1285,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon27559a650203
+DECL|enum|__anon2c6477ec0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -5139,6 +5150,26 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_get_icon_theme_dir:  *  * Returns the directory of the current icon theme.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the icon theme directory  *  * Since: 2.10.4  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_icon_theme_dir (void)
+name|gimp_icon_theme_dir
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_icon_theme_dir
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_get_progname:  *  * Returns the plug-in's executable name.  *  * Return value: the executable name  **/
 end_comment
 
@@ -6812,6 +6843,15 @@ operator|=
 name|config
 operator|->
 name|timestamp
+expr_stmt|;
+name|_icon_theme_dir
+operator|=
+name|g_strdup
+argument_list|(
+name|config
+operator|->
+name|icon_theme_dir
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -428,11 +428,17 @@ name|gimp_wm_class
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_icon_theme_dir
+argument_list|()
+condition|)
+block|{
 name|file
 operator|=
 name|g_file_new_for_path
 argument_list|(
-name|gimp_get_icon_theme_dir
+name|gimp_icon_theme_dir
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -446,6 +452,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_widgets_init
 argument_list|(
 name|gimp_ui_help_func

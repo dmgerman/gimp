@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0017
 name|enum
-DECL|enum|__anon2b738b920103
+DECL|enum|__anon2953ad730103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -239,6 +239,11 @@ DECL|member|timestamp
 name|guint32
 name|timestamp
 decl_stmt|;
+DECL|member|icon_theme_dir
+name|gchar
+modifier|*
+name|icon_theme_dir
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -316,7 +321,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b738b92020a
+DECL|union|__anon2953ad73020a
 block|{
 DECL|member|d_int32
 name|gint32
