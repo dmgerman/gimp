@@ -216,6 +216,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_container_editor_bind_to_async_set
+parameter_list|(
+name|GimpContainerEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GimpAsyncSet
+modifier|*
+name|async_set
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
