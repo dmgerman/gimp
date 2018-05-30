@@ -472,16 +472,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fonts_load_async_callback (GimpAsync * async,Gimp * gimp)
+DECL|function|gimp_fonts_load_async_callback (GimpAsync * async,gpointer data)
 name|gimp_fonts_load_async_callback
 parameter_list|(
 name|GimpAsync
 modifier|*
 name|async
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 block|{
 if|if
@@ -732,7 +731,7 @@ name|GimpAsyncCallback
 operator|)
 name|gimp_fonts_load_async_callback
 argument_list|,
-name|gimp
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_async_set_add

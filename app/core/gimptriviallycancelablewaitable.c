@@ -45,20 +45,6 @@ directive|include
 file|"gimpwaitable.h"
 end_include
 
-begin_struct
-DECL|struct|_GimpTriviallyCancelableWaitablePrivate
-struct|struct
-name|_GimpTriviallyCancelableWaitablePrivate
-block|{
-DECL|member|waitable
-name|GimpWaitable
-modifier|*
-name|waitable
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment

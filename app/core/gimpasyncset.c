@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c21430103
+DECL|enum|__anon2a57dd2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -459,20 +459,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|TIME_ASYNC_SET_OPS
-name|async_set
-operator|->
-name|priv
-operator|->
-name|start_time
-operator|=
-name|g_get_monotonic_time
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
