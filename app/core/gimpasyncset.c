@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a57dd2b0103
+DECL|enum|__anon2c523f030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,15 +63,6 @@ name|PROP_EMPTY
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpAsyncSetCallbackInfo
-typedef|typedef
-name|struct
-name|_GimpAsyncSetCallbackInfo
-name|GimpAsyncSetCallbackInfo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpAsyncSetPrivate
