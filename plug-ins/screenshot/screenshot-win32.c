@@ -113,13 +113,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"magnification-api-win32.h"
+file|"screenshot-win32-magnification-api.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dwm-api-win32.h"
+file|"screenshot-win32-dwm-api.h"
 end_include
 
 begin_comment
@@ -470,7 +470,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f076340108
+DECL|struct|__anon2b20c7ae0108
 typedef|typedef
 struct|struct
 block|{
@@ -517,7 +517,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f076340208
+DECL|struct|__anon2b20c7ae0208
 typedef|typedef
 struct|struct
 block|{
