@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340103
+DECL|enum|__anon2bf819ba0103
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340203
+DECL|enum|__anon2bf819ba0203
 block|{
 DECL|enumerator|GIMP_CURSOR_FORMAT_BITMAP
 name|GIMP_CURSOR_FORMAT_BITMAP
@@ -124,7 +124,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340303
+DECL|enum|__anon2bf819ba0303
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -164,7 +164,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340403
+DECL|enum|__anon2bf819ba0403
 block|{
 DECL|enumerator|GIMP_HANDEDNESS_LEFT
 name|GIMP_HANDEDNESS_LEFT
@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340503
+DECL|enum|__anon2bf819ba0503
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -212,58 +212,6 @@ comment|/*< desc="Web browser">*/
 DECL|typedef|GimpHelpBrowserType
 block|}
 name|GimpHelpBrowserType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_ICON_SIZE
-define|#
-directive|define
-name|GIMP_TYPE_ICON_SIZE
-value|(gimp_icon_size_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_icon_size_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2bee08340603
-block|{
-DECL|enumerator|GIMP_ICON_SIZE_AUTO
-name|GIMP_ICON_SIZE_AUTO
-block|,
-comment|/*< desc="Guess ideal size"> */
-DECL|enumerator|GIMP_ICON_SIZE_THEME
-name|GIMP_ICON_SIZE_THEME
-block|,
-comment|/*< desc="Theme-set size"> */
-DECL|enumerator|GIMP_ICON_SIZE_SMALL
-name|GIMP_ICON_SIZE_SMALL
-block|,
-comment|/*< desc="Small size"> */
-DECL|enumerator|GIMP_ICON_SIZE_MEDIUM
-name|GIMP_ICON_SIZE_MEDIUM
-block|,
-comment|/*< desc="Medium size"> */
-DECL|enumerator|GIMP_ICON_SIZE_LARGE
-name|GIMP_ICON_SIZE_LARGE
-block|,
-comment|/*< desc="Large size"> */
-DECL|enumerator|GIMP_ICON_SIZE_HUGE
-name|GIMP_ICON_SIZE_HUGE
-comment|/*< desc="Huge size"> */
-DECL|typedef|GimpIconSize
-block|}
-name|GimpIconSize
 typedef|;
 end_typedef
 
@@ -288,7 +236,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340703
+DECL|enum|__anon2bf819ba0603
 block|{
 DECL|enumerator|GIMP_POSITION_TOP
 name|GIMP_POSITION_TOP
@@ -332,7 +280,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340803
+DECL|enum|__anon2bf819ba0703
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -372,7 +320,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340903
+DECL|enum|__anon2bf819ba0803
 block|{
 DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
 name|GIMP_WINDOW_HINT_NORMAL
@@ -412,7 +360,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bee08340a03
+DECL|enum|__anon2bf819ba0903
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW

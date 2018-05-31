@@ -216,10 +216,6 @@ name|gchar
 modifier|*
 name|icon_theme
 decl_stmt|;
-DECL|member|icon_size
-name|GimpIconSize
-name|icon_size
-decl_stmt|;
 DECL|member|use_help
 name|gboolean
 name|use_help
@@ -326,17 +322,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|GimpIconSize
-name|gimp_gui_config_detect_icon_size
-parameter_list|(
-name|GimpGuiConfig
-modifier|*
-name|config
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_endif
 endif|#
