@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a753b20103
+DECL|enum|__anon2a900e5e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2273,6 +2273,19 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|async_set
+operator|&&
+operator|!
+name|editor
+operator|->
+name|priv
+operator|->
+name|async_set_binding
+condition|)
+return|return;
 name|g_clear_object
 argument_list|(
 operator|&
@@ -2325,6 +2338,18 @@ argument_list|,
 name|G_BINDING_SYNC_CREATE
 operator||
 name|G_BINDING_INVERT_BOOLEAN
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gtk_widget_hide
+argument_list|(
+name|editor
+operator|->
+name|priv
+operator|->
+name|busy_box
 argument_list|)
 expr_stmt|;
 block|}
