@@ -374,7 +374,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785cb640108
+DECL|struct|__anon2bf339c40108
 block|{
 DECL|member|file
 name|GFile
@@ -507,8 +507,6 @@ operator|->
 name|as_new
 argument_list|,
 name|NULL
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -904,8 +902,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
