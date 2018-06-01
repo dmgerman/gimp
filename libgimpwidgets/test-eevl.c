@@ -28,13 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeevl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1520108
+DECL|struct|__anon2b5d2af00108
 block|{
 DECL|member|string
 specifier|const
@@ -192,7 +198,7 @@ block|,
 name|TRUE
 block|}
 block|,
-comment|//  { "2 / 3 in",                  { 2 / 3., 1},        TRUE },
+comment|//  { "2 / 3 in",                  { 2 / 3., 1},              TRUE },
 block|{
 literal|"(2 + 2/3)in"
 block|,
@@ -214,6 +220,28 @@ literal|"1/2 + 1/2"
 block|,
 block|{
 literal|1
+block|,
+literal|1
+block|}
+block|,
+name|TRUE
+block|}
+block|,
+block|{
+literal|"2 ^ 3 ^ 4"
+block|,
+block|{
+name|pow
+argument_list|(
+literal|2
+argument_list|,
+name|pow
+argument_list|(
+literal|3
+argument_list|,
+literal|4
+argument_list|)
+argument_list|)
 block|,
 literal|1
 block|}
