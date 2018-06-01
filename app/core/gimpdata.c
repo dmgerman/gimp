@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfff8620103
+DECL|enum|__anon2c7337400103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfff8620203
+DECL|enum|__anon2c7337400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2973,25 +2973,13 @@ operator|->
 name|internal
 condition|)
 return|return;
-if|if
-condition|(
-name|private
-operator|->
-name|file
-condition|)
-name|g_object_unref
+name|g_set_object
 argument_list|(
+operator|&
 name|private
 operator|->
 name|file
-argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|file
-operator|=
-name|g_object_ref
-argument_list|(
+argument_list|,
 name|file
 argument_list|)
 expr_stmt|;

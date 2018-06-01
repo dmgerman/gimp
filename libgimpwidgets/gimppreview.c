@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2ea790103
+DECL|enum|__anon2b4dc4400103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2ea790203
+DECL|enum|__anon2b4dc4400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3321,44 +3321,16 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|cursor
-operator|!=
-name|priv
-operator|->
-name|default_cursor
-condition|)
-block|{
-if|if
-condition|(
-name|priv
-operator|->
-name|default_cursor
-condition|)
-name|g_object_unref
+name|g_set_object
 argument_list|(
+operator|&
 name|priv
 operator|->
 name|default_cursor
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|cursor
-condition|)
-name|g_object_ref
-argument_list|(
+argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|priv
-operator|->
-name|default_cursor
-operator|=
-name|cursor
-expr_stmt|;
-block|}
 block|}
 end_function
 

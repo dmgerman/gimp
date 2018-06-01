@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f7e2a80103
+DECL|enum|__anon2c28b05b0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f7e2a80203
+DECL|enum|__anon2c28b05b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7897,32 +7897,16 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|parasites
-operator|!=
-name|private
-operator|->
-name|parasites
-condition|)
-block|{
-name|g_object_unref
+name|g_set_object
 argument_list|(
+operator|&
 name|private
 operator|->
+name|parasites
+argument_list|,
 name|parasites
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|parasites
-operator|=
-name|g_object_ref
-argument_list|(
-name|parasites
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 

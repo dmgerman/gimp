@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1a9ef0103
+DECL|enum|__anon2b70ae970103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -245,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1a9ef0203
+DECL|enum|__anon2b70ae970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3466,12 +3466,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  ref new before unrefing old, they might be the same  */
-name|g_object_ref
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|drawable
@@ -3480,7 +3474,6 @@ name|private
 operator|->
 name|buffer
 condition|)
-block|{
 name|old_has_alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -3488,23 +3481,17 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_set_object
 argument_list|(
+operator|&
 name|drawable
 operator|->
 name|private
 operator|->
+name|buffer
+argument_list|,
 name|buffer
 argument_list|)
-expr_stmt|;
-block|}
-name|drawable
-operator|->
-name|private
-operator|->
-name|buffer
-operator|=
-name|buffer
 expr_stmt|;
 if|if
 condition|(

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc38a40103
+DECL|enum|__anon28f0831c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc38a40203
+DECL|enum|__anon28f0831c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2362,24 +2362,21 @@ argument_list|,
 name|area
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|priv
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|gimp_color_area_destroy_transform
 argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
 block|}
+name|g_set_object
+argument_list|(
+operator|&
 name|priv
 operator|->
 name|config
-operator|=
+argument_list|,
 name|config
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2388,13 +2385,6 @@ operator|->
 name|config
 condition|)
 block|{
-name|g_object_ref
-argument_list|(
-name|priv
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|priv
