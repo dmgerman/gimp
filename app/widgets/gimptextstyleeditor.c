@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"text/gimpfontlist.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f3d0c20103
+DECL|enum|__anon2b63d1f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -679,7 +679,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_FONT_LIST
+name|GIMP_TYPE_CONTAINER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -1449,7 +1449,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_assert
 argument_list|(
-name|GIMP_IS_FONT_LIST
+name|GIMP_IS_CONTAINER
 argument_list|(
 name|editor
 operator|->

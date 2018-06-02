@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpfontview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -283,11 +277,6 @@ case|:
 if|if
 condition|(
 name|GIMP_IS_DATA_FACTORY_VIEW
-argument_list|(
-name|data
-argument_list|)
-operator|||
-name|GIMP_IS_FONT_VIEW
 argument_list|(
 name|data
 argument_list|)

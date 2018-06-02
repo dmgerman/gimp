@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -845,6 +851,10 @@ argument_list|)
 operator|->
 name|gimp
 decl_stmt|;
+name|GimpContainer
+modifier|*
+name|fonts
+decl_stmt|;
 name|gdouble
 name|xres
 init|=
@@ -928,6 +938,15 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
+name|fonts
+operator|=
+name|gimp_data_factory_get_container
+argument_list|(
+name|gimp
+operator|->
+name|font_factory
+argument_list|)
+expr_stmt|;
 name|text_tool
 operator|->
 name|style_editor
@@ -944,8 +963,6 @@ name|text_tool
 operator|->
 name|buffer
 argument_list|,
-name|gimp
-operator|->
 name|fonts
 argument_list|,
 name|xres

@@ -46,13 +46,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpparamspecs.h"
+file|"core/gimpdatafactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"text/gimp-fonts.h"
+file|"core/gimpparamspecs.h"
 end_include
 
 begin_include
@@ -185,11 +185,11 @@ name|font_callback
 argument_list|)
 operator|||
 operator|!
-name|gimp_fonts_wait
+name|gimp_data_factory_data_wait
 argument_list|(
 name|gimp
-argument_list|,
-name|error
+operator|->
+name|font_factory
 argument_list|)
 operator|||
 operator|!
@@ -201,9 +201,12 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|,
 name|popup_title
 argument_list|,
@@ -319,9 +322,12 @@ name|gimp_pdb_dialog_close
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|,
 name|font_callback
 argument_list|)
@@ -444,11 +450,11 @@ name|font_callback
 argument_list|)
 operator|||
 operator|!
-name|gimp_fonts_wait
+name|gimp_data_factory_data_wait
 argument_list|(
 name|gimp
-argument_list|,
-name|error
+operator|->
+name|font_factory
 argument_list|)
 operator|||
 operator|!
@@ -456,9 +462,12 @@ name|gimp_pdb_dialog_set
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|,
 name|font_callback
 argument_list|,

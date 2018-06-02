@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fonts-actions.h"
+file|"data-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"fonts-commands.h"
+file|"fonts-actions.h"
 end_include
 
 begin_include
@@ -134,7 +134,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|fonts_refresh_cmd_callback
+name|data_refresh_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FONT_REFRESH

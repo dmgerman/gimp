@@ -100,12 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/gimp-fonts.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"xcf/xcf.h"
 end_include
 
@@ -279,7 +273,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757aa150103
+DECL|enum|__anon29372ad80103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757aa150203
+DECL|enum|__anon29372ad80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1062,11 +1056,6 @@ argument_list|,
 literal|"named buffers"
 argument_list|)
 expr_stmt|;
-name|gimp_fonts_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|gimp_data_factories_init
 argument_list|(
 name|gimp
@@ -1614,11 +1603,6 @@ name|pdb
 argument_list|)
 expr_stmt|;
 name|gimp_data_factories_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|gimp_fonts_exit
 argument_list|(
 name|gimp
 argument_list|)
@@ -2216,11 +2200,6 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gimp_fonts_set_config
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 comment|/*  set the last values used to default values  */
 name|gimp
 operator|->
@@ -2404,11 +2383,6 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_data_factories_save
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|gimp_fonts_reset
 argument_list|(
 name|gimp
 argument_list|)
@@ -3339,35 +3313,6 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of fonts  */
-if|if
-condition|(
-operator|!
-name|gimp
-operator|->
-name|no_fonts
-condition|)
-block|{
-name|status_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Fonts"
-argument_list|)
-argument_list|,
-literal|0.7
-argument_list|)
-expr_stmt|;
-name|gimp_fonts_load
-argument_list|(
-name|gimp
-argument_list|,
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  initialize the template list  */
 name|status_callback
 argument_list|(

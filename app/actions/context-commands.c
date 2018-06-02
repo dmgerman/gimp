@@ -2129,11 +2129,14 @@ name|value
 argument_list|,
 name|context
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|context
 operator|->
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

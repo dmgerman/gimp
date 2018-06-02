@@ -2330,11 +2330,14 @@ name|container
 condition|)
 name|container
 operator|=
+name|gimp_data_factory_get_container
+argument_list|(
 name|context
 operator|->
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 expr_stmt|;
 return|return
 name|gimp_viewable_box_new

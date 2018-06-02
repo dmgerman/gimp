@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpparasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-fonts.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf755ee0103
+DECL|enum|__anon27b44b1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2333,6 +2333,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpContainer
+modifier|*
+name|container
+decl_stmt|;
 name|GimpTextLayout
 modifier|*
 name|layout
@@ -2386,24 +2390,31 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gimp_fonts_wait
+name|container
+operator|=
+name|gimp_data_factory_get_container
 argument_list|(
 name|image
 operator|->
 name|gimp
-argument_list|,
-name|NULL
+operator|->
+name|font_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_wait
+argument_list|(
+name|image
+operator|->
+name|gimp
+operator|->
+name|font_factory
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_container_is_empty
 argument_list|(
-name|image
-operator|->
-name|gimp
-operator|->
-name|fonts
+name|container
 argument_list|)
 condition|)
 block|{

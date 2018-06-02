@@ -1502,7 +1502,7 @@ name|GimpAsyncCallback
 operator|)
 name|gimp_font_factory_load_async_callback
 argument_list|,
-name|gimp
+name|factory
 argument_list|)
 expr_stmt|;
 name|gimp_async_set_add

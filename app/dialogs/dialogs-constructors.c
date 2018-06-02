@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpfontview.h"
+file|"widgets/gimpfontfactoryview.h"
 end_include
 
 begin_include
@@ -1734,7 +1734,7 @@ name|view_size
 parameter_list|)
 block|{
 return|return
-name|gimp_font_view_new
+name|gimp_font_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
@@ -1742,7 +1742,7 @@ name|context
 operator|->
 name|gimp
 operator|->
-name|fonts
+name|font_factory
 argument_list|,
 name|context
 argument_list|,
@@ -2334,7 +2334,7 @@ name|view_size
 parameter_list|)
 block|{
 return|return
-name|gimp_font_view_new
+name|gimp_font_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
@@ -2342,7 +2342,7 @@ name|context
 operator|->
 name|gimp
 operator|->
-name|fonts
+name|font_factory
 argument_list|,
 name|context
 argument_list|,

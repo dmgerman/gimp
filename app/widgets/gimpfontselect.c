@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfontselect.h"
+file|"gimpfontfactoryview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpfontview.h"
+file|"gimpfontselect.h"
 end_include
 
 begin_function_decl
@@ -238,7 +238,7 @@ name|dialog
 operator|->
 name|view
 operator|=
-name|gimp_font_view_new
+name|gimp_font_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
@@ -248,7 +248,7 @@ name|context
 operator|->
 name|gimp
 operator|->
-name|fonts
+name|font_factory
 argument_list|,
 name|dialog
 operator|->

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94b5310103
+DECL|enum|__anon2c4990d10103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -701,9 +707,12 @@ name|text
 argument_list|,
 name|text_buffer
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|,
 name|xres
 argument_list|,

@@ -268,7 +268,7 @@ literal|"/fonts-popup"
 argument_list|,
 literal|"action-group"
 argument_list|,
-literal|"fontes"
+literal|"fonts"
 argument_list|,
 name|NULL
 argument_list|)

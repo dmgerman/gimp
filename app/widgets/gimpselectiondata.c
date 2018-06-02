@@ -2820,9 +2820,12 @@ name|gimp_selection_data_get_object
 argument_list|(
 name|selection
 argument_list|,
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

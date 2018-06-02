@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -137,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76dcd50103
+DECL|enum|__anon287ee6820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1901,6 +1907,10 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
+name|GimpAsyncSet
+modifier|*
+name|async_set
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|options_vbox
@@ -1946,6 +1956,19 @@ name|row
 init|=
 literal|0
 decl_stmt|;
+name|async_set
+operator|=
+name|gimp_data_factory_get_async_set
+argument_list|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|font_factory
+argument_list|)
+expr_stmt|;
 name|box
 operator|=
 name|gimp_busy_box_new
@@ -1984,13 +2007,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_bind_property
 argument_list|(
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|gimp
-operator|->
-name|fonts_async_set
+name|async_set
 argument_list|,
 literal|"empty"
 argument_list|,
@@ -2041,13 +2058,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_bind_property
 argument_list|(
-name|tool_options
-operator|->
-name|tool_info
-operator|->
-name|gimp
-operator|->
-name|fonts_async_set
+name|async_set
 argument_list|,
 literal|"empty"
 argument_list|,

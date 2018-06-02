@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer-floating-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-fonts.h"
 end_include
 
 begin_include
@@ -252,13 +252,13 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_fonts_wait
+name|gimp_data_factory_data_wait
 argument_list|(
 name|image
 operator|->
 name|gimp
-argument_list|,
-name|NULL
+operator|->
+name|font_factory
 argument_list|)
 condition|)
 return|return
@@ -561,11 +561,11 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_fonts_wait
+name|gimp_data_factory_data_wait
 argument_list|(
 name|gimp
-argument_list|,
-name|NULL
+operator|->
+name|font_factory
 argument_list|)
 condition|)
 return|return

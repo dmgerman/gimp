@@ -1515,11 +1515,11 @@ operator|(
 name|GimpFont
 operator|*
 operator|)
-name|gimp_container_get_child_by_name
+name|gimp_pdb_get_data_factory_item
 argument_list|(
 name|gimp
 operator|->
-name|fonts
+name|font_factory
 argument_list|,
 name|name
 argument_list|)
