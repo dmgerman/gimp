@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4136770103
+DECL|enum|__anon2c5b1e750103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -199,7 +199,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4136770203
+DECL|enum|__anon2c5b1e750203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,7 +218,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4136770303
+DECL|enum|__anon2c5b1e750303
 block|{
 DECL|enumerator|BEGIN_CHANGE
 name|BEGIN_CHANGE
@@ -817,6 +817,12 @@ expr_stmt|;
 name|widget_class
 operator|->
 name|changed
+operator|=
+name|gimp_tool_path_changed
+expr_stmt|;
+name|widget_class
+operator|->
+name|focus_changed
 operator|=
 name|gimp_tool_path_changed
 expr_stmt|;
@@ -1767,6 +1773,13 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_tool_widget_get_focus
+argument_list|(
+name|widget
+argument_list|)
+condition|)
 name|gimp_canvas_item_set_highlight
 argument_list|(
 name|item
