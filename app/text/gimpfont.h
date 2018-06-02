@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpviewable.h"
+file|"core/gimpdata.h"
 end_include
 
 begin_define

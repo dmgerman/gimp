@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b75ad70103
+DECL|enum|__anon2b529d140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -154,7 +154,7 @@ struct|struct
 name|_GimpFont
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpData
 name|parent_instance
 decl_stmt|;
 DECL|member|pango_context
@@ -185,12 +185,24 @@ struct|struct
 name|_GimpFontClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpDataClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_font_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -328,14 +340,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFont,gimp_font,GIMP_TYPE_VIEWABLE)
+DECL|function|G_DEFINE_TYPE (GimpFont,gimp_font,GIMP_TYPE_DATA)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpFont
 argument_list|,
 argument|gimp_font
 argument_list|,
-argument|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_DATA
 argument_list|)
 end_macro
 
@@ -375,6 +387,12 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|object_class
+operator|->
+name|constructed
+operator|=
+name|gimp_font_constructed
+expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -444,12 +462,42 @@ name|GimpFont
 modifier|*
 name|font
 parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_font_constructed (GObject * object)
+name|gimp_font_constructed
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
 block|{
-name|font
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
 operator|->
-name|pango_context
-operator|=
-name|NULL
+name|constructed
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
+name|GIMP_DATA
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1433,7 +1481,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b75ad70208
+DECL|struct|__anon2b529d140208
 block|{
 DECL|member|script
 specifier|const
