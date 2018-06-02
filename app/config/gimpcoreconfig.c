@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b51e6e0103
+DECL|enum|__anon2b1aed570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -773,7 +773,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -806,7 +806,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -839,7 +839,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -872,7 +872,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -947,7 +947,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -984,7 +984,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1017,7 +1017,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1050,7 +1050,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1083,7 +1083,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1116,7 +1116,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1149,7 +1149,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1182,7 +1182,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1215,7 +1215,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1248,7 +1248,7 @@ name|path
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
