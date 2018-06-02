@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef6c900103
+DECL|enum|__anon2bd23e330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -644,6 +644,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_tool_transform_grid_leave_notify
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_tool_transform_grid_hover_modifier
 parameter_list|(
 name|GimpToolWidget
@@ -845,6 +857,12 @@ operator|->
 name|hover
 operator|=
 name|gimp_tool_transform_grid_hover
+expr_stmt|;
+name|widget_class
+operator|->
+name|leave_notify
+operator|=
+name|gimp_tool_transform_grid_leave_notify
 expr_stmt|;
 name|widget_class
 operator|->
@@ -9149,8 +9167,60 @@ argument_list|)
 expr_stmt|;
 end_expr_stmt
 
+begin_macro
+unit|}  void
+DECL|function|gimp_tool_transform_grid_leave_notify (GimpToolWidget * widget)
+name|gimp_tool_transform_grid_leave_notify
+argument_list|(
+argument|GimpToolWidget *widget
+argument_list|)
+end_macro
+
+begin_block
+block|{
+name|GimpToolTransformGrid
+modifier|*
+name|grid
+init|=
+name|GIMP_TOOL_TRANSFORM_GRID
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
+name|GimpToolTransformGridPrivate
+modifier|*
+name|private
+init|=
+name|grid
+operator|->
+name|private
+decl_stmt|;
+name|private
+operator|->
+name|handle
+operator|=
+name|GIMP_TRANSFORM_HANDLE_NONE
+expr_stmt|;
+name|gimp_tool_transform_grid_update_hilight
+argument_list|(
+name|grid
+argument_list|)
+expr_stmt|;
+name|GIMP_TOOL_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|leave_notify
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+block|}
+end_block
+
 begin_function
-unit|}  static
+specifier|static
 name|void
 DECL|function|gimp_tool_transform_grid_modifier (GimpToolWidget * widget,GdkModifierType key)
 name|gimp_tool_transform_grid_modifier
