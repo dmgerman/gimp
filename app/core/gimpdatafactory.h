@@ -245,9 +245,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|gboolean
-name|no_data
 parameter_list|)
 function_decl|;
 DECL|member|data_refresh

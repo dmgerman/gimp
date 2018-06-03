@@ -172,9 +172,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|gboolean
-name|no_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -483,7 +480,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_font_factory_data_init (GimpDataFactory * factory,GimpContext * context,gboolean no_data)
+DECL|function|gimp_font_factory_data_init (GimpDataFactory * factory,GimpContext * context)
 name|gimp_font_factory_data_init
 parameter_list|(
 name|GimpDataFactory
@@ -493,16 +490,7 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|gboolean
-name|no_data
 parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|no_data
-condition|)
 block|{
 name|GError
 modifier|*
@@ -547,7 +535,6 @@ argument_list|(
 name|error
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
