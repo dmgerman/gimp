@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c134da60103
+DECL|enum|__anon29d7cb150103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -3903,6 +3903,20 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+comment|/* GTK+ 3.x always keeps the row with the cursor selected, so we get    * a gazillion selection changed during gtk_tree_store_clear()    */
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|tree_view
+operator|->
+name|priv
+operator|->
+name|selection
+argument_list|,
+name|gimp_container_tree_view_selection_changed
+argument_list|,
+name|tree_view
+argument_list|)
+expr_stmt|;
 name|gimp_container_tree_store_clear_items
 argument_list|(
 name|GIMP_CONTAINER_TREE_STORE
@@ -3911,6 +3925,19 @@ name|tree_view
 operator|->
 name|model
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|tree_view
+operator|->
+name|priv
+operator|->
+name|selection
+argument_list|,
+name|gimp_container_tree_view_selection_changed
+argument_list|,
+name|tree_view
 argument_list|)
 expr_stmt|;
 name|parent_view_iface
