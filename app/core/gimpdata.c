@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7337400103
+DECL|enum|__anon27df1ee40103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7337400203
+DECL|enum|__anon27df1ee40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4331,6 +4331,13 @@ operator|&
 name|private
 operator|->
 name|file
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|private
+operator|->
+name|identifier
 argument_list|)
 expr_stmt|;
 name|private
