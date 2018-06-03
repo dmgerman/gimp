@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630103
+DECL|enum|__anon2c3763c70103
 block|{
 DECL|enumerator|GIMP_BUTTON_PRESS_NORMAL
 name|GIMP_BUTTON_PRESS_NORMAL
@@ -74,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630203
+DECL|enum|__anon2c3763c70203
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630303
+DECL|enum|__anon2c3763c70303
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -151,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630403
+DECL|enum|__anon2c3763c70403
 block|{
 DECL|enumerator|GIMP_GUIDES_NONE
 name|GIMP_GUIDES_NONE
@@ -211,7 +211,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630503
+DECL|enum|__anon2c3763c70503
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -272,7 +272,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630603
+DECL|enum|__anon2c3763c70603
 block|{
 DECL|enumerator|GIMP_HANDLE_ANCHOR_CENTER
 name|GIMP_HANDLE_ANCHOR_CENTER
@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630703
+DECL|enum|__anon2c3763c70703
 block|{
 DECL|enumerator|GIMP_PATH_STYLE_DEFAULT
 name|GIMP_PATH_STYLE_DEFAULT
@@ -364,7 +364,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630803
+DECL|enum|__anon2c3763c70803
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -401,7 +401,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630903
+DECL|enum|__anon2c3763c70903
 block|{
 DECL|enumerator|GIMP_RECTANGLE_FIXED_ASPECT
 name|GIMP_RECTANGLE_FIXED_ASPECT
@@ -446,7 +446,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630a03
+DECL|enum|__anon2c3763c70a03
 block|{
 DECL|enumerator|GIMP_RECTANGLE_PRECISION_INT
 name|GIMP_RECTANGLE_PRECISION_INT
@@ -480,7 +480,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630b03
+DECL|enum|__anon2c3763c70b03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FUNCTION_MOVE
 name|GIMP_TRANSFORM_FUNCTION_MOVE
@@ -523,7 +523,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630c03
+DECL|enum|__anon2c3763c70c03
 block|{
 DECL|enumerator|GIMP_HANDLE_MODE_ADD_TRANSFORM
 name|GIMP_HANDLE_MODE_ADD_TRANSFORM
@@ -563,7 +563,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630d03
+DECL|enum|__anon2c3763c70d03
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -603,7 +603,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64a8630e03
+DECL|enum|__anon2c3763c70e03
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
@@ -623,6 +623,30 @@ name|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
 DECL|typedef|GimpZoomFocus
 block|}
 name|GimpZoomFocus
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2c3763c70f03
+block|{
+DECL|enumerator|GIMP_HIT_NONE
+name|GIMP_HIT_NONE
+block|,
+DECL|enumerator|GIMP_HIT_INDIRECT
+name|GIMP_HIT_INDIRECT
+block|,
+DECL|enumerator|GIMP_HIT_DIRECT
+name|GIMP_HIT_DIRECT
+DECL|typedef|GimpHit
+block|}
+name|GimpHit
 typedef|;
 end_typedef
 
