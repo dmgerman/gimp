@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60c32d0103
+DECL|enum|__anon2c13c33a0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60c32d0203
+DECL|enum|__anon2c13c33a0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -13303,8 +13303,11 @@ name|gimp_context_set_font
 argument_list|(
 name|context
 argument_list|,
+name|GIMP_FONT
+argument_list|(
 name|gimp_font_get_standard
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -13593,8 +13596,11 @@ name|font_name
 operator|&&
 name|font
 operator|!=
+name|GIMP_FONT
+argument_list|(
 name|gimp_font_get_standard
 argument_list|()
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -13664,8 +13670,11 @@ if|if
 condition|(
 name|font
 operator|!=
+name|GIMP_FONT
+argument_list|(
 name|gimp_font_get_standard
 argument_list|()
+argument_list|)
 condition|)
 name|context
 operator|->

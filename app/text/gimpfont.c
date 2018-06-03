@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b529d140103
+DECL|enum|__anon27b375950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1295,7 +1295,7 @@ block|}
 end_function
 
 begin_function
-name|GimpFont
+name|GimpData
 modifier|*
 DECL|function|gimp_font_get_standard (void)
 name|gimp_font_get_standard
@@ -1304,7 +1304,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GimpFont
+name|GimpData
 modifier|*
 name|standard_font
 init|=
@@ -1315,6 +1315,7 @@ condition|(
 operator|!
 name|standard_font
 condition|)
+block|{
 name|standard_font
 operator|=
 name|g_object_new
@@ -1328,6 +1329,34 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
+name|standard_font
+argument_list|)
+expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
+name|standard_font
+argument_list|,
+literal|"gimp-font-standard"
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|standard_font
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|*
+operator|)
+operator|&
+name|standard_font
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|standard_font
 return|;
@@ -1481,7 +1510,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b529d140208
+DECL|struct|__anon27b375950208
 block|{
 DECL|member|script
 specifier|const

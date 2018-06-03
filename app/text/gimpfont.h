@@ -105,7 +105,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpFont
+name|GimpData
 modifier|*
 name|gimp_font_get_standard
 parameter_list|(
