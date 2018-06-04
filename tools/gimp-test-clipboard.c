@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * test-clipboard.c -- do clipboard things  *  * Copyright (C) 2005  Michael Natterer<mitch@gimp.org>  *  * Use this code for whatever you like.  */
+comment|/*  * gimp-test-clipboard.c -- do clipboard things  *  * Copyright (C) 2005  Michael Natterer<mitch@gimp.org>  *  * Use this code for whatever you like.  */
 end_comment
 
 begin_include
@@ -768,7 +768,7 @@ parameter_list|)
 block|{
 name|g_print
 argument_list|(
-literal|"test-clipboard (GIMP clipboard testbed) version %s\n"
+literal|"gimp-test-clipboard (GIMP clipboard testbed) version %s\n"
 argument_list|,
 name|GIMP_VERSION
 argument_list|)
