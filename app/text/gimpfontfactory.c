@@ -781,6 +781,10 @@ literal|"path-property-name"
 argument_list|,
 name|path_property_name
 argument_list|,
+literal|"get-standard-func"
+argument_list|,
+name|gimp_font_get_standard
+argument_list|,
 name|NULL
 argument_list|)
 return|;
