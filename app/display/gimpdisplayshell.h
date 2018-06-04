@@ -757,6 +757,14 @@ DECL|member|scrolling
 name|gboolean
 name|scrolling
 decl_stmt|;
+DECL|member|scroll_start_x
+name|gint
+name|scroll_start_x
+decl_stmt|;
+DECL|member|scroll_start_y
+name|gint
+name|scroll_start_y
+decl_stmt|;
 DECL|member|scroll_last_x
 name|gint
 name|scroll_last_x

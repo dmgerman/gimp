@@ -1945,12 +1945,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_drag (GimpDisplayShell * shell,gdouble delta_x,gdouble delta_y)
+DECL|function|gimp_display_shell_scale_drag (GimpDisplayShell * shell,gdouble start_x,gdouble start_y,gdouble delta_x,gdouble delta_y)
 name|gimp_display_shell_scale_drag
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gdouble
+name|start_x
+parameter_list|,
+name|gdouble
+name|start_y
 parameter_list|,
 name|gdouble
 name|delta_x
@@ -1979,6 +1985,15 @@ operator|->
 name|zoom
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_push_zoom_focus_pointer_pos
+argument_list|(
+name|shell
+argument_list|,
+name|start_x
+argument_list|,
+name|start_y
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|delta_y
@@ -1996,7 +2011,7 @@ name|scale
 operator|*
 literal|1.1
 argument_list|,
-name|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_POINTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -2018,7 +2033,7 @@ name|scale
 operator|*
 literal|0.9
 argument_list|,
-name|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_POINTER
 argument_list|)
 expr_stmt|;
 block|}

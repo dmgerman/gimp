@@ -242,6 +242,12 @@ modifier|*
 name|shell
 parameter_list|,
 name|gdouble
+name|start_x
+parameter_list|,
+name|gdouble
+name|start_y
+parameter_list|,
+name|gdouble
 name|delta_x
 parameter_list|,
 name|gdouble
