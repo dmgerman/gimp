@@ -1560,7 +1560,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6b7b80103
+DECL|enum|__anon27cb906e0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1574,7 +1574,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd6b7b80203
+DECL|enum|__anon27cb906e0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -6179,6 +6179,11 @@ operator|!
 name|deserialize_obj
 condition|)
 block|{
+if|if
+condition|(
+name|no_data
+condition|)
+block|{
 name|g_free
 argument_list|(
 operator|*
@@ -6193,6 +6198,14 @@ argument_list|(
 name|object_name
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|deserialize_obj
+operator|=
+name|current
+expr_stmt|;
+block|}
 block|}
 name|g_value_set_object
 argument_list|(

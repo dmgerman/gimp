@@ -506,15 +506,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataLoaderFactory
-typedef|typedef
-name|struct
-name|_GimpDataLoaderFactory
-name|GimpDataLoaderFactory
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpData
 typedef|typedef
 name|struct
