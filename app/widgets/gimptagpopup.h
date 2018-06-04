@@ -126,11 +126,6 @@ name|GtkWidget
 modifier|*
 name|tag_area
 decl_stmt|;
-DECL|member|context
-name|PangoContext
-modifier|*
-name|context
-decl_stmt|;
 DECL|member|layout
 name|PangoLayout
 modifier|*
