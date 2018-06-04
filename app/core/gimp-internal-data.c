@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdatafactory.h"
+file|"gimpdataloaderfactory.h"
 end_include
 
 begin_include
