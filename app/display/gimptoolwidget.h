@@ -577,6 +577,17 @@ end_comment
 
 begin_function_decl
 name|void
+name|gimp_tool_widget_changed
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_tool_widget_response
 parameter_list|(
 name|GimpToolWidget

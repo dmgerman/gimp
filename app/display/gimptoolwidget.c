@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29489f510103
+DECL|enum|__anon29c4bf1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29489f510203
+DECL|enum|__anon29c4bf1c0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1014,6 +1014,15 @@ modifier|*
 name|pspecs
 parameter_list|)
 block|{
+name|GimpToolWidget
+modifier|*
+name|widget
+init|=
+name|GIMP_TOOL_WIDGET
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1028,16 +1037,9 @@ argument_list|,
 name|pspecs
 argument_list|)
 expr_stmt|;
-name|g_signal_emit
+name|gimp_tool_widget_changed
 argument_list|(
-name|object
-argument_list|,
-name|widget_signals
-index|[
-name|CHANGED
-index|]
-argument_list|,
-literal|0
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1289,6 +1291,39 @@ name|private
 operator|->
 name|focus
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_tool_widget_changed (GimpToolWidget * widget)
+name|gimp_tool_widget_changed
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_WIDGET
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|widget
+argument_list|,
+name|widget_signals
+index|[
+name|CHANGED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
