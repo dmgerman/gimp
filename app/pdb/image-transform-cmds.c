@@ -342,6 +342,14 @@ argument_list|,
 name|context
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

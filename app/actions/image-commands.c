@@ -2568,6 +2568,14 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
