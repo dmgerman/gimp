@@ -45,9 +45,15 @@ directive|include
 file|"gimpprocedureaction.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2783727f0103
+DECL|enum|__anon2b0bdb950103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -60,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783727f0203
+DECL|enum|__anon2b0bdb950203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
