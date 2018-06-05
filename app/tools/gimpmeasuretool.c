@@ -450,7 +450,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|rotate_active_layer
+name|gimp_measure_tool_rotate_active_layer
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1741,7 +1741,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|rotate_active_layer
+name|gimp_measure_tool_rotate_active_layer
 argument_list|)
 argument_list|,
 name|measure
@@ -1845,7 +1845,7 @@ name|auto_straighten
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|rotate_active_layer
+name|gimp_measure_tool_rotate_active_layer
 argument_list|)
 argument_list|,
 name|measure
@@ -4266,8 +4266,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_active_layer (GtkWidget * button,GimpMeasureTool * measure)
-name|rotate_active_layer
+DECL|function|gimp_measure_tool_rotate_active_layer (GtkWidget * button,GimpMeasureTool * measure)
+name|gimp_measure_tool_rotate_active_layer
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4362,10 +4362,10 @@ decl_stmt|;
 name|gdouble
 name|angle
 init|=
-name|atan2
+name|atan
 argument_list|(
 name|ay
-argument_list|,
+operator|/
 name|ax
 argument_list|)
 decl_stmt|;

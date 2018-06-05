@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13c4ce0103
+DECL|enum|__anon2bc8f37e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -428,7 +428,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|//  gimp_help_set_help_data (button, NULL, GIMP_HELP_PATH_STROKE);
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Rotate the active layer using the measurement line as horizon"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
