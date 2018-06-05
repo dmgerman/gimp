@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-recursive-transform-plus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-shadows-highlights.h"
 end_include
 
@@ -1854,7 +1860,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3d427c0108
+DECL|struct|__anon278d1f760108
 block|{
 DECL|member|config_type
 specifier|const
@@ -1924,6 +1930,12 @@ block|{
 literal|"GimpGegl-gegl-recursive-transform-config"
 block|,
 name|_gimp_prop_gui_new_recursive_transform
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-recursive-transform-plus-config"
+block|,
+name|_gimp_prop_gui_new_recursive_transform_plus
 block|}
 block|,
 block|{
