@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b44b1b0103
+DECL|enum|__anon2b5d94810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1734,6 +1734,21 @@ argument_list|,
 name|TRUE
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_mode
+argument_list|(
+name|GIMP_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|gimp_image_get_default_new_layer_mode
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_text_layer_set_text
