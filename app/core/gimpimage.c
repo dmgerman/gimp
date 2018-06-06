@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c426af10103
+DECL|enum|__anon27ec7d7c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c426af10203
+DECL|enum|__anon27ec7d7c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9530,7 +9530,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_xcf_version (GimpImage * image,gboolean zlib_compression,gint * gimp_version,const gchar ** version_string)
+DECL|function|gimp_image_get_xcf_version (GimpImage * image,gboolean zlib_compression,gint * gimp_version,const gchar ** version_string,gchar ** version_reason)
 name|gimp_image_get_xcf_version
 parameter_list|(
 name|GimpImage
@@ -9549,6 +9549,11 @@ name|gchar
 modifier|*
 modifier|*
 name|version_string
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|version_reason
 parameter_list|)
 block|{
 name|GList
@@ -9559,12 +9564,32 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|GList
+modifier|*
+name|reasons
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|version
 init|=
 literal|0
 decl_stmt|;
 comment|/* default to oldest */
+specifier|const
+name|gchar
+modifier|*
+name|enum_desc
+decl_stmt|;
+DECL|macro|ADD_REASON (_reason)
+define|#
+directive|define
+name|ADD_REASON
+parameter_list|(
+name|_reason
+parameter_list|)
+define|\
+value|if (version_reason) {                                           \     gchar *tmp = _reason;                                         \     if (g_list_find_custom (reasons, tmp, (GCompareFunc) strcmp)) \       g_free (tmp);                                               \     else                                                          \       reasons = g_list_prepend (reasons, (_reason)); }
 comment|/* need version 1 for colormaps */
 if|if
 condition|(
@@ -9678,7 +9703,7 @@ case|case
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 case|:
 break|break;
-comment|/*  Since 2.8  */
+comment|/*  Since 2.6  */
 case|case
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 case|:
@@ -9691,6 +9716,40 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 case|:
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_LAYER_MODE
+argument_list|,
+name|gimp_layer_get_mode
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|enum_desc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Layer mode '%s' was added in %s"
+argument_list|)
+argument_list|,
+name|enum_desc
+argument_list|,
+literal|"GIMP 2.6"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9717,6 +9776,40 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 case|:
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_LAYER_MODE
+argument_list|,
+name|gimp_layer_get_mode
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|enum_desc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Layer mode '%s' was added in %s"
+argument_list|)
+argument_list|,
+name|enum_desc
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9830,6 +9923,40 @@ case|:
 case|case
 name|GIMP_LAYER_MODE_PASS_THROUGH
 case|:
+name|gimp_enum_get_value
+argument_list|(
+name|GIMP_TYPE_LAYER_MODE
+argument_list|,
+name|gimp_layer_get_mode
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|enum_desc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Layer mode '%s' was added in %s"
+argument_list|)
+argument_list|,
+name|enum_desc
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9864,6 +9991,19 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Layer groups were added in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.8"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9881,6 +10021,21 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Masks on layer groups were "
+literal|"added in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9890,6 +10045,7 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|g_list_free
@@ -9908,6 +10064,21 @@ argument_list|)
 operator|!=
 name|GIMP_PRECISION_U8_GAMMA
 condition|)
+block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"High bit-depth images were added "
+literal|"in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9917,6 +10088,7 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* need version 12 for> 8-bit images for proper endian swapping */
 if|if
 condition|(
@@ -9983,6 +10155,21 @@ operator|<<
 literal|32
 operator|)
 condition|)
+block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Support for image files larger than "
+literal|"4GB was added in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -9992,6 +10179,10 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+block|}
+undef|#
+directive|undef
+name|ADD_REASON
 switch|switch
 condition|(
 name|version
@@ -10096,6 +10287,90 @@ operator|=
 literal|"GIMP 2.10"
 expr_stmt|;
 break|break;
+block|}
+if|if
+condition|(
+name|version_reason
+operator|&&
+name|reasons
+condition|)
+block|{
+name|GString
+modifier|*
+name|reason
+init|=
+name|g_string_new
+argument_list|(
+name|NULL
+argument_list|)
+decl_stmt|;
+name|reasons
+operator|=
+name|g_list_sort
+argument_list|(
+name|reasons
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|strcmp
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|reasons
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+name|g_string_append
+argument_list|(
+name|reason
+argument_list|,
+name|list
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+condition|)
+name|g_string_append_c
+argument_list|(
+name|reason
+argument_list|,
+literal|'\n'
+argument_list|)
+expr_stmt|;
+block|}
+name|g_list_free
+argument_list|(
+name|reasons
+argument_list|)
+expr_stmt|;
+operator|*
+name|version_reason
+operator|=
+name|g_string_free
+argument_list|(
+name|reason
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|version

@@ -1059,6 +1059,11 @@ name|gchar
 modifier|*
 modifier|*
 name|version_string
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|version_reason
 parameter_list|)
 function_decl|;
 end_function_decl
