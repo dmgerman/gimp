@@ -24,9 +24,9 @@ DECL|macro|GIMP_PROTOCOL_VERSION
 define|#
 directive|define
 name|GIMP_PROTOCOL_VERSION
-value|0x0017
+value|0x0100
 name|enum
-DECL|enum|__anon2953ad730103
+DECL|enum|__anon29456da90103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -208,10 +208,6 @@ DECL|member|export_iptc
 name|gint8
 name|export_iptc
 decl_stmt|;
-DECL|member|show_tooltips
-name|gint8
-name|show_tooltips
-decl_stmt|;
 DECL|member|gdisp_ID
 name|gint32
 name|gdisp_ID
@@ -321,7 +317,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2953ad73020a
+DECL|union|__anon29456da9020a
 block|{
 DECL|member|d_int32
 name|gint32

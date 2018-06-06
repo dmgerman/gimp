@@ -46,28 +46,7 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-name|void
-name|gimp_help_enable_tooltips
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_help_disable_tooltips
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  the standard gimp help function  */
-end_comment
-
-begin_function_decl
 name|void
 name|gimp_standard_help_func
 parameter_list|(

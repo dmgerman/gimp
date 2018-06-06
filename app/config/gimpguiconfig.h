@@ -152,10 +152,6 @@ DECL|member|save_tool_options
 name|gboolean
 name|save_tool_options
 decl_stmt|;
-DECL|member|show_tooltips
-name|gboolean
-name|show_tooltips
-decl_stmt|;
 DECL|member|can_change_accels
 name|gboolean
 name|can_change_accels

@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6477ec0103
+DECL|enum|__anon275aad3f0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -986,16 +986,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_show_tool_tips
-specifier|static
-name|gboolean
-name|_show_tool_tips
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|_show_help_button
 specifier|static
 name|gboolean
@@ -1296,7 +1286,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2c6477ec0203
+DECL|enum|__anon275aad3f0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1936,7 +1926,7 @@ index|]
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 name|gimp_env_init
@@ -1980,13 +1970,11 @@ operator|<
 name|GIMP_PROTOCOL_VERSION
 condition|)
 block|{
-name|gimp_message
-argument_list|(
-name|g_strdup_printf
+name|g_printerr
 argument_list|(
 literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because GIMP is using an older version of the "
-literal|"plug-in protocol."
+literal|"plug-in protocol.\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1999,10 +1987,9 @@ argument_list|(
 name|progname
 argument_list|)
 argument_list|)
-argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 elseif|else
@@ -2013,13 +2000,11 @@ operator|>
 name|GIMP_PROTOCOL_VERSION
 condition|)
 block|{
-name|gimp_message
-argument_list|(
-name|g_strdup_printf
+name|g_printerr
 argument_list|(
 literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because it uses an obsolete version of the "
-literal|"plug-in protocol."
+literal|"plug-in protocol.\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2032,10 +2017,9 @@ argument_list|(
 name|progname
 argument_list|)
 argument_list|)
-argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 name|env_string
@@ -4930,24 +4914,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_tool_tips:  *  * Returns whether or not the plug-in should show tool-tips.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_tool_tips boolean  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_show_tool_tips (void)
-name|gimp_show_tool_tips
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|_show_tool_tips
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_help_button boolean  *  * Since: 2.2  **/
 end_comment
 
@@ -6757,16 +6723,6 @@ operator|=
 name|config
 operator|->
 name|check_type
-expr_stmt|;
-name|_show_tool_tips
-operator|=
-name|config
-operator|->
-name|show_tooltips
-condition|?
-name|TRUE
-else|:
-name|FALSE
 expr_stmt|;
 name|_show_help_button
 operator|=

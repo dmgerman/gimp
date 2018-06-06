@@ -464,15 +464,6 @@ argument_list|,
 name|gimp_ensure_modules
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_show_tool_tips
-argument_list|()
-condition|)
-name|gimp_help_disable_tooltips
-argument_list|()
-expr_stmt|;
 name|gimp_dialogs_show_help_button
 argument_list|(
 name|gimp_show_help_button

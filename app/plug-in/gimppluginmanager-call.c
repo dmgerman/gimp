@@ -867,14 +867,6 @@ name|export_metadata_iptc
 expr_stmt|;
 name|config
 operator|.
-name|show_tooltips
-operator|=
-name|gui_config
-operator|->
-name|show_tooltips
-expr_stmt|;
-name|config
-operator|.
 name|gdisp_ID
 operator|=
 name|display_ID

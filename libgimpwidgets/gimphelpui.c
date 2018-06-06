@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2963623e0103
+DECL|enum|__anon273d217b0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -73,30 +73,6 @@ block|}
 name|GimpWidgetHelpType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  local variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|tooltips_enabled
-specifier|static
-name|gboolean
-name|tooltips_enabled
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|tooltips_enable_called
-specifier|static
-name|gboolean
-name|tooltips_enable_called
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -253,66 +229,6 @@ end_function_decl
 begin_comment
 comment|/*  public functions  */
 end_comment
-
-begin_comment
-comment|/**  * gimp_help_enable_tooltips:  *  * Enable tooltips to be shown in the GIMP user interface.  *  * As a plug-in author, you don't need to care about this as this  * function is called for you from gimp_ui_init(). This ensures that  * the user setting from the GIMP preferences dialog is respected in  * all plug-in dialogs.  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_help_enable_tooltips (void)
-name|gimp_help_enable_tooltips
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|tooltips_enable_called
-condition|)
-block|{
-name|tooltips_enable_called
-operator|=
-name|TRUE
-expr_stmt|;
-name|tooltips_enabled
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_help_disable_tooltips:  *  * Disable tooltips to be shown in the GIMP user interface.  *  * As a plug-in author, you don't need to care about this as this  * function is called for you from gimp_ui_init(). This ensures that  * the user setting from the GIMP preferences dialog is respected in  * all plug-in dialogs.  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_help_disable_tooltips (void)
-name|gimp_help_disable_tooltips
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|tooltips_enable_called
-condition|)
-block|{
-name|tooltips_enable_called
-operator|=
-name|TRUE
-expr_stmt|;
-name|tooltips_enabled
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-block|}
-end_function
 
 begin_comment
 comment|/**  * gimp_standard_help_func:  * @help_id:   A unique help identifier.  * @help_data: The @help_data passed to gimp_help_connect().  *  * This is the standard GIMP help function which does nothing but calling  * gimp_help(). It is the right function to use in almost all cases.  **/
@@ -544,11 +460,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tooltips_enabled
-condition|)
-block|{
 name|gtk_widget_set_tooltip_text
 argument_list|(
 name|widget
@@ -572,7 +483,6 @@ argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
-block|}
 name|g_object_set_qdata
 argument_list|(
 name|G_OBJECT
@@ -623,11 +533,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tooltips_enabled
-condition|)
-block|{
 name|gtk_widget_set_tooltip_markup
 argument_list|(
 name|widget
@@ -651,7 +556,6 @@ argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
-block|}
 name|g_object_set_qdata
 argument_list|(
 name|G_OBJECT

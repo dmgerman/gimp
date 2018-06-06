@@ -10720,23 +10720,6 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
-literal|"show-tooltips"
-argument_list|,
-name|_
-argument_list|(
-literal|"Show _tooltips"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
 literal|"show-help-button"
 argument_list|,
 name|_
@@ -12744,7 +12727,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2953329d0108
+DECL|struct|__anon2bdff9370108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13619,7 +13602,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2953329d0208
+DECL|struct|__anon2bdff9370208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13750,7 +13733,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2953329d0308
+DECL|struct|__anon2bdff9370308
 block|{
 DECL|member|tree_label
 specifier|const
