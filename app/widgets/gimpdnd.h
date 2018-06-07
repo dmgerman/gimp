@@ -228,12 +228,12 @@ value|{ "application/x-gimp-tool-info-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_
 end_define
 
 begin_define
-DECL|macro|GIMP_TARGET_DIALOG
+DECL|macro|GIMP_TARGET_NOTEBOOK_TAB
 define|#
 directive|define
-name|GIMP_TARGET_DIALOG
+name|GIMP_TARGET_NOTEBOOK_TAB
 define|\
-value|{ "application/x-gimp-dialog", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_DIALOG }
+value|{ "GTK_NOTEBOOK_TAB", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_NOTEBOOK_TAB }
 end_define
 
 begin_comment

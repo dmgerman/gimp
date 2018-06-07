@@ -1895,7 +1895,11 @@ function_decl|)
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|source
+name|notebook
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|child
 parameter_list|,
 name|gint
 name|insert_index

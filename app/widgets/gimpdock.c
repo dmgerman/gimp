@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b32362f0103
+DECL|enum|__anon27a9b19d0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -256,7 +256,11 @@ name|gimp_dock_dropped_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|source
+name|notebook
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|child
 parameter_list|,
 name|gint
 name|insert_index
@@ -1196,12 +1200,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dock_dropped_cb (GtkWidget * source,gint insert_index,gpointer data)
+DECL|function|gimp_dock_dropped_cb (GtkWidget * notebook,GtkWidget * child,gint insert_index,gpointer data)
 name|gimp_dock_dropped_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|source
+name|notebook
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|child
 parameter_list|,
 name|gint
 name|insert_index
@@ -1219,13 +1227,22 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpDockbook
+modifier|*
+name|dockbook
+init|=
+name|GIMP_DOCKBOOK
+argument_list|(
+name|notebook
+argument_list|)
+decl_stmt|;
 name|GimpDockable
 modifier|*
 name|dockable
 init|=
-name|gimp_dockbook_drag_source_to_dockable
+name|GIMP_DOCKABLE
 argument_list|(
-name|source
+name|child
 argument_list|)
 decl_stmt|;
 name|GimpDialogFactory
@@ -1234,27 +1251,14 @@ name|factory
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|dockbook
-init|=
-name|NULL
+name|new_dockbook
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|dockable
-condition|)
-return|return
-name|FALSE
-return|;
 comment|/*  if dropping to the same dock, take care that we don't try    *  to reorder the *only* dockable in the dock    */
 if|if
 condition|(
 name|gimp_dockbook_get_dock
 argument_list|(
-name|gimp_dockable_get_dockbook
-argument_list|(
-name|dockable
-argument_list|)
+name|dockbook
 argument_list|)
 operator|==
 name|dock
@@ -1326,14 +1330,14 @@ argument_list|(
 name|dockable
 argument_list|)
 expr_stmt|;
-name|gimp_dockbook_remove
+name|gtk_notebook_detach_tab
 argument_list|(
-name|gimp_dockable_get_dockbook
+name|GTK_NOTEBOOK
 argument_list|(
-name|dockable
+name|notebook
 argument_list|)
 argument_list|,
-name|dockable
+name|child
 argument_list|)
 expr_stmt|;
 comment|/* Create a new dockbook */
@@ -1344,7 +1348,7 @@ argument_list|(
 name|dock
 argument_list|)
 expr_stmt|;
-name|dockbook
+name|new_dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
@@ -1360,7 +1364,7 @@ name|dock
 argument_list|,
 name|GIMP_DOCKBOOK
 argument_list|(
-name|dockbook
+name|new_dockbook
 argument_list|)
 argument_list|,
 name|insert_index
@@ -1371,7 +1375,7 @@ name|gimp_dockbook_add
 argument_list|(
 name|GIMP_DOCKBOOK
 argument_list|(
-name|dockbook
+name|new_dockbook
 argument_list|)
 argument_list|,
 name|dockable

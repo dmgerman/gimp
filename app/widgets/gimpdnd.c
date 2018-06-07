@@ -1560,7 +1560,7 @@ name|gimp_dnd_set_tool_info_data
 block|}
 block|,
 block|{
-name|GIMP_TARGET_DIALOG
+name|GIMP_TARGET_NOTEBOOK_TAB
 block|,
 name|NULL
 block|,
