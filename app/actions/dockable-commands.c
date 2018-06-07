@@ -613,7 +613,7 @@ argument_list|(
 name|new_dockable
 argument_list|)
 argument_list|,
-name|gimp_dockable_is_locked
+name|gimp_dockable_get_locked
 argument_list|(
 name|dockable
 argument_list|)

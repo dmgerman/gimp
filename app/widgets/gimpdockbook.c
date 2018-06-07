@@ -213,7 +213,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce67070103
+DECL|enum|__anon2c577fa20103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1726,7 +1726,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_dockable_is_locked
+name|gimp_dockable_get_locked
 argument_list|(
 name|dockable
 argument_list|)
@@ -3485,7 +3485,7 @@ block|{
 name|gboolean
 name|locked
 init|=
-name|gimp_dockable_is_locked
+name|gimp_dockable_get_locked
 argument_list|(
 name|dockable
 argument_list|)

@@ -1149,7 +1149,7 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (sensitive) != 0)
 name|locked
 operator|=
-name|gimp_dockable_is_locked
+name|gimp_dockable_get_locked
 argument_list|(
 name|dockable
 argument_list|)
