@@ -100,7 +100,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8c4a730103
+DECL|enum|__anon2b8607270103
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8c4a730203
+DECL|enum|__anon2b8607270203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1389,7 +1389,7 @@ argument_list|,
 operator|(
 name|HWND
 operator|)
-name|gdk_win32_drawable_get_handle
+name|gdk_win32_window_get_handle
 argument_list|(
 name|store
 operator|->
