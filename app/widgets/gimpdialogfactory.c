@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1907570103
+DECL|enum|__anon294a1d560103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1809,6 +1809,12 @@ name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|dockbook
+init|=
+name|NULL
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|dock_window
 init|=
 name|NULL
@@ -1826,10 +1832,6 @@ operator|->
 name|dockable
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|dockbook
-decl_stmt|;
 comment|/*  It doesn't make sense to have a dockable without a dock                *  so create one. Create a new dock _before_ creating the                *  dialog. We do this because the new dockable needs to be                *  created in its dock's context.                */
 name|dock
 operator|=
@@ -1840,7 +1842,6 @@ argument_list|,
 name|monitor
 argument_list|,
 name|FALSE
-comment|/*toolbox*/
 argument_list|)
 expr_stmt|;
 name|dockbook
@@ -2041,21 +2042,21 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|gimp_dock_add
+name|gtk_notebook_append_page
 argument_list|(
-name|GIMP_DOCK
+name|GTK_NOTEBOOK
 argument_list|(
-name|dock
+name|dockbook
 argument_list|)
 argument_list|,
-name|GIMP_DOCKABLE
+name|dialog
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
 argument_list|(
 name|dialog
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

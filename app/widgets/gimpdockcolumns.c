@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b462d0f0103
+DECL|enum|__anon27d9587c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b462d0f0203
+DECL|enum|__anon27d9587c0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1288,17 +1288,16 @@ argument_list|,
 name|child
 argument_list|)
 expr_stmt|;
-name|gimp_dockbook_add
+name|gtk_notebook_append_page
 argument_list|(
-name|GIMP_DOCKBOOK
+name|GTK_NOTEBOOK
 argument_list|(
 name|new_dockbook
 argument_list|)
 argument_list|,
-name|dockable
+name|child
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

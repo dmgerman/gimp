@@ -430,10 +430,6 @@ name|dockbook
 argument_list|)
 argument_list|,
 name|identifiers
-argument_list|,
-operator|-
-literal|1
-comment|/*index*/
 argument_list|)
 expr_stmt|;
 block|}
