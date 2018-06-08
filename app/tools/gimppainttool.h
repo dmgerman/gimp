@@ -191,6 +191,14 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+DECL|member|paint_x
+name|gdouble
+name|paint_x
+decl_stmt|;
+DECL|member|paint_y
+name|gdouble
+name|paint_y
+decl_stmt|;
 block|}
 struct|;
 end_struct
