@@ -212,6 +212,10 @@ name|gchar
 modifier|*
 name|icon_theme
 decl_stmt|;
+DECL|member|prefer_symbolic_icons
+name|gboolean
+name|prefer_symbolic_icons
+decl_stmt|;
 DECL|member|use_help
 name|gboolean
 name|use_help

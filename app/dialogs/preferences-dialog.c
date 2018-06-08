@@ -8837,6 +8837,23 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"prefer-symbolic-icons"
+argument_list|,
+name|_
+argument_list|(
+literal|"Use symbolic icons if available"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*************************/
 comment|/*  Interface / Toolbox  */
@@ -12810,7 +12827,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29e5f14e0108
+DECL|struct|__anon2c51b7840108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13685,7 +13702,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e5f14e0208
+DECL|struct|__anon2c51b7840208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13816,7 +13833,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e5f14e0308
+DECL|struct|__anon2c51b7840308
 block|{
 DECL|member|tree_label
 specifier|const

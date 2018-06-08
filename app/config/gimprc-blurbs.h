@@ -1205,12 +1205,12 @@ value|"The name of the icon theme to use."
 end_define
 
 begin_define
-DECL|macro|ICON_SIZE_BLURB
+DECL|macro|PREFER_SYMBOLIC_ICONS_BLURB
 define|#
 directive|define
-name|ICON_SIZE_BLURB
+name|PREFER_SYMBOLIC_ICONS_BLURB
 define|\
-value|"The size of the icons to use."
+value|"When enabled, symbolic icons will be prefered if available."
 end_define
 
 begin_define
