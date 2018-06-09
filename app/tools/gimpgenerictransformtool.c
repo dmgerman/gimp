@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptransformoptions.h"
+file|"gimptransformgridoptions.h"
 end_include
 
 begin_include
@@ -102,9 +102,9 @@ specifier|static
 name|void
 name|gimp_generic_transform_tool_dialog
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -114,9 +114,9 @@ specifier|static
 name|void
 name|gimp_generic_transform_tool_dialog_update
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -126,9 +126,9 @@ specifier|static
 name|void
 name|gimp_generic_transform_tool_prepare
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -138,9 +138,9 @@ specifier|static
 name|void
 name|gimp_generic_transform_tool_recalc_matrix
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|,
 name|GimpToolWidget
 modifier|*
@@ -150,14 +150,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpGenericTransformTool,gimp_generic_transform_tool,GIMP_TYPE_TRANSFORM_TOOL)
+DECL|function|G_DEFINE_TYPE (GimpGenericTransformTool,gimp_generic_transform_tool,GIMP_TYPE_TRANSFORM_GRID_TOOL)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpGenericTransformTool
 argument_list|,
 argument|gimp_generic_transform_tool
 argument_list|,
-argument|GIMP_TYPE_TRANSFORM_TOOL
+argument|GIMP_TYPE_TRANSFORM_GRID_TOOL
 argument_list|)
 end_macro
 
@@ -171,34 +171,34 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpTransformToolClass
+name|GimpTransformGridToolClass
 modifier|*
-name|trans_class
+name|tg_class
 init|=
-name|GIMP_TRANSFORM_TOOL_CLASS
+name|GIMP_TRANSFORM_GRID_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|trans_class
+name|tg_class
 operator|->
 name|dialog
 operator|=
 name|gimp_generic_transform_tool_dialog
 expr_stmt|;
-name|trans_class
+name|tg_class
 operator|->
 name|dialog_update
 operator|=
 name|gimp_generic_transform_tool_dialog_update
 expr_stmt|;
-name|trans_class
+name|tg_class
 operator|->
 name|prepare
 operator|=
 name|gimp_generic_transform_tool_prepare
 expr_stmt|;
-name|trans_class
+name|tg_class
 operator|->
 name|recalc_matrix
 operator|=
@@ -223,12 +223,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_generic_transform_tool_dialog (GimpTransformTool * tr_tool)
+DECL|function|gimp_generic_transform_tool_dialog (GimpTransformGridTool * tg_tool)
 name|gimp_generic_transform_tool_dialog
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|)
 block|{
 name|GimpGenericTransformTool
@@ -237,7 +237,7 @@ name|generic
 init|=
 name|GIMP_GENERIC_TRANSFORM_TOOL
 argument_list|(
-name|tr_tool
+name|tg_tool
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -281,7 +281,7 @@ name|GTK_BOX
 argument_list|(
 name|gimp_tool_gui_get_vbox
 argument_list|(
-name|tr_tool
+name|tg_tool
 operator|->
 name|gui
 argument_list|)
@@ -542,21 +542,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_generic_transform_tool_dialog_update (GimpTransformTool * tr_tool)
+DECL|function|gimp_generic_transform_tool_dialog_update (GimpTransformGridTool * tg_tool)
 name|gimp_generic_transform_tool_dialog_update
 parameter_list|(
+name|GimpTransformGridTool
+modifier|*
+name|tg_tool
+parameter_list|)
+block|{
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|)
-block|{
+init|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tg_tool
+argument_list|)
+decl_stmt|;
 name|GimpGenericTransformTool
 modifier|*
 name|generic
 init|=
 name|GIMP_GENERIC_TRANSFORM_TOOL
 argument_list|(
-name|tr_tool
+name|tg_tool
 argument_list|)
 decl_stmt|;
 if|if
@@ -687,21 +696,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_generic_transform_tool_prepare (GimpTransformTool * tr_tool)
+DECL|function|gimp_generic_transform_tool_prepare (GimpTransformGridTool * tg_tool)
 name|gimp_generic_transform_tool_prepare
 parameter_list|(
+name|GimpTransformGridTool
+modifier|*
+name|tg_tool
+parameter_list|)
+block|{
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|)
-block|{
+init|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tg_tool
+argument_list|)
+decl_stmt|;
 name|GimpGenericTransformTool
 modifier|*
 name|generic
 init|=
 name|GIMP_GENERIC_TRANSFORM_TOOL
 argument_list|(
-name|tr_tool
+name|tg_tool
 argument_list|)
 decl_stmt|;
 name|generic
@@ -808,25 +826,34 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_generic_transform_tool_recalc_matrix (GimpTransformTool * tr_tool,GimpToolWidget * widget)
+DECL|function|gimp_generic_transform_tool_recalc_matrix (GimpTransformGridTool * tg_tool,GimpToolWidget * widget)
 name|gimp_generic_transform_tool_recalc_matrix
 parameter_list|(
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|tr_tool
+name|tg_tool
 parameter_list|,
 name|GimpToolWidget
 modifier|*
 name|widget
 parameter_list|)
 block|{
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+init|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tg_tool
+argument_list|)
+decl_stmt|;
 name|GimpGenericTransformTool
 modifier|*
 name|generic
 init|=
 name|GIMP_GENERIC_TRANSFORM_TOOL
 argument_list|(
-name|tr_tool
+name|tg_tool
 argument_list|)
 decl_stmt|;
 if|if

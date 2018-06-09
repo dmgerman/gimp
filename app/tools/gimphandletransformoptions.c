@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be039640103
+DECL|enum|__anon294572b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,14 +142,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpHandleTransformOptions,gimp_handle_transform_options,GIMP_TYPE_TRANSFORM_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpHandleTransformOptions,gimp_handle_transform_options,GIMP_TYPE_TRANSFORM_GRID_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpHandleTransformOptions
 argument_list|,
 argument|gimp_handle_transform_options
 argument_list|,
-argument|GIMP_TYPE_TRANSFORM_OPTIONS
+argument|GIMP_TYPE_TRANSFORM_GRID_OPTIONS
 argument_list|)
 end_macro
 
@@ -390,7 +390,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 init|=
-name|gimp_transform_options_gui
+name|gimp_transform_grid_options_gui
 argument_list|(
 name|tool_options
 argument_list|)

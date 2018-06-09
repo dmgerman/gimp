@@ -36,18 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
+file|"gimptransformgridtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimptransformtoolundo.h"
+file|"gimptransformgridtoolundo.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6baf20103
+DECL|enum|__anon2ab367b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +61,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_undo_constructed
+name|gimp_transform_grid_tool_undo_constructed
 parameter_list|(
 name|GObject
 modifier|*
@@ -73,7 +73,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_undo_set_property
+name|gimp_transform_grid_tool_undo_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -97,7 +97,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_undo_get_property
+name|gimp_transform_grid_tool_undo_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -120,7 +120,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_undo_pop
+name|gimp_transform_grid_tool_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -139,7 +139,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_undo_free
+name|gimp_transform_grid_tool_undo_free
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -152,12 +152,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTransformToolUndo,gimp_transform_tool_undo,GIMP_TYPE_UNDO)
+DECL|function|G_DEFINE_TYPE (GimpTransformGridToolUndo,gimp_transform_grid_tool_undo,GIMP_TYPE_UNDO)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpTransformToolUndo
+argument|GimpTransformGridToolUndo
 argument_list|,
-argument|gimp_transform_tool_undo
+argument|gimp_transform_grid_tool_undo
 argument_list|,
 argument|GIMP_TYPE_UNDO
 argument_list|)
@@ -168,15 +168,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_transform_tool_undo_parent_class
+value|gimp_transform_grid_tool_undo_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_transform_tool_undo_class_init
+name|gimp_transform_grid_tool_undo_class_init
 parameter_list|(
-name|GimpTransformToolUndoClass
+name|GimpTransformGridToolUndoClass
 modifier|*
 name|klass
 parameter_list|)
@@ -203,31 +203,31 @@ name|object_class
 operator|->
 name|constructed
 operator|=
-name|gimp_transform_tool_undo_constructed
+name|gimp_transform_grid_tool_undo_constructed
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_transform_tool_undo_set_property
+name|gimp_transform_grid_tool_undo_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_transform_tool_undo_get_property
+name|gimp_transform_grid_tool_undo_get_property
 expr_stmt|;
 name|undo_class
 operator|->
 name|pop
 operator|=
-name|gimp_transform_tool_undo_pop
+name|gimp_transform_grid_tool_undo_pop
 expr_stmt|;
 name|undo_class
 operator|->
 name|free
 operator|=
-name|gimp_transform_tool_undo_free
+name|gimp_transform_grid_tool_undo_free
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -243,7 +243,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_TRANSFORM_TOOL
+name|GIMP_TYPE_TRANSFORM_GRID_TOOL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -257,10 +257,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_init (GimpTransformToolUndo * undo)
-name|gimp_transform_tool_undo_init
+DECL|function|gimp_transform_grid_tool_undo_init (GimpTransformGridToolUndo * undo)
+name|gimp_transform_grid_tool_undo_init
 parameter_list|(
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
 name|undo
 parameter_list|)
@@ -270,26 +270,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_constructed (GObject * object)
-name|gimp_transform_tool_undo_constructed
+DECL|function|gimp_transform_grid_tool_undo_constructed (GObject * object)
+name|gimp_transform_grid_tool_undo_constructed
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
-name|transform_tool_undo
+name|tg_tool_undo
 init|=
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|transform_tool
+name|tg_tool
 decl_stmt|;
 name|gint
 name|i
@@ -306,19 +306,19 @@ argument_list|)
 expr_stmt|;
 name|gimp_assert
 argument_list|(
-name|GIMP_IS_TRANSFORM_TOOL
+name|GIMP_IS_TRANSFORM_GRID_TOOL
 argument_list|(
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|transform_tool
+name|tg_tool
 operator|=
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 expr_stmt|;
 for|for
 control|(
@@ -333,7 +333,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
 name|trans_info
 index|[
@@ -342,7 +342,7 @@ index|]
 operator|=
 operator|(
 operator|*
-name|transform_tool
+name|tg_tool
 operator|->
 name|old_trans_info
 operator|)
@@ -353,25 +353,25 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (transform_tool->original)     transform_tool_undo->original = tile_manager_ref (transform_tool->original);
+block|if (tg_tool->original)     tg_tool_undo->original = tile_manager_ref (tg_tool->original);
 endif|#
 directive|endif
 name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 argument_list|,
 operator|(
 name|gpointer
 operator|)
 operator|&
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -380,8 +380,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_transform_tool_undo_set_property
+DECL|function|gimp_transform_grid_tool_undo_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_transform_grid_tool_undo_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -400,11 +400,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
-name|transform_tool_undo
+name|tg_tool_undo
 init|=
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 argument_list|(
 name|object
 argument_list|)
@@ -417,9 +417,9 @@ block|{
 case|case
 name|PROP_TRANSFORM_TOOL
 case|:
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 operator|=
 name|g_value_get_object
 argument_list|(
@@ -445,8 +445,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_transform_tool_undo_get_property
+DECL|function|gimp_transform_grid_tool_undo_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_transform_grid_tool_undo_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -464,11 +464,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
-name|transform_tool_undo
+name|tg_tool_undo
 init|=
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 argument_list|(
 name|object
 argument_list|)
@@ -485,9 +485,9 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -509,8 +509,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
-name|gimp_transform_tool_undo_pop
+DECL|function|gimp_transform_grid_tool_undo_pop (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+name|gimp_transform_grid_tool_undo_pop
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -524,11 +524,11 @@ modifier|*
 name|accum
 parameter_list|)
 block|{
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
-name|transform_tool_undo
+name|tg_tool_undo
 init|=
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 argument_list|(
 name|undo
 argument_list|)
@@ -549,19 +549,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 condition|)
 block|{
-name|GimpTransformTool
+name|GimpTransformGridTool
 modifier|*
-name|transform_tool
+name|tg_tool
 decl_stmt|;
 if|#
 directive|if
 literal|0
-block|TileManager       *temp;
+block|TileManager           *temp;
 endif|#
 directive|endif
 name|gdouble
@@ -570,11 +570,11 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|transform_tool
+name|tg_tool
 operator|=
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 expr_stmt|;
 comment|/*  swap the transformation information arrays  */
 for|for
@@ -593,28 +593,28 @@ control|)
 block|{
 name|d
 operator|=
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
 name|trans_info
 index|[
 name|i
 index|]
 expr_stmt|;
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
 name|trans_info
 index|[
 name|i
 index|]
 operator|=
-name|transform_tool
+name|tg_tool
 operator|->
 name|trans_info
 index|[
 name|i
 index|]
 expr_stmt|;
-name|transform_tool
+name|tg_tool
 operator|->
 name|trans_info
 index|[
@@ -627,15 +627,15 @@ block|}
 if|#
 directive|if
 literal|0
-comment|/*  swap the original buffer--the source buffer for repeated transforms        */
-block|temp                          = transform_tool_undo->original;       transform_tool_undo->original = transform_tool->original;       transform_tool->original      = temp;
+comment|/*  swap the original buffer--the source buffer for repeated transform_grids        */
+block|temp                   = tg_tool_undo->original;       tg_tool_undo->original = tg_tool->original;       tg_tool->original      = temp;
 endif|#
 directive|endif
 if|#
 directive|if
 literal|0
-comment|/*  If we're re-implementing the first transform, reactivate tool  */
-block|if (undo_mode == GIMP_UNDO_MODE_REDO&& transform_tool->original)         {           gimp_tool_control_activate (GIMP_TOOL (transform_tool)->control);            gimp_draw_tool_resume (GIMP_DRAW_TOOL (transform_tool));         }
+comment|/*  If we're re-implementing the first transform_grid, reactivate tool  */
+block|if (undo_mode == GIMP_UNDO_MODE_REDO&& tg_tool->original)         {           gimp_tool_control_activate (GIMP_TOOL (tg_tool)->control);            gimp_draw_tool_resume (GIMP_DRAW_TOOL (tg_tool));         }
 endif|#
 directive|endif
 block|}
@@ -645,8 +645,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_undo_free (GimpUndo * undo,GimpUndoMode undo_mode)
-name|gimp_transform_tool_undo_free
+DECL|function|gimp_transform_grid_tool_undo_free (GimpUndo * undo,GimpUndoMode undo_mode)
+name|gimp_transform_grid_tool_undo_free
 parameter_list|(
 name|GimpUndo
 modifier|*
@@ -656,43 +656,43 @@ name|GimpUndoMode
 name|undo_mode
 parameter_list|)
 block|{
-name|GimpTransformToolUndo
+name|GimpTransformGridToolUndo
 modifier|*
-name|transform_tool_undo
+name|tg_tool_undo
 init|=
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 argument_list|(
 name|undo
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 condition|)
 block|{
 name|g_object_remove_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 argument_list|,
 operator|(
 name|gpointer
 operator|)
 operator|&
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 argument_list|)
 expr_stmt|;
-name|transform_tool_undo
+name|tg_tool_undo
 operator|->
-name|transform_tool
+name|tg_tool
 operator|=
 name|NULL
 expr_stmt|;
@@ -700,7 +700,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|if (transform_tool_undo->original)     {       tile_manager_unref (transform_tool_undo->original);       transform_tool_undo->original = NULL;     }
+block|if (tg_tool_undo->original)     {       tile_manager_unref (tg_tool_undo->original);       tg_tool_undo->original = NULL;     }
 endif|#
 directive|endif
 name|GIMP_UNDO_CLASS

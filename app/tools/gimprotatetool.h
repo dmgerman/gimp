@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
+file|"gimptransformgridtool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpRotateTool
 block|{
 DECL|member|parent_instance
-name|GimpTransformTool
+name|GimpTransformGridTool
 name|parent_instance
 decl_stmt|;
 DECL|member|angle_adj
@@ -137,7 +137,7 @@ struct|struct
 name|_GimpRotateToolClass
 block|{
 DECL|member|parent_class
-name|GimpTransformToolClass
+name|GimpTransformGridToolClass
 name|parent_class
 decl_stmt|;
 block|}

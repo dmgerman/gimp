@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
+file|"gimptransformgridtool.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpGenericTransformTool
 block|{
 DECL|member|parent_instance
-name|GimpTransformTool
+name|GimpTransformGridTool
 name|parent_instance
 decl_stmt|;
 DECL|member|input_points
@@ -148,7 +148,7 @@ struct|struct
 name|_GimpGenericTransformToolClass
 block|{
 DECL|member|parent_class
-name|GimpTransformToolClass
+name|GimpTransformGridToolClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */

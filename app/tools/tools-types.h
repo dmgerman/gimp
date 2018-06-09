@@ -111,6 +111,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTransformGridTool
+typedef|typedef
+name|struct
+name|_GimpTransformGridTool
+name|GimpTransformGridTool
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTransformTool
 typedef|typedef
 name|struct

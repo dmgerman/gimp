@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_TRANSFORM_TOOL_UNDO_H__
+name|__GIMP_TRANSFORM_GRID_TOOL_UNDO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_TRANSFORM_TOOL_UNDO_H__
+DECL|macro|__GIMP_TRANSFORM_GRID_TOOL_UNDO_H__
 define|#
 directive|define
-name|__GIMP_TRANSFORM_TOOL_UNDO_H__
+name|__GIMP_TRANSFORM_GRID_TOOL_UNDO_H__
 end_define
 
 begin_include
@@ -23,99 +23,99 @@ file|"core/gimpundo.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_TRANSFORM_TOOL_UNDO
+DECL|macro|GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO
 define|#
 directive|define
-name|GIMP_TYPE_TRANSFORM_TOOL_UNDO
-value|(gimp_transform_tool_undo_get_type ())
+name|GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO
+value|(gimp_transform_grid_tool_undo_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_TRANSFORM_TOOL_UNDO (obj)
+DECL|macro|GIMP_TRANSFORM_GRID_TOOL_UNDO (obj)
 define|#
 directive|define
-name|GIMP_TRANSFORM_TOOL_UNDO
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TRANSFORM_TOOL_UNDO, GimpTransformToolUndo))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO, GimpTransformGridToolUndo))
 end_define
 
 begin_define
-DECL|macro|GIMP_TRANSFORM_TOOL_UNDO_CLASS (klass)
+DECL|macro|GIMP_TRANSFORM_GRID_TOOL_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_TRANSFORM_TOOL_UNDO_CLASS
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TRANSFORM_TOOL_UNDO, GimpTransformToolUndoClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO, GimpTransformGridToolUndoClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TRANSFORM_TOOL_UNDO (obj)
+DECL|macro|GIMP_IS_TRANSFORM_GRID_TOOL_UNDO (obj)
 define|#
 directive|define
-name|GIMP_IS_TRANSFORM_TOOL_UNDO
+name|GIMP_IS_TRANSFORM_GRID_TOOL_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TRANSFORM_TOOL_UNDO))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TRANSFORM_TOOL_UNDO_CLASS (klass)
+DECL|macro|GIMP_IS_TRANSFORM_GRID_TOOL_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_TRANSFORM_TOOL_UNDO_CLASS
+name|GIMP_IS_TRANSFORM_GRID_TOOL_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TRANSFORM_TOOL_UNDO))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_TRANSFORM_TOOL_UNDO_GET_CLASS (obj)
+DECL|macro|GIMP_TRANSFORM_GRID_TOOL_UNDO_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_TRANSFORM_TOOL_UNDO_GET_CLASS
+name|GIMP_TRANSFORM_GRID_TOOL_UNDO_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TRANSFORM_TOOL_UNDO, GimpTransformToolUndoClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TRANSFORM_GRID_TOOL_UNDO, GimpTransformGridToolUndoClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpTransformToolUndo
+DECL|typedef|GimpTransformGridToolUndo
 typedef|typedef
 name|struct
-name|_GimpTransformToolUndo
-name|GimpTransformToolUndo
+name|_GimpTransformGridToolUndo
+name|GimpTransformGridToolUndo
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpTransformToolUndoClass
+DECL|typedef|GimpTransformGridToolUndoClass
 typedef|typedef
 name|struct
-name|_GimpTransformToolUndoClass
-name|GimpTransformToolUndoClass
+name|_GimpTransformGridToolUndoClass
+name|GimpTransformGridToolUndoClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpTransformToolUndo
+DECL|struct|_GimpTransformGridToolUndo
 struct|struct
-name|_GimpTransformToolUndo
+name|_GimpTransformGridToolUndo
 block|{
 DECL|member|parent_instance
 name|GimpUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|transform_tool
-name|GimpTransformTool
+DECL|member|tg_tool
+name|GimpTransformGridTool
 modifier|*
-name|transform_tool
+name|tg_tool
 decl_stmt|;
 DECL|member|trans_info
 name|TransInfo
@@ -124,7 +124,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|TileManager       *original;
+block|TileManager           *original;
 endif|#
 directive|endif
 block|}
@@ -132,9 +132,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpTransformToolUndoClass
+DECL|struct|_GimpTransformGridToolUndoClass
 struct|struct
-name|_GimpTransformToolUndoClass
+name|_GimpTransformGridToolUndoClass
 block|{
 DECL|member|parent_class
 name|GimpUndoClass
@@ -146,7 +146,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_transform_tool_undo_get_type
+name|gimp_transform_grid_tool_undo_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -160,7 +160,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_TRANSFORM_TOOL_UNDO_H__ */
+comment|/* __GIMP_TRANSFORM_GRID_TOOL_UNDO_H__ */
 end_comment
 
 end_unit

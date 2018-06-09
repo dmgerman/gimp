@@ -4603,11 +4603,11 @@ literal|"fs-to-layer"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_TRANSFORM
+name|GIMP_UNDO_TRANSFORM_GRID
 block|,
-literal|"GIMP_UNDO_TRANSFORM"
+literal|"GIMP_UNDO_TRANSFORM_GRID"
 block|,
-literal|"transform"
+literal|"transform-grid"
 block|}
 block|,
 block|{
@@ -5793,13 +5793,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_TRANSFORM
+name|GIMP_UNDO_TRANSFORM_GRID
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Transform"
+literal|"Transform grid"
 argument_list|)
 block|,
 name|NULL
