@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc8f37e0103
+DECL|enum|__anon28aeb5e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,14 +118,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpMeasureOptions,gimp_measure_options,GIMP_TYPE_TOOL_OPTIONS)
+DECL|function|G_DEFINE_TYPE (GimpMeasureOptions,gimp_measure_options,GIMP_TYPE_TRANSFORM_OPTIONS)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpMeasureOptions
 argument_list|,
 argument|gimp_measure_options
 argument_list|,
-argument|GIMP_TYPE_TOOL_OPTIONS
+argument|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|)
 end_macro
 
@@ -362,6 +362,14 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox2
+decl_stmt|;
 comment|/*  the use_info_window toggle button  */
 name|button
 operator|=
@@ -395,13 +403,14 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|button
+comment|/*  the straighten frame  */
+name|frame
 operator|=
-name|gtk_button_new_with_label
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto straighten"
+literal|"Straighten"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -410,6 +419,67 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|vbox
+argument_list|)
+argument_list|,
+name|frame
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
+comment|/*  the transform options  */
+name|vbox2
+operator|=
+name|gimp_transform_options_gui
+argument_list|(
+name|tool_options
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|vbox2
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox2
+argument_list|)
+expr_stmt|;
+comment|/*  the straighten button  */
+name|button
+operator|=
+name|gtk_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Straighten"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
 argument_list|)
 argument_list|,
 name|button
@@ -434,7 +504,8 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotate the active layer using the measurement line as horizon"
+literal|"Rotate the active layer, selection or path "
+literal|"by the measured angle"
 argument_list|)
 argument_list|,
 name|NULL
@@ -450,7 +521,7 @@ argument_list|(
 name|tool_options
 argument_list|)
 operator|->
-name|auto_straighten
+name|straighten
 operator|=
 name|button
 expr_stmt|;
