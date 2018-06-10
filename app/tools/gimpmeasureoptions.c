@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aeb5e50103
+DECL|enum|__anon294fe0580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -349,6 +349,15 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
+name|GimpMeasureOptions
+modifier|*
+name|options
+init|=
+name|GIMP_MEASURE_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -516,12 +525,9 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|GIMP_MEASURE_OPTIONS
-argument_list|(
-name|tool_options
-argument_list|)
+name|options
 operator|->
-name|straighten
+name|straighten_button
 operator|=
 name|button
 expr_stmt|;

@@ -116,10 +116,11 @@ DECL|member|use_info_window
 name|gboolean
 name|use_info_window
 decl_stmt|;
-DECL|member|straighten
+comment|/*  options gui  */
+DECL|member|straighten_button
 name|GtkWidget
 modifier|*
-name|straighten
+name|straighten_button
 decl_stmt|;
 block|}
 struct|;
