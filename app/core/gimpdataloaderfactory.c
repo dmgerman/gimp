@@ -1554,6 +1554,25 @@ argument_list|(
 name|factory
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_data_factory_get_gimp
+argument_list|(
+name|factory
+argument_list|)
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"  Loading %s\n"
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|mtime
 operator|=
 name|g_file_info_get_attribute_uint64
