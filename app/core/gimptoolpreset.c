@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34bcdf0103
+DECL|enum|__anon28b9090c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1404,6 +1404,36 @@ operator|=
 name|G_TOKEN_STRING
 expr_stmt|;
 break|break;
+block|}
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|type_name
+argument_list|,
+literal|"GimpTransformOptions"
+argument_list|)
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"Correcting tool options type GimpTransformOptions "
+literal|"to GimpTransformGridOptions\n"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|type_name
+argument_list|)
+expr_stmt|;
+name|type_name
+operator|=
+name|g_strdup
+argument_list|(
+literal|"GimpTransformGridOptions"
+argument_list|)
+expr_stmt|;
 block|}
 name|type
 operator|=
