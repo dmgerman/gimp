@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09f0330103
+DECL|enum|__anon2ae2594e0103
 block|{
 DECL|enumerator|COLOR_SELECTED
 name|COLOR_SELECTED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09f0330203
+DECL|enum|__anon2ae2594e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -403,6 +403,16 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"GimpColorHistory"
 argument_list|)
 expr_stmt|;
 name|klass
