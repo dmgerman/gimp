@@ -971,7 +971,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_INPUT_STREAM
 argument_list|(
-name|file
+name|input
 argument_list|)
 argument_list|,
 name|NULL
@@ -1153,7 +1153,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_INPUT_STREAM
 argument_list|(
-name|file
+name|input
 argument_list|)
 argument_list|,
 name|NULL
@@ -1392,7 +1392,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_INPUT_STREAM
 argument_list|(
-name|file
+name|input
 argument_list|)
 argument_list|,
 name|NULL
@@ -1774,7 +1774,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_INPUT_STREAM
 argument_list|(
-name|file
+name|input
 argument_list|)
 argument_list|,
 name|NULL
@@ -2746,7 +2746,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_INPUT_STREAM
 argument_list|(
-name|file
+name|input
 argument_list|)
 argument_list|,
 name|NULL
