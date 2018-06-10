@@ -995,13 +995,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_transform_tool_get_active_item
+name|gimp_transform_tool_check_active_item
 argument_list|(
 name|tr_tool
 argument_list|,
 name|display
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
