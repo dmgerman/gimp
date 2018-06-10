@@ -1246,7 +1246,17 @@ name|gimp_item_is_visible
 argument_list|(
 name|item
 argument_list|)
+operator|&&
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+operator|!=
+name|tr_tool
+operator|->
+name|drawable
 condition|)
+comment|/* see bug #759194 */
 block|{
 name|g_set_error_literal
 argument_list|(

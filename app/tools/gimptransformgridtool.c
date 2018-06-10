@@ -1211,6 +1211,12 @@ name|drawable
 operator|=
 name|drawable
 expr_stmt|;
+name|tr_tool
+operator|->
+name|drawable
+operator|=
+name|drawable
+expr_stmt|;
 comment|/*  Initialize the transform_grid tool dialog  */
 if|if
 condition|(
@@ -3699,6 +3705,15 @@ argument_list|(
 name|tg_tool
 argument_list|)
 decl_stmt|;
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+init|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tg_tool
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|gimp_draw_tool_is_active
@@ -3823,6 +3838,12 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
+name|tr_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -3870,12 +3891,6 @@ name|GIMP_DRAW_TOOL
 argument_list|(
 name|tg_tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* un-hide the active item before transforming, so that GimpTransformTool    * doesn't refuse to transform it.    */
-name|gimp_transform_grid_tool_show_active_item
-argument_list|(
-name|tg_tool
 argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_transform
