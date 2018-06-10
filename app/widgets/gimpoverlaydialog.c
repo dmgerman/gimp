@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b040ce10103
+DECL|enum|__anon2882d8f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b040ce10203
+DECL|enum|__anon2882d8f00203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -705,6 +705,16 @@ argument_list|,
 literal|"close"
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"GimpOverlayDialog"
 argument_list|)
 expr_stmt|;
 block|}

@@ -162,6 +162,16 @@ name|dispose
 operator|=
 name|gimp_tool_dialog_dispose
 expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"GimpToolDialog"
+argument_list|)
+expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
 name|klass
