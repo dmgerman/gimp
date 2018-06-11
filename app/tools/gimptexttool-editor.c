@@ -916,7 +916,7 @@ name|text_tool
 operator|->
 name|style_overlay
 argument_list|,
-literal|0.7
+literal|0.85
 argument_list|)
 expr_stmt|;
 if|if
