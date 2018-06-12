@@ -3991,8 +3991,10 @@ argument_list|)
 expr_stmt|;
 name|quality_slider
 operator|=
-name|gtk_hscale_new_with_range
+name|gtk_scale_new_with_range
 argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|,
 literal|0
 argument_list|,
 literal|100
