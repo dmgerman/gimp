@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e239c70108
+DECL|struct|__anon28cb07780108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e239c70208
+DECL|struct|__anon28cb07780208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e239c70308
+DECL|struct|__anon28cb07780308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2500,11 +2500,11 @@ decl_stmt|;
 name|gint
 name|num
 decl_stmt|;
-name|g_warning
+name|g_printerr
 argument_list|(
 name|_
 argument_list|(
-literal|"Error loading PNG file: %s"
+literal|"Error loading PNG file: %s\n"
 argument_list|)
 argument_list|,
 name|error_msg
@@ -4410,6 +4410,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|png_read_end
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 comment|/* Switch back to default error handler */
 name|png_set_error_fn
 argument_list|(
@@ -4420,13 +4427,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|png_read_end
-argument_list|(
-name|pp
-argument_list|,
-name|info
 argument_list|)
 expr_stmt|;
 if|if
