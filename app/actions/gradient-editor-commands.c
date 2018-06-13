@@ -3000,6 +3000,8 @@ operator|(
 name|GimpZoomType
 operator|)
 name|value
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

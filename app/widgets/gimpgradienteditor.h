@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c42e3870103
+DECL|enum|__anon2a0bd71f0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -349,6 +349,9 @@ name|editor
 parameter_list|,
 name|GimpZoomType
 name|zoom_type
+parameter_list|,
+name|gdouble
+name|delta
 parameter_list|)
 function_decl|;
 end_function_decl
