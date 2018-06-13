@@ -93,15 +93,9 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"icons/Color/gimp-core-pixbufs.c"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2bddf0750103
+DECL|enum|__anon2c4f9b540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddf0750203
+DECL|enum|__anon2c4f9b540203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"icons/Color/gimp-icon-pixbufs.c"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
