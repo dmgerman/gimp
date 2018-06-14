@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c89a1430103
+DECL|enum|__anon2c2c6ab30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1271,7 +1271,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Selection Bounding Box"
+literal|"Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1298,6 +1298,18 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|frame
+argument_list|,
+name|_
+argument_list|(
+literal|"The selection's bounding box"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|grid
