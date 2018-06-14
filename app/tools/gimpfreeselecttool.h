@@ -202,6 +202,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  protected functions */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_free_select_tool_halt
+parameter_list|(
+name|GimpFreeSelectTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

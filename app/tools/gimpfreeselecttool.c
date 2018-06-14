@@ -933,7 +933,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_free_select_tool_halt (GimpFreeSelectTool * fst)
 name|gimp_free_select_tool_halt

@@ -4292,6 +4292,14 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|gimp_free_select_tool_halt
+argument_list|(
+name|GIMP_FREE_SELECT_TOOL
+argument_list|(
+name|fg_select
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_foreground_select_options_get_mask_color
 argument_list|(
 name|options
