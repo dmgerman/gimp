@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f18df0103
+DECL|enum|__anon2784eb700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1449,6 +1449,12 @@ case|:
 name|tool
 operator|->
 name|display
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
 operator|=
 name|NULL
 expr_stmt|;
