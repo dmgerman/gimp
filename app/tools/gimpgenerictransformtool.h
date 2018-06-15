@@ -162,10 +162,6 @@ parameter_list|(
 name|GimpGenericTransformTool
 modifier|*
 name|generic
-parameter_list|,
-name|GimpToolWidget
-modifier|*
-name|widget
 parameter_list|)
 function_decl|;
 block|}
