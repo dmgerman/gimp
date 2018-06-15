@@ -3127,7 +3127,7 @@ name|g_fopen
 argument_list|(
 name|savename
 argument_list|,
-literal|"wb+"
+literal|"w+b"
 argument_list|)
 expr_stmt|;
 if|if

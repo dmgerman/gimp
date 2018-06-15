@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa2c6110108
+DECL|struct|__anon2783902b0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa2c6110208
+DECL|struct|__anon2783902b0208
 block|{
 DECL|member|y
 name|gint32
@@ -3459,7 +3459,7 @@ name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"wb+"
+literal|"w+b"
 argument_list|)
 expr_stmt|;
 if|if
