@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -231,7 +237,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29d6b4000108
+DECL|struct|__anon2b625c1f0108
 specifier|static
 struct|struct
 block|{
@@ -896,7 +902,8 @@ comment|/* On Unix assume the executable package is in the same prefix as the de
 return|return
 name|pkg_config
 argument_list|(
-literal|"--variable=prefix gimp-3.0"
+literal|"--variable=prefix gimp-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 endif|#
@@ -1277,7 +1284,9 @@ parameter_list|)
 block|{
 name|g_print
 argument_list|(
-literal|"\ Usage: gimptool-2.0 [OPTION]...\n\ \n\ General options:\n\   --help                  print this message\n\   --quiet, --silent       don't echo build commands\n\   --version               print the version of GIMP associated with this script\n\   -n, --just-print, --dry-run, --recon\n\                           don't actually run any commands; just print them\n\ Developer options:\n\   --cflags                print the compiler flags that are necessary to\n\                           compile a plug-in\n\   --libs                  print the linker flags that are necessary to link a\n\                           plug-in\n\   --prefix=PREFIX         use PREFIX instead of the installation prefix that\n\                           GIMP was built when computing the output for --cflags\n\                           and --libs\n\   --exec-prefix=PREFIX    use PREFIX instead of the installation exec prefix\n\                           that GIMP was built when computing the output for\n\                           --cflags and --libs\n\   --msvc-syntax           print flags in MSVC syntax\n\ \n\ Installation directory options:\n\   --prefix --exec-prefix --bindir --sbindir --libexecdir --datadir --sysconfdir\n\   --sharedstatedir --localstatedir --libdir --infodir --mandir --includedir\n\   --gimpplugindir --gimpdatadir\n\ \n\ The --cflags and --libs options can be appended with -noui to get appropriate\n\ settings for plug-ins which do not use GTK+.\n\ \n\ User options:\n\   --build plug-in.c               build a plug-in from a source file\n\   --install plug-in.c             same as --build, but installs the built\n\                                   plug-in as well\n\   --install-bin plug-in           install a compiled plug-in\n\   --install-script script.scm     install a script-fu script\n\ \n\   --uninstall-bin plug-in         remove a plug-in again\n\   --uninstall-script plug-in      remove a script-fu script\n\ \n\ The --install and --uninstall options have \"admin\" counterparts (with\n\ prefix --install-admin instead of --install) that can be used instead to\n\ install/uninstall a plug-in or script in the machine directory instead of a\n\ user directory.\n\ \n\ For plug-ins which do not use GTK+, the --build and --install options can be\n\ appended with -noui for appropriate settings. For plug-ins that use GTK+ but\n\ not libgimpui, append -nogimpui.\n"
+literal|"\ Usage: gimptool-"
+name|GIMP_TOOL_VERSION
+literal|" [OPTION]...\n\ \n\ General options:\n\   --help                  print this message\n\   --quiet, --silent       don't echo build commands\n\   --version               print the version of GIMP associated with this script\n\   -n, --just-print, --dry-run, --recon\n\                           don't actually run any commands; just print them\n\ Developer options:\n\   --cflags                print the compiler flags that are necessary to\n\                           compile a plug-in\n\   --libs                  print the linker flags that are necessary to link a\n\                           plug-in\n\   --prefix=PREFIX         use PREFIX instead of the installation prefix that\n\                           GIMP was built when computing the output for --cflags\n\                           and --libs\n\   --exec-prefix=PREFIX    use PREFIX instead of the installation exec prefix\n\                           that GIMP was built when computing the output for\n\                           --cflags and --libs\n\   --msvc-syntax           print flags in MSVC syntax\n\ \n\ Installation directory options:\n\   --prefix --exec-prefix --bindir --sbindir --libexecdir --datadir --sysconfdir\n\   --sharedstatedir --localstatedir --libdir --infodir --mandir --includedir\n\   --gimpplugindir --gimpdatadir\n\ \n\ The --cflags and --libs options can be appended with -noui to get appropriate\n\ settings for plug-ins which do not use GTK+.\n\ \n\ User options:\n\   --build plug-in.c               build a plug-in from a source file\n\   --install plug-in.c             same as --build, but installs the built\n\                                   plug-in as well\n\   --install-bin plug-in           install a compiled plug-in\n\   --install-script script.scm     install a script-fu script\n\ \n\   --uninstall-bin plug-in         remove a plug-in again\n\   --uninstall-script plug-in      remove a script-fu script\n\ \n\ The --install and --uninstall options have \"admin\" counterparts (with\n\ prefix --install-admin instead of --install) that can be used instead to\n\ install/uninstall a plug-in or script in the machine directory instead of a\n\ user directory.\n\ \n\ For plug-ins which do not use GTK+, the --build and --install options can be\n\ appended with -noui for appropriate settings. For plug-ins that use GTK+ but\n\ not libgimpui, append -nogimpui.\n"
 argument_list|)
 expr_stmt|;
 name|exit
@@ -1301,7 +1310,8 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--variable=includedir gimp-3.0"
+literal|"--variable=includedir gimp-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 block|}
@@ -1351,7 +1361,8 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimpui-3.0"
+literal|"--cflags gimpui-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 block|}
@@ -1401,7 +1412,8 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimp-3.0"
+literal|"--cflags gimp-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 block|}
@@ -1451,7 +1463,9 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimp-3.0 gtk+-3.0"
+literal|"--cflags gimp-"
+name|GIMP_PKGCONFIG_VERSION
+literal|" gtk+-3.0"
 argument_list|)
 return|;
 block|}
@@ -1501,7 +1515,8 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimpui-3.0"
+literal|"--libs gimpui-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 block|}
@@ -1551,7 +1566,8 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimp-3.0"
+literal|"--libs gimp-"
+name|GIMP_PKGCONFIG_VERSION
 argument_list|)
 return|;
 block|}
@@ -1601,7 +1617,9 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimp-3.0 gtk+-3.0"
+literal|"--libs gimp-"
+name|GIMP_PKGCONFIG_VERSION
+literal|" gtk+-3.0"
 argument_list|)
 return|;
 block|}
