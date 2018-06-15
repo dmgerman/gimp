@@ -231,7 +231,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon299b8a750108
+DECL|struct|__anon29d6b4000108
 specifier|static
 struct|struct
 block|{
@@ -896,7 +896,7 @@ comment|/* On Unix assume the executable package is in the same prefix as the de
 return|return
 name|pkg_config
 argument_list|(
-literal|"--variable=prefix gimp-2.0"
+literal|"--variable=prefix gimp-3.0"
 argument_list|)
 return|;
 endif|#
@@ -1301,7 +1301,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--variable=includedir gimp-2.0"
+literal|"--variable=includedir gimp-3.0"
 argument_list|)
 return|;
 block|}
@@ -1351,7 +1351,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimpui-2.0"
+literal|"--cflags gimpui-3.0"
 argument_list|)
 return|;
 block|}
@@ -1401,7 +1401,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimp-2.0"
+literal|"--cflags gimp-3.0"
 argument_list|)
 return|;
 block|}
@@ -1451,7 +1451,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--cflags gimp-2.0 gtk+-2.0"
+literal|"--cflags gimp-3.0 gtk+-3.0"
 argument_list|)
 return|;
 block|}
@@ -1501,7 +1501,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimpui-2.0"
+literal|"--libs gimpui-3.0"
 argument_list|)
 return|;
 block|}
@@ -1551,7 +1551,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimp-2.0"
+literal|"--libs gimp-3.0"
 argument_list|)
 return|;
 block|}
@@ -1601,7 +1601,7 @@ block|{
 return|return
 name|pkg_config
 argument_list|(
-literal|"--libs gimp-2.0 gtk+-2.0"
+literal|"--libs gimp-3.0 gtk+-3.0"
 argument_list|)
 return|;
 block|}
