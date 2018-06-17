@@ -2205,16 +2205,6 @@ condition|(
 name|transform
 condition|)
 block|{
-comment|/* for the alpha channel */
-name|gimp_rgba_get_pixel
-argument_list|(
-name|color
-argument_list|,
-name|pixel_format
-argument_list|,
-name|pixel
-argument_list|)
-expr_stmt|;
 name|gimp_color_transform_process_pixels
 argument_list|(
 name|transform
