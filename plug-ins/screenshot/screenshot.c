@@ -401,7 +401,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"x1"
 block|,
-literal|"(optional) Region left x coord"
+literal|"Region left x coord for SHOOT-REGION"
 block|}
 block|,
 block|{
@@ -409,7 +409,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"y1"
 block|,
-literal|"(optional) Region top y coord"
+literal|"Region top y coord for SHOOT-REGION"
 block|}
 block|,
 block|{
@@ -417,7 +417,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"x2"
 block|,
-literal|"(optional) Region right x coord"
+literal|"Region right x coord for SHOOT-REGION"
 block|}
 block|,
 block|{
@@ -425,7 +425,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"y2"
 block|,
-literal|"(optional) Region bottom y coord"
+literal|"Region bottom y coord for SHOOT-REGION"
 block|}
 block|}
 decl_stmt|;
