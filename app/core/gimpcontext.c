@@ -1608,7 +1608,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934445e0103
+DECL|enum|__anon291a2de40103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1622,7 +1622,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934445e0203
+DECL|enum|__anon291a2de40203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -8286,10 +8286,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  handle disappearing images  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -8485,10 +8481,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  handle disappearing displays  */
-end_comment
 
 begin_function
 specifier|static
@@ -8802,10 +8794,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active tool was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -8856,10 +8844,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global tool list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -8926,10 +8910,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active tool disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -8958,14 +8938,10 @@ operator|->
 name|tool_info
 condition|)
 block|{
-name|context
-operator|->
-name|tool_info
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|tool_info
 argument_list|,
 name|gimp_context_tool_dirty
@@ -8973,8 +8949,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|tool_info
 argument_list|)
 expr_stmt|;
@@ -9037,21 +9016,17 @@ name|gimp
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|tool_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|tool_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old tool's signals  */
 if|if
 condition|(
 name|context
@@ -9281,10 +9256,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active paint info was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -9405,10 +9376,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active paint info disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -9437,14 +9404,10 @@ operator|->
 name|paint_info
 condition|)
 block|{
-name|context
-operator|->
-name|paint_info
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|paint_info
 argument_list|,
 name|gimp_context_paint_info_dirty
@@ -9452,8 +9415,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|paint_info
 argument_list|)
 expr_stmt|;
@@ -9516,21 +9482,17 @@ name|gimp
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|paint_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|paint_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old paint info's signals  */
 if|if
 condition|(
 name|context
@@ -10639,10 +10601,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active brush was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -10693,10 +10651,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global brush list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -10799,14 +10753,10 @@ operator|->
 name|brush
 condition|)
 block|{
-name|context
-operator|->
-name|brush
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|brush
 argument_list|,
 name|gimp_context_brush_dirty
@@ -10814,8 +10764,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|brush
 argument_list|)
 expr_stmt|;
@@ -10879,21 +10832,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|brush_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|brush_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old brush's signals  */
 if|if
 condition|(
 name|context
@@ -11188,14 +11137,10 @@ operator|->
 name|dynamics
 condition|)
 block|{
-name|context
-operator|->
-name|dynamics
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|dynamics
 argument_list|,
 name|gimp_context_dynamics_dirty
@@ -11203,8 +11148,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|dynamics
 argument_list|)
 expr_stmt|;
@@ -11337,21 +11285,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|dynamics_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|dynamics_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old dynamics' signals  */
 if|if
 condition|(
 name|context
@@ -11567,10 +11511,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active mybrush was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -11621,10 +11561,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global mybrush list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -11695,10 +11631,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active mybrush disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -11727,24 +11659,23 @@ operator|->
 name|mybrush
 condition|)
 block|{
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
 name|context
 operator|->
 name|mybrush
-operator|=
-name|NULL
-expr_stmt|;
-name|g_signal_handlers_disconnect_by_func
-argument_list|(
-name|brush
 argument_list|,
 name|gimp_context_mybrush_dirty
 argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
-name|brush
+operator|&
+name|context
+operator|->
+name|mybrush
 argument_list|)
 expr_stmt|;
 if|if
@@ -11807,21 +11738,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|mybrush_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|mybrush_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old mybrush's signals  */
 if|if
 condition|(
 name|context
@@ -12026,10 +11953,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active pattern was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -12080,10 +12003,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global pattern list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -12154,10 +12073,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active pattern disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -12186,14 +12101,10 @@ operator|->
 name|pattern
 condition|)
 block|{
-name|context
-operator|->
-name|pattern
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|pattern
 argument_list|,
 name|gimp_context_pattern_dirty
@@ -12201,8 +12112,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|pattern
 argument_list|)
 expr_stmt|;
@@ -12266,21 +12180,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|pattern_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|pattern_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old pattern's signals  */
 if|if
 condition|(
 name|context
@@ -12485,10 +12395,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active gradient was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -12539,10 +12445,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global gradient list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -12613,10 +12515,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active gradient disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -12645,14 +12543,10 @@ operator|->
 name|gradient
 condition|)
 block|{
-name|context
-operator|->
-name|gradient
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|gradient
 argument_list|,
 name|gimp_context_gradient_dirty
@@ -12660,8 +12554,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|gradient
 argument_list|)
 expr_stmt|;
@@ -12725,21 +12622,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|gradient_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|gradient_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old gradient's signals  */
 if|if
 condition|(
 name|context
@@ -12944,10 +12837,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active palette was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -12998,10 +12887,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global palette list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -13072,10 +12957,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active palette disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -13104,14 +12985,10 @@ operator|->
 name|palette
 condition|)
 block|{
-name|context
-operator|->
-name|palette
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|palette
 argument_list|,
 name|gimp_context_palette_dirty
@@ -13119,8 +12996,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|palette
 argument_list|)
 expr_stmt|;
@@ -13184,21 +13064,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|palette_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|palette_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old palette's signals  */
 if|if
 condition|(
 name|context
@@ -13534,10 +13410,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active font was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -13588,10 +13460,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global font list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -13660,10 +13528,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active font disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -13692,14 +13556,10 @@ operator|->
 name|font
 condition|)
 block|{
-name|context
-operator|->
-name|font
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|font
 argument_list|,
 name|gimp_context_font_dirty
@@ -13707,8 +13567,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|font
 argument_list|)
 expr_stmt|;
@@ -13770,21 +13633,17 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|font_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|font_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old font's signals  */
 if|if
 condition|(
 name|context
@@ -14077,14 +13936,10 @@ operator|->
 name|tool_preset
 condition|)
 block|{
-name|context
-operator|->
-name|tool_preset
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|tool_preset
 argument_list|,
 name|gimp_context_tool_preset_dirty
@@ -14092,8 +13947,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|tool_preset
 argument_list|)
 expr_stmt|;
@@ -14191,21 +14049,17 @@ operator|->
 name|tool_preset_name
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|tool_preset_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|tool_preset_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old tool preset's signals  */
 if|if
 condition|(
 name|context
@@ -14398,10 +14252,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active buffer was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -14452,10 +14302,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global buffer list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -14525,10 +14371,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*  the active buffer disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -14557,14 +14399,10 @@ operator|->
 name|buffer
 condition|)
 block|{
-name|context
-operator|->
-name|buffer
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|buffer
 argument_list|,
 name|gimp_context_buffer_dirty
@@ -14572,8 +14410,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|buffer
 argument_list|)
 expr_stmt|;
@@ -14627,21 +14468,17 @@ operator|->
 name|buffer_name
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|buffer_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|buffer_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old buffer's signals  */
 if|if
 condition|(
 name|context
@@ -14834,10 +14671,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active imagefile was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -14888,10 +14721,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global imagefile list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -14961,10 +14790,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*  the active imagefile disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -14993,14 +14818,10 @@ operator|->
 name|imagefile
 condition|)
 block|{
-name|context
-operator|->
-name|imagefile
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|imagefile
 argument_list|,
 name|gimp_context_imagefile_dirty
@@ -15008,8 +14829,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|imagefile
 argument_list|)
 expr_stmt|;
@@ -15063,21 +14887,17 @@ operator|->
 name|imagefile_name
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|imagefile_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|imagefile_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old imagefile's signals  */
 if|if
 condition|(
 name|context
@@ -15270,10 +15090,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  the active template was modified  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -15324,10 +15140,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  the global template list is there again after refresh  */
-end_comment
 
 begin_function
 specifier|static
@@ -15397,10 +15209,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*  the active template disappeared  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -15429,14 +15237,10 @@ operator|->
 name|template
 condition|)
 block|{
-name|context
-operator|->
-name|template
-operator|=
-name|NULL
-expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|context
+operator|->
 name|template
 argument_list|,
 name|gimp_context_template_dirty
@@ -15444,8 +15248,11 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
+name|context
+operator|->
 name|template
 argument_list|)
 expr_stmt|;
@@ -15499,21 +15306,17 @@ operator|->
 name|template_name
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|context
 operator|->
 name|template_name
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|context
-operator|->
-name|template_name
-operator|=
-name|NULL
-expr_stmt|;
 block|}
-comment|/*  disconnect from the old template's signals  */
 if|if
 condition|(
 name|context
