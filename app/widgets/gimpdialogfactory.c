@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a1d560103
+DECL|enum|__anon2bbd20720103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2052,11 +2052,6 @@ argument_list|,
 name|dialog
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

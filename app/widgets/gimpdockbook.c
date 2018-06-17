@@ -213,7 +213,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d960bd0103
+DECL|enum|__anon2936f4ed0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1660,6 +1660,11 @@ name|gimp_dockbook_tab_locked_notify
 argument_list|)
 argument_list|,
 name|dockbook
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|child
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_set_current_page

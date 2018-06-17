@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30a06e0103
+DECL|enum|__anon2b3906490103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -942,14 +942,6 @@ name|dockable
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|n_dockables

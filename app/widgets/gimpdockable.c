@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af571640103
+DECL|enum|__anon2c0bbb830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2326,14 +2326,6 @@ name|dockable
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
