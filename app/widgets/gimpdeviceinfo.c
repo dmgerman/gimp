@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b98a5f0103
+DECL|enum|__anon2c1973120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2269,7 +2269,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_device_info_set_device (GimpDeviceInfo * info,GdkDevice * device,GdkDisplay * display)
 name|gimp_device_info_set_device
 parameter_list|(
@@ -2289,15 +2289,17 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DEVICE_INFO
 argument_list|(
 name|info
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 operator|(
 name|device
@@ -2320,38 +2322,66 @@ argument_list|(
 name|display
 argument_list|)
 operator|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-operator|(
+if|if
+condition|(
+name|device
+operator|&&
 name|info
 operator|->
 name|device
-operator|==
-name|NULL
-operator|&&
-name|GDK_IS_DEVICE
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"%s: trying to set GdkDevice '%s' on GimpDeviceInfo "
+literal|"which already has a device\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|gdk_device_get_name
 argument_list|(
 name|device
 argument_list|)
-operator|)
-operator|||
-operator|(
-name|GDK_IS_DEVICE
-argument_list|(
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|device
+operator|&&
+operator|!
 name|info
 operator|->
 name|device
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"%s: trying to unset GdkDevice of GimpDeviceInfo '%s'"
+literal|"which has no device\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|info
 argument_list|)
-operator|&&
-name|device
-operator|==
-name|NULL
-operator|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+return|return
+name|FALSE
+return|;
+block|}
+name|g_return_val_if_fail
 argument_list|(
 name|device
 operator|==
@@ -2371,6 +2401,8 @@ argument_list|)
 argument_list|)
 operator|==
 literal|0
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify
@@ -2862,6 +2894,9 @@ name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
