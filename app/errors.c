@@ -1617,6 +1617,12 @@ condition|(
 name|backup_path
 condition|)
 block|{
+comment|/* increase the busy counter, so XCF saving calling        * gimp_set_busy() and gimp_unset_busy() won't call the GUI        * layer and do whatever windowing system calls to set cursors.        */
+name|the_errors_gimp
+operator|->
+name|busy
+operator|++
+expr_stmt|;
 comment|/* The index of 'XXX' in backup_path string. */
 name|num_idx
 operator|=
