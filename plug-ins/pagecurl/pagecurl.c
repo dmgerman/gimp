@@ -35,12 +35,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pagecurl-icons.h"
-end_include
-
 begin_define
 DECL|macro|PLUG_IN_PROC
 define|#
@@ -84,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b41cf4d0103
+DECL|enum|__anon2b7158d60103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -108,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b41cf4d0203
+DECL|enum|__anon2b7158d60203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -129,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b41cf4d0303
+DECL|enum|__anon2b7158d60303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -217,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b41cf4d0408
+DECL|struct|__anon2b7158d60408
 block|{
 DECL|member|colors
 name|CurlColors
