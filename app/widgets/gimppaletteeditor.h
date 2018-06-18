@@ -108,6 +108,11 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+DECL|member|index_label
+name|GtkWidget
+modifier|*
+name|index_label
+decl_stmt|;
 DECL|member|color_name
 name|GtkWidget
 modifier|*
@@ -129,7 +134,7 @@ modifier|*
 name|color
 decl_stmt|;
 DECL|member|zoom_factor
-name|gfloat
+name|gdouble
 name|zoom_factor
 decl_stmt|;
 comment|/* range from 0.1 to 4.0 */
