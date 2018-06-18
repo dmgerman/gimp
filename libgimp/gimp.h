@@ -1024,16 +1024,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-name|gdouble
-name|gimp_gamma
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 name|gboolean
 name|gimp_show_help_button
 argument_list|(

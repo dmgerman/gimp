@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbb78a00103
+DECL|enum|__anon29c3f0cd0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -975,17 +975,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_gamma_val
-specifier|static
-specifier|const
-name|gdouble
-name|_gamma_val
-init|=
-literal|2.2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|_show_help_button
 specifier|static
 name|gboolean
@@ -1296,7 +1285,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2bbb78a00203
+DECL|enum|__anon29c3f0cd0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -4901,24 +4890,6 @@ parameter_list|)
 block|{
 return|return
 name|_shm_addr
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_gamma:  *  * Returns the global gamma value GIMP and all its plug-ins should  * use.  *  * This is a constant value given at plug-in configuration time.  *  * NOTE: This function will always return 2.2, the gamma value for  * sRGB. There's currently no way to change this and all operations  * should assume that pixel data is in the sRGB colorspace.  *  * Return value: the gamma value  **/
-end_comment
-
-begin_function
-name|gdouble
-DECL|function|gimp_gamma (void)
-name|gimp_gamma
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|_gamma_val
 return|;
 block|}
 end_function

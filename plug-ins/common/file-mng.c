@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6e47840103
+DECL|enum|__anon2936007f0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6e47840203
+DECL|enum|__anon2936007f0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2607,10 +2607,7 @@ argument_list|,
 operator|(
 literal|1.0
 operator|/
-operator|(
-name|gimp_gamma
-argument_list|()
-operator|)
+literal|2.2
 operator|*
 literal|100000
 operator|)
