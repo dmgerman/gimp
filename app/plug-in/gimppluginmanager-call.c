@@ -843,6 +843,14 @@ name|use_opencl
 expr_stmt|;
 name|config
 operator|.
+name|export_profile
+operator|=
+name|core_config
+operator|->
+name|export_color_profile
+expr_stmt|;
+name|config
+operator|.
 name|export_exif
 operator|=
 name|core_config

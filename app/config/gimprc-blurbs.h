@@ -557,6 +557,15 @@ value|_("Which plug-in to use for importing raw digital camera files.")
 end_define
 
 begin_define
+DECL|macro|EXPORT_COLOR_PROFILE_BLURB
+define|#
+directive|define
+name|EXPORT_COLOR_PROFILE_BLURB
+define|\
+value|_("Export the image's color profile by default.")
+end_define
+
+begin_define
 DECL|macro|EXPORT_METADATA_EXIF_BLURB
 define|#
 directive|define

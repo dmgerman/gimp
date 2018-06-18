@@ -1045,6 +1045,16 @@ end_decl_stmt
 
 begin_decl_stmt
 name|gboolean
+name|gimp_export_color_profile
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|gboolean
 name|gimp_export_exif
 argument_list|(
 name|void

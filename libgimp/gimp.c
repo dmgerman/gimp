@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275aad3f0103
+DECL|enum|__anon2bbb78a00103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -996,6 +996,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|_export_profile
+specifier|static
+name|gboolean
+name|_export_profile
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|_export_exif
 specifier|static
 name|gboolean
@@ -1286,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon275aad3f0203
+DECL|enum|__anon2bbb78a00203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -4932,6 +4942,24 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_export_color_profile:  *  * Returns whether file plug-ins should default to exporting the  * image's color profile.  *  * Return value: TRUE if preferences are set to export the color profile.  *  * Since: 2.10.4  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_export_color_profile (void)
+name|gimp_export_color_profile
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_export_profile
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
 end_comment
 
@@ -6729,6 +6757,16 @@ operator|=
 name|config
 operator|->
 name|show_help_button
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|_export_profile
+operator|=
+name|config
+operator|->
+name|export_profile
 condition|?
 name|TRUE
 else|:
