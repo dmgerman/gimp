@@ -26,6 +26,9 @@ modifier|*
 name|filename
 parameter_list|,
 name|gboolean
+name|merged_image_only
+parameter_list|,
+name|gboolean
 modifier|*
 name|resolution_loaded
 parameter_list|,

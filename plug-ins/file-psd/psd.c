@@ -370,6 +370,64 @@ argument_list|,
 literal|"0,string,8BPS"
 argument_list|)
 expr_stmt|;
+comment|/* File load (merged) */
+name|gimp_install_procedure
+argument_list|(
+name|LOAD_MERGED_PROC
+argument_list|,
+literal|"Loads merged images from the Photoshop PSD file format"
+argument_list|,
+literal|"This plug-in loads the merged image data in Adobe "
+literal|"Photoshop (TM) native PSD format."
+argument_list|,
+literal|"Ell"
+argument_list|,
+literal|"Ell"
+argument_list|,
+literal|"2018"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Photoshop image (merged)"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|load_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+name|LOAD_MERGED_PROC
+argument_list|,
+literal|"image/x-psd"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+name|LOAD_MERGED_PROC
+argument_list|,
+literal|"psd"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,8BPS"
+argument_list|)
+expr_stmt|;
 comment|/* Thumbnail load */
 name|gimp_install_procedure
 argument_list|(
@@ -582,6 +640,15 @@ name|LOAD_PROC
 argument_list|)
 operator|==
 literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_MERGED_PROC
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|gboolean
@@ -634,6 +701,15 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|LOAD_MERGED_PROC
+argument_list|)
+operator|==
+literal|0
 argument_list|,
 operator|&
 name|resolution_loaded
