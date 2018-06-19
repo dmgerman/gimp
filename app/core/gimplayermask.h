@@ -125,10 +125,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  function declarations  */
-end_comment
-
 begin_decl_stmt
 name|GType
 name|gimp_layer_mask_get_type
@@ -153,32 +149,6 @@ name|width
 parameter_list|,
 name|gint
 name|height
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpLayerMask
-modifier|*
-name|gimp_layer_mask_new_from_buffer
-parameter_list|(
-name|GeglBuffer
-modifier|*
-name|buffer
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
 parameter_list|,
 specifier|const
 name|gchar
