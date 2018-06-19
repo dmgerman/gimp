@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28948fba0103
+DECL|enum|__anon277ff61b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28948fba0203
+DECL|enum|__anon277ff61b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8127,9 +8127,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|mask
-return|;
+break|break;
 case|case
 name|GIMP_ADD_MASK_BLACK
 case|:
@@ -8145,23 +8143,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|mask
-return|;
-default|default:
-break|break;
-block|}
-switch|switch
-condition|(
-name|add_mask_type
-condition|)
-block|{
-case|case
-name|GIMP_ADD_MASK_WHITE
-case|:
-case|case
-name|GIMP_ADD_MASK_BLACK
-case|:
 break|break;
 case|case
 name|GIMP_ADD_MASK_ALPHA
@@ -8444,6 +8425,11 @@ name|GeglBuffer
 modifier|*
 name|dest
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|src
 operator|=
 name|gimp_drawable_get_buffer
@@ -8462,6 +8448,21 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|mask
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|src
+argument_list|)
+expr_stmt|;
+comment|/* make sure no gamma conversion happens */
+name|gegl_buffer_set_format
+argument_list|(
+name|dest
+argument_list|,
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_buffer_copy
@@ -8497,6 +8498,13 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_buffer_set_format
+argument_list|(
+name|dest
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GIMP_CHANNEL
