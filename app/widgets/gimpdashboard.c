@@ -331,7 +331,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2920aed00103
+DECL|enum|__anon2a21f6560103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2920aed00203
+DECL|enum|__anon2a21f6560203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -446,7 +446,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2920aed00303
+DECL|enum|__anon2a21f6560303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -708,7 +708,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2920aed0040a
+DECL|union|__anon2a21f656040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -720,7 +720,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon2920aed00508
+DECL|struct|__anon2a21f6560508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -735,7 +735,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2920aed00608
+DECL|struct|__anon2a21f6560608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8428,6 +8428,9 @@ decl_stmt|;
 specifier|static
 name|gint
 name|fd
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|gchar
 name|buffer
