@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcurve.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bbe920103
+DECL|enum|__anon2781d1390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3613,7 +3619,7 @@ literal|64
 expr_stmt|;
 name|line
 operator|=
-name|g_data_input_stream_read_line
+name|gimp_data_input_stream_read_line_always
 argument_list|(
 name|data_input
 argument_list|,
@@ -3711,7 +3717,7 @@ literal|64
 expr_stmt|;
 name|line
 operator|=
-name|g_data_input_stream_read_line
+name|gimp_data_input_stream_read_line_always
 argument_list|(
 name|data_input
 argument_list|,
