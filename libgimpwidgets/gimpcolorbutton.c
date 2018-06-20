@@ -175,7 +175,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965da560103
+DECL|enum|__anon29d82c400103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965da560203
+DECL|enum|__anon29d82c400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1506,15 +1506,6 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpColorButton
-modifier|*
-name|button
-init|=
-name|GIMP_COLOR_BUTTON
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 name|GimpColorButtonPrivate
 modifier|*
 name|priv
