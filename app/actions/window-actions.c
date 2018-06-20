@@ -1003,6 +1003,13 @@ argument_list|,
 literal|"display-table"
 argument_list|)
 expr_stmt|;
+name|display_name
+operator|=
+name|gdk_display_get_name
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 name|count
 operator|=
 name|GPOINTER_TO_INT
