@@ -18,6 +18,20 @@ end_define
 
 begin_function_decl
 name|void
+name|debug_gtk_inspector_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|debug_mem_profile_cmd_callback
 parameter_list|(
 name|GtkAction

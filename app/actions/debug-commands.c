@@ -236,6 +236,27 @@ end_comment
 
 begin_function
 name|void
+DECL|function|debug_gtk_inspector_cmd_callback (GtkAction * action,gpointer data)
+name|debug_gtk_inspector_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gtk_window_set_interactive_debugging
+argument_list|(
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|debug_mem_profile_cmd_callback (GtkAction * action,gpointer data)
 name|debug_mem_profile_cmd_callback
 parameter_list|(

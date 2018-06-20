@@ -75,6 +75,25 @@ literal|"_Debug"
 block|}
 block|,
 block|{
+literal|"debug-gtk-inspector"
+block|,
+name|NULL
+block|,
+literal|"Start _GtkInspector"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|debug_gtk_inspector_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"debug-mem-profile"
 block|,
 name|NULL
