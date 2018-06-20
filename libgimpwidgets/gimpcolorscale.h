@@ -134,7 +134,7 @@ struct|struct
 name|_GimpColorScale
 block|{
 DECL|member|parent_instance
-name|GtkRange
+name|GtkScale
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
@@ -152,7 +152,7 @@ struct|struct
 name|_GimpColorScaleClass
 block|{
 DECL|member|parent_class
-name|GtkRangeClass
+name|GtkScaleClass
 name|parent_class
 decl_stmt|;
 comment|/* Padding for future expansion */
