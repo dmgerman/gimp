@@ -177,6 +177,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_colormap_editor_edit_color
+parameter_list|(
+name|GimpColormapEditor
+modifier|*
+name|editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_colormap_editor_get_index
 parameter_list|(
