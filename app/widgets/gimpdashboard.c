@@ -337,7 +337,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32e8830103
+DECL|enum|__anon2b5dbb3a0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -373,17 +373,17 @@ block|,
 DECL|enumerator|VARIABLE_SWAP_LIMIT
 name|VARIABLE_SWAP_LIMIT
 block|,
-DECL|enumerator|VARIABLE_SWAP_READING
-name|VARIABLE_SWAP_READING
-block|,
 DECL|enumerator|VARIABLE_SWAP_READ
 name|VARIABLE_SWAP_READ
 block|,
-DECL|enumerator|VARIABLE_SWAP_WRITING
-name|VARIABLE_SWAP_WRITING
+DECL|enumerator|VARIABLE_SWAP_READING
+name|VARIABLE_SWAP_READING
 block|,
 DECL|enumerator|VARIABLE_SWAP_WRITTEN
 name|VARIABLE_SWAP_WRITTEN
+block|,
+DECL|enumerator|VARIABLE_SWAP_WRITING
+name|VARIABLE_SWAP_WRITING
 block|,
 DECL|enumerator|VARIABLE_SWAP_BUSY
 name|VARIABLE_SWAP_BUSY
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32e8830203
+DECL|enum|__anon2b5dbb3a0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32e8830303
+DECL|enum|__anon2b5dbb3a0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -726,7 +726,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2a32e883040a
+DECL|union|__anon2b5dbb3a040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -738,7 +738,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon2a32e8830508
+DECL|struct|__anon2b5dbb3a0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -753,7 +753,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2a32e8830608
+DECL|struct|__anon2b5dbb3a0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8099,7 +8099,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32e8830708
+DECL|struct|__anon2b5dbb3a0708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8369,7 +8369,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32e8830808
+DECL|struct|__anon2b5dbb3a0808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8575,7 +8575,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32e8830908
+DECL|struct|__anon2b5dbb3a0908
 block|{
 DECL|member|prev_time
 specifier|static
@@ -8853,7 +8853,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32e8830a08
+DECL|struct|__anon2b5dbb3a0a08
 block|{
 DECL|member|active
 name|gboolean
@@ -9013,7 +9013,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32e8830b08
+DECL|struct|__anon2b5dbb3a0b08
 block|{
 DECL|member|prev_time
 name|gint64
