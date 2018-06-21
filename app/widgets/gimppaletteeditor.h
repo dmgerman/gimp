@@ -190,6 +190,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_palette_editor_edit_color
+parameter_list|(
+name|GimpPaletteEditor
+modifier|*
+name|editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_palette_editor_pick_color
 parameter_list|(
 name|GimpPaletteEditor
