@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294f2d3a0103
+DECL|enum|__anon2a581fd50103
 block|{
 DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
 name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294f2d3a0208
+DECL|struct|__anon2a581fd50208
 block|{
 DECL|member|canvas_buffer
 name|GeglBuffer
@@ -293,6 +293,7 @@ name|GeglBuffer
 modifier|*
 name|dst_buffer
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
