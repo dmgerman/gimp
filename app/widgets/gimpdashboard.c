@@ -337,7 +337,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae017d0103
+DECL|enum|__anon2a32e8830103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae017d0203
+DECL|enum|__anon2a32e8830203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae017d0303
+DECL|enum|__anon2a32e8830303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -726,7 +726,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28ae017d040a
+DECL|union|__anon2a32e883040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -738,7 +738,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon28ae017d0508
+DECL|struct|__anon2a32e8830508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -753,7 +753,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28ae017d0608
+DECL|struct|__anon2a32e8830608
 block|{
 DECL|member|antecedent
 name|gint
@@ -2916,7 +2916,7 @@ block|,
 operator|.
 name|meter_value
 operator|=
-literal|1
+literal|2
 block|}
 block|,
 block|{
@@ -2943,7 +2943,7 @@ block|,
 operator|.
 name|meter_value
 operator|=
-literal|2
+literal|1
 block|}
 block|,
 block|{}
@@ -7117,23 +7117,12 @@ name|type
 operator|==
 name|VARIABLE_TYPE_BOOLEAN
 operator|&&
-name|group_info
-operator|->
-name|meter_limit
-operator|&&
 name|value
 condition|)
 block|{
 name|value
 operator|=
-name|gimp_dashboard_variable_to_double
-argument_list|(
-name|dashboard
-argument_list|,
-name|group_info
-operator|->
-name|meter_limit
-argument_list|)
+name|G_MAXDOUBLE
 expr_stmt|;
 block|}
 if|if
@@ -8110,7 +8099,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae017d0708
+DECL|struct|__anon2a32e8830708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8380,7 +8369,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae017d0808
+DECL|struct|__anon2a32e8830808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8586,7 +8575,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae017d0908
+DECL|struct|__anon2a32e8830908
 block|{
 DECL|member|prev_time
 specifier|static
@@ -8864,7 +8853,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae017d0a08
+DECL|struct|__anon2a32e8830a08
 block|{
 DECL|member|active
 name|gboolean
@@ -9024,7 +9013,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae017d0b08
+DECL|struct|__anon2a32e8830b08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -12660,6 +12649,11 @@ operator|&&
 name|field_info
 operator|->
 name|meter_value
+operator|&&
+operator|!
+name|field_info
+operator|->
+name|meter_variable
 operator|&&
 name|group_data
 operator|->
