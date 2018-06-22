@@ -207,6 +207,12 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -867,7 +873,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_real_get_sensitive (GimpProcedure * procedure,GimpObject * object)
+DECL|function|gimp_procedure_real_get_sensitive (GimpProcedure * procedure,GimpObject * object,const gchar ** tooltip)
 name|gimp_procedure_real_get_sensitive
 parameter_list|(
 name|GimpProcedure
@@ -877,6 +883,12 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 block|{
 return|return
@@ -1628,7 +1640,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedure_get_sensitive (GimpProcedure * procedure,GimpObject * object)
+DECL|function|gimp_procedure_get_sensitive (GimpProcedure * procedure,GimpObject * object,const gchar ** tooltip)
 name|gimp_procedure_get_sensitive
 parameter_list|(
 name|GimpProcedure
@@ -1638,8 +1650,24 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|my_tooltip
+init|=
+name|NULL
+decl_stmt|;
+name|gboolean
+name|sensitive
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PROCEDURE
@@ -1664,7 +1692,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
+name|sensitive
+operator|=
 name|GIMP_PROCEDURE_GET_CLASS
 argument_list|(
 name|procedure
@@ -1675,7 +1704,22 @@ argument_list|(
 name|procedure
 argument_list|,
 name|object
+argument_list|,
+operator|&
+name|my_tooltip
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tooltip
+condition|)
+operator|*
+name|tooltip
+operator|=
+name|my_tooltip
+expr_stmt|;
+return|return
+name|sensitive
 return|;
 block|}
 end_function

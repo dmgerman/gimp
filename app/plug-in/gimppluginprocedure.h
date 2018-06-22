@@ -159,6 +159,11 @@ DECL|member|image_types_val
 name|GimpPlugInImageType
 name|image_types_val
 decl_stmt|;
+DECL|member|image_types_tooltip
+name|gchar
+modifier|*
+name|image_types_tooltip
+decl_stmt|;
 DECL|member|mtime
 name|gint64
 name|mtime

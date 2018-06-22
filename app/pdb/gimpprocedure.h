@@ -306,6 +306,12 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 DECL|member|execute
@@ -593,6 +599,12 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 end_function_decl

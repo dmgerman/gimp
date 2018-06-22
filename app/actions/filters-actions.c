@@ -4373,6 +4373,8 @@ name|GIMP_OBJECT
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -4472,6 +4474,8 @@ name|GIMP_OBJECT
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_set_action_sensitive
