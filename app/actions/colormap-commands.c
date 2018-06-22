@@ -265,6 +265,11 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
