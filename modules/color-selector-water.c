@@ -2293,9 +2293,11 @@ name|pressure
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+name|gdk_device_free_history
 argument_list|(
 name|coords
+argument_list|,
+name|nevents
 argument_list|)
 expr_stmt|;
 block|}
