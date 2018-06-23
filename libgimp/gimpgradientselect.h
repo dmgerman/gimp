@@ -33,7 +33,7 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_GRAIDENT_SELECT_H__
+name|__GIMP_GRADIENT_SELECT_H__
 end_ifndef
 
 begin_define
