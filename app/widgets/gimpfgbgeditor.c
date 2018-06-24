@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882a83b0103
+DECL|enum|__anon27b0b6eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882a83b0203
+DECL|enum|__anon27b0b6eb0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2882a83b0303
+DECL|enum|__anon27b0b6eb0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -966,23 +966,13 @@ name|height
 decl_stmt|;
 name|gint
 name|default_w
-init|=
-literal|0
-decl_stmt|;
-name|gint
+decl_stmt|,
 name|default_h
-init|=
-literal|0
 decl_stmt|;
 name|gint
 name|swap_w
-init|=
-literal|0
-decl_stmt|;
-name|gint
+decl_stmt|,
 name|swap_h
-init|=
-literal|0
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -1088,13 +1078,6 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|editor
-operator|->
-name|default_icon
-condition|)
-block|{
 name|default_w
 operator|=
 name|gdk_pixbuf_get_width
@@ -1164,31 +1147,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-block|}
-else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"%s: invisible default colors area because of "
-literal|"missing or broken icons in your theme.\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-comment|/* If icon is too small, we may not draw it but still assigns some        * dimensions for the default color area, which will still exist,        * though not designated by an icon.        */
-name|default_w
-operator|=
-name|width
-operator|/
-literal|4
-expr_stmt|;
-name|default_h
-operator|=
-name|height
-operator|/
-literal|4
-expr_stmt|;
-block|}
 comment|/*  draw the swap colors pixbuf  */
 if|if
 condition|(
@@ -1210,13 +1168,6 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|editor
-operator|->
-name|swap_icon
-condition|)
-block|{
 name|swap_w
 operator|=
 name|gdk_pixbuf_get_width
@@ -1284,31 +1235,6 @@ operator|=
 name|swap_h
 operator|=
 literal|0
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"%s: invisible color swap area because of missing or "
-literal|"broken icons in your theme.\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-comment|/* If icon is too small, we may not draw it but still assigns some        * dimensions for the color swap area, which will still exist,        * though not designated by an icon.        */
-name|swap_w
-operator|=
-name|width
-operator|/
-literal|4
-expr_stmt|;
-name|swap_h
-operator|=
-name|height
-operator|/
-literal|4
 expr_stmt|;
 block|}
 name|rect
