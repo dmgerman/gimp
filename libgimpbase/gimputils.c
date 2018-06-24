@@ -3226,6 +3226,9 @@ argument_list|)
 name|uint64
 name|tid64
 decl_stmt|;
+name|long
+name|tid
+decl_stmt|;
 name|pthread_threadid_np
 argument_list|(
 name|NULL
@@ -3234,14 +3237,13 @@ operator|&
 name|tid64
 argument_list|)
 expr_stmt|;
-name|long
 name|tid
-init|=
+operator|=
 operator|(
 name|long
 operator|)
 name|tid64
-decl_stmt|;
+expr_stmt|;
 elif|#
 directive|elif
 name|defined
@@ -3643,6 +3645,7 @@ operator|<
 literal|0
 condition|)
 block|{
+comment|/* LLDB on macOS seems to trigger a few EINTR error (see                * !13), though read() finally ends up working later. So                * let's not make this error fatal, and instead try again.                * Yet to avoid infinite loop (in case the error really                * happens at every call), we abandon after a few                * consecutive errors.                */
 if|if
 condition|(
 name|errno
@@ -3661,6 +3664,10 @@ continue|continue;
 block|}
 break|break;
 block|}
+name|eintr_count
+operator|=
+literal|0
+expr_stmt|;
 if|if
 condition|(
 operator|!
