@@ -1270,6 +1270,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_widget_load_icon:  * @widget:                  parent widget (to determine icon theme and  *                           style)  * @icon_name:               icon name  * @size:                    requested pixel size  *  * Loads an icon into a pixbuf with size as close as possible to @size.  * If icon does not exist or fail to load, the function will fallback to  * "gimp-wilber-eek" instead to prevent NULL pixbuf.  * Nevertheless it is still possible for this function to return NULL,  * in the edge case where "gimp-wilber-eek" is also missing, its file  * corrupted or maybe other reasons. So calling code must take the NULL  * return possibility into account.  *  * Return value: a newly allocated #GdkPixbuf containing @icon_name at  * size @size or a fallback icon/size. NULL return is a possibility in  * if neither the requested icon nor fallback could be loaded  * successfully.  **/
+end_comment
+
 begin_function
 name|GdkPixbuf
 modifier|*
@@ -3952,7 +3956,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b9215d80108
+DECL|struct|__anon293e1c210108
 block|{
 DECL|member|r
 name|guchar
@@ -4562,7 +4566,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9215d80208
+DECL|struct|__anon293e1c210208
 block|{
 DECL|member|timeout_id
 name|gint
