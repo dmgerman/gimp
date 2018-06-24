@@ -57,13 +57,25 @@ directive|include
 file|"gimpcolorhexentry.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimphelpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/libgimp-intl.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpcolorhexentry  * @title: GimpColorHexEntry  * @short_description: Widget for entering a color's hex triplet.  *  * Widget for entering a color's hex triplet.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b643a600103
+DECL|enum|__anon2c61a01a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -76,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b643a600203
+DECL|enum|__anon2c61a01a0203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -366,6 +378,22 @@ name|entry
 argument_list|)
 argument_list|,
 literal|8
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Hexadecimal color notation as used in HTML and "
+literal|"CSS.  This entry also accepts CSS color names."
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set

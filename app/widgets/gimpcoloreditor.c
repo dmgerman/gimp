@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e72230103
+DECL|enum|__anon27cbf0430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1243,21 +1243,6 @@ name|hex_entry
 operator|=
 name|gimp_color_hex_entry_new
 argument_list|()
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|editor
-operator|->
-name|hex_entry
-argument_list|,
-name|_
-argument_list|(
-literal|"Hexadecimal color notation as used in HTML and "
-literal|"CSS.  This entry also accepts CSS color names."
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
 argument_list|(

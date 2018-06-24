@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b87675d0103
+DECL|enum|__anon294adfef0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b87675d0203
+DECL|enum|__anon294adfef0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b87675d0303
+DECL|enum|__anon294adfef0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1495,19 +1495,6 @@ name|entry
 operator|=
 name|gimp_color_hex_entry_new
 argument_list|()
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|entry
-argument_list|,
-name|_
-argument_list|(
-literal|"Hexadecimal color notation as used in HTML and "
-literal|"CSS.  This entry also accepts CSS color names."
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
 argument_list|(
