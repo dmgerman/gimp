@@ -3714,10 +3714,6 @@ expr_stmt|;
 comment|/*    * Maybe I add on-the-fly RGB conversion, to keep palettechanges...    * But for now you can set a start- and a end-frame:    */
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|from_frame
@@ -3798,10 +3794,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|to_frame
@@ -4037,10 +4029,6 @@ expr_stmt|;
 comment|/*    * Maybe I add on-the-fly RGB conversion, to keep palettechanges...    * But for now you can set a start- and a end-frame:    */
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|from_frame
@@ -4121,10 +4109,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|to_frame

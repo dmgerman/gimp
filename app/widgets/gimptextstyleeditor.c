@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af18e260103
+DECL|enum|__anon2c4ddbe10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1210,8 +1210,6 @@ name|editor
 operator|->
 name|kerning_adjustment
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -1226,7 +1224,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor
@@ -1317,8 +1314,6 @@ name|editor
 operator|->
 name|baseline_adjustment
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -1333,7 +1328,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor

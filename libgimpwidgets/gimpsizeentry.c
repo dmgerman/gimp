@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44f7be0103
+DECL|enum|__anon27a9adff0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -257,9 +257,9 @@ specifier|static
 name|void
 name|gimp_size_entry_value_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -287,9 +287,9 @@ specifier|static
 name|void
 name|gimp_size_entry_refval_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -3206,12 +3206,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_value_callback (GtkWidget * widget,gpointer data)
+DECL|function|gimp_size_entry_value_callback (GtkAdjustment * adjustment,gpointer data)
 name|gimp_size_entry_value_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -3236,10 +3236,7 @@ name|new_value
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|widget
-argument_list|)
+name|adjustment
 argument_list|)
 expr_stmt|;
 if|if
@@ -4202,12 +4199,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_refval_callback (GtkWidget * widget,gpointer data)
+DECL|function|gimp_size_entry_refval_callback (GtkAdjustment * adjustment,gpointer data)
 name|gimp_size_entry_refval_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -4232,10 +4229,7 @@ name|new_refval
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|widget
-argument_list|)
+name|adjustment
 argument_list|)
 expr_stmt|;
 if|if

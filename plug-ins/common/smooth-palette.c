@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2792a71c0108
+DECL|struct|__anon2c750b350108
 block|{
 DECL|member|width
 name|gint
@@ -2208,8 +2208,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 name|config
@@ -2225,7 +2223,6 @@ argument_list|,
 literal|10
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|spinbutton

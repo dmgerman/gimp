@@ -975,8 +975,6 @@ argument_list|)
 expr_stmt|;
 name|adjustment
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 name|private
@@ -992,7 +990,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -1154,10 +1151,6 @@ expr_stmt|;
 comment|/*  The size sizeentry  */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|1
@@ -1541,10 +1534,6 @@ expr_stmt|;
 comment|/*  The offset sizeentry  */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0

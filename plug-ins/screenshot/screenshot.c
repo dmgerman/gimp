@@ -2792,10 +2792,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|shootvals
@@ -3137,10 +3133,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|shootvals

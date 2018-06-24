@@ -133,10 +133,7 @@ name|button
 init|=
 name|gtk_spin_button_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|1
 argument_list|,

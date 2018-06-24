@@ -5131,10 +5131,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|xsvals
@@ -5222,10 +5218,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|xsvals

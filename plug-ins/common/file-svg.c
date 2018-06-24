@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa0a880108
+DECL|struct|__anon277ce0950108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -3503,10 +3503,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|1
@@ -3807,10 +3803,6 @@ argument_list|)
 expr_stmt|;
 name|xadj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|ratio_x
@@ -3966,10 +3958,6 @@ argument_list|)
 expr_stmt|;
 name|yadj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|ratio_y

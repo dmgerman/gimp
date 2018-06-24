@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29858aea0103
+DECL|enum|__anon291e74050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29858aea0203
+DECL|enum|__anon291e74050203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED_U8
 name|GIMP_COLOR_SELECTOR_RED_U8
@@ -1409,10 +1409,6 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_color_scale_entry_new
 argument_list|(
 name|GTK_GRID

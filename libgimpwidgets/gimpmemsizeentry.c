@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b895a0e0103
+DECL|enum|__anon29bba4ae0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -541,10 +541,6 @@ name|GimpMemsizeEntryPrivate
 modifier|*
 name|private
 decl_stmt|;
-name|GtkAdjustment
-modifier|*
-name|adj
-decl_stmt|;
 name|guint
 name|shift
 decl_stmt|;
@@ -662,7 +658,9 @@ name|shift
 operator|=
 name|shift
 expr_stmt|;
-name|adj
+name|private
+operator|->
+name|adjustment
 operator|=
 name|gtk_adjustment_new
 argument_list|(
@@ -700,7 +698,9 @@ name|spinbutton
 operator|=
 name|gtk_spin_button_new
 argument_list|(
-name|adj
+name|private
+operator|->
+name|adjustment
 argument_list|,
 literal|1.0
 argument_list|,
@@ -722,22 +722,6 @@ expr_stmt|;
 undef|#
 directive|undef
 name|CAST
-name|private
-operator|->
-name|adjustment
-operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
-name|adj
-argument_list|)
-expr_stmt|;
-name|g_object_ref_sink
-argument_list|(
-name|private
-operator|->
-name|adjustment
-argument_list|)
-expr_stmt|;
 name|gtk_entry_set_width_chars
 argument_list|(
 name|GTK_ENTRY

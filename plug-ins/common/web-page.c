@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d42960108
+DECL|struct|__anon2a04531e0108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d42960208
+DECL|struct|__anon2a04531e0208
 block|{
 DECL|member|url
 name|char
@@ -1510,10 +1510,7 @@ name|gint
 operator|)
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_get_active

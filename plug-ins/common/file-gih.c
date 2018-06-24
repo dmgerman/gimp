@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28940be30108
+DECL|struct|__anon275deda00108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28940be30208
+DECL|struct|__anon275deda00208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3426,12 +3426,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|size_adjustment_callback (GtkWidget * widget,SizeAdjustmentData * adj)
+DECL|function|size_adjustment_callback (GtkAdjustment * adjustment,SizeAdjustmentData * adj)
 name|size_adjustment_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|SizeAdjustmentData
 modifier|*
@@ -3507,10 +3507,7 @@ operator|)
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|widget
-argument_list|)
+name|adjustment
 argument_list|)
 expr_stmt|;
 if|if

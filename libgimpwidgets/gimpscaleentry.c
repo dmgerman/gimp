@@ -1090,10 +1090,7 @@ argument_list|)
 expr_stmt|;
 name|spin_adj
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adjustment
-argument_list|)
 expr_stmt|;
 name|scale_adj
 operator|=

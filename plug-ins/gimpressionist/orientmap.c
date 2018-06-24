@@ -2984,10 +2984,6 @@ argument_list|)
 expr_stmt|;
 name|vector_preview_brightness_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|50.0
@@ -3707,10 +3703,6 @@ argument_list|)
 expr_stmt|;
 name|angle_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -3773,10 +3765,6 @@ argument_list|)
 expr_stmt|;
 name|angle_offset_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -3839,10 +3827,6 @@ argument_list|)
 expr_stmt|;
 name|strength_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -3905,10 +3889,6 @@ argument_list|)
 expr_stmt|;
 name|orient_map_str_exp_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID

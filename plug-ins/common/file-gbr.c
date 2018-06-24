@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0bb59f0108
+DECL|struct|__anon2c6419d00108
 block|{
 DECL|member|description
 name|gchar
@@ -2390,7 +2390,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b0bb59f020a
+DECL|union|__anon2c6419d0020a
 block|{
 DECL|member|u
 name|guint16
@@ -3545,10 +3545,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|info

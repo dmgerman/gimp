@@ -3959,10 +3959,6 @@ literal|0
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -4152,10 +4148,6 @@ literal|0
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -4860,10 +4852,7 @@ argument_list|(
 name|adjustment
 argument_list|)
 argument_list|,
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 literal|100.0
 argument_list|,

@@ -500,10 +500,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|paper_relief_adjust
-argument_list|)
 argument_list|,
 name|pcvals
 operator|.
@@ -512,10 +509,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|paper_scale_adjust
-argument_list|)
 argument_list|,
 name|pcvals
 operator|.

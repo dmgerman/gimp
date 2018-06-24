@@ -1004,10 +1004,6 @@ expr_stmt|;
 comment|/*  the offset sizeentry  */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|1

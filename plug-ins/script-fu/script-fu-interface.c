@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeb17c40108
+DECL|struct|__anon2bc177190108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1599,10 +1599,6 @@ name|sfa_adjustment
 operator|.
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -1729,10 +1725,6 @@ name|sfa_adjustment
 operator|.
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|arg

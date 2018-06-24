@@ -2012,12 +2012,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_asepct_adjust_cb (GtkWidget * w,gpointer data)
+DECL|function|brush_asepct_adjust_cb (GtkAdjustment * a,gpointer data)
 name|brush_asepct_adjust_cb
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|w
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -2025,10 +2025,7 @@ parameter_list|)
 block|{
 name|gimp_double_adjustment_update
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|w
-argument_list|)
+name|a
 argument_list|,
 name|data
 argument_list|)
@@ -2383,8 +2380,6 @@ argument_list|)
 expr_stmt|;
 name|brush_gamma_adjust
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 name|pcvals
@@ -2400,7 +2395,6 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|1.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tmpw
@@ -2724,10 +2718,6 @@ argument_list|)
 expr_stmt|;
 name|brush_aspect_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -2807,10 +2797,6 @@ argument_list|)
 expr_stmt|;
 name|brush_relief_adjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID

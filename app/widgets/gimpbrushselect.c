@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b53720103
+DECL|enum|__anon27a2c6f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -666,8 +666,6 @@ name|select
 operator|->
 name|opacity_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 name|gimp_context_get_opacity
@@ -688,7 +686,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale

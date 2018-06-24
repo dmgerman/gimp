@@ -1725,10 +1725,6 @@ literal|0
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -3997,7 +3993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e3dee0108
+DECL|struct|__anon2c02006f0108
 block|{
 DECL|member|config
 name|GObject

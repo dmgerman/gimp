@@ -2097,10 +2097,6 @@ argument_list|)
 expr_stmt|;
 name|smvectprevbrightadjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|50.0
@@ -2580,10 +2576,6 @@ argument_list|)
 expr_stmt|;
 name|sizadjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -2646,10 +2638,6 @@ argument_list|)
 expr_stmt|;
 name|smstradjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -2712,10 +2700,6 @@ argument_list|)
 expr_stmt|;
 name|smstrexpadjust
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID

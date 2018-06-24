@@ -1363,8 +1363,6 @@ name|priv
 operator|->
 name|opacity_adjustment
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|100.0
@@ -1378,7 +1376,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2354,7 +2351,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c996f30108
+DECL|struct|__anon2b731cf20108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2714,7 +2711,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c996f30208
+DECL|struct|__anon2b731cf20208
 block|{
 DECL|member|mask_column
 name|gint

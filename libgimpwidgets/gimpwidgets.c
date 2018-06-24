@@ -1255,10 +1255,6 @@ argument_list|()
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 operator|*
@@ -1575,7 +1571,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d9ea70108
+DECL|struct|__anon277b7ef60108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2148,10 +2144,6 @@ name|chainbutton
 decl_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|1

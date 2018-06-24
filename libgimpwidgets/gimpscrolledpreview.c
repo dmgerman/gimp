@@ -523,8 +523,6 @@ expr_stmt|;
 comment|/*  scrollbars  */
 name|adj
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -540,7 +538,6 @@ argument_list|,
 name|width
 argument_list|,
 name|width
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -599,8 +596,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -616,7 +611,6 @@ argument_list|,
 name|height
 argument_list|,
 name|height
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a39b8c0108
+DECL|struct|__anon2bd1bc390108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a39b8c0208
+DECL|struct|__anon2bd1bc390208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a39b8c0303
+DECL|enum|__anon2bd1bc390303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -833,9 +833,9 @@ specifier|static
 name|void
 name|gimp_resolution_entry_value_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -4629,7 +4629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a39b8c0408
+DECL|struct|__anon2bd1bc390408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -4654,7 +4654,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a39b8c0508
+DECL|struct|__anon2bd1bc390508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -6134,10 +6134,6 @@ name|gref
 operator|->
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gref
@@ -7208,12 +7204,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_resolution_entry_value_callback (GtkWidget * widget,gpointer data)
+DECL|function|gimp_resolution_entry_value_callback (GtkAdjustment * adjustment,gpointer data)
 name|gimp_resolution_entry_value_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAdjustment
 modifier|*
-name|widget
+name|adjustment
 parameter_list|,
 name|gpointer
 name|data
@@ -7236,10 +7232,7 @@ name|new_value
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|widget
-argument_list|)
+name|adjustment
 argument_list|)
 expr_stmt|;
 if|if

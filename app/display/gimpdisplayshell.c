@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b25490103
+DECL|enum|__anon28a62f440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b25490203
+DECL|enum|__anon28a62f440203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1781,8 +1781,6 @@ name|shell
 operator|->
 name|hsbdata
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -1796,7 +1794,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|image_width
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|shell
@@ -1826,8 +1823,6 @@ name|shell
 operator|->
 name|vsbdata
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -1841,7 +1836,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|image_height
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|shell

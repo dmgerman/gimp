@@ -1656,8 +1656,6 @@ expr_stmt|;
 comment|/*  Scale  */
 name|scale_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|2.0
@@ -1671,7 +1669,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -2168,8 +2165,6 @@ expr_stmt|;
 comment|/*  Scale  */
 name|scale_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|2.0
@@ -2183,7 +2178,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale

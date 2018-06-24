@@ -1184,10 +1184,6 @@ expr_stmt|;
 comment|/* key-frame distance entry */
 name|adj_kf
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|params

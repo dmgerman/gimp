@@ -560,10 +560,6 @@ argument_list|)
 expr_stmt|;
 name|opacity_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|channel_color

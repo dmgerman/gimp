@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29467fdc0108
+DECL|struct|__anon2be1d56f0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29467fdc0208
+DECL|struct|__anon2be1d56f0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29467fdc0308
+DECL|struct|__anon2be1d56f0308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29467fdc0408
+DECL|struct|__anon2be1d56f0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29467fdc0508
+DECL|struct|__anon2be1d56f0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -7405,10 +7405,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_min
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|data
-argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
@@ -7498,10 +7495,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_gamma
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|data
-argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
@@ -7591,10 +7585,7 @@ name|g_di
 operator|.
 name|adj_lvl_in_max
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|data
-argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
@@ -7758,10 +7749,7 @@ name|g_di
 operator|.
 name|adj_lvl_out_min
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|data
-argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
@@ -7851,10 +7839,7 @@ name|g_di
 operator|.
 name|adj_lvl_out_max
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|data
-argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=

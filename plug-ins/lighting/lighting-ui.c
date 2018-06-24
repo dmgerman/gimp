@@ -1569,10 +1569,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gimp_scale_entry_new
 argument_list|(
 name|GTK_GRID
@@ -7621,10 +7617,6 @@ decl_stmt|;
 operator|*
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -7644,11 +7636,8 @@ name|spinbutton
 operator|=
 name|gtk_spin_button_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 operator|*
 name|adjustment
-argument_list|)
 argument_list|,
 name|climb_rate
 argument_list|,
