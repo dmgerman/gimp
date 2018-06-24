@@ -1626,6 +1626,11 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|enumerator
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
