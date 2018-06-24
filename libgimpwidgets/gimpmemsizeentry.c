@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bba4ae0103
+DECL|enum|__anon2b9b74630103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -83,6 +83,7 @@ DECL|member|shift
 name|guint
 name|shift
 decl_stmt|;
+comment|/* adjustement is owned by spinbutton. Do not unref() it. */
 DECL|member|adjustment
 name|GtkAdjustment
 modifier|*
@@ -112,18 +113,6 @@ name|obj
 parameter_list|)
 value|(((GimpMemsizeEntry *) (obj))->priv)
 end_define
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_memsize_entry_finalize
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -210,12 +199,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|object_class
-operator|->
-name|finalize
-operator|=
-name|gimp_memsize_entry_finalize
-expr_stmt|;
 name|klass
 operator|->
 name|value_changed
@@ -311,47 +294,6 @@ name|entry
 argument_list|)
 argument_list|,
 literal|4
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_memsize_entry_finalize (GObject * object)
-name|gimp_memsize_entry_finalize
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|)
-block|{
-name|GimpMemsizeEntryPrivate
-modifier|*
-name|private
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
-name|g_clear_object
-argument_list|(
-operator|&
-name|private
-operator|->
-name|adjustment
-argument_list|)
-expr_stmt|;
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|finalize
-argument_list|(
-name|object
 argument_list|)
 expr_stmt|;
 block|}
