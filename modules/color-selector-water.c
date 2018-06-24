@@ -489,6 +489,16 @@ name|set_config
 operator|=
 name|colorsel_water_set_config
 expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"ColorselWater"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

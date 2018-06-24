@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d104950103
+DECL|enum|__anon277348fd0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -171,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d104950203
+DECL|enum|__anon277348fd0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d104950303
+DECL|enum|__anon277348fd0303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -1298,6 +1298,16 @@ operator|->
 name|set_config
 operator|=
 name|gimp_color_select_set_config
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"GimpColorSelect"
+argument_list|)
 expr_stmt|;
 name|fish_rgb_to_lch
 operator|=

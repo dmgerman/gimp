@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294adfef0103
+DECL|enum|__anon2b3987680103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294adfef0203
+DECL|enum|__anon2b3987680203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294adfef0303
+DECL|enum|__anon2b3987680303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -557,6 +557,16 @@ argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+literal|"GimpColorSelection"
 argument_list|)
 expr_stmt|;
 name|g_type_class_add_private
