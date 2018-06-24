@@ -1407,6 +1407,10 @@ argument_list|,
 name|GTK_ICON_LOOKUP_GENERIC_FALLBACK
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_info
+condition|)
 name|pixbuf
 operator|=
 name|gtk_icon_info_load_symbolic_for_context
@@ -1478,6 +1482,10 @@ argument_list|,
 name|GTK_ICON_LOOKUP_GENERIC_FALLBACK
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_info
+condition|)
 name|pixbuf
 operator|=
 name|gtk_icon_info_load_symbolic_for_context
@@ -3956,7 +3964,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon293e1c210108
+DECL|struct|__anon2c5558390108
 block|{
 DECL|member|r
 name|guchar
@@ -4566,7 +4574,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e1c210208
+DECL|struct|__anon2c5558390208
 block|{
 DECL|member|timeout_id
 name|gint
