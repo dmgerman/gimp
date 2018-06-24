@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28053c2e0103
+DECL|enum|__anon2b53d6db0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -180,12 +180,6 @@ name|GtkAdjustment
 modifier|*
 name|scroll_data
 decl_stmt|;
-comment|/*  Color dialog  */
-DECL|member|color_dialog
-name|GtkWidget
-modifier|*
-name|color_dialog
-decl_stmt|;
 comment|/*  Gradient view  */
 DECL|member|view_last_x
 name|gint
@@ -248,16 +242,6 @@ DECL|member|blend_color_space
 name|GimpGradientBlendColorSpace
 name|blend_color_space
 decl_stmt|;
-comment|/*  Split uniformly dialog  */
-DECL|member|split_parts
-name|gint
-name|split_parts
-decl_stmt|;
-comment|/*  Replicate dialog  */
-DECL|member|replicate_times
-name|gint
-name|replicate_times
-decl_stmt|;
 comment|/*  Saved colors  */
 DECL|member|saved_colors
 name|GimpRGB
@@ -266,24 +250,20 @@ index|[
 name|GRAD_NUM_COLORS
 index|]
 decl_stmt|;
-comment|/*  Color dialogs  */
-DECL|member|left_saved_segments
+comment|/*  Color dialog  */
+DECL|member|color_dialog
+name|GtkWidget
+modifier|*
+name|color_dialog
+decl_stmt|;
+DECL|member|saved_segments
 name|GimpGradientSegment
 modifier|*
-name|left_saved_segments
+name|saved_segments
 decl_stmt|;
-DECL|member|left_saved_dirty
+DECL|member|saved_dirty
 name|gboolean
-name|left_saved_dirty
-decl_stmt|;
-DECL|member|right_saved_segments
-name|GimpGradientSegment
-modifier|*
-name|right_saved_segments
-decl_stmt|;
-DECL|member|right_saved_dirty
-name|gboolean
-name|right_saved_dirty
+name|saved_dirty
 decl_stmt|;
 block|}
 struct|;
