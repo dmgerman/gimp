@@ -565,6 +565,10 @@ define|\
 value|_("Export the image's color profile by default.")
 end_define
 
+begin_comment
+comment|/* Translators: tooltip for configuration option (checkbox).  * It determines how file export plug-ins handle Exif by default.  */
+end_comment
+
 begin_define
 DECL|macro|EXPORT_METADATA_EXIF_BLURB
 define|#
@@ -574,6 +578,10 @@ define|\
 value|_("Export Exif metadata by default.")
 end_define
 
+begin_comment
+comment|/* Translators: tooltip for configuration option (checkbox).  * It determines how file export plug-ins handle XMP by default.  */
+end_comment
+
 begin_define
 DECL|macro|EXPORT_METADATA_XMP_BLURB
 define|#
@@ -582,6 +590,10 @@ name|EXPORT_METADATA_XMP_BLURB
 define|\
 value|_("Export XMP metadata by default.")
 end_define
+
+begin_comment
+comment|/* Translators: tooltip for configuration option (checkbox).  * It determines how file export plug-ins handle IPTC by default.  */
+end_comment
 
 begin_define
 DECL|macro|EXPORT_METADATA_IPTC_BLURB

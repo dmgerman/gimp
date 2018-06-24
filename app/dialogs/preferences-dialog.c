@@ -6307,6 +6307,7 @@ name|object
 argument_list|,
 literal|"export-metadata-exif"
 argument_list|,
+comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle Exif by default.                                     */
 name|_
 argument_list|(
 literal|"Export Exif metadata by default when available"
@@ -6326,6 +6327,7 @@ name|object
 argument_list|,
 literal|"export-metadata-xmp"
 argument_list|,
+comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle XMP by default.                                     */
 name|_
 argument_list|(
 literal|"Export XMP metadata by default when available"
@@ -6345,6 +6347,7 @@ name|object
 argument_list|,
 literal|"export-metadata-iptc"
 argument_list|,
+comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle IPTC by default.                                     */
 name|_
 argument_list|(
 literal|"Export IPTC metadata by default when available"
@@ -12746,7 +12749,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bcf11f20108
+DECL|struct|__anon2a3cadfd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13621,7 +13624,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcf11f20208
+DECL|struct|__anon2a3cadfd0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13752,7 +13755,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcf11f20308
+DECL|struct|__anon2a3cadfd0308
 block|{
 DECL|member|tree_label
 specifier|const
