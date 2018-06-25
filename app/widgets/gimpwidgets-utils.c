@@ -1653,6 +1653,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Small assertion test to get a warning if we ever get NULL return    * value, as this is never supposed to happen.    */
+name|g_return_val_if_fail
+argument_list|(
+name|pixbuf
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|pixbuf
 return|;
@@ -4176,7 +4186,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277f2b4f0108
+DECL|struct|__anon2a8d18d30108
 block|{
 DECL|member|r
 name|guchar
@@ -4786,7 +4796,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f2b4f0208
+DECL|struct|__anon2a8d18d30208
 block|{
 DECL|member|timeout_id
 name|gint
