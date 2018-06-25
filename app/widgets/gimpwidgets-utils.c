@@ -1313,6 +1313,8 @@ block|{
 name|GdkPixbuf
 modifier|*
 name|pixbuf
+init|=
+name|NULL
 decl_stmt|;
 name|GtkIconTheme
 modifier|*
@@ -1397,55 +1399,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|icon_info
 condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"WARNING: icon theme has no icon '%s'.\n"
-argument_list|,
-name|icon_name
-argument_list|)
-expr_stmt|;
-name|icon_info
-operator|=
-name|gtk_icon_theme_lookup_icon_for_scale
-argument_list|(
-name|icon_theme
-argument_list|,
-name|GIMP_ICON_WILBER_EEK
-literal|"-symbolic"
-argument_list|,
-name|size
-argument_list|,
-name|scale_factor
-argument_list|,
-name|GTK_ICON_LOOKUP_GENERIC_FALLBACK
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|icon_info
-condition|)
-name|pixbuf
-operator|=
-name|gtk_icon_info_load_symbolic_for_context
-argument_list|(
-name|icon_info
-argument_list|,
-name|gtk_widget_get_style_context
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|pixbuf
 operator|=
@@ -1463,13 +1418,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|icon_info
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|pixbuf
 condition|)
-block|{
-comment|/* The icon was seemingly present in the current icon theme, yet            * it failed to load. Maybe the file is broken?            * As last resort, try to load "gimp-wilber-eek" as fallback.            * Note that we are not making more checks, so if the fallback            * icon fails to load as well, the function may still return NULL.            */
+comment|/* The icon was seemingly present in the current icon theme, yet          * it failed to load. Maybe the file is broken?          * As last resort, try to load "gimp-wilber-eek" as fallback.          * Note that we are not making more checks, so if the fallback          * icon fails to load as well, the function may still return NULL.          */
 name|g_printerr
 argument_list|(
 literal|"WARNING: icon '%s' failed to load. Check the files "
@@ -1478,11 +1437,22 @@ argument_list|,
 name|icon_name
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+block|}
+else|else
+name|g_printerr
 argument_list|(
-name|icon_info
+literal|"WARNING: icon theme has no icon '%s'.\n"
+argument_list|,
+name|icon_name
 argument_list|)
 expr_stmt|;
+comment|/* First fallback: gimp-wilber-eek */
+if|if
+condition|(
+operator|!
+name|pixbuf
+condition|)
+block|{
 name|icon_info
 operator|=
 name|gtk_icon_theme_lookup_icon_for_scale
@@ -1503,6 +1473,7 @@ if|if
 condition|(
 name|icon_info
 condition|)
+block|{
 name|pixbuf
 operator|=
 name|gtk_icon_info_load_symbolic_for_context
@@ -1519,6 +1490,35 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|icon_info
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|pixbuf
+condition|)
+name|g_printerr
+argument_list|(
+literal|"WARNING: icon '%s' failed to load. Check the files "
+literal|"in your icon theme.\n"
+argument_list|,
+name|GIMP_ICON_WILBER_EEK
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|g_printerr
+argument_list|(
+literal|"WARNING: icon theme has no icon '%s'.\n"
+argument_list|,
+name|GIMP_ICON_WILBER_EEK
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* Last fallback: just a magenta square. */
 if|if
 condition|(
 operator|!
@@ -1542,14 +1542,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"WARNING: icon '%s' failed to load. Check the files "
-literal|"in your icon theme.\n"
-argument_list|,
-name|GIMP_ICON_WILBER_EEK
-argument_list|)
-expr_stmt|;
 name|data
 operator|=
 name|g_new
@@ -1661,17 +1653,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-block|}
-if|if
-condition|(
-name|icon_info
-condition|)
-name|g_object_unref
-argument_list|(
-name|icon_info
-argument_list|)
-expr_stmt|;
 return|return
 name|pixbuf
 return|;
@@ -4195,7 +4176,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2abfd2750108
+DECL|struct|__anon277f2b4f0108
 block|{
 DECL|member|r
 name|guchar
@@ -4805,7 +4786,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfd2750208
+DECL|struct|__anon277f2b4f0208
 block|{
 DECL|member|timeout_id
 name|gint
