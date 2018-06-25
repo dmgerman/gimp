@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c97654a0103
+DECL|enum|__anon2aead6740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -923,6 +923,68 @@ end_function
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|void
+DECL|function|gimp_tool_options_set_gui_mode (GimpToolOptions * tool_options,gboolean gui_mode)
+name|gimp_tool_options_set_gui_mode
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|,
+name|gboolean
+name|gui_mode
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options
+operator|->
+name|gui_mode
+operator|=
+name|gui_mode
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_tool_options_get_gui_mode (GimpToolOptions * tool_options)
+name|gimp_tool_options_get_gui_mode
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|tool_options
+operator|->
+name|gui_mode
+return|;
+block|}
+end_function
 
 begin_function
 name|gboolean

@@ -108,6 +108,11 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+comment|/*  if TRUE this instance is the main tool options object used for    *  the GUI, this is not exactly clean, but there are some things    *  (like linking brush properties to the active brush, or properly    *  maintaining global brush, pattern etc.) that can only be done    *  right in the object, and not by signal connections from the GUI,    *  or upon switching tools, all of which was much more horrible.    */
+DECL|member|gui_mode
+name|gboolean
+name|gui_mode
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -134,6 +139,31 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_tool_options_set_gui_mode
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|,
+name|gboolean
+name|gui_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_tool_options_get_gui_mode
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean

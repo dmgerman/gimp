@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29393c180103
+DECL|enum|__anon29d22ceb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1034,6 +1034,15 @@ argument_list|,
 name|tool_info
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_tool_options_set_gui_mode
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
