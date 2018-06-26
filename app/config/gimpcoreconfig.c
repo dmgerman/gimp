@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297944b70103
+DECL|enum|__anon27a660a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -885,7 +885,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|ENABLE_BUNDLED_MYPAINT_BRUSHES
+name|ENABLE_RELOCATABLE_RESOURCES
 name|mypaint_brushes
 operator|=
 name|g_build_filename
