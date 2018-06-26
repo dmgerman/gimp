@@ -70,7 +70,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<Carbon/Carbon.h>
+file|<CoreGraphics/CoreGraphics.h>
 end_include
 
 begin_endif
@@ -4186,7 +4186,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a8d18d30108
+DECL|struct|__anon2c0227590108
 block|{
 DECL|member|r
 name|guchar
@@ -4796,7 +4796,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d18d30208
+DECL|struct|__anon2c0227590208
 block|{
 DECL|member|timeout_id
 name|gint
