@@ -90,7 +90,7 @@ value|5
 end_define
 
 begin_comment
-comment|/*  *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get.  */
+comment|/*  *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get,  *  or G_TOKEN_ERROR if the function already set an error itself.  */
 end_comment
 
 begin_function_decl
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6134a0103
+DECL|enum|__anon28bf51a90103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -969,7 +969,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|token
+operator|!=
+name|G_TOKEN_ERROR
+condition|)
 block|{
 name|g_scanner_get_next_token
 argument_list|(
@@ -1075,6 +1081,12 @@ decl_stmt|;
 name|GTokenType
 name|token
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1095,7 +1107,8 @@ name|gimp_file_new_for_config_path
 argument_list|(
 name|path
 argument_list|,
-name|NULL
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1103,6 +1116,33 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|file
+condition|)
+block|{
+name|g_scanner_error
+argument_list|(
+name|scanner
+argument_list|,
+literal|"unable to parse plug-in filename: %s"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+return|return
+name|G_TOKEN_ERROR
+return|;
+block|}
 name|plug_in_def
 operator|=
 name|gimp_plug_in_def_new
