@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b199d5c0108
+DECL|struct|__anon2c114dc50108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1719,7 +1719,7 @@ name|data
 decl_stmt|;
 name|data
 operator|=
-name|CGColorSpaceCopyICCProfile
+name|CGColorSpaceCopyICCData
 argument_list|(
 name|space
 argument_list|)
