@@ -1996,7 +1996,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_overlay_box_scroll:  * @box: the #GimpOverlayBox widget to scroll.  * @offset_x: the x scroll amount.  * @offset_y: the y scroll amount.  *  * Scrolls the box using gdk_window_scroll() and makes sure the result  * is displayed immediately by calling gdk_window_process_updates().  **/
+comment|/**  * gimp_overlay_box_scroll:  * @box: the #GimpOverlayBox widget to scroll.  * @offset_x: the x scroll amount.  * @offset_y: the y scroll amount.  *  * Scrolls the box using gdk_window_scroll(), taking care of properly  * handling overlay children.  **/
 end_comment
 
 begin_function
@@ -2138,14 +2138,6 @@ name|child
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make sure expose events are processed before scrolling again  */
-name|gdk_window_process_updates
-argument_list|(
-name|window
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
