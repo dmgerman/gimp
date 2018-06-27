@@ -709,6 +709,10 @@ DECL|member|size_allocate_from_configure_event
 name|gboolean
 name|size_allocate_from_configure_event
 decl_stmt|;
+DECL|member|size_allocate_center_image
+name|gboolean
+name|size_allocate_center_image
+decl_stmt|;
 comment|/*  the state of gimp_display_shell_tool_events()  */
 DECL|member|grab_pointer
 name|GdkDevice

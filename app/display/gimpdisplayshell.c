@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a62f440103
+DECL|enum|__anon28b552a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a62f440203
+DECL|enum|__anon28b552a70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3042,14 +3042,11 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* After connecting to the image we want to center it. Since we        * not even finished creating the display shell, we can safely        * assume we will get a size-allocate later.        */
-name|gimp_display_shell_scroll_center_image_on_size_allocate
-argument_list|(
 name|shell
-argument_list|,
+operator|->
+name|size_allocate_center_image
+operator|=
 name|TRUE
-argument_list|,
-name|TRUE
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -6010,16 +6007,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* center the image so subsequent stuff only moves it a little in    * the center    */
-name|gimp_display_shell_scroll_center_image
-argument_list|(
-name|shell
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_sync_config
 argument_list|(
 name|shell
@@ -6064,14 +6051,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* A size-allocate will always occur because the scrollbars will    * become visible forcing the canvas to become smaller    */
-name|gimp_display_shell_scroll_center_image_on_size_allocate
-argument_list|(
 name|shell
-argument_list|,
+operator|->
+name|size_allocate_center_image
+operator|=
 name|TRUE
-argument_list|,
-name|TRUE
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

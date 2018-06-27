@@ -122,23 +122,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scroll_center_image_on_size_allocate
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gboolean
-name|horizontally
-parameter_list|,
-name|gboolean
-name|vertically
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_scroll_get_scaled_viewport
 parameter_list|(
 name|GimpDisplayShell
