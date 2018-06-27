@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275deda00108
+DECL|struct|__anon278cd2420108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275deda00208
+DECL|struct|__anon278cd2420208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1703,6 +1703,12 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
+name|gimp_pixpipe_params_free
+argument_list|(
+operator|&
+name|gihparams
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|export

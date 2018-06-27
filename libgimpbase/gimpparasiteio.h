@@ -167,6 +167,21 @@ name|G_GNUC_MALLOC
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* Free the internal values. It does not free the struct itsef. */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_pixpipe_params_free
+parameter_list|(
+name|GimpPixPipeParams
+modifier|*
+name|params
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
