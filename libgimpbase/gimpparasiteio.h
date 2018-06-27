@@ -106,6 +106,7 @@ index|[
 name|GIMP_PIXPIPE_MAXDIM
 index|]
 decl_stmt|;
+comment|/* this flag is now useless. All selection strings are allocated. */
 DECL|member|free_selection_string
 name|gboolean
 name|free_selection_string

@@ -762,12 +762,6 @@ index|]
 operator|=
 name|PIPE_SELECT_CONSTANT
 expr_stmt|;
-if|if
-condition|(
-name|params
-operator|.
-name|free_selection_string
-condition|)
 name|g_free
 argument_list|(
 name|params
