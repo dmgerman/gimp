@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782797e0103
+DECL|enum|__anon2b1c85660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1090,6 +1090,16 @@ block|{
 name|gimp_cancelable_cancel
 argument_list|(
 name|GIMP_CANCELABLE
+argument_list|(
+name|priv
+operator|->
+name|async_set
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_waitable_wait
+argument_list|(
+name|GIMP_WAITABLE
 argument_list|(
 name|priv
 operator|->
