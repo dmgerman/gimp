@@ -51,6 +51,12 @@ directive|include
 file|<windows.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<psapi.h>
+end_include
+
 begin_define
 DECL|macro|HAVE_CPU_GROUP
 define|#
@@ -337,7 +343,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc19960103
+DECL|enum|__anon2a3022ab0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -436,7 +442,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc19960203
+DECL|enum|__anon2a3022ab0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -464,7 +470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc19960303
+DECL|enum|__anon2a3022ab0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -726,7 +732,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2acc1996040a
+DECL|union|__anon2a3022ab040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -738,7 +744,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon2acc19960508
+DECL|struct|__anon2a3022ab0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -753,7 +759,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2acc19960608
+DECL|struct|__anon2a3022ab0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8099,7 +8105,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc19960708
+DECL|struct|__anon2a3022ab0708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8369,7 +8375,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc19960808
+DECL|struct|__anon2a3022ab0808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8575,15 +8581,13 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc19960908
+DECL|struct|__anon2a3022ab0908
 block|{
 DECL|member|prev_time
-specifier|static
 name|guint64
 name|prev_time
 decl_stmt|;
 DECL|member|prev_usage
-specifier|static
 name|guint64
 name|prev_usage
 decl_stmt|;
@@ -8853,7 +8857,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc19960a08
+DECL|struct|__anon2a3022ab0a08
 block|{
 DECL|member|active
 name|gboolean
@@ -9013,7 +9017,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc19960b08
+DECL|struct|__anon2a3022ab0b08
 block|{
 DECL|member|prev_time
 name|gint64
