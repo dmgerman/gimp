@@ -343,7 +343,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3022ab0103
+DECL|enum|__anon2a36b75e0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -442,7 +442,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3022ab0203
+DECL|enum|__anon2a36b75e0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -470,7 +470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3022ab0303
+DECL|enum|__anon2a36b75e0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -732,7 +732,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2a3022ab040a
+DECL|union|__anon2a36b75e040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -744,7 +744,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon2a3022ab0508
+DECL|struct|__anon2a36b75e0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -759,7 +759,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2a3022ab0608
+DECL|struct|__anon2a36b75e0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8105,7 +8105,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3022ab0708
+DECL|struct|__anon2a36b75e0708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8375,7 +8375,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3022ab0808
+DECL|struct|__anon2a36b75e0808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8581,7 +8581,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3022ab0908
+DECL|struct|__anon2a36b75e0908
 block|{
 DECL|member|prev_time
 name|guint64
@@ -8857,7 +8857,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3022ab0a08
+DECL|struct|__anon2a36b75e0a08
 block|{
 DECL|member|active
 name|gboolean
@@ -9017,7 +9017,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3022ab0b08
+DECL|struct|__anon2a36b75e0b08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -9697,8 +9697,10 @@ index|[
 name|variable
 index|]
 decl_stmt|;
-name|PPROCESS_MEMORY_COUNTERS_EX
+name|PROCESS_MEMORY_COUNTERS_EX
 name|pmc
+init|=
+block|{}
 decl_stmt|;
 name|variable_data
 operator|->
@@ -9714,6 +9716,9 @@ argument_list|(
 name|GetCurrentProcess
 argument_list|()
 argument_list|,
+operator|(
+name|PPROCESS_MEMORY_COUNTERS
+operator|)
 operator|&
 name|pmc
 argument_list|,
@@ -9722,8 +9727,19 @@ argument_list|(
 name|pmc
 argument_list|)
 argument_list|)
+operator|||
+name|pmc
+operator|.
+name|cb
+operator|!=
+sizeof|sizeof
+argument_list|(
+name|pmc
+argument_list|)
 condition|)
+block|{
 return|return;
+block|}
 name|variable_data
 operator|->
 name|available
