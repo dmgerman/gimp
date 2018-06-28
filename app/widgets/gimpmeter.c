@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e787790103
+DECL|enum|__anon28a7e0fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e787790208
+DECL|struct|__anon28a7e0fd0208
 block|{
 DECL|member|active
 name|gboolean
@@ -5913,6 +5913,14 @@ operator|=
 operator|*
 name|color
 expr_stmt|;
+if|if
+condition|(
+name|meter
+operator|->
+name|priv
+operator|->
+name|led_active
+condition|)
 name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
