@@ -168,7 +168,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e4f5190103
+DECL|enum|__anon275b2adf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e4f5190203
+DECL|enum|__anon275b2adf0203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2368,7 +2368,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_controller_list_edit_clicked
 argument_list|(
-name|NULL
+name|list
+operator|->
+name|edit_button
 argument_list|,
 name|list
 argument_list|)
