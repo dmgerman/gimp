@@ -1174,7 +1174,6 @@ operator||=
 name|GIMP_CONTEXT_PROP_MASK_BRUSH
 expr_stmt|;
 block|}
-elseif|else
 if|if
 condition|(
 operator|(
@@ -1197,7 +1196,6 @@ operator||=
 name|GIMP_CONTEXT_PROP_MASK_DYNAMICS
 expr_stmt|;
 block|}
-elseif|else
 if|if
 condition|(
 operator|(
