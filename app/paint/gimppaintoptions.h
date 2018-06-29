@@ -407,7 +407,7 @@ name|gimp_paint_options_get_fade
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -425,7 +425,7 @@ name|gimp_paint_options_get_jitter
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -440,7 +440,7 @@ name|gimp_paint_options_get_gradient_color
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -465,7 +465,7 @@ name|gimp_paint_options_get_brush_mode
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -476,7 +476,7 @@ name|gimp_paint_options_set_default_brush_size
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpBrush
 modifier|*
@@ -491,7 +491,7 @@ name|gimp_paint_options_set_default_brush_angle
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpBrush
 modifier|*
@@ -506,7 +506,7 @@ name|gimp_paint_options_set_default_brush_aspect_ratio
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpBrush
 modifier|*
@@ -521,7 +521,7 @@ name|gimp_paint_options_set_default_brush_spacing
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpBrush
 modifier|*
@@ -536,7 +536,7 @@ name|gimp_paint_options_set_default_brush_hardness
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
-name|paint_options
+name|options
 parameter_list|,
 name|GimpBrush
 modifier|*
@@ -546,23 +546,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_paint_options_copy_brush_props
+name|gboolean
+name|gimp_paint_options_is_prop
 parameter_list|(
-name|GimpPaintOptions
+specifier|const
+name|gchar
 modifier|*
-name|src
+name|prop_name
 parameter_list|,
-name|GimpPaintOptions
-modifier|*
-name|dest
+name|GimpContextPropMask
+name|prop_mask
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_options_copy_dynamics_props
+name|gimp_paint_options_copy_props
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
@@ -571,21 +571,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|dest
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_options_copy_gradient_props
-parameter_list|(
-name|GimpPaintOptions
-modifier|*
-name|src
 parameter_list|,
-name|GimpPaintOptions
-modifier|*
-name|dest
+name|GimpContextPropMask
+name|prop_mask
 parameter_list|)
 function_decl|;
 end_function_decl
