@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aead6740103
+DECL|enum|__anon2b0575e70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -664,26 +664,6 @@ operator|=
 name|g_object_ref
 argument_list|(
 name|tool_info
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|tool_info
-operator|->
-name|context_props
-condition|)
-name|gimp_context_define_properties
-argument_list|(
-name|GIMP_CONTEXT
-argument_list|(
-name|options
-argument_list|)
-argument_list|,
-name|tool_info
-operator|->
-name|context_props
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_serialize_properties

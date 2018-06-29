@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-tool-options-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-tools.h"
 end_include
 
@@ -610,11 +616,6 @@ expr_stmt|;
 name|gimp_tool_options_create_folder
 argument_list|()
 expr_stmt|;
-name|tool_manager_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|gimp_container_freeze
 argument_list|(
 name|gimp
@@ -655,6 +656,16 @@ argument_list|(
 name|gimp
 operator|->
 name|tool_info_list
+argument_list|)
+expr_stmt|;
+name|gimp_tool_options_manager_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|tool_manager_init
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 for|for
@@ -784,6 +795,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|tool_manager_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_tool_options_manager_exit
 argument_list|(
 name|gimp
 argument_list|)
