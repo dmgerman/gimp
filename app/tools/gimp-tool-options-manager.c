@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -105,16 +99,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-DECL|variable|manager_quark
-specifier|static
-name|GQuark
-name|manager_quark
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -213,6 +197,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|manager_quark
+specifier|static
+name|GQuark
+name|manager_quark
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -234,10 +228,6 @@ decl_stmt|;
 name|GimpContext
 modifier|*
 name|user_context
-decl_stmt|;
-name|GimpCoreConfig
-modifier|*
-name|config
 decl_stmt|;
 name|GList
 modifier|*
@@ -265,17 +255,23 @@ argument_list|(
 literal|"gimp-tool-options-manager"
 argument_list|)
 expr_stmt|;
-name|config
-operator|=
-name|gimp
-operator|->
-name|config
-expr_stmt|;
 name|manager
 operator|=
 name|g_slice_new0
 argument_list|(
 name|GimpToolOptionsManager
+argument_list|)
+expr_stmt|;
+name|g_object_set_qdata
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|manager_quark
+argument_list|,
+name|manager
 argument_list|)
 expr_stmt|;
 name|manager
@@ -309,19 +305,9 @@ name|global_props
 operator|=
 name|tool_options_manager_get_global_props
 argument_list|(
-name|config
-argument_list|)
-expr_stmt|;
-name|g_object_set_qdata
-argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
-argument_list|)
-argument_list|,
-name|manager_quark
-argument_list|,
-name|manager
+operator|->
+name|config
 argument_list|)
 expr_stmt|;
 name|user_context
@@ -1382,7 +1368,7 @@ return|return;
 comment|/*  FIXME: gimp_busy HACK    *  the tool manager will stop the emission, so simply return    */
 if|if
 condition|(
-name|user_context
+name|manager
 operator|->
 name|gimp
 operator|->
