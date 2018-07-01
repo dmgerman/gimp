@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b541d8d0103
+DECL|enum|__anon2c74ce1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -162,7 +162,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541d8d0208
+DECL|struct|__anon2c74ce1f0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b541d8d0308
+DECL|struct|__anon2c74ce1f0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1349,8 +1349,6 @@ name|calculate_async
 operator|=
 name|gimp_parallel_run_async
 argument_list|(
-name|FALSE
-argument_list|,
 operator|(
 name|GimpParallelRunAsyncFunc
 operator|)

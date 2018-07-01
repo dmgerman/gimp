@@ -2511,10 +2511,8 @@ block|{
 comment|/* listens for a cancellation request */
 name|input_async
 operator|=
-name|gimp_parallel_run_async
+name|gimp_parallel_run_async_independent
 argument_list|(
-name|TRUE
-argument_list|,
 operator|(
 name|GimpParallelRunAsyncFunc
 operator|)

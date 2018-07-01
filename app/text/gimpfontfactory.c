@@ -1193,10 +1193,8 @@ expr_stmt|;
 comment|/* We perform font cache initialization in a separate thread, so    * in the case a cache rebuild is to be done it will not block    * the UI.    */
 name|async
 operator|=
-name|gimp_parallel_run_async
+name|gimp_parallel_run_async_independent
 argument_list|(
-name|TRUE
-argument_list|,
 operator|(
 name|GimpParallelRunAsyncFunc
 operator|)
