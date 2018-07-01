@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VIEW_RENDERER_DRAWABLE, GimpV
 end_define
 
 begin_typedef
+DECL|typedef|GimpViewRendererDrawablePrivate
+typedef|typedef
+name|struct
+name|_GimpViewRendererDrawablePrivate
+name|GimpViewRendererDrawablePrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewRendererDrawableClass
 typedef|typedef
 name|struct
@@ -102,6 +111,11 @@ block|{
 DECL|member|parent_instance
 name|GimpViewRenderer
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpViewRendererDrawablePrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
