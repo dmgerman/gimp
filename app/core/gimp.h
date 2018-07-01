@@ -222,6 +222,11 @@ DECL|member|write_modulerc
 name|gboolean
 name|write_modulerc
 decl_stmt|;
+DECL|member|extension_manager
+name|GimpExtensionManager
+modifier|*
+name|extension_manager
+decl_stmt|;
 DECL|member|plug_in_manager
 name|GimpPlugInManager
 modifier|*

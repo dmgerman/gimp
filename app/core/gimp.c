@@ -196,6 +196,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpextensionmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgradient.h"
 end_include
 
@@ -273,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29372ad80103
+DECL|enum|__anon29eb01c10103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -301,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29372ad80203
+DECL|enum|__anon29eb01c10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1163,6 +1169,15 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_paint_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|extension_manager
+operator|=
+name|gimp_extension_manager_new
 argument_list|(
 name|gimp
 argument_list|)
@@ -2261,6 +2276,13 @@ operator|->
 name|plug_in_manager
 argument_list|,
 name|status_callback
+argument_list|)
+expr_stmt|;
+name|gimp_extension_manager_initialize
+argument_list|(
+name|gimp
+operator|->
+name|extension_manager
 argument_list|)
 expr_stmt|;
 name|status_callback

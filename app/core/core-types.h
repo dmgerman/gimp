@@ -846,6 +846,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpExtension
+typedef|typedef
+name|struct
+name|_GimpExtension
+name|GimpExtension
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpExtensionManager
+typedef|typedef
+name|struct
+name|_GimpExtensionManager
+name|GimpExtensionManager
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGuide
 typedef|typedef
 name|struct
