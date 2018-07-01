@@ -2768,7 +2768,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Unsharp Mask..."
+literal|"Sharpen (_Unsharp Mask)..."
 argument_list|)
 block|,
 name|NULL
