@@ -2854,7 +2854,7 @@ argument_list|,
 literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
-name|gimp_test_utils_setup_menus_dir
+name|gimp_test_utils_setup_menus_path
 argument_list|()
 expr_stmt|;
 comment|/* Start up GIMP */

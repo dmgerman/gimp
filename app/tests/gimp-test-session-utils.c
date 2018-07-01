@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c1c64c0108
+DECL|struct|__anon2b56ed0b0108
 block|{
 DECL|member|filename
 name|gchar
@@ -562,7 +562,7 @@ argument_list|,
 literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
-name|gimp_test_utils_setup_menus_dir
+name|gimp_test_utils_setup_menus_path
 argument_list|()
 expr_stmt|;
 comment|/* Note that we expect the resulting sessionrc to be different from    * the read file, which is why we check the MD5 of the -expected    * variant    */
