@@ -265,7 +265,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpAsync,gimp_async,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,gimp_async_waitable_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,gimp_async_cancelable_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpAsync
@@ -287,12 +286,27 @@ value|gimp_async_parent_class
 end_define
 
 begin_comment
+comment|/*  local variables  */
+end_comment
+
+begin_decl_stmt
+specifier|static
+specifier|volatile
+name|gint
+name|gimp_async_n_running
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  private functions  */
 end_comment
 
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_async_class_init (GimpAsyncClass * klass)
 name|gimp_async_class_init
 parameter_list|(
 name|GimpAsyncClass
@@ -432,6 +446,12 @@ operator|->
 name|priv
 operator|->
 name|callbacks
+argument_list|)
+expr_stmt|;
+name|g_atomic_int_inc
+argument_list|(
+operator|&
+name|gimp_async_n_running
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -954,6 +974,12 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+name|g_atomic_int_dec_and_test
+argument_list|(
+operator|&
+name|gimp_async_n_running
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1845,6 +1871,24 @@ name|async
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions (stats)  */
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_async_get_n_running (void)
+name|gimp_async_get_n_running
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|gimp_async_n_running
+return|;
 block|}
 end_function
 

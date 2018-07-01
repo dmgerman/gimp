@@ -309,6 +309,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  stats  */
+end_comment
+
+begin_function_decl
+name|gint
+name|gimp_async_get_n_running
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
