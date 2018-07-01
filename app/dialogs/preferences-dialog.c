@@ -6186,6 +6186,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_object_bind_property
+argument_list|(
+name|button
+argument_list|,
+literal|"active"
+argument_list|,
+name|vbox3
+argument_list|,
+literal|"sensitive"
+argument_list|,
+name|G_BINDING_SYNC_CREATE
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|prefs_check_button_add
@@ -12749,7 +12762,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a3cadfd0108
+DECL|struct|__anon290004160108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13624,7 +13637,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3cadfd0208
+DECL|struct|__anon290004160208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13755,7 +13768,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3cadfd0308
+DECL|struct|__anon290004160308
 block|{
 DECL|member|tree_label
 specifier|const
