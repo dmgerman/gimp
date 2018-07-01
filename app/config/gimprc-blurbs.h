@@ -827,6 +827,15 @@ value|_("Sets whether GIMP should create previews of layers and channels. " \   
 end_define
 
 begin_define
+DECL|macro|GROUP_LAYER_PREVIEWS_BLURB
+define|#
+directive|define
+name|GROUP_LAYER_PREVIEWS_BLURB
+define|\
+value|_("Sets whether GIMP should create previews of layer groups. " \   "Layer group previews are more expensive than ordinary layer previews.")
+end_define
+
+begin_define
 DECL|macro|LAYER_PREVIEW_SIZE_BLURB
 define|#
 directive|define

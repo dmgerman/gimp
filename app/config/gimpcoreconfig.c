@@ -167,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a660a00103
+DECL|enum|__anon2c8afebe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,6 +306,9 @@ name|PROP_PLUGINRC_PATH
 block|,
 DECL|enumerator|PROP_LAYER_PREVIEWS
 name|PROP_LAYER_PREVIEWS
+block|,
+DECL|enumerator|PROP_GROUP_LAYER_PREVIEWS
+name|PROP_GROUP_LAYER_PREVIEWS
 block|,
 DECL|enumerator|PROP_LAYER_PREVIEW_SIZE
 name|PROP_LAYER_PREVIEW_SIZE
@@ -1742,6 +1745,23 @@ argument_list|,
 literal|"Layer previews"
 argument_list|,
 name|LAYER_PREVIEWS_BLURB
+argument_list|,
+name|TRUE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_GROUP_LAYER_PREVIEWS
+argument_list|,
+literal|"group-layer-previews"
+argument_list|,
+literal|"Layer group previews"
+argument_list|,
+name|GROUP_LAYER_PREVIEWS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3302,6 +3322,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_GROUP_LAYER_PREVIEWS
+case|:
+name|core_config
+operator|->
+name|group_layer_previews
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_LAYER_PREVIEW_SIZE
 case|:
 name|core_config
@@ -4160,6 +4193,19 @@ argument_list|,
 name|core_config
 operator|->
 name|layer_previews
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_GROUP_LAYER_PREVIEWS
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|group_layer_previews
 argument_list|)
 expr_stmt|;
 break|break;

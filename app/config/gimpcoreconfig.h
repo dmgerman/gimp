@@ -317,6 +317,10 @@ DECL|member|layer_previews
 name|gboolean
 name|layer_previews
 decl_stmt|;
+DECL|member|group_layer_previews
+name|gboolean
+name|group_layer_previews
+decl_stmt|;
 DECL|member|layer_preview_size
 name|GimpViewSize
 name|layer_preview_size
