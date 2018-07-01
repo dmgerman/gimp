@@ -102,7 +102,7 @@ name|gint
 name|n_valid_rects
 parameter_list|,
 name|gboolean
-name|cancellable
+name|cancelable
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1956,12 +1956,6 @@ operator|->
 name|item
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_display_shell_flush (shell, TRUE);
-endif|#
-directive|endif
 name|draw_tool
 operator|->
 name|last_draw_time

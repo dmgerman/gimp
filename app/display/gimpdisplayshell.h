@@ -1202,9 +1202,6 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|gboolean
-name|now
 parameter_list|)
 function_decl|;
 end_function_decl

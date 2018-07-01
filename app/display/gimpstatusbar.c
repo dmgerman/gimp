@@ -2207,11 +2207,13 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gimp_widget_flush_expose
-argument_list|(
-name|bar
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* FIXME flush_expose */
+block|gimp_widget_flush_expose (bar);
+endif|#
+directive|endif
 name|gimp_statusbar_override_window_title
 argument_list|(
 name|statusbar
@@ -2410,14 +2412,6 @@ operator|->
 name|progress_active
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|bar
-init|=
-name|statusbar
-operator|->
-name|progressbar
-decl_stmt|;
 name|gimp_statusbar_replace
 argument_list|(
 name|statusbar
@@ -2431,11 +2425,13 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
-name|gimp_widget_flush_expose
-argument_list|(
-name|bar
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* FIXME flush_expose */
+block|gimp_widget_flush_expose (bar);
+endif|#
+directive|endif
 name|gimp_statusbar_override_window_title
 argument_list|(
 name|statusbar
@@ -2563,11 +2559,13 @@ argument_list|,
 name|percentage
 argument_list|)
 expr_stmt|;
-name|gimp_widget_flush_expose
-argument_list|(
-name|bar
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* FIXME flush_expose */
+block|gimp_widget_flush_expose (bar);
+endif|#
+directive|endif
 block|}
 block|}
 block|}
@@ -2677,11 +2675,13 @@ name|bar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_widget_flush_expose
-argument_list|(
-name|bar
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* FIXME flush_expose */
+block|gimp_widget_flush_expose (bar);
+endif|#
+directive|endif
 block|}
 block|}
 block|}

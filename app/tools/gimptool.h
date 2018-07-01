@@ -218,6 +218,10 @@ name|GtkWidget
 modifier|*
 name|progress_grab_widget
 decl_stmt|;
+DECL|member|progress_cancelable
+name|gboolean
+name|progress_cancelable
+decl_stmt|;
 block|}
 struct|;
 end_struct

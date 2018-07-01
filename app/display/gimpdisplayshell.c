@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b552a70103
+DECL|enum|__anon2aaec8260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b552a70203
+DECL|enum|__anon2aaec8260203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7193,17 +7193,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_flush (GimpDisplayShell * shell,gboolean now)
+DECL|function|gimp_display_shell_flush (GimpDisplayShell * shell)
 name|gimp_display_shell_flush
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|gboolean
-name|now
 parameter_list|)
 block|{
+name|GimpImageWindow
+modifier|*
+name|window
+decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -7212,39 +7217,13 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|now
-condition|)
-block|{
-name|gdk_window_process_updates
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|GimpImageWindow
-modifier|*
 name|window
-init|=
+operator|=
 name|gimp_display_shell_get_window
 argument_list|(
 name|shell
 argument_list|)
-decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
+expr_stmt|;
 name|gimp_display_shell_title_update
 argument_list|(
 name|shell
@@ -7335,7 +7314,6 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function

@@ -1574,15 +1574,6 @@ name|cairo_surface_t
 modifier|*
 name|surface
 decl_stmt|;
-name|gdk_window_process_updates
-argument_list|(
-name|child
-operator|->
-name|window
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|surface
 operator|=
 name|gdk_offscreen_window_get_surface
