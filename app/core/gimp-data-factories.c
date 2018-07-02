@@ -245,6 +245,8 @@ literal|"brush-path"
 argument_list|,
 literal|"brush-path-writable"
 argument_list|,
+literal|"brush-paths"
+argument_list|,
 name|gimp_brush_new
 argument_list|,
 name|gimp_brush_get_standard
@@ -366,6 +368,8 @@ literal|"dynamics-path"
 argument_list|,
 literal|"dynamics-path-writable"
 argument_list|,
+literal|"dynamics-paths"
+argument_list|,
 name|gimp_dynamics_new
 argument_list|,
 name|gimp_dynamics_get_standard
@@ -412,6 +416,8 @@ literal|"mypaint-brush-path"
 argument_list|,
 literal|"mypaint-brush-path-writable"
 argument_list|,
+literal|"mypaint-brush-paths"
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -457,6 +463,8 @@ argument_list|,
 literal|"pattern-path"
 argument_list|,
 literal|"pattern-path-writable"
+argument_list|,
+literal|"pattern-paths"
 argument_list|,
 name|NULL
 argument_list|,
@@ -514,6 +522,8 @@ argument_list|,
 literal|"gradient-path"
 argument_list|,
 literal|"gradient-path-writable"
+argument_list|,
+literal|"gradient-paths"
 argument_list|,
 name|gimp_gradient_new
 argument_list|,
@@ -575,6 +585,8 @@ argument_list|,
 literal|"palette-path"
 argument_list|,
 literal|"palette-path-writable"
+argument_list|,
+literal|"palette-paths"
 argument_list|,
 name|gimp_palette_new
 argument_list|,
@@ -644,6 +656,8 @@ argument_list|,
 literal|"tool-preset-path"
 argument_list|,
 literal|"tool-preset-path-writable"
+argument_list|,
+literal|"tool-preset-paths"
 argument_list|,
 name|gimp_tool_preset_new
 argument_list|,

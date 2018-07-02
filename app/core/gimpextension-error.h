@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292595df0103
+DECL|enum|__anon2a2c306f0103
 block|{
 comment|/* Generic error condition. */
 DECL|enumerator|GIMP_EXTENSION_FAILED
@@ -33,8 +33,11 @@ name|GIMP_EXTENSION_BAD_ID
 block|,
 DECL|enumerator|GIMP_EXTENSION_NO_VERSION
 name|GIMP_EXTENSION_NO_VERSION
-block|, }
+block|,
+DECL|enumerator|GIMP_EXTENSION_BAD_PATH
+name|GIMP_EXTENSION_BAD_PATH
 DECL|typedef|GimpExtensionErrorCode
+block|}
 name|GimpExtensionErrorCode
 typedef|;
 end_typedef

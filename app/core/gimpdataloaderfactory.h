@@ -196,6 +196,11 @@ name|gchar
 modifier|*
 name|writable_property_name
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ext_property_name
+parameter_list|,
 name|GimpDataNewFunc
 name|new_func
 parameter_list|,
