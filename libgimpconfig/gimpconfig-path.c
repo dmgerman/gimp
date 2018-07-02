@@ -544,6 +544,37 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_config_build_system_path:  * @name: directory name (in UTF-8 encoding)  *  * Creates a search path as it is used in the gimprc file.  The path  * returned by gimp_config_build_system_path() is just the read-only  * parts of the search path constructed by gimp_config_build_plug_in_path().  *  * Note that you cannot use this path directly with gimp_path_parse().  * As it is in the gimprc notation, you first need to expand and  * recode it using gimp_config_path_expand().  *  * Returns: a newly allocated string  *  * Since: 2.10.6  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_config_build_system_path (const gchar * name)
+name|gimp_config_build_system_path
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+return|return
+name|g_strconcat
+argument_list|(
+literal|"${gimp_plug_in_dir}"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|name
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_config_path_expand:  * @path:   a NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error:  return location for errors  *  * Paths as stored in gimprc and other config files have to be treated  * special.  The string may contain special identifiers such as for  * example ${gimp_dir} that have to be substituted before use. Also  * the user's filesystem may be in a different encoding than UTF-8  * (which is what is used for the gimprc). This function does the  * variable substitution for you and can also attempt to convert to  * the filesystem encoding.  *  * To reverse the expansion, use gimp_config_path_unexpand().  *  * Return value: a newly allocated NUL-terminated string  *  * Since: 2.4  **/
 end_comment
 
@@ -1893,7 +1924,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon28eb3fde0108
+DECL|struct|__anon2c55674c0108
 block|{
 DECL|member|id
 specifier|const
