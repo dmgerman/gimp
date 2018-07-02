@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c92e200103
+DECL|enum|__anon29e621960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -80,7 +80,7 @@ DECL|member|writable
 name|gboolean
 name|writable
 decl_stmt|;
-comment|/* Extension metadata. */
+comment|/* Extension metadata: directories. */
 DECL|member|brush_paths
 name|GList
 modifier|*
@@ -115,6 +115,12 @@ DECL|member|tool_preset_paths
 name|GList
 modifier|*
 name|tool_preset_paths
+decl_stmt|;
+comment|/* Extension metadata: plug-in entry points. */
+DECL|member|plug_in_paths
+name|GList
+modifier|*
+name|plug_in_paths
 decl_stmt|;
 block|}
 struct|;
@@ -1433,6 +1439,42 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+operator|(
+operator|*
+name|error
+operator|)
+condition|)
+block|{
+name|value
+operator|=
+name|g_hash_table_lookup
+argument_list|(
+name|metadata
+argument_list|,
+literal|"GIMP::plug-in-path"
+argument_list|)
+expr_stmt|;
+name|extension
+operator|->
+name|p
+operator|->
+name|plug_in_paths
+operator|=
+name|gimp_extension_validate_paths
+argument_list|(
+name|extension
+argument_list|,
+name|value
+argument_list|,
+name|FALSE
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 operator|*
 name|error
 condition|)
@@ -1595,6 +1637,25 @@ name|tool_preset_paths
 operator|=
 name|NULL
 expr_stmt|;
+name|g_list_free_full
+argument_list|(
+name|extension
+operator|->
+name|p
+operator|->
+name|plug_in_paths
+argument_list|,
+name|g_object_unref
+argument_list|)
+expr_stmt|;
+name|extension
+operator|->
+name|p
+operator|->
+name|plug_in_paths
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -1741,6 +1802,27 @@ operator|->
 name|p
 operator|->
 name|tool_preset_paths
+return|;
+block|}
+end_function
+
+begin_function
+name|GList
+modifier|*
+DECL|function|gimp_extension_get_plug_in_paths (GimpExtension * extension)
+name|gimp_extension_get_plug_in_paths
+parameter_list|(
+name|GimpExtension
+modifier|*
+name|extension
+parameter_list|)
+block|{
+return|return
+name|extension
+operator|->
+name|p
+operator|->
+name|plug_in_paths
 return|;
 block|}
 end_function

@@ -287,6 +287,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_extension_get_plug_in_paths
+parameter_list|(
+name|GimpExtension
+modifier|*
+name|extension
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
