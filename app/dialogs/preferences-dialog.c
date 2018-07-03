@@ -7504,7 +7504,7 @@ literal|"group-layer-previews"
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable layer group previews"
+literal|"Enable layer _group previews"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -12810,7 +12810,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29e4419a0108
+DECL|struct|__anon2b64911f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13685,7 +13685,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e4419a0208
+DECL|struct|__anon2b64911f0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13816,7 +13816,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e4419a0308
+DECL|struct|__anon2b64911f0308
 block|{
 DECL|member|tree_label
 specifier|const
