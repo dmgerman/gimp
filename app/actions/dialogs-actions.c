@@ -1196,6 +1196,32 @@ literal|"gimp-action-search-dialog"
 block|,
 name|GIMP_HELP_ACTION_SEARCH_DIALOG
 block|}
+block|,
+block|{
+literal|"dialogs-extensions"
+block|,
+name|GIMP_ICON_PLUGIN
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Manage _Extensions"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Manage Extensions: search, install, uninstall, update."
+argument_list|)
+block|,
+literal|"gimp-extensions-dialog"
+block|,
+name|GIMP_HELP_EXTENSIONS_DIALOG
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt

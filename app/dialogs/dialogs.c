@@ -1123,6 +1123,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 block|,
+name|TOPLEVEL
+argument_list|(
+literal|"gimp-extensions-dialog"
+argument_list|,
+name|dialogs_extensions_get
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
 comment|/*  docks  */
 name|DOCK
 argument_list|(
