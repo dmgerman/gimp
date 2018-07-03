@@ -244,11 +244,9 @@ operator|>
 specifier|inline
 name|GimpAsync
 operator|*
-DECL|function|gimp_parallel_run_async (gboolean independent,ParallelRunAsyncFunc func)
+DECL|function|gimp_parallel_run_async (ParallelRunAsyncFunc func)
 name|gimp_parallel_run_async
 argument_list|(
-argument|gboolean             independent
-argument_list|,
 argument|ParallelRunAsyncFunc func
 argument_list|)
 block|{
@@ -372,7 +370,7 @@ argument_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6724a20108
+DECL|struct|__anon28d11d5d0108
 block|{
 DECL|member|func
 name|ParallelRunAsyncFunc
