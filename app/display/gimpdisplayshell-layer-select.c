@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b333d160108
+DECL|struct|__anon297dff670108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -178,8 +178,9 @@ name|LayerSelect
 modifier|*
 name|layer_select
 parameter_list|,
-name|guint32
-name|time
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,18 +226,19 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_layer_select_init (GimpDisplayShell * shell,gint move,guint32 time)
+DECL|function|gimp_display_shell_layer_select_init (GimpDisplayShell * shell,GdkEvent * event,gint move)
 name|gimp_display_shell_layer_select_init
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
 name|gint
 name|move
-parameter_list|,
-name|guint32
-name|time
 parameter_list|)
 block|{
 name|LayerSelect
@@ -260,6 +262,13 @@ name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|event
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -337,8 +346,13 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|gdk_keyboard_grab
+name|gdk_seat_grab
 argument_list|(
+name|gdk_event_get_seat
+argument_list|(
+name|event
+argument_list|)
+argument_list|,
 name|gtk_widget_get_window
 argument_list|(
 name|layer_select
@@ -346,9 +360,17 @@ operator|->
 name|window
 argument_list|)
 argument_list|,
+name|GDK_SEAT_CAPABILITY_KEYBOARD
+argument_list|,
 name|FALSE
 argument_list|,
-name|time
+name|NULL
+argument_list|,
+name|event
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -357,6 +379,7 @@ name|status
 operator|!=
 name|GDK_GRAB_SUCCESS
 condition|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"gdk_keyboard_grab failed with status %d\n"
@@ -364,6 +387,14 @@ argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
+name|layer_select_destroy
+argument_list|(
+name|layer_select
+argument_list|,
+name|event
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -735,27 +766,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_select_destroy (LayerSelect * layer_select,guint32 time)
+DECL|function|layer_select_destroy (LayerSelect * layer_select,GdkEvent * event)
 name|layer_select_destroy
 parameter_list|(
 name|LayerSelect
 modifier|*
 name|layer_select
 parameter_list|,
-name|guint32
-name|time
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 block|{
-name|gdk_display_keyboard_ungrab
+name|gdk_seat_ungrab
 argument_list|(
-name|gtk_widget_get_display
+name|gdk_event_get_seat
 argument_list|(
-name|layer_select
-operator|->
-name|window
+name|event
 argument_list|)
-argument_list|,
-name|time
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -1005,10 +1033,6 @@ name|GdkEventKey
 modifier|*
 name|kevent
 decl_stmt|;
-name|GdkEventButton
-modifier|*
-name|bevent
-decl_stmt|;
 switch|switch
 condition|(
 name|event
@@ -1019,21 +1043,11 @@ block|{
 case|case
 name|GDK_BUTTON_PRESS
 case|:
-name|bevent
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
 name|layer_select_destroy
 argument_list|(
 name|layer_select
 argument_list|,
-name|bevent
-operator|->
-name|time
+name|event
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1159,9 +1173,7 @@ name|layer_select_destroy
 argument_list|(
 name|layer_select
 argument_list|,
-name|kevent
-operator|->
-name|time
+name|event
 argument_list|)
 expr_stmt|;
 return|return

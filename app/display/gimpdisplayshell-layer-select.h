@@ -24,11 +24,12 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
 name|gint
 name|move
-parameter_list|,
-name|guint32
-name|time
 parameter_list|)
 function_decl|;
 end_function_decl
