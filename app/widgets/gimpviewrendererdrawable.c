@@ -1308,7 +1308,7 @@ name|priv
 operator|->
 name|render_buf_x
 operator|=
-literal|0
+name|render_buf_x
 expr_stmt|;
 name|renderdrawable
 operator|->
@@ -1316,7 +1316,7 @@ name|priv
 operator|->
 name|render_buf_y
 operator|=
-literal|0
+name|render_buf_y
 expr_stmt|;
 name|renderdrawable
 operator|->
