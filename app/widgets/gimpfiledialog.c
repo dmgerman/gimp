@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794d1d80103
+DECL|enum|__anon294043360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -949,6 +949,13 @@ name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_set_css_name
+argument_list|(
+name|widget_class
+argument_list|,
+literal|"GimpFileDialog"
 argument_list|)
 expr_stmt|;
 block|}
