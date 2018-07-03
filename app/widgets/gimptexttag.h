@@ -62,7 +62,7 @@ DECL|macro|GIMP_TEXT_PROP_NAME_FG_COLOR
 define|#
 directive|define
 name|GIMP_TEXT_PROP_NAME_FG_COLOR
-value|"foreground-gdk"
+value|"foreground-rgba"
 end_define
 
 begin_define
@@ -70,7 +70,7 @@ DECL|macro|GIMP_TEXT_PROP_NAME_BG_COLOR
 define|#
 directive|define
 name|GIMP_TEXT_PROP_NAME_BG_COLOR
-value|"background-gdk"
+value|"background-rgba"
 end_define
 
 begin_function_decl
