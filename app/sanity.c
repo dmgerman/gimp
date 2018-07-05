@@ -1981,6 +1981,8 @@ literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
 block|,
+literal|"gegl:stereographic-projection"
+block|,
 literal|"gegl:mantiuk06"
 block|,
 literal|"gegl:map-absolute"

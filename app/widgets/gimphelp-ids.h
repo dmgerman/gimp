@@ -2846,6 +2846,14 @@ value|"gimp-filter-lens-flare"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_LITTLE_PLANET
+define|#
+directive|define
+name|GIMP_HELP_FILTER_LITTLE_PLANET
+value|"gimp-filter-little-planet"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_MANTIUK_2006
 define|#
 directive|define

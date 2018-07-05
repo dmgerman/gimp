@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29543dab0103
+DECL|enum|__anon27b3e88c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -519,6 +519,8 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
+block|,
+literal|"gegl:stereographic-projection"
 block|,
 literal|"gegl:mantiuk06"
 block|,
