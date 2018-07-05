@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab39dd0103
+DECL|enum|__anon2af736c30103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab39dd0208
+DECL|struct|__anon2af736c30208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aab39dd0308
+DECL|struct|__anon2af736c30308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1222,15 +1222,6 @@ block|{
 name|GimpGuiConfig
 modifier|*
 name|config
-init|=
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|history
-operator|.
-name|gimp
-operator|->
-name|config
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1245,6 +1236,26 @@ name|GimpActionHistoryItem
 modifier|*
 name|item
 decl_stmt|;
+comment|/* we can get here after gimp_action_history_exit() has been called, if    * gimp_exit() was called during the execution of a temporary procedure,    * which was executed in response to a GimpProcedureAction, such as a script-    * fu script (temporary procedures run a nested mainloop, during which    * anything can happen.)  the GimpProcedureAction's "selected" signal, in    * response to which the procedure is run, is emitted before any user-    * provided "activate" handlers are invoked, and so this function will be    * called *after* the procedure returns.    */
+if|if
+condition|(
+operator|!
+name|history
+operator|.
+name|gimp
+condition|)
+return|return;
+name|config
+operator|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|history
+operator|.
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|config
