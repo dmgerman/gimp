@@ -76,7 +76,17 @@ name|NULL
 decl_stmt|;
 name|gsize
 name|bytes_written
+init|=
+literal|0
 decl_stmt|;
+comment|/* we allow for 'data == NULL&& count == 0', which    * g_output_stream_write_all() rejects.    */
+if|if
+condition|(
+name|count
+operator|>
+literal|0
+condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -119,6 +129,7 @@ name|cp
 operator|+=
 name|bytes_written
 expr_stmt|;
+block|}
 return|return
 name|bytes_written
 return|;
