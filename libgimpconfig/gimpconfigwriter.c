@@ -1452,7 +1452,7 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|length
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
@@ -1461,6 +1461,10 @@ argument_list|(
 name|data
 operator|!=
 name|NULL
+operator|||
+name|length
+operator|==
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
