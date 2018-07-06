@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e24f80103
+DECL|enum|__anon2a8f53400103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e24f80203
+DECL|enum|__anon2a8f53400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1473,15 +1473,23 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|str
-operator|!=
-name|NULL
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Empty symmetry parasite \"%s\""
 argument_list|,
-name|NULL
+name|parasite_name
 argument_list|)
 expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|symmetry
 operator|=
 name|gimp_image_symmetry_new
