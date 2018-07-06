@@ -144,6 +144,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_babl_is_valid
+parameter_list|(
+name|GimpImageBaseType
+name|base_type
+parameter_list|,
+name|GimpPrecision
+name|precision
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|Babl
 modifier|*
