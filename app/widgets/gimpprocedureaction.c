@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bdb950103
+DECL|enum|__anon2c65bc610103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bdb950203
+DECL|enum|__anon2c65bc610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -538,6 +538,16 @@ argument_list|(
 name|action
 argument_list|)
 decl_stmt|;
+name|GTK_ACTION_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|activate
+argument_list|(
+name|action
+argument_list|)
+expr_stmt|;
 comment|/* Not all actions have procedures associated with them, for example    * unused "filters-recent-[N]" actions, so check for NULL before we    * invoke the action    */
 if|if
 condition|(

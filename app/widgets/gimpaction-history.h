@@ -124,14 +124,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_action_history_activate_callback
+name|gimp_action_history_action_activated
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

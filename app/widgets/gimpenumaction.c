@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6a3ca0103
+DECL|enum|__anon2ab0b2f80103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6a3ca0203
+DECL|enum|__anon2ab0b2f80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -553,6 +553,16 @@ argument_list|(
 name|action
 argument_list|)
 decl_stmt|;
+name|GTK_ACTION_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|activate
+argument_list|(
+name|action
+argument_list|)
+expr_stmt|;
 name|gimp_enum_action_selected
 argument_list|(
 name|enum_action
