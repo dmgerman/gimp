@@ -1175,7 +1175,7 @@ name|GInputStream
 modifier|*
 name|input
 decl_stmt|;
-name|PatternHeader
+name|GimpPatternHeader
 name|ph
 decl_stmt|;
 name|gchar
@@ -1269,7 +1269,7 @@ name|ph
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|,
 operator|&
@@ -1284,7 +1284,7 @@ name|bytes_read
 operator|!=
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1371,7 +1371,7 @@ name|ph
 operator|.
 name|magic_number
 operator|!=
-name|GPATTERN_MAGIC
+name|GIMP_PATTERN_MAGIC
 operator|||
 name|ph
 operator|.
@@ -1385,7 +1385,7 @@ name|header_size
 operator|<=
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1411,7 +1411,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1430,7 +1430,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|,
 operator|&
@@ -1449,7 +1449,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1480,7 +1480,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 operator|-
 literal|1
@@ -2025,7 +2025,7 @@ name|GOutputStream
 modifier|*
 name|output
 decl_stmt|;
-name|PatternHeader
+name|GimpPatternHeader
 name|ph
 decl_stmt|;
 name|GeglBuffer
@@ -2197,7 +2197,7 @@ name|g_htonl
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 operator|+
 name|strlen
@@ -2253,7 +2253,7 @@ name|magic_number
 operator|=
 name|g_htonl
 argument_list|(
-name|GPATTERN_MAGIC
+name|GIMP_PATTERN_MAGIC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2268,7 +2268,7 @@ name|ph
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|,
 name|NULL

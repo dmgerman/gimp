@@ -17,19 +17,19 @@ name|__GIMP_PATTERN_HEADER_H__
 end_define
 
 begin_define
-DECL|macro|GPATTERN_FILE_VERSION
+DECL|macro|GIMP_PATTERN_FILE_VERSION
 define|#
 directive|define
-name|GPATTERN_FILE_VERSION
+name|GIMP_PATTERN_FILE_VERSION
 value|1
 end_define
 
 begin_define
-DECL|macro|GPATTERN_MAGIC
+DECL|macro|GIMP_PATTERN_MAGIC
 define|#
 directive|define
-name|GPATTERN_MAGIC
-value|(('G'<< 24) + ('P'<< 16) + ('A'<< 8) + ('T'<< 0))
+name|GIMP_PATTERN_MAGIC
+value|(('G'<< 24) + ('P'<< 16) + \                                     ('A'<< 8)  + ('T'<< 0))
 end_define
 
 begin_comment
@@ -37,24 +37,24 @@ comment|/*  All field entries are MSB  */
 end_comment
 
 begin_typedef
-DECL|typedef|PatternHeader
+DECL|typedef|GimpPatternHeader
 typedef|typedef
 name|struct
-name|_PatternHeader
-name|PatternHeader
+name|_GimpPatternHeader
+name|GimpPatternHeader
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_PatternHeader
+DECL|struct|_GimpPatternHeader
 struct|struct
-name|_PatternHeader
+name|_GimpPatternHeader
 block|{
 DECL|member|header_size
 name|guint32
 name|header_size
 decl_stmt|;
-comment|/*  header_size = sizeof(PatternHeader) + pattern name  */
+comment|/*  = sizeof (GimpPatternHeader) + pattern name  */
 DECL|member|version
 name|guint32
 name|version

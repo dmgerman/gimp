@@ -112,7 +112,7 @@ name|format
 init|=
 name|NULL
 decl_stmt|;
-name|PatternHeader
+name|GimpPatternHeader
 name|header
 decl_stmt|;
 name|gsize
@@ -284,7 +284,7 @@ name|header
 operator|.
 name|magic_number
 operator|!=
-name|GPATTERN_MAGIC
+name|GIMP_PATTERN_MAGIC
 operator|||
 name|header
 operator|.

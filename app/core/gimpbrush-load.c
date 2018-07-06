@@ -562,7 +562,7 @@ decl_stmt|;
 name|gsize
 name|bn_size
 decl_stmt|;
-name|BrushHeader
+name|GimpBrushHeader
 name|header
 decl_stmt|;
 name|gchar
@@ -966,7 +966,7 @@ name|header
 operator|.
 name|magic_number
 operator|==
-name|GBRUSH_MAGIC
+name|GIMP_BRUSH_MAGIC
 condition|)
 break|break;
 default|default:
@@ -1000,7 +1000,7 @@ name|header_size
 operator|<
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 condition|)
 block|{
@@ -1341,7 +1341,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b694e85010a
+DECL|union|__anon2b318761010a
 block|{
 DECL|member|u
 name|guint16

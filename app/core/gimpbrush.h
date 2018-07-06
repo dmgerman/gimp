@@ -27,12 +27,12 @@ DECL|macro|GIMP_BRUSH_MAX_SIZE
 define|#
 directive|define
 name|GIMP_BRUSH_MAX_SIZE
-value|10000.0
+value|10000
 end_define
 
 begin_comment
 DECL|macro|GIMP_BRUSH_MAX_SIZE
-comment|/*Max size in either dimension in px*/
+comment|/* Max size in either dimension in px */
 end_comment
 
 begin_define

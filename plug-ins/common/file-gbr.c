@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6419d00108
+DECL|struct|__anon28ef96940108
 block|{
 DECL|member|description
 name|gchar
@@ -1280,7 +1280,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|BrushHeader
+name|GimpBrushHeader
 name|bh
 decl_stmt|;
 name|guchar
@@ -1363,7 +1363,7 @@ name|size
 operator|=
 name|G_STRUCT_OFFSET
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|,
 name|magic_number
 argument_list|)
@@ -1635,7 +1635,7 @@ name|header_size
 operator|<
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 condition|)
 block|{
@@ -1703,7 +1703,7 @@ name|bh
 operator|+
 name|G_STRUCT_OFFSET
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|,
 name|magic_number
 argument_list|)
@@ -1808,7 +1808,7 @@ name|bh
 operator|.
 name|magic_number
 operator|==
-name|GBRUSH_MAGIC
+name|GIMP_BRUSH_MAGIC
 operator|&&
 name|bh
 operator|.
@@ -1816,7 +1816,7 @@ name|header_size
 operator|>
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 condition|)
 break|break;
@@ -1851,7 +1851,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 operator|)
 operator|)
@@ -2048,7 +2048,7 @@ case|case
 literal|1
 case|:
 block|{
-name|PatternHeader
+name|GimpPatternHeader
 name|ph
 decl_stmt|;
 comment|/* For backwards-compatibility, check if a pattern follows.          * The obsolete .gpb format did it this way.          */
@@ -2063,7 +2063,7 @@ name|ph
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|,
 operator|&
@@ -2078,7 +2078,7 @@ name|bytes_read
 operator|==
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 condition|)
 block|{
@@ -2155,7 +2155,7 @@ name|ph
 operator|.
 name|magic_number
 operator|==
-name|GPATTERN_MAGIC
+name|GIMP_PATTERN_MAGIC
 operator|&&
 name|ph
 operator|.
@@ -2169,7 +2169,7 @@ name|header_size
 operator|>
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 operator|&&
 name|ph
@@ -2204,7 +2204,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 argument_list|,
 name|NULL
@@ -2218,7 +2218,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|PatternHeader
+name|GimpPatternHeader
 argument_list|)
 condition|)
 block|{
@@ -2390,7 +2390,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c6419d0020a
+DECL|union|__anon28ef9694020a
 block|{
 DECL|member|u
 name|guint16
@@ -2779,7 +2779,7 @@ name|GOutputStream
 modifier|*
 name|output
 decl_stmt|;
-name|BrushHeader
+name|GimpBrushHeader
 name|bh
 decl_stmt|;
 name|guchar
@@ -2961,7 +2961,7 @@ name|g_htonl
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 operator|+
 name|strlen
@@ -3016,7 +3016,7 @@ name|magic_number
 operator|=
 name|g_htonl
 argument_list|(
-name|GBRUSH_MAGIC
+name|GIMP_BRUSH_MAGIC
 argument_list|)
 expr_stmt|;
 name|bh
@@ -3042,7 +3042,7 @@ name|bh
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|BrushHeader
+name|GimpBrushHeader
 argument_list|)
 argument_list|,
 name|NULL

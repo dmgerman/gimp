@@ -17,19 +17,19 @@ name|__GIMP_BRUSH_HEADER_H__
 end_define
 
 begin_define
-DECL|macro|GBRUSH_FILE_VERSION
+DECL|macro|GIMP_BRUSH_FILE_VERSION
 define|#
 directive|define
-name|GBRUSH_FILE_VERSION
+name|GIMP_BRUSH_FILE_VERSION
 value|2
 end_define
 
 begin_define
-DECL|macro|GBRUSH_MAGIC
+DECL|macro|GIMP_BRUSH_MAGIC
 define|#
 directive|define
-name|GBRUSH_MAGIC
-value|(('G'<< 24) + ('I'<< 16) + ('M'<< 8) + ('P'<< 0))
+name|GIMP_BRUSH_MAGIC
+value|(('G'<< 24) + ('I'<< 16) + \                                   ('M'<< 8)  + ('P'<< 0))
 end_define
 
 begin_comment
@@ -37,24 +37,24 @@ comment|/*  All field entries are MSB  */
 end_comment
 
 begin_typedef
-DECL|typedef|BrushHeader
+DECL|typedef|GimpBrushHeader
 typedef|typedef
 name|struct
-name|_BrushHeader
-name|BrushHeader
+name|_GimpBrushHeader
+name|GimpBrushHeader
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_BrushHeader
+DECL|struct|_GimpBrushHeader
 struct|struct
-name|_BrushHeader
+name|_GimpBrushHeader
 block|{
 DECL|member|header_size
 name|guint32
 name|header_size
 decl_stmt|;
-comment|/*  header_size = sizeof (BrushHeader) + brush name  */
+comment|/*  = sizeof (GimpBrushHeader) + brush name  */
 DECL|member|version
 name|guint32
 name|version
