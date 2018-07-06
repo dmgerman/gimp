@@ -636,14 +636,9 @@ argument_list|(
 name|data
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+operator|||
 name|length
-operator|!=
+operator|==
 literal|0
 argument_list|,
 name|FALSE
