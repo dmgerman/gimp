@@ -1074,6 +1074,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpExtensionList
+typedef|typedef
+name|struct
+name|_GimpExtensionList
+name|GimpExtensionList
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFgBgEditor
 typedef|typedef
 name|struct
