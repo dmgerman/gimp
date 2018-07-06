@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292267910103
+DECL|enum|__anon2b57c5270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1214,15 +1214,21 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|str
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Empty grid parasite"
 argument_list|)
 expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|grid
 operator|=
 name|g_object_new
