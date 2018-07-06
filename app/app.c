@@ -1494,6 +1494,11 @@ name|NULL
 expr_stmt|;
 else|#
 directive|else
+name|gimp_gegl_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gegl_exit
 argument_list|()
 expr_stmt|;
