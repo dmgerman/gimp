@@ -1204,6 +1204,8 @@ decl_stmt|;
 name|GimpMetadata
 modifier|*
 name|metadata
+init|=
+name|NULL
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1221,6 +1223,10 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|meta_string
+condition|)
 name|metadata
 operator|=
 name|gimp_metadata_deserialize
