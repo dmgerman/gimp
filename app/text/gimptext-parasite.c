@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimptext-xlfd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_comment
@@ -264,15 +276,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|str
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|text
 operator|=
 name|g_object_new
@@ -282,6 +285,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|str
+operator|!=
+name|NULL
+condition|)
+block|{
 name|gimp_config_deserialize_string
 argument_list|(
 name|GIMP_CONFIG
@@ -301,6 +311,24 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_ERROR
+argument_list|,
+name|GIMP_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Empty text parasite"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|text
 return|;
@@ -341,7 +369,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899b4740103
+DECL|enum|__anon276209e10103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
