@@ -72,7 +72,17 @@ parameter_list|)
 block|{
 name|gsize
 name|bytes_read
+init|=
+literal|0
 decl_stmt|;
+comment|/* we allow for 'data == NULL&& count == 0', which g_input_stream_read_all()    * rejects.    */
+if|if
+condition|(
+name|count
+operator|>
+literal|0
+condition|)
+block|{
 name|g_input_stream_read_all
 argument_list|(
 name|info
@@ -97,6 +107,7 @@ name|cp
 operator|+=
 name|bytes_read
 expr_stmt|;
+block|}
 return|return
 name|bytes_read
 return|;
