@@ -32,6 +32,32 @@ name|GIMP_PATTERN_MAGIC
 value|(('G'<< 24) + ('P'<< 16) + \                                     ('A'<< 8)  + ('T'<< 0))
 end_define
 
+begin_define
+DECL|macro|GIMP_PATTERN_MAX_SIZE
+define|#
+directive|define
+name|GIMP_PATTERN_MAX_SIZE
+value|10000
+end_define
+
+begin_comment
+DECL|macro|GIMP_PATTERN_MAX_SIZE
+comment|/* Max size in either dimension in px */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PATTERN_MAX_NAME
+define|#
+directive|define
+name|GIMP_PATTERN_MAX_NAME
+value|256
+end_define
+
+begin_comment
+DECL|macro|GIMP_PATTERN_MAX_NAME
+comment|/* Max length of the pattern's name   */
+end_comment
+
 begin_comment
 comment|/*  All field entries are MSB  */
 end_comment

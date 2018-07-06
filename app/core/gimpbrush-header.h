@@ -45,6 +45,19 @@ DECL|macro|GIMP_BRUSH_MAX_SIZE
 comment|/* Max size in either dimension in px */
 end_comment
 
+begin_define
+DECL|macro|GIMP_BRUSH_MAX_NAME
+define|#
+directive|define
+name|GIMP_BRUSH_MAX_NAME
+value|256
+end_define
+
+begin_comment
+DECL|macro|GIMP_BRUSH_MAX_NAME
+comment|/* Max length of the brush's name     */
+end_comment
+
 begin_comment
 comment|/*  All field entries are MSB  */
 end_comment
