@@ -32,6 +32,19 @@ name|GIMP_BRUSH_MAGIC
 value|(('G'<< 24) + ('I'<< 16) + \                                   ('M'<< 8)  + ('P'<< 0))
 end_define
 
+begin_define
+DECL|macro|GIMP_BRUSH_MAX_SIZE
+define|#
+directive|define
+name|GIMP_BRUSH_MAX_SIZE
+value|10000
+end_define
+
+begin_comment
+DECL|macro|GIMP_BRUSH_MAX_SIZE
+comment|/* Max size in either dimension in px */
+end_comment
+
 begin_comment
 comment|/*  All field entries are MSB  */
 end_comment

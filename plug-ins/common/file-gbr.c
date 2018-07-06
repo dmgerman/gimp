@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef96940108
+DECL|struct|__anon279506840108
 block|{
 DECL|member|description
 name|gchar
@@ -1475,7 +1475,7 @@ name|bh
 operator|.
 name|width
 operator|>
-name|GIMP_MAX_IMAGE_SIZE
+name|GIMP_BRUSH_MAX_SIZE
 operator|)
 operator|||
 operator|(
@@ -1491,7 +1491,7 @@ name|bh
 operator|.
 name|height
 operator|>
-name|GIMP_MAX_IMAGE_SIZE
+name|GIMP_BRUSH_MAX_SIZE
 operator|)
 operator|||
 operator|(
@@ -2390,7 +2390,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28ef9694020a
+DECL|union|__anon27950684020a
 block|{
 DECL|member|u
 name|guint16

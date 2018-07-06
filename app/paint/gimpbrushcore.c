@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrush.h"
+file|"core/gimpbrush-header.h"
 end_include
 
 begin_include
@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c85f0230103
+DECL|enum|__anon288d954f0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH

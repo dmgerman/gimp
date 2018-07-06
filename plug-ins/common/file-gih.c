@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c63410108
+DECL|struct|__anon2bcfcdc40108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c63410208
+DECL|struct|__anon2bcfcdc40208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1968,7 +1968,7 @@ name|bh
 operator|.
 name|width
 operator|>
-name|GIMP_MAX_IMAGE_SIZE
+name|GIMP_BRUSH_MAX_SIZE
 operator|)
 operator|||
 operator|(
@@ -1984,7 +1984,7 @@ name|bh
 operator|.
 name|height
 operator|>
-name|GIMP_MAX_IMAGE_SIZE
+name|GIMP_BRUSH_MAX_SIZE
 operator|)
 operator|||
 operator|(

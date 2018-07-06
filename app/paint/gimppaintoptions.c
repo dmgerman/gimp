@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbrush-header.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrushgenerated.h"
 end_include
 
@@ -352,7 +358,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b214b390103
+DECL|enum|__anon28db99530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
