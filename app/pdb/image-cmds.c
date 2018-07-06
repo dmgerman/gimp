@@ -178,6 +178,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimpplugin-cleanup.h"
 end_include
 
@@ -872,13 +878,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_babl_is_valid
+argument_list|(
 name|type
-operator|!=
-name|GIMP_INDEXED
-operator|||
+argument_list|,
 name|precision
-operator|==
-name|GIMP_PRECISION_U8_GAMMA
+argument_list|)
 condition|)
 block|{
 name|image

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -424,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c2eabd70103
+DECL|enum|__anon29bfc5090103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1512,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eabd70208
+DECL|struct|__anon29bfc5090208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1742,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eabd70308
+DECL|struct|__anon29bfc5090308
 block|{
 DECL|member|used_count
 name|glong
@@ -2819,6 +2825,21 @@ name|image
 argument_list|)
 operator|!=
 name|GIMP_INDEXED
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_babl_is_valid
+argument_list|(
+name|GIMP_INDEXED
+argument_list|,
+name|gimp_image_get_precision
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
