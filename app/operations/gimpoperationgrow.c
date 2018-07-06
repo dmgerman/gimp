@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3d11e0103
+DECL|enum|__anon2ad64d810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -545,15 +545,29 @@ modifier|*
 name|operation
 parameter_list|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|space
+init|=
+name|gegl_operation_get_source_space
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
+decl_stmt|;
 name|gegl_operation_set_format
 argument_list|(
 name|operation
 argument_list|,
 literal|"input"
 argument_list|,
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"Y float"
+argument_list|,
+name|space
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -563,9 +577,11 @@ name|operation
 argument_list|,
 literal|"output"
 argument_list|,
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"Y float"
+argument_list|,
+name|space
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -858,9 +874,11 @@ name|Babl
 modifier|*
 name|input_format
 init|=
-name|babl_format
+name|gegl_operation_get_format
 argument_list|(
-literal|"Y float"
+name|operation
+argument_list|,
+literal|"input"
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -868,9 +886,11 @@ name|Babl
 modifier|*
 name|output_format
 init|=
-name|babl_format
+name|gegl_operation_get_format
 argument_list|(
-literal|"Y float"
+name|operation
+argument_list|,
+literal|"output"
 argument_list|)
 decl_stmt|;
 name|gint32
