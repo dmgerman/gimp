@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc33c9c0103
+DECL|enum|__anon2b77991a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc33c9c0203
+DECL|enum|__anon2b77991a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14117,7 +14117,16 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|valid
+init|=
+name|FALSE
 decl_stmt|;
+if|if
+condition|(
+name|length
+operator|>
+literal|0
+condition|)
+block|{
 if|if
 condition|(
 name|data
@@ -14153,6 +14162,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
