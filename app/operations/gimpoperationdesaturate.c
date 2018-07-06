@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bc68490103
+DECL|enum|__anon2bd379030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -457,6 +457,13 @@ specifier|const
 name|Babl
 modifier|*
 name|format
+init|=
+name|gegl_operation_get_source_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -469,9 +476,11 @@ condition|)
 block|{
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|format
 argument_list|)
 expr_stmt|;
 block|}
@@ -479,9 +488,11 @@ else|else
 block|{
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+name|format
 argument_list|)
 expr_stmt|;
 block|}
