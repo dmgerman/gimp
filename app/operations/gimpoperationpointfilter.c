@@ -357,6 +357,18 @@ decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
+name|space
+init|=
+name|gegl_operation_get_source_space
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
 name|format
 decl_stmt|;
 if|if
@@ -367,17 +379,21 @@ name|linear
 condition|)
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|space
 argument_list|)
 expr_stmt|;
 else|else
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+name|space
 argument_list|)
 expr_stmt|;
 name|gegl_operation_set_format
