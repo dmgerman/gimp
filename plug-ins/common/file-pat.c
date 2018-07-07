@@ -1181,6 +1181,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|name
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
