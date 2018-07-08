@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460103
+DECL|enum|__anon28d500680103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460203
+DECL|enum|__anon28d500680203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460303
+DECL|enum|__anon28d500680303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460403
+DECL|enum|__anon28d500680403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -201,14 +201,14 @@ comment|/*< desc="_A", help="Alpha">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
 name|GIMP_COLOR_SELECTOR_LCH_LIGHTNESS
 block|,
-comment|/*< desc="_L", help="LCH Lightness">*/
+comment|/*< desc="_L", help="LCh Lightness">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_CHROMA
 name|GIMP_COLOR_SELECTOR_LCH_CHROMA
 block|,
-comment|/*< desc="_C", help="LCH Chroma">*/
+comment|/*< desc="_C", help="LCh Chroma">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_HUE
 name|GIMP_COLOR_SELECTOR_LCH_HUE
-comment|/*< desc="_H", help="LCH Hue">*/
+comment|/*< desc="_H", help="LCh Hue">*/
 DECL|typedef|GimpColorSelectorChannel
 block|}
 name|GimpColorSelectorChannel
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpColorSelectorModel:  * @GIMP_COLOR_SELECTOR_MODEL_RGB: RGB color model  * @GIMP_COLOR_SELECTOR_MODEL_LCH: CIELCh color model  * @GIMP_COLOR_SELECTOR_MODEL_HSV: HSV color model  *  * An enum to specify the types of color spaces edited in  * #GimpColorSelector widgets.  *  * Since: 2.10  **/
+comment|/**  * GimpColorSelectorModel:  * @GIMP_COLOR_SELECTOR_MODEL_RGB: RGB color model  * @GIMP_COLOR_SELECTOR_MODEL_LCH: CIE LCh color model  * @GIMP_COLOR_SELECTOR_MODEL_HSV: HSV color model  *  * An enum to specify the types of color spaces edited in  * #GimpColorSelector widgets.  *  * Since: 2.10  **/
 end_comment
 
 begin_define
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460503
+DECL|enum|__anon28d500680503
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_RGB
 name|GIMP_COLOR_SELECTOR_MODEL_RGB
@@ -249,7 +249,7 @@ comment|/*< desc="RGB", help="RGB color model">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_LCH
 name|GIMP_COLOR_SELECTOR_MODEL_LCH
 block|,
-comment|/*< desc="LCH", help="CIELCh color model">*/
+comment|/*< desc="LCH", help="CIE LCh color model">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_HSV
 name|GIMP_COLOR_SELECTOR_MODEL_HSV
 comment|/*< desc="HSV", help="HSV color model">*/
@@ -284,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460603
+DECL|enum|__anon28d500680603
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -324,7 +324,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460703
+DECL|enum|__anon28d500680703
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460803
+DECL|enum|__anon28d500680803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -435,7 +435,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8466460903
+DECL|enum|__anon28d500680903
 block|{
 DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
 name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY

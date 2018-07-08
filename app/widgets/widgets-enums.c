@@ -570,7 +570,7 @@ name|NC_
 argument_list|(
 literal|"color-frame-mode"
 argument_list|,
-literal|"CIE LCH"
+literal|"CIE LCh"
 argument_list|)
 block|,
 name|NULL

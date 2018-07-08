@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e74050103
+DECL|enum|__anon2b0a32910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e74050203
+DECL|enum|__anon2b0a32910203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED_U8
 name|GIMP_COLOR_SELECTOR_RED_U8
@@ -2204,7 +2204,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"LCH"
+literal|"LCh"
 argument_list|)
 argument_list|)
 expr_stmt|;

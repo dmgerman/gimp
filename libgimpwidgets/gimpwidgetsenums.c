@@ -726,7 +726,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"LCH Lightness"
+literal|"LCh Lightness"
 argument_list|)
 block|}
 block|,
@@ -742,7 +742,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"LCH Chroma"
+literal|"LCh Chroma"
 argument_list|)
 block|}
 block|,
@@ -758,7 +758,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"LCH Hue"
+literal|"LCh Hue"
 argument_list|)
 block|}
 block|,
@@ -907,7 +907,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"CIELCh color model"
+literal|"CIE LCh color model"
 argument_list|)
 block|}
 block|,

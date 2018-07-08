@@ -8668,7 +8668,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Hue (HSV)"
+literal|"HSV Hue"
 argument_list|)
 block|,
 name|NULL
@@ -8681,7 +8681,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Saturation (HSV)"
+literal|"HSV Saturation"
 argument_list|)
 block|,
 name|NULL
@@ -8694,7 +8694,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Value (HSV)"
+literal|"HSV Value"
 argument_list|)
 block|,
 name|NULL
@@ -8720,7 +8720,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Lightness (LCH)"
+literal|"LCh Lightness"
 argument_list|)
 block|,
 name|NULL
@@ -8733,7 +8733,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Chroma (LCH)"
+literal|"LCh Chroma"
 argument_list|)
 block|,
 name|NULL
@@ -8746,7 +8746,7 @@ name|NC_
 argument_list|(
 literal|"select-criterion"
 argument_list|,
-literal|"Hue (LCH)"
+literal|"LCh Hue"
 argument_list|)
 block|,
 name|NULL

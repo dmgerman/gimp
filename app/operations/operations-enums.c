@@ -1229,13 +1229,13 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hue (HSV) (legacy)"
+literal|"HSV Hue (legacy)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
-comment|/* Translators: this is an abbreviated version of "Hue (HSV) (legacy)".        Keep it short. */
+comment|/* Translators: this is an abbreviated version of "HSV Hue (legacy)".        Keep it short. */
 block|{
 name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 block|,
@@ -1243,7 +1243,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hue (HSV) (l)"
+literal|"HSV Hue (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1256,13 +1256,13 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Saturation (HSV) (legacy)"
+literal|"HSV Saturation (legacy)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
-comment|/* Translators: this is an abbreviated version of "Saturation (HSV) (legacy)".        Keep it short. */
+comment|/* Translators: this is an abbreviated version of "HSV Saturation (legacy)".        Keep it short. */
 block|{
 name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 block|,
@@ -1270,7 +1270,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Saturation (HSV) (l)"
+literal|"HSV Saturation (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1283,13 +1283,13 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSL) (legacy)"
+literal|"HSL Color (legacy)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
-comment|/* Translators: this is an abbreviated version of "Color (HSL) (legacy)".        Keep it short. */
+comment|/* Translators: this is an abbreviated version of "HSL Color (legacy)".        Keep it short. */
 block|{
 name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
@@ -1297,7 +1297,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSL) (l)"
+literal|"HSL Color (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1310,13 +1310,13 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Value (HSV) (legacy)"
+literal|"HSV Value (legacy)"
 argument_list|)
 block|,
 name|NULL
 block|}
 block|,
-comment|/* Translators: this is an abbreviated version of "Value (HSV) (legacy)".        Keep it short. */
+comment|/* Translators: this is an abbreviated version of "HSV Value (legacy)".        Keep it short. */
 block|{
 name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 block|,
@@ -1324,7 +1324,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Value (HSV) (l)"
+literal|"HSV Value (l)"
 argument_list|)
 block|,
 name|NULL
@@ -1566,7 +1566,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hue (LCH)"
+literal|"LCh Hue"
 argument_list|)
 block|,
 name|NULL
@@ -1579,7 +1579,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Chroma (LCH)"
+literal|"LCh Chroma"
 argument_list|)
 block|,
 name|NULL
@@ -1592,7 +1592,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (LCH)"
+literal|"LCh Color"
 argument_list|)
 block|,
 name|NULL
@@ -1605,7 +1605,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Lightness (LCH)"
+literal|"LCh Lightness"
 argument_list|)
 block|,
 name|NULL
@@ -1735,7 +1735,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Hue (HSV)"
+literal|"HSV Hue"
 argument_list|)
 block|,
 name|NULL
@@ -1748,7 +1748,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Saturation (HSV)"
+literal|"HSV Saturation"
 argument_list|)
 block|,
 name|NULL
@@ -1761,7 +1761,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Color (HSL)"
+literal|"HSL Color"
 argument_list|)
 block|,
 name|NULL
@@ -1774,7 +1774,7 @@ name|NC_
 argument_list|(
 literal|"layer-mode"
 argument_list|,
-literal|"Value (HSV)"
+literal|"HSV Value"
 argument_list|)
 block|,
 name|NULL

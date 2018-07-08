@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2924fca00103
+DECL|enum|__anon2b20c7830103
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2924fca00203
+DECL|enum|__anon2b20c7830203
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -130,13 +130,13 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2924fca00303
+DECL|enum|__anon2b20c7830303
 block|{
 comment|/*  Modes that exist since ancient times  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
 block|,
-comment|/*< desc="Normal (legacy)",             abbrev="Normal (l)">*/
+comment|/*< desc="Normal (legacy)",         abbrev="Normal (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_DISSOLVE
 name|GIMP_LAYER_MODE_DISSOLVE
 block|,
@@ -144,88 +144,88 @@ comment|/*< desc="Dissolve">*/
 DECL|enumerator|GIMP_LAYER_MODE_BEHIND_LEGACY
 name|GIMP_LAYER_MODE_BEHIND_LEGACY
 block|,
-comment|/*< desc="Behind (legacy)",             abbrev="Behind (l)">*/
+comment|/*< desc="Behind (legacy)",         abbrev="Behind (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 name|GIMP_LAYER_MODE_MULTIPLY_LEGACY
 block|,
-comment|/*< desc="Multiply (legacy)",           abbrev="Multiply (l)">*/
+comment|/*< desc="Multiply (legacy)",       abbrev="Multiply (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_SCREEN_LEGACY
 name|GIMP_LAYER_MODE_SCREEN_LEGACY
 block|,
-comment|/*< desc="Screen (legacy)",             abbrev="Screen (l)">*/
+comment|/*< desc="Screen (legacy)",         abbrev="Screen (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_OVERLAY_LEGACY
 name|GIMP_LAYER_MODE_OVERLAY_LEGACY
 block|,
-comment|/*< desc="Old broken Overlay",          abbrev="Old Overlay">*/
+comment|/*< desc="Old broken Overlay",      abbrev="Old Overlay">*/
 DECL|enumerator|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 name|GIMP_LAYER_MODE_DIFFERENCE_LEGACY
 block|,
-comment|/*< desc="Difference (legacy)",         abbrev="Difference (l)">*/
+comment|/*< desc="Difference (legacy)",     abbrev="Difference (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_ADDITION_LEGACY
 name|GIMP_LAYER_MODE_ADDITION_LEGACY
 block|,
-comment|/*< desc="Addition (legacy)",           abbrev="Addition (l)">*/
+comment|/*< desc="Addition (legacy)",       abbrev="Addition (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 name|GIMP_LAYER_MODE_SUBTRACT_LEGACY
 block|,
-comment|/*< desc="Subtract (legacy)",           abbrev="Subtract (l)">*/
+comment|/*< desc="Subtract (legacy)",       abbrev="Subtract (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 name|GIMP_LAYER_MODE_DARKEN_ONLY_LEGACY
 block|,
-comment|/*< desc="Darken only (legacy)",        abbrev="Darken only (l)">*/
+comment|/*< desc="Darken only (legacy)",    abbrev="Darken only (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 name|GIMP_LAYER_MODE_LIGHTEN_ONLY_LEGACY
 block|,
-comment|/*< desc="Lighten only (legacy)",       abbrev="Lighten only (l)">*/
+comment|/*< desc="Lighten only (legacy)",   abbrev="Lighten only (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 name|GIMP_LAYER_MODE_HSV_HUE_LEGACY
 block|,
-comment|/*< desc="Hue (HSV) (legacy)",          abbrev="Hue (HSV) (l)">*/
+comment|/*< desc="HSV Hue (legacy)",        abbrev="HSV Hue (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 name|GIMP_LAYER_MODE_HSV_SATURATION_LEGACY
 block|,
-comment|/*< desc="Saturation (HSV) (legacy)",   abbrev="Saturation (HSV) (l)">*/
+comment|/*< desc="HSV Saturation (legacy)", abbrev="HSV Saturation (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 name|GIMP_LAYER_MODE_HSL_COLOR_LEGACY
 block|,
-comment|/*< desc="Color (HSL) (legacy)",        abbrev="Color (HSL) (l)">*/
+comment|/*< desc="HSL Color (legacy)",      abbrev="HSL Color (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 name|GIMP_LAYER_MODE_HSV_VALUE_LEGACY
 block|,
-comment|/*< desc="Value (HSV) (legacy)",        abbrev="Value (HSV) (l)">*/
+comment|/*< desc="HSV Value (legacy)",      abbrev="HSV Value (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_DIVIDE_LEGACY
 name|GIMP_LAYER_MODE_DIVIDE_LEGACY
 block|,
-comment|/*< desc="Divide (legacy)",             abbrev="Divide (l)">*/
+comment|/*< desc="Divide (legacy)",         abbrev="Divide (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_DODGE_LEGACY
 name|GIMP_LAYER_MODE_DODGE_LEGACY
 block|,
-comment|/*< desc="Dodge (legacy)",              abbrev="Dodge (l)">*/
+comment|/*< desc="Dodge (legacy)",          abbrev="Dodge (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_BURN_LEGACY
 name|GIMP_LAYER_MODE_BURN_LEGACY
 block|,
-comment|/*< desc="Burn (legacy)",               abbrev="Burn (l)">*/
+comment|/*< desc="Burn (legacy)",           abbrev="Burn (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 name|GIMP_LAYER_MODE_HARDLIGHT_LEGACY
 block|,
-comment|/*< desc="Hard light (legacy)",         abbrev="Hard light (l)">*/
+comment|/*< desc="Hard light (legacy)",     abbrev="Hard light (l)">*/
 comment|/*  Since 2.8 (XCF version 2)  */
 DECL|enumerator|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 name|GIMP_LAYER_MODE_SOFTLIGHT_LEGACY
 block|,
-comment|/*< desc="Soft light (legacy)",         abbrev="Soft light (l)">*/
+comment|/*< desc="Soft light (legacy)",     abbrev="Soft light (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 name|GIMP_LAYER_MODE_GRAIN_EXTRACT_LEGACY
 block|,
-comment|/*< desc="Grain extract (legacy)",      abbrev="Grain extract (l)">*/
+comment|/*< desc="Grain extract (legacy)",  abbrev="Grain extract (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 name|GIMP_LAYER_MODE_GRAIN_MERGE_LEGACY
 block|,
-comment|/*< desc="Grain merge (legacy)",        abbrev="Grain merge (l)">*/
+comment|/*< desc="Grain merge (legacy)",    abbrev="Grain merge (l)">*/
 DECL|enumerator|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 name|GIMP_LAYER_MODE_COLOR_ERASE_LEGACY
 block|,
-comment|/*< desc="Color erase (legacy)",        abbrev="Color erase (l)">*/
+comment|/*< desc="Color erase (legacy)",    abbrev="Color erase (l)">*/
 comment|/*  Since 2.10 (XCF version 9) */
 DECL|enumerator|GIMP_LAYER_MODE_OVERLAY
 name|GIMP_LAYER_MODE_OVERLAY
@@ -234,19 +234,19 @@ comment|/*< desc="Overlay">*/
 DECL|enumerator|GIMP_LAYER_MODE_LCH_HUE
 name|GIMP_LAYER_MODE_LCH_HUE
 block|,
-comment|/*< desc="Hue (LCH)">*/
+comment|/*< desc="LCh Hue">*/
 DECL|enumerator|GIMP_LAYER_MODE_LCH_CHROMA
 name|GIMP_LAYER_MODE_LCH_CHROMA
 block|,
-comment|/*< desc="Chroma (LCH)">*/
+comment|/*< desc="LCh Chroma">*/
 DECL|enumerator|GIMP_LAYER_MODE_LCH_COLOR
 name|GIMP_LAYER_MODE_LCH_COLOR
 block|,
-comment|/*< desc="Color (LCH)">*/
+comment|/*< desc="LCh Color">*/
 DECL|enumerator|GIMP_LAYER_MODE_LCH_LIGHTNESS
 name|GIMP_LAYER_MODE_LCH_LIGHTNESS
 block|,
-comment|/*< desc="Lightness (LCH)">*/
+comment|/*< desc="LCh Lightness">*/
 comment|/*  Since 2.10 (XCF version 10)  */
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL
 name|GIMP_LAYER_MODE_NORMAL
@@ -287,19 +287,19 @@ comment|/*< desc="Lighten only">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_HUE
 name|GIMP_LAYER_MODE_HSV_HUE
 block|,
-comment|/*< desc="Hue (HSV)">*/
+comment|/*< desc="HSV Hue">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_SATURATION
 name|GIMP_LAYER_MODE_HSV_SATURATION
 block|,
-comment|/*< desc="Saturation (HSV)">*/
+comment|/*< desc="HSV Saturation">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSL_COLOR
 name|GIMP_LAYER_MODE_HSL_COLOR
 block|,
-comment|/*< desc="Color (HSL)">*/
+comment|/*< desc="HSL Color">*/
 DECL|enumerator|GIMP_LAYER_MODE_HSV_VALUE
 name|GIMP_LAYER_MODE_HSV_VALUE
 block|,
-comment|/*< desc="Value (HSV)">*/
+comment|/*< desc="HSV Value">*/
 DECL|enumerator|GIMP_LAYER_MODE_DIVIDE
 name|GIMP_LAYER_MODE_DIVIDE
 block|,
@@ -428,7 +428,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2924fca00403
+DECL|enum|__anon2b20c7830403
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_GROUP_DEFAULT
 name|GIMP_LAYER_MODE_GROUP_DEFAULT
@@ -466,7 +466,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2924fca00503
+DECL|enum|__anon2b20c7830503
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_CONTEXT_LAYER
 name|GIMP_LAYER_MODE_CONTEXT_LAYER
@@ -522,7 +522,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2924fca00603
+DECL|enum|__anon2b20c7830603
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
 name|GIMP_LAYER_COMPOSITE_REGION_INTERSECTION
@@ -561,7 +561,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2924fca00703
+DECL|enum|__anon2b20c7830703
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_FLAG_LEGACY
 name|GIMP_LAYER_MODE_FLAG_LEGACY
