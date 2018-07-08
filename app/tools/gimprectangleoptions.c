@@ -92,12 +92,12 @@ DECL|macro|SB_WIDTH
 define|#
 directive|define
 name|SB_WIDTH
-value|7
+value|5
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53dc470103
+DECL|enum|__anon296178460103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2626,7 +2626,7 @@ name|gtk_box_new
 argument_list|(
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
