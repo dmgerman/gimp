@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680103
+DECL|enum|__anon2b87e92a0103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680203
+DECL|enum|__anon2b87e92a0203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680303
+DECL|enum|__anon2b87e92a0303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680403
+DECL|enum|__anon2b87e92a0403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -208,7 +208,7 @@ block|,
 comment|/*< desc="_C", help="LCh Chroma">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_LCH_HUE
 name|GIMP_COLOR_SELECTOR_LCH_HUE
-comment|/*< desc="_H", help="LCh Hue">*/
+comment|/*< desc="_h", help="LCh Hue">*/
 DECL|typedef|GimpColorSelectorChannel
 block|}
 name|GimpColorSelectorChannel
@@ -240,7 +240,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680503
+DECL|enum|__anon2b87e92a0503
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_MODEL_RGB
 name|GIMP_COLOR_SELECTOR_MODEL_RGB
@@ -284,7 +284,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680603
+DECL|enum|__anon2b87e92a0603
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -324,7 +324,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680703
+DECL|enum|__anon2b87e92a0703
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680803
+DECL|enum|__anon2b87e92a0803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -435,7 +435,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d500680903
+DECL|enum|__anon2b87e92a0903
 block|{
 DECL|enumerator|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY
 name|GIMP_INT_COMBO_BOX_LAYOUT_ICON_ONLY

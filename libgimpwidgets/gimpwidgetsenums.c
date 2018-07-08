@@ -753,7 +753,7 @@ name|NC_
 argument_list|(
 literal|"color-selector-channel"
 argument_list|,
-literal|"_H"
+literal|"_h"
 argument_list|)
 block|,
 name|N_
