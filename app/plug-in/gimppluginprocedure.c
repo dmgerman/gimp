@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b44deca0103
+DECL|enum|__anon2c33d67b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2800,13 +2800,6 @@ goto|;
 block|}
 if|if
 condition|(
-name|g_str_has_prefix
-argument_list|(
-name|menu_path
-argument_list|,
-literal|"<Toolbox>"
-argument_list|)
-operator|||
 name|g_str_has_prefix
 argument_list|(
 name|menu_path
