@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* types.h: general types.  *  * Copyright (C) 1992 Free Software Foundation, Inc.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* types.h: general types.  *  * Copyright (C) 1992 Free Software Foundation, Inc.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -21,7 +21,7 @@ comment|/* Booleans.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2948b1950103
+DECL|enum|__anon2b425adb0103
 DECL|typedef|boolean
 typedef|typedef
 enum|enum
@@ -223,7 +223,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948b1950208
+DECL|struct|__anon2b425adb0208
 block|{
 DECL|member|real
 name|real
@@ -240,7 +240,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2948b1950303
+DECL|enum|__anon2b425adb0303
 DECL|enumerator|first_complex_part
 DECL|enumerator|second_complex_part
 DECL|typedef|complex_part_type
@@ -256,7 +256,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2948b1950403
+DECL|enum|__anon2b425adb0403
 DECL|enumerator|polar_rep
 DECL|enumerator|rectangular_rep
 DECL|typedef|complex_rep_type
@@ -278,7 +278,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948b1950508
+DECL|struct|__anon2b425adb0508
 block|{
 DECL|member|height
 DECL|member|width
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948b1950608
+DECL|struct|__anon2b425adb0608
 block|{
 DECL|member|x
 DECL|member|y
@@ -340,7 +340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948b1950708
+DECL|struct|__anon2b425adb0708
 block|{
 DECL|member|x
 DECL|member|y
@@ -370,7 +370,7 @@ end_else
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948b1950808
+DECL|struct|__anon2b425adb0808
 block|{
 DECL|member|align_threshold
 name|double

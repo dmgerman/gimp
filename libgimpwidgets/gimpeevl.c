@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpeevl.c  * Copyright (C) 2008 Fredrik Alstromer<roe@excu.se>  * Copyright (C) 2008 Martin Nordholts<martinn@svn.gnome.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpeevl.c  * Copyright (C) 2008 Fredrik Alstromer<roe@excu.se>  * Copyright (C) 2008 Martin Nordholts<martinn@svn.gnome.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd668f0103
+DECL|enum|__anon29f557400103
 block|{
 DECL|enumerator|GIMP_EEVL_TOKEN_NUM
 name|GIMP_EEVL_TOKEN_NUM
@@ -88,21 +88,21 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd668f0208
+DECL|struct|__anon29f557400208
 block|{
 DECL|member|type
 name|GimpEevlTokenType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27dd668f030a
+DECL|union|__anon29f55740030a
 block|{
 DECL|member|fl
 name|gdouble
 name|fl
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27dd668f0408
+DECL|struct|__anon29f557400408
 block|{
 DECL|member|c
 specifier|const
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd668f0508
+DECL|struct|__anon29f557400508
 block|{
 DECL|member|string
 specifier|const

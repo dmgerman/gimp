@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Sparkle --- image filter plug-in for GIMP  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  *  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  Also bugfixed by Seth Burgess (9/17/03)  * to take rowstrides into account when selections are present (bug #50911).  * Attempted reformatting.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * You can contact Seth at sjburges@gimp.org  */
+comment|/* Sparkle --- image filter plug-in for GIMP  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  *  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  Also bugfixed by Seth Burgess (9/17/03)  * to take rowstrides into account when selections are present (bug #50911).  * Attempted reformatting.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * You can contact Seth at sjburges@gimp.org  */
 end_comment
 
 begin_comment
@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293625c10108
+DECL|struct|__anon2c70f26a0108
 block|{
 DECL|member|lum_threshold
 name|gdouble

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpVectors Import  * Copyright (C) 2003-2004  Sven Neumann<sven@gimp.org>  *  * Some code here is based on code from librsvg that was originally  * written by Raph Levien<raph@artofcode.com> for Gill.  *  * This SVG path importer implements a subset of SVG that is  * sufficient to parse path elements and basic shapes and to apply  * transformations as described by the SVG specification:  * http://www.w3.org/TR/SVG/.  It must handle the SVG files exported  * by GIMP but it is also supposed to be able to extract paths and  * shapes from foreign SVG documents.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpVectors Import  * Copyright (C) 2003-2004  Sven Neumann<sven@gimp.org>  *  * Some code here is based on code from librsvg that was originally  * written by Raph Levien<raph@artofcode.com> for Gill.  *  * This SVG path importer implements a subset of SVG that is  * sufficient to parse path elements and basic shapes and to apply  * transformations as described by the SVG specification:  * http://www.w3.org/TR/SVG/.  It must handle the SVG files exported  * by GIMP but it is also supposed to be able to extract paths and  * shapes from foreign SVG documents.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0315b0108
+DECL|struct|__anon29d099500108
 block|{
 DECL|member|stack
 name|GQueue
@@ -228,7 +228,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0315b0208
+DECL|struct|__anon29d099500208
 block|{
 DECL|member|id
 name|gchar
@@ -6247,7 +6247,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0315b0308
+DECL|struct|__anon29d099500308
 block|{
 DECL|member|strokes
 name|GList

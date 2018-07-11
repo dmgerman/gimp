@@ -4,7 +4,7 @@ comment|/*  *   X11 Mouse Cursor (XMC) plug-in for GIMP  *  *   Copyright 2008-2
 end_comment
 
 begin_comment
-comment|/*  *   This program is free software: you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation, either version 3 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/*  *   This program is free software: you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation, either version 3 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2942f6850108
+DECL|struct|__anon278086390108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2942f6850208
+DECL|struct|__anon278086390208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -9133,7 +9133,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2942f6850308
+DECL|struct|__anon278086390308
 block|{
 DECL|member|size
 name|guint32

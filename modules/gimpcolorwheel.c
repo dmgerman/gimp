@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* HSV color selector for GTK+  *  * Copyright (C) 1999 The Free Software Foundation  *  * Authors: Simon Budig<Simon.Budig@unix-ag.org> (original code)  *          Federico Mena-Quintero<federico@gimp.org> (cleanup for GTK+)  *          Jonathan Blandford<jrb@redhat.com> (cleanup for GTK+)  *          Michael Natterer<mitch@gimp.org> (ported back to GIMP)  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* HSV color selector for GTK+  *  * Copyright (C) 1999 The Free Software Foundation  *  * Authors: Simon Budig<Simon.Budig@unix-ag.org> (original code)  *          Federico Mena-Quintero<federico@gimp.org> (cleanup for GTK+)  *          Jonathan Blandford<jrb@redhat.com> (cleanup for GTK+)  *          Michael Natterer<mitch@gimp.org> (ported back to GIMP)  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c76dd7e0103
+DECL|enum|__anon2ae7c9350103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76dd7e0208
+DECL|struct|__anon2ae7c9350208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c76dd7e0303
+DECL|enum|__anon2ae7c9350303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

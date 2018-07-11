@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Page Curl 0.9 --- image filter plug-in for GIMP  * Copyright (C) 1996 Federico Mena Quintero  * Ported to Gimp 1.0 1998 by Simon Budig<Simon.Budig@unix-ag.org>  *  * You can contact me at quartic@polloux.fciencias.unam.mx  * You can contact the original GIMP authors at gimp@xcf.berkeley.edu  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
+comment|/* Page Curl 0.9 --- image filter plug-in for GIMP  * Copyright (C) 1996 Federico Mena Quintero  * Ported to Gimp 1.0 1998 by Simon Budig<Simon.Budig@unix-ag.org>  *  * You can contact me at quartic@polloux.fciencias.unam.mx  * You can contact the original GIMP authors at gimp@xcf.berkeley.edu  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_comment
@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7158d60103
+DECL|enum|__anon2b64c2960103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7158d60203
+DECL|enum|__anon2b64c2960203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7158d60303
+DECL|enum|__anon2b64c2960303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7158d60408
+DECL|struct|__anon2b64c2960408
 block|{
 DECL|member|colors
 name|CurlColors

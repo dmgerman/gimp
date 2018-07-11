@@ -320,7 +320,7 @@ comment|/* You should have received a copy of the GNU General Public License    
 end_comment
 
 begin_comment
-comment|/* along with this program.  If not, see<http://www.gnu.org/licenses/>.      */
+comment|/* along with this program.  If not, see<https://www.gnu.org/licenses/>.      */
 end_comment
 
 begin_comment

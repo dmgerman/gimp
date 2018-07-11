@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMPBASE - The GIMP Basic Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmetadata.h  * Copyright (C) 2013 Hartmut Kuhse<hartmutkuhse@src.gnome.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMPBASE - The GIMP Basic Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmetadata.h  * Copyright (C) 2013 Hartmut Kuhse<hartmutkuhse@src.gnome.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -90,7 +90,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295184d50103
+DECL|enum|__anon2752adf50103
 block|{
 DECL|enumerator|GIMP_METADATA_LOAD_COMMENT
 name|GIMP_METADATA_LOAD_COMMENT
@@ -137,7 +137,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295184d50203
+DECL|enum|__anon2752adf50203
 block|{
 DECL|enumerator|GIMP_METADATA_SAVE_EXIF
 name|GIMP_METADATA_SAVE_EXIF
@@ -184,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295184d50303
+DECL|enum|__anon2752adf50303
 block|{
 DECL|enumerator|GIMP_METADATA_COLORSPACE_UNSPECIFIED
 name|GIMP_METADATA_COLORSPACE_UNSPECIFIED

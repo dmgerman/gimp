@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  *  * file-pdf-save.c - PDF file exporter, based on the cairo PDF surface  *  * Copyright (C) 2010 Barak Itkin<lightningismyname@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  *  * file-pdf-save.c - PDF file exporter, based on the cairo PDF surface  *  * Copyright (C) 2010 Barak Itkin<lightningismyname@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -166,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3e17840103
+DECL|enum|__anon277916ae0103
 block|{
 DECL|enumerator|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
 name|GIMP_PLUGIN_PDF_SAVE_ERROR_FAILED
@@ -188,7 +188,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3e17840203
+DECL|enum|__anon277916ae0203
 block|{
 DECL|enumerator|SA_RUN_MODE
 name|SA_RUN_MODE
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3e17840303
+DECL|enum|__anon277916ae0303
 block|{
 DECL|enumerator|SMA_RUN_MODE
 name|SMA_RUN_MODE
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e17840408
+DECL|struct|__anon277916ae0408
 block|{
 DECL|member|vectorize
 name|gboolean
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e17840508
+DECL|struct|__anon277916ae0508
 block|{
 DECL|member|images
 name|gint32
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e17840608
+DECL|struct|__anon277916ae0608
 block|{
 DECL|member|optimize
 name|PdfOptimize
@@ -347,7 +347,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e17840703
+DECL|enum|__anon277916ae0703
 block|{
 DECL|enumerator|THUMB
 name|THUMB
@@ -367,7 +367,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e17840808
+DECL|struct|__anon277916ae0808
 block|{
 DECL|member|thumb
 name|GdkPixbuf

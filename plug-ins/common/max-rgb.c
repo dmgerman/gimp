@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* max_rgb.c -- This is a plug-in for GIMP  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<2000-02-08 16:26:24 yasuhiro>  * Version: 0.35  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  *  * Added a preview mode.  After adding preview mode realised just exactly  * how useless this plugin is :)  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* max_rgb.c -- This is a plug-in for GIMP  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<2000-02-08 16:26:24 yasuhiro>  * Version: 0.35  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  *  * Added a preview mode.  After adding preview mode realised just exactly  * how useless this plugin is :)  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a27686b0103
+DECL|enum|__anon2c6661bb0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a27686b0208
+DECL|struct|__anon2c6661bb0208
 block|{
 DECL|member|max_p
 name|gint
@@ -524,7 +524,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a27686b0308
+DECL|struct|__anon2c6661bb0308
 block|{
 DECL|member|init_value
 name|gint

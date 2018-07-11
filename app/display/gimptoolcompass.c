@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimptoolcompass.c  * Copyright (C) 2017 Michael Natterer<mitch@gimp.org>  *  * Measure tool  * Copyright (C) 1999-2003 Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimptoolcompass.c  * Copyright (C) 2017 Michael Natterer<mitch@gimp.org>  *  * Measure tool  * Copyright (C) 1999-2003 Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2768ca0103
+DECL|enum|__anon2a0a46780103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -153,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2768ca0203
+DECL|enum|__anon2a0a46780203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,7 +184,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2768ca0303
+DECL|enum|__anon2a0a46780303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES

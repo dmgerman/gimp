@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1999 Spencer Kimball and Peter Mattis  *  * gimpdashboard.c  * Copyright (C) 2017 Ell  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995-1999 Spencer Kimball and Peter Mattis  *  * gimpdashboard.c  * Copyright (C) 2017 Ell  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b83aa80103
+DECL|enum|__anon29b394f20103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -448,7 +448,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b83aa80203
+DECL|enum|__anon29b394f20203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -479,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b83aa80303
+DECL|enum|__anon29b394f20303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -743,7 +743,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28b83aa8040a
+DECL|union|__anon29b394f2040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -759,7 +759,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon28b83aa80508
+DECL|struct|__anon29b394f20508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -774,7 +774,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28b83aa80608
+DECL|struct|__anon29b394f20608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8065,7 +8065,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b83aa80708
+DECL|struct|__anon29b394f20708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8335,7 +8335,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b83aa80808
+DECL|struct|__anon29b394f20808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8541,7 +8541,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b83aa80908
+DECL|struct|__anon29b394f20908
 block|{
 DECL|member|prev_time
 name|guint64
@@ -8817,7 +8817,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b83aa80a08
+DECL|struct|__anon29b394f20a08
 block|{
 DECL|member|active
 name|gboolean
@@ -8977,7 +8977,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b83aa80b08
+DECL|struct|__anon29b394f20b08
 block|{
 DECL|member|prev_time
 name|gint64
