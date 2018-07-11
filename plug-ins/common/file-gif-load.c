@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c74dc060108
+DECL|struct|__anon299d15e00108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c74dc060208
+DECL|struct|__anon299d15e00208
 block|{
 DECL|member|transparent
 name|gint
@@ -4769,7 +4769,8 @@ comment|/* I don't see how one would easily construct a GIF in which          th
 name|g_message
 argument_list|(
 literal|"Ouch!  Can't handle non-alpha RGB frames.\n"
-literal|"Please file a bug report in GIMP's bugzilla."
+literal|"Please file a bug report at "
+literal|"https://gitlab.gnome.org/GNOME/gimp/issues"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
