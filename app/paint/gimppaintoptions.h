@@ -125,6 +125,7 @@ DECL|member|gradient_repeat
 name|GimpRepeatMode
 name|gradient_repeat
 decl_stmt|;
+comment|/* only used by gradient tool */
 block|}
 struct|;
 end_struct
