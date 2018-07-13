@@ -3158,9 +3158,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_filter_tool_gyroscope_changed (GimpToolWidget * widget,Controller * controller)
 specifier|static
 name|void
+DECL|function|gimp_filter_tool_gyroscope_changed (GimpToolWidget * widget,Controller * controller)
 name|gimp_filter_tool_gyroscope_changed
 parameter_list|(
 name|GimpToolWidget
