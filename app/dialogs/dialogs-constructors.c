@@ -294,6 +294,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"extensions-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-open-dialog.h"
 end_include
 
