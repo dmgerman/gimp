@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2881983a0103
+DECL|enum|__anon2900419f0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2881983a0203
+DECL|enum|__anon2900419f0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2946,14 +2946,14 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|layer_rows
+name|layer_cols
 operator|=
 name|gegl_buffer_get_width
 argument_list|(
 name|layer_buffer
 argument_list|)
 expr_stmt|;
-name|layer_cols
+name|layer_rows
 operator|=
 name|gegl_buffer_get_height
 argument_list|(
