@@ -24,9 +24,9 @@ DECL|macro|GIMP_PROTOCOL_VERSION
 define|#
 directive|define
 name|GIMP_PROTOCOL_VERSION
-value|0x0101
+value|0x0102
 name|enum
-DECL|enum|__anon2af9461e0103
+DECL|enum|__anon2c9c8d5d0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -321,7 +321,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2af9461e020a
+DECL|union|__anon2c9c8d5d020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -535,10 +535,10 @@ name|gchar
 modifier|*
 name|date
 decl_stmt|;
-DECL|member|menu_path
+DECL|member|menu_label
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 decl_stmt|;
 DECL|member|image_types
 name|gchar
