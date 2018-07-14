@@ -234,9 +234,9 @@ name|gboolean
 name|constrain_angle
 decl_stmt|;
 comment|/* Whether or not to suppress handles (so that new segments can be    * created immediately after an existing segment vertex.    */
-DECL|member|supress_handles
+DECL|member|suppress_handles
 name|gboolean
-name|supress_handles
+name|suppress_handles
 decl_stmt|;
 comment|/* Last _oper_update or _motion coords */
 DECL|member|hover
@@ -1475,7 +1475,7 @@ operator|(
 operator|!
 name|priv
 operator|->
-name|supress_handles
+name|suppress_handles
 operator|&&
 name|dist
 operator|<
@@ -3563,7 +3563,7 @@ operator|&&
 operator|!
 name|private
 operator|->
-name|supress_handles
+name|suppress_handles
 operator|&&
 comment|/* If the first point is hovered while button1 is held down,            * only draw the first handle, the other handles are not            * relevant (see comment a few lines up)            */
 operator|(
@@ -4874,7 +4874,7 @@ operator|)
 expr_stmt|;
 name|priv
 operator|->
-name|supress_handles
+name|suppress_handles
 operator|=
 operator|(
 operator|(
@@ -5004,7 +5004,7 @@ condition|(
 operator|!
 name|priv
 operator|->
-name|supress_handles
+name|suppress_handles
 condition|)
 block|{
 name|gdouble
