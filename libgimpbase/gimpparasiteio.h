@@ -168,7 +168,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Free the internal values. It does not free the struct itsef. */
+comment|/* Free the internal values. It does not free the struct itself. */
 end_comment
 
 begin_function_decl

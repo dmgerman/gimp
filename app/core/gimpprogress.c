@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8defad0103
+DECL|enum|__anon28af0e4b0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -96,7 +96,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  private functionss  */
+comment|/*  private functions  */
 end_comment
 
 begin_function

@@ -959,7 +959,7 @@ name|the_gui_gimp
 operator|=
 name|gimp
 expr_stmt|;
-comment|/* Normally this should have been taken care of during command line    * parsing as a post-parse hook of gtk_get_option_group(), using the    * system locales.    * But user config may have overriden the language, therefore we must    * check the widget directions again.    */
+comment|/* Normally this should have been taken care of during command line    * parsing as a post-parse hook of gtk_get_option_group(), using the    * system locales.    * But user config may have overridden the language, therefore we must    * check the widget directions again.    */
 name|gtk_widget_set_default_direction
 argument_list|(
 name|gtk_get_locale_direction
@@ -3386,7 +3386,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0954660108
+DECL|struct|__anon2a8de3070108
 block|{
 DECL|member|path
 specifier|const

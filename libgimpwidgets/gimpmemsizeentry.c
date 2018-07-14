@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8d45b0103
+DECL|enum|__anon2a2b102f0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -83,7 +83,7 @@ DECL|member|shift
 name|guint
 name|shift
 decl_stmt|;
-comment|/* adjustement is owned by spinbutton. Do not unref() it. */
+comment|/* adjustment is owned by spinbutton. Do not unref() it. */
 DECL|member|adjustment
 name|GtkAdjustment
 modifier|*

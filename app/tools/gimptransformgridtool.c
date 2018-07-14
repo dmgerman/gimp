@@ -3399,7 +3399,7 @@ name|tg_tool
 operator|->
 name|widget
 decl_stmt|;
-comment|/* supress the call to GimpTransformGridTool::update_widget() when    * recalculating the matrix    */
+comment|/* suppress the call to GimpTransformGridTool::update_widget() when    * recalculating the matrix    */
 name|tg_tool
 operator|->
 name|widget

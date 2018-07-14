@@ -940,7 +940,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-comment|/*  don't change the active tool, it is always fully connected        *  to the user_context anway because we set its        *  defined/undefined context props in tool_changed()        */
+comment|/*  don't change the active tool, it is always fully connected        *  to the user_context anyway because we set its        *  defined/undefined context props in tool_changed()        */
 if|if
 condition|(
 name|tool_info

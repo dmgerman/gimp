@@ -470,7 +470,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b09c5c50108
+DECL|struct|__anon275972110108
 typedef|typedef
 struct|struct
 block|{
@@ -517,7 +517,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b09c5c50208
+DECL|struct|__anon275972110208
 typedef|typedef
 struct|struct
 block|{
@@ -1806,7 +1806,7 @@ name|outRect
 argument_list|)
 condition|)
 block|{
-comment|/* If the window is maximized then we need and can fix the rect variable (we need to do this if the rect not comming from dwm api) */
+comment|/* If the window is maximized then we need and can fix the rect variable         * (we need to do this if the rect isn't coming from dwm api)         */
 name|ZeroMemory
 argument_list|(
 operator|&
@@ -1841,7 +1841,7 @@ name|rectScreens
 init|=
 name|NULL
 decl_stmt|;
-comment|/* if this is not the first time we call this function for some            * reason then we reset the rectScreens count            */
+comment|/* If this is not the first time we call this function for some            * reason then we reset the rectScreens count            */
 if|if
 condition|(
 name|rectScreensCount

@@ -1021,7 +1021,7 @@ return|;
 case|case
 name|GDK_DEVICE_TYPE_SLAVE
 case|:
-comment|/*  this is the tricky part: we do want to distingiugh slave            *  devices, but only if we actually enabled them ourselves            *  explicitely (like the pens of a tablet); however we            *  usually don't enable the different incarnations of the            *  mouse itself (like touchpad, trackpoint, usb mouse            *  etc.), so for these return their respective master so            *  its settings are used            */
+comment|/*  this is the tricky part: we do want to distingiugh slave            *  devices, but only if we actually enabled them ourselves            *  explicitly (like the pens of a tablet); however we            *  usually don't enable the different incarnations of the            *  mouse itself (like touchpad, trackpoint, usb mouse            *  etc.), so for these return their respective master so            *  its settings are used            */
 if|if
 condition|(
 name|gdk_device_get_mode
