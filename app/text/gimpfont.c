@@ -137,7 +137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893fad10103
+DECL|enum|__anon28b27dfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1506,11 +1506,11 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/* This is a table of scripts and corresponding short sample strings    * to be used instead of the Latin sample string Aa. The script    * codes are as in ISO15924 (see    * http://www.unicode.org/iso15924/iso15924-codes.html), but in    * lower case. The Unicode subrange bit numbers, as used in TrueType    * so-called OS/2 tables, are from    * http://www.microsoft.com/typography/otspec/os2.htm#ur .    *    * The table is mostly ordered by Unicode order. But as there are    * fonts that support several of these scripts, the ordering is    * be modified so that the script which such a font is more likely    * to be actually designed for comes first and matches.    *    * These sample strings are mostly just guesswork as for their    * usefulness. Usually they contain what I assume is the first    * letter in the corresponding alphabet, or two first letters if the    * first one happens to look too "trivial" to be recognizable by    * itself.    *    * This table is used to determine the primary script a font has    * been designed for.    *    * Very useful link: http://www.travelphrases.info/fonts.html    */
+comment|/* This is a table of scripts and corresponding short sample strings    * to be used instead of the Latin sample string Aa. The script    * codes are as in ISO15924 (see    * https://www.unicode.org/iso15924/iso15924-codes.html), but in    * lower case. The Unicode subrange bit numbers, as used in TrueType    * so-called OS/2 tables, are from    * https://www.microsoft.com/typography/otspec/os2.htm#ur .    *    * The table is mostly ordered by Unicode order. But as there are    * fonts that support several of these scripts, the ordering is    * be modified so that the script which such a font is more likely    * to be actually designed for comes first and matches.    *    * These sample strings are mostly just guesswork as for their    * usefulness. Usually they contain what I assume is the first    * letter in the corresponding alphabet, or two first letters if the    * first one happens to look too "trivial" to be recognizable by    * itself.    *    * This table is used to determine the primary script a font has    * been designed for.    *    * Very useful link: https://www.wazu.jp/index.html    */
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2893fad10208
+DECL|struct|__anon28b27dfd0208
 block|{
 DECL|member|script
 specifier|const

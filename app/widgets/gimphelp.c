@@ -2404,7 +2404,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"http://www.gimp.org/help"
+literal|"https://www.gimp.org/help"
 argument_list|)
 expr_stmt|;
 operator|(

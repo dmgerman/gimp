@@ -4896,7 +4896,7 @@ literal|"gimp-text-layer-get-markup"
 argument_list|,
 literal|"Get the markup from a text layer as string."
 argument_list|,
-literal|"This procedure returns the markup of the styles from a text layer. The markup will be in the form of Pango's markup - See http://www.pango.org/ for more information about Pango and its markup. Note: Setting the markup of a text layer using Pango's markup is not supported for now."
+literal|"This procedure returns the markup of the styles from a text layer. The markup will be in the form of Pango's markup - See https://www.pango.org/ for more information about Pango and its markup. Note: Setting the markup of a text layer using Pango's markup is not supported for now."
 argument_list|,
 literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,

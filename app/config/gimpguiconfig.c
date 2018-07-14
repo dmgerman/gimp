@@ -89,12 +89,12 @@ define|#
 directive|define
 name|DEFAULT_USER_MANUAL_ONLINE_URI
 define|\
-value|"http://docs.gimp.org/" GIMP_APP_VERSION_STRING
+value|"https://docs.gimp.org/" GIMP_APP_VERSION_STRING
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2747feaf0103
+DECL|enum|__anon2b4514260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -56,7 +56,7 @@ directive|endif
 end_endif
 
 begin_expr_stmt
-DECL|union|__anon297ce6b1010a
+DECL|union|__anon277dc996010a
 DECL|member|data
 DECL|member|alignment
 DECL|member|ptr
@@ -244177,7 +244177,7 @@ argument_list|)
 end_elif
 
 begin_comment
-comment|/* This is not tested, but i believe it should work, based on:  * http://opensource.apple.com/source/OpenSSL098/OpenSSL098-35/src/fips/fips_premain.c  */
+comment|/* This is not tested, but i believe it should work, based on:  * https://opensource.apple.com/source/OpenSSL098/OpenSSL098-35/src/fips/fips_premain.c  */
 end_comment
 
 begin_define

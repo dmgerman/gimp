@@ -100,7 +100,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c05d7d90103
+DECL|enum|__anon2c8318930103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -125,7 +125,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c05d7d90203
+DECL|enum|__anon2c8318930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c05d7d90308
+DECL|struct|__anon2c8318930308
 block|{
 DECL|member|signame
 name|gchar
@@ -1286,7 +1286,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c05d7d90408
+DECL|struct|__anon2c8318930408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2442,7 +2442,7 @@ block|{
 name|g_warning
 argument_list|(
 literal|"%s: GimpContainer::remove() implementation did not "
-literal|"chain up. Please report this at http://www.gimp.org/bugs/"
+literal|"chain up. Please report this at https://www.gimp.org/bugs/"
 argument_list|,
 name|G_STRFUNC
 argument_list|)

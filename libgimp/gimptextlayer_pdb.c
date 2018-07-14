@@ -294,7 +294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * http://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: The markup which represents the style of the specified text  * layer.  *  * Since: 2.8  **/
+comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * https://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: The markup which represents the style of the specified text  * layer.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

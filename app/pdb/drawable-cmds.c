@@ -7236,7 +7236,7 @@ literal|"gimp-drawable-foreground-extract"
 argument_list|,
 literal|"Extract the foreground of a drawable using a given trimap."
 argument_list|,
-literal|"Image Segmentation by Uniform Color Clustering, see http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf"
+literal|"Image Segmentation by Uniform Color Clustering, see https://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf"
 argument_list|,
 literal|"Gerald Friedland<fland@inf.fu-berlin.de>, Kristian Jantz<jantz@inf.fu-berlin.de>, Sven Neumann<sven@gimp.org>"
 argument_list|,

@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8121aa0108
+DECL|struct|__anon292235360108
 block|{
 DECL|member|url
 name|char
@@ -117,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8121aa0208
+DECL|struct|__anon292235360208
 block|{
 DECL|member|url
 name|char
@@ -412,7 +412,7 @@ name|WebpageSaveVals
 name|save
 init|=
 block|{
-literal|"http://www.gimp.org/"
+literal|"https://www.gimp.org/"
 block|,
 literal|1024
 block|,

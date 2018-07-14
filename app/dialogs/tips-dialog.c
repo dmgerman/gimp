@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277d38100103
+DECL|enum|__anon293f74120103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -872,7 +872,7 @@ name|more_button
 operator|=
 name|gtk_link_button_new_with_label
 argument_list|(
-literal|"http://docs.gimp.org/"
+literal|"https://docs.gimp.org/"
 argument_list|,
 comment|/*  a link to the related section in the user manual  */
 name|_
@@ -1093,7 +1093,7 @@ argument_list|(
 name|more_button
 argument_list|)
 argument_list|,
-literal|"http://docs.gimp.org/"
+literal|"https://docs.gimp.org/"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

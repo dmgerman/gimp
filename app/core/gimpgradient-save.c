@@ -624,7 +624,7 @@ operator|=
 name|g_string_new
 argument_list|(
 literal|"/* color_map file created by GIMP */\n"
-literal|"/* http://www.gimp.org/           */\n"
+literal|"/* https://www.gimp.org/          */\n"
 literal|"color_map {\n"
 argument_list|)
 expr_stmt|;

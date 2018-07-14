@@ -51,7 +51,7 @@ DECL|macro|GIMP_HELP_DEFAULT_DOMAIN
 define|#
 directive|define
 name|GIMP_HELP_DEFAULT_DOMAIN
-value|"http://www.gimp.org/help"
+value|"https://www.gimp.org/help"
 end_define
 
 begin_define

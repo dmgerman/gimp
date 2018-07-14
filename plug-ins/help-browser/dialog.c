@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a23910108
+DECL|struct|__anon2c745a920108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a23910203
+DECL|enum|__anon2c745a920203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3592,7 +3592,7 @@ parameter_list|)
 block|{
 name|browser_dialog_load
 argument_list|(
-literal|"http://docs.gimp.org/"
+literal|"https://docs.gimp.org/"
 argument_list|)
 expr_stmt|;
 block|}

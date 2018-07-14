@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Implementation of the Flood algorithm.  * See http://wiki.gimp.org/wiki/Algorithms:Flood for details.  */
+comment|/* Implementation of the Flood algorithm.  * See https://wiki.gimp.org/wiki/Algorithms:Flood for details.  */
 end_comment
 
 begin_include
@@ -642,7 +642,7 @@ literal|"GIMP Flood operation"
 argument_list|,
 literal|"reference"
 argument_list|,
-literal|"http://wiki.gimp.org/wiki/Algorithms:Flood"
+literal|"https://wiki.gimp.org/wiki/Algorithms:Flood"
 argument_list|,
 literal|"reference-image"
 argument_list|,

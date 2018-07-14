@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30a5ff0103
+DECL|enum|__anon29b2612c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30a5ff0208
+DECL|struct|__anon29b2612c0208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1845,7 +1845,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  make sure we can activate accels even if the menubar is invisible        *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)        */
+comment|/*  make sure we can activate accels even if the menubar is invisible        *  (see https://bugzilla.gnome.org/show_bug.cgi?id=137151)        */
 name|g_signal_connect
 argument_list|(
 name|private
@@ -3391,7 +3391,7 @@ name|geometry_mask
 operator|=
 name|GDK_HINT_MIN_SIZE
 expr_stmt|;
-comment|/*  Only set user pos on the empty display because it gets a pos    *  set by gimp. All other displays should be placed by the window    *  manager. See http://bugzilla.gnome.org/show_bug.cgi?id=559580    */
+comment|/*  Only set user pos on the empty display because it gets a pos    *  set by gimp. All other displays should be placed by the window    *  manager. See https://bugzilla.gnome.org/show_bug.cgi?id=559580    */
 if|if
 condition|(
 operator|!

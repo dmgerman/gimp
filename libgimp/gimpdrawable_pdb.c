@@ -2316,7 +2316,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * https://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
