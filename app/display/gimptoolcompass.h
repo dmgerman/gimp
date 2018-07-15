@@ -186,6 +186,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|GimpCompassOrientation
+name|orinetation
+parameter_list|,
 name|gint
 name|n_points
 parameter_list|,

@@ -1906,6 +1906,8 @@ name|gimp_tool_compass_new
 argument_list|(
 name|shell
 argument_list|,
+name|GIMP_COMPASS_ORIENTATION_AUTO
+argument_list|,
 name|measure
 operator|->
 name|n_points
