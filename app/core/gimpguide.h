@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_GUIDE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpobject.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_GUIDE_POSITION_UNDEFINED
 define|#
@@ -208,6 +202,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_guide_removed
+parameter_list|(
+name|GimpGuide
+modifier|*
+name|guide
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpOrientationType
 name|gimp_guide_get_orientation
 parameter_list|(
@@ -253,17 +258,6 @@ name|guide
 parameter_list|,
 name|gint
 name|position
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_guide_removed
-parameter_list|(
-name|GimpGuide
-modifier|*
-name|guide
 parameter_list|)
 function_decl|;
 end_function_decl

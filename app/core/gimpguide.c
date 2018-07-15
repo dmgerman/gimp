@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d5492b0103
+DECL|enum|__anon288ae1470103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d5492b0203
+DECL|enum|__anon288ae1470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -739,6 +739,39 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_guide_removed (GimpGuide * guide)
+name|gimp_guide_removed
+parameter_list|(
+name|GimpGuide
+modifier|*
+name|guide
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GUIDE
+argument_list|(
+name|guide
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|guide
+argument_list|,
+name|gimp_guide_signals
+index|[
+name|REMOVED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GimpOrientationType
 DECL|function|gimp_guide_get_orientation (GimpGuide * guide)
 name|gimp_guide_get_orientation
@@ -877,39 +910,6 @@ name|guide
 argument_list|)
 argument_list|,
 literal|"position"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_guide_removed (GimpGuide * guide)
-name|gimp_guide_removed
-parameter_list|(
-name|GimpGuide
-modifier|*
-name|guide
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_GUIDE
-argument_list|(
-name|guide
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|guide
-argument_list|,
-name|gimp_guide_signals
-index|[
-name|REMOVED
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

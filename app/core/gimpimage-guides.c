@@ -265,10 +265,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|guide
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -343,10 +340,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|guide
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_guide_added
@@ -466,10 +460,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|guide
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
