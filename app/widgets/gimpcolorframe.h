@@ -138,9 +138,9 @@ DECL|member|y
 name|gint
 name|y
 decl_stmt|;
-DECL|member|frame_mode
-name|GimpColorFrameMode
-name|frame_mode
+DECL|member|pick_mode
+name|GimpColorPickMode
+name|pick_mode
 decl_stmt|;
 DECL|member|ellipsize
 name|PangoEllipsizeMode
@@ -162,10 +162,10 @@ DECL|member|has_coords
 name|gboolean
 name|has_coords
 decl_stmt|;
-DECL|member|menu
+DECL|member|combo
 name|GtkWidget
 modifier|*
-name|menu
+name|combo
 decl_stmt|;
 DECL|member|color_area
 name|GtkWidget
@@ -268,7 +268,7 @@ name|GimpColorFrame
 modifier|*
 name|frame
 parameter_list|,
-name|GimpColorFrameMode
+name|GimpColorPickMode
 name|mode
 parameter_list|)
 function_decl|;

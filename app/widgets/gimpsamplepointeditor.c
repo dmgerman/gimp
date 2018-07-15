@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc24e500103
+DECL|enum|__anon28a8a6bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1885,7 +1885,7 @@ name|GIMP_TYPE_COLOR_FRAME
 argument_list|,
 literal|"mode"
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_PIXEL
+name|GIMP_COLOR_PICK_MODE_PIXEL
 argument_list|,
 literal|"has-number"
 argument_list|,

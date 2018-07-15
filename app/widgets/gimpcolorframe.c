@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe30540103
+DECL|enum|__anon29a4895c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -209,7 +209,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_frame_menu_callback
+name|gimp_color_frame_combo_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -356,9 +356,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_PIXEL
+name|GIMP_COLOR_PICK_MODE_PIXEL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -532,11 +532,11 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|->
-name|menu
+name|combo
 operator|=
 name|gimp_enum_combo_box_new
 argument_list|(
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -548,27 +548,27 @@ argument_list|)
 argument_list|,
 name|frame
 operator|->
-name|menu
+name|combo
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
 operator|->
-name|menu
+name|combo
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|frame
 operator|->
-name|menu
+name|combo
 argument_list|,
 literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_color_frame_menu_callback
+name|gimp_color_frame_combo_callback
 argument_list|)
 argument_list|,
 name|frame
@@ -1225,7 +1225,7 @@ name|value
 argument_list|,
 name|frame
 operator|->
-name|frame_mode
+name|pick_mode
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1530,7 +1530,7 @@ name|GtkAllocation
 name|allocation
 decl_stmt|;
 name|GtkAllocation
-name|menu_allocation
+name|combo_allocation
 decl_stmt|;
 name|GtkAllocation
 name|color_area_allocation
@@ -1575,10 +1575,10 @@ name|gtk_widget_get_allocation
 argument_list|(
 name|frame
 operator|->
-name|menu
+name|combo
 argument_list|,
 operator|&
-name|menu_allocation
+name|combo_allocation
 argument_list|)
 expr_stmt|;
 name|gtk_widget_get_allocation
@@ -1702,7 +1702,7 @@ name|allocation
 operator|.
 name|height
 operator|-
-name|menu_allocation
+name|combo_allocation
 operator|.
 name|height
 operator|-
@@ -1761,7 +1761,7 @@ name|height
 operator|/
 literal|2.0
 operator|+
-name|menu_allocation
+name|combo_allocation
 operator|.
 name|height
 operator|/
@@ -1870,19 +1870,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_frame_set_mode:  * @frame: The #GimpColorFrame.  * @mode:  The new @mode.  *  * Sets the #GimpColorFrame's color @mode. Calling this function does  * the same as selecting the @mode from the frame's #GtkOptionMenu.  **/
+comment|/**  * gimp_color_frame_set_mode:  * @frame: The #GimpColorFrame.  * @mode:  The new @mode.  *  * Sets the #GimpColorFrame's color pick @mode. Calling this function  * does the same as selecting the @mode from the frame's #GtkComboBox.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_frame_set_mode (GimpColorFrame * frame,GimpColorFrameMode mode)
+DECL|function|gimp_color_frame_set_mode (GimpColorFrame * frame,GimpColorPickMode mode)
 name|gimp_color_frame_set_mode
 parameter_list|(
 name|GimpColorFrame
 modifier|*
 name|frame
 parameter_list|,
-name|GimpColorFrameMode
+name|GimpColorPickMode
 name|mode
 parameter_list|)
 block|{
@@ -1900,7 +1900,7 @@ name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|frame
 operator|->
-name|menu
+name|combo
 argument_list|)
 argument_list|,
 name|mode
@@ -2604,8 +2604,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_frame_menu_callback (GtkWidget * widget,GimpColorFrame * frame)
-name|gimp_color_frame_menu_callback
+DECL|function|gimp_color_frame_combo_callback (GtkWidget * widget,GimpColorFrame * frame)
+name|gimp_color_frame_combo_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2635,7 +2635,7 @@ condition|)
 block|{
 name|frame
 operator|->
-name|frame_mode
+name|pick_mode
 operator|=
 name|value
 expr_stmt|;
@@ -2831,11 +2831,11 @@ switch|switch
 condition|(
 name|frame
 operator|->
-name|frame_mode
+name|pick_mode
 condition|)
 block|{
 case|case
-name|GIMP_COLOR_FRAME_MODE_PIXEL
+name|GIMP_COLOR_PICK_MODE_PIXEL
 case|:
 block|{
 name|GimpImageBaseType
@@ -3226,10 +3226,10 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
+name|GIMP_COLOR_PICK_MODE_RGB_PERCENT
 case|:
 case|case
-name|GIMP_COLOR_FRAME_MODE_RGB_U8
+name|GIMP_COLOR_PICK_MODE_RGB_U8
 case|:
 comment|/* TRANSLATORS: R for Red (RGB) */
 name|names
@@ -3350,9 +3350,9 @@ if|if
 condition|(
 name|frame
 operator|->
-name|frame_mode
+name|pick_mode
 operator|==
-name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
+name|GIMP_COLOR_PICK_MODE_RGB_PERCENT
 condition|)
 block|{
 name|values
@@ -3498,7 +3498,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_COLOR_FRAME_MODE_HSV
+name|GIMP_COLOR_PICK_MODE_HSV
 case|:
 comment|/* TRANSLATORS: H for Hue (HSV color space) */
 name|names
@@ -3664,7 +3664,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_COLOR_FRAME_MODE_LCH
+name|GIMP_COLOR_PICK_MODE_LCH
 case|:
 comment|/* TRANSLATORS: L for Lightness (LCH color space) */
 name|names
@@ -3855,7 +3855,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_COLOR_FRAME_MODE_LAB
+name|GIMP_COLOR_PICK_MODE_LAB
 case|:
 comment|/* TRANSLATORS: L* for Lightness (Lab color space) */
 name|names
@@ -4046,7 +4046,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_COLOR_FRAME_MODE_CMYK
+name|GIMP_COLOR_PICK_MODE_CMYK
 case|:
 comment|/* TRANSLATORS: C for Cyan (CMYK) */
 name|names

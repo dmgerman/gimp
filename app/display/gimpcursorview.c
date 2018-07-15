@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290723ed0103
+DECL|enum|__anon28c8a72a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1731,7 +1731,7 @@ operator|->
 name|color_frame_1
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_PIXEL
+name|GIMP_COLOR_PICK_MODE_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_color_frame_set_ellipsize
@@ -1801,7 +1801,7 @@ operator|->
 name|color_frame_2
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
+name|GIMP_COLOR_PICK_MODE_RGB_PERCENT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2292,7 +2292,7 @@ name|enum_class
 operator|=
 name|g_type_class_peek
 argument_list|(
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|)
 expr_stmt|;
 name|enum_value
@@ -2374,7 +2374,7 @@ if|if
 condition|(
 name|gimp_enum_get_value
 argument_list|(
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
 name|GIMP_COLOR_FRAME
 argument_list|(
@@ -2385,7 +2385,7 @@ operator|->
 name|color_frame_1
 argument_list|)
 operator|->
-name|frame_mode
+name|pick_mode
 argument_list|,
 name|NULL
 argument_list|,
@@ -2421,7 +2421,7 @@ if|if
 condition|(
 name|gimp_enum_get_value
 argument_list|(
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
 name|GIMP_COLOR_FRAME
 argument_list|(
@@ -2432,7 +2432,7 @@ operator|->
 name|color_frame_2
 argument_list|)
 operator|->
-name|frame_mode
+name|pick_mode
 argument_list|,
 name|NULL
 argument_list|,

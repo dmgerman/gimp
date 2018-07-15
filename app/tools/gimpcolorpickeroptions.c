@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9741770103
+DECL|enum|__anon2c8fe9c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +79,7 @@ name|PROP_FRAME1_MODE
 block|,
 DECL|enumerator|PROP_FRAME2_MODE
 name|PROP_FRAME2_MODE
-block|, }
+block|}
 enum|;
 end_enum
 
@@ -259,9 +259,9 @@ literal|"Frame 1 Mode"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_PIXEL
+name|GIMP_COLOR_PICK_MODE_PIXEL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -278,9 +278,9 @@ literal|"Frame 2 Mode"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_COLOR_FRAME_MODE
+name|GIMP_TYPE_COLOR_PICK_MODE
 argument_list|,
-name|GIMP_COLOR_FRAME_MODE_RGB_PERCENT
+name|GIMP_COLOR_PICK_MODE_RGB_PERCENT
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
