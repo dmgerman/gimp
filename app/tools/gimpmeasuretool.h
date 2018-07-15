@@ -133,6 +133,10 @@ name|GimpToolWidget
 modifier|*
 name|grab_widget
 decl_stmt|;
+DECL|member|supress_guides
+name|gboolean
+name|supress_guides
+decl_stmt|;
 DECL|member|n_points
 name|gint
 name|n_points

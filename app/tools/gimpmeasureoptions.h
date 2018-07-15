@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpTransformOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|orientation
+name|GimpCompassOrientation
+name|orientation
+decl_stmt|;
 DECL|member|use_info_window
 name|gboolean
 name|use_info_window
