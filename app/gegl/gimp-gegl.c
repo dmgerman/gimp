@@ -165,6 +165,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_parallel_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|config
@@ -205,11 +210,6 @@ name|gimp_gegl_notify_use_opencl
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_parallel_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_babl_init
