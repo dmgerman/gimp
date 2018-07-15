@@ -234,9 +234,12 @@ argument_list|)
 expr_stmt|;
 name|sample_point
 operator|=
-name|gimp_sample_point_get_ID
+name|gimp_aux_item_get_ID
+argument_list|(
+name|GIMP_AUX_ITEM
 argument_list|(
 name|sp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -517,9 +520,12 @@ name|sp
 condition|)
 name|next_sample_point
 operator|=
-name|gimp_sample_point_get_ID
+name|gimp_aux_item_get_ID
+argument_list|(
+name|GIMP_AUX_ITEM
 argument_list|(
 name|sp
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

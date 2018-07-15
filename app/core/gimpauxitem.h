@@ -6,122 +6,108 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_SAMPLE_POINT_H__
+name|__GIMP_AUX_ITEM_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_SAMPLE_POINT_H__
+DECL|macro|__GIMP_AUX_ITEM_H__
 define|#
 directive|define
-name|__GIMP_SAMPLE_POINT_H__
-end_define
-
-begin_include
-include|#
-directive|include
-file|"gimpauxitem.h"
-end_include
-
-begin_define
-DECL|macro|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
-define|#
-directive|define
-name|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
-value|G_MININT
+name|__GIMP_AUX_ITEM_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_SAMPLE_POINT
+DECL|macro|GIMP_TYPE_AUX_ITEM
 define|#
 directive|define
-name|GIMP_TYPE_SAMPLE_POINT
-value|(gimp_sample_point_get_type ())
+name|GIMP_TYPE_AUX_ITEM
+value|(gimp_aux_item_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_SAMPLE_POINT (obj)
+DECL|macro|GIMP_AUX_ITEM (obj)
 define|#
 directive|define
-name|GIMP_SAMPLE_POINT
+name|GIMP_AUX_ITEM
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SAMPLE_POINT, GimpSamplePoint))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_AUX_ITEM, GimpAuxItem))
 end_define
 
 begin_define
-DECL|macro|GIMP_SAMPLE_POINT_CLASS (klass)
+DECL|macro|GIMP_AUX_ITEM_CLASS (klass)
 define|#
 directive|define
-name|GIMP_SAMPLE_POINT_CLASS
+name|GIMP_AUX_ITEM_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SAMPLE_POINT, GimpSamplePointClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_AUX_ITEM, GimpAuxItemClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SAMPLE_POINT (obj)
+DECL|macro|GIMP_IS_AUX_ITEM (obj)
 define|#
 directive|define
-name|GIMP_IS_SAMPLE_POINT
+name|GIMP_IS_AUX_ITEM
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SAMPLE_POINT))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_AUX_ITEM))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SAMPLE_POINT_CLASS (klass)
+DECL|macro|GIMP_IS_AUX_ITEM_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_SAMPLE_POINT_CLASS
+name|GIMP_IS_AUX_ITEM_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SAMPLE_POINT))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_AUX_ITEM))
 end_define
 
 begin_define
-DECL|macro|GIMP_SAMPLE_POINT_GET_CLASS (obj)
+DECL|macro|GIMP_AUX_ITEM_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_SAMPLE_POINT_GET_CLASS
+name|GIMP_AUX_ITEM_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SAMPLE_POINT, GimpSamplePointClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_AUX_ITEM, GimpAuxItemClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpSamplePointPrivate
+DECL|typedef|GimpAuxItemPrivate
 typedef|typedef
 name|struct
-name|_GimpSamplePointPrivate
-name|GimpSamplePointPrivate
+name|_GimpAuxItemPrivate
+name|GimpAuxItemPrivate
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpSamplePointClass
+DECL|typedef|GimpAuxItemClass
 typedef|typedef
 name|struct
-name|_GimpSamplePointClass
-name|GimpSamplePointClass
+name|_GimpAuxItemClass
+name|GimpAuxItemClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpSamplePoint
+DECL|struct|_GimpAuxItem
 struct|struct
-name|_GimpSamplePoint
+name|_GimpAuxItem
 block|{
 DECL|member|parent_instance
-name|GimpAuxItem
+name|GObject
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpSamplePointPrivate
+name|GimpAuxItemPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -130,21 +116,34 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpSamplePointClass
+DECL|struct|_GimpAuxItemClass
 struct|struct
-name|_GimpSamplePointClass
+name|_GimpAuxItemClass
 block|{
 DECL|member|parent_class
-name|GimpAuxItemClass
+name|GObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|removed
+name|void
+function_decl|(
+modifier|*
+name|removed
+function_decl|)
+parameter_list|(
+name|GimpAuxItem
+modifier|*
+name|aux_item
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_sample_point_get_type
+name|gimp_aux_item_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -153,48 +152,23 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpSamplePoint
-modifier|*
-name|gimp_sample_point_new
-parameter_list|(
 name|guint32
-name|sample_point_ID
+name|gimp_aux_item_get_ID
+parameter_list|(
+name|GimpAuxItem
+modifier|*
+name|aux_item
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_sample_point_get_position
+name|gimp_aux_item_removed
 parameter_list|(
-name|GimpSamplePoint
+name|GimpAuxItem
 modifier|*
-name|sample_point
-parameter_list|,
-name|gint
-modifier|*
-name|position_x
-parameter_list|,
-name|gint
-modifier|*
-name|position_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_sample_point_set_position
-parameter_list|(
-name|GimpSamplePoint
-modifier|*
-name|sample_point
-parameter_list|,
-name|gint
-name|position_x
-parameter_list|,
-name|gint
-name|position_y
+name|aux_item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,7 +179,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_SAMPLE_POINT_H__ */
+comment|/* __GIMP_AUX_ITEM_H__ */
 end_comment
 
 end_unit

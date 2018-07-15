@@ -6,131 +6,128 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_GUIDE_UNDO_H__
+name|__GIMP_AUX_ITEM_UNDO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_GUIDE_UNDO_H__
+DECL|macro|__GIMP_AUX_ITEM_UNDO_H__
 define|#
 directive|define
-name|__GIMP_GUIDE_UNDO_H__
+name|__GIMP_AUX_ITEM_UNDO_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpauxitemundo.h"
+file|"gimpundo.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_GUIDE_UNDO
+DECL|macro|GIMP_TYPE_AUX_ITEM_UNDO
 define|#
 directive|define
-name|GIMP_TYPE_GUIDE_UNDO
-value|(gimp_guide_undo_get_type ())
+name|GIMP_TYPE_AUX_ITEM_UNDO
+value|(gimp_aux_item_undo_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_GUIDE_UNDO (obj)
+DECL|macro|GIMP_AUX_ITEM_UNDO (obj)
 define|#
 directive|define
-name|GIMP_GUIDE_UNDO
+name|GIMP_AUX_ITEM_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GUIDE_UNDO, GimpGuideUndo))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_AUX_ITEM_UNDO, GimpAuxItemUndo))
 end_define
 
 begin_define
-DECL|macro|GIMP_GUIDE_UNDO_CLASS (klass)
+DECL|macro|GIMP_AUX_ITEM_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_GUIDE_UNDO_CLASS
+name|GIMP_AUX_ITEM_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GUIDE_UNDO, GimpGuideUndoClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_AUX_ITEM_UNDO, GimpAuxItemUndoClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_GUIDE_UNDO (obj)
+DECL|macro|GIMP_IS_AUX_ITEM_UNDO (obj)
 define|#
 directive|define
-name|GIMP_IS_GUIDE_UNDO
+name|GIMP_IS_AUX_ITEM_UNDO
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GUIDE_UNDO))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_AUX_ITEM_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_GUIDE_UNDO_CLASS (klass)
+DECL|macro|GIMP_IS_AUX_ITEM_UNDO_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_GUIDE_UNDO_CLASS
+name|GIMP_IS_AUX_ITEM_UNDO_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GUIDE_UNDO))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_AUX_ITEM_UNDO))
 end_define
 
 begin_define
-DECL|macro|GIMP_GUIDE_UNDO_GET_CLASS (obj)
+DECL|macro|GIMP_AUX_ITEM_UNDO_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_GUIDE_UNDO_GET_CLASS
+name|GIMP_AUX_ITEM_UNDO_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GUIDE_UNDO, GimpGuideUndoClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_AUX_ITEM_UNDO, GimpAuxItemUndoClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpGuideUndo
+DECL|typedef|GimpAuxItemUndo
 typedef|typedef
 name|struct
-name|_GimpGuideUndo
-name|GimpGuideUndo
+name|_GimpAuxItemUndo
+name|GimpAuxItemUndo
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGuideUndoClass
+DECL|typedef|GimpAuxItemUndoClass
 typedef|typedef
 name|struct
-name|_GimpGuideUndoClass
-name|GimpGuideUndoClass
+name|_GimpAuxItemUndoClass
+name|GimpAuxItemUndoClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpGuideUndo
+DECL|struct|_GimpAuxItemUndo
 struct|struct
-name|_GimpGuideUndo
+name|_GimpAuxItemUndo
 block|{
 DECL|member|parent_instance
-name|GimpAuxItemUndo
+name|GimpUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|orientation
-name|GimpOrientationType
-name|orientation
-decl_stmt|;
-DECL|member|position
-name|gint
-name|position
+DECL|member|aux_item
+name|GimpAuxItem
+modifier|*
+name|aux_item
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpGuideUndoClass
+DECL|struct|_GimpAuxItemUndoClass
 struct|struct
-name|_GimpGuideUndoClass
+name|_GimpAuxItemUndoClass
 block|{
 DECL|member|parent_class
-name|GimpAuxItemUndoClass
+name|GimpUndoClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -139,7 +136,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_guide_undo_get_type
+name|gimp_aux_item_undo_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -153,7 +150,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_GUIDE_UNDO_H__ */
+comment|/* __GIMP_AUX_ITEM_UNDO_H__ */
 end_comment
 
 end_unit

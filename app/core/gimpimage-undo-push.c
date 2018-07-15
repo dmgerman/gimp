@@ -839,7 +839,7 @@ name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
 argument_list|,
-literal|"guide"
+literal|"aux-item"
 argument_list|,
 name|guide
 argument_list|,
@@ -902,7 +902,7 @@ name|undo_desc
 argument_list|,
 name|GIMP_DIRTY_IMAGE_META
 argument_list|,
-literal|"sample-point"
+literal|"aux-item"
 argument_list|,
 name|sample_point
 argument_list|,

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpundo.h"
+file|"gimpauxitemundo.h"
 end_include
 
 begin_define
@@ -109,13 +109,8 @@ struct|struct
 name|_GimpSamplePointUndo
 block|{
 DECL|member|parent_instance
-name|GimpUndo
+name|GimpAuxItemUndo
 name|parent_instance
-decl_stmt|;
-DECL|member|sample_point
-name|GimpSamplePoint
-modifier|*
-name|sample_point
 decl_stmt|;
 DECL|member|x
 name|gint
@@ -135,7 +130,7 @@ struct|struct
 name|_GimpSamplePointUndoClass
 block|{
 DECL|member|parent_class
-name|GimpUndoClass
+name|GimpAuxItemUndoClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -315,6 +315,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpAuxItem
+typedef|typedef
+name|struct
+name|_GimpAuxItem
+name|GimpAuxItem
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|Gimp
 typedef|typedef
 name|struct
@@ -726,6 +735,28 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  auxillary image items  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpGuide
+typedef|typedef
+name|struct
+name|_GimpGuide
+name|GimpGuide
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSamplePoint
+typedef|typedef
+name|struct
+name|_GimpSamplePoint
+name|GimpSamplePoint
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  undo objects  */
 end_comment
 
@@ -864,15 +895,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGuide
-typedef|typedef
-name|struct
-name|_GimpGuide
-name|GimpGuide
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpHistogram
 typedef|typedef
 name|struct
@@ -941,15 +963,6 @@ typedef|typedef
 name|struct
 name|_GimpProjection
 name|GimpProjection
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpSamplePoint
-typedef|typedef
-name|struct
-name|_GimpSamplePoint
-name|GimpSamplePoint
 typedef|;
 end_typedef
 
