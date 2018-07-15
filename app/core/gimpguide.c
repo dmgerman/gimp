@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae69fb20103
+DECL|enum|__anon2aace05e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -517,12 +517,7 @@ name|GimpGuideStyle
 name|guide_style
 parameter_list|)
 block|{
-name|GimpGuide
-modifier|*
-name|guide
-decl_stmt|;
-name|guide
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_GUIDE
@@ -541,9 +536,6 @@ name|guide_style
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-return|return
-name|guide
 return|;
 block|}
 end_function
