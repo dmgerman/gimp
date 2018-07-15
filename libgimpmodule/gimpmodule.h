@@ -60,7 +60,7 @@ DECL|macro|GIMP_MODULE_ABI_VERSION
 define|#
 directive|define
 name|GIMP_MODULE_ABI_VERSION
-value|0x0004
+value|0x0005
 end_define
 
 begin_comment
@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274c7b410103
+DECL|enum|__anon2c1c3a0d0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -110,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274c7b410203
+DECL|enum|__anon2c1c3a0d0203
 block|{
 DECL|enumerator|GIMP_MODULE_FAILED
 name|GIMP_MODULE_FAILED
