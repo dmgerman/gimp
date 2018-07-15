@@ -120,6 +120,10 @@ DECL|member|y
 name|gint
 name|y
 decl_stmt|;
+DECL|member|pick_mode
+name|GimpColorPickMode
+name|pick_mode
+decl_stmt|;
 block|}
 struct|;
 end_struct

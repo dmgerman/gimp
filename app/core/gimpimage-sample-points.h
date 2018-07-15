@@ -109,6 +109,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_image_set_sample_point_pick_mode
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|,
+name|GimpColorPickMode
+name|pick_mode
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GList
 modifier|*
 name|gimp_image_get_sample_points
