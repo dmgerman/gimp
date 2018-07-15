@@ -309,8 +309,8 @@ name|GimpPaintTool
 modifier|*
 name|tool
 parameter_list|,
-name|GimpColorPickMode
-name|mode
+name|GimpColorPickTarget
+name|target
 parameter_list|)
 function_decl|;
 end_function_decl

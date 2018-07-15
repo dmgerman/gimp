@@ -112,9 +112,9 @@ DECL|member|parent_instance
 name|GimpColorOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|pick_mode
-name|GimpColorPickMode
-name|pick_mode
+DECL|member|pick_target
+name|GimpColorPickTarget
+name|pick_target
 decl_stmt|;
 DECL|member|use_info_window
 name|gboolean

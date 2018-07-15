@@ -658,8 +658,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_color_pick_mode_get_type (void)
-name|gimp_color_pick_mode_get_type
+DECL|function|gimp_color_pick_target_get_type (void)
+name|gimp_color_pick_target_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -672,33 +672,33 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_COLOR_PICK_MODE_NONE
+name|GIMP_COLOR_PICK_TARGET_NONE
 block|,
-literal|"GIMP_COLOR_PICK_MODE_NONE"
+literal|"GIMP_COLOR_PICK_TARGET_NONE"
 block|,
 literal|"none"
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 block|,
-literal|"GIMP_COLOR_PICK_MODE_FOREGROUND"
+literal|"GIMP_COLOR_PICK_TARGET_FOREGROUND"
 block|,
 literal|"foreground"
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 block|,
-literal|"GIMP_COLOR_PICK_MODE_BACKGROUND"
+literal|"GIMP_COLOR_PICK_TARGET_BACKGROUND"
 block|,
 literal|"background"
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_PALETTE
+name|GIMP_COLOR_PICK_TARGET_PALETTE
 block|,
-literal|"GIMP_COLOR_PICK_MODE_PALETTE"
+literal|"GIMP_COLOR_PICK_TARGET_PALETTE"
 block|,
 literal|"palette"
 block|}
@@ -720,11 +720,11 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_COLOR_PICK_MODE_NONE
+name|GIMP_COLOR_PICK_TARGET_NONE
 block|,
 name|NC_
 argument_list|(
-literal|"color-pick-mode"
+literal|"color-pick-target"
 argument_list|,
 literal|"Pick only"
 argument_list|)
@@ -733,11 +733,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 block|,
 name|NC_
 argument_list|(
-literal|"color-pick-mode"
+literal|"color-pick-target"
 argument_list|,
 literal|"Set foreground color"
 argument_list|)
@@ -746,11 +746,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 block|,
 name|NC_
 argument_list|(
-literal|"color-pick-mode"
+literal|"color-pick-target"
 argument_list|,
 literal|"Set background color"
 argument_list|)
@@ -759,11 +759,11 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_COLOR_PICK_MODE_PALETTE
+name|GIMP_COLOR_PICK_TARGET_PALETTE
 block|,
 name|NC_
 argument_list|(
-literal|"color-pick-mode"
+literal|"color-pick-target"
 argument_list|,
 literal|"Add to palette"
 argument_list|)
@@ -799,7 +799,7 @@ name|type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpColorPickMode"
+literal|"GimpColorPickTarget"
 argument_list|,
 name|values
 argument_list|)
@@ -808,7 +808,7 @@ name|gimp_type_set_translation_context
 argument_list|(
 name|type
 argument_list|,
-literal|"color-pick-mode"
+literal|"color-pick-target"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

@@ -1771,11 +1771,11 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|pick_mode
+name|pick_target
 condition|)
 block|{
 case|case
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 case|:
 name|gimp_tool_push_status
 argument_list|(
@@ -1792,7 +1792,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 case|:
 name|gimp_tool_push_status
 argument_list|(
@@ -3478,20 +3478,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paint_tool_enable_color_picker:  * @tool: a #GimpPaintTool  * @mode: the #GimpColorPickMode to set  *  * This is a convenience function used from the init method of paint  * tools that want the color picking functionality. The @mode that is  * set here is used to decide what cursor modifier to draw and if the  * picked color goes to the foreground or background color.  **/
+comment|/**  * gimp_paint_tool_enable_color_picker:  * @tool:   a #GimpPaintTool  * @target: the #GimpColorPickTarget to set  *  * This is a convenience function used from the init method of paint  * tools that want the color picking functionality. The @mode that is  * set here is used to decide what cursor modifier to draw and if the  * picked color goes to the foreground or background color.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_tool_enable_color_picker (GimpPaintTool * tool,GimpColorPickMode mode)
+DECL|function|gimp_paint_tool_enable_color_picker (GimpPaintTool * tool,GimpColorPickTarget target)
 name|gimp_paint_tool_enable_color_picker
 parameter_list|(
 name|GimpPaintTool
 modifier|*
 name|tool
 parameter_list|,
-name|GimpColorPickMode
-name|mode
+name|GimpColorPickTarget
+name|target
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3513,9 +3513,9 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|pick_mode
+name|pick_target
 operator|=
-name|mode
+name|target
 expr_stmt|;
 block|}
 end_function

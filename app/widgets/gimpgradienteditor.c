@@ -606,8 +606,8 @@ name|GimpGradientEditor
 modifier|*
 name|editor
 parameter_list|,
-name|GimpColorPickMode
-name|pick_mode
+name|GimpColorPickTarget
+name|pick_target
 parameter_list|,
 name|GimpColorPickState
 name|pick_state
@@ -4876,9 +4876,9 @@ name|gimp_get_toggle_behavior_mask
 argument_list|()
 operator|)
 condition|?
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 else|:
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 argument_list|,
 name|GIMP_COLOR_PICK_STATE_UPDATE
 argument_list|,
@@ -4984,9 +4984,9 @@ name|gimp_get_toggle_behavior_mask
 argument_list|()
 operator|)
 condition|?
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 else|:
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 argument_list|,
 name|GIMP_COLOR_PICK_STATE_START
 argument_list|,
@@ -5165,9 +5165,9 @@ name|gimp_get_toggle_behavior_mask
 argument_list|()
 operator|)
 condition|?
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 else|:
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 argument_list|,
 name|GIMP_COLOR_PICK_STATE_END
 argument_list|,
@@ -5428,15 +5428,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|view_pick_color (GimpGradientEditor * editor,GimpColorPickMode pick_mode,GimpColorPickState pick_state,gint x)
+DECL|function|view_pick_color (GimpGradientEditor * editor,GimpColorPickTarget pick_target,GimpColorPickState pick_state,gint x)
 name|view_pick_color
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
 name|editor
 parameter_list|,
-name|GimpColorPickMode
-name|pick_mode
+name|GimpColorPickTarget
+name|pick_target
 parameter_list|,
 name|GimpColorPickState
 name|pick_state
@@ -5579,9 +5579,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|pick_mode
+name|pick_target
 operator|==
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 condition|)
 block|{
 name|gimp_context_set_foreground

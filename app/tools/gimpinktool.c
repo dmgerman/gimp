@@ -293,7 +293,7 @@ argument_list|(
 name|ink_tool
 argument_list|)
 argument_list|,
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 argument_list|)
 expr_stmt|;
 block|}

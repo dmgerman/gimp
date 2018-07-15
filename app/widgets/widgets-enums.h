@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0103
+DECL|enum|__anon2bc104090103
 block|{
 DECL|enumerator|GIMP_ACTIVE_COLOR_FOREGROUND
 name|GIMP_ACTIVE_COLOR_FOREGROUND
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0203
+DECL|enum|__anon2bc104090203
 block|{
 DECL|enumerator|GIMP_CIRCLE_BACKGROUND_PLAIN
 name|GIMP_CIRCLE_BACKGROUND_PLAIN
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0303
+DECL|enum|__anon2bc104090303
 block|{
 DECL|enumerator|GIMP_COLOR_DIALOG_OK
 name|GIMP_COLOR_DIALOG_OK
@@ -150,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0403
+DECL|enum|__anon2bc104090403
 block|{
 DECL|enumerator|GIMP_COLOR_FRAME_MODE_PIXEL
 name|GIMP_COLOR_FRAME_MODE_PIXEL
@@ -186,16 +186,16 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_PICK_MODE
+DECL|macro|GIMP_TYPE_COLOR_PICK_TARGET
 define|#
 directive|define
-name|GIMP_TYPE_COLOR_PICK_MODE
-value|(gimp_color_pick_mode_get_type ())
+name|GIMP_TYPE_COLOR_PICK_TARGET
+value|(gimp_color_pick_target_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_color_pick_mode_get_type
+name|gimp_color_pick_target_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -206,26 +206,26 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0503
+DECL|enum|__anon2bc104090503
 block|{
-DECL|enumerator|GIMP_COLOR_PICK_MODE_NONE
-name|GIMP_COLOR_PICK_MODE_NONE
+DECL|enumerator|GIMP_COLOR_PICK_TARGET_NONE
+name|GIMP_COLOR_PICK_TARGET_NONE
 block|,
 comment|/*< desc="Pick only">*/
-DECL|enumerator|GIMP_COLOR_PICK_MODE_FOREGROUND
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+DECL|enumerator|GIMP_COLOR_PICK_TARGET_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 block|,
 comment|/*< desc="Set foreground color">*/
-DECL|enumerator|GIMP_COLOR_PICK_MODE_BACKGROUND
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+DECL|enumerator|GIMP_COLOR_PICK_TARGET_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 block|,
 comment|/*< desc="Set background color">*/
-DECL|enumerator|GIMP_COLOR_PICK_MODE_PALETTE
-name|GIMP_COLOR_PICK_MODE_PALETTE
+DECL|enumerator|GIMP_COLOR_PICK_TARGET_PALETTE
+name|GIMP_COLOR_PICK_TARGET_PALETTE
 comment|/*< desc="Add to palette">*/
-DECL|typedef|GimpColorPickMode
+DECL|typedef|GimpColorPickTarget
 block|}
-name|GimpColorPickMode
+name|GimpColorPickTarget
 typedef|;
 end_typedef
 
@@ -250,7 +250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0603
+DECL|enum|__anon2bc104090603
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_STATE_START
 name|GIMP_COLOR_PICK_STATE_START
@@ -287,7 +287,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0703
+DECL|enum|__anon2bc104090703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_SCALE_LINEAR
 name|GIMP_HISTOGRAM_SCALE_LINEAR
@@ -323,7 +323,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0803
+DECL|enum|__anon2bc104090803
 block|{
 DECL|enumerator|GIMP_TAB_STYLE_ICON
 name|GIMP_TAB_STYLE_ICON
@@ -383,7 +383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a52f95f0903
+DECL|enum|__anon2bc104090903
 block|{
 DECL|enumerator|GIMP_TAG_ENTRY_MODE_QUERY
 name|GIMP_TAG_ENTRY_MODE_QUERY
@@ -404,7 +404,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0a03
+DECL|enum|__anon2bc104090a03
 block|{
 DECL|enumerator|GIMP_VIEW_BG_CHECKS
 name|GIMP_VIEW_BG_CHECKS
@@ -421,7 +421,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0b03
+DECL|enum|__anon2bc104090b03
 block|{
 DECL|enumerator|GIMP_VIEW_BORDER_BLACK
 name|GIMP_VIEW_BORDER_BLACK
@@ -444,7 +444,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0c03
+DECL|enum|__anon2bc104090c03
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -585,7 +585,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0d03
+DECL|enum|__anon2bc104090d03
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -605,7 +605,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0e03
+DECL|enum|__anon2bc104090e03
 block|{
 DECL|enumerator|GIMP_CURSOR_NONE
 name|GIMP_CURSOR_NONE
@@ -694,7 +694,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f0f03
+DECL|enum|__anon2bc104090f03
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -822,7 +822,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f1003
+DECL|enum|__anon2bc104091003
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -884,7 +884,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f1103
+DECL|enum|__anon2bc104091103
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE
@@ -958,7 +958,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f1203
+DECL|enum|__anon2bc104091203
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -980,7 +980,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f1303
+DECL|enum|__anon2bc104091303
 block|{
 DECL|enumerator|GIMP_DASHBOARD_UPDATE_INTERVAL_0_25_SEC
 name|GIMP_DASHBOARD_UPDATE_INTERVAL_0_25_SEC
@@ -1016,7 +1016,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a52f95f1403
+DECL|enum|__anon2bc104091403
 block|{
 DECL|enumerator|GIMP_DASHBOARD_HISTORY_DURATION_15_SEC
 name|GIMP_DASHBOARD_HISTORY_DURATION_15_SEC

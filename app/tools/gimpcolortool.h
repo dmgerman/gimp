@@ -127,9 +127,9 @@ DECL|member|saved_snap_to
 name|gboolean
 name|saved_snap_to
 decl_stmt|;
-DECL|member|pick_mode
-name|GimpColorPickMode
-name|pick_mode
+DECL|member|pick_target
+name|GimpColorPickTarget
+name|pick_target
 decl_stmt|;
 DECL|member|can_pick
 name|gboolean

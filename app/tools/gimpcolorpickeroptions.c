@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c3d82a0103
+DECL|enum|__anon2b9741770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -68,8 +68,8 @@ DECL|enumerator|PROP_SAMPLE_AVERAGE
 name|PROP_SAMPLE_AVERAGE
 block|,
 comment|/* overrides a GimpColorOptions property */
-DECL|enumerator|PROP_PICK_MODE
-name|PROP_PICK_MODE
+DECL|enumerator|PROP_PICK_TARGET
+name|PROP_PICK_TARGET
 block|,
 DECL|enumerator|PROP_USE_INFO_WINDOW
 name|PROP_USE_INFO_WINDOW
@@ -202,23 +202,23 @@ name|GIMP_CONFIG_PROP_ENUM
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PICK_MODE
+name|PROP_PICK_TARGET
 argument_list|,
-literal|"pick-mode"
+literal|"pick-target"
 argument_list|,
 name|_
 argument_list|(
-literal|"Pick Mode"
+literal|"Pick Target"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Choose what color picker will do"
+literal|"Choose what the color picker will do"
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_COLOR_PICK_MODE
+name|GIMP_TYPE_COLOR_PICK_TARGET
 argument_list|,
-name|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_TARGET_FOREGROUND
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -355,11 +355,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PICK_MODE
+name|PROP_PICK_TARGET
 case|:
 name|options
 operator|->
-name|pick_mode
+name|pick_target
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -474,7 +474,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PICK_MODE
+name|PROP_PICK_TARGET
 case|:
 name|g_value_set_enum
 argument_list|(
@@ -482,7 +482,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|pick_mode
+name|pick_target
 argument_list|)
 expr_stmt|;
 break|break;
@@ -633,7 +633,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Pick Mode  (%s)"
+literal|"Pick Target  (%s)"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_string
@@ -648,7 +648,7 @@ name|gimp_prop_enum_radio_frame_new
 argument_list|(
 name|config
 argument_list|,
-literal|"pick-mode"
+literal|"pick-target"
 argument_list|,
 name|str
 argument_list|,

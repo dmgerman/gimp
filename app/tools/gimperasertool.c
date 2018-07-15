@@ -335,7 +335,7 @@ name|gimp_paint_tool_enable_color_picker
 argument_list|(
 name|paint_tool
 argument_list|,
-name|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_TARGET_BACKGROUND
 argument_list|)
 expr_stmt|;
 name|paint_tool
