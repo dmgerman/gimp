@@ -661,6 +661,12 @@ name|constrain_15_degrees
 parameter_list|,
 name|gdouble
 name|constrain_offset_angle
+parameter_list|,
+name|gdouble
+name|constrain_xres
+parameter_list|,
+name|gdouble
+name|constrain_yres
 parameter_list|)
 function_decl|;
 end_function_decl

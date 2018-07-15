@@ -187,7 +187,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c96bd20103
+DECL|enum|__anon2a245f220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2795,12 +2795,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paint_core_round_line:  * @core:                 the #GimpPaintCore  * @options:              the #GimpPaintOptions to use  * @constrain_15_degrees: the modifier state  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. If @center_pixels is TRUE the endpoints  * get pushed to the center of the pixels. This avoids artifacts  * for e.g. the hard mode. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
+comment|/**  * gimp_paint_core_round_line:  * @core:                   the #GimpPaintCore  * @options:                the #GimpPaintOptions to use  * @constrain_15_degrees:   the modifier state  * @constrain_offset_angle: the angle by which to offset the lines, in degrees  * @constrain_xres:         the horizontal resolution  * @constrain_yres:         the vertical resolution  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. If @center_pixels is TRUE the endpoints  * get pushed to the center of the pixels. This avoids artifacts  * for e.g. the hard mode. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_round_line (GimpPaintCore * core,GimpPaintOptions * paint_options,gboolean constrain_15_degrees,gdouble constrain_offset_angle)
+DECL|function|gimp_paint_core_round_line (GimpPaintCore * core,GimpPaintOptions * paint_options,gboolean constrain_15_degrees,gdouble constrain_offset_angle,gdouble constrain_xres,gdouble constrain_yres)
 name|gimp_paint_core_round_line
 parameter_list|(
 name|GimpPaintCore
@@ -2816,6 +2816,12 @@ name|constrain_15_degrees
 parameter_list|,
 name|gdouble
 name|constrain_offset_angle
+parameter_list|,
+name|gdouble
+name|constrain_xres
+parameter_list|,
+name|gdouble
+name|constrain_yres
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2948,6 +2954,10 @@ argument_list|,
 name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|,
 name|constrain_offset_angle
+argument_list|,
+name|constrain_xres
+argument_list|,
+name|constrain_yres
 argument_list|)
 expr_stmt|;
 block|}

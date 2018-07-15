@@ -2000,6 +2000,10 @@ argument_list|,
 name|GIMP_CONSTRAIN_LINE_45_DEGREES
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

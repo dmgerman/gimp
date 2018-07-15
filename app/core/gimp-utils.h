@@ -296,6 +296,12 @@ name|n_snap_lines
 parameter_list|,
 name|gdouble
 name|offset_angle
+parameter_list|,
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
 parameter_list|)
 function_decl|;
 end_function_decl

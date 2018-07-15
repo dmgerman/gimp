@@ -17,12 +17,24 @@ name|__GIMP_DISPLAY_SHELL_UTILS_H__
 end_define
 
 begin_function_decl
-name|gdouble
-name|gimp_display_shell_get_constrained_line_offset_angle
+name|void
+name|gimp_display_shell_get_constrained_line_params
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gdouble
+modifier|*
+name|offset_angle
+parameter_list|,
+name|gdouble
+modifier|*
+name|xres
+parameter_list|,
+name|gdouble
+modifier|*
+name|yres
 parameter_list|)
 function_decl|;
 end_function_decl
