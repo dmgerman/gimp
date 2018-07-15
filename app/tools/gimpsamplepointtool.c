@@ -105,14 +105,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
-define|#
-directive|define
-name|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
-value|G_MININT
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1414,9 +1406,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_sample_point_tool_start

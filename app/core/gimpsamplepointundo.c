@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d01c20103
+DECL|enum|__anon29185ee70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,7 +241,7 @@ name|object_class
 argument_list|,
 name|PROP_SAMPLE_POINT
 argument_list|,
-name|g_param_spec_boxed
+name|g_param_spec_object
 argument_list|(
 literal|"sample-point"
 argument_list|,
@@ -305,11 +305,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_assert
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point_undo
 operator|->
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_sample_point_get_position
@@ -376,7 +377,7 @@ name|sample_point_undo
 operator|->
 name|sample_point
 operator|=
-name|g_value_dup_boxed
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -436,7 +437,7 @@ block|{
 case|case
 name|PROP_SAMPLE_POINT
 case|:
-name|g_value_set_boxed
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -525,8 +526,7 @@ if|if
 condition|(
 name|x
 operator|==
-operator|-
-literal|1
+name|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
 condition|)
 block|{
 name|gimp_image_add_sample_point
@@ -556,8 +556,7 @@ name|sample_point_undo
 operator|->
 name|x
 operator|==
-operator|-
-literal|1
+name|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
 condition|)
 block|{
 name|gimp_image_remove_sample_point
@@ -641,14 +640,12 @@ argument_list|(
 name|undo
 argument_list|)
 decl_stmt|;
-name|g_clear_pointer
+name|g_clear_object
 argument_list|(
 operator|&
 name|sample_point_undo
 operator|->
 name|sample_point
-argument_list|,
-name|gimp_sample_point_unref
 argument_list|)
 expr_stmt|;
 name|GIMP_UNDO_CLASS

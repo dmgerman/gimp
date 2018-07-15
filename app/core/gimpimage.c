@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c4a9200103
+DECL|enum|__anon2b2ba53d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c4a9200203
+DECL|enum|__anon2b2ba53d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2104,13 +2104,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_SAMPLE_POINT
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -2140,13 +2140,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_SAMPLE_POINT
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -2176,13 +2176,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_SAMPLE_POINT
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -4812,7 +4812,7 @@ argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_sample_point_unref
+name|g_object_unref
 argument_list|)
 expr_stmt|;
 name|private
@@ -12729,9 +12729,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -12775,9 +12776,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -12821,9 +12823,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit

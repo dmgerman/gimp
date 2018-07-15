@@ -17,6 +17,14 @@ name|__GIMP_SAMPLE_POINT_H__
 end_define
 
 begin_define
+DECL|macro|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
+define|#
+directive|define
+name|GIMP_SAMPLE_POINT_POSITION_UNDEFINED
+value|G_MININT
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_SAMPLE_POINT
 define|#
 directive|define
@@ -24,27 +32,119 @@ name|GIMP_TYPE_SAMPLE_POINT
 value|(gimp_sample_point_get_type ())
 end_define
 
+begin_define
+DECL|macro|GIMP_SAMPLE_POINT (obj)
+define|#
+directive|define
+name|GIMP_SAMPLE_POINT
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SAMPLE_POINT, GimpSamplePoint))
+end_define
+
+begin_define
+DECL|macro|GIMP_SAMPLE_POINT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_SAMPLE_POINT_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SAMPLE_POINT, GimpSamplePointClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SAMPLE_POINT (obj)
+define|#
+directive|define
+name|GIMP_IS_SAMPLE_POINT
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SAMPLE_POINT))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SAMPLE_POINT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_SAMPLE_POINT_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SAMPLE_POINT))
+end_define
+
+begin_define
+DECL|macro|GIMP_SAMPLE_POINT_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_SAMPLE_POINT_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SAMPLE_POINT, GimpSamplePointClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpSamplePointPrivate
+typedef|typedef
+name|struct
+name|_GimpSamplePointPrivate
+name|GimpSamplePointPrivate
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSamplePointClass
+typedef|typedef
+name|struct
+name|_GimpSamplePointClass
+name|GimpSamplePointClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpSamplePoint
 struct|struct
 name|_GimpSamplePoint
 block|{
-DECL|member|ref_count
-name|gint
-name|ref_count
+DECL|member|parent_instance
+name|GObject
+name|parent_instance
 decl_stmt|;
-DECL|member|sample_point_ID
-name|guint32
-name|sample_point_ID
+DECL|member|priv
+name|GimpSamplePointPrivate
+modifier|*
+name|priv
 decl_stmt|;
-DECL|member|x
-name|gint
-name|x
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpSamplePointClass
+struct|struct
+name|_GimpSamplePointClass
+block|{
+DECL|member|parent_class
+name|GObjectClass
+name|parent_class
 decl_stmt|;
-DECL|member|y
-name|gint
-name|y
-decl_stmt|;
+comment|/*  signals  */
+DECL|member|removed
+name|void
+function_decl|(
+modifier|*
+name|removed
+function_decl|)
+parameter_list|(
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -71,9 +171,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpSamplePoint
-modifier|*
-name|gimp_sample_point_ref
+name|guint32
+name|gimp_sample_point_get_ID
 parameter_list|(
 name|GimpSamplePoint
 modifier|*
@@ -84,18 +183,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_sample_point_unref
-parameter_list|(
-name|GimpSamplePoint
-modifier|*
-name|sample_point
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|guint32
-name|gimp_sample_point_get_ID
+name|gimp_sample_point_removed
 parameter_list|(
 name|GimpSamplePoint
 modifier|*

@@ -881,9 +881,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_SAMPLE_POINT
+argument_list|(
 name|sample_point
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
