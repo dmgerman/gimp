@@ -4732,7 +4732,7 @@ argument_list|)
 expr_stmt|;
 name|space
 operator|=
-name|babl_icc_make_space
+name|babl_space_from_icc
 argument_list|(
 operator|(
 specifier|const
