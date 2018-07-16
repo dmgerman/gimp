@@ -6438,7 +6438,7 @@ name|format
 argument_list|,
 name|name
 argument_list|,
-literal|255
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|)
