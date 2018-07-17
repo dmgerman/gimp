@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3cb930103
+DECL|enum|__anon2c789aa20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3cb930203
+DECL|enum|__anon2c789aa20203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon2be3cb930308
+DECL|struct|__anon2c789aa20308
 block|{
 DECL|member|use_property
 specifier|const
@@ -296,18 +296,29 @@ literal|"Fade"
 argument_list|)
 block|,
 block|{
-literal|0.2
+literal|0.5
 block|,
-literal|0.2
+literal|0.5
 block|,
-literal|0.2
+literal|0.5
 block|,
-literal|1.0
+literal|0.0
 block|}
 block|}
 block|}
 struct|;
 end_struct
+
+begin_define
+DECL|macro|INPUT_COLOR (i)
+define|#
+directive|define
+name|INPUT_COLOR
+parameter_list|(
+name|i
+parameter_list|)
+value|(inputs[(i)].color.a ?&inputs[(i)].color : NULL)
+end_define
 
 begin_typedef
 DECL|typedef|GimpDynamicsOutputEditorPrivate
@@ -1744,13 +1755,10 @@ argument_list|)
 argument_list|,
 name|input_curve
 argument_list|,
-operator|&
-name|inputs
-index|[
+name|INPUT_COLOR
+argument_list|(
 name|i
-index|]
-operator|.
-name|color
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|private
@@ -1794,13 +1802,10 @@ argument_list|)
 argument_list|,
 name|input_curve
 argument_list|,
-operator|&
-name|inputs
-index|[
+name|INPUT_COLOR
+argument_list|(
 name|i
-index|]
-operator|.
-name|color
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1982,13 +1987,10 @@ argument_list|)
 argument_list|,
 name|input_curve
 argument_list|,
-operator|&
-name|inputs
-index|[
+name|INPUT_COLOR
+argument_list|(
 name|i
-index|]
-operator|.
-name|color
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
