@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4fc4c0103
+DECL|enum|__anon2c9492130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -147,10 +147,10 @@ modifier|*
 name|extensions
 decl_stmt|;
 comment|/* Running extensions */
-DECL|member|active_extensions
+DECL|member|running_extensions
 name|GHashTable
 modifier|*
-name|active_extensions
+name|running_extensions
 decl_stmt|;
 comment|/* Metadata properties */
 DECL|member|brush_paths
@@ -1152,7 +1152,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|,
 operator|(
 name|gpointer
@@ -1322,7 +1322,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -1906,7 +1906,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 condition|)
 name|g_hash_table_unref
 argument_list|(
@@ -1914,14 +1914,14 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|)
 expr_stmt|;
 name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 operator|=
 name|g_hash_table_new
 argument_list|(
@@ -2133,7 +2133,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|,
 operator|(
 name|gpointer
@@ -2347,32 +2347,110 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_extension_manager_is_running:  * @extension:  *  * Returns: %TRUE if @extension is ON.  */
+end_comment
+
 begin_function
 name|gboolean
-DECL|function|gimp_extension_manager_is_active (GimpExtensionManager * manager,const gchar * id)
-name|gimp_extension_manager_is_active
+DECL|function|gimp_extension_manager_is_running (GimpExtensionManager * manager,GimpExtension * extension)
+name|gimp_extension_manager_is_running
 parameter_list|(
 name|GimpExtensionManager
 modifier|*
 name|manager
 parameter_list|,
-specifier|const
-name|gchar
+name|GimpExtension
 modifier|*
-name|id
+name|extension
 parameter_list|)
 block|{
-return|return
-name|g_hash_table_contains
+name|GimpExtension
+modifier|*
+name|ext
+decl_stmt|;
+name|ext
+operator|=
+name|g_hash_table_lookup
 argument_list|(
 name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|,
-name|id
+name|gimp_object_get_name
+argument_list|(
+name|extension
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|ext
+operator|&&
+name|ext
+operator|==
+name|extension
+operator|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_extension_manager_can_run:  * @extension:  *  * Returns: %TRUE is @extension can be run.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_extension_manager_can_run (GimpExtensionManager * manager,GimpExtension * extension)
+name|gimp_extension_manager_can_run
+parameter_list|(
+name|GimpExtensionManager
+modifier|*
+name|manager
+parameter_list|,
+name|GimpExtension
+modifier|*
+name|extension
+parameter_list|)
+block|{
+comment|/* System extension overrided by another extension. */
+if|if
+condition|(
+name|g_list_find
+argument_list|(
+name|manager
+operator|->
+name|p
+operator|->
+name|sys_extensions
+argument_list|,
+name|extension
+argument_list|)
+operator|&&
+name|g_list_find_custom
+argument_list|(
+name|manager
+operator|->
+name|p
+operator|->
+name|extensions
+argument_list|,
+name|extension
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|gimp_extension_cmp
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+comment|/* TODO: should return FALSE if required GIMP version or other    * requirements are not filled as well.    */
+return|return
+name|TRUE
 return|;
 block|}
 end_function
@@ -2453,7 +2531,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|,
 name|name
 argument_list|)
@@ -2563,7 +2641,7 @@ name|manager
 operator|->
 name|p
 operator|->
-name|active_extensions
+name|running_extensions
 argument_list|)
 expr_stmt|;
 while|while
