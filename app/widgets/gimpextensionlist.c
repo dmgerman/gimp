@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfe5c80103
+DECL|enum|__anon2c86e8200103
 block|{
 DECL|enumerator|EXTENSION_ACTIVATED
 name|EXTENSION_ACTIVATED
@@ -642,7 +642,7 @@ argument_list|(
 name|onoff
 argument_list|)
 argument_list|,
-name|gimp_extension_manager_is_active
+name|gimp_extension_manager_is_running
 argument_list|(
 name|list
 operator|->
@@ -650,10 +650,23 @@ name|p
 operator|->
 name|manager
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
 name|extension
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|onoff
+argument_list|,
+name|gimp_extension_manager_can_run
+argument_list|(
+name|list
+operator|->
+name|p
+operator|->
+name|manager
+argument_list|,
+name|extension
 argument_list|)
 argument_list|)
 expr_stmt|;
