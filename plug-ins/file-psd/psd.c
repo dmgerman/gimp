@@ -410,6 +410,14 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_register_file_handler_priority
+argument_list|(
+name|LOAD_MERGED_PROC
+argument_list|,
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 name|LOAD_MERGED_PROC
