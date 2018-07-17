@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298cae930108
+DECL|struct|__anon2c8910240108
 block|{
 DECL|member|name
 name|gchar
@@ -1078,7 +1078,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: Return location for the parsed token  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: the #GTokenType expected as next token.  *  * Return value: %TRUE if the next token is @token, %FALSE otherwise.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1118,7 +1118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: Return location for the parsed identifier  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: the expected identifier.  *  * Return value: %TRUE if the next token is an identifier and if its  * value matches @identifier.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1825,7 +1825,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon298cae930203
+DECL|enum|__anon2c8910240203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
