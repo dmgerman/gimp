@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd42d070103
+DECL|enum|__anon295b5daa0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -5051,6 +5051,36 @@ name|proc
 operator|->
 name|magics
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_procedure_set_priority (GimpPlugInProcedure * proc,gint priority)
+name|gimp_plug_in_procedure_set_priority
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+name|gint
+name|priority
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|proc
+operator|->
+name|priority
+operator|=
+name|priority
 expr_stmt|;
 block|}
 end_function

@@ -6487,7 +6487,7 @@ name|gimp
 operator|->
 name|plug_in_manager
 operator|->
-name|raw_load_procs
+name|display_raw_load_procs
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_view_set_plug_in
@@ -12810,7 +12810,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27baff910108
+DECL|struct|__anon29e5f14e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13685,7 +13685,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27baff910208
+DECL|struct|__anon29e5f14e0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13816,7 +13816,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27baff910308
+DECL|struct|__anon29e5f14e0308
 block|{
 DECL|member|tree_label
 specifier|const
