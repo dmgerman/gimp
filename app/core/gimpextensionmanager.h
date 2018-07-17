@@ -168,6 +168,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_extension_manager_exit
+parameter_list|(
+name|GimpExtensionManager
+modifier|*
+name|manager
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|GList
 modifier|*

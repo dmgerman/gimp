@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a10f70103
+DECL|enum|__anon2be2e1e40103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a10f70203
+DECL|enum|__anon2be2e1e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1686,6 +1686,14 @@ operator|->
 name|plug_in_manager
 argument_list|)
 expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
+name|gimp
+operator|->
+name|extension_manager
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
@@ -2397,6 +2405,13 @@ argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
+argument_list|)
+expr_stmt|;
+name|gimp_extension_manager_exit
+argument_list|(
+name|gimp
+operator|->
+name|extension_manager
 argument_list|)
 expr_stmt|;
 name|gimp_modules_unload
