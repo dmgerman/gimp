@@ -7980,6 +7980,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|==
+name|GIMP_LAYER
+argument_list|(
+name|text_tool
+operator|->
+name|layer
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/*  FIXME this function works, and I have no clue why: first we set    *  the drawable, then we HALT the tool and start() it without    *  re-setting the drawable. Why this works perfectly anyway when    *  double clicking a text layer in the layers dialog... no idea.    */
 if|if
 condition|(
