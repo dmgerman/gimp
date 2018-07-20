@@ -376,6 +376,11 @@ define|#
 directive|define
 name|GIMP_ICON_COLOR_SPACE_LINEAR
 value|"gimp-color-space-linear"
+DECL|macro|GIMP_ICON_COLOR_SPACE_NON_LINEAR
+define|#
+directive|define
+name|GIMP_ICON_COLOR_SPACE_NON_LINEAR
+value|"gimp-color-space-non-linear"
 DECL|macro|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
 define|#
 directive|define
