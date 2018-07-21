@@ -133,6 +133,11 @@ name|GimpColorProfile
 modifier|*
 name|color_profile
 decl_stmt|;
+DECL|member|format_profile
+name|GimpColorProfile
+modifier|*
+name|format_profile
+decl_stmt|;
 block|}
 struct|;
 end_struct

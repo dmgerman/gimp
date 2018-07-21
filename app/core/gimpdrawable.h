@@ -921,6 +921,19 @@ begin_function_decl
 specifier|const
 name|Babl
 modifier|*
+name|gimp_drawable_get_space
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|Babl
+modifier|*
 name|gimp_drawable_get_format
 parameter_list|(
 name|GimpDrawable
@@ -957,8 +970,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_drawable_get_linear
+name|GimpTRCType
+name|gimp_drawable_get_trc
 parameter_list|(
 name|GimpDrawable
 modifier|*

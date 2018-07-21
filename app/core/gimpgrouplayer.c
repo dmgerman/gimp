@@ -4198,6 +4198,11 @@ argument_list|,
 name|precision
 argument_list|,
 name|TRUE
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 return|;
 case|case
@@ -4213,6 +4218,11 @@ argument_list|,
 name|precision
 argument_list|,
 name|TRUE
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 return|;
 block|}

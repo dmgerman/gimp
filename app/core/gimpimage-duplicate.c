@@ -524,14 +524,6 @@ argument_list|,
 name|new_image
 argument_list|)
 expr_stmt|;
-comment|/*  Copy the colormap if necessary  */
-name|gimp_image_duplicate_colormap
-argument_list|(
-name|image
-argument_list|,
-name|new_image
-argument_list|)
-expr_stmt|;
 comment|/*  Copy resolution information  */
 name|gimp_image_duplicate_resolution
 argument_list|(
@@ -549,6 +541,14 @@ name|new_image
 argument_list|)
 expr_stmt|;
 name|gimp_image_duplicate_color_profile
+argument_list|(
+name|image
+argument_list|,
+name|new_image
+argument_list|)
+expr_stmt|;
+comment|/*  Copy the colormap if necessary  */
+name|gimp_image_duplicate_colormap
 argument_list|(
 name|image
 argument_list|,

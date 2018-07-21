@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-loops.h"
 end_include
 
@@ -187,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a245f220103
+DECL|enum|__anon27f86fb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1859,29 +1865,29 @@ specifier|const
 name|Babl
 modifier|*
 name|format
-decl_stmt|;
-if|if
-condition|(
-name|gimp_drawable_get_linear
+init|=
+name|gimp_babl_format
+argument_list|(
+name|GIMP_RGB
+argument_list|,
+name|gimp_babl_precision
+argument_list|(
+name|GIMP_COMPONENT_TYPE_FLOAT
+argument_list|,
+name|gimp_drawable_get_trc
 argument_list|(
 name|drawable
 argument_list|)
-condition|)
-name|format
-operator|=
-name|babl_format
-argument_list|(
-literal|"RGBA float"
 argument_list|)
-expr_stmt|;
-else|else
-name|format
-operator|=
-name|babl_format
+argument_list|,
+name|TRUE
+argument_list|,
+name|gimp_drawable_get_space
 argument_list|(
-literal|"R'G'B'A float"
+name|drawable
 argument_list|)
-expr_stmt|;
+argument_list|)
+decl_stmt|;
 name|core
 operator|->
 name|comp_buffer
@@ -3862,7 +3868,12 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_linear
+name|gimp_drawable_get_trc
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|gimp_drawable_get_space
 argument_list|(
 name|drawable
 argument_list|)

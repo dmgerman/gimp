@@ -1342,6 +1342,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 decl_stmt|;
+comment|/* EEK SPACE _gimp_drawable_get_format() only returns the encoding,    * needs to create the actual space from the image's profile    */
 if|if
 condition|(
 name|format_str

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aaafd80103
+DECL|enum|__anon27de9d240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -726,10 +726,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|model
-operator|==
-name|babl_model
+operator|!
+name|strcmp
 argument_list|(
+name|babl_get_name
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
 literal|"R'G'B'A"
 argument_list|)
 condition|)

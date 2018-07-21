@@ -692,7 +692,7 @@ name|height
 argument_list|,
 name|type
 argument_list|,
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3503,6 +3503,26 @@ condition|)
 name|parent
 operator|=
 name|GIMP_IMAGE_ACTIVE_PARENT
+expr_stmt|;
+comment|/* see layer-new */
+if|if
+condition|(
+name|gimp_drawable_is_gray
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+name|gimp_layer_fix_format_space
+argument_list|(
+name|layer
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|success
 operator|=
@@ -12567,7 +12587,7 @@ literal|"gimp-image-new-with-precision"
 argument_list|,
 literal|"Creates a new image with the specified width, height, type and precision."
 argument_list|,
-literal|"Creates a new image, undisplayed with the specified extents, type and precision. Indexed images can only be created at GIMP_PRECISION_U8_GAMMA precision. See 'gimp-image-new' for further details."
+literal|"Creates a new image, undisplayed with the specified extents, type and precision. Indexed images can only be created at GIMP_PRECISION_U8_NON_LINEAR precision. See 'gimp-image-new' for further details."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

@@ -199,7 +199,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa6b9a0103
+DECL|enum|__anon2b7b28b60103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -212,7 +212,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa6b9a0203
+DECL|enum|__anon2b7b28b60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1392,6 +1392,8 @@ name|FALSE
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|bytes

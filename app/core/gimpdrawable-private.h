@@ -33,6 +33,11 @@ modifier|*
 name|shadow
 decl_stmt|;
 comment|/* shadow buffer            */
+DECL|member|format_profile
+name|GimpColorProfile
+modifier|*
+name|format_profile
+decl_stmt|;
 DECL|member|source_node
 name|GeglNode
 modifier|*

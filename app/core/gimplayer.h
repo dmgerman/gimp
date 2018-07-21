@@ -197,7 +197,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2946cb960108
+DECL|struct|__anon28ef657c0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -646,6 +646,23 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_layer_fix_format_space
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|gboolean
+name|copy_buffer
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GimpLayer

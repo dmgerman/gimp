@@ -181,6 +181,13 @@ modifier|*
 name|color_profile
 decl_stmt|;
 comment|/*  image's color profile        */
+DECL|member|layer_space
+specifier|const
+name|Babl
+modifier|*
+name|layer_space
+decl_stmt|;
+comment|/*  image's Babl layer space     */
 comment|/*  Cached color transforms: from layer to sRGB u8 and double, and back    */
 DECL|member|color_transforms_created
 name|gboolean

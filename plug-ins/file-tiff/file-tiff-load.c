@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa2b1780108
+DECL|struct|__anon2c02d1fa0108
 block|{
 DECL|member|compression
 name|gint
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa2b1780208
+DECL|struct|__anon2c02d1fa0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1033,7 +1033,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1064,7 +1064,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_HALF_GAMMA
+name|GIMP_PRECISION_HALF_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1087,7 +1087,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1119,7 +1119,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_FLOAT_GAMMA
+name|GIMP_PRECISION_FLOAT_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1142,7 +1142,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U32_GAMMA
+name|GIMP_PRECISION_U32_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1167,7 +1167,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_DOUBLE_GAMMA
+name|GIMP_PRECISION_DOUBLE_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -1189,7 +1189,7 @@ expr_stmt|;
 else|else
 name|image_precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=

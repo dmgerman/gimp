@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d28d50108
+DECL|struct|__anon2c2c70650108
 block|{
 DECL|member|replace
 name|gint
@@ -2153,7 +2153,7 @@ literal|8
 case|:
 name|iprecision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 name|type
 operator|=
@@ -2176,7 +2176,7 @@ literal|16
 case|:
 name|iprecision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 comment|/* FIXME precision */
 name|type

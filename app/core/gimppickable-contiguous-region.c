@@ -952,10 +952,12 @@ argument_list|(
 name|format
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_FLOAT_GAMMA
+name|GIMP_PRECISION_FLOAT_NON_LINEAR
 argument_list|,
 operator|*
 name|has_alpha
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

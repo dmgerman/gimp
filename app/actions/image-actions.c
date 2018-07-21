@@ -1150,11 +1150,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_convert_gamma_actions
+DECL|variable|image_convert_trc_actions
 specifier|static
 specifier|const
 name|GimpRadioActionEntry
-name|image_convert_gamma_actions
+name|image_convert_trc_actions
 index|[]
 init|=
 block|{
@@ -1179,7 +1179,7 @@ argument_list|,
 literal|"Convert the image to perceptual (sRGB) gamma"
 argument_list|)
 block|,
-name|FALSE
+name|GIMP_TRC_NON_LINEAR
 block|,
 name|GIMP_HELP_IMAGE_CONVERT_GAMMA
 block|}
@@ -1205,7 +1205,7 @@ argument_list|,
 literal|"Convert the image to linear light"
 argument_list|)
 block|,
-name|TRUE
+name|GIMP_TRC_LINEAR
 block|,
 name|GIMP_HELP_IMAGE_CONVERT_GAMMA
 block|}
@@ -1467,11 +1467,11 @@ name|group
 argument_list|,
 literal|"image-convert-action"
 argument_list|,
-name|image_convert_gamma_actions
+name|image_convert_trc_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|image_convert_gamma_actions
+name|image_convert_trc_actions
 argument_list|)
 argument_list|,
 name|NULL
@@ -1480,7 +1480,7 @@ literal|0
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|image_convert_gamma_cmd_callback
+name|image_convert_trc_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1777,7 +1777,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_babl_format_get_linear
+name|gimp_babl_format_get_trc
 argument_list|(
 name|gimp_image_get_layer_format
 argument_list|(
@@ -1786,6 +1786,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 argument_list|)
+operator|==
+name|GIMP_TRC_LINEAR
 condition|)
 block|{
 name|gimp_action_group_set_action_active
@@ -1823,7 +1825,7 @@ operator|=
 operator|(
 name|precision
 operator|==
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 operator|)
 expr_stmt|;
 name|is_double

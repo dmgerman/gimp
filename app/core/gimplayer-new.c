@@ -752,6 +752,14 @@ name|src_format
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_object_ref
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
+block|}
 name|dest_profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -781,6 +789,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|src_profile
 argument_list|)
 expr_stmt|;
 block|}

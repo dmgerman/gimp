@@ -264,6 +264,11 @@ name|image
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -409,7 +414,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  When converting to/from GRAY, convert to the new type's builtin    *  profile if none was passed.    */
+comment|/*  When converting to/from GRAY, always convert to the new type's    *  builtin profile as a fallback, we need one for convert_type on    *  the same image    */
 if|if
 condition|(
 name|old_type
@@ -425,11 +430,6 @@ if|if
 condition|(
 operator|!
 name|dest_profile
-operator|&&
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|)
 condition|)
 name|dest_profile
 operator|=
@@ -506,13 +506,6 @@ operator|==
 name|GIMP_GRAY
 condition|)
 block|{
-if|if
-condition|(
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|)
-condition|)
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -520,15 +513,6 @@ argument_list|,
 name|dest_profile
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-else|else
-name|gimp_color_managed_profile_changed
-argument_list|(
-name|GIMP_COLOR_MANAGED
-argument_list|(
-name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

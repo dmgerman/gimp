@@ -348,10 +348,9 @@ name|filter_format
 expr_stmt|;
 name|filter_profile
 operator|=
-name|gimp_babl_format_get_color_profile
-argument_list|(
-name|filter_format
-argument_list|)
+name|shell
+operator|->
+name|filter_profile
 expr_stmt|;
 block|}
 else|else

@@ -5994,7 +5994,7 @@ literal|32
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U32_GAMMA
+name|GIMP_PRECISION_U32_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -6002,7 +6002,7 @@ literal|16
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -6013,7 +6013,7 @@ literal|1
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 break|break;
 default|default:

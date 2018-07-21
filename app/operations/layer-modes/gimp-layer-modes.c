@@ -4657,10 +4657,12 @@ condition|(
 operator|!
 name|preferred_format
 operator|||
-name|gimp_babl_format_get_linear
+name|gimp_babl_format_get_trc
 argument_list|(
 name|preferred_format
 argument_list|)
+operator|==
+name|GIMP_TRC_LINEAR
 condition|)
 return|return
 name|babl_format

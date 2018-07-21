@@ -201,17 +201,19 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|GIMP_OPERATION_POINT_FILTER_PROP_LINEAR
+name|GIMP_OPERATION_POINT_FILTER_PROP_TRC
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
-literal|"linear"
+literal|"trc"
 argument_list|,
-literal|"Linear"
+literal|"Linear/Percptual"
 argument_list|,
-literal|"Whether to operate on linear RGB"
+literal|"What TRC to operate on"
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRC_TYPE
+argument_list|,
+name|GIMP_TRC_NON_LINEAR
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

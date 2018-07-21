@@ -3026,6 +3026,11 @@ name|babl_format_has_alpha
 argument_list|(
 name|src_format
 argument_list|)
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|src_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

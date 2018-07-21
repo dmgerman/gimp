@@ -647,6 +647,12 @@ modifier|*
 name|filter_format
 decl_stmt|;
 comment|/*  filter_buffer's format             */
+DECL|member|filter_profile
+name|GimpColorProfile
+modifier|*
+name|filter_profile
+decl_stmt|;
+comment|/*  filter_format's profile            */
 DECL|member|filter_buffer
 name|GeglBuffer
 modifier|*

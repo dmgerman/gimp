@@ -430,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c58dcb50103
+DECL|enum|__anon2af1f62e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1518,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c58dcb50208
+DECL|struct|__anon2af1f62e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c58dcb50308
+DECL|struct|__anon2af1f62e0308
 block|{
 DECL|member|used_count
 name|glong
@@ -3010,20 +3010,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* when converting from GRAY, convert to the new type's builtin    * profile.    */
+comment|/* when converting from GRAY, always convert to the new type's    * builtin profile    */
 if|if
 condition|(
 name|old_type
 operator|==
 name|GIMP_GRAY
-condition|)
-block|{
-if|if
-condition|(
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|)
 condition|)
 name|dest_profile
 operator|=
@@ -3032,7 +3024,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  Build histogram if necessary.  */
 name|rgb_to_lab_fish
 operator|=
@@ -3978,14 +3969,6 @@ name|old_type
 operator|==
 name|GIMP_GRAY
 condition|)
-block|{
-if|if
-condition|(
-name|gimp_image_get_color_profile
-argument_list|(
-name|image
-argument_list|)
-condition|)
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -3995,16 +3978,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|else
-name|gimp_color_managed_profile_changed
-argument_list|(
-name|GIMP_COLOR_MANAGED
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  Delete the quantizer object, if there is one */
 if|if
 condition|(

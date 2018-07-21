@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bafc4c40103
+DECL|enum|__anon2c4ed3540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,6 +129,9 @@ name|PROP_COMPONENT_TYPE
 block|,
 DECL|enumerator|PROP_LINEAR
 name|PROP_LINEAR
+block|,
+DECL|enumerator|PROP_TRC
+name|PROP_TRC
 block|,
 DECL|enumerator|PROP_COLOR_MANAGED
 name|PROP_COLOR_MANAGED
@@ -587,7 +590,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -623,20 +626,22 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_LINEAR
+name|PROP_TRC
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
-literal|"linear"
+literal|"trc"
 argument_list|,
 name|_
 argument_list|(
-literal|"Gamma"
+literal|"Linear/Perceptual"
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|GIMP_TYPE_TRC_TYPE
+argument_list|,
+name|GIMP_TRC_NON_LINEAR
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -990,7 +995,7 @@ name|g_object_notify
 argument_list|(
 name|object
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1008,7 +1013,7 @@ argument_list|(
 name|value
 argument_list|)
 argument_list|,
-name|gimp_babl_linear
+name|gimp_babl_trc
 argument_list|(
 name|private
 operator|->
@@ -1025,7 +1030,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_LINEAR
+name|PROP_TRC
 case|:
 name|private
 operator|->
@@ -1040,7 +1045,7 @@ operator|->
 name|precision
 argument_list|)
 argument_list|,
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 name|value
 argument_list|)
@@ -1330,13 +1335,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_LINEAR
+name|PROP_TRC
 case|:
-name|g_value_set_boolean
+name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,
-name|gimp_babl_linear
+name|gimp_babl_trc
 argument_list|(
 name|private
 operator|->
@@ -1496,6 +1501,8 @@ operator|->
 name|fill_type
 operator|==
 name|GIMP_FILL_TRANSPARENT
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|bytes
@@ -2019,7 +2026,7 @@ argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 argument_list|)
 expr_stmt|;
 return|return

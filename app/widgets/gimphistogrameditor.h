@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|linear
-name|gboolean
-name|linear
+DECL|member|trc
+name|GimpTRCType
+name|trc
 decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable

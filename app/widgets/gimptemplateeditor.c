@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27905d840103
+DECL|enum|__anon2c8906840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2237,24 +2237,18 @@ argument_list|)
 expr_stmt|;
 name|combo
 operator|=
-name|gimp_prop_boolean_combo_box_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|template
 argument_list|)
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
-name|_
-argument_list|(
-literal|"Linear light"
-argument_list|)
+name|GIMP_TRC_LINEAR
 argument_list|,
-name|_
-argument_list|(
-literal|"Perceptual gamma (sRGB)"
-argument_list|)
+name|GIMP_TRC_NON_LINEAR
 argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned
@@ -3243,9 +3237,9 @@ name|private
 operator|->
 name|template
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
-name|FALSE
+name|GIMP_TRC_NON_LINEAR
 argument_list|,
 name|NULL
 argument_list|)
@@ -3276,9 +3270,9 @@ name|private
 operator|->
 name|template
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
-name|TRUE
+name|GIMP_TRC_LINEAR
 argument_list|,
 name|NULL
 argument_list|)

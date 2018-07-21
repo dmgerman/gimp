@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27956a080103
+DECL|enum|__anon29fd12d30103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -5510,6 +5510,11 @@ decl_stmt|;
 name|GimpPrecision
 name|pixmap_precision
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|pixmap_space
+decl_stmt|;
 name|pixmap_base_type
 operator|=
 name|gimp_babl_format_get_base_type
@@ -5520,6 +5525,13 @@ expr_stmt|;
 name|pixmap_precision
 operator|=
 name|gimp_babl_format_get_precision
+argument_list|(
+name|pixmap_format
+argument_list|)
+expr_stmt|;
+name|pixmap_space
+operator|=
+name|babl_format_get_space
 argument_list|(
 name|pixmap_format
 argument_list|)
@@ -5535,6 +5547,8 @@ argument_list|,
 name|pixmap_precision
 argument_list|,
 name|TRUE
+argument_list|,
+name|pixmap_space
 argument_list|)
 argument_list|,
 name|area_format

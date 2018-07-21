@@ -63,6 +63,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpColorProfile
+modifier|*
+name|gimp_babl_get_builtin_color_profile
+parameter_list|(
+name|GimpImageBaseType
+name|base_type
+parameter_list|,
+name|GimpTRCType
+name|trc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageBaseType
 name|gimp_babl_format_get_base_type
 parameter_list|(
@@ -99,8 +113,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_babl_format_get_linear
+name|GimpTRCType
+name|gimp_babl_format_get_trc
 parameter_list|(
 specifier|const
 name|Babl
@@ -121,8 +135,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_babl_linear
+name|GimpTRCType
+name|gimp_babl_trc
 parameter_list|(
 name|GimpPrecision
 name|precision
@@ -137,8 +151,8 @@ parameter_list|(
 name|GimpComponentType
 name|component
 parameter_list|,
-name|gboolean
-name|linear
+name|GimpTRCType
+name|trc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -170,6 +184,11 @@ name|precision
 parameter_list|,
 name|gboolean
 name|with_alpha
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 function_decl|;
 end_function_decl

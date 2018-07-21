@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c181f980103
+DECL|enum|__anon278297280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -478,26 +478,34 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|model
-operator|==
-name|babl_model
+operator|!
+name|strcmp
 argument_list|(
+name|babl_get_name
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
 literal|"R'G'B'A"
 argument_list|)
 condition|)
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+name|format
 argument_list|)
 expr_stmt|;
 else|else
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|format
 argument_list|)
 expr_stmt|;
 block|}

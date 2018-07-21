@@ -110,9 +110,9 @@ DECL|member|component_type
 name|GimpComponentType
 name|component_type
 decl_stmt|;
-DECL|member|linear
-name|gboolean
-name|linear
+DECL|member|trc
+name|GimpTRCType
+name|trc
 decl_stmt|;
 DECL|member|layer_dither_method
 name|GeglDitherMethod
@@ -262,8 +262,8 @@ decl_stmt|;
 name|gboolean
 name|dither
 decl_stmt|;
-name|gboolean
-name|linear
+name|GimpTRCType
+name|trc
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -328,6 +328,11 @@ name|FALSE
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|old_format
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|old_bits
@@ -385,9 +390,9 @@ case|case
 name|GIMP_COMPONENT_TYPE_U8
 case|:
 comment|/* default to gamma when converting 8 bit */
-name|linear
+name|trc
 operator|=
-name|FALSE
+name|GIMP_TRC_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -398,9 +403,9 @@ name|GIMP_COMPONENT_TYPE_U32
 case|:
 default|default:
 comment|/* leave gamma alone by default when converting to 16/32 bit int */
-name|linear
+name|trc
 operator|=
-name|gimp_babl_format_get_linear
+name|gimp_babl_format_get_trc
 argument_list|(
 name|old_format
 argument_list|)
@@ -416,9 +421,9 @@ case|case
 name|GIMP_COMPONENT_TYPE_DOUBLE
 case|:
 comment|/* default to linear when converting to floating point */
-name|linear
+name|trc
 operator|=
-name|TRUE
+name|GIMP_TRC_LINEAR
 expr_stmt|;
 break|break;
 block|}
@@ -443,9 +448,9 @@ name|component_type
 expr_stmt|;
 name|private
 operator|->
-name|linear
+name|trc
 operator|=
-name|linear
+name|trc
 expr_stmt|;
 name|private
 operator|->
@@ -703,25 +708,34 @@ argument_list|,
 operator|&
 name|private
 operator|->
-name|linear
+name|trc
 argument_list|,
-name|linear
-argument_list|,
-name|_
-argument_list|(
-literal|"Perceptual gamma (sRGB)"
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
+name|trc
 argument_list|,
 name|_
 argument_list|(
 literal|"Linear light"
 argument_list|)
 argument_list|,
-name|TRUE
+name|GIMP_TRC_LINEAR
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Non-Linear"
+argument_list|)
+argument_list|,
+name|GIMP_TRC_NON_LINEAR
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Perceptual (sRGB)"
+argument_list|)
+argument_list|,
+name|GIMP_TRC_PERCEPTUAL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1330,7 +1344,7 @@ name|component_type
 argument_list|,
 name|private
 operator|->
-name|linear
+name|trc
 argument_list|)
 decl_stmt|;
 name|private

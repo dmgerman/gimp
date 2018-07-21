@@ -882,11 +882,11 @@ name|filter_tool
 operator|->
 name|operation
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
 name|config
 operator|->
-name|linear
+name|trc
 argument_list|,
 name|NULL
 argument_list|)
@@ -897,7 +897,7 @@ name|gimp_histogram_new
 argument_list|(
 name|config
 operator|->
-name|linear
+name|trc
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2043,28 +2043,22 @@ expr_stmt|;
 comment|/*  The linear/perceptual radio buttons  */
 name|hbox2
 operator|=
-name|gimp_prop_boolean_icon_box_new
+name|gimp_prop_enum_icon_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|config
 argument_list|)
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
-name|GIMP_ICON_COLOR_SPACE_LINEAR
+literal|"gimp-color-space"
 argument_list|,
-name|GIMP_ICON_COLOR_SPACE_PERCEPTUAL
+operator|-
+literal|1
 argument_list|,
-name|_
-argument_list|(
-literal|"Adjust curves in linear light"
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Adjust curves perceptually"
-argument_list|)
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -2829,11 +2823,11 @@ name|g_object_set
 argument_list|(
 name|config
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
 name|default_config
 operator|->
-name|linear
+name|trc
 argument_list|,
 name|NULL
 argument_list|)
@@ -2846,7 +2840,7 @@ argument_list|(
 name|config
 argument_list|)
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|)
 expr_stmt|;
 for|for
@@ -3062,7 +3056,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|)
 condition|)
 block|{
@@ -3076,11 +3070,11 @@ name|filter_tool
 operator|->
 name|operation
 argument_list|,
-literal|"linear"
+literal|"trc"
 argument_list|,
 name|curves_config
 operator|->
-name|linear
+name|trc
 argument_list|,
 name|NULL
 argument_list|)
@@ -3091,7 +3085,7 @@ name|gimp_histogram_new
 argument_list|(
 name|curves_config
 operator|->
-name|linear
+name|trc
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3466,7 +3460,9 @@ if|if
 condition|(
 name|config
 operator|->
-name|linear
+name|trc
+operator|==
+name|GIMP_TRC_LINEAR
 condition|)
 name|babl_process
 argument_list|(

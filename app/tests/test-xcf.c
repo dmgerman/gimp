@@ -216,7 +216,7 @@ DECL|macro|GIMP_MAINIMAGE_PRECISION
 define|#
 directive|define
 name|GIMP_MAINIMAGE_PRECISION
-value|GIMP_PRECISION_U8_GAMMA
+value|GIMP_PRECISION_U8_NON_LINEAR
 end_define
 
 begin_define

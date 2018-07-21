@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f4c5f60103
+DECL|enum|__anon29bfe7080103
 block|{
 DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
 name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4c5f60208
+DECL|struct|__anon29bfe7080208
 block|{
 DECL|member|canvas_buffer
 name|GeglBuffer
@@ -301,8 +301,13 @@ parameter_list|,
 name|GimpComponentMask
 name|mask
 parameter_list|,
-name|gboolean
-name|linear_mode
+name|GimpTRCType
+name|trc
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 function_decl|;
 end_function_decl

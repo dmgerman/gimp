@@ -760,7 +760,7 @@ decl_stmt|;
 name|GimpPrecision
 name|precision
 init|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 decl_stmt|;
 name|gint
 name|num_successful_elements
@@ -884,7 +884,7 @@ literal|0
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -892,7 +892,7 @@ literal|1
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -959,7 +959,7 @@ literal|150
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -975,7 +975,7 @@ literal|250
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -991,7 +991,7 @@ literal|350
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_U32_GAMMA
+name|GIMP_PRECISION_U32_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -1007,7 +1007,7 @@ literal|450
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_HALF_GAMMA
+name|GIMP_PRECISION_HALF_NON_LINEAR
 expr_stmt|;
 break|break;
 case|case
@@ -1023,7 +1023,7 @@ literal|550
 case|:
 name|precision
 operator|=
-name|GIMP_PRECISION_FLOAT_GAMMA
+name|GIMP_PRECISION_FLOAT_NON_LINEAR
 expr_stmt|;
 break|break;
 default|default:
@@ -2234,6 +2234,38 @@ name|info
 operator|->
 name|floating_sel_drawable
 condition|)
+block|{
+comment|/* we didn't fix the loaded floating selection's format before        * because we didn't know if it needed the layer space        */
+if|if
+condition|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|info
+operator|->
+name|floating_sel_drawable
+argument_list|)
+operator|&&
+name|gimp_drawable_is_gray
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|info
+operator|->
+name|floating_sel
+argument_list|)
+argument_list|)
+condition|)
+name|gimp_layer_fix_format_space
+argument_list|(
+name|info
+operator|->
+name|floating_sel
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|floating_sel_attach
 argument_list|(
 name|info
@@ -2245,6 +2277,7 @@ operator|->
 name|floating_sel_drawable
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|info
@@ -6406,7 +6439,14 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/* do not use gimp_image_get_layer_format() because it might    * be the floating selection of a channel or mask    */
+if|if
+condition|(
+name|base_type
+operator|==
+name|GIMP_GRAY
+condition|)
+block|{
+comment|/* do not use gimp_image_get_layer_format() because it might        * be the floating selection of a channel or mask        */
 name|format
 operator|=
 name|gimp_image_get_format
@@ -6421,8 +6461,24 @@ name|image
 argument_list|)
 argument_list|,
 name|has_alpha
+argument_list|,
+name|NULL
+comment|/* we will fix the space later */
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|format
+operator|=
+name|gimp_image_get_layer_format
+argument_list|(
+name|image
+argument_list|,
+name|has_alpha
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* create a new layer */
 name|layer
 operator|=
@@ -6563,6 +6619,25 @@ operator|=
 name|layer
 expr_stmt|;
 block|}
+comment|/* if this is not the floating selection, we can fix the layer's    * space already now, the function will do nothing if we already    * created the layer with the right format    */
+if|if
+condition|(
+operator|!
+name|floating
+operator|&&
+name|base_type
+operator|==
+name|GIMP_GRAY
+condition|)
+name|gimp_layer_fix_format_space
+argument_list|(
+name|layer
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 comment|/* read the hierarchy and layer mask offsets */
 name|xcf_read_offset
 argument_list|(

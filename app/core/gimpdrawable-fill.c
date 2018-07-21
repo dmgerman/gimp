@@ -417,6 +417,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
 name|gegl_buffer_set_pattern
 argument_list|(
 name|buffer

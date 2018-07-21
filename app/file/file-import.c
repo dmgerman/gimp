@@ -221,7 +221,7 @@ name|import_promote_dither
 operator|&&
 name|old_precision
 operator|==
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 condition|)
 block|{
 name|gimp_image_convert_dither_u8

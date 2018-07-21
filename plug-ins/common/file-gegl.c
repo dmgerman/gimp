@@ -1263,7 +1263,7 @@ name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 block|}
 else|else
@@ -1489,7 +1489,7 @@ argument_list|)
 condition|)
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 elseif|else
 if|if
@@ -1503,7 +1503,7 @@ argument_list|)
 condition|)
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 elseif|else
 if|if
@@ -1517,7 +1517,7 @@ argument_list|)
 condition|)
 name|precision
 operator|=
-name|GIMP_PRECISION_U32_GAMMA
+name|GIMP_PRECISION_U32_NON_LINEAR
 expr_stmt|;
 elseif|else
 if|if
@@ -1531,12 +1531,12 @@ argument_list|)
 condition|)
 name|precision
 operator|=
-name|GIMP_PRECISION_HALF_GAMMA
+name|GIMP_PRECISION_HALF_NON_LINEAR
 expr_stmt|;
 else|else
 name|precision
 operator|=
-name|GIMP_PRECISION_FLOAT_GAMMA
+name|GIMP_PRECISION_FLOAT_NON_LINEAR
 expr_stmt|;
 block|}
 block|}

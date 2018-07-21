@@ -442,7 +442,14 @@ name|TRUE
 expr_stmt|;
 break|break;
 block|}
-comment|/* do not use gimp_image_get_layer_format() because it might        * be the floating selection of a channel or mask        */
+if|if
+condition|(
+name|base_type
+operator|==
+name|GIMP_GRAY
+condition|)
+block|{
+comment|/* do not use gimp_image_get_layer_format() because it might            * be the floating selection of a channel or mask, we will            * fix the format in image-add-layer and floating-sel-attach            */
 name|format
 operator|=
 name|gimp_image_get_format
@@ -457,8 +464,24 @@ name|image
 argument_list|)
 argument_list|,
 name|has_alpha
+argument_list|,
+name|NULL
+comment|/* will fix later */
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|format
+operator|=
+name|gimp_image_get_layer_format
+argument_list|(
+name|image
+argument_list|,
+name|has_alpha
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|=
 name|gimp_layer_new

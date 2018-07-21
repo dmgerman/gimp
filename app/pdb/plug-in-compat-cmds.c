@@ -438,11 +438,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|gimp_drawable_get_linear
+name|gimp_drawable_get_trc
 argument_list|(
 name|drawable
 argument_list|)
+operator|!=
+name|GIMP_TRC_LINEAR
 condition|)
 block|{
 specifier|const
@@ -502,6 +503,11 @@ name|TRUE
 argument_list|)
 argument_list|,
 name|babl_format_has_alpha
+argument_list|(
+name|drawable_format
+argument_list|)
+argument_list|,
+name|babl_format_get_space
 argument_list|(
 name|drawable_format
 argument_list|)

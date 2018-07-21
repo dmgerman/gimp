@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c501d10108
+DECL|struct|__anon2c2634be0108
 block|{
 DECL|member|raw
 name|gint
@@ -844,7 +844,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c501d10208
+DECL|struct|__anon2c2634be0208
 block|{
 DECL|member|name
 name|gchar
@@ -2987,14 +2987,14 @@ condition|)
 block|{
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 block|}
 else|else
 block|{
 name|precision
 operator|=
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 expr_stmt|;
 block|}
 block|}
@@ -3002,7 +3002,7 @@ else|else
 block|{
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 block|}
 comment|/* Create a new image of the proper size and associate the filename      with it. */
@@ -4691,7 +4691,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon27c501d1030a
+DECL|union|__anon2c2634be030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -5996,7 +5996,10 @@ case|case
 name|GIMP_PRECISION_U8_LINEAR
 case|:
 case|case
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
+case|:
+case|case
+name|GIMP_PRECISION_U8_PERCEPTUAL
 case|:
 name|rowinfo
 operator|.

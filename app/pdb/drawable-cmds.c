@@ -264,11 +264,12 @@ operator|->
 name|current_plug_in
 argument_list|)
 expr_stmt|;
+comment|/* EEK SPACE: this needs more code on the libgimp side, we currently        * lose the space        */
 name|format
 operator|=
 name|g_strdup
 argument_list|(
-name|babl_get_name
+name|babl_format_get_encoding
 argument_list|(
 name|gimp_drawable_get_format
 argument_list|(

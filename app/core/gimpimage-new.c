@@ -1552,7 +1552,7 @@ argument_list|)
 argument_list|,
 name|base_type
 argument_list|,
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 argument_list|,
 name|FALSE
 argument_list|)

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-babl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -365,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d750190103
+DECL|enum|__anon29db5e0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d750190203
+DECL|enum|__anon29db5e0b0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1370,6 +1376,17 @@ operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|filter_profile
+operator|=
+name|gimp_babl_get_builtin_color_profile
+argument_list|(
+name|GIMP_RGB
+argument_list|,
+name|GIMP_TRC_NON_LINEAR
 argument_list|)
 expr_stmt|;
 name|shell

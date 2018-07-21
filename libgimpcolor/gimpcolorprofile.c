@@ -4878,7 +4878,7 @@ return|;
 return|return
 name|babl_format_with_space
 argument_list|(
-name|babl_get_name
+name|babl_format_get_encoding
 argument_list|(
 name|format
 argument_list|)

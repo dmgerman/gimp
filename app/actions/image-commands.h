@@ -82,7 +82,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_convert_gamma_cmd_callback
+name|image_convert_trc_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

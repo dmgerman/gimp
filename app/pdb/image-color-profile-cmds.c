@@ -575,11 +575,13 @@ condition|)
 block|{
 name|success
 operator|=
-name|gimp_image_set_color_profile
+name|gimp_image_assign_color_profile
 argument_list|(
 name|image
 argument_list|,
 name|profile
+argument_list|,
+name|progress
 argument_list|,
 name|error
 argument_list|)
@@ -600,11 +602,13 @@ else|else
 block|{
 name|success
 operator|=
-name|gimp_image_set_color_profile
+name|gimp_image_assign_color_profile
 argument_list|(
 name|image
 argument_list|,
 name|NULL
+argument_list|,
+name|progress
 argument_list|,
 name|error
 argument_list|)
@@ -742,11 +746,13 @@ condition|)
 block|{
 name|success
 operator|=
-name|gimp_image_set_color_profile
+name|gimp_image_assign_color_profile
 argument_list|(
 name|image
 argument_list|,
 name|profile
+argument_list|,
+name|progress
 argument_list|,
 name|error
 argument_list|)
@@ -772,11 +778,13 @@ else|else
 block|{
 name|success
 operator|=
-name|gimp_image_set_color_profile
+name|gimp_image_assign_color_profile
 argument_list|(
 name|image
 argument_list|,
 name|NULL
+argument_list|,
+name|progress
 argument_list|,
 name|error
 argument_list|)
@@ -1460,7 +1468,7 @@ literal|"gimp-image-set-color-profile"
 argument_list|,
 literal|"Sets the image's color profile"
 argument_list|,
-literal|"This procedure sets the image's color profile, or unsets it if NULL is passed as 'color_profile'. This procedure does no color conversion."
+literal|"This procedure sets the image's color profile, or unsets it if NULL is passed as 'color_profile'. This procedure does no color conversion. However, it will change the pixel format of all layers to contain the babl space matching the profile. You must call this procedure before adding layers to the image."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -1569,7 +1577,7 @@ literal|"gimp-image-set-color-profile-from-file"
 argument_list|,
 literal|"Sets the image's color profile from an ICC file"
 argument_list|,
-literal|"This procedure sets the image's color profile from a file containing an ICC profile, or unsets it if NULL is passed as 'uri'. This procedure does no color conversion."
+literal|"This procedure sets the image's color profile from a file containing an ICC profile, or unsets it if NULL is passed as 'uri'. This procedure does no color conversion. However, it will change the pixel format of all layers to contain the babl space matching the profile. You must call this procedure before adding layers to the image."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

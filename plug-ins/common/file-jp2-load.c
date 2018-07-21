@@ -4838,7 +4838,7 @@ return|return
 name|GIMP_PRECISION_U32_LINEAR
 return|;
 return|return
-name|GIMP_PRECISION_U32_GAMMA
+name|GIMP_PRECISION_U32_NON_LINEAR
 return|;
 case|case
 literal|16
@@ -4851,7 +4851,7 @@ return|return
 name|GIMP_PRECISION_U16_LINEAR
 return|;
 return|return
-name|GIMP_PRECISION_U16_GAMMA
+name|GIMP_PRECISION_U16_NON_LINEAR
 return|;
 default|default:
 if|if
@@ -4862,7 +4862,7 @@ return|return
 name|GIMP_PRECISION_U8_LINEAR
 return|;
 return|return
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 return|;
 block|}
 block|}

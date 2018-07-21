@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ba53d0103
+DECL|enum|__anon2bdabfea0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ba53d0203
+DECL|enum|__anon2bdabfea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2733,7 +2733,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -3109,7 +3109,7 @@ name|private
 operator|->
 name|precision
 operator|=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 expr_stmt|;
 name|private
 operator|->
@@ -5900,6 +5900,16 @@ operator|>
 literal|0
 condition|)
 block|{
+specifier|const
+name|Babl
+modifier|*
+name|space
+init|=
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|babl_palette_set_palette
 argument_list|(
 name|private
@@ -5915,6 +5925,8 @@ operator|->
 name|precision
 argument_list|,
 name|FALSE
+argument_list|,
+name|space
 argument_list|)
 argument_list|,
 name|private
@@ -5941,6 +5953,8 @@ operator|->
 name|precision
 argument_list|,
 name|FALSE
+argument_list|,
+name|space
 argument_list|)
 argument_list|,
 name|private
@@ -6338,6 +6352,11 @@ name|image
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 return|;
 case|case
@@ -6356,6 +6375,11 @@ name|image
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -7808,7 +7832,7 @@ begin_function
 specifier|const
 name|Babl
 modifier|*
-DECL|function|gimp_image_get_format (GimpImage * image,GimpImageBaseType base_type,GimpPrecision precision,gboolean with_alpha)
+DECL|function|gimp_image_get_format (GimpImage * image,GimpImageBaseType base_type,GimpPrecision precision,gboolean with_alpha,const Babl * space)
 name|gimp_image_get_format
 parameter_list|(
 name|GimpImage
@@ -7823,6 +7847,11 @@ name|precision
 parameter_list|,
 name|gboolean
 name|with_alpha
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -7854,6 +7883,8 @@ argument_list|,
 name|precision
 argument_list|,
 name|with_alpha
+argument_list|,
+name|space
 argument_list|)
 return|;
 case|case
@@ -7863,7 +7894,7 @@ if|if
 condition|(
 name|precision
 operator|==
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 condition|)
 block|{
 if|if
@@ -7890,6 +7921,39 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_image_get_layer_space (GimpImage * image)
+name|gimp_image_get_layer_space
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+operator|->
+name|layer_space
+return|;
 block|}
 end_function
 
@@ -7934,6 +7998,11 @@ name|image
 argument_list|)
 argument_list|,
 name|with_alpha
+argument_list|,
+name|gimp_image_get_layer_space
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -7975,7 +8044,7 @@ if|if
 condition|(
 name|precision
 operator|==
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 condition|)
 return|return
 name|gimp_image_get_format
@@ -7990,6 +8059,8 @@ name|image
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 return|return
@@ -10077,7 +10148,7 @@ argument_list|(
 name|image
 argument_list|)
 operator|!=
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_PRECISION_U8_NON_LINEAR
 condition|)
 block|{
 name|ADD_REASON
@@ -10107,13 +10178,28 @@ block|}
 comment|/* need version 12 for> 8-bit images for proper endian swapping */
 if|if
 condition|(
-name|gimp_image_get_precision
+name|gimp_image_get_component_type
 argument_list|(
 name|image
 argument_list|)
 operator|>
-name|GIMP_PRECISION_U8_GAMMA
+name|GIMP_COMPONENT_TYPE_U8
 condition|)
+block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Encoding of high bit-depth images was "
+literal|"fixed in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -10123,6 +10209,7 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* need version 8 for zlib compression */
 if|if
 condition|(
