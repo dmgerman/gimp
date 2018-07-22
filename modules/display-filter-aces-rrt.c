@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c27e9ec0103
+DECL|enum|__anon2b8774120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,7 +282,7 @@ name|GIMP_MODULE_ABI_VERSION
 block|,
 name|N_
 argument_list|(
-literal|"ACES RRT (RRT = Reference Rendering Transform) An HDR to SDR proof color display filter, usin a luminance-only approximation of the ACES RRT, a pre-defined filmic look to be used before ODT (display or output space ICC Profile)"
+literal|"ACES RRT (RRT = Reference Rendering Transform). An HDR to SDR proof color display filter, using a luminance-only approximation of the ACES RRT, a pre-defined filmic look to be used before ODT (display or output space ICC profile)"
 argument_list|)
 block|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
@@ -400,7 +400,7 @@ literal|"exposure"
 argument_list|,
 name|_
 argument_list|(
-literal|"pre-transform change in stops"
+literal|"Pre-transform change in stops"
 argument_list|)
 argument_list|,
 name|NULL
