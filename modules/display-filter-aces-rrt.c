@@ -66,79 +66,79 @@ value|0.0
 end_define
 
 begin_define
-DECL|macro|CDISPLAY_TYPE_FILMIC
+DECL|macro|CDISPLAY_TYPE_ACES_RRT
 define|#
 directive|define
-name|CDISPLAY_TYPE_FILMIC
-value|(cdisplay_filmic_get_type ())
+name|CDISPLAY_TYPE_ACES_RRT
+value|(cdisplay_aces_rrt_get_type ())
 end_define
 
 begin_define
-DECL|macro|CDISPLAY_FILMIC (obj)
+DECL|macro|CDISPLAY_ACES_RRT (obj)
 define|#
 directive|define
-name|CDISPLAY_FILMIC
+name|CDISPLAY_ACES_RRT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), CDISPLAY_TYPE_FILMIC, CdisplayFilmic))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), CDISPLAY_TYPE_ACES_RRT, CdisplayAcesRRT))
 end_define
 
 begin_define
-DECL|macro|CDISPLAY_FILMIC_CLASS (klass)
+DECL|macro|CDISPLAY_ACES_RRT_CLASS (klass)
 define|#
 directive|define
-name|CDISPLAY_FILMIC_CLASS
+name|CDISPLAY_ACES_RRT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), CDISPLAY_TYPE_FILMIC, CdisplayFilmicClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), CDISPLAY_TYPE_ACES_RRT, CdisplayAcesRRTClass))
 end_define
 
 begin_define
-DECL|macro|CDISPLAY_IS_FILMIC (obj)
+DECL|macro|CDISPLAY_IS_ACES_RRT (obj)
 define|#
 directive|define
-name|CDISPLAY_IS_FILMIC
+name|CDISPLAY_IS_ACES_RRT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), CDISPLAY_TYPE_FILMIC))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), CDISPLAY_TYPE_ACES_RRT))
 end_define
 
 begin_define
-DECL|macro|CDISPLAY_IS_FILMIC_CLASS (klass)
+DECL|macro|CDISPLAY_IS_ACES_RRT_CLASS (klass)
 define|#
 directive|define
-name|CDISPLAY_IS_FILMIC_CLASS
+name|CDISPLAY_IS_ACES_RRT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), CDISPLAY_TYPE_FILMIC))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), CDISPLAY_TYPE_ACES_RRT))
 end_define
 
 begin_typedef
-DECL|typedef|CdisplayFilmic
+DECL|typedef|CdisplayAcesRRT
 typedef|typedef
 name|struct
-name|_CdisplayFilmic
-name|CdisplayFilmic
+name|_CdisplayAcesRRT
+name|CdisplayAcesRRT
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|CdisplayFilmicClass
+DECL|typedef|CdisplayAcesRRTClass
 typedef|typedef
 name|struct
-name|_CdisplayFilmicClass
-name|CdisplayFilmicClass
+name|_CdisplayAcesRRTClass
+name|CdisplayAcesRRTClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_CdisplayFilmic
+DECL|struct|_CdisplayAcesRRT
 struct|struct
-name|_CdisplayFilmic
+name|_CdisplayAcesRRT
 block|{
 DECL|member|parent_instance
 name|GimpColorDisplay
@@ -153,9 +153,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_CdisplayFilmicClass
+DECL|struct|_CdisplayAcesRRTClass
 struct|struct
-name|_CdisplayFilmicClass
+name|_CdisplayAcesRRTClass
 block|{
 DECL|member|parent_instance
 name|GimpColorDisplayClass
@@ -167,7 +167,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29874f600103
+DECL|enum|__anon2c27e9ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|GType
-name|cdisplay_filmic_get_type
+name|cdisplay_aces_rrt_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -191,7 +191,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_filmic_set_property
+name|cdisplay_aces_rrt_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -215,7 +215,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_filmic_get_property
+name|cdisplay_aces_rrt_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -238,7 +238,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_filmic_convert_buffer
+name|cdisplay_aces_rrt_convert_buffer
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
@@ -258,11 +258,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_filmic_set_exposure
+name|cdisplay_aces_rrt_set_exposure
 parameter_list|(
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
-name|filmic
+name|aces_rrt
 parameter_list|,
 name|gdouble
 name|value
@@ -271,25 +271,25 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|cdisplay_filmic_info
+DECL|variable|cdisplay_aces_rrt_info
 specifier|static
 specifier|const
 name|GimpModuleInfo
-name|cdisplay_filmic_info
+name|cdisplay_aces_rrt_info
 init|=
 block|{
 name|GIMP_MODULE_ABI_VERSION
 block|,
 name|N_
 argument_list|(
-literal|"Filmic HDR to SDR proof color display filter, usin an approximation of the ACES filmic transform."
+literal|"ACES RRT (RRT = Reference Rendering Transform) An HDR to SDR proof color display filter, usin a luminance-only approximation of the ACES RRT, a pre-defined filmic look to be used before ODT (display or output space ICC Profile)"
 argument_list|)
 block|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 block|,
-literal|"v0.2"
+literal|"v0.1"
 block|,
-literal|"(c) 2018, released under the GPL"
+literal|"(c) 2018, released under the LGPLv2+"
 block|,
 literal|"July 17, 2018"
 block|}
@@ -297,12 +297,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_DYNAMIC_TYPE (CdisplayFilmic,cdisplay_filmic,GIMP_TYPE_COLOR_DISPLAY)
+DECL|function|G_DEFINE_DYNAMIC_TYPE (CdisplayAcesRRT,cdisplay_aces_rrt,GIMP_TYPE_COLOR_DISPLAY)
 name|G_DEFINE_DYNAMIC_TYPE
 argument_list|(
-argument|CdisplayFilmic
+argument|CdisplayAcesRRT
 argument_list|,
-argument|cdisplay_filmic
+argument|cdisplay_aces_rrt
 argument_list|,
 argument|GIMP_TYPE_COLOR_DISPLAY
 argument_list|)
@@ -322,7 +322,7 @@ parameter_list|)
 block|{
 return|return
 operator|&
-name|cdisplay_filmic_info
+name|cdisplay_aces_rrt_info
 return|;
 block|}
 end_function
@@ -338,7 +338,7 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|cdisplay_filmic_register_type
+name|cdisplay_aces_rrt_register_type
 argument_list|(
 name|module
 argument_list|)
@@ -352,10 +352,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_class_init (CdisplayFilmicClass * klass)
-name|cdisplay_filmic_class_init
+DECL|function|cdisplay_aces_rrt_class_init (CdisplayAcesRRTClass * klass)
+name|cdisplay_aces_rrt_class_init
 parameter_list|(
-name|CdisplayFilmicClass
+name|CdisplayAcesRRTClass
 modifier|*
 name|klass
 parameter_list|)
@@ -382,13 +382,13 @@ name|object_class
 operator|->
 name|get_property
 operator|=
-name|cdisplay_filmic_get_property
+name|cdisplay_aces_rrt_get_property
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|cdisplay_filmic_set_property
+name|cdisplay_aces_rrt_set_property
 expr_stmt|;
 name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
@@ -421,14 +421,14 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"Filmic"
+literal|"Aces RRT"
 argument_list|)
 expr_stmt|;
 name|display_class
 operator|->
 name|help_id
 operator|=
-literal|"gimp-colordisplay-filmic"
+literal|"gimp-colordisplay-aces-rrt"
 expr_stmt|;
 name|display_class
 operator|->
@@ -440,7 +440,7 @@ name|display_class
 operator|->
 name|convert_buffer
 operator|=
-name|cdisplay_filmic_convert_buffer
+name|cdisplay_aces_rrt_convert_buffer
 expr_stmt|;
 block|}
 end_function
@@ -448,10 +448,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_class_finalize (CdisplayFilmicClass * klass)
-name|cdisplay_filmic_class_finalize
+DECL|function|cdisplay_aces_rrt_class_finalize (CdisplayAcesRRTClass * klass)
+name|cdisplay_aces_rrt_class_finalize
 parameter_list|(
-name|CdisplayFilmicClass
+name|CdisplayAcesRRTClass
 modifier|*
 name|klass
 parameter_list|)
@@ -461,12 +461,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_init (CdisplayFilmic * filmic)
-name|cdisplay_filmic_init
+DECL|function|cdisplay_aces_rrt_init (CdisplayAcesRRT * aces_rrt)
+name|cdisplay_aces_rrt_init
 parameter_list|(
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
-name|filmic
+name|aces_rrt
 parameter_list|)
 block|{ }
 end_function
@@ -474,8 +474,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|cdisplay_filmic_get_property
+DECL|function|cdisplay_aces_rrt_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|cdisplay_aces_rrt_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -493,11 +493,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
-name|filmic
+name|aces_rrt
 init|=
-name|CDISPLAY_FILMIC
+name|CDISPLAY_ACES_RRT
 argument_list|(
 name|object
 argument_list|)
@@ -514,7 +514,7 @@ name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
-name|filmic
+name|aces_rrt
 operator|->
 name|exposure
 argument_list|)
@@ -538,8 +538,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|cdisplay_filmic_set_property
+DECL|function|cdisplay_aces_rrt_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|cdisplay_aces_rrt_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -558,11 +558,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
-name|filmic
+name|aces_rrt
 init|=
-name|CDISPLAY_FILMIC
+name|CDISPLAY_ACES_RRT
 argument_list|(
 name|object
 argument_list|)
@@ -575,9 +575,9 @@ block|{
 case|case
 name|PROP_EXPOSURE
 case|:
-name|cdisplay_filmic_set_exposure
+name|cdisplay_aces_rrt_set_exposure
 argument_list|(
-name|filmic
+name|aces_rrt
 argument_list|,
 name|g_value_get_double
 argument_list|(
@@ -602,17 +602,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|aces_filmic (float x)
+DECL|function|aces_aces_rrt (float x)
 specifier|static
 specifier|inline
 name|float
-name|aces_filmic
+name|aces_aces_rrt
 parameter_list|(
 name|float
 name|x
 parameter_list|)
 block|{
-comment|/*     Approximation of the ACES filmic HDR to SDR mapping from:     https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/ACES.hlsl   */
+comment|/*     Approximation of the ACES aces_rrt HDR to SDR mapping from:     https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/ACES.hlsl   */
 name|float
 name|a
 init|=
@@ -652,8 +652,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_convert_buffer (GimpColorDisplay * display,GeglBuffer * buffer,GeglRectangle * area)
-name|cdisplay_filmic_convert_buffer
+DECL|function|cdisplay_aces_rrt_convert_buffer (GimpColorDisplay * display,GeglBuffer * buffer,GeglRectangle * area)
+name|cdisplay_aces_rrt_convert_buffer
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
@@ -668,11 +668,11 @@ modifier|*
 name|area
 parameter_list|)
 block|{
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
 name|filter
 init|=
-name|CDISPLAY_FILMIC
+name|CDISPLAY_ACES_RRT
 argument_list|(
 name|display
 argument_list|)
@@ -749,7 +749,7 @@ block|{
 operator|*
 name|data
 operator|=
-name|aces_filmic
+name|aces_aces_rrt
 argument_list|(
 operator|*
 name|data
@@ -763,7 +763,7 @@ expr_stmt|;
 operator|*
 name|data
 operator|=
-name|aces_filmic
+name|aces_aces_rrt
 argument_list|(
 operator|*
 name|data
@@ -777,7 +777,7 @@ expr_stmt|;
 operator|*
 name|data
 operator|=
-name|aces_filmic
+name|aces_aces_rrt
 argument_list|(
 operator|*
 name|data
@@ -799,12 +799,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_filmic_set_exposure (CdisplayFilmic * filmic,gdouble value)
-name|cdisplay_filmic_set_exposure
+DECL|function|cdisplay_aces_rrt_set_exposure (CdisplayAcesRRT * aces_rrt,gdouble value)
+name|cdisplay_aces_rrt_set_exposure
 parameter_list|(
-name|CdisplayFilmic
+name|CdisplayAcesRRT
 modifier|*
-name|filmic
+name|aces_rrt
 parameter_list|,
 name|gdouble
 name|value
@@ -814,12 +814,12 @@ if|if
 condition|(
 name|value
 operator|!=
-name|filmic
+name|aces_rrt
 operator|->
 name|exposure
 condition|)
 block|{
-name|filmic
+name|aces_rrt
 operator|->
 name|exposure
 operator|=
@@ -829,7 +829,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|filmic
+name|aces_rrt
 argument_list|)
 argument_list|,
 literal|"exposure"
@@ -839,7 +839,7 @@ name|gimp_color_display_changed
 argument_list|(
 name|GIMP_COLOR_DISPLAY
 argument_list|(
-name|filmic
+name|aces_rrt
 argument_list|)
 argument_list|)
 expr_stmt|;
