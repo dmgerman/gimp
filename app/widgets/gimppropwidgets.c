@@ -3432,7 +3432,7 @@ name|clockwise_property_name
 argument_list|,
 name|dial
 argument_list|,
-literal|"clockwise"
+literal|"clockwise-delta"
 argument_list|,
 name|G_BINDING_BIDIRECTIONAL
 operator||
@@ -3993,7 +3993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8f24f0108
+DECL|struct|__anon2c0af11f0108
 block|{
 DECL|member|config
 name|GObject

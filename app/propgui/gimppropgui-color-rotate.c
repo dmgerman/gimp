@@ -106,7 +106,7 @@ argument_list|,
 operator|&
 name|beta
 argument_list|,
-literal|"clockwise"
+literal|"clockwise-delta"
 argument_list|,
 operator|&
 name|clockwise
@@ -126,7 +126,7 @@ literal|"beta"
 argument_list|,
 name|alpha
 argument_list|,
-literal|"clockwise"
+literal|"clockwise-delta"
 argument_list|,
 operator|!
 name|clockwise
@@ -169,7 +169,7 @@ argument_list|,
 operator|&
 name|alpha
 argument_list|,
-literal|"clockwise"
+literal|"clockwise-delta"
 argument_list|,
 operator|&
 name|clockwise
