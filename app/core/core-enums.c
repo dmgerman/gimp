@@ -5754,6 +5754,14 @@ literal|"drawable-mod"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_DRAWABLE_FORMAT
+block|,
+literal|"GIMP_UNDO_DRAWABLE_FORMAT"
+block|,
+literal|"drawable-format"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_MASK
 block|,
 literal|"GIMP_UNDO_MASK"
@@ -6763,6 +6771,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Layer/Channel modification"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_DRAWABLE_FORMAT
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Layer/Channel format"
 argument_list|)
 block|,
 name|NULL
