@@ -180,6 +180,11 @@ name|gchar
 modifier|*
 modifier|*
 name|label
+parameter_list|,
+name|GtkFileFilter
+modifier|*
+modifier|*
+name|filter
 parameter_list|)
 function_decl|;
 end_function_decl
