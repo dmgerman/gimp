@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278193ea0103
+DECL|enum|__anon29ed0b390103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278193ea0203
+DECL|enum|__anon29ed0b390203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -150,6 +150,10 @@ parameter_list|(
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc
+parameter_list|,
+name|GtkFileFilter
+modifier|*
+name|all
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -367,6 +371,10 @@ modifier|*
 name|automatic_help_id
 parameter_list|)
 block|{
+name|GtkFileFilter
+modifier|*
+name|all_filter
+decl_stmt|;
 name|GtkTreeView
 modifier|*
 name|view
@@ -443,6 +451,11 @@ name|g_object_unref
 argument_list|(
 name|store
 argument_list|)
+expr_stmt|;
+name|all_filter
+operator|=
+name|gtk_file_filter_new
+argument_list|()
 expr_stmt|;
 for|for
 control|(
@@ -521,6 +534,8 @@ operator|=
 name|gimp_file_proc_view_process_procedure
 argument_list|(
 name|proc
+argument_list|,
+name|all_filter
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_append
@@ -647,36 +662,12 @@ condition|(
 name|automatic
 condition|)
 block|{
-name|GtkFileFilter
-modifier|*
-name|filter
-init|=
-name|gtk_file_filter_new
-argument_list|()
-decl_stmt|;
 name|gtk_list_store_prepend
 argument_list|(
 name|store
 argument_list|,
 operator|&
 name|iter
-argument_list|)
-expr_stmt|;
-name|gtk_file_filter_set_name
-argument_list|(
-name|filter
-argument_list|,
-name|_
-argument_list|(
-literal|"All files"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_file_filter_add_pattern
-argument_list|(
-name|filter
-argument_list|,
-literal|"*"
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
@@ -700,7 +691,7 @@ name|automatic_help_id
 argument_list|,
 name|COLUMN_FILTER
 argument_list|,
-name|filter
+name|all_filter
 argument_list|,
 operator|-
 literal|1
@@ -1290,19 +1281,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_proc_view_process_procedure:  * @file_proc:  *  * Creates a #GtkFileFilter of @file_proc.  * The returned #GtkFileFilter has a normal ref and must be unreffed  * when used.  **/
+comment|/**  * gimp_file_proc_view_process_procedure:  * @file_proc:  * @all:  *  * Creates a #GtkFileFilter of @file_proc and adds the extensions to  * the @all filter.  * The returned #GtkFileFilter has a normal ref and must be unreffed  * when used.  **/
 end_comment
 
 begin_function
 specifier|static
 name|GtkFileFilter
 modifier|*
-DECL|function|gimp_file_proc_view_process_procedure (GimpPlugInProcedure * file_proc)
+DECL|function|gimp_file_proc_view_process_procedure (GimpPlugInProcedure * file_proc,GtkFileFilter * all)
 name|gimp_file_proc_view_process_procedure
 parameter_list|(
 name|GimpPlugInProcedure
 modifier|*
 name|file_proc
+parameter_list|,
+name|GtkFileFilter
+modifier|*
+name|all
 parameter_list|)
 block|{
 name|GtkFileFilter
@@ -1388,6 +1383,13 @@ argument_list|,
 name|mime_type
 argument_list|)
 expr_stmt|;
+name|gtk_file_filter_add_mime_type
+argument_list|(
+name|all
+argument_list|,
+name|mime_type
+argument_list|)
+expr_stmt|;
 block|}
 for|for
 control|(
@@ -1437,6 +1439,13 @@ expr_stmt|;
 name|gtk_file_filter_add_pattern
 argument_list|(
 name|filter
+argument_list|,
+name|pattern
+argument_list|)
+expr_stmt|;
+name|gtk_file_filter_add_pattern
+argument_list|(
+name|all
 argument_list|,
 name|pattern
 argument_list|)
