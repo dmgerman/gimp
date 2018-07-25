@@ -184,6 +184,10 @@ name|GSList
 modifier|*
 name|file_procs_all_images
 decl_stmt|;
+DECL|member|show_all_files
+name|gboolean
+name|show_all_files
+decl_stmt|;
 block|}
 struct|;
 end_struct
