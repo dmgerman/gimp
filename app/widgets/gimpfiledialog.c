@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29faec790103
+DECL|enum|__anon28fe84ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2916,6 +2916,18 @@ expr_stmt|;
 name|gtk_expander_set_resize_toplevel
 argument_list|(
 name|GTK_EXPANDER
+argument_list|(
+name|dialog
+operator|->
+name|proc_expander
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_hexpand
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|dialog
 operator|->
