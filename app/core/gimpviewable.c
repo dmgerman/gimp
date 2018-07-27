@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e88790103
+DECL|enum|__anon299c1a2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e88790203
+DECL|enum|__anon299c1a2c0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -722,7 +722,7 @@ name|klass
 operator|->
 name|default_icon_name
 operator|=
-literal|"gimp-question"
+literal|"dialog-question"
 expr_stmt|;
 name|klass
 operator|->
@@ -3862,7 +3862,7 @@ name|icon
 operator|=
 name|gdk_pixbuf_new_from_resource
 argument_list|(
-literal|"/org/gimp/icons/64/gimp-question.png"
+literal|"/org/gimp/icons/64/dialog-question.png"
 argument_list|,
 operator|&
 name|error

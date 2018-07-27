@@ -225,7 +225,7 @@ define|#
 directive|define
 name|GIMP_ICON_TEXTURE
 value|"gimp-texture"
-comment|/*  icons that follow, or at least try to follow the FDO naming and  *  category conventions; and groups of icons with a common prefix;  *  all sorted alphabetically  *  *  see also:  *  https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html  *  *  some icons are marked with "use FDO", these shall be renamed in 3.0  *  because we duplicated FDO standard icon names  */
+comment|/*  icons that follow, or at least try to follow the FDO naming and  *  category conventions; and groups of icons with a common prefix;  *  all sorted alphabetically  *  *  see also:  *  https://specifications.freedesktop.org/icon-naming-spec/latest/ar01s04.html  *  *  When icons are available as standard Freedesktop icons, we use these  *  in priority. As a fallback, we use standard GTK+ icons. As last  *  fallback, we create our own icons under the "gimp-" namespace.  */
 DECL|macro|GIMP_ICON_APPLICATION_EXIT
 define|#
 directive|define
@@ -475,8 +475,7 @@ DECL|macro|GIMP_ICON_DIALOG_ERROR
 define|#
 directive|define
 name|GIMP_ICON_DIALOG_ERROR
-value|"gimp-error"
-comment|/* use FDO */
+value|"dialog-error"
 DECL|macro|GIMP_ICON_DIALOG_IMAGES
 define|#
 directive|define
@@ -486,8 +485,7 @@ DECL|macro|GIMP_ICON_DIALOG_INFORMATION
 define|#
 directive|define
 name|GIMP_ICON_DIALOG_INFORMATION
-value|"gimp-info"
-comment|/* use FDO */
+value|"dialog-information"
 DECL|macro|GIMP_ICON_DIALOG_LAYERS
 define|#
 directive|define
@@ -507,8 +505,7 @@ DECL|macro|GIMP_ICON_DIALOG_QUESTION
 define|#
 directive|define
 name|GIMP_ICON_DIALOG_QUESTION
-value|"gimp-question"
-comment|/* use FDO */
+value|"dialog-question"
 DECL|macro|GIMP_ICON_DIALOG_RESHOW_FILTER
 define|#
 directive|define
@@ -533,8 +530,7 @@ DECL|macro|GIMP_ICON_DIALOG_WARNING
 define|#
 directive|define
 name|GIMP_ICON_DIALOG_WARNING
-value|"gimp-warning"
-comment|/* use FDO */
+value|"dialog-warning"
 DECL|macro|GIMP_ICON_DISPLAY_FILTER
 define|#
 directive|define
@@ -744,14 +740,12 @@ DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_LTR
 define|#
 directive|define
 name|GIMP_ICON_FORMAT_TEXT_DIRECTION_LTR
-value|"gimp-text-dir-ltr"
-comment|/* use FDO */
+value|"format-text-direction-ltr"
 DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_RTL
 define|#
 directive|define
 name|GIMP_ICON_FORMAT_TEXT_DIRECTION_RTL
-value|"gimp-text-dir-rtl"
-comment|/* use FDO */
+value|"format-text-direction-rtl"
 DECL|macro|GIMP_ICON_FORMAT_TEXT_SPACING_LETTER
 define|#
 directive|define
@@ -1031,14 +1025,12 @@ DECL|macro|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
 define|#
 directive|define
 name|GIMP_ICON_OBJECT_FLIP_HORIZONTAL
-value|"gimp-flip-horizontal"
-comment|/* use FDO */
+value|"object-flip-horizontal"
 DECL|macro|GIMP_ICON_OBJECT_FLIP_VERTICAL
 define|#
 directive|define
 name|GIMP_ICON_OBJECT_FLIP_VERTICAL
-value|"gimp-flip-vertical"
-comment|/* use FDO */
+value|"object-flip-vertical"
 DECL|macro|GIMP_ICON_OBJECT_RESIZE
 define|#
 directive|define
@@ -1053,14 +1045,12 @@ DECL|macro|GIMP_ICON_OBJECT_ROTATE_270
 define|#
 directive|define
 name|GIMP_ICON_OBJECT_ROTATE_270
-value|"gimp-rotate-270"
-comment|/* use FDO */
+value|"object-rotate-left"
 DECL|macro|GIMP_ICON_OBJECT_ROTATE_90
 define|#
 directive|define
 name|GIMP_ICON_OBJECT_ROTATE_90
-value|"gimp-rotate-90"
-comment|/* use FDO */
+value|"object-rotate-right"
 DECL|macro|GIMP_ICON_OBJECT_SCALE
 define|#
 directive|define

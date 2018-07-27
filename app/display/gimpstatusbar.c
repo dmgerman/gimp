@@ -1371,7 +1371,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-flip-horizontal"
+literal|"object-flip-horizontal"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
@@ -1445,7 +1445,7 @@ name|image
 operator|=
 name|gtk_image_new_from_icon_name
 argument_list|(
-literal|"gimp-flip-vertical"
+literal|"object-flip-vertical"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
