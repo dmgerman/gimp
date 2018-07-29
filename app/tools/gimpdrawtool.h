@@ -819,6 +819,9 @@ name|cursor
 parameter_list|,
 name|gboolean
 name|overwrite
+parameter_list|,
+name|GimpTextDirection
+name|direction
 parameter_list|)
 function_decl|;
 end_function_decl

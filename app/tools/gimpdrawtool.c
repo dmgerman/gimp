@@ -4293,7 +4293,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite)
+DECL|function|gimp_draw_tool_add_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite,GimpTextDirection direction)
 name|gimp_draw_tool_add_text_cursor
 parameter_list|(
 name|GimpDrawTool
@@ -4306,6 +4306,9 @@ name|cursor
 parameter_list|,
 name|gboolean
 name|overwrite
+parameter_list|,
+name|GimpTextDirection
+name|direction
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -4336,6 +4339,8 @@ argument_list|,
 name|cursor
 argument_list|,
 name|overwrite
+argument_list|,
+name|direction
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item

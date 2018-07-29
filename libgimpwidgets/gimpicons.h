@@ -746,6 +746,30 @@ define|#
 directive|define
 name|GIMP_ICON_FORMAT_TEXT_DIRECTION_RTL
 value|"format-text-direction-rtl"
+DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_RTL
+define|#
+directive|define
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_RTL
+value|"gimp-text-dir-ttb-rtl"
+comment|/* use FDO */
+DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_RTL_UPRIGHT
+define|#
+directive|define
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_RTL_UPRIGHT
+value|"gimp-text-dir-ttb-rtl-upright"
+comment|/* use FDO */
+DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_LTR
+define|#
+directive|define
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_LTR
+value|"gimp-text-dir-ttb-ltr"
+comment|/* use FDO */
+DECL|macro|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_LTR_UPRIGHT
+define|#
+directive|define
+name|GIMP_ICON_FORMAT_TEXT_DIRECTION_TTB_LTR_UPRIGHT
+value|"gimp-text-dir-ttb-ltr-upright"
+comment|/* use FDO */
 DECL|macro|GIMP_ICON_FORMAT_TEXT_SPACING_LETTER
 define|#
 directive|define

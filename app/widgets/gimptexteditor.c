@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb09f4d0103
+DECL|enum|__anon29fdaa410103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -845,6 +845,18 @@ block|{
 case|case
 name|GIMP_TEXT_DIRECTION_LTR
 case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_RTL
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_RTL_UPRIGHT
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_LTR
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_LTR_UPRIGHT
+case|:
 name|gtk_widget_set_direction
 argument_list|(
 name|editor
@@ -1138,6 +1150,18 @@ condition|)
 block|{
 case|case
 name|GIMP_TEXT_DIRECTION_LTR
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_RTL
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_RTL_UPRIGHT
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_LTR
+case|:
+case|case
+name|GIMP_TEXT_DIRECTION_TTB_LTR_UPRIGHT
 case|:
 name|gtk_widget_set_direction
 argument_list|(
