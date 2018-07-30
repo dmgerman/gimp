@@ -2586,7 +2586,7 @@ argument_list|,
 name|cursor_rect
 argument_list|)
 expr_stmt|;
-comment|/* Avoid pango bug ? */
+comment|/* pango_layout_index_to_pos() returns wrong position, if gravity is west        * and cursor is at end of line. Avoid this behavior. (pango 1.42.1)        */
 if|if
 condition|(
 name|pango_context_get_base_gravity
