@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f5a950103
+DECL|enum|__anon29c70d760103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -106,12 +106,6 @@ name|Babl
 modifier|*
 name|src_format
 decl_stmt|;
-DECL|member|src_space_format
-specifier|const
-name|Babl
-modifier|*
-name|src_space_format
-decl_stmt|;
 DECL|member|dest_profile
 name|GimpColorProfile
 modifier|*
@@ -122,12 +116,6 @@ specifier|const
 name|Babl
 modifier|*
 name|dest_format
-decl_stmt|;
-DECL|member|dest_space_format
-specifier|const
-name|Babl
-modifier|*
-name|dest_space_format
 decl_stmt|;
 DECL|member|transform
 name|cmsHTRANSFORM
@@ -436,7 +424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new:  * @src_profile:      the source #GimpColorProfile  * @src_format:       the source #Babl format  * @dest_profile:     the destination #GimpColorProfile  * @dest_format:      the destination #Babl format  * @rendering_intent: the rendering intent  * @flags:            transform flags  *  * This function creates an color transform.  *  * Return value: the #GimpColorTransform, or %NULL if no transform is needed  *               to convert between pixels of @src_profile and @dest_profile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new:  * @src_profile:      the source #GimpColorProfile  * @src_format:       the source #Babl format  * @dest_profile:     the destination #GimpColorProfile  * @dest_format:      the destination #Babl format  * @rendering_intent: the rendering intent  * @flags:            transform flags  *  * This function creates an color transform.  *  * The color transform is determined exclusively by @src_profile and  * @dest_profile. The color spaces of @src_format and @dest_format are  * ignored, the formats are only used to decide between what pixel  * encodings to transform.  *  * Note: this function used to return %NULL if  * gimp_color_transform_can_gegl_copy() returned %TRUE for  * @src_profile and @dest_profile. This is no longer the case because  * special care has to be taken not to perform multiple implicit color  * transforms caused by babl formats with color spaces. Now, it always  * returns a non-%NULL transform and the code takes care of doing only  * exactly the requested color transform.  *  * Return value: the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -534,18 +522,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_color_transform_can_gegl_copy
-argument_list|(
-name|src_profile
-argument_list|,
-name|dest_profile
-argument_list|)
-condition|)
-return|return
-name|NULL
-return|;
 name|transform
 operator|=
 name|g_object_new
@@ -561,9 +537,10 @@ name|transform
 operator|->
 name|priv
 expr_stmt|;
+comment|/* only src_profile and dest_profile must determine the transform's    * color spaces, create formats with src_format's and dest_format's    * encoding, and the profiles' color spaces; see process_pixels()    * and process_buffer().    */
 name|priv
 operator|->
-name|src_space_format
+name|src_format
 operator|=
 name|gimp_color_profile_get_format
 argument_list|(
@@ -582,7 +559,7 @@ condition|(
 operator|!
 name|priv
 operator|->
-name|src_space_format
+name|src_format
 condition|)
 block|{
 name|g_printerr
@@ -605,7 +582,7 @@ expr_stmt|;
 block|}
 name|priv
 operator|->
-name|dest_space_format
+name|dest_format
 operator|=
 name|gimp_color_profile_get_format
 argument_list|(
@@ -624,7 +601,7 @@ condition|(
 operator|!
 name|priv
 operator|->
-name|dest_space_format
+name|dest_format
 condition|)
 block|{
 name|g_printerr
@@ -655,25 +632,13 @@ argument_list|)
 operator|&&
 name|priv
 operator|->
-name|src_space_format
+name|src_format
 operator|&&
 name|priv
 operator|->
-name|dest_space_format
+name|dest_format
 condition|)
 block|{
-name|priv
-operator|->
-name|src_format
-operator|=
-name|src_format
-expr_stmt|;
-name|priv
-operator|->
-name|dest_format
-operator|=
-name|dest_format
-expr_stmt|;
 name|priv
 operator|->
 name|fish
@@ -682,11 +647,11 @@ name|babl_fish
 argument_list|(
 name|priv
 operator|->
-name|src_space_format
+name|src_format
 argument_list|,
 name|priv
 operator|->
-name|dest_space_format
+name|dest_format
 argument_list|)
 expr_stmt|;
 name|g_printerr
@@ -710,17 +675,30 @@ return|return
 name|transform
 return|;
 block|}
-name|priv
-operator|->
-name|src_space_format
+comment|/* see above: when using lcms, don't mess with formats with color    * spaces, gimp_color_profile_get_lcms_format() might return the    * same format and it must be without space    */
+name|src_format
 operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|src_format
+argument_list|)
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
-name|priv
-operator|->
-name|dest_space_format
+name|dest_format
 operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|dest_format
+argument_list|)
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|priv
 operator|->
@@ -843,7 +821,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:    the source #GimpColorProfile  * @src_format:     the source #Babl format  * @dest_profile:   the destination #GimpColorProfile  * @dest_format:    the destination #Babl format  * @proof_profile:  the proof #GimpColorProfile  * @proof_intent:   the proof intent  * @display_intent: the display intent  * @flags:          transform flags  *  * This function creates a simulation / proofing color transform.  *  * Return value: the #GimpColorTransform, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:    the source #GimpColorProfile  * @src_format:     the source #Babl format  * @dest_profile:   the destination #GimpColorProfile  * @dest_format:    the destination #Babl format  * @proof_profile:  the proof #GimpColorProfile  * @proof_intent:   the proof intent  * @display_intent: the display intent  * @flags:          transform flags  *  * This function creates a simulation / proofing color transform.  *  * See gimp_color_transform_new() about the color spaces to transform  * between.  *  * Return value: the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -991,6 +969,31 @@ argument_list|(
 name|proof_profile
 argument_list|)
 expr_stmt|;
+comment|/* see gimp_color_transform_new(), we can't have color spaces    * on the formats    */
+name|src_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|src_format
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|dest_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|dest_format
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|src_format
@@ -1104,7 +1107,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_process_pixels:  * @transform:   a #GimpColorTransform  * @src_format:  #Babl format of @src_pixels  * @src_pixels:  pointer to the source pixels  * @dest_format: #Babl format of @dest_pixels  * @dest_pixels: pointer to the destination pixels  * @length:      number of pixels to process  *  * This function transforms a contiguous line of pixels.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_process_pixels:  * @transform:   a #GimpColorTransform  * @src_format:  #Babl format of @src_pixels  * @src_pixels:  pointer to the source pixels  * @dest_format: #Babl format of @dest_pixels  * @dest_pixels: pointer to the destination pixels  * @length:      number of pixels to process  *  * This function transforms a contiguous line of pixels.  *  * See gimp_color_transform_new(): only the pixel encoding of  * @src_format and @dest_format is honored, their color spaces are  * ignored. The transform always takes place between the color spaces  * determined by @transform's color profiles.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1189,6 +1192,41 @@ operator|=
 name|transform
 operator|->
 name|priv
+expr_stmt|;
+comment|/* we must not do any babl color transforms when reading from    * src_pixels or writing to dest_pixels, so construct formats with    * src_format's and dest_format's encoding, and the transform's    * input and output color spaces.    */
+name|src_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|src_format
+argument_list|)
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|priv
+operator|->
+name|src_format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dest_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|dest_format
+argument_list|)
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|priv
+operator|->
+name|dest_format
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1362,7 +1400,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_process_buffer:  * @transform:   a #GimpColorTransform  * @src_buffer:  source #GeglBuffer  * @src_rect:    rectangle in @src_buffer  * @dest_buffer: destination #GeglBuffer  * @dest_rect:   rectangle in @dest_buffer  *  * This function transforms buffer into another buffer.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_process_buffer:  * @transform:   a #GimpColorTransform  * @src_buffer:  source #GeglBuffer  * @src_rect:    rectangle in @src_buffer  * @dest_buffer: destination #GeglBuffer  * @dest_rect:   rectangle in @dest_buffer  *  * This function transforms buffer into another buffer.  *  * See gimp_color_transform_new(): only the pixel encoding of  * @src_buffer's and @dest_buffer's formats honored, their color  * spaces are ignored. The transform always takes place between the  * color spaces determined by @transform's color profiles.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1396,6 +1434,16 @@ block|{
 name|GimpColorTransformPrivate
 modifier|*
 name|priv
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|src_format
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|dest_format
 decl_stmt|;
 name|GeglBufferIterator
 modifier|*
@@ -1472,6 +1520,55 @@ argument_list|)
 operator|)
 expr_stmt|;
 block|}
+comment|/* we must not do any babl color transforms when reading from    * src_buffer or writing to dest_buffer, so construct formats with    * src_buffers's and dest_buffers's encoding, and the transform's    * input and output color spaces.    */
+name|src_format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|src_buffer
+argument_list|)
+expr_stmt|;
+name|dest_format
+operator|=
+name|gegl_buffer_get_format
+argument_list|(
+name|dest_buffer
+argument_list|)
+expr_stmt|;
+name|src_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|src_format
+argument_list|)
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|priv
+operator|->
+name|src_format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dest_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|dest_format
+argument_list|)
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|priv
+operator|->
+name|dest_format
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|src_buffer
@@ -1479,6 +1576,20 @@ operator|!=
 name|dest_buffer
 condition|)
 block|{
+name|gegl_buffer_set_format
+argument_list|(
+name|src_buffer
+argument_list|,
+name|src_format
+argument_list|)
+expr_stmt|;
+name|gegl_buffer_set_format
+argument_list|(
+name|dest_buffer
+argument_list|,
+name|dest_format
+argument_list|)
+expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -1629,9 +1740,30 @@ name|total_pixels
 argument_list|)
 expr_stmt|;
 block|}
+name|gegl_buffer_set_format
+argument_list|(
+name|src_buffer
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gegl_buffer_set_format
+argument_list|(
+name|dest_buffer
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
+name|gegl_buffer_set_format
+argument_list|(
+name|src_buffer
+argument_list|,
+name|src_format
+argument_list|)
+expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -1763,6 +1895,13 @@ name|total_pixels
 argument_list|)
 expr_stmt|;
 block|}
+name|gegl_buffer_set_format
+argument_list|(
+name|src_buffer
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
