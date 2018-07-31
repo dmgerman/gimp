@@ -94,6 +94,15 @@ name|GimpTextLayerClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTextLayerPrivate
+typedef|typedef
+name|struct
+name|_GimpTextLayerPrivate
+name|GimpTextLayerPrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpTextLayer
 struct|struct
@@ -128,6 +137,11 @@ specifier|const
 name|Babl
 modifier|*
 name|convert_format
+decl_stmt|;
+DECL|member|private
+name|GimpTextLayerPrivate
+modifier|*
+name|private
 decl_stmt|;
 block|}
 struct|;
