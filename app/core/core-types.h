@@ -735,7 +735,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  auxillary image items  */
+comment|/*  auxiliary image items  */
 end_comment
 
 begin_typedef

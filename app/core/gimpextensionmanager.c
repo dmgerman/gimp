@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf023ed0103
+DECL|enum|__anon27af1ff20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2124,7 +2124,7 @@ name|list
 argument_list|)
 control|)
 block|{
-comment|/* Unlike user-installed extensions, system extensions are loaded        * by default if they were not set in the extensionrc (so that new        * extensions installed with GIMP updates get loaded) and if they        * were not overrided by a user-installed extension (same ID).        */
+comment|/* Unlike user-installed extensions, system extensions are loaded        * by default if they were not set in the extensionrc (so that new        * extensions installed with GIMP updates get loaded) and if they        * were not overridden by a user-installed extension (same ID).        */
 if|if
 condition|(
 operator|!
@@ -2467,7 +2467,7 @@ modifier|*
 name|extension
 parameter_list|)
 block|{
-comment|/* System extension overrided by another extension. */
+comment|/* System extension overridden by another extension. */
 if|if
 condition|(
 name|g_list_find
