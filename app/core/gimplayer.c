@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c54810103
+DECL|enum|__anon2ae8e57e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c54810203
+DECL|enum|__anon2ae8e57e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4371,6 +4371,18 @@ name|dest_image
 argument_list|)
 condition|)
 block|{
+name|GimpColorProfile
+modifier|*
+name|src_profile
+init|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|dest_profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -4380,6 +4392,19 @@ argument_list|(
 name|dest_image
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_color_profile_is_equal
+argument_list|(
+name|dest_profile
+argument_list|,
+name|src_profile
+argument_list|)
+condition|)
+name|dest_profile
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 if|if
