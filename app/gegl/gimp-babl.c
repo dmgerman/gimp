@@ -569,7 +569,7 @@ comment|/* create a bunch of fishes - to decrease the initial lazy    * initiali
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a35763d0108
+DECL|struct|__anon2773eea70108
 block|{
 DECL|member|from_format
 specifier|const
@@ -737,6 +737,12 @@ literal|"R'G'B' u8"
 block|,
 literal|"RaGaBaA float"
 block|}
+block|,
+block|{
+literal|"cairo-ARGB32"
+block|,
+literal|"R'G'B'A u8"
+block|}
 block|}
 struct|;
 name|gint
@@ -816,7 +822,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a35763d0208
+DECL|struct|__anon2773eea70208
 block|{
 DECL|member|name
 specifier|const
