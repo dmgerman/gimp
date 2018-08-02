@@ -234,7 +234,7 @@ name|NC_
 argument_list|(
 literal|"text-editor-action"
 argument_list|,
-literal|"Vertical lines from right to left (mixed orientation)"
+literal|"Vertical, right to left (mixed orientation)"
 argument_list|)
 block|,
 name|GIMP_TEXT_DIRECTION_TTB_RTL
@@ -260,7 +260,7 @@ name|NC_
 argument_list|(
 literal|"text-editor-action"
 argument_list|,
-literal|"Vertical lines from right to left (upright characters)"
+literal|"Vertical, right to left (upright orientation)"
 argument_list|)
 block|,
 name|GIMP_TEXT_DIRECTION_TTB_RTL_UPRIGHT
@@ -286,7 +286,7 @@ name|NC_
 argument_list|(
 literal|"text-editor-action"
 argument_list|,
-literal|"Vertical lines from left to right (mixed orientation)"
+literal|"Vertical, left to right (mixed orientation)"
 argument_list|)
 block|,
 name|GIMP_TEXT_DIRECTION_TTB_LTR
@@ -312,7 +312,7 @@ name|NC_
 argument_list|(
 literal|"text-editor-action"
 argument_list|,
-literal|"Vertical lines from left to right (upright characters)"
+literal|"Vertical, left to right (upright orientation)"
 argument_list|)
 block|,
 name|GIMP_TEXT_DIRECTION_TTB_LTR_UPRIGHT
