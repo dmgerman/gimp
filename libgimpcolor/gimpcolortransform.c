@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c70d760103
+DECL|enum|__anon296c86340103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -790,7 +790,9 @@ expr_stmt|;
 block|}
 name|g_printerr
 argument_list|(
-literal|"%s\n"
+literal|"%s: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|lcms_last_error
 argument_list|)
@@ -1076,7 +1078,9 @@ expr_stmt|;
 block|}
 name|g_printerr
 argument_list|(
-literal|"%s\n"
+literal|"%s: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|lcms_last_error
 argument_list|)
@@ -1520,7 +1524,7 @@ argument_list|)
 operator|)
 expr_stmt|;
 block|}
-comment|/* we must not do any babl color transforms when reading from    * src_buffer or writing to dest_buffer, so construct formats with    * src_buffers's and dest_buffers's encoding, and the transform's    * input and output color spaces.    */
+comment|/* we must not do any babl color transforms when reading from    * src_buffer or writing to dest_buffer, so construct formats with    * the transform's expected input and output encoding and    * src_buffer's and dest_buffers's color spaces.    */
 name|src_format
 operator|=
 name|gegl_buffer_get_format
@@ -1541,13 +1545,13 @@ name|babl_format_with_space
 argument_list|(
 name|babl_format_get_encoding
 argument_list|(
+name|priv
+operator|->
 name|src_format
 argument_list|)
 argument_list|,
 name|babl_format_get_space
 argument_list|(
-name|priv
-operator|->
 name|src_format
 argument_list|)
 argument_list|)
@@ -1558,13 +1562,13 @@ name|babl_format_with_space
 argument_list|(
 name|babl_format_get_encoding
 argument_list|(
+name|priv
+operator|->
 name|dest_format
 argument_list|)
 argument_list|,
 name|babl_format_get_space
 argument_list|(
-name|priv
-operator|->
 name|dest_format
 argument_list|)
 argument_list|)
@@ -1576,20 +1580,6 @@ operator|!=
 name|dest_buffer
 condition|)
 block|{
-name|gegl_buffer_set_format
-argument_list|(
-name|src_buffer
-argument_list|,
-name|src_format
-argument_list|)
-expr_stmt|;
-name|gegl_buffer_set_format
-argument_list|(
-name|dest_buffer
-argument_list|,
-name|dest_format
-argument_list|)
-expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -1600,8 +1590,6 @@ name|src_rect
 argument_list|,
 literal|0
 argument_list|,
-name|priv
-operator|->
 name|src_format
 argument_list|,
 name|GEGL_ACCESS_READ
@@ -1619,8 +1607,6 @@ name|dest_rect
 argument_list|,
 literal|0
 argument_list|,
-name|priv
-operator|->
 name|dest_format
 argument_list|,
 name|GEGL_ACCESS_WRITE
@@ -1740,30 +1726,9 @@ name|total_pixels
 argument_list|)
 expr_stmt|;
 block|}
-name|gegl_buffer_set_format
-argument_list|(
-name|src_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gegl_buffer_set_format
-argument_list|(
-name|dest_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
-name|gegl_buffer_set_format
-argument_list|(
-name|src_buffer
-argument_list|,
-name|src_format
-argument_list|)
-expr_stmt|;
 name|iter
 operator|=
 name|gegl_buffer_iterator_new
@@ -1774,8 +1739,6 @@ name|src_rect
 argument_list|,
 literal|0
 argument_list|,
-name|priv
-operator|->
 name|src_format
 argument_list|,
 name|GEGL_ACCESS_READWRITE
@@ -1895,13 +1858,6 @@ name|total_pixels
 argument_list|)
 expr_stmt|;
 block|}
-name|gegl_buffer_set_format
-argument_list|(
-name|src_buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
