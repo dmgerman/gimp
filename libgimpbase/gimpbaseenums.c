@@ -9559,7 +9559,7 @@ name|NC_
 argument_list|(
 literal|"text-direction"
 argument_list|,
-literal|"Characters are from top to bottom, Lines are from right to left"
+literal|"Vertical lines from right to left (mixed orientation)"
 argument_list|)
 block|,
 name|NULL
@@ -9572,7 +9572,7 @@ name|NC_
 argument_list|(
 literal|"text-direction"
 argument_list|,
-literal|"Upright characters are from top to bottom, Lines are from right to left"
+literal|"Vertical lines from right to left (upright characters)"
 argument_list|)
 block|,
 name|NULL
@@ -9585,7 +9585,7 @@ name|NC_
 argument_list|(
 literal|"text-direction"
 argument_list|,
-literal|"Characters are from top to bottom, Lines are from left to right"
+literal|"Vertical lines from left to right (mixed orientation)"
 argument_list|)
 block|,
 name|NULL
@@ -9598,7 +9598,7 @@ name|NC_
 argument_list|(
 literal|"text-direction"
 argument_list|,
-literal|"Upright characters are from top to bottom, Lines are from left to right"
+literal|"Vertical lines from left to right (upright characters)"
 argument_list|)
 block|,
 name|NULL
