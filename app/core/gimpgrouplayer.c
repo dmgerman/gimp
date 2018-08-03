@@ -7185,6 +7185,24 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* make sure we have a buffer, and stop any idle rendering, which is        * initiated when a new buffer is allocated.  the call to        * gimp_pickable_flush() below causes any pending idle rendering to        * finish synchronously, so this needs to happen before.        */
+name|gimp_pickable_get_buffer
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|private
+operator|->
+name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_projection_stop_rendering
+argument_list|(
+name|private
+operator|->
+name|projection
+argument_list|)
+expr_stmt|;
 comment|/*  flush the pickable not the projectable because flushing the        *  pickable will finish all invalidation on the projection so it        *  can be used as source (note that it will still be constructed        *  when the actual read happens, so this it not a performance        *  problem)        */
 name|gimp_pickable_flush
 argument_list|(
