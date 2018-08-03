@@ -199,7 +199,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b28b60103
+DECL|enum|__anon2bc1edb90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -212,7 +212,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b28b60203
+DECL|enum|__anon2bc1edb90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2705,21 +2705,23 @@ name|priv
 operator|->
 name|validate_handler
 condition|)
-name|gegl_buffer_remove_handler
+block|{
+name|gimp_tile_handler_validate_unassign
 argument_list|(
 name|proj
 operator|->
 name|priv
 operator|->
-name|buffer
+name|validate_handler
 argument_list|,
 name|proj
 operator|->
 name|priv
 operator|->
-name|validate_handler
+name|buffer
 argument_list|)
 expr_stmt|;
+block|}
 name|g_clear_object
 argument_list|(
 operator|&
