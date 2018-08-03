@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a526e30103
+DECL|enum|__anon2ab5612b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -245,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a526e30203
+DECL|enum|__anon2ab5612b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2195,6 +2195,8 @@ argument_list|,
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2506,6 +2508,8 @@ argument_list|,
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -5440,6 +5444,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5447,7 +5453,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_buffer_full (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_set_buffer_full (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,gint offset_x,gint offset_y,gboolean update)
 name|gimp_drawable_set_buffer_full
 parameter_list|(
 name|GimpDrawable
@@ -5471,6 +5477,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|gboolean
+name|update
 parameter_list|)
 block|{
 name|GimpItem
@@ -5517,6 +5526,9 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
+name|update
+operator|&&
+operator|(
 name|gimp_item_get_width
 argument_list|(
 name|item
@@ -5550,6 +5562,7 @@ name|item
 argument_list|)
 operator|!=
 name|offset_y
+operator|)
 condition|)
 block|{
 name|gimp_drawable_update
@@ -5604,6 +5617,10 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|update
+condition|)
 name|gimp_drawable_update
 argument_list|(
 name|drawable

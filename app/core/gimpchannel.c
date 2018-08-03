@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e40c00103
+DECL|enum|__anon2be84c660103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2924,6 +2924,8 @@ name|gimp_item_get_offset_y
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -3534,6 +3536,8 @@ argument_list|,
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

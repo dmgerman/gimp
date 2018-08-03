@@ -597,6 +597,8 @@ operator|->
 name|mask_bounds
 operator|.
 name|y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

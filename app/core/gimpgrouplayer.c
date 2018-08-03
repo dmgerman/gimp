@@ -4421,6 +4421,8 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  reset, the actual format is right now  */
@@ -7679,6 +7681,8 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  reset, the actual size is correct now  */
@@ -8148,6 +8152,8 @@ argument_list|,
 name|bounds
 operator|.
 name|y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
