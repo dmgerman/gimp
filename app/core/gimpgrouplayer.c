@@ -194,6 +194,10 @@ DECL|member|transforming
 name|gint
 name|transforming
 decl_stmt|;
+DECL|member|direct_update
+name|gint
+name|direct_update
+decl_stmt|;
 DECL|member|expanded
 name|gboolean
 name|expanded
@@ -3398,16 +3402,101 @@ argument_list|(
 name|layer
 argument_list|)
 decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
 name|GList
 modifier|*
 name|list
 decl_stmt|;
-comment|/*  don't push an undo here because undo will call us again  */
-name|gimp_group_layer_suspend_resize
+comment|/*  don't use gimp_group_layer_suspend_resize(), but rather increment    *  private->suspend_resize directly, since we're translating the group layer    *  here, rather than relying on gimp_group_layer_update_size() to do it.    */
+name|private
+operator|->
+name|suspend_resize
+operator|++
+expr_stmt|;
+comment|/*  redirect stack updates to the drawable, rather than to the projection  */
+name|private
+operator|->
+name|direct_update
+operator|++
+expr_stmt|;
+name|gimp_item_get_offset
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|group
+argument_list|)
 argument_list|,
-name|FALSE
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|)
+expr_stmt|;
+name|x
+operator|+=
+name|offset_x
+expr_stmt|;
+name|y
+operator|+=
+name|offset_y
+expr_stmt|;
+comment|/*  update the offset node  */
+if|if
+condition|(
+name|private
+operator|->
+name|offset_node
+condition|)
+name|gegl_node_set
+argument_list|(
+name|private
+operator|->
+name|offset_node
+argument_list|,
+literal|"x"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+operator|-
+name|x
+argument_list|,
+literal|"y"
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+operator|-
+name|y
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  invalidate the selection boundary because of a layer modification  */
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  update the group layer offset  */
+name|gimp_item_set_offset
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|group
+argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 for|for
@@ -3455,13 +3544,17 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  don't push an undo here because undo will call us again  */
-name|gimp_group_layer_resume_resize
-argument_list|(
-name|group
-argument_list|,
-name|FALSE
-argument_list|)
+comment|/*  redirect stack updates back to the projection  */
+name|private
+operator|->
+name|direct_update
+operator|--
+expr_stmt|;
+comment|/*  don't use gimp_group_layer_resume_resize(), but rather decrement    *  private->suspend_resize directly, so that gimp_group_layer_update_size()    *  isn't called.    */
+name|private
+operator|->
+name|suspend_resize
+operator|--
 expr_stmt|;
 block|}
 end_function
@@ -8442,7 +8535,15 @@ literal|0
 block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (group),               x, y, width, height);
 endif|#
 directive|endif
-comment|/*  the layer stack's update signal speaks in image coordinates,    *  pass to the projection as-is.    */
+if|if
+condition|(
+operator|!
+name|private
+operator|->
+name|direct_update
+condition|)
+block|{
+comment|/*  the layer stack's update signal speaks in image coordinates,        *  pass to the projection as-is.        */
 name|gimp_projectable_invalidate
 argument_list|(
 name|GIMP_PROJECTABLE
@@ -8464,8 +8565,13 @@ argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
+name|private
+operator|->
+name|direct_update
+operator|||
 name|private
 operator|->
 name|pass_through
