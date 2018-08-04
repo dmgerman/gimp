@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3cd5a0103
+DECL|enum|__anon277045270103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3cd5a0203
+DECL|enum|__anon277045270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9675,7 +9675,7 @@ parameter_list|(
 name|_reason
 parameter_list|)
 define|\
-value|if (version_reason) {                                           \     gchar *tmp = _reason;                                         \     if (g_list_find_custom (reasons, tmp, (GCompareFunc) strcmp)) \       g_free (tmp);                                               \     else                                                          \       reasons = g_list_prepend (reasons, (_reason)); }            \   else g_free (_reason);
+value|if (version_reason) {                                           \     gchar *tmp = _reason;                                         \     if (g_list_find_custom (reasons, tmp, (GCompareFunc) strcmp)) \       g_free (tmp);                                               \     else                                                          \       reasons = g_list_prepend (reasons, tmp); }
 comment|/* need version 1 for colormaps */
 if|if
 condition|(
