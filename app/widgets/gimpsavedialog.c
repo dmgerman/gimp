@@ -1145,6 +1145,11 @@ argument_list|,
 name|basename
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
