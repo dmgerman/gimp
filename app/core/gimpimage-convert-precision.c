@@ -375,9 +375,12 @@ argument_list|)
 expr_stmt|;
 name|old_profile
 operator|=
-name|gimp_image_get_color_profile
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|old_format
@@ -410,12 +413,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|old_profile
-condition|)
-block|{
-comment|/* we use old_format and new_format just for looking at their        * TRCs, new_format's space might be incorrect, don't use it        * for anything else.        */
+comment|/* we use old_format and new_format just for looking at their    * TRCs, new_format's space might be incorrect, don't use it    * for anything else.    */
 if|if
 condition|(
 name|gimp_babl_format_get_trc
@@ -429,7 +427,7 @@ name|new_format
 argument_list|)
 condition|)
 block|{
-comment|/* when converting between linear and gamma, we create a new            * profile using the original profile's chromacities and            * whitepoint, but a linear/sRGB-gamma TRC.            */
+comment|/* when converting between linear and non-linear, we create a        * new profile using the original profile's chromacities and        * whitepoint, but a linear/sRGB-gamma TRC.        */
 if|if
 condition|(
 name|gimp_babl_format_get_trc
@@ -458,21 +456,7 @@ name|old_profile
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-if|if
-condition|(
-operator|!
-name|new_profile
-condition|)
-name|new_profile
-operator|=
-name|g_object_ref
-argument_list|(
-name|old_profile
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* we always need a profile for convert_type on the same image, use    * the new precision's builtin profile as a fallback if the image    * didn't have a profile before, or it couldn't be converted    */
+comment|/* we always need a profile for convert_type with changing TRC        * on the same image, use the new precision's builtin profile as        * a fallback if the profile couldn't be converted        */
 if|if
 condition|(
 operator|!
@@ -509,6 +493,7 @@ argument_list|(
 name|new_profile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 while|while
 condition|(
@@ -620,7 +605,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gint
+name|GeglDitherMethod
 name|dither_type
 decl_stmt|;
 if|if
@@ -660,6 +645,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|old_profile
+argument_list|,
 name|new_profile
 argument_list|,
 name|dither_type
@@ -676,8 +663,6 @@ block|}
 if|if
 condition|(
 name|new_profile
-operator|!=
-name|old_profile
 condition|)
 name|gimp_image_set_color_profile
 argument_list|(

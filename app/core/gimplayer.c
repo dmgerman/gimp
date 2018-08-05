@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8e57e0103
+DECL|enum|__anon295aec0e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8e57e0203
+DECL|enum|__anon295aec0e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -869,6 +869,10 @@ name|new_format
 parameter_list|,
 name|GimpColorProfile
 modifier|*
+name|src_profile
+parameter_list|,
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GeglDitherMethod
@@ -1221,6 +1225,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -4324,6 +4332,12 @@ name|new_precision
 decl_stmt|;
 name|GimpColorProfile
 modifier|*
+name|src_profile
+init|=
+name|NULL
+decl_stmt|;
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 init|=
 name|NULL
@@ -4371,10 +4385,8 @@ name|dest_image
 argument_list|)
 condition|)
 block|{
-name|GimpColorProfile
-modifier|*
 name|src_profile
-init|=
+operator|=
 name|gimp_color_managed_get_color_profile
 argument_list|(
 name|GIMP_COLOR_MANAGED
@@ -4382,7 +4394,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|dest_profile
 operator|=
 name|gimp_color_managed_get_color_profile
@@ -4402,10 +4414,16 @@ argument_list|,
 name|src_profile
 argument_list|)
 condition|)
+block|{
+name|src_profile
+operator|=
+name|NULL
+expr_stmt|;
 name|dest_profile
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -4434,6 +4452,8 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|src_profile
 argument_list|,
 name|dest_profile
 argument_list|,
@@ -5812,7 +5832,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5827,6 +5847,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -6016,6 +6040,8 @@ name|dest_image
 argument_list|,
 name|space_format
 argument_list|,
+name|src_profile
+argument_list|,
 name|dest_profile
 argument_list|,
 name|layer_dither_type
@@ -6068,6 +6094,8 @@ operator|->
 name|mask
 argument_list|)
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -7127,7 +7155,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_real_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_layer_real_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_layer_real_convert_type
 parameter_list|(
 name|GimpLayer
@@ -7142,6 +7170,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -7306,10 +7338,13 @@ condition|(
 name|dest_profile
 condition|)
 block|{
-name|GimpColorProfile
-modifier|*
+if|if
+condition|(
+operator|!
 name|src_profile
-init|=
+condition|)
+name|src_profile
+operator|=
 name|gimp_color_managed_get_color_profile
 argument_list|(
 name|GIMP_COLOR_MANAGED
@@ -7317,7 +7352,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_gegl_convert_color_profile
 argument_list|(
 name|src_buffer

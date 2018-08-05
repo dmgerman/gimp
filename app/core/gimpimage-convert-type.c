@@ -137,6 +137,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GimpColorProfile
+modifier|*
+name|src_profile
+decl_stmt|;
 name|GimpImageBaseType
 name|old_type
 decl_stmt|;
@@ -387,6 +391,16 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
+name|src_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Push the image type to the stack  */
 name|gimp_image_undo_push_image_type
 argument_list|(
@@ -468,6 +482,8 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|src_profile
 argument_list|,
 name|dest_profile
 argument_list|,

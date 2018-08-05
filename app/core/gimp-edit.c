@@ -1145,6 +1145,8 @@ name|TRUE
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|GEGL_DITHER_NONE
 argument_list|,
 name|GEGL_DITHER_NONE

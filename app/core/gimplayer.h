@@ -197,7 +197,7 @@ name|mask_offset_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28ef657c0108
+DECL|struct|__anon2ab4a3220108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -570,6 +570,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*

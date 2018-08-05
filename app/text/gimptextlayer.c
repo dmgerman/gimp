@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3d5550103
+DECL|enum|__anon2acc61470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,6 +413,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -1561,7 +1565,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_text_layer_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_text_layer_convert_type
 parameter_list|(
 name|GimpLayer
@@ -1576,6 +1580,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -1644,6 +1652,8 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_format
+argument_list|,
+name|src_profile
 argument_list|,
 name|dest_profile
 argument_list|,

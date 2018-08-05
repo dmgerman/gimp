@@ -251,6 +251,10 @@ name|new_format
 parameter_list|,
 name|GimpColorProfile
 modifier|*
+name|src_profile
+parameter_list|,
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GeglDitherMethod
@@ -641,6 +645,10 @@ name|new_precision
 parameter_list|,
 name|gboolean
 name|new_has_alpha
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*

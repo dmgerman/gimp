@@ -430,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2af1f62e0103
+DECL|enum|__anon2acd8c080103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1518,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1f62e0208
+DECL|struct|__anon2acd8c080208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1f62e0308
+DECL|struct|__anon2acd8c080308
 block|{
 DECL|member|used_count
 name|glong
@@ -2803,6 +2803,12 @@ name|list
 decl_stmt|;
 name|GimpColorProfile
 modifier|*
+name|src_profile
+init|=
+name|NULL
+decl_stmt|;
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 init|=
 name|NULL
@@ -2980,6 +2986,16 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Convert Image to Indexed"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|src_profile
+operator|=
+name|gimp_color_managed_get_color_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3706,6 +3722,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+argument_list|,
+name|src_profile
 argument_list|,
 name|dest_profile
 argument_list|,

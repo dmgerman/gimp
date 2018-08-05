@@ -700,6 +700,10 @@ name|new_format
 parameter_list|,
 name|GimpColorProfile
 modifier|*
+name|src_profile
+parameter_list|,
+name|GimpColorProfile
+modifier|*
 name|dest_profile
 parameter_list|,
 name|GeglDitherMethod
@@ -4334,7 +4338,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
+DECL|function|gimp_group_layer_convert_type (GimpLayer * layer,GimpImage * dest_image,const Babl * new_format,GimpColorProfile * src_profile,GimpColorProfile * dest_profile,GeglDitherMethod layer_dither_type,GeglDitherMethod mask_dither_type,gboolean push_undo,GimpProgress * progress)
 name|gimp_group_layer_convert_type
 parameter_list|(
 name|GimpLayer
@@ -4349,6 +4353,10 @@ specifier|const
 name|Babl
 modifier|*
 name|new_format
+parameter_list|,
+name|GimpColorProfile
+modifier|*
+name|src_profile
 parameter_list|,
 name|GimpColorProfile
 modifier|*
