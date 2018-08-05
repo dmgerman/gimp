@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed0b390103
+DECL|enum|__anon2ad598a30103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -102,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed0b390203
+DECL|enum|__anon2ad598a30203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -577,6 +577,11 @@ name|filter
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|filter
 argument_list|)
 expr_stmt|;
 block|}
