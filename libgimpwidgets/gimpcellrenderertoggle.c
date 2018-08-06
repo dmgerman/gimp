@@ -42,12 +42,12 @@ DECL|macro|DEFAULT_ICON_SIZE
 define|#
 directive|define
 name|DEFAULT_ICON_SIZE
-value|GTK_ICON_SIZE_BUTTON
+value|16
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277b93990103
+DECL|enum|__anon2a24a06b0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277b93990203
+DECL|enum|__anon2a24a06b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -68,8 +68,8 @@ block|,
 DECL|enumerator|PROP_ICON_NAME
 name|PROP_ICON_NAME
 block|,
-DECL|enumerator|PROP_STOCK_SIZE
-name|PROP_STOCK_SIZE
+DECL|enumerator|PROP_ICON_SIZE
+name|PROP_ICON_SIZE
 block|,
 DECL|enumerator|PROP_OVERRIDE_BACKGROUND
 name|PROP_OVERRIDE_BACKGROUND
@@ -87,9 +87,9 @@ name|gchar
 modifier|*
 name|icon_name
 decl_stmt|;
-DECL|member|stock_size
-name|GtkIconSize
-name|stock_size
+DECL|member|icon_size
+name|gint
+name|icon_size
 decl_stmt|;
 DECL|member|override_background
 name|gboolean
@@ -460,15 +460,15 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_STOCK_SIZE
+name|PROP_ICON_SIZE
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"stock-size"
+literal|"icon-size"
 argument_list|,
-literal|"Stock Size"
+literal|"Icon Size"
 argument_list|,
-literal|"The icon size to use"
+literal|"The desired icon size to use in pixel (before applying scaling factor)"
 argument_list|,
 literal|0
 argument_list|,
@@ -645,7 +645,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_SIZE
+name|PROP_ICON_SIZE
 case|:
 name|g_value_set_int
 argument_list|(
@@ -653,7 +653,7 @@ name|value
 argument_list|,
 name|priv
 operator|->
-name|stock_size
+name|icon_size
 argument_list|)
 expr_stmt|;
 break|break;
@@ -749,11 +749,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_STOCK_SIZE
+name|PROP_ICON_SIZE
 case|:
 name|priv
 operator|->
-name|stock_size
+name|icon_size
 operator|=
 name|g_value_get_int
 argument_list|(
@@ -1910,38 +1910,6 @@ decl_stmt|;
 name|gint
 name|scale_factor
 decl_stmt|;
-name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gtk_icon_size_lookup
-argument_list|(
-name|priv
-operator|->
-name|stock_size
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-condition|)
-name|gtk_icon_size_lookup
-argument_list|(
-name|DEFAULT_ICON_SIZE
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
 name|scale_factor
 operator|=
 name|gtk_widget_get_scale_factor
@@ -1983,12 +1951,9 @@ name|icon_theme
 argument_list|,
 name|icon_name
 argument_list|,
-name|MIN
-argument_list|(
-name|width
-argument_list|,
-name|height
-argument_list|)
+name|priv
+operator|->
+name|icon_size
 argument_list|,
 name|scale_factor
 argument_list|,
