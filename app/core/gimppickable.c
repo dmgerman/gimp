@@ -183,11 +183,6 @@ specifier|const
 name|Babl
 modifier|*
 name|average_format
-init|=
-name|babl_format
-argument_list|(
-literal|"RaGaBaA double"
-argument_list|)
 decl_stmt|;
 name|gdouble
 name|average
@@ -195,7 +190,9 @@ index|[
 literal|4
 index|]
 init|=
-block|{}
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|gint
 name|n
@@ -211,6 +208,18 @@ decl_stmt|;
 name|gint
 name|c
 decl_stmt|;
+name|average_format
+operator|=
+name|babl_format_with_space
+argument_list|(
+literal|"RaGaBaA double"
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -1332,9 +1341,14 @@ argument_list|)
 decl_stmt|;
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RaGaBaA double"
+argument_list|,
+name|babl_format_get_space
+argument_list|(
+name|format
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_pickable_get_pixel_average
