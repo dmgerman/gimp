@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af1ff20103
+DECL|enum|__anon29bb59b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1830,6 +1830,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|path_str
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -1881,6 +1886,11 @@ argument_list|(
 name|path_str
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path_str
 argument_list|)
 expr_stmt|;
 for|for
