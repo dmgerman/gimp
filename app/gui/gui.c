@@ -1054,6 +1054,8 @@ block|{
 name|splash_create
 argument_list|(
 name|gimp
+argument_list|,
+name|gimp
 operator|->
 name|be_verbose
 argument_list|,
@@ -3386,7 +3388,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8de3070108
+DECL|struct|__anon2b337dbb0108
 block|{
 DECL|member|path
 specifier|const

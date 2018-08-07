@@ -279,7 +279,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2e1e40103
+DECL|enum|__anon291c42670103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +307,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2e1e40203
+DECL|enum|__anon291c42670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1209,6 +1209,14 @@ comment|/*  create user and default context  */
 name|gimp_contexts_init
 argument_list|(
 name|gimp
+argument_list|)
+expr_stmt|;
+comment|/* Initialize the extension manager early as its contents may be used    * at the very start (e.g. the splash image).    */
+name|gimp_extension_manager_initialize
+argument_list|(
+name|gimp
+operator|->
+name|extension_manager
 argument_list|)
 expr_stmt|;
 block|}
@@ -2284,13 +2292,6 @@ operator|->
 name|plug_in_manager
 argument_list|,
 name|status_callback
-argument_list|)
-expr_stmt|;
-name|gimp_extension_manager_initialize
-argument_list|(
-name|gimp
-operator|->
-name|extension_manager
 argument_list|)
 expr_stmt|;
 name|status_callback

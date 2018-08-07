@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -94,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3024ef0108
+DECL|struct|__anon2c0540b20108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -284,6 +290,10 @@ name|GdkPixbufAnimation
 modifier|*
 name|splash_image_load
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|max_width
 parameter_list|,
@@ -379,9 +389,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|splash_create (gboolean be_verbose,GdkMonitor * monitor)
+DECL|function|splash_create (Gimp * gimp,gboolean be_verbose,GdkMonitor * monitor)
 name|splash_create
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|be_verbose
 parameter_list|,
@@ -457,6 +471,8 @@ name|pixbuf
 operator|=
 name|splash_image_load
 argument_list|(
+name|gimp
+argument_list|,
 name|max_width
 argument_list|,
 name|max_height
@@ -2150,9 +2166,13 @@ begin_function
 specifier|static
 name|GdkPixbufAnimation
 modifier|*
-DECL|function|splash_image_load (gint max_width,gint max_height,gboolean be_verbose)
+DECL|function|splash_image_load (Gimp * gimp,gint max_width,gint max_height,gboolean be_verbose)
 name|splash_image_load
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|max_width
 parameter_list|,
@@ -2181,6 +2201,41 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+comment|/* Random image in splash extensions. */
+name|g_object_get
+argument_list|(
+name|gimp
+operator|->
+name|extension_manager
+argument_list|,
+literal|"splash-paths"
+argument_list|,
+operator|&
+name|list
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|animation
+operator|=
+name|splash_image_pick_from_dirs
+argument_list|(
+name|list
+argument_list|,
+name|max_width
+argument_list|,
+name|max_height
+argument_list|,
+name|be_verbose
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|animation
+condition|)
+return|return
+name|animation
+return|;
 comment|/* File "gimp-splash.png" in personal configuration directory. */
 name|filename
 operator|=

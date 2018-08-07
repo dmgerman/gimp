@@ -20,6 +20,10 @@ begin_function_decl
 name|void
 name|splash_create
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gboolean
 name|be_verbose
 parameter_list|,
