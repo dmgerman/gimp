@@ -153,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab405080103
+DECL|enum|__anon294b853d0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -5034,6 +5034,15 @@ operator|->
 name|render_node
 argument_list|,
 name|GIMP_ICON_TOOL_CAGE
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_filter_set_region
+argument_list|(
+name|ct
+operator|->
+name|filter
+argument_list|,
+name|GIMP_FILTER_REGION_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

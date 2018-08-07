@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7282180103
+DECL|enum|__anon2b96b3320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1163,6 +1163,14 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|aux_buf
+condition|)
+return|return
+name|TRUE
+return|;
 name|gegl_operation_progress
 argument_list|(
 name|operation
