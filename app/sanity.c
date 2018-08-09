@@ -1981,8 +1981,6 @@ literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
 block|,
-literal|"gegl:stereographic-projection"
-block|,
 literal|"gegl:mantiuk06"
 block|,
 literal|"gegl:map-absolute"
@@ -2078,6 +2076,8 @@ block|,
 literal|"gegl:spherize"
 block|,
 literal|"gegl:spiral"
+block|,
+literal|"gegl:stereographic-projection"
 block|,
 literal|"gegl:stretch-contrast"
 block|,

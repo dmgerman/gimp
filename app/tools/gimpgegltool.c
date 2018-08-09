@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4de7e60103
+DECL|enum|__anon2c8fad6e0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -520,8 +520,6 @@ literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
 block|,
-literal|"gegl:stereographic-projection"
-block|,
 literal|"gegl:mantiuk06"
 block|,
 literal|"gegl:maze"
@@ -603,6 +601,8 @@ block|,
 literal|"gegl:spherize"
 block|,
 literal|"gegl:spiral"
+block|,
+literal|"gegl:stereographic-projection"
 block|,
 literal|"gegl:stretch-contrast"
 block|,
