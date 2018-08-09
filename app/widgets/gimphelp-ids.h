@@ -2854,6 +2854,14 @@ value|"gimp-filter-little-planet"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_LONG_SHADOW
+define|#
+directive|define
+name|GIMP_HELP_FILTER_LONG_SHADOW
+value|"gimp-filter-long-shadow"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_MANTIUK_2006
 define|#
 directive|define
