@@ -1736,9 +1736,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|src_profile
-operator|||
 name|gimp_color_profile_is_equal
 argument_list|(
 name|src_profile
@@ -1785,6 +1782,12 @@ name|_
 argument_list|(
 literal|"Color profile conversion"
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* retain src_profile across gimp_image_set_color_profile() */
+name|g_object_ref
+argument_list|(
+name|src_profile
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_is_color_managed
@@ -1870,6 +1873,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|g_object_unref
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
