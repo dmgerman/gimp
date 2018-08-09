@@ -42,13 +42,18 @@ end_include
 begin_function
 name|GeglNode
 modifier|*
-DECL|function|gimp_gegl_create_flatten_node (const GimpRGB * background,GimpLayerColorSpace composite_space)
+DECL|function|gimp_gegl_create_flatten_node (const GimpRGB * background,const Babl * space,GimpLayerColorSpace composite_space)
 name|gimp_gegl_create_flatten_node
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
 name|background
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|,
 name|GimpLayerColorSpace
 name|composite_space
@@ -128,6 +133,8 @@ operator|=
 name|gimp_gegl_color_new
 argument_list|(
 name|background
+argument_list|,
+name|space
 argument_list|)
 expr_stmt|;
 name|color
@@ -706,7 +713,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_node_set_color (GeglNode * node,const GimpRGB * color)
+DECL|function|gimp_gegl_node_set_color (GeglNode * node,const GimpRGB * color,const Babl * space)
 name|gimp_gegl_node_set_color
 parameter_list|(
 name|GeglNode
@@ -717,6 +724,11 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 block|{
 name|GeglColor
@@ -743,6 +755,8 @@ operator|=
 name|gimp_gegl_color_new
 argument_list|(
 name|color
+argument_list|,
+name|space
 argument_list|)
 expr_stmt|;
 name|gegl_node_set

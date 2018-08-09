@@ -2442,6 +2442,14 @@ argument_list|(
 operator|&
 name|bg
 argument_list|,
+name|gimp_drawable_get_space
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|,
 name|gimp_layer_get_real_composite_space
 argument_list|(
 name|bottom_layer

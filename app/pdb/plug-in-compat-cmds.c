@@ -2161,6 +2161,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -4136,6 +4138,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|GeglNode
@@ -5051,6 +5055,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -6886,6 +6892,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|from
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gegl_to
@@ -6894,6 +6902,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|to
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -8927,6 +8937,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -9400,6 +9412,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -9416,6 +9430,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -10588,6 +10604,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|bgcolor
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -10604,6 +10622,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|fgcolor
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -10971,6 +10991,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -11389,6 +11411,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|node
@@ -15461,6 +15485,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|col1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gegl_color2
@@ -15469,6 +15495,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|col2
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_item_mask_intersect
@@ -17421,6 +17449,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

@@ -42,6 +42,11 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 function_decl|;
 end_function_decl

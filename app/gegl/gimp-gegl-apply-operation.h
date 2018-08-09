@@ -167,6 +167,11 @@ name|GimpRGB
 modifier|*
 name|background
 parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
+parameter_list|,
 name|GimpLayerColorSpace
 name|composite_space
 parameter_list|)

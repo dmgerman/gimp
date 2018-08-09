@@ -174,13 +174,18 @@ end_function
 begin_function
 name|GeglColor
 modifier|*
-DECL|function|gimp_gegl_color_new (const GimpRGB * rgb)
+DECL|function|gimp_gegl_color_new (const GimpRGB * rgb,const Babl * space)
 name|gimp_gegl_color_new
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
+parameter_list|,
+specifier|const
+name|Babl
+modifier|*
+name|space
 parameter_list|)
 block|{
 name|GeglColor
@@ -207,9 +212,11 @@ name|gegl_color_set_pixel
 argument_list|(
 name|color
 argument_list|,
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A double"
+argument_list|,
+name|space
 argument_list|)
 argument_list|,
 name|rgb

@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d546a0103
+DECL|enum|__anon2c07c0080103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2115,6 +2115,8 @@ operator|&
 name|channel
 operator|->
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_warn_if_fail
@@ -2907,6 +2909,8 @@ name|new_buffer
 argument_list|,
 operator|&
 name|background
+argument_list|,
+name|NULL
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 argument_list|)
@@ -7773,6 +7777,8 @@ operator|&
 name|channel
 operator|->
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -7994,6 +8000,8 @@ operator|&
 name|channel
 operator|->
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

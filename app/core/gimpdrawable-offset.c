@@ -350,6 +350,11 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|bg
+argument_list|,
+name|gimp_drawable_get_space
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set_color

@@ -2008,6 +2008,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|gimp_color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_init
@@ -2619,6 +2621,8 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|gimp_color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_init

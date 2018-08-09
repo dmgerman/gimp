@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aec0e0103
+DECL|enum|__anon2bf3475a0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aec0e0203
+DECL|enum|__anon2bf3475a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8872,6 +8872,8 @@ argument_list|,
 operator|&
 name|background
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 argument_list|)
 expr_stmt|;
@@ -10240,6 +10242,14 @@ name|new_buffer
 argument_list|,
 operator|&
 name|background
+argument_list|,
+name|gimp_drawable_get_space
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_layer_get_real_composite_space
 argument_list|(

@@ -1661,6 +1661,11 @@ name|gimp_gegl_color_new
 argument_list|(
 operator|&
 name|foreground
+argument_list|,
+name|gimp_drawable_get_space
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2323,7 +2328,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279154bf0103
+DECL|enum|__anon29c265cf0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
