@@ -1755,7 +1755,7 @@ endif|#
 directive|endif
 ifdef|#
 directive|ifdef
-name|GIMP_UNSTABLE
+name|ENABLE_WIN32_DEBUG_CONSOLE
 name|gimp_open_console_window
 argument_list|()
 expr_stmt|;
