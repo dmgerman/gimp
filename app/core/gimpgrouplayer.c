@@ -194,10 +194,6 @@ DECL|member|direct_update
 name|gint
 name|direct_update
 decl_stmt|;
-DECL|member|suspend_update
-name|gint
-name|suspend_update
-decl_stmt|;
 DECL|member|transforming
 name|gint
 name|transforming
@@ -7687,11 +7683,6 @@ name|GeglBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-name|gboolean
-name|update_drawable
-init|=
-name|FALSE
-decl_stmt|;
 comment|/* if the graph is already constructed, set the offset node's        * coordinates first, so the graph is in the right state when        * the projection is reallocated, see bug #730550.        */
 if|if
 condition|(
@@ -7768,10 +7759,6 @@ name|group
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|update_drawable
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -7793,22 +7780,6 @@ name|old_height
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* avoid updating the drawable in response to projection updates while        * flushing the projection, since we want to either update the entire        * drawable, or not update at all, when setting the drawable's buffer.        */
-name|private
-operator|->
-name|suspend_update
-operator|++
-expr_stmt|;
-name|gimp_group_layer_flush
-argument_list|(
-name|group
-argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|suspend_update
-operator|--
-expr_stmt|;
 name|buffer
 operator|=
 name|gimp_pickable_get_buffer
@@ -7838,7 +7809,13 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|update_drawable
+name|FALSE
+comment|/* don't update the drawable, the                                             * flush() below will take care of                                             * that.                                             */
+argument_list|)
+expr_stmt|;
+name|gimp_group_layer_flush
+argument_list|(
+name|group
 argument_list|)
 expr_stmt|;
 comment|/*  reset, the actual size is correct now  */
@@ -8676,13 +8653,6 @@ argument_list|(
 name|group
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|suspend_update
-condition|)
-return|return;
 if|#
 directive|if
 literal|0
