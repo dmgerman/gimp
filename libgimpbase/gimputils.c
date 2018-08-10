@@ -253,20 +253,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|gboolean
-name|gimp_utils_lldb_available
-parameter_list|(
-name|gint
-name|major
-parameter_list|,
-name|gint
-name|minor
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/**  * gimp_utf8_strtrim:  * @str: an UTF-8 encoded string (or %NULL)  * @max_chars: the maximum number of characters before the string get  * trimmed  *  * Creates a (possibly trimmed) copy of @str. The string is cut if it  * exceeds @max_chars characters or on the first newline. The fact  * that the string was trimmed is indicated by appending an ellipsis.  *  * Returns: A (possibly trimmed) copy of @str which should be freed  * using g_free() when it is not needed any longer.  **/
 end_comment
@@ -3059,7 +3045,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_stack_trace_available:  * @optimal: whether we get optimal traces.  *  * Returns #TRUE if we have dependencies to generate backtraces. If  * @optimal is #TRUE, the function will return #TRUE only when we  * are able to generate optimal traces (i.e. with GDB or LLDB);  * otherwise we return #TRUE even if only backtrace() API is available.  *  * On Win32, we return TRUE if Dr. Mingw is built-in, FALSE otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_stack_trace_available:  * @optimal: whether we get optimal traces.  *  * Returns #TRUE if we have dependencies to generate backtraces. If  * @optimal is #TRUE, the function will return #TRUE only when we  * are able to generate optimal traces (i.e. with GDB or LLDB);  * otherwise we return #TRUE even if only backtrace() API is available.  *  * On Win32, we return TRUE if Dr. Mingw is built-in, FALSE otherwise.  *  * Note: this function is not crash-safe, i.e. you should not try to use  * it in a callback when the program is already crashing. In such a  * case, call gimp_stack_trace_print() or gimp_stack_trace_query()  * directly.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3074,6 +3060,40 @@ block|{
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
+name|gchar
+modifier|*
+name|lld_path
+init|=
+name|NULL
+decl_stmt|;
+name|gboolean
+name|has_lldb
+init|=
+name|FALSE
+decl_stmt|;
+comment|/* Similarly to gdb, we could check for lldb by calling:    * gimp_utils_generic_available ("lldb", major, minor).    * We don't do so on purpose because on macOS, when lldb is absent, it    * triggers a popup asking to install Xcode. So instead, we just    * search for the executable in path.    * This is the reason why this function is not crash-safe, since    * g_find_program_in_path() allocates memory.    * See issue #1999.    */
+name|lld_path
+operator|=
+name|g_find_program_in_path
+argument_list|(
+literal|"lldb"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|lld_path
+condition|)
+block|{
+name|has_lldb
+operator|=
+name|TRUE
+expr_stmt|;
+name|g_free
+argument_list|(
+name|lld_path
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_utils_gdb_available
@@ -3083,12 +3103,7 @@ argument_list|,
 literal|0
 argument_list|)
 operator|||
-name|gimp_utils_lldb_available
-argument_list|(
-literal|0
-argument_list|,
-literal|0
-argument_list|)
+name|has_lldb
 condition|)
 return|return
 name|TRUE
@@ -4636,32 +4651,6 @@ return|return
 name|gimp_utils_generic_available
 argument_list|(
 literal|"gdb"
-argument_list|,
-name|major
-argument_list|,
-name|minor
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|gimp_utils_lldb_available (gint major,gint minor)
-name|gimp_utils_lldb_available
-parameter_list|(
-name|gint
-name|major
-parameter_list|,
-name|gint
-name|minor
-parameter_list|)
-block|{
-return|return
-name|gimp_utils_generic_available
-argument_list|(
-literal|"lldb"
 argument_list|,
 name|major
 argument_list|,
