@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0108
+DECL|struct|__anon299ea5cb0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0208
+DECL|struct|__anon299ea5cb0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0308
+DECL|struct|__anon299ea5cb0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0408
+DECL|struct|__anon299ea5cb0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0508
+DECL|struct|__anon299ea5cb0508
 block|{
 DECL|member|pull_grid
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0608
+DECL|struct|__anon299ea5cb0608
 block|{
 DECL|member|name
 specifier|const
@@ -3110,7 +3110,7 @@ condition|(
 name|in_progress
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"newsprint_menu_callback: unexpected recursion: can't happen\n"
 argument_list|)
@@ -6523,7 +6523,7 @@ condition|(
 operator|!
 name|st
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"newsprint: cspace_update: no state, can't happen!\n"
 argument_list|)
@@ -7027,7 +7027,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4fd3e0708
+DECL|struct|__anon299ea5cb0708
 block|{
 DECL|member|index
 name|gint
@@ -7813,7 +7813,7 @@ parameter_list|(
 name|_x
 parameter_list|)
 define|\
-value|do {                                                            \     if (!VALID_SPOTFN(_x))                                      \     {                                                           \         printf("newsprint: %d is not a valid spot type\n", _x); \         _x = SPOTFN_DOT;                                        \     }                                                           \ } while(0)
+value|do {                                                               \     if (!VALID_SPOTFN(_x))                                         \     {                                                              \         g_printf ("newsprint: %d is not a valid spot type\n", _x); \         _x = SPOTFN_DOT;                                           \     }                                                              \ } while(0)
 comment|/* calculate the RGB / CMYK rotations and threshold matrices */
 if|if
 condition|(

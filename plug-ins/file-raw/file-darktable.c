@@ -1572,7 +1572,7 @@ condition|(
 name|debug_prints
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"[%s] trying to call\n"
 argument_list|,
@@ -1594,7 +1594,7 @@ condition|;
 name|iter
 operator|++
 control|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"    %s\n"
 argument_list|,
@@ -1602,7 +1602,7 @@ operator|*
 name|iter
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"\n"
 argument_list|)

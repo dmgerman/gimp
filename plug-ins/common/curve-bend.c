@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d6bbc0108
+DECL|struct|__anon2c0ac5960108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d6bbc0208
+DECL|struct|__anon2c0ac5960208
 block|{
 DECL|member|y
 name|gint32
@@ -4017,7 +4017,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"warning: BAD points[%d] in file %s are ignored\n"
 argument_list|,
@@ -4113,7 +4113,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"warning: BAD y_vals[%d] in file %s are ignored\n"
 argument_list|,
@@ -8594,7 +8594,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"bender_plot_curve xmax:%d ymax:%d\n"
 argument_list|,
@@ -8741,7 +8741,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"outline: %d  cX: %d cY: %d\n"
 argument_list|,
@@ -14394,7 +14394,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_bender_calculate_iter_curve NORMAL1\n"
 argument_list|)
@@ -14463,7 +14463,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_bender_calculate_iter_curve ITERmode 1\n"
 argument_list|)
@@ -16534,7 +16534,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend  l_tmp_layer_id %d\n"
 argument_list|,
@@ -16557,7 +16557,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend rotate: %f\n"
 argument_list|,
@@ -16684,7 +16684,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend: l_dst_height:%d\n"
 argument_list|,
@@ -16716,7 +16716,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend: DONE add layer\n"
 argument_list|)
@@ -16746,7 +16746,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend: DONE layer resize\n"
 argument_list|)
@@ -16825,7 +16825,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend: DONE vertical bend\n"
 argument_list|)
@@ -16949,7 +16949,7 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"p_main_bend: DONE bend main\n"
 argument_list|)

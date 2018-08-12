@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad25ecd0103
+DECL|enum|__anon29da172e0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad25ecd0203
+DECL|enum|__anon29da172e0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -3228,7 +3228,7 @@ block|}
 block|}
 else|else
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"draw_jigsaw: bad style\n"
 argument_list|)

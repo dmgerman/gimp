@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87f8340108
+DECL|struct|__anon27ce37510108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87f8340208
+DECL|struct|__anon27ce37510208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87f8340308
+DECL|struct|__anon27ce37510308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87f8340408
+DECL|struct|__anon27ce37510408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87f8340508
+DECL|struct|__anon27ce37510508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1468,7 +1468,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"sample colorize run\n"
 argument_list|)
@@ -3903,7 +3903,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"UPD PREVIEWS   ID:%d ENABLE_UPD:%d\n"
 argument_list|,
@@ -4356,7 +4356,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"levels_update: update reques %x\n"
 argument_list|,
@@ -5007,7 +5007,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: GDK_EXPOSE\n"
 argument_list|)
@@ -5033,7 +5033,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: GDK_BUTTON_PRESS\n"
 argument_list|)
@@ -5130,7 +5130,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: GDK_BUTTON_RELEASE\n"
 argument_list|)
@@ -5207,7 +5207,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: GDK_MOTION_NOTIFY\n"
 argument_list|)
@@ -5241,7 +5241,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: default\n"
 argument_list|)
@@ -5257,7 +5257,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"EVENT: ** update **\n"
 argument_list|)
@@ -5520,7 +5520,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: GDK_EXPOSE\n"
 argument_list|)
@@ -5546,7 +5546,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: GDK_BUTTON_PRESS\n"
 argument_list|)
@@ -5638,7 +5638,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: GDK_BUTTON_RELEASE\n"
 argument_list|)
@@ -5696,7 +5696,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: GDK_MOTION_NOTIFY\n"
 argument_list|)
@@ -5730,7 +5730,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: default\n"
 argument_list|)
@@ -5746,7 +5746,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"OUT_EVENT: ** update **\n"
 argument_list|)
@@ -9002,7 +9002,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+name|g_printf
 argument_list|(
 literal|"g_values.tol_col_err    :%f\n"
 argument_list|,
@@ -9284,7 +9284,7 @@ operator|++
 expr_stmt|;
 return|return;
 comment|/* debug start */
-name|printf
+name|g_printf
 argument_list|(
 literal|"\np_provide_tile: row: %d col: %d data:"
 argument_list|,
@@ -9321,7 +9321,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|" %d"
 argument_list|,
@@ -9338,7 +9338,7 @@ name|ptr
 operator|++
 expr_stmt|;
 block|}
-name|printf
+name|g_printf
 argument_list|(
 literal|"\n\n"
 argument_list|)
@@ -9552,7 +9552,7 @@ name|bpp
 argument_list|)
 expr_stmt|;
 return|return;
-name|printf
+name|g_printf
 argument_list|(
 literal|"get_pixel: x: %d  y: %d bpp:%d RGBA:%d %d %d %d\n"
 argument_list|,
@@ -12052,7 +12052,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"sample colorize: unknown layer_id %d (Image closed?)\n"
 argument_list|,
@@ -12227,7 +12227,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"\np_init_gdrw: drawable %p  ID: %d\n"
 argument_list|,
@@ -12420,7 +12420,7 @@ condition|(
 name|g_Sdebug
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: image_id %d sel_channel_id: %d\n"
 argument_list|,
@@ -12435,7 +12435,7 @@ operator|)
 name|sel_channel_id
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: BOUNDS     x1: %d y1: %d x2:%d y2: %d\n"
 argument_list|,
@@ -12468,7 +12468,7 @@ operator|->
 name|y2
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: OFFS       x: %d y: %d\n"
 argument_list|,
@@ -12675,7 +12675,7 @@ condition|(
 name|g_Sdebug
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: SEL_BOUNDS x1: %d y1: %d x2:%d y2: %d\n"
 argument_list|,
@@ -12708,7 +12708,7 @@ operator|->
 name|y2
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: SEL_OFFS   x: %d y: %d\n"
 argument_list|,
@@ -12723,7 +12723,7 @@ operator|)
 name|sel_offsety
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"init_gdrw: SEL_DELTA  x: %d y: %d\n"
 argument_list|,
@@ -13193,7 +13193,7 @@ if|if
 condition|(
 name|g_Sdebug
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"ROWS: %d - %d  COLS: %d - %d\n"
 argument_list|,
@@ -13288,7 +13288,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"Error: Source sample has no visible Pixel\n"
 argument_list|)

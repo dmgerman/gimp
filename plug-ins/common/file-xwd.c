@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b205f160108
+DECL|struct|__anon2c88885b0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b205f160208
+DECL|struct|__anon2c88885b0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -304,7 +304,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b205f160308
+DECL|struct|__anon2c88885b0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b205f160408
+DECL|struct|__anon2c88885b0408
 block|{
 DECL|member|npixel
 name|gint
@@ -1938,7 +1938,7 @@ block|{
 name|int
 name|j
 decl_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|"File %s\n"
 argument_list|,
@@ -1960,7 +1960,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"Entry 0x%08lx: 0x%04lx,  0x%04lx, 0x%04lx, %d\n"
 argument_list|,
@@ -4246,7 +4246,7 @@ operator|||
 name|index_is_bad
 condition|)
 block|{
-name|printf
+name|g_printf
 argument_list|(
 literal|"xwd: Warning. Error in XWD-color-structure ("
 argument_list|)
@@ -4255,7 +4255,7 @@ if|if
 condition|(
 name|flag_is_bad
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"flag"
 argument_list|)
@@ -4264,12 +4264,12 @@ if|if
 condition|(
 name|index_is_bad
 condition|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"index"
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printf
 argument_list|(
 literal|")\n"
 argument_list|)
@@ -5053,7 +5053,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_COL_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"Colors in pixelmap: %d\n"
 argument_list|,
@@ -5077,7 +5077,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"Pixelvalue 0x%08lx, 0x%02x 0x%02x 0x%02x\n"
 argument_list|,
@@ -5131,7 +5131,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"0x%08lx: %d\n"
 argument_list|,
@@ -5373,7 +5373,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_COL_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"Set GIMP b/w-colortable:\n"
 argument_list|)
@@ -5855,7 +5855,7 @@ block|}
 ifdef|#
 directive|ifdef
 name|XWD_COL_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"Set GIMP colortable:\n"
 argument_list|)
@@ -5873,7 +5873,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|printf
+name|g_printf
 argument_list|(
 literal|"%3d: 0x%02x 0x%02x 0x%02x\n"
 argument_list|,
@@ -6129,7 +6129,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f2_d1_b1 (%s)\n"
 argument_list|,
@@ -6838,7 +6838,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f2_d8_b8 (%s)\n"
 argument_list|,
@@ -7384,7 +7384,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f2_d16_b16 (%s)\n"
 argument_list|,
@@ -8293,7 +8293,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f2_d24_b32 (%s)\n"
 argument_list|,
@@ -9537,7 +9537,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f2_d32_b32 (%s)\n"
 argument_list|,
@@ -10562,7 +10562,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"load_xwd_f1_d24_b1 (%s)\n"
 argument_list|,
@@ -11906,7 +11906,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"save_index ()\n"
 argument_list|)
@@ -12656,7 +12656,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|XWD_DEBUG
-name|printf
+name|g_printf
 argument_list|(
 literal|"save_rgb ()\n"
 argument_list|)
