@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b394f20103
+DECL|enum|__anon2795fa5d0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -448,7 +448,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b394f20203
+DECL|enum|__anon2795fa5d0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -479,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b394f20303
+DECL|enum|__anon2795fa5d0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -743,7 +743,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon29b394f2040a
+DECL|union|__anon2795fa5d040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -759,7 +759,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes    */
 struct|struct
-DECL|struct|__anon29b394f20508
+DECL|struct|__anon2795fa5d0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -774,7 +774,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon29b394f20608
+DECL|struct|__anon2795fa5d0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -3636,7 +3636,7 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 argument_list|,
-name|GTK_POLICY_NEVER
+name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
@@ -8065,7 +8065,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b394f20708
+DECL|struct|__anon2795fa5d0708
 block|{
 DECL|member|free_space
 name|guint64
@@ -8335,7 +8335,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b394f20808
+DECL|struct|__anon2795fa5d0808
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -8541,7 +8541,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b394f20908
+DECL|struct|__anon2795fa5d0908
 block|{
 DECL|member|prev_time
 name|guint64
@@ -8817,7 +8817,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b394f20a08
+DECL|struct|__anon2795fa5d0a08
 block|{
 DECL|member|active
 name|gboolean
@@ -8977,7 +8977,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b394f20b08
+DECL|struct|__anon2795fa5d0b08
 block|{
 DECL|member|prev_time
 name|gint64
