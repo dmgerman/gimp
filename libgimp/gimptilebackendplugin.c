@@ -528,17 +528,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_assert
-argument_list|(
-name|command
-operator|<
-name|GEGL_TILE_LAST_COMMAND
-operator|&&
-name|command
-operator|>=
-literal|0
-argument_list|)
-expr_stmt|;
+comment|/* g_assert (command< GEGL_TILE_LAST_COMMAND&& command>= 0); */
+break|break;
 block|}
 return|return
 name|result
