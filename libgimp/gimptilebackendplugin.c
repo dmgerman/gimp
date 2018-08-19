@@ -528,7 +528,26 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/* g_assert (command< GEGL_TILE_LAST_COMMAND&& command>= 0); */
+name|result
+operator|=
+name|gegl_tile_backend_command
+argument_list|(
+name|GEGL_TILE_BACKEND
+argument_list|(
+name|tile_store
+argument_list|)
+argument_list|,
+name|command
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|z
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 return|return
