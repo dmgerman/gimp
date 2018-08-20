@@ -536,6 +536,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_gtk_container_clear
+parameter_list|(
+name|GtkContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_button_set_suggested
 parameter_list|(
 name|GtkWidget
