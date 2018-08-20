@@ -199,7 +199,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4de03a0103
+DECL|enum|__anon2c47eb2c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -212,7 +212,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4de03a0203
+DECL|enum|__anon2c47eb2c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -699,6 +699,9 @@ parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|chunk
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2597,6 +2600,8 @@ condition|(
 name|gimp_projection_chunk_render_iteration
 argument_list|(
 name|proj
+argument_list|,
+name|FALSE
 argument_list|)
 condition|)
 empty_stmt|;
@@ -3358,6 +3363,8 @@ operator|!
 name|gimp_projection_chunk_render_iteration
 argument_list|(
 name|proj
+argument_list|,
+name|TRUE
 argument_list|)
 condition|)
 block|{
@@ -3623,12 +3630,15 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_projection_chunk_render_iteration (GimpProjection * proj)
+DECL|function|gimp_projection_chunk_render_iteration (GimpProjection * proj,gboolean chunk)
 name|gimp_projection_chunk_render_iteration
 parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|chunk
 parameter_list|)
 block|{
 name|GimpProjectionChunkRender
@@ -3664,10 +3674,6 @@ name|work_h
 decl_stmt|;
 name|work_w
 operator|=
-name|MIN
-argument_list|(
-name|GIMP_PROJECTION_CHUNK_WIDTH
-argument_list|,
 name|chunk_render
 operator|->
 name|x
@@ -3677,14 +3683,9 @@ operator|->
 name|width
 operator|-
 name|work_x
-argument_list|)
 expr_stmt|;
 name|work_h
 operator|=
-name|MIN
-argument_list|(
-name|GIMP_PROJECTION_CHUNK_HEIGHT
-argument_list|,
 name|chunk_render
 operator|->
 name|y
@@ -3694,6 +3695,37 @@ operator|->
 name|height
 operator|-
 name|work_y
+expr_stmt|;
+if|if
+condition|(
+name|chunk
+condition|)
+name|work_w
+operator|=
+name|MIN
+argument_list|(
+name|work_w
+argument_list|,
+name|GIMP_PROJECTION_CHUNK_WIDTH
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|chunk
+operator|||
+name|work_x
+operator|!=
+name|chunk_render
+operator|->
+name|x
+condition|)
+name|work_h
+operator|=
+name|MIN
+argument_list|(
+name|work_h
+argument_list|,
+name|GIMP_PROJECTION_CHUNK_HEIGHT
 argument_list|)
 expr_stmt|;
 name|gimp_projection_paint_area
