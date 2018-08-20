@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b060cc00103
+DECL|enum|__anon29b3c2560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2348,9 +2348,7 @@ name|device
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
+comment|/*  don't bail out here, instead, simply continue and overwrite        *  the info's old device with the new one.        *        *  NOTE that this only happens if something is wrong on the USB        *  or udev or libinput or whatever side and the same device is        *  present multiple times. The only "safe" thing is to assume        *  that devices listed earlier are dead and dangling entities        *  and that the last registered device is the one actually        *  delivering events.        */
 block|}
 elseif|else
 if|if
@@ -2377,6 +2375,7 @@ name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  bail out, unsetting twice makes no sense  */
 return|return
 name|FALSE
 return|;
