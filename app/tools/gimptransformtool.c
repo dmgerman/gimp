@@ -1767,9 +1767,7 @@ name|gimp_viewable_get_children
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|tool
-operator|->
-name|drawable
+name|active_item
 argument_list|)
 argument_list|)
 operator|&&
@@ -1787,9 +1785,10 @@ name|orig_buffer
 operator|=
 name|gimp_drawable_transform_cut
 argument_list|(
-name|tool
-operator|->
-name|drawable
+name|GIMP_DRAWABLE
+argument_list|(
+name|active_item
+argument_list|)
 argument_list|,
 name|context
 argument_list|,
@@ -1884,9 +1883,10 @@ block|{
 comment|/*  paste the new transformed image to the image...also implement            *  undo...            */
 name|gimp_drawable_transform_paste
 argument_list|(
-name|tool
-operator|->
-name|drawable
+name|GIMP_DRAWABLE
+argument_list|(
+name|active_item
+argument_list|)
 argument_list|,
 name|new_buffer
 argument_list|,
