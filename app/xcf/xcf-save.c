@@ -860,9 +860,14 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|version_tag
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|version_tag
+argument_list|)
 argument_list|,
 literal|"gimp xcf v%03d"
 argument_list|,
@@ -8467,7 +8472,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be7998a0108
+DECL|struct|__anon2b793b920108
 block|{
 DECL|member|info
 name|XcfInfo
