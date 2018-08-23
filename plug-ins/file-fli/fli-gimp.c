@@ -1915,11 +1915,19 @@ name|magic
 operator|==
 name|NO_HEADER
 condition|)
+block|{
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 else|else
+block|{
 name|fseek
 argument_list|(
 name|file
@@ -1929,6 +1937,7 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*    * Fix parameters    */
 if|if
 condition|(
@@ -1993,6 +2002,11 @@ literal|1
 condition|)
 block|{
 comment|/* nothing to do ... */
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2008,6 +2022,11 @@ name|frames
 condition|)
 block|{
 comment|/* nothing to do ... */
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1

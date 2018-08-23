@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278086390108
+DECL|struct|__anon27feeacc0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon278086390208
+DECL|struct|__anon27feeacc0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -2605,6 +2605,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2664,6 +2669,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2704,6 +2714,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -2776,10 +2791,17 @@ argument_list|(
 name|image_ID
 argument_list|)
 condition|)
+block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 comment|/* Temporary buffer */
 name|tmppixel
 operator|=
@@ -2913,10 +2935,17 @@ condition|(
 operator|!
 name|framename
 condition|)
+block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 name|layer_ID
 operator|=
 name|gimp_layer_new
@@ -3170,6 +3199,11 @@ argument_list|(
 literal|"Failed to write %ith comment.\n"
 argument_list|,
 name|i
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -3464,6 +3498,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -3609,6 +3648,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -3803,6 +3847,11 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -3833,6 +3882,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -6387,6 +6441,11 @@ argument_list|(
 literal|"Failed to XcursorImagesCreate!\n"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -6537,6 +6596,11 @@ argument_list|,
 name|MAX_SAVE_DIMENSION
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -6572,6 +6636,11 @@ name|NULL
 argument_list|)
 argument_list|,
 name|MAX_SAVE_DIMENSION
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -6611,6 +6680,11 @@ literal|1
 argument_list|,
 name|NULL
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -6689,6 +6763,11 @@ block|{
 name|DM_XMC
 argument_list|(
 literal|"Failed to XcursorImageCreate.\n"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -6819,6 +6898,11 @@ name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -6930,6 +7014,11 @@ block|{
 name|DM_XMC
 argument_list|(
 literal|"Failed to XcursorImageCreate.\n"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -7204,9 +7293,16 @@ condition|(
 operator|!
 name|framename
 condition|)
+block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 name|gimp_item_set_name
 argument_list|(
 name|orig_layers
@@ -7437,6 +7533,11 @@ argument_list|,
 name|imagesp
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -7463,6 +7564,11 @@ argument_list|,
 name|fp
 argument_list|,
 name|imagesp
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -9133,7 +9239,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon278086390308
+DECL|struct|__anon27feeacc0308
 block|{
 DECL|member|size
 name|guint32

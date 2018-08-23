@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299d15e00108
+DECL|struct|__anon29b4fc220108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299d15e00208
+DECL|struct|__anon29b4fc220208
 block|{
 DECL|member|transparent
 name|gint
@@ -1309,6 +1309,11 @@ argument_list|(
 literal|"Error reading magic number"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1346,6 +1351,11 @@ name|_
 argument_list|(
 literal|"This is not a GIF file"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1405,6 +1415,11 @@ argument_list|(
 literal|"Bad version number, not '87a' or '89a'"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1426,6 +1441,11 @@ block|{
 name|g_message
 argument_list|(
 literal|"Failed to read screen descriptor"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1562,6 +1582,11 @@ argument_list|(
 literal|"Error reading global colormap"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1620,6 +1645,11 @@ argument_list|(
 literal|"EOF / read error on image data"
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 name|image_ID
 return|;
@@ -1633,6 +1663,11 @@ literal|';'
 condition|)
 block|{
 comment|/* GIF terminator */
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 name|image_ID
 return|;
@@ -1662,6 +1697,11 @@ block|{
 name|g_message
 argument_list|(
 literal|"EOF / read error on extension function code"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1717,6 +1757,11 @@ block|{
 name|g_message
 argument_list|(
 literal|"Couldn't read left/top/width/height"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -1779,6 +1824,11 @@ block|{
 name|g_message
 argument_list|(
 literal|"Error reading local colormap"
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
@@ -2032,6 +2082,11 @@ name|thumbnail
 condition|)
 break|break;
 block|}
+name|fclose
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 return|return
 name|image_ID
 return|;

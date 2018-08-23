@@ -1389,6 +1389,11 @@ literal|"EOF or error while reading image header"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1497,6 +1502,11 @@ literal|"EOF or error while reading image header"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1532,6 +1542,11 @@ name|_
 argument_list|(
 literal|"is not a CEL image file"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1584,6 +1599,11 @@ literal|"illegal bpp value in image: %hhu"
 argument_list|)
 argument_list|,
 name|bpp
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1708,6 +1728,11 @@ argument_list|,
 name|height
 argument_list|,
 name|offy
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1973,6 +1998,11 @@ literal|"EOF or error while reading image data"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2159,6 +2189,11 @@ literal|"EOF or error while reading image data"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2280,6 +2315,11 @@ literal|"EOF or error while reading image data"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2354,6 +2394,11 @@ literal|"Unsupported bit depth (%d)!"
 argument_list|)
 argument_list|,
 name|bpp
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 return|return
