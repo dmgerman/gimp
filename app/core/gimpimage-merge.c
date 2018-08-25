@@ -1937,6 +1937,22 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  Make sure the parent's graph is constructed, so that the top layer has a    *  parent node, even if it is the child of a group layer (in particular, of    *  an invisible group layer, whose graph may not have been constructed as a    *  result of the above call.  see issue #2095.)    */
+if|if
+condition|(
+name|parent
+condition|)
+operator|(
+name|void
+operator|)
+name|gimp_filter_get_node
+argument_list|(
+name|GIMP_FILTER
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Build our graph inside the top-layer's parent node  */
 name|source_node
 operator|=
