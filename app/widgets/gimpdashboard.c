@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdaca090103
+DECL|enum|__anon29b758140103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -460,7 +460,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdaca090203
+DECL|enum|__anon29b758140203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -494,7 +494,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdaca090303
+DECL|enum|__anon29b758140303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -758,7 +758,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2bdaca09040a
+DECL|union|__anon29b75814040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -774,7 +774,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2bdaca090508
+DECL|struct|__anon29b758140508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -789,7 +789,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2bdaca090608
+DECL|struct|__anon29b758140608
 block|{
 DECL|member|antecedent
 name|gint
@@ -2327,7 +2327,7 @@ name|description
 operator|=
 name|N_
 argument_list|(
-literal|"The rate at which data is written to the swap"
+literal|"The rate at which data is read from the swap"
 argument_list|)
 block|,
 operator|.
@@ -8389,7 +8389,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090708
+DECL|struct|__anon29b758140708
 block|{
 DECL|member|last_time
 name|gint64
@@ -8595,7 +8595,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090808
+DECL|struct|__anon29b758140808
 block|{
 DECL|member|free_space
 name|guint64
@@ -8865,7 +8865,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090908
+DECL|struct|__anon29b758140908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9071,7 +9071,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090a08
+DECL|struct|__anon29b758140a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9347,7 +9347,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090b08
+DECL|struct|__anon29b758140b08
 block|{
 DECL|member|active
 name|gboolean
@@ -9507,7 +9507,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdaca090c08
+DECL|struct|__anon29b758140c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -13422,6 +13422,7 @@ break|break;
 case|case
 name|VARIABLE_TYPE_RATE_OF_CHANGE
 case|:
+comment|/* Translators:  This string reports the rate of change of a measured            * value.  The "%g" is replaced by a certain quantity, and the "/s"            * is an abbreviation for "per second".            */
 name|str
 operator|=
 name|g_strdup_printf
