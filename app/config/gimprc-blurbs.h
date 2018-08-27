@@ -1210,7 +1210,7 @@ define|#
 directive|define
 name|PREFER_SYMBOLIC_ICONS_BLURB
 define|\
-value|"When enabled, symbolic icons will be prefered if available."
+value|"When enabled, symbolic icons will be preferred if available."
 end_define
 
 begin_define

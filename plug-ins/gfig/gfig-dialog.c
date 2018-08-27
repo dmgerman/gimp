@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f7a250108
+DECL|struct|__anon280419100108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -9082,7 +9082,7 @@ comment|/* Size is number of PAIRS of points */
 end_comment
 
 begin_comment
-comment|/* FP + int varients */
+comment|/* FP + int variants */
 end_comment
 
 begin_function

@@ -3000,7 +3000,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Delete the current  item + asssociated file */
+comment|/* Delete the current item + associated file */
 name|valid
 operator|=
 name|gtk_list_store_remove

@@ -1501,7 +1501,7 @@ name|tool_name
 argument_list|)
 condition|)
 block|{
-comment|/*  Remember the prodecure that created this tool, because        *  we can't just switch to an operation tool using        *  gimp_context_set_tool(), we also have to go through the        *  initialization code below, otherwise we end up with a        *  dummy tool that does nothing. See bug #776370.        */
+comment|/*  Remember the procedure that created this tool, because        *  we can't just switch to an operation tool using        *  gimp_context_set_tool(), we also have to go through the        *  initialization code below, otherwise we end up with a        *  dummy tool that does nothing. See bug #776370.        */
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
