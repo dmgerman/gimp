@@ -520,7 +520,7 @@ operator|||
 name|guide_tool
 operator|->
 name|guide_position
-operator|>=
+operator|>
 name|max_position
 condition|)
 block|{
@@ -940,7 +940,7 @@ operator|||
 name|guide_tool
 operator|->
 name|guide_position
-operator|>=
+operator|>
 name|max_position
 condition|)
 block|{
