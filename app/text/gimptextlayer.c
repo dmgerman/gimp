@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc61470103
+DECL|enum|__anon274cbc1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1816,16 +1816,6 @@ argument_list|,
 name|text
 argument_list|)
 expr_stmt|;
-name|layer
-operator|->
-name|private
-operator|->
-name|base_dir
-operator|=
-name|text
-operator|->
-name|base_dir
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1939,6 +1929,18 @@ name|g_object_ref
 argument_list|(
 name|text
 argument_list|)
+expr_stmt|;
+name|layer
+operator|->
+name|private
+operator|->
+name|base_dir
+operator|=
+name|layer
+operator|->
+name|text
+operator|->
+name|base_dir
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
