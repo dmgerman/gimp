@@ -267,6 +267,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwindowstrategy.h"
 end_include
 
@@ -349,7 +355,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2d09d0103
+DECL|enum|__anon2c7100a90103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -460,7 +466,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2d09d0203
+DECL|enum|__anon2c7100a90203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -494,7 +500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2d09d0303
+DECL|enum|__anon2c7100a90303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -758,7 +764,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28e2d09d040a
+DECL|union|__anon2c7100a9040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -774,7 +780,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon28e2d09d0508
+DECL|struct|__anon2c7100a90508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -789,7 +795,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28e2d09d0608
+DECL|struct|__anon2c7100a90608
 block|{
 DECL|member|antecedent
 name|gint
@@ -1409,22 +1415,6 @@ name|object
 parameter_list|,
 name|Variable
 name|variable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dashboard_container_remove
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkContainer
-modifier|*
-name|container
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8362,7 +8352,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0708
+DECL|struct|__anon2c7100a90708
 block|{
 DECL|member|last_time
 name|gint64
@@ -8568,7 +8558,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0808
+DECL|struct|__anon2c7100a90808
 block|{
 DECL|member|free_space
 name|guint64
@@ -8838,7 +8828,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0908
+DECL|struct|__anon2c7100a90908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9044,7 +9034,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0a08
+DECL|struct|__anon2c7100a90a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9320,7 +9310,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0b08
+DECL|struct|__anon2c7100a90b08
 block|{
 DECL|member|active
 name|gboolean
@@ -9480,7 +9470,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2d09d0c08
+DECL|struct|__anon2c7100a90c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -10867,31 +10857,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dashboard_container_remove (GtkWidget * widget,GtkContainer * container)
-name|gimp_dashboard_container_remove
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkContainer
-modifier|*
-name|container
-parameter_list|)
-block|{
-name|gtk_container_remove
-argument_list|(
-name|container
-argument_list|,
-name|widget
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_dashboard_update_groups (GimpDashboard * dashboard)
 name|gimp_dashboard_update_groups
 parameter_list|(
@@ -11129,7 +11094,7 @@ name|TRUE
 expr_stmt|;
 block|}
 block|}
-name|gtk_container_foreach
+name|gimp_gtk_container_clear
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -11137,15 +11102,6 @@ name|group_data
 operator|->
 name|grid
 argument_list|)
-argument_list|,
-operator|(
-name|GtkCallback
-operator|)
-name|gimp_dashboard_container_remove
-argument_list|,
-name|group_data
-operator|->
-name|grid
 argument_list|)
 expr_stmt|;
 name|n_rows
