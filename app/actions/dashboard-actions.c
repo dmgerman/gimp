@@ -108,7 +108,7 @@ name|NC_
 argument_list|(
 literal|"dashboard-action"
 argument_list|,
-literal|"Groups"
+literal|"_Groups"
 argument_list|)
 block|}
 block|,
@@ -121,7 +121,7 @@ name|NC_
 argument_list|(
 literal|"dashboard-action"
 argument_list|,
-literal|"Update Interval"
+literal|"_Update Interval"
 argument_list|)
 block|}
 block|,
@@ -134,7 +134,7 @@ name|NC_
 argument_list|(
 literal|"dashboard-action"
 argument_list|,
-literal|"History Duration"
+literal|"_History Duration"
 argument_list|)
 block|}
 block|,
@@ -147,7 +147,7 @@ name|NC_
 argument_list|(
 literal|"dashboard-action"
 argument_list|,
-literal|"Reset"
+literal|"_Reset"
 argument_list|)
 block|,
 name|NULL
@@ -188,7 +188,7 @@ name|NC_
 argument_list|(
 literal|"dashboard-action"
 argument_list|,
-literal|"Low Swap Space Warning"
+literal|"_Low Swap Space Warning"
 argument_list|)
 block|,
 name|NULL
