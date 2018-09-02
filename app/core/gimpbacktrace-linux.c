@@ -155,14 +155,6 @@ value|32
 end_define
 
 begin_define
-DECL|macro|MAX_SYMBOL_NAME_SIZE
-define|#
-directive|define
-name|MAX_SYMBOL_NAME_SIZE
-value|128
-end_define
-
-begin_define
 DECL|macro|N_SKIPPED_FRAMES
 define|#
 directive|define
