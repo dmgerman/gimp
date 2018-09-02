@@ -1892,13 +1892,13 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_backtrace_get_symbol_info (guintptr address,GimpBacktraceSymbolInfo * info)
-name|gimp_backtrace_get_symbol_info
+DECL|function|gimp_backtrace_get_address_info (guintptr address,GimpBacktraceAddressInfo * info)
+name|gimp_backtrace_get_address_info
 parameter_list|(
 name|guintptr
 name|address
 parameter_list|,
-name|GimpBacktraceSymbolInfo
+name|GimpBacktraceAddressInfo
 modifier|*
 name|info
 parameter_list|)

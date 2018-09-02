@@ -17,18 +17,18 @@ name|__GIMP_BACKTRACE_H__
 end_define
 
 begin_typedef
-DECL|typedef|GimpBacktraceSymbolInfo
+DECL|typedef|GimpBacktraceAddressInfo
 typedef|typedef
 name|struct
-name|_GimpBacktraceSymbolInfo
-name|GimpBacktraceSymbolInfo
+name|_GimpBacktraceAddressInfo
+name|GimpBacktraceAddressInfo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpBacktraceSymbolInfo
+DECL|struct|_GimpBacktraceAddressInfo
 struct|struct
-name|_GimpBacktraceSymbolInfo
+name|_GimpBacktraceAddressInfo
 block|{
 DECL|member|object_name
 name|gchar
@@ -183,12 +183,12 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_backtrace_get_symbol_info
+name|gimp_backtrace_get_address_info
 parameter_list|(
 name|guintptr
 name|address
 parameter_list|,
-name|GimpBacktraceSymbolInfo
+name|GimpBacktraceAddressInfo
 modifier|*
 name|info
 parameter_list|)
