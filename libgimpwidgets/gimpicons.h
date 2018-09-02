@@ -62,6 +62,11 @@ define|#
 directive|define
 name|GIMP_ICON_INVERT
 value|"gimp-invert"
+DECL|macro|GIMP_ICON_RECORD
+define|#
+directive|define
+name|GIMP_ICON_RECORD
+value|"media-record"
 DECL|macro|GIMP_ICON_RESET
 define|#
 directive|define
@@ -103,6 +108,11 @@ define|#
 directive|define
 name|GIMP_ICON_LINKED
 value|"gimp-linked"
+DECL|macro|GIMP_ICON_MARKER
+define|#
+directive|define
+name|GIMP_ICON_MARKER
+value|"gimp-marker"
 DECL|macro|GIMP_ICON_SMARTPHONE
 define|#
 directive|define
