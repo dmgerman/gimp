@@ -1411,20 +1411,6 @@ operator|<
 name|MAX_N_THREADS
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"blacklisted %d\n"
-argument_list|,
-name|backtrace
-operator|->
-name|threads
-index|[
-name|i
-index|]
-operator|.
-name|tid
-argument_list|)
-expr_stmt|;
 name|blacklisted_threads
 index|[
 name|n_blacklisted_threads
