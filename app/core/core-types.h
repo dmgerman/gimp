@@ -1113,6 +1113,15 @@ comment|/*  non-object types  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpBacktrace
+typedef|typedef
+name|struct
+name|_GimpBacktrace
+name|GimpBacktrace
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBoundSeg
 typedef|typedef
 name|struct
