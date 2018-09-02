@@ -218,7 +218,7 @@ block|}
 end_function
 
 begin_function
-name|gpointer
+name|guintptr
 DECL|function|gimp_backtrace_get_frame_address (GimpBacktrace * backtrace,gint thread,gint frame)
 name|gimp_backtrace_get_frame_address
 parameter_list|(
@@ -235,7 +235,7 @@ parameter_list|)
 block|{
 name|g_return_val_if_reached
 argument_list|(
-name|NULL
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
