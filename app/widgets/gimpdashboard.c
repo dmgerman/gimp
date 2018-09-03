@@ -412,7 +412,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e89510103
+DECL|enum|__anon2a0792580103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e89510203
+DECL|enum|__anon2a0792580203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -557,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e89510303
+DECL|enum|__anon2a0792580303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -825,7 +825,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon297e8951040a
+DECL|union|__anon2a079258040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -841,7 +841,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon297e89510508
+DECL|struct|__anon2a0792580508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -856,7 +856,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon297e89510608
+DECL|struct|__anon2a0792580608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8897,7 +8897,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510708
+DECL|struct|__anon2a0792580708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9103,7 +9103,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510808
+DECL|struct|__anon2a0792580808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9373,7 +9373,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510908
+DECL|struct|__anon2a0792580908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9579,7 +9579,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510a08
+DECL|struct|__anon2a0792580a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9855,7 +9855,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510b08
+DECL|struct|__anon2a0792580b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10015,7 +10015,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e89510c08
+DECL|struct|__anon2a0792580c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -15091,6 +15091,15 @@ modifier|*
 name|thread_name
 decl_stmt|;
 name|gint
+name|last_running
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|gint
+name|running
+decl_stmt|;
+name|gint
 name|n_frames
 decl_stmt|;
 name|gint
@@ -15167,6 +15176,17 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|last_running
+operator|=
+name|gimp_backtrace_is_thread_running
+argument_list|(
+name|priv
+operator|->
+name|log_backtrace
+argument_list|,
+name|other_thread
+argument_list|)
+expr_stmt|;
 name|n
 operator|=
 name|gimp_backtrace_get_n_frames
@@ -15287,8 +15307,21 @@ name|i
 expr_stmt|;
 block|}
 block|}
+name|running
+operator|=
+name|gimp_backtrace_is_thread_running
+argument_list|(
+name|backtrace
+argument_list|,
+name|thread
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|running
+operator|==
+name|last_running
+operator|&&
 name|n_head
 operator|+
 name|n_tail
@@ -15340,6 +15373,15 @@ literal|"\""
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_dashboard_log_printf
+argument_list|(
+name|dashboard
+argument_list|,
+literal|" running=\"%d\""
+argument_list|,
+name|running
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|n_head
@@ -15374,6 +15416,15 @@ name|n_tail
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|n_head
+operator|+
+name|n_tail
+operator|<
+name|n_frames
+condition|)
+block|{
 name|gimp_dashboard_log_printf
 argument_list|(
 name|dashboard
@@ -15442,6 +15493,17 @@ argument_list|,
 literal|"</thread>\n"
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_dashboard_log_printf
+argument_list|(
+name|dashboard
+argument_list|,
+literal|" />\n"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(

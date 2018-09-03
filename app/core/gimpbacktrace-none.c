@@ -176,6 +176,27 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_backtrace_is_thread_running (GimpBacktrace * backtrace,gint thread)
+name|gimp_backtrace_is_thread_running
+parameter_list|(
+name|GimpBacktrace
+modifier|*
+name|backtrace
+parameter_list|,
+name|gint
+name|thread
+parameter_list|)
+block|{
+name|g_return_val_if_reached
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gint
 DECL|function|gimp_backtrace_find_thread_by_id (GimpBacktrace * backtrace,guintptr thread_id,gint thread_hint)
 name|gimp_backtrace_find_thread_by_id

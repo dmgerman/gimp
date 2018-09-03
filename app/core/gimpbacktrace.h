@@ -154,6 +154,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_backtrace_is_thread_running
+parameter_list|(
+name|GimpBacktrace
+modifier|*
+name|backtrace
+parameter_list|,
+name|gint
+name|thread
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_backtrace_find_thread_by_id
 parameter_list|(
