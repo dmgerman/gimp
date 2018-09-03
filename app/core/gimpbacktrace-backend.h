@@ -29,6 +29,27 @@ directive|define
 name|GIMP_BACKTRACE_BACKEND_LINUX
 end_define
 
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|ARCH_X86
+argument_list|)
+end_elif
+
+begin_define
+DECL|macro|GIMP_BACKTRACE_BACKEND_WINDOWS
+define|#
+directive|define
+name|GIMP_BACKTRACE_BACKEND_WINDOWS
+end_define
+
 begin_else
 else|#
 directive|else
