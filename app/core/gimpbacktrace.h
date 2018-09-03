@@ -48,6 +48,17 @@ DECL|member|symbol_address
 name|guintptr
 name|symbol_address
 decl_stmt|;
+DECL|member|source_file
+name|gchar
+name|source_file
+index|[
+literal|256
+index|]
+decl_stmt|;
+DECL|member|source_line
+name|gint
+name|source_line
+decl_stmt|;
 block|}
 struct|;
 end_struct
