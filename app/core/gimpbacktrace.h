@@ -53,7 +53,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_backtrace_init
 parameter_list|(
 name|void
@@ -62,8 +62,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_backtrace_start
+parameter_list|(
 name|void
-name|gimp_backtrace_shutdown
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_backtrace_stop
 parameter_list|(
 name|void
 parameter_list|)

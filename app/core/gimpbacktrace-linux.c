@@ -19,6 +19,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gio/gio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbacktrace-backend.h"
 end_include
 
@@ -111,12 +117,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<gio/gio.h>
-end_include
 
 begin_include
 include|#
@@ -825,9 +825,19 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_backtrace_init (void)
 name|gimp_backtrace_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_backtrace_start (void)
+name|gimp_backtrace_start
 parameter_list|(
 name|void
 parameter_list|)
@@ -1023,8 +1033,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_backtrace_shutdown (void)
-name|gimp_backtrace_shutdown
+DECL|function|gimp_backtrace_stop (void)
+name|gimp_backtrace_stop
 parameter_list|(
 name|void
 parameter_list|)
