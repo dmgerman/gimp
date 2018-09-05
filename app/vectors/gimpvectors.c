@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08f4810103
+DECL|enum|__anon2b4ee6840103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2762,13 +2762,6 @@ argument_list|(
 name|vectors
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_item_is_attached
-argument_list|(
-name|item
-argument_list|)
-condition|)
 name|gimp_image_undo_push_vectors_mod
 argument_list|(
 name|gimp_item_get_image
