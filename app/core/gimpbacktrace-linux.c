@@ -1887,6 +1887,10 @@ expr_stmt|;
 if|if
 condition|(
 name|thread_hint
+operator|>=
+literal|0
+operator|&&
+name|thread_hint
 operator|<
 name|backtrace
 operator|->

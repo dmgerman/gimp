@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<exchndl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -127,7 +121,7 @@ name|DWORD
 name|tid
 decl_stmt|;
 union|union
-DECL|union|__anon28e6a2d2010a
+DECL|union|__anon29e313fe010a
 block|{
 DECL|member|name
 name|gchar
@@ -2155,6 +2149,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|thread_hint
+operator|>=
+literal|0
+operator|&&
 name|thread_hint
 operator|<
 name|backtrace

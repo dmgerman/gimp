@@ -41,11 +41,6 @@ name|defined
 argument_list|(
 name|ARCH_X86
 argument_list|)
-operator|&&
-name|defined
-argument_list|(
-name|HAVE_EXCHNDL
-argument_list|)
 end_elif
 
 begin_define
