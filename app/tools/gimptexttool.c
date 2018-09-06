@@ -8908,6 +8908,8 @@ name|dir
 decl_stmt|;
 name|gdouble
 name|offset
+init|=
+literal|0.0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
