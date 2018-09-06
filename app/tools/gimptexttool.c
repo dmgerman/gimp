@@ -5329,20 +5329,34 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_text_tool_apply_idle (gpointer text_tool)
+DECL|function|gimp_text_tool_apply_idle (GimpTextTool * text_tool)
 name|gimp_text_tool_apply_idle
 parameter_list|(
-name|gpointer
+name|GimpTextTool
+modifier|*
 name|text_tool
 parameter_list|)
 block|{
-return|return
+name|text_tool
+operator|->
+name|idle_id
+operator|=
+literal|0
+expr_stmt|;
 name|gimp_text_tool_apply
 argument_list|(
 name|text_tool
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
+return|return
+name|G_SOURCE_REMOVE
 return|;
 block|}
 end_function
@@ -5428,6 +5442,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_text_tool_block_drawing
 argument_list|(
@@ -5485,11 +5504,6 @@ block|}
 else|else
 block|{
 comment|/* else queue the property change for normal processing,            * including undo            */
-name|gimp_text_tool_block_drawing
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 name|text_tool
 operator|->
 name|pending
@@ -5508,15 +5522,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|text_tool
 operator|->
 name|idle_id
 condition|)
-name|g_source_remove
+block|{
+name|gimp_text_tool_block_drawing
 argument_list|(
 name|text_tool
-operator|->
-name|idle_id
 argument_list|)
 expr_stmt|;
 name|text_tool
@@ -5527,6 +5541,9 @@ name|g_idle_add_full
 argument_list|(
 name|G_PRIORITY_LOW
 argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
 name|gimp_text_tool_apply_idle
 argument_list|,
 name|text_tool
@@ -5534,6 +5551,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -5774,6 +5792,11 @@ name|text_tool
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5792,6 +5815,11 @@ modifier|*
 name|text_tool
 parameter_list|)
 block|{
+name|gimp_text_tool_block_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 comment|/* we need to redraw the rectangle in any case because whatever    * changes to the text can change its size    */
 name|gimp_text_tool_frame_item
 argument_list|(
@@ -6475,11 +6503,6 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_unblock_drawing
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
@@ -6501,6 +6524,11 @@ name|layer
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7403,10 +7431,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|text_tool
 operator|->
 name|drawing_blocked
+operator|==
+literal|0
 condition|)
 block|{
 name|gimp_draw_tool_pause
@@ -7422,13 +7451,12 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
+block|}
 name|text_tool
 operator|->
 name|drawing_blocked
-operator|=
-name|TRUE
+operator|++
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -7448,16 +7476,23 @@ argument_list|(
 name|text_tool
 operator|->
 name|drawing_blocked
-operator|==
-name|TRUE
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
 name|drawing_blocked
-operator|=
-name|FALSE
+operator|--
 expr_stmt|;
+if|if
+condition|(
+name|text_tool
+operator|->
+name|drawing_blocked
+operator|==
+literal|0
+condition|)
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -7586,6 +7621,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -7768,7 +7808,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_text_tool_apply (GimpTextTool * text_tool,gboolean push_undo)
 name|gimp_text_tool_apply
 parameter_list|(
@@ -7824,27 +7864,28 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|text_tool
 operator|->
 name|text
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|text_tool
 operator|->
 name|layer
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|layer
@@ -7863,7 +7904,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|layer
 operator|->
@@ -7872,8 +7913,6 @@ operator|==
 name|text_tool
 operator|->
 name|text
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Walk over the list of changes and figure out if we are changing    *  a single property or need to push a full text undo.    */
@@ -8149,14 +8188,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_unblock_drawing
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 

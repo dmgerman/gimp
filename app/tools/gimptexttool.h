@@ -174,7 +174,7 @@ modifier|*
 name|layout
 decl_stmt|;
 DECL|member|drawing_blocked
-name|gboolean
+name|gint
 name|drawing_blocked
 decl_stmt|;
 DECL|member|widget
@@ -439,7 +439,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_text_tool_apply
 parameter_list|(
 name|GimpTextTool
