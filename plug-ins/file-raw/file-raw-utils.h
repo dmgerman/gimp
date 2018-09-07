@@ -47,6 +47,9 @@ modifier|*
 name|win32_registry_key_base
 parameter_list|,
 name|gboolean
+name|win32_use_hkcu
+parameter_list|,
+name|gboolean
 modifier|*
 name|search_path
 parameter_list|)

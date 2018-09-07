@@ -47,6 +47,14 @@ name|LOAD_THUMB_PROC
 value|"file-rawtherapee-load-thumb"
 end_define
 
+begin_define
+DECL|macro|REGISTRY_KEY_BASE
+define|#
+directive|define
+name|REGISTRY_KEY_BASE
+value|"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\rawtherapee"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -284,7 +292,9 @@ literal|"RAWTHERAPEE_EXECUTABLE"
 argument_list|,
 literal|"com.rawtherapee.rawtherapee"
 argument_list|,
-name|NULL
+name|REGISTRY_KEY_BASE
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|search_path
@@ -1105,7 +1115,9 @@ literal|"RAWTHERAPEE_EXECUTABLE"
 argument_list|,
 literal|"com.rawtherapee.rawtherapee"
 argument_list|,
-name|NULL
+name|REGISTRY_KEY_BASE
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|search_path
@@ -1369,7 +1381,9 @@ literal|"RAWTHERAPEE_EXECUTABLE"
 argument_list|,
 literal|"com.rawtherapee.rawtherapee"
 argument_list|,
-name|NULL
+name|REGISTRY_KEY_BASE
+argument_list|,
+name|TRUE
 argument_list|,
 operator|&
 name|search_path

@@ -318,6 +318,8 @@ literal|"org.darktable"
 argument_list|,
 name|REGISTRY_KEY_BASE
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|search_path
 argument_list|)
@@ -1497,6 +1499,8 @@ literal|"org.darktable"
 argument_list|,
 name|REGISTRY_KEY_BASE
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|search_path
 argument_list|)
@@ -1883,6 +1887,8 @@ argument_list|,
 literal|"org.darktable"
 argument_list|,
 name|REGISTRY_KEY_BASE
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|search_path

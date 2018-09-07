@@ -64,7 +64,7 @@ end_include
 begin_function
 name|gchar
 modifier|*
-DECL|function|file_raw_get_executable_path (const gchar * main_executable,const gchar * suffix,const gchar * env_variable,const gchar * mac_bundle_id,const gchar * win32_registry_key_base,gboolean * search_path)
+DECL|function|file_raw_get_executable_path (const gchar * main_executable,const gchar * suffix,const gchar * env_variable,const gchar * mac_bundle_id,const gchar * win32_registry_key_base,gboolean win32_use_hkcu,gboolean * search_path)
 name|file_raw_get_executable_path
 parameter_list|(
 specifier|const
@@ -91,6 +91,9 @@ specifier|const
 name|gchar
 modifier|*
 name|win32_registry_key_base
+parameter_list|,
+name|gboolean
+name|win32_use_hkcu
 parameter_list|,
 name|gboolean
 modifier|*
@@ -389,6 +392,35 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|win32_use_hkcu
+condition|)
+name|status
+operator|=
+name|RegGetValue
+argument_list|(
+name|HKEY_CURRENT_USER
+argument_list|,
+name|registry_key
+argument_list|,
+literal|""
+argument_list|,
+name|RRF_RT_ANY
+argument_list|,
+name|NULL
+argument_list|,
+operator|(
+name|PVOID
+operator|)
+operator|&
+name|path
+argument_list|,
+operator|&
+name|buffer_size
+argument_list|)
+expr_stmt|;
+else|else
 name|status
 operator|=
 name|RegGetValue
