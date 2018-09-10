@@ -7,6 +7,13 @@ begin_comment
 comment|/*  * Colormap remapping plug-in  * Copyright (C) 2006 Mukund Sivaraman<muks@mukund.org>  *  * This plug-in takes the colormap and lets you move colors from one index  * to another while keeping the original image visually unmodified.  *  * Such functionality is useful for creating graphics files for applications  * which expect certain indices to contain some specific colors.  *  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -1419,6 +1426,8 @@ argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|src_roi
@@ -1426,10 +1435,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 expr_stmt|;
 name|gegl_buffer_iterator_add
 argument_list|(
@@ -1462,10 +1473,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|1
 index|]
+operator|.
+name|roi
 expr_stmt|;
 while|while
 condition|(
@@ -1482,10 +1495,12 @@ name|src_row
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1493,10 +1508,12 @@ name|dest_row
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|1
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|y
@@ -1729,7 +1746,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fdae3b0103
+DECL|enum|__anon27e6d5bc0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
