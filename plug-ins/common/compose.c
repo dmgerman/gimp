@@ -15,6 +15,13 @@ begin_comment
 comment|/*  * All redundant _256 versions of YCbCr* are here only for compatibility .  * They can be dropped for GIMP 3.0  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -100,10 +107,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f2370108
+DECL|struct|__anon2b62e1080108
 block|{
 union|union
-DECL|union|__anon29a0f237020a
+DECL|union|__anon2b62e108020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f2370308
+DECL|struct|__anon2b62e1080308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +194,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f2370408
+DECL|struct|__anon2b62e1080408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1016,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f2370508
+DECL|struct|__anon2b62e1080508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1056,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0f2370608
+DECL|struct|__anon2b62e1080608
 block|{
 DECL|member|width
 DECL|member|height
@@ -2608,6 +2615,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -2624,10 +2633,12 @@ name|data
 init|=
 name|gi
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|guint
 name|k
@@ -2720,6 +2731,8 @@ argument_list|,
 name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|10
 argument_list|)
 expr_stmt|;
 for|for
@@ -2791,10 +2804,12 @@ operator|*
 operator|)
 name|gi
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gulong
 name|k
@@ -2838,11 +2853,13 @@ operator|*
 operator|)
 name|gi
 operator|->
-name|data
+name|items
 index|[
 name|count
 operator|++
 index|]
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
