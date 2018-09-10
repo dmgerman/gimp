@@ -15,6 +15,13 @@ directive|include
 file|<cairo.h>
 end_include
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -1216,6 +1223,8 @@ argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -1304,10 +1313,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|1
 index|]
+operator|.
+name|roi
 expr_stmt|;
 name|mask_bpp
 operator|=
@@ -1332,10 +1343,12 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 specifier|const
 name|guchar
@@ -1359,10 +1372,12 @@ name|mask_data
 operator|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|1
 index|]
+operator|.
+name|data
 expr_stmt|;
 while|while
 condition|(
