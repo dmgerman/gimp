@@ -7,6 +7,13 @@ begin_comment
 comment|/*  Lab colorspace support originally written by Alexey Dyachenko,  *  merged into the officical plug-in by Sven Neumann.  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -76,7 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29908a580108
+DECL|struct|__anon2b4e576f0108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +141,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29908a580208
+DECL|struct|__anon2b4e576f0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29908a580308
+DECL|struct|__anon2b4e576f0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -3099,6 +3106,8 @@ argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|10
 argument_list|)
 expr_stmt|;
 for|for
@@ -3162,10 +3171,12 @@ name|src_data
 operator|=
 name|gi
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
@@ -3187,12 +3198,14 @@ index|]
 operator|=
 name|gi
 operator|->
-name|data
+name|items
 index|[
 name|j
 operator|+
 literal|1
 index|]
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
@@ -3375,6 +3388,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -3400,10 +3415,12 @@ operator|*
 operator|)
 name|gi
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 expr_stmt|;
 if|if
 condition|(
