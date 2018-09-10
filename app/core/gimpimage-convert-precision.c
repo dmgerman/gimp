@@ -664,6 +664,7 @@ if|if
 condition|(
 name|new_profile
 condition|)
+block|{
 name|gimp_image_set_color_profile
 argument_list|(
 name|image
@@ -673,7 +674,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|new_profile
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimp_color_managed_profile_changed
 argument_list|(
 name|GIMP_COLOR_MANAGED
@@ -682,11 +690,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|new_profile
-argument_list|)
-expr_stmt|;
+block|}
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
