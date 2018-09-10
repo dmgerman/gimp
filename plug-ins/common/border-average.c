@@ -3,6 +3,13 @@ begin_comment
 comment|/* borderaverage 0.01 - image processing plug-in for GIMP.  *  * Copyright (C) 1998 Philipp Klaus (webmaster@access.ch)  *  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -1161,6 +1168,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -1186,10 +1195,12 @@ operator|*
 operator|)
 name|gi
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
