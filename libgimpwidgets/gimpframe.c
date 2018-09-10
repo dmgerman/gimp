@@ -571,6 +571,11 @@ name|frame
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|child
+condition|)
+block|{
 name|gtk_widget_set_margin_start
 argument_list|(
 name|child
@@ -591,6 +596,7 @@ name|frame
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
