@@ -15,6 +15,13 @@ directive|include
 file|<cairo.h>
 end_include
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -65,7 +72,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b96b3320103
+DECL|enum|__anon29be20ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -909,6 +916,8 @@ argument_list|,
 name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|cage_bb
@@ -989,17 +998,24 @@ name|output
 init|=
 name|it
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|x
 operator|=
 name|it
 operator|->
+name|items
+index|[
+literal|0
+index|]
+operator|.
 name|roi
-operator|->
+operator|.
 name|x
 expr_stmt|;
 comment|/* initial x         */
@@ -1007,8 +1023,13 @@ name|y
 operator|=
 name|it
 operator|->
+name|items
+index|[
+literal|0
+index|]
+operator|.
 name|roi
-operator|->
+operator|.
 name|y
 expr_stmt|;
 comment|/* and y coordinates */
@@ -1137,14 +1158,24 @@ operator|>=
 operator|(
 name|it
 operator|->
+name|items
+index|[
+literal|0
+index|]
+operator|.
 name|roi
-operator|->
+operator|.
 name|x
 operator|+
 name|it
 operator|->
+name|items
+index|[
+literal|0
+index|]
+operator|.
 name|roi
-operator|->
+operator|.
 name|width
 operator|)
 condition|)
@@ -1153,8 +1184,13 @@ name|x
 operator|=
 name|it
 operator|->
+name|items
+index|[
+literal|0
+index|]
+operator|.
 name|roi
-operator|->
+operator|.
 name|x
 expr_stmt|;
 name|y
