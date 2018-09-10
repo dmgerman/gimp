@@ -9,6 +9,13 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -167,7 +174,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon288fe56e0103
+DECL|enum|__anon293000ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -661,6 +668,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -677,10 +686,12 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|count
