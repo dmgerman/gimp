@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon277045270103
+DECL|enum|__anon2c071fda0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277045270203
+DECL|enum|__anon2c071fda0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10215,6 +10215,21 @@ if|if
 condition|(
 name|zlib_compression
 condition|)
+block|{
+name|ADD_REASON
+argument_list|(
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Internal zlib compression was "
+literal|"added in %s"
+argument_list|)
+argument_list|,
+literal|"GIMP 2.10"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|version
 operator|=
 name|MAX
@@ -10224,6 +10239,7 @@ argument_list|,
 name|version
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* if version is 10 (lots of new layer modes), go to version 11 with    * 64 bit offsets right away    */
 if|if
 condition|(
