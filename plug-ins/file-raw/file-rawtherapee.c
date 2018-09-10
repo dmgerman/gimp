@@ -294,8 +294,6 @@ literal|"com.rawtherapee.rawtherapee"
 argument_list|,
 name|REGISTRY_KEY_BASE
 argument_list|,
-name|TRUE
-argument_list|,
 operator|&
 name|search_path
 argument_list|)
@@ -1117,8 +1115,6 @@ literal|"com.rawtherapee.rawtherapee"
 argument_list|,
 name|REGISTRY_KEY_BASE
 argument_list|,
-name|TRUE
-argument_list|,
 operator|&
 name|search_path
 argument_list|)
@@ -1382,8 +1378,6 @@ argument_list|,
 literal|"com.rawtherapee.rawtherapee"
 argument_list|,
 name|REGISTRY_KEY_BASE
-argument_list|,
-name|TRUE
 argument_list|,
 operator|&
 name|search_path
