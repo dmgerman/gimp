@@ -21,6 +21,13 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -145,7 +152,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd12d30103
+DECL|enum|__anon28db058d0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -5493,6 +5500,8 @@ argument_list|,
 name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -5576,10 +5585,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 expr_stmt|;
 while|while
 condition|(
@@ -5595,10 +5606,12 @@ name|d
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|y
