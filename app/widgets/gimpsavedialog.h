@@ -120,10 +120,10 @@ name|GimpObject
 modifier|*
 name|display_to_close
 decl_stmt|;
-DECL|member|compression_toggle
+DECL|member|compression_frame
 name|GtkWidget
 modifier|*
-name|compression_toggle
+name|compression_frame
 decl_stmt|;
 DECL|member|compat_info
 name|GtkWidget
