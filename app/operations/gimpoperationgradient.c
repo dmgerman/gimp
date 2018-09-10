@@ -15,6 +15,13 @@ directive|include
 file|<cairo.h>
 end_include
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -75,7 +82,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec55220103
+DECL|enum|__anon279569ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec55220208
+DECL|struct|__anon279569ee0208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -204,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec55220308
+DECL|struct|__anon279569ee0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -4424,6 +4431,8 @@ argument_list|,
 name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|roi
@@ -4431,10 +4440,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 expr_stmt|;
 if|if
 condition|(
@@ -4461,10 +4472,12 @@ name|dest
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|endx
