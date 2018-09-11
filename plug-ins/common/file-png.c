@@ -3,6 +3,13 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *   Portable Network Graphics (PNG) plug-in  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999-2000 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software: you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 3 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program.  If not, see<https://www.gnu.org/licenses/>.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   offsets_dialog()            - Asks the user about offsets when loading.  *   respin_cmap()               - Re-order a Gimp colormap for PNG tRNS  *   save_image()                - Export the specified image to a PNG file.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the export dialog.  *  * Revision History:  *  *   see ChangeLog  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -202,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3faadc0108
+DECL|struct|__anon2bb5e49c0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -269,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3faadc0208
+DECL|struct|__anon2bb5e49c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +365,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3faadc0308
+DECL|struct|__anon2bb5e49c0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -4751,6 +4758,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|n_components
@@ -4781,10 +4790,12 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|length
@@ -7766,6 +7777,8 @@ argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|n_components
@@ -7799,10 +7812,12 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|length
@@ -7936,6 +7951,8 @@ argument_list|,
 name|GEGL_ACCESS_READ
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|n_components
@@ -7969,10 +7986,12 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|length
