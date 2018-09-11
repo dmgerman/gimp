@@ -3,6 +3,13 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Screenshot plug-in  * Copyright 1998-2007 Sven Neumann<sven@gimp.org>  * Copyright 2003      Henrik Brix Andersen<brix@gimp.org>  * Copyright 2012      Simone Karin Lehmann - OS X patches  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -2115,6 +2122,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|roi
@@ -2122,10 +2131,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 expr_stmt|;
 while|while
 condition|(
@@ -2162,10 +2173,12 @@ name|dest
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|gint
 name|x
