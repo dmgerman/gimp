@@ -7,6 +7,13 @@ begin_comment
 comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful way for a  *    script to give the 19N parameters for an image).  Perhaps just  *    support saving parameters to a file, script passes file name.  * 2. Figure out if we need multiple phases for supersampled brushes.  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -138,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277f77050103
+DECL|enum|__anon2a225ff20103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -158,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277f77050203
+DECL|enum|__anon2a225ff20203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -174,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050308
+DECL|struct|__anon2a225ff20308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -200,7 +207,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon277f7705040a
+DECL|union|__anon2a225ff2040a
 block|{
 DECL|member|d
 name|gdouble
@@ -225,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050508
+DECL|struct|__anon2a225ff20508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -255,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050608
+DECL|struct|__anon2a225ff20608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -290,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050708
+DECL|struct|__anon2a225ff20708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050808
+DECL|struct|__anon2a225ff20808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -388,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050908
+DECL|struct|__anon2a225ff20908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -537,7 +544,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f77050a08
+DECL|struct|__anon2a225ff20a08
 block|{
 DECL|member|run
 name|gboolean
@@ -6564,6 +6571,8 @@ argument_list|,
 name|GEGL_ACCESS_WRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|roi
@@ -6571,10 +6580,12 @@ operator|=
 operator|&
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 expr_stmt|;
 while|while
 condition|(
@@ -6590,10 +6601,12 @@ name|destrow
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 for|for
 control|(
