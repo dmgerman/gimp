@@ -3,6 +3,13 @@ begin_comment
 comment|/*  * Written 1997 Jens Ch. Restemeier<jrestemeier@currantbun.com>  * This program is based on an algorithm / article by  * JÃ¶rn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called  * "AusgewÃ¼rfelt - Moderne Kunst algorithmisch erzeugen"  * (~modern art created with algorithms).  *  * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  *  */
 end_comment
 
+begin_define
+DECL|macro|GEGL_ITERATOR2_API
+define|#
+directive|define
+name|GEGL_ITERATOR2_API
+end_define
+
 begin_include
 include|#
 directive|include
@@ -127,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be265410103
+DECL|enum|__anon2b0d7b870103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -172,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be265410208
+DECL|struct|__anon2b0d7b870208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -211,7 +218,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be265410308
+DECL|struct|__anon2b0d7b870308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2656,6 +2663,8 @@ argument_list|,
 name|GEGL_ACCESS_READWRITE
 argument_list|,
 name|GEGL_ABYSS_NONE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|optimize
@@ -2688,20 +2697,24 @@ name|data
 init|=
 name|iter
 operator|->
-name|data
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|data
 decl_stmt|;
 name|GeglRectangle
 name|roi
 init|=
 name|iter
 operator|->
-name|roi
+name|items
 index|[
 literal|0
 index|]
+operator|.
+name|roi
 decl_stmt|;
 name|gint
 name|row
