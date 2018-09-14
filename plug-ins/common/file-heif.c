@@ -419,6 +419,17 @@ argument_list|(
 name|LOAD_PROC
 argument_list|)
 expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+name|LOAD_PROC
+argument_list|,
+literal|"heif,heic"
+argument_list|,
+literal|""
+argument_list|,
+literal|"4,string,ftyp"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
