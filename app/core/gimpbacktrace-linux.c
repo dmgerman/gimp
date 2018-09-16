@@ -999,6 +999,12 @@ name|sa_handler
 operator|=
 name|gimp_backtrace_signal_handler
 expr_stmt|;
+name|action
+operator|.
+name|sa_flags
+operator|=
+name|SA_RESTART
+expr_stmt|;
 name|sigemptyset
 argument_list|(
 operator|&
