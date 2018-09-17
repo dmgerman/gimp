@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3c2560103
+DECL|enum|__anon289f16540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3491,7 +3491,7 @@ name|id
 operator|=
 name|_
 argument_list|(
-literal|"(Virtual decvice)"
+literal|"(Virtual device)"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3587,7 +3587,7 @@ block|{
 return|return
 name|_
 argument_list|(
-literal|"(Virtual decvice)"
+literal|"(Virtual device)"
 argument_list|)
 return|;
 block|}
