@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956fa0c0103
+DECL|enum|__anon29b393470103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -385,7 +385,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSizeEntry
 argument_list|,
@@ -563,16 +563,6 @@ name|unit_changed
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSizeEntryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -595,13 +585,9 @@ name|gse
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_size_entry_get_instance_private
 argument_list|(
 name|gse
-argument_list|,
-name|GIMP_TYPE_SIZE_ENTRY
-argument_list|,
-name|GimpSizeEntryPrivate
 argument_list|)
 expr_stmt|;
 name|priv

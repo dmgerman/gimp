@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c8a72a0103
+DECL|enum|__anon29e162990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -155,9 +155,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpCursorViewPriv
+DECL|struct|_GimpCursorViewPrivate
 struct|struct
-name|_GimpCursorViewPriv
+name|_GimpCursorViewPrivate
 block|{
 DECL|member|parent_instance
 name|GimpEditor
@@ -559,7 +559,7 @@ argument|gimp_cursor_view
 argument_list|,
 argument|GIMP_TYPE_EDITOR
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_cursor_view_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpCursorView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_cursor_view_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -656,16 +656,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCursorViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -699,13 +689,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_cursor_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_CURSOR_VIEW
-argument_list|,
-name|GimpCursorViewPriv
 argument_list|)
 expr_stmt|;
 name|view

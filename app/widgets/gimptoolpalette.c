@@ -156,7 +156,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|p
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (p, \                                                     GIMP_TYPE_TOOL_PALETTE, \                                                     GimpToolPalettePrivate)
+value|((GimpToolPalettePrivate *) gimp_tool_palette_get_instance_private ((GimpToolPalette *) (p)))
 end_define
 
 begin_function_decl
@@ -342,8 +342,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolPalette,gimp_tool_palette,GTK_TYPE_TOOL_PALETTE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpToolPalette,gimp_tool_palette,GTK_TYPE_TOOL_PALETTE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolPalette
 argument_list|,
@@ -453,16 +453,6 @@ argument_list|,
 name|DEFAULT_BUTTON_RELIEF
 argument_list|,
 name|GIMP_PARAM_READABLE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolPalettePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

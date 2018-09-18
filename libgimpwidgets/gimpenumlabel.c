@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6116a80103
+DECL|enum|__anon29d8d0280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,8 +138,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpEnumLabel,gimp_enum_label,GTK_TYPE_LABEL)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpEnumLabel,gimp_enum_label,GTK_TYPE_LABEL)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpEnumLabel
 argument_list|,
@@ -244,16 +244,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpEnumLabelPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -272,13 +262,9 @@ name|enum_label
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_enum_label_get_instance_private
 argument_list|(
 name|enum_label
-argument_list|,
-name|GIMP_TYPE_ENUM_LABEL
-argument_list|,
-name|GimpEnumLabelPrivate
 argument_list|)
 expr_stmt|;
 block|}

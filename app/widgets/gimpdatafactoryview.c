@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b664c50103
+DECL|enum|__anon2b1e9c4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,9 +188,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpDataFactoryViewPriv
+DECL|struct|_GimpDataFactoryViewPrivate
 struct|struct
-name|_GimpDataFactoryViewPriv
+name|_GimpDataFactoryViewPrivate
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -449,7 +449,7 @@ argument|gimp_data_factory_view
 argument_list|,
 argument|GIMP_TYPE_CONTAINER_EDITOR
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_data_factory_view_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpDataFactoryView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_data_factory_view_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -586,16 +586,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDataFactoryViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -614,13 +604,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_data_factory_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_DATA_FACTORY_VIEW
-argument_list|,
-name|GimpDataFactoryViewPriv
 argument_list|)
 expr_stmt|;
 name|view
@@ -875,7 +861,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpDataFactoryViewPriv
+name|GimpDataFactoryViewPrivate
 modifier|*
 name|priv
 init|=

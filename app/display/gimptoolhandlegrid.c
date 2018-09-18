@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05236b0103
+DECL|enum|__anon2bc313310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -590,8 +590,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolHandleGrid,gimp_tool_handle_grid,GIMP_TYPE_TOOL_TRANSFORM_GRID)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpToolHandleGrid,gimp_tool_handle_grid,GIMP_TYPE_TOOL_TRANSFORM_GRID)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolHandleGrid
 argument_list|,
@@ -1185,16 +1185,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolHandleGridPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1213,13 +1203,9 @@ name|grid
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_handle_grid_get_instance_private
 argument_list|(
 name|grid
-argument_list|,
-name|GIMP_TYPE_TOOL_HANDLE_GRID
-argument_list|,
-name|GimpToolHandleGridPrivate
 argument_list|)
 expr_stmt|;
 block|}

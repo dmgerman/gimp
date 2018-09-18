@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933eef60103
+DECL|enum|__anon2920a6930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -95,7 +95,7 @@ parameter_list|(
 name|item
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (item, \                                      GIMP_TYPE_CANVAS_PASSE_PARTOUT, \                                      GimpCanvasPassePartoutPrivate)
+value|((GimpCanvasPassePartoutPrivate *) gimp_canvas_passe_partout_get_instance_private ((GimpCanvasPassePartout *) (item)))
 end_define
 
 begin_comment
@@ -195,8 +195,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasPassePartout,gimp_canvas_passe_partout,GIMP_TYPE_CANVAS_RECTANGLE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasPassePartout,gimp_canvas_passe_partout,GIMP_TYPE_CANVAS_RECTANGLE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasPassePartout
 argument_list|,
@@ -293,16 +293,6 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasPassePartoutPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

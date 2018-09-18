@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2b102f0103
+DECL|enum|__anon28dc21490103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -147,7 +147,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpMemsizeEntry
 argument_list|,
@@ -190,15 +190,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|object_class
-init|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|klass
 operator|->
 name|value_changed
@@ -239,16 +230,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMemsizeEntryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -267,13 +248,9 @@ name|entry
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_memsize_entry_get_instance_private
 argument_list|(
 name|entry
-argument_list|,
-name|GIMP_TYPE_MEMSIZE_ENTRY
-argument_list|,
-name|GimpMemsizeEntryPrivate
 argument_list|)
 expr_stmt|;
 name|gtk_orientable_set_orientation

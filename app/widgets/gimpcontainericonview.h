@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpContainerIconViewPriv
+DECL|typedef|GimpContainerIconViewPrivate
 typedef|typedef
 name|struct
-name|_GimpContainerIconViewPriv
-name|GimpContainerIconViewPriv
+name|_GimpContainerIconViewPrivate
+name|GimpContainerIconViewPrivate
 typedef|;
 end_typedef
 
@@ -145,7 +145,7 @@ name|dnd_gimp
 decl_stmt|;
 comment|/* eek */
 DECL|member|priv
-name|GimpContainerIconViewPriv
+name|GimpContainerIconViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

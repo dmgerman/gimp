@@ -72,8 +72,8 @@ struct|;
 end_struct
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpExtensionDetails,gimp_extension_details,GTK_TYPE_FRAME)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpExtensionDetails,gimp_extension_details,GTK_TYPE_FRAME)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpExtensionDetails
 argument_list|,
@@ -100,18 +100,7 @@ name|GimpExtensionDetailsClass
 modifier|*
 name|klass
 parameter_list|)
-block|{
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpExtensionDetailsPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -141,13 +130,9 @@ name|details
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_extension_details_get_instance_private
 argument_list|(
 name|details
-argument_list|,
-name|GIMP_TYPE_EXTENSION_DETAILS
-argument_list|,
-name|GimpExtensionDetailsPrivate
 argument_list|)
 expr_stmt|;
 block|}

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2936b4af0103
+DECL|enum|__anon2aea4dc40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -146,7 +146,7 @@ parameter_list|(
 name|boundary
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (boundary, \                                      GIMP_TYPE_CANVAS_BOUNDARY, \                                      GimpCanvasBoundaryPrivate)
+value|((GimpCanvasBoundaryPrivate *) gimp_canvas_boundary_get_instance_private ((GimpCanvasBoundary *) (boundary)))
 end_define
 
 begin_comment
@@ -242,8 +242,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasBoundary,gimp_canvas_boundary,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasBoundary,gimp_canvas_boundary,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasBoundary
 argument_list|,
@@ -402,16 +402,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasBoundaryPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

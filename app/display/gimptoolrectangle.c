@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbb02300103
+DECL|enum|__anon27623ce80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbb02300203
+DECL|enum|__anon27623ce80203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbb02300303
+DECL|enum|__anon27623ce80303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbb02300403
+DECL|enum|__anon27623ce80403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -1544,7 +1544,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolRectangle
 argument_list|,
@@ -2426,16 +2426,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolRectanglePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2454,13 +2444,9 @@ name|rectangle
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_rectangle_get_instance_private
 argument_list|(
 name|rectangle
-argument_list|,
-name|GIMP_TYPE_TOOL_RECTANGLE
-argument_list|,
-name|GimpToolRectanglePrivate
 argument_list|)
 expr_stmt|;
 name|rectangle

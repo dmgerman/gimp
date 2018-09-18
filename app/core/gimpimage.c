@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c071fda0103
+DECL|enum|__anon2b429d040103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -487,7 +487,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c071fda0203
+DECL|enum|__anon2b429d040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1239,7 +1239,7 @@ argument|gimp_image
 argument_list|,
 argument|GIMP_TYPE_VIEWABLE
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
+argument|G_ADD_PRIVATE (GimpImage)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
 argument_list|)
 end_macro
 
@@ -2795,16 +2795,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpImagePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3043,7 +3033,7 @@ name|GimpImagePrivate
 modifier|*
 name|private
 init|=
-name|GIMP_IMAGE_GET_PRIVATE
+name|gimp_image_get_instance_private
 argument_list|(
 name|image
 argument_list|)
@@ -3051,6 +3041,12 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|image
+operator|->
+name|priv
+operator|=
+name|private
+expr_stmt|;
 name|private
 operator|->
 name|ID

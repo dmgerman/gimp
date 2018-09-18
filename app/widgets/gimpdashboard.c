@@ -412,7 +412,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2975811c0103
+DECL|enum|__anon2778c7780103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2975811c0203
+DECL|enum|__anon2778c7780203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -557,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2975811c0303
+DECL|enum|__anon2778c7780303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -825,7 +825,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2975811c040a
+DECL|union|__anon2778c778040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -841,7 +841,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2975811c0508
+DECL|struct|__anon2778c7780508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -856,7 +856,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2975811c0608
+DECL|struct|__anon2778c7780608
 block|{
 DECL|member|antecedent
 name|gint
@@ -3884,7 +3884,7 @@ argument|gimp_dashboard
 argument_list|,
 argument|GIMP_TYPE_EDITOR
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dashboard_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpDashboard)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dashboard_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -3968,16 +3968,6 @@ operator|->
 name|unmap
 operator|=
 name|gimp_dashboard_unmap
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDashboardPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -4072,13 +4062,9 @@ name|dashboard
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dashboard_get_instance_private
 argument_list|(
 name|dashboard
-argument_list|,
-name|GIMP_TYPE_DASHBOARD
-argument_list|,
-name|GimpDashboardPrivate
 argument_list|)
 expr_stmt|;
 name|g_mutex_init
@@ -8897,7 +8883,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0708
+DECL|struct|__anon2778c7780708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9103,7 +9089,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0808
+DECL|struct|__anon2778c7780808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9373,7 +9359,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0908
+DECL|struct|__anon2778c7780908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9579,7 +9565,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0a08
+DECL|struct|__anon2778c7780a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9855,7 +9841,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0b08
+DECL|struct|__anon2778c7780b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10015,7 +10001,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975811c0c08
+DECL|struct|__anon2778c7780c08
 block|{
 DECL|member|prev_time
 name|gint64

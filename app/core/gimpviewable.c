@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c1a2c0103
+DECL|enum|__anon2afb1b9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c1a2c0203
+DECL|enum|__anon2afb1b9b0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -197,7 +197,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|viewable
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (viewable, \                                                            GIMP_TYPE_VIEWABLE, \                                                            GimpViewablePrivate)
+value|((GimpViewablePrivate *) gimp_viewable_get_instance_private ((GimpViewable *) (viewable)))
 end_define
 
 begin_function_decl
@@ -503,7 +503,7 @@ argument|gimp_viewable
 argument_list|,
 argument|GIMP_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_viewable_config_iface_init)
+argument|G_ADD_PRIVATE (GimpViewable)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_viewable_config_iface_init)
 argument_list|)
 end_macro
 
@@ -903,16 +903,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READABLE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpViewablePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

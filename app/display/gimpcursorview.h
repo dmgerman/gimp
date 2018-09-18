@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCursorViewPriv
+DECL|typedef|GimpCursorViewPrivate
 typedef|typedef
 name|struct
-name|_GimpCursorViewPriv
-name|GimpCursorViewPriv
+name|_GimpCursorViewPrivate
+name|GimpCursorViewPrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpCursorViewPriv
+name|GimpCursorViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

@@ -364,8 +364,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorNotebook,gimp_color_notebook,GIMP_TYPE_COLOR_SELECTOR)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorNotebook,gimp_color_notebook,GIMP_TYPE_COLOR_SELECTOR)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorNotebook
 argument_list|,
@@ -393,15 +393,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|object_class
-init|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -507,16 +498,6 @@ argument_list|,
 literal|"GimpColorNotebook"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorNotebookPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -554,13 +535,9 @@ name|notebook
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_notebook_get_instance_private
 argument_list|(
 name|notebook
-argument_list|,
-name|GIMP_TYPE_COLOR_NOTEBOOK
-argument_list|,
-name|GimpColorNotebookPrivate
 argument_list|)
 expr_stmt|;
 name|private

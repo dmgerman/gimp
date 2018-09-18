@@ -50,15 +50,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpImagePrivate
-typedef|typedef
-name|struct
-name|_GimpImagePrivate
-name|GimpImagePrivate
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpImagePrivate
 struct|struct
@@ -463,8 +454,7 @@ name|GIMP_IMAGE_GET_PRIVATE
 parameter_list|(
 name|image
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (image, \                                      GIMP_TYPE_IMAGE, \                                      GimpImagePrivate)
+value|(((GimpImage *) (image))->priv)
 end_define
 
 begin_function_decl

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286e4b830103
+DECL|enum|__anon2753ca2e0103
 block|{
 DECL|enumerator|COLUMN_TREE_ICON_NAME
 name|COLUMN_TREE_ICON_NAME
@@ -171,8 +171,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPrefsBox,gimp_prefs_box,GTK_TYPE_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPrefsBox,gimp_prefs_box,GTK_TYPE_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPrefsBox
 argument_list|,
@@ -214,16 +214,6 @@ operator|->
 name|finalize
 operator|=
 name|gimp_prefs_box_finalize
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPrefsBoxPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -275,13 +265,9 @@ name|box
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_prefs_box_get_instance_private
 argument_list|(
 name|box
-argument_list|,
-name|GIMP_TYPE_PREFS_BOX
-argument_list|,
-name|GimpPrefsBoxPrivate
 argument_list|)
 expr_stmt|;
 name|private

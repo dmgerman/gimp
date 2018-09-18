@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ab7a40103
+DECL|enum|__anon28c898200103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288ab7a40203
+DECL|enum|__anon28c898200203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ab7a40303
+DECL|enum|__anon28c898200303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -271,7 +271,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpProcBrowserDialog
 argument_list|,
@@ -396,16 +396,6 @@ name|row_activated
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpProcBrowserDialogPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -444,13 +434,9 @@ name|dialog
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_proc_browser_dialog_get_instance_private
 argument_list|(
 name|dialog
-argument_list|,
-name|GIMP_TYPE_PROC_BROWSER_DIALOG
-argument_list|,
-name|GimpProcBrowserDialogPrivate
 argument_list|)
 expr_stmt|;
 name|priv

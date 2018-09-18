@@ -208,9 +208,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_struct
-DECL|struct|_GimpLayerTreeViewPriv
+DECL|struct|_GimpLayerTreeViewPrivate
 struct|struct
-name|_GimpLayerTreeViewPriv
+name|_GimpLayerTreeViewPrivate
 block|{
 DECL|member|layer_mode_box
 name|GtkWidget
@@ -874,7 +874,7 @@ argument|gimp_layer_tree_view
 argument_list|,
 argument|GIMP_TYPE_DRAWABLE_TREE_VIEW
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_layer_tree_view_view_iface_init)
+argument|G_ADD_PRIVATE (GimpLayerTreeView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_layer_tree_view_view_iface_init)
 argument_list|)
 end_macro
 
@@ -1118,16 +1118,6 @@ name|lock_position_help_id
 operator|=
 name|GIMP_HELP_LAYER_LOCK_POSITION
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpLayerTreeViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1231,13 +1221,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_layer_tree_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_LAYER_TREE_VIEW
-argument_list|,
-name|GimpLayerTreeViewPriv
 argument_list|)
 expr_stmt|;
 name|view
@@ -2351,7 +2337,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290025360108
+DECL|struct|__anon2c496a3d0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2711,7 +2697,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290025360208
+DECL|struct|__anon2c496a3d0208
 block|{
 DECL|member|mask_column
 name|gint

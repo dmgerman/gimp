@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ef11f0103
+DECL|enum|__anon2c2e7d7f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -180,7 +180,7 @@ parameter_list|(
 name|handle
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (handle, \                                      GIMP_TYPE_CANVAS_HANDLE, \                                      GimpCanvasHandlePrivate)
+value|((GimpCanvasHandlePrivate *) gimp_canvas_handle_get_instance_private ((GimpCanvasHandle *) (handle)))
 end_define
 
 begin_comment
@@ -282,8 +282,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasHandle,gimp_canvas_handle,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasHandle,gimp_canvas_handle,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasHandle
 argument_list|,
@@ -550,16 +550,6 @@ operator|*
 name|G_PI
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasHandlePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

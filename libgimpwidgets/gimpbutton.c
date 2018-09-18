@@ -33,7 +33,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8111e0103
+DECL|enum|__anon2b0a415e0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -97,7 +97,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpButton
 argument_list|,
@@ -140,15 +140,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|object_class
-init|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -216,16 +207,6 @@ name|clicked
 operator|=
 name|gimp_button_clicked
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -244,13 +225,9 @@ name|button
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_BUTTON
-argument_list|,
-name|GimpButtonPrivate
 argument_list|)
 expr_stmt|;
 block|}

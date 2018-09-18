@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e88c80103
+DECL|enum|__anon2abfa70b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ argument|gimp_dockable
 argument_list|,
 argument|GTK_TYPE_BIN
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,                                                 gimp_dockable_session_managed_iface_init)
+argument|G_ADD_PRIVATE (GimpDockable)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,                                                 gimp_dockable_session_managed_iface_init)
 argument_list|)
 end_macro
 
@@ -484,16 +484,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDockablePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -512,13 +502,9 @@ name|dockable
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dockable_get_instance_private
 argument_list|(
 name|dockable
-argument_list|,
-name|GIMP_TYPE_DOCKABLE
-argument_list|,
-name|GimpDockablePrivate
 argument_list|)
 expr_stmt|;
 name|dockable

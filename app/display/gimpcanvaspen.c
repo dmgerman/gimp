@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1751c00103
+DECL|enum|__anon2bc685510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ parameter_list|(
 name|pen
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (pen, \                                      GIMP_TYPE_CANVAS_PEN, \                                      GimpCanvasPenPrivate)
+value|((GimpCanvasPenPrivate *) gimp_canvas_pen_get_instance_private ((GimpCanvasPen *) (pen)))
 end_define
 
 begin_comment
@@ -210,8 +210,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasPen,gimp_canvas_pen,GIMP_TYPE_CANVAS_POLYGON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasPen,gimp_canvas_pen,GIMP_TYPE_CANVAS_POLYGON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasPen
 argument_list|,
@@ -324,16 +324,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasPenPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

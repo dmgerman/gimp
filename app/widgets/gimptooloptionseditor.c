@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf40b220103
+DECL|enum|__anon278b2cb20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -430,7 +430,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpToolOptionsEditor,gimp_tool_options_editor,GIMP_TYPE_EDITOR,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_tool_options_editor_docked_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpToolOptionsEditor,gimp_tool_options_editor,GIMP_TYPE_EDITOR,G_ADD_PRIVATE (GimpToolOptionsEditor)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_tool_options_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpToolOptionsEditor
@@ -439,7 +439,7 @@ argument|gimp_tool_options_editor
 argument_list|,
 argument|GIMP_TYPE_EDITOR
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_tool_options_editor_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpToolOptionsEditor)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_tool_options_editor_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -516,16 +516,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolOptionsEditorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -580,13 +570,9 @@ name|editor
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_options_editor_get_instance_private
 argument_list|(
 name|editor
-argument_list|,
-name|GIMP_TYPE_TOOL_OPTIONS_EDITOR
-argument_list|,
-name|GimpToolOptionsEditorPrivate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

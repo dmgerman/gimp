@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf4e0e0103
+DECL|enum|__anon289e03ae0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf4e0e0203
+DECL|enum|__anon289e03ae0203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -195,7 +195,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorHexEntry
 argument_list|,
@@ -293,16 +293,6 @@ name|color_changed
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorHexEntryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -353,13 +343,9 @@ name|entry
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_hex_entry_get_instance_private
 argument_list|(
 name|entry
-argument_list|,
-name|GIMP_TYPE_COLOR_HEX_ENTRY
-argument_list|,
-name|GimpColorHexEntryPrivate
 argument_list|)
 expr_stmt|;
 name|private

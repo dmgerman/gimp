@@ -273,7 +273,7 @@ argument|gimp_async
 argument_list|,
 argument|G_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,                                                 gimp_async_waitable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,                                                 gimp_async_cancelable_iface_init)
+argument|G_ADD_PRIVATE (GimpAsync)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,                                                 gimp_async_waitable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,                                                 gimp_async_cancelable_iface_init)
 argument_list|)
 end_macro
 
@@ -328,16 +328,6 @@ operator|->
 name|finalize
 operator|=
 name|gimp_async_finalize
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpAsyncPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -409,13 +399,9 @@ name|async
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_async_get_instance_private
 argument_list|(
 name|async
-argument_list|,
-name|GIMP_TYPE_ASYNC
-argument_list|,
-name|GimpAsyncPrivate
 argument_list|)
 expr_stmt|;
 name|g_mutex_init

@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6700f90103
+DECL|enum|__anon2ba8155d0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -237,7 +237,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpModuleDB
 argument_list|,
@@ -415,16 +415,6 @@ name|remove
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpModuleDBPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -443,13 +433,9 @@ name|db
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_module_db_get_instance_private
 argument_list|(
 name|db
-argument_list|,
-name|GIMP_TYPE_MODULE_DB
-argument_list|,
-name|GimpModuleDBPrivate
 argument_list|)
 expr_stmt|;
 name|db

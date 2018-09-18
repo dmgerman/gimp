@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64db190103
+DECL|enum|__anon27a98a230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ parameter_list|(
 name|guide
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (guide, \                                      GIMP_TYPE_CANVAS_GUIDE, \                                      GimpCanvasGuidePrivate)
+value|((GimpCanvasGuidePrivate *) gimp_canvas_guide_get_instance_private ((GimpCanvasGuide *) (guide)))
 end_define
 
 begin_comment
@@ -215,8 +215,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasGuide,gimp_canvas_guide,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasGuide,gimp_canvas_guide,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasGuide
 argument_list|,
@@ -358,16 +358,6 @@ argument_list|,
 name|GIMP_GUIDE_STYLE_NONE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasGuidePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

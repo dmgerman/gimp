@@ -142,9 +142,9 @@ file|"gimp-intl.h"
 end_include
 
 begin_struct
-DECL|struct|_GimpChannelTreeViewPriv
+DECL|struct|_GimpChannelTreeViewPrivate
 struct|struct
-name|_GimpChannelTreeViewPriv
+name|_GimpChannelTreeViewPrivate
 block|{
 DECL|member|component_editor
 name|GtkWidget
@@ -299,7 +299,7 @@ argument|gimp_channel_tree_view
 argument_list|,
 argument|GIMP_TYPE_DRAWABLE_TREE_VIEW
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_channel_tree_view_view_iface_init)
+argument|G_ADD_PRIVATE (GimpChannelTreeView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_channel_tree_view_view_iface_init)
 argument_list|)
 end_macro
 
@@ -515,16 +515,6 @@ name|lock_position_help_id
 operator|=
 name|GIMP_HELP_CHANNEL_LOCK_POSITION
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpChannelTreeViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -576,13 +566,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_channel_tree_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_CHANNEL_TREE_VIEW
-argument_list|,
-name|GimpChannelTreeViewPriv
 argument_list|)
 expr_stmt|;
 name|view

@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276196b40103
+DECL|enum|__anon2b527dc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -119,7 +119,7 @@ name|GIMP_SIZE_BOX_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                         GIMP_TYPE_SIZE_BOX, GimpSizeBoxPrivate))
+value|((GimpSizeBoxPrivate *) gimp_size_box_get_instance_private ((GimpSizeBox *) (obj)))
 end_define
 
 begin_typedef
@@ -272,8 +272,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSizeBox,gimp_size_box,GTK_TYPE_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSizeBox,gimp_size_box,GTK_TYPE_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSizeBox
 argument_list|,
@@ -333,16 +333,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_size_box_get_property
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSizeBoxPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(

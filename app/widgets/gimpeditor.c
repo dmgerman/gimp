@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d07650103
+DECL|enum|__anon2bf141530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -368,7 +368,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpEditor,gimp_editor,GTK_TYPE_BOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_editor_docked_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpEditor,gimp_editor,GTK_TYPE_BOX,G_ADD_PRIVATE (GimpEditor)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpEditor
@@ -377,7 +377,7 @@ argument|gimp_editor
 argument_list|,
 argument|GTK_TYPE_BOX
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_editor_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpEditor)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_editor_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -659,16 +659,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpEditorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -735,13 +725,9 @@ name|editor
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_editor_get_instance_private
 argument_list|(
 name|editor
-argument_list|,
-name|GIMP_TYPE_EDITOR
-argument_list|,
-name|GimpEditorPrivate
 argument_list|)
 expr_stmt|;
 name|editor
@@ -2228,7 +2214,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4d07650208
+DECL|struct|__anon2bf141530208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

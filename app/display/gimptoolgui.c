@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b16d1470103
+DECL|enum|__anon288be8960103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -233,7 +233,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|gui
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (gui, \                                                       GIMP_TYPE_TOOL_GUI, \                                                       GimpToolGuiPrivate)
+value|((GimpToolGuiPrivate *) gimp_tool_gui_get_instance_private ((GimpToolGui *) (gui)))
 end_define
 
 begin_function_decl
@@ -397,7 +397,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolGui
 argument_list|,
@@ -495,16 +495,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|G_TYPE_INT
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolGuiPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -359,8 +359,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFontFactory,gimp_font_factory,GIMP_TYPE_DATA_FACTORY)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpFontFactory,gimp_font_factory,GIMP_TYPE_DATA_FACTORY)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpFontFactory
 argument_list|,
@@ -442,16 +442,6 @@ name|data_delete
 operator|=
 name|gimp_font_factory_data_delete
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpFontFactoryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -470,13 +460,9 @@ name|factory
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_font_factory_get_instance_private
 argument_list|(
 name|factory
-argument_list|,
-name|GIMP_TYPE_FONT_FACTORY
-argument_list|,
-name|GimpFontFactoryPrivate
 argument_list|)
 expr_stmt|;
 block|}

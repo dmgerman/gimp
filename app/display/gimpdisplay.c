@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63bd520103
+DECL|enum|__anon28d7ccd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -238,7 +238,7 @@ parameter_list|(
 name|display
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (display, \                                      GIMP_TYPE_DISPLAY, \                                      GimpDisplayPrivate)
+value|((GimpDisplayPrivate *) gimp_display_get_instance_private ((GimpDisplay *) (display)))
 end_define
 
 begin_comment
@@ -499,7 +499,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDisplay,gimp_display,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_display_progress_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDisplay,gimp_display,GIMP_TYPE_OBJECT,G_ADD_PRIVATE (GimpDisplay)G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_display_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpDisplay
@@ -508,7 +508,7 @@ argument|gimp_display
 argument_list|,
 argument|GIMP_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_progress_iface_init)
+argument|G_ADD_PRIVATE (GimpDisplay)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_progress_iface_init)
 argument_list|)
 end_macro
 
@@ -634,16 +634,6 @@ argument_list|,
 name|GIMP_TYPE_DISPLAY_SHELL
 argument_list|,
 name|GIMP_PARAM_READABLE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDisplayPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

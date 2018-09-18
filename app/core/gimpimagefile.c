@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933bf9d0103
+DECL|enum|__anon274b4f090103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -196,7 +196,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|imagefile
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (imagefile, \                                                             GIMP_TYPE_IMAGEFILE, \                                                             GimpImagefilePrivate)
+value|((GimpImagefilePrivate *) gimp_imagefile_get_instance_private ((GimpImagefile *) (imagefile)))
 end_define
 
 begin_function_decl
@@ -422,7 +422,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpImagefile
 argument_list|,
@@ -592,16 +592,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|creator
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpImagefilePrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -329,8 +329,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_ABSTRACT_TYPE (GimpScrolledPreview,gimp_scrolled_preview,GIMP_TYPE_PREVIEW)
-name|G_DEFINE_ABSTRACT_TYPE
+DECL|function|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GimpScrolledPreview,gimp_scrolled_preview,GIMP_TYPE_PREVIEW)
+name|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpScrolledPreview
 argument_list|,
@@ -395,16 +395,6 @@ name|set_cursor
 operator|=
 name|gimp_scrolled_preview_set_cursor
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpScrolledPreviewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -449,13 +439,9 @@ name|preview
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_scrolled_preview_get_instance_private
 argument_list|(
 name|preview
-argument_list|,
-name|GIMP_TYPE_SCROLLED_PREVIEW
-argument_list|,
-name|GimpScrolledPreviewPrivate
 argument_list|)
 expr_stmt|;
 name|priv

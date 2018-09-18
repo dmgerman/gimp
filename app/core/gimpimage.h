@@ -102,6 +102,15 @@ name|GimpImageClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpImagePrivate
+typedef|typedef
+name|struct
+name|_GimpImagePrivate
+name|GimpImagePrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpImage
 struct|struct
@@ -117,6 +126,11 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to  */
+DECL|member|priv
+name|GimpImagePrivate
+modifier|*
+name|priv
+decl_stmt|;
 block|}
 struct|;
 end_struct

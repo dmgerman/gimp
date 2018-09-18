@@ -106,7 +106,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c53f90103
+DECL|enum|__anon2aa9d6470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ parameter_list|(
 name|progress
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (progress, \                                      GIMP_TYPE_CANVAS_PROGRESS, \                                      GimpCanvasProgressPrivate)
+value|((GimpCanvasProgressPrivate *) gimp_canvas_progress_get_instance_private ((GimpCanvasProgress *) (progress)))
 end_define
 
 begin_comment
@@ -431,7 +431,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCanvasProgress,gimp_canvas_progress,GIMP_TYPE_CANVAS_ITEM,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_canvas_progress_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCanvasProgress,gimp_canvas_progress,GIMP_TYPE_CANVAS_ITEM,G_ADD_PRIVATE (GimpCanvasProgress)G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_canvas_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpCanvasProgress
@@ -440,7 +440,7 @@ argument|gimp_canvas_progress
 argument_list|,
 argument|GIMP_TYPE_CANVAS_ITEM
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_canvas_progress_iface_init)
+argument|G_ADD_PRIVATE (GimpCanvasProgress)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_canvas_progress_iface_init)
 argument_list|)
 end_macro
 
@@ -585,16 +585,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasProgressPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

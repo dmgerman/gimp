@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299dad160103
+DECL|enum|__anon29fa2dfb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -151,8 +151,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpEnumStore,gimp_enum_store,GIMP_TYPE_INT_STORE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpEnumStore,gimp_enum_store,GIMP_TYPE_INT_STORE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpEnumStore
 argument_list|,
@@ -230,16 +230,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpEnumStorePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -258,13 +248,9 @@ name|store
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_enum_store_get_instance_private
 argument_list|(
 name|store
-argument_list|,
-name|GIMP_TYPE_ENUM_STORE
-argument_list|,
-name|GimpEnumStorePrivate
 argument_list|)
 expr_stmt|;
 block|}

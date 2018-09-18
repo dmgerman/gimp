@@ -76,7 +76,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c12b2c80103
+DECL|enum|__anon298ec1360103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c12b2c80203
+DECL|enum|__anon298ec1360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c12b2c80303
+DECL|enum|__anon298ec1360303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -359,7 +359,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPageSelector
 argument_list|,
@@ -579,16 +579,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPageSelectorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -643,13 +633,9 @@ name|selector
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_page_selector_get_instance_private
 argument_list|(
 name|selector
-argument_list|,
-name|GIMP_TYPE_PAGE_SELECTOR
-argument_list|,
-name|GimpPageSelectorPrivate
 argument_list|)
 expr_stmt|;
 name|priv

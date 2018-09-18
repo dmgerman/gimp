@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286dad2a0103
+DECL|enum|__anon288f7baa0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -42,7 +42,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286dad2a0203
+DECL|enum|__anon288f7baa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -114,7 +114,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_ABSTRACT_TYPE
+name|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpAuxItem
 argument_list|,
@@ -236,16 +236,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpAuxItemPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -264,13 +254,9 @@ name|aux_item
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_aux_item_get_instance_private
 argument_list|(
 name|aux_item
-argument_list|,
-name|GIMP_TYPE_AUX_ITEM
-argument_list|,
-name|GimpAuxItemPrivate
 argument_list|)
 expr_stmt|;
 block|}

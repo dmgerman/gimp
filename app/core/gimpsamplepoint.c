@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fe7b00103
+DECL|enum|__anon28cf8e550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,8 +127,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSamplePoint,gimp_sample_point,GIMP_TYPE_AUX_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSamplePoint,gimp_sample_point,GIMP_TYPE_AUX_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSamplePoint
 argument_list|,
@@ -230,16 +230,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSamplePointPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -258,13 +248,9 @@ name|sample_point
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_sample_point_get_instance_private
 argument_list|(
 name|sample_point
-argument_list|,
-name|GIMP_TYPE_SAMPLE_POINT
-argument_list|,
-name|GimpSamplePointPrivate
 argument_list|)
 expr_stmt|;
 block|}

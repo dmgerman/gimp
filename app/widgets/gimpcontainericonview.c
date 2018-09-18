@@ -100,9 +100,9 @@ file|"gimpwidgets-utils.h"
 end_include
 
 begin_struct
-DECL|struct|_GimpContainerIconViewPriv
+DECL|struct|_GimpContainerIconViewPrivate
 struct|struct
-name|_GimpContainerIconViewPriv
+name|_GimpContainerIconViewPrivate
 block|{
 DECL|member|dnd_renderer
 name|GimpViewRenderer
@@ -509,7 +509,7 @@ argument|gimp_container_icon_view
 argument_list|,
 argument|GIMP_TYPE_CONTAINER_BOX
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_icon_view_view_iface_init)
+argument|G_ADD_PRIVATE (GimpContainerIconView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_icon_view_view_iface_init)
 argument_list|)
 end_macro
 
@@ -583,16 +583,6 @@ operator|->
 name|popup_menu
 operator|=
 name|gimp_container_icon_view_popup_menu
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerIconViewPriv
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -729,13 +719,9 @@ name|icon_view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_container_icon_view_get_instance_private
 argument_list|(
 name|icon_view
-argument_list|,
-name|GIMP_TYPE_CONTAINER_ICON_VIEW
-argument_list|,
-name|GimpContainerIconViewPriv
 argument_list|)
 expr_stmt|;
 name|gimp_container_tree_store_columns_init

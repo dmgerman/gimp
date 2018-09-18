@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5a6c10103
+DECL|enum|__anon297d970e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,7 +158,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5a6c10208
+DECL|struct|__anon297d970e0208
 block|{
 DECL|member|text
 name|GString
@@ -375,8 +375,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpExtension,gimp_extension,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpExtension,gimp_extension,GIMP_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpExtension
 argument_list|,
@@ -495,16 +495,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpExtensionPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -523,13 +513,9 @@ name|extension
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_extension_get_instance_private
 argument_list|(
 name|extension
-argument_list|,
-name|GIMP_TYPE_EXTENSION
-argument_list|,
-name|GimpExtensionPrivate
 argument_list|)
 expr_stmt|;
 block|}

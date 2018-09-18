@@ -188,8 +188,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSymmetryEditor,gimp_symmetry_editor,GIMP_TYPE_IMAGE_EDITOR)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSymmetryEditor,gimp_symmetry_editor,GIMP_TYPE_IMAGE_EDITOR)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSymmetryEditor
 argument_list|,
@@ -232,16 +232,6 @@ name|set_image
 operator|=
 name|gimp_symmetry_editor_set_image
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSymmetryEditorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -268,13 +258,9 @@ name|editor
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_symmetry_editor_get_instance_private
 argument_list|(
 name|editor
-argument_list|,
-name|GIMP_TYPE_SYMMETRY_EDITOR
-argument_list|,
-name|GimpSymmetryEditorPrivate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

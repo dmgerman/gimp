@@ -148,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be2224f0103
+DECL|enum|__anon28f9b5950103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -175,7 +175,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2224f0203
+DECL|enum|__anon28f9b5950203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2224f0303
+DECL|enum|__anon28f9b5950303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -638,7 +638,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolCompass
 argument_list|,
@@ -1075,16 +1075,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolCompassPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1103,13 +1093,9 @@ name|compass
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_compass_get_instance_private
 argument_list|(
 name|compass
-argument_list|,
-name|GIMP_TYPE_TOOL_COMPASS
-argument_list|,
-name|GimpToolCompassPrivate
 argument_list|)
 expr_stmt|;
 name|compass

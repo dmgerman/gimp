@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb9992f0103
+DECL|enum|__anon2757f3920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ parameter_list|(
 name|store
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (store, \                                      GIMP_TYPE_CONTAINER_TREE_STORE, \                                      GimpContainerTreeStorePrivate)
+value|((GimpContainerTreeStorePrivate *) gimp_container_tree_store_get_instance_private ((GimpContainerTreeStore *) (store)))
 end_define
 
 begin_function_decl
@@ -237,8 +237,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpContainerTreeStore,gimp_container_tree_store,GTK_TYPE_TREE_STORE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpContainerTreeStore,gimp_container_tree_store,GTK_TYPE_TREE_STORE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpContainerTreeStore
 argument_list|,
@@ -338,16 +338,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerTreeStorePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1674,7 +1664,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9992f0208
+DECL|struct|__anon2757f3920208
 block|{
 DECL|member|view_size
 name|gint

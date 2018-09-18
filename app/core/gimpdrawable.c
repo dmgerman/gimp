@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b92f2ad0103
+DECL|enum|__anon2bfe9cb80103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -245,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b92f2ad0203
+DECL|enum|__anon2bfe9cb80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -882,7 +882,7 @@ argument|gimp_drawable
 argument_list|,
 argument|GIMP_TYPE_ITEM
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
+argument|G_ADD_PRIVATE (GimpDrawable)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
 argument_list|)
 end_macro
 
@@ -1229,16 +1229,6 @@ argument_list|,
 literal|"buffer"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDrawablePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1257,13 +1247,9 @@ name|drawable
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_drawable_get_instance_private
 argument_list|(
 name|drawable
-argument_list|,
-name|GIMP_TYPE_DRAWABLE
-argument_list|,
-name|GimpDrawablePrivate
 argument_list|)
 expr_stmt|;
 name|drawable

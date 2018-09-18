@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a94f6ec0103
+DECL|enum|__anon2bd986ac0103
 block|{
 DECL|enumerator|ACTIVE_CHANGED
 name|ACTIVE_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a94f6ec0203
+DECL|enum|__anon2bd986ac0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -128,7 +128,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|filter
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (filter, \                                                          GIMP_TYPE_FILTER, \                                                          GimpFilterPrivate)
+value|((GimpFilterPrivate *) gimp_filter_get_instance_private ((GimpFilter *) (filter)))
 end_define
 
 begin_comment
@@ -224,7 +224,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpFilter
 argument_list|,
@@ -392,16 +392,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpFilterPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

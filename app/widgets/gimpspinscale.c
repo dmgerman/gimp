@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adfaf9d0103
+DECL|enum|__anon27b61dd50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adfaf9d0203
+DECL|enum|__anon27b61dd50203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -211,7 +211,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                                        GIMP_TYPE_SPIN_SCALE, \                                                        GimpSpinScalePrivate))
+value|((GimpSpinScalePrivate *) gimp_spin_scale_get_instance_private ((GimpSpinScale *) (obj)))
 end_define
 
 begin_function_decl
@@ -518,17 +518,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
-name|G_DEFINE_TYPE
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSpinScale,gimp_spin_scale,GTK_TYPE_SPIN_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-name|GimpSpinScale
+argument|GimpSpinScale
 argument_list|,
-name|gimp_spin_scale
+argument|gimp_spin_scale
 argument_list|,
-name|GTK_TYPE_SPIN_BUTTON
+argument|GTK_TYPE_SPIN_BUTTON
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -541,7 +541,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_spin_scale_class_init (GimpSpinScaleClass * klass)
 name|gimp_spin_scale_class_init
 parameter_list|(
 name|GimpSpinScaleClass
@@ -683,16 +682,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSpinScalePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

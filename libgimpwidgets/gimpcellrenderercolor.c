@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a24e00103
+DECL|enum|__anon28e57a050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -236,8 +236,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCellRendererColor,gimp_cell_renderer_color,GTK_TYPE_CELL_RENDERER)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCellRendererColor,gimp_cell_renderer_color,GTK_TYPE_CELL_RENDERER)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCellRendererColor
 argument_list|,
@@ -375,16 +375,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCellRendererColorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -403,13 +393,9 @@ name|cell
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_cell_renderer_color_get_instance_private
 argument_list|(
 name|cell
-argument_list|,
-name|GIMP_TYPE_CELL_RENDERER_COLOR
-argument_list|,
-name|GimpCellRendererColorPrivate
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set

@@ -189,8 +189,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpViewRendererDrawable,gimp_view_renderer_drawable,GIMP_TYPE_VIEW_RENDERER)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpViewRendererDrawable,gimp_view_renderer_drawable,GIMP_TYPE_VIEW_RENDERER)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpViewRendererDrawable
 argument_list|,
@@ -258,16 +258,6 @@ name|render
 operator|=
 name|gimp_view_renderer_drawable_render
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpViewRendererDrawablePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -286,13 +276,9 @@ name|renderdrawable
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_view_renderer_drawable_get_instance_private
 argument_list|(
 name|renderdrawable
-argument_list|,
-name|GIMP_TYPE_VIEW_RENDERER_DRAWABLE
-argument_list|,
-name|GimpViewRendererDrawablePrivate
 argument_list|)
 expr_stmt|;
 block|}

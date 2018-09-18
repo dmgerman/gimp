@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ac3660103
+DECL|enum|__anon2951fb830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -360,8 +360,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPreviewArea,gimp_preview_area,GTK_TYPE_DRAWING_AREA)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPreviewArea,gimp_preview_area,GTK_TYPE_DRAWING_AREA)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPreviewArea
 argument_list|,
@@ -493,16 +493,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPreviewAreaPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -525,13 +515,9 @@ name|area
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_preview_area_get_instance_private
 argument_list|(
 name|area
-argument_list|,
-name|GIMP_TYPE_PREVIEW_AREA
-argument_list|,
-name|GimpPreviewAreaPrivate
 argument_list|)
 expr_stmt|;
 name|priv

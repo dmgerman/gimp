@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f972f80103
+DECL|enum|__anon2c3d64650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -389,8 +389,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_ABSTRACT_TYPE (GimpDataFactory,gimp_data_factory,GIMP_TYPE_OBJECT)
-name|G_DEFINE_ABSTRACT_TYPE
+DECL|function|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GimpDataFactory,gimp_data_factory,GIMP_TYPE_OBJECT)
+name|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDataFactory
 argument_list|,
@@ -646,16 +646,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDataFactoryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -674,13 +664,9 @@ name|factory
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_data_factory_get_instance_private
 argument_list|(
 name|factory
-argument_list|,
-name|GIMP_TYPE_DATA_FACTORY
-argument_list|,
-name|GimpDataFactoryPrivate
 argument_list|)
 expr_stmt|;
 name|factory

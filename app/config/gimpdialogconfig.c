@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaec1290103
+DECL|enum|__anon29da1f410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -274,7 +274,7 @@ parameter_list|(
 name|config
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (config, \                                      GIMP_TYPE_DIALOG_CONFIG, \                                      GimpDialogConfigPrivate)
+value|((GimpDialogConfigPrivate *) gimp_dialog_config_get_instance_private ((GimpDialogConfig *) (config)))
 end_define
 
 begin_function_decl
@@ -387,8 +387,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDialogConfig,gimp_dialog_config,GIMP_TYPE_GUI_CONFIG)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpDialogConfig,gimp_dialog_config,GIMP_TYPE_GUI_CONFIG)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDialogConfig
 argument_list|,
@@ -1347,16 +1347,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
 name|GIMP_CONFIG_PARAM_AGGREGATE
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDialogConfigPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataFactoryViewPriv
+DECL|typedef|GimpDataFactoryViewPrivate
 typedef|typedef
 name|struct
-name|_GimpDataFactoryViewPriv
-name|GimpDataFactoryViewPriv
+name|_GimpDataFactoryViewPrivate
+name|GimpDataFactoryViewPrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpDataFactoryViewPriv
+name|GimpDataFactoryViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

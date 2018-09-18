@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298800ba0103
+DECL|enum|__anon2c0609be0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298800ba0203
+DECL|enum|__anon2c0609be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -251,7 +251,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|item
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (item, \                                                        GIMP_TYPE_SETTINGS_BOX, \                                                        GimpSettingsBoxPrivate)
+value|((GimpSettingsBoxPrivate *) gimp_settings_box_get_instance_private ((GimpSettingsBox *) (item)))
 end_define
 
 begin_function_decl
@@ -563,7 +563,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSettingsBox
 argument_list|,
@@ -982,16 +982,6 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSettingsBoxPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

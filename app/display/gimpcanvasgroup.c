@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c749e360103
+DECL|enum|__anon2bc281ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -220,8 +220,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasGroup,gimp_canvas_group,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasGroup,gimp_canvas_group,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasGroup
 argument_list|,
@@ -343,16 +343,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasGroupPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -371,13 +361,9 @@ name|group
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_canvas_group_get_instance_private
 argument_list|(
 name|group
-argument_list|,
-name|GIMP_TYPE_CANVAS_GROUP
-argument_list|,
-name|GimpCanvasGroupPrivate
 argument_list|)
 expr_stmt|;
 name|group

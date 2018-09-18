@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayerTreeViewPriv
+DECL|typedef|GimpLayerTreeViewPrivate
 typedef|typedef
 name|struct
-name|_GimpLayerTreeViewPriv
-name|GimpLayerTreeViewPriv
+name|_GimpLayerTreeViewPrivate
+name|GimpLayerTreeViewPrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpDrawableTreeView
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpLayerTreeViewPriv
+name|GimpLayerTreeViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

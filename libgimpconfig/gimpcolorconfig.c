@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279405af0103
+DECL|enum|__anon2b276bd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -538,7 +538,7 @@ argument|gimp_color_config
 argument_list|,
 argument|G_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)                          gimp_type_set_translation_domain (g_define_type_id,                                                            GETTEXT_PACKAGE
+argument|G_ADD_PRIVATE (GimpColorConfig)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)                          gimp_type_set_translation_domain (g_define_type_id,                                                            GETTEXT_PACKAGE
 literal|"-libgimp"
 argument|)
 argument_list|)
@@ -928,16 +928,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorConfigPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -956,13 +946,9 @@ name|config
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_config_get_instance_private
 argument_list|(
 name|config
-argument_list|,
-name|GIMP_TYPE_COLOR_CONFIG
-argument_list|,
-name|GimpColorConfigPrivate
 argument_list|)
 expr_stmt|;
 block|}

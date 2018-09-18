@@ -113,7 +113,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279ae1ae0103
+DECL|enum|__anon2ba6281b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279ae1ae0208
+DECL|struct|__anon2ba6281b0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279ae1ae0308
+DECL|struct|__anon2ba6281b0308
 block|{
 DECL|member|records
 name|GArray
@@ -175,9 +175,9 @@ typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpTagCachePriv
+DECL|struct|_GimpTagCachePrivate
 struct|struct
-name|_GimpTagCachePriv
+name|_GimpTagCachePrivate
 block|{
 DECL|member|records
 name|GArray
@@ -400,8 +400,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTagCache,gimp_tag_cache,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpTagCache,gimp_tag_cache,GIMP_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpTagCache
 argument_list|,
@@ -447,15 +447,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpTagCacheClass
-modifier|*
-name|gimp_tag_cache_class
-init|=
-name|GIMP_TAG_CACHE_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -467,16 +458,6 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_tag_cache_get_memsize
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|gimp_tag_cache_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpTagCachePriv
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -496,13 +477,9 @@ name|cache
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tag_cache_get_instance_private
 argument_list|(
 name|cache
-argument_list|,
-name|GIMP_TYPE_TAG_CACHE
-argument_list|,
-name|GimpTagCachePriv
 argument_list|)
 expr_stmt|;
 name|cache

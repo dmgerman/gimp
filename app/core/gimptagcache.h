@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpTagCachePriv
+DECL|typedef|GimpTagCachePrivate
 typedef|typedef
 name|struct
-name|_GimpTagCachePriv
-name|GimpTagCachePriv
+name|_GimpTagCachePrivate
+name|GimpTagCachePrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpObject
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpTagCachePriv
+name|GimpTagCachePrivate
 modifier|*
 name|priv
 decl_stmt|;

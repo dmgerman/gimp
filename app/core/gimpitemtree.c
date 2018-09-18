@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a75ed80103
+DECL|enum|__anon29491ef40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -141,7 +141,7 @@ parameter_list|(
 name|object
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (object, \                                      GIMP_TYPE_ITEM_TREE, \                                      GimpItemTreePrivate)
+value|((GimpItemTreePrivate *) gimp_item_tree_get_instance_private ((GimpItemTree *) (object)))
 end_define
 
 begin_comment
@@ -257,8 +257,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpItemTree,gimp_item_tree,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpItemTree,gimp_item_tree,GIMP_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpItemTree
 argument_list|,
@@ -417,16 +417,6 @@ argument_list|,
 name|GIMP_TYPE_ITEM
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpItemTreePrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

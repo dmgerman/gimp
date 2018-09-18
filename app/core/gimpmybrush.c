@@ -214,7 +214,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpMybrush,gimp_mybrush,GIMP_TYPE_DATA,G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,gimp_mybrush_tagged_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpMybrush,gimp_mybrush,GIMP_TYPE_DATA,G_ADD_PRIVATE (GimpMybrush)G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,gimp_mybrush_tagged_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpMybrush
@@ -223,7 +223,7 @@ argument|gimp_mybrush
 argument_list|,
 argument|GIMP_TYPE_DATA
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_mybrush_tagged_iface_init)
+argument|G_ADD_PRIVATE (GimpMybrush)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_mybrush_tagged_iface_init)
 argument_list|)
 end_macro
 
@@ -329,16 +329,6 @@ name|get_extension
 operator|=
 name|gimp_mybrush_get_extension
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMybrushPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -377,13 +367,9 @@ name|brush
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_mybrush_get_instance_private
 argument_list|(
 name|brush
-argument_list|,
-name|GIMP_TYPE_MYBRUSH
-argument_list|,
-name|GimpMybrushPrivate
 argument_list|)
 expr_stmt|;
 name|brush

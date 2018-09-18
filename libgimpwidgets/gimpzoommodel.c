@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0311430103
+DECL|enum|__anon2c5142060103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0311430203
+DECL|enum|__anon2c5142060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -204,8 +204,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpZoomModel,gimp_zoom_model,G_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpZoomModel,gimp_zoom_model,G_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpZoomModel
 argument_list|,
@@ -410,16 +410,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpZoomModelPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -442,13 +432,9 @@ name|model
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_zoom_model_get_instance_private
 argument_list|(
 name|model
-argument_list|,
-name|GIMP_TYPE_ZOOM_MODEL
-argument_list|,
-name|GimpZoomModelPrivate
 argument_list|)
 expr_stmt|;
 name|priv

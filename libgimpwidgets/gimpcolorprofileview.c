@@ -89,17 +89,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
-name|G_DEFINE_TYPE
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorProfileView,gimp_color_profile_view,GTK_TYPE_TEXT_VIEW)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-name|GimpColorProfileView
+argument|GimpColorProfileView
 argument_list|,
-name|gimp_color_profile_view
+argument|gimp_color_profile_view
 argument_list|,
-name|GTK_TYPE_TEXT_VIEW
+argument|GTK_TYPE_TEXT_VIEW
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -112,7 +112,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_profile_view_class_init (GimpColorProfileViewClass * klass)
 name|gimp_color_profile_view_class_init
 parameter_list|(
 name|GimpColorProfileViewClass
@@ -141,16 +140,6 @@ name|finalize
 operator|=
 name|gimp_color_profile_view_finalize
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorProfileViewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -169,13 +158,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_profile_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_COLOR_PROFILE_VIEW
-argument_list|,
-name|GimpColorProfileViewPrivate
 argument_list|)
 expr_stmt|;
 block|}

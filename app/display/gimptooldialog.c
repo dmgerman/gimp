@@ -94,7 +94,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|dialog
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (dialog, \                                                          GIMP_TYPE_TOOL_DIALOG, \                                                          GimpToolDialogPrivate)
+value|((GimpToolDialogPrivate *) gimp_tool_dialog_get_instance_private ((GimpToolDialog *) (dialog)))
 end_define
 
 begin_function_decl
@@ -126,8 +126,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolDialog,gimp_tool_dialog,GIMP_TYPE_VIEWABLE_DIALOG)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpToolDialog,gimp_tool_dialog,GIMP_TYPE_VIEWABLE_DIALOG)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolDialog
 argument_list|,
@@ -170,16 +170,6 @@ name|klass
 argument_list|)
 argument_list|,
 literal|"GimpToolDialog"
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolDialogPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

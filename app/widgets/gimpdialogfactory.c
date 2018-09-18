@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290129860103
+DECL|enum|__anon28bdfa370103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -363,7 +363,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDialogFactory
 argument_list|,
@@ -514,16 +514,6 @@ argument_list|,
 name|GIMP_TYPE_DOCK_WINDOW
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDialogFactoryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -542,13 +532,9 @@ name|factory
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dialog_factory_get_instance_private
 argument_list|(
 name|factory
-argument_list|,
-name|GIMP_TYPE_DIALOG_FACTORY
-argument_list|,
-name|GimpDialogFactoryPrivate
 argument_list|)
 expr_stmt|;
 name|factory

@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7c9350103
+DECL|enum|__anon2bb8c22f0103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c9350208
+DECL|struct|__anon2bb8c22f0208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c9350303
+DECL|enum|__anon2bb8c22f0303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -467,14 +467,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_DYNAMIC_TYPE (GimpColorWheel,gimp_color_wheel,GTK_TYPE_WIDGET)
-name|G_DEFINE_DYNAMIC_TYPE
+name|G_DEFINE_DYNAMIC_TYPE_EXTENDED
 argument_list|(
 argument|GimpColorWheel
 argument_list|,
 argument|gimp_color_wheel
 argument_list|,
 argument|GTK_TYPE_WIDGET
+argument_list|,
+literal|0
+argument_list|,
+argument|G_ADD_PRIVATE_DYNAMIC (GimpColorWheel)
 argument_list|)
 end_macro
 
@@ -850,16 +853,6 @@ argument_list|,
 name|GTK_DIR_LEFT
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorWheelPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -890,18 +883,12 @@ block|{
 name|GimpColorWheelPrivate
 modifier|*
 name|priv
-decl_stmt|;
-name|priv
-operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+init|=
+name|gimp_color_wheel_get_instance_private
 argument_list|(
 name|wheel
-argument_list|,
-name|GIMP_TYPE_COLOR_WHEEL
-argument_list|,
-name|GimpColorWheelPrivate
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|wheel
 operator|->
 name|priv

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea954a0103
+DECL|enum|__anon280487610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ parameter_list|(
 name|proxy_group
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (proxy_group, \                                      GIMP_TYPE_CANVAS_PROXY_GROUP, \                                      GimpCanvasProxyGroupPrivate)
+value|((GimpCanvasProxyGroupPrivate *) gimp_canvas_proxy_group_get_instance_private ((GimpCanvasProxyGroup *) (proxy_group)))
 end_define
 
 begin_comment
@@ -166,8 +166,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasProxyGroup,gimp_canvas_proxy_group,GIMP_TYPE_CANVAS_GROUP)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasProxyGroup,gimp_canvas_proxy_group,GIMP_TYPE_CANVAS_GROUP)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasProxyGroup
 argument_list|,
@@ -221,16 +221,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_canvas_proxy_group_get_property
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasProxyGroupPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function

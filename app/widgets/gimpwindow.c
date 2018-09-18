@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d561110103
+DECL|enum|__anon2ad44b400103
 block|{
 DECL|enumerator|MONITOR_CHANGED
 name|MONITOR_CHANGED
@@ -162,7 +162,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpWindow
 argument_list|,
@@ -283,16 +283,6 @@ name|key_press_event
 operator|=
 name|gimp_window_key_press_event
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpWindowPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -311,13 +301,9 @@ name|window
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_window_get_instance_private
 argument_list|(
 name|window
-argument_list|,
-name|GIMP_TYPE_WINDOW
-argument_list|,
-name|GimpWindowPrivate
 argument_list|)
 expr_stmt|;
 block|}

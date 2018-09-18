@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5cb2300103
+DECL|enum|__anon2c2f186b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -164,7 +164,7 @@ parameter_list|(
 name|options
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (options, \                                      GIMP_TYPE_FILL_OPTIONS, \                                      GimpFillOptionsPrivate)
+value|((GimpFillOptionsPrivate *) gimp_fill_options_get_instance_private ((GimpFillOptions *) (options)))
 end_define
 
 begin_function_decl
@@ -246,7 +246,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpFillOptions,gimp_fill_options,GIMP_TYPE_CONTEXT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_fill_options_config_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpFillOptions,gimp_fill_options,GIMP_TYPE_CONTEXT,G_ADD_PRIVATE (GimpFillOptions)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_fill_options_config_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpFillOptions
@@ -255,7 +255,7 @@ argument|gimp_fill_options
 argument_list|,
 argument|GIMP_TYPE_CONTEXT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_fill_options_config_init)
+argument|G_ADD_PRIVATE (GimpFillOptions)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_fill_options_config_init)
 argument_list|)
 end_macro
 
@@ -379,16 +379,6 @@ argument_list|,
 name|G_PARAM_CONSTRUCT
 operator||
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpFillOptionsPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

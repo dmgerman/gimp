@@ -256,7 +256,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpToolPresetEditor,gimp_tool_preset_editor,GIMP_TYPE_DATA_EDITOR,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpToolPresetEditor,gimp_tool_preset_editor,GIMP_TYPE_DATA_EDITOR,G_ADD_PRIVATE (GimpToolPresetEditor)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpToolPresetEditor
@@ -265,7 +265,7 @@ argument|gimp_tool_preset_editor
 argument_list|,
 argument|GIMP_TYPE_DATA_EDITOR
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED, NULL)
+argument|G_ADD_PRIVATE (GimpToolPresetEditor)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED, NULL)
 argument_list|)
 end_macro
 
@@ -332,16 +332,6 @@ argument_list|(
 literal|"Tool Preset Editor"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolPresetEditorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -360,13 +350,9 @@ name|editor
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_preset_editor_get_instance_private
 argument_list|(
 name|editor
-argument_list|,
-name|GIMP_TYPE_TOOL_PRESET_EDITOR
-argument_list|,
-name|GimpToolPresetEditorPrivate
 argument_list|)
 expr_stmt|;
 block|}

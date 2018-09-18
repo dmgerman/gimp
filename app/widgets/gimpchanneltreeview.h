@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpChannelTreeViewPriv
+DECL|typedef|GimpChannelTreeViewPrivate
 typedef|typedef
 name|struct
-name|_GimpChannelTreeViewPriv
-name|GimpChannelTreeViewPriv
+name|_GimpChannelTreeViewPrivate
+name|GimpChannelTreeViewPrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpDrawableTreeView
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpChannelTreeViewPriv
+name|GimpChannelTreeViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

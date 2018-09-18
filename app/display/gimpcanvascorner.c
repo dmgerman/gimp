@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6529e0103
+DECL|enum|__anon289238ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +144,7 @@ parameter_list|(
 name|corner
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (corner, \                                      GIMP_TYPE_CANVAS_CORNER, \                                      GimpCanvasCornerPrivate)
+value|((GimpCanvasCornerPrivate *) gimp_canvas_corner_get_instance_private ((GimpCanvasCorner *) (corner)))
 end_define
 
 begin_comment
@@ -228,8 +228,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasCorner,gimp_canvas_corner,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasCorner,gimp_canvas_corner,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasCorner
 argument_list|,
@@ -486,16 +486,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasCornerPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

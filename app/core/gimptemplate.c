@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ed3540103
+DECL|enum|__anon2abd5b970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -236,7 +236,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|template
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (template, \                                                            GIMP_TYPE_TEMPLATE, \                                                            GimpTemplatePrivate)
+value|((GimpTemplatePrivate *) gimp_template_get_instance_private ((GimpTemplate *) (template)))
 end_define
 
 begin_function_decl
@@ -315,7 +315,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpTemplate,gimp_template,GIMP_TYPE_VIEWABLE,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpTemplate,gimp_template,GIMP_TYPE_VIEWABLE,G_ADD_PRIVATE (GimpTemplate)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpTemplate
@@ -324,7 +324,7 @@ argument|gimp_template
 argument_list|,
 argument|GIMP_TYPE_VIEWABLE
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_ADD_PRIVATE (GimpTemplate)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -755,16 +755,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpTemplatePrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

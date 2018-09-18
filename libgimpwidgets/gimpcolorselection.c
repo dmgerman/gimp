@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b81d140103
+DECL|enum|__anon297d22e70103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b81d140203
+DECL|enum|__anon297d22e70203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b81d140303
+DECL|enum|__anon297d22e70303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -441,7 +441,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorSelection
 argument_list|,
@@ -569,16 +569,6 @@ argument_list|,
 literal|"GimpColorSelection"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorSelectionPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -637,13 +627,9 @@ name|selection
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_selection_get_instance_private
 argument_list|(
 name|selection
-argument_list|,
-name|GIMP_TYPE_COLOR_SELECTION
-argument_list|,
-name|GimpColorSelectionPrivate
 argument_list|)
 expr_stmt|;
 name|priv

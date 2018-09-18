@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a42291b0103
+DECL|enum|__anon2bcce76e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -360,7 +360,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorScale
 argument_list|,
@@ -498,16 +498,6 @@ argument_list|,
 literal|"GimpColorScale"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorScalePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|fish_rgb_to_lch
 operator|=
 name|babl_fish
@@ -573,13 +563,9 @@ name|scale
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_scale_get_instance_private
 argument_list|(
 name|scale
-argument_list|,
-name|GIMP_TYPE_COLOR_SCALE
-argument_list|,
-name|GimpColorScalePrivate
 argument_list|)
 expr_stmt|;
 name|priv

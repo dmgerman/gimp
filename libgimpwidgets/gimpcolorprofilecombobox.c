@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3a69d0103
+DECL|enum|__anon29b66eb50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -217,8 +217,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorProfileComboBox,gimp_color_profile_combo_box,GTK_TYPE_COMBO_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorProfileComboBox,gimp_color_profile_combo_box,GTK_TYPE_COMBO_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorProfileComboBox
 argument_list|,
@@ -332,16 +332,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorProfileComboBoxPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -364,13 +354,9 @@ name|combo_box
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_profile_combo_box_get_instance_private
 argument_list|(
 name|combo_box
-argument_list|,
-name|GIMP_TYPE_COLOR_PROFILE_COMBO_BOX
-argument_list|,
-name|GimpColorProfileComboBoxPrivate
 argument_list|)
 expr_stmt|;
 name|cell

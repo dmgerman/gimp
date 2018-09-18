@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940c5500103
+DECL|enum|__anon2c0bd5b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -462,7 +462,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerEditor,gimp_container_editor,GTK_TYPE_BOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_editor_docked_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerEditor,gimp_container_editor,GTK_TYPE_BOX,G_ADD_PRIVATE (GimpContainerEditor)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpContainerEditor
@@ -471,7 +471,7 @@ argument|gimp_container_editor
 argument_list|,
 argument|GTK_TYPE_BOX
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_container_editor_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpContainerEditor)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_container_editor_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -730,16 +730,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerEditorPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -818,13 +808,9 @@ name|editor
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_container_editor_get_instance_private
 argument_list|(
 name|editor
-argument_list|,
-name|GIMP_TYPE_CONTAINER_EDITOR
-argument_list|,
-name|GimpContainerEditorPrivate
 argument_list|)
 expr_stmt|;
 block|}

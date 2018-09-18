@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c5663f0103
+DECL|enum|__anon29e257f10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,8 +299,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPickableButton,gimp_pickable_button,GIMP_TYPE_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPickableButton,gimp_pickable_button,GIMP_TYPE_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPickableButton
 argument_list|,
@@ -424,16 +424,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPickableButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -452,13 +442,9 @@ name|button
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_pickable_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_PICKABLE_BUTTON
-argument_list|,
-name|GimpPickableButtonPrivate
 argument_list|)
 expr_stmt|;
 name|button

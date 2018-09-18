@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c789aa20103
+DECL|enum|__anon2a54535a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c789aa20203
+DECL|enum|__anon2a54535a0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c789aa20308
+DECL|struct|__anon2a54535a0308
 block|{
 DECL|member|use_property
 specifier|const
@@ -382,7 +382,7 @@ parameter_list|(
 name|editor
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (editor, \                                      GIMP_TYPE_DYNAMICS_OUTPUT_EDITOR, \                                      GimpDynamicsOutputEditorPrivate)
+value|((GimpDynamicsOutputEditorPrivate *) gimp_dynamics_output_editor_get_instance_private ((GimpDynamicsOutputEditor *) (editor)))
 end_define
 
 begin_function_decl
@@ -545,8 +545,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDynamicsOutputEditor,gimp_dynamics_output_editor,GTK_TYPE_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpDynamicsOutputEditor,gimp_dynamics_output_editor,GTK_TYPE_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDynamicsOutputEditor
 argument_list|,
@@ -626,16 +626,6 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDynamicsOutputEditorPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

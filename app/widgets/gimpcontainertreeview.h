@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpContainerTreeViewPriv
+DECL|typedef|GimpContainerTreeViewPrivate
 typedef|typedef
 name|struct
-name|_GimpContainerTreeViewPriv
-name|GimpContainerTreeViewPriv
+name|_GimpContainerTreeViewPrivate
+name|GimpContainerTreeViewPrivate
 typedef|;
 end_typedef
 
@@ -150,7 +150,7 @@ name|dnd_gimp
 decl_stmt|;
 comment|/* eek */
 DECL|member|priv
-name|GimpContainerTreeViewPriv
+name|GimpContainerTreeViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54fb440103
+DECL|enum|__anon27b6c3c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54fb440203
+DECL|enum|__anon27b6c3c60203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -308,7 +308,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDockColumns
 argument_list|,
@@ -528,16 +528,6 @@ argument_list|,
 name|GIMP_TYPE_DOCK
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDockColumnsPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -566,13 +556,9 @@ name|dock_columns
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dock_columns_get_instance_private
 argument_list|(
 name|dock_columns
-argument_list|,
-name|GIMP_TYPE_DOCK_COLUMNS
-argument_list|,
-name|GimpDockColumnsPrivate
 argument_list|)
 expr_stmt|;
 name|dock_columns

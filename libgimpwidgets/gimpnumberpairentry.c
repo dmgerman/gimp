@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e801580103
+DECL|enum|__anon279390cf0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e801580203
+DECL|enum|__anon279390cf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -134,7 +134,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e801580303
+DECL|enum|__anon279390cf0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -436,7 +436,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpNumberPairEntry
 argument_list|,
@@ -878,16 +878,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpNumberPairEntryPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -910,13 +900,9 @@ name|entry
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_number_pair_entry_get_instance_private
 argument_list|(
 name|entry
-argument_list|,
-name|GIMP_TYPE_NUMBER_PAIR_ENTRY
-argument_list|,
-name|GimpNumberPairEntryPrivate
 argument_list|)
 expr_stmt|;
 name|priv

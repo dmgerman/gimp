@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ed3530103
+DECL|enum|__anon2bc8ec640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ed3530203
+DECL|enum|__anon2bc8ec640203
 block|{
 DECL|enumerator|DIAL_TARGET_NONE
 name|DIAL_TARGET_NONE
@@ -341,8 +341,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDial,gimp_dial,GIMP_TYPE_CIRCLE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpDial,gimp_dial,GIMP_TYPE_CIRCLE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDial
 argument_list|,
@@ -555,16 +555,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDialPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -583,13 +573,9 @@ name|dial
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dial_get_instance_private
 argument_list|(
 name|dial
-argument_list|,
-name|GIMP_TYPE_DIAL
-argument_list|,
-name|GimpDialPrivate
 argument_list|)
 expr_stmt|;
 block|}

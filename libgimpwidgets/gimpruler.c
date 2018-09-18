@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6565680103
+DECL|enum|__anon29a0e42e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6565680208
+DECL|struct|__anon29a0e42e0208
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -745,8 +745,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpRuler,gimp_ruler,GTK_TYPE_WIDGET)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpRuler,gimp_ruler,GTK_TYPE_WIDGET)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpRuler
 argument_list|,
@@ -1023,16 +1023,6 @@ argument_list|,
 literal|"GimpRuler"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpRulerPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1055,13 +1045,9 @@ name|ruler
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_ruler_get_instance_private
 argument_list|(
 name|ruler
-argument_list|,
-name|GIMP_TYPE_RULER
-argument_list|,
-name|GimpRulerPrivate
 argument_list|)
 expr_stmt|;
 name|priv

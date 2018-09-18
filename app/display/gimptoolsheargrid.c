@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c411730103
+DECL|enum|__anon2c7ea8580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,8 +218,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolShearGrid,gimp_tool_shear_grid,GIMP_TYPE_TOOL_TRANSFORM_GRID)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpToolShearGrid,gimp_tool_shear_grid,GIMP_TYPE_TOOL_TRANSFORM_GRID)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolShearGrid
 argument_list|,
@@ -367,16 +367,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolShearGridPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -395,13 +385,9 @@ name|grid
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_shear_grid_get_instance_private
 argument_list|(
 name|grid
-argument_list|,
-name|GIMP_TYPE_TOOL_SHEAR_GRID
-argument_list|,
-name|GimpToolShearGridPrivate
 argument_list|)
 expr_stmt|;
 name|g_object_set

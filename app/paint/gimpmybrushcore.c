@@ -312,8 +312,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpMybrushCore,gimp_mybrush_core,GIMP_TYPE_PAINT_CORE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpMybrushCore,gimp_mybrush_core,GIMP_TYPE_PAINT_CORE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpMybrushCore
 argument_list|,
@@ -420,16 +420,6 @@ name|interpolate
 operator|=
 name|gimp_mybrush_core_interpolate
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMybrushCorePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -448,13 +438,9 @@ name|mybrush
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_mybrush_core_get_instance_private
 argument_list|(
 name|mybrush
-argument_list|,
-name|GIMP_TYPE_MYBRUSH_CORE
-argument_list|,
-name|GimpMybrushCorePrivate
 argument_list|)
 expr_stmt|;
 block|}

@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274cbc1c0103
+DECL|enum|__anon2c667cf30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -479,8 +479,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTextLayer,gimp_text_layer,GIMP_TYPE_LAYER)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpTextLayer,gimp_text_layer,GIMP_TYPE_LAYER)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpTextLayer
 argument_list|,
@@ -751,16 +751,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpTextLayerPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -791,13 +781,9 @@ name|layer
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_text_layer_get_instance_private
 argument_list|(
 name|layer
-argument_list|,
-name|GIMP_TYPE_TEXT_LAYER
-argument_list|,
-name|GimpTextLayerPrivate
 argument_list|)
 expr_stmt|;
 block|}

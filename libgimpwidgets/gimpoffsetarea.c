@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcba89d0103
+DECL|enum|__anon2c1abf580103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -183,7 +183,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpOffsetArea
 argument_list|,
@@ -226,15 +226,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|object_class
-init|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -306,16 +297,6 @@ name|draw
 operator|=
 name|gimp_offset_area_draw
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpOffsetAreaPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -338,13 +319,9 @@ name|area
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_offset_area_get_instance_private
 argument_list|(
 name|area
-argument_list|,
-name|GIMP_TYPE_OFFSET_AREA
-argument_list|,
-name|GimpOffsetAreaPrivate
 argument_list|)
 expr_stmt|;
 name|private

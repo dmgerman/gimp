@@ -421,17 +421,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
-name|G_DEFINE_TYPE
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpFreeSelectTool,gimp_free_select_tool,GIMP_TYPE_SELECTION_TOOL)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-name|GimpFreeSelectTool
+argument|GimpFreeSelectTool
 argument_list|,
-name|gimp_free_select_tool
+argument|gimp_free_select_tool
 argument_list|,
-name|GIMP_TYPE_SELECTION_TOOL
+argument|GIMP_TYPE_SELECTION_TOOL
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -443,7 +443,6 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_free_select_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_free_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
@@ -649,16 +648,6 @@ name|select
 operator|=
 name|gimp_free_select_tool_real_select
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpFreeSelectToolPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -686,13 +675,9 @@ name|fst
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_free_select_tool_get_instance_private
 argument_list|(
 name|fst
-argument_list|,
-name|GIMP_TYPE_FREE_SELECT_TOOL
-argument_list|,
-name|GimpFreeSelectToolPrivate
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_motion_mode

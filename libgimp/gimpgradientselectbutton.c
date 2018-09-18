@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb95aca0103
+DECL|enum|__anon2b50cf9f0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb95aca0203
+DECL|enum|__anon2b50cf9f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -383,8 +383,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpGradientSelectButton,gimp_gradient_select_button,GIMP_TYPE_SELECT_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpGradientSelectButton,gimp_gradient_select_button,GIMP_TYPE_SELECT_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpGradientSelectButton
 argument_list|,
@@ -542,16 +542,6 @@ argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpGradientSelectButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -574,13 +564,9 @@ name|button
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_gradient_select_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_GRADIENT_SELECT_BUTTON
-argument_list|,
-name|GimpGradientSelectButtonPrivate
 argument_list|)
 expr_stmt|;
 name|priv

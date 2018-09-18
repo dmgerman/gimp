@@ -223,11 +223,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpItemTreeViewPriv
+DECL|typedef|GimpItemTreeViewPrivate
 typedef|typedef
 name|struct
-name|_GimpItemTreeViewPriv
-name|GimpItemTreeViewPriv
+name|_GimpItemTreeViewPrivate
+name|GimpItemTreeViewPrivate
 typedef|;
 end_typedef
 
@@ -241,7 +241,7 @@ name|GimpContainerTreeView
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpItemTreeViewPriv
+name|GimpItemTreeViewPrivate
 modifier|*
 name|priv
 decl_stmt|;

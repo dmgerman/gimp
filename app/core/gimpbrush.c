@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a520d0103
+DECL|enum|__anon299d755d0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a520d0203
+DECL|enum|__anon299d755d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -414,7 +414,7 @@ argument|gimp_brush
 argument_list|,
 argument|GIMP_TYPE_DATA
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_brush_tagged_iface_init)
+argument|G_ADD_PRIVATE (GimpBrush)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_brush_tagged_iface_init)
 argument_list|)
 end_macro
 
@@ -664,16 +664,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpBrushPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -712,13 +702,9 @@ name|brush
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_brush_get_instance_private
 argument_list|(
 name|brush
-argument_list|,
-name|GIMP_TYPE_BRUSH
-argument_list|,
-name|GimpBrushPrivate
 argument_list|)
 expr_stmt|;
 name|brush

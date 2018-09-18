@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7c2070103
+DECL|enum|__anon298a7f510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7c2070208
+DECL|struct|__anon298a7f510208
 block|{
 DECL|member|update
 name|gboolean
@@ -290,7 +290,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpAspectPreview
 argument_list|,
@@ -409,16 +409,6 @@ name|untransform
 operator|=
 name|gimp_aspect_preview_untransform
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpAspectPreviewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/**    * GimpAspectPreview:drawable-id:    *    * The drawable the #GimpAspectPreview is attached to.    *    * Since: 2.10    */
 name|g_object_class_install_property
 argument_list|(
@@ -466,13 +456,9 @@ name|preview
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_aspect_preview_get_instance_private
 argument_list|(
 name|preview
-argument_list|,
-name|GIMP_TYPE_ASPECT_PREVIEW
-argument_list|,
-name|GimpAspectPreviewPrivate
 argument_list|)
 expr_stmt|;
 name|g_object_set

@@ -118,7 +118,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79a0be0103
+DECL|enum|__anon2c51b0300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79a0be0208
+DECL|struct|__anon2c51b0300208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -218,7 +218,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79a0be0308
+DECL|struct|__anon2c51b0300308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -398,8 +398,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpHistogram,gimp_histogram,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpHistogram,gimp_histogram,GIMP_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpHistogram
 argument_list|,
@@ -538,16 +538,6 @@ name|G_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpHistogramPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -566,13 +556,9 @@ name|histogram
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_histogram_get_instance_private
 argument_list|(
 name|histogram
-argument_list|,
-name|GIMP_TYPE_HISTOGRAM
-argument_list|,
-name|GimpHistogramPrivate
 argument_list|)
 expr_stmt|;
 name|histogram

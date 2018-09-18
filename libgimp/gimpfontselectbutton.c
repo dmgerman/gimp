@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad462330103
+DECL|enum|__anon28c62baa0103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad462330203
+DECL|enum|__anon28c62baa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -301,8 +301,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpFontSelectButton,gimp_font_select_button,GIMP_TYPE_SELECT_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpFontSelectButton,gimp_font_select_button,GIMP_TYPE_SELECT_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpFontSelectButton
 argument_list|,
@@ -456,16 +456,6 @@ argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpFontSelectButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -488,13 +478,9 @@ name|button
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_font_select_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_FONT_SELECT_BUTTON
-argument_list|,
-name|GimpFontSelectButtonPrivate
 argument_list|)
 expr_stmt|;
 name|priv

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c6dfd0103
+DECL|enum|__anon27fa77700103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c6dfd0203
+DECL|enum|__anon27fa77700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -447,7 +447,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorArea
 argument_list|,
@@ -737,16 +737,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorAreaPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -769,13 +759,9 @@ name|area
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_area_get_instance_private
 argument_list|(
 name|area
-argument_list|,
-name|GIMP_TYPE_COLOR_AREA
-argument_list|,
-name|GimpColorAreaPrivate
 argument_list|)
 expr_stmt|;
 name|priv

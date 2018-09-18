@@ -56,9 +56,9 @@ value|G_MAXINT
 end_define
 
 begin_struct
-DECL|struct|_GimpIdTablePriv
+DECL|struct|_GimpIdTablePrivate
 struct|struct
-name|_GimpIdTablePriv
+name|_GimpIdTablePrivate
 block|{
 DECL|member|id_table
 name|GHashTable
@@ -102,8 +102,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpIdTable,gimp_id_table,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpIdTable,gimp_id_table,GIMP_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpIdTable
 argument_list|,
@@ -149,15 +149,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpIdTableClass
-modifier|*
-name|gimp_id_table_class
-init|=
-name|GIMP_ID_TABLE_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -169,16 +160,6 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_id_table_get_memsize
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|gimp_id_table_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpIdTablePriv
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -198,13 +179,9 @@ name|id_table
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_id_table_get_instance_private
 argument_list|(
 name|id_table
-argument_list|,
-name|GIMP_TYPE_ID_TABLE
-argument_list|,
-name|GimpIdTablePriv
 argument_list|)
 expr_stmt|;
 name|id_table

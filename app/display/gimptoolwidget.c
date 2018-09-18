@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c224460103
+DECL|enum|__anon2c7cbcfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c224460203
+DECL|enum|__anon2c7cbcfd0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -323,7 +323,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolWidget
 argument_list|,
@@ -685,16 +685,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolWidgetPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -713,13 +703,9 @@ name|widget
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_widget_get_instance_private
 argument_list|(
 name|widget
-argument_list|,
-name|GIMP_TYPE_TOOL_WIDGET
-argument_list|,
-name|GimpToolWidgetPrivate
 argument_list|)
 expr_stmt|;
 block|}

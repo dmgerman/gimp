@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7784db0103
+DECL|enum|__anon29edbe7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -274,7 +274,7 @@ parameter_list|(
 name|output
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (output, \                                      GIMP_TYPE_DYNAMICS_OUTPUT, \                                      GimpDynamicsOutputPrivate)
+value|((GimpDynamicsOutputPrivate *) gimp_dynamics_output_get_instance_private ((GimpDynamicsOutput *) (output)))
 end_define
 
 begin_function_decl
@@ -387,7 +387,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOutput,gimp_dynamics_output,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOutput,gimp_dynamics_output,GIMP_TYPE_OBJECT,G_ADD_PRIVATE (GimpDynamicsOutput)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpDynamicsOutput
@@ -396,7 +396,7 @@ argument|gimp_dynamics_output
 argument_list|,
 argument|GIMP_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_ADD_PRIVATE (GimpDynamicsOutput)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -708,16 +708,6 @@ argument_list|,
 name|GIMP_TYPE_CURVE
 argument_list|,
 name|GIMP_CONFIG_PARAM_AGGREGATE
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDynamicsOutputPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -281,17 +281,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
-name|G_DEFINE_TYPE
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorProfile,gimp_color_profile,G_TYPE_OBJECT)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-name|GimpColorProfile
+argument|GimpColorProfile
 argument_list|,
-name|gimp_color_profile
+argument|gimp_color_profile
 argument_list|,
-name|G_TYPE_OBJECT
+argument|G_TYPE_OBJECT
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -312,7 +312,6 @@ end_define
 begin_function
 specifier|static
 name|GQuark
-DECL|function|gimp_color_profile_error_quark (void)
 name|gimp_color_profile_error_quark
 parameter_list|(
 name|void
@@ -372,16 +371,6 @@ name|finalize
 operator|=
 name|gimp_color_profile_finalize
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorProfilePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -400,13 +389,9 @@ name|profile
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_profile_get_instance_private
 argument_list|(
 name|profile
-argument_list|,
-name|GIMP_TYPE_COLOR_PROFILE
-argument_list|,
-name|GimpColorProfilePrivate
 argument_list|)
 expr_stmt|;
 block|}

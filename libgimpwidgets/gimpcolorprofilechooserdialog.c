@@ -146,17 +146,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
-name|G_DEFINE_TYPE
+begin_macro
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorProfileChooserDialog,gimp_color_profile_chooser_dialog,GTK_TYPE_FILE_CHOOSER_DIALOG)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
-name|GimpColorProfileChooserDialog
+argument|GimpColorProfileChooserDialog
 argument_list|,
-name|gimp_color_profile_chooser_dialog
+argument|gimp_color_profile_chooser_dialog
 argument_list|,
-name|GTK_TYPE_FILE_CHOOSER_DIALOG
+argument|GTK_TYPE_FILE_CHOOSER_DIALOG
 argument_list|)
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_define
 DECL|macro|parent_class
@@ -169,7 +169,6 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_profile_chooser_dialog_class_init (GimpColorProfileChooserDialogClass * klass)
 name|gimp_color_profile_chooser_dialog_class_init
 parameter_list|(
 name|GimpColorProfileChooserDialogClass
@@ -207,16 +206,6 @@ name|delete_event
 operator|=
 name|gimp_color_profile_chooser_dialog_delete_event
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorProfileChooserDialogPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -235,13 +224,9 @@ name|dialog
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_profile_chooser_dialog_get_instance_private
 argument_list|(
 name|dialog
-argument_list|,
-name|GIMP_TYPE_COLOR_PROFILE_CHOOSER_DIALOG
-argument_list|,
-name|GimpColorProfileChooserDialogPrivate
 argument_list|)
 expr_stmt|;
 block|}

@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f928c0103
+DECL|enum|__anon29fde9040103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -262,7 +262,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDock
 argument_list|,
@@ -512,16 +512,6 @@ argument_list|,
 literal|"GimpDock"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDockPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -562,13 +552,9 @@ name|dock
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_dock_get_instance_private
 argument_list|(
 name|dock
-argument_list|,
-name|GIMP_TYPE_DOCK
-argument_list|,
-name|GimpDockPrivate
 argument_list|)
 expr_stmt|;
 name|dock

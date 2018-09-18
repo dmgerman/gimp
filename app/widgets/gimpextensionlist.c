@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf2d4d0103
+DECL|enum|__anon2bde902e0103
 block|{
 DECL|enumerator|EXTENSION_ACTIVATED
 name|EXTENSION_ACTIVATED
@@ -149,7 +149,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpExtensionList
 argument_list|,
@@ -228,16 +228,6 @@ argument_list|,
 name|GIMP_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpExtensionListPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -276,13 +266,9 @@ name|list
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_extension_list_get_instance_private
 argument_list|(
 name|list
-argument_list|,
-name|GIMP_TYPE_EXTENSION_LIST
-argument_list|,
-name|GimpExtensionListPrivate
 argument_list|)
 expr_stmt|;
 block|}

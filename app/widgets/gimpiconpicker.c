@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b47fd20103
+DECL|enum|__anon2b9594130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,7 +199,7 @@ parameter_list|(
 name|picker
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (picker, \                                      GIMP_TYPE_ICON_PICKER, \                                      GimpIconPickerPrivate)
+value|((GimpIconPickerPrivate *) gimp_icon_picker_get_instance_private ((GimpIconPicker *) (picker)))
 end_define
 
 begin_function_decl
@@ -389,8 +389,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpIconPicker,gimp_icon_picker,GTK_TYPE_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpIconPicker,gimp_icon_picker,GTK_TYPE_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpIconPicker
 argument_list|,
@@ -512,16 +512,6 @@ argument_list|,
 name|GDK_TYPE_PIXBUF
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpIconPickerPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

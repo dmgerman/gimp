@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9c0300103
+DECL|enum|__anon28e602260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c9c0300208
+DECL|struct|__anon28e602260208
 block|{
 DECL|member|update
 name|gboolean
@@ -450,7 +450,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpZoomPreview
 argument_list|,
@@ -587,16 +587,6 @@ name|untransform
 operator|=
 name|gimp_zoom_preview_untransform
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpZoomPreviewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/**    * GimpZoomPreview:drawable-id:    *    * The drawable the #GimpZoomPreview is attached to.    *    * Since: 2.10    */
 name|g_object_class_install_property
 argument_list|(
@@ -679,13 +669,9 @@ name|preview
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_zoom_preview_get_instance_private
 argument_list|(
 name|preview
-argument_list|,
-name|GIMP_TYPE_ZOOM_PREVIEW
-argument_list|,
-name|GimpZoomPreviewPrivate
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

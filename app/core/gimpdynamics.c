@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794b90c0103
+DECL|enum|__anon293668a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -211,7 +211,7 @@ parameter_list|(
 name|output
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (output, \                                      GIMP_TYPE_DYNAMICS, \                                      GimpDynamicsPrivate)
+value|((GimpDynamicsPrivate *) gimp_dynamics_get_instance_private ((GimpDynamics *) (output)))
 end_define
 
 begin_function_decl
@@ -366,8 +366,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDynamics,gimp_dynamics,GIMP_TYPE_DATA)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpDynamics,gimp_dynamics,GIMP_TYPE_DATA)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDynamics
 argument_list|,
@@ -672,16 +672,6 @@ argument_list|,
 name|GIMP_TYPE_DYNAMICS_OUTPUT
 argument_list|,
 name|GIMP_CONFIG_PARAM_AGGREGATE
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDynamicsPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

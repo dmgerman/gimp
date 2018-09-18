@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpIdTablePriv
+DECL|typedef|GimpIdTablePrivate
 typedef|typedef
 name|struct
-name|_GimpIdTablePriv
-name|GimpIdTablePriv
+name|_GimpIdTablePrivate
+name|GimpIdTablePrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpObject
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpIdTablePriv
+name|GimpIdTablePrivate
 modifier|*
 name|priv
 decl_stmt|;

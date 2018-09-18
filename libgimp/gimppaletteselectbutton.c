@@ -69,7 +69,7 @@ name|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_PALETTE_SELECT_BUTTON, GimpPaletteSelectButtonPrivate))
+value|((GimpPaletteSelectButtonPrivate *) gimp_palette_select_button_get_instance_private ((GimpPaletteSelectButton *) (obj)))
 end_define
 
 begin_typedef
@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef06760103
+DECL|enum|__anon28dde2380103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef06760203
+DECL|enum|__anon28dde2380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -310,8 +310,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPaletteSelectButton,gimp_palette_select_button,GIMP_TYPE_SELECT_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPaletteSelectButton,gimp_palette_select_button,GIMP_TYPE_SELECT_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPaletteSelectButton
 argument_list|,
@@ -463,16 +463,6 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_BOOLEAN
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPaletteSelectButtonPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -17,9 +17,9 @@ name|__GIMP_CONTAINER_TREE_VIEW_PRIVATE_H__
 end_define
 
 begin_struct
-DECL|struct|_GimpContainerTreeViewPriv
+DECL|struct|_GimpContainerTreeViewPrivate
 struct|struct
-name|_GimpContainerTreeViewPriv
+name|_GimpContainerTreeViewPrivate
 block|{
 DECL|member|selection
 name|GtkTreeSelection

@@ -358,8 +358,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolEditor,gimp_tool_editor,GIMP_TYPE_CONTAINER_TREE_VIEW)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpToolEditor,gimp_tool_editor,GIMP_TYPE_CONTAINER_TREE_VIEW)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolEditor
 argument_list|,
@@ -385,7 +385,7 @@ name|GIMP_TOOL_EDITOR_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), \                                            GIMP_TYPE_TOOL_EDITOR, \                                            GimpToolEditorPrivate))
+value|((GimpToolEditorPrivate *) gimp_tool_editor_get_instance_private ((GimpToolEditor *) (obj)))
 end_define
 
 begin_function
@@ -418,16 +418,6 @@ operator|->
 name|finalize
 operator|=
 name|gimp_tool_editor_finalize
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolEditorPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function

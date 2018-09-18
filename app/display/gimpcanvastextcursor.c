@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc183400103
+DECL|enum|__anon29013a990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -130,7 +130,7 @@ parameter_list|(
 name|text_cursor
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (text_cursor, \                                      GIMP_TYPE_CANVAS_TEXT_CURSOR, \                                      GimpCanvasTextCursorPrivate)
+value|((GimpCanvasTextCursorPrivate *) gimp_canvas_text_cursor_get_instance_private ((GimpCanvasTextCursor *) (text_cursor)))
 end_define
 
 begin_comment
@@ -214,8 +214,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasTextCursor,gimp_canvas_text_cursor,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasTextCursor,gimp_canvas_text_cursor,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasTextCursor
 argument_list|,
@@ -425,16 +425,6 @@ argument_list|,
 name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasTextCursorPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

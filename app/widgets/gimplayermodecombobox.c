@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae466450103
+DECL|enum|__anon28f5e7720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -201,8 +201,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpLayerModeComboBox,gimp_layer_mode_combo_box,GIMP_TYPE_ENUM_COMBO_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpLayerModeComboBox,gimp_layer_mode_combo_box,GIMP_TYPE_ENUM_COMBO_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpLayerModeComboBox
 argument_list|,
@@ -344,16 +344,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpLayerModeComboBoxPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -372,13 +362,9 @@ name|combo
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_layer_mode_combo_box_get_instance_private
 argument_list|(
 name|combo
-argument_list|,
-name|GIMP_TYPE_LAYER_MODE_COMBO_BOX
-argument_list|,
-name|GimpLayerModeComboBoxPrivate
 argument_list|)
 expr_stmt|;
 name|gtk_combo_box_set_row_separator_func

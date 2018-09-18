@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c81240e0103
+DECL|enum|__anon2b4d0dd70103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -683,7 +683,7 @@ argument|gimp_container_tree_view
 argument_list|,
 argument|GIMP_TYPE_CONTAINER_BOX
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_tree_view_view_iface_init)
+argument|G_ADD_PRIVATE (GimpContainerTreeView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_container_tree_view_view_iface_init)
 argument_list|)
 end_macro
 
@@ -887,16 +887,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerTreeViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1038,13 +1028,9 @@ name|tree_view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_container_tree_view_get_instance_private
 argument_list|(
 name|tree_view
-argument_list|,
-name|GIMP_TYPE_CONTAINER_TREE_VIEW
-argument_list|,
-name|GimpContainerTreeViewPriv
 argument_list|)
 expr_stmt|;
 name|gimp_container_tree_store_columns_init

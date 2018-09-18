@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f5c2560103
+DECL|enum|__anon2967fad80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ parameter_list|(
 name|polygon
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (polygon, \                                      GIMP_TYPE_CANVAS_POLYGON, \                                      GimpCanvasPolygonPrivate)
+value|((GimpCanvasPolygonPrivate *) gimp_canvas_polygon_get_instance_private ((GimpCanvasPolygon *) (polygon)))
 end_define
 
 begin_comment
@@ -241,8 +241,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasPolygon,gimp_canvas_polygon,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasPolygon,gimp_canvas_polygon,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasPolygon
 argument_list|,
@@ -377,16 +377,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasPolygonPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

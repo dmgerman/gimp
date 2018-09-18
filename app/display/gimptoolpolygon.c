@@ -613,7 +613,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolPolygon
 argument_list|,
@@ -764,16 +764,6 @@ name|get_cursor
 operator|=
 name|gimp_tool_polygon_get_cursor
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolPolygonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -792,13 +782,9 @@ name|polygon
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_polygon_get_instance_private
 argument_list|(
 name|polygon
-argument_list|,
-name|GIMP_TYPE_TOOL_POLYGON
-argument_list|,
-name|GimpToolPolygonPrivate
 argument_list|)
 expr_stmt|;
 name|polygon

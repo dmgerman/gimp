@@ -233,8 +233,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTileBackendPlugin,_gimp_tile_backend_plugin,GEGL_TYPE_TILE_BACKEND)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpTileBackendPlugin,_gimp_tile_backend_plugin,GEGL_TYPE_TILE_BACKEND)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpTileBackendPlugin
 argument_list|,
@@ -284,16 +284,6 @@ name|finalize
 operator|=
 name|gimp_tile_backend_plugin_finalize
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpTileBackendPluginPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|64
@@ -326,13 +316,9 @@ name|backend
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|_gimp_tile_backend_plugin_get_instance_private
 argument_list|(
 name|backend
-argument_list|,
-name|GIMP_TYPE_TILE_BACKEND_PLUGIN
-argument_list|,
-name|GimpTileBackendPluginPrivate
 argument_list|)
 expr_stmt|;
 name|source

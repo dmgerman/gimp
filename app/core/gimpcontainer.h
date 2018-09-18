@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpContainerPriv
+DECL|typedef|GimpContainerPrivate
 typedef|typedef
 name|struct
-name|_GimpContainerPriv
-name|GimpContainerPriv
+name|_GimpContainerPrivate
+name|GimpContainerPrivate
 typedef|;
 end_typedef
 
@@ -113,7 +113,7 @@ name|GimpObject
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
-name|GimpContainerPriv
+name|GimpContainerPrivate
 modifier|*
 name|priv
 decl_stmt|;

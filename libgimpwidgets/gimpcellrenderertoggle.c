@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a24a06b0103
+DECL|enum|__anon2baf2ec90103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a24a06b0203
+DECL|enum|__anon2baf2ec90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCellRendererToggle
 argument_list|,
@@ -504,16 +504,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCellRendererTogglePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -532,13 +522,9 @@ name|toggle
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_cell_renderer_toggle_get_instance_private
 argument_list|(
 name|toggle
-argument_list|,
-name|GIMP_TYPE_CELL_RENDERER_TOGGLE
-argument_list|,
-name|GimpCellRendererTogglePrivate
 argument_list|)
 expr_stmt|;
 block|}

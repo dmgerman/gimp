@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a35570103
+DECL|enum|__anon2af9be010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -245,7 +245,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpAsyncSet,gimp_async_set,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,gimp_async_set_waitable_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,gimp_async_set_cancelable_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpAsyncSet,gimp_async_set,G_TYPE_OBJECT,G_ADD_PRIVATE (GimpAsyncSet)G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,gimp_async_set_waitable_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,gimp_async_set_cancelable_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpAsyncSet
@@ -254,7 +254,7 @@ argument|gimp_async_set
 argument_list|,
 argument|G_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,                                                 gimp_async_set_waitable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,                                                 gimp_async_set_cancelable_iface_init)
+argument|G_ADD_PRIVATE (GimpAsyncSet)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_WAITABLE,                                                 gimp_async_set_waitable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CANCELABLE,                                                 gimp_async_set_cancelable_iface_init)
 argument_list|)
 end_macro
 
@@ -333,16 +333,6 @@ name|GIMP_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpAsyncSetPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -413,13 +403,9 @@ name|async_set
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_async_set_get_instance_private
 argument_list|(
 name|async_set
-argument_list|,
-name|GIMP_TYPE_ASYNC_SET
-argument_list|,
-name|GimpAsyncSetPrivate
 argument_list|)
 expr_stmt|;
 name|async_set

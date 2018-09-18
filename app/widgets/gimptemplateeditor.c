@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8906840103
+DECL|enum|__anon289fb8870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,7 +222,7 @@ parameter_list|(
 name|editor
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (editor, \                                      GIMP_TYPE_TEMPLATE_EDITOR, \                                      GimpTemplateEditorPrivate)
+value|((GimpTemplateEditorPrivate *) gimp_template_editor_get_instance_private ((GimpTemplateEditor *) (editor)))
 end_define
 
 begin_function_decl
@@ -349,8 +349,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTemplateEditor,gimp_template_editor,GTK_TYPE_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpTemplateEditor,gimp_template_editor,GTK_TYPE_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpTemplateEditor
 argument_list|,
@@ -452,16 +452,6 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpTemplateEditorPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

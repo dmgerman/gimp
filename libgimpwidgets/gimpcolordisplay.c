@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ef1b00103
+DECL|enum|__anon275d2b090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ef1b00203
+DECL|enum|__anon275d2b090203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -245,7 +245,7 @@ argument|gimp_color_display
 argument_list|,
 argument|G_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_ADD_PRIVATE (GimpColorDisplay)                          G_ADD_PRIVATE (GimpColorDisplay)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -451,16 +451,6 @@ name|changed
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorDisplayPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -479,13 +469,9 @@ name|display
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_display_get_instance_private
 argument_list|(
 name|display
-argument_list|,
-name|GIMP_TYPE_COLOR_DISPLAY
-argument_list|,
-name|GimpColorDisplayPrivate
 argument_list|)
 expr_stmt|;
 block|}

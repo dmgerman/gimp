@@ -553,8 +553,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpRectangleSelectTool,gimp_rectangle_select_tool,GIMP_TYPE_SELECTION_TOOL)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpRectangleSelectTool,gimp_rectangle_select_tool,GIMP_TYPE_SELECTION_TOOL)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpRectangleSelectTool
 argument_list|,
@@ -695,16 +695,6 @@ name|select
 operator|=
 name|gimp_rectangle_select_tool_real_select
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpRectangleSelectToolPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -732,13 +722,9 @@ name|rect_tool
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_rectangle_select_tool_get_instance_private
 argument_list|(
 name|rect_tool
-argument_list|,
-name|GIMP_TYPE_RECTANGLE_SELECT_TOOL
-argument_list|,
-name|GimpRectangleSelectToolPrivate
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_wants_click

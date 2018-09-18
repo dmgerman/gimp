@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2612c0103
+DECL|enum|__anon29584b750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +509,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2612c0208
+DECL|struct|__anon29584b750208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -542,7 +542,7 @@ parameter_list|(
 name|window
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (window, \                                      GIMP_TYPE_IMAGE_WINDOW, \                                      GimpImageWindowPrivate)
+value|((GimpImageWindowPrivate *) gimp_image_window_get_instance_private ((GimpImageWindow *) (window)))
 end_define
 
 begin_comment
@@ -1246,7 +1246,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpImageWindow,gimp_image_window,GIMP_TYPE_WINDOW,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,gimp_image_window_dock_container_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,gimp_image_window_session_managed_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpImageWindow,gimp_image_window,GIMP_TYPE_WINDOW,G_ADD_PRIVATE (GimpImageWindow)G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,gimp_image_window_dock_container_iface_init)G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,gimp_image_window_session_managed_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpImageWindow
@@ -1255,7 +1255,7 @@ argument|gimp_image_window
 argument_list|,
 argument|GIMP_TYPE_WINDOW
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,                                                 gimp_image_window_dock_container_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,                                                 gimp_image_window_session_managed_iface_init)
+argument|G_ADD_PRIVATE (GimpImageWindow)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCK_CONTAINER,                                                 gimp_image_window_dock_container_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_SESSION_MANAGED,                                                 gimp_image_window_session_managed_iface_init)
 argument_list|)
 end_macro
 
@@ -1433,16 +1433,6 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpImageWindowPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

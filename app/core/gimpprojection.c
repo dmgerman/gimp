@@ -261,7 +261,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c471e0103
+DECL|enum|__anon2880a1330103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -274,7 +274,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c471e0203
+DECL|enum|__anon2880a1330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -967,7 +967,7 @@ argument|gimp_projection
 argument_list|,
 argument|GIMP_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_projection_pickable_iface_init)
+argument|G_ADD_PRIVATE (GimpProjection)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_projection_pickable_iface_init)
 argument_list|)
 end_macro
 
@@ -1104,16 +1104,6 @@ argument_list|,
 literal|"buffer"
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpProjectionPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|g_getenv
@@ -1219,13 +1209,9 @@ name|proj
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_projection_get_instance_private
 argument_list|(
 name|proj
-argument_list|,
-name|GIMP_TYPE_PROJECTION
-argument_list|,
-name|GimpProjectionPrivate
 argument_list|)
 expr_stmt|;
 block|}

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b41f6d0103
+DECL|enum|__anon2a428bc50103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b41f6d0208
+DECL|struct|__anon2a428bc50208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -324,7 +324,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpSessionInfo,gimp_session_info,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_session_info_config_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpSessionInfo,gimp_session_info,GIMP_TYPE_OBJECT,G_ADD_PRIVATE (GimpSessionInfo)G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_session_info_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpSessionInfo
@@ -333,7 +333,7 @@ argument|gimp_session_info
 argument_list|,
 argument|GIMP_TYPE_OBJECT
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_session_info_config_iface_init)
+argument|G_ADD_PRIVATE (GimpSessionInfo)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_session_info_config_iface_init)
 argument_list|)
 end_macro
 
@@ -385,16 +385,6 @@ name|get_memsize
 operator|=
 name|gimp_session_info_get_memsize
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpSessionInfoPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -413,13 +403,9 @@ name|info
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_session_info_get_instance_private
 argument_list|(
 name|info
-argument_list|,
-name|GIMP_TYPE_SESSION_INFO
-argument_list|,
-name|GimpSessionInfoPrivate
 argument_list|)
 expr_stmt|;
 name|info

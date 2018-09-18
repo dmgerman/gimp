@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c865270103
+DECL|enum|__anon2c4d41a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -283,7 +283,7 @@ parameter_list|(
 name|transform_preview
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (transform_preview, \                                      GIMP_TYPE_CANVAS_TRANSFORM_PREVIEW, \                                      GimpCanvasTransformPreviewPrivate)
+value|((GimpCanvasTransformPreviewPrivate *) gimp_canvas_transform_preview_get_instance_private ((GimpCanvasTransformPreview *) (transform_preview)))
 end_define
 
 begin_comment
@@ -423,8 +423,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCanvasTransformPreview,gimp_canvas_transform_preview,GIMP_TYPE_CANVAS_ITEM)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCanvasTransformPreview,gimp_canvas_transform_preview,GIMP_TYPE_CANVAS_ITEM)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCanvasTransformPreview
 argument_list|,
@@ -665,16 +665,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCanvasTransformPreviewPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

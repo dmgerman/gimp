@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6510d0103
+DECL|enum|__anon2bf1bebe0103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6510d0203
+DECL|enum|__anon2bf1bebe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -486,8 +486,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpBrushSelectButton,gimp_brush_select_button,GIMP_TYPE_SELECT_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpBrushSelectButton,gimp_brush_select_button,GIMP_TYPE_SELECT_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpBrushSelectButton
 argument_list|,
@@ -734,16 +734,6 @@ argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpBrushSelectButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -782,13 +772,9 @@ name|button
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_brush_select_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_BRUSH_SELECT_BUTTON
-argument_list|,
-name|GimpBrushSelectButtonPrivate
 argument_list|)
 expr_stmt|;
 name|priv

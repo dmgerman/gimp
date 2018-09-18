@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c255adb0103
+DECL|enum|__anon28a5bff50103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -80,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c255adb0203
+DECL|enum|__anon28a5bff50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -456,7 +456,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_ABSTRACT_TYPE
+name|G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPreview
 argument_list|,
@@ -624,16 +624,6 @@ name|untransform
 operator|=
 name|gimp_preview_real_untransform
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPreviewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -709,13 +699,9 @@ name|preview
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_preview_get_instance_private
 argument_list|(
 name|preview
-argument_list|,
-name|GIMP_TYPE_PREVIEW
-argument_list|,
-name|GimpPreviewPrivate
 argument_list|)
 expr_stmt|;
 name|priv

@@ -110,7 +110,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f76ec00103
+DECL|enum|__anon28dc2bd00103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -146,7 +146,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPickButton
 argument_list|,
@@ -262,16 +262,6 @@ name|color_picked
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPickButtonPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -294,13 +284,9 @@ name|button
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_pick_button_get_instance_private
 argument_list|(
 name|button
-argument_list|,
-name|GIMP_TYPE_PICK_BUTTON
-argument_list|,
-name|GimpPickButtonPrivate
 argument_list|)
 expr_stmt|;
 name|image

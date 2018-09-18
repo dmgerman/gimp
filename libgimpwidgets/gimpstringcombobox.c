@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0e70e0103
+DECL|enum|__anon2c3b17ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,8 +149,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpStringComboBox,gimp_string_combo_box,GTK_TYPE_COMBO_BOX)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpStringComboBox,gimp_string_combo_box,GTK_TYPE_COMBO_BOX)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpStringComboBox
 argument_list|,
@@ -282,16 +282,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpStringComboBoxPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -310,13 +300,9 @@ name|combo_box
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_string_combo_box_get_instance_private
 argument_list|(
 name|combo_box
-argument_list|,
-name|GIMP_TYPE_STRING_COMBO_BOX
-argument_list|,
-name|GimpStringComboBoxPrivate
 argument_list|)
 expr_stmt|;
 block|}

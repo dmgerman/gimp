@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d09aca0103
+DECL|enum|__anon2b0602e30103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -199,7 +199,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d09aca0203
+DECL|enum|__anon2b0602e30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,7 +218,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d09aca0303
+DECL|enum|__anon2b0602e30303
 block|{
 DECL|enumerator|BEGIN_CHANGE
 name|BEGIN_CHANGE
@@ -772,7 +772,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpToolPath
 argument_list|,
@@ -1096,16 +1096,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpToolPathPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1124,13 +1114,9 @@ name|path
 operator|->
 name|private
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_tool_path_get_instance_private
 argument_list|(
 name|path
-argument_list|,
-name|GIMP_TYPE_TOOL_PATH
-argument_list|,
-name|GimpToolPathPrivate
 argument_list|)
 expr_stmt|;
 block|}

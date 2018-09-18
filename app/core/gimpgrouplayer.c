@@ -237,7 +237,7 @@ name|GET_PRIVATE
 parameter_list|(
 name|item
 parameter_list|)
-value|G_TYPE_INSTANCE_GET_PRIVATE (item, \                                                        GIMP_TYPE_GROUP_LAYER, \                                                        GimpGroupLayerPrivate)
+value|((GimpGroupLayerPrivate *) gimp_group_layer_get_instance_private ((GimpGroupLayer *) (item)))
 end_define
 
 begin_function_decl
@@ -1152,7 +1152,7 @@ argument|gimp_group_layer
 argument_list|,
 argument|GIMP_TYPE_LAYER
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
+argument|G_ADD_PRIVATE (GimpGroupLayer)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROJECTABLE,                                                 gimp_projectable_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_PICKABLE,                                                 gimp_pickable_iface_init)
 argument_list|)
 end_macro
 
@@ -1507,16 +1507,6 @@ operator|->
 name|get_excludes_backdrop
 operator|=
 name|gimp_group_layer_get_excludes_backdrop
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpGroupLayerPrivate
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

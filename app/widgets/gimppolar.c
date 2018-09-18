@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b49f9260103
+DECL|enum|__anon2c96dde60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +76,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b49f9260203
+DECL|enum|__anon2c96dde60203
 block|{
 DECL|enumerator|POLAR_TARGET_NONE
 name|POLAR_TARGET_NONE
@@ -288,8 +288,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPolar,gimp_polar,GIMP_TYPE_CIRCLE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPolar,gimp_polar,GIMP_TYPE_CIRCLE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPolar
 argument_list|,
@@ -434,16 +434,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPolarPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -462,13 +452,9 @@ name|polar
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_polar_get_instance_private
 argument_list|(
 name|polar
-argument_list|,
-name|GIMP_TYPE_POLAR
-argument_list|,
-name|GimpPolarPrivate
 argument_list|)
 expr_stmt|;
 block|}

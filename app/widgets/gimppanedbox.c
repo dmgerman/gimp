@@ -351,7 +351,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPanedBox
 argument_list|,
@@ -441,16 +441,6 @@ name|drag_data_received
 operator|=
 name|gimp_paned_box_drag_data_received
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPanedBoxPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -469,13 +459,9 @@ name|paned_box
 operator|->
 name|p
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_paned_box_get_instance_private
 argument_list|(
 name|paned_box
-argument_list|,
-name|GIMP_TYPE_PANED_BOX
-argument_list|,
-name|GimpPanedBoxPrivate
 argument_list|)
 expr_stmt|;
 comment|/* Instructions label    *    * Size a small size request so it don't mess up dock window layouts    * during startup; in particular, set its height request to 0 so it    * doesn't contribute to the minimum height of the toolbox.    */

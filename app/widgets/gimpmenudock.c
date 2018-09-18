@@ -133,8 +133,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpMenuDock,gimp_menu_dock,GIMP_TYPE_DOCK)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpMenuDock,gimp_menu_dock,GIMP_TYPE_DOCK)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpMenuDock
 argument_list|,
@@ -196,16 +196,6 @@ argument_list|,
 name|DEFAULT_MINIMAL_WIDTH
 argument_list|,
 name|GIMP_PARAM_READABLE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMenuDockPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

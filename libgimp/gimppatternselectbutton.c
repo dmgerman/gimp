@@ -77,7 +77,7 @@ name|GIMP_PATTERN_SELECT_BUTTON_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_PATTERN_SELECT_BUTTON, GimpPatternSelectButtonPrivate))
+value|((GimpPatternSelectButtonPrivate *) gimp_pattern_select_button_get_instance_private ((GimpPatternSelectButton *) (obj)))
 end_define
 
 begin_typedef
@@ -144,7 +144,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c29388f0103
+DECL|enum|__anon27fbbedd0103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c29388f0203
+DECL|enum|__anon27fbbedd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -443,8 +443,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPatternSelectButton,gimp_pattern_select_button,GIMP_TYPE_SELECT_BUTTON)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpPatternSelectButton,gimp_pattern_select_button,GIMP_TYPE_SELECT_BUTTON)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpPatternSelectButton
 argument_list|,
@@ -604,16 +604,6 @@ argument_list|,
 name|G_TYPE_POINTER
 argument_list|,
 name|G_TYPE_BOOLEAN
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpPatternSelectButtonPrivate
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

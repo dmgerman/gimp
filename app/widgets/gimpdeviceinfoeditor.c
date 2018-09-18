@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64d7810103
+DECL|enum|__anon277198390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64d7810203
+DECL|enum|__anon277198390203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64d7810303
+DECL|enum|__anon277198390303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64d7810403
+DECL|enum|__anon277198390403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -215,7 +215,7 @@ parameter_list|(
 name|editor
 parameter_list|)
 define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (editor, \                                      GIMP_TYPE_DEVICE_INFO_EDITOR, \                                      GimpDeviceInfoEditorPrivate)
+value|((GimpDeviceInfoEditorPrivate *) gimp_device_info_editor_get_instance_private ((GimpDeviceInfoEditor *) (editor)))
 end_define
 
 begin_function_decl
@@ -410,7 +410,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDeviceInfoEditor
 argument_list|,
@@ -550,16 +550,6 @@ argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDeviceInfoEditorPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;

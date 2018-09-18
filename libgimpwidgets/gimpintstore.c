@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba503bf0103
+DECL|enum|__anon2a0ae1660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -225,7 +225,7 @@ argument|gimp_int_store
 argument_list|,
 argument|GTK_TYPE_LIST_STORE
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,                                                 gimp_int_store_tree_model_init)
+argument|G_ADD_PRIVATE (GimpIntStore)                          G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL,                                                 gimp_int_store_tree_model_init)
 argument_list|)
 end_macro
 
@@ -314,16 +314,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpIntStorePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -375,13 +365,9 @@ name|store
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_int_store_get_instance_private
 argument_list|(
 name|store
-argument_list|,
-name|GIMP_TYPE_INT_STORE
-argument_list|,
-name|GimpIntStorePrivate
 argument_list|)
 expr_stmt|;
 block|}

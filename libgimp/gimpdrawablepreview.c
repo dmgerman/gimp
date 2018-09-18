@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc51470103
+DECL|enum|__anon2a0a484a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc51470208
+DECL|struct|__anon2a0a484a0208
 block|{
 DECL|member|x
 name|gint
@@ -270,7 +270,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpDrawablePreview
 argument_list|,
@@ -383,16 +383,6 @@ name|draw_buffer
 operator|=
 name|gimp_drawable_preview_draw_buffer
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDrawablePreviewPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/**    * GimpDrawablePreview:drawable-id:    *    * The drawable the #GimpDrawablePreview is attached to.    *    * Since: 2.10    */
 name|g_object_class_install_property
 argument_list|(
@@ -440,13 +430,9 @@ name|preview
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_drawable_preview_get_instance_private
 argument_list|(
 name|preview
-argument_list|,
-name|GIMP_TYPE_DRAWABLE_PREVIEW
-argument_list|,
-name|GimpDrawablePreviewPrivate
 argument_list|)
 expr_stmt|;
 name|g_object_set

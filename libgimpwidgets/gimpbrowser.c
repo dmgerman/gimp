@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0efe80103
+DECL|enum|__anon2bd0613a0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -205,7 +205,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpBrowser
 argument_list|,
@@ -307,16 +307,6 @@ name|search
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpBrowserPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -355,13 +345,9 @@ name|browser
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_browser_get_instance_private
 argument_list|(
 name|browser
-argument_list|,
-name|GIMP_TYPE_BROWSER
-argument_list|,
-name|GimpBrowserPrivate
 argument_list|)
 expr_stmt|;
 name|priv

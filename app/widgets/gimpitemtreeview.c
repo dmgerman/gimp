@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb67e1d0103
+DECL|enum|__anon296a09d30103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -197,9 +197,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpItemTreeViewPriv
+DECL|struct|_GimpItemTreeViewPrivate
 struct|struct
-name|_GimpItemTreeViewPriv
+name|_GimpItemTreeViewPrivate
 block|{
 DECL|member|image
 name|GimpImage
@@ -946,7 +946,7 @@ argument|gimp_item_tree_view
 argument_list|,
 argument|GIMP_TYPE_CONTAINER_TREE_VIEW
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_item_tree_view_view_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_item_tree_view_docked_iface_init)
+argument|G_ADD_PRIVATE (GimpItemTreeView)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONTAINER_VIEW,                                                 gimp_item_tree_view_view_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_item_tree_view_docked_iface_init)
 argument_list|)
 end_macro
 
@@ -1233,16 +1233,6 @@ name|lock_position_help_id
 operator|=
 name|NULL
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpItemTreeViewPriv
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1353,13 +1343,9 @@ name|view
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_item_tree_view_get_instance_private
 argument_list|(
 name|view
-argument_list|,
-name|GIMP_TYPE_ITEM_TREE_VIEW
-argument_list|,
-name|GimpItemTreeViewPriv
 argument_list|)
 expr_stmt|;
 name|view

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e9cc970103
+DECL|enum|__anon2b5429520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -405,8 +405,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCircle,gimp_circle,GTK_TYPE_WIDGET)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpCircle,gimp_circle,GTK_TYPE_WIDGET)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpCircle
 argument_list|,
@@ -624,16 +624,6 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpCirclePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -652,13 +642,9 @@ name|circle
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_circle_get_instance_private
 argument_list|(
 name|circle
-argument_list|,
-name|GIMP_TYPE_CIRCLE
-argument_list|,
-name|GimpCirclePrivate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_has_window

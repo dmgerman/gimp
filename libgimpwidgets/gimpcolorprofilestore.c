@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988929e0103
+DECL|enum|__anon29c807fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -282,8 +282,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorProfileStore,gimp_color_profile_store,GTK_TYPE_LIST_STORE)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpColorProfileStore,gimp_color_profile_store,GTK_TYPE_LIST_STORE)
+name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpColorProfileStore
 argument_list|,
@@ -373,16 +373,6 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|object_class
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpColorProfileStorePrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -419,13 +409,9 @@ name|store
 operator|->
 name|priv
 operator|=
-name|G_TYPE_INSTANCE_GET_PRIVATE
+name|gimp_color_profile_store_get_instance_private
 argument_list|(
 name|store
-argument_list|,
-name|GIMP_TYPE_COLOR_PROFILE_STORE
-argument_list|,
-name|GimpColorProfileStorePrivate
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set_column_types
