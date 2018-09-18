@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275d2b090103
+DECL|enum|__anon2795492b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275d2b090203
+DECL|enum|__anon2795492b0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -245,7 +245,7 @@ argument|gimp_color_display
 argument_list|,
 argument|G_TYPE_OBJECT
 argument_list|,
-argument|G_ADD_PRIVATE (GimpColorDisplay)                          G_ADD_PRIVATE (GimpColorDisplay)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
+argument|G_ADD_PRIVATE (GimpColorDisplay)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
