@@ -753,7 +753,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_inner_product:  * @vector1: a pointer to the first #GimpVector2.  * @vector2: a pointer to the second #GimpVector2.  *  * Computes the inner (dot) product of two 2D vectors.  * This product is zero if and only if the two vectors are orthognal.  *  * Returns: The inner product.  **/
+comment|/**  * gimp_vector2_inner_product:  * @vector1: a pointer to the first #GimpVector2.  * @vector2: a pointer to the second #GimpVector2.  *  * Computes the inner (dot) product of two 2D vectors.  * This product is zero if and only if the two vectors are orthogonal.  *  * Returns: The inner product.  **/
 end_comment
 
 begin_function
@@ -833,7 +833,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_cross_product:  * @vector1: a pointer to the first #GimpVector2.  * @vector2: a pointer to the second #GimpVector2.  *  * Compute the cross product of two vectors. The result is a  * #GimpVector2 which is orthognal to both @vector1 and @vector2. If  * @vector1 and @vector2 are parallel, the result will be the nul  * vector.  *  * Note that in 2D, this function is useful to test if two vectors are  * parallel or not, or to compute the area spawned by two vectors.  *  * Returns: The cross product.  **/
+comment|/**  * gimp_vector2_cross_product:  * @vector1: a pointer to the first #GimpVector2.  * @vector2: a pointer to the second #GimpVector2.  *  * Compute the cross product of two vectors. The result is a  * #GimpVector2 which is orthogonal to both @vector1 and @vector2. If  * @vector1 and @vector2 are parallel, the result will be the nul  * vector.  *  * Note that in 2D, this function is useful to test if two vectors are  * parallel or not, or to compute the area spawned by two vectors.  *  * Returns: The cross product.  **/
 end_comment
 
 begin_function
@@ -1978,7 +1978,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_inner_product:  * @vector1: a pointer to the first #GimpVector3.  * @vector2: a pointer to the second #GimpVector3.  *  * Computes the inner (dot) product of two 3D vectors. This product  * is zero if and only if the two vectors are orthognal.  *  * Returns: The inner product.  **/
+comment|/**  * gimp_vector3_inner_product:  * @vector1: a pointer to the first #GimpVector3.  * @vector2: a pointer to the second #GimpVector3.  *  * Computes the inner (dot) product of two 3D vectors. This product  * is zero if and only if the two vectors are orthogonal.  *  * Returns: The inner product.  **/
 end_comment
 
 begin_function
@@ -2074,7 +2074,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_cross_product:  * @vector1: a pointer to the first #GimpVector3.  * @vector2: a pointer to the second #GimpVector3.  *  * Compute the cross product of two vectors. The result is a  * #GimpVector3 which is orthognal to both @vector1 and @vector2. If  * @vector1 and @vector2 and parallel, the result will be the nul  * vector.  *  * This function can be used to compute the normal of the plane  * defined by @vector1 and @vector2.  *  * Returns: The cross product.  **/
+comment|/**  * gimp_vector3_cross_product:  * @vector1: a pointer to the first #GimpVector3.  * @vector2: a pointer to the second #GimpVector3.  *  * Compute the cross product of two vectors. The result is a  * #GimpVector3 which is orthogonal to both @vector1 and @vector2. If  * @vector1 and @vector2 and parallel, the result will be the nul  * vector.  *  * This function can be used to compute the normal of the plane  * defined by @vector1 and @vector2.  *  * Returns: The cross product.  **/
 end_comment
 
 begin_function
