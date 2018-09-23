@@ -17,6 +17,24 @@ name|__GIMP_DRAWABLE_TRANSFORM_H__
 end_define
 
 begin_function_decl
+name|GimpTransformResize
+name|gimp_drawable_transform_get_effective_clip
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|orig_buffer
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_drawable_transform_buffer_affine
