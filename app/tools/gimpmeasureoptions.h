@@ -116,6 +116,10 @@ DECL|member|orientation
 name|GimpCompassOrientation
 name|orientation
 decl_stmt|;
+DECL|member|perspective_correction
+name|gboolean
+name|perspective_correction
+decl_stmt|;
 DECL|member|use_info_window
 name|gboolean
 name|use_info_window
