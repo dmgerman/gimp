@@ -2090,7 +2090,7 @@ name|focus_widget
 operator|=
 name|GIMP_TOOL_WIDGET
 argument_list|(
-name|gimp_container_get_first_child
+name|gimp_container_get_last_child
 argument_list|(
 name|container
 argument_list|)
