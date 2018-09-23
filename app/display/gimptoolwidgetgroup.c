@@ -996,6 +996,17 @@ name|group
 operator|->
 name|priv
 decl_stmt|;
+name|gimp_tool_widget_group_hover
+argument_list|(
+name|widget
+argument_list|,
+name|coords
+argument_list|,
+name|state
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|priv
