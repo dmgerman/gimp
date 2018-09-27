@@ -510,6 +510,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_tools_set_tool_options_gui_func
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|,
+name|GimpToolOptionsGUIFunc
+name|func
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_widget_get_fully_opaque
 parameter_list|(

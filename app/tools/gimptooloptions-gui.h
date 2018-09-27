@@ -28,6 +28,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_tool_options_empty_gui
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

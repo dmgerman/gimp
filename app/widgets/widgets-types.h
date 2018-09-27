@@ -1928,6 +1928,23 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpToolOptionsGUIFunc
+typedef|typedef
+name|GtkWidget
+modifier|*
+function_decl|(
+modifier|*
+name|GimpToolOptionsGUIFunc
+function_decl|)
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
