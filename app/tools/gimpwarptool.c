@@ -3147,11 +3147,21 @@ argument_list|(
 name|wt
 argument_list|)
 decl_stmt|;
+comment|/* don't commit a nop */
 if|if
 condition|(
-name|wt
+name|tool
 operator|->
-name|filter
+name|display
+operator|&&
+name|gimp_tool_can_undo
+argument_list|(
+name|tool
+argument_list|,
+name|tool
+operator|->
+name|display
+argument_list|)
 condition|)
 block|{
 name|gimp_tool_control_push_preserve
