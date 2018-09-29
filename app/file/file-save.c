@@ -305,6 +305,11 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+name|gimp_image_saving
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_get_active_drawable
