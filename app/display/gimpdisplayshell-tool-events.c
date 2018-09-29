@@ -6386,10 +6386,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|initialized
-operator|=
-name|TRUE
-expr_stmt|;
 comment|/*  initialize the current tool if it has no drawable  */
 if|if
 condition|(
@@ -6536,6 +6532,11 @@ argument_list|,
 literal|"filters-reshow"
 argument_list|)
 expr_stmt|;
+comment|/*  the procedure already initialized the tool; don't                *  reinitialize it below, since this can lead to errors.                */
+name|initialized
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -6561,6 +6562,11 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|initialized
+condition|)
 name|initialized
 operator|=
 name|tool_manager_initialize_active
@@ -6569,6 +6575,13 @@ name|gimp
 argument_list|,
 name|display
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|initialized
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 block|}
