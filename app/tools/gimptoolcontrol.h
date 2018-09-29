@@ -138,7 +138,12 @@ DECL|member|dirty_mask
 name|GimpDirtyMask
 name|dirty_mask
 decl_stmt|;
-comment|/*  if preserve is FALSE, cancel    *                                             *  the tool on these events        */
+comment|/*  if preserve is FALSE, stop      *                                             *  the tool on these events        */
+DECL|member|dirty_action
+name|GimpToolAction
+name|dirty_action
+decl_stmt|;
+comment|/*  use this action to stop the     *                                             *  tool when one of the dirty      *                                             *  events occurs                   */
 DECL|member|motion_mode
 name|GimpMotionMode
 name|motion_mode
@@ -473,6 +478,31 @@ end_function_decl
 begin_function_decl
 name|GimpDirtyMask
 name|gimp_tool_control_get_dirty_mask
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_dirty_action
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|GimpToolAction
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpToolAction
+name|gimp_tool_control_get_dirty_action
 parameter_list|(
 name|GimpToolControl
 modifier|*

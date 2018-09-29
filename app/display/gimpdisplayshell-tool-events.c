@@ -6474,12 +6474,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  When changing between drawables if the *same* image,                *  halt the tool so it doesn't get committed on tool                *  change. This is a pure "probably better this way"                *  decision because the user is likely changing their                *  mind or was simply on the wrong layer. See bug                *  #776370.                */
+comment|/*  When changing between drawables if the *same* image,                *  stop the tool using its dirty action, so it doesn't                *  get committed on tool change, in case its dirty action                *  is HALT. This is a pure "probably better this way"                *  decision because the user is likely changing their                *  mind or was simply on the wrong layer. See bug #776370.                *                *  See also issues #1180 and #1202 for cases where we                *  actually *don't* want to halt the tool here, but rather                *  commit it, hence the use of the tool's dirty action.                */
 name|tool_manager_control_active
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_TOOL_ACTION_HALT
+name|gimp_tool_control_get_dirty_action
+argument_list|(
+name|active_tool
+operator|->
+name|control
+argument_list|)
 argument_list|,
 name|active_tool
 operator|->

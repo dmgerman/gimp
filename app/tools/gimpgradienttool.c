@@ -906,6 +906,15 @@ operator||
 name|GIMP_DIRTY_ACTIVE_DRAWABLE
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_dirty_action
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_TOOL_ACTION_COMMIT
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_wants_click
 argument_list|(
 name|tool
