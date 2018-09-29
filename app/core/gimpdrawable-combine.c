@@ -246,6 +246,9 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 comment|/*  make sure the image application coordinates are within drawable bounds  */
+if|if
+condition|(
+operator|!
 name|gimp_rectangle_intersect
 argument_list|(
 name|base_x
@@ -286,7 +289,10 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return;
+block|}
 if|if
 condition|(
 name|mask
@@ -302,6 +308,9 @@ name|mask
 argument_list|)
 decl_stmt|;
 comment|/*  make sure coordinates are in mask bounds ...        *  we need to add the layer offset to transform coords        *  into the mask coordinate system        */
+if|if
+condition|(
+operator|!
 name|gimp_rectangle_intersect
 argument_list|(
 name|x
@@ -340,7 +349,10 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return;
+block|}
 block|}
 if|if
 condition|(
@@ -783,6 +795,9 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 comment|/*  make sure the image application coordinates are within drawable bounds  */
+if|if
+condition|(
+operator|!
 name|gimp_rectangle_intersect
 argument_list|(
 name|dest_x
@@ -823,7 +838,10 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return;
+block|}
 if|if
 condition|(
 name|mask
@@ -839,6 +857,9 @@ name|mask
 argument_list|)
 decl_stmt|;
 comment|/*  make sure coordinates are in mask bounds ...        *  we need to add the layer offset to transform coords        *  into the mask coordinate system        */
+if|if
+condition|(
+operator|!
 name|gimp_rectangle_intersect
 argument_list|(
 name|x
@@ -877,7 +898,10 @@ argument_list|,
 operator|&
 name|height
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return;
+block|}
 block|}
 comment|/*  adjust the original regions according to the application    *  offset and size    */
 name|buffer_rect
