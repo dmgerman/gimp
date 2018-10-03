@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c745a920108
+DECL|struct|__anon29f6d36e0108
 block|{
 DECL|member|width
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c745a920203
+DECL|enum|__anon29f6d36e0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -5218,7 +5218,7 @@ argument_list|(
 name|find_controller
 argument_list|)
 decl_stmt|;
-comment|/* The previous search, if any, may ned to be canceled. */
+comment|/* The previous search, if any, may need to be canceled. */
 if|if
 condition|(
 name|prev_text

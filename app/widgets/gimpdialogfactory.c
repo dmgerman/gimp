@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bdfa370103
+DECL|enum|__anon29f30d550103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1805,7 +1805,7 @@ name|dock_window
 init|=
 name|NULL
 decl_stmt|;
-comment|/* What follows is special-case code for some entires. At some        * point we might want to abstract this block of code away.        */
+comment|/* What follows is special-case code for some entries. At some        * point we might want to abstract this block of code away.        */
 if|if
 condition|(
 name|create_containers
