@@ -884,7 +884,7 @@ name|seg
 operator|->
 name|type
 operator|>
-name|GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING
+name|GIMP_GRADIENT_SEGMENT_STEP
 condition|)
 block|{
 name|g_set_error
@@ -1143,7 +1143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291152940108
+DECL|struct|__anon28b0cf3e0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1171,7 +1171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291152940208
+DECL|struct|__anon28b0cf3e0208
 block|{
 DECL|member|offset
 name|gdouble

@@ -3693,6 +3693,14 @@ literal|"sphere-decreasing"
 block|}
 block|,
 block|{
+name|GIMP_GRADIENT_SEGMENT_STEP
+block|,
+literal|"GIMP_GRADIENT_SEGMENT_STEP"
+block|,
+literal|"step"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -3796,6 +3804,19 @@ argument_list|(
 literal|"gradient-segment-type"
 argument_list|,
 literal|"Spherical (dec)"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_GRADIENT_SEGMENT_STEP
+block|,
+name|NC_
+argument_list|(
+literal|"gradient-segment-type"
+argument_list|,
+literal|"Step"
 argument_list|)
 block|,
 name|NULL
