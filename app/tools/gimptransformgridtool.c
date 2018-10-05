@@ -1261,9 +1261,9 @@ name|drawable
 expr_stmt|;
 name|tr_tool
 operator|->
-name|drawable
+name|item
 operator|=
-name|drawable
+name|item
 expr_stmt|;
 comment|/*  Initialize the transform_grid tool dialog  */
 if|if
@@ -3758,7 +3758,7 @@ name|NULL
 expr_stmt|;
 name|tr_tool
 operator|->
-name|drawable
+name|item
 operator|=
 name|NULL
 expr_stmt|;

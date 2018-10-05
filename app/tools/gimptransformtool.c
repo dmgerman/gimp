@@ -1726,6 +1726,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|item
+condition|)
+return|return
+name|tr_tool
+operator|->
+name|item
+return|;
 switch|switch
 condition|(
 name|options
@@ -1947,14 +1958,11 @@ argument_list|(
 name|item
 argument_list|)
 operator|&&
-name|GIMP_DRAWABLE
-argument_list|(
 name|item
-argument_list|)
 operator|!=
 name|tr_tool
 operator|->
-name|drawable
+name|item
 condition|)
 comment|/* see bug #759194 */
 block|{
