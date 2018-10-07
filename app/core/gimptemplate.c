@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abd5b970103
+DECL|enum|__anon2b72e5a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -133,9 +133,6 @@ block|,
 DECL|enumerator|PROP_TRC
 name|PROP_TRC
 block|,
-DECL|enumerator|PROP_COLOR_MANAGED
-name|PROP_COLOR_MANAGED
-block|,
 DECL|enumerator|PROP_COLOR_PROFILE
 name|PROP_COLOR_PROFILE
 block|,
@@ -147,6 +144,10 @@ name|PROP_COMMENT
 block|,
 DECL|enumerator|PROP_FILENAME
 name|PROP_FILENAME
+block|,
+comment|/* compat cruft */
+DECL|enumerator|PROP_COLOR_MANAGED
+name|PROP_COLOR_MANAGED
 block|}
 enum|;
 end_enum
@@ -196,10 +197,6 @@ decl_stmt|;
 DECL|member|precision
 name|GimpPrecision
 name|precision
-decl_stmt|;
-DECL|member|color_managed
-name|gboolean
-name|color_managed
 decl_stmt|;
 DECL|member|color_profile
 name|GFile
@@ -649,32 +646,6 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_COLOR_MANAGED
-argument_list|,
-literal|"color-managed"
-argument_list|,
-name|_
-argument_list|(
-literal|"Color managed"
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Whether the image is color managed. "
-literal|"Disabling color management is equivalent to "
-literal|"choosing a built-in sRGB profile. Better "
-literal|"leave color management enabled."
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
 name|GIMP_CONFIG_PROP_OBJECT
 argument_list|(
 name|object_class
@@ -755,6 +726,26 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+comment|/* compat cruft */
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_COLOR_MANAGED
+argument_list|,
+literal|"color-managed"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1050,19 +1041,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_COLOR_MANAGED
-case|:
-name|private
-operator|->
-name|color_managed
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_COLOR_PROFILE
 case|:
 if|if
@@ -1152,6 +1130,11 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|PROP_COLOR_MANAGED
+case|:
+comment|/* ignored */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
@@ -1341,19 +1324,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_COLOR_MANAGED
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|private
-operator|->
-name|color_managed
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_COLOR_PROFILE
 case|:
 name|g_value_set_object
@@ -1404,6 +1374,11 @@ operator|->
 name|filename
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|PROP_COLOR_MANAGED
+case|:
+comment|/* ignored */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
@@ -2026,37 +2001,6 @@ name|template
 argument_list|)
 operator|->
 name|precision
-return|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|gimp_template_get_color_managed (GimpTemplate * template)
-name|gimp_template_get_color_managed
-parameter_list|(
-name|GimpTemplate
-modifier|*
-name|template
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_TEMPLATE
-argument_list|(
-name|template
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-return|return
-name|GET_PRIVATE
-argument_list|(
-name|template
-argument_list|)
-operator|->
-name|color_managed
 return|;
 block|}
 end_function

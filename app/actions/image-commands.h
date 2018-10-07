@@ -100,7 +100,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_color_management_enabled_cmd_callback
+name|image_color_profile_use_srgb_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

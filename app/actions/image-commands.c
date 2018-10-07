@@ -1567,8 +1567,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_management_enabled_cmd_callback (GtkAction * action,gpointer data)
-name|image_color_management_enabled_cmd_callback
+DECL|function|image_color_profile_use_srgb_cmd_callback (GtkAction * action,gpointer data)
+name|image_color_profile_use_srgb_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1583,7 +1583,7 @@ modifier|*
 name|image
 decl_stmt|;
 name|gboolean
-name|enabled
+name|use_srgb
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -1592,7 +1592,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|enabled
+name|use_srgb
 operator|=
 name|gtk_toggle_action_get_active
 argument_list|(
@@ -1604,21 +1604,21 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|enabled
+name|use_srgb
 operator|!=
-name|gimp_image_get_is_color_managed
+name|gimp_image_get_use_srgb_profile
 argument_list|(
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
-name|gimp_image_set_is_color_managed
+name|gimp_image_set_use_srgb_profile
 argument_list|(
 name|image
 argument_list|,
-name|enabled
-argument_list|,
-name|TRUE
+name|use_srgb
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

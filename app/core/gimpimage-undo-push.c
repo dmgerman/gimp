@@ -564,8 +564,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_image_color_managed (GimpImage * image,const gchar * undo_desc)
-name|gimp_image_undo_push_image_color_managed
+DECL|function|gimp_image_undo_push_image_hidden_profile (GimpImage * image,const gchar * undo_desc)
+name|gimp_image_undo_push_image_hidden_profile
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -594,7 +594,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_IMAGE_UNDO
 argument_list|,
-name|GIMP_UNDO_IMAGE_COLOR_MANAGED
+name|GIMP_UNDO_IMAGE_HIDDEN_PROFILE
 argument_list|,
 name|undo_desc
 argument_list|,

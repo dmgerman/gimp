@@ -141,7 +141,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_image_color_managed
+name|gimp_image_undo_push_image_hidden_profile
 parameter_list|(
 name|GimpImage
 modifier|*

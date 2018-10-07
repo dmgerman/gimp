@@ -311,17 +311,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_template_get_color_managed
-parameter_list|(
-name|GimpTemplate
-modifier|*
-name|template
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpColorProfile
 modifier|*
 name|gimp_template_get_color_profile

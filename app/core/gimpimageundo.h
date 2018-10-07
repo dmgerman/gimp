@@ -170,9 +170,10 @@ name|guchar
 modifier|*
 name|colormap
 decl_stmt|;
-DECL|member|is_color_managed
-name|gboolean
-name|is_color_managed
+DECL|member|hidden_profile
+name|GimpColorProfile
+modifier|*
+name|hidden_profile
 decl_stmt|;
 DECL|member|metadata
 name|GimpMetadata

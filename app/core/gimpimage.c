@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edbc460103
+DECL|enum|__anon29d8f51e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edbc460203
+DECL|enum|__anon29d8f51e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3177,12 +3177,6 @@ name|NULL
 expr_stmt|;
 name|private
 operator|->
-name|is_color_managed
-operator|=
-name|TRUE
-expr_stmt|;
-name|private
-operator|->
 name|metadata
 operator|=
 name|NULL
@@ -4658,12 +4652,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|color_profile
-condition|)
 name|_gimp_image_free_color_profile
 argument_list|(
 name|image
@@ -6107,16 +6095,7 @@ decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
-init|=
-name|NULL
 decl_stmt|;
-if|if
-condition|(
-name|gimp_image_get_is_color_managed
-argument_list|(
-name|image
-argument_list|)
-condition|)
 name|profile
 operator|=
 name|gimp_image_get_color_profile

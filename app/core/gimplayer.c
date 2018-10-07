@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3475a0103
+DECL|enum|__anon276ffdec0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3475a0203
+DECL|enum|__anon276ffdec0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4377,11 +4377,6 @@ argument_list|(
 name|old_type
 argument_list|,
 name|GIMP_TYPE_LAYER
-argument_list|)
-operator|&&
-name|gimp_image_get_is_color_managed
-argument_list|(
-name|dest_image
 argument_list|)
 condition|)
 block|{

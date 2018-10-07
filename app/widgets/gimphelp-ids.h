@@ -1046,14 +1046,6 @@ value|"gimp-image-flatten"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
-define|#
-directive|define
-name|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
-value|"gimp-image-color-management-enabled"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_IMAGE_COLOR_PROFILE_ASSIGN
 define|#
 directive|define
@@ -1075,6 +1067,14 @@ define|#
 directive|define
 name|GIMP_HELP_IMAGE_COLOR_PROFILE_DISCARD
 value|"gimp-image-color-profile-discard"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_IMAGE_COLOR_PROFILE_USE_SRGB
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_COLOR_PROFILE_USE_SRGB
+value|"gimp-image-color-profile-use-srgb"
 end_define
 
 begin_define

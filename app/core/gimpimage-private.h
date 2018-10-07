@@ -161,11 +161,6 @@ modifier|*
 name|babl_palette_rgba
 decl_stmt|;
 comment|/*  palette's RGBA Babl format   */
-DECL|member|is_color_managed
-name|gboolean
-name|is_color_managed
-decl_stmt|;
-comment|/*  is this image color managed  */
 DECL|member|color_profile
 name|GimpColorProfile
 modifier|*
@@ -179,6 +174,12 @@ modifier|*
 name|layer_space
 decl_stmt|;
 comment|/*  image's Babl layer space     */
+DECL|member|hidden_profile
+name|GimpColorProfile
+modifier|*
+name|hidden_profile
+decl_stmt|;
+comment|/*  hidden by "use sRGB"         */
 comment|/*  Cached color transforms: from layer to sRGB u8 and double, and back    */
 DECL|member|color_transforms_created
 name|gboolean

@@ -856,7 +856,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"image-color-management-enabled"
+literal|"image-color-profile-use-srgb"
 block|,
 name|NULL
 block|,
@@ -864,7 +864,7 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"_Enable Color Management"
+literal|"Use _sRGB Profile"
 argument_list|)
 block|,
 name|NULL
@@ -873,19 +873,19 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"Whether the image is color managed. Disabling "
-literal|"color management is equivalent to assigning a built-in sRGB "
-literal|"color profile. Better leave color management enabled."
+literal|"Temporarily use an sRGB profile for the image. "
+literal|"This is the same as discarding the image's color profile, but "
+literal|"allows to easily restore the profile."
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|image_color_management_enabled_cmd_callback
+name|image_color_profile_use_srgb_cmd_callback
 argument_list|)
 block|,
 name|TRUE
 block|,
-name|GIMP_HELP_IMAGE_COLOR_MANAGEMENT_ENABLED
+name|GIMP_HELP_IMAGE_COLOR_PROFILE_USE_SRGB
 block|}
 block|}
 decl_stmt|;
@@ -1618,7 +1618,12 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|color_managed
+name|profile_srgb
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|profile_hidden
 init|=
 name|FALSE
 decl_stmt|;
@@ -1884,11 +1889,14 @@ name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|color_managed
+name|profile_srgb
 operator|=
-name|gimp_image_get_is_color_managed
+name|gimp_image_get_use_srgb_profile
 argument_list|(
 name|image
+argument_list|,
+operator|&
+name|profile_hidden
 argument_list|)
 expr_stmt|;
 name|profile
@@ -2120,18 +2128,24 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"image-color-management-enabled"
+literal|"image-color-profile-use-srgb"
 argument_list|,
 name|image
+operator|&&
+operator|(
+name|profile
+operator|||
+name|profile_hidden
+operator|)
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"image-color-management-enabled"
+literal|"image-color-profile-use-srgb"
 argument_list|,
 name|image
 operator|&&
-name|color_managed
+name|profile_srgb
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

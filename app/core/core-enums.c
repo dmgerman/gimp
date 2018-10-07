@@ -5714,11 +5714,11 @@ literal|"image-colormap"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE_COLOR_MANAGED
+name|GIMP_UNDO_IMAGE_HIDDEN_PROFILE
 block|,
-literal|"GIMP_UNDO_IMAGE_COLOR_MANAGED"
+literal|"GIMP_UNDO_IMAGE_HIDDEN_PROFILE"
 block|,
-literal|"image-color-managed"
+literal|"image-hidden-profile"
 block|}
 block|,
 block|{
@@ -6712,13 +6712,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE_COLOR_MANAGED
+name|GIMP_UNDO_IMAGE_HIDDEN_PROFILE
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Change color managed state"
+literal|"Hide/Unhide color profile"
 argument_list|)
 block|,
 name|NULL
