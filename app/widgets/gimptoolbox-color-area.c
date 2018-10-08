@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsessioninfo.h"
 end_include
 
@@ -302,15 +308,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_add_events
-argument_list|(
-name|color_area
-argument_list|,
-name|GDK_ENTER_NOTIFY_MASK
-operator||
-name|GDK_LEAVE_NOTIFY_MASK
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|color_area
@@ -323,7 +320,7 @@ literal|"The arrows swap colors.\n"
 literal|"Click to open the color selection dialog."
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TOOLBOX_COLOR_AREA
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

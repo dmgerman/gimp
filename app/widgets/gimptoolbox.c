@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274cb28a0103
+DECL|enum|__anon2af56ba50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2560,15 +2560,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|col_area
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_HELP_TOOLBOX_COLOR_AREA
-argument_list|)
-expr_stmt|;
 return|return
 name|col_area
 return|;
@@ -2631,15 +2622,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|foo_area
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_HELP_TOOLBOX_INDICATOR_AREA
 argument_list|)
 expr_stmt|;
 return|return
@@ -2708,15 +2690,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|image_area
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_HELP_TOOLBOX_IMAGE_AREA
 argument_list|)
 expr_stmt|;
 return|return

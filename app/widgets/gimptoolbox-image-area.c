@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpview.h"
+file|"gimphelp-ids.h"
 end_include
 
 begin_include
@@ -85,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimptoolbox-image-area.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -428,7 +434,7 @@ name|image_view
 argument_list|,
 name|tooltip
 argument_list|,
-name|NULL
+name|GIMP_HELP_TOOLBOX_IMAGE_AREA
 argument_list|)
 expr_stmt|;
 name|g_free

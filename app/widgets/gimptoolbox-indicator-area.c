@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpview.h"
+file|"gimphelp-ids.h"
 end_include
 
 begin_include
@@ -97,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimptoolbox-indicator-area.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -514,7 +520,7 @@ name|context
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|indicator_grid
+name|grid
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -545,7 +551,7 @@ argument_list|(
 name|toolbox
 argument_list|)
 expr_stmt|;
-name|indicator_grid
+name|grid
 operator|=
 name|gtk_grid_new
 argument_list|()
@@ -554,7 +560,7 @@ name|gtk_grid_set_row_spacing
 argument_list|(
 name|GTK_GRID
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 argument_list|,
 name|CELL_SPACING
@@ -564,10 +570,19 @@ name|gtk_grid_set_column_spacing
 argument_list|(
 name|GTK_GRID
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 argument_list|,
 name|CELL_SPACING
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|grid
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_TOOLBOX_INDICATOR_AREA
 argument_list|)
 expr_stmt|;
 comment|/*  brush view  */
@@ -614,7 +629,7 @@ name|gtk_grid_attach
 argument_list|(
 name|GTK_GRID
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 argument_list|,
 name|brush_view
@@ -731,7 +746,7 @@ name|gtk_grid_attach
 argument_list|(
 name|GTK_GRID
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 argument_list|,
 name|pattern_view
@@ -848,7 +863,7 @@ name|gtk_grid_attach
 argument_list|(
 name|GTK_GRID
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 argument_list|,
 name|gradient_view
@@ -923,11 +938,11 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|indicator_grid
+name|grid
 argument_list|)
 expr_stmt|;
 return|return
-name|indicator_grid
+name|grid
 return|;
 block|}
 end_function
