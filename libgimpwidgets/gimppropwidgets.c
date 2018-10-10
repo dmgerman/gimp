@@ -1771,7 +1771,7 @@ name|param_spec
 operator|->
 name|value_type
 argument_list|,
-literal|11
+literal|12
 argument_list|,
 name|GIMP_SELECT_CRITERION_COMPOSITE
 argument_list|,
@@ -1794,6 +1794,8 @@ argument_list|,
 name|GIMP_SELECT_CRITERION_LCH_C
 argument_list|,
 name|GIMP_SELECT_CRITERION_LCH_H
+argument_list|,
+name|GIMP_SELECT_CRITERION_LINE_ART
 argument_list|)
 expr_stmt|;
 block|}

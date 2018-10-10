@@ -8837,6 +8837,14 @@ literal|"lch-h"
 block|}
 block|,
 block|{
+name|GIMP_SELECT_CRITERION_LINE_ART
+block|,
+literal|"GIMP_SELECT_CRITERION_LINE_ART"
+block|,
+literal|"line-art"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -8990,6 +8998,19 @@ argument_list|(
 literal|"select-criterion"
 argument_list|,
 literal|"LCh Hue"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_SELECT_CRITERION_LINE_ART
+block|,
+name|NC_
+argument_list|(
+literal|"select-criterion"
+argument_list|,
+literal|"Line Art"
 argument_list|)
 block|,
 name|NULL
