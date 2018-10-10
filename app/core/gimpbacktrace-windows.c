@@ -121,7 +121,7 @@ name|DWORD
 name|tid
 decl_stmt|;
 union|union
-DECL|union|__anon2ac12e9e010a
+DECL|union|__anon2b75ddd1010a
 block|{
 DECL|member|name
 name|gchar
@@ -2578,9 +2578,13 @@ name|info
 operator|->
 name|symbol_address
 operator|=
+name|offset
+condition|?
 name|address
 operator|-
 name|offset
+else|:
+literal|0
 expr_stmt|;
 name|result
 operator|=
