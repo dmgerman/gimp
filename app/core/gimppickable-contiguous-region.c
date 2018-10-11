@@ -1844,7 +1844,7 @@ name|format
 operator|=
 name|babl_format
 argument_list|(
-literal|"Y'A u8"
+literal|"Y'A float"
 argument_list|)
 expr_stmt|;
 break|break;
