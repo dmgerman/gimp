@@ -2504,16 +2504,13 @@ comment|/* HAVE_LIBBACKTRACE */
 ifdef|#
 directive|ifdef
 name|HAVE_LIBUNWIND
-if|if
-condition|(
-operator|!
-name|info
-operator|->
-name|symbol_name
-index|[
+comment|/* we use libunwind to get the symbol name, when available, even if dladdr() or  * libbacktrace already found one, since it provides more descriptive names in  * some cases, and, in particular, full symbol names for C++ lambdas.  *  * note that, in some cases, this can result in a discrepancy between the  * symbol name, and the corresponding source location.  */
+if|#
+directive|if
 literal|0
-index|]
-condition|)
+block|if (! info->symbol_name[0])
+endif|#
+directive|endif
 block|{
 name|unw_context_t
 name|context
