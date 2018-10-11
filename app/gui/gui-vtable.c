@@ -2216,6 +2216,13 @@ operator|==
 name|EINTR
 condition|)
 empty_stmt|;
+name|gimp_async_finish
+argument_list|(
+name|async
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
