@@ -5222,6 +5222,14 @@ value|"gimp-windows-hide-docks"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_WINDOWS_SHOW_TABS
+define|#
+directive|define
+name|GIMP_HELP_WINDOWS_SHOW_TABS
+value|"gimp-windows-show-tabs"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_WINDOWS_TABS_POSITION
 define|#
 directive|define

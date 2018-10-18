@@ -276,6 +276,10 @@ DECL|member|single_window_mode
 name|gboolean
 name|single_window_mode
 decl_stmt|;
+DECL|member|show_tabs
+name|gboolean
+name|show_tabs
+decl_stmt|;
 DECL|member|tabs_position
 name|GimpPosition
 name|tabs_position

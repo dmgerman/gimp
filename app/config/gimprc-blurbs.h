@@ -1079,6 +1079,15 @@ value|_("Hide docks and other windows, leaving only image windows.")
 end_define
 
 begin_define
+DECL|macro|SHOW_TABS_BLURB
+define|#
+directive|define
+name|SHOW_TABS_BLURB
+define|\
+value|_("Show the image tabs bar in single window mode.")
+end_define
+
+begin_define
 DECL|macro|PLAYGROUND_NPD_TOOL_BLURB
 define|#
 directive|define
