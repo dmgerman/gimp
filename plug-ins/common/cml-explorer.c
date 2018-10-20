@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54190103
+DECL|enum|__anon29801d280103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54190203
+DECL|enum|__anon29801d280203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54190303
+DECL|enum|__anon29801d280303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f54190403
+DECL|enum|__anon29801d280403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f54190508
+DECL|struct|__anon29801d280508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f54190608
+DECL|struct|__anon29801d280608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f54190708
+DECL|struct|__anon29801d280708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6660,40 +6660,6 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|abox
-operator|=
-name|gtk_alignment_new
-argument_list|(
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|abox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|abox
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
@@ -6711,14 +6677,27 @@ argument_list|,
 name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_widget_set_halign
 argument_list|(
-name|GTK_CONTAINER
+name|frame
+argument_list|,
+name|GTK_ALIGN_CENTER
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
 argument_list|(
-name|abox
+name|GTK_BOX
+argument_list|(
+name|vbox
 argument_list|)
 argument_list|,
 name|frame
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
