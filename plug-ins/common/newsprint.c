@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0108
+DECL|struct|__anon28a2757e0108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0208
+DECL|struct|__anon28a2757e0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0308
+DECL|struct|__anon28a2757e0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0408
+DECL|struct|__anon28a2757e0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0508
+DECL|struct|__anon28a2757e0508
 block|{
 DECL|member|pull_grid
 name|GtkWidget
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0608
+DECL|struct|__anon28a2757e0608
 block|{
 DECL|member|name
 specifier|const
@@ -3110,7 +3110,7 @@ condition|(
 name|in_progress
 condition|)
 block|{
-name|g_printf
+name|g_printerr
 argument_list|(
 literal|"newsprint_menu_callback: unexpected recursion: can't happen\n"
 argument_list|)
@@ -3744,14 +3744,6 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbox2
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|abox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|label
 decl_stmt|;
 name|spot_info_t
@@ -3993,64 +3985,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|abox
-operator|=
-name|gtk_alignment_new
-argument_list|(
-literal|0.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|abox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|abox
-argument_list|)
-expr_stmt|;
-name|hbox2
-operator|=
-name|gtk_box_new
-argument_list|(
-name|GTK_ORIENTATION_HORIZONTAL
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|abox
-argument_list|)
-argument_list|,
-name|hbox2
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox2
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new_with_mnemonic
@@ -4075,7 +4009,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox2
+name|hbox
 argument_list|)
 argument_list|,
 name|label
@@ -4108,6 +4042,15 @@ argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_valign
+argument_list|(
+name|chst
+operator|->
+name|combo
+argument_list|,
+name|GTK_ALIGN_CENTER
 argument_list|)
 expr_stmt|;
 for|for
@@ -4207,7 +4150,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox2
+name|hbox
 argument_list|)
 argument_list|,
 name|chst
@@ -6523,7 +6466,7 @@ condition|(
 operator|!
 name|st
 condition|)
-name|g_printf
+name|g_printerr
 argument_list|(
 literal|"newsprint: cspace_update: no state, can't happen!\n"
 argument_list|)
@@ -7027,7 +6970,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea5cb0708
+DECL|struct|__anon28a2757e0708
 block|{
 DECL|member|index
 name|gint
@@ -7813,7 +7756,7 @@ parameter_list|(
 name|_x
 parameter_list|)
 define|\
-value|do {                                                               \     if (!VALID_SPOTFN(_x))                                         \     {                                                              \         g_printf ("newsprint: %d is not a valid spot type\n", _x); \         _x = SPOTFN_DOT;                                           \     }                                                              \ } while(0)
+value|do {                                                                 \     if (!VALID_SPOTFN(_x))                                           \     {                                                                \         g_printerr ("newsprint: %d is not a valid spot type\n", _x); \         _x = SPOTFN_DOT;                                             \     }                                                                \ } while(0)
 comment|/* calculate the RGB / CMYK rotations and threshold matrices */
 if|if
 condition|(
