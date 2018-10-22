@@ -574,6 +574,12 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+operator|-
+name|x
+argument_list|,
+operator|-
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_apply_opacity

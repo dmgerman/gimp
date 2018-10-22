@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f186b0103
+DECL|enum|__anon29210aab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1394,7 +1394,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_fill_options_create_buffer (GimpFillOptions * options,GimpDrawable * drawable,const GeglRectangle * rect)
+DECL|function|gimp_fill_options_create_buffer (GimpFillOptions * options,GimpDrawable * drawable,const GeglRectangle * rect,gint pattern_offset_x,gint pattern_offset_y)
 name|gimp_fill_options_create_buffer
 parameter_list|(
 name|GimpFillOptions
@@ -1409,6 +1409,12 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|rect
+parameter_list|,
+name|gint
+name|pattern_offset_x
+parameter_list|,
+name|gint
+name|pattern_offset_y
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -1563,9 +1569,9 @@ name|NULL
 argument_list|,
 name|pattern
 argument_list|,
-literal|0
+name|pattern_offset_x
 argument_list|,
-literal|0
+name|pattern_offset_y
 argument_list|)
 expr_stmt|;
 block|}
