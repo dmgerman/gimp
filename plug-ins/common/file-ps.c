@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6636c70108
+DECL|struct|__anon2bafcc520108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6636c70208
+DECL|struct|__anon2bafcc520208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6636c70308
+DECL|struct|__anon2bafcc520308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6636c70408
+DECL|struct|__anon2bafcc520408
 block|{
 DECL|member|eol
 name|goffset
@@ -16219,6 +16219,8 @@ name|plvals
 operator|.
 name|pages
 argument_list|)
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|plvals
@@ -16273,17 +16275,15 @@ name|pages
 argument_list|,
 literal|"1"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
+sizeof|sizeof
+argument_list|(
 name|plvals
 operator|.
 name|pages
-index|[
+argument_list|)
+operator|-
 literal|1
-index|]
-operator|=
-literal|'\0'
+argument_list|)
 expr_stmt|;
 name|ps_pagemode
 operator|=

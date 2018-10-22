@@ -1606,7 +1606,7 @@ argument_list|)
 operator|<
 literal|0
 condition|)
-name|g_printf
+name|g_printerr
 argument_list|(
 literal|"sgiGetRow(sgip, rows[i], %d, %d) failed!\n"
 argument_list|,
