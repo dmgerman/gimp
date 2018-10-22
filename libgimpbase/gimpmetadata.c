@@ -1984,6 +1984,13 @@ argument_list|)
 expr_stmt|;
 name|tzstr
 index|[
+literal|6
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+name|tzstr
+index|[
 literal|5
 index|]
 operator|=
@@ -2443,7 +2450,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon29686d5f0108
+DECL|struct|__anon2bc2abbf0108
 block|{
 DECL|member|name
 name|gchar
