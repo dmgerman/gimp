@@ -4726,16 +4726,6 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 name|gimp_image_flush
