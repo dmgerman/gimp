@@ -777,6 +777,14 @@ literal|"cmyk"
 block|}
 block|,
 block|{
+name|GIMP_COLOR_PICK_MODE_XYY
+block|,
+literal|"GIMP_COLOR_PICK_MODE_XYY"
+block|,
+literal|"xyy"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -878,6 +886,19 @@ argument_list|(
 literal|"color-pick-mode"
 argument_list|,
 literal|"CMYK"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_COLOR_PICK_MODE_XYY
+block|,
+name|NC_
+argument_list|(
+literal|"color-pick-mode"
+argument_list|,
+literal|"CIE xyY"
 argument_list|)
 block|,
 name|NULL

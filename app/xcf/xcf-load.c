@@ -3290,6 +3290,16 @@ argument_list|,
 name|pick_mode
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pick_mode
+operator|>
+name|GIMP_COLOR_PICK_MODE_LAST
+condition|)
+name|pick_mode
+operator|=
+name|GIMP_COLOR_PICK_MODE_PIXEL
+expr_stmt|;
 name|sample_point
 operator|=
 name|gimp_image_add_sample_point_at_pos
