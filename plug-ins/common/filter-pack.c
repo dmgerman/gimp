@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fd2ce0108
+DECL|struct|__anon2c7413a40108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fd2ce0208
+DECL|struct|__anon2c7413a40208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279fd2ce0303
+DECL|enum|__anon2c7413a40303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fd2ce0403
+DECL|enum|__anon2c7413a40403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fd2ce0503
+DECL|enum|__anon2c7413a40503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fd2ce0603
+DECL|enum|__anon2c7413a40603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fd2ce0703
+DECL|enum|__anon2c7413a40703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fd2ce0808
+DECL|struct|__anon2c7413a40808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fd2ce0908
+DECL|struct|__anon2c7413a40908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fd2ce0a08
+DECL|struct|__anon2c7413a40a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1312,7 +1312,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon279fd2ce0b08
+DECL|struct|__anon2c7413a40b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6601,9 +6601,6 @@ name|label
 decl_stmt|,
 modifier|*
 name|labelGrid
-decl_stmt|,
-modifier|*
-name|alignment
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -6854,40 +6851,6 @@ argument_list|(
 name|inner_vbox
 argument_list|)
 expr_stmt|;
-name|alignment
-operator|=
-name|gtk_alignment_new
-argument_list|(
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|inner_vbox
-argument_list|)
-argument_list|,
-name|alignment
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|alignment
-argument_list|)
-expr_stmt|;
 name|innermost_vbox
 operator|=
 name|gtk_box_new
@@ -6897,14 +6860,34 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_widget_set_halign
 argument_list|(
-name|GTK_CONTAINER
+name|innermost_vbox
+argument_list|,
+name|GTK_ALIGN_CENTER
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_valign
 argument_list|(
-name|alignment
+name|innermost_vbox
+argument_list|,
+name|GTK_ALIGN_CENTER
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|inner_vbox
 argument_list|)
 argument_list|,
 name|innermost_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
