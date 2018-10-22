@@ -153,64 +153,6 @@ end_comment
 begin_macro
 name|GIMP_DEPRECATED_FOR
 argument_list|(
-argument|gimp_rgb_to_hsv
-argument_list|)
-end_macro
-
-begin_function_decl
-name|void
-name|gimp_rgb_to_hsv_int
-parameter_list|(
-name|gint
-modifier|*
-name|red
-comment|/* returns hue        */
-parameter_list|,
-name|gint
-modifier|*
-name|green
-comment|/* returns saturation */
-parameter_list|,
-name|gint
-modifier|*
-name|blue
-comment|/* returns value      */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_hsv_to_rgb
-argument_list|)
-end_macro
-
-begin_function_decl
-name|void
-name|gimp_hsv_to_rgb_int
-parameter_list|(
-name|gint
-modifier|*
-name|hue
-comment|/* returns red        */
-parameter_list|,
-name|gint
-modifier|*
-name|saturation
-comment|/* returns green      */
-parameter_list|,
-name|gint
-modifier|*
-name|value
-comment|/* returns blue       */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
 argument|gimp_rgb_to_hsl
 argument_list|)
 end_macro
