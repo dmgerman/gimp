@@ -70,7 +70,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<CoreGraphics/CoreGraphics.h>
+file|<ApplicationServices/ApplicationServices.h>
 end_include
 
 begin_endif
@@ -3928,7 +3928,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c604420108
+DECL|struct|__anon297cb6bb0108
 block|{
 DECL|member|r
 name|guchar
@@ -4538,7 +4538,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c604420208
+DECL|struct|__anon297cb6bb0208
 block|{
 DECL|member|timeout_id
 name|gint

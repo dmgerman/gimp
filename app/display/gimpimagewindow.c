@@ -381,9 +381,30 @@ name|GIMP_IMAGE_WINDOW_MAXIMIZED
 value|"maximized"
 end_define
 
+begin_if
+if|#
+directive|if
+name|MAC_OS_X_VERSION_MAX_ALLOWED
+operator|<
+literal|1070
+end_if
+
+begin_define
+DECL|macro|NSWindowCollectionBehaviorFullScreenAuxiliary
+define|#
+directive|define
+name|NSWindowCollectionBehaviorFullScreenAuxiliary
+value|(1<< 8)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_enum
 enum|enum
-DECL|enum|__anon298792890103
+DECL|enum|__anon2a3c9ae80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,7 +530,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298792890208
+DECL|struct|__anon2a3c9ae80208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -2750,30 +2771,12 @@ name|gdk_window
 argument_list|)
 expr_stmt|;
 comment|/* Disable the new-style full screen mode. For now only the "old-style"    * full screen mode, via the "View" menu, is supported. In the future, and    * as soon as GTK+ has proper support for this, we will migrate to the    * new-style full screen mode.    */
-if|#
-directive|if
-name|MAC_OS_X_VERSION_MIN_REQUIRED
-operator|>=
-name|MAC_OS_X_VERSION_10_7
 name|ns_window
 operator|.
 name|collectionBehavior
 operator||=
 name|NSWindowCollectionBehaviorFullScreenAuxiliary
 expr_stmt|;
-else|#
-directive|else
-comment|/* Hard code the define ... */
-name|ns_window
-operator|.
-name|collectionBehavior
-operator||=
-literal|1
-operator|<<
-literal|8
-expr_stmt|;
-endif|#
-directive|endif
 endif|#
 directive|endif
 comment|/* !GDK_WINDOWING_QUARTZ */
