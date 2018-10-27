@@ -144,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291466ee0108
+DECL|struct|__anon278165000108
 block|{
 DECL|member|a
 DECL|member|b
@@ -997,6 +997,8 @@ argument_list|(
 name|top_left
 operator|.
 name|x
+operator|+
+name|EPSILON
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1010,6 +1012,8 @@ argument_list|(
 name|top_left
 operator|.
 name|y
+operator|+
+name|EPSILON
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1023,6 +1027,8 @@ argument_list|(
 name|bottom_right
 operator|.
 name|x
+operator|-
+name|EPSILON
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1036,6 +1042,8 @@ argument_list|(
 name|bottom_right
 operator|.
 name|y
+operator|-
+name|EPSILON
 argument_list|)
 expr_stmt|;
 block|}
