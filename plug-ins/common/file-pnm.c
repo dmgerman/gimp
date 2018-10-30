@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2634be0108
+DECL|struct|__anon288fcf9e0108
 block|{
 DECL|member|raw
 name|gint
@@ -844,7 +844,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2634be0208
+DECL|struct|__anon288fcf9e0208
 block|{
 DECL|member|name
 name|gchar
@@ -4691,7 +4691,7 @@ condition|(
 name|swap_byte_order
 condition|)
 block|{
-DECL|union|__anon2c2634be030a
+DECL|union|__anon288fcf9e030a
 DECL|member|f
 DECL|member|i
 union|union
@@ -4748,26 +4748,8 @@ operator|->
 name|scale_factor
 argument_list|)
 expr_stmt|;
-name|data
-index|[
-name|x
-index|]
-operator|=
-name|fmaxf
-argument_list|(
-literal|0.0f
-argument_list|,
-name|fminf
-argument_list|(
-name|FLT_MAX
-argument_list|,
-name|data
-index|[
-name|x
-index|]
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* Keep values smaller than zero. That is in line with what the            * TIFF loader does. If the user doesn't want the negative numbers            * he has to get rid of them afterwards */
+comment|/* data[x] = fmaxf (0.0f, fminf (FLT_MAX, data[x])); */
 block|}
 name|gegl_buffer_set
 argument_list|(
