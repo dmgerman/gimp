@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28edbf380103
+DECL|enum|__anon2c3f1ddf0103
 block|{
 DECL|enumerator|CHECK_URI_FAIL
 name|CHECK_URI_FAIL
@@ -2758,8 +2758,15 @@ name|file
 argument_list|)
 argument_list|,
 name|error
+condition|?
+name|error
 operator|->
 name|message
+else|:
+name|_
+argument_list|(
+literal|"Unknown error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_clear_error

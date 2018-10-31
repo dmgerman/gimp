@@ -322,9 +322,25 @@ condition|(
 operator|!
 name|drawable
 condition|)
+block|{
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"There is no active layer to save"
+argument_list|)
+argument_list|)
+expr_stmt|;
 goto|goto
 name|out
 goto|;
+block|}
 comment|/* FIXME enable these tests for remote files again, needs testing */
 if|if
 condition|(
@@ -367,9 +383,34 @@ condition|(
 operator|!
 name|info
 condition|)
+block|{
+comment|/* extra paranoia */
+if|if
+condition|(
+name|error
+operator|&&
+operator|!
+operator|*
+name|error
+condition|)
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Failed to get file information"
+argument_list|)
+argument_list|)
+expr_stmt|;
 goto|goto
 name|out
 goto|;
+block|}
 if|if
 condition|(
 name|g_file_info_get_file_type
