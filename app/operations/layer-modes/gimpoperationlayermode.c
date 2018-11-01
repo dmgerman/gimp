@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89a3960103
+DECL|enum|__anon27b3979f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1310,9 +1310,11 @@ name|operation
 argument_list|,
 literal|"aux2"
 argument_list|,
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"Y float"
+argument_list|,
+name|format
 argument_list|)
 argument_list|)
 expr_stmt|;

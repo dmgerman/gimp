@@ -4665,51 +4665,63 @@ operator|==
 name|GIMP_TRC_LINEAR
 condition|)
 return|return
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|preferred_format
 argument_list|)
 return|;
 else|else
 return|return
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+name|preferred_format
 argument_list|)
 return|;
 case|case
 name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
 case|:
 return|return
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|preferred_format
 argument_list|)
 return|;
 case|case
 name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
 case|:
 return|return
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A float"
+argument_list|,
+name|preferred_format
 argument_list|)
 return|;
 case|case
 name|GIMP_LAYER_COLOR_SPACE_LAB
 case|:
 return|return
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"CIE Lab alpha float"
+argument_list|,
+name|preferred_format
 argument_list|)
 return|;
 block|}
 name|g_return_val_if_reached
 argument_list|(
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"RGBA float"
+argument_list|,
+name|preferred_format
 argument_list|)
 argument_list|)
 expr_stmt|;
