@@ -340,6 +340,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -363,6 +366,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,6 +392,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1072,7 +1081,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c9af07d0108
+DECL|struct|__anon287a61b30108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1149,7 +1158,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2c9af07d0208
+DECL|struct|__anon287a61b30208
 specifier|static
 struct|struct
 block|{
@@ -3569,6 +3578,11 @@ index|[
 literal|128
 index|]
 decl_stmt|;
+name|gboolean
+name|padding
+init|=
+name|FALSE
+decl_stmt|;
 name|drawable_type
 operator|=
 name|gimp_drawable_type
@@ -3680,10 +3694,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|GUINT16_TO_LE
-argument_list|(
 name|width
-argument_list|)
 expr_stmt|;
 block|}
 elseif|else
@@ -3710,8 +3721,6 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|GUINT16_TO_LE
-argument_list|(
 operator|(
 name|width
 operator|+
@@ -3719,7 +3728,6 @@ literal|1
 operator|)
 operator|/
 literal|2
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -3740,8 +3748,6 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|GUINT16_TO_LE
-argument_list|(
 operator|(
 name|width
 operator|+
@@ -3749,7 +3755,6 @@ literal|7
 operator|)
 operator|/
 literal|8
-argument_list|)
 expr_stmt|;
 block|}
 name|pcx_header
@@ -3834,10 +3839,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|GUINT16_TO_LE
-argument_list|(
 name|width
-argument_list|)
 expr_stmt|;
 name|format
 operator|=
@@ -3875,10 +3877,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|GUINT16_TO_LE
-argument_list|(
 name|width
-argument_list|)
 expr_stmt|;
 name|format
 operator|=
@@ -3918,7 +3917,22 @@ operator|.
 name|bytesperline
 operator|++
 expr_stmt|;
+name|padding
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
+name|pcx_header
+operator|.
+name|bytesperline
+operator|=
+name|GUINT16_TO_LE
+argument_list|(
+name|pcx_header
+operator|.
+name|bytesperline
+argument_list|)
+expr_stmt|;
 name|pixels
 operator|=
 operator|(
@@ -4304,6 +4318,8 @@ argument_list|,
 name|height
 argument_list|,
 name|pixels
+argument_list|,
+name|padding
 argument_list|)
 expr_stmt|;
 name|fputc
@@ -4377,6 +4393,8 @@ operator|.
 name|bpp
 argument_list|,
 name|pixels
+argument_list|,
+name|padding
 argument_list|)
 expr_stmt|;
 block|}
@@ -4393,6 +4411,8 @@ argument_list|,
 name|height
 argument_list|,
 name|pixels
+argument_list|,
+name|padding
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4408,6 +4428,8 @@ argument_list|,
 name|height
 argument_list|,
 name|pixels
+argument_list|,
+name|padding
 argument_list|)
 expr_stmt|;
 name|fputc
@@ -4528,7 +4550,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_less_than_8 (FILE * fp,gint width,gint height,const gint bpp,const guchar * buf)
+DECL|function|save_less_than_8 (FILE * fp,gint width,gint height,const gint bpp,const guchar * buf,gboolean padding)
 name|save_less_than_8
 parameter_list|(
 name|FILE
@@ -4549,6 +4571,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 block|{
 specifier|const
@@ -4706,6 +4731,17 @@ name|count
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|padding
+condition|)
+name|fputc
+argument_list|(
+literal|'\0'
+argument_list|,
+name|fp
+argument_list|)
+expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -4733,7 +4769,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_8 (FILE * fp,gint width,gint height,const guchar * buf)
+DECL|function|save_8 (FILE * fp,gint width,gint height,const guchar * buf,gboolean padding)
 name|save_8
 parameter_list|(
 name|FILE
@@ -4750,6 +4786,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 block|{
 name|int
@@ -4782,6 +4821,17 @@ name|buf
 operator|+=
 name|width
 expr_stmt|;
+if|if
+condition|(
+name|padding
+condition|)
+name|fputc
+argument_list|(
+literal|'\0'
+argument_list|,
+name|fp
+argument_list|)
+expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -4802,7 +4852,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_24 (FILE * fp,gint width,gint height,const guchar * buf)
+DECL|function|save_24 (FILE * fp,gint width,gint height,const guchar * buf,gboolean padding)
 name|save_24
 parameter_list|(
 name|FILE
@@ -4819,6 +4869,9 @@ specifier|const
 name|guchar
 modifier|*
 name|buf
+parameter_list|,
+name|gboolean
+name|padding
 parameter_list|)
 block|{
 name|int
@@ -4909,6 +4962,17 @@ argument_list|,
 name|line
 argument_list|,
 name|width
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|padding
+condition|)
+name|fputc
+argument_list|(
+literal|'\0'
+argument_list|,
+name|fp
 argument_list|)
 expr_stmt|;
 block|}
