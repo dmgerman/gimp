@@ -114,6 +114,15 @@ name|GimpBucketFillToolClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpBucketFillToolPrivate
+typedef|typedef
+name|struct
+name|_GimpBucketFillToolPrivate
+name|GimpBucketFillToolPrivate
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpBucketFillTool
 struct|struct
@@ -122,6 +131,11 @@ block|{
 DECL|member|parent_instance
 name|GimpTool
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpBucketFillToolPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;

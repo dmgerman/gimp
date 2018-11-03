@@ -405,6 +405,8 @@ name|gimp_pickable_contiguous_region_by_seed
 argument_list|(
 name|pickable
 argument_list|,
+name|NULL
+argument_list|,
 name|sel_options
 operator|->
 name|antialias

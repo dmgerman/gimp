@@ -683,6 +683,8 @@ name|gimp_drawable_bucket_fill
 argument_list|(
 name|drawable
 argument_list|,
+name|NULL
+argument_list|,
 name|options
 argument_list|,
 name|GIMP_PDB_CONTEXT

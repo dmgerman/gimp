@@ -24,6 +24,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GeglBuffer
+modifier|*
+name|line_art
+parameter_list|,
 name|GimpFillOptions
 modifier|*
 name|options

@@ -135,12 +135,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|line_art
 parameter_list|,
 name|GimpFillOptions
 modifier|*
@@ -315,6 +319,8 @@ operator|=
 name|gimp_pickable_contiguous_region_by_seed
 argument_list|(
 name|pickable
+argument_list|,
+name|line_art
 argument_list|,
 name|antialias
 argument_list|,
