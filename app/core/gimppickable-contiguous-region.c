@@ -352,7 +352,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_prepare_line_art (GimpPickable * pickable,gboolean select_transparent)
+DECL|function|gimp_pickable_contiguous_region_prepare_line_art (GimpPickable * pickable,gboolean select_transparent,gfloat stroke_threshold,gint erosion)
 name|gimp_pickable_contiguous_region_prepare_line_art
 parameter_list|(
 name|GimpPickable
@@ -361,6 +361,12 @@ name|pickable
 parameter_list|,
 name|gboolean
 name|select_transparent
+parameter_list|,
+name|gfloat
+name|stroke_threshold
+parameter_list|,
+name|gint
+name|erosion
 parameter_list|)
 block|{
 name|GeglBuffer
@@ -541,12 +547,9 @@ name|lineart
 argument_list|,
 name|select_transparent
 argument_list|,
-comment|/*contour_detection_level,*/
-literal|0.92
+name|stroke_threshold
 argument_list|,
-comment|/* erosion, */
-operator|-
-literal|1
+name|erosion
 argument_list|,
 comment|/*minimal_lineart_area,*/
 literal|5
@@ -599,7 +602,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gint x,gint y)
+DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gfloat stroke_threshold,gint erosion,gint x,gint y)
 name|gimp_pickable_contiguous_region_by_seed
 parameter_list|(
 name|GimpPickable
@@ -624,6 +627,12 @@ name|select_criterion
 parameter_list|,
 name|gboolean
 name|diagonal_neighbors
+parameter_list|,
+name|gfloat
+name|stroke_threshold
+parameter_list|,
+name|gint
+name|erosion
 parameter_list|,
 name|gint
 name|x
@@ -707,6 +716,10 @@ argument_list|(
 name|pickable
 argument_list|,
 name|select_transparent
+argument_list|,
+name|stroke_threshold
+argument_list|,
+name|erosion
 argument_list|)
 expr_stmt|;
 name|free_line_art

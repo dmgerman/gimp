@@ -2070,6 +2070,12 @@ name|select_criterion
 argument_list|,
 name|diagonal_neighbors
 argument_list|,
+literal|0.92
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+comment|/* TODO */
 name|x
 argument_list|,
 name|y

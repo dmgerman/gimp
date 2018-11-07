@@ -135,7 +135,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gint erosion,gdouble seed_x,gdouble seed_y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -164,6 +164,12 @@ name|sample_merged
 parameter_list|,
 name|gboolean
 name|diagonal_neighbors
+parameter_list|,
+name|gfloat
+name|stroke_threshold
+parameter_list|,
+name|gint
+name|erosion
 parameter_list|,
 name|gdouble
 name|seed_x
@@ -254,6 +260,10 @@ argument_list|,
 name|sample_merged
 argument_list|,
 name|diagonal_neighbors
+argument_list|,
+name|stroke_threshold
+argument_list|,
+name|erosion
 argument_list|,
 name|seed_x
 argument_list|,
@@ -383,7 +393,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
+DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gint erosion,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
 name|gimp_drawable_get_bucket_fill_buffer
 parameter_list|(
 name|GimpDrawable
@@ -412,6 +422,12 @@ name|sample_merged
 parameter_list|,
 name|gboolean
 name|diagonal_neighbors
+parameter_list|,
+name|gfloat
+name|stroke_threshold
+parameter_list|,
+name|gint
+name|erosion
 parameter_list|,
 name|gdouble
 name|seed_x
@@ -664,6 +680,10 @@ argument_list|,
 name|fill_criterion
 argument_list|,
 name|diagonal_neighbors
+argument_list|,
+name|stroke_threshold
+argument_list|,
+name|erosion
 argument_list|,
 operator|(
 name|gint

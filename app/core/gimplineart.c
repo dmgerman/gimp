@@ -820,7 +820,7 @@ comment|/* Public functions */
 end_comment
 
 begin_comment
-comment|/**  * gimp_lineart_close:  * @line_art: the input #GeglBuffer  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @erosion:  * @minimal_lineart_area:  * @normal_estimate_mask_size:  * @end_point_rate: [0-1] range value.  * @spline_max_length:  * @spline_max_angle:  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections:  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @segments_max_length:  *  * Creates a binarized version of the strokes of @line_art, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. A value of  */
+comment|/**  * gimp_lineart_close:  * @line_art: the input #GeglBuffer.  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @erosion: size (in pixels) of the rectangular structure used to erode  *           the stroke pixels. 0 means no erosion will be done, and a  *           negative value will compute a median approximation of the  *           stroke width, for base of erosion.  * @minimal_lineart_area: the minimum size in number pixels for area to  *                        be considered as line art.  * @normal_estimate_mask_size:  * @end_point_rate: threshold to estimate if a curvature is an end-point  *                  in [0-1] range value.  * @spline_max_length: the maximum length for creating splines between  *                     end points.  * @spline_max_angle: the maximum angle between end point normals for  *                    creating splines between them.  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections: whether to allow created splines and  *                            segments to intersect.  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @segments_max_length: the maximum length for creating segments  *                       between end points. Unlike splines, segments  *                       are straight lines.  *  * Creates a binarized version of the strokes of @line_art, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. A value of  */
 end_comment
 
 begin_function
@@ -1252,9 +1252,8 @@ elseif|else
 if|if
 condition|(
 name|erosion
-operator|==
-operator|-
-literal|1
+operator|<
+literal|0
 condition|)
 block|{
 specifier|const
