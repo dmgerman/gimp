@@ -412,7 +412,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7e538f0103
+DECL|enum|__anon29c848090103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7e538f0203
+DECL|enum|__anon29c848090203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -557,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7e538f0303
+DECL|enum|__anon29c848090303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -825,7 +825,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2b7e538f040a
+DECL|union|__anon29c84809040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -841,7 +841,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2b7e538f0508
+DECL|struct|__anon29c848090508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -856,7 +856,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2b7e538f0608
+DECL|struct|__anon29c848090608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8883,7 +8883,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0708
+DECL|struct|__anon29c848090708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9089,7 +9089,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0808
+DECL|struct|__anon29c848090808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9359,7 +9359,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0908
+DECL|struct|__anon29c848090908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9565,7 +9565,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0a08
+DECL|struct|__anon29c848090a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9841,7 +9841,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0b08
+DECL|struct|__anon29c848090b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10001,7 +10001,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7e538f0c08
+DECL|struct|__anon29c848090c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -15086,6 +15086,12 @@ name|gint
 name|running
 decl_stmt|;
 name|gint
+name|last_n_frames
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|gint
 name|n_frames
 decl_stmt|;
 name|gint
@@ -15113,6 +15119,15 @@ expr_stmt|;
 name|thread_name
 operator|=
 name|gimp_backtrace_get_thread_name
+argument_list|(
+name|backtrace
+argument_list|,
+name|thread
+argument_list|)
+expr_stmt|;
+name|running
+operator|=
+name|gimp_backtrace_is_thread_running
 argument_list|(
 name|backtrace
 argument_list|,
@@ -15173,7 +15188,7 @@ argument_list|,
 name|other_thread
 argument_list|)
 expr_stmt|;
-name|n
+name|last_n_frames
 operator|=
 name|gimp_backtrace_get_n_frames
 argument_list|(
@@ -15188,9 +15203,9 @@ name|n
 operator|=
 name|MIN
 argument_list|(
-name|n
-argument_list|,
 name|n_frames
+argument_list|,
+name|last_n_frames
 argument_list|)
 expr_stmt|;
 for|for
@@ -15293,20 +15308,15 @@ name|i
 expr_stmt|;
 block|}
 block|}
-name|running
-operator|=
-name|gimp_backtrace_is_thread_running
-argument_list|(
-name|backtrace
-argument_list|,
-name|thread
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|running
 operator|==
 name|last_running
+operator|&&
+name|n_frames
+operator|==
+name|last_n_frames
 operator|&&
 name|n_head
 operator|+
@@ -15314,7 +15324,9 @@ name|n_tail
 operator|==
 name|n_frames
 condition|)
+block|{
 continue|continue;
+block|}
 name|BACKTRACE_NONEMPTY
 argument_list|()
 expr_stmt|;
@@ -15404,6 +15416,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|n_frames
+operator|==
+literal|0
+operator|||
 name|n_head
 operator|+
 name|n_tail
