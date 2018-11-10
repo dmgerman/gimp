@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b393470103
+DECL|enum|__anon29be1c330103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1059,7 +1059,7 @@ name|gsef
 operator|->
 name|value_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|gsef
 operator|->
@@ -1218,7 +1218,7 @@ name|gsef
 operator|->
 name|refval_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|gsef
 operator|->
