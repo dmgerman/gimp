@@ -320,6 +320,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpspinbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpstringcombobox.h>
 end_include
 

@@ -415,6 +415,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSpinButton
+typedef|typedef
+name|struct
+name|_GimpSpinButton
+name|GimpSpinButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStringComboBox
 typedef|typedef
 name|struct
