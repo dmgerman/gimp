@@ -608,6 +608,17 @@ argument_list|(
 name|orig_buffer
 argument_list|)
 expr_stmt|;
+comment|/*  Don't modify the clipping mode of layer masks here, so that,    *  when transformed together with their layer, they match the    *  layer's clipping mode.    */
+if|if
+condition|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|drawable
+argument_list|)
+operator|==
+name|GIMP_TYPE_CHANNEL
+condition|)
+block|{
 name|clip_result
 operator|=
 name|gimp_drawable_transform_get_effective_clip
@@ -619,6 +630,7 @@ argument_list|,
 name|clip_result
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Find the bounding coordinates of target */
 name|gimp_transform_resize_boundary
 argument_list|(
