@@ -9,6 +9,12 @@ directive|include
 file|<math.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"color.h"
+end_include
+
 begin_function
 DECL|function|linear_to_sRGB (int c)
 name|int

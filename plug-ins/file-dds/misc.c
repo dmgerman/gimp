@@ -9,6 +9,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"misc.h"
+end_include
+
 begin_function
 DECL|function|saturate (float a)
 specifier|static
@@ -134,6 +140,8 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|sbuffer
 argument_list|,
@@ -434,7 +442,7 @@ argument_list|,
 name|h
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
 name|format
 argument_list|,
@@ -578,6 +586,8 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|sbuffer
 argument_list|,
@@ -915,7 +925,7 @@ argument_list|,
 name|h
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
 name|format
 argument_list|,
@@ -1043,6 +1053,8 @@ argument_list|(
 name|buffer
 argument_list|,
 name|NULL
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|,
 name|sbuffer
 argument_list|,
@@ -1307,7 +1319,7 @@ argument_list|,
 name|h
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
 name|format
 argument_list|,

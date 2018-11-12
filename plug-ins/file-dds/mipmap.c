@@ -4465,7 +4465,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29017ff20108
+DECL|struct|__anon2761ae0f0108
 block|{
 DECL|member|filter
 name|int
@@ -4558,6 +4558,7 @@ end_comment
 
 begin_function
 DECL|function|calc_alpha_test_coverage (unsigned char * src,unsigned int width,unsigned int height,int bpp,float alpha_test_threshold,float alpha_scale)
+specifier|static
 name|float
 name|calc_alpha_test_coverage
 parameter_list|(
@@ -4705,6 +4706,7 @@ end_function
 
 begin_function
 DECL|function|scale_alpha_to_coverage (unsigned char * img,unsigned int width,unsigned int height,int bpp,float desired_coverage,float alpha_test_threshold)
+specifier|static
 name|void
 name|scale_alpha_to_coverage
 parameter_list|(
