@@ -155,7 +155,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fe7f7c0103
+DECL|enum|__anon2889b32e0103
 block|{
 DECL|enumerator|COMBO_VALUE
 DECL|enumerator|COMBO_STRING
@@ -801,7 +801,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27fe7f7c0208
+DECL|struct|__anon2889b32e0208
 block|{
 DECL|member|format
 name|int
@@ -9767,7 +9767,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Compression:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -9902,7 +9905,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Format:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -10051,7 +10057,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -10210,7 +10219,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mipmaps:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -10408,7 +10420,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Transparent index:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -10645,7 +10660,10 @@ name|expander
 operator|=
 name|gtk_expander_new
 argument_list|(
+name|_
+argument_list|(
 literal|"<b>Advanced Options</b>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_expander_set_use_markup
@@ -10746,7 +10764,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Compression"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -10830,7 +10851,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Use perceptual error metric"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -10914,7 +10938,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mipmaps"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -10998,7 +11025,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Filter:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11136,7 +11166,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Wrap mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11274,7 +11307,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply gamma correction"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -11359,7 +11395,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Use sRGB colorspace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -11444,7 +11483,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gamma:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11607,7 +11649,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preserve alpha test coverage"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -11692,7 +11737,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Alpha test threshold:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

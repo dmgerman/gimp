@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2892aa1e0108
+DECL|struct|__anon2c5d48840108
 block|{
 DECL|member|rshift
 DECL|member|gshift
@@ -7606,7 +7606,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load DDS"
+argument_list|)
 argument_list|,
 literal|"dds"
 argument_list|,
@@ -7712,7 +7715,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load mipmaps"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -7771,9 +7777,12 @@ expr_stmt|;
 name|check
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Automatically decode YCoCg/AExp images when detected"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -7832,7 +7841,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Show this dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
