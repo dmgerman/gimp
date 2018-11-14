@@ -500,7 +500,10 @@ literal|"Shawn Kirst"
 argument_list|,
 literal|"2008"
 argument_list|,
-literal|"<Load>/DDS image"
+name|N_
+argument_list|(
+literal|"DDS image"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -553,7 +556,10 @@ literal|"Shawn Kirst"
 argument_list|,
 literal|"2008"
 argument_list|,
-literal|"<Save>/DDS image"
+name|N_
+argument_list|(
+literal|"DDS image"
+argument_list|)
 argument_list|,
 literal|"INDEXED, GRAY, RGB"
 argument_list|,
@@ -601,7 +607,10 @@ literal|"Shawn Kirst"
 argument_list|,
 literal|"2008"
 argument_list|,
-literal|"<Image>/Filters/Colors/Decode YCoCg"
+name|N_
+argument_list|(
+literal|"Decode YCoCg"
+argument_list|)
 argument_list|,
 literal|"RGBA"
 argument_list|,
@@ -619,6 +628,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*gimp_plugin_menu_register (DECODE_YCOCG_PROC, "<Image>/Filters/Colors");*/
 name|gimp_install_procedure
 argument_list|(
 name|DECODE_YCOCG_SCALED_PROC
@@ -633,7 +643,10 @@ literal|"Shawn Kirst"
 argument_list|,
 literal|"2008"
 argument_list|,
-literal|"<Image>/Filters/Colors/Decode YCoCg (scaled)"
+name|N_
+argument_list|(
+literal|"Decode YCoCg (scaled)"
+argument_list|)
 argument_list|,
 literal|"RGBA"
 argument_list|,
@@ -651,6 +664,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*gimp_plugin_menu_register (DECODE_YCOCG_SCALED_PROC, "<Image>/Filters/Colors");*/
 name|gimp_install_procedure
 argument_list|(
 name|DECODE_ALPHA_EXP_PROC
@@ -665,7 +679,10 @@ literal|"Shawn Kirst"
 argument_list|,
 literal|"2008"
 argument_list|,
-literal|"<Image>/Filters/Colors/Decode Alpha exponent"
+name|N_
+argument_list|(
+literal|"Decode Alpha exponent"
+argument_list|)
 argument_list|,
 literal|"RGBA"
 argument_list|,
@@ -683,6 +700,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*gimp_plugin_menu_register (DECODE_ALPHA_EXP_PROC, "<Image>/Filters/Colors");*/
 block|}
 end_function
 
