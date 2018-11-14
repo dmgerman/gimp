@@ -101,24 +101,21 @@ file|"gimpwaitable.h"
 end_include
 
 begin_define
-DECL|macro|MIN_PARALLEL_SUB_SIZE
+DECL|macro|PIXELS_PER_THREAD
 define|#
 directive|define
-name|MIN_PARALLEL_SUB_SIZE
-value|64
-end_define
-
-begin_define
-DECL|macro|MIN_PARALLEL_SUB_AREA
-define|#
-directive|define
-name|MIN_PARALLEL_SUB_AREA
-value|(MIN_PARALLEL_SUB_SIZE * MIN_PARALLEL_SUB_SIZE)
+name|PIXELS_PER_THREAD
+define|\
+value|(
+comment|/* each thread costs as much as */
+value|64.0 * 64.0
+comment|/* pixels */
+value|)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c51b0300103
+DECL|enum|__anon295bc7430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +166,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51b0300208
+DECL|struct|__anon295bc7430208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -218,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51b0300308
+DECL|struct|__anon295bc7430308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -3951,14 +3948,16 @@ name|values_list
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_parallel_distribute_area
+name|gegl_parallel_distribute_area
 argument_list|(
 operator|&
 name|context
 operator|->
 name|buffer_rect
 argument_list|,
-name|MIN_PARALLEL_SUB_AREA
+name|PIXELS_PER_THREAD
+argument_list|,
+name|GEGL_SPLIT_STRATEGY_AUTO
 argument_list|,
 operator|(
 name|GimpParallelDistributeAreaFunc
