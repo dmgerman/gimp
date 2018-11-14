@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295bc7430103
+DECL|enum|__anon2c80e88c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -166,7 +166,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bc7430208
+DECL|struct|__anon2c80e88c0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bc7430308
+DECL|struct|__anon2c80e88c0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -3960,7 +3960,7 @@ argument_list|,
 name|GEGL_SPLIT_STRATEGY_AUTO
 argument_list|,
 operator|(
-name|GimpParallelDistributeAreaFunc
+name|GeglParallelDistributeAreaFunc
 operator|)
 name|gimp_histogram_calculate_area
 argument_list|,
