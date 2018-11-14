@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc96bb0103
+DECL|enum|__anon2bedec8c0103
 block|{
 DECL|enumerator|COMBO_VALUE
 DECL|enumerator|COMBO_STRING
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fc96bb0208
+DECL|struct|__anon2bedec8c0208
 block|{
 DECL|member|format
 name|int
@@ -9623,11 +9623,17 @@ name|gimp_standard_help_func
 argument_list|,
 name|SAVE_PROC
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -10383,9 +10389,9 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_box_new
 argument_list|(
-literal|0
+name|GTK_ORIENTATION_HORIZONTAL
 argument_list|,
 literal|8
 argument_list|)
@@ -10724,9 +10730,9 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gtk_vbox_new
+name|gtk_box_new
 argument_list|(
-literal|0
+name|GTK_ORIENTATION_VERTICAL
 argument_list|,
 literal|4
 argument_list|)
