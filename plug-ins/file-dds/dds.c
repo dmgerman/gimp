@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
 end_include
 
 begin_include
@@ -1437,12 +1449,12 @@ name|gamma
 operator|<
 literal|1e-04f
 condition|)
+comment|/* gimp_gamma() got removed and was always returning 2.2 anyway.          * XXX Review this piece of code if we expect gamma value could          * be parameterized.          */
 name|dds_write_vals
 operator|.
 name|gamma
 operator|=
-name|gimp_gamma
-argument_list|()
+literal|2.2
 expr_stmt|;
 if|if
 condition|(
