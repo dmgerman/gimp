@@ -2320,6 +2320,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2995,7 +3000,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29adb4960108
+DECL|struct|__anon28b7e59e0108
 block|{
 DECL|member|tool
 name|GimpBucketFillTool
