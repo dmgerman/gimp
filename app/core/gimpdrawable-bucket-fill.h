@@ -50,9 +50,6 @@ parameter_list|,
 name|gfloat
 name|stroke_threshold
 parameter_list|,
-name|gint
-name|erosion
-parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -96,9 +93,6 @@ name|diagonal_neighbors
 parameter_list|,
 name|gfloat
 name|stroke_threshold
-parameter_list|,
-name|gint
-name|erosion
 parameter_list|,
 name|gdouble
 name|seed_x

@@ -32,9 +32,6 @@ name|gfloat
 name|stroke_threshold
 parameter_list|,
 name|gint
-name|erosion
-parameter_list|,
-name|gint
 name|minimal_lineart_area
 parameter_list|,
 name|gint
