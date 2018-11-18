@@ -403,6 +403,38 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|prefs_folders_reset
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|prefs_path_reset
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|prefs_import_raw_procedure_callback
 parameter_list|(
 name|GtkWidget
@@ -2041,6 +2073,108 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|pspecs
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|prefs_folders_reset (GtkWidget * widget,GObject * config)
+name|prefs_folders_reset
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|)
+block|{
+name|gimp_config_reset_property
+argument_list|(
+name|config
+argument_list|,
+literal|"temp-path"
+argument_list|)
+expr_stmt|;
+name|gimp_config_reset_property
+argument_list|(
+name|config
+argument_list|,
+literal|"swap-path"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|prefs_path_reset (GtkWidget * widget,GObject * config)
+name|prefs_path_reset
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GObject
+modifier|*
+name|config
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|path_property
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|writable_property
+decl_stmt|;
+name|path_property
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"path"
+argument_list|)
+expr_stmt|;
+name|writable_property
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"path-writable"
+argument_list|)
+expr_stmt|;
+name|gimp_config_reset_property
+argument_list|(
+name|config
+argument_list|,
+name|path_property
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|writable_property
+condition|)
+name|gimp_config_reset_property
+argument_list|(
+name|config
+argument_list|,
+name|writable_property
 argument_list|)
 expr_stmt|;
 block|}
@@ -12827,7 +12961,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c51b7840108
+DECL|struct|__anon2b5fc0850108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13698,11 +13832,42 @@ operator|&
 name|top_iter
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
+name|gimp_prefs_box_set_page_resettable
+argument_list|(
+name|GIMP_PREFS_BOX
+argument_list|(
+name|prefs_box
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|,
+name|_
+argument_list|(
+literal|"Reset Folders"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|button
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|prefs_folders_reset
+argument_list|)
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
 block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c51b7840208
+DECL|struct|__anon2b5fc0850208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13833,7 +13998,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c51b7840308
+DECL|struct|__anon2b5fc0850308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -13858,6 +14023,12 @@ specifier|const
 name|gchar
 modifier|*
 name|help_data
+decl_stmt|;
+DECL|member|reset_label
+specifier|const
+name|gchar
+modifier|*
+name|reset_label
 decl_stmt|;
 DECL|member|fs_label
 specifier|const
@@ -13899,6 +14070,11 @@ name|GIMP_HELP_PREFS_FOLDERS_BRUSHES
 block|,
 name|N_
 argument_list|(
+literal|"Reset Brush Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Brush Folders"
 argument_list|)
 block|,
@@ -13921,6 +14097,11 @@ block|,
 literal|"folders-dynamics"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_DYNAMICS
+block|,
+name|N_
+argument_list|(
+literal|"Reset Dynamics Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -13949,6 +14130,11 @@ name|GIMP_HELP_PREFS_FOLDERS_PATTERNS
 block|,
 name|N_
 argument_list|(
+literal|"Reset Pattern Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Pattern Folders"
 argument_list|)
 block|,
@@ -13971,6 +14157,11 @@ block|,
 literal|"folders-palettes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_PALETTES
+block|,
+name|N_
+argument_list|(
+literal|"Reset Palette Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -13999,6 +14190,11 @@ name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
 block|,
 name|N_
 argument_list|(
+literal|"Reset Gradient Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Gradient Folders"
 argument_list|)
 block|,
@@ -14021,6 +14217,11 @@ block|,
 literal|"folders-fonts"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_FONTS
+block|,
+name|N_
+argument_list|(
+literal|"Reset Font Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -14049,6 +14250,11 @@ name|GIMP_HELP_PREFS_FOLDERS_TOOL_PRESETS
 block|,
 name|N_
 argument_list|(
+literal|"Reset Tool Preset Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Tool Preset Folders"
 argument_list|)
 block|,
@@ -14071,6 +14277,11 @@ block|,
 literal|"folders-mypaint-brushes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_MYPAINT_BRUSHES
+block|,
+name|N_
+argument_list|(
+literal|"Reset MyPaint Brush Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -14099,6 +14310,11 @@ name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 block|,
 name|N_
 argument_list|(
+literal|"Reset plug-in Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select plug-in Folders"
 argument_list|)
 block|,
@@ -14121,6 +14337,11 @@ block|,
 literal|"folders-scripts"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
+block|,
+name|N_
+argument_list|(
+literal|"Reset Script-Fu Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -14149,6 +14370,11 @@ name|GIMP_HELP_PREFS_FOLDERS_MODULES
 block|,
 name|N_
 argument_list|(
+literal|"Reset Module Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Module Folders"
 argument_list|)
 block|,
@@ -14171,6 +14397,11 @@ block|,
 literal|"folders-interp"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
+block|,
+name|N_
+argument_list|(
+literal|"Reset Interpreter Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -14199,6 +14430,11 @@ name|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
 block|,
 name|N_
 argument_list|(
+literal|"Reset Environment Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Environment Folders"
 argument_list|)
 block|,
@@ -14224,6 +14460,11 @@ name|GIMP_HELP_PREFS_FOLDERS_THEMES
 block|,
 name|N_
 argument_list|(
+literal|"Reset Theme Folders"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"Select Theme Folders"
 argument_list|)
 block|,
@@ -14246,6 +14487,11 @@ block|,
 literal|"folders-icon-themes"
 block|,
 name|GIMP_HELP_PREFS_FOLDERS_ICON_THEMES
+block|,
+name|N_
+argument_list|(
+literal|"Reset Icon Theme Folders"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -14347,6 +14593,82 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|icon_name
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|gimp_prefs_box_set_page_resettable
+argument_list|(
+name|GIMP_PREFS_BOX
+argument_list|(
+name|prefs_box
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|,
+name|gettext
+argument_list|(
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|reset_label
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"path"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|path_property_name
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"path-writable"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|writable_property_name
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|button
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|prefs_path_reset
+argument_list|)
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 name|editor

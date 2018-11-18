@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adde5780103
+DECL|enum|__anon296c15640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -362,9 +362,7 @@ name|TEMP_PATH_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR
 argument_list|,
-literal|"${gimp_dir}"
-name|G_DIR_SEPARATOR_S
-literal|"tmp"
+literal|"${gimp_temp_dir}"
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
@@ -385,7 +383,7 @@ name|SWAP_PATH_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR
 argument_list|,
-literal|"${gimp_dir}"
+literal|"${gimp_cache_dir}"
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
