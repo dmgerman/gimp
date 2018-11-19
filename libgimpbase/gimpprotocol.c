@@ -2796,6 +2796,13 @@ operator|->
 name|display_name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|config
+operator|->
+name|icon_theme_dir
+argument_list|)
+expr_stmt|;
 name|g_slice_free
 argument_list|(
 name|GPConfig
