@@ -143,6 +143,19 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|waiting
+name|void
+function_decl|(
+modifier|*
+name|waiting
+function_decl|)
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
