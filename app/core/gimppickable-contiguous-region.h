@@ -35,6 +35,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpAsync
+modifier|*
+name|gimp_pickable_contiguous_region_prepare_line_art_async
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|,
+name|gboolean
+name|select_transparent
+parameter_list|,
+name|gfloat
+name|stroke_threshold
+parameter_list|,
+name|gint
+name|priority
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_pickable_contiguous_region_by_seed
