@@ -1732,6 +1732,16 @@ literal|"Advanced Color Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_expander_set_resize_toplevel
+argument_list|(
+name|GTK_EXPANDER
+argument_list|(
+name|expander
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
