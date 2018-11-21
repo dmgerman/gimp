@@ -23,7 +23,7 @@ name|gimp_lineart_close
 parameter_list|(
 name|GeglBuffer
 modifier|*
-name|line_art
+name|buffer
 parameter_list|,
 name|gboolean
 name|select_transparent
@@ -66,6 +66,16 @@ name|small_segments_from_spline_sources
 parameter_list|,
 name|gint
 name|segments_max_length
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_distmap
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_radii
 parameter_list|)
 function_decl|;
 end_function_decl

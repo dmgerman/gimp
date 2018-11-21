@@ -2060,6 +2060,10 @@ name|pickable
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
 name|antialias
 argument_list|,
 name|threshold

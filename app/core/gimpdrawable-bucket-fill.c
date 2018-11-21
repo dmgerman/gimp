@@ -135,7 +135,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gdouble seed_x,gdouble seed_y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,gfloat * distmap,gfloat * thickmap,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gdouble seed_x,gdouble seed_y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -145,6 +145,14 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|line_art
+parameter_list|,
+name|gfloat
+modifier|*
+name|distmap
+parameter_list|,
+name|gfloat
+modifier|*
+name|thickmap
 parameter_list|,
 name|GimpFillOptions
 modifier|*
@@ -245,6 +253,10 @@ argument_list|(
 name|drawable
 argument_list|,
 name|line_art
+argument_list|,
+name|distmap
+argument_list|,
+name|thickmap
 argument_list|,
 name|options
 argument_list|,
@@ -388,7 +400,7 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GeglBuffer * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
+DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GeglBuffer * line_art,gfloat * distmap,gfloat * thickmap,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
 name|gimp_drawable_get_bucket_fill_buffer
 parameter_list|(
 name|GimpDrawable
@@ -398,6 +410,14 @@ parameter_list|,
 name|GeglBuffer
 modifier|*
 name|line_art
+parameter_list|,
+name|gfloat
+modifier|*
+name|distmap
+parameter_list|,
+name|gfloat
+modifier|*
+name|thickmap
 parameter_list|,
 name|GimpFillOptions
 modifier|*
@@ -662,6 +682,10 @@ argument_list|(
 name|pickable
 argument_list|,
 name|line_art
+argument_list|,
+name|distmap
+argument_list|,
+name|thickmap
 argument_list|,
 name|antialias
 argument_list|,

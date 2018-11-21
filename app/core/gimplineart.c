@@ -450,6 +450,11 @@ parameter_list|(
 name|GeglBuffer
 modifier|*
 name|mask
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_distmap
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -778,18 +783,18 @@ comment|/* Public functions */
 end_comment
 
 begin_comment
-comment|/**  * gimp_lineart_close:  * @line_art: the input #GeglBuffer.  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @minimal_lineart_area: the minimum size in number pixels for area to  *                        be considered as line art.  * @normal_estimate_mask_size:  * @end_point_rate: threshold to estimate if a curvature is an end-point  *                  in [0-1] range value.  * @spline_max_length: the maximum length for creating splines between  *                     end points.  * @spline_max_angle: the maximum angle between end point normals for  *                    creating splines between them.  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections: whether to allow created splines and  *                            segments to intersect.  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @segments_max_length: the maximum length for creating segments  *                       between end points. Unlike splines, segments  *                       are straight lines.  *  * Creates a binarized version of the strokes of @line_art, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. A value of  */
+comment|/**  * gimp_lineart_close:  * @buffer: the input #GeglBuffer.  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @minimal_lineart_area: the minimum size in number pixels for area to  *                        be considered as line art.  * @normal_estimate_mask_size:  * @end_point_rate: threshold to estimate if a curvature is an end-point  *                  in [0-1] range value.  * @spline_max_length: the maximum length for creating splines between  *                     end points.  * @spline_max_angle: the maximum angle between end point normals for  *                    creating splines between them.  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections: whether to allow created splines and  *                            segments to intersect.  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @segments_max_length: the maximum length for creating segments  *                       between end points. Unlike splines, segments  *                       are straight lines.  * @lineart_distmap: a distance map of the line art pixels.  * @lineart_radii: a map of estimated radii of line art border pixels.  *  * Creates a binarized version of the strokes of @buffer, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. If @lineart_radii and @lineart_distmap  *          are not #NULL, newly allocated float buffer are returned,  *          which can be used for overflowing created masks later.  */
 end_comment
 
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_lineart_close (GeglBuffer * line_art,gboolean select_transparent,gfloat stroke_threshold,gint minimal_lineart_area,gint normal_estimate_mask_size,gfloat end_point_rate,gint spline_max_length,gfloat spline_max_angle,gint end_point_connectivity,gfloat spline_roundness,gboolean allow_self_intersections,gint created_regions_significant_area,gint created_regions_minimum_area,gboolean small_segments_from_spline_sources,gint segments_max_length)
+DECL|function|gimp_lineart_close (GeglBuffer * buffer,gboolean select_transparent,gfloat stroke_threshold,gint minimal_lineart_area,gint normal_estimate_mask_size,gfloat end_point_rate,gint spline_max_length,gfloat spline_max_angle,gint end_point_connectivity,gfloat spline_roundness,gboolean allow_self_intersections,gint created_regions_significant_area,gint created_regions_minimum_area,gboolean small_segments_from_spline_sources,gint segments_max_length,gfloat ** lineart_distmap,gfloat ** lineart_radii)
 name|gimp_lineart_close
 parameter_list|(
 name|GeglBuffer
 modifier|*
-name|line_art
+name|buffer
 parameter_list|,
 name|gboolean
 name|select_transparent
@@ -832,6 +837,16 @@ name|small_segments_from_spline_sources
 parameter_list|,
 name|gint
 name|segments_max_length
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_distmap
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_radii
 parameter_list|)
 block|{
 specifier|const
@@ -903,7 +918,7 @@ name|width
 init|=
 name|gegl_buffer_get_width
 argument_list|(
-name|line_art
+name|buffer
 argument_list|)
 decl_stmt|;
 name|gint
@@ -911,7 +926,7 @@ name|height
 init|=
 name|gegl_buffer_get_height
 argument_list|(
-name|line_art
+name|buffer
 argument_list|)
 decl_stmt|;
 name|gint
@@ -980,7 +995,7 @@ name|gegl_buffer_new
 argument_list|(
 name|gegl_buffer_get_extent
 argument_list|(
-name|line_art
+name|buffer
 argument_list|)
 argument_list|,
 name|gray_format
@@ -988,7 +1003,7 @@ argument_list|)
 expr_stmt|;
 name|gegl_buffer_copy
 argument_list|(
-name|line_art
+name|buffer
 argument_list|,
 name|NULL
 argument_list|,
@@ -1237,6 +1252,8 @@ operator|=
 name|gimp_lineart_estimate_strokes_radii
 argument_list|(
 name|strokes
+argument_list|,
+name|lineart_distmap
 argument_list|)
 expr_stmt|;
 name|threshold
@@ -1350,6 +1367,16 @@ literal|0.0
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|lineart_radii
+condition|)
+operator|*
+name|lineart_radii
+operator|=
+name|radii
+expr_stmt|;
+else|else
 name|g_free
 argument_list|(
 name|radii
@@ -7430,12 +7457,17 @@ begin_function
 specifier|static
 name|gfloat
 modifier|*
-DECL|function|gimp_lineart_estimate_strokes_radii (GeglBuffer * mask)
+DECL|function|gimp_lineart_estimate_strokes_radii (GeglBuffer * mask,gfloat ** lineart_distmap)
 name|gimp_lineart_estimate_strokes_radii
 parameter_list|(
 name|GeglBuffer
 modifier|*
 name|mask
+parameter_list|,
+name|gfloat
+modifier|*
+modifier|*
+name|lineart_distmap
 parameter_list|)
 block|{
 name|GeglBufferIterator
@@ -8169,6 +8201,16 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|lineart_distmap
+condition|)
+operator|*
+name|lineart_distmap
+operator|=
+name|dist
+expr_stmt|;
+else|else
 name|g_free
 argument_list|(
 name|dist
