@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05df760108
+DECL|struct|__anon2a07f4d10108
 block|{
 DECL|member|line_art
 name|GeglBuffer
@@ -106,11 +106,11 @@ name|line_art
 parameter_list|,
 name|gfloat
 modifier|*
-name|distmap
+name|line_art_distmap
 parameter_list|,
 name|gfloat
 modifier|*
-name|thickmap
+name|line_art_thickmap
 parameter_list|,
 name|gboolean
 name|antialias
@@ -128,7 +128,10 @@ name|gboolean
 name|diagonal_neighbors
 parameter_list|,
 name|gfloat
-name|stroke_threshold
+name|line_art_stroke_threshold
+parameter_list|,
+name|gint
+name|line_art_max_grow
 parameter_list|,
 name|gint
 name|x

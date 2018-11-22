@@ -1782,6 +1782,10 @@ name|options
 operator|->
 name|line_art_threshold
 argument_list|,
+name|options
+operator|->
+name|line_art_max_grow
+argument_list|,
 name|x
 argument_list|,
 name|y

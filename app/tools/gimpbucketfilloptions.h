@@ -153,6 +153,10 @@ DECL|member|line_art_threshold
 name|gdouble
 name|line_art_threshold
 decl_stmt|;
+DECL|member|line_art_max_grow
+name|gint
+name|line_art_max_grow
+decl_stmt|;
 DECL|member|fill_criterion
 name|GimpSelectCriterion
 name|fill_criterion

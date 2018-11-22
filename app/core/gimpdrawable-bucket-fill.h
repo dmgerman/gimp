@@ -56,7 +56,10 @@ name|gboolean
 name|diagonal_neighbors
 parameter_list|,
 name|gfloat
-name|stroke_threshold
+name|line_art_stroke_threshold
+parameter_list|,
+name|gint
+name|line_art_max_grow
 parameter_list|,
 name|gdouble
 name|x
@@ -108,7 +111,10 @@ name|gboolean
 name|diagonal_neighbors
 parameter_list|,
 name|gfloat
-name|stroke_threshold
+name|line_art_stroke_threshold
+parameter_list|,
+name|gint
+name|line_art_max_grow
 parameter_list|,
 name|gdouble
 name|seed_x

@@ -435,6 +435,8 @@ name|diagonal_neighbors
 argument_list|,
 literal|0.92
 argument_list|,
+literal|3
+argument_list|,
 comment|/* TODO */
 name|x
 argument_list|,

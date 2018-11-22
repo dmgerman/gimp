@@ -107,7 +107,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292bbe4a0108
+DECL|struct|__anon2a1142cb0108
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292bbe4a0208
+DECL|struct|__anon2a1142cb0208
 block|{
 DECL|member|x
 name|gint
@@ -141,9 +141,13 @@ DECL|member|y
 name|gint
 name|y
 decl_stmt|;
-DECL|member|dist
+DECL|member|radius
 name|gfloat
-name|dist
+name|radius
+decl_stmt|;
+DECL|member|level
+name|gint
+name|level
 decl_stmt|;
 DECL|typedef|BorderPixel
 block|}
@@ -484,7 +488,10 @@ name|gint
 name|y
 parameter_list|,
 name|gfloat
-name|dist
+name|radius
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1015,7 +1022,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gfloat * distmap,gfloat * thickmap,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gfloat stroke_threshold,gint x,gint y)
+DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gfloat * distmap,gfloat * thickmap,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gfloat stroke_threshold,gint flooding_max,gint x,gint y)
 name|gimp_pickable_contiguous_region_by_seed
 parameter_list|(
 name|GimpPickable
@@ -1051,6 +1058,9 @@ name|diagonal_neighbors
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|flooding_max
 parameter_list|,
 name|gint
 name|x
@@ -1635,6 +1645,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1667,6 +1679,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1709,6 +1723,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1766,6 +1782,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1798,6 +1816,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1840,6 +1860,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1886,6 +1908,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1929,6 +1953,8 @@ argument_list|,
 name|y
 argument_list|,
 name|thickness
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1991,6 +2017,16 @@ if|if
 condition|(
 name|c
 operator|->
+name|level
+operator|>=
+name|flooding_max
+condition|)
+comment|/* Do not overflood under line arts. */
+continue|continue;
+if|if
+condition|(
+name|c
+operator|->
 name|x
 operator|>
 literal|0
@@ -2067,7 +2103,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2079,7 +2115,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2135,7 +2177,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2147,7 +2189,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -2215,7 +2263,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2227,7 +2275,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2314,7 +2368,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2326,7 +2380,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2382,7 +2442,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2394,7 +2454,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -2462,7 +2528,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2474,7 +2540,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2548,7 +2620,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2560,7 +2632,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2629,7 +2707,7 @@ index|]
 operator|<
 name|c
 operator|->
-name|dist
+name|radius
 condition|)
 name|line_art_queue_pixel
 argument_list|(
@@ -2641,7 +2719,13 @@ name|ny
 argument_list|,
 name|c
 operator|->
-name|dist
+name|radius
+argument_list|,
+name|c
+operator|->
+name|level
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -4931,7 +5015,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|line_art_queue_pixel (GQueue * queue,gint x,gint y,gfloat dist)
+DECL|function|line_art_queue_pixel (GQueue * queue,gint x,gint y,gfloat radius,gint level)
 name|line_art_queue_pixel
 parameter_list|(
 name|GQueue
@@ -4945,7 +5029,10 @@ name|gint
 name|y
 parameter_list|,
 name|gfloat
-name|dist
+name|radius
+parameter_list|,
+name|gint
+name|level
 parameter_list|)
 block|{
 name|BorderPixel
@@ -4973,9 +5060,15 @@ name|y
 expr_stmt|;
 name|p
 operator|->
-name|dist
+name|radius
 operator|=
-name|dist
+name|radius
+expr_stmt|;
+name|p
+operator|->
+name|level
+operator|=
+name|level
 expr_stmt|;
 name|g_queue_push_head
 argument_list|(
