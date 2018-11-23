@@ -2315,6 +2315,15 @@ name|menu
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* do not activate OSX menu if tests are running */
+if|if
+condition|(
+operator|!
+name|getenv
+argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|)
+condition|)
 name|gtkosx_application_set_menu_bar
 argument_list|(
 name|osx_app
@@ -3431,7 +3440,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9242e50108
+DECL|struct|__anon2912f4e40108
 block|{
 DECL|member|path
 specifier|const
