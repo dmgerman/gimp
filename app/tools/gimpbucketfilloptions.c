@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279eef5c0103
+DECL|enum|__anon2783a29f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -154,11 +154,6 @@ DECL|member|diagonal_neighbors_checkbox
 name|GtkWidget
 modifier|*
 name|diagonal_neighbors_checkbox
-decl_stmt|;
-DECL|member|antialias_checkbox
-name|GtkWidget
-modifier|*
-name|antialias_checkbox
 decl_stmt|;
 DECL|member|threshold_scale
 name|GtkWidget
@@ -457,9 +452,9 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Base fill opacity on color difference from "
-literal|"the clicked pixel (see threshold). Disable "
-literal|"antialiasing to fill the entire area "
-literal|"uniformly."
+literal|"the clicked pixel (see threshold) or on line "
+literal|" art borders. Disable antialiasing to fill "
+literal|"the entire area uniformly."
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1080,7 +1075,7 @@ name|options
 operator|->
 name|priv
 operator|->
-name|antialias_checkbox
+name|threshold_scale
 condition|)
 return|return;
 switch|switch
@@ -1093,15 +1088,6 @@ block|{
 case|case
 name|GIMP_SELECT_CRITERION_LINE_ART
 case|:
-name|gtk_widget_hide
-argument_list|(
-name|options
-operator|->
-name|priv
-operator|->
-name|antialias_checkbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|options
@@ -1156,15 +1142,6 @@ operator|->
 name|priv
 operator|->
 name|line_art_grow_scale
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|options
-operator|->
-name|priv
-operator|->
-name|antialias_checkbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1652,14 +1629,6 @@ name|FALSE
 argument_list|,
 literal|0
 argument_list|)
-expr_stmt|;
-name|options
-operator|->
-name|priv
-operator|->
-name|antialias_checkbox
-operator|=
-name|button
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
