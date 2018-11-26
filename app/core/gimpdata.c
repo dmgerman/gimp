@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde14580103
+DECL|enum|__anon29be030f0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde14580203
+DECL|enum|__anon29be030f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2341,7 +2341,20 @@ name|FALSE
 expr_stmt|;
 block|}
 block|}
-elseif|else
+else|else
+block|{
+name|GCancellable
+modifier|*
+name|cancellable
+init|=
+name|g_cancellable_new
+argument_list|()
+decl_stmt|;
+name|g_cancellable_cancel
+argument_list|(
+name|cancellable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|error
@@ -2389,6 +2402,21 @@ name|private
 operator|->
 name|file
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+name|g_output_stream_close
+argument_list|(
+name|output
+argument_list|,
+name|cancellable
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|cancellable
 argument_list|)
 expr_stmt|;
 block|}

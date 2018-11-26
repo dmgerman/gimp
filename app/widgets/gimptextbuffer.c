@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d8dc00103
+DECL|enum|__anon2ac3b51f0103
 block|{
 DECL|enumerator|COLOR_APPLIED
 name|COLOR_APPLIED
@@ -7152,6 +7152,13 @@ name|my_error
 argument_list|)
 condition|)
 block|{
+name|GCancellable
+modifier|*
+name|cancellable
+init|=
+name|g_cancellable_new
+argument_list|()
+decl_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -7188,6 +7195,26 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|text_contents
+argument_list|)
+expr_stmt|;
+comment|/* Cancel the overwrite initiated by g_file_replace(). */
+name|g_cancellable_cancel
+argument_list|(
+name|cancellable
+argument_list|)
+expr_stmt|;
+name|g_output_stream_close
+argument_list|(
+name|output
+argument_list|,
+name|cancellable
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|cancellable
 argument_list|)
 expr_stmt|;
 name|g_object_unref

@@ -113,7 +113,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6281b0103
+DECL|enum|__anon2922dacc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6281b0208
+DECL|struct|__anon2922dacc0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6281b0308
+DECL|struct|__anon2922dacc0308
 block|{
 DECL|member|records
 name|GArray
@@ -1756,7 +1756,56 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
-operator|||
+condition|)
+block|{
+name|GCancellable
+modifier|*
+name|cancellable
+init|=
+name|g_cancellable_new
+argument_list|()
+decl_stmt|;
+name|g_printerr
+argument_list|(
+name|_
+argument_list|(
+literal|"Error writing '%s': %s\n"
+argument_list|)
+argument_list|,
+name|gimp_file_get_utf8_name
+argument_list|(
+name|file
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+comment|/* Cancel the overwrite initiated by g_file_replace(). */
+name|g_cancellable_cancel
+argument_list|(
+name|cancellable
+argument_list|)
+expr_stmt|;
+name|g_output_stream_close
+argument_list|(
+name|output
+argument_list|,
+name|cancellable
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|cancellable
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
 operator|!
 name|g_output_stream_close
 argument_list|(
@@ -1773,7 +1822,7 @@ name|g_printerr
 argument_list|(
 name|_
 argument_list|(
-literal|"Error writing '%s': %s\n"
+literal|"Error closing '%s': %s\n"
 argument_list|)
 argument_list|,
 name|gimp_file_get_utf8_name
