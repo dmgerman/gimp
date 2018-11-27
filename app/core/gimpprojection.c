@@ -261,7 +261,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon276071d10103
+DECL|enum|__anon2b68b8b40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -277,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276071d10203
+DECL|enum|__anon2b68b8b40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2747,13 +2747,13 @@ argument_list|(
 name|proj
 argument_list|)
 expr_stmt|;
-name|gimp_projectable_begin_render
+name|gimp_tile_handler_validate_begin_validate
 argument_list|(
 name|proj
 operator|->
 name|priv
 operator|->
-name|projectable
+name|validate_handler
 argument_list|)
 expr_stmt|;
 while|while
@@ -2766,13 +2766,13 @@ name|FALSE
 argument_list|)
 condition|)
 empty_stmt|;
-name|gimp_projectable_end_render
+name|gimp_tile_handler_validate_end_validate
 argument_list|(
 name|proj
 operator|->
 name|priv
 operator|->
-name|projectable
+name|validate_handler
 argument_list|)
 expr_stmt|;
 block|}
@@ -3547,13 +3547,13 @@ name|n_pixels
 operator|=
 literal|0
 expr_stmt|;
-name|gimp_projectable_begin_render
+name|gimp_tile_handler_validate_begin_validate
 argument_list|(
 name|proj
 operator|->
 name|priv
 operator|->
-name|projectable
+name|validate_handler
 argument_list|)
 expr_stmt|;
 do|do
@@ -3596,13 +3596,13 @@ operator|<
 name|GIMP_PROJECTION_CHUNK_TIME
 condition|)
 do|;
-name|gimp_projectable_end_render
+name|gimp_tile_handler_validate_end_validate
 argument_list|(
 name|proj
 operator|->
 name|priv
 operator|->
-name|projectable
+name|validate_handler
 argument_list|)
 expr_stmt|;
 comment|/* adjust the target number of pixels to be processed on the next frame,    * according to the number of pixels processed during this frame and the    * elapsed time, in order to match the desired frame rate.    */
