@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07f4d10108
+DECL|struct|__anon2bde7e910108
 block|{
 DECL|member|line_art
 name|GeglBuffer
@@ -30,11 +30,6 @@ DECL|member|distmap
 name|gfloat
 modifier|*
 name|distmap
-decl_stmt|;
-DECL|member|thickmap
-name|gfloat
-modifier|*
-name|thickmap
 decl_stmt|;
 DECL|typedef|GimpPickableLineArtAsyncResult
 block|}
@@ -61,11 +56,6 @@ name|gfloat
 modifier|*
 modifier|*
 name|distmap
-parameter_list|,
-name|gfloat
-modifier|*
-modifier|*
-name|thickmap
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -107,10 +97,6 @@ parameter_list|,
 name|gfloat
 modifier|*
 name|line_art_distmap
-parameter_list|,
-name|gfloat
-modifier|*
-name|line_art_thickmap
 parameter_list|,
 name|gboolean
 name|antialias

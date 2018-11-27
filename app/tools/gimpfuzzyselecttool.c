@@ -409,8 +409,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
 name|sel_options
 operator|->
 name|antialias

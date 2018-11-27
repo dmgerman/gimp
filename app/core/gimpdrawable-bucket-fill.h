@@ -32,10 +32,6 @@ name|gfloat
 modifier|*
 name|distmap
 parameter_list|,
-name|gfloat
-modifier|*
-name|thickmap
-parameter_list|,
 name|GimpFillOptions
 modifier|*
 name|options
@@ -86,10 +82,6 @@ parameter_list|,
 name|gfloat
 modifier|*
 name|distmap
-parameter_list|,
-name|gfloat
-modifier|*
-name|thickmap
 parameter_list|,
 name|GimpFillOptions
 modifier|*

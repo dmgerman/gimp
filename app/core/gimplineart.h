@@ -71,11 +71,6 @@ name|gfloat
 modifier|*
 modifier|*
 name|lineart_distmap
-parameter_list|,
-name|gfloat
-modifier|*
-modifier|*
-name|lineart_radii
 parameter_list|)
 function_decl|;
 end_function_decl
