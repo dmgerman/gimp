@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimpcolortool.h"
 end_include
 
 begin_define
@@ -129,7 +129,7 @@ struct|struct
 name|_GimpBucketFillTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpColorTool
 name|parent_instance
 decl_stmt|;
 DECL|member|priv
@@ -147,7 +147,7 @@ struct|struct
 name|_GimpBucketFillToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpColorToolClass
 name|parent_class
 decl_stmt|;
 block|}
