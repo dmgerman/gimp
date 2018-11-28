@@ -261,7 +261,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5ef370103
+DECL|enum|__anon276071d10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -277,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5ef370203
+DECL|enum|__anon276071d10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -776,6 +776,9 @@ parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|assume_running
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2461,6 +2464,8 @@ condition|)
 name|gimp_projection_chunk_render_reinit
 argument_list|(
 name|proj
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3691,6 +3696,8 @@ expr_stmt|;
 name|gimp_projection_chunk_render_reinit
 argument_list|(
 name|proj
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3699,12 +3706,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_chunk_render_reinit (GimpProjection * proj)
+DECL|function|gimp_projection_chunk_render_reinit (GimpProjection * proj,gboolean assume_running)
 name|gimp_projection_chunk_render_reinit
 parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|assume_running
 parameter_list|)
 block|{
 name|GimpProjectionChunkRender
@@ -3772,6 +3782,8 @@ condition|(
 name|chunk_render
 operator|->
 name|idle_id
+operator|||
+name|assume_running
 condition|)
 block|{
 name|cairo_rectangle_int_t
@@ -4198,6 +4210,8 @@ condition|)
 name|gimp_projection_chunk_render_reinit
 argument_list|(
 name|proj
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|chunk_render
