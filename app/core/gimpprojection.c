@@ -261,7 +261,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee447b0103
+DECL|enum|__anon2ad5ef370103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -277,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee447b0203
+DECL|enum|__anon2ad5ef370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3224,6 +3224,16 @@ name|gboolean
 name|now
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|proj
+operator|->
+name|priv
+operator|->
+name|buffer
+condition|)
+return|return;
 if|if
 condition|(
 name|proj
