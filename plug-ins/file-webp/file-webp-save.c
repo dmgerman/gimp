@@ -1177,6 +1177,11 @@ name|size
 argument_list|)
 expr_stmt|;
 block|}
+name|WebPMuxDelete
+argument_list|(
+name|mux
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
