@@ -157,6 +157,14 @@ DECL|member|line_art_max_grow
 name|gint
 name|line_art_max_grow
 decl_stmt|;
+DECL|member|line_art_segment_max_len
+name|gint
+name|line_art_segment_max_len
+decl_stmt|;
+DECL|member|line_art_spline_max_len
+name|gint
+name|line_art_spline_max_len
+decl_stmt|;
 DECL|member|fill_criterion
 name|GimpSelectCriterion
 name|fill_criterion

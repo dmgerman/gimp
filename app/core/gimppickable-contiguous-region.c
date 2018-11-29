@@ -107,7 +107,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38f9520108
+DECL|struct|__anon2b1e18c50108
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -122,6 +122,14 @@ DECL|member|stroke_threshold
 name|gfloat
 name|stroke_threshold
 decl_stmt|;
+DECL|member|segment_max_length
+name|gint
+name|segment_max_length
+decl_stmt|;
+DECL|member|spline_max_length
+name|gint
+name|spline_max_length
+decl_stmt|;
 DECL|typedef|LineArtData
 block|}
 name|LineArtData
@@ -131,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38f9520208
+DECL|struct|__anon2b1e18c50208
 block|{
 DECL|member|x
 name|gint
@@ -419,6 +427,12 @@ name|select_transparent
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -703,8 +717,9 @@ argument_list|,
 comment|/*end_point_rate,*/
 literal|0.85
 argument_list|,
-comment|/*spline_max_length,*/
-literal|60
+name|data
+operator|->
+name|spline_max_length
 argument_list|,
 comment|/*spline_max_angle,*/
 literal|90.0
@@ -727,8 +742,9 @@ argument_list|,
 comment|/*small_segments_from_spline_sources,*/
 name|TRUE
 argument_list|,
-comment|/*segments_max_length*/
-literal|20
+name|data
+operator|->
+name|segment_max_length
 argument_list|,
 operator|&
 name|distmap
@@ -767,7 +783,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_prepare_line_art (GimpPickable * pickable,gboolean select_transparent,gfloat stroke_threshold,gfloat ** distmap)
+DECL|function|gimp_pickable_contiguous_region_prepare_line_art (GimpPickable * pickable,gboolean select_transparent,gfloat stroke_threshold,gint segment_max_length,gint spline_max_length,gfloat ** distmap)
 name|gimp_pickable_contiguous_region_prepare_line_art
 parameter_list|(
 name|GimpPickable
@@ -779,6 +795,12 @@ name|select_transparent
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|,
 name|gfloat
 modifier|*
@@ -834,6 +856,10 @@ argument_list|,
 name|select_transparent
 argument_list|,
 name|stroke_threshold
+argument_list|,
+name|segment_max_length
+argument_list|,
+name|spline_max_length
 argument_list|)
 expr_stmt|;
 name|gimp_pickable_contiguous_region_prepare_line_art_async_func
@@ -886,7 +912,7 @@ end_function
 begin_function
 name|GimpAsync
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_prepare_line_art_async (GimpPickable * pickable,gboolean select_transparent,gfloat stroke_threshold,gint priority)
+DECL|function|gimp_pickable_contiguous_region_prepare_line_art_async (GimpPickable * pickable,gboolean select_transparent,gfloat stroke_threshold,gint segment_max_length,gint spline_max_length,gint priority)
 name|gimp_pickable_contiguous_region_prepare_line_art_async
 parameter_list|(
 name|GimpPickable
@@ -898,6 +924,12 @@ name|select_transparent
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|,
 name|gint
 name|priority
@@ -949,6 +981,10 @@ argument_list|,
 name|select_transparent
 argument_list|,
 name|stroke_threshold
+argument_list|,
+name|segment_max_length
+argument_list|,
+name|spline_max_length
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -984,7 +1020,7 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gfloat * distmap,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gfloat stroke_threshold,gint flooding_max,gint x,gint y)
+DECL|function|gimp_pickable_contiguous_region_by_seed (GimpPickable * pickable,GeglBuffer * line_art,gfloat * distmap,gboolean antialias,gfloat threshold,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean diagonal_neighbors,gfloat stroke_threshold,gint flooding_max,gint segment_max_length,gint spline_max_length,gint x,gint y)
 name|gimp_pickable_contiguous_region_by_seed
 parameter_list|(
 name|GimpPickable
@@ -1019,6 +1055,12 @@ name|stroke_threshold
 parameter_list|,
 name|gint
 name|flooding_max
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|,
 name|gint
 name|x
@@ -1118,6 +1160,10 @@ argument_list|,
 name|select_transparent
 argument_list|,
 name|stroke_threshold
+argument_list|,
+name|segment_max_length
+argument_list|,
+name|spline_max_length
 argument_list|,
 operator|&
 name|distmap
@@ -4612,7 +4658,7 @@ begin_function
 specifier|static
 name|LineArtData
 modifier|*
-DECL|function|line_art_data_new (GeglBuffer * buffer,gboolean select_transparent,gfloat stroke_threshold)
+DECL|function|line_art_data_new (GeglBuffer * buffer,gboolean select_transparent,gfloat stroke_threshold,gint segment_max_length,gint spline_max_length)
 name|line_art_data_new
 parameter_list|(
 name|GeglBuffer
@@ -4624,6 +4670,12 @@ name|select_transparent
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|)
 block|{
 name|LineArtData
@@ -4655,6 +4707,18 @@ operator|->
 name|stroke_threshold
 operator|=
 name|stroke_threshold
+expr_stmt|;
+name|data
+operator|->
+name|segment_max_length
+operator|=
+name|segment_max_length
+expr_stmt|;
+name|data
+operator|->
+name|spline_max_length
+operator|=
+name|spline_max_length
 expr_stmt|;
 return|return
 name|data

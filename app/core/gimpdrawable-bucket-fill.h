@@ -57,6 +57,12 @@ parameter_list|,
 name|gint
 name|line_art_max_grow
 parameter_list|,
+name|gint
+name|line_art_segment_max_length
+parameter_list|,
+name|gint
+name|line_art_spline_max_length
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -107,6 +113,12 @@ name|line_art_stroke_threshold
 parameter_list|,
 name|gint
 name|line_art_max_grow
+parameter_list|,
+name|gint
+name|line_art_segment_max_length
+parameter_list|,
+name|gint
+name|line_art_spline_max_length
 parameter_list|,
 name|gdouble
 name|seed_x

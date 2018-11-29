@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde7e910108
+DECL|struct|__anon2782c2410108
 block|{
 DECL|member|line_art
 name|GeglBuffer
@@ -52,6 +52,12 @@ parameter_list|,
 name|gfloat
 name|stroke_threshold
 parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
+parameter_list|,
 name|gfloat
 modifier|*
 modifier|*
@@ -74,6 +80,12 @@ name|select_transparent
 parameter_list|,
 name|gfloat
 name|stroke_threshold
+parameter_list|,
+name|gint
+name|segment_max_length
+parameter_list|,
+name|gint
+name|spline_max_length
 parameter_list|,
 name|gint
 name|priority
@@ -118,6 +130,12 @@ name|line_art_stroke_threshold
 parameter_list|,
 name|gint
 name|line_art_max_grow
+parameter_list|,
+name|gint
+name|line_art_segment_max_length
+parameter_list|,
+name|gint
+name|line_art_spline_max_length
 parameter_list|,
 name|gint
 name|x
