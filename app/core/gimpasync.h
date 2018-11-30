@@ -210,6 +210,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_async_add_callback_for_object
+parameter_list|(
+name|GimpAsync
+modifier|*
+name|async
+parameter_list|,
+name|GimpAsyncCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|gpointer
+name|gobject
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_async_remove_callback
 parameter_list|(
 name|GimpAsync
