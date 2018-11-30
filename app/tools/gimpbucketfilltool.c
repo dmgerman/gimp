@@ -3646,7 +3646,7 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
-name|gimp_async_add_callback
+name|gimp_async_add_callback_for_object
 argument_list|(
 name|tool
 operator|->
@@ -3658,6 +3658,8 @@ operator|(
 name|GimpAsyncCallback
 operator|)
 name|gimp_bucket_fill_compute_line_art_cb
+argument_list|,
+name|tool
 argument_list|,
 name|tool
 argument_list|)
