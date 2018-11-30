@@ -1114,7 +1114,7 @@ name|render_update
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_async_add_callback
+name|gimp_async_add_callback_for_object
 argument_list|(
 name|async
 argument_list|,
@@ -1122,6 +1122,8 @@ operator|(
 name|GimpAsyncCallback
 operator|)
 name|gimp_view_renderer_drawable_render_async_callback
+argument_list|,
+name|renderdrawable
 argument_list|,
 name|renderdrawable
 argument_list|)

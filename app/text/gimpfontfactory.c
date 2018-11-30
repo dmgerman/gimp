@@ -1161,7 +1161,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_async_add_callback
+name|gimp_async_add_callback_for_object
 argument_list|(
 name|async
 argument_list|,
@@ -1169,6 +1169,8 @@ operator|(
 name|GimpAsyncCallback
 operator|)
 name|gimp_font_factory_load_async_callback
+argument_list|,
+name|factory
 argument_list|,
 name|factory
 argument_list|)
