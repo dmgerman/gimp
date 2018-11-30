@@ -123,6 +123,26 @@ DECL|member|composite_mode
 name|GimpLayerCompositeMode
 name|composite_mode
 decl_stmt|;
+DECL|member|cached_fish_format
+specifier|const
+name|Babl
+modifier|*
+name|cached_fish_format
+decl_stmt|;
+DECL|member|space_fish
+specifier|const
+name|Babl
+modifier|*
+name|space_fish
+index|[
+literal|3
+comment|/* from */
+index|]
+index|[
+literal|3
+comment|/* to */
+index|]
+decl_stmt|;
 DECL|member|real_composite_mode
 name|GimpLayerCompositeMode
 name|real_composite_mode

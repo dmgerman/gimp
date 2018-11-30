@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3979f0103
+DECL|enum|__anon29b53fc00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -380,23 +380,6 @@ end_define
 
 begin_decl_stmt
 specifier|static
-specifier|const
-name|Babl
-modifier|*
-name|gimp_layer_color_space_fish
-index|[
-literal|3
-comment|/* from */
-index|]
-index|[
-literal|3
-comment|/* to */
-index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|static
 name|CompositeFunc
 name|composite_union
 init|=
@@ -405,6 +388,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|composite_clip_to_backdrop
 specifier|static
 name|CompositeFunc
 name|composite_clip_to_backdrop
@@ -414,6 +398,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|composite_clip_to_layer
 specifier|static
 name|CompositeFunc
 name|composite_clip_to_layer
@@ -683,132 +668,6 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"RGBA float"
-argument_list|,
-literal|"R'G'B'A float"
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_LAB
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"RGBA float"
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|,
-literal|"RGBA float"
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_LAB
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"R'G'B'A float"
-argument_list|,
-literal|"CIE Lab alpha float"
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_LAB
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"CIE Lab alpha float"
-argument_list|,
-literal|"RGBA float"
-argument_list|)
-expr_stmt|;
-name|gimp_layer_color_space_fish
-comment|/* from */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_LAB
-operator|-
-literal|1
-index|]
-comment|/* to   */
-index|[
-name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
-operator|-
-literal|1
-index|]
-operator|=
-name|babl_fish
-argument_list|(
-literal|"CIE Lab alpha float"
-argument_list|,
-literal|"R'G'B'A float"
 argument_list|)
 expr_stmt|;
 if|#
@@ -1277,6 +1136,220 @@ argument_list|,
 name|preferred_format
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|self
+operator|->
+name|cached_fish_format
+operator|!=
+name|format
+condition|)
+block|{
+name|self
+operator|->
+name|cached_fish_format
+operator|=
+name|format
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_LAB
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_LAB
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_LAB
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_LINEAR
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|space_fish
+comment|/* from */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_LAB
+operator|-
+literal|1
+index|]
+comment|/* to   */
+index|[
+name|GIMP_LAYER_COLOR_SPACE_RGB_PERCEPTUAL
+operator|-
+literal|1
+index|]
+operator|=
+name|babl_fish
+argument_list|(
+name|babl_format_with_space
+argument_list|(
+literal|"CIE Lab alpha float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|,
+name|babl_format_with_space
+argument_list|(
+literal|"R'G'B'A float"
+argument_list|,
+name|format
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|gegl_operation_set_format
 argument_list|(
 name|operation
@@ -2023,7 +2096,9 @@ argument_list|)
 expr_stmt|;
 name|composite_to_blend_fish
 operator|=
-name|gimp_layer_color_space_fish
+name|layer_mode
+operator|->
+name|space_fish
 index|[
 name|composite_space
 operator|-
@@ -2037,7 +2112,9 @@ index|]
 expr_stmt|;
 name|blend_to_composite_fish
 operator|=
-name|gimp_layer_color_space_fish
+name|layer_mode
+operator|->
+name|space_fish
 index|[
 name|blend_space
 operator|-
