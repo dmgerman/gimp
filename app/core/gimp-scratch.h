@@ -39,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298115590108
+DECL|struct|__anon2bf7d94d0108
 block|{
 DECL|member|size
 name|gsize
@@ -79,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298115590208
+DECL|struct|__anon2bf7d94d0208
 block|{
 DECL|member|blocks
 name|GimpScratchBlock
@@ -507,6 +507,19 @@ parameter_list|)
 define|\
 value|((type *) (gimp_scratch_alloc0 (sizeof (type) * (n))))
 end_define
+
+begin_comment
+comment|/*  stats  */
+end_comment
+
+begin_function_decl
+name|guint64
+name|gimp_scratch_get_total
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

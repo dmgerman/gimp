@@ -270,5 +270,23 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*   public functions (stats)  */
+end_comment
+
+begin_function
+name|gsize
+DECL|function|gimp_scratch_get_total (void)
+name|gimp_scratch_get_total
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|gimp_scratch_total
+return|;
+block|}
+end_function
+
 end_unit
 
