@@ -3987,6 +3987,12 @@ name|gint
 name|samples
 parameter_list|)
 block|{
+specifier|static
+specifier|const
+name|Babl
+modifier|*
+name|fish
+decl_stmt|;
 name|gfloat
 modifier|*
 name|scratch
@@ -3999,6 +4005,20 @@ name|gfloat
 modifier|*
 name|layer_Y
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|fish
+condition|)
+name|fish
+operator|=
+name|babl_fish
+argument_list|(
+literal|"RGBA float"
+argument_list|,
+literal|"Y float"
+argument_list|)
+expr_stmt|;
 name|scratch
 operator|=
 name|gimp_scratch_new
@@ -4022,12 +4042,7 @@ name|samples
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-literal|"RGBA float"
-argument_list|,
-literal|"Y float"
-argument_list|)
+name|fish
 argument_list|,
 name|in
 argument_list|,
@@ -4038,12 +4053,7 @@ argument_list|)
 expr_stmt|;
 name|babl_process
 argument_list|(
-name|babl_fish
-argument_list|(
-literal|"RGBA float"
-argument_list|,
-literal|"Y float"
-argument_list|)
+name|fish
 argument_list|,
 name|layer
 argument_list|,
