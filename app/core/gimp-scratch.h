@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_SCRATCH_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
 begin_define
 DECL|macro|GIMP_SCRATCH_ALIGNMENT
 define|#
@@ -39,7 +45,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7d94d0108
+DECL|struct|__anon2b720cb50108
 block|{
 DECL|member|size
 name|gsize
@@ -79,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7d94d0208
+DECL|struct|__anon2b720cb50208
 block|{
 DECL|member|blocks
 name|GimpScratchBlock
