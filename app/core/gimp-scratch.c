@@ -275,7 +275,7 @@ comment|/*   public functions (stats)  */
 end_comment
 
 begin_function
-name|gsize
+name|guint64
 DECL|function|gimp_scratch_get_total (void)
 name|gimp_scratch_get_total
 parameter_list|(
