@@ -259,10 +259,6 @@ DECL|member|n_threads
 name|gint
 name|n_threads
 decl_stmt|;
-DECL|member|n_remaining_threads
-name|gint
-name|n_remaining_threads
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -410,6 +406,14 @@ specifier|static
 name|GimpBacktrace
 modifier|*
 name|handler_backtrace
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|handler_n_remaining_threads
+specifier|static
+name|gint
+name|handler_n_remaining_threads
 decl_stmt|;
 end_decl_stmt
 
@@ -1034,9 +1038,7 @@ expr_stmt|;
 name|g_atomic_int_dec_and_test
 argument_list|(
 operator|&
-name|curr_backtrace
-operator|->
-name|n_remaining_threads
+name|handler_n_remaining_threads
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1463,12 +1465,6 @@ name|n_threads
 operator|=
 name|n_threads
 expr_stmt|;
-name|backtrace
-operator|->
-name|n_remaining_threads
-operator|=
-name|n_threads
-expr_stmt|;
 while|while
 condition|(
 operator|!
@@ -1490,6 +1486,14 @@ operator|&
 name|handler_backtrace
 argument_list|,
 name|backtrace
+argument_list|)
+expr_stmt|;
+name|g_atomic_int_set
+argument_list|(
+operator|&
+name|handler_n_remaining_threads
+argument_list|,
+name|n_threads
 argument_list|)
 expr_stmt|;
 name|g_atomic_int_set
@@ -1595,9 +1599,7 @@ condition|(
 name|g_atomic_int_get
 argument_list|(
 operator|&
-name|backtrace
-operator|->
-name|n_remaining_threads
+name|handler_n_remaining_threads
 argument_list|)
 operator|>
 literal|0
@@ -1658,7 +1660,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (backtrace->n_remaining_threads> 0)     {       gint j = 0;        for (i = 0; i< n_threads; i++)         {           if (backtrace->threads[i].n_frames == 0)             {               if (n_blacklisted_threads< MAX_N_THREADS)                 {                   blacklisted_threads[n_blacklisted_threads++] =                     backtrace->threads[i].tid;                 }             }           else             {               if (j< i)                 backtrace->threads[j] = backtrace->threads[i];                j++;             }         }        n_threads = j;     }
+block|if (handler_n_remaining_threads> 0)     {       gint j = 0;        for (i = 0; i< n_threads; i++)         {           if (backtrace->threads[i].n_frames == 0)             {               if (n_blacklisted_threads< MAX_N_THREADS)                 {                   blacklisted_threads[n_blacklisted_threads++] =                     backtrace->threads[i].tid;                 }             }           else             {               if (j< i)                 backtrace->threads[j] = backtrace->threads[i];                j++;             }         }        n_threads = j;     }
 endif|#
 directive|endif
 name|g_mutex_unlock
@@ -1703,12 +1705,6 @@ if|if
 condition|(
 operator|!
 name|backtrace
-operator|||
-name|backtrace
-operator|->
-name|n_remaining_threads
-operator|>
-literal|0
 condition|)
 return|return;
 name|g_free
