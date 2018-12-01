@@ -931,6 +931,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLineArt
+typedef|typedef
+name|struct
+name|_GimpLineArt
+name|GimpLineArt
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpObjectQueue
 typedef|typedef
 name|struct

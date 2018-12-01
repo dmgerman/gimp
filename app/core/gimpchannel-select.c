@@ -2060,8 +2060,6 @@ name|pickable
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
 name|antialias
 argument_list|,
 name|threshold
@@ -2072,15 +2070,6 @@ name|select_criterion
 argument_list|,
 name|diagonal_neighbors
 argument_list|,
-literal|0.92
-argument_list|,
-literal|3
-argument_list|,
-literal|20
-argument_list|,
-literal|60
-argument_list|,
-comment|/* TODO */
 name|x
 argument_list|,
 name|y

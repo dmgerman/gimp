@@ -685,8 +685,6 @@ name|drawable
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
 name|options
 argument_list|,
 name|GIMP_PDB_CONTEXT
@@ -724,15 +722,6 @@ argument_list|)
 operator|->
 name|diagonal_neighbors
 argument_list|,
-literal|0.92
-argument_list|,
-literal|3
-argument_list|,
-literal|20
-argument_list|,
-literal|60
-argument_list|,
-comment|/* TODO */
 name|x
 argument_list|,
 name|y

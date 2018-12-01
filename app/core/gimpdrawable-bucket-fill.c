@@ -135,20 +135,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GeglBuffer * line_art,gfloat * distmap,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat line_art_stroke_threshold,gint line_art_max_grow,gint line_art_segment_max_length,gint line_art_spline_max_length,gdouble seed_x,gdouble seed_y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpLineArt * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GeglBuffer
+name|GimpLineArt
 modifier|*
 name|line_art
-parameter_list|,
-name|gfloat
-modifier|*
-name|distmap
 parameter_list|,
 name|GimpFillOptions
 modifier|*
@@ -168,18 +164,6 @@ name|sample_merged
 parameter_list|,
 name|gboolean
 name|diagonal_neighbors
-parameter_list|,
-name|gfloat
-name|line_art_stroke_threshold
-parameter_list|,
-name|gint
-name|line_art_max_grow
-parameter_list|,
-name|gint
-name|line_art_segment_max_length
-parameter_list|,
-name|gint
-name|line_art_spline_max_length
 parameter_list|,
 name|gdouble
 name|seed_x
@@ -259,8 +243,6 @@ name|drawable
 argument_list|,
 name|line_art
 argument_list|,
-name|distmap
-argument_list|,
 name|options
 argument_list|,
 name|fill_transparent
@@ -272,14 +254,6 @@ argument_list|,
 name|sample_merged
 argument_list|,
 name|diagonal_neighbors
-argument_list|,
-name|line_art_stroke_threshold
-argument_list|,
-name|line_art_max_grow
-argument_list|,
-name|line_art_segment_max_length
-argument_list|,
-name|line_art_spline_max_length
 argument_list|,
 name|seed_x
 argument_list|,
@@ -409,20 +383,16 @@ end_comment
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GeglBuffer * line_art,gfloat * distmap,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gfloat stroke_threshold,gint max_grow,gint segment_max_length,gint spline_max_length,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
+DECL|function|gimp_drawable_get_bucket_fill_buffer (GimpDrawable * drawable,GimpLineArt * line_art,GimpFillOptions * options,gboolean fill_transparent,GimpSelectCriterion fill_criterion,gdouble threshold,gboolean sample_merged,gboolean diagonal_neighbors,gdouble seed_x,gdouble seed_y,GeglBuffer ** mask_buffer,gdouble * mask_x,gdouble * mask_y,gint * mask_width,gint * mask_height)
 name|gimp_drawable_get_bucket_fill_buffer
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GeglBuffer
+name|GimpLineArt
 modifier|*
 name|line_art
-parameter_list|,
-name|gfloat
-modifier|*
-name|distmap
 parameter_list|,
 name|GimpFillOptions
 modifier|*
@@ -442,18 +412,6 @@ name|sample_merged
 parameter_list|,
 name|gboolean
 name|diagonal_neighbors
-parameter_list|,
-name|gfloat
-name|stroke_threshold
-parameter_list|,
-name|gint
-name|max_grow
-parameter_list|,
-name|gint
-name|segment_max_length
-parameter_list|,
-name|gint
-name|spline_max_length
 parameter_list|,
 name|gdouble
 name|seed_x
@@ -697,8 +655,6 @@ name|pickable
 argument_list|,
 name|line_art
 argument_list|,
-name|distmap
-argument_list|,
 name|antialias
 argument_list|,
 name|threshold
@@ -708,14 +664,6 @@ argument_list|,
 name|fill_criterion
 argument_list|,
 name|diagonal_neighbors
-argument_list|,
-name|stroke_threshold
-argument_list|,
-name|max_grow
-argument_list|,
-name|segment_max_length
-argument_list|,
-name|spline_max_length
 argument_list|,
 operator|(
 name|gint
