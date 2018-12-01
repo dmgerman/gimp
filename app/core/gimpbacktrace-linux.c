@@ -448,6 +448,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+specifier|const
 name|blacklisted_thread_names
 index|[]
 init|=
