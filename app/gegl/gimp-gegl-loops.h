@@ -44,6 +44,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_gegl_clear
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|rect
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  this is a pretty stupid port of concolve_region() that only works  *  on a linear source buffer  */
 end_comment
