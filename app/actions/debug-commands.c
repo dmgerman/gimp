@@ -1096,6 +1096,11 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
+name|gimp_projection_stop_rendering
+argument_list|(
+name|projection
+argument_list|)
+expr_stmt|;
 name|GIMP_TIMER_START
 argument_list|()
 expr_stmt|;
@@ -1121,11 +1126,8 @@ expr_stmt|;
 name|gimp_projection_flush_now
 argument_list|(
 name|projection
-argument_list|)
-expr_stmt|;
-name|gimp_display_flush_now
-argument_list|(
-name|display
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|GIMP_TIMER_END

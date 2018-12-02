@@ -261,7 +261,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a93c100103
+DECL|enum|__anon28dc1b500103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -277,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a93c100203
+DECL|enum|__anon28dc1b500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -717,6 +717,9 @@ name|proj
 parameter_list|,
 name|gboolean
 name|now
+parameter_list|,
+name|gboolean
+name|direct
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1658,6 +1661,8 @@ expr_stmt|;
 name|gimp_projection_flush_now
 argument_list|(
 name|proj
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2679,6 +2684,8 @@ argument_list|(
 name|proj
 argument_list|,
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2686,12 +2693,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_projection_flush_now (GimpProjection * proj)
+DECL|function|gimp_projection_flush_now (GimpProjection * proj,gboolean direct)
 name|gimp_projection_flush_now
 parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|direct
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2708,6 +2718,8 @@ argument_list|(
 name|proj
 argument_list|,
 name|TRUE
+argument_list|,
+name|direct
 argument_list|)
 expr_stmt|;
 block|}
@@ -3208,7 +3220,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_flush_whenever (GimpProjection * proj,gboolean now)
+DECL|function|gimp_projection_flush_whenever (GimpProjection * proj,gboolean now,gboolean direct)
 name|gimp_projection_flush_whenever
 parameter_list|(
 name|GimpProjection
@@ -3217,6 +3229,9 @@ name|proj
 parameter_list|,
 name|gboolean
 name|now
+parameter_list|,
+name|gboolean
+name|direct
 parameter_list|)
 block|{
 if|if
@@ -3294,9 +3309,8 @@ name|gimp_projection_paint_area
 argument_list|(
 name|proj
 argument_list|,
-name|FALSE
+name|direct
 argument_list|,
-comment|/* sic! */
 name|rect
 operator|.
 name|x
@@ -4216,7 +4230,6 @@ argument_list|(
 name|proj
 argument_list|,
 name|TRUE
-comment|/* sic! */
 argument_list|,
 name|work_x
 argument_list|,

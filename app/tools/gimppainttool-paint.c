@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cc35a0108
+DECL|struct|__anon28fdfae70108
 block|{
 DECL|member|paint_tool
 name|GimpPaintTool
@@ -123,7 +123,7 @@ name|GimpPaintToolPaintFunc
 name|func
 decl_stmt|;
 union|union
-DECL|union|__anon2c5cc35a020a
+DECL|union|__anon28fdfae7020a
 block|{
 DECL|member|data
 name|gpointer
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cc35a0308
+DECL|struct|__anon28fdfae70308
 block|{
 DECL|member|coords
 name|GimpCoords
@@ -658,6 +658,8 @@ name|gimp_image_get_projection
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now
@@ -1202,6 +1204,8 @@ name|gimp_image_get_projection
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now
@@ -1732,6 +1736,8 @@ name|gimp_image_get_projection
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now

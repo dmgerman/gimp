@@ -272,6 +272,9 @@ parameter_list|(
 name|GimpProjection
 modifier|*
 name|proj
+parameter_list|,
+name|gboolean
+name|direct
 parameter_list|)
 function_decl|;
 end_function_decl
