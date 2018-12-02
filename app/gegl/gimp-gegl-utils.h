@@ -110,6 +110,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_gegl_rectangle_align_to_tile_grid
+parameter_list|(
+name|GeglRectangle
+modifier|*
+name|dest
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|src
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
