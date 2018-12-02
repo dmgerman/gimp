@@ -3,13 +3,6 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gradient Map plug-in  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -81,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2980d70b0103
+DECL|enum|__anon288c83090103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE

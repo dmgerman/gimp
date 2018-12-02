@@ -15,13 +15,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -149,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290861c80103
+DECL|enum|__anon28f999c20103
 block|{
 DECL|enumerator|WARNING_SHADOW
 name|WARNING_SHADOW
@@ -268,7 +261,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon290861c80203
+DECL|enum|__anon28f999c20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

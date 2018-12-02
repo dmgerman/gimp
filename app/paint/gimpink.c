@@ -21,13 +21,6 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -2335,7 +2328,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ada0b0103
+DECL|enum|__anon29c519eb0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

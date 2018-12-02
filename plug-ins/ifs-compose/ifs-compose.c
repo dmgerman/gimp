@@ -7,13 +7,6 @@ begin_comment
 comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful way for a  *    script to give the 19N parameters for an image).  Perhaps just  *    support saving parameters to a file, script passes file name.  * 2. Figure out if we need multiple phases for supersampled brushes.  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -145,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a225ff20103
+DECL|enum|__anon2a1cde540103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -165,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a225ff20203
+DECL|enum|__anon2a1cde540203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -181,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20308
+DECL|struct|__anon2a1cde540308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -207,7 +200,7 @@ name|guint
 name|timeout_id
 decl_stmt|;
 union|union
-DECL|union|__anon2a225ff2040a
+DECL|union|__anon2a1cde54040a
 block|{
 DECL|member|d
 name|gdouble
@@ -232,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20508
+DECL|struct|__anon2a1cde540508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -262,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20608
+DECL|struct|__anon2a1cde540608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -297,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20708
+DECL|struct|__anon2a1cde540708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -333,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20808
+DECL|struct|__anon2a1cde540808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20908
+DECL|struct|__anon2a1cde540908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -544,7 +537,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a225ff20a08
+DECL|struct|__anon2a1cde540a08
 block|{
 DECL|member|run
 name|gboolean

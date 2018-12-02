@@ -27,13 +27,6 @@ directive|include
 file|<gio/gio.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -86,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad948770103
+DECL|enum|__anon2b5e2a250103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS

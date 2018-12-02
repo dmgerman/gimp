@@ -21,13 +21,6 @@ directive|include
 file|<cairo.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -107,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e18c50108
+DECL|struct|__anon27eda7b10108
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -139,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e18c50208
+DECL|struct|__anon27eda7b10208
 block|{
 DECL|member|x
 name|gint

@@ -15,13 +15,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -73,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2976dada0103
+DECL|enum|__anon2afad82c0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -348,7 +341,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976dada0203
+DECL|enum|__anon2afad82c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

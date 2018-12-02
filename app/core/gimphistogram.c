@@ -3,13 +3,6 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimphistogram module Copyright (C) 1999 Jay Cox<jaycox@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -115,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80e88c0103
+DECL|enum|__anon2c2bb6c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -166,7 +159,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c80e88c0208
+DECL|struct|__anon2c2bb6c60208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -215,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c80e88c0308
+DECL|struct|__anon2c2bb6c60308
 block|{
 DECL|member|async
 name|GimpAsync

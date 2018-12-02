@@ -7,13 +7,6 @@ begin_comment
 comment|/*  * Colormap remapping plug-in  * Copyright (C) 2006 Mukund Sivaraman<muks@mukund.org>  *  * This plug-in takes the colormap and lets you move colors from one index  * to another while keeping the original image visually unmodified.  *  * Such functionality is useful for creating graphics files for applications  * which expect certain indices to contain some specific colors.  *  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -1746,7 +1739,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e6d5bc0103
+DECL|enum|__anon2b82892c0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

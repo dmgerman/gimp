@@ -15,13 +15,6 @@ directive|include
 file|<cairo.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -72,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be20ba0103
+DECL|enum|__anon287d8b7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

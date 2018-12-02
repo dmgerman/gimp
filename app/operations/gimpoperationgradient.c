@@ -15,13 +15,6 @@ directive|include
 file|<cairo.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -82,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279569ee0103
+DECL|enum|__anon291392020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279569ee0208
+DECL|struct|__anon291392020208
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -211,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279569ee0308
+DECL|struct|__anon291392020308
 block|{
 DECL|member|buffer
 name|GeglBuffer

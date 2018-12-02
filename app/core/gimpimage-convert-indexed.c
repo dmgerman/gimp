@@ -51,13 +51,6 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -437,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b82f78a0103
+DECL|enum|__anon2c1c06f60103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1525,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82f78a0208
+DECL|struct|__anon2c1c06f60208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1755,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82f78a0308
+DECL|struct|__anon2c1c06f60308
 block|{
 DECL|member|used_count
 name|glong

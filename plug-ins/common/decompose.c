@@ -7,13 +7,6 @@ begin_comment
 comment|/*  Lab colorspace support originally written by Alexey Dyachenko,  *  merged into the officical plug-in by Sven Neumann.  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -83,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e576f0108
+DECL|struct|__anon2bd589bf0108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -141,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e576f0208
+DECL|struct|__anon2bd589bf0208
 block|{
 DECL|member|type
 specifier|const
@@ -193,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e576f0308
+DECL|struct|__anon2bd589bf0308
 block|{
 DECL|member|extract_type
 name|gchar

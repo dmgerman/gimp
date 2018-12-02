@@ -15,13 +15,6 @@ begin_comment
 comment|/*  * All redundant _256 versions of YCbCr* are here only for compatibility .  * They can be dropped for GIMP 3.0  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -107,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62e1080108
+DECL|struct|__anon2b4e4f810108
 block|{
 union|union
-DECL|union|__anon2b62e108020a
+DECL|union|__anon2b4e4f81020a
 block|{
 DECL|member|ID
 name|gint32
@@ -143,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62e1080308
+DECL|struct|__anon2b4e4f810308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -194,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62e1080408
+DECL|struct|__anon2b4e4f810408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1016,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62e1080508
+DECL|struct|__anon2b4e4f810508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1056,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62e1080608
+DECL|struct|__anon2b4e4f810608
 block|{
 DECL|member|width
 DECL|member|height

@@ -11,13 +11,6 @@ begin_comment
 comment|/*  * Version History  * 0.5: (1996) Version for Gimp 0.54 by Federico Mena Quintero  * 0.6: (Feb '98) First Version for Gimp 0.99.x, very buggy.  * 0.8: (Mar '98) First "stable" version  * 0.9: (May '98)  *      - Added support for Gradients. It is now possible to map  *        a gradient to the back of the curl.  *      - This implies a changed PDB-Interface: New "mode" parameter.  *      - Pagecurl now returns the ID of the new layer.  *      - Exchanged the meaning of FG/BG Color, because mostly the FG  *        color is darker.  * 1.0: (July '04)  *      - Code cleanup, added reverse gradient option.  */
 end_comment
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -85,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5870c70103
+DECL|enum|__anon27bd61530103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -109,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5870c70203
+DECL|enum|__anon27bd61530203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -130,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5870c70303
+DECL|enum|__anon27bd61530303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -218,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5870c70408
+DECL|struct|__anon27bd61530408
 block|{
 DECL|member|colors
 name|CurlColors

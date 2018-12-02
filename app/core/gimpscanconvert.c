@@ -21,13 +21,6 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include

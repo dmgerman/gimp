@@ -27,13 +27,6 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
-begin_define
-DECL|macro|GEGL_ITERATOR2_API
-define|#
-directive|define
-name|GEGL_ITERATOR2_API
-end_define
-
 begin_include
 include|#
 directive|include
@@ -1107,7 +1100,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon29e962c9010a
+DECL|union|__anon2b895fe6010a
 DECL|member|v
 DECL|member|f
 union|union
