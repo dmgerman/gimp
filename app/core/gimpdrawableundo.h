@@ -131,6 +131,14 @@ name|GeglBuffer
 modifier|*
 name|applied_buffer
 decl_stmt|;
+DECL|member|applied_x
+name|gint
+name|applied_x
+decl_stmt|;
+DECL|member|applied_y
+name|gint
+name|applied_y
+decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
