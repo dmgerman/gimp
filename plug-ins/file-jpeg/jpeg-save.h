@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b9de450108
+DECL|struct|__anon292527b40108
 block|{
 DECL|member|quality
 name|gdouble
@@ -65,10 +65,6 @@ DECL|member|save_exif
 name|gboolean
 name|save_exif
 decl_stmt|;
-DECL|member|save_thumbnail
-name|gboolean
-name|save_thumbnail
-decl_stmt|;
 DECL|member|save_xmp
 name|gboolean
 name|save_xmp
@@ -76,6 +72,14 @@ decl_stmt|;
 DECL|member|save_iptc
 name|gboolean
 name|save_iptc
+decl_stmt|;
+DECL|member|save_thumbnail
+name|gboolean
+name|save_thumbnail
+decl_stmt|;
+DECL|member|save_profile
+name|gboolean
+name|save_profile
 decl_stmt|;
 DECL|member|use_orig_quality
 name|gboolean

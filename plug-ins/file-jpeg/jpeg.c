@@ -1372,6 +1372,13 @@ operator|)
 operator|!=
 literal|0
 expr_stmt|;
+name|jsvals
+operator|.
+name|save_profile
+operator|=
+name|gimp_export_color_profile
+argument_list|()
+expr_stmt|;
 name|parasite
 operator|=
 name|gimp_image_get_parasite
