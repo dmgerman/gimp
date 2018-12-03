@@ -3294,7 +3294,7 @@ name|profile
 decl_stmt|;
 name|profile
 operator|=
-name|gimp_image_get_color_profile
+name|gimp_image_get_effective_color_profile
 argument_list|(
 name|image_id
 argument_list|)
