@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af40690108
+DECL|struct|__anon2aab471d0108
 block|{
 DECL|member|compression
 name|gint
@@ -48,6 +48,10 @@ decl_stmt|;
 DECL|member|save_thumbnail
 name|gboolean
 name|save_thumbnail
+decl_stmt|;
+DECL|member|save_profile
+name|gboolean
+name|save_profile
 decl_stmt|;
 DECL|typedef|TiffSaveVals
 block|}

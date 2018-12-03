@@ -193,7 +193,10 @@ name|FALSE
 block|,
 comment|/*  save iptc           */
 name|TRUE
+block|,
 comment|/*  save thumbnail      */
+name|TRUE
+comment|/*  save profile        */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1182,6 +1185,13 @@ name|GIMP_METADATA_SAVE_THUMBNAIL
 operator|)
 operator|!=
 literal|0
+expr_stmt|;
+name|tsvals
+operator|.
+name|save_profile
+operator|=
+name|gimp_export_color_profile
+argument_list|()
 expr_stmt|;
 name|parasite
 operator|=
