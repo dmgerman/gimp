@@ -2684,6 +2684,8 @@ operator|=
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_MODE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_TRIVIAL
 block|,
 operator|.
 name|context
@@ -2713,6 +2715,8 @@ operator|.
 name|flags
 operator|=
 name|GIMP_LAYER_MODE_FLAG_BLEND_SPACE_IMMUTABLE
+operator||
+name|GIMP_LAYER_MODE_FLAG_TRIVIAL
 block|,
 operator|.
 name|context
