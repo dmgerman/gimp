@@ -176,6 +176,9 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
+name|GimpComponentMask
+name|affect
+decl_stmt|;
 name|GimpLayerMode
 name|mode
 decl_stmt|;
@@ -207,6 +210,13 @@ operator|=
 name|gimp_context_get_opacity
 argument_list|(
 name|context
+argument_list|)
+expr_stmt|;
+name|affect
+operator|=
+name|gimp_drawable_get_active_mask
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|mode
@@ -245,6 +255,10 @@ operator|&&
 name|opacity
 operator|==
 name|GIMP_OPACITY_OPAQUE
+operator|&&
+name|affect
+operator|==
+name|GIMP_COMPONENT_MASK_ALL
 operator|&&
 name|gimp_layer_mode_is_trivial
 argument_list|(
