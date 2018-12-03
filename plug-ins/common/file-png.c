@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe36e90108
+DECL|struct|__anon27cc616a0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -256,6 +256,10 @@ DECL|member|save_thumbnail
 name|gboolean
 name|save_thumbnail
 decl_stmt|;
+DECL|member|save_profile
+name|gboolean
+name|save_profile
+decl_stmt|;
 DECL|member|export_format
 name|PngExportFormat
 name|export_format
@@ -269,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe36e90208
+DECL|struct|__anon27cc616a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -345,6 +349,11 @@ name|GtkWidget
 modifier|*
 name|save_thumbnail
 decl_stmt|;
+DECL|member|save_profile
+name|GtkWidget
+modifier|*
+name|save_profile
+decl_stmt|;
 block|}
 DECL|typedef|PngSaveGui
 name|PngSaveGui
@@ -358,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe36e90308
+DECL|struct|__anon27cc616a0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1636,6 +1645,13 @@ name|GIMP_METADATA_SAVE_THUMBNAIL
 operator|)
 operator|!=
 literal|0
+expr_stmt|;
+name|pngvals
+operator|.
+name|save_profile
+operator|=
+name|gimp_export_color_profile
+argument_list|()
 expr_stmt|;
 comment|/* Override preferences from PNG export defaults (if saved). */
 name|load_parasite
@@ -5331,9 +5347,15 @@ name|defined
 argument_list|(
 name|PNG_iCCP_SUPPORTED
 argument_list|)
+if|if
+condition|(
+name|pngvals
+operator|.
+name|save_profile
+condition|)
 name|profile
 operator|=
-name|gimp_image_get_color_profile
+name|gimp_image_get_effective_color_profile
 argument_list|(
 name|orig_image_ID
 argument_list|)
@@ -8870,7 +8892,7 @@ name|toggle_button_init
 argument_list|(
 name|builder
 argument_list|,
-literal|"sv_exif"
+literal|"save-exif"
 argument_list|,
 name|pngvals
 operator|.
@@ -8890,7 +8912,7 @@ name|toggle_button_init
 argument_list|(
 name|builder
 argument_list|,
-literal|"sv_xmp"
+literal|"save-xmp"
 argument_list|,
 name|pngvals
 operator|.
@@ -8910,7 +8932,7 @@ name|toggle_button_init
 argument_list|(
 name|builder
 argument_list|,
-literal|"sv_iptc"
+literal|"save-iptc"
 argument_list|,
 name|pngvals
 operator|.
@@ -8930,7 +8952,7 @@ name|toggle_button_init
 argument_list|(
 name|builder
 argument_list|,
-literal|"sv_thumbnail"
+literal|"save-thumbnail"
 argument_list|,
 name|pngvals
 operator|.
@@ -8942,6 +8964,42 @@ operator|.
 name|save_thumbnail
 argument_list|)
 expr_stmt|;
+name|pg
+operator|.
+name|save_profile
+operator|=
+name|toggle_button_init
+argument_list|(
+name|builder
+argument_list|,
+literal|"save-color-profile"
+argument_list|,
+name|pngvals
+operator|.
+name|save_profile
+argument_list|,
+operator|&
+name|pngvals
+operator|.
+name|save_profile
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|PNG_iCCP_SUPPORTED
+argument_list|)
+name|gtk_widget_hide
+argument_list|(
+name|pg
+operator|.
+name|save_profile
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Comment toggle */
 name|parasite
 operator|=
@@ -9298,7 +9356,7 @@ name|sscanf
 argument_list|(
 name|def_str
 argument_list|,
-literal|"%d %d %d %d %d %d %d %d %d %d %d %d %d"
+literal|"%d %d %d %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 operator|&
 name|tmpvals
@@ -9364,6 +9422,11 @@ operator|&
 name|tmpvals
 operator|.
 name|save_thumbnail
+argument_list|,
+operator|&
+name|tmpvals
+operator|.
+name|save_profile
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -9380,6 +9443,10 @@ operator|||
 name|num_fields
 operator|==
 literal|13
+operator|||
+name|num_fields
+operator|==
+literal|14
 condition|)
 name|pngvals
 operator|=
@@ -9410,7 +9477,7 @@ name|def_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%d %d %d %d %d %d %d %d %d %d %d %d %d"
+literal|"%d %d %d %d %d %d %d %d %d %d %d %d %d %d"
 argument_list|,
 name|pngvals
 operator|.
@@ -9463,6 +9530,10 @@ argument_list|,
 name|pngvals
 operator|.
 name|save_thumbnail
+argument_list|,
+name|pngvals
+operator|.
+name|save_profile
 argument_list|)
 expr_stmt|;
 name|parasite
@@ -9586,6 +9657,11 @@ expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 name|save_thumbnail
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+name|save_profile
 argument_list|)
 expr_stmt|;
 undef|#
