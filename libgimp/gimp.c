@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287f86200103
+DECL|enum|__anon288f73020103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1285,7 +1285,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon287f86200203
+DECL|enum|__anon288f73020203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -6877,9 +6877,7 @@ name|tile_cache_size
 argument_list|,
 literal|"swap"
 argument_list|,
-name|config
-operator|->
-name|swap_path
+name|path
 argument_list|,
 literal|"threads"
 argument_list|,
