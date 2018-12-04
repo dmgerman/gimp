@@ -6805,6 +6805,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/* NOTE:  this should be an offset, not an int32!  however...            * since there are already 64-bit-offsets XCFs out there in            * which this field is 32-bit, and since it's not actually            * being used, we're going to keep this field 32-bit for the            * dummy levels, to remain consistent.  if we ever make use            * of levels above the first, we should turn this field into            * an offset, and bump the xcf version.            */
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
@@ -8472,7 +8473,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b793b920108
+DECL|struct|__anon29769f080108
 block|{
 DECL|member|info
 name|XcfInfo
