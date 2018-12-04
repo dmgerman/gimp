@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc616a0108
+DECL|struct|__anon29479fb10108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc616a0208
+DECL|struct|__anon29479fb10208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc616a0308
+DECL|struct|__anon29479fb10308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -1650,8 +1650,13 @@ name|pngvals
 operator|.
 name|save_profile
 operator|=
-name|gimp_export_color_profile
-argument_list|()
+operator|(
+name|metadata_flags
+operator|&
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+operator|)
+operator|!=
+literal|0
 expr_stmt|;
 comment|/* Override preferences from PNG export defaults (if saved). */
 name|load_parasite
@@ -2027,6 +2032,22 @@ name|metadata_flags
 operator|&=
 operator|~
 name|GIMP_METADATA_SAVE_THUMBNAIL
+expr_stmt|;
+if|if
+condition|(
+name|pngvals
+operator|.
+name|save_profile
+condition|)
+name|metadata_flags
+operator||=
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+expr_stmt|;
+else|else
+name|metadata_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
 expr_stmt|;
 name|file
 operator|=

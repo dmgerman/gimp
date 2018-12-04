@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9bd70108
+DECL|struct|__anon2b2a13f60108
 block|{
 DECL|member|tag
 name|gchar
@@ -1087,6 +1087,7 @@ argument_list|(
 name|datetime
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Thumbnail */
 if|if
 condition|(
@@ -1099,7 +1100,19 @@ operator|&=
 operator|~
 name|GIMP_METADATA_SAVE_THUMBNAIL
 expr_stmt|;
-block|}
+comment|/* Color profile */
+if|if
+condition|(
+operator|!
+name|gimp_export_color_profile
+argument_list|()
+condition|)
+operator|*
+name|suggested_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+expr_stmt|;
 return|return
 name|metadata
 return|;
@@ -2176,7 +2189,16 @@ expr_stmt|;
 end_expr_stmt
 
 begin_expr_stmt
-unit|}    success
+unit|}    if
+operator|(
+name|flags
+operator|&
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+operator|)
+block|{
+comment|/* nothing to do, but if we ever need to modify metadata based        * on the exported color profile, this is probably the place to        * add it        */
+block|}
+name|success
 operator|=
 name|gimp_metadata_save_to_file
 argument_list|(
