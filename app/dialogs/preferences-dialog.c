@@ -6268,6 +6268,25 @@ operator|&
 name|top_iter
 argument_list|)
 expr_stmt|;
+name|gimp_prefs_box_set_page_scrollable
+argument_list|(
+name|GIMP_PREFS_BOX
+argument_list|(
+name|prefs_box
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|size_group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
 comment|/*  Import Policies  */
 name|vbox2
 operator|=
@@ -6406,7 +6425,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|size_group
 argument_list|)
 expr_stmt|;
 comment|/*  Export Policies  */
@@ -6454,7 +6473,7 @@ name|object
 argument_list|,
 literal|"export-metadata-exif"
 argument_list|,
-comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle Exif by default.                                     */
+comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle Exif by default.                                     */
 name|_
 argument_list|(
 literal|"Export Exif metadata by default when available"
@@ -6474,7 +6493,7 @@ name|object
 argument_list|,
 literal|"export-metadata-xmp"
 argument_list|,
-comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle XMP by default.                                     */
+comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle XMP by default.                                     */
 name|_
 argument_list|(
 literal|"Export XMP metadata by default when available"
@@ -6494,7 +6513,7 @@ name|object
 argument_list|,
 literal|"export-metadata-iptc"
 argument_list|,
-comment|/* Translators: label for configuration option (checkbox).                                     * It determines how file export plug-ins handle IPTC by default.                                     */
+comment|/* Translators: label for                                     * configuration option (checkbox).                                     * It determines how file export                                     * plug-ins handle IPTC by default.                                     */
 name|_
 argument_list|(
 literal|"Export IPTC metadata by default when available"
@@ -6532,6 +6551,59 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+comment|/*  Export File Type  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Export File Type"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|grid
+operator|=
+name|prefs_grid_new
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_enum_combo_box_add
+argument_list|(
+name|object
+argument_list|,
+literal|"export-file-type"
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Default export file type:"
+argument_list|)
+argument_list|,
+name|GTK_GRID
+argument_list|(
+name|grid
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 comment|/*  Raw Image Importer  */
@@ -6666,6 +6738,11 @@ name|config
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|size_group
+argument_list|)
+expr_stmt|;
 comment|/****************/
 comment|/*  Playground  */
 comment|/****************/
@@ -12961,7 +13038,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b5fc0850108
+DECL|struct|__anon2968e2030108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13867,7 +13944,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b5fc0850208
+DECL|struct|__anon2968e2030208
 block|{
 DECL|member|property_name
 specifier|const
@@ -13998,7 +14075,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b5fc0850308
+DECL|struct|__anon2968e2030308
 block|{
 DECL|member|tree_label
 specifier|const

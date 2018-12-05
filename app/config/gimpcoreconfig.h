@@ -363,6 +363,10 @@ name|gchar
 modifier|*
 name|import_raw_plug_in
 decl_stmt|;
+DECL|member|export_file_type
+name|GimpExportFileType
+name|export_file_type
+decl_stmt|;
 DECL|member|export_color_profile
 name|gboolean
 name|export_color_profile

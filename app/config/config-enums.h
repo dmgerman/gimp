@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0103
+DECL|enum|__anon2965ab6f0103
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0203
+DECL|enum|__anon2965ab6f0203
 block|{
 DECL|enumerator|GIMP_CURSOR_FORMAT_BITMAP
 name|GIMP_CURSOR_FORMAT_BITMAP
@@ -124,7 +124,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0303
+DECL|enum|__anon2965ab6f0303
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -140,6 +140,67 @@ comment|/*< desc="Crosshair only">*/
 DECL|typedef|GimpCursorMode
 block|}
 name|GimpCursorMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_EXPORT_FILE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_EXPORT_FILE_TYPE
+value|(gimp_export_file_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_export_file_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2965ab6f0403
+block|{
+DECL|enumerator|GIMP_EXPORT_FILE_PNG
+name|GIMP_EXPORT_FILE_PNG
+block|,
+comment|/*< desc="PNG Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_JPG
+name|GIMP_EXPORT_FILE_JPG
+block|,
+comment|/*< desc="JPEG Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_ORA
+name|GIMP_EXPORT_FILE_ORA
+block|,
+comment|/*< desc="OpenRaster Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_PSD
+name|GIMP_EXPORT_FILE_PSD
+block|,
+comment|/*< desc="Photoshop Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_PDF
+name|GIMP_EXPORT_FILE_PDF
+block|,
+comment|/*< desc="Portable Document Format">*/
+DECL|enumerator|GIMP_EXPORT_FILE_TIF
+name|GIMP_EXPORT_FILE_TIF
+block|,
+comment|/*< desc="TIFF Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_BMP
+name|GIMP_EXPORT_FILE_BMP
+block|,
+comment|/*< desc="Windows BMP Image">*/
+DECL|enumerator|GIMP_EXPORT_FILE_WEBP
+name|GIMP_EXPORT_FILE_WEBP
+block|,
+comment|/*< desc="WebP Image">*/
+DECL|typedef|GimpExportFileType
+block|}
+name|GimpExportFileType
 typedef|;
 end_typedef
 
@@ -164,7 +225,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0403
+DECL|enum|__anon2965ab6f0503
 block|{
 DECL|enumerator|GIMP_HANDEDNESS_LEFT
 name|GIMP_HANDEDNESS_LEFT
@@ -200,7 +261,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0503
+DECL|enum|__anon2965ab6f0603
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -236,7 +297,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0603
+DECL|enum|__anon2965ab6f0703
 block|{
 DECL|enumerator|GIMP_POSITION_TOP
 name|GIMP_POSITION_TOP
@@ -280,7 +341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0703
+DECL|enum|__anon2965ab6f0803
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -320,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0803
+DECL|enum|__anon2965ab6f0903
 block|{
 DECL|enumerator|GIMP_WINDOW_HINT_NORMAL
 name|GIMP_WINDOW_HINT_NORMAL
@@ -360,7 +421,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4263dc0903
+DECL|enum|__anon2965ab6f0a03
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW

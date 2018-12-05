@@ -557,6 +557,15 @@ value|_("Which plug-in to use for importing raw digital camera files.")
 end_define
 
 begin_define
+DECL|macro|EXPORT_FILE_TYPE_BLURB
+define|#
+directive|define
+name|EXPORT_FILE_TYPE_BLURB
+define|\
+value|_("Export file type used by default.")
+end_define
+
+begin_define
 DECL|macro|EXPORT_COLOR_PROFILE_BLURB
 define|#
 directive|define
