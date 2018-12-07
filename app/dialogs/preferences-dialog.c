@@ -5073,15 +5073,6 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|size_group
-argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
-expr_stmt|;
 comment|/*  Document History  */
 name|vbox2
 operator|=
@@ -5115,6 +5106,12 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
+name|size_group
 argument_list|)
 expr_stmt|;
 comment|/***************/
@@ -5216,13 +5213,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|size_group
-operator|=
-name|gtk_size_group_new
-argument_list|(
-name|GTK_SIZE_GROUP_HORIZONTAL
-argument_list|)
-expr_stmt|;
 name|grid
 operator|=
 name|prefs_grid_new
@@ -5257,7 +5247,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Check existence of gdb or lldb to activate the preference, as a    * good hint of its prerequisite, unless backtrace() API exists, in    * which case the feature is always available.    */
@@ -6225,8 +6215,9 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
 expr_stmt|;
@@ -6738,8 +6729,9 @@ name|config
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
 expr_stmt|;
@@ -7242,14 +7234,11 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
 expr_stmt|;
 comment|/*******************/
 comment|/*  Default Image  */
@@ -7756,7 +7745,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 name|prefs_enum_combo_box_add
@@ -7781,7 +7770,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 name|prefs_enum_combo_box_add
@@ -7806,7 +7795,7 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Keyboard Shortcuts */
@@ -9208,14 +9197,11 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
 expr_stmt|;
 comment|/* Tool Editor */
 name|vbox2
@@ -10964,8 +10950,9 @@ argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
 expr_stmt|;
@@ -11583,14 +11570,11 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
 expr_stmt|;
 comment|/*************************/
 comment|/*  Interface / Display  */
@@ -12238,14 +12222,11 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
 expr_stmt|;
 comment|/***********************************/
 comment|/*  Interface / Window Management  */
@@ -12329,7 +12310,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox2
@@ -12859,14 +12840,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|g_clear_object
 argument_list|(
+operator|&
 name|size_group
 argument_list|)
-expr_stmt|;
-name|size_group
-operator|=
-name|NULL
 expr_stmt|;
 comment|/********************************/
 comment|/*  Image Windows / Appearance  */
@@ -13038,7 +13016,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2968e2030108
+DECL|struct|__anon2b92b6500108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13623,7 +13601,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|size_group
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*******************/
@@ -13944,7 +13922,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2968e2030208
+DECL|struct|__anon2b92b6500208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14075,7 +14053,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2968e2030308
+DECL|struct|__anon2b92b6500308
 block|{
 DECL|member|tree_label
 specifier|const
