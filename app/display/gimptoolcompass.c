@@ -148,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f9b5950103
+DECL|enum|__anon2786d0040103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -175,7 +175,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f9b5950203
+DECL|enum|__anon2786d0040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f9b5950303
+DECL|enum|__anon2786d0040303
 block|{
 DECL|enumerator|CREATE_GUIDES
 name|CREATE_GUIDES
@@ -5187,11 +5187,16 @@ block|}
 block|}
 if|if
 condition|(
+name|fabs
+argument_list|(
 name|pixel_angle
-operator|!=
+operator|-
 name|private
 operator|->
 name|pixel_angle
+argument_list|)
+operator|>
+name|EPSILON
 condition|)
 block|{
 name|private
@@ -5213,11 +5218,16 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|fabs
+argument_list|(
 name|unit_angle
-operator|!=
+operator|-
 name|private
 operator|->
 name|unit_angle
+argument_list|)
+operator|>
+name|EPSILON
 condition|)
 block|{
 name|private
