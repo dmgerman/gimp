@@ -3928,7 +3928,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2aad1f230108
+DECL|struct|__anon2c54e6970108
 block|{
 DECL|member|r
 name|guchar
@@ -4538,7 +4538,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aad1f230208
+DECL|struct|__anon2c54e6970208
 block|{
 DECL|member|timeout_id
 name|gint
@@ -4826,6 +4826,19 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"gimp-widget-blink"
+argument_list|)
+condition|)
+block|{
 name|gimp_highlight_widget
 argument_list|(
 name|widget
@@ -4845,6 +4858,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
