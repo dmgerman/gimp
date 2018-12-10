@@ -204,6 +204,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptools-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
@@ -4469,6 +4475,15 @@ argument_list|,
 name|display
 argument_list|,
 name|locked_message
+argument_list|)
+expr_stmt|;
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|item
 argument_list|)
 expr_stmt|;
 return|return

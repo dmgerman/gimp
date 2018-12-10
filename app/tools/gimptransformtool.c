@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptools-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptransformoptions.h"
 end_include
 
@@ -2174,6 +2180,19 @@ argument_list|,
 name|GIMP_FAILED
 argument_list|,
 name|locked_message
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|item
 argument_list|)
 expr_stmt|;
 return|return

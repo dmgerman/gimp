@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptools-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -436,6 +442,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|,
 name|GError
 modifier|*
@@ -1242,6 +1252,18 @@ literal|"The active layer's pixels are locked."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
@@ -1252,6 +1274,8 @@ argument_list|(
 name|paint_tool
 argument_list|,
 name|drawable
+argument_list|,
+name|display
 argument_list|,
 operator|&
 name|error
@@ -2022,6 +2046,8 @@ argument_list|(
 name|paint_tool
 argument_list|,
 name|drawable
+argument_list|,
+name|display
 argument_list|,
 name|NULL
 argument_list|)
@@ -3350,7 +3376,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_paint_tool_check_alpha (GimpPaintTool * paint_tool,GimpDrawable * drawable,GError ** error)
+DECL|function|gimp_paint_tool_check_alpha (GimpPaintTool * paint_tool,GimpDrawable * drawable,GimpDisplay * display,GError ** error)
 name|gimp_paint_tool_check_alpha
 parameter_list|(
 name|GimpPaintTool
@@ -3360,6 +3386,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|,
 name|GError
 modifier|*
@@ -3446,6 +3476,22 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active layer's alpha channel is locked."
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;

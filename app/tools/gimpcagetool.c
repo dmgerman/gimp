@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptools-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -153,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294b853d0103
+DECL|enum|__anon2abb77be0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -958,6 +964,22 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active layer's pixels are locked."
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;

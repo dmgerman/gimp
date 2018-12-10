@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimptools-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvashandle.h"
 end_include
 
@@ -142,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0602e30103
+DECL|enum|__anon28b784000103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -199,7 +205,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0602e30203
+DECL|enum|__anon28b784000203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -218,7 +224,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0602e30303
+DECL|enum|__anon28b784000303
 block|{
 DECL|enumerator|BEGIN_CHANGE
 name|BEGIN_CHANGE
@@ -1967,6 +1973,24 @@ name|path
 operator|->
 name|private
 decl_stmt|;
+name|GimpToolWidget
+modifier|*
+name|widget
+init|=
+name|GIMP_TOOL_WIDGET
+argument_list|(
+name|path
+argument_list|)
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_tool_widget_get_shell
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_is_content_locked
@@ -2000,6 +2024,23 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active path is locked."
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: this should really be done by the tool */
+name|gimp_tools_blink_lock_box
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|private
+operator|->
+name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
