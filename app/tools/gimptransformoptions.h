@@ -128,6 +128,12 @@ DECL|member|clip
 name|GimpTransformResize
 name|clip
 decl_stmt|;
+comment|/*  options gui  */
+DECL|member|type_box
+name|GtkWidget
+modifier|*
+name|type_box
+decl_stmt|;
 block|}
 struct|;
 end_struct

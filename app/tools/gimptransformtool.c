@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolcontrol.h"
 end_include
 
@@ -2137,6 +2143,17 @@ argument_list|,
 name|GIMP_FAILED
 argument_list|,
 name|null_message
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+name|gimp_widget_blink
+argument_list|(
+name|options
+operator|->
+name|type_box
 argument_list|)
 expr_stmt|;
 return|return

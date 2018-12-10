@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c21f20103
+DECL|enum|__anon29bcca3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -687,6 +687,15 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
+name|GimpTransformOptions
+modifier|*
+name|options
+init|=
+name|GIMP_TRANSFORM_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -745,6 +754,12 @@ name|gtk_widget_show
 argument_list|(
 name|hbox
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|type_box
+operator|=
+name|hbox
 expr_stmt|;
 name|label
 operator|=
