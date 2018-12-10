@@ -129,6 +129,11 @@ name|gdouble
 name|feather_radius
 decl_stmt|;
 comment|/*  options gui  */
+DECL|member|mode_box
+name|GtkWidget
+modifier|*
+name|mode_box
+decl_stmt|;
 DECL|member|antialias_toggle
 name|GtkWidget
 modifier|*

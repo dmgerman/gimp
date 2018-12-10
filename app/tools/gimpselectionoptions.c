@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb30960103
+DECL|enum|__anon2930099c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -682,6 +682,12 @@ name|gtk_widget_show
 argument_list|(
 name|hbox
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|mode_box
+operator|=
+name|hbox
 expr_stmt|;
 name|label
 operator|=
