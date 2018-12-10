@@ -3835,6 +3835,8 @@ argument_list|,
 name|translate_type
 argument_list|,
 name|display
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -3842,7 +3844,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_selection_tool_translate (GimpTool * tool,GdkEventKey * kevent,GimpTransformType translate_type,GimpDisplay * display)
+DECL|function|gimp_edit_selection_tool_translate (GimpTool * tool,GdkEventKey * kevent,GimpTransformType translate_type,GimpDisplay * display,GtkWidget * type_box)
 name|gimp_edit_selection_tool_translate
 parameter_list|(
 name|GimpTool
@@ -3859,6 +3861,10 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|type_box
 parameter_list|)
 block|{
 name|gint
@@ -4135,6 +4141,20 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_channel_is_empty
+argument_list|(
+name|GIMP_CHANNEL
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+name|item
+operator|=
+name|NULL
+expr_stmt|;
 name|edit_mode
 operator|=
 name|GIMP_TRANSLATE_MODE_MASK
@@ -4168,26 +4188,6 @@ comment|/* cannot happen, don't translate this message */
 name|locked_message
 operator|=
 literal|"The selection's position is locked."
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|gimp_channel_is_empty
-argument_list|(
-name|GIMP_CHANNEL
-argument_list|(
-name|item
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|locked_message
-operator|=
-name|_
-argument_list|(
-literal|"The selection is empty."
-argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -4441,6 +4441,15 @@ argument_list|,
 name|display
 argument_list|,
 name|null_message
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|type_box
+condition|)
+name|gimp_widget_blink
+argument_list|(
+name|type_box
 argument_list|)
 expr_stmt|;
 return|return

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5206e80103
+DECL|enum|__anon29ee641c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -625,6 +625,15 @@ argument_list|(
 name|tool_options
 argument_list|)
 decl_stmt|;
+name|GimpMoveOptions
+modifier|*
+name|options
+init|=
+name|GIMP_MOVE_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -683,6 +692,12 @@ name|gtk_widget_show
 argument_list|(
 name|hbox
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|type_box
+operator|=
+name|hbox
 expr_stmt|;
 name|label
 operator|=

@@ -147,6 +147,10 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|type_box
 parameter_list|)
 function_decl|;
 end_function_decl

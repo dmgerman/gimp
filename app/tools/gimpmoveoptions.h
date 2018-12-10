@@ -120,6 +120,12 @@ DECL|member|move_current
 name|gboolean
 name|move_current
 decl_stmt|;
+comment|/*  options gui  */
+DECL|member|type_box
+name|GtkWidget
+modifier|*
+name|type_box
+decl_stmt|;
 block|}
 struct|;
 end_struct
