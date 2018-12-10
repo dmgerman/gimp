@@ -28,6 +28,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_paint_options_gui_get_paint_mode_box
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|options_gui
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
