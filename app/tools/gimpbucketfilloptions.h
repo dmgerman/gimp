@@ -125,9 +125,9 @@ DECL|member|fill_mode
 name|GimpBucketFillMode
 name|fill_mode
 decl_stmt|;
-DECL|member|fill_selection
-name|gboolean
-name|fill_selection
+DECL|member|fill_area
+name|GimpBucketFillArea
+name|fill_area
 decl_stmt|;
 DECL|member|fill_transparent
 name|gboolean
