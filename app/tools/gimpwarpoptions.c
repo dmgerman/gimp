@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4fce7f0103
+DECL|enum|__anon2b7fa50a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1052,6 +1052,12 @@ name|gtk_widget_show
 argument_list|(
 name|combo
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|behavior_combo
+operator|=
+name|combo
 expr_stmt|;
 name|scale
 operator|=

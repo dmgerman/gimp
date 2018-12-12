@@ -161,6 +161,11 @@ name|gint
 name|n_animation_frames
 decl_stmt|;
 comment|/*  options gui  */
+DECL|member|behavior_combo
+name|GtkWidget
+modifier|*
+name|behavior_combo
+decl_stmt|;
 DECL|member|stroke_frame
 name|GtkWidget
 modifier|*
