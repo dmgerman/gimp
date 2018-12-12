@@ -2736,6 +2736,13 @@ literal|"No stroke events selected."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_widget_blink
+argument_list|(
+name|options
+operator|->
+name|stroke_frame
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE

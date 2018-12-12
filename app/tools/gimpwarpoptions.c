@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9d0770103
+DECL|enum|__anon2b4fce7f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1432,6 +1432,12 @@ name|gtk_widget_show
 argument_list|(
 name|frame
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|stroke_frame
+operator|=
+name|frame
 expr_stmt|;
 name|vbox2
 operator|=
