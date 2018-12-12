@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170103
+DECL|enum|__anon2784ecab0103
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170203
+DECL|enum|__anon2784ecab0203
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170303
+DECL|enum|__anon2784ecab0303
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170403
+DECL|enum|__anon2784ecab0403
 block|{
 DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
 name|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
@@ -198,7 +198,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170503
+DECL|enum|__anon2784ecab0503
 block|{
 DECL|enumerator|GIMP_MATTING_DRAW_MODE_FOREGROUND
 name|GIMP_MATTING_DRAW_MODE_FOREGROUND
@@ -239,34 +239,34 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2f8170603
+DECL|enum|__anon2784ecab0603
 block|{
 DECL|enumerator|GIMP_WARP_BEHAVIOR_MOVE
 name|GIMP_WARP_BEHAVIOR_MOVE
 block|,
 comment|/*< desc="Move pixels">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_GROW
-name|GEGL_WARP_BEHAVIOR_GROW
+DECL|enumerator|GIMP_WARP_BEHAVIOR_GROW
+name|GIMP_WARP_BEHAVIOR_GROW
 block|,
 comment|/*< desc="Grow area">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_SHRINK
-name|GEGL_WARP_BEHAVIOR_SHRINK
+DECL|enumerator|GIMP_WARP_BEHAVIOR_SHRINK
+name|GIMP_WARP_BEHAVIOR_SHRINK
 block|,
 comment|/*< desc="Shrink area">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_SWIRL_CW
-name|GEGL_WARP_BEHAVIOR_SWIRL_CW
+DECL|enumerator|GIMP_WARP_BEHAVIOR_SWIRL_CW
+name|GIMP_WARP_BEHAVIOR_SWIRL_CW
 block|,
 comment|/*< desc="Swirl clockwise">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_SWIRL_CCW
-name|GEGL_WARP_BEHAVIOR_SWIRL_CCW
+DECL|enumerator|GIMP_WARP_BEHAVIOR_SWIRL_CCW
+name|GIMP_WARP_BEHAVIOR_SWIRL_CCW
 block|,
 comment|/*< desc="Swirl counter-clockwise">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_ERASE
-name|GEGL_WARP_BEHAVIOR_ERASE
+DECL|enumerator|GIMP_WARP_BEHAVIOR_ERASE
+name|GIMP_WARP_BEHAVIOR_ERASE
 block|,
 comment|/*< desc="Erase warping">*/
-DECL|enumerator|GEGL_WARP_BEHAVIOR_SMOOTH
-name|GEGL_WARP_BEHAVIOR_SMOOTH
+DECL|enumerator|GIMP_WARP_BEHAVIOR_SMOOTH
+name|GIMP_WARP_BEHAVIOR_SMOOTH
 comment|/*< desc="Smooth warping">*/
 DECL|typedef|GimpWarpBehavior
 block|}
@@ -282,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a2f8170703
+DECL|enum|__anon2784ecab0703
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -312,7 +312,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a2f8170803
+DECL|enum|__anon2784ecab0803
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -351,7 +351,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a2f8170903
+DECL|enum|__anon2784ecab0903
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
