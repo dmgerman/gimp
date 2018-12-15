@@ -131,6 +131,11 @@ DECL|member|draw_line
 name|gboolean
 name|draw_line
 decl_stmt|;
+DECL|member|picking_layer
+name|gboolean
+name|picking_layer
+decl_stmt|;
+comment|/*  pick layer in progress (alt pressed)  */
 DECL|member|show_cursor
 name|gboolean
 name|show_cursor
