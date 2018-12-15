@@ -1133,6 +1133,17 @@ literal|"Save this XCF file with better but slower compression"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_tooltip_text
+argument_list|(
+name|compression_toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"On edge cases, better compression algorithms might still "
+literal|"end up on bigger file size; manual check recommended"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|->
 name|compression_frame
