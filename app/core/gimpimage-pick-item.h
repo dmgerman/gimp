@@ -30,6 +30,10 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|previously_picked
 parameter_list|)
 function_decl|;
 end_function_decl

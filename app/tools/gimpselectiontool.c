@@ -624,6 +624,8 @@ argument_list|,
 name|coords
 operator|->
 name|y
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|floating_sel
