@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3c6310103
+DECL|enum|__anon2b67e9930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -569,7 +569,7 @@ argument_list|(
 literal|"Maximum curved length (in pixels) to close the line art"
 argument_list|)
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1000
 argument_list|,
@@ -596,7 +596,7 @@ argument_list|(
 literal|"Maximum straight length (in pixels) to close the line art"
 argument_list|)
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1000
 argument_list|,
