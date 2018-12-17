@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b25530103
+DECL|enum|__anon2ae7c0fa0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -532,7 +532,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b25530203
+DECL|enum|__anon2ae7c0fa0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b25530303
+DECL|enum|__anon2ae7c0fa0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -834,7 +834,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon287b2553040a
+DECL|union|__anon2ae7c0fa040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -850,7 +850,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon287b25530508
+DECL|struct|__anon2ae7c0fa0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -865,7 +865,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon287b25530608
+DECL|struct|__anon2ae7c0fa0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -2107,7 +2107,7 @@ operator|.
 name|data
 operator|=
 literal|"tile-cache-total\0"
-literal|"tile-cache-total-uncloned"
+literal|"tile-cache-total-uncompressed"
 block|}
 block|,
 index|[
@@ -2736,7 +2736,7 @@ operator|.
 name|data
 operator|=
 literal|"swap-total\0"
-literal|"swap-total-uncloned"
+literal|"swap-total-uncompressed"
 block|}
 block|,
 ifdef|#
@@ -8948,7 +8948,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530708
+DECL|struct|__anon2ae7c0fa0708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9154,7 +9154,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530808
+DECL|struct|__anon2ae7c0fa0808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9424,7 +9424,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530908
+DECL|struct|__anon2ae7c0fa0908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9630,7 +9630,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530a08
+DECL|struct|__anon2ae7c0fa0a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9906,7 +9906,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530b08
+DECL|struct|__anon2ae7c0fa0b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10066,7 +10066,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b25530c08
+DECL|struct|__anon2ae7c0fa0c08
 block|{
 DECL|member|prev_time
 name|gint64
