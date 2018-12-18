@@ -1107,6 +1107,15 @@ argument_list|(
 name|store
 argument_list|)
 expr_stmt|;
+name|gtk_combo_box_set_wrap_width
+argument_list|(
+name|statusbar
+operator|->
+name|unit_combo
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_can_focus
 argument_list|(
 name|statusbar
