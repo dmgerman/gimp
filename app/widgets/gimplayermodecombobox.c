@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f5e7720103
+DECL|enum|__anon29abf96a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -436,6 +436,17 @@ operator|->
 name|priv
 operator|->
 name|layer_mode
+argument_list|)
+expr_stmt|;
+comment|/* Sure why this is needed to have the dropdown display properly.    * Probably some weird side effect. See issue #2642.    */
+name|gtk_combo_box_set_wrap_width
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
