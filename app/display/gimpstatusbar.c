@@ -1109,9 +1109,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_combo_box_set_wrap_width
 argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
 name|statusbar
 operator|->
 name|unit_combo
+argument_list|)
 argument_list|,
 literal|1
 argument_list|)
