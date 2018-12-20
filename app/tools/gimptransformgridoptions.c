@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d13940103
+DECL|enum|__anon2b51bc060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -420,7 +420,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1627,7 +1627,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2a2d13940208
+DECL|struct|__anon2b51bc060208
 block|{
 DECL|member|mod
 name|GdkModifierType
