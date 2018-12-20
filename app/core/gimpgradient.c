@@ -277,6 +277,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|GimpGradientSegment
 modifier|*
 name|gimp_gradient_get_segment_at_internal
@@ -1910,16 +1911,8 @@ decl_stmt|;
 name|GimpRGB
 name|rgb
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GRADIENT
-argument_list|(
-name|gradient
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/* type-check disabled to improve speed */
+comment|/* g_return_val_if_fail (GIMP_IS_GRADIENT (gradient), NULL); */
 name|g_return_val_if_fail
 argument_list|(
 name|color
@@ -2116,6 +2109,11 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Get left/right colors */
+if|if
+condition|(
+name|context
+condition|)
+block|{
 name|gimp_gradient_segment_get_left_flat_color
 argument_list|(
 name|gradient
@@ -2140,6 +2138,22 @@ operator|&
 name|right_color
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|left_color
+operator|=
+name|seg
+operator|->
+name|left_color
+expr_stmt|;
+name|right_color
+operator|=
+name|seg
+operator|->
+name|right_color
+expr_stmt|;
+block|}
 comment|/* Calculate color components */
 if|if
 condition|(
@@ -8591,6 +8605,7 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|GimpGradientSegment
 modifier|*
 DECL|function|gimp_gradient_get_segment_at_internal (GimpGradient * gradient,GimpGradientSegment * seg,gdouble pos)
