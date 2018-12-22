@@ -131,16 +131,6 @@ DECL|member|draw_line
 name|gboolean
 name|draw_line
 decl_stmt|;
-DECL|member|picking_layer
-name|gboolean
-name|picking_layer
-decl_stmt|;
-comment|/*  pick layer in progress (alt pressed)  */
-DECL|member|picked_layer
-name|GimpLayer
-modifier|*
-name|picked_layer
-decl_stmt|;
 DECL|member|show_cursor
 name|gboolean
 name|show_cursor

@@ -799,6 +799,15 @@ DECL|member|scroll_info
 name|gpointer
 name|scroll_info
 decl_stmt|;
+DECL|member|layer_picking
+name|gboolean
+name|layer_picking
+decl_stmt|;
+DECL|member|picked_layer
+name|GimpLayer
+modifier|*
+name|picked_layer
+decl_stmt|;
 DECL|member|mask
 name|GeglBuffer
 modifier|*
