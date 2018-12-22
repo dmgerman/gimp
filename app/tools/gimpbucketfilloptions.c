@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67e9930103
+DECL|enum|__anon2bc3b8240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1798,7 +1798,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Line art detection"
+literal|"Line Art Detection"
 argument_list|)
 argument_list|)
 expr_stmt|;
