@@ -979,7 +979,7 @@ name|g_object_bind_property
 argument_list|(
 name|options
 argument_list|,
-literal|"line-art-spline-max-len"
+literal|"line-art-max-gap-length"
 argument_list|,
 name|line_art
 argument_list|,
@@ -987,14 +987,14 @@ literal|"spline-max-length"
 argument_list|,
 name|G_BINDING_SYNC_CREATE
 operator||
-name|G_BINDING_BIDIRECTIONAL
+name|G_BINDING_DEFAULT
 argument_list|)
 expr_stmt|;
 name|g_object_bind_property
 argument_list|(
 name|options
 argument_list|,
-literal|"line-art-segment-max-len"
+literal|"line-art-max-gap-length"
 argument_list|,
 name|line_art
 argument_list|,
@@ -1002,7 +1002,7 @@ literal|"segment-max-length"
 argument_list|,
 name|G_BINDING_SYNC_CREATE
 operator||
-name|G_BINDING_BIDIRECTIONAL
+name|G_BINDING_DEFAULT
 argument_list|)
 expr_stmt|;
 name|GIMP_BUCKET_FILL_TOOL

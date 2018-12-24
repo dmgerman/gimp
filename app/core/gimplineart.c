@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04189c0103
+DECL|enum|__anon28c64b2e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,7 +199,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04189c0208
+DECL|struct|__anon28c64b2e0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04189c0308
+DECL|struct|__anon28c64b2e0308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -1423,7 +1423,7 @@ literal|0
 argument_list|,
 literal|1000
 argument_list|,
-literal|60
+literal|100
 argument_list|,
 name|G_PARAM_CONSTRUCT
 operator||
@@ -1455,7 +1455,7 @@ literal|0
 argument_list|,
 literal|1000
 argument_list|,
-literal|20
+literal|100
 argument_list|,
 name|G_PARAM_CONSTRUCT
 operator||
