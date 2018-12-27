@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawableundo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpfilterstack.h"
 end_include
 
@@ -163,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-colormap.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage-undo.h"
 end_include
 
 begin_include
@@ -241,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23e78a0103
+DECL|enum|__anon2c7e036c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -260,7 +248,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23e78a0203
+DECL|enum|__anon2c7e036c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3777,20 +3765,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpDrawableUndo
-modifier|*
-name|undo
-decl_stmt|;
-name|gint
-name|applied_x
-init|=
-name|x
-decl_stmt|;
-name|gint
-name|applied_y
-init|=
-name|y
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -3930,34 +3904,6 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|undo
-operator|=
-name|GIMP_DRAWABLE_UNDO
-argument_list|(
-name|gimp_image_undo_get_fadeable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|undo
-condition|)
-block|{
-name|undo
-operator|->
-name|applied_x
-operator|=
-name|applied_x
-expr_stmt|;
-name|undo
-operator|->
-name|applied_y
-operator|=
-name|applied_y
-expr_stmt|;
-block|}
 name|g_object_unref
 argument_list|(
 name|buffer

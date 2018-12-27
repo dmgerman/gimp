@@ -218,8 +218,6 @@ operator|.
 name|context
 operator|=
 name|GIMP_LAYER_MODE_CONTEXT_PAINT
-operator||
-name|GIMP_LAYER_MODE_CONTEXT_FADE
 block|,
 operator|.
 name|paint_composite_mode
@@ -1122,8 +1120,6 @@ operator|.
 name|context
 operator|=
 name|GIMP_LAYER_MODE_CONTEXT_PAINT
-operator||
-name|GIMP_LAYER_MODE_CONTEXT_FADE
 block|,
 operator|.
 name|paint_composite_mode
@@ -1414,8 +1410,6 @@ operator|.
 name|context
 operator|=
 name|GIMP_LAYER_MODE_CONTEXT_PAINT
-operator||
-name|GIMP_LAYER_MODE_CONTEXT_FADE
 block|,
 operator|.
 name|paint_composite_mode
@@ -2719,11 +2713,6 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_TRIVIAL
 block|,
 operator|.
-name|context
-operator|=
-name|GIMP_LAYER_MODE_CONTEXT_FADE
-block|,
-operator|.
 name|paint_composite_mode
 operator|=
 name|GIMP_LAYER_COMPOSITE_UNION
@@ -2755,11 +2744,6 @@ operator||
 name|GIMP_LAYER_MODE_FLAG_COMPOSITE_SPACE_IMMUTABLE
 operator||
 name|GIMP_LAYER_MODE_FLAG_ALPHA_ONLY
-block|,
-operator|.
-name|context
-operator|=
-name|GIMP_LAYER_MODE_CONTEXT_FADE
 block|,
 operator|.
 name|paint_composite_mode

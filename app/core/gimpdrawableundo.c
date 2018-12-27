@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be209a0103
+DECL|enum|__anon2b2e4ef10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -759,14 +759,6 @@ operator|&
 name|drawable_undo
 operator|->
 name|buffer
-argument_list|)
-expr_stmt|;
-name|g_clear_object
-argument_list|(
-operator|&
-name|drawable_undo
-operator|->
-name|applied_buffer
 argument_list|)
 expr_stmt|;
 name|GIMP_UNDO_CLASS
