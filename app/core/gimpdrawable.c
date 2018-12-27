@@ -229,13 +229,10 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e036c0103
+DECL|enum|__anon2760bfbd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
-block|,
-DECL|enumerator|PAINTED
-name|PAINTED
 block|,
 DECL|enumerator|ALPHA_CHANGED
 name|ALPHA_CHANGED
@@ -248,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e036c0203
+DECL|enum|__anon2760bfbd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -967,7 +964,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-comment|/**    * GimpDrawable::update:    * @drawable: the object which received the signal.    * @x:    * @y:    * @width:    * @height:    *    * This signal is emitted when a region of the drawable is updated.    **/
 name|gimp_drawable_signals
 index|[
 name|UPDATE
@@ -1008,41 +1004,6 @@ argument_list|,
 name|G_TYPE_INT
 argument_list|,
 name|G_TYPE_INT
-argument_list|)
-expr_stmt|;
-comment|/**    * GimpDrawable::painted:    * @drawable: the object which received the signal.    *    * This signal is emitted when the drawable has been painted. Unlike    * the "update" signal, it will be emitted once for a single paint    * event (whereas several "update" signals could be emitted    * sequentially for various regions of the drawable).    **/
-name|gimp_drawable_signals
-index|[
-name|PAINTED
-index|]
-operator|=
-name|g_signal_new
-argument_list|(
-literal|"painted"
-argument_list|,
-name|G_TYPE_FROM_CLASS
-argument_list|(
-name|klass
-argument_list|)
-argument_list|,
-name|G_SIGNAL_RUN_FIRST
-argument_list|,
-name|G_STRUCT_OFFSET
-argument_list|(
-name|GimpDrawableClass
-argument_list|,
-name|painted
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|gimp_marshal_VOID__VOID
-argument_list|,
-name|G_TYPE_NONE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_signals
@@ -4405,18 +4366,6 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|drawable
-argument_list|,
-name|gimp_drawable_signals
-index|[
-name|PAINTED
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
