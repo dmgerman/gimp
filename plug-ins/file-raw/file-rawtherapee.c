@@ -298,6 +298,27 @@ operator|&
 name|search_path
 argument_list|)
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* Issue #2716 - Prevent RT from opening a console window */
+name|gchar
+modifier|*
+name|argv
+index|[]
+init|=
+block|{
+name|exec_path
+block|,
+literal|"-v"
+block|,
+literal|"-w"
+block|,
+name|NULL
+block|}
+decl_stmt|;
+else|#
+directive|else
 name|gchar
 modifier|*
 name|argv
@@ -311,6 +332,8 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
+endif|#
+directive|endif
 name|gchar
 modifier|*
 name|rawtherapee_stdout
