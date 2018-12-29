@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7984b80103
+DECL|enum|__anon2afff9e50103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -910,10 +910,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|node
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_filter_set_applicator
@@ -926,6 +922,15 @@ argument_list|,
 name|filter
 operator|->
 name|applicator
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_cache
+argument_list|(
+name|filter
+operator|->
+name|applicator
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|filter

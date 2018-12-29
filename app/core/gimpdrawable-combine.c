@@ -370,10 +370,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

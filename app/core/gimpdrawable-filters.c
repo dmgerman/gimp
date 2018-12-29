@@ -604,7 +604,7 @@ condition|(
 name|applicator
 condition|)
 block|{
-comment|/*  disable the preview crop, this will force-process the            *  cached result from the preview cache into the result            *  cache, involving only the layer and affect nodes            */
+comment|/*  disable the preview crop  */
 name|gimp_applicator_set_preview
 argument_list|(
 name|applicator

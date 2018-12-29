@@ -841,10 +841,6 @@ operator|=
 name|gimp_applicator_new
 argument_list|(
 name|node
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_filter_set_applicator
@@ -856,6 +852,15 @@ argument_list|,
 name|private
 operator|->
 name|fs_applicator
+argument_list|)
+expr_stmt|;
+name|gimp_applicator_set_cache
+argument_list|(
+name|private
+operator|->
+name|fs_applicator
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|private
