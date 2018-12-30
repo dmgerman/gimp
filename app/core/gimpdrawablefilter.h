@@ -179,6 +179,25 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_drawable_filter_set_crop
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|rect
+parameter_list|,
+name|gboolean
+name|update
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_drawable_filter_set_preview
 parameter_list|(
 name|GimpDrawableFilter
