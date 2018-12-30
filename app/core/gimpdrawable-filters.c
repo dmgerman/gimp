@@ -604,23 +604,12 @@ condition|(
 name|applicator
 condition|)
 block|{
-comment|/*  disable the preview crop  */
-name|gimp_applicator_set_preview
+comment|/*  disable the output crop  */
+name|gimp_applicator_set_crop
 argument_list|(
 name|applicator
 argument_list|,
-name|FALSE
-argument_list|,
-name|GEGL_RECTANGLE
-argument_list|(
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  the cache and its valid rectangles are the region that            *  has already been processed by this applicator.            */

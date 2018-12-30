@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afff9e50103
+DECL|enum|__anon292401860103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2305,7 +2305,7 @@ operator|&
 name|new_rect
 argument_list|)
 expr_stmt|;
-name|gimp_applicator_set_preview
+name|gimp_applicator_set_crop
 argument_list|(
 name|filter
 operator|->
@@ -2314,9 +2314,11 @@ argument_list|,
 name|filter
 operator|->
 name|preview_enabled
-argument_list|,
+condition|?
 operator|&
 name|new_rect
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
