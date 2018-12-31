@@ -600,11 +600,6 @@ block|{
 name|GimpContext
 modifier|*
 name|context
-init|=
-name|GIMP_CONTEXT
-argument_list|(
-name|options
-argument_list|)
 decl_stmt|;
 name|gint
 name|x
@@ -669,6 +664,13 @@ block|{
 return|return;
 comment|/*  nothing to do, but the fill succeeded  */
 block|}
+name|context
+operator|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_layer_mode_is_alpha_only
