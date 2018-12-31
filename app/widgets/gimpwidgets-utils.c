@@ -1518,6 +1518,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_printerr
 argument_list|(
 literal|"WARNING: icon theme has no icon '%s'.\n"
@@ -1525,6 +1526,7 @@ argument_list|,
 name|GIMP_ICON_WILBER_EEK
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/* Last fallback: just a magenta square. */
 if|if
@@ -1544,6 +1546,8 @@ init|=
 literal|3
 operator|*
 name|size
+operator|*
+name|scale_factor
 decl_stmt|;
 name|gint
 name|i
@@ -1584,6 +1588,8 @@ init|;
 name|j
 operator|<
 name|size
+operator|*
+name|scale_factor
 condition|;
 name|j
 operator|++
@@ -1647,8 +1653,12 @@ argument_list|,
 literal|8
 argument_list|,
 name|size
+operator|*
+name|scale_factor
 argument_list|,
 name|size
+operator|*
+name|scale_factor
 argument_list|,
 name|rowstride
 argument_list|,
@@ -3928,7 +3938,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c54e6970108
+DECL|struct|__anon276f7ef70108
 block|{
 DECL|member|r
 name|guchar
@@ -4538,7 +4548,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54e6970208
+DECL|struct|__anon276f7ef70208
 block|{
 DECL|member|timeout_id
 name|gint
