@@ -21,9 +21,9 @@ name|GdkCursor
 modifier|*
 name|gimp_cursor_new
 parameter_list|(
-name|GdkDisplay
+name|GdkWindow
 modifier|*
-name|display
+name|window
 parameter_list|,
 name|GimpHandedness
 name|cursor_handedness
