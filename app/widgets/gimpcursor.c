@@ -739,7 +739,7 @@ comment|/* no critical here until we actually have the cursor files */
 name|g_printerr
 argument_list|(
 literal|"Failed to create scaled cursor image '%s' "
-literal|"falling back to upscaling default cursor: %s"
+literal|"falling back to upscaling default cursor: %s\n"
 argument_list|,
 name|resource_path
 argument_list|,
