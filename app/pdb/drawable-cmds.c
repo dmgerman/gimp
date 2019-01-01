@@ -264,7 +264,7 @@ operator|->
 name|current_plug_in
 argument_list|)
 expr_stmt|;
-comment|/* EEK SPACE: this needs more code on the libgimp side, we currently        * lose the space        */
+comment|/* this only transfers the encoding, losing the space, see the        * code in libgimp/gimpdrawable.c which reconstructs the actual        * format in the plug-in process        */
 name|format
 operator|=
 name|g_strdup
@@ -4409,7 +4409,8 @@ literal|"gimp-drawable-get-format"
 argument_list|,
 literal|"Returns the drawable's Babl format"
 argument_list|,
-literal|"This procedure returns the drawable's Babl format."
+literal|"This procedure returns the drawable's Babl format.\n"
+literal|"Note that the actual PDB procedure only transfers the format's encoding. In order to get to the real format, the libbgimp C wrapper must be used."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
