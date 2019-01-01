@@ -356,7 +356,7 @@ parameter_list|,
 name|type
 parameter_list|)
 define|\
-value|G_STMT_START                                             \                   {                                                      \                     const type *data;                                    \                     gint        y;                                       \                                                                          \                     if ((guintptr) data_u8 % bpp)                        \                       goto generic;                                      \                                                                          \                     data = (const type *) data_u8;                       \                                                                          \                     for (y = roi->y; y< ey; y++)                        \                       {                                                  \                         gint x1;                                         \                                                                          \                         for (x1 = 0; x1< roi->width; x1++)              \                           {                                              \                             if (data[x1])                                \                               {                                          \                                 gint x2;                                 \                                                                          \                                 for (x2 = roi->width - 1; x2> x1; x2--) \                                   {                                      \                                     if (data[x2])                        \                                       break;                             \                                   }                                      \                                                                          \                                 x1 += roi->x;                            \                                 x2 += roi->x;                            \                                                                          \                                 if (x1< tx1) tx1 = x1;                  \                                 if (x2> tx2) tx2 = x2;                  \                                                                          \                                 if (y< ty1) ty1 = y;                    \                                 if (y> ty2) ty2 = y;                    \                               }                                          \                           }                                              \                                                                          \                         data += roi->width;                              \                       }                                                  \                   }                                                      \                 G_STMT_END
+value|G_STMT_START                                                 \                   {                                                          \                     const type *data;                                        \                     gint        y;                                           \                                                                              \                     if ((guintptr) data_u8 % bpp)                            \                       goto generic;                                          \                                                                              \                     data = (const type *) data_u8;                           \                                                                              \                     for (y = roi->y; y< ey; y++)                            \                       {                                                      \                         gint x1;                                             \                                                                              \                         for (x1 = 0; x1< roi->width; x1++)                  \                           {                                                  \                             if (data[x1])                                    \                               {                                              \                                 gint x2;                                     \                                 gint x2_end = MAX (x1, tx2 - roi->x);        \                                                                              \                                 for (x2 = roi->width - 1; x2> x2_end; x2--) \                                   {                                          \                                     if (data[x2])                            \                                       break;                                 \                                   }                                          \                                                                              \                                 x1 += roi->x;                                \                                 x2 += roi->x;                                \                                                                              \                                 if (x1< tx1) tx1 = x1;                      \                                 if (x2> tx2) tx2 = x2;                      \                                                                              \                                 if (y< ty1) ty1 = y;                        \                                 if (y> ty2) ty2 = y;                        \                               }                                              \                           }                                                  \                                                                              \                         data += roi->width;                                  \                       }                                                      \                   }                                                          \                 G_STMT_END
 switch|switch
 condition|(
 name|bpp
@@ -473,6 +473,20 @@ block|{
 name|gint
 name|x2
 decl_stmt|;
+name|gint
+name|x2_end
+init|=
+name|MAX
+argument_list|(
+name|x1
+argument_list|,
+name|tx2
+operator|-
+name|roi
+operator|->
+name|x
+argument_list|)
+decl_stmt|;
 for|for
 control|(
 name|x2
@@ -485,7 +499,7 @@ literal|1
 init|;
 name|x2
 operator|>
-name|x1
+name|x2_end
 condition|;
 name|x2
 operator|--
@@ -505,7 +519,9 @@ argument_list|,
 name|bpp
 argument_list|)
 condition|)
+block|{
 break|break;
+block|}
 block|}
 name|x1
 operator|+=
