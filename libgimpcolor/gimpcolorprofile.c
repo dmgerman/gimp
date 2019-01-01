@@ -4863,10 +4863,12 @@ return|;
 return|return
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|format
-argument_list|)
 argument_list|,
 name|space
 argument_list|)

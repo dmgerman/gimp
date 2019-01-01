@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ffdec0103
+DECL|enum|__anon28be74d70103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ffdec0203
+DECL|enum|__anon28be74d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6014,10 +6014,12 @@ name|space_format
 operator|=
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|new_format
-argument_list|)
 argument_list|,
 name|dest_space
 argument_list|)
