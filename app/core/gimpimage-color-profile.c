@@ -1861,6 +1861,20 @@ argument_list|,
 literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_base_type
+argument_list|(
+name|image
+argument_list|)
+operator|==
+name|GIMP_INDEXED
+condition|)
+name|gimp_image_colormap_update_formats
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_image_fix_layer_format_spaces
 argument_list|(
 name|image
@@ -2906,6 +2920,7 @@ name|private
 operator|->
 name|layer_space
 condition|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"%s: failed to create Babl space from profile: %s\n"
@@ -2917,6 +2932,13 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|gimp_color_managed_profile_changed
 argument_list|(
@@ -3186,6 +3208,16 @@ name|GimpColorTransform
 modifier|*
 name|transform
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|src_format
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|dest_format
+decl_stmt|;
 name|GimpColorTransformFlags
 name|flags
 init|=
@@ -3227,25 +3259,49 @@ name|flags
 operator||=
 name|GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION
 expr_stmt|;
+name|src_format
+operator|=
+name|gimp_color_profile_get_format
+argument_list|(
+name|src_profile
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|dest_format
+operator|=
+name|gimp_color_profile_get_format
+argument_list|(
+name|dest_profile
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|transform
 operator|=
 name|gimp_color_transform_new
 argument_list|(
 name|src_profile
 argument_list|,
-comment|/* EEK SPACE */
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
+name|src_format
 argument_list|,
 name|dest_profile
 argument_list|,
-comment|/* EEK SPACE */
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
+name|dest_format
 argument_list|,
 name|intent
 argument_list|,
@@ -3299,7 +3355,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"cmsCreateTransform() failed!"
+literal|"gimp_color_transform_new() failed!"
 argument_list|)
 expr_stmt|;
 block|}
