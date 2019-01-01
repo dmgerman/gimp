@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgrouplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplayer.h"
 end_include
 
 begin_include
@@ -1030,10 +1030,25 @@ case|:
 case|case
 name|GIMP_PASTE_TYPE_FLOATING_INTO_IN_PLACE
 case|:
-comment|/*  when pasting as floating selection, force creation of a            *  plain layer, so gimp_item_convert() will collapse a            *  group layer            */
+comment|/*  when pasting as floating make sure gimp_item_convert()            *  will turn group layers into normal layers, otherwise use            *  the same layer type so e.g. text information gets            *  preserved. See issue #2667.            */
+if|if
+condition|(
+name|GIMP_IS_GROUP_LAYER
+argument_list|(
+name|layer
+argument_list|)
+condition|)
 name|layer_type
 operator|=
 name|GIMP_TYPE_LAYER
+expr_stmt|;
+else|else
+name|layer_type
+operator|=
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|layer
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
