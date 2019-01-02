@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afcf3e20108
+DECL|struct|__anon298edaa60108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -339,7 +339,7 @@ argument_list|(
 literal|"C source code"
 argument_list|)
 argument_list|,
-literal|"RGB*"
+literal|"*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -1909,6 +1909,11 @@ name|n_bytes
 decl_stmt|,
 name|bpp
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|drawable_format
+decl_stmt|;
 name|gint
 name|drawable_bpp
 decl_stmt|;
@@ -1985,11 +1990,33 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|drawable_bpp
-operator|=
-name|gimp_drawable_bpp
+if|if
+condition|(
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable_ID
+argument_list|)
+condition|)
+name|drawable_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|drawable_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+name|drawable_bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|drawable_format
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -2022,7 +2049,7 @@ name|pad
 operator|=
 name|width
 operator|*
-name|bpp
+name|drawable_bpp
 expr_stmt|;
 if|if
 condition|(
@@ -2091,7 +2118,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|NULL
+name|drawable_format
 argument_list|,
 name|data
 argument_list|,
