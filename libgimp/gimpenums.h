@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0103
+DECL|enum|__anon27b734c70103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -49,43 +49,6 @@ name|GIMP_BRUSH_SOFT
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_BUCKET_FILL_MODE
-define|#
-directive|define
-name|GIMP_TYPE_BUCKET_FILL_MODE
-value|(gimp_bucket_fill_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_bucket_fill_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29e22bba0203
-block|{
-DECL|enumerator|GIMP_BUCKET_FILL_FG
-name|GIMP_BUCKET_FILL_FG
-block|,
-DECL|enumerator|GIMP_BUCKET_FILL_BG
-name|GIMP_BUCKET_FILL_BG
-block|,
-DECL|enumerator|GIMP_BUCKET_FILL_PATTERN
-name|GIMP_BUCKET_FILL_PATTERN
-DECL|typedef|GimpBucketFillMode
-block|}
-name|GimpBucketFillMode
 typedef|;
 end_typedef
 
@@ -110,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0303
+DECL|enum|__anon27b734c70203
 block|{
 DECL|enumerator|GIMP_CONVERT_DITHER_NONE
 name|GIMP_CONVERT_DITHER_NONE
@@ -150,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0403
+DECL|enum|__anon27b734c70303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -196,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0503
+DECL|enum|__anon27b734c70403
 block|{
 DECL|enumerator|GIMP_LAYER_COLOR_SPACE_AUTO
 name|GIMP_LAYER_COLOR_SPACE_AUTO
@@ -233,7 +196,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0603
+DECL|enum|__anon27b734c70503
 block|{
 DECL|enumerator|GIMP_LAYER_COMPOSITE_AUTO
 name|GIMP_LAYER_COMPOSITE_AUTO
@@ -276,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e22bba0703
+DECL|enum|__anon27b734c70603
 block|{
 DECL|enumerator|GIMP_LAYER_MODE_NORMAL_LEGACY
 name|GIMP_LAYER_MODE_NORMAL_LEGACY
