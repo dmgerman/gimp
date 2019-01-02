@@ -2438,7 +2438,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* GIMP_BUCKET_FILL_SIMILAR_COLORS or GIMP_BUCKET_FILL_LINE_ART */
+comment|/* GIMP_BUCKET_FILL_SIMILAR_COLORS || GIMP_BUCKET_FILL_LINE_ART */
 block|{
 name|gimp_bucket_fill_tool_start
 argument_list|(
@@ -2963,7 +2963,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/* GIMP_BUCKET_FILL_BG&& GIMP_BUCKET_FILL_PATTERN */
+comment|/* GIMP_BUCKET_FILL_BG || GIMP_BUCKET_FILL_PATTERN */
 name|g_object_set
 argument_list|(
 name|options
@@ -3185,7 +3185,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/* GIMP_BUCKET_FILL_SELECTION&& GIMP_BUCKET_FILL_LINE_ART */
+comment|/* GIMP_BUCKET_FILL_SELECTION || GIMP_BUCKET_FILL_LINE_ART */
 name|g_object_set
 argument_list|(
 name|options
@@ -3197,7 +3197,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-break|break;
 break|break;
 block|}
 block|}
