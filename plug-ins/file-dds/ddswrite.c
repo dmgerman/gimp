@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bedec8c0103
+DECL|enum|__anon29b32b0f0103
 block|{
 DECL|enumerator|COMBO_VALUE
 DECL|enumerator|COMBO_STRING
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bedec8c0208
+DECL|struct|__anon29b32b0f0208
 block|{
 DECL|member|format
 name|int
@@ -9611,7 +9611,7 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
-literal|"Save as DDS"
+literal|"Export as DDS"
 argument_list|,
 literal|"dds"
 argument_list|,
