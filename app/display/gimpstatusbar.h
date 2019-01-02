@@ -142,6 +142,10 @@ name|GHashTable
 modifier|*
 name|icon_hash
 decl_stmt|;
+DECL|member|icon_space_width
+name|gint
+name|icon_space_width
+decl_stmt|;
 DECL|member|temp_context_id
 name|guint
 name|temp_context_id
