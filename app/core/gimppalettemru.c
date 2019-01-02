@@ -57,9 +57,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-4
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2760acef0103
+DECL|enum|__anon29ab33f40103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -712,7 +720,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 block|{
 name|found
@@ -804,7 +812,7 @@ operator|->
 name|color
 argument_list|)
 operator|<
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 block|{
 name|found

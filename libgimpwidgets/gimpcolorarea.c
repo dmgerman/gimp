@@ -68,6 +68,14 @@ comment|/**  * SECTION: gimpcolorarea  * @title: GimpColorArea  * @short_descrip
 end_comment
 
 begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-6
+end_define
+
+begin_define
 DECL|macro|DRAG_PREVIEW_SIZE
 define|#
 directive|define
@@ -85,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa77700103
+DECL|enum|__anon279916f20103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa77700203
+DECL|enum|__anon279916f20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1964,7 +1972,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-literal|0.000001
+name|RGBA_EPSILON
 condition|)
 return|return;
 name|priv

@@ -162,11 +162,11 @@ value|6
 end_define
 
 begin_define
-DECL|macro|EPSILON
+DECL|macro|RGB_EPSILON
 define|#
 directive|define
-name|EPSILON
-value|1e-10
+name|RGB_EPSILON
+value|1e-6
 end_define
 
 begin_define
@@ -1998,7 +1998,7 @@ argument_list|,
 name|search
 argument_list|)
 operator|>
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 block|{
 name|gint
@@ -2046,7 +2046,7 @@ argument_list|,
 name|search
 argument_list|)
 operator|<
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 block|{
 name|index

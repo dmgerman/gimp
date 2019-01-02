@@ -75,9 +75,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-6
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2914b3cd0103
+DECL|enum|__anon2c6dee520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2395,7 +2403,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 block|{
 name|frame

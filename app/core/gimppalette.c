@@ -94,11 +94,11 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|EPSILON
+DECL|macro|RGB_EPSILON
 define|#
 directive|define
-name|EPSILON
-value|1e-10
+name|RGB_EPSILON
+value|1e-6
 end_define
 
 begin_comment
@@ -2810,7 +2810,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 return|return
 name|entry
@@ -2830,7 +2830,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 block|{
 return|return
@@ -2916,7 +2916,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 return|return
 name|entry
@@ -2955,7 +2955,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-name|EPSILON
+name|RGB_EPSILON
 condition|)
 return|return
 name|entry

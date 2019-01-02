@@ -81,9 +81,17 @@ directive|include
 file|"gimpcolorpanel.h"
 end_include
 
+begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-6
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b80110103
+DECL|enum|__anon2b387d810103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1046,7 +1054,7 @@ operator|&
 name|dialog_color
 argument_list|)
 operator|>
-literal|0.00001
+name|RGBA_EPSILON
 operator|||
 name|color
 operator|.

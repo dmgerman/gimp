@@ -141,9 +141,17 @@ directive|include
 file|"gimp-priorities.h"
 end_include
 
+begin_define
+DECL|macro|RGB_EPSILON
+define|#
+directive|define
+name|RGB_EPSILON
+value|1e-6
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6c3b90103
+DECL|enum|__anon28ff44ba0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2018,6 +2026,8 @@ name|border_color
 argument_list|,
 name|color
 argument_list|)
+operator|>
+name|RGB_EPSILON
 condition|)
 block|{
 name|renderer

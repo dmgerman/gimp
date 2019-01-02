@@ -165,6 +165,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-6
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1970,7 +1978,7 @@ operator|->
 name|color
 argument_list|)
 operator|>
-literal|0.0001
+name|RGBA_EPSILON
 operator|||
 name|channel_visible
 operator|!=
@@ -2056,7 +2064,7 @@ operator|->
 name|color
 argument_list|)
 operator|>
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 name|gimp_channel_set_color
 argument_list|(

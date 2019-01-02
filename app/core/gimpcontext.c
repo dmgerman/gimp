@@ -183,6 +183,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|RGBA_EPSILON
+define|#
+directive|define
+name|RGBA_EPSILON
+value|1e-10
+end_define
+
 begin_typedef
 DECL|typedef|GimpContextCopyPropFunc
 typedef|typedef
@@ -1608,7 +1616,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0b59f50103
+DECL|enum|__anon29d1b5870103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1622,7 +1630,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0b59f50203
+DECL|enum|__anon29d1b5870203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -9770,7 +9778,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 return|return;
 name|context
@@ -9968,7 +9976,7 @@ argument_list|,
 name|color
 argument_list|)
 operator|<
-literal|0.0001
+name|RGBA_EPSILON
 condition|)
 return|return;
 name|context
