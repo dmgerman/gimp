@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29479fb10108
+DECL|struct|__anon2a1e41be0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29479fb10208
+DECL|struct|__anon2a1e41be0208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29479fb10308
+DECL|struct|__anon2a1e41be0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -486,6 +486,10 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_saved
 parameter_list|,
 name|GError
 modifier|*
@@ -1929,6 +1933,11 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|gboolean
+name|profile_saved
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|save_image
@@ -1947,6 +1956,9 @@ argument_list|,
 name|drawable_ID
 argument_list|,
 name|orig_image_ID
+argument_list|,
+operator|&
+name|profile_saved
 argument_list|,
 operator|&
 name|error
@@ -2033,11 +2045,10 @@ operator|&=
 operator|~
 name|GIMP_METADATA_SAVE_THUMBNAIL
 expr_stmt|;
+comment|/* check if the profile was actually saved, not only                    * if we wanted to save it                    */
 if|if
 condition|(
-name|pngvals
-operator|.
-name|save_profile
+name|profile_saved
 condition|)
 name|metadata_flags
 operator||=
@@ -5188,7 +5199,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,GError ** error)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean * profile_saved,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -5204,6 +5215,10 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_saved
 parameter_list|,
 name|GError
 modifier|*
@@ -6717,6 +6732,11 @@ name|g_object_unref
 argument_list|(
 name|profile
 argument_list|)
+expr_stmt|;
+operator|*
+name|profile_saved
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 endif|#
