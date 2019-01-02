@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29660f130108
+DECL|struct|__anon274be3650108
 block|{
 DECL|member|compression
 name|int
@@ -119,12 +119,8 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29660f130208
+DECL|struct|__anon274be3650208
 block|{
-DECL|member|show_dialog
-name|int
-name|show_dialog
-decl_stmt|;
 DECL|member|mipmaps
 name|int
 name|mipmaps

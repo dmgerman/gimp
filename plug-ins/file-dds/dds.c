@@ -206,8 +206,6 @@ block|{
 literal|1
 block|,
 literal|1
-block|,
-literal|1
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -850,12 +848,6 @@ case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|interactive_dds
-operator|=
-literal|0
-expr_stmt|;
-name|dds_read_vals
-operator|.
-name|show_dialog
 operator|=
 literal|0
 expr_stmt|;
