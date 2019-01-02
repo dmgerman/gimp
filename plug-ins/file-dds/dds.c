@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; see the file COPYING.  If not, write to  * the Free Software Foundation, 51 Franklin Street, Fifth Floor  * Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_include
@@ -68,39 +68,6 @@ include|#
 directive|include
 file|"misc.h"
 end_include
-
-begin_decl_stmt
-DECL|variable|errFile
-name|FILE
-modifier|*
-name|errFile
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|prog_name
-name|gchar
-modifier|*
-name|prog_name
-init|=
-literal|"dds"
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|interactive_dds
-name|gint
-name|interactive_dds
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -703,9 +670,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 specifier|const
@@ -831,10 +798,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|interactive_dds
-operator|=
-literal|1
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|LOAD_PROC
@@ -847,10 +810,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|interactive_dds
-operator|=
-literal|0
-expr_stmt|;
 name|dds_read_vals
 operator|.
 name|mipmaps
@@ -916,6 +875,10 @@ name|d_string
 argument_list|,
 operator|&
 name|imageID
+argument_list|,
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 if|if
@@ -957,7 +920,9 @@ name|imageID
 expr_stmt|;
 if|if
 condition|(
-name|interactive_dds
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1102,18 +1067,10 @@ operator|&
 name|dds_write_vals
 argument_list|)
 expr_stmt|;
-name|interactive_dds
-operator|=
-literal|1
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|interactive_dds
-operator|=
-literal|0
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -1443,10 +1400,6 @@ operator|&
 name|dds_write_vals
 argument_list|)
 expr_stmt|;
-name|interactive_dds
-operator|=
-literal|0
-expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -1459,7 +1412,7 @@ name|gamma
 operator|<
 literal|1e-04f
 condition|)
-comment|/* gimp_gamma() got removed and was always returning 2.2 anyway.          * XXX Review this piece of code if we expect gamma value could          * be parameterized.          */
+comment|/* gimp_gamma () got removed and was always returning 2.2 anyway.          * XXX Review this piece of code if we expect gamma value could          * be parameterized.          */
 name|dds_write_vals
 operator|.
 name|gamma
@@ -1489,6 +1442,10 @@ argument_list|,
 name|imageID
 argument_list|,
 name|drawableID
+argument_list|,
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 if|if

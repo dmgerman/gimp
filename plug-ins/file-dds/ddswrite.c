@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; see the file COPYING.  If not, write to  * the Free Software Foundation, 51 Franklin Street, Fifth Floor  * Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_include
@@ -167,15 +167,15 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4679d70103
+DECL|enum|__anon2877df430103
 block|{
 DECL|enumerator|COMBO_VALUE
-DECL|enumerator|COMBO_STRING
-DECL|enumerator|COMBO_SENSITIVE
 name|COMBO_VALUE
 block|,
+DECL|enumerator|COMBO_STRING
 name|COMBO_STRING
 block|,
+DECL|enumerator|COMBO_SENSITIVE
 name|COMBO_SENSITIVE
 block|}
 enum|;
@@ -222,7 +222,7 @@ block|,
 literal|"pos z"
 block|,
 literal|"neg z"
-block|,    }
+block|,     }
 block|,
 block|{
 literal|"+x"
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a4679d70208
+DECL|struct|__anon2877df430208
 block|{
 DECL|member|format
 name|int
@@ -1113,9 +1113,9 @@ struct|;
 end_struct
 
 begin_function
-DECL|function|check_mipmaps (gint32 image_id,int savetype)
 specifier|static
 name|int
+DECL|function|check_mipmaps (gint32 image_id,int savetype)
 name|check_mipmaps
 parameter_list|(
 name|gint32
@@ -1489,9 +1489,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_cubemap (gint32 image_id)
 specifier|static
 name|int
+DECL|function|check_cubemap (gint32 image_id)
 name|check_cubemap
 parameter_list|(
 name|gint32
@@ -2113,9 +2113,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_volume (gint32 image_id)
 specifier|static
 name|int
+DECL|function|check_volume (gint32 image_id)
 name|check_volume
 parameter_list|(
 name|gint32
@@ -2291,9 +2291,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_array (gint32 image_id)
 specifier|static
 name|int
+DECL|function|check_array (gint32 image_id)
 name|check_array
 parameter_list|(
 name|gint32
@@ -2484,9 +2484,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_array_size (gint32 image_id)
 specifier|static
 name|int
+DECL|function|get_array_size (gint32 image_id)
 name|get_array_size
 parameter_list|(
 name|gint32
@@ -2587,8 +2587,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_dds (gchar * filename,gint32 image_id,gint32 drawable_id)
 name|GimpPDBStatusType
+DECL|function|write_dds (gchar * filename,gint32 image_id,gint32 drawable_id,gboolean interactive_dds)
 name|write_dds
 parameter_list|(
 name|gchar
@@ -2600,6 +2600,9 @@ name|image_id
 parameter_list|,
 name|gint32
 name|drawable_id
+parameter_list|,
+name|gboolean
+name|interactive_dds
 parameter_list|)
 block|{
 name|FILE
@@ -2886,9 +2889,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|swap_rb (unsigned char * pixels,unsigned int n,int bpp)
 specifier|static
 name|void
+DECL|function|swap_rb (unsigned char * pixels,unsigned int n,int bpp)
 name|swap_rb
 parameter_list|(
 name|unsigned
@@ -2971,9 +2974,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|alpha_exp (unsigned char * dst,int r,int g,int b,int a)
 specifier|static
 name|void
+DECL|function|alpha_exp (unsigned char * dst,int r,int g,int b,int a)
 name|alpha_exp
 parameter_list|(
 name|unsigned
@@ -3221,9 +3224,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|convert_pixels (unsigned char * dst,unsigned char * src,int format,int w,int h,int d,int bpp,unsigned char * palette,int mipmaps)
 specifier|static
 name|void
+DECL|function|convert_pixels (unsigned char * dst,unsigned char * src,int format,int w,int h,int d,int bpp,unsigned char * palette,int mipmaps)
 name|convert_pixels
 parameter_list|(
 name|unsigned
@@ -3963,9 +3966,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_mipmap_chain (unsigned char * dst,int w,int h,int bpp,gint32 image_id,gint drawable_id)
 specifier|static
 name|void
+DECL|function|get_mipmap_chain (unsigned char * dst,int w,int h,int bpp,gint32 image_id,gint drawable_id)
 name|get_mipmap_chain
 parameter_list|(
 name|unsigned
@@ -4251,9 +4254,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_layer (FILE * fp,gint32 image_id,gint32 drawable_id,int w,int h,int bpp,int fmtbpp,int mipmaps)
 specifier|static
 name|void
+DECL|function|write_layer (FILE * fp,gint32 image_id,gint32 drawable_id,int w,int h,int bpp,int fmtbpp,int mipmaps)
 name|write_layer
 parameter_list|(
 name|FILE
@@ -4531,7 +4534,7 @@ literal|1
 expr_stmt|;
 block|}
 block|}
-comment|/* we want and assume BGRA ordered pixels for bpp>= 3 from here and       onwards */
+comment|/* we want and assume BGRA ordered pixels for bpp>= 3 from here and      onwards */
 if|if
 condition|(
 name|bpp
@@ -5015,7 +5018,7 @@ operator|>
 literal|1
 condition|)
 block|{
-comment|/* pre-convert indexed images to RGB for better quality mipmaps             if a pixel format conversion is requested */
+comment|/* pre-convert indexed images to RGB for better quality mipmaps              if a pixel format conversion is requested */
 if|if
 condition|(
 name|dds_write_vals
@@ -5708,9 +5711,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_volume_mipmaps (FILE * fp,gint32 image_id,gint32 * layers,int w,int h,int d,int bpp,int fmtbpp,int mipmaps)
 specifier|static
 name|void
+DECL|function|write_volume_mipmaps (FILE * fp,gint32 image_id,gint32 * layers,int w,int h,int d,int bpp,int fmtbpp,int mipmaps)
 name|write_volume_mipmaps
 parameter_list|(
 name|FILE
@@ -6021,7 +6024,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-comment|/* we want and assume BGRA ordered pixels for bpp>= 3 from here and       onwards */
+comment|/* we want and assume BGRA ordered pixels for bpp>= 3 from here and      onwards */
 if|if
 condition|(
 name|bpp
@@ -6041,7 +6044,7 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-comment|/* pre-convert indexed images to RGB for better mipmaps if a       pixel format conversion is requested */
+comment|/* pre-convert indexed images to RGB for better mipmaps if a      pixel format conversion is requested */
 if|if
 condition|(
 name|dds_write_vals
@@ -6328,9 +6331,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_image (FILE * fp,gint32 image_id,gint32 drawable_id)
 specifier|static
 name|int
+DECL|function|write_image (FILE * fp,gint32 image_id,gint32 drawable_id)
 name|write_image
 parameter_list|(
 name|FILE
@@ -7013,7 +7016,7 @@ name|amask
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*     put some information in the reserved area to identify the origin     of the image    */
+comment|/*      put some information in the reserved area to identify the origin      of the image      */
 name|PUTL32
 argument_list|(
 name|hdr
@@ -7358,7 +7361,7 @@ argument_list|,
 name|pflags
 argument_list|)
 expr_stmt|;
-comment|/*        write extra fourcc info - this is special to GIMP DDS. When the image        is read by the plugin, we can detect the added information to decode        the pixels       */
+comment|/*          write extra fourcc info - this is special to GIMP DDS. When the image          is read by the plugin, we can detect the added information to decode          the pixels          */
 if|if
 condition|(
 name|dds_write_vals
@@ -7683,7 +7686,7 @@ name|size
 argument_list|)
 expr_stmt|;
 comment|/* linear size */
-comment|/*        write extra fourcc info - this is special to GIMP DDS. When the image        is read by the plugin, we can detect the added information to decode        the pixels       */
+comment|/*          write extra fourcc info - this is special to GIMP DDS. When the image          is read by the plugin, we can detect the added information to decode          the pixels          */
 if|if
 condition|(
 name|dds_write_vals
@@ -8293,10 +8296,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|string_value_combo_new (string_value_t * strings,int active_value)
 specifier|static
 name|GtkWidget
 modifier|*
+DECL|function|string_value_combo_new (string_value_t * strings,int active_value)
 name|string_value_combo_new
 parameter_list|(
 name|string_value_t
@@ -8487,9 +8490,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|string_value_combo_selected (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|string_value_combo_selected (GtkWidget * widget,gpointer data)
 name|string_value_combo_selected
 parameter_list|(
 name|GtkWidget
@@ -8562,9 +8565,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|string_value_combo_set_item_sensitive (GtkWidget * widget,int value,int sensitive)
 specifier|static
 name|void
+DECL|function|string_value_combo_set_item_sensitive (GtkWidget * widget,int value,int sensitive)
 name|string_value_combo_set_item_sensitive
 parameter_list|(
 name|GtkWidget
@@ -8667,9 +8670,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|string_value_combo_set_active (GtkWidget * widget,int value)
 specifier|static
 name|void
+DECL|function|string_value_combo_set_active (GtkWidget * widget,int value)
 name|string_value_combo_set_active
 parameter_list|(
 name|GtkWidget
@@ -8762,9 +8765,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_dialog_response (GtkWidget * widget,gint response_id,gpointer data)
 specifier|static
 name|void
+DECL|function|save_dialog_response (GtkWidget * widget,gint response_id,gpointer data)
 name|save_dialog_response
 parameter_list|(
 name|GtkWidget
@@ -8802,9 +8805,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compression_selected (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|compression_selected (GtkWidget * widget,gpointer data)
 name|compression_selected
 parameter_list|(
 name|GtkWidget
@@ -8887,9 +8890,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|savetype_selected (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|savetype_selected (GtkWidget * widget,gpointer data)
 name|savetype_selected
 parameter_list|(
 name|GtkWidget
@@ -8996,9 +8999,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|mipmaps_selected (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|mipmaps_selected (GtkWidget * widget,gpointer data)
 name|mipmaps_selected
 parameter_list|(
 name|GtkWidget
@@ -9159,9 +9162,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|toggle_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|toggle_clicked (GtkWidget * widget,gpointer data)
 name|toggle_clicked
 parameter_list|(
 name|GtkWidget
@@ -9197,9 +9200,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|transindex_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|transindex_clicked (GtkWidget * widget,gpointer data)
 name|transindex_clicked
 parameter_list|(
 name|GtkWidget
@@ -9283,9 +9286,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|transindex_changed (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|transindex_changed (GtkWidget * widget,gpointer data)
 name|transindex_changed
 parameter_list|(
 name|GtkWidget
@@ -9312,9 +9315,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|adv_opt_expanded (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|adv_opt_expanded (GtkWidget * widget,gpointer data)
 name|adv_opt_expanded
 parameter_list|(
 name|GtkWidget
@@ -9342,9 +9345,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gamma_correct_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gamma_correct_clicked (GtkWidget * widget,gpointer data)
 name|gamma_correct_clicked
 parameter_list|(
 name|GtkWidget
@@ -9394,9 +9397,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|srgb_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|srgb_clicked (GtkWidget * widget,gpointer data)
 name|srgb_clicked
 parameter_list|(
 name|GtkWidget
@@ -9433,9 +9436,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gamma_changed (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gamma_changed (GtkWidget * widget,gpointer data)
 name|gamma_changed
 parameter_list|(
 name|GtkWidget
@@ -9462,9 +9465,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|alpha_coverage_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|alpha_coverage_clicked (GtkWidget * widget,gpointer data)
 name|alpha_coverage_clicked
 parameter_list|(
 name|GtkWidget
@@ -9500,9 +9503,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|alpha_test_threshold_changed (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|alpha_test_threshold_changed (GtkWidget * widget,gpointer data)
 name|alpha_test_threshold_changed
 parameter_list|(
 name|GtkWidget
@@ -9529,9 +9532,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_dialog (gint32 image_id,gint32 drawable_id)
 specifier|static
 name|gint
+DECL|function|save_dialog (gint32 image_id,gint32 drawable_id)
 name|save_dialog
 parameter_list|(
 name|gint32

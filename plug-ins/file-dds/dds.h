@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; see the file COPYING.  If not, write to  * the Free Software Foundation, 51 Franklin Street, Fifth Floor  * Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_ifndef
@@ -37,7 +37,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00103
+DECL|enum|__anon2c4dd8350103
 block|{
 DECL|enumerator|DDS_COMPRESS_NONE
 name|DDS_COMPRESS_NONE
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00203
+DECL|enum|__anon2c4dd8350203
 block|{
 DECL|enumerator|DDS_SAVE_SELECTED_LAYER
 name|DDS_SAVE_SELECTED_LAYER
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00303
+DECL|enum|__anon2c4dd8350303
 block|{
 DECL|enumerator|DDS_FORMAT_DEFAULT
 name|DDS_FORMAT_DEFAULT
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00403
+DECL|enum|__anon2c4dd8350403
 block|{
 DECL|enumerator|DDS_MIPMAP_NONE
 name|DDS_MIPMAP_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00503
+DECL|enum|__anon2c4dd8350503
 block|{
 DECL|enumerator|DDS_MIPMAP_FILTER_DEFAULT
 name|DDS_MIPMAP_FILTER_DEFAULT
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00603
+DECL|enum|__anon2c4dd8350603
 block|{
 DECL|enumerator|DDS_MIPMAP_WRAP_DEFAULT
 name|DDS_MIPMAP_WRAP_DEFAULT
@@ -553,7 +553,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b384dd00708
+DECL|struct|__anon2c4dd8350708
 block|{
 DECL|member|size
 name|unsigned
@@ -606,7 +606,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b384dd00808
+DECL|struct|__anon2c4dd8350808
 block|{
 DECL|member|caps1
 name|unsigned
@@ -635,7 +635,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b384dd00908
+DECL|struct|__anon2c4dd8350908
 block|{
 DECL|member|magic
 name|unsigned
@@ -678,10 +678,10 @@ name|int
 name|num_mipmaps
 decl_stmt|;
 union|union
-DECL|union|__anon2b384dd00a0a
+DECL|union|__anon2c4dd8350a0a
 block|{
 struct|struct
-DECL|struct|__anon2b384dd00b08
+DECL|struct|__anon2c4dd8350b08
 block|{
 DECL|member|magic1
 name|unsigned
@@ -745,7 +745,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b384dd00c03
+DECL|enum|__anon2c4dd8350c03
 block|{
 DECL|enumerator|DXGI_FORMAT_UNKNOWN
 name|DXGI_FORMAT_UNKNOWN
@@ -1340,7 +1340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b384dd00d08
+DECL|struct|__anon2c4dd8350d08
 block|{
 DECL|member|dxgiFormat
 name|DXGI_FORMAT
