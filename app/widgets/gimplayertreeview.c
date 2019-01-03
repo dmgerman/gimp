@@ -2337,7 +2337,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c720dc50108
+DECL|struct|__anon2a238bc30108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2725,7 +2725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c720dc50208
+DECL|struct|__anon2a238bc30208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3192,6 +3192,11 @@ operator|&
 name|parent
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -3369,6 +3374,11 @@ argument_list|)
 expr_stmt|;
 block|}
 name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|g_object_unref
 argument_list|(
 name|image
 argument_list|)
