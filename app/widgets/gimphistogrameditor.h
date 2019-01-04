@@ -122,6 +122,11 @@ name|GimpHistogram
 modifier|*
 name|bg_histogram
 decl_stmt|;
+DECL|member|calculate_async
+name|GimpAsync
+modifier|*
+name|calculate_async
+decl_stmt|;
 DECL|member|idle_id
 name|guint
 name|idle_id

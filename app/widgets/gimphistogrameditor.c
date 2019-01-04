@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29995ed80103
+DECL|enum|__anon2bf4cd480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2025,6 +2025,12 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
+name|editor
+operator|->
+name|calculate_async
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|gimp_async_is_finished
@@ -2141,6 +2147,12 @@ name|histogram
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|calculate_async
+operator|=
+name|async
 expr_stmt|;
 name|gimp_async_add_callback
 argument_list|(
@@ -2382,6 +2394,19 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
+if|if
+condition|(
+name|editor
+operator|->
+name|calculate_async
+condition|)
+name|gimp_async_cancel_and_wait
+argument_list|(
+name|editor
+operator|->
+name|calculate_async
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|editor
