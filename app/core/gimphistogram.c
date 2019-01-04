@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-atomic.h"
 end_include
 
@@ -108,7 +114,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bb6c60103
+DECL|enum|__anon2bddefb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -159,7 +165,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb6c60208
+DECL|struct|__anon2bddefb40208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -208,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb6c60308
+DECL|struct|__anon2bddefb40308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1166,6 +1172,9 @@ name|CalculateContext
 modifier|*
 name|context
 decl_stmt|;
+name|GeglRectangle
+name|rect
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_HISTOGRAM
@@ -1212,6 +1221,16 @@ operator|->
 name|calculate_async
 argument_list|)
 expr_stmt|;
+name|gimp_gegl_rectangle_align_to_tile_grid
+argument_list|(
+operator|&
+name|rect
+argument_list|,
+name|buffer_rect
+argument_list|,
+name|buffer
+argument_list|)
+expr_stmt|;
 name|context
 operator|=
 name|g_slice_new0
@@ -1231,7 +1250,8 @@ name|buffer
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|buffer_rect
+operator|&
+name|rect
 argument_list|,
 name|gegl_buffer_get_format
 argument_list|(
@@ -1250,7 +1270,8 @@ name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,
-name|buffer_rect
+operator|&
+name|rect
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|,
@@ -1288,6 +1309,19 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
+name|gimp_gegl_rectangle_align_to_tile_grid
+argument_list|(
+operator|&
+name|rect
+argument_list|,
+operator|&
+name|context
+operator|->
+name|mask_rect
+argument_list|,
+name|mask
+argument_list|)
+expr_stmt|;
 name|context
 operator|->
 name|mask
@@ -1295,9 +1329,7 @@ operator|=
 name|gegl_buffer_new
 argument_list|(
 operator|&
-name|context
-operator|->
-name|mask_rect
+name|rect
 argument_list|,
 name|gegl_buffer_get_format
 argument_list|(
@@ -1310,9 +1342,7 @@ argument_list|(
 name|mask
 argument_list|,
 operator|&
-name|context
-operator|->
-name|mask_rect
+name|rect
 argument_list|,
 name|GEGL_ABYSS_NONE
 argument_list|,
