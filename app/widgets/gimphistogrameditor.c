@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e1ee90103
+DECL|enum|__anon2aef305f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2104,6 +2104,8 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
+name|editor
+operator|->
 name|update_pending
 condition|)
 name|gimp_histogram_editor_update
