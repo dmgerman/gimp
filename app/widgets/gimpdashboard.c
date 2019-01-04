@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7c0fa0103
+DECL|enum|__anon2a3b7b4c0103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -532,7 +532,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7c0fa0203
+DECL|enum|__anon2a3b7b4c0203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7c0fa0303
+DECL|enum|__anon2a3b7b4c0303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -834,7 +834,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2ae7c0fa040a
+DECL|union|__anon2a3b7b4c040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -850,7 +850,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2ae7c0fa0508
+DECL|struct|__anon2a3b7b4c0508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -865,7 +865,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2ae7c0fa0608
+DECL|struct|__anon2a3b7b4c0608
 block|{
 DECL|member|antecedent
 name|gint
@@ -8948,7 +8948,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0708
+DECL|struct|__anon2a3b7b4c0708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9154,7 +9154,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0808
+DECL|struct|__anon2a3b7b4c0808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9424,7 +9424,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0908
+DECL|struct|__anon2a3b7b4c0908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9630,7 +9630,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0a08
+DECL|struct|__anon2a3b7b4c0a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9906,7 +9906,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0b08
+DECL|struct|__anon2a3b7b4c0b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10066,7 +10066,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c0fa0c08
+DECL|struct|__anon2a3b7b4c0c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -14758,6 +14758,15 @@ modifier|...
 parameter_list|)
 define|\
 value|gimp_dashboard_log_printf (dashboard,               \                                            "<%s>" format "</%s>\n", \                                            variable_info->name,     \                                            __VA_ARGS__,             \                                            variable_info->name)
+DECL|macro|LOG_VAR_FLOAT (value)
+define|#
+directive|define
+name|LOG_VAR_FLOAT
+parameter_list|(
+name|value
+parameter_list|)
+define|\
+value|G_STMT_START                                                \                   {                                                         \                     gchar buffer[G_ASCII_DTOSTR_BUF_SIZE];                  \                                                                             \                     LOG_VAR ("%s", g_ascii_dtostr (buffer, sizeof (buffer), \                                                    value));                 \                   }                                                         \                 G_STMT_END
 switch|switch
 condition|(
 name|variable_info
@@ -14878,10 +14887,8 @@ break|break;
 case|case
 name|VARIABLE_TYPE_PERCENTAGE
 case|:
-name|LOG_VAR
+name|LOG_VAR_FLOAT
 argument_list|(
-literal|"%.16g"
-argument_list|,
 name|variable_data
 operator|->
 name|value
@@ -14893,10 +14900,8 @@ break|break;
 case|case
 name|VARIABLE_TYPE_DURATION
 case|:
-name|LOG_VAR
+name|LOG_VAR_FLOAT
 argument_list|(
-literal|"%.16g"
-argument_list|,
 name|variable_data
 operator|->
 name|value
@@ -14908,10 +14913,8 @@ break|break;
 case|case
 name|VARIABLE_TYPE_RATE_OF_CHANGE
 case|:
-name|LOG_VAR
+name|LOG_VAR_FLOAT
 argument_list|(
-literal|"%.16g"
-argument_list|,
 name|variable_data
 operator|->
 name|value
@@ -14924,6 +14927,9 @@ block|}
 undef|#
 directive|undef
 name|LOG_VAR
+undef|#
+directive|undef
+name|LOG_VAR_FLOAT
 block|}
 else|else
 block|{
