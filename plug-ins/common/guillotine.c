@@ -212,7 +212,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Guillotine"
+literal|"Slice Using G_uides"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -238,7 +238,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/Image/Transform"
+literal|"<Image>/Image/Crop"
 argument_list|)
 expr_stmt|;
 block|}
