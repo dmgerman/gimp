@@ -5761,7 +5761,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_palette_foreground_actions
 argument_list|,
@@ -5780,7 +5780,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_palette_background_actions
 argument_list|,
@@ -5799,7 +5799,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_colormap_foreground_actions
 argument_list|,
@@ -5818,7 +5818,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_colormap_background_actions
 argument_list|,
@@ -5837,7 +5837,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_swatch_foreground_actions
 argument_list|,
@@ -5856,7 +5856,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_swatch_background_actions
 argument_list|,
@@ -5875,7 +5875,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_red_actions
 argument_list|,
@@ -5894,7 +5894,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_green_actions
 argument_list|,
@@ -5913,7 +5913,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_blue_actions
 argument_list|,
@@ -5932,7 +5932,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_hue_actions
 argument_list|,
@@ -5951,7 +5951,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_saturation_actions
 argument_list|,
@@ -5970,7 +5970,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_foreground_value_actions
 argument_list|,
@@ -5989,7 +5989,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_red_actions
 argument_list|,
@@ -6008,7 +6008,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_green_actions
 argument_list|,
@@ -6027,7 +6027,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_blue_actions
 argument_list|,
@@ -6046,7 +6046,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_hue_actions
 argument_list|,
@@ -6065,7 +6065,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_saturation_actions
 argument_list|,
@@ -6084,7 +6084,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_background_value_actions
 argument_list|,
@@ -6103,7 +6103,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_opacity_actions
 argument_list|,
@@ -6122,7 +6122,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_paint_mode_actions
 argument_list|,
@@ -6141,7 +6141,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_tool_select_actions
 argument_list|,
@@ -6160,7 +6160,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_select_actions
 argument_list|,
@@ -6179,7 +6179,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_pattern_select_actions
 argument_list|,
@@ -6198,7 +6198,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_palette_select_actions
 argument_list|,
@@ -6217,7 +6217,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_gradient_select_actions
 argument_list|,
@@ -6236,7 +6236,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_font_select_actions
 argument_list|,
@@ -6255,7 +6255,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_spacing_actions
 argument_list|,
@@ -6274,7 +6274,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_shape_actions
 argument_list|,
@@ -6293,7 +6293,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_radius_actions
 argument_list|,
@@ -6312,7 +6312,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_spikes_actions
 argument_list|,
@@ -6331,7 +6331,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_hardness_actions
 argument_list|,
@@ -6350,7 +6350,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_aspect_actions
 argument_list|,
@@ -6369,7 +6369,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"context-action"
 argument_list|,
 name|context_brush_angle_actions
 argument_list|,
