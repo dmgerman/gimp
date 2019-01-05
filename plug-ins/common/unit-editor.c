@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abe9dca0103
+DECL|enum|__anon289f9f2b0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abe9dca0208
+DECL|struct|__anon289f9f2b0208
 block|{
 DECL|member|title
 specifier|const
@@ -2008,6 +2008,16 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|scrolled_win
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|200
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_shadow_type
