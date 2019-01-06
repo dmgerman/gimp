@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-scratch.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpoperationlayermode-blend.h"
 end_include
 
@@ -4021,7 +4015,7 @@ argument_list|)
 expr_stmt|;
 name|scratch
 operator|=
-name|gimp_scratch_new
+name|gegl_scratch_new
 argument_list|(
 name|gfloat
 argument_list|,
@@ -4159,7 +4153,7 @@ name|layer_Y
 operator|++
 expr_stmt|;
 block|}
-name|gimp_scratch_free
+name|gegl_scratch_free
 argument_list|(
 name|scratch
 argument_list|)

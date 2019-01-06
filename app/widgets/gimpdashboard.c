@@ -231,12 +231,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-scratch.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpasync.h"
 end_include
 
@@ -418,7 +412,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3b7b4c0103
+DECL|enum|__anon2a0d52400103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -532,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3b7b4c0203
+DECL|enum|__anon2a0d52400203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -566,7 +560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3b7b4c0303
+DECL|enum|__anon2a0d52400303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -834,7 +828,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2a3b7b4c040a
+DECL|union|__anon2a0d5240040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -850,7 +844,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2a3b7b4c0508
+DECL|struct|__anon2a0d52400508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -865,7 +859,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2a3b7b4c0608
+DECL|struct|__anon2a0d52400608
 block|{
 DECL|member|antecedent
 name|gint
@@ -3177,12 +3171,12 @@ block|,
 operator|.
 name|sample_func
 operator|=
-name|gimp_dashboard_sample_function
+name|gimp_dashboard_sample_gegl_stats
 block|,
 operator|.
 name|data
 operator|=
-name|gimp_scratch_get_total
+literal|"scratch-total"
 block|}
 block|}
 decl_stmt|;
@@ -8948,7 +8942,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0708
+DECL|struct|__anon2a0d52400708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9154,7 +9148,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0808
+DECL|struct|__anon2a0d52400808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9424,7 +9418,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0908
+DECL|struct|__anon2a0d52400908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9630,7 +9624,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0a08
+DECL|struct|__anon2a0d52400a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9906,7 +9900,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0b08
+DECL|struct|__anon2a0d52400b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10066,7 +10060,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b7b4c0c08
+DECL|struct|__anon2a0d52400c08
 block|{
 DECL|member|prev_time
 name|gint64
