@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee527d0103
+DECL|enum|__anon2ad8fa580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee527d0208
+DECL|struct|__anon2ad8fa580208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee527d0308
+DECL|struct|__anon2ad8fa580308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -1864,6 +1864,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|pickable
+operator|!=
+name|line_art
+operator|->
+name|priv
+operator|->
+name|input
+condition|)
+block|{
+if|if
+condition|(
 name|line_art
 operator|->
 name|priv
@@ -1913,6 +1924,7 @@ argument_list|,
 name|line_art
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
