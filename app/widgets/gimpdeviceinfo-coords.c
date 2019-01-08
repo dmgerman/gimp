@@ -82,6 +82,8 @@ name|x
 decl_stmt|;
 if|if
 condition|(
+name|event
+operator|&&
 name|gdk_event_get_axis
 argument_list|(
 name|event
