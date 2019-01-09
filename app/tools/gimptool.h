@@ -179,6 +179,19 @@ DECL|member|active_modifier_state
 name|GdkModifierType
 name|active_modifier_state
 decl_stmt|;
+comment|/*  private state for synthesizing button_release() events    */
+DECL|member|last_pointer_coords
+name|GimpCoords
+name|last_pointer_coords
+decl_stmt|;
+DECL|member|last_pointer_time
+name|guint32
+name|last_pointer_time
+decl_stmt|;
+DECL|member|last_pointer_state
+name|GdkModifierType
+name|last_pointer_state
+decl_stmt|;
 comment|/*  private state for click detection    */
 DECL|member|in_click_distance
 name|gboolean
