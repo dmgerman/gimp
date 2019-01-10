@@ -4977,6 +4977,7 @@ name|flip_vertically
 condition|)
 block|{
 comment|/* please preserve the trailing space */
+comment|/* H: Horizontal, V: Vertical */
 name|flip
 operator|=
 name|_
@@ -4994,6 +4995,7 @@ name|flip_horizontally
 condition|)
 block|{
 comment|/* please preserve the trailing space */
+comment|/* H: Horizontal */
 name|flip
 operator|=
 name|_
@@ -5011,6 +5013,7 @@ name|flip_vertically
 condition|)
 block|{
 comment|/* please preserve the trailing space */
+comment|/* V: Vertical */
 name|flip
 operator|=
 name|_
