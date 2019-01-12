@@ -3076,6 +3076,12 @@ operator|->
 name|filter
 condition|)
 block|{
+comment|/* halt the editor before committing the filter so that the image-flush        * idle source is removed, to avoid flushing the image, and hence        * restarting the projection rendering, while applying the filter.        */
+name|gimp_gradient_tool_editor_halt
+argument_list|(
+name|gradient_tool
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_push_preserve
 argument_list|(
 name|tool
