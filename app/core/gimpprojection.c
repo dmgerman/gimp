@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a26370103
+DECL|enum|__anon2a9b18f30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a26370203
+DECL|enum|__anon2a9b18f30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2858,6 +2858,11 @@ name|priv
 operator|->
 name|update_region
 decl_stmt|;
+name|gboolean
+name|invalidate_preview
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|proj
@@ -2887,6 +2892,21 @@ operator|->
 name|iter
 operator|=
 name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|cairo_region_is_empty
+argument_list|(
+name|region
+argument_list|)
+condition|)
+name|invalidate_preview
+operator|=
+name|proj
+operator|->
+name|priv
+operator|->
+name|invalidate_preview
 expr_stmt|;
 if|if
 condition|(
@@ -3039,6 +3059,30 @@ operator|->
 name|idle_id
 operator|=
 literal|0
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|invalidate_preview
+condition|)
+block|{
+comment|/* invalidate the preview here since it is constructed from            * the projection            */
+name|proj
+operator|->
+name|priv
+operator|->
+name|invalidate_preview
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp_projectable_invalidate_preview
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|projectable
+argument_list|)
 expr_stmt|;
 block|}
 block|}
