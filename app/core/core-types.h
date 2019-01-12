@@ -1140,6 +1140,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpChunkIterator
+typedef|typedef
+name|struct
+name|_GimpChunkIterator
+name|GimpChunkIterator
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCoords
 typedef|typedef
 name|struct
