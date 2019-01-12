@@ -429,6 +429,14 @@ block|{
 case|case
 name|GEGL_TILE_GET
 case|:
+comment|/* TODO: fetch mipmapped tiles directly from gimp, instead of returning        * NULL to render them locally        */
+if|if
+condition|(
+name|z
+operator|==
+literal|0
+condition|)
+block|{
 name|g_mutex_lock
 argument_list|(
 operator|&
@@ -452,10 +460,19 @@ operator|&
 name|backend_plugin_mutex
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GEGL_TILE_SET
 case|:
+comment|/* TODO: actually store mipmapped tiles */
+if|if
+condition|(
+name|z
+operator|==
+literal|0
+condition|)
+block|{
 name|g_mutex_lock
 argument_list|(
 operator|&
@@ -476,15 +493,16 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_tile_mark_as_stored
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|g_mutex_unlock
 argument_list|(
 operator|&
 name|backend_plugin_mutex
+argument_list|)
+expr_stmt|;
+block|}
+name|gegl_tile_mark_as_stored
+argument_list|(
+name|data
 argument_list|)
 expr_stmt|;
 break|break;
