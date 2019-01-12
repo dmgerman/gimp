@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40103
+DECL|enum|__anon2b3e53430103
 block|{
 DECL|enumerator|GIMP_XMP_NONE
 name|GIMP_XMP_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40203
+DECL|enum|__anon2b3e53430203
 block|{
 DECL|enumerator|COL_LICENSOR_NAME
 name|COL_LICENSOR_NAME
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40303
+DECL|enum|__anon2b3e53430303
 block|{
 DECL|enumerator|COL_CR_OWNER_NAME
 name|COL_CR_OWNER_NAME
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40403
+DECL|enum|__anon2b3e53430403
 block|{
 DECL|enumerator|COL_IMG_CR8_NAME
 name|COL_IMG_CR8_NAME
@@ -147,7 +147,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40503
+DECL|enum|__anon2b3e53430503
 block|{
 DECL|enumerator|COL_AOO_TITLE
 name|COL_AOO_TITLE
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40603
+DECL|enum|__anon2b3e53430603
 block|{
 DECL|enumerator|COL_REGSITRY_ORG_ID
 name|COL_REGSITRY_ORG_ID
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40703
+DECL|enum|__anon2b3e53430703
 block|{
 DECL|enumerator|COL_LOC_SHO_SUB_LOC
 name|COL_LOC_SHO_SUB_LOC
@@ -225,7 +225,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40803
+DECL|enum|__anon2b3e53430803
 block|{
 DECL|enumerator|COL_ORG_IMG_CODE
 name|COL_ORG_IMG_CODE
@@ -240,7 +240,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40903
+DECL|enum|__anon2b3e53430903
 block|{
 DECL|enumerator|COL_ORG_IMG_NAME
 name|COL_ORG_IMG_NAME
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40a03
+DECL|enum|__anon2b3e53430a03
 block|{
 DECL|enumerator|COL_MOD_REL_ID
 name|COL_MOD_REL_ID
@@ -270,7 +270,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84ede40b03
+DECL|enum|__anon2b3e53430b03
 block|{
 DECL|enumerator|COL_PROP_REL_ID
 name|COL_PROP_REL_ID
@@ -1761,7 +1761,7 @@ literal|"http://cv.iptc.org/newscodes/digitalsourcetype/negativeFilm"
 block|,
 name|N_
 argument_list|(
-literal|"Digitised from a negative on film"
+literal|"Digitized from a negative on film"
 argument_list|)
 block|}
 block|,
@@ -1770,7 +1770,7 @@ literal|"http://cv.iptc.org/newscodes/digitalsourcetype/positiveFilm"
 block|,
 name|N_
 argument_list|(
-literal|"Digitised from a positive on film"
+literal|"Digitized from a positive on film"
 argument_list|)
 block|}
 block|,
@@ -1779,7 +1779,7 @@ literal|"http://cv.iptc.org/newscodes/digitalsourcetype/print"
 block|,
 name|N_
 argument_list|(
-literal|"Digitised from a print on non-transparent medium"
+literal|"Digitized from a print on non-transparent medium"
 argument_list|)
 block|}
 block|,

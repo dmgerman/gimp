@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b51bc060103
+DECL|enum|__anon28ed9c6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Show a preview of the transform_grided image"
+literal|"Show a preview of the transformed image"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1627,7 +1627,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2b51bc060208
+DECL|struct|__anon28ed9c6b0208
 block|{
 DECL|member|mod
 name|GdkModifierType
