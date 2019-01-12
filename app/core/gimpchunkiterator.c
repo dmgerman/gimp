@@ -1020,6 +1020,13 @@ operator|=
 operator|*
 name|rect
 expr_stmt|;
+if|if
+condition|(
+name|gimp_chunk_iterator_prepare
+argument_list|(
+name|iter
+argument_list|)
+condition|)
 name|gimp_chunk_iterator_merge
 argument_list|(
 name|iter
