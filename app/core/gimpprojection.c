@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b18f30103
+DECL|enum|__anon2ace80fb0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b18f30203
+DECL|enum|__anon2ace80fb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2224,6 +2224,17 @@ operator|->
 name|iter
 condition|)
 block|{
+name|gimp_chunk_iterator_set_priority_rect
+argument_list|(
+name|proj
+operator|->
+name|priv
+operator|->
+name|iter
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_tile_handler_validate_begin_validate
 argument_list|(
 name|proj
