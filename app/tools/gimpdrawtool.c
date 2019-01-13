@@ -1548,12 +1548,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_widget_status (GimpToolWidget * rectangle,const gchar * status,GimpTool * tool)
+DECL|function|gimp_draw_tool_widget_status (GimpToolWidget * widget,const gchar * status,GimpTool * tool)
 name|gimp_draw_tool_widget_status
 parameter_list|(
 name|GimpToolWidget
 modifier|*
-name|rectangle
+name|widget
 parameter_list|,
 specifier|const
 name|gchar
@@ -1611,12 +1611,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_widget_status_coords (GimpToolWidget * rectangle,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help,GimpTool * tool)
+DECL|function|gimp_draw_tool_widget_status_coords (GimpToolWidget * widget,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help,GimpTool * tool)
 name|gimp_draw_tool_widget_status_coords
 parameter_list|(
 name|GimpToolWidget
 modifier|*
-name|rectangle
+name|widget
 parameter_list|,
 specifier|const
 name|gchar
