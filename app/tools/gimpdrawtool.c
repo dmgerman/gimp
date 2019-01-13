@@ -1597,9 +1597,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|status
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|status
+condition|)
 name|gimp_tool_replace_status
 argument_list|(
 name|tool
@@ -1613,9 +1620,7 @@ argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -1674,6 +1679,14 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+condition|)
+block|{
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -1710,6 +1723,7 @@ name|help
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1741,6 +1755,13 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+condition|)
 name|gimp_tool_message_literal
 argument_list|(
 name|tool
