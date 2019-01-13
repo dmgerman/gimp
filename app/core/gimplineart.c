@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29112bbc0103
+DECL|enum|__anon2b1ddd890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29112bbc0208
+DECL|struct|__anon2b1ddd890208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29112bbc0308
+DECL|struct|__anon2b1ddd890308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -7594,6 +7594,13 @@ name|p
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|max_curvature
+operator|>
+literal|0.0
+condition|)
+block|{
 name|curvatures
 index|[
 operator|(
@@ -7622,6 +7629,7 @@ argument_list|,
 name|max_curvature_pixel
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|g_queue_free_full
