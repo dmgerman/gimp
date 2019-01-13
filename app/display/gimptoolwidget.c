@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d80f70103
+DECL|enum|__anon28dbffc90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -135,7 +135,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d80f70203
+DECL|enum|__anon28dbffc90203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -199,6 +199,10 @@ decl_stmt|;
 DECL|member|snap_height
 name|gint
 name|snap_height
+decl_stmt|;
+DECL|member|visible
+name|gboolean
+name|visible
 decl_stmt|;
 DECL|member|focus
 name|gboolean
@@ -753,6 +757,14 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -813,6 +825,17 @@ argument_list|(
 name|private
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_set_visible
+argument_list|(
+name|private
+operator|->
+name|item
+argument_list|,
+name|private
+operator|->
+name|visible
 argument_list|)
 expr_stmt|;
 block|}
@@ -1235,6 +1258,111 @@ operator|->
 name|private
 operator|->
 name|item
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_tool_widget_set_visible (GimpToolWidget * widget,gboolean visible)
+name|gimp_tool_widget_set_visible
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gboolean
+name|visible
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_WIDGET
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|visible
+operator|!=
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+condition|)
+block|{
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|=
+name|visible
+expr_stmt|;
+if|if
+condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|item
+condition|)
+name|gimp_canvas_item_set_visible
+argument_list|(
+name|widget
+operator|->
+name|private
+operator|->
+name|item
+argument_list|,
+name|visible
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|visible
+condition|)
+name|gimp_tool_widget_set_status
+argument_list|(
+name|widget
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_tool_widget_get_visible (GimpToolWidget * widget)
+name|gimp_tool_widget_get_visible
+parameter_list|(
+name|GimpToolWidget
+modifier|*
+name|widget
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_WIDGET
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
 return|;
 block|}
 end_function
@@ -3082,6 +3210,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3089,6 +3223,7 @@ argument_list|)
 operator|->
 name|button_press
 condition|)
+block|{
 return|return
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
@@ -3108,6 +3243,7 @@ argument_list|,
 name|press_type
 argument_list|)
 return|;
+block|}
 return|return
 literal|0
 return|;
@@ -3155,6 +3291,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3162,6 +3304,7 @@ argument_list|)
 operator|->
 name|button_release
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3180,6 +3323,7 @@ argument_list|,
 name|release_type
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3221,6 +3365,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3228,6 +3378,7 @@ argument_list|)
 operator|->
 name|motion
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3244,6 +3395,7 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3289,6 +3441,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3296,6 +3454,7 @@ argument_list|)
 operator|->
 name|hit
 condition|)
+block|{
 return|return
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
@@ -3313,6 +3472,7 @@ argument_list|,
 name|proximity
 argument_list|)
 return|;
+block|}
 return|return
 name|GIMP_HIT_NONE
 return|;
@@ -3357,6 +3517,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3364,6 +3530,7 @@ argument_list|)
 operator|->
 name|hover
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3380,6 +3547,7 @@ argument_list|,
 name|proximity
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3403,6 +3571,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3410,6 +3584,7 @@ argument_list|)
 operator|->
 name|leave_notify
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3420,6 +3595,7 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3458,6 +3634,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3465,6 +3647,7 @@ argument_list|)
 operator|->
 name|key_press
 condition|)
+block|{
 return|return
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
@@ -3478,6 +3661,7 @@ argument_list|,
 name|kevent
 argument_list|)
 return|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -3519,6 +3703,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3526,6 +3716,7 @@ argument_list|)
 operator|->
 name|key_release
 condition|)
+block|{
 return|return
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
@@ -3539,6 +3730,7 @@ argument_list|,
 name|kevent
 argument_list|)
 return|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -3574,6 +3766,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3581,6 +3779,7 @@ argument_list|)
 operator|->
 name|motion_modifier
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3597,6 +3796,7 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3629,6 +3829,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3636,6 +3842,7 @@ argument_list|)
 operator|->
 name|hover_modifier
 condition|)
+block|{
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
@@ -3652,6 +3859,7 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3706,6 +3914,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|widget
+operator|->
+name|private
+operator|->
+name|visible
+operator|&&
 name|GIMP_TOOL_WIDGET_GET_CLASS
 argument_list|(
 name|widget
