@@ -119,6 +119,10 @@ DECL|member|preview_position
 name|gdouble
 name|preview_position
 decl_stmt|;
+DECL|member|controller
+name|gboolean
+name|controller
+decl_stmt|;
 DECL|member|region
 name|GimpFilterRegion
 name|region

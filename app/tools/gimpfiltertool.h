@@ -176,6 +176,11 @@ name|GtkWidget
 modifier|*
 name|settings_box
 decl_stmt|;
+DECL|member|controller_toggle
+name|GtkWidget
+modifier|*
+name|controller_toggle
+decl_stmt|;
 DECL|member|region_combo
 name|GtkWidget
 modifier|*
