@@ -962,7 +962,7 @@ operator|+
 name|u
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref_noinit
 argument_list|(
 name|gimp_tile
 argument_list|)
