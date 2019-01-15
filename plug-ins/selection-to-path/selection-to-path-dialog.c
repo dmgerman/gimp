@@ -490,7 +490,7 @@ name|_
 argument_list|(
 literal|"If the angle defined by a point and its predecessors "
 literal|"and successors is smaller than this, it's a corner, "
-literal|"even if it's within `corner_surround' pixels of a "
+literal|"even if it's within 'corner_surround' pixels of a "
 literal|"point with a smaller angle."
 argument_list|)
 argument_list|,
@@ -770,7 +770,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Amount of error at which a fitted spline is "
-literal|"unacceptable.  If any pixel is further away "
+literal|"unacceptable. If any pixel is further away "
 literal|"than this from the fitted curve, we try again."
 argument_list|)
 argument_list|,
@@ -1053,8 +1053,8 @@ name|_
 argument_list|(
 literal|"Number of times to smooth original data points.  "
 literal|"Increasing this number dramatically --- to 50 or "
-literal|"so --- can produce vastly better results.  But if "
-literal|"any points that ``should'' be corners aren't found, "
+literal|"so --- can produce vastly better results. But if "
+literal|"any points that 'should' be corners aren't found, "
 literal|"the curve goes to hell around that point."
 argument_list|)
 argument_list|,
@@ -1241,7 +1241,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Number of adjacent points to consider if "
-literal|"`filter_surround' points defines a straight line."
+literal|"'filter_surround' points defines a straight line."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1429,7 +1429,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Says whether or not to remove ``knee'' "
+literal|"Says whether or not to remove 'knee' "
 literal|"points after finding the outline."
 argument_list|)
 argument_list|,
@@ -1820,7 +1820,7 @@ name|_
 argument_list|(
 literal|"Amount of error at which it is pointless to reparameterize.  "
 literal|"This happens, for example, when we are trying to fit the "
-literal|"outline of the outside of an `O' with a single spline.  "
+literal|"outline of the outside of an 'O' with a single spline. "
 literal|"The initial fit is not good enough for the Newton-Raphson "
 literal|"iteration to improve it.  It may be that it would be better "
 literal|"to detect the cases where we didn't find any corners."
