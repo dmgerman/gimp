@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ddd890103
+DECL|enum|__anon28b6e3cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ddd890208
+DECL|struct|__anon28b6e3cf0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ddd890308
+DECL|struct|__anon28b6e3cf0308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -1926,6 +1926,27 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+end_function
+
+begin_function
+name|GimpPickable
+modifier|*
+DECL|function|gimp_line_art_get_input (GimpLineArt * line_art)
+name|gimp_line_art_get_input
+parameter_list|(
+name|GimpLineArt
+modifier|*
+name|line_art
+parameter_list|)
+block|{
+return|return
+name|line_art
+operator|->
+name|priv
+operator|->
+name|input
+return|;
 block|}
 end_function
 

@@ -45,7 +45,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0103
+DECL|enum|__anon2a222c7a0103
 block|{
 DECL|enumerator|GIMP_BUCKET_FILL_SELECTION
 name|GIMP_BUCKET_FILL_SELECTION
@@ -61,6 +61,54 @@ comment|/*< desc="Fill by line art detection">*/
 DECL|typedef|GimpBucketFillArea
 block|}
 name|GimpBucketFillArea
+typedef|;
+end_typedef
+
+begin_comment
+comment|/**  * GimpLineArtSource:  * @GIMP_LINE_ART_SOURCE_SAMPLE_MERGED: All visible layers  * @GIMP_LINE_ART_SOURCE_ACTIVE_LAYER:  Active layer  * @GIMP_LINE_ART_SOURCE_LOWER_LAYER:   Layer below the active one  * @GIMP_LINE_ART_SOURCE_UPPER_LAYER:   Layer above the active one  *  * Bucket fill area.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_LINE_ART_SOURCE
+define|#
+directive|define
+name|GIMP_TYPE_LINE_ART_SOURCE
+value|(gimp_line_art_source_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_line_art_source_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a222c7a0203
+block|{
+DECL|enumerator|GIMP_LINE_ART_SOURCE_SAMPLE_MERGED
+name|GIMP_LINE_ART_SOURCE_SAMPLE_MERGED
+block|,
+comment|/*< desc="All visible layers">*/
+DECL|enumerator|GIMP_LINE_ART_SOURCE_ACTIVE_LAYER
+name|GIMP_LINE_ART_SOURCE_ACTIVE_LAYER
+block|,
+comment|/*< desc="Active layer">*/
+DECL|enumerator|GIMP_LINE_ART_SOURCE_LOWER_LAYER
+name|GIMP_LINE_ART_SOURCE_LOWER_LAYER
+block|,
+comment|/*< desc="Layer below the active one">*/
+DECL|enumerator|GIMP_LINE_ART_SOURCE_UPPER_LAYER
+name|GIMP_LINE_ART_SOURCE_UPPER_LAYER
+comment|/*< desc="Layer above the active one">*/
+DECL|typedef|GimpLineArtSource
+block|}
+name|GimpLineArtSource
 typedef|;
 end_typedef
 
@@ -85,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0203
+DECL|enum|__anon2a222c7a0303
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -125,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0303
+DECL|enum|__anon2a222c7a0403
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -165,7 +213,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0403
+DECL|enum|__anon2a222c7a0503
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -205,7 +253,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0503
+DECL|enum|__anon2a222c7a0603
 block|{
 DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
 name|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
@@ -242,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0603
+DECL|enum|__anon2a222c7a0703
 block|{
 DECL|enumerator|GIMP_MATTING_DRAW_MODE_FOREGROUND
 name|GIMP_MATTING_DRAW_MODE_FOREGROUND
@@ -283,7 +331,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bf3a0703
+DECL|enum|__anon2a222c7a0803
 block|{
 DECL|enumerator|GIMP_WARP_BEHAVIOR_MOVE
 name|GIMP_WARP_BEHAVIOR_MOVE
@@ -326,7 +374,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a41bf3a0803
+DECL|enum|__anon2a222c7a0903
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -356,7 +404,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a41bf3a0903
+DECL|enum|__anon2a222c7a0a03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -395,7 +443,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a41bf3a0a03
+DECL|enum|__anon2a222c7a0b03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT

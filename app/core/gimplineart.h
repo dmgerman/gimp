@@ -170,6 +170,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpPickable
+modifier|*
+name|gimp_line_art_get_input
+parameter_list|(
+name|GimpLineArt
+modifier|*
+name|line_art
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_line_art_freeze
 parameter_list|(

@@ -149,6 +149,10 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
+DECL|member|line_art_source
+name|GimpLineArtSource
+name|line_art_source
+decl_stmt|;
 DECL|member|line_art_threshold
 name|gdouble
 name|line_art_threshold
