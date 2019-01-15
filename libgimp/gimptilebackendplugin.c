@@ -97,7 +97,7 @@ specifier|static
 name|gint
 name|mul
 init|=
-literal|2
+literal|1
 decl_stmt|;
 specifier|static
 name|gboolean
