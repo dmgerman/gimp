@@ -1142,6 +1142,13 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_data
 argument_list|(
+name|options
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_disconnect_by_data
+argument_list|(
 name|context
 argument_list|,
 name|tool
