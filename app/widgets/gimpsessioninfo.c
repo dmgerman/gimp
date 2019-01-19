@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a428bc50103
+DECL|enum|__anon2b0c6cfc0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a428bc50208
+DECL|struct|__anon2b0c6cfc0208
 block|{
 DECL|member|info
 name|GimpSessionInfo
@@ -1939,6 +1939,55 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_session_info_get_remember_size
+argument_list|(
+name|info
+argument_list|)
+operator|&&
+name|info
+operator|->
+name|p
+operator|->
+name|width
+operator|>
+literal|0
+operator|&&
+name|info
+operator|->
+name|p
+operator|->
+name|height
+operator|>
+literal|0
+condition|)
+block|{
+name|gtk_window_resize
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|info
+operator|->
+name|p
+operator|->
+name|widget
+argument_list|)
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|width
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2706,7 +2755,7 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|/*  This used to call gtk_window_set_default_size() which worked        *  fine in gtk2 and should continue to work, but doesn't for        *  dock windows. gtk_window_resize() seems to work fine for all        *  windows. Leave this comment here until we figured what's        *  going on...        */
+comment|/*  This used to call gtk_window_set_default_size() which worked        *  fine in gtk2 and should continue to work, but doesn't for        *  dock windows. gtk_window_resize() seems to work fine for all        *  windows. Leave this comment here until we figured what's        *  going on...        *        *  XXX If we end up updating this code, also do the same to the        *  gtk_window_resize() call in gimp_session_info_dialog_show()        *  signal handler.        */
 if|#
 directive|if
 literal|1
@@ -2961,7 +3010,7 @@ expr_stmt|;
 comment|/*  Window managers and windowing systems suck. They have their own    *  ideas about WM standards and when it's appropriate to honor    *  user/application-set window positions and when not. Therefore,    *  use brute force and "manually" position dialogs whenever they    *  are shown. This is important especially for transient dialogs,    *  because window managers behave even "smarter" then...    */
 if|if
 condition|(
-name|GTK_IS_DIALOG
+name|GTK_IS_WINDOW
 argument_list|(
 name|info
 operator|->
@@ -3904,7 +3953,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_DIALOG
+name|GTK_IS_WINDOW
 argument_list|(
 name|info
 operator|->
