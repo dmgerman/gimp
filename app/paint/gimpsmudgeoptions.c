@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c04500103
+DECL|enum|__anon293ce2540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,10 @@ name|PROP_FLOW
 block|,
 DECL|enumerator|PROP_NO_ERASING
 name|PROP_NO_ERASING
-block|, }
+block|,
+DECL|enumerator|PROP_SAMPLE_MERGED
+name|PROP_SAMPLE_MERGED
+block|}
 enum|;
 end_enum
 
@@ -261,6 +264,26 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_SAMPLE_MERGED
+argument_list|,
+literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample merged"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -346,6 +369,19 @@ case|:
 name|options
 operator|->
 name|no_erasing
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SAMPLE_MERGED
+case|:
+name|options
+operator|->
+name|sample_merged
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -440,6 +476,19 @@ argument_list|,
 name|options
 operator|->
 name|no_erasing
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SAMPLE_MERGED
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|options
+operator|->
+name|sample_merged
 argument_list|)
 expr_stmt|;
 break|break;

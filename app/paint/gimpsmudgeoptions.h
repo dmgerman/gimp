@@ -115,6 +115,10 @@ DECL|member|no_erasing
 name|gboolean
 name|no_erasing
 decl_stmt|;
+DECL|member|sample_merged
+name|gboolean
+name|sample_merged
+decl_stmt|;
 block|}
 struct|;
 end_struct
