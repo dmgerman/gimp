@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc420180103
+DECL|enum|__anon2c3ef4e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2411,6 +2411,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* See issues #2828 and #2642. */
+name|gtk_combo_box_set_wrap_width
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

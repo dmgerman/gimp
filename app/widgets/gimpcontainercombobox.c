@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2945e3560103
+DECL|enum|__anon2948fca70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -675,6 +675,17 @@ name|combo
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* See issues #2828 and #2642. */
+name|gtk_combo_box_set_wrap_width
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf4adb0103
+DECL|enum|__anon27a607a70103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf4adb0203
+DECL|enum|__anon27a607a70203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -629,6 +629,17 @@ name|gimp_scale_combo_box_entry_key_press
 argument_list|)
 argument_list|,
 name|combo_box
+argument_list|)
+expr_stmt|;
+comment|/* See issues #2828 and #2642. */
+name|gtk_combo_box_set_wrap_width
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab16a770108
+DECL|struct|__anon2c3c61630108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -597,19 +597,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* See issues #2828 and #2642. */
-name|gtk_combo_box_set_wrap_width
-argument_list|(
-name|GTK_COMBO_BOX
-argument_list|(
-name|private
-operator|->
-name|combo
-argument_list|)
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
