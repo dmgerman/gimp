@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpspinscale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectangleoptions.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ca93940103
+DECL|enum|__anon291090bb0103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -284,9 +290,9 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|10000.0
 argument_list|,
-literal|5.0
+literal|10.0
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -539,6 +545,28 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_scale_limits
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1000.0
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_gamma
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+literal|1.7
 argument_list|)
 expr_stmt|;
 name|frame

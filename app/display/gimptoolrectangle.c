@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27623ce80103
+DECL|enum|__anon2a1b0c440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27623ce80203
+DECL|enum|__anon2a1b0c440203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27623ce80303
+DECL|enum|__anon2a1b0c440303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27623ce80403
+DECL|enum|__anon2a1b0c440403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -538,7 +538,7 @@ name|gboolean
 name|round_corners
 decl_stmt|;
 DECL|member|corner_radius
-name|gboolean
+name|gdouble
 name|corner_radius
 decl_stmt|;
 comment|/* The title for the statusbar coords */
@@ -1989,9 +1989,9 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1000.0
+literal|10000.0
 argument_list|,
-literal|5.0
+literal|10.0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
