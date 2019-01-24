@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1351,7 +1351,7 @@ literal|1
 expr_stmt|;
 name|top_row
 operator|=
-name|g_new
+name|gegl_scratch_new
 argument_list|(
 name|GimpSampleType
 argument_list|,
@@ -1364,7 +1364,7 @@ argument_list|)
 expr_stmt|;
 name|bot_row
 operator|=
-name|g_new
+name|gegl_scratch_new
 argument_list|(
 name|GimpSampleType
 argument_list|,
@@ -1455,7 +1455,7 @@ block|}
 comment|/* Allocate block matrix */
 name|block
 operator|=
-name|g_new
+name|gegl_scratch_new
 argument_list|(
 name|GimpSampleType
 operator|*
@@ -1489,7 +1489,7 @@ index|[
 name|y
 index|]
 operator|=
-name|g_new
+name|gegl_scratch_new
 argument_list|(
 name|GimpSampleType
 argument_list|,
@@ -1966,7 +1966,7 @@ condition|;
 name|y
 operator|++
 control|)
-name|g_free
+name|gegl_scratch_free
 argument_list|(
 name|block
 index|[
@@ -1974,17 +1974,17 @@ name|y
 index|]
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gegl_scratch_free
 argument_list|(
 name|block
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gegl_scratch_free
 argument_list|(
 name|top_row
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gegl_scratch_free
 argument_list|(
 name|bot_row
 argument_list|)
