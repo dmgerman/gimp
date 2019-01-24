@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275796b20103
+DECL|enum|__anon27d6a1320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -250,9 +250,15 @@ name|g_param_spec_double
 argument_list|(
 literal|"value"
 argument_list|,
+name|_
+argument_list|(
 literal|"Value"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The alpha value"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

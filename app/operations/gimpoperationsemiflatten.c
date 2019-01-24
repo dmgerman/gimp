@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be78f280103
+DECL|enum|__anon277fedd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -284,9 +284,15 @@ name|gimp_param_spec_rgb
 argument_list|(
 literal|"color"
 argument_list|,
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The color"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
