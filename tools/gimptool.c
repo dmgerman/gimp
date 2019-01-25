@@ -237,7 +237,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29d7ce440108
+DECL|struct|__anon2a1cf1c40108
 specifier|static
 struct|struct
 block|{
@@ -292,7 +292,7 @@ block|,
 block|{
 literal|"datadir"
 block|,
-name|SYSDATADIR
+name|DATADIR
 block|}
 block|,
 block|{
