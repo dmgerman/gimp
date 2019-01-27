@@ -3262,7 +3262,8 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n\n"
-literal|"attempted to install a procedure NULL parameter name."
+literal|"attempted to install procedure \"%s\" with a "
+literal|"NULL parameter name."
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -3275,6 +3276,8 @@ name|plug_in
 operator|->
 name|file
 argument_list|)
+argument_list|,
+name|canonical
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3303,7 +3306,8 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n\n"
-literal|"attempted to install a procedure with invalid UTF-8 strings."
+literal|"attempted to install procedure \"%s\" with "
+literal|"invalid UTF-8 strings."
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -3316,6 +3320,8 @@ name|plug_in
 operator|->
 name|file
 argument_list|)
+argument_list|,
+name|canonical
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3361,8 +3367,9 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-in \"%s\"\n(%s)\n\n"
-literal|"attempted to install a procedure with a full menu path "
-literal|"as menu label, this is not supported any longer."
+literal|"attempted to install procedure \"%s\" with a full "
+literal|"menu path \"%s\" as menu label, this is not supported "
+literal|"any longer."
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -3375,6 +3382,12 @@ name|plug_in
 operator|->
 name|file
 argument_list|)
+argument_list|,
+name|canonical
+argument_list|,
+name|proc_install
+operator|->
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|g_free
