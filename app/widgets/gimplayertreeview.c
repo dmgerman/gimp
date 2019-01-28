@@ -1382,6 +1382,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_spin_scale_set_constrain_drag
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|scale
@@ -2337,7 +2347,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a238bc30108
+DECL|struct|__anon2c00d3610108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2725,7 +2735,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a238bc30208
+DECL|struct|__anon2c00d3610208
 block|{
 DECL|member|mask_column
 name|gint

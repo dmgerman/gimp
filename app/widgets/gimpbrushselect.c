@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeffd870103
+DECL|enum|__anon293128a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,6 +702,16 @@ literal|"Opacity"
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_spin_scale_set_constrain_drag
+argument_list|(
+name|GIMP_SPIN_SCALE
+argument_list|(
+name|scale
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
