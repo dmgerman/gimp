@@ -1349,10 +1349,6 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|profile
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -1360,13 +1356,23 @@ name|space
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|gimp_item_is_layer
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+block|{
+name|GimpColorProfile
+modifier|*
 name|profile
-operator|=
+init|=
 name|gimp_image_get_color_profile
 argument_list|(
 name|image_ID
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|profile
@@ -1398,7 +1404,8 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: failed to create Babl space from profile: %s\n"
+literal|"%s: failed to create Babl space from "
+literal|"profile: %s\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -1419,6 +1426,7 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
