@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3f7850103
+DECL|enum|__anon2a33dd1b0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -1086,6 +1086,24 @@ name|clone_tool
 argument_list|)
 expr_stmt|;
 comment|/*  start drawing the bounding box and handles...  */
+if|if
+condition|(
+name|gimp_draw_tool_is_active
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+condition|)
+name|gimp_draw_tool_stop
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
