@@ -177,6 +177,10 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  lower right hand coords          */
+DECL|member|saved_precision
+name|GimpCursorPrecision
+name|saved_precision
+decl_stmt|;
 DECL|member|widget
 name|GimpToolWidget
 modifier|*
