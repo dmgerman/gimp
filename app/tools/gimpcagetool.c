@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb77be0103
+DECL|enum|__anon27e8112b0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -829,6 +829,15 @@ operator|->
 name|control
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_SUBPIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor

@@ -987,6 +987,15 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_SUBPIXEL
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
 argument_list|(
 name|tool

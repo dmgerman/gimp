@@ -1098,7 +1098,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
+name|GIMP_CURSOR_PRECISION_SUBPIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -4082,6 +4082,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  set precision to SUBPIXEL, because it may have been changed to    *  PIXEL_CENTER if the tool has switched to MATTING_STATE_PAINT_TRIMAP,    *  in gimp_foreground_select_tool_set_trimap().    */
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_SUBPIXEL
+argument_list|)
+expr_stmt|;
 name|fg_select
 operator|->
 name|state
@@ -4366,6 +4376,16 @@ operator|->
 name|control
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* set precision to PIXEL_CENTER in paint trimap state */
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 argument_list|)
 expr_stmt|;
 name|fg_select
