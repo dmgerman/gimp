@@ -140,6 +140,10 @@ DECL|member|show_source_outline
 name|gboolean
 name|show_source_outline
 decl_stmt|;
+DECL|member|saved_precision
+name|GimpCursorPrecision
+name|saved_precision
+decl_stmt|;
 DECL|member|src_handle
 name|GimpCanvasItem
 modifier|*
