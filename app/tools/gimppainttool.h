@@ -122,6 +122,10 @@ DECL|member|parent_instance
 name|GimpColorTool
 name|parent_instance
 decl_stmt|;
+DECL|member|active
+name|gboolean
+name|active
+decl_stmt|;
 DECL|member|pick_colors
 name|gboolean
 name|pick_colors
@@ -300,6 +304,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_paint_tool_set_active
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|tool
+parameter_list|,
+name|gboolean
+name|active
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
