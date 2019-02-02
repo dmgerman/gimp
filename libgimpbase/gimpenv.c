@@ -1850,6 +1850,61 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_installation_directory_file:  * @first_element: the first element of a path to a file in the  *                 top installation directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the installation directory, or the installation  * directory itself if @first_element is %NULL.  *  * See also: gimp_installation_directory().  *  * Since: 2.10.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+end_comment
+
+begin_function
+name|GFile
+modifier|*
+DECL|function|gimp_installation_directory_file (const gchar * first_element,...)
+name|gimp_installation_directory_file
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|first_element
+parameter_list|,
+modifier|...
+parameter_list|)
+block|{
+name|GFile
+modifier|*
+name|file
+decl_stmt|;
+name|va_list
+name|args
+decl_stmt|;
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|first_element
+argument_list|)
+expr_stmt|;
+name|file
+operator|=
+name|gimp_child_file
+argument_list|(
+name|gimp_installation_directory
+argument_list|()
+argument_list|,
+name|first_element
+argument_list|,
+name|args
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
+argument_list|)
+expr_stmt|;
+return|return
+name|file
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_data_directory_file:  * @first_element: the first element of a path to a file in the  *                 data directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the data directory, or the data directory  * itself if @first_element is %NULL.  *  * See also: gimp_data_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
