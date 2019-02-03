@@ -128,6 +128,10 @@ modifier|*
 name|aux_inputs
 decl_stmt|;
 comment|/* dialog */
+DECL|member|options_sw_ref
+name|GWeakRef
+name|options_sw_ref
+decl_stmt|;
 DECL|member|options_box_ref
 name|GWeakRef
 name|options_box_ref
