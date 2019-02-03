@@ -1813,7 +1813,7 @@ define|#
 directive|define
 name|SEARCH_SHOW_UNAVAILABLE_BLURB
 define|\
-value|"When enabled, a search of actions will also return inactive actions."
+value|_("When enabled, a search of actions will also return inactive actions.")
 end_define
 
 begin_define
@@ -1822,7 +1822,7 @@ define|#
 directive|define
 name|ACTION_HISTORY_SIZE_BLURB
 define|\
-value|"The maximum number of actions saved in history."
+value|_("The maximum number of actions saved in history.")
 end_define
 
 begin_endif
