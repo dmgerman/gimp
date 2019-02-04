@@ -623,6 +623,17 @@ name|gimp_measure_tool_get_undo_desc
 expr_stmt|;
 name|tr_class
 operator|->
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Straighten"
+argument_list|)
+expr_stmt|;
+name|tr_class
+operator|->
 name|progress_text
 operator|=
 name|_

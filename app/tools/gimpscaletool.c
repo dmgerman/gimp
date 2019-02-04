@@ -131,7 +131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04b5e90103
+DECL|enum|__anon2c4e361c0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -421,6 +421,17 @@ operator|->
 name|widget_changed
 operator|=
 name|gimp_scale_tool_widget_changed
+expr_stmt|;
+name|tr_class
+operator|->
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Scale"
+argument_list|)
 expr_stmt|;
 name|tr_class
 operator|->

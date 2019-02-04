@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a1bfb0103
+DECL|enum|__anon290b3f790103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -459,6 +459,17 @@ operator|->
 name|widget_changed
 operator|=
 name|gimp_rotate_tool_widget_changed
+expr_stmt|;
+name|tr_class
+operator|->
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Rotate"
+argument_list|)
 expr_stmt|;
 name|tr_class
 operator|->

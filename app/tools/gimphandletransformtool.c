@@ -103,7 +103,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd0db90103
+DECL|enum|__anon2c3efcf80103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -184,19 +184,6 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gchar
-modifier|*
-name|gimp_handle_transform_tool_get_undo_desc
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -391,12 +378,6 @@ name|modifier_key
 operator|=
 name|gimp_handle_transform_tool_modifier_key
 expr_stmt|;
-name|tr_class
-operator|->
-name|get_undo_desc
-operator|=
-name|gimp_handle_transform_tool_get_undo_desc
-expr_stmt|;
 name|tg_class
 operator|->
 name|prepare
@@ -426,6 +407,17 @@ operator|->
 name|recalc_points
 operator|=
 name|gimp_handle_transform_tool_recalc_points
+expr_stmt|;
+name|tr_class
+operator|->
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Handle transform"
+argument_list|)
 expr_stmt|;
 name|tr_class
 operator|->
@@ -644,32 +636,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gchar
-modifier|*
-DECL|function|gimp_handle_transform_tool_get_undo_desc (GimpTransformTool * tr_tool)
-name|gimp_handle_transform_tool_get_undo_desc
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|)
-block|{
-return|return
-name|g_strdup
-argument_list|(
-name|C_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Handle transform"
-argument_list|)
-argument_list|)
-return|;
 block|}
 end_function
 

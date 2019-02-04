@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f82260103
+DECL|enum|__anon2ac4faaf0103
 block|{
 DECL|enumerator|ORIENTATION
 name|ORIENTATION
@@ -412,6 +412,17 @@ operator|->
 name|widget_changed
 operator|=
 name|gimp_shear_tool_widget_changed
+expr_stmt|;
+name|tr_class
+operator|->
+name|progress_text
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Shear"
+argument_list|)
 expr_stmt|;
 name|tr_class
 operator|->

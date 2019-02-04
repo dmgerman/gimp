@@ -247,6 +247,12 @@ modifier|*
 name|new_offset_y
 parameter_list|)
 function_decl|;
+DECL|member|undo_desc
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 DECL|member|progress_text
 specifier|const
 name|gchar
