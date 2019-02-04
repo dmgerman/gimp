@@ -117,9 +117,12 @@ name|GimpTransformGridTool
 modifier|*
 name|tg_tool
 decl_stmt|;
-DECL|member|trans_info
+DECL|member|trans_infos
 name|TransInfo
-name|trans_info
+name|trans_infos
+index|[
+literal|2
+index|]
 decl_stmt|;
 if|#
 directive|if

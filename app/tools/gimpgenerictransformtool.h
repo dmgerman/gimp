@@ -152,11 +152,11 @@ name|GimpTransformGridToolClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
-DECL|member|recalc_points
+DECL|member|info_to_points
 name|void
 function_decl|(
 modifier|*
-name|recalc_points
+name|info_to_points
 function_decl|)
 parameter_list|(
 name|GimpGenericTransformTool

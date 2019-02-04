@@ -137,29 +137,31 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
-DECL|member|trans_info
+DECL|member|init_trans_info
 name|TransInfo
+name|init_trans_info
+decl_stmt|;
+comment|/*  initial transformation info           */
+DECL|member|trans_infos
+name|TransInfo
+name|trans_infos
+index|[
+literal|2
+index|]
+decl_stmt|;
+comment|/*  forward/backward transformation info  */
+DECL|member|trans_info
+name|gdouble
+modifier|*
 name|trans_info
 decl_stmt|;
-comment|/*  transformation info                */
-DECL|member|old_trans_info
-name|TransInfo
-modifier|*
-name|old_trans_info
-decl_stmt|;
-comment|/*  for resetting everything           */
-DECL|member|prev_trans_info
-name|TransInfo
-modifier|*
-name|prev_trans_info
-decl_stmt|;
-comment|/*  the current finished state         */
+comment|/*  current transformation info           */
 DECL|member|undo_list
 name|GList
 modifier|*
 name|undo_list
 decl_stmt|;
-comment|/*  list of all states,                                            head is current == prev_trans_info,                                            tail is original == old_trans_info */
+comment|/*  list of all states,                                            head is current == prev_trans_info,                                            tail is original == old_trans_info    */
 DECL|member|redo_list
 name|GList
 modifier|*
@@ -171,7 +173,7 @@ name|GimpItem
 modifier|*
 name|hidden_item
 decl_stmt|;
-comment|/*  the item that was hidden during                                            the transform                      */
+comment|/*  the item that was hidden during                                            the transform                         */
 DECL|member|widget
 name|GimpToolWidget
 modifier|*
@@ -221,6 +223,35 @@ name|GimpTransformToolClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
+DECL|member|info_to_matrix
+name|gboolean
+function_decl|(
+modifier|*
+name|info_to_matrix
+function_decl|)
+parameter_list|(
+name|GimpTransformGridTool
+modifier|*
+name|tg_tool
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
+parameter_list|)
+function_decl|;
+DECL|member|get_undo_desc
+name|gchar
+modifier|*
+function_decl|(
+modifier|*
+name|get_undo_desc
+function_decl|)
+parameter_list|(
+name|GimpTransformGridTool
+modifier|*
+name|tg_tool
+parameter_list|)
+function_decl|;
 DECL|member|dialog
 name|void
 function_decl|(
@@ -353,6 +384,21 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|gboolean
+name|gimp_transform_grid_tool_info_to_matrix
+parameter_list|(
+name|GimpTransformGridTool
+modifier|*
+name|tg_tool
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

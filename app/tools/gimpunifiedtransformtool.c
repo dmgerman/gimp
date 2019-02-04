@@ -93,7 +93,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b763f200103
+DECL|enum|__anon29db8bda0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -184,7 +184,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_unified_transform_tool_recalc_points
+name|gimp_unified_transform_tool_info_to_points
 parameter_list|(
 name|GimpGenericTransformTool
 modifier|*
@@ -333,9 +333,9 @@ name|gimp_unified_transform_tool_widget_changed
 expr_stmt|;
 name|generic_class
 operator|->
-name|recalc_points
+name|info_to_points
 operator|=
-name|gimp_unified_transform_tool_recalc_points
+name|gimp_unified_transform_tool_info_to_points
 expr_stmt|;
 name|tr_class
 operator|->
@@ -724,18 +724,21 @@ argument_list|(
 name|tg_tool
 argument_list|)
 decl_stmt|;
+name|GIMP_TRANSFORM_GRID_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|update_widget
+argument_list|(
+name|tg_tool
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|tg_tool
 operator|->
 name|widget
-argument_list|,
-literal|"transform"
-argument_list|,
-operator|&
-name|tr_tool
-operator|->
-name|transform
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -992,8 +995,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_unified_transform_tool_recalc_points (GimpGenericTransformTool * generic)
-name|gimp_unified_transform_tool_recalc_points
+DECL|function|gimp_unified_transform_tool_info_to_points (GimpGenericTransformTool * generic)
+name|gimp_unified_transform_tool_info_to_points
 parameter_list|(
 name|GimpGenericTransformTool
 modifier|*
