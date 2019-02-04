@@ -2568,7 +2568,10 @@ condition|)
 block|{
 if|if
 condition|(
-name|show_preview
+name|gimp_transform_grid_options_show_preview
+argument_list|(
+name|tg_options
+argument_list|)
 condition|)
 name|gimp_transform_grid_tool_hide_active_item
 argument_list|(
