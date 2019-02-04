@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpTransformOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|direction_linked
+name|gboolean
+name|direction_linked
+decl_stmt|;
 DECL|member|show_preview
 name|gboolean
 name|show_preview

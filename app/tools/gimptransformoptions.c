@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bcca3e0103
+DECL|enum|__anon2baef17d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -868,6 +868,12 @@ name|gtk_widget_show
 argument_list|(
 name|frame
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|direction_frame
+operator|=
+name|frame
 expr_stmt|;
 block|}
 comment|/*  the interpolation menu  */

@@ -134,6 +134,11 @@ name|GtkWidget
 modifier|*
 name|type_box
 decl_stmt|;
+DECL|member|direction_frame
+name|GtkWidget
+modifier|*
+name|direction_frame
+decl_stmt|;
 block|}
 struct|;
 end_struct
