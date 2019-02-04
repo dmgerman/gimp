@@ -4999,6 +4999,36 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|hbox
+operator|=
+name|prefs_hint_box_new
+argument_list|(
+name|GIMP_ICON_DIALOG_WARNING
+argument_list|,
+name|_
+argument_list|(
+literal|"OpenCL drivers and support are experimental, "
+literal|"expect slowdowns and possible crashes "
+literal|"(please report)."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/*  Image Thumbnails  */
 name|vbox2
 operator|=
@@ -13016,7 +13046,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b92b6500108
+DECL|struct|__anon29ec32a90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13922,7 +13952,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b92b6500208
+DECL|struct|__anon29ec32a90208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14053,7 +14083,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b92b6500308
+DECL|struct|__anon29ec32a90308
 block|{
 DECL|member|tree_label
 specifier|const
