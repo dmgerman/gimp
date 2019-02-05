@@ -300,7 +300,7 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
-comment|/* Check whether the symlink's target is also a symlink.                  * We want to get the final target. */
+comment|/* Check whether the symlink's target is also a symlink.        * We want to get the final target. */
 name|i
 operator|=
 name|stat
@@ -362,7 +362,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* readlink() or stat() failed; this can happen when the program is          * running in Valgrind 2.2. Read from /proc/self/maps as fallback. */
+comment|/* readlink() or stat() failed; this can happen when the program is    * running in Valgrind 2.2. Read from /proc/self/maps as fallback. */
 name|buf_size
 operator|=
 name|PATH_MAX
@@ -986,7 +986,7 @@ name|end_addr
 argument_list|)
 condition|)
 continue|continue;
-comment|/* Transform the addresses into a string in the form of 0xdeadbeef,                  * then transform that into a pointer. */
+comment|/* Transform the addresses into a string in the form of 0xdeadbeef,        * then transform that into a pointer. */
 if|if
 condition|(
 name|address_string_len
