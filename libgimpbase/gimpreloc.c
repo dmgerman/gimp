@@ -27,11 +27,20 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_BINRELOC
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|ENABLE_RELOCATABLE_RESOURCES
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+end_if
 
 begin_include
 include|#
@@ -57,7 +66,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ENABLE_BINRELOC */
+comment|/* ENABLE_RELOCATABLE_RESOURCES&& ! G_OS_WIN32 */
 end_comment
 
 begin_include
@@ -94,9 +103,18 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-ifndef|#
-directive|ifndef
-name|ENABLE_BINRELOC
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|ENABLE_RELOCATABLE_RESOURCES
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
 if|if
 condition|(
 name|error
@@ -600,7 +618,7 @@ name|path
 return|;
 endif|#
 directive|endif
-comment|/* ENABLE_BINRELOC */
+comment|/* ! ENABLE_RELOCATABLE_RESOURCES || G_OS_WIN32 */
 block|}
 end_function
 
@@ -625,9 +643,18 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-ifndef|#
-directive|ifndef
-name|ENABLE_BINRELOC
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|ENABLE_RELOCATABLE_RESOURCES
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
 if|if
 condition|(
 name|error
@@ -1117,7 +1144,7 @@ argument_list|)
 return|;
 endif|#
 directive|endif
-comment|/* ENABLE_BINRELOC */
+comment|/* ! ENABLE_RELOCATABLE_RESOURCES || G_OS_WIN32 */
 block|}
 end_function
 
