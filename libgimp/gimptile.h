@@ -168,11 +168,14 @@ end_comment
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|void
-name|_gimp_tile_ref_noinit
+name|_gimp_tile_ref_nocache
 parameter_list|(
 name|GimpTile
 modifier|*
 name|tile
+parameter_list|,
+name|gboolean
+name|init
 parameter_list|)
 function_decl|;
 end_function_decl

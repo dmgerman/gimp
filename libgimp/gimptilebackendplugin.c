@@ -284,11 +284,6 @@ name|finalize
 operator|=
 name|gimp_tile_backend_plugin_finalize
 expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|64
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -723,9 +718,11 @@ operator|+
 name|u
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref_nocache
 argument_list|(
 name|gimp_tile
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|{
@@ -962,9 +959,11 @@ operator|+
 name|u
 argument_list|)
 expr_stmt|;
-name|_gimp_tile_ref_noinit
+name|_gimp_tile_ref_nocache
 argument_list|(
 name|gimp_tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|{

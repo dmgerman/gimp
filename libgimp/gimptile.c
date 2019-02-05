@@ -254,12 +254,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_tile_ref_noinit (GimpTile * tile)
-name|_gimp_tile_ref_noinit
+DECL|function|_gimp_tile_ref_nocache (GimpTile * tile,gboolean init)
+name|_gimp_tile_ref_nocache
 parameter_list|(
 name|GimpTile
 modifier|*
 name|tile
+parameter_list|,
+name|gboolean
+name|init
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -282,6 +285,26 @@ name|ref_count
 operator|==
 literal|1
 condition|)
+block|{
+if|if
+condition|(
+name|init
+condition|)
+block|{
+name|gimp_tile_get
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
+name|tile
+operator|->
+name|dirty
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+else|else
+block|{
 name|tile
 operator|->
 name|data
@@ -303,11 +326,8 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-name|gimp_tile_cache_insert
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 
