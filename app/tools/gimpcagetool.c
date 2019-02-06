@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-utils.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"operations/gimpcageconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -159,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8112b0103
+DECL|enum|__anon27a60cb50103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
@@ -896,6 +908,19 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1006,6 +1031,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|&&
+operator|!
+name|config
+operator|->
+name|edit_non_visible
 condition|)
 block|{
 name|g_set_error_literal
@@ -2557,6 +2587,19 @@ argument_list|(
 name|ct
 argument_list|)
 decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpCursorModifier
 name|modifier
 init|=
@@ -2660,6 +2703,7 @@ argument_list|)
 argument_list|)
 operator|||
 operator|!
+operator|(
 name|gimp_item_is_visible
 argument_list|(
 name|GIMP_ITEM
@@ -2667,6 +2711,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|||
+name|config
+operator|->
+name|edit_non_visible
+operator|)
 condition|)
 block|{
 name|modifier

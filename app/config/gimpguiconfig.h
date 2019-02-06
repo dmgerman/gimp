@@ -108,6 +108,10 @@ DECL|member|parent_instance
 name|GimpDisplayConfig
 name|parent_instance
 decl_stmt|;
+DECL|member|edit_non_visible
+name|gboolean
+name|edit_non_visible
+decl_stmt|;
 DECL|member|move_tool_changes_active
 name|gboolean
 name|move_tool_changes_active

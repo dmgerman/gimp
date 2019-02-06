@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"operations/gimp-operation-config.h"
 end_include
 
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"operations/layer-modes/gimp-layer-modes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -1087,6 +1099,19 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1193,6 +1218,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|&&
+operator|!
+name|config
+operator|->
+name|edit_non_visible
 condition|)
 block|{
 name|g_set_error_literal
@@ -1862,6 +1892,19 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1899,6 +1942,7 @@ argument_list|)
 argument_list|)
 operator|||
 operator|!
+operator|(
 name|gimp_item_is_visible
 argument_list|(
 name|GIMP_ITEM
@@ -1906,6 +1950,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|||
+name|config
+operator|->
+name|edit_non_visible
+operator|)
 condition|)
 block|{
 name|gimp_tool_set_cursor

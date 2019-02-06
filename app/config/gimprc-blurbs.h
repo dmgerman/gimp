@@ -722,6 +722,15 @@ value|_("Sets the monitor's vertical resolution, in dots per inch.  If set to " 
 end_define
 
 begin_define
+DECL|macro|EDIT_NON_VISIBLE_BLURB
+define|#
+directive|define
+name|EDIT_NON_VISIBLE_BLURB
+define|\
+value|_("When enabled, non-visible layers can be edited as normal.")
+end_define
+
+begin_define
 DECL|macro|MOVE_TOOL_CHANGES_ACTIVE_BLURB
 define|#
 directive|define

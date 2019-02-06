@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimp-gegl-loops.h"
 end_include
 
@@ -1253,6 +1259,19 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1298,6 +1317,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|&&
+operator|!
+name|config
+operator|->
+name|edit_non_visible
 condition|)
 block|{
 name|g_set_error_literal

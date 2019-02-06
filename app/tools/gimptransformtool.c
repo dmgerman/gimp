@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -1977,6 +1983,19 @@ name|locked_message
 init|=
 name|NULL
 decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TRANSFORM_TOOL
@@ -2085,6 +2104,11 @@ name|gimp_item_is_visible
 argument_list|(
 name|item
 argument_list|)
+operator|&&
+operator|!
+name|config
+operator|->
+name|edit_non_visible
 operator|&&
 name|item
 operator|!=
