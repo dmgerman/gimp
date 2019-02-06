@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d85b60103
+DECL|enum|__anon299762c50103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d85b60203
+DECL|enum|__anon299762c50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1468,11 +1468,6 @@ name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_temp_buf_data_clear
-argument_list|(
-name|return_buf
 argument_list|)
 expr_stmt|;
 name|mask
