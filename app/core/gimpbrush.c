@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d755d0103
+DECL|enum|__anon2c7d85b60103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d755d0203
+DECL|enum|__anon2c7d85b60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1202,6 +1202,10 @@ name|mask_height
 decl_stmt|;
 name|guchar
 modifier|*
+name|mask_data
+decl_stmt|;
+name|guchar
+modifier|*
 name|mask
 decl_stmt|;
 name|guchar
@@ -1473,9 +1477,18 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|gimp_temp_buf_get_data
+name|mask_data
+operator|=
+name|gimp_temp_buf_lock
 argument_list|(
 name|mask_buf
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"Y u8"
+argument_list|)
+argument_list|,
+name|GEGL_ACCESS_READ
 argument_list|)
 expr_stmt|;
 name|buf
@@ -1492,13 +1505,28 @@ condition|)
 block|{
 name|guchar
 modifier|*
+name|pixmap_data
+decl_stmt|;
+name|guchar
+modifier|*
 name|pixmap
-init|=
-name|gimp_temp_buf_get_data
+decl_stmt|;
+name|pixmap
+operator|=
+name|pixmap_data
+operator|=
+name|gimp_temp_buf_lock
 argument_list|(
 name|pixmap_buf
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
 argument_list|)
-decl_stmt|;
+argument_list|,
+name|GEGL_ACCESS_READ
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -1561,6 +1589,13 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+name|gimp_temp_buf_unlock
+argument_list|(
+name|pixmap_buf
+argument_list|,
+name|pixmap_data
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -1621,6 +1656,13 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|gimp_temp_buf_unlock
+argument_list|(
+name|mask_buf
+argument_list|,
+name|mask_data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|scaled

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c92ea0103
+DECL|enum|__anon289c81af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1577,7 +1577,7 @@ end_comment
 
 begin_function
 specifier|static
-name|guchar
+name|gfloat
 modifier|*
 DECL|function|gimp_brush_generated_calc_lut (gdouble radius,gdouble hardness)
 name|gimp_brush_generated_calc_lut
@@ -1589,7 +1589,7 @@ name|gdouble
 name|hardness
 parameter_list|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|lookup
 decl_stmt|;
@@ -1640,8 +1640,10 @@ argument_list|)
 expr_stmt|;
 name|lookup
 operator|=
-name|g_malloc
+name|gegl_scratch_new
 argument_list|(
+name|gfloat
+argument_list|,
 name|length
 argument_list|)
 expr_stmt|;
@@ -1822,16 +1824,9 @@ name|x
 operator|++
 index|]
 operator|=
-name|RINT
-argument_list|(
 name|sum
-operator|*
-operator|(
-literal|255.0
 operator|/
 name|OVERSAMPLING
-operator|)
-argument_list|)
 expr_stmt|;
 block|}
 while|while
@@ -1847,7 +1842,7 @@ name|x
 operator|++
 index|]
 operator|=
-literal|0
+literal|0.0f
 expr_stmt|;
 block|}
 return|return
@@ -1897,15 +1892,15 @@ modifier|*
 name|yaxis
 parameter_list|)
 block|{
-name|guchar
+name|gfloat
 modifier|*
 name|centerp
 decl_stmt|;
-name|guchar
+name|gfloat
 modifier|*
 name|lookup
 decl_stmt|;
-name|guchar
+name|gfloat
 name|a
 decl_stmt|;
 name|gint
@@ -1991,7 +1986,7 @@ name|height
 argument_list|,
 name|babl_format
 argument_list|(
-literal|"Y u8"
+literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2009,6 +2004,10 @@ literal|2
 expr_stmt|;
 name|centerp
 operator|=
+operator|(
+name|gfloat
+operator|*
+operator|)
 name|gimp_temp_buf_get_data
 argument_list|(
 name|mask
@@ -2280,7 +2279,7 @@ expr_stmt|;
 else|else
 name|a
 operator|=
-literal|0
+literal|0.0f
 expr_stmt|;
 name|centerp
 index|[
@@ -2317,7 +2316,7 @@ name|a
 expr_stmt|;
 block|}
 block|}
-name|g_free
+name|gegl_scratch_free
 argument_list|(
 name|lookup
 argument_list|)
