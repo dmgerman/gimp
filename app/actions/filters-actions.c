@@ -591,7 +591,7 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"drawable-action"
+literal|"filters-action"
 argument_list|,
 literal|"Grow lighter areas of the image"
 argument_list|)
@@ -627,7 +627,7 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"drawable-action"
+literal|"filters-action"
 argument_list|,
 literal|"Grow darker areas of the image"
 argument_list|)
