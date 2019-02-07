@@ -292,5 +292,43 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_babl_compat_u8_mask_format (const Babl * format)
+name|gimp_babl_compat_u8_mask_format
+parameter_list|(
+specifier|const
+name|Babl
+modifier|*
+name|format
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_babl_format
+argument_list|(
+name|gimp_babl_format_get_base_type
+argument_list|(
+name|format
+argument_list|)
+argument_list|,
+name|GIMP_PRECISION_U8_LINEAR
+argument_list|,
+name|FALSE
+argument_list|)
+return|;
+block|}
+end_function
+
 end_unit
 
