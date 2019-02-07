@@ -325,6 +325,8 @@ argument_list|,
 name|GIMP_PRECISION_U8_LINEAR
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
