@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25dd210103
+DECL|enum|__anon2baab9f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +58,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25dd210203
+DECL|enum|__anon2baab9f00203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1191,6 +1191,18 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|button
+argument_list|,
+name|gimp_chain_button_signals
+index|[
+name|TOGGLED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -1328,18 +1340,6 @@ operator|!
 name|private
 operator|->
 name|active
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|button
-argument_list|,
-name|gimp_chain_button_signals
-index|[
-name|TOGGLED
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
