@@ -3156,7 +3156,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"layers-action"
 argument_list|,
 name|layers_opacity_actions
 argument_list|,
@@ -3175,7 +3175,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"layers-action"
 argument_list|,
 name|layers_mode_actions
 argument_list|,

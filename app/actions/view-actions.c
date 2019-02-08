@@ -1400,7 +1400,7 @@ name|NULL
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Set zoom factor"
 argument_list|)
@@ -1423,7 +1423,7 @@ name|GIMP_ICON_ZOOM_OUT
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom out as far as possible"
 argument_list|)
@@ -1446,7 +1446,7 @@ name|GIMP_ICON_ZOOM_IN
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom in as far as possible"
 argument_list|)
@@ -1581,7 +1581,7 @@ name|GIMP_ICON_ZOOM_OUT
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom out a lot"
 argument_list|)
@@ -1604,7 +1604,7 @@ name|GIMP_ICON_ZOOM_IN
 block|,
 name|NC_
 argument_list|(
-literal|"view-action"
+literal|"view-zoom-action"
 argument_list|,
 literal|"Zoom in a lot"
 argument_list|)
@@ -3244,7 +3244,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"view-action"
 argument_list|,
 name|view_scroll_horizontal_actions
 argument_list|,
@@ -3263,7 +3263,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"view-action"
 argument_list|,
 name|view_scroll_vertical_actions
 argument_list|,

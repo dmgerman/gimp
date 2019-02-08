@@ -3228,7 +3228,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_airbrush_rate_actions
 argument_list|,
@@ -3247,7 +3247,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_airbrush_flow_actions
 argument_list|,
