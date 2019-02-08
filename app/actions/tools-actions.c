@@ -3380,7 +3380,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_opacity_actions
 argument_list|,
@@ -3399,7 +3399,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_size_actions
 argument_list|,
@@ -3418,7 +3418,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_aspect_actions
 argument_list|,
@@ -3437,7 +3437,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_angle_actions
 argument_list|,
@@ -3456,7 +3456,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_spacing_actions
 argument_list|,
@@ -3475,7 +3475,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_hardness_actions
 argument_list|,
@@ -3494,7 +3494,7 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|NULL
+literal|"tools-action"
 argument_list|,
 name|tools_force_actions
 argument_list|,
