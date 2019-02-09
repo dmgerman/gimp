@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274be7690103
+DECL|enum|__anon29b3208b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274be7690208
+DECL|struct|__anon29b3208b0208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274be7690308
+DECL|struct|__anon29b3208b0308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -1164,7 +1164,7 @@ modifier|*
 name|mask
 parameter_list|,
 name|Edgel
-name|starting_edgel
+name|start_edgel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9400,9 +9400,6 @@ condition|)
 block|{
 name|area
 operator|=
-operator|-
-literal|1
-operator|*
 name|gimp_edgel_region_area
 argument_list|(
 name|mask
@@ -11861,7 +11858,7 @@ name|edgel
 init|=
 name|start_edgel
 decl_stmt|;
-name|long
+name|glong
 name|area
 init|=
 literal|0
@@ -11877,7 +11874,7 @@ operator|==
 name|XPlusDirection
 condition|)
 name|area
-operator|+=
+operator|-=
 name|edgel
 operator|.
 name|x
@@ -11892,7 +11889,7 @@ operator|==
 name|XMinusDirection
 condition|)
 name|area
-operator|-=
+operator|+=
 name|edgel
 operator|.
 name|x
