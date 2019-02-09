@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3208b0103
+DECL|enum|__anon2a0fa5e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3208b0208
+DECL|struct|__anon2a0fa5e20208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3208b0308
+DECL|struct|__anon2a0fa5e20308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -894,7 +894,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_lineart_curve_creates_region
+name|gimp_line_art_allow_closure
 parameter_list|(
 name|GeglBuffer
 modifier|*
@@ -910,10 +910,10 @@ modifier|*
 name|fill_pixels
 parameter_list|,
 name|int
-name|lower_size_limit
+name|significant_size
 parameter_list|,
 name|int
-name|upper_size_limit
+name|minimum_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4050,8 +4050,7 @@ name|transitions
 operator|==
 literal|2
 operator|&&
-operator|!
-name|gimp_lineart_curve_creates_region
+name|gimp_line_art_allow_closure
 argument_list|(
 name|closed
 argument_list|,
@@ -4376,8 +4375,7 @@ name|segment
 operator|->
 name|len
 operator|&&
-operator|!
-name|gimp_lineart_curve_creates_region
+name|gimp_line_art_allow_closure
 argument_list|(
 name|closed
 argument_list|,
@@ -9007,14 +9005,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Check whether a set of points will create a 4-connected background  * region whose size (i.e. number of pixels) falls within a given interval.  */
+comment|/**  * gimp_line_art_allow_closure:  * @mask: the current state of line art closure.  * @pixels: the pixels of a candidate closure (spline or segment).  * @fill_pixels: #GList of unsignificant pixels to bucket fill.  * @significant_size: number of pixels for area to be considered  *                    "significant".  * @minimum_size: number of pixels for area to be allowed.  *  * Checks whether adding the set of points @pixels to @mask will create  * 4-connected background regions whose size (i.e. number of pixels)  * will be below @minimum_size. If it creates such small areas, the  * function will refuse this candidate spline/segment, with the  * exception of very small areas under @significant_size. These  * micro-area are considered "unsignificant" and accepted (because they  * can be created in some conditions, for instance when created curves  * cross or start from a same endpoint), and one pixel for each  * micro-area will be added to @fill_pixels to be later filled along  * with the candidate pixels.  *  * Returns: #TRUE if @pixels should be added to @mask, #FALSE otherwise.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_lineart_curve_creates_region (GeglBuffer * mask,GArray * pixels,GList ** fill_pixels,int lower_size_limit,int upper_size_limit)
-name|gimp_lineart_curve_creates_region
+DECL|function|gimp_line_art_allow_closure (GeglBuffer * mask,GArray * pixels,GList ** fill_pixels,int significant_size,int minimum_size)
+name|gimp_line_art_allow_closure
 parameter_list|(
 name|GeglBuffer
 modifier|*
@@ -9030,12 +9028,13 @@ modifier|*
 name|fill_pixels
 parameter_list|,
 name|int
-name|lower_size_limit
+name|significant_size
 parameter_list|,
 name|int
-name|upper_size_limit
+name|minimum_size
 parameter_list|)
 block|{
+comment|/* A theorem from the paper is that a zone with more than    * `2 * (@minimum_size - 1)` edgels (border pixels) will have more    * than @minimum_size pixels.    * Since we are following the edges of the area, we can therefore stop    * earlier if we reach this number of edgels.    */
 specifier|const
 name|glong
 name|max_edgel_count
@@ -9043,7 +9042,7 @@ init|=
 literal|2
 operator|*
 operator|(
-name|upper_size_limit
+name|minimum_size
 operator|+
 literal|1
 operator|)
@@ -9411,11 +9410,11 @@ if|if
 condition|(
 name|area
 operator|>=
-name|lower_size_limit
+name|significant_size
 operator|&&
 name|area
 operator|<=
-name|upper_size_limit
+name|minimum_size
 condition|)
 block|{
 name|gint
@@ -9565,7 +9564,7 @@ name|g_free
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 elseif|else
@@ -9573,7 +9572,7 @@ if|if
 condition|(
 name|area
 operator|<
-name|lower_size_limit
+name|significant_size
 condition|)
 block|{
 name|Pixel
@@ -9847,7 +9846,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
