@@ -685,6 +685,8 @@ expr_stmt|;
 name|tool
 operator|->
 name|progress_cancelable
+operator|=
+name|cancelable
 expr_stmt|;
 return|return
 name|progress
