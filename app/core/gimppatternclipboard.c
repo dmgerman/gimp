@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dafe1d0103
+DECL|enum|__anon2a340efe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -153,17 +153,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static GimpData * gimp_pattern_clipboard_duplicate    (GimpData     *data);
-endif|#
-directive|endif
-end_endif
+begin_function_decl
+specifier|static
+name|GimpData
+modifier|*
+name|gimp_pattern_clipboard_duplicate
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -220,12 +221,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|GimpDataClass *data_class   = GIMP_DATA_CLASS (klass);
-endif|#
-directive|endif
+name|GimpDataClass
+modifier|*
+name|data_class
+init|=
+name|GIMP_DATA_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|constructed
@@ -244,12 +248,12 @@ name|get_property
 operator|=
 name|gimp_pattern_clipboard_get_property
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|data_class->duplicate      = gimp_pattern_clipboard_duplicate;
-endif|#
-directive|endif
+name|data_class
+operator|->
+name|duplicate
+operator|=
+name|gimp_pattern_clipboard_duplicate
+expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -490,17 +494,41 @@ block|}
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static GimpData * gimp_pattern_clipboard_duplicate (GimpData *data) {   GimpPatternClipboard *pattern = GIMP_PATTERN_CLIPBOARD (data);    return gimp_pattern_clipboard_new (pattern->gimp); }
-endif|#
-directive|endif
-end_endif
+begin_function
+specifier|static
+name|GimpData
+modifier|*
+DECL|function|gimp_pattern_clipboard_duplicate (GimpData * data)
+name|gimp_pattern_clipboard_duplicate
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
+name|GimpData
+modifier|*
+name|new
+init|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_PATTERN
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+name|gimp_data_copy
+argument_list|(
+name|new
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+return|return
+name|new
+return|;
+block|}
+end_function
 
 begin_function
 name|GimpData

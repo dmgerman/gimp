@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern-save.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptagged.h"
 end_include
 
@@ -322,6 +328,12 @@ operator|->
 name|get_description
 operator|=
 name|gimp_pattern_get_description
+expr_stmt|;
+name|data_class
+operator|->
+name|save
+operator|=
+name|gimp_pattern_save
 expr_stmt|;
 name|data_class
 operator|->
