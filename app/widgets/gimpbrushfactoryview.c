@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpeditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -562,6 +568,22 @@ operator|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|factory_view
+argument_list|)
+expr_stmt|;
+name|gimp_editor_add_action_button
+argument_list|(
+name|GIMP_EDITOR
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+literal|"brushes"
+argument_list|,
+literal|"brushes-open-as-image"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
