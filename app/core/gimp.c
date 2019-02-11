@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file-data/file-data.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -279,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c42670103
+DECL|enum|__anon2bf585cc0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -307,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c42670203
+DECL|enum|__anon2bf585cc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1205,6 +1211,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|file_data_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/*  create user and default context  */
 name|gimp_contexts_init
 argument_list|(
@@ -1612,6 +1623,11 @@ name|tool_info_list
 argument_list|)
 expr_stmt|;
 block|}
+name|file_data_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|xcf_exit
 argument_list|(
 name|gimp
