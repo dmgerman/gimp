@@ -1006,7 +1006,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"%s plug-In could not open image"
+literal|"%s plug-in could not open image"
 argument_list|)
 argument_list|,
 name|gimp_procedure_get_label
