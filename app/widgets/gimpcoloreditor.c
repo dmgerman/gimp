@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ce6850103
+DECL|enum|__anon27e696740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1131,9 +1131,9 @@ name|editor
 operator|->
 name|fg_bg
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
