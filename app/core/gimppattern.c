@@ -805,11 +805,14 @@ argument_list|(
 name|src_data
 argument_list|)
 decl_stmt|;
-name|gimp_temp_buf_unref
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|pattern
 operator|->
 name|mask
+argument_list|,
+name|gimp_temp_buf_unref
 argument_list|)
 expr_stmt|;
 name|pattern
