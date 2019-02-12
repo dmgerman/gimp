@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68cb970103
+DECL|enum|__anon2768fef30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3297,7 +3297,7 @@ operator|->
 name|applicator
 condition|)
 block|{
-comment|/*  If the mode is CONSTANT:        *   combine the canvas buf, the paint mask to the canvas buffer        */
+comment|/*  If the mode is CONSTANT:        *   combine the canvas buffer and the paint mask to the paint buffer        */
 if|if
 condition|(
 name|mode
@@ -3313,15 +3313,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|GimpTempBuf
-modifier|*
-name|modified_mask
-init|=
-name|gimp_temp_buf_copy
-argument_list|(
-name|paint_mask
-argument_list|)
-decl_stmt|;
 name|GeglBuffer
 modifier|*
 name|paint_mask_buffer
@@ -3332,7 +3323,7 @@ operator|(
 name|GimpTempBuf
 operator|*
 operator|)
-name|modified_mask
+name|paint_mask
 argument_list|)
 decl_stmt|;
 name|gimp_gegl_combine_mask_weird
@@ -3380,11 +3371,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|paint_mask_buffer
-argument_list|)
-expr_stmt|;
-name|gimp_temp_buf_unref
-argument_list|(
-name|modified_mask
 argument_list|)
 expr_stmt|;
 block|}
@@ -3439,7 +3425,7 @@ name|undo_buffer
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Otherwise:        *   combine the canvas buf and the paint mask to the canvas buf        */
+comment|/*  Otherwise:        *   combine the paint mask to the paint buffer directly        */
 else|else
 block|{
 name|GeglBuffer
