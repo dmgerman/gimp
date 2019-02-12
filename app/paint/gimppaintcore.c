@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d97e150103
+DECL|enum|__anon29ac56fc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3713,7 +3713,7 @@ name|paint_opacity
 expr_stmt|;
 name|algorithms
 operator||=
-name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_MASK
+name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_BUFFER
 expr_stmt|;
 block|}
 comment|/* Write canvas_buffer to paint_buf */
@@ -3765,7 +3765,7 @@ name|paint_opacity
 expr_stmt|;
 name|algorithms
 operator||=
-name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUFFER
+name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUF_ALPHA
 expr_stmt|;
 comment|/* dest_buffer -> paint_buf -> dest_buffer */
 if|if
@@ -4164,7 +4164,7 @@ block|}
 else|else
 block|{
 comment|/* Mix paint mask and canvas_buffer */
-name|combine_paint_mask_to_canvas_mask
+name|combine_paint_mask_to_canvas_buffer
 argument_list|(
 name|paint_mask
 argument_list|,

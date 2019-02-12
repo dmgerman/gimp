@@ -19,15 +19,15 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bfe7080103
+DECL|enum|__anon2c66f3380103
 block|{
 DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
 name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
 init|=
 literal|0
 block|,
-DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_MASK
-name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_MASK
+DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_BUFFER
+name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_COMBINE_PAINT_MASK_TO_CANVAS_BUFFER
 init|=
 literal|1
 operator|<<
@@ -40,8 +40,8 @@ literal|1
 operator|<<
 literal|1
 block|,
-DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUFFER
-name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUFFER
+DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUF_ALPHA
+name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_PAINT_MASK_TO_PAINT_BUF_ALPHA
 init|=
 literal|1
 operator|<<
@@ -62,7 +62,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfe7080208
+DECL|struct|__anon2c66f3380208
 block|{
 DECL|member|canvas_buffer
 name|GeglBuffer
@@ -158,7 +158,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|combine_paint_mask_to_canvas_mask
+name|combine_paint_mask_to_canvas_buffer
 parameter_list|(
 specifier|const
 name|GimpTempBuf
@@ -213,7 +213,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|paint_mask_to_paint_buffer
+name|paint_mask_to_paint_buf_alpha
 parameter_list|(
 specifier|const
 name|GimpTempBuf
