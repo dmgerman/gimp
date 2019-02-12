@@ -235,6 +235,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpDataClass
+modifier|*
+name|data_class
+init|=
+name|GIMP_DATA_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|GimpBrushClass
 modifier|*
 name|brush_class
@@ -262,6 +271,20 @@ name|get_popup_size
 operator|=
 name|gimp_brush_pipe_get_popup_size
 expr_stmt|;
+name|data_class
+operator|->
+name|save
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* don't inherit */
+name|data_class
+operator|->
+name|copy
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* don't inherit */
 name|brush_class
 operator|->
 name|begin_use

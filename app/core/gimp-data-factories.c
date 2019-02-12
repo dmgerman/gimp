@@ -276,7 +276,7 @@ name|gimp_brush_load
 argument_list|,
 name|GIMP_BRUSH_FILE_EXTENSION
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_data_loader_factory_add_loader
