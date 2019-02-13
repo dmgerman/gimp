@@ -488,7 +488,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Linear Invert"
+literal|"L_inear Invert"
 argument_list|)
 block|,
 name|NULL
