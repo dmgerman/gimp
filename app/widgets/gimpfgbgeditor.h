@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea857f0103
+DECL|enum|__anon29b3585b0103
 block|{
 DECL|enumerator|GIMP_FG_BG_TARGET_INVALID
 name|GIMP_FG_BG_TARGET_INVALID
@@ -140,6 +140,11 @@ decl_stmt|;
 DECL|member|active_color
 name|GimpActiveColor
 name|active_color
+decl_stmt|;
+DECL|member|active_image
+name|GimpImage
+modifier|*
+name|active_image
 decl_stmt|;
 DECL|member|default_icon
 name|GdkPixbuf
