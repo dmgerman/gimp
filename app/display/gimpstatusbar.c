@@ -3051,6 +3051,32 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Make sure icon_space_width has been initialized to avoid a            * division by zero.            */
+if|if
+condition|(
+name|statusbar
+operator|->
+name|icon_space_width
+operator|==
+literal|0
+condition|)
+name|gimp_statusbar_style_updated
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|statusbar
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|statusbar
+operator|->
+name|icon_space_width
+operator|!=
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/* prepend enough spaces for the icon plus one space */
 name|n_spaces
 operator|=
