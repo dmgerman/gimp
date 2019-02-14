@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fa5e20103
+DECL|enum|__anon27a745b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fa5e20208
+DECL|struct|__anon27a745b50208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fa5e20308
+DECL|struct|__anon27a745b50308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -9571,6 +9571,10 @@ elseif|else
 if|if
 condition|(
 name|area
+operator|>
+literal|0
+operator|&&
+name|area
 operator|<
 name|significant_size
 condition|)
@@ -11836,6 +11840,10 @@ name|count
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_edgel_region_area:  * @mask: current state of closed line art buffer.  * @start_edgel: edgel to follow.  *  * Follows a line border, starting from @start_edgel to compute the area  * enclosed by this border.  * Unfortunately this may return a negative area when the line does not  * close a zone. In this case, there is an uncertaincy on the size of  * the created zone, and we should consider it a big size.  *  * Returns: the area enclosed by the followed line, or a negative value  * if the zone is not closed (hence actual area unknown).  */
+end_comment
 
 begin_function
 specifier|static
