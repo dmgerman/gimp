@@ -421,13 +421,20 @@ name|GeglNode
 modifier|*
 name|src_node
 decl_stmt|;
-comment|/* dup() because reading and writing the same buffer doesn't        * work with area ops when working in chunks. See bug #701875.        */
+comment|/* dup() because reading and writing the same buffer doesn't        * generally work with non-point ops when working in chunks.        * See bug #701875.        */
 if|if
 condition|(
 name|src_buffer
 operator|==
 name|dest_buffer
+operator|&&
+operator|!
+name|gimp_gegl_node_is_point_operation
+argument_list|(
+name|operation
+argument_list|)
 condition|)
+block|{
 name|src_buffer
 operator|=
 name|gegl_buffer_dup
@@ -435,12 +442,15 @@ argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_object_ref
 argument_list|(
 name|src_buffer
 argument_list|)
 expr_stmt|;
+block|}
 name|src_node
 operator|=
 name|gegl_node_new_child
