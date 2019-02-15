@@ -72,6 +72,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_gegl_node_is_point_operation
+parameter_list|(
+name|GeglNode
+modifier|*
+name|node
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|Babl
 modifier|*
