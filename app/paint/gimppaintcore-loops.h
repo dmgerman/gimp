@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277465440103
+DECL|enum|__anon2b055d300103
 block|{
 DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
 name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_NONE
@@ -67,6 +67,13 @@ init|=
 literal|1
 operator|<<
 literal|5
+block|,
+DECL|enumerator|GIMP_PAINT_CORE_LOOPS_ALGORITHM_MASK_COMPONENTS
+name|GIMP_PAINT_CORE_LOOPS_ALGORITHM_MASK_COMPONENTS
+init|=
+literal|1
+operator|<<
+literal|6
 DECL|typedef|GimpPaintCoreLoopsAlgorithm
 block|}
 name|GimpPaintCoreLoopsAlgorithm
@@ -76,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277465440208
+DECL|struct|__anon2b055d300208
 block|{
 DECL|member|canvas_buffer
 name|GeglBuffer
@@ -148,6 +155,10 @@ decl_stmt|;
 DECL|member|paint_mode
 name|GimpLayerMode
 name|paint_mode
+decl_stmt|;
+DECL|member|affect
+name|GimpComponentMask
+name|affect
 decl_stmt|;
 DECL|typedef|GimpPaintCoreLoopsParams
 block|}
