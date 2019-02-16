@@ -183,12 +183,6 @@ modifier|*
 name|canvas_buffer
 decl_stmt|;
 comment|/*  the buffer to paint the mask to     */
-DECL|member|comp_buffer
-name|GeglBuffer
-modifier|*
-name|comp_buffer
-decl_stmt|;
-comment|/*  scratch buffer used when masking components */
 DECL|member|paint_buffer
 name|GeglBuffer
 modifier|*
