@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a745b50103
+DECL|enum|__anon2b1f2fc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -215,7 +215,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a745b50208
+DECL|struct|__anon2b1f2fc20208
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a745b50308
+DECL|struct|__anon2b1f2fc20308
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -968,6 +968,10 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|,
+name|gint
+modifier|*
+name|counter
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4062,8 +4066,6 @@ argument_list|,
 name|created_regions_significant_area
 argument_list|,
 name|created_regions_minimum_area
-operator|-
-literal|1
 argument_list|)
 condition|)
 block|{
@@ -4387,8 +4389,6 @@ argument_list|,
 name|created_regions_significant_area
 argument_list|,
 name|created_regions_minimum_area
-operator|-
-literal|1
 argument_list|)
 condition|)
 block|{
@@ -4537,6 +4537,13 @@ name|iter
 operator|->
 name|data
 decl_stmt|;
+name|gint
+name|fill_max
+init|=
+name|created_regions_significant_area
+operator|-
+literal|1
+decl_stmt|;
 comment|/* XXX A best approach would be to generalize            * gimp_drawable_bucket_fill() to work on any buffer (the code            * is already mostly there) rather than reimplementing a naive            * bucket fill.            * This is mostly a quick'n dirty first implementation which I            * will improve later.            */
 name|gimp_line_art_simple_fill
 argument_list|(
@@ -4555,6 +4562,9 @@ operator|)
 name|p
 operator|->
 name|y
+argument_list|,
+operator|&
+name|fill_max
 argument_list|)
 expr_stmt|;
 block|}
@@ -9041,11 +9051,7 @@ name|max_edgel_count
 init|=
 literal|2
 operator|*
-operator|(
 name|minimum_size
-operator|+
-literal|1
-operator|)
 decl_stmt|;
 name|Pixel
 modifier|*
@@ -9413,7 +9419,7 @@ operator|>=
 name|significant_size
 operator|&&
 name|area
-operator|<=
+operator|<
 name|minimum_size
 condition|)
 block|{
@@ -10908,7 +10914,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_line_art_simple_fill (GeglBuffer * buffer,gint x,gint y)
+DECL|function|gimp_line_art_simple_fill (GeglBuffer * buffer,gint x,gint y,gint * counter)
 name|gimp_line_art_simple_fill
 parameter_list|(
 name|GeglBuffer
@@ -10920,6 +10926,10 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|,
+name|gint
+modifier|*
+name|counter
 parameter_list|)
 block|{
 name|guchar
@@ -10948,6 +10958,10 @@ name|gegl_buffer_get_height
 argument_list|(
 name|buffer
 argument_list|)
+operator|||
+name|counter
+operator|<=
+literal|0
 condition|)
 return|return;
 name|gegl_buffer_sample
@@ -11005,6 +11019,12 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
+operator|(
+operator|*
+name|counter
+operator|)
+operator|--
+expr_stmt|;
 name|gimp_line_art_simple_fill
 argument_list|(
 name|buffer
@@ -11014,6 +11034,8 @@ operator|+
 literal|1
 argument_list|,
 name|y
+argument_list|,
+name|counter
 argument_list|)
 expr_stmt|;
 name|gimp_line_art_simple_fill
@@ -11025,6 +11047,8 @@ operator|-
 literal|1
 argument_list|,
 name|y
+argument_list|,
+name|counter
 argument_list|)
 expr_stmt|;
 name|gimp_line_art_simple_fill
@@ -11036,6 +11060,8 @@ argument_list|,
 name|y
 operator|+
 literal|1
+argument_list|,
+name|counter
 argument_list|)
 expr_stmt|;
 name|gimp_line_art_simple_fill
@@ -11047,6 +11073,8 @@ argument_list|,
 name|y
 operator|-
 literal|1
+argument_list|,
+name|counter
 argument_list|)
 expr_stmt|;
 block|}
