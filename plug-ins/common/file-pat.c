@@ -822,6 +822,22 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|g_set_error
+argument_list|(
+operator|&
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"Running procedure 'file-pat-save-internal' "
+literal|"failed: %s"
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
