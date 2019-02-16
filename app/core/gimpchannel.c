@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d28750103
+DECL|enum|__anon2bbda2520103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -726,18 +726,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|active
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GimpComponentMask
-name|gimp_channel_get_active_mask
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1497,12 +1485,6 @@ operator|->
 name|get_active_components
 operator|=
 name|gimp_channel_get_active_components
-expr_stmt|;
-name|drawable_class
-operator|->
-name|get_active_mask
-operator|=
-name|gimp_channel_get_active_mask
 expr_stmt|;
 name|drawable_class
 operator|->
@@ -4580,24 +4562,6 @@ index|]
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GimpComponentMask
-DECL|function|gimp_channel_get_active_mask (GimpDrawable * drawable)
-name|gimp_channel_get_active_mask
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-comment|/*  Return all, because that skips the component mask op when painting  */
-return|return
-name|GIMP_COMPONENT_MASK_ALL
-return|;
 block|}
 end_function
 

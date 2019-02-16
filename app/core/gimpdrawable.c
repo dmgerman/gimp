@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c524b60103
+DECL|enum|__anon2a4db5dc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,7 +248,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c524b60203
+DECL|enum|__anon2a4db5dc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -719,6 +719,18 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpComponentMask
+name|gimp_drawable_real_get_active_mask
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1237,7 +1249,7 @@ name|klass
 operator|->
 name|get_active_mask
 operator|=
-name|NULL
+name|gimp_drawable_real_get_active_mask
 expr_stmt|;
 name|klass
 operator|->
@@ -3353,6 +3365,24 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|GimpComponentMask
+DECL|function|gimp_drawable_real_get_active_mask (GimpDrawable * drawable)
+name|gimp_drawable_real_get_active_mask
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+comment|/*  Return all, because that skips the component mask op when painting  */
+return|return
+name|GIMP_COMPONENT_MASK_ALL
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* FIXME: this default impl is currently unused because no subclass  * chains up. the goal is to handle the almost identical subclass code  * here again.  */
 end_comment
@@ -4859,9 +4889,8 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GimpDrawableClass
-modifier|*
-name|drawable_class
+name|GimpComponentMask
+name|mask
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -4873,29 +4902,48 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|drawable_class
+name|mask
 operator|=
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|drawable_class
-operator|->
-name|get_active_mask
-condition|)
-return|return
-name|drawable_class
 operator|->
 name|get_active_mask
 argument_list|(
 name|drawable
 argument_list|)
-return|;
+expr_stmt|;
+comment|/* if the drawable doesn't have an alpha channel, the value of the mask's    * alpha-bit doesn't matter, however, we'd like to have a fully-clear or    * fully-set mask whenever possible, since it allows us to skip component    * masking altogether.  we therefore set or clear the alpha bit, depending on    * the state of the other bits, so that it never gets in the way of a uniform    * mask.    */
+if|if
+condition|(
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|mask
+operator|&
+operator|~
+name|GIMP_COMPONENT_MASK_ALPHA
+condition|)
+name|mask
+operator||=
+name|GIMP_COMPONENT_MASK_ALPHA
+expr_stmt|;
+else|else
+name|mask
+operator|&=
+operator|~
+name|GIMP_COMPONENT_MASK_ALPHA
+expr_stmt|;
+block|}
 return|return
-literal|0
+name|mask
 return|;
 block|}
 end_function
