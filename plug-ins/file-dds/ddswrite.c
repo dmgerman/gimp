@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"endian.h"
+file|"endian_rw.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2877df430103
+DECL|enum|__anon292c79f70103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2877df430208
+DECL|struct|__anon292c79f70208
 block|{
 DECL|member|format
 name|int

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|ENDIAN_H
+name|ENDIAN_RW_H
 end_ifndef
 
 begin_define
-DECL|macro|ENDIAN_H
+DECL|macro|ENDIAN_RW_H
 define|#
 directive|define
-name|ENDIAN_H
+name|ENDIAN_RW_H
 end_define
 
 begin_define

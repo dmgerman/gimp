@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"endian.h"
+file|"endian_rw.h"
 end_include
 
 begin_include
@@ -239,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8aba100108
+DECL|struct|__anon27440b5d0108
 block|{
 DECL|member|single
 name|unsigned

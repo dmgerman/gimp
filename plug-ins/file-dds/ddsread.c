@@ -82,7 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"endian.h"
+file|"endian_rw.h"
 end_include
 
 begin_include
@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d301700108
+DECL|struct|__anon2a4ff12f0108
 block|{
 DECL|member|rshift
 DECL|member|gshift
