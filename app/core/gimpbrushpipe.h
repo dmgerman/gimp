@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29429d4a0103
+DECL|enum|__anon2b39558f0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -182,6 +182,12 @@ modifier|*
 name|current
 decl_stmt|;
 comment|/* Currently selected brush */
+DECL|member|params
+name|gchar
+modifier|*
+name|params
+decl_stmt|;
+comment|/* For pipe<-> image conversion */
 block|}
 struct|;
 end_struct
