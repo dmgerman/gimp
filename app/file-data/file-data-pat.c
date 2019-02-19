@@ -261,9 +261,7 @@ block|{
 name|GList
 modifier|*
 name|list
-decl_stmt|;
-name|list
-operator|=
+init|=
 name|gimp_pattern_load
 argument_list|(
 name|context
@@ -274,7 +272,7 @@ name|input
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|list
