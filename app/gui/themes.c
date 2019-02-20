@@ -1044,6 +1044,7 @@ literal|"@import url(\"%s\");\n"
 literal|"\n"
 literal|"* { -gtk-icon-style: %s; }\n"
 literal|"\n"
+literal|"%s"
 literal|"/* end of theme.css */\n"
 argument_list|,
 name|gimp_file_get_utf8_name
@@ -1062,6 +1063,14 @@ condition|?
 literal|"symbolic"
 else|:
 literal|"regular"
+argument_list|,
+name|config
+operator|->
+name|prefer_dark_theme
+condition|?
+literal|"/* prefer-dark-theme */\n\n"
+else|:
+literal|""
 argument_list|)
 condition|)
 block|{
