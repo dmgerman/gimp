@@ -251,9 +251,9 @@ name|gimp_operation_cage_coef_calc_get_bounding_box
 expr_stmt|;
 name|operation_class
 operator|->
-name|no_cache
+name|cache_policy
 operator|=
-name|FALSE
+name|GEGL_CACHE_POLICY_ALWAYS
 expr_stmt|;
 name|operation_class
 operator|->

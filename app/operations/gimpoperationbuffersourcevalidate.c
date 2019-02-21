@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaaf200103
+DECL|enum|__anon2acd025c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,9 +288,9 @@ name|FALSE
 expr_stmt|;
 name|operation_class
 operator|->
-name|no_cache
+name|cache_policy
 operator|=
-name|TRUE
+name|GEGL_CACHE_POLICY_NEVER
 expr_stmt|;
 name|gegl_operation_class_set_keys
 argument_list|(

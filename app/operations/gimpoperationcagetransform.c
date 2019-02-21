@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287d8b7a0103
+DECL|enum|__anon2bcb3a3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,12 +413,6 @@ operator|->
 name|get_cached_region
 operator|=
 name|gimp_operation_cage_transform_get_cached_region
-expr_stmt|;
-name|operation_class
-operator|->
-name|no_cache
-operator|=
-name|FALSE
 expr_stmt|;
 name|operation_class
 operator|->

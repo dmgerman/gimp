@@ -646,9 +646,9 @@ name|clone
 operator|->
 name|node
 argument_list|,
-literal|"dont-cache"
+literal|"cache-policy"
 argument_list|,
-name|TRUE
+name|GEGL_CACHE_POLICY_NEVER
 argument_list|,
 name|NULL
 argument_list|)
