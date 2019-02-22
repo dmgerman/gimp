@@ -243,6 +243,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptempbuf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpwaitable.h"
 end_include
 
@@ -412,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d52400103
+DECL|enum|__anon28ff2f830103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -512,6 +518,9 @@ block|,
 DECL|enumerator|VARIABLE_SCRATCH_TOTAL
 name|VARIABLE_SCRATCH_TOTAL
 block|,
+DECL|enumerator|VARIABLE_TEMP_BUF_TOTAL
+name|VARIABLE_TEMP_BUF_TOTAL
+block|,
 DECL|enumerator|N_VARIABLES
 name|N_VARIABLES
 block|,
@@ -526,7 +535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d52400203
+DECL|enum|__anon28ff2f830203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -560,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d52400303
+DECL|enum|__anon28ff2f830303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -828,7 +837,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2a0d5240040a
+DECL|union|__anon28ff2f83040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -844,7 +853,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2a0d52400508
+DECL|struct|__anon28ff2f830508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -859,7 +868,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2a0d52400608
+DECL|struct|__anon28ff2f830608
 block|{
 DECL|member|antecedent
 name|gint
@@ -3178,6 +3187,51 @@ name|data
 operator|=
 literal|"scratch-total"
 block|}
+block|,
+index|[
+name|VARIABLE_TEMP_BUF_TOTAL
+index|]
+operator|=
+block|{
+operator|.
+name|name
+operator|=
+literal|"temp-buf-total"
+block|,
+comment|/* Translators:  "TempBuf" is a technical term referring to an internal      * GIMP data structure.  It's probably OK to leave it untranslated.      */
+operator|.
+name|title
+operator|=
+name|NC_
+argument_list|(
+literal|"dashboard-variable"
+argument_list|,
+literal|"TempBuf"
+argument_list|)
+block|,
+operator|.
+name|description
+operator|=
+name|N_
+argument_list|(
+literal|"Total size of temporary buffers"
+argument_list|)
+block|,
+operator|.
+name|type
+operator|=
+name|VARIABLE_TYPE_SIZE
+block|,
+operator|.
+name|sample_func
+operator|=
+name|gimp_dashboard_sample_function
+block|,
+operator|.
+name|data
+operator|=
+name|gimp_temp_buf_get_total_memsize
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3920,6 +3974,18 @@ operator|.
 name|variable
 operator|=
 name|VARIABLE_SCRATCH_TOTAL
+block|,
+operator|.
+name|default_active
+operator|=
+name|TRUE
+block|}
+block|,
+block|{
+operator|.
+name|variable
+operator|=
+name|VARIABLE_TEMP_BUF_TOTAL
 block|,
 operator|.
 name|default_active
@@ -8942,7 +9008,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400708
+DECL|struct|__anon28ff2f830708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9148,7 +9214,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400808
+DECL|struct|__anon28ff2f830808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9418,7 +9484,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400908
+DECL|struct|__anon28ff2f830908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9624,7 +9690,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400a08
+DECL|struct|__anon28ff2f830a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9900,7 +9966,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400b08
+DECL|struct|__anon28ff2f830b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10060,7 +10126,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d52400c08
+DECL|struct|__anon28ff2f830c08
 block|{
 DECL|member|prev_time
 name|gint64

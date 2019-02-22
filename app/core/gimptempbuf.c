@@ -106,7 +106,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27747d870108
+DECL|struct|__anon275bc9bd0108
 block|{
 DECL|member|format
 specifier|const
@@ -136,6 +136,24 @@ name|LOCK_DATA_ALIGNMENT
 argument_list|)
 expr_stmt|;
 end_expr_stmt
+
+begin_comment
+comment|/*  local variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gimp_temp_buf_total_memsize
+specifier|static
+name|guintptr
+name|gimp_temp_buf_total_memsize
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|GimpTempBuf
@@ -255,6 +273,18 @@ operator|*
 name|height
 operator|*
 name|bpp
+argument_list|)
+expr_stmt|;
+name|g_atomic_pointer_add
+argument_list|(
+operator|&
+name|gimp_temp_buf_total_memsize
+argument_list|,
+operator|+
+name|gimp_temp_buf_get_memsize
+argument_list|(
+name|temp
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -612,6 +642,18 @@ operator|<
 literal|1
 condition|)
 block|{
+name|g_atomic_pointer_add
+argument_list|(
+operator|&
+name|gimp_temp_buf_total_memsize
+argument_list|,
+operator|-
+name|gimp_temp_buf_get_memsize
+argument_list|(
+name|buf
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|buf
@@ -1711,6 +1753,24 @@ argument_list|)
 argument_list|,
 literal|"gimp-temp-buf"
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions (stats)  */
+end_comment
+
+begin_function
+name|guint64
+DECL|function|gimp_temp_buf_get_total_memsize (void)
+name|gimp_temp_buf_get_total_memsize
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|gimp_temp_buf_total_memsize
 return|;
 block|}
 end_function
