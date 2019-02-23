@@ -351,7 +351,7 @@ name|gimp_brush_pipe_load
 argument_list|,
 name|GIMP_BRUSH_PIPE_FILE_EXTENSION
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp
