@@ -469,8 +469,8 @@ parameter_list|,
 name|gint
 name|area_y
 parameter_list|,
-name|GimpBrushApplicationMode
-name|mode
+name|gboolean
+name|apply_mask
 parameter_list|)
 function_decl|;
 end_function_decl

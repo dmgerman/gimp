@@ -1795,10 +1795,7 @@ name|paint_buffer_x
 argument_list|,
 name|paint_buffer_y
 argument_list|,
-name|gimp_paint_options_get_brush_mode
-argument_list|(
-name|paint_options
-argument_list|)
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
