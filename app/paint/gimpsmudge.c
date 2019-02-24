@@ -1777,6 +1777,10 @@ if|if
 condition|(
 operator|!
 name|brush_color_ptr
+operator|&&
+name|flow
+operator|>
+literal|0.0
 condition|)
 block|{
 name|gimp_brush_core_color_area_with_pixmap
