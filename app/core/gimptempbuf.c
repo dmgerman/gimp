@@ -106,7 +106,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bc9bd0108
+DECL|struct|__anon2925aef60108
 block|{
 DECL|member|format
 specifier|const
@@ -574,9 +574,10 @@ end_function
 begin_function
 name|GimpTempBuf
 modifier|*
-DECL|function|gimp_temp_buf_ref (GimpTempBuf * buf)
+DECL|function|gimp_temp_buf_ref (const GimpTempBuf * buf)
 name|gimp_temp_buf_ref
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -591,12 +592,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_atomic_int_inc
+argument_list|(
+operator|(
+name|gint
+operator|*
+operator|)
+operator|&
 name|buf
 operator|->
 name|ref_count
-operator|++
+argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpTempBuf
+operator|*
+operator|)
 name|buf
 return|;
 block|}
@@ -604,9 +616,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_temp_buf_unref (GimpTempBuf * buf)
+DECL|function|gimp_temp_buf_unref (const GimpTempBuf * buf)
 name|gimp_temp_buf_unref
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -628,18 +641,19 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-name|buf
-operator|->
-name|ref_count
-operator|--
-expr_stmt|;
 if|if
 condition|(
+name|g_atomic_int_dec_and_test
+argument_list|(
+operator|(
+name|gint
+operator|*
+operator|)
+operator|&
 name|buf
 operator|->
 name|ref_count
-operator|<
-literal|1
+argument_list|)
 condition|)
 block|{
 name|g_atomic_pointer_add
@@ -671,6 +685,10 @@ name|g_slice_free
 argument_list|(
 name|GimpTempBuf
 argument_list|,
+operator|(
+name|GimpTempBuf
+operator|*
+operator|)
 name|buf
 argument_list|)
 expr_stmt|;
@@ -1436,9 +1454,10 @@ end_function
 begin_function
 name|GeglBuffer
 modifier|*
-DECL|function|gimp_temp_buf_create_buffer (GimpTempBuf * temp_buf)
+DECL|function|gimp_temp_buf_create_buffer (const GimpTempBuf * temp_buf)
 name|gimp_temp_buf_create_buffer
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|temp_buf
@@ -1507,6 +1526,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-temp-buf"
 argument_list|,
+operator|(
+name|GimpTempBuf
+operator|*
+operator|)
 name|temp_buf
 argument_list|)
 expr_stmt|;
@@ -1519,9 +1542,10 @@ end_function
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_temp_buf_create_pixbuf (GimpTempBuf * temp_buf)
+DECL|function|gimp_temp_buf_create_pixbuf (const GimpTempBuf * temp_buf)
 name|gimp_temp_buf_create_pixbuf
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|temp_buf

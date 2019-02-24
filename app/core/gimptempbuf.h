@@ -73,6 +73,7 @@ name|GimpTempBuf
 modifier|*
 name|gimp_temp_buf_ref
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -84,6 +85,7 @@ begin_function_decl
 name|void
 name|gimp_temp_buf_unref
 parameter_list|(
+specifier|const
 name|GimpTempBuf
 modifier|*
 name|buf
@@ -255,6 +257,7 @@ name|GeglBuffer
 modifier|*
 name|gimp_temp_buf_create_buffer
 argument_list|(
+specifier|const
 name|GimpTempBuf
 operator|*
 name|temp_buf
@@ -268,6 +271,7 @@ name|GdkPixbuf
 modifier|*
 name|gimp_temp_buf_create_pixbuf
 argument_list|(
+specifier|const
 name|GimpTempBuf
 operator|*
 name|temp_buf
