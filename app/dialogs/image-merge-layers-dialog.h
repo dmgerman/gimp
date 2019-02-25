@@ -45,6 +45,9 @@ name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef

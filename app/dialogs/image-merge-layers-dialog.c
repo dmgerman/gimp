@@ -719,6 +719,10 @@ argument_list|,
 name|private
 operator|->
 name|discard_invisible
+argument_list|,
+name|private
+operator|->
+name|user_data
 argument_list|)
 expr_stmt|;
 block|}

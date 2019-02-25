@@ -645,6 +645,9 @@ name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3439,6 +3442,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
@@ -3446,6 +3453,13 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -3520,7 +3534,7 @@ name|layer_merge_discard_invisible
 argument_list|,
 name|image_merge_layers_callback
 argument_list|,
-name|NULL
+name|display
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog
@@ -3564,6 +3578,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
@@ -3577,6 +3595,13 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -3598,6 +3623,11 @@ argument_list|,
 name|action_data_get_context
 argument_list|(
 name|data
+argument_list|)
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
 argument_list|)
 argument_list|,
 operator|&
@@ -5459,7 +5489,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_merge_layers_callback (GtkWidget * dialog,GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean merge_active_group,gboolean discard_invisible)
+DECL|function|image_merge_layers_callback (GtkWidget * dialog,GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean merge_active_group,gboolean discard_invisible,gpointer user_data)
 name|image_merge_layers_callback
 parameter_list|(
 name|GtkWidget
@@ -5482,6 +5512,9 @@ name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GimpDialogConfig
@@ -5496,6 +5529,12 @@ name|gimp
 operator|->
 name|config
 argument_list|)
+decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|user_data
 decl_stmt|;
 name|g_object_set
 argument_list|(
@@ -5533,6 +5572,11 @@ argument_list|,
 name|config
 operator|->
 name|layer_merge_discard_invisible
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

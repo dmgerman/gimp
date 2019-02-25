@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprojectable.h"
 end_include
 
@@ -207,6 +213,15 @@ name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -218,7 +233,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean merge_active_group,gboolean discard_invisible)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpContext * context,GimpMergeType merge_type,gboolean merge_active_group,gboolean discard_invisible,GimpProgress * progress)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
@@ -237,6 +252,10 @@ name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpContainer
@@ -274,6 +293,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -448,6 +481,18 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+init|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Merge Visible Layers"
+argument_list|)
+decl_stmt|;
 name|gimp_set_busy
 argument_list|(
 name|image
@@ -461,12 +506,7 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
-name|C_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Merge Visible Layers"
-argument_list|)
+name|undo_desc
 argument_list|)
 expr_stmt|;
 comment|/* if there's a floating selection, anchor it */
@@ -498,6 +538,10 @@ argument_list|,
 name|context
 argument_list|,
 name|merge_type
+argument_list|,
+name|undo_desc
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -576,7 +620,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_flatten (GimpImage * image,GimpContext * context,GError ** error)
+DECL|function|gimp_image_flatten (GimpImage * image,GimpContext * context,GimpProgress * progress,GError ** error)
 name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
@@ -586,6 +630,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
@@ -622,6 +670,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -699,6 +761,18 @@ condition|(
 name|merge_list
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+init|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Flatten Image"
+argument_list|)
+decl_stmt|;
 name|gimp_set_busy
 argument_list|(
 name|image
@@ -712,12 +786,7 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
-name|C_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Flatten Image"
-argument_list|)
+name|undo_desc
 argument_list|)
 expr_stmt|;
 comment|/* if there's a floating selection, anchor it */
@@ -752,6 +821,10 @@ argument_list|,
 name|context
 argument_list|,
 name|GIMP_FLATTEN_IMAGE
+argument_list|,
+name|undo_desc
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -803,7 +876,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_down (GimpImage * image,GimpLayer * current_layer,GimpContext * context,GimpMergeType merge_type,GError ** error)
+DECL|function|gimp_image_merge_down (GimpImage * image,GimpLayer * current_layer,GimpContext * context,GimpMergeType merge_type,GimpProgress * progress,GError ** error)
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
@@ -820,6 +893,10 @@ name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
@@ -846,6 +923,11 @@ modifier|*
 name|merge_list
 init|=
 name|NULL
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -885,6 +967,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -1135,6 +1231,15 @@ argument_list|,
 name|current_layer
 argument_list|)
 expr_stmt|;
+name|undo_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Merge Down"
+argument_list|)
+expr_stmt|;
 name|gimp_set_busy
 argument_list|(
 name|image
@@ -1148,12 +1253,7 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
-name|C_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Merge Down"
-argument_list|)
+name|undo_desc
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1175,6 +1275,10 @@ argument_list|,
 name|context
 argument_list|,
 name|merge_type
+argument_list|,
+name|undo_desc
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -1804,7 +1908,7 @@ begin_function
 specifier|static
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_layers (GimpImage * image,GimpContainer * container,GSList * merge_list,GimpContext * context,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_layers (GimpImage * image,GimpContainer * container,GSList * merge_list,GimpContext * context,GimpMergeType merge_type,const gchar * undo_desc,GimpProgress * progress)
 name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
@@ -1825,6 +1929,15 @@ name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpLayer
@@ -1907,6 +2020,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -2667,8 +2794,14 @@ literal|"input"
 argument_list|)
 expr_stmt|;
 comment|/*  Render the graph into the merge layer  */
-name|gegl_node_blit_buffer
+name|gimp_gegl_apply_operation
 argument_list|(
+name|NULL
+argument_list|,
+name|progress
+argument_list|,
+name|undo_desc
+argument_list|,
 name|offset_node
 argument_list|,
 name|gimp_drawable_get_buffer
@@ -2681,9 +2814,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
-argument_list|,
-name|GEGL_ABYSS_NONE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Reconnect the bottom-layer node's input  */

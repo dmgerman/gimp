@@ -37,6 +37,10 @@ name|merge_active_group
 parameter_list|,
 name|gboolean
 name|discard_invisible
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -60,6 +64,10 @@ name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
@@ -97,6 +105,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
