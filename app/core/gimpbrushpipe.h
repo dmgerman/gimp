@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b39558f0103
+DECL|enum|__anon2ba30e420103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -214,6 +214,22 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|gboolean
+name|gimp_brush_pipe_set_params
+parameter_list|(
+name|GimpBrushPipe
+modifier|*
+name|pipe
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|paramstring
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
