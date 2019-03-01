@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47bf6b0108
+DECL|struct|__anon293e31690108
 block|{
 DECL|member|direction
 name|GimpTransformDirection
@@ -3145,7 +3145,7 @@ name|G_OBJECT
 argument_list|(
 name|tg_tool
 operator|->
-name|boundary_in
+name|boundary_out
 argument_list|)
 argument_list|,
 operator|(
