@@ -945,6 +945,15 @@ argument_list|(
 name|self
 argument_list|)
 decl_stmt|;
+name|gimp_tool_control_set_scroll_lock
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_preserve
 argument_list|(
 name|tool
