@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be74d70103
+DECL|enum|__anon27b7ee8b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be74d70203
+DECL|enum|__anon27b7ee8b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6135,40 +6135,48 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+operator|&&
+name|gimp_item_is_visible
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+block|{
 name|GimpImage
 modifier|*
 name|image
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|mask
-decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|image
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
 argument_list|)
-operator|)
-condition|)
-return|return;
-comment|/*  Turn the current selection off  */
-name|gimp_image_selection_invalidate
+decl_stmt|;
+name|GimpChannel
+modifier|*
+name|mask
+init|=
+name|gimp_image_get_mask
 argument_list|(
 name|image
 argument_list|)
-expr_stmt|;
-comment|/*  get the selection mask channel  */
-name|mask
-operator|=
-name|gimp_image_get_mask
+decl_stmt|;
+comment|/*  Turn the current selection off  */
+name|gimp_image_selection_invalidate
 argument_list|(
 name|image
 argument_list|)
@@ -6195,6 +6203,7 @@ name|boundary_known
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
