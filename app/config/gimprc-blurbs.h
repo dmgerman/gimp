@@ -266,7 +266,7 @@ define|#
 directive|define
 name|SNAP_TO_GUIDES_BLURB
 define|\
-value|"Snap to guides by default in new image windows."
+value|_("Snap to guides by default in new image windows.")
 end_define
 
 begin_define
@@ -275,7 +275,7 @@ define|#
 directive|define
 name|SNAP_TO_GRID_BLURB
 define|\
-value|"Snap to the grid by default in new image windows."
+value|_("Snap to the grid by default in new image windows.")
 end_define
 
 begin_define
@@ -284,7 +284,7 @@ define|#
 directive|define
 name|SNAP_TO_CANVAS_BLURB
 define|\
-value|"Snap to the canvas edges by default in new image windows."
+value|_("Snap to the canvas edges by default in new image windows.")
 end_define
 
 begin_define
@@ -293,7 +293,7 @@ define|#
 directive|define
 name|SNAP_TO_PATH_BLURB
 define|\
-value|"Snap to the active path by default in new image windows."
+value|_("Snap to the active path by default in new image windows.")
 end_define
 
 begin_define
