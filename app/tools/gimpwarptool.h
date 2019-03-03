@@ -123,16 +123,11 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|cursor_x
-name|gdouble
-name|cursor_x
+DECL|member|cursor_pos
+name|GimpVector2
+name|cursor_pos
 decl_stmt|;
-comment|/* Hold the cursor x position */
-DECL|member|cursor_y
-name|gdouble
-name|cursor_y
-decl_stmt|;
-comment|/* Hold the cursor y position */
+comment|/* Hold the cursor position */
 DECL|member|coords_buffer
 name|GeglBuffer
 modifier|*
@@ -159,6 +154,14 @@ decl_stmt|;
 DECL|member|stroke_timer
 name|guint
 name|stroke_timer
+decl_stmt|;
+DECL|member|last_pos
+name|GimpVector2
+name|last_pos
+decl_stmt|;
+DECL|member|total_dist
+name|gdouble
+name|total_dist
 decl_stmt|;
 DECL|member|filter
 name|GimpDrawableFilter
