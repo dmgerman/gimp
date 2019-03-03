@@ -144,6 +144,10 @@ DECL|member|high_quality_preview
 name|gboolean
 name|high_quality_preview
 decl_stmt|;
+DECL|member|real_time_preview
+name|gboolean
+name|real_time_preview
+decl_stmt|;
 DECL|member|stroke_during_motion
 name|gboolean
 name|stroke_during_motion
