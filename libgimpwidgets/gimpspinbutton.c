@@ -515,7 +515,7 @@ name|spin_button
 operator|=
 name|g_object_new
 argument_list|(
-name|GTK_TYPE_SPIN_BUTTON
+name|GIMP_TYPE_SPIN_BUTTON
 argument_list|,
 name|NULL
 argument_list|)
