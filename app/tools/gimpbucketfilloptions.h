@@ -149,6 +149,11 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
+DECL|member|line_art_busy_box
+name|GtkWidget
+modifier|*
+name|line_art_busy_box
+decl_stmt|;
 DECL|member|line_art_source
 name|GimpLineArtSource
 name|line_art_source
