@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a15d2f60103
+DECL|enum|__anon2be60b4f0103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -139,7 +139,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a15d2f60203
+DECL|enum|__anon2be60b4f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,7 +241,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a15d2f60308
+DECL|struct|__anon2be60b4f0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a15d2f60408
+DECL|struct|__anon2be60b4f0408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -2465,6 +2465,18 @@ name|async
 condition|)
 block|{
 comment|/* we cancel the async, but don't wait for it to finish, since        * it can't actually be interrupted.  instead gimp_line_art_compute_cb()        * bails if the async has been canceled, to avoid accessing the line art.        */
+name|g_signal_emit
+argument_list|(
+name|line_art
+argument_list|,
+name|gimp_line_art_signals
+index|[
+name|COMPUTING_END
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_cancelable_cancel
 argument_list|(
 name|GIMP_CANCELABLE
@@ -2642,18 +2654,6 @@ modifier|*
 name|line_art
 parameter_list|)
 block|{
-name|g_signal_emit
-argument_list|(
-name|line_art
-argument_list|,
-name|gimp_line_art_signals
-index|[
-name|COMPUTING_END
-index|]
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_async_is_canceled
@@ -2709,6 +2709,18 @@ operator|->
 name|distmap
 operator|=
 name|NULL
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|line_art
+argument_list|,
+name|gimp_line_art_signals
+index|[
+name|COMPUTING_END
+index|]
+argument_list|,
+literal|0
+argument_list|)
 expr_stmt|;
 block|}
 name|g_clear_object
