@@ -1017,6 +1017,13 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+name|gimp_line_art_bind_gap_length
+argument_list|(
+name|line_art
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|bucket_tool
 operator|->
 name|priv
@@ -3496,7 +3503,8 @@ argument_list|,
 literal|"fill-area"
 argument_list|)
 condition|)
-comment|/* We want more motion events when the tool is used in a paint tool      * fashion. Unfortunately we only set exact mode in line art fill,      * because we can't as easily remove events from the similar color      * mode just because a point has already been selected  (unless      * threshold were 0, but that's an edge case).      */
+block|{
+comment|/* We want more motion events when the tool is used in a paint tool        * fashion. Unfortunately we only set exact mode in line art fill,        * because we can't as easily remove events from the similar color        * mode just because a point has already been selected  (unless        * threshold were 0, but that's an edge case).        */
 name|gimp_tool_control_set_motion_mode
 argument_list|(
 name|tool
@@ -3514,29 +3522,6 @@ else|:
 name|GIMP_MOTION_MODE_COMPRESS
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-name|pspec
-operator|->
-name|name
-argument_list|,
-literal|"fill-area"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-name|pspec
-operator|->
-name|name
-argument_list|,
-literal|"sample-merged"
-argument_list|)
-condition|)
-block|{
 name|gimp_bucket_fill_tool_reset_line_art
 argument_list|(
 name|bucket_tool
