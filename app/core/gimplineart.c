@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be60b4f0103
+DECL|enum|__anon29b4a1d30103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -139,7 +139,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be60b4f0203
+DECL|enum|__anon29b4a1d30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,7 +241,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be60b4f0308
+DECL|struct|__anon29b4a1d30308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be60b4f0408
+DECL|struct|__anon29b4a1d30408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -4401,7 +4401,7 @@ block|{
 name|guchar
 name|val
 init|=
-literal|1
+literal|2
 decl_stmt|;
 name|gegl_buffer_set
 argument_list|(
@@ -4694,7 +4694,7 @@ decl_stmt|;
 name|guchar
 name|val
 init|=
-literal|1
+literal|2
 decl_stmt|;
 name|gegl_buffer_set
 argument_list|(
