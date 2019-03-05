@@ -212,6 +212,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_item_tree_clear
+parameter_list|(
+name|GimpItemTree
+modifier|*
+name|tree
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_item_tree_add_item
 parameter_list|(
 name|GimpItemTree
