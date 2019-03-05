@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5f7f60103
+DECL|enum|__anon2c707c190103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5f7f60203
+DECL|enum|__anon2c707c190203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4529,25 +4529,34 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_item_tree_clear
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|private
 operator|->
 name|layers
 argument_list|)
+argument_list|)
 expr_stmt|;
-name|gimp_item_tree_clear
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|private
 operator|->
 name|channels
 argument_list|)
+argument_list|)
 expr_stmt|;
-name|gimp_item_tree_clear
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|private
 operator|->
 name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
