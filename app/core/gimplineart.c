@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c193b810103
+DECL|enum|__anon2c8b5baa0103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c193b810203
+DECL|enum|__anon2c8b5baa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -247,7 +247,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c193b810308
+DECL|struct|__anon2c8b5baa0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c193b810408
+DECL|struct|__anon2c8b5baa0408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -4763,12 +4763,6 @@ argument_list|,
 name|g_free
 argument_list|)
 expr_stmt|;
-name|g_clear_object
-argument_list|(
-operator|&
-name|strokes
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_async_is_stopped
@@ -4780,6 +4774,12 @@ goto|goto
 name|end2
 goto|;
 block|}
+name|g_clear_object
+argument_list|(
+operator|&
+name|strokes
+argument_list|)
+expr_stmt|;
 comment|/* Draw straight line segments */
 if|if
 condition|(
@@ -5148,6 +5148,18 @@ argument_list|(
 name|smoothed_curvatures
 argument_list|)
 expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|radii
+argument_list|,
+name|g_free
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|keypoints
+condition|)
 name|g_array_free
 argument_list|(
 name|keypoints
@@ -5155,9 +5167,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_hash_table_destroy
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|visited
+argument_list|,
+name|g_hash_table_destroy
 argument_list|)
 expr_stmt|;
 if|if
@@ -5170,6 +5185,15 @@ condition|)
 goto|goto
 name|end1
 goto|;
+block|}
+else|else
+block|{
+name|g_clear_object
+argument_list|(
+operator|&
+name|strokes
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -5530,15 +5554,6 @@ block|{
 name|Pixel
 modifier|*
 name|p
-init|=
-operator|(
-name|Pixel
-operator|*
-operator|)
-name|g_queue_pop_head
-argument_list|(
-name|q
-argument_list|)
 decl_stmt|;
 name|gint
 name|p2x
@@ -5563,6 +5578,17 @@ goto|goto
 name|end
 goto|;
 block|}
+name|p
+operator|=
+operator|(
+name|Pixel
+operator|*
+operator|)
+name|g_queue_pop_head
+argument_list|(
+name|q
+argument_list|)
+expr_stmt|;
 name|p2x
 operator|=
 name|p
@@ -13255,6 +13281,11 @@ name|async
 argument_list|)
 condition|)
 block|{
+name|gegl_buffer_iterator_stop
+argument_list|(
+name|gi
+argument_list|)
+expr_stmt|;
 name|gimp_async_abort
 argument_list|(
 name|async
