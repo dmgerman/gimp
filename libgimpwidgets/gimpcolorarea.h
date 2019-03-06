@@ -357,6 +357,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_color_area_set_out_of_gamut
+parameter_list|(
+name|GimpColorArea
+modifier|*
+name|area
+parameter_list|,
+name|gboolean
+name|out_of_gamut
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_color_area_set_color_config
 parameter_list|(
 name|GimpColorArea

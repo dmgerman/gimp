@@ -102,6 +102,11 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|active_image
+name|GimpImage
+modifier|*
+name|active_image
+decl_stmt|;
 DECL|member|color_areas
 name|GtkWidget
 modifier|*
