@@ -105,6 +105,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpAsync
+modifier|*
+name|gimp_parallel_run_async_independent_full
+parameter_list|(
+name|gint
+name|priority
+parameter_list|,
+name|GimpParallelRunAsyncFunc
+name|func
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -252,7 +269,7 @@ argument_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6ef5690108
+DECL|struct|__anon2ac299180108
 block|{
 DECL|member|func
 name|ParallelRunAsyncFunc
@@ -380,9 +397,11 @@ operator|>
 specifier|inline
 name|GimpAsync
 operator|*
-DECL|function|gimp_parallel_run_async_independent (ParallelRunAsyncFunc func)
-name|gimp_parallel_run_async_independent
+DECL|function|gimp_parallel_run_async_independent_full (gint priority,ParallelRunAsyncFunc func)
+name|gimp_parallel_run_async_independent_full
 argument_list|(
+argument|gint                 priority
+argument_list|,
 argument|ParallelRunAsyncFunc func
 argument_list|)
 block|{
@@ -407,8 +426,10 @@ name|func
 argument_list|)
 block|;
 return|return
-name|gimp_parallel_run_async_independent
+name|gimp_parallel_run_async_independent_full
 argument_list|(
+name|priority
+argument_list|,
 index|[]
 operator|(
 name|GimpAsync
@@ -447,9 +468,35 @@ name|g_free
 argument_list|(
 name|func_copy
 argument_list|)
-block|;                                               }
+block|;                                                    }
 argument_list|,
 name|func_copy
+argument_list|)
+return|;
+block|}
+end_expr_stmt
+
+begin_expr_stmt
+name|template
+operator|<
+name|class
+name|ParallelRunAsyncFunc
+operator|>
+specifier|inline
+name|GimpAsync
+operator|*
+DECL|function|gimp_parallel_run_async_independent (ParallelRunAsyncFunc func)
+name|gimp_parallel_run_async_independent
+argument_list|(
+argument|ParallelRunAsyncFunc func
+argument_list|)
+block|{
+return|return
+name|gimp_parallel_run_async_independent_full
+argument_list|(
+literal|0
+argument_list|,
+name|func
 argument_list|)
 return|;
 block|}
