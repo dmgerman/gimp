@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aceb02b0103
+DECL|enum|__anon299063c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4173,7 +4173,7 @@ literal|"Y float"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|core
 operator|->

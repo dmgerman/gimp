@@ -30,12 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptilehandlervalidate.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a4cdb0103
+DECL|enum|__anon297b25a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2356,7 +2362,7 @@ operator|->
 name|suspend_validate
 operator|++
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|src_buffer
 argument_list|,

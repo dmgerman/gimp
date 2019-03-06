@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-loops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-parallel.h"
 end_include
 
@@ -123,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4a1d30103
+DECL|enum|__anon277019330103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -139,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4a1d30203
+DECL|enum|__anon277019330203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -241,7 +247,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4a1d30308
+DECL|struct|__anon277019330308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -273,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4a1d30408
+DECL|struct|__anon277019330408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -3528,7 +3534,7 @@ argument_list|,
 name|gray_format
 argument_list|)
 expr_stmt|;
-name|gegl_buffer_copy
+name|gimp_gegl_buffer_copy
 argument_list|(
 name|buffer
 argument_list|,
