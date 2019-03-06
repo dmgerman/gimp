@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ff2f830103
+DECL|enum|__anon289c3cf70103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -535,7 +535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ff2f830203
+DECL|enum|__anon289c3cf70203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ff2f830303
+DECL|enum|__anon289c3cf70303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -837,7 +837,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon28ff2f83040a
+DECL|union|__anon289c3cf7040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -853,7 +853,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon28ff2f830508
+DECL|struct|__anon289c3cf70508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -868,7 +868,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon28ff2f830608
+DECL|struct|__anon289c3cf70608
 block|{
 DECL|member|antecedent
 name|gint
@@ -9008,7 +9008,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830708
+DECL|struct|__anon289c3cf70708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9214,7 +9214,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830808
+DECL|struct|__anon289c3cf70808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9484,7 +9484,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830908
+DECL|struct|__anon289c3cf70908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9690,7 +9690,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830a08
+DECL|struct|__anon289c3cf70a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9966,7 +9966,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830b08
+DECL|struct|__anon289c3cf70b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10126,7 +10126,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff2f830c08
+DECL|struct|__anon289c3cf70c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -18139,19 +18139,14 @@ name|async
 decl_stmt|;
 name|async
 operator|=
-name|gimp_parallel_run_async_full
+name|gimp_parallel_run_async_independent
 argument_list|(
-operator|-
-literal|1
-argument_list|,
 operator|(
 name|GimpParallelRunAsyncFunc
 operator|)
 name|gimp_dashboard_log_write_address_map
 argument_list|,
 name|dashboard
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_wait
