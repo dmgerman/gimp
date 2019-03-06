@@ -118,6 +118,11 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
 name|gint
 name|index
 parameter_list|)
@@ -964,6 +969,8 @@ name|gimp_image_colormap_set_palette_entry
 argument_list|(
 name|image
 argument_list|,
+name|NULL
+argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
@@ -1311,6 +1318,8 @@ name|gimp_image_colormap_set_palette_entry
 argument_list|(
 name|image
 argument_list|,
+name|color
+argument_list|,
 name|color_index
 argument_list|)
 expr_stmt|;
@@ -1455,6 +1464,8 @@ name|gimp_image_colormap_set_palette_entry
 argument_list|(
 name|image
 argument_list|,
+name|color
+argument_list|,
 name|private
 operator|->
 name|n_colors
@@ -1480,12 +1491,17 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_colormap_set_palette_entry (GimpImage * image,gint index)
+DECL|function|gimp_image_colormap_set_palette_entry (GimpImage * image,const GimpRGB * c,gint index)
 name|gimp_image_colormap_set_palette_entry
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|c
 parameter_list|,
 name|gint
 name|index
@@ -1509,6 +1525,17 @@ index|[
 literal|64
 index|]
 decl_stmt|;
+comment|/* Avoid converting to char then back to double if we have the    * original GimpRGB color.    */
+if|if
+condition|(
+name|c
+condition|)
+name|color
+operator|=
+operator|*
+name|c
+expr_stmt|;
+else|else
 name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
