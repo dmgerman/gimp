@@ -1801,7 +1801,7 @@ operator|)
 operator|&
 name|color
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3285,18 +3285,6 @@ argument_list|)
 operator|->
 name|image
 decl_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|GIMP_COLOR_DIALOG_UPDATE
-case|:
-break|break;
-case|case
-name|GIMP_COLOR_DIALOG_OK
-case|:
 name|gimp_image_set_colormap_entry
 argument_list|(
 name|image
@@ -3315,7 +3303,14 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* Fall through */
+switch|switch
+condition|(
+name|state
+condition|)
+block|{
+case|case
+name|GIMP_COLOR_DIALOG_OK
+case|:
 case|case
 name|GIMP_COLOR_DIALOG_CANCEL
 case|:
@@ -3326,6 +3321,10 @@ operator|->
 name|color_dialog
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_COLOR_DIALOG_UPDATE
+case|:
 break|break;
 block|}
 block|}
