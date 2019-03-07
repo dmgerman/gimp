@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4fde170103
+DECL|enum|__anon2c849d440103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -856,11 +856,6 @@ name|private
 decl_stmt|;
 name|va_list
 name|args
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|button_text
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
