@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c92fa790108
+DECL|struct|__anon299197860108
 block|{
 DECL|member|direction
 name|GimpTransformDirection
@@ -4732,7 +4732,7 @@ name|gui
 argument_list|,
 name|_
 argument_list|(
-literal|"_Readjust"
+literal|"Re_adjust"
 argument_list|)
 argument_list|,
 name|RESPONSE_READJUST
@@ -5437,6 +5437,15 @@ break|break;
 case|case
 name|RESPONSE_READJUST
 case|:
+if|if
+condition|(
+name|GIMP_TRANSFORM_GRID_TOOL_GET_CLASS
+argument_list|(
+name|tg_tool
+argument_list|)
+operator|->
+name|readjust
+condition|)
 block|{
 name|gboolean
 name|direction_linked
@@ -5452,7 +5461,7 @@ argument_list|(
 name|tg_tool
 argument_list|)
 expr_stmt|;
-comment|/*  recalculate the tool's transformation matrix, preserving the          *  overall transformation          */
+comment|/*  recalculate the tool's transformation matrix, preserving the            *  overall transformation            */
 name|direction_linked
 operator|=
 name|tg_options
