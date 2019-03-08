@@ -2083,6 +2083,9 @@ break|break;
 case|case
 name|GIMP_INDEXED_IMAGE
 case|:
+case|case
+name|GIMP_INDEXEDA_IMAGE
+case|:
 name|cmap
 operator|=
 name|gimp_image_get_colormap
@@ -2250,6 +2253,14 @@ block|}
 block|}
 name|samplesperpixel
 operator|=
+operator|(
+name|drawable_type
+operator|==
+name|GIMP_INDEXEDA_IMAGE
+operator|)
+condition|?
+literal|2
+else|:
 literal|1
 expr_stmt|;
 name|bytesperrow
@@ -2258,7 +2269,11 @@ name|cols
 expr_stmt|;
 name|alpha
 operator|=
-name|FALSE
+operator|(
+name|drawable_type
+operator|==
+name|GIMP_INDEXEDA_IMAGE
+operator|)
 expr_stmt|;
 name|format
 operator|=
@@ -2273,24 +2288,6 @@ name|cmap
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|G_FILE_ERROR
-argument_list|,
-name|G_FILE_ERROR_FAILED
-argument_list|,
-name|_
-argument_list|(
-literal|"TIFF export cannot handle indexed images with "
-literal|"an alpha channel."
-argument_list|)
-argument_list|)
-expr_stmt|;
 default|default:
 goto|goto
 name|out
@@ -2564,6 +2561,11 @@ condition|(
 name|tsvals
 operator|->
 name|save_transp_pixels
+operator|||
+comment|/* Associated alpha, hence premultiplied components is            * meaningless for palette images with transparency in TIFF            * format, since alpha is set per pixel, not per color (so a            * given color could be set to different alpha on different            * pixels, hence it cannot be premultiplied).            */
+name|drawable_type
+operator|==
+name|GIMP_INDEXEDA_IMAGE
 condition|)
 name|extra_samples
 index|[
@@ -2910,9 +2912,15 @@ condition|(
 operator|!
 name|is_bw
 operator|&&
+operator|(
 name|drawable_type
 operator|==
 name|GIMP_INDEXED_IMAGE
+operator|||
+name|drawable_type
+operator|==
+name|GIMP_INDEXEDA_IMAGE
+operator|)
 condition|)
 name|TIFFSetField
 argument_list|(
@@ -3042,6 +3050,9 @@ condition|)
 block|{
 case|case
 name|GIMP_INDEXED_IMAGE
+case|:
+case|case
+name|GIMP_INDEXEDA_IMAGE
 case|:
 if|if
 condition|(
@@ -3963,9 +3974,13 @@ argument_list|)
 argument_list|,
 name|has_alpha
 operator|&&
+operator|(
 name|tsvals
 operator|->
 name|save_transp_pixels
+operator|||
+name|is_indexed
+operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -3973,6 +3988,9 @@ argument_list|(
 name|toggle
 argument_list|,
 name|has_alpha
+operator|&&
+operator|!
+name|is_indexed
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
