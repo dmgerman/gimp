@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e41be0108
+DECL|struct|__anon2bcf23df0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e41be0208
+DECL|struct|__anon2bcf23df0208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e41be0308
+DECL|struct|__anon2bcf23df0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -2893,10 +2893,6 @@ name|height
 decl_stmt|;
 comment|/* image height */
 name|gint
-name|empty
-decl_stmt|;
-comment|/* Number of fully transparent indices */
-name|gint
 name|num_passes
 decl_stmt|;
 comment|/* Number of interlace passes in file */
@@ -4055,11 +4051,6 @@ name|filename
 argument_list|)
 expr_stmt|;
 comment|/*    * Load the colormap as necessary...    */
-name|empty
-operator|=
-literal|0
-expr_stmt|;
-comment|/* by default assume no full transparent palette entries */
 if|if
 condition|(
 name|png_get_color_type
@@ -4091,74 +4082,6 @@ operator|&
 name|num_palette
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|png_get_valid
-argument_list|(
-name|pp
-argument_list|,
-name|info
-argument_list|,
-name|PNG_INFO_tRNS
-argument_list|)
-condition|)
-block|{
-for|for
-control|(
-name|empty
-operator|=
-literal|0
-init|;
-name|empty
-operator|<
-literal|256
-operator|&&
-name|alpha
-index|[
-name|empty
-index|]
-operator|==
-literal|0
-condition|;
-operator|++
-name|empty
-control|)
-comment|/* Calculates number of fully transparent "empty" entries */
-empty_stmt|;
-comment|/*  keep at least one entry  */
-name|empty
-operator|=
-name|MIN
-argument_list|(
-name|empty
-argument_list|,
-name|num_palette
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_colormap
-argument_list|(
-name|image
-argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-operator|(
-name|palette
-operator|+
-name|empty
-operator|)
-argument_list|,
-name|num_palette
-operator|-
-name|empty
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|gimp_image_set_colormap
 argument_list|(
 name|image
@@ -4172,7 +4095,6 @@ argument_list|,
 name|num_palette
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|bpp
 operator|=
@@ -4863,13 +4785,6 @@ index|[
 literal|0
 index|]
 index|]
-expr_stmt|;
-name|data
-index|[
-literal|0
-index|]
-operator|-=
-name|empty
 expr_stmt|;
 name|data
 operator|+=
