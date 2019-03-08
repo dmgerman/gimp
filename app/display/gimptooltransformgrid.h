@@ -19,13 +19,28 @@ end_define
 begin_include
 include|#
 directive|include
+file|"gimpcanvashandle.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolwidget.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_TOOL_TRANSFORM_GRID_MAX_HANDLE_SIZE
+define|#
+directive|define
+name|GIMP_TOOL_TRANSFORM_GRID_MAX_HANDLE_SIZE
+define|\
+value|(1.5 * GIMP_CANVAS_HANDLE_SIZE_LARGE)
+end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aea9b130103
+DECL|enum|__anon2c3e7bdd0103
 block|{
 DECL|enumerator|GIMP_TRANSFORM_HANDLE_NONE
 name|GIMP_TRANSFORM_HANDLE_NONE

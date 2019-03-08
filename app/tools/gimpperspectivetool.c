@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9df33c0103
+DECL|enum|__anon27d56b8d0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -786,6 +786,8 @@ literal|2.0
 expr_stmt|;
 name|r
 operator|=
+name|MAX
+argument_list|(
 name|MIN
 argument_list|(
 name|x
@@ -794,6 +796,15 @@ name|y
 argument_list|)
 operator|/
 name|G_SQRT2
+operator|-
+name|GIMP_TOOL_TRANSFORM_GRID_MAX_HANDLE_SIZE
+operator|/
+literal|2.0
+argument_list|,
+name|GIMP_TOOL_TRANSFORM_GRID_MAX_HANDLE_SIZE
+operator|/
+literal|2.0
+argument_list|)
 expr_stmt|;
 name|gimp_display_shell_untransform_xy_f
 argument_list|(
