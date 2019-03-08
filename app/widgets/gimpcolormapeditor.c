@@ -3285,6 +3285,11 @@ argument_list|)
 operator|->
 name|image
 decl_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|gimp_image_set_colormap_entry
 argument_list|(
 name|image
@@ -3303,6 +3308,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|state
