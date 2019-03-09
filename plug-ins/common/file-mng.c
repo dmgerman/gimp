@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900419f0103
+DECL|enum|__anon28b9b0440103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900419f0203
+DECL|enum|__anon28b9b0440203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6118,7 +6118,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|spinbutton_adj
 argument_list|,

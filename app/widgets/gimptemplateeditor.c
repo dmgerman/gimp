@@ -122,7 +122,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c87c5340103
+DECL|enum|__anon27620c900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -723,7 +723,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -771,7 +771,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -1598,7 +1598,7 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -1646,7 +1646,7 @@ argument_list|)
 expr_stmt|;
 name|yres
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,

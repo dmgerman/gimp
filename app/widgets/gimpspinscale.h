@@ -103,7 +103,7 @@ struct|struct
 name|_GimpSpinScale
 block|{
 DECL|member|parent_instance
-name|GtkSpinButton
+name|GimpSpinButton
 name|parent_instance
 decl_stmt|;
 block|}
@@ -116,7 +116,7 @@ struct|struct
 name|_GimpSpinScaleClass
 block|{
 DECL|member|parent_class
-name|GtkSpinButtonClass
+name|GimpSpinButtonClass
 name|parent_class
 decl_stmt|;
 block|}

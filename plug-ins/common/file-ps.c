@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad8fb0108
+DECL|struct|__anon2bff42a40108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad8fb0208
+DECL|struct|__anon2bff42a40208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad8fb0308
+DECL|struct|__anon2bff42a40308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad8fb0408
+DECL|struct|__anon2bff42a40408
 block|{
 DECL|member|eol
 name|goffset
@@ -15414,7 +15414,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -15513,7 +15513,7 @@ argument_list|)
 expr_stmt|;
 name|ps_width_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -15595,7 +15595,7 @@ argument_list|)
 expr_stmt|;
 name|ps_height_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -16713,7 +16713,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|vals
 operator|->
@@ -16810,7 +16810,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|vals
 operator|->
@@ -16907,7 +16907,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|vals
 operator|->
@@ -17004,7 +17004,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|vals
 operator|->
@@ -17604,7 +17604,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

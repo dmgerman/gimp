@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294307ec0103
+DECL|enum|__anon27e5ef320103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -1274,7 +1274,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|rotate
 operator|->
@@ -1440,7 +1440,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

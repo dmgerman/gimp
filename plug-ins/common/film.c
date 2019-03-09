@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adcad820108
+DECL|struct|__anon293d76b10108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adcad820208
+DECL|struct|__anon293d76b10208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -4648,7 +4648,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -4989,7 +4989,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

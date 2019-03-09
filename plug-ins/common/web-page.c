@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292235360108
+DECL|struct|__anon2ae7a4410108
 block|{
 DECL|member|url
 name|char
@@ -117,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292235360208
+DECL|struct|__anon2ae7a4410208
 block|{
 DECL|member|url
 name|char
@@ -1224,7 +1224,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,

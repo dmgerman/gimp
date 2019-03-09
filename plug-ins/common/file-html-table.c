@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979cb9e0108
+DECL|struct|__anon28a5d42f0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -2710,7 +2710,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -2966,7 +2966,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -3060,7 +3060,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

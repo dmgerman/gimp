@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa612a0103
+DECL|enum|__anon27bc99880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfa612a0203
+DECL|enum|__anon27bc99880203
 block|{
 DECL|enumerator|TARGET_NONE
 name|TARGET_NONE
@@ -523,14 +523,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSpinScale,gimp_spin_scale,GTK_TYPE_SPIN_BUTTON)
+DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpSpinScale,gimp_spin_scale,GIMP_TYPE_SPIN_BUTTON)
 name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpSpinScale
 argument_list|,
 argument|gimp_spin_scale
 argument_list|,
-argument|GTK_TYPE_SPIN_BUTTON
+argument|GIMP_TYPE_SPIN_BUTTON
 argument_list|)
 end_macro
 

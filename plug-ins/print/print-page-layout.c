@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8045e00108
+DECL|struct|__anon28761e120108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8045e00203
+DECL|enum|__anon28761e120203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -1286,7 +1286,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -1569,7 +1569,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -2057,7 +2057,7 @@ argument_list|)
 expr_stmt|;
 name|spinner
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|info
 operator|.
@@ -2198,7 +2198,7 @@ argument_list|)
 expr_stmt|;
 name|spinner
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|info
 operator|.
@@ -2351,7 +2351,7 @@ argument_list|)
 expr_stmt|;
 name|spinner
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|info
 operator|.
@@ -2492,7 +2492,7 @@ argument_list|)
 expr_stmt|;
 name|spinner
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|info
 operator|.

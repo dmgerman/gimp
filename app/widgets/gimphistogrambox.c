@@ -637,7 +637,7 @@ name|box
 operator|->
 name|low_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|box
 operator|->
@@ -739,7 +739,7 @@ name|box
 operator|->
 name|high_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|box
 operator|->

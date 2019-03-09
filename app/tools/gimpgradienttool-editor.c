@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad73ae30103
+DECL|enum|__anon2afb71390103
 block|{
 DECL|enumerator|DIRECTION_NONE
 name|DIRECTION_NONE
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73ae30208
+DECL|struct|__anon2afb71390208
 block|{
 comment|/* line endpoints at the beginning of the operation */
 DECL|member|start_x
@@ -5177,7 +5177,7 @@ expr_stmt|;
 comment|/* the position size entry */
 name|spinbutton
 operator|=
-name|gtk_spin_button_new_with_range
+name|gimp_spin_button_new_with_range
 argument_list|(
 literal|0.0
 argument_list|,

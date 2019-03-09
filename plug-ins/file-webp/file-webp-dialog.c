@@ -1203,7 +1203,7 @@ argument_list|)
 expr_stmt|;
 name|kf_distance
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj_kf
 argument_list|,
@@ -1518,7 +1518,7 @@ argument_list|)
 expr_stmt|;
 name|delay
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

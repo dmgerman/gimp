@@ -634,7 +634,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -682,7 +682,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -1087,7 +1087,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -1135,7 +1135,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

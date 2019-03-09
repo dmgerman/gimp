@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276e66960108
+DECL|struct|__anon2c376f960108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon276e66960208
+DECL|struct|__anon2c376f960208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -4518,7 +4518,7 @@ argument_list|)
 expr_stmt|;
 name|tmpwidget
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -4659,7 +4659,7 @@ argument_list|)
 expr_stmt|;
 name|tmpwidget
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -5114,7 +5114,7 @@ argument_list|)
 expr_stmt|;
 name|tmpwidget
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,
@@ -9175,7 +9175,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon276e66960308
+DECL|struct|__anon2c376f960308
 block|{
 DECL|member|size
 name|guint32

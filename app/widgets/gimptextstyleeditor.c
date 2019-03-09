@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d961f0103
+DECL|enum|__anon2bde01310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1230,7 +1230,7 @@ name|editor
 operator|->
 name|kerning_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|editor
 operator|->
@@ -1334,7 +1334,7 @@ name|editor
 operator|->
 name|baseline_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|editor
 operator|->

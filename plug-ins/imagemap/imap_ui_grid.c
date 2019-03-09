@@ -131,7 +131,7 @@ name|GtkWidget
 modifier|*
 name|button
 init|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

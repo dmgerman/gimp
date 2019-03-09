@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2b0fc00108
+DECL|struct|__anon2b274ce50108
 block|{
 DECL|member|width
 name|gint
@@ -2227,7 +2227,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,

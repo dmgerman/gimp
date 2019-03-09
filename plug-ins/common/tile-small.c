@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d51b40108
+DECL|struct|__anon2a5700230108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d51b40203
+DECL|enum|__anon2a5700230203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d51b40308
+DECL|struct|__anon2a5700230308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d51b40408
+DECL|struct|__anon2a5700230408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1308,7 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 operator|*
 name|adjustment

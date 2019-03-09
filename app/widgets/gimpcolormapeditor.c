@@ -937,7 +937,7 @@ name|editor
 operator|->
 name|index_spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|editor
 operator|->

@@ -1277,7 +1277,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adj
 argument_list|,
@@ -1571,7 +1571,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a411fb30108
+DECL|struct|__anon2ae6a7d10108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2161,7 +2161,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|adjustment
 argument_list|,

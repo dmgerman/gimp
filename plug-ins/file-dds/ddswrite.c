@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c79f70103
+DECL|enum|__anon298f44d50103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon292c79f70208
+DECL|struct|__anon298f44d50208
 block|{
 DECL|member|format
 name|int
@@ -10470,7 +10470,7 @@ argument_list|)
 expr_stmt|;
 name|spin
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -11527,7 +11527,7 @@ argument_list|)
 expr_stmt|;
 name|spin
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -11775,7 +11775,7 @@ argument_list|)
 expr_stmt|;
 name|spin
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(

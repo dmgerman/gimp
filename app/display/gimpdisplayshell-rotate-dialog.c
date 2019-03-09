@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5eb8210108
+DECL|struct|__anon2b6751270108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -624,7 +624,7 @@ argument_list|)
 expr_stmt|;
 name|spin
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|data
 operator|->

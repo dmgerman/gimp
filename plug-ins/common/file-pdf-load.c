@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b97eb0108
+DECL|struct|__anon2a51a6b40108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b97eb0208
+DECL|struct|__anon2a51a6b40208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b97eb0303
+DECL|enum|__anon2a51a6b40303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -3807,7 +3807,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b97eb0408
+DECL|struct|__anon2a51a6b40408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3832,7 +3832,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b97eb0508
+DECL|struct|__anon2a51a6b40508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -5337,7 +5337,7 @@ name|gref
 operator|->
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|gref
 operator|->

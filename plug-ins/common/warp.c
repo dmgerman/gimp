@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c896cd40103
+DECL|enum|__anon274ff48e0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c896cd40208
+DECL|struct|__anon274ff48e0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1405,7 +1405,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 operator|*
 name|adjustment

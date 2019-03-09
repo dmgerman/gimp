@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41ad210108
+DECL|struct|__anon28eb74930108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1772,7 +1772,7 @@ argument_list|)
 expr_stmt|;
 name|widget
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|arg
 operator|->

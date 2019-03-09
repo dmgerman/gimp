@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e73a240108
+DECL|struct|__anon27e706a10108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e73a240208
+DECL|struct|__anon27e706a10208
 block|{
 DECL|member|run
 name|gboolean
@@ -4479,7 +4479,7 @@ name|restart_markers_scale
 operator|=
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|pg
 operator|.

@@ -656,7 +656,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d974b0108
+DECL|struct|__anon2bbe38fa0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -710,7 +710,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d974b0208
+DECL|struct|__anon2bbe38fa0208
 block|{
 DECL|member|y
 name|gint32
@@ -6167,7 +6167,7 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_spin_button_new
+name|gimp_spin_button_new
 argument_list|(
 name|cd
 operator|->
