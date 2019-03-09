@@ -390,7 +390,7 @@ argument_list|(
 literal|"TIFF image"
 argument_list|)
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -448,7 +448,7 @@ argument_list|(
 literal|"TIFF image"
 argument_list|)
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED"
+literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
