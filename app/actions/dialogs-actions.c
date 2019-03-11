@@ -736,7 +736,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Palette Editor"
+literal|"Palette _Editor"
 argument_list|)
 block|,
 name|NULL
@@ -762,7 +762,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Tool presets"
+literal|"Tool Pre_sets"
 argument_list|)
 block|,
 name|NULL
