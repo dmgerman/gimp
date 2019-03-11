@@ -304,7 +304,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"save-transp-pixels"
 block|,
-literal|"Keep the color data masked by an alpha channel intact"
+literal|"Keep the color data masked by an alpha channel intact (do not store premultiplied components)"
 block|}
 block|}
 decl_stmt|;
