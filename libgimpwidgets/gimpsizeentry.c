@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be1c330103
+DECL|enum|__anon27a867de0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -4675,7 +4675,7 @@ argument_list|,
 name|GTK_UPDATE_IF_VALID
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_after
 argument_list|(
 name|spin_button
 argument_list|,
