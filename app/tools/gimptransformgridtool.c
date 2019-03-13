@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3ff400108
+DECL|struct|__anon29a1f4a50108
 block|{
 DECL|member|direction
 name|GimpTransformDirection
@@ -5609,29 +5609,7 @@ name|memcpy
 argument_list|(
 name|tg_tool
 operator|->
-name|trans_infos
-index|[
-name|GIMP_TRANSFORM_FORWARD
-index|]
-argument_list|,
-name|tg_tool
-operator|->
-name|init_trans_info
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|TransInfo
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|tg_tool
-operator|->
-name|trans_infos
-index|[
-name|GIMP_TRANSFORM_BACKWARD
-index|]
+name|trans_info
 argument_list|,
 name|tg_tool
 operator|->
@@ -5656,7 +5634,7 @@ operator|&
 name|transform
 argument_list|)
 expr_stmt|;
-comment|/*  recalculate the tool's transformation matrix  */
+comment|/*  recalculate the tool's transformation matrix, preserving the                *  overall transformation                */
 name|direction_linked
 operator|=
 name|tg_options
@@ -5667,7 +5645,7 @@ name|tg_options
 operator|->
 name|direction_linked
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 name|gimp_transform_tool_recalc_matrix
 argument_list|(
