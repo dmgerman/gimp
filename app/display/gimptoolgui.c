@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c849d440103
+DECL|enum|__anon2af541950103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -2688,13 +2688,12 @@ argument_list|,
 name|response_id
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|entry
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|entry
 operator|->
 name|sensitive
