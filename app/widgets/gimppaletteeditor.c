@@ -2244,6 +2244,8 @@ name|data_editor
 operator|->
 name|context
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Edit Palette Color"

@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b387d810103
+DECL|enum|__anon296ba38e0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -774,6 +774,8 @@ argument_list|,
 name|panel
 operator|->
 name|context
+argument_list|,
+name|TRUE
 argument_list|,
 name|gimp_color_button_get_title
 argument_list|(

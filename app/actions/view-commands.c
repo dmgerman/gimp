@@ -3665,6 +3665,8 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|_
 argument_list|(
 literal|"Set Canvas Padding Color"

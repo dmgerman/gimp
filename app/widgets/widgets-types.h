@@ -984,6 +984,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColormapSelection
+typedef|typedef
+name|struct
+name|_GimpColormapSelection
+name|GimpColormapSelection
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorPanel
 typedef|typedef
 name|struct

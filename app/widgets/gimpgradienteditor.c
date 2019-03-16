@@ -2641,6 +2641,8 @@ argument_list|)
 operator|->
 name|context
 argument_list|,
+name|TRUE
+argument_list|,
 name|_
 argument_list|(
 literal|"Left Endpoint Color"
@@ -2843,6 +2845,8 @@ name|editor
 argument_list|)
 operator|->
 name|context
+argument_list|,
+name|TRUE
 argument_list|,
 name|_
 argument_list|(
