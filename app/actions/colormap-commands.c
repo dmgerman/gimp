@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcolormapselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -208,6 +214,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GimpColormapSelection
+modifier|*
+name|selection
+decl_stmt|;
 name|GimpColormapEditor
 modifier|*
 name|editor
@@ -218,6 +228,9 @@ name|image
 decl_stmt|;
 name|GimpChannelOps
 name|op
+decl_stmt|;
+name|gint
+name|col_index
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -231,6 +244,24 @@ operator|=
 name|GIMP_COLORMAP_EDITOR
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+name|selection
+operator|=
+name|GIMP_COLORMAP_SELECTION
+argument_list|(
+name|editor
+operator|->
+name|selection
+argument_list|)
+expr_stmt|;
+name|col_index
+operator|=
+name|gimp_colormap_selection_get_index
+argument_list|(
+name|selection
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|op
@@ -252,8 +283,6 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|editor
-operator|->
 name|col_index
 argument_list|,
 name|op
