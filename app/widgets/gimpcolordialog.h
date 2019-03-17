@@ -115,9 +115,9 @@ DECL|member|wants_updates
 name|gboolean
 name|wants_updates
 decl_stmt|;
-DECL|member|context_aware
+DECL|member|user_context_aware
 name|gboolean
-name|context_aware
+name|user_context_aware
 decl_stmt|;
 DECL|member|stack
 name|GtkWidget
