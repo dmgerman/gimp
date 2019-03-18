@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b277e570103
+DECL|enum|__anon2977b44e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b277e570203
+DECL|enum|__anon2977b44e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2972,6 +2972,24 @@ operator|->
 name|active_image
 condition|)
 block|{
+name|g_object_remove_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+operator|->
+name|active_image
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|dialog
+operator|->
+name|active_image
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|dialog
@@ -2998,6 +3016,24 @@ condition|(
 name|image
 condition|)
 block|{
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+operator|->
+name|active_image
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|dialog
+operator|->
+name|active_image
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|image
