@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad2f9260103
+DECL|enum|__anon28d736070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -174,7 +174,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad2f9260203
+DECL|enum|__anon28d736070203
 block|{
 DECL|enumerator|COLOR_CONTEXT
 name|COLOR_CONTEXT
@@ -1112,6 +1112,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|selection
+operator|->
+name|index_spinbutton
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
+expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -1173,6 +1182,15 @@ name|color_entry
 operator|=
 name|gimp_color_hex_entry_new
 argument_list|()
+expr_stmt|;
+name|gtk_widget_set_halign
+argument_list|(
+name|selection
+operator|->
+name|color_entry
+argument_list|,
+name|GTK_ALIGN_START
+argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned
 argument_list|(
