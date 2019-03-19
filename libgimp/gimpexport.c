@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f262660108
+DECL|struct|__anon2767db3f0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -3782,20 +3782,19 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
+comment|/* TRANSLATORS: the %s parameter is an image format name (ex: PNG). */
 name|gchar
 modifier|*
 name|title
 init|=
-name|g_strconcat
+name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Export Image as "
+literal|"Export Image as %s"
 argument_list|)
 argument_list|,
 name|format_name
-argument_list|,
-name|NULL
 argument_list|)
 decl_stmt|;
 name|dialog
