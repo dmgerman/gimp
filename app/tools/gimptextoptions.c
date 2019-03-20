@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4264200103
+DECL|enum|__anon288ca27d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2434,6 +2434,16 @@ argument_list|,
 literal|24
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
+argument_list|)
+expr_stmt|;
+name|gimp_color_button_set_update
+argument_list|(
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_color_panel_set_context
