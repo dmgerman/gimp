@@ -3313,13 +3313,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_signal_emit_by_name
-argument_list|(
-name|chain
-argument_list|,
-literal|"toggled"
-argument_list|)
-expr_stmt|;
 block|}
 name|chains
 operator|=
@@ -3551,13 +3544,6 @@ argument_list|(
 name|chain
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_signal_emit_by_name
-argument_list|(
-name|chain
-argument_list|,
-literal|"toggled"
 argument_list|)
 expr_stmt|;
 block|}
