@@ -423,10 +423,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_channel_combine_ellipse:  * @mask:      the channel with which to combine the ellipse  * @op:        whether to replace, add to, or subtract from the current  *             contents  * @x:         x coordinate of upper left corner of ellipse  * @y:         y coordinate of upper left corner of ellipse  * @w:         width of ellipse bounding box  * @h:         height of ellipse bounding box  * @antialias: if %TRUE, antialias the ellipse  *  * Mainly used for elliptical selections.  If @op is  * %GIMP_CHANNEL_OP_REPLACE or %GIMP_CHANNEL_OP_ADD, sets pixels  * within the ellipse to 255.  If @op is %GIMP_CHANNEL_OP_SUBTRACT,  * sets pixels within to zero.  If @antialias is %TRUE, pixels that  * impinge on the edge of the ellipse are set to intermediate values,  * depending on how much they overlap.  **/
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,GimpChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
@@ -483,13 +479,9 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_channel_combine_ellipse_rect:  * @mask:      the channel with which to combine the elliptic rect  * @op:        whether to replace, add to, or subtract from the current  *             contents  * @x:         x coordinate of upper left corner of bounding rect  * @y:         y coordinate of upper left corner of bounding rect  * @w:         width of bounding rect  * @h:         height of bounding rect  * @a:         elliptic a-constant applied to corners  * @b:         elliptic b-constant applied to corners  * @antialias: if %TRUE, antialias the elliptic corners  *  * Used for rounded cornered rectangles and ellipses.  If @op is  * %GIMP_CHANNEL_OP_REPLACE or %GIMP_CHANNEL_OP_ADD, sets pixels  * within the ellipse to 255.  If @op is %GIMP_CHANNEL_OP_SUBTRACT,  * sets pixels within to zero.  If @antialias is %TRUE, pixels that  * impinge on the edge of the ellipse are set to intermediate values,  * depending on how much they overlap.  **/
-end_comment
-
 begin_function
 name|void
-DECL|function|gimp_channel_combine_ellipse_rect (GimpChannel * mask,GimpChannelOps op,gint x,gint y,gint w,gint h,gdouble a,gdouble b,gboolean antialias)
+DECL|function|gimp_channel_combine_ellipse_rect (GimpChannel * mask,GimpChannelOps op,gint x,gint y,gint w,gint h,gdouble rx,gdouble ry,gboolean antialias)
 name|gimp_channel_combine_ellipse_rect
 parameter_list|(
 name|GimpChannel
@@ -512,10 +504,10 @@ name|gint
 name|h
 parameter_list|,
 name|gdouble
-name|a
+name|rx
 parameter_list|,
 name|gdouble
-name|b
+name|ry
 parameter_list|,
 name|gboolean
 name|antialias
@@ -531,17 +523,6 @@ name|GIMP_IS_CHANNEL
 argument_list|(
 name|mask
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|a
-operator|>=
-literal|0.0
-operator|&&
-name|b
-operator|>=
-literal|0.0
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -578,9 +559,9 @@ name|w
 argument_list|,
 name|h
 argument_list|,
-name|a
+name|rx
 argument_list|,
-name|b
+name|ry
 argument_list|,
 name|antialias
 argument_list|)

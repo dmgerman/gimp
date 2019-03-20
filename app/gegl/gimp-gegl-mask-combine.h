@@ -95,10 +95,10 @@ name|gint
 name|h
 parameter_list|,
 name|gdouble
-name|a
+name|rx
 parameter_list|,
 name|gdouble
-name|b
+name|ry
 parameter_list|,
 name|gboolean
 name|antialias
