@@ -2217,6 +2217,9 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|result
+decl_stmt|;
 if|if
 condition|(
 name|private
@@ -2250,20 +2253,8 @@ return|return
 name|TRUE
 return|;
 block|}
-comment|/*  return the size only if there are children...  */
-if|if
-condition|(
-name|gimp_item_stack_get_item_iter
-argument_list|(
-name|GIMP_ITEM_STACK
-argument_list|(
-name|private
-operator|->
-name|children
-argument_list|)
-argument_list|)
-condition|)
-return|return
+name|result
+operator|=
 name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|parent_class
@@ -2277,10 +2268,23 @@ name|width
 argument_list|,
 name|height
 argument_list|)
-return|;
-comment|/*  ...otherwise return "no content"  */
-return|return
+expr_stmt|;
+comment|/* if the group is empty, return "no content" through    * gimp_viewable_get_size(), but make sure to set *width and *height anyway,    * so that the correct size is reported to the projection through    * gimp_projectable_get_size().  see issue #3134.    */
+if|if
+condition|(
+name|gimp_container_is_empty
+argument_list|(
+name|private
+operator|->
+name|children
+argument_list|)
+condition|)
+name|result
+operator|=
 name|FALSE
+expr_stmt|;
+return|return
+name|result
 return|;
 block|}
 end_function
