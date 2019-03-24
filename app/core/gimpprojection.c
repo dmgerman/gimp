@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace80fb0103
+DECL|enum|__anon298611010103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace80fb0203
+DECL|enum|__anon298611010203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2695,16 +2695,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|proj
-operator|->
-name|priv
-operator|->
-name|buffer
-condition|)
-return|return;
-if|if
-condition|(
 name|proj
 operator|->
 name|priv
@@ -2712,6 +2702,12 @@ operator|->
 name|update_region
 condition|)
 block|{
+comment|/* Make sure we have a buffer */
+name|gimp_projection_allocate_buffer
+argument_list|(
+name|proj
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|now
