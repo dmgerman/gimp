@@ -625,6 +625,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|applicator_output_format
+operator|==
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
 name|gimp_applicator_set_output_format
 argument_list|(
 name|applicator
