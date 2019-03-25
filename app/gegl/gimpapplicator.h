@@ -451,6 +451,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_applicator_get_output_format
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_applicator_set_cache
 parameter_list|(
@@ -460,6 +473,17 @@ name|applicator
 parameter_list|,
 name|gboolean
 name|enable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_applicator_get_cache
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimpapplicator.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -93,10 +87,6 @@ block|{
 name|GimpDrawableFilter
 modifier|*
 name|filter
-decl_stmt|;
-name|GimpApplicator
-modifier|*
-name|applicator
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -177,23 +167,6 @@ argument_list|,
 name|operation
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|applicator
-operator|=
-name|gimp_filter_get_applicator
-argument_list|(
-name|GIMP_FILTER
-argument_list|(
-name|filter
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_applicator_set_cache
-argument_list|(
-name|applicator
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_filter_apply

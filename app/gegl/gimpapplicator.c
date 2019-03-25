@@ -1778,6 +1778,36 @@ block|}
 end_function
 
 begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_applicator_get_output_format (GimpApplicator * applicator)
+name|gimp_applicator_get_output_format
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_APPLICATOR
+argument_list|(
+name|applicator
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|applicator
+operator|->
+name|output_format
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_applicator_set_cache (GimpApplicator * applicator,gboolean enable)
 name|gimp_applicator_set_cache
@@ -1849,6 +1879,34 @@ operator|=
 name|enable
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_applicator_get_cache (GimpApplicator * applicator)
+name|gimp_applicator_get_cache
+parameter_list|(
+name|GimpApplicator
+modifier|*
+name|applicator
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_APPLICATOR
+argument_list|(
+name|applicator
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|applicator
+operator|->
+name|cache_enabled
+return|;
 block|}
 end_function
 
