@@ -421,6 +421,17 @@ name|GeglNode
 modifier|*
 name|src_node
 decl_stmt|;
+name|GeglNode
+modifier|*
+name|underlying_operation
+decl_stmt|;
+name|underlying_operation
+operator|=
+name|gimp_gegl_node_get_underlying_operation
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
 comment|/* dup() because reading and writing the same buffer doesn't        * generally work with non-point ops when working in chunks.        * See bug #701875.        */
 if|if
 condition|(
@@ -429,10 +440,17 @@ operator|==
 name|dest_buffer
 operator|&&
 operator|!
+operator|(
 name|gimp_gegl_node_is_point_operation
 argument_list|(
-name|operation
+name|underlying_operation
 argument_list|)
+operator|||
+name|gimp_gegl_node_is_source_operation
+argument_list|(
+name|underlying_operation
+argument_list|)
+operator|)
 condition|)
 block|{
 name|src_buffer
