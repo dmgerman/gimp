@@ -259,6 +259,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|Babl
+modifier|*
+name|gimp_fill_options_get_format
+parameter_list|(
+name|GimpFillOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GeglBuffer
 modifier|*
 name|gimp_fill_options_create_buffer
