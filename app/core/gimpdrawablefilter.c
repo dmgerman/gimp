@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53eae70103
+DECL|enum|__anon2955c4420103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -900,6 +900,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_node_add_child
+argument_list|(
+name|node
+argument_list|,
+name|operation
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_node_set_underlying_operation
 argument_list|(
 name|node
 argument_list|,
