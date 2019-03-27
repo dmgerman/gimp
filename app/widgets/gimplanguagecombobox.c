@@ -136,17 +136,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* See issues #2828 and #2642. */
-name|gtk_combo_box_set_wrap_width
-argument_list|(
-name|GTK_COMBO_BOX
-argument_list|(
-name|combo
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
