@@ -145,6 +145,14 @@ DECL|member|antialias
 name|gboolean
 name|antialias
 decl_stmt|;
+DECL|member|feather
+name|gboolean
+name|feather
+decl_stmt|;
+DECL|member|feather_radius
+name|gdouble
+name|feather_radius
+decl_stmt|;
 DECL|member|threshold
 name|gdouble
 name|threshold
