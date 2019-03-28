@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb1b9b0103
+DECL|enum|__anon2af283730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb1b9b0203
+DECL|enum|__anon2af283730203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -813,6 +813,18 @@ operator|->
 name|is_name_editable
 operator|=
 name|gimp_viewable_real_is_name_editable
+expr_stmt|;
+name|klass
+operator|->
+name|preview_freeze
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|preview_thaw
+operator|=
+name|NULL
 expr_stmt|;
 name|klass
 operator|->
@@ -4353,6 +4365,26 @@ name|freeze_count
 operator|==
 literal|1
 condition|)
+block|{
+if|if
+condition|(
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|preview_freeze
+condition|)
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|preview_freeze
+argument_list|(
+name|viewable
+argument_list|)
+expr_stmt|;
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -4363,6 +4395,7 @@ argument_list|,
 literal|"frozen"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4431,6 +4464,25 @@ name|viewable
 argument_list|)
 argument_list|,
 literal|"frozen"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|preview_thaw
+condition|)
+name|GIMP_VIEWABLE_GET_CLASS
+argument_list|(
+name|viewable
+argument_list|)
+operator|->
+name|preview_thaw
+argument_list|(
+name|viewable
 argument_list|)
 expr_stmt|;
 block|}
