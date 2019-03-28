@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a05230103
+DECL|enum|__anon2aeeafff0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,7 +248,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a05230203
+DECL|enum|__anon2aeeafff0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1911,6 +1911,14 @@ if|if
 condition|(
 operator|!
 name|parent
+operator|&&
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|)
 condition|)
 name|parent
 operator|=
@@ -1925,6 +1933,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
 name|gimp_viewable_preview_freeze
 argument_list|(
 name|parent
@@ -1957,6 +1969,14 @@ if|if
 condition|(
 operator|!
 name|parent
+operator|&&
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|)
 condition|)
 name|parent
 operator|=
@@ -1971,6 +1991,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
 name|gimp_viewable_preview_thaw
 argument_list|(
 name|parent
