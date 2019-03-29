@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af283730103
+DECL|enum|__anon28ac89800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af283730203
+DECL|enum|__anon28ac89800203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -165,6 +165,10 @@ decl_stmt|;
 DECL|member|freeze_count
 name|gint
 name|freeze_count
+decl_stmt|;
+DECL|member|invalidate_pending
+name|gboolean
+name|invalidate_pending
 decl_stmt|;
 DECL|member|parent
 name|GimpViewable
@@ -2179,6 +2183,13 @@ index|]
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+else|else
+name|private
+operator|->
+name|invalidate_pending
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -4451,11 +4462,25 @@ operator|==
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+name|private
+operator|->
+name|invalidate_pending
+condition|)
+block|{
+name|private
+operator|->
+name|invalidate_pending
+operator|=
+name|FALSE
+expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
