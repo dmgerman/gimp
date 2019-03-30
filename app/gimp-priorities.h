@@ -44,6 +44,14 @@ name|GIMP_PRIORITY_DISPLAY_SHELL_FILL_IDLE
 value|(G_PRIORITY_HIGH_IDLE + 21)
 end_define
 
+begin_define
+DECL|macro|GIMP_PRIORITY_IMAGE_WINDOW_UPDATE_UI_MANAGER_IDLE
+define|#
+directive|define
+name|GIMP_PRIORITY_IMAGE_WINDOW_UPDATE_UI_MANAGER_IDLE
+value|(G_PRIORITY_HIGH_IDLE + 21)
+end_define
+
 begin_comment
 comment|/*  just a bit less than GDK_PRIORITY_REDRAW   */
 end_comment

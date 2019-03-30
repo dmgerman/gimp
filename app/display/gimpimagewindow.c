@@ -318,6 +318,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-priorities.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -404,7 +410,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c9ae80103
+DECL|enum|__anon2a2cce560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -530,7 +536,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c9ae80208
+DECL|struct|__anon2a2cce560208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -7537,14 +7543,18 @@ name|private
 operator|->
 name|update_ui_manager_idle_id
 operator|=
-name|g_idle_add
+name|g_idle_add_full
 argument_list|(
+name|GIMP_PRIORITY_IMAGE_WINDOW_UPDATE_UI_MANAGER_IDLE
+argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
 name|gimp_image_window_update_ui_manager_idle
 argument_list|,
 name|window
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
