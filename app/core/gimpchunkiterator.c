@@ -383,6 +383,12 @@ name|rect
 operator|->
 name|y
 expr_stmt|;
+name|iter
+operator|->
+name|current_height
+operator|=
+literal|0
+expr_stmt|;
 block|}
 end_function
 
@@ -400,11 +406,6 @@ block|{
 name|GeglRectangle
 name|rect
 decl_stmt|;
-name|gint
-name|current_height
-init|=
-literal|0
-decl_stmt|;
 if|if
 condition|(
 name|gegl_rectangle_is_empty
@@ -417,25 +418,6 @@ argument_list|)
 condition|)
 return|return;
 comment|/* merge the remainder of the current row */
-if|if
-condition|(
-name|iter
-operator|->
-name|current_x
-operator|!=
-name|iter
-operator|->
-name|current_rect
-operator|.
-name|x
-condition|)
-block|{
-name|current_height
-operator|=
-name|iter
-operator|->
-name|current_height
-expr_stmt|;
 name|rect
 operator|.
 name|x
@@ -476,6 +458,8 @@ name|rect
 operator|.
 name|height
 operator|=
+name|iter
+operator|->
 name|current_height
 expr_stmt|;
 name|cairo_region_union_rectangle
@@ -493,7 +477,6 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* merge the remainder of the current rect */
 name|rect
 operator|.
@@ -513,6 +496,8 @@ name|iter
 operator|->
 name|current_y
 operator|+
+name|iter
+operator|->
 name|current_height
 expr_stmt|;
 name|rect
@@ -605,6 +590,12 @@ name|current_y
 operator|=
 literal|0
 expr_stmt|;
+name|iter
+operator|->
+name|current_height
+operator|=
+literal|0
+expr_stmt|;
 block|}
 end_function
 
@@ -654,6 +645,14 @@ argument_list|,
 name|cairo_region_destroy
 argument_list|)
 expr_stmt|;
+name|iter
+operator|->
+name|current_region
+operator|=
+name|iter
+operator|->
+name|region
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -674,7 +673,7 @@ condition|(
 name|iter
 operator|->
 name|current_x
-operator|>=
+operator|==
 name|iter
 operator|->
 name|current_rect
@@ -706,12 +705,18 @@ name|iter
 operator|->
 name|current_height
 expr_stmt|;
+name|iter
+operator|->
+name|current_height
+operator|=
+literal|0
+expr_stmt|;
 if|if
 condition|(
 name|iter
 operator|->
 name|current_y
-operator|>=
+operator|==
 name|iter
 operator|->
 name|current_rect
@@ -877,6 +882,12 @@ expr_stmt|;
 name|iter
 operator|->
 name|current_y
+operator|=
+literal|0
+expr_stmt|;
+name|iter
+operator|->
+name|current_height
 operator|=
 literal|0
 expr_stmt|;
@@ -1513,6 +1524,12 @@ name|region
 operator|=
 name|region
 expr_stmt|;
+name|iter
+operator|->
+name|current_region
+operator|=
+name|region
+expr_stmt|;
 name|g_object_get
 argument_list|(
 name|gegl_config
@@ -1658,13 +1675,6 @@ operator|=
 operator|*
 name|rect
 expr_stmt|;
-if|if
-condition|(
-name|gimp_chunk_iterator_prepare
-argument_list|(
-name|iter
-argument_list|)
-condition|)
 name|gimp_chunk_iterator_merge
 argument_list|(
 name|iter
@@ -2211,13 +2221,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|if
-condition|(
-name|gimp_chunk_iterator_prepare
-argument_list|(
-name|iter
-argument_list|)
-condition|)
 name|gimp_chunk_iterator_merge
 argument_list|(
 name|iter
