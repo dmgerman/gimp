@@ -2469,9 +2469,9 @@ name|heif_colorspace_RGB
 argument_list|,
 name|has_alpha
 condition|?
-name|heif_chroma_interleaved_32bit
+name|heif_chroma_interleaved_RGBA
 else|:
-name|heif_chroma_interleaved_24bit
+name|heif_chroma_interleaved_RGB
 argument_list|,
 operator|&
 name|image
