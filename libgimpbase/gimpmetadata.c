@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon29407a560108
+DECL|struct|__anon2ba7459f0108
 block|{
 DECL|member|name
 name|gchar
@@ -6253,7 +6253,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* don't copy the same tag multile times */
+comment|/* don't copy the same tag multiple times */
 if|if
 condition|(
 name|i

@@ -15649,7 +15649,7 @@ literal|"gimp-image-raise-item"
 argument_list|,
 literal|"Raise the specified item in its level in its item tree"
 argument_list|,
-literal|"This procedure raises the specified item one step in the item tree. The procecure call will fail if there is no item above it."
+literal|"This procedure raises the specified item one step in the item tree. The procedure call will fail if there is no item above it."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -15742,7 +15742,7 @@ literal|"gimp-image-lower-item"
 argument_list|,
 literal|"Lower the specified item in its level in its item tree"
 argument_list|,
-literal|"This procedure lowers the specified item one step in the item tree. The procecure call will fail if there is no item below it."
+literal|"This procedure lowers the specified item one step in the item tree. The procedure call will fail if there is no item below it."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

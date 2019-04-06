@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da1f410103
+DECL|enum|__anon2c9b47920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -530,7 +530,7 @@ name|PROP_IMAGE_CONVERT_PROFILE_INTENT
 argument_list|,
 literal|"image-convert-profile-intent"
 argument_list|,
-literal|"Default rendering intent fo color profile conversion"
+literal|"Default rendering intent for color profile conversion"
 argument_list|,
 name|IMAGE_CONVERT_PROFILE_INTENT_BLURB
 argument_list|,

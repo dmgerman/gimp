@@ -961,7 +961,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_uri:  * @procedure_name: The name of the procedure to enable URIs for.  *  * Registers a file handler procedure as capable of handling URIs.  *  * Registers a file handler procedure as capable of handling URIs. This  * allows GIMP to call the procecure directly for all kinds of URIs,  * and the 'filename' traditionally passed to file procesures turns  * into an URI.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_register_file_handler_uri:  * @procedure_name: The name of the procedure to enable URIs for.  *  * Registers a file handler procedure as capable of handling URIs.  *  * Registers a file handler procedure as capable of handling URIs. This  * allows GIMP to call the procedure directly for all kinds of URIs,  * and the 'filename' traditionally passed to file procesures turns  * into an URI.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

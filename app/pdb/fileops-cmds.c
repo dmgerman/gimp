@@ -4275,7 +4275,7 @@ literal|"gimp-register-file-handler-uri"
 argument_list|,
 literal|"Registers a file handler procedure as capable of handling URIs."
 argument_list|,
-literal|"Registers a file handler procedure as capable of handling URIs. This allows GIMP to call the procecure directly for all kinds of URIs, and the 'filename' traditionally passed to file procesures turns into an URI."
+literal|"Registers a file handler procedure as capable of handling URIs. This allows GIMP to call the procedure directly for all kinds of URIs, and the 'filename' traditionally passed to file procesures turns into an URI."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

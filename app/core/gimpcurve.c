@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8588ef0103
+DECL|enum|__anon2bf8686a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5547,7 +5547,7 @@ operator|/
 literal|3.0
 expr_stmt|;
 block|}
-comment|/*    * finally calculate the y(t) values for the given bezier values. We can    * use homogenously distributed values for t, since x(t) increases linearly.    */
+comment|/*    * finally calculate the y(t) values for the given bezier values. We can    * use homogeneously distributed values for t, since x(t) increases linearly.    */
 for|for
 control|(
 name|i

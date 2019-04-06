@@ -2825,7 +2825,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procecure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procedure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2899,7 +2899,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procecure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procedure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
