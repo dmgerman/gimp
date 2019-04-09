@@ -1565,8 +1565,11 @@ name|pixmap_size
 operator|)
 expr_stmt|;
 block|}
-block|}
-comment|/*  seek back unconditionally  */
+else|else
+block|{
+comment|/*  seek back if pattern wasn't found  */
+name|success
+operator|=
 name|g_seekable_seek
 argument_list|(
 name|G_SEEKABLE
@@ -1580,9 +1583,11 @@ name|G_SEEK_SET
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 break|break;
 case|case
@@ -1689,7 +1694,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2a192298010a
+DECL|union|__anon2bb67fc4010a
 block|{
 DECL|member|u
 name|guint16
