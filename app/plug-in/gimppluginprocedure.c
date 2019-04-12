@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b5daa0103
+DECL|enum|__anon2bdc33be0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -5051,6 +5051,28 @@ name|proc
 operator|->
 name|magics
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_procedure_set_generic_file_proc (GimpPlugInProcedure * proc,gboolean is_generic_file_proc)
+name|gimp_plug_in_procedure_set_generic_file_proc
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+name|gboolean
+name|is_generic_file_proc
+parameter_list|)
+block|{
+name|proc
+operator|->
+name|generic_file_proc
+operator|=
+name|is_generic_file_proc
 expr_stmt|;
 block|}
 end_function

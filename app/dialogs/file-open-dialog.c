@@ -729,6 +729,10 @@ name|image
 operator|&&
 name|status
 operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|status
+operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{

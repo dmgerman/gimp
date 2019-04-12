@@ -234,6 +234,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
+operator|(
 name|procedure
 operator|->
 name|num_args
@@ -282,6 +283,12 @@ literal|2
 index|]
 argument_list|)
 operator|||
+operator|(
+operator|!
+name|file_proc
+operator|->
+name|generic_file_proc
+operator|&&
 operator|!
 name|GIMP_IS_PARAM_SPEC_IMAGE_ID
 argument_list|(
@@ -292,6 +299,8 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
+operator|)
 condition|)
 block|{
 name|gimp_message

@@ -177,6 +177,11 @@ DECL|member|file_proc
 name|gboolean
 name|file_proc
 decl_stmt|;
+DECL|member|generic_file_proc
+name|gboolean
+name|generic_file_proc
+decl_stmt|;
+comment|/* not returning an image. */
 DECL|member|extensions
 name|gchar
 modifier|*
@@ -497,6 +502,20 @@ specifier|const
 name|gchar
 modifier|*
 name|magics
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_plug_in_procedure_set_generic_file_proc
+parameter_list|(
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|,
+name|gboolean
+name|is_generic_file_proc
 parameter_list|)
 function_decl|;
 end_function_decl

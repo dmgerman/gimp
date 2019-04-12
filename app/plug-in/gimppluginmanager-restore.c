@@ -3910,7 +3910,6 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* finally, remove all raw loaders except the configured one from    * the list of load_procs    */
 name|list
 operator|=
 name|manager
@@ -3937,6 +3936,7 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
+comment|/* finally, remove all raw loaders except the configured one from        * the list of load_procs        */
 if|if
 condition|(
 name|file_proc
@@ -3982,6 +3982,26 @@ name|file_proc
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Remove generic (non-image) loaders from the display loader        * list. */
+if|if
+condition|(
+name|file_proc
+operator|->
+name|generic_file_proc
+condition|)
+name|manager
+operator|->
+name|display_load_procs
+operator|=
+name|g_slist_remove
+argument_list|(
+name|manager
+operator|->
+name|display_load_procs
+argument_list|,
+name|file_proc
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function

@@ -2334,6 +2334,10 @@ condition|(
 name|status
 operator|!=
 name|GIMP_PDB_CANCEL
+operator|&&
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|warn
@@ -2399,6 +2403,10 @@ operator|&&
 name|status
 operator|!=
 name|GIMP_PDB_CANCEL
+operator|&&
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 name|warn
 operator|=
@@ -2463,6 +2471,10 @@ condition|(
 name|status
 operator|!=
 name|GIMP_PDB_CANCEL
+operator|&&
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|warn
