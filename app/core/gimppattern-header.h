@@ -17,19 +17,11 @@ name|__GIMP_PATTERN_HEADER_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_PATTERN_FILE_VERSION
-define|#
-directive|define
-name|GIMP_PATTERN_FILE_VERSION
-value|1
-end_define
-
-begin_define
 DECL|macro|GIMP_PATTERN_MAGIC
 define|#
 directive|define
 name|GIMP_PATTERN_MAGIC
-value|(('G'<< 24) + ('P'<< 16) + \                                     ('A'<< 8)  + ('T'<< 0))
+value|(('G'<< 24) + ('P'<< 16) + \                                ('A'<< 8)  + ('T'<< 0))
 end_define
 
 begin_define
@@ -111,7 +103,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  In a pattern file, next comes the pattern name, null-terminated.  After that  *  comes the pattern data--width * height * bytes bytes of it...  */
+comment|/*  In a pattern file, next comes the pattern name, null-terminated.  *  After that comes the pattern data -- width * height * bytes bytes  *  of it...  */
 end_comment
 
 begin_endif
@@ -120,7 +112,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PATTERN_HEADER_H__  */
+comment|/* __GIMP_PATTERN_HEADER_H__ */
 end_comment
 
 end_unit

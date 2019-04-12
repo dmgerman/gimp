@@ -17,19 +17,11 @@ name|__GIMP_BRUSH_HEADER_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_BRUSH_FILE_VERSION
-define|#
-directive|define
-name|GIMP_BRUSH_FILE_VERSION
-value|2
-end_define
-
-begin_define
 DECL|macro|GIMP_BRUSH_MAGIC
 define|#
 directive|define
 name|GIMP_BRUSH_MAGIC
-value|(('G'<< 24) + ('I'<< 16) + \                                   ('M'<< 8)  + ('P'<< 0))
+value|(('G'<< 24) + ('I'<< 16) + \                              ('M'<< 8)  + ('P'<< 0))
 end_define
 
 begin_define
@@ -100,7 +92,7 @@ DECL|member|bytes
 name|guint32
 name|bytes
 decl_stmt|;
-comment|/*  depth of brush in bytes--always 1 */
+comment|/*  depth of brush in bytes  */
 DECL|member|magic_number
 name|guint32
 name|magic_number
@@ -116,7 +108,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  In a brush file, next comes the brush name, null-terminated.  After that  *  comes the brush data--width * height * bytes bytes of it...  */
+comment|/*  In a brush file, next comes the brush name, null-terminated.  *  After that comes the brush data -- width * height * bytes bytes of  *  it...  */
 end_comment
 
 begin_endif
@@ -125,7 +117,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_BRUSH_HEADER_H__  */
+comment|/* __GIMP_BRUSH_HEADER_H__ */
 end_comment
 
 end_unit
