@@ -583,6 +583,11 @@ decl_stmt|;
 name|WebPData
 name|chunk
 decl_stmt|;
+name|gboolean
+name|out_linear
+init|=
+name|FALSE
+decl_stmt|;
 name|int
 name|res
 decl_stmt|;
@@ -603,7 +608,18 @@ name|profile
 argument_list|)
 condition|)
 block|{
-comment|/* We always save as sRGB data, especially since WebP is        * apparently 8-bit max (at least how we export it). If original        * data was linear, let's convert the profile.        */
+comment|/* Since WebP is apparently 8-bit max, we export it as sRGB to        * avoid shadow posterization.        * We do an exception for 8-bit linear work image, when the        * profile is also exported.        */
+if|if
+condition|(
+name|gimp_image_get_precision
+argument_list|(
+name|image_ID
+argument_list|)
+operator|!=
+name|GIMP_PRECISION_U8_LINEAR
+condition|)
+block|{
+comment|/* If original data was linear, let's convert the profile. */
 name|GimpColorProfile
 modifier|*
 name|saved_profile
@@ -624,6 +640,15 @@ name|profile
 operator|=
 name|saved_profile
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* Keep linear profile as-is. */
+name|out_linear
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 comment|/* The do...while() loop is a neat little trick that makes it easier    * to jump to error handling code while still ensuring proper    * cleanup    */
 do|do
@@ -700,11 +725,38 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+block|{
+if|if
+condition|(
+name|out_linear
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGBA u8"
+argument_list|)
+expr_stmt|;
+else|else
 name|format
 operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|out_linear
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"RGB u8"
 argument_list|)
 expr_stmt|;
 else|else
@@ -715,6 +767,7 @@ argument_list|(
 literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
+block|}
 name|bpp
 operator|=
 name|babl_format_get_bytes_per_pixel
