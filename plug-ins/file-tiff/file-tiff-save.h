@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab471d0108
+DECL|struct|__anon2759d7ed0108
 block|{
 DECL|member|compression
 name|gint
@@ -53,6 +53,10 @@ DECL|member|save_profile
 name|gboolean
 name|save_profile
 decl_stmt|;
+DECL|member|save_layers
+name|gboolean
+name|save_layers
+decl_stmt|;
 DECL|typedef|TiffSaveVals
 block|}
 name|TiffSaveVals
@@ -75,9 +79,6 @@ name|gint32
 name|image
 parameter_list|,
 name|gint32
-name|drawable
-parameter_list|,
-name|gint32
 name|orig_image
 parameter_list|,
 specifier|const
@@ -88,6 +89,13 @@ parameter_list|,
 name|gint
 modifier|*
 name|saved_bpp
+parameter_list|,
+name|GimpMetadata
+modifier|*
+name|metadata
+parameter_list|,
+name|GimpMetadataSaveFlags
+name|metadata_flags
 parameter_list|,
 name|GError
 modifier|*

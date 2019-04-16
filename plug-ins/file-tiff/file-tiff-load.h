@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2968cae30108
+DECL|struct|__anon2a23eef70108
 block|{
 DECL|member|o_pages
 name|gint
@@ -37,6 +37,10 @@ decl_stmt|;
 DECL|member|target
 name|GimpPageSelectorTarget
 name|target
+decl_stmt|;
+DECL|member|keep_empty_space
+name|gboolean
+name|keep_empty_space
 decl_stmt|;
 DECL|typedef|TiffSelectedPages
 block|}
