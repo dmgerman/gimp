@@ -168,6 +168,11 @@ DECL|member|grabbed
 name|gboolean
 name|grabbed
 decl_stmt|;
+DECL|member|orig_curve
+name|GimpCurve
+modifier|*
+name|orig_curve
+decl_stmt|;
 DECL|member|cursor_type
 name|GdkCursorType
 name|cursor_type
