@@ -140,6 +140,14 @@ DECL|member|selected
 name|gint
 name|selected
 decl_stmt|;
+DECL|member|offset_x
+name|gdouble
+name|offset_x
+decl_stmt|;
+DECL|member|offset_y
+name|gdouble
+name|offset_y
+decl_stmt|;
 DECL|member|last_x
 name|gdouble
 name|last_x
