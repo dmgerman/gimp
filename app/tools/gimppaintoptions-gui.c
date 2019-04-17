@@ -1315,6 +1315,10 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_ERASER_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_DODGE_BURN_TOOL
 condition|)
 block|{
 name|GtkWidget
