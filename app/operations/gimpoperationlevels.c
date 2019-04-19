@@ -786,6 +786,10 @@ name|channel
 index|]
 operator|!=
 literal|0.0
+operator|&&
+name|value
+operator|>
+literal|0.0
 condition|)
 name|value
 operator|=
