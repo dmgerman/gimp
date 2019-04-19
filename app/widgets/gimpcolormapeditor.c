@@ -635,6 +635,12 @@ operator|->
 name|selection
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
+name|selection
+operator|=
+name|NULL
+expr_stmt|;
 comment|/* Main selection widget. */
 if|if
 condition|(
