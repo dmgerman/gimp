@@ -242,6 +242,19 @@ DECL|member|parent_class
 name|GimpHistogramViewClass
 name|parent_class
 decl_stmt|;
+comment|/* signals */
+DECL|member|selection_changed
+name|void
+function_decl|(
+modifier|*
+name|selection_changed
+function_decl|)
+parameter_list|(
+name|GimpCurveView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
 DECL|member|cut_clipboard
 name|void
 function_decl|(
@@ -390,6 +403,17 @@ name|view
 parameter_list|,
 name|gint
 name|selected
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_curve_view_get_selected
+parameter_list|(
+name|GimpCurveView
+modifier|*
+name|view
 parameter_list|)
 function_decl|;
 end_function_decl
