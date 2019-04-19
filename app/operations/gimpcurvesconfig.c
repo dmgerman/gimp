@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b457e3f0103
+DECL|enum|__anon2925d1840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2880,6 +2880,11 @@ argument_list|(
 name|string
 argument_list|,
 literal|"\n"
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|curve
 argument_list|)
 expr_stmt|;
 block|}
