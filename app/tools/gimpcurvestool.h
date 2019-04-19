@@ -144,6 +144,11 @@ name|GtkWidget
 modifier|*
 name|point_output
 decl_stmt|;
+DECL|member|point_type
+name|GtkWidget
+modifier|*
+name|point_type
+decl_stmt|;
 DECL|member|curve_type
 name|GtkWidget
 modifier|*

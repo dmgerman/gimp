@@ -148,6 +148,10 @@ DECL|member|offset_y
 name|gdouble
 name|offset_y
 decl_stmt|;
+DECL|member|point_type
+name|GimpCurvePointType
+name|point_type
+decl_stmt|;
 DECL|member|last_x
 name|gdouble
 name|last_x
