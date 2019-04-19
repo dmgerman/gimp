@@ -102,6 +102,10 @@ name|GimpFilterTool
 name|parent_instance
 decl_stmt|;
 comment|/* dialog */
+DECL|member|scale
+name|gdouble
+name|scale
+decl_stmt|;
 DECL|member|picked_color
 name|gdouble
 name|picked_color
