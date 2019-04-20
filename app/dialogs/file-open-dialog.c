@@ -468,10 +468,10 @@ operator|->
 name|image
 condition|)
 block|{
-name|file_dialog
-operator|->
-name|image
-operator|=
+name|gimp_open_dialog_set_image
+argument_list|(
+name|open_dialog
+argument_list|,
 name|file_open_dialog_open_image
 argument_list|(
 name|dialog
@@ -483,6 +483,9 @@ argument_list|,
 name|file_dialog
 operator|->
 name|file_proc
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
