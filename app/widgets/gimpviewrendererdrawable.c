@@ -1248,7 +1248,7 @@ modifier|*
 name|renderdrawable
 parameter_list|)
 block|{
-comment|/* cancel the async render operation (if one is ongoing) without actually    * waiting for it.  if the actual rendering hasn't started yet, it will be    * immediately aborted; otherwise, it can't really be interrupted, so we just    * let it go on without blocking the main thread.    * gimp_drawable_get_sub_preview_async() can continue rendering safely even    * after the drawable had died, and our completion callback is prepared to    * handle cancelation.    */
+comment|/* cancel the async render operation (if one is ongoing) without actually    * waiting for it.  if the actual rendering hasn't started yet, it will be    * immediately aborted; otherwise, it can't really be interrupted, so we just    * let it go on without blocking the main thread.    * gimp_drawable_get_sub_preview_async() can continue rendering safely even    * after the drawable had died, and our completion callback is prepared to    * handle cancellation.    */
 if|if
 condition|(
 name|renderdrawable
