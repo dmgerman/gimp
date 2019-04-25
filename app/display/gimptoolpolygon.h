@@ -139,6 +139,19 @@ DECL|member|parent_class
 name|GimpToolWidgetClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|change_complete
+name|void
+function_decl|(
+modifier|*
+name|change_complete
+function_decl|)
+parameter_list|(
+name|GimpToolPolygon
+modifier|*
+name|polygon
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
