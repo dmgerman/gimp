@@ -1209,12 +1209,6 @@ decl_stmt|;
 name|gshort
 name|photometric
 decl_stmt|;
-name|GimpColorProfile
-modifier|*
-name|profile
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|linear
 init|=
@@ -1454,7 +1448,9 @@ case|:
 comment|/* only keep 8 bit linear RGB if we also save a profile */
 if|if
 condition|(
-name|profile
+name|tsvals
+operator|->
+name|save_profile
 condition|)
 block|{
 name|bitspersample
@@ -1621,7 +1617,9 @@ case|:
 comment|/* save linear RGB only if we save a profile, or a loader won't        * do the right thing        */
 if|if
 condition|(
-name|profile
+name|tsvals
+operator|->
+name|save_profile
 condition|)
 name|linear
 operator|=
