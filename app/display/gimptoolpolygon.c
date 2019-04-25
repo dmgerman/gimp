@@ -223,11 +223,6 @@ DECL|member|polygon_closed
 name|gboolean
 name|polygon_closed
 decl_stmt|;
-comment|/* The selection operation active when the tool was started */
-DECL|member|operation_at_start
-name|GimpChannelOps
-name|operation_at_start
-decl_stmt|;
 comment|/* Whether or not to constrain the angle for newly created polygonal    * segments.    */
 DECL|member|constrain_angle
 name|gboolean
