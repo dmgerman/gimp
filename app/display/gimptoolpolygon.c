@@ -5124,6 +5124,44 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_tool_polygon_is_closed (GimpToolPolygon * polygon)
+name|gimp_tool_polygon_is_closed
+parameter_list|(
+name|GimpToolPolygon
+modifier|*
+name|polygon
+parameter_list|)
+block|{
+name|GimpToolPolygonPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_POLYGON
+argument_list|(
+name|polygon
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|polygon
+operator|->
+name|private
+expr_stmt|;
+return|return
+name|private
+operator|->
+name|polygon_closed
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_tool_polygon_get_points (GimpToolPolygon * polygon,const GimpVector2 ** points,gint * n_points)
 name|gimp_tool_polygon_get_points

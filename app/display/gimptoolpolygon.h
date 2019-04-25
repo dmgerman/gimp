@@ -166,6 +166,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_tool_polygon_is_closed
+parameter_list|(
+name|GimpToolPolygon
+modifier|*
+name|polygon
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tool_polygon_get_points
 parameter_list|(
