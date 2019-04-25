@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpfreeselecttool.h"
+file|"gimppolygonselecttool.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dddb760103
+DECL|enum|__anon279672930103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -141,16 +141,12 @@ struct|struct
 name|_GimpForegroundSelectTool
 block|{
 DECL|member|parent_instance
-name|GimpFreeSelectTool
+name|GimpPolygonSelectTool
 name|parent_instance
 decl_stmt|;
 DECL|member|state
 name|MattingState
 name|state
-decl_stmt|;
-DECL|member|in_double_click
-name|gboolean
-name|in_double_click
 decl_stmt|;
 DECL|member|last_coords
 name|GimpCoords
@@ -201,7 +197,7 @@ struct|struct
 name|_GimpForegroundSelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpFreeSelectToolClass
+name|GimpPolygonSelectToolClass
 name|parent_class
 decl_stmt|;
 block|}
