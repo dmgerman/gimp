@@ -267,7 +267,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_free_select_tool_select
 parameter_list|(
 name|GimpFreeSelectTool
@@ -1047,19 +1047,31 @@ argument_list|(
 name|poly_sel
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
 name|gimp_free_select_tool_select
 argument_list|(
 name|free_sel
 argument_list|,
 name|display
 argument_list|)
+condition|)
+name|gimp_image_flush
+argument_list|(
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_free_select_tool_select (GimpFreeSelectTool * free_sel,GimpDisplay * display)
 name|gimp_free_select_tool_select
 parameter_list|(
@@ -1194,7 +1206,13 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
