@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d970e0103
+DECL|enum|__anon28b616b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,7 +158,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d970e0208
+DECL|struct|__anon28b616b70208
 block|{
 DECL|member|text
 name|GString
@@ -1046,6 +1046,38 @@ name|app
 argument_list|,
 name|NULL
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_extension_get_path (GimpExtension * extension)
+name|gimp_extension_get_path
+parameter_list|(
+name|GimpExtension
+modifier|*
+name|extension
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_EXTENSION
+argument_list|(
+name|extension
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|extension
+operator|->
+name|p
+operator|->
+name|path
 return|;
 block|}
 end_function

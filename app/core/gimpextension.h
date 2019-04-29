@@ -200,6 +200,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_extension_get_path
+parameter_list|(
+name|GimpExtension
+modifier|*
+name|extension
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_extension_get_markup_description
