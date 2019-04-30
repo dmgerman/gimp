@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920a6930103
+DECL|enum|__anon29002c3d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -604,6 +604,11 @@ name|cairo_region_xor
 argument_list|(
 name|outer
 argument_list|,
+name|inner
+argument_list|)
+expr_stmt|;
+name|cairo_region_destroy
+argument_list|(
 name|inner
 argument_list|)
 expr_stmt|;
