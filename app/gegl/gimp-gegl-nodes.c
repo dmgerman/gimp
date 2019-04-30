@@ -172,6 +172,13 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
+name|gimp_gegl_node_set_underlying_operation
+argument_list|(
+name|node
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
 name|mode
 operator|=
 name|gegl_node_new_child
@@ -325,6 +332,13 @@ argument_list|,
 name|opacity
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_node_set_underlying_operation
+argument_list|(
+name|node
+argument_list|,
+name|opacity_node
 argument_list|)
 expr_stmt|;
 name|mask_source
