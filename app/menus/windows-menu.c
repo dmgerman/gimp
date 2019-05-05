@@ -1730,6 +1730,12 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|image
+condition|)
+return|return;
 name|text
 operator|=
 name|gtk_widget_get_tooltip_text
