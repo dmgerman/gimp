@@ -1735,7 +1735,9 @@ condition|(
 operator|!
 name|image
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|text
 operator|=
 name|gtk_widget_get_tooltip_text

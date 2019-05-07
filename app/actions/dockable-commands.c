@@ -680,7 +680,10 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
 name|dockable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_set_current_page
