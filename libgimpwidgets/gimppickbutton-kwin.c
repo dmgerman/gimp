@@ -246,7 +246,7 @@ name|g_variant_get
 argument_list|(
 name|retval
 argument_list|,
-literal|"(u)"
+literal|"((u))"
 argument_list|,
 operator|&
 name|color
