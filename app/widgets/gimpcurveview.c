@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6bb800103
+DECL|enum|__anon2b5a899d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6bb800203
+DECL|enum|__anon2b5a899d0203
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -166,7 +166,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d6bb800308
+DECL|struct|__anon2b5a899d0308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -3441,9 +3441,10 @@ argument_list|)
 argument_list|,
 literal|"x:%3d y:%3d"
 argument_list|,
-call|(
+operator|(
 name|gint
-call|)
+operator|)
+name|round
 argument_list|(
 name|view
 operator|->
@@ -3464,9 +3465,10 @@ operator|->
 name|range_x_min
 argument_list|)
 argument_list|,
-call|(
+operator|(
 name|gint
-call|)
+operator|)
+name|round
 argument_list|(
 operator|(
 literal|1.0
