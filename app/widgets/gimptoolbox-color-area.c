@@ -602,7 +602,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|context
 argument_list|,
-name|color_area_foreground_changed
+name|color_area_background_changed
 argument_list|,
 name|dialog
 argument_list|)
@@ -618,7 +618,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|context
 argument_list|,
-name|color_area_foreground_changed
+name|color_area_background_changed
 argument_list|,
 name|dialog
 argument_list|)
