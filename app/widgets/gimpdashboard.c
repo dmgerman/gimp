@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c3cf70103
+DECL|enum|__anon2a8ee8320103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -535,7 +535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c3cf70203
+DECL|enum|__anon2a8ee8320203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c3cf70303
+DECL|enum|__anon2a8ee8320303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -837,7 +837,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon289c3cf7040a
+DECL|union|__anon2a8ee832040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -853,7 +853,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon289c3cf70508
+DECL|struct|__anon2a8ee8320508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -868,7 +868,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon289c3cf70608
+DECL|struct|__anon2a8ee8320608
 block|{
 DECL|member|antecedent
 name|gint
@@ -9008,7 +9008,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70708
+DECL|struct|__anon2a8ee8320708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9214,7 +9214,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70808
+DECL|struct|__anon2a8ee8320808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9484,7 +9484,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70908
+DECL|struct|__anon2a8ee8320908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9690,7 +9690,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70a08
+DECL|struct|__anon2a8ee8320a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -9966,7 +9966,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70b08
+DECL|struct|__anon2a8ee8320b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10126,7 +10126,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c3cf70c08
+DECL|struct|__anon2a8ee8320c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -11922,6 +11922,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|group_info
+operator|->
+name|has_meter
+operator|&&
 name|variable_info
 operator|->
 name|color
