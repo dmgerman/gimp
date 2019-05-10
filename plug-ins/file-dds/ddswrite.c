@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f44d50103
+DECL|enum|__anon29c57e620103
 block|{
 DECL|enumerator|COMBO_VALUE
 name|COMBO_VALUE
@@ -813,7 +813,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298f44d50208
+DECL|struct|__anon29c57e620208
 block|{
 DECL|member|format
 name|int
@@ -9631,14 +9631,14 @@ name|SAVE_PROC
 argument_list|,
 name|_
 argument_list|(
-literal|"Cancel"
+literal|"_Cancel"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"OK"
+literal|"_Export"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
