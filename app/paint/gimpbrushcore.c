@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289c069b0103
+DECL|enum|__anon2ad8bee00103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3741,6 +3741,14 @@ operator|->
 name|paint_buffer
 return|;
 block|}
+name|g_clear_object
+argument_list|(
+operator|&
+name|paint_core
+operator|->
+name|paint_buffer
+argument_list|)
+expr_stmt|;
 name|temp_buf
 operator|=
 name|gimp_temp_buf_new
@@ -3769,14 +3777,6 @@ operator|*
 name|paint_buffer_y
 operator|=
 name|y1
-expr_stmt|;
-name|g_clear_object
-argument_list|(
-operator|&
-name|paint_core
-operator|->
-name|paint_buffer
-argument_list|)
 expr_stmt|;
 name|paint_core
 operator|->
