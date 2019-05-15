@@ -504,6 +504,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|GimpTempBuf
+modifier|*
+name|gimp_brush_core_get_brush_pixmap
+parameter_list|(
+name|GimpBrushCore
+modifier|*
+name|core
+parameter_list|,
+name|GeglNode
+modifier|*
+name|op
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_brush_core_eval_transform_dynamics
 parameter_list|(
