@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9b2b430103
+DECL|enum|__anon2a32d9c40103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -184,6 +184,9 @@ block|,
 DECL|enumerator|ARCH_X86_VENDOR_SIS
 name|ARCH_X86_VENDOR_SIS
 block|,
+DECL|enumerator|ARCH_X86_VENDOR_HYGON
+name|ARCH_X86_VENDOR_HYGON
+block|,
 DECL|enumerator|ARCH_X86_VENDOR_UNKNOWN
 name|ARCH_X86_VENDOR_UNKNOWN
 init|=
@@ -196,7 +199,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b2b430203
+DECL|enum|__anon2a32d9c40203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -273,7 +276,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b2b430303
+DECL|enum|__anon2a32d9c40303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
@@ -403,7 +406,7 @@ name|ecx
 decl_stmt|,
 name|edx
 decl_stmt|;
-DECL|union|__anon2b9b2b43040a
+DECL|union|__anon2a32d9c4040a
 union|union
 block|{
 DECL|member|idaschar
@@ -525,6 +528,23 @@ name|id
 operator|.
 name|idaschar
 argument_list|,
+literal|"HygonGenuine"
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+name|ARCH_X86_VENDOR_HYGON
+return|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|id
+operator|.
+name|idaschar
+argument_list|,
 literal|"GenuineIntel"
 argument_list|)
 operator|==
@@ -567,6 +587,23 @@ literal|0
 condition|)
 return|return
 name|ARCH_X86_VENDOR_AMD
+return|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|id
+operator|.
+name|idaschar
+argument_list|,
+literal|"HygonGenuine"
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+name|ARCH_X86_VENDOR_HYGON
 return|;
 elseif|else
 if|if
@@ -1306,6 +1343,9 @@ expr_stmt|;
 break|break;
 case|case
 name|ARCH_X86_VENDOR_AMD
+case|:
+case|case
+name|ARCH_X86_VENDOR_HYGON
 case|:
 name|caps
 operator|=
