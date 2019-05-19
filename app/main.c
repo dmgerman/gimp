@@ -159,6 +159,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbacktrace.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimppdb.h"
 end_include
 
@@ -1469,6 +1475,10 @@ name|__argv
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* Initialize GimpBacktrace early on.  In particular, we want the    * Windows backend to catch the SET_THREAD_NAME exceptions of newly    * created threads.    */
+name|gimp_backtrace_init
+argument_list|()
+expr_stmt|;
 comment|/* Start signal handlers early. */
 name|gimp_init_signal_handlers
 argument_list|(
