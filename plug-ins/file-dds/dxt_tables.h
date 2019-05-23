@@ -2,14 +2,14 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|DXT_TABLES_H
+name|__DXT_TABLES_H__
 end_ifndef
 
 begin_define
-DECL|macro|DXT_TABLES_H
+DECL|macro|__DXT_TABLES_H__
 define|#
 directive|define
-name|DXT_TABLES_H
+name|__DXT_TABLES_H__
 end_define
 
 begin_decl_stmt
@@ -569,7 +569,7 @@ block|,
 literal|0xff
 block|,
 literal|0xff
-block|,  }
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -1130,7 +1130,7 @@ block|,
 literal|0xff
 block|,
 literal|0xff
-block|,  }
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -2684,7 +2684,7 @@ literal|0x1f
 block|,
 literal|0x1f
 block|}
-block|,  }
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -4238,7 +4238,7 @@ literal|0x3f
 block|,
 literal|0x3f
 block|}
-block|,  }
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -4246,6 +4246,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __DXT_TABLES_H__ */
+end_comment
 
 end_unit
 

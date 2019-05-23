@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; see the file COPYING.  If not, write to  * the Free Software Foundation, 51 Franklin Street, Fifth Floor  * Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_include
@@ -193,8 +193,8 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|get_num_mipmaps (int width,int height)
 name|int
+DECL|function|get_num_mipmaps (int width,int height)
 name|get_num_mipmaps
 parameter_list|(
 name|int
@@ -259,17 +259,15 @@ name|n
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|n
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|get_mipmapped_size (int width,int height,int bpp,int level,int num,int format)
 name|unsigned
 name|int
+DECL|function|get_mipmapped_size (int width,int height,int bpp,int level,int num,int format)
 name|get_mipmapped_size
 parameter_list|(
 name|int
@@ -428,10 +426,12 @@ name|format
 operator|==
 name|DDS_COMPRESS_NONE
 condition|)
+block|{
 name|size
 operator|*=
 name|bpp
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -455,17 +455,15 @@ literal|16
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|size
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|get_volume_mipmapped_size (int width,int height,int depth,int bpp,int level,int num,int format)
 name|unsigned
 name|int
+DECL|function|get_volume_mipmapped_size (int width,int height,int depth,int bpp,int level,int num,int format)
 name|get_volume_mipmapped_size
 parameter_list|(
 name|int
@@ -664,10 +662,12 @@ name|format
 operator|==
 name|DDS_COMPRESS_NONE
 condition|)
+block|{
 name|size
 operator|*=
 name|bpp
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -691,16 +691,14 @@ literal|16
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|size
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|get_next_mipmap_dimensions (int * next_w,int * next_h,int curr_w,int curr_h)
 name|int
+DECL|function|get_next_mipmap_dimensions (int * next_w,int * next_h,int curr_w,int curr_h)
 name|get_next_mipmap_dimensions
 parameter_list|(
 name|int
@@ -729,9 +727,7 @@ operator|==
 literal|1
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 if|if
 condition|(
@@ -756,9 +752,7 @@ operator|>>
 literal|1
 expr_stmt|;
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -768,9 +762,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|wrap_mirror (int x,int max)
 specifier|static
 name|int
+DECL|function|wrap_mirror (int x,int max)
 name|wrap_mirror
 parameter_list|(
 name|int
@@ -817,17 +811,15 @@ literal|2
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|x
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|wrap_repeat (int x,int max)
 specifier|static
 name|int
+DECL|function|wrap_repeat (int x,int max)
 name|wrap_repeat
 parameter_list|(
 name|int
@@ -844,14 +836,11 @@ operator|>=
 literal|0
 condition|)
 return|return
-operator|(
 name|x
 operator|%
 name|max
-operator|)
 return|;
 return|return
-operator|(
 operator|(
 name|x
 operator|+
@@ -863,15 +852,14 @@ operator|+
 name|max
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|wrap_clamp (int x,int max)
 specifier|static
 name|int
+DECL|function|wrap_clamp (int x,int max)
 name|wrap_clamp
 parameter_list|(
 name|int
@@ -882,7 +870,6 @@ name|max
 parameter_list|)
 block|{
 return|return
-operator|(
 name|MAX
 argument_list|(
 literal|0
@@ -896,7 +883,6 @@ argument_list|,
 name|x
 argument_list|)
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -906,9 +892,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|linear_to_gamma (int gc,int v,float gamma)
 specifier|static
 name|int
+DECL|function|linear_to_gamma (int gc,int v,float gamma)
 name|linear_to_gamma
 parameter_list|(
 name|int
@@ -967,6 +953,7 @@ name|gc
 operator|==
 literal|2
 condition|)
+block|{
 name|v
 operator|=
 name|linear_to_sRGB
@@ -974,18 +961,17 @@ argument_list|(
 name|v
 argument_list|)
 expr_stmt|;
+block|}
 return|return
-operator|(
 name|v
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|gamma_to_linear (int gc,int v,float gamma)
 specifier|static
 name|int
+DECL|function|gamma_to_linear (int gc,int v,float gamma)
 name|gamma_to_linear
 parameter_list|(
 name|int
@@ -1046,6 +1032,7 @@ name|gc
 operator|==
 literal|2
 condition|)
+block|{
 name|v
 operator|=
 name|sRGB_to_linear
@@ -1053,10 +1040,9 @@ argument_list|(
 name|v
 argument_list|)
 expr_stmt|;
+block|}
 return|return
-operator|(
 name|v
-operator|)
 return|;
 block|}
 end_function
@@ -1066,9 +1052,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|box_filter (float t)
 specifier|static
 name|float
+DECL|function|box_filter (float t)
 name|box_filter
 parameter_list|(
 name|float
@@ -1091,22 +1077,18 @@ literal|0.5f
 operator|)
 condition|)
 return|return
-operator|(
 literal|1.0f
-operator|)
 return|;
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|triangle_filter (float t)
 specifier|static
 name|float
+DECL|function|triangle_filter (float t)
 name|triangle_filter
 parameter_list|(
 name|float
@@ -1131,24 +1113,20 @@ operator|<
 literal|1.0f
 condition|)
 return|return
-operator|(
 literal|1.0f
 operator|-
 name|t
-operator|)
 return|;
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|quadratic_filter (float t)
 specifier|static
 name|float
+DECL|function|quadratic_filter (float t)
 name|quadratic_filter
 parameter_list|(
 name|float
@@ -1173,13 +1151,11 @@ operator|<
 literal|0.5f
 condition|)
 return|return
-operator|(
 literal|0.75f
 operator|-
 name|t
 operator|*
 name|t
-operator|)
 return|;
 if|if
 condition|(
@@ -1193,27 +1169,23 @@ operator|-=
 literal|1.5f
 expr_stmt|;
 return|return
-operator|(
 literal|0.5f
 operator|*
 name|t
 operator|*
 name|t
-operator|)
 return|;
 block|}
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|bspline_filter (float t)
 specifier|static
 name|float
+DECL|function|bspline_filter (float t)
 name|bspline_filter
 parameter_list|(
 name|float
@@ -1250,7 +1222,6 @@ expr_stmt|;
 return|return
 operator|(
 operator|(
-operator|(
 literal|0.5f
 operator|*
 name|tt
@@ -1264,7 +1235,6 @@ operator|(
 literal|2.0f
 operator|/
 literal|3.0f
-operator|)
 operator|)
 operator|)
 return|;
@@ -1285,7 +1255,6 @@ name|t
 expr_stmt|;
 return|return
 operator|(
-operator|(
 literal|1.0f
 operator|/
 literal|6.0f
@@ -1298,21 +1267,18 @@ name|t
 operator|*
 name|t
 operator|)
-operator|)
 return|;
 block|}
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|mitchell (float t,const float B,const float C)
 specifier|static
 name|float
+DECL|function|mitchell (float t,const float B,const float C)
 name|mitchell
 parameter_list|(
 name|float
@@ -1404,11 +1370,9 @@ operator|)
 operator|)
 expr_stmt|;
 return|return
-operator|(
 name|t
 operator|/
 literal|6.0f
-operator|)
 return|;
 block|}
 elseif|else
@@ -1482,25 +1446,21 @@ operator|)
 operator|)
 expr_stmt|;
 return|return
-operator|(
 name|t
 operator|/
 literal|6.0f
-operator|)
 return|;
 block|}
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|mitchell_filter (float t)
 specifier|static
 name|float
+DECL|function|mitchell_filter (float t)
 name|mitchell_filter
 parameter_list|(
 name|float
@@ -1508,7 +1468,6 @@ name|t
 parameter_list|)
 block|{
 return|return
-operator|(
 name|mitchell
 argument_list|(
 name|t
@@ -1521,15 +1480,14 @@ literal|1.0f
 operator|/
 literal|3.0f
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|sinc (float x)
 specifier|static
 name|float
+DECL|function|sinc (float x)
 name|sinc
 parameter_list|(
 name|float
@@ -1554,7 +1512,6 @@ operator|<
 literal|1e-04f
 condition|)
 return|return
-operator|(
 literal|1.0f
 operator|+
 name|x
@@ -1575,25 +1532,22 @@ literal|1.0f
 operator|/
 literal|120.0f
 operator|)
-operator|)
 return|;
 return|return
-operator|(
 name|sinf
 argument_list|(
 name|x
 argument_list|)
 operator|/
 name|x
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|lanczos_filter (float t)
 specifier|static
 name|float
+DECL|function|lanczos_filter (float t)
 name|lanczos_filter
 parameter_list|(
 name|float
@@ -1618,7 +1572,6 @@ operator|<
 literal|3.0f
 condition|)
 return|return
-operator|(
 name|sinc
 argument_list|(
 name|t
@@ -1630,20 +1583,17 @@ name|t
 operator|/
 literal|3.0f
 argument_list|)
-operator|)
 return|;
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|bessel0 (float x)
 specifier|static
 name|float
+DECL|function|bessel0 (float x)
 name|bessel0
 parameter_list|(
 name|float
@@ -1724,17 +1674,15 @@ name|ds
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|sum
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|kaiser_filter (float t)
 specifier|static
 name|float
+DECL|function|kaiser_filter (float t)
 name|kaiser_filter
 parameter_list|(
 name|float
@@ -1793,7 +1741,6 @@ operator|>=
 literal|0
 condition|)
 return|return
-operator|(
 name|sinc
 argument_list|(
 name|t
@@ -1814,13 +1761,10 @@ argument_list|)
 argument_list|)
 operator|*
 name|rb04
-operator|)
 return|;
 block|}
 return|return
-operator|(
 literal|0.0f
-operator|)
 return|;
 block|}
 end_function
@@ -1830,9 +1774,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|scale_image_nearest (unsigned char * dst,int dw,int dh,unsigned char * src,int sw,int sh,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 specifier|static
 name|void
+DECL|function|scale_image_nearest (unsigned char * dst,int dw,int dh,unsigned char * src,int sw,int sh,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 name|scale_image_nearest
 parameter_list|(
 name|unsigned
@@ -2009,9 +1953,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|scale_image (unsigned char * dst,int dw,int dh,unsigned char * src,int sw,int sh,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 specifier|static
 name|void
+DECL|function|scale_image (unsigned char * dst,int dw,int dh,unsigned char * src,int sw,int sh,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 name|scale_image
 parameter_list|(
 name|unsigned
@@ -2865,9 +2809,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|scale_volume_image_nearest (unsigned char * dst,int dw,int dh,int dd,unsigned char * src,int sw,int sh,int sd,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 specifier|static
 name|void
+DECL|function|scale_volume_image_nearest (unsigned char * dst,int dw,int dh,int dd,unsigned char * src,int sw,int sh,int sd,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 name|scale_volume_image_nearest
 parameter_list|(
 name|unsigned
@@ -3093,9 +3037,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|scale_volume_image (unsigned char * dst,int dw,int dh,int dd,unsigned char * src,int sw,int sh,int sd,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 specifier|static
 name|void
+DECL|function|scale_volume_image (unsigned char * dst,int dw,int dh,int dd,unsigned char * src,int sw,int sh,int sd,int bpp,filterfunc_t filter,float support,wrapfunc_t wrap,int gc,float gamma)
 name|scale_volume_image
 parameter_list|(
 name|unsigned
@@ -4465,7 +4409,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27c726fd0108
+DECL|struct|__anon2bbec43d0108
 block|{
 DECL|member|filter
 name|int
@@ -4557,9 +4501,9 @@ comment|/*  * Alpha test coverage - portion of visible texels after alpha test: 
 end_comment
 
 begin_function
-DECL|function|calc_alpha_test_coverage (unsigned char * src,unsigned int width,unsigned int height,int bpp,float alpha_test_threshold,float alpha_scale)
 specifier|static
 name|float
+DECL|function|calc_alpha_test_coverage (unsigned char * src,unsigned int width,unsigned int height,int bpp,float alpha_test_threshold,float alpha_scale)
 name|calc_alpha_test_coverage
 parameter_list|(
 name|unsigned
@@ -4705,9 +4649,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|scale_alpha_to_coverage (unsigned char * img,unsigned int width,unsigned int height,int bpp,float desired_coverage,float alpha_test_threshold)
 specifier|static
 name|void
+DECL|function|scale_alpha_to_coverage (unsigned char * img,unsigned int width,unsigned int height,int bpp,float desired_coverage,float alpha_test_threshold)
 name|scale_alpha_to_coverage
 parameter_list|(
 name|unsigned
@@ -4946,8 +4890,8 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|generate_mipmaps (unsigned char * dst,unsigned char * src,unsigned int width,unsigned int height,int bpp,int indexed,int mipmaps,int filter,int wrap,int gc,float gamma,int preserve_alpha_coverage,float alpha_test_threshold)
 name|int
+DECL|function|generate_mipmaps (unsigned char * dst,unsigned char * src,unsigned int width,unsigned int height,int bpp,int indexed,int mipmaps,int filter,int wrap,int gc,float gamma,int preserve_alpha_coverage,float alpha_test_threshold)
 name|generate_mipmaps
 parameter_list|(
 name|unsigned
@@ -5351,16 +5295,14 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|generate_volume_mipmaps (unsigned char * dst,unsigned char * src,unsigned int width,unsigned int height,unsigned int depth,int bpp,int indexed,int mipmaps,int filter,int wrap,int gc,float gamma)
 name|int
+DECL|function|generate_volume_mipmaps (unsigned char * dst,unsigned char * src,unsigned int width,unsigned int height,unsigned int depth,int bpp,int indexed,int mipmaps,int filter,int wrap,int gc,float gamma)
 name|generate_volume_mipmaps
 parameter_list|(
 name|unsigned
@@ -5734,9 +5676,7 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function

@@ -100,7 +100,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ff12f0108
+DECL|struct|__anon2a31cb4f0108
 block|{
 DECL|member|rshift
 DECL|member|gshift
@@ -394,10 +394,10 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|runme
 specifier|static
-name|int
+name|gboolean
 name|runme
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -481,9 +481,7 @@ name|load_dialog
 argument_list|()
 condition|)
 return|return
-operator|(
 name|GIMP_PDB_CANCEL
-operator|)
 return|;
 block|}
 name|fp
@@ -508,9 +506,7 @@ literal|"Error opening file.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -631,9 +627,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 block|}
@@ -658,9 +652,7 @@ literal|"Invalid DDS header!\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 comment|/* a lot of DDS images out there don't have this for some reason -_- */
@@ -1264,9 +1256,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 name|gimp_image_set_filename
@@ -1332,9 +1322,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 for|for
@@ -1730,9 +1718,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -1772,9 +1758,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 block|}
@@ -1837,9 +1821,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -1889,9 +1871,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -1941,9 +1921,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -1993,9 +1971,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -2045,9 +2021,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -2097,9 +2071,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 block|}
@@ -2204,9 +2176,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 name|g_free
@@ -2346,9 +2316,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 name|g_free
@@ -2442,9 +2410,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 if|if
@@ -2484,9 +2450,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 name|g_free
@@ -2560,9 +2524,7 @@ literal|"Oops!  NULL image read!  Please report this!"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_EXECUTION_ERROR
-operator|)
 return|;
 block|}
 name|gimp_image_set_active_layer
@@ -2586,9 +2548,7 @@ operator|=
 name|image
 expr_stmt|;
 return|return
-operator|(
 name|GIMP_PDB_SUCCESS
-operator|)
 return|;
 block|}
 end_function
@@ -2643,9 +2603,7 @@ operator|!=
 name|DDS_HEADERSIZE
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 name|hdr
 operator|->
@@ -3008,9 +2966,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -3064,9 +3020,7 @@ operator|!=
 name|DDS_HEADERSIZE_DX10
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 name|hdr
 operator|->
@@ -3122,9 +3076,7 @@ literal|16
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -3168,9 +3120,7 @@ literal|"Invalid DDS file.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 if|if
@@ -3217,7 +3167,7 @@ operator||=
 name|DDSD_PITCH
 expr_stmt|;
 block|}
-comment|/*      if ((hdr->pixelfmt.flags& DDPF_FOURCC) ==      (hdr->pixelfmt.flags& DDPF_RGB))      {      g_message ("Invalid pixel format.\n");      return (0);      }      */
+comment|/*      if ((hdr->pixelfmt.flags& DDPF_FOURCC) ==      (hdr->pixelfmt.flags& DDPF_RGB))      {      g_message ("Invalid pixel format.\n");      return 0;      }      */
 name|fourcc
 operator|=
 name|GETL32
@@ -3462,9 +3412,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 if|if
@@ -3527,9 +3475,7 @@ literal|"Invalid BPP.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 block|}
@@ -3574,9 +3520,7 @@ literal|"Invalid BPP.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 name|hdr
@@ -3885,18 +3829,14 @@ literal|"Invalid pixel format."
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 break|break;
 block|}
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -4002,9 +3942,7 @@ name|D3D10_RESOURCE_DIMENSION_TEXTURE3D
 operator|)
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 comment|// check for a compressed DXGI format
 if|if
@@ -4761,16 +4699,12 @@ name|dxgiFormat
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -5593,9 +5527,7 @@ literal|"Unexpected EOF.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 if|if
@@ -5734,9 +5666,7 @@ literal|"Unexpected EOF.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 if|if
@@ -6797,9 +6727,7 @@ literal|"Image marked as compressed, but DDSD_LINEARSIZE is not set.\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 name|dst
@@ -7188,9 +7116,7 @@ break|break;
 block|}
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -7309,16 +7235,12 @@ name|buf
 argument_list|)
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
@@ -7388,12 +7310,9 @@ name|buf
 argument_list|)
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 return|return
-operator|(
 name|load_mipmaps
 argument_list|(
 name|fp
@@ -7412,7 +7331,6 @@ name|pixels
 argument_list|,
 name|buf
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -7455,9 +7373,7 @@ literal|1
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|i
-operator|)
 return|;
 block|}
 end_function
@@ -7474,8 +7390,7 @@ name|int
 name|mask
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|i
 init|=
 literal|0
@@ -7486,9 +7401,7 @@ operator|!
 name|mask
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 while|while
 condition|(
@@ -7507,9 +7420,7 @@ operator|++
 name|i
 expr_stmt|;
 return|return
-operator|(
 name|i
-operator|)
 return|;
 block|}
 end_function
@@ -7541,7 +7452,7 @@ name|GTK_RESPONSE_OK
 case|:
 name|runme
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 default|default:
 name|gtk_widget_destroy
@@ -7850,15 +7761,13 @@ argument_list|)
 expr_stmt|;
 name|runme
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 name|runme
-operator|)
 return|;
 block|}
 end_function

@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|COLOR_H
+name|__COLOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|COLOR_H
+DECL|macro|__COLOR_H__
 define|#
 directive|define
-name|COLOR_H
+name|__COLOR_H__
 end_define
 
 begin_include
@@ -51,10 +51,10 @@ comment|/* YCoCg encoding */
 end_comment
 
 begin_function
-DECL|function|RGB_to_YCoCg (unsigned char * dst,int r,int g,int b)
 specifier|static
 specifier|inline
 name|void
+DECL|function|RGB_to_YCoCg (unsigned char * dst,int r,int g,int b)
 name|RGB_to_YCoCg
 parameter_list|(
 name|unsigned
@@ -230,10 +230,10 @@ comment|/* other color conversions */
 end_comment
 
 begin_function
-DECL|function|rgb_to_luminance (int r,int g,int b)
 specifier|static
 specifier|inline
 name|int
+DECL|function|rgb_to_luminance (int r,int g,int b)
 name|rgb_to_luminance
 parameter_list|(
 name|int
@@ -248,7 +248,6 @@ parameter_list|)
 block|{
 comment|/* ITU-R BT.709 luma coefficents, scaled by 256 */
 return|return
-operator|(
 operator|(
 operator|(
 name|r
@@ -268,17 +267,16 @@ literal|128
 operator|)
 operator|>>
 literal|8
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pack_r5g6b5 (int r,int g,int b)
 specifier|static
 specifier|inline
 name|unsigned
 name|short
+DECL|function|pack_r5g6b5 (int r,int g,int b)
 name|pack_r5g6b5
 parameter_list|(
 name|int
@@ -292,7 +290,6 @@ name|b
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 name|mul8bit
 argument_list|(
@@ -323,17 +320,16 @@ argument_list|,
 literal|31
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pack_rgba4 (int r,int g,int b,int a)
 specifier|static
 specifier|inline
 name|unsigned
 name|short
+DECL|function|pack_rgba4 (int r,int g,int b,int a)
 name|pack_rgba4
 parameter_list|(
 name|int
@@ -350,7 +346,6 @@ name|a
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 name|mul8bit
 argument_list|(
@@ -392,17 +387,16 @@ argument_list|,
 literal|15
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pack_rgb5a1 (int r,int g,int b,int a)
 specifier|static
 specifier|inline
 name|unsigned
 name|short
+DECL|function|pack_rgb5a1 (int r,int g,int b,int a)
 name|pack_rgb5a1
 parameter_list|(
 name|int
@@ -419,7 +413,6 @@ name|a
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 operator|(
 operator|(
@@ -464,17 +457,16 @@ argument_list|,
 literal|31
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pack_r3g3b2 (int r,int g,int b)
 specifier|static
 specifier|inline
 name|unsigned
 name|char
+DECL|function|pack_r3g3b2 (int r,int g,int b)
 name|pack_r3g3b2
 parameter_list|(
 name|int
@@ -488,7 +480,6 @@ name|b
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 name|mul8bit
 argument_list|(
@@ -519,17 +510,16 @@ argument_list|,
 literal|3
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pack_rgb10a2 (int r,int g,int b,int a)
 specifier|static
 specifier|inline
 name|unsigned
 name|int
+DECL|function|pack_rgb10a2 (int r,int g,int b,int a)
 name|pack_rgb10a2
 parameter_list|(
 name|int
@@ -546,7 +536,6 @@ name|a
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 call|(
 name|unsigned
@@ -616,7 +605,6 @@ operator|&
 literal|0x3ff
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
@@ -625,6 +613,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __COLOR_H__ */
+end_comment
 
 end_unit
 

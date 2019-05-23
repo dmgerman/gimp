@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to 	the Free Software Foundation, 51 Franklin Street, Fifth Floor 	Boston, MA 02110-1301, USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software; you can redistribute it and/or  * modify it under the terms of the GNU General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; see the file COPYING.  If not, write to  * the Free Software Foundation, 51 Franklin Street, Fifth Floor  * Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_comment
@@ -239,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27440b5d0108
+DECL|struct|__anon278002e50108
 block|{
 DECL|member|single
 name|unsigned
@@ -288,9 +288,9 @@ comment|/* extract 4x4 BGRA block */
 end_comment
 
 begin_function
-DECL|function|extract_block (const unsigned char * src,int x,int y,int w,int h,unsigned char * block)
 specifier|static
 name|void
+DECL|function|extract_block (const unsigned char * src,int x,int y,int w,int h,unsigned char * block)
 name|extract_block
 parameter_list|(
 specifier|const
@@ -622,11 +622,11 @@ comment|/* pack BGR8 to RGB565 */
 end_comment
 
 begin_function
-DECL|function|pack_rgb565 (const unsigned char * c)
 specifier|static
 specifier|inline
 name|unsigned
 name|short
+DECL|function|pack_rgb565 (const unsigned char * c)
 name|pack_rgb565
 parameter_list|(
 specifier|const
@@ -637,7 +637,6 @@ name|c
 parameter_list|)
 block|{
 return|return
-operator|(
 operator|(
 name|mul8bit
 argument_list|(
@@ -677,7 +676,6 @@ argument_list|,
 literal|31
 argument_list|)
 operator|)
-operator|)
 return|;
 block|}
 end_function
@@ -687,9 +685,9 @@ comment|/* unpack RGB565 to BGR */
 end_comment
 
 begin_function
-DECL|function|unpack_rgb565 (unsigned char * dst,unsigned short v)
 specifier|static
 name|void
+DECL|function|unpack_rgb565 (unsigned char * dst,unsigned short v)
 name|unpack_rgb565
 parameter_list|(
 name|unsigned
@@ -792,9 +790,9 @@ comment|/* linear interpolation at 1/3 point between a and b */
 end_comment
 
 begin_function
-DECL|function|lerp_rgb13 (unsigned char * dst,unsigned char * a,unsigned char * b)
 specifier|static
 name|void
+DECL|function|lerp_rgb13 (unsigned char * dst,unsigned char * a,unsigned char * b)
 name|lerp_rgb13
 parameter_list|(
 name|unsigned
@@ -816,7 +814,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|dst[0] = blerp(a[0], b[0], 0x55);    dst[1] = blerp(a[1], b[1], 0x55);    dst[2] = blerp(a[2], b[2], 0x55);
+block|dst[0] = blerp(a[0], b[0], 0x55);   dst[1] = blerp(a[1], b[1], 0x55);   dst[2] = blerp(a[2], b[2], 0x55);
 else|#
 directive|else
 comment|/*    * according to the S3TC/DX10 specs, this is the correct way to do the    * interpolation (with no rounding bias)    *    * dst = (2 * a + b) / 3;    */
@@ -889,9 +887,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_endpoints_to_565 (int * start,int * end,const vec4_t a,const vec4_t b)
 specifier|static
 name|void
+DECL|function|vec4_endpoints_to_565 (int * start,int * end,const vec4_t a,const vec4_t b)
 name|vec4_endpoints_to_565
 parameter_list|(
 name|int
@@ -1522,9 +1520,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dxtblock_init (dxtblock_t * dxtb,const unsigned char * block,int flags)
 specifier|static
 name|void
+DECL|function|dxtblock_init (dxtblock_t * dxtb,const unsigned char * block,int flags)
 name|dxtblock_init
 parameter_list|(
 name|dxtblock_t
@@ -2160,9 +2158,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|construct_palette3 (dxtblock_t * dxtb)
 specifier|static
 name|void
+DECL|function|construct_palette3 (dxtblock_t * dxtb)
 name|construct_palette3
 parameter_list|(
 name|dxtblock_t
@@ -2229,9 +2227,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|construct_palette4 (dxtblock_t * dxtb)
 specifier|static
 name|void
+DECL|function|construct_palette4 (dxtblock_t * dxtb)
 name|construct_palette4
 parameter_list|(
 name|dxtblock_t
@@ -2315,9 +2313,9 @@ comment|/*  * from nvidia-texture-tools; see LICENSE.nvtt for copyright informat
 end_comment
 
 begin_function
-DECL|function|optimize_endpoints3 (dxtblock_t * dxtb,unsigned int indices,vec4_t * max,vec4_t * min)
 specifier|static
 name|void
+DECL|function|optimize_endpoints3 (dxtblock_t * dxtb,unsigned int indices,vec4_t * max,vec4_t * min)
 name|optimize_endpoints3
 parameter_list|(
 name|dxtblock_t
@@ -2631,9 +2629,9 @@ comment|/*  * from nvidia-texture-tools; see LICENSE.nvtt for copyright informat
 end_comment
 
 begin_function
-DECL|function|optimize_endpoints4 (dxtblock_t * dxtb,unsigned int indices,vec4_t * max,vec4_t * min)
 specifier|static
 name|void
+DECL|function|optimize_endpoints4 (dxtblock_t * dxtb,unsigned int indices,vec4_t * max,vec4_t * min)
 name|optimize_endpoints4
 parameter_list|(
 name|dxtblock_t
@@ -2937,10 +2935,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|match_colors3 (dxtblock_t * dxtb)
 specifier|static
 name|unsigned
 name|int
+DECL|function|match_colors3 (dxtblock_t * dxtb)
 name|match_colors3
 parameter_list|(
 name|dxtblock_t
@@ -3295,18 +3293,16 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|indices
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|match_colors4 (dxtblock_t * dxtb)
 specifier|static
 name|unsigned
 name|int
+DECL|function|match_colors4 (dxtblock_t * dxtb)
 name|match_colors4
 parameter_list|(
 name|dxtblock_t
@@ -3659,17 +3655,15 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|indices
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|compute_error3 (dxtblock_t * dxtb,unsigned int indices)
 specifier|static
 name|float
+DECL|function|compute_error3 (dxtblock_t * dxtb,unsigned int indices)
 name|compute_error3
 parameter_list|(
 name|dxtblock_t
@@ -3764,17 +3758,15 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|error
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|compute_error4 (dxtblock_t * dxtb,unsigned int indices)
 specifier|static
 name|float
+DECL|function|compute_error4 (dxtblock_t * dxtb,unsigned int indices)
 name|compute_error4
 parameter_list|(
 name|dxtblock_t
@@ -4104,18 +4096,16 @@ block|}
 endif|#
 directive|endif
 return|return
-operator|(
 name|error
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|compress3 (dxtblock_t * dxtb)
 specifier|static
 name|unsigned
 name|int
+DECL|function|compress3 (dxtblock_t * dxtb)
 name|compress3
 parameter_list|(
 name|dxtblock_t
@@ -4264,18 +4254,16 @@ break|break;
 block|}
 block|}
 return|return
-operator|(
 name|bestindices
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|compress4 (dxtblock_t * dxtb)
 specifier|static
 name|unsigned
 name|int
+DECL|function|compress4 (dxtblock_t * dxtb)
 name|compress4
 parameter_list|(
 name|dxtblock_t
@@ -4424,17 +4412,15 @@ break|break;
 block|}
 block|}
 return|return
-operator|(
 name|bestindices
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|encode_color_block (unsigned char * dst,unsigned char * block,int flags)
 specifier|static
 name|void
+DECL|function|encode_color_block (unsigned char * dst,unsigned char * block,int flags)
 name|encode_color_block
 parameter_list|(
 name|unsigned
@@ -4805,9 +4791,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_min_max_YCoCg (const unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 specifier|static
 name|void
+DECL|function|get_min_max_YCoCg (const unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 name|get_min_max_YCoCg
 parameter_list|(
 specifier|const
@@ -4993,9 +4979,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|scale_YCoCg (unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 specifier|static
 name|void
+DECL|function|scale_YCoCg (unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 name|scale_YCoCg
 parameter_list|(
 name|unsigned
@@ -5342,9 +5328,9 @@ value|4
 end_define
 
 begin_function
-DECL|function|inset_bbox_YCoCg (unsigned char * mincolor,unsigned char * maxcolor)
 specifier|static
 name|void
+DECL|function|inset_bbox_YCoCg (unsigned char * mincolor,unsigned char * maxcolor)
 name|inset_bbox_YCoCg
 parameter_list|(
 name|unsigned
@@ -5708,9 +5694,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|select_diagonal_YCoCg (const unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 specifier|static
 name|void
+DECL|function|select_diagonal_YCoCg (const unsigned char * block,unsigned char * mincolor,unsigned char * maxcolor)
 name|select_diagonal_YCoCg
 parameter_list|(
 specifier|const
@@ -5916,9 +5902,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|encode_YCoCg_block (unsigned char * dst,unsigned char * block)
 specifier|static
 name|void
+DECL|function|encode_YCoCg_block (unsigned char * dst,unsigned char * block)
 name|encode_YCoCg_block
 parameter_list|(
 name|unsigned
@@ -6344,9 +6330,9 @@ comment|/* write DXT3 alpha block */
 end_comment
 
 begin_function
-DECL|function|encode_alpha_block_BC2 (unsigned char * dst,const unsigned char * block)
 specifier|static
 name|void
+DECL|function|encode_alpha_block_BC2 (unsigned char * dst,const unsigned char * block)
 name|encode_alpha_block_BC2
 parameter_list|(
 name|unsigned
@@ -6439,9 +6425,9 @@ comment|/* Write DXT5 alpha block */
 end_comment
 
 begin_function
-DECL|function|encode_alpha_block_BC3 (unsigned char * dst,const unsigned char * block,const int offset)
 specifier|static
 name|void
+DECL|function|encode_alpha_block_BC3 (unsigned char * dst,const unsigned char * block,const int offset)
 name|encode_alpha_block_BC3
 parameter_list|(
 name|unsigned
@@ -6564,7 +6550,7 @@ operator|++
 operator|=
 name|mn
 expr_stmt|;
-comment|/*     * determine bias and emit indices     * given the choice of mx/mn, these indices are optimal:     * http://fgiesen.wordpress.com/2009/12/15/dxt5-alpha-block-index-determination/     */
+comment|/*    * determine bias and emit indices    * given the choice of mx/mn, these indices are optimal:    * http://fgiesen.wordpress.com/2009/12/15/dxt5-alpha-block-index-determination/    */
 name|dist
 operator|=
 name|mx
@@ -6646,7 +6632,7 @@ literal|7
 operator|+
 name|bias
 expr_stmt|;
-comment|/* select index. this is a "linear scale" lerp factor between 0 (val=min) and 7 (val=max). */
+comment|/* select index. this is a "linear scale" lerp factor between 0          (val=min) and 7 (val=max). */
 name|t
 operator|=
 operator|(
@@ -6789,9 +6775,9 @@ value|(((y)>> 2) * ((bs) * (((w) + 3)>> 2)) + ((bs) * ((x)>> 2)))
 end_define
 
 begin_function
-DECL|function|compress_BC1 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 specifier|static
 name|void
+DECL|function|compress_BC1 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 name|compress_BC1
 parameter_list|(
 name|unsigned
@@ -6968,9 +6954,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compress_BC2 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 specifier|static
 name|void
+DECL|function|compress_BC2 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 name|compress_BC2
 parameter_list|(
 name|unsigned
@@ -7156,9 +7142,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compress_BC3 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 specifier|static
 name|void
+DECL|function|compress_BC3 (unsigned char * dst,const unsigned char * src,int w,int h,int flags)
 name|compress_BC3
 parameter_list|(
 name|unsigned
@@ -7346,9 +7332,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compress_BC4 (unsigned char * dst,const unsigned char * src,int w,int h)
 specifier|static
 name|void
+DECL|function|compress_BC4 (unsigned char * dst,const unsigned char * src,int w,int h)
 name|compress_BC4
 parameter_list|(
 name|unsigned
@@ -7521,9 +7507,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compress_BC5 (unsigned char * dst,const unsigned char * src,int w,int h)
 specifier|static
 name|void
+DECL|function|compress_BC5 (unsigned char * dst,const unsigned char * src,int w,int h)
 name|compress_BC5
 parameter_list|(
 name|unsigned
@@ -7708,9 +7694,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compress_YCoCg (unsigned char * dst,const unsigned char * src,int w,int h)
 specifier|static
 name|void
+DECL|function|compress_YCoCg (unsigned char * dst,const unsigned char * src,int w,int h)
 name|compress_YCoCg
 parameter_list|(
 name|unsigned
@@ -7891,8 +7877,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dxt_compress (unsigned char * dst,unsigned char * src,int format,unsigned int width,unsigned int height,int bpp,int mipmaps,int flags)
 name|int
+DECL|function|dxt_compress (unsigned char * dst,unsigned char * src,int format,unsigned int width,unsigned int height,int bpp,int mipmaps,int flags)
 name|dxt_compress
 parameter_list|(
 name|unsigned
@@ -8514,17 +8500,15 @@ name|tmp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|decode_color_block (unsigned char * block,unsigned char * src,int format)
 specifier|static
 name|void
+DECL|function|decode_color_block (unsigned char * block,unsigned char * src,int format)
 name|decode_color_block
 parameter_list|(
 name|unsigned
@@ -8854,9 +8838,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|decode_alpha_block_BC2 (unsigned char * block,unsigned char * src)
 specifier|static
 name|void
+DECL|function|decode_alpha_block_BC2 (unsigned char * block,unsigned char * src)
 name|decode_alpha_block_BC2
 parameter_list|(
 name|unsigned
@@ -8954,9 +8938,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|decode_alpha_block_BC3 (unsigned char * block,unsigned char * src,int w)
 specifier|static
 name|void
+DECL|function|decode_alpha_block_BC3 (unsigned char * block,unsigned char * src,int w)
 name|decode_alpha_block_BC3
 parameter_list|(
 name|unsigned
@@ -9196,9 +9180,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|make_normal (unsigned char * dst,unsigned char x,unsigned char y)
 specifier|static
 name|void
+DECL|function|make_normal (unsigned char * dst,unsigned char x,unsigned char y)
 name|make_normal
 parameter_list|(
 name|unsigned
@@ -9337,9 +9321,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|normalize_block (unsigned char * block,int format)
 specifier|static
 name|void
+DECL|function|normalize_block (unsigned char * block,int format)
 name|normalize_block
 parameter_list|(
 name|unsigned
@@ -9533,9 +9517,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|put_block (unsigned char * dst,unsigned char * block,unsigned int bx,unsigned int by,unsigned int width,unsigned height,int bpp)
 specifier|static
 name|void
+DECL|function|put_block (unsigned char * dst,unsigned char * block,unsigned int bx,unsigned int by,unsigned int width,unsigned height,int bpp)
 name|put_block
 parameter_list|(
 name|unsigned
@@ -9683,8 +9667,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dxt_decompress (unsigned char * dst,unsigned char * src,int format,unsigned int size,unsigned int width,unsigned int height,int bpp,int normals)
 name|int
+DECL|function|dxt_decompress (unsigned char * dst,unsigned char * src,int format,unsigned int size,unsigned int width,unsigned int height,int bpp,int normals)
 name|dxt_decompress
 parameter_list|(
 name|unsigned
@@ -9961,9 +9945,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function

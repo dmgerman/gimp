@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* 	DDS GIMP plugin  	Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,    with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  	This program is free software; you can redistribute it and/or 	modify it under the terms of the GNU General Public 	License as published by the Free Software Foundation; either 	version 2 of the License, or (at your option) any later version.  	This program is distributed in the hope that it will be useful, 	but WITHOUT ANY WARRANTY; without even the implied warranty of 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 	General Public License for more details.  	You should have received a copy of the GNU General Public License 	along with this program; see the file COPYING.  If not, write to    the Free Software Foundation, 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301 USA. */
+comment|/*  * DDS GIMP plugin  *  * Copyright (C) 2004-2012 Shawn Kirst<skirst@gmail.com>,  * with parts (C) 2003 Arne Reuter<homepage@arnereuter.de> where specified.  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|VEC_H
+name|__VEC_H__
 end_ifndef
 
 begin_define
-DECL|macro|VEC_H
+DECL|macro|__VEC_H__
 define|#
 directive|define
-name|VEC_H
+name|__VEC_H__
 end_define
 
 begin_include
@@ -130,10 +130,10 @@ value|{x, x, x, x}
 end_define
 
 begin_function
-DECL|function|vec4_set (float x,float y,float z,float w)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_set (float x,float y,float z,float w)
 name|vec4_set
 parameter_list|(
 name|float
@@ -153,7 +153,6 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_setr_ps
 argument_list|(
 name|x
@@ -164,7 +163,6 @@ name|z
 argument_list|,
 name|w
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -182,9 +180,7 @@ name|w
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|v
-operator|)
 return|;
 endif|#
 directive|endif
@@ -192,10 +188,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_set1 (float f)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_set1 (float f)
 name|vec4_set1
 parameter_list|(
 name|float
@@ -206,12 +202,10 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_set1_ps
 argument_list|(
 name|f
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -229,9 +223,7 @@ name|f
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|v
-operator|)
 return|;
 endif|#
 directive|endif
@@ -239,21 +231,21 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_zero ()
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_zero (void)
 name|vec4_zero
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_setzero_ps
 argument_list|()
-operator|)
 return|;
 else|#
 directive|else
@@ -271,9 +263,7 @@ literal|0
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|v
-operator|)
 return|;
 endif|#
 directive|endif
@@ -281,10 +271,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_store (float * f,const vec4_t v)
 specifier|static
 specifier|inline
 name|void
+DECL|function|vec4_store (float * f,const vec4_t v)
 name|vec4_store
 parameter_list|(
 name|float
@@ -354,10 +344,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_splatx (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_splatx (const vec4_t v)
 name|vec4_splatx
 parameter_list|(
 specifier|const
@@ -369,7 +359,6 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_shuffle_ps
 argument_list|(
 name|v
@@ -378,7 +367,6 @@ name|v
 argument_list|,
 literal|0x00
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -408,9 +396,7 @@ index|]
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|r
-operator|)
 return|;
 endif|#
 directive|endif
@@ -418,10 +404,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_splaty (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_splaty (const vec4_t v)
 name|vec4_splaty
 parameter_list|(
 specifier|const
@@ -433,7 +419,6 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_shuffle_ps
 argument_list|(
 name|v
@@ -442,7 +427,6 @@ name|v
 argument_list|,
 literal|0x55
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -472,9 +456,7 @@ index|]
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|r
-operator|)
 return|;
 endif|#
 directive|endif
@@ -482,10 +464,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_splatz (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_splatz (const vec4_t v)
 name|vec4_splatz
 parameter_list|(
 specifier|const
@@ -497,7 +479,6 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_shuffle_ps
 argument_list|(
 name|v
@@ -506,7 +487,6 @@ name|v
 argument_list|,
 literal|0xaa
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -536,9 +516,7 @@ index|]
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|r
-operator|)
 return|;
 endif|#
 directive|endif
@@ -546,10 +524,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_splatw (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_splatw (const vec4_t v)
 name|vec4_splatw
 parameter_list|(
 specifier|const
@@ -561,7 +539,6 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_shuffle_ps
 argument_list|(
 name|v
@@ -570,7 +547,6 @@ name|v
 argument_list|,
 literal|0xff
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -600,9 +576,7 @@ index|]
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|r
-operator|)
 return|;
 endif|#
 directive|endif
@@ -610,10 +584,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_rcp (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_rcp (const vec4_t v)
 name|vec4_rcp
 parameter_list|(
 specifier|const
@@ -651,7 +625,6 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|_mm_add_ps
 argument_list|(
 name|_mm_mul_ps
@@ -663,7 +636,6 @@ argument_list|)
 argument_list|,
 name|est
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -681,11 +653,9 @@ literal|1.0f
 block|}
 decl_stmt|;
 return|return
-operator|(
 name|one
 operator|/
 name|v
-operator|)
 return|;
 endif|#
 directive|endif
@@ -693,10 +663,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_min (const vec4_t a,const vec4_t b)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_min (const vec4_t a,const vec4_t b)
 name|vec4_min
 parameter_list|(
 specifier|const
@@ -712,19 +682,16 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_min_ps
 argument_list|(
 name|a
 argument_list|,
 name|b
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
 return|return
-operator|(
 name|vec4_set
 argument_list|(
 name|MIN
@@ -779,7 +746,6 @@ literal|3
 index|]
 argument_list|)
 argument_list|)
-operator|)
 return|;
 endif|#
 directive|endif
@@ -787,10 +753,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_max (const vec4_t a,const vec4_t b)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_max (const vec4_t a,const vec4_t b)
 name|vec4_max
 parameter_list|(
 specifier|const
@@ -806,19 +772,16 @@ ifdef|#
 directive|ifdef
 name|USE_SSE
 return|return
-operator|(
 name|_mm_max_ps
 argument_list|(
 name|a
 argument_list|,
 name|b
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
 return|return
-operator|(
 name|vec4_set
 argument_list|(
 name|MAX
@@ -873,7 +836,6 @@ literal|3
 index|]
 argument_list|)
 argument_list|)
-operator|)
 return|;
 endif|#
 directive|endif
@@ -881,10 +843,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_trunc (const vec4_t v)
 specifier|static
 specifier|inline
 name|vec4_t
+DECL|function|vec4_trunc (const vec4_t v)
 name|vec4_trunc
 parameter_list|(
 specifier|const
@@ -899,14 +861,12 @@ ifdef|#
 directive|ifdef
 name|__SSE4_1__
 return|return
-operator|(
 name|_mm_round_ps
 argument_list|(
 name|v
 argument_list|,
 name|_MM_FROUND_TRUNC
 argument_list|)
-operator|)
 return|;
 elif|#
 directive|elif
@@ -915,7 +875,6 @@ argument_list|(
 name|__SSE2__
 argument_list|)
 return|return
-operator|(
 name|_mm_cvtepi32_ps
 argument_list|(
 name|_mm_cvttps_epi32
@@ -923,7 +882,6 @@ argument_list|(
 name|v
 argument_list|)
 argument_list|)
-operator|)
 return|;
 else|#
 directive|else
@@ -985,9 +943,7 @@ name|_mm_empty
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 name|trunc
-operator|)
 return|;
 endif|#
 directive|endif
@@ -1088,12 +1044,10 @@ index|[
 literal|3
 index|]
 argument_list|)
-block|,    }
+block|, }
 decl_stmt|;
 return|return
-operator|(
 name|r
-operator|)
 return|;
 endif|#
 directive|endif
@@ -1101,10 +1055,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_accum (const vec4_t v)
 specifier|static
 specifier|inline
 name|float
+DECL|function|vec4_accum (const vec4_t v)
 name|vec4_accum
 parameter_list|(
 specifier|const
@@ -1185,14 +1139,11 @@ name|t
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|rv
-operator|)
 return|;
 else|#
 directive|else
 return|return
-operator|(
 name|v
 index|[
 literal|0
@@ -1212,7 +1163,6 @@ name|v
 index|[
 literal|3
 index|]
-operator|)
 return|;
 endif|#
 directive|endif
@@ -1220,10 +1170,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_dot (const vec4_t a,const vec4_t b)
 specifier|static
 specifier|inline
 name|float
+DECL|function|vec4_dot (const vec4_t a,const vec4_t b)
 name|vec4_dot
 parameter_list|(
 specifier|const
@@ -1270,21 +1220,17 @@ name|t
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|rv
-operator|)
 return|;
 else|#
 directive|else
 return|return
-operator|(
 name|vec4_accum
 argument_list|(
 name|a
 operator|*
 name|b
 argument_list|)
-operator|)
 return|;
 endif|#
 directive|endif
@@ -1292,10 +1238,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|vec4_cmplt (const vec4_t a,const vec4_t b)
 specifier|static
 specifier|inline
 name|int
+DECL|function|vec4_cmplt (const vec4_t a,const vec4_t b)
 name|vec4_cmplt
 parameter_list|(
 specifier|const
@@ -1329,17 +1275,14 @@ name|bits
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|val
 operator|!=
 literal|0
-operator|)
 return|;
 else|#
 directive|else
 return|return
 operator|(
-operator|(
 name|a
 index|[
 literal|0
@@ -1385,7 +1328,6 @@ name|b
 index|[
 literal|3
 index|]
-operator|)
 operator|)
 return|;
 endif|#
@@ -1397,6 +1339,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __VEC_H__ */
+end_comment
 
 end_unit
 
