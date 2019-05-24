@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b16643c0103
+DECL|enum|__anon2bac792e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1669,6 +1669,14 @@ argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|gimp_layer_mode_get_paint_composite_mode
+argument_list|(
+name|gimp_context_get_paint_mode
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_drawable_get_format
 argument_list|(

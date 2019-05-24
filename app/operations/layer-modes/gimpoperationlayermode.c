@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b53fc00103
+DECL|enum|__anon290a68b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1127,11 +1127,15 @@ name|layer_mode
 argument_list|,
 name|self
 operator|->
+name|blend_space
+argument_list|,
+name|self
+operator|->
 name|composite_space
 argument_list|,
 name|self
 operator|->
-name|blend_space
+name|composite_mode
 argument_list|,
 name|preferred_format
 argument_list|)

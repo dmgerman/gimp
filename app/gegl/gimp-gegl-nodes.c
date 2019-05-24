@@ -157,9 +157,11 @@ name|gimp_layer_mode_get_format
 argument_list|(
 name|GIMP_LAYER_MODE_NORMAL
 argument_list|,
+name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
 name|composite_space
 argument_list|,
-name|GIMP_LAYER_COLOR_SPACE_AUTO
+name|GIMP_LAYER_COMPOSITE_AUTO
 argument_list|,
 name|NULL
 argument_list|)

@@ -1075,6 +1075,16 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
+name|GimpLayerCompositeMode
+name|composite_mode
+decl_stmt|;
+name|composite_mode
+operator|=
+name|gimp_layer_mode_get_paint_composite_mode
+argument_list|(
+name|paint_mode
+argument_list|)
+expr_stmt|;
 name|format
 operator|=
 name|gimp_layer_mode_get_format
@@ -1084,6 +1094,8 @@ argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
 argument_list|,
 name|GIMP_LAYER_COLOR_SPACE_AUTO
+argument_list|,
+name|composite_mode
 argument_list|,
 name|gimp_drawable_get_format
 argument_list|(
@@ -2328,7 +2340,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c519eb0103
+DECL|enum|__anon28a432ba0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

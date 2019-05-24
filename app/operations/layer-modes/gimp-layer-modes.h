@@ -248,10 +248,13 @@ name|GimpLayerMode
 name|mode
 parameter_list|,
 name|GimpLayerColorSpace
-name|composite_space
+name|blend_space
 parameter_list|,
 name|GimpLayerColorSpace
-name|blend_space
+name|composite_space
+parameter_list|,
+name|GimpLayerCompositeMode
+name|composite_mode
 parameter_list|,
 specifier|const
 name|Babl
