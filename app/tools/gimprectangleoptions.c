@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c730ec80103
+DECL|enum|__anon2a95cf6e0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -246,7 +246,7 @@ literal|"auto-shrink"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Automatically shrink to the nearest "
 literal|"rectangular shape in a layer"
@@ -297,7 +297,7 @@ literal|"guide"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Composition guides such as rule of thirds"
 argument_list|)
@@ -322,7 +322,7 @@ literal|"x"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"X coordinate of top left corner"
 argument_list|)
@@ -350,7 +350,7 @@ literal|"y"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Y coordinate of top left corner"
 argument_list|)
@@ -378,7 +378,7 @@ literal|"width"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Width of selection"
 argument_list|)
@@ -405,7 +405,7 @@ literal|"height"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Height of selection"
 argument_list|)
@@ -432,7 +432,7 @@ literal|"position-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Unit of top left corner coordinate"
 argument_list|)
@@ -459,7 +459,7 @@ literal|"size-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Unit of selection size"
 argument_list|)
@@ -486,7 +486,7 @@ literal|"fixed-rule-active"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enable lock of aspect ratio, "
 literal|"width, height or size"
@@ -510,7 +510,7 @@ literal|"fixed-rule"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Choose what has to be locked"
 argument_list|)
@@ -535,7 +535,7 @@ literal|"desired-fixed-width"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Custom fixed width"
 argument_list|)
@@ -562,7 +562,7 @@ literal|"desired-fixed-height"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Custom fixed height"
 argument_list|)
@@ -841,7 +841,7 @@ literal|"fixed-unit"
 argument_list|,
 name|NULL
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Unit of fixed width, height or size"
 argument_list|)
