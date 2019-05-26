@@ -1100,7 +1100,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|union|__anon28e2c04a010a
+DECL|union|__anon2c7402b9010a
 DECL|member|v
 DECL|member|f
 union|union
@@ -2398,8 +2398,6 @@ argument_list|)
 argument_list|,
 name|coords
 argument_list|,
-name|op
-argument_list|,
 name|GIMP_BRUSH_HARD
 argument_list|,
 name|force
@@ -2836,8 +2834,6 @@ argument_list|,
 name|force
 argument_list|,
 name|GIMP_PAINT_INCREMENTAL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

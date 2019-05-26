@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be55b250103
+DECL|enum|__anon275c3f200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1347,6 +1347,15 @@ argument_list|(
 name|source_core
 argument_list|)
 decl_stmt|;
+name|GimpBrushCore
+modifier|*
+name|brush_core
+init|=
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|source_core
+argument_list|)
+decl_stmt|;
 name|GimpSourceOptions
 modifier|*
 name|options
@@ -1585,10 +1594,7 @@ block|}
 block|}
 name|gimp_brush_core_eval_transform_dynamics
 argument_list|(
-name|GIMP_BRUSH_CORE
-argument_list|(
-name|paint_core
-argument_list|)
+name|brush_core
 argument_list|,
 name|drawable
 argument_list|,
@@ -1632,6 +1638,15 @@ name|coords
 operator|=
 name|gimp_symmetry_get_coords
 argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+name|gimp_brush_core_eval_transform_symmetry
+argument_list|(
+name|brush_core
+argument_list|,
 name|sym
 argument_list|,
 name|i

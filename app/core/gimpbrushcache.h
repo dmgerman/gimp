@@ -183,10 +183,6 @@ name|GimpBrushCache
 modifier|*
 name|cache
 parameter_list|,
-name|GeglNode
-modifier|*
-name|op
-parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -221,10 +217,6 @@ name|cache
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|GeglNode
-modifier|*
-name|op
 parameter_list|,
 name|gint
 name|width

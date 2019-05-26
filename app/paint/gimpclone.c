@@ -910,8 +910,6 @@ condition|?
 name|GIMP_PAINT_INCREMENTAL
 else|:
 name|GIMP_PAINT_CONSTANT
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

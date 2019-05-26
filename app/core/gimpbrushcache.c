@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bfdec20103
+DECL|enum|__anon2b898f150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,11 +105,6 @@ decl_stmt|;
 DECL|member|hardness
 name|gdouble
 name|hardness
-decl_stmt|;
-DECL|member|op
-name|GeglNode
-modifier|*
-name|op
 decl_stmt|;
 block|}
 struct|;
@@ -644,16 +639,12 @@ end_function
 
 begin_function
 name|gconstpointer
-DECL|function|gimp_brush_cache_get (GimpBrushCache * cache,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
+DECL|function|gimp_brush_cache_get (GimpBrushCache * cache,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_cache_get
 parameter_list|(
 name|GimpBrushCache
 modifier|*
 name|cache
-parameter_list|,
-name|GeglNode
-modifier|*
-name|op
 parameter_list|,
 name|gint
 name|width
@@ -764,12 +755,6 @@ operator|->
 name|hardness
 operator|==
 name|hardness
-operator|&&
-name|unit
-operator|->
-name|op
-operator|==
-name|op
 condition|)
 block|{
 if|if
@@ -862,7 +847,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_cache_add (GimpBrushCache * cache,gpointer data,GeglNode * op,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
+DECL|function|gimp_brush_cache_add (GimpBrushCache * cache,gpointer data,gint width,gint height,gdouble scale,gdouble aspect_ratio,gdouble angle,gboolean reflect,gdouble hardness)
 name|gimp_brush_cache_add
 parameter_list|(
 name|GimpBrushCache
@@ -871,10 +856,6 @@ name|cache
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|GeglNode
-modifier|*
-name|op
 parameter_list|,
 name|gint
 name|width
@@ -1070,12 +1051,6 @@ operator|->
 name|hardness
 operator|=
 name|hardness
-expr_stmt|;
-name|unit
-operator|->
-name|op
-operator|=
-name|op
 expr_stmt|;
 name|cache
 operator|->
