@@ -801,6 +801,7 @@ name|height
 argument_list|)
 condition|)
 block|{
+comment|/*  The fill region and the selection are disjoint; bail.  */
 if|if
 condition|(
 operator|!
@@ -811,7 +812,6 @@ argument_list|(
 name|new_mask
 argument_list|)
 expr_stmt|;
-comment|/*  The fill region and the selection are disjoint; bail.  */
 name|gimp_unset_busy
 argument_list|(
 name|image
@@ -1587,7 +1587,8 @@ operator|&
 name|feather_radius
 argument_list|)
 condition|)
-comment|/* Feathering for the line art algorithm is not applied during      * mask creation because we just want to apply it on the borders      * of the mask at the end (since the mask can evolve, we don't      * want to actually touch it, but only the intermediate results).      */
+block|{
+comment|/* Feathering for the line art algorithm is not applied during        * mask creation because we just want to apply it on the borders        * of the mask at the end (since the mask can evolve, we don't        * want to actually touch it, but only the intermediate results).        */
 name|gimp_gegl_apply_feather
 argument_list|(
 name|buffer
@@ -1605,6 +1606,7 @@ argument_list|,
 name|feather_radius
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|mask_x
