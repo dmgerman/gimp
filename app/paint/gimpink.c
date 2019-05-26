@@ -298,6 +298,12 @@ name|ytilt
 parameter_list|,
 name|gdouble
 name|velocity
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1398,6 +1404,12 @@ name|i
 operator|++
 control|)
 block|{
+name|gdouble
+name|angle
+decl_stmt|;
+name|gboolean
+name|reflect
+decl_stmt|;
 name|coords
 operator|=
 name|gimp_symmetry_get_coords
@@ -1405,6 +1417,19 @@ argument_list|(
 name|sym
 argument_list|,
 name|i
+argument_list|)
+expr_stmt|;
+name|gimp_symmetry_get_transform
+argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|,
+operator|&
+name|angle
+argument_list|,
+operator|&
+name|reflect
 argument_list|)
 expr_stmt|;
 name|last_blob
@@ -1434,6 +1459,13 @@ operator|->
 name|ytilt
 argument_list|,
 literal|100
+argument_list|,
+name|gimp_deg_to_rad
+argument_list|(
+name|angle
+argument_list|)
+argument_list|,
+name|reflect
 argument_list|)
 expr_stmt|;
 name|ink
@@ -1531,6 +1563,12 @@ name|blob_union
 init|=
 name|NULL
 decl_stmt|;
+name|gdouble
+name|angle
+decl_stmt|;
+name|gboolean
+name|reflect
+decl_stmt|;
 name|coords
 operator|=
 name|gimp_symmetry_get_coords
@@ -1538,6 +1576,19 @@ argument_list|(
 name|sym
 argument_list|,
 name|i
+argument_list|)
+expr_stmt|;
+name|gimp_symmetry_get_transform
+argument_list|(
+name|sym
+argument_list|,
+name|i
+argument_list|,
+operator|&
+name|angle
+argument_list|,
+operator|&
+name|reflect
 argument_list|)
 expr_stmt|;
 name|blob
@@ -1571,6 +1622,13 @@ operator|->
 name|velocity
 operator|*
 literal|100
+argument_list|,
+name|gimp_deg_to_rad
+argument_list|(
+name|angle
+argument_list|)
+argument_list|,
+name|reflect
 argument_list|)
 expr_stmt|;
 name|last_blob
@@ -1850,7 +1908,7 @@ begin_function
 specifier|static
 name|GimpBlob
 modifier|*
-DECL|function|ink_pen_ellipse (GimpInkOptions * options,gdouble x_center,gdouble y_center,gdouble pressure,gdouble xtilt,gdouble ytilt,gdouble velocity)
+DECL|function|ink_pen_ellipse (GimpInkOptions * options,gdouble x_center,gdouble y_center,gdouble pressure,gdouble xtilt,gdouble ytilt,gdouble velocity,gdouble angle,gboolean reflect)
 name|ink_pen_ellipse
 parameter_list|(
 name|GimpInkOptions
@@ -1874,6 +1932,12 @@ name|ytilt
 parameter_list|,
 name|gdouble
 name|velocity
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|gboolean
+name|reflect
 parameter_list|)
 block|{
 name|GimpBlobFunc
@@ -1905,6 +1969,9 @@ name|tscale_c
 decl_stmt|;
 name|gdouble
 name|tscale_s
+decl_stmt|;
+name|gdouble
+name|blob_angle
 decl_stmt|;
 comment|/* Adjust the size depending on pressure. */
 name|size
@@ -2054,6 +2121,24 @@ literal|1.0
 operator|/
 name|SUBSAMPLE
 expr_stmt|;
+comment|/* Calculate brush angle */
+name|blob_angle
+operator|=
+name|options
+operator|->
+name|blob_angle
+operator|-
+name|angle
+expr_stmt|;
+if|if
+condition|(
+name|reflect
+condition|)
+name|blob_angle
+operator|=
+operator|-
+name|blob_angle
+expr_stmt|;
 comment|/* Add brush angle/aspect to tilt vectorially */
 comment|/* I'm not happy with the way the brush widget info is combined with    * tilt info from the brush. My personal feeling is that    * representing both as affine transforms would make the most    * sense. -RLL    */
 name|tscale
@@ -2101,8 +2186,6 @@ name|blob_aspect
 operator|*
 name|cos
 argument_list|(
-name|options
-operator|->
 name|blob_angle
 argument_list|)
 operator|+
@@ -2124,8 +2207,6 @@ name|blob_aspect
 operator|*
 name|sin
 argument_list|(
-name|options
-operator|->
 name|blob_angle
 argument_list|)
 operator|+
@@ -2145,8 +2226,6 @@ name|g_printerr
 argument_list|(
 literal|"angle %g aspect %g; %g %g; %g %g\n"
 argument_list|,
-name|options
-operator|->
 name|blob_angle
 argument_list|,
 name|options
@@ -2205,8 +2284,6 @@ name|tsin
 operator|=
 name|sin
 argument_list|(
-name|options
-operator|->
 name|blob_angle
 argument_list|)
 expr_stmt|;
@@ -2214,8 +2291,6 @@ name|tcos
 operator|=
 name|cos
 argument_list|(
-name|options
-operator|->
 name|blob_angle
 argument_list|)
 expr_stmt|;
@@ -2340,7 +2415,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a432ba0103
+DECL|enum|__anon29f944660103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
