@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpbrushcore.h"
+file|"gimppaintbrush.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpEraser
 block|{
 DECL|member|parent_instance
-name|GimpBrushCore
+name|GimpPaintbrush
 name|parent_instance
 decl_stmt|;
 block|}
@@ -113,7 +113,7 @@ struct|struct
 name|_GimpEraserClass
 block|{
 DECL|member|parent_class
-name|GimpBrushCoreClass
+name|GimpPaintbrushClass
 name|parent_class
 decl_stmt|;
 block|}
