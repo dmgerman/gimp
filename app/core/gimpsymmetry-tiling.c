@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee3a720103
+DECL|enum|__anon29eb1f810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -209,28 +209,6 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|origin
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GeglNode
-modifier|*
-name|gimp_tiling_get_operation
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|tiling
-parameter_list|,
-name|gint
-name|stroke
-parameter_list|,
-name|gint
-name|paint_width
-parameter_list|,
-name|gint
-name|paint_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -353,12 +331,6 @@ operator|->
 name|update_strokes
 operator|=
 name|gimp_tiling_update_strokes
-expr_stmt|;
-name|symmetry_class
-operator|->
-name|get_operation
-operator|=
-name|gimp_tiling_get_operation
 expr_stmt|;
 name|GIMP_CONFIG_PROP_DOUBLE
 argument_list|(
@@ -1836,34 +1808,6 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GeglNode
-modifier|*
-DECL|function|gimp_tiling_get_operation (GimpSymmetry * sym,gint stroke,gint paint_width,gint paint_height)
-name|gimp_tiling_get_operation
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|sym
-parameter_list|,
-name|gint
-name|stroke
-parameter_list|,
-name|gint
-name|paint_width
-parameter_list|,
-name|gint
-name|paint_height
-parameter_list|)
-block|{
-comment|/* No buffer transformation happens for tiling. */
-return|return
-name|NULL
-return|;
 block|}
 end_function
 
