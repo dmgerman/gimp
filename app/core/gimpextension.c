@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b616b70103
+DECL|enum|__anon27722ca30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,7 +158,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b616b70208
+DECL|struct|__anon27722ca30208
 block|{
 DECL|member|text
 name|GString
@@ -1112,6 +1112,11 @@ name|NULL
 comment|/*  error       */
 block|}
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|description
+decl_stmt|;
 name|GimpXmlParser
 modifier|*
 name|xml_parser
@@ -1169,17 +1174,23 @@ operator|&
 name|state
 argument_list|)
 expr_stmt|;
+name|description
+operator|=
+name|gimp_extension_get_description
+argument_list|(
+name|extension
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|description
+operator|&&
 operator|!
 name|gimp_xml_parser_parse_buffer
 argument_list|(
 name|xml_parser
 argument_list|,
-name|gimp_extension_get_description
-argument_list|(
-name|extension
-argument_list|)
+name|description
 argument_list|,
 operator|-
 literal|1
