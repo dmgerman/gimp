@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c707c190103
+DECL|enum|__anon28cfc6260103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c707c190203
+DECL|enum|__anon28cfc6260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6060,6 +6060,14 @@ name|image
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|gimp_projectable_structure_changed
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
