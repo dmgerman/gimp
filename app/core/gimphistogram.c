@@ -114,7 +114,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddefb40103
+DECL|enum|__anon2782c56a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,7 +165,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddefb40208
+DECL|struct|__anon2782c56a0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddefb40308
+DECL|struct|__anon2782c56a0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1440,22 +1440,17 @@ operator|->
 name|values
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|histogram
 operator|->
 name|priv
 operator|->
 name|values
+argument_list|,
+name|g_free
 argument_list|)
-expr_stmt|;
-name|histogram
-operator|->
-name|priv
-operator|->
-name|values
-operator|=
-name|NULL
 expr_stmt|;
 name|g_object_notify
 argument_list|(

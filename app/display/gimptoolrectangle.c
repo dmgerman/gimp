@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8e5f20103
+DECL|enum|__anon2c7785310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,7 +299,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8e5f20203
+DECL|enum|__anon2c7785310203
 block|{
 DECL|enumerator|CHANGE_COMPLETE
 name|CHANGE_COMPLETE
@@ -313,7 +313,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8e5f20303
+DECL|enum|__anon2c7785310303
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8e5f20403
+DECL|enum|__anon2c7785310403
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2950,27 +2950,16 @@ name|rectangle
 operator|->
 name|private
 decl_stmt|;
-if|if
-condition|(
-name|private
-operator|->
-name|status_title
-condition|)
-block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|private
 operator|->
 name|status_title
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
-name|private
-operator|->
-name|status_title
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

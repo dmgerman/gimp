@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab16c470103
+DECL|enum|__anon2c380ce80103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab16c470203
+DECL|enum|__anon2c380ce80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2987,14 +2987,13 @@ literal|0
 condition|)
 block|{
 comment|/* The value returned by gtk_accelerator_get_label() must be        * freed after use.        */
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|accel_string
+argument_list|,
+name|g_free
 argument_list|)
-expr_stmt|;
-name|accel_string
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 return|return

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac89800103
+DECL|enum|__anon27a473530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac89800203
+DECL|enum|__anon27a473530203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -4264,18 +4264,15 @@ argument_list|(
 name|viewable
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|private
 operator|->
 name|icon_name
+argument_list|,
+name|g_free
 argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|icon_name
-operator|=
-name|NULL
 expr_stmt|;
 name|viewable_class
 operator|=

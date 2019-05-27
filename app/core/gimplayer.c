@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7ee8b0103
+DECL|enum|__anon28ee910e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7ee8b0203
+DECL|enum|__anon28ee910e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10523,22 +10523,17 @@ operator|.
 name|segs
 condition|)
 block|{
-name|g_free
+name|g_clear_pointer
 argument_list|(
+operator|&
 name|layer
 operator|->
 name|fs
 operator|.
 name|segs
+argument_list|,
+name|g_free
 argument_list|)
-expr_stmt|;
-name|layer
-operator|->
-name|fs
-operator|.
-name|segs
-operator|=
-name|NULL
 expr_stmt|;
 name|layer
 operator|->
