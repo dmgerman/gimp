@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c0c280108
+DECL|struct|__anon28aa9e6c0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c0c280208
+DECL|struct|__anon28aa9e6c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4029,7 +4029,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save color profile"
+literal|"Save color _profile"
 argument_list|)
 argument_list|)
 expr_stmt|;
