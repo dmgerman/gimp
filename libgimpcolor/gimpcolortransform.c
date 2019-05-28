@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c483e720103
+DECL|enum|__anon296169de0103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -548,7 +548,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: error making format: %s\n"
+literal|"%s: error making src format: %s\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -590,7 +590,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: error making format: %s\n"
+literal|"%s: error making dest format: %s\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,

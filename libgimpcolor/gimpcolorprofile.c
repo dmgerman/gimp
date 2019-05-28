@@ -5380,7 +5380,7 @@ else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"format: %s\n"
+literal|"format not supported: %s\n"
 literal|"has_alpha = %s\n"
 literal|"type = %s\n"
 literal|"model = %s\n"
