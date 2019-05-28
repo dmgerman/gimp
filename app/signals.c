@@ -376,7 +376,52 @@ name|PEXCEPTION_POINTERS
 name|pExceptionInfo
 parameter_list|)
 block|{
-comment|/* Just in case, so that we don't loop or anything similar, just    * re-establish previous handler.    */
+name|EXCEPTION_RECORD
+modifier|*
+name|er
+decl_stmt|;
+name|int
+name|fatal
+decl_stmt|;
+if|if
+condition|(
+name|pExceptionInfo
+operator|==
+name|NULL
+operator|||
+name|pExceptionInfo
+operator|->
+name|ExceptionRecord
+operator|==
+name|NULL
+condition|)
+return|return
+name|EXCEPTION_CONTINUE_SEARCH
+return|;
+name|er
+operator|=
+name|pExceptionInfo
+operator|->
+name|ExceptionRecord
+expr_stmt|;
+name|fatal
+operator|=
+name|I_RpcExceptionFilter
+argument_list|(
+name|er
+operator|->
+name|ExceptionCode
+argument_list|)
+expr_stmt|;
+comment|/* IREF() returns EXCEPTION_CONTINUE_SEARCH for fatal exceptions */
+if|if
+condition|(
+name|fatal
+operator|==
+name|EXCEPTION_CONTINUE_SEARCH
+condition|)
+block|{
+comment|/* Just in case, so that we don't loop or anything similar, just        * re-establish previous handler.        */
 name|SetUnhandledExceptionFilter
 argument_list|(
 name|g_prevExceptionFilter
@@ -388,6 +433,7 @@ argument_list|(
 literal|"unhandled exception"
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|g_prevExceptionFilter
