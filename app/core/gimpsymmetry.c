@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-nodes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce984a0103
+DECL|enum|__anon2c29cefe0103
 block|{
 DECL|enumerator|STROKES_UPDATED
 name|STROKES_UPDATED
@@ -108,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce984a0203
+DECL|enum|__anon2c29cefe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -204,28 +210,6 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|origin
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GeglNode
-modifier|*
-name|gimp_symmetry_real_get_op
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|sym
-parameter_list|,
-name|gint
-name|stroke
-parameter_list|,
-name|gint
-name|paint_width
-parameter_list|,
-name|gint
-name|paint_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -450,12 +434,6 @@ operator|->
 name|update_strokes
 operator|=
 name|gimp_symmetry_real_update_strokes
-expr_stmt|;
-name|klass
-operator|->
-name|get_operation
-operator|=
-name|gimp_symmetry_real_get_op
 expr_stmt|;
 name|klass
 operator|->
@@ -834,34 +812,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GeglNode
-modifier|*
-DECL|function|gimp_symmetry_real_get_op (GimpSymmetry * sym,gint stroke,gint paint_width,gint paint_height)
-name|gimp_symmetry_real_get_op
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|sym
-parameter_list|,
-name|gint
-name|stroke
-parameter_list|,
-name|gint
-name|paint_width
-parameter_list|,
-name|gint
-name|paint_height
-parameter_list|)
-block|{
-comment|/* The basic symmetry just returns NULL, since no transformation of the    * brush painting happen. */
-return|return
-name|NULL
-return|;
 block|}
 end_function
 
@@ -1274,61 +1224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_symmetry_get_operation:  * @sym:          the #GimpSymmetry  * @stroke:       the stroke number  * @paint_width:  the width of the painting area  * @paint_height: the height of the painting area  *  * Returns: the operation to apply to the paint buffer for stroke number @stroke.  * NULL means to copy the original stroke as-is.  **/
-end_comment
-
-begin_function
-name|GeglNode
-modifier|*
-DECL|function|gimp_symmetry_get_operation (GimpSymmetry * sym,gint stroke,gint paint_width,gint paint_height)
-name|gimp_symmetry_get_operation
-parameter_list|(
-name|GimpSymmetry
-modifier|*
-name|sym
-parameter_list|,
-name|gint
-name|stroke
-parameter_list|,
-name|gint
-name|paint_width
-parameter_list|,
-name|gint
-name|paint_height
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_SYMMETRY
-argument_list|(
-name|sym
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|GIMP_SYMMETRY_GET_CLASS
-argument_list|(
-name|sym
-argument_list|)
-operator|->
-name|get_operation
-argument_list|(
-name|sym
-argument_list|,
-name|stroke
-argument_list|,
-name|paint_width
-argument_list|,
-name|paint_height
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_symmetry_get_transform:  * @sym:     the #GimpSymmetry  * @stroke:  the stroke number  * @angle:   output pointer to the transformation rotation angle,  *           in degrees (ccw)  * @reflect: output pointer to the transformation reflection flag  *  * Returns the transformation to apply to the paint buffer for stroke  * number @stroke.  The transformation is comprised of rotation around the  * center, possibly followed by horizontal reflection around the center.  **/
+comment|/**  * gimp_symmetry_get_transform:  * @sym:     the #GimpSymmetry  * @stroke:  the stroke number  * @angle:   output pointer to the transformation rotation angle,  *           in degrees (ccw)  * @reflect: output pointer to the transformation reflection flag  *  * Returns: the transformation to apply to the paint content for stroke  * number @stroke.  The transformation is comprised of rotation, possibly  * followed by horizontal reflection, around the stroke coordinates.  **/
 end_comment
 
 begin_function
@@ -1404,7 +1300,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_symmetry_get_matrix:  * @sym:     the #GimpSymmetry  * @stroke:  the stroke number  * @matrix:  output pointer to the transformation matrix  *  * Returns the transformation matrix to apply to the paint buffer for stroke  * number @stroke.  **/
+comment|/**  * gimp_symmetry_get_matrix:  * @sym:     the #GimpSymmetry  * @stroke:  the stroke number  * @matrix:  output pointer to the transformation matrix  *  * Returns: the transformation matrix to apply to the paint content for stroke  * number @stroke.  **/
 end_comment
 
 begin_function
@@ -1488,6 +1384,68 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_symmetry_get_operation:  * @sym:          the #GimpSymmetry  * @stroke:       the stroke number  *  * Returns: the transformation operation to apply to the paint content for  * stroke number @stroke, or NULL for the identity transformation.  *  * The returned #GeglNode should be freed by the caller.  **/
+end_comment
+
+begin_function
+name|GeglNode
+modifier|*
+DECL|function|gimp_symmetry_get_operation (GimpSymmetry * sym,gint stroke)
+name|gimp_symmetry_get_operation
+parameter_list|(
+name|GimpSymmetry
+modifier|*
+name|sym
+parameter_list|,
+name|gint
+name|stroke
+parameter_list|)
+block|{
+name|GimpMatrix3
+name|matrix
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_SYMMETRY
+argument_list|(
+name|sym
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_symmetry_get_matrix
+argument_list|(
+name|sym
+argument_list|,
+name|stroke
+argument_list|,
+operator|&
+name|matrix
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_matrix3_is_identity
+argument_list|(
+operator|&
+name|matrix
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
+return|return
+name|gimp_gegl_create_transform_node
+argument_list|(
+operator|&
+name|matrix
+argument_list|)
+return|;
 block|}
 end_function
 
