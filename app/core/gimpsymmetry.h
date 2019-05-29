@@ -396,6 +396,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_symmetry_get_matrix
+parameter_list|(
+name|GimpSymmetry
+modifier|*
+name|symmetry
+parameter_list|,
+name|gint
+name|stroke
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|matrix
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_symmetry_parasite_name
