@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae83ae40103
+DECL|enum|__anon290d06940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae83ae40203
+DECL|enum|__anon290d06940203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1242,6 +1242,15 @@ name|sw
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|sw
+argument_list|,
+literal|400
+argument_list|,
+literal|300
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
