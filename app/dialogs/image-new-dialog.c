@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c61630108
+DECL|struct|__anon2785cb400108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1445,7 +1445,7 @@ name|_
 argument_list|(
 literal|"An image of the chosen size will use more "
 literal|"memory than what is configured as "
-literal|"\"Maximum Image Size\" in the Preferences "
+literal|"\"Maximum new image size\" in the Preferences "
 literal|"dialog (currently %s)."
 argument_list|)
 argument_list|,
