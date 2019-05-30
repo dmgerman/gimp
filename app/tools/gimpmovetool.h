@@ -128,10 +128,10 @@ name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-DECL|member|guide
-name|GimpGuide
+DECL|member|guides
+name|GList
 modifier|*
-name|guide
+name|guides
 decl_stmt|;
 DECL|member|saved_type
 name|GimpTransformType
