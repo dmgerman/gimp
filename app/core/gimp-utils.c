@@ -3198,8 +3198,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_list_compare (GList * list1,GList * list2)
-name|gimp_list_compare
+DECL|function|gimp_g_list_compare (GList * list1,GList * list2)
+name|gimp_g_list_compare
 parameter_list|(
 name|GList
 modifier|*

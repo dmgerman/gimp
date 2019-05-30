@@ -432,7 +432,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_list_compare
+name|gimp_g_list_compare
 parameter_list|(
 name|GList
 modifier|*

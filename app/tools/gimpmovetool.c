@@ -1945,7 +1945,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_list_compare
+name|gimp_g_list_compare
 argument_list|(
 name|guides
 argument_list|,
