@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cfc6260103
+DECL|enum|__anon2bf28ea90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cfc6260203
+DECL|enum|__anon2bf28ea90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14386,6 +14386,8 @@ argument_list|,
 name|builtin
 argument_list|)
 condition|)
+block|{
+comment|/* setting the builtin profile is equal to removing the profile */
 name|gimp_image_parasite_detach
 argument_list|(
 name|image
@@ -14393,6 +14395,13 @@ argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|g_object_unref
 argument_list|(
 name|profile
