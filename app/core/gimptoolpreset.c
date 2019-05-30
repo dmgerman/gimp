@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296392d10103
+DECL|enum|__anon28caa7da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -639,7 +639,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|DEFAULT_USE_PATTERN
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
