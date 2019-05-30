@@ -779,6 +779,8 @@ argument_list|(
 name|image
 argument_list|,
 name|parasite
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
@@ -794,6 +796,8 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_IMAGE_COMMENT_PARASITE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

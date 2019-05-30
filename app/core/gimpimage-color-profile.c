@@ -847,6 +847,8 @@ argument_list|(
 name|image
 argument_list|,
 name|icc_parasite
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -857,6 +859,8 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1859,6 +1863,8 @@ argument_list|(
 name|image
 argument_list|,
 literal|"icc-profile-name"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2081,6 +2087,8 @@ argument_list|(
 name|image
 argument_list|,
 literal|"icc-profile-name"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 switch|switch

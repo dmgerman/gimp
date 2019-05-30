@@ -285,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf585cc0103
+DECL|enum|__anon29b2035d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -313,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf585cc0203
+DECL|enum|__anon29b2035d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4081,6 +4081,8 @@ argument_list|(
 name|image
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free

@@ -738,6 +738,8 @@ argument_list|(
 name|image
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
@@ -788,6 +790,8 @@ argument_list|(
 name|image
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
@@ -940,6 +944,8 @@ argument_list|(
 name|image
 argument_list|,
 name|parasite
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free

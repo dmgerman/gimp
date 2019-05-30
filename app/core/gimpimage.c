@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf28ea90103
+DECL|enum|__anon2a0ae44d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf28ea90203
+DECL|enum|__anon2a0ae44d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -14278,7 +14278,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_attach (GimpImage * image,const GimpParasite * parasite)
+DECL|function|gimp_image_parasite_attach (GimpImage * image,const GimpParasite * parasite,gboolean push_undo)
 name|gimp_image_parasite_attach
 parameter_list|(
 name|GimpImage
@@ -14289,6 +14289,9 @@ specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImagePrivate
@@ -14393,6 +14396,8 @@ argument_list|(
 name|image
 argument_list|,
 name|GIMP_ICC_PROFILE_PARASITE_NAME
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -14417,6 +14422,8 @@ expr_stmt|;
 comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we aren't undoable    */
 if|if
 condition|(
+name|push_undo
+operator|&&
 name|gimp_parasite_is_undoable
 argument_list|(
 operator|&
@@ -14451,6 +14458,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|push_undo
+operator|&&
 name|gimp_parasite_has_flag
 argument_list|(
 operator|&
@@ -14477,20 +14486,6 @@ name|copy
 argument_list|)
 expr_stmt|;
 block|}
-name|g_signal_emit
-argument_list|(
-name|image
-argument_list|,
-name|gimp_image_signals
-index|[
-name|PARASITE_ATTACHED
-index|]
-argument_list|,
-literal|0
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -14509,12 +14504,26 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|image
+argument_list|,
+name|gimp_image_signals
+index|[
+name|PARASITE_ATTACHED
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_detach (GimpImage * image,const gchar * name)
+DECL|function|gimp_image_parasite_detach (GimpImage * image,const gchar * name,gboolean push_undo)
 name|gimp_image_parasite_detach
 parameter_list|(
 name|GimpImage
@@ -14525,6 +14534,9 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImagePrivate
@@ -14577,6 +14589,8 @@ condition|)
 return|return;
 if|if
 condition|(
+name|push_undo
+operator|&&
 name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
@@ -14605,20 +14619,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|image
-argument_list|,
-name|gimp_image_signals
-index|[
-name|PARASITE_DETACHED
-index|]
-argument_list|,
-literal|0
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -14635,6 +14635,20 @@ argument_list|(
 name|image
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|image
+argument_list|,
+name|gimp_image_signals
+index|[
+name|PARASITE_DETACHED
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 block|}

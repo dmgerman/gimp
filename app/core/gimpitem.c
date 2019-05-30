@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c985a60103
+DECL|enum|__anon2bc24d230103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c985a60203
+DECL|enum|__anon2bc24d230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8186,6 +8186,8 @@ name|image
 argument_list|,
 operator|&
 name|copy
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
