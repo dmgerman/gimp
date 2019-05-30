@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c898200103
+DECL|enum|__anon289822f10103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c898200203
+DECL|enum|__anon289822f10203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c898200303
+DECL|enum|__anon289822f10303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -842,11 +842,27 @@ decl_stmt|;
 name|va_list
 name|args
 decl_stmt|;
+name|gboolean
+name|use_header_bar
+decl_stmt|;
 name|va_start
 argument_list|(
 name|args
 argument_list|,
 name|help_id
+argument_list|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|gtk_settings_get_default
+argument_list|()
+argument_list|,
+literal|"gtk-dialogs-use-header"
+argument_list|,
+operator|&
+name|use_header_bar
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -870,6 +886,10 @@ argument_list|,
 literal|"help-id"
 argument_list|,
 name|help_id
+argument_list|,
+literal|"use-header-bar"
+argument_list|,
+name|use_header_bar
 argument_list|,
 name|NULL
 argument_list|)
