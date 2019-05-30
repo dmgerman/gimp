@@ -431,6 +431,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_list_compare
+parameter_list|(
+name|GList
+modifier|*
+name|list1
+parameter_list|,
+name|GList
+modifier|*
+name|list2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImage
 modifier|*
 name|gimp_create_image_from_buffer
