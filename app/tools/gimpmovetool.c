@@ -2024,6 +2024,14 @@ name|draw_tool
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_list_free
+argument_list|(
+name|guides
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
