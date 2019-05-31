@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -384,29 +390,6 @@ operator|<=
 name|CONVERT_PRECISION_DIALOG_MAX_DITHER_BITS
 operator|)
 expr_stmt|;
-comment|/* when changing this logic, also change the same switch()    * in gimptemplateeditor.h    */
-switch|switch
-condition|(
-name|component_type
-condition|)
-block|{
-case|case
-name|GIMP_COMPONENT_TYPE_U8
-case|:
-comment|/* default to gamma when converting 8 bit */
-name|trc
-operator|=
-name|GIMP_TRC_NON_LINEAR
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_COMPONENT_TYPE_U16
-case|:
-case|case
-name|GIMP_COMPONENT_TYPE_U32
-case|:
-default|default:
-comment|/* leave gamma alone by default when converting to 16/32 bit int */
 name|trc
 operator|=
 name|gimp_babl_format_get_trc
@@ -414,23 +397,15 @@ argument_list|(
 name|old_format
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_COMPONENT_TYPE_HALF
-case|:
-case|case
-name|GIMP_COMPONENT_TYPE_FLOAT
-case|:
-case|case
-name|GIMP_COMPONENT_TYPE_DOUBLE
-case|:
-comment|/* default to linear when converting to floating point */
 name|trc
 operator|=
-name|GIMP_TRC_LINEAR
+name|gimp_suggest_trc_for_component_type
+argument_list|(
+name|component_type
+argument_list|,
+name|trc
+argument_list|)
 expr_stmt|;
-break|break;
-block|}
 name|private
 operator|=
 name|g_slice_new0

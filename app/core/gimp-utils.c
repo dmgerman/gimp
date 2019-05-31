@@ -3456,6 +3456,68 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GimpTRCType
+DECL|function|gimp_suggest_trc_for_component_type (GimpComponentType component_type,GimpTRCType old_trc)
+name|gimp_suggest_trc_for_component_type
+parameter_list|(
+name|GimpComponentType
+name|component_type
+parameter_list|,
+name|GimpTRCType
+name|old_trc
+parameter_list|)
+block|{
+name|GimpTRCType
+name|new_trc
+init|=
+name|old_trc
+decl_stmt|;
+switch|switch
+condition|(
+name|component_type
+condition|)
+block|{
+case|case
+name|GIMP_COMPONENT_TYPE_U8
+case|:
+comment|/* default to non-linear when converting 8 bit */
+name|new_trc
+operator|=
+name|GIMP_TRC_NON_LINEAR
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_U16
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_U32
+case|:
+default|default:
+comment|/* leave TRC alone by default when converting to 16/32 bit int */
+break|break;
+case|case
+name|GIMP_COMPONENT_TYPE_HALF
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_FLOAT
+case|:
+case|case
+name|GIMP_COMPONENT_TYPE_DOUBLE
+case|:
+comment|/* default to linear when converting to floating point */
+name|new_trc
+operator|=
+name|GIMP_TRC_LINEAR
+expr_stmt|;
+break|break;
+block|}
+return|return
+name|new_trc
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  debug stuff  */
 end_comment

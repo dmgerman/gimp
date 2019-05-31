@@ -462,6 +462,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpTRCType
+name|gimp_suggest_trc_for_component_type
+parameter_list|(
+name|GimpComponentType
+name|component_type
+parameter_list|,
+name|GimpTRCType
+name|old_trc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImage
 modifier|*
 name|gimp_create_image_from_buffer
