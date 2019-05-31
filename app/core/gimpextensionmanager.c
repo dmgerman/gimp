@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14f13d0103
+DECL|enum|__anon28952aa10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -144,7 +144,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14f13d0203
+DECL|enum|__anon28952aa10203
 block|{
 DECL|enumerator|EXTENSION_INSTALLED
 name|EXTENSION_INSTALLED
@@ -1554,7 +1554,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rec_rm
+name|gimp_file_delete_recursive
 argument_list|(
 name|file
 argument_list|,

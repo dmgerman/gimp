@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28eb440108
+DECL|struct|__anon2ad471450108
 block|{
 DECL|member|input
 name|GInputStream
@@ -2093,7 +2093,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rec_rm
+name|gimp_file_delete_recursive
 argument_list|(
 name|file
 argument_list|,
