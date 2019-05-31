@@ -116,9 +116,13 @@ DECL|member|mask
 name|GimpComponentMask
 name|mask
 decl_stmt|;
-DECL|member|opacity_value
+DECL|member|alpha
+name|gdouble
+name|alpha
+decl_stmt|;
+DECL|member|alpha_value
 name|guint32
-name|opacity_value
+name|alpha_value
 decl_stmt|;
 DECL|member|process
 name|gpointer

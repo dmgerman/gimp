@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ae44d0103
+DECL|enum|__anon2bbe81190103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ae44d0203
+DECL|enum|__anon2bbe81190203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6740,6 +6740,10 @@ argument_list|,
 literal|"mask"
 argument_list|,
 name|mask
+argument_list|,
+literal|"alpha"
+argument_list|,
+literal|1.0
 argument_list|,
 name|NULL
 argument_list|)
