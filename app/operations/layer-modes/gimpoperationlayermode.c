@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a68b40103
+DECL|enum|__anon2acafe7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1619,13 +1619,26 @@ comment|/* otherwise, there's no 'aux', or the composite mode doesn't include it
 else|else
 block|{
 comment|/* ... the output is empty. */
-name|gegl_operation_context_set_object
+name|gegl_operation_context_take_object
 argument_list|(
 name|context
 argument_list|,
 literal|"output"
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|gegl_buffer_new
+argument_list|(
+name|result
+argument_list|,
+name|gegl_operation_get_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"output"
+argument_list|)
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
