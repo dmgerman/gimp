@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c380ce80103
+DECL|enum|__anon2c70510a0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c380ce80203
+DECL|enum|__anon2c70510a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,6 +645,10 @@ argument_list|,
 literal|"type"
 argument_list|,
 name|GTK_WINDOW_TOPLEVEL
+argument_list|,
+literal|"type-hint"
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_DIALOG
 argument_list|,
 literal|"decorated"
 argument_list|,
