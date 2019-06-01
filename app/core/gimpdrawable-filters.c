@@ -390,7 +390,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc,gboolean cancellable)
+DECL|function|gimp_drawable_merge_filter (GimpDrawable * drawable,GimpFilter * filter,GimpProgress * progress,const gchar * undo_desc,gboolean cancellable,gboolean update)
 name|gimp_drawable_merge_filter
 parameter_list|(
 name|GimpDrawable
@@ -412,6 +412,9 @@ name|undo_desc
 parameter_list|,
 name|gboolean
 name|cancellable
+parameter_list|,
+name|gboolean
+name|update
 parameter_list|)
 block|{
 name|GimpImage
@@ -859,6 +862,11 @@ name|applicator_output_format
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|update
+condition|)
+block|{
 name|gimp_drawable_update
 argument_list|(
 name|drawable
@@ -880,6 +888,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|success
 return|;

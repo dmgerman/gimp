@@ -107,6 +107,9 @@ name|undo_desc
 parameter_list|,
 name|gboolean
 name|cancellable
+parameter_list|,
+name|gboolean
+name|update
 parameter_list|)
 function_decl|;
 end_function_decl

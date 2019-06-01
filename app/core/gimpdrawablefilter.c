@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c4420103
+DECL|enum|__anon2accfdc30103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1815,11 +1815,25 @@ name|filter
 argument_list|)
 argument_list|,
 name|cancellable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_filter_remove_filter
 argument_list|(
 name|filter
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+name|gimp_drawable_filter_update_drawable
+argument_list|(
+name|filter
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
