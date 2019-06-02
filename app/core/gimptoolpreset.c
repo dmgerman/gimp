@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28caa7da0103
+DECL|enum|__anon28dba59e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -737,14 +737,7 @@ name|GimpToolPreset
 modifier|*
 name|tool_preset
 parameter_list|)
-block|{
-name|tool_preset
-operator|->
-name|tool_options
-operator|=
-name|NULL
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
