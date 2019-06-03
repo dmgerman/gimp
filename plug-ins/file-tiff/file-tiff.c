@@ -1627,7 +1627,13 @@ block|{
 name|gint32
 name|transp
 decl_stmt|;
-comment|/* FIXME: Do we have to update drawable, too? */
+if|if
+condition|(
+name|export
+operator|!=
+name|GIMP_EXPORT_EXPORT
+condition|)
+block|{
 name|image
 operator|=
 name|gimp_image_duplicate
@@ -1635,6 +1641,18 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|drawable
+operator|=
+name|gimp_image_get_active_layer
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|export
+operator|=
+name|GIMP_EXPORT_EXPORT
+expr_stmt|;
+block|}
 comment|/* borrowed from ./libgimp/gimpexport.c:export_merge()                * this makes sure that the exported file size is correct. */
 name|transp
 operator|=
