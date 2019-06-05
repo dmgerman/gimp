@@ -2278,6 +2278,14 @@ value|"gimp-tool-n-point-deformation"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_OFFSET
+define|#
+directive|define
+name|GIMP_HELP_TOOL_OFFSET
+value|"gimp-tool-offset"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_PATH
 define|#
 directive|define

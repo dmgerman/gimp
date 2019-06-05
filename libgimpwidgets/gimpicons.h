@@ -1375,6 +1375,11 @@ define|#
 directive|define
 name|GIMP_ICON_TOOL_N_POINT_DEFORMATION
 value|"gimp-tool-n-point-deformation"
+DECL|macro|GIMP_ICON_TOOL_OFFSET
+define|#
+directive|define
+name|GIMP_ICON_TOOL_OFFSET
+value|"gimp-tool-offset"
 DECL|macro|GIMP_ICON_TOOL_PAINTBRUSH
 define|#
 directive|define

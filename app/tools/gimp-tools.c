@@ -300,6 +300,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoffsettool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
@@ -572,7 +578,7 @@ name|gimp_smudge_tool_register
 block|,
 name|gimp_dodge_burn_tool_register
 block|,
-comment|/*  color tools  */
+comment|/*  filter tools  */
 name|gimp_brightness_contrast_tool_register
 block|,
 name|gimp_threshold_tool_register
@@ -580,6 +586,8 @@ block|,
 name|gimp_levels_tool_register
 block|,
 name|gimp_curves_tool_register
+block|,
+name|gimp_offset_tool_register
 block|,
 name|gimp_gegl_tool_register
 block|,
