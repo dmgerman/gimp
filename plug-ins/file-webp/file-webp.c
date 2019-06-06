@@ -850,6 +850,18 @@ operator|)
 operator|!=
 literal|0
 expr_stmt|;
+name|params
+operator|.
+name|profile
+operator|=
+operator|(
+name|metadata_flags
+operator|&
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+operator|)
+operator|!=
+literal|0
+expr_stmt|;
 comment|/*  Possibly override with session data  */
 name|gimp_get_data
 argument_list|(

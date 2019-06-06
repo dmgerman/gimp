@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fc0540108
+DECL|struct|__anon2979e83b0108
 block|{
 DECL|member|preset
 name|WebPPreset
@@ -64,6 +64,10 @@ decl_stmt|;
 DECL|member|xmp
 name|gboolean
 name|xmp
+decl_stmt|;
+DECL|member|profile
+name|gboolean
+name|profile
 decl_stmt|;
 DECL|member|delay
 name|gint

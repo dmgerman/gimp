@@ -593,6 +593,13 @@ decl_stmt|;
 name|int
 name|res
 decl_stmt|;
+if|if
+condition|(
+name|params
+operator|->
+name|profile
+condition|)
+block|{
 name|profile
 operator|=
 name|gimp_image_get_color_profile
@@ -600,7 +607,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-comment|/* If a profile is explicitly set, follow its TRC, whatever the    * storage format.    */
+comment|/* If a profile is explicitly set, follow its TRC, whatever the        * storage format.        */
 if|if
 condition|(
 name|profile
@@ -614,7 +621,7 @@ name|out_linear
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* When no profile was explicitly set, since WebP is apparently    * 8-bit max, we export it as sRGB to avoid shadow posterization    * (we don't care about storage TRC).    * We do an exception for 8-bit linear work image to avoid    * conversion loss while the precision is the same.    */
+comment|/* When no profile was explicitly set, since WebP is apparently        * 8-bit max, we export it as sRGB to avoid shadow posterization        * (we don't care about storage TRC).        * We do an exception for 8-bit linear work image to avoid        * conversion loss while the precision is the same.        */
 if|if
 condition|(
 operator|!
@@ -676,6 +683,7 @@ name|out_linear
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -3146,6 +3154,22 @@ operator|~
 name|GIMP_METADATA_SAVE_IPTC
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|params
+operator|->
+name|profile
+condition|)
+name|metadata_flags
+operator||=
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+expr_stmt|;
+else|else
+name|metadata_flags
+operator|&=
+operator|~
+name|GIMP_METADATA_SAVE_COLOR_PROFILE
+expr_stmt|;
 name|file
 operator|=
 name|g_file_new_for_path
