@@ -57,9 +57,15 @@ directive|include
 file|"gimpoperationoffset.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon27742f180103
+DECL|enum|__anon2b613c6a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -425,11 +431,14 @@ literal|"gimp:offset"
 argument_list|,
 literal|"categories"
 argument_list|,
-literal|"gimp"
+literal|"transform"
 argument_list|,
 literal|"description"
 argument_list|,
-literal|"GIMP Offset operation"
+name|_
+argument_list|(
+literal|"Shift the pixels, optionally wrapping them at the borders"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

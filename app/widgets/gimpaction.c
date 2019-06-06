@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276efb960103
+DECL|enum|__anon2bda41660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1248,6 +1248,8 @@ block|,
 literal|"tools-curves"
 block|,
 literal|"tools-levels"
+block|,
+literal|"tools-offset"
 block|,
 literal|"tools-threshold"
 block|}
