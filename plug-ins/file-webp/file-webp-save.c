@@ -556,6 +556,8 @@ decl_stmt|;
 name|GimpColorProfile
 modifier|*
 name|profile
+init|=
+name|NULL
 decl_stmt|;
 name|GeglBuffer
 modifier|*
@@ -598,6 +600,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+comment|/* If a profile is explicitly set, follow its TRC, whatever the    * storage format.    */
 if|if
 condition|(
 name|profile
@@ -607,8 +610,33 @@ argument_list|(
 name|profile
 argument_list|)
 condition|)
+name|out_linear
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* When no profile was explicitly set, since WebP is apparently    * 8-bit max, we export it as sRGB to avoid shadow posterization    * (we don't care about storage TRC).    * We do an exception for 8-bit linear work image to avoid    * conversion loss while the precision is the same.    */
+if|if
+condition|(
+operator|!
+name|profile
+condition|)
 block|{
-comment|/* Since WebP is apparently 8-bit max, we export it as sRGB to        * avoid shadow posterization.        * We do an exception for 8-bit linear work image, when the        * profile is also exported.        */
+comment|/* There is always an effective profile. */
+name|profile
+operator|=
+name|gimp_image_get_effective_color_profile
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_color_profile_is_linear
+argument_list|(
+name|profile
+argument_list|)
+condition|)
+block|{
 if|if
 condition|(
 name|gimp_image_get_precision
@@ -619,7 +647,7 @@ operator|!=
 name|GIMP_PRECISION_U8_LINEAR
 condition|)
 block|{
-comment|/* If original data was linear, let's convert the profile. */
+comment|/* If stored data was linear, let's convert the profile. */
 name|GimpColorProfile
 modifier|*
 name|saved_profile
@@ -643,11 +671,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Keep linear profile as-is. */
+comment|/* Keep linear profile as-is for 8-bit linear image. */
 name|out_linear
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/* The do...while() loop is a neat little trick that makes it easier    * to jump to error handling code while still ensuring proper    * cleanup    */
