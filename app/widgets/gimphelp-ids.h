@@ -1518,14 +1518,6 @@ value|"gimp-layer-rotate-270"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_OFFSET
-define|#
-directive|define
-name|GIMP_HELP_LAYER_OFFSET
-value|"gimp-layer-offset"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_LAYER_RESIZE
 define|#
 directive|define
