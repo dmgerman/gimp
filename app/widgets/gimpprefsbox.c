@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2753ca2e0103
+DECL|enum|__anon2b5d64b30103
 block|{
 DECL|enumerator|COLUMN_TREE_ICON_NAME
 name|COLUMN_TREE_ICON_NAME
@@ -1165,6 +1165,16 @@ argument_list|,
 name|GTK_POLICY_NEVER
 argument_list|,
 name|GTK_POLICY_NEVER
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_overlay_scrolling
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_win
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
