@@ -1145,11 +1145,6 @@ condition|(
 name|mux
 condition|)
 block|{
-name|gboolean
-name|saved
-init|=
-name|FALSE
-decl_stmt|;
 comment|/* Save ICC data */
 if|if
 condition|(
@@ -1164,10 +1159,6 @@ decl_stmt|;
 name|gsize
 name|icc_data_size
 decl_stmt|;
-name|saved
-operator|=
-name|TRUE
-expr_stmt|;
 name|icc_data
 operator|=
 name|gimp_color_profile_get_icc_profile
@@ -1202,14 +1193,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|saved
-operator|==
-name|TRUE
-condition|)
-block|{
 name|WebPMuxAssemble
 argument_list|(
 name|mux
