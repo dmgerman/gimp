@@ -219,6 +219,10 @@ modifier|*
 name|GimpLayerModeBlendFunc
 function_decl|)
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*

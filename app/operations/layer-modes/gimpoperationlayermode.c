@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a68b40103
+DECL|enum|__anon29e090b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2396,6 +2396,8 @@ argument_list|)
 expr_stmt|;
 name|blend_function
 argument_list|(
+name|operation
+argument_list|,
 name|blend_in
 operator|+
 name|first
@@ -2475,6 +2477,8 @@ expr_stmt|;
 block|}
 name|blend_function
 argument_list|(
+name|operation
+argument_list|,
 name|blend_in
 argument_list|,
 name|blend_layer

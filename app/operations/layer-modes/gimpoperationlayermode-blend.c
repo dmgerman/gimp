@@ -173,9 +173,13 @@ end_comment
 begin_function
 name|void
 comment|/* aka linear_dodge */
-DECL|function|gimp_operation_layer_mode_blend_addition (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_addition (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_addition
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -277,9 +281,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_burn (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_burn (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_burn
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -388,9 +396,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_darken_only (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_darken_only (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_darken_only
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -495,9 +507,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_difference (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_difference (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_difference
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -602,9 +618,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_divide (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_divide (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_divide
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -709,9 +729,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_dodge (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_dodge (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_dodge
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -818,9 +842,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_exclusion (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_exclusion (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_exclusion
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -934,9 +962,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_grain_extract (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_grain_extract (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_grain_extract
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -1040,9 +1072,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_grain_merge (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_grain_merge (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_grain_merge
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -1146,9 +1182,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hard_mix (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hard_mix (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hard_mix
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -1256,9 +1296,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hardlight (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hardlight (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hardlight
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -1433,9 +1477,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hsl_color (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hsl_color (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hsl_color
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -1802,9 +1850,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hsv_hue (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hsv_hue (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hsv_hue
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -2110,9 +2162,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hsv_saturation (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hsv_saturation (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hsv_saturation
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -2415,9 +2471,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_hsv_value (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_hsv_value (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_hsv_value
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -2618,9 +2678,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_lch_chroma (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_lch_chroma (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_lch_chroma
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -2826,9 +2890,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_lch_color (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_lch_color (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_lch_color
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -2929,9 +2997,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_lch_hue (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_lch_hue (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_lch_hue
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3137,9 +3209,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_lch_lightness (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_lch_lightness (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_lch_lightness
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3240,9 +3316,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_lighten_only (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_lighten_only (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_lighten_only
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3347,9 +3427,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_linear_burn (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_linear_burn (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_linear_burn
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3457,9 +3541,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_linear_light (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_linear_light (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_linear_light
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3602,9 +3690,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_luma_darken_only (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_luma_darken_only (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_luma_darken_only
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3781,9 +3873,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_luma_lighten_only (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_luma_lighten_only (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_luma_lighten_only
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -3960,9 +4056,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_luminance (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_luminance (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_luminance
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4163,9 +4263,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_multiply (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_multiply (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_multiply
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4267,9 +4371,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_overlay (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_overlay (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_overlay
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4420,9 +4528,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_pin_light (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_pin_light (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_pin_light
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4569,9 +4681,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_screen (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_screen (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_screen
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4683,9 +4799,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_softlight (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_softlight (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_softlight
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4838,9 +4958,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_subtract (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_subtract (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_subtract
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -4946,9 +5070,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_vivid_light (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_vivid_light (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_vivid_light
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
@@ -5125,9 +5253,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_operation_layer_mode_blend_color_erase (const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
+DECL|function|gimp_operation_layer_mode_blend_color_erase (GeglOperation * operation,const gfloat * in,const gfloat * layer,gfloat * comp,gint samples)
 name|gimp_operation_layer_mode_blend_color_erase
 parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
 specifier|const
 name|gfloat
 modifier|*
