@@ -4183,7 +4183,6 @@ name|gint
 name|samples
 parameter_list|)
 block|{
-specifier|static
 specifier|const
 name|Babl
 modifier|*
@@ -4200,18 +4199,6 @@ decl_stmt|;
 name|gfloat
 modifier|*
 name|layer_Y
-decl_stmt|;
-specifier|const
-name|Babl
-modifier|*
-name|format
-init|=
-name|gegl_operation_get_source_format
-argument_list|(
-name|operation
-argument_list|,
-literal|"input"
-argument_list|)
 decl_stmt|;
 specifier|const
 name|Babl
