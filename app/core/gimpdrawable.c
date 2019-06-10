@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeeafff0103
+DECL|enum|__anon2bdf79340103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,7 +248,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aeeafff0203
+DECL|enum|__anon2bdf79340203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -743,6 +743,18 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_drawable_real_update_all
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1268,6 +1280,12 @@ operator|->
 name|estimate_memsize
 operator|=
 name|gimp_drawable_real_estimate_memsize
+expr_stmt|;
+name|klass
+operator|->
+name|update_all
+operator|=
+name|gimp_drawable_real_update_all
 expr_stmt|;
 name|klass
 operator|->
@@ -3519,6 +3537,35 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_drawable_real_update_all (GimpDrawable * drawable)
+name|gimp_drawable_real_update_all
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|gimp_drawable_update
+argument_list|(
+name|drawable
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|GimpComponentMask
 DECL|function|gimp_drawable_real_get_active_mask (GimpDrawable * drawable)
 name|gimp_drawable_real_get_active_mask
@@ -4925,6 +4972,37 @@ expr_stmt|;
 block|}
 block|}
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_drawable_update_all (GimpDrawable * drawable)
+name|gimp_drawable_update_all
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_DRAWABLE_GET_CLASS
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|update_all
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
