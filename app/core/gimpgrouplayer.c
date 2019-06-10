@@ -3526,6 +3526,27 @@ operator|->
 name|direct_update
 operator|++
 expr_stmt|;
+comment|/*  if this is a nested group layer, we need to update the child-layers'    *  original area *before* updating the group's offset.  once we update the    *  group's offset, our parent's size will also be updated, and the    *  subsequent area-updates of the child layers during translation will be    *  clipped to the updated parent bounds, potentially failing to update their    *  original area.  see issue #3484.    */
+if|if
+condition|(
+name|gimp_viewable_get_depth
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|group
+argument_list|)
+argument_list|)
+operator|>
+literal|0
+condition|)
+name|gimp_drawable_update_all
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|group
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
