@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c041bdb0108
+DECL|struct|__anon2b2e87290108
 block|{
 DECL|member|file
 name|GFile
@@ -655,6 +655,41 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|msg
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|module
+argument_list|,
+literal|"TIFFReadDirectory"
+argument_list|)
+operator|&&
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"Sum of Photometric type-related color channels and ExtraSamples doesn't match SamplesPerPixel."
+literal|" Defining non-color channels as ExtraSamples."
+argument_list|)
+condition|)
+block|{
+comment|/* We will process this issue in our code. Just report to stderr. */
+name|g_printerr
+argument_list|(
+literal|"%s: [%s] %s\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|module
+argument_list|,
+name|fmt
 argument_list|)
 expr_stmt|;
 return|return;
