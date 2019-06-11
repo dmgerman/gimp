@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70510a0103
+DECL|enum|__anon2b04136f0103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70510a0203
+DECL|enum|__anon2b04136f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -679,6 +679,16 @@ argument_list|,
 name|callback_data
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_modal
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
