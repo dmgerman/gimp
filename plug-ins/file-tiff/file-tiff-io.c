@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e87290108
+DECL|struct|__anon278d80220108
 block|{
 DECL|member|file
 name|GFile
@@ -265,11 +265,17 @@ parameter_list|)
 block|{
 name|TIFFSetWarningHandler
 argument_list|(
+operator|(
+name|TIFFErrorHandler
+operator|)
 name|tiff_io_warning
 argument_list|)
 expr_stmt|;
 name|TIFFSetErrorHandler
 argument_list|(
+operator|(
+name|TIFFErrorHandler
+operator|)
 name|tiff_io_error
 argument_list|)
 expr_stmt|;
