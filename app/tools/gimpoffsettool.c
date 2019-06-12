@@ -2255,7 +2255,10 @@ name|button
 operator|=
 name|gtk_button_new_with_mnemonic
 argument_list|(
+name|_
+argument_list|(
 literal|"By _width/2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2297,7 +2300,10 @@ name|button
 operator|=
 name|gtk_button_new_with_mnemonic
 argument_list|(
+name|_
+argument_list|(
 literal|"By _height/2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
