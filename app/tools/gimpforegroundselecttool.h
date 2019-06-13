@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279672930103
+DECL|enum|__anon29f561240103
 block|{
 DECL|enumerator|MATTING_STATE_FREE_SELECT
 name|MATTING_STATE_FREE_SELECT
@@ -186,6 +186,11 @@ DECL|member|preview_toggle
 name|GtkWidget
 modifier|*
 name|preview_toggle
+decl_stmt|;
+DECL|member|grayscale_preview
+name|GimpCanvasItem
+modifier|*
+name|grayscale_preview
 decl_stmt|;
 block|}
 struct|;

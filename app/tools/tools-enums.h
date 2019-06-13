@@ -45,7 +45,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0103
+DECL|enum|__anon2bbd9b190103
 block|{
 DECL|enumerator|GIMP_BUCKET_FILL_SELECTION
 name|GIMP_BUCKET_FILL_SELECTION
@@ -89,7 +89,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0203
+DECL|enum|__anon2bbd9b190203
 block|{
 DECL|enumerator|GIMP_LINE_ART_SOURCE_SAMPLE_MERGED
 name|GIMP_LINE_ART_SOURCE_SAMPLE_MERGED
@@ -133,7 +133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0303
+DECL|enum|__anon2bbd9b190303
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0403
+DECL|enum|__anon2bbd9b190403
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -213,7 +213,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0503
+DECL|enum|__anon2bbd9b190503
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -253,7 +253,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0603
+DECL|enum|__anon2bbd9b190603
 block|{
 DECL|enumerator|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
 name|GIMP_TOOL_ACTIVE_MODIFIERS_OFF
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0703
+DECL|enum|__anon2bbd9b190703
 block|{
 DECL|enumerator|GIMP_MATTING_DRAW_MODE_FOREGROUND
 name|GIMP_MATTING_DRAW_MODE_FOREGROUND
@@ -307,6 +307,43 @@ comment|/*< desc="Draw unknown">*/
 DECL|typedef|GimpMattingDrawMode
 block|}
 name|GimpMattingDrawMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_MATTING_PREVIEW_MODE
+define|#
+directive|define
+name|GIMP_TYPE_MATTING_PREVIEW_MODE
+value|(gimp_matting_preview_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_matting_preview_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bbd9b190803
+block|{
+DECL|enumerator|GIMP_MATTING_PREVIEW_MODE_ON_COLOR
+name|GIMP_MATTING_PREVIEW_MODE_ON_COLOR
+block|,
+comment|/*< desc="On color">*/
+DECL|enumerator|GIMP_MATTING_PREVIEW_MODE_GRAYSCALE
+name|GIMP_MATTING_PREVIEW_MODE_GRAYSCALE
+block|,
+comment|/*< desc="Grayscale">*/
+DECL|typedef|GimpMattingPreviewMode
+block|}
+name|GimpMattingPreviewMode
 typedef|;
 end_typedef
 
@@ -331,7 +368,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c7a0803
+DECL|enum|__anon2bbd9b190903
 block|{
 DECL|enumerator|GIMP_WARP_BEHAVIOR_MOVE
 name|GIMP_WARP_BEHAVIOR_MOVE
@@ -374,7 +411,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a222c7a0903
+DECL|enum|__anon2bbd9b190a03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -404,7 +441,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a222c7a0a03
+DECL|enum|__anon2bbd9b190b03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -443,7 +480,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a222c7a0b03
+DECL|enum|__anon2bbd9b190c03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
