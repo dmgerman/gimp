@@ -275,6 +275,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_buffer
@@ -470,6 +472,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_buffer
@@ -677,6 +681,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_buffer
@@ -890,6 +896,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_buffer
@@ -1332,6 +1340,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_buffer
@@ -1751,6 +1761,8 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 comment|/* no undo */
