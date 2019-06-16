@@ -209,6 +209,9 @@ name|radius_x
 parameter_list|,
 name|gdouble
 name|radius_y
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -356,6 +359,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* UGLY: private enum of gegl:gaussian-blur */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29c4f72c0103
+block|{
+DECL|enumerator|GAUSSIAN_BLUR_ABYSS_NONE
+name|GAUSSIAN_BLUR_ABYSS_NONE
+block|,
+DECL|enumerator|GAUSSIAN_BLUR_ABYSS_CLAMP
+name|GAUSSIAN_BLUR_ABYSS_CLAMP
+DECL|typedef|GaussianBlurAbyssPolicy
+block|}
+name|GaussianBlurAbyssPolicy
+typedef|;
+end_typedef
+
 begin_function_decl
 name|void
 name|gimp_gegl_apply_gaussian_blur
@@ -387,6 +410,9 @@ name|std_dev_x
 parameter_list|,
 name|gdouble
 name|std_dev_y
+parameter_list|,
+name|GaussianBlurAbyssPolicy
+name|abyss_policy
 parameter_list|)
 function_decl|;
 end_function_decl

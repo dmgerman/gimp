@@ -272,6 +272,10 @@ DECL|member|selection_feather_radius
 name|gdouble
 name|selection_feather_radius
 decl_stmt|;
+DECL|member|selection_feather_edge_lock
+name|gboolean
+name|selection_feather_edge_lock
+decl_stmt|;
 DECL|member|selection_grow_radius
 name|gdouble
 name|selection_grow_radius

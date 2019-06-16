@@ -10642,6 +10642,23 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"selection-feather-edge-lock"
+argument_list|,
+name|_
+argument_list|(
+literal|"Selected areas continue outside the image"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Grow Selection Dialog  */
 name|vbox2
 operator|=
@@ -13046,7 +13063,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29ec32a90108
+DECL|struct|__anon2c1d12be0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13952,7 +13969,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29ec32a90208
+DECL|struct|__anon2c1d12be0208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14083,7 +14100,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29ec32a90308
+DECL|struct|__anon2c1d12be0308
 block|{
 DECL|member|tree_label
 specifier|const

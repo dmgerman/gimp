@@ -1565,6 +1565,15 @@ value|_("Sets the default feather radius for the 'Feather Selection' dialog.")
 end_define
 
 begin_define
+DECL|macro|SELECTION_FEATHER_EDGE_LOCK_BLURB
+define|#
+directive|define
+name|SELECTION_FEATHER_EDGE_LOCK_BLURB
+define|\
+value|_("Sets the default 'Selected areas continue outside the image' setting " \   "for the 'Feather Selection' dialog.")
+end_define
+
+begin_define
 DECL|macro|SELECTION_GROW_RADIUS_BLURB
 define|#
 directive|define

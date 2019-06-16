@@ -284,6 +284,9 @@ name|gdouble
 name|radius_y
 parameter_list|,
 name|gboolean
+name|edge_lock
+parameter_list|,
+name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
@@ -820,6 +823,9 @@ name|radius_x
 parameter_list|,
 name|gdouble
 name|radius_y
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|,
 name|gboolean
 name|push_undo

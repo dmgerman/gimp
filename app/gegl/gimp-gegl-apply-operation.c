@@ -1251,7 +1251,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_feather (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble radius_x,gdouble radius_y)
+DECL|function|gimp_gegl_apply_feather (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble radius_x,gdouble radius_y,gboolean edge_lock)
 name|gimp_gegl_apply_feather
 parameter_list|(
 name|GeglBuffer
@@ -1281,8 +1281,14 @@ name|radius_x
 parameter_list|,
 name|gdouble
 name|radius_y
+parameter_list|,
+name|gboolean
+name|edge_lock
 parameter_list|)
 block|{
+name|GaussianBlurAbyssPolicy
+name|abyss_policy
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GEGL_IS_BUFFER
@@ -1311,6 +1317,19 @@ name|dest_buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|edge_lock
+condition|)
+name|abyss_policy
+operator|=
+name|GAUSSIAN_BLUR_ABYSS_CLAMP
+expr_stmt|;
+else|else
+name|abyss_policy
+operator|=
+name|GAUSSIAN_BLUR_ABYSS_NONE
+expr_stmt|;
 comment|/* 3.5 is completely magic and picked to visually match the old    * gaussian_blur_region() on a crappy laptop display    */
 name|gimp_gegl_apply_gaussian_blur
 argument_list|(
@@ -1331,6 +1350,8 @@ argument_list|,
 name|radius_y
 operator|/
 literal|3.5
+argument_list|,
+name|abyss_policy
 argument_list|)
 expr_stmt|;
 block|}
@@ -2013,7 +2034,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gegl_apply_gaussian_blur (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble std_dev_x,gdouble std_dev_y)
+DECL|function|gimp_gegl_apply_gaussian_blur (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gdouble std_dev_x,gdouble std_dev_y,GaussianBlurAbyssPolicy abyss_policy)
 name|gimp_gegl_apply_gaussian_blur
 parameter_list|(
 name|GeglBuffer
@@ -2043,6 +2064,9 @@ name|std_dev_x
 parameter_list|,
 name|gdouble
 name|std_dev_y
+parameter_list|,
+name|GaussianBlurAbyssPolicy
+name|abyss_policy
 parameter_list|)
 block|{
 name|GeglNode
@@ -2094,6 +2118,10 @@ argument_list|,
 literal|"std-dev-y"
 argument_list|,
 name|std_dev_y
+argument_list|,
+literal|"abyss-policy"
+argument_list|,
+name|abyss_policy
 argument_list|,
 name|NULL
 argument_list|)
