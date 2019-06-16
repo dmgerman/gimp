@@ -654,7 +654,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"When feathering, act as if selected areas"
+literal|"When feathering, act as if selected areas "
 literal|"continued outside the image."
 argument_list|)
 argument_list|,
