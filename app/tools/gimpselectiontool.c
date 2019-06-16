@@ -2186,6 +2186,15 @@ block|{
 name|GimpTranslateMode
 name|edit_mode
 decl_stmt|;
+name|gimp_tool_control
+argument_list|(
+name|tool
+argument_list|,
+name|GIMP_TOOL_ACTION_COMMIT
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|sel_tool
