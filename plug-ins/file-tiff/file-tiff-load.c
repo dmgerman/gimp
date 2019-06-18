@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea3d00108
+DECL|struct|__anon27ef8b180108
 block|{
 DECL|member|compression
 name|gint
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ea3d00208
+DECL|struct|__anon27ef8b180208
 block|{
 DECL|member|ID
 name|gint32
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299ea3d00303
+DECL|enum|__anon27ef8b180303
 block|{
 DECL|enumerator|GIMP_TIFF_LOAD_ASSOCALPHA
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -3717,14 +3717,14 @@ name|babl_format_new
 argument_list|(
 name|babl_model
 argument_list|(
-literal|"Y'"
+literal|"Y"
 argument_list|)
 argument_list|,
 name|type
 argument_list|,
 name|babl_component
 argument_list|(
-literal|"Y'"
+literal|"Y"
 argument_list|)
 argument_list|,
 name|NULL
