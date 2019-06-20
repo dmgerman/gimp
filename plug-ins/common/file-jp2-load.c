@@ -205,6 +205,10 @@ parameter_list|,
 name|gboolean
 name|interactive
 parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -530,6 +534,11 @@ decl_stmt|;
 name|gint
 name|image_ID
 decl_stmt|;
+name|gboolean
+name|profile_loaded
+init|=
+name|FALSE
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -727,6 +736,7 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|image_ID
 operator|=
 name|load_image
@@ -747,11 +757,16 @@ argument_list|,
 name|interactive
 argument_list|,
 operator|&
+name|profile_loaded
+argument_list|,
+operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 comment|/* strcmp (name, LOAD_J2K_PROC) == 0 */
+block|{
 name|image_ID
 operator|=
 name|load_image
@@ -772,9 +787,13 @@ argument_list|,
 name|interactive
 argument_list|,
 operator|&
+name|profile_loaded
+argument_list|,
+operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|image_ID
@@ -826,6 +845,15 @@ name|flags
 init|=
 name|GIMP_METADATA_LOAD_ALL
 decl_stmt|;
+if|if
+condition|(
+name|profile_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_COLORSPACE
+expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
 name|image_ID
@@ -5305,7 +5333,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,OPJ_COLOR_SPACE color_space,gboolean interactive,GError ** error)
+DECL|function|load_image (const gchar * filename,OPJ_CODEC_FORMAT format,OPJ_COLOR_SPACE color_space,gboolean interactive,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -5321,6 +5349,10 @@ name|color_space
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -5688,6 +5720,11 @@ condition|)
 goto|goto
 name|out
 goto|;
+operator|*
+name|profile_loaded
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 name|image

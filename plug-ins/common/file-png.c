@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297594550108
+DECL|struct|__anon2a075b7a0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297594550208
+DECL|struct|__anon2a075b7a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297594550308
+DECL|struct|__anon2a075b7a0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -459,6 +459,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|resolution_loaded
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -1271,6 +1275,11 @@ name|resolution_loaded
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|profile_loaded
+init|=
+name|FALSE
+decl_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1318,6 +1327,9 @@ name|interactive
 argument_list|,
 operator|&
 name|resolution_loaded
+argument_list|,
+operator|&
+name|profile_loaded
 argument_list|,
 operator|&
 name|error
@@ -1382,6 +1394,15 @@ name|flags
 operator|&=
 operator|~
 name|GIMP_METADATA_LOAD_RESOLUTION
+expr_stmt|;
+if|if
+condition|(
+name|profile_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_COLORSPACE
 expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(
@@ -2851,7 +2872,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (const gchar * filename,gboolean interactive,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -2865,6 +2886,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|resolution_loaded
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -3262,6 +3287,12 @@ if|if
 condition|(
 name|profile
 condition|)
+block|{
+operator|*
+name|profile_loaded
+operator|=
+name|TRUE
+expr_stmt|;
 name|linear
 operator|=
 name|gimp_color_profile_is_linear
@@ -3269,6 +3300,7 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*    * Get image precision and color model    */
 if|if
 condition|(

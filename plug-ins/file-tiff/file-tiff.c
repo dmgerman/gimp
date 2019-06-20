@@ -589,6 +589,11 @@ name|resolution_loaded
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|profile_loaded
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -615,6 +620,9 @@ name|image
 argument_list|,
 operator|&
 name|resolution_loaded
+argument_list|,
+operator|&
+name|profile_loaded
 argument_list|,
 operator|&
 name|error
@@ -662,6 +670,15 @@ name|flags
 operator|&=
 operator|~
 name|GIMP_METADATA_LOAD_RESOLUTION
+expr_stmt|;
+if|if
+condition|(
+name|profile_loaded
+condition|)
+name|flags
+operator|&=
+operator|~
+name|GIMP_METADATA_LOAD_COLORSPACE
 expr_stmt|;
 name|gimp_image_metadata_load_finish
 argument_list|(

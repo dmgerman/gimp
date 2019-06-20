@@ -829,7 +829,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_image_resource (PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image_resource (PSDimageres * res_a,gint32 image_id,PSDimage * img_a,FILE * f,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image_resource
 parameter_list|(
 name|PSDimageres
@@ -850,6 +850,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|resolution_loaded
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -1206,6 +1210,9 @@ break|break;
 case|case
 name|PSD_ICC_PROFILE
 case|:
+if|if
+condition|(
+operator|!
 name|load_resource_1039
 argument_list|(
 name|res_a
@@ -1216,6 +1223,11 @@ name|f
 argument_list|,
 name|error
 argument_list|)
+condition|)
+operator|*
+name|profile_loaded
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case

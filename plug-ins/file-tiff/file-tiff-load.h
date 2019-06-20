@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dea5140108
+DECL|struct|__anon2973b6750108
 block|{
 DECL|member|o_pages
 name|gint
@@ -74,6 +74,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|resolution_loaded
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*

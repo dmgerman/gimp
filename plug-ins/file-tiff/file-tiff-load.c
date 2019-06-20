@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299bdd080108
+DECL|struct|__anon2b4d87a50108
 block|{
 DECL|member|compression
 name|gint
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299bdd080208
+DECL|struct|__anon2b4d87a50208
 block|{
 DECL|member|ID
 name|gint32
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299bdd080303
+DECL|enum|__anon2b4d87a50303
 block|{
 DECL|enumerator|GIMP_TIFF_LOAD_ASSOCALPHA
 name|GIMP_TIFF_LOAD_ASSOCALPHA
@@ -410,7 +410,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|load_image (GFile * file,GimpRunMode run_mode,gint32 * image,gboolean * resolution_loaded,GError ** error)
+DECL|function|load_image (GFile * file,GimpRunMode run_mode,gint32 * image,gboolean * resolution_loaded,gboolean * profile_loaded,GError ** error)
 name|load_image
 parameter_list|(
 name|GFile
@@ -427,6 +427,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|resolution_loaded
+parameter_list|,
+name|gboolean
+modifier|*
+name|profile_loaded
 parameter_list|,
 name|GError
 modifier|*
@@ -1174,6 +1178,18 @@ if|if
 condition|(
 name|profile
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+operator|*
+name|image
+condition|)
+operator|*
+name|profile_loaded
+operator|=
+name|TRUE
+expr_stmt|;
 name|profile_linear
 operator|=
 name|gimp_color_profile_is_linear
@@ -1181,6 +1197,7 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|bps
