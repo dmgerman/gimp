@@ -270,7 +270,7 @@ name|frame_title
 operator|=
 name|_
 argument_list|(
-literal|"Convert the image to the grayscale working space?"
+literal|"Convert the image to the built-in grayscale color profile?"
 argument_list|)
 expr_stmt|;
 block|}
@@ -287,7 +287,7 @@ name|frame_title
 operator|=
 name|_
 argument_list|(
-literal|"Convert the image to the RGB working space?"
+literal|"Convert the image to the built-in sRGB color profile?"
 argument_list|)
 expr_stmt|;
 block|}

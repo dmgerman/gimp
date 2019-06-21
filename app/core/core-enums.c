@@ -1194,7 +1194,7 @@ name|NC_
 argument_list|(
 literal|"color-profile-policy"
 argument_list|,
-literal|"Convert to preferred RGB color profile"
+literal|"Convert to built-in sRGB or grayscale profile"
 argument_list|)
 block|,
 name|NULL
