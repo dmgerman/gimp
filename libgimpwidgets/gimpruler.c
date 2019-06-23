@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba56eaa0103
+DECL|enum|__anon2c53b8710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba56eaa0208
+DECL|struct|__anon2c53b8710208
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -265,6 +265,7 @@ name|RulerMetric
 name|ruler_metric_inches
 init|=
 block|{
+comment|/* 12 inch = 1 foot; 36 inch = 1 yard; 72 inchs = 1 fathom */
 block|{
 literal|1
 block|,
@@ -275,6 +276,8 @@ block|,
 literal|12
 block|,
 literal|36
+block|,
+literal|72
 block|,
 literal|100
 block|,
@@ -297,8 +300,11 @@ block|,
 literal|100000
 block|}
 block|,
+comment|/* Inches are divided by multiples of 2. */
 block|{
 literal|1
+block|,
+literal|2
 block|,
 literal|4
 block|,
@@ -306,9 +312,13 @@ literal|8
 block|,
 literal|16
 block|,
-literal|12
-operator|*
-literal|16
+literal|32
+block|,
+literal|64
+block|,
+literal|128
+block|,
+literal|256
 block|}
 block|}
 decl_stmt|;
@@ -322,10 +332,11 @@ name|RulerMetric
 name|ruler_metric_feet
 init|=
 block|{
+comment|/* 3 feet = 1 yard; 6 feet = 1 fathom */
 block|{
 literal|1
 block|,
-literal|2
+literal|3
 block|,
 literal|6
 block|,
@@ -354,6 +365,7 @@ block|,
 literal|100000
 block|}
 block|,
+comment|/* 1 foot = 12 inches, so let's divide up to 12. */
 block|{
 literal|1
 block|,
@@ -363,9 +375,14 @@ literal|6
 block|,
 literal|12
 block|,
-literal|12
-operator|*
-literal|8
+comment|/* then since inches are divided by 2, continue by 2-divisions. */
+literal|24
+block|,
+literal|48
+block|,
+literal|96
+block|,
+literal|192
 block|}
 block|}
 decl_stmt|;
@@ -379,16 +396,19 @@ name|RulerMetric
 name|ruler_metric_yards
 init|=
 block|{
+comment|/* 1 fathom = 2 yards. Should we go back to base-10 digits? */
 block|{
 literal|1
 block|,
 literal|2
 block|,
-literal|6
+literal|5
 block|,
-literal|12
+literal|10
 block|,
-literal|36
+literal|25
+block|,
+literal|50
 block|,
 literal|100
 block|,
@@ -411,6 +431,7 @@ block|,
 literal|100000
 block|}
 block|,
+comment|/* 1 yard = 3 feet = 36 inches. */
 block|{
 literal|1
 block|,
@@ -420,9 +441,14 @@ literal|6
 block|,
 literal|12
 block|,
-literal|12
-operator|*
-literal|12
+literal|36
+block|,
+comment|/* Then divide by 2, inch style */
+literal|72
+block|,
+literal|144
+block|,
+literal|288
 block|}
 block|}
 decl_stmt|;
@@ -5659,6 +5685,7 @@ operator|&
 name|ruler_metric_inches
 return|;
 block|}
+comment|/* XXX: recognizing feet or yard unit this way definitely sucks.    * Actually the subdvision and rule scale rules should probably become    * settable values in unitrc instead of hardcoded rules.    * This way, people would be able to set how they want a unit to be    * shown (we could definitely imagine someone wanting to see inches    * with base-10 divisions).    */
 elseif|else
 if|if
 condition|(
