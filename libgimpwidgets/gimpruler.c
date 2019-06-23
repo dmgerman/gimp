@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0e42e0103
+DECL|enum|__anon2ba56eaa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0e42e0208
+DECL|struct|__anon2ba56eaa0208
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -5647,11 +5647,6 @@ name|GimpUnit
 name|unit
 parameter_list|)
 block|{
-comment|/*  not enabled until we double checked the metrics  */
-return|return
-operator|&
-name|ruler_metric_decimal
-return|;
 if|if
 condition|(
 name|unit
