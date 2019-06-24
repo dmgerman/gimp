@@ -13080,7 +13080,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon287cb0d50108
+DECL|struct|__anon29c9d5510108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -13986,7 +13986,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon287cb0d50208
+DECL|struct|__anon29c9d5510208
 block|{
 DECL|member|property_name
 specifier|const
@@ -14117,7 +14117,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon287cb0d50308
+DECL|struct|__anon29c9d5510308
 block|{
 DECL|member|tree_label
 specifier|const

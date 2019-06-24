@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a60cb50103
+DECL|enum|__anon29fc78af0103
 block|{
 DECL|enumerator|CAGE_STATE_INIT
 name|CAGE_STATE_INIT
