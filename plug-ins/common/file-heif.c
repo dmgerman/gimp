@@ -1704,6 +1704,9 @@ operator|-
 literal|1
 return|;
 block|}
+ifdef|#
+directive|ifdef
+name|HAVE_LIBHEIF_1_4_0
 switch|switch
 condition|(
 name|heif_image_handle_get_color_profile_type
@@ -1801,6 +1804,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+endif|#
+directive|endif
+comment|/* HAVE_LIBHEIF_1_4_0 */
 name|gimp_progress_update
 argument_list|(
 literal|0.75
@@ -2498,6 +2504,9 @@ condition|(
 name|profile
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|HAVE_LIBHEIF_1_4_0
 specifier|const
 name|guint8
 modifier|*
@@ -2527,6 +2536,9 @@ argument_list|,
 name|icc_length
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* HAVE_LIBHEIF_1_4_0 */
 name|g_object_unref
 argument_list|(
 name|profile
