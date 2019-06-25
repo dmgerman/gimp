@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bee87480108
+DECL|struct|__anon2c3d55540108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bee87480208
+DECL|struct|__anon2c3d55540208
 block|{
 DECL|member|run
 name|gboolean
@@ -1671,6 +1671,21 @@ return|return
 name|FALSE
 return|;
 block|}
+name|format
+operator|=
+name|babl_format_with_space
+argument_list|(
+name|babl_format_get_encoding
+argument_list|(
+name|format
+argument_list|)
+argument_list|,
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Step 3: set parameters for compression */
 comment|/* First we supply a description of the input image.    * Four fields of the cinfo struct must be filled in:    */
 comment|/* image width and height, in pixels */
