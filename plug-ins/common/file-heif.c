@@ -1917,17 +1917,27 @@ name|has_alpha
 condition|)
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A u8"
+argument_list|,
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B' u8"
+argument_list|,
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2587,17 +2597,27 @@ name|has_alpha
 condition|)
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A u8"
+argument_list|,
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|format
 operator|=
-name|babl_format
+name|babl_format_with_space
 argument_list|(
 literal|"R'G'B' u8"
+argument_list|,
+name|gegl_buffer_get_format
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
