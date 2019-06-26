@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-tool-options-manager.h"
 end_include
 
@@ -1434,6 +1440,14 @@ name|manager
 operator|->
 name|active_tool
 decl_stmt|;
+comment|/*  make sure the tool options GUI always exists, this call        *  creates it if needed, so tools always have their option GUI        *  available even if the tool options dockable is not open, see        *  for example issue #3435        */
+name|gimp_tools_get_tool_options_gui
+argument_list|(
+name|active
+operator|->
+name|tool_options
+argument_list|)
+expr_stmt|;
 comment|/*  copy the new tool's context properties that are not        *  currently global to the user context, so they get used by        *  everything        */
 name|gimp_context_copy_properties
 argument_list|(
