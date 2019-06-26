@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0609be0103
+DECL|enum|__anon2785c0430103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0609be0203
+DECL|enum|__anon2785c0430203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2232,7 +2232,6 @@ if|if
 condition|(
 name|object
 condition|)
-block|{
 name|g_signal_emit
 argument_list|(
 name|box
@@ -2247,14 +2246,6 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_select_item
-argument_list|(
-name|view
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -3944,6 +3935,50 @@ argument_list|,
 name|private
 operator|->
 name|container
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_settings_box_unset (GimpSettingsBox * box)
+name|gimp_settings_box_unset
+parameter_list|(
+name|GimpSettingsBox
+modifier|*
+name|box
+parameter_list|)
+block|{
+name|GimpSettingsBoxPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_SETTINGS_BOX
+argument_list|(
+name|box
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|box
+argument_list|)
+expr_stmt|;
+name|gimp_container_view_select_item
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|private
+operator|->
+name|combo
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

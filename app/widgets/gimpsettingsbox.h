@@ -261,6 +261,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_settings_box_unset
+parameter_list|(
+name|GimpSettingsBox
+modifier|*
+name|box
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
