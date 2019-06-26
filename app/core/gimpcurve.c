@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292202bb0103
+DECL|enum|__anon2b010e450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1083,7 +1083,7 @@ literal|0
 expr_stmt|;
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
@@ -1343,7 +1343,7 @@ argument_list|)
 expr_stmt|;
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
@@ -2788,7 +2788,7 @@ name|curve
 operator|->
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
@@ -3018,7 +3018,7 @@ name|curve
 operator|->
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
@@ -3758,7 +3758,7 @@ break|break;
 block|}
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
@@ -3942,7 +3942,7 @@ argument_list|)
 expr_stmt|;
 name|points
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpCurvePoint
 argument_list|,
