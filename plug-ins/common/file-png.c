@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a075b7a0108
+DECL|struct|__anon29310d3d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a075b7a0208
+DECL|struct|__anon29310d3d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a075b7a0308
+DECL|struct|__anon29310d3d0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -5427,7 +5427,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* When converting higher bit depth work image into 8-bit,            * with no manually assigned profile, make sure the result if            * sRGB. */
+comment|/* When converting higher bit depth work image into 8-bit,            * with no manually assigned profile, make sure the result is            * sRGB.            */
 name|profile
 operator|=
 name|gimp_image_get_effective_color_profile
