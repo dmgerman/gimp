@@ -755,13 +755,15 @@ name|col
 operator|=
 name|x
 operator|/
-name|TILE_WIDTH
+name|gimp_tile_width
+argument_list|()
 expr_stmt|;
 name|row
 operator|=
 name|y
 operator|/
-name|TILE_HEIGHT
+name|gimp_tile_height
+argument_list|()
 expr_stmt|;
 name|t
 operator|=
