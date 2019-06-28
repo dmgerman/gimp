@@ -276,6 +276,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|GIMP_DEPRECATED_FOR
+argument_list|(
+argument|gimp_preview_draw_buffer
+argument_list|)
+end_macro
+
 begin_function_decl
 name|void
 name|gimp_drawable_preview_draw_region
