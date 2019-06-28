@@ -1645,7 +1645,7 @@ DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|16
+value|17
 name|gegl_get_version
 argument_list|(
 operator|&
@@ -1887,6 +1887,8 @@ init|=
 block|{
 literal|"gegl:alien-map"
 block|,
+literal|"gegl:bayer-matrix"
+block|,
 literal|"gegl:buffer-sink"
 block|,
 literal|"gegl:buffer-source"
@@ -1980,6 +1982,8 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
+block|,
+literal|"gegl:linear-sinusoid"
 block|,
 literal|"gegl:long-shadow"
 block|,

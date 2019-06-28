@@ -2470,6 +2470,14 @@ value|"gimp-filter-apply-lens"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_BAYER_MATRIX
+define|#
+directive|define
+name|GIMP_HELP_FILTER_BAYER_MATRIX
+value|"gimp-filter-bayer-matrix"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_BUMP_MAP
 define|#
 directive|define
@@ -2835,6 +2843,14 @@ define|#
 directive|define
 name|GIMP_HELP_FILTER_LENS_FLARE
 value|"gimp-filter-lens-flare"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILTER_LINEAR_SINUSOID
+define|#
+directive|define
+name|GIMP_HELP_FILTER_LINEAR_SINUSOID
+value|"gimp-filter-linear-sinusoid"
 end_define
 
 begin_define

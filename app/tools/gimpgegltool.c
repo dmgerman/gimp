@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae497c50103
+DECL|enum|__anon29db72b20103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -434,6 +434,8 @@ literal|"gegl:antialias"
 block|,
 literal|"gegl:apply-lens"
 block|,
+literal|"gegl:bayer-matrix"
+block|,
 literal|"gegl:bump-map"
 block|,
 literal|"gegl:c2g"
@@ -519,6 +521,8 @@ block|,
 literal|"gegl:lens-distortion"
 block|,
 literal|"gegl:lens-flare"
+block|,
+literal|"gegl:linear-sinusoid"
 block|,
 literal|"gegl:long-shadow"
 block|,
