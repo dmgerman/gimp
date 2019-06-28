@@ -172,26 +172,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDatafileLoaderFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDatafileLoaderFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|GimpDatafileData
-modifier|*
-name|file_data
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpMetadata
 typedef|typedef
 name|struct
