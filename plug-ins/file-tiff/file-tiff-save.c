@@ -4361,7 +4361,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_dialog (TiffSaveVals * tsvals,const gchar * help_id,gboolean has_alpha,gboolean is_monochrome,gboolean is_indexed,gchar ** image_comment)
+DECL|function|save_dialog (TiffSaveVals * tsvals,const gchar * help_id,gboolean has_alpha,gboolean is_monochrome,gboolean is_indexed,gboolean is_multi_layer,gchar ** image_comment)
 name|save_dialog
 parameter_list|(
 name|TiffSaveVals
@@ -4381,6 +4381,9 @@ name|is_monochrome
 parameter_list|,
 name|gboolean
 name|is_indexed
+parameter_list|,
+name|gboolean
+name|is_multi_layer
 parameter_list|,
 name|gchar
 modifier|*
@@ -5095,6 +5098,12 @@ literal|"save-layers"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|is_multi_layer
+condition|)
+block|{
+comment|/* If single-layer TIFF, set the toggle insensitive and show it as        * unchecked though I don't actually change the tsvals value to        * keep storing previously chosen value.        */
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -5122,6 +5131,14 @@ operator|&
 name|tsvals
 operator|->
 name|save_layers
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+name|is_multi_layer
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

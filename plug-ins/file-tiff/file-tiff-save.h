@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759d7ed0108
+DECL|struct|__anon27724e0c0108
 block|{
 DECL|member|compression
 name|gint
@@ -126,6 +126,9 @@ name|is_monochrome
 parameter_list|,
 name|gboolean
 name|is_indexed
+parameter_list|,
+name|gboolean
+name|is_multi_layer
 parameter_list|,
 name|gchar
 modifier|*
