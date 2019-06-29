@@ -1298,11 +1298,10 @@ name|compression
 operator|==
 name|COMPRESSION_CCITTFAX4
 condition|)
+comment|/* G3/G4 are fax compressions. They only support                  * monochrome images without alpha support.                  */
 name|capabilities
 operator|=
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator||
-name|GIMP_EXPORT_NEEDS_OPAQUE_LAYERS
 expr_stmt|;
 else|else
 name|capabilities

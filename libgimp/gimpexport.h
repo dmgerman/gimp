@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29884c080103
+DECL|enum|__anon293782db0103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -118,13 +118,6 @@ init|=
 literal|1
 operator|<<
 literal|8
-block|,
-DECL|enumerator|GIMP_EXPORT_NEEDS_OPAQUE_LAYERS
-name|GIMP_EXPORT_NEEDS_OPAQUE_LAYERS
-init|=
-literal|1
-operator|<<
-literal|9
 DECL|typedef|GimpExportCapabilities
 block|}
 name|GimpExportCapabilities
@@ -134,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29884c080203
+DECL|enum|__anon293782db0203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL
