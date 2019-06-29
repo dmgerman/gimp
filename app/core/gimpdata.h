@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32df330103
+DECL|enum|__anon2b50cd260103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -112,6 +112,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DATA, GimpDataClass))
 end_define
 
 begin_typedef
+DECL|typedef|GimpDataPrivate
+typedef|typedef
+name|struct
+name|_GimpDataPrivate
+name|GimpDataPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDataClass
 typedef|typedef
 name|struct
@@ -128,6 +137,11 @@ block|{
 DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpDataPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;

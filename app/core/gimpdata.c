@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be030f0103
+DECL|enum|__anon28e72d3a0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be030f0203
+DECL|enum|__anon28e72d3a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -103,15 +103,6 @@ name|PROP_MIME_TYPE
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|GimpDataPrivate
-typedef|typedef
-name|struct
-name|_GimpDataPrivate
-name|GimpDataPrivate
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpDataPrivate
@@ -175,28 +166,15 @@ struct|;
 end_struct
 
 begin_define
-DECL|macro|GIMP_DATA_GET_PRIVATE (data)
+DECL|macro|GIMP_DATA_GET_PRIVATE (obj)
 define|#
 directive|define
 name|GIMP_DATA_GET_PRIVATE
 parameter_list|(
-name|data
+name|obj
 parameter_list|)
-define|\
-value|G_TYPE_INSTANCE_GET_PRIVATE (data, GIMP_TYPE_DATA, GimpDataPrivate)
+value|(((GimpData *) (obj))->priv)
 end_define
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_data_class_init
-parameter_list|(
-name|GimpDataClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -206,22 +184,6 @@ parameter_list|(
 name|GimpTaggedInterface
 modifier|*
 name|iface
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_data_init
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|,
-name|GimpDataClass
-modifier|*
-name|data_class
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -449,8 +411,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_macro
+name|G_DEFINE_TYPE_WITH_CODE
+argument_list|(
+argument|GimpData
+argument_list|,
+argument|gimp_data
+argument_list|,
+argument|GIMP_TYPE_VIEWABLE
+argument_list|,
+argument|G_ADD_PRIVATE (GimpData)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_data_tagged_iface_init)
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_data_parent_class
+end_define
+
 begin_decl_stmt
-DECL|variable|data_signals
 specifier|static
 name|guint
 name|data_signals
@@ -463,130 +445,6 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpViewableClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|GType
-DECL|function|gimp_data_get_type (void)
-name|gimp_data_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|data_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|data_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|data_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|GimpDataClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_data_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|GimpData
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_data_init
-block|,       }
-decl_stmt|;
-specifier|const
-name|GInterfaceInfo
-name|tagged_info
-init|=
-block|{
-operator|(
-name|GInterfaceInitFunc
-operator|)
-name|gimp_data_tagged_iface_init
-block|,
-name|NULL
-block|,
-comment|/* interface_finalize */
-name|NULL
-comment|/* interface_data     */
-block|}
-decl_stmt|;
-name|data_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|GIMP_TYPE_VIEWABLE
-argument_list|,
-literal|"GimpData"
-argument_list|,
-operator|&
-name|data_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|data_type
-argument_list|,
-name|GIMP_TYPE_TAGGED
-argument_list|,
-operator|&
-name|tagged_info
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|data_type
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -833,16 +691,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_type_class_add_private
-argument_list|(
-name|klass
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpDataPrivate
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -893,27 +741,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_init (GimpData * data,GimpDataClass * data_class)
+DECL|function|gimp_data_init (GimpData * data)
 name|gimp_data_init
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|GimpDataClass
-modifier|*
-name|data_class
 parameter_list|)
 block|{
 name|GimpDataPrivate
 modifier|*
 name|private
 init|=
-name|GIMP_DATA_GET_PRIVATE
+name|gimp_data_get_instance_private
 argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|data
+operator|->
+name|priv
+operator|=
+name|private
+expr_stmt|;
 name|private
 operator|->
 name|writable
@@ -931,20 +781,6 @@ operator|->
 name|dirty
 operator|=
 name|TRUE
-expr_stmt|;
-comment|/*  look at the passed class pointer, not at GIMP_DATA_GET_CLASS(data)    *  here, because the latter is always GimpDataClass itself    */
-if|if
-condition|(
-operator|!
-name|data_class
-operator|->
-name|save
-condition|)
-name|private
-operator|->
-name|writable
-operator|=
-name|FALSE
 expr_stmt|;
 comment|/*  freeze the data object during construction  */
 name|gimp_data_freeze
@@ -966,6 +802,15 @@ modifier|*
 name|object
 parameter_list|)
 block|{
+name|GimpDataPrivate
+modifier|*
+name|private
+init|=
+name|GIMP_DATA_GET_PRIVATE
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -975,6 +820,22 @@ name|constructed
 argument_list|(
 name|object
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|object
+argument_list|)
+operator|->
+name|save
+condition|)
+name|private
+operator|->
+name|writable
+operator|=
+name|FALSE
 expr_stmt|;
 name|gimp_data_thaw
 argument_list|(
