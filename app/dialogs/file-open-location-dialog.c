@@ -818,6 +818,19 @@ argument_list|(
 name|text
 argument_list|)
 decl_stmt|;
+comment|/* should not fail but does, see issue #3093 */
+if|if
+condition|(
+operator|!
+name|entered_file
+condition|)
+name|entered_file
+operator|=
+name|g_object_ref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|box
@@ -992,9 +1005,17 @@ argument_list|)
 argument_list|,
 name|text
 argument_list|,
+comment|/* error should never be NULL, also issue #3093 */
+name|error
+condition|?
 name|error
 operator|->
 name|message
+else|:
+name|_
+argument_list|(
+literal|"Invalid URI"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_clear_error
