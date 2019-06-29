@@ -338,7 +338,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|int
 name|doWindowCapture
 parameter_list|(
 name|void
@@ -470,7 +470,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275972110108
+DECL|struct|__anon2c8166910108
 typedef|typedef
 struct|struct
 block|{
@@ -517,7 +517,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275972110208
+DECL|struct|__anon2c8166910208
 typedef|typedef
 struct|struct
 block|{
@@ -669,11 +669,15 @@ operator|==
 name|SHOOT_WINDOW
 condition|)
 block|{
-name|doWindowCapture
-argument_list|()
-expr_stmt|;
 name|status
 operator|=
+literal|0
+operator|==
+name|doWindowCapture
+argument_list|()
+condition|?
+name|GIMP_PDB_CANCEL
+else|:
 name|GIMP_PDB_SUCCESS
 expr_stmt|;
 block|}
@@ -1201,7 +1205,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|int
 DECL|function|doWindowCapture (void)
 name|doWindowCapture
 parameter_list|(
@@ -1209,9 +1213,10 @@ name|void
 parameter_list|)
 block|{
 comment|/* Start up a standard Win32    * message handling loop for    * selection of the window    * to be captured    */
+return|return
 name|winsnapWinMain
 argument_list|()
-expr_stmt|;
+return|;
 block|}
 end_function
 
@@ -4521,7 +4526,9 @@ argument_list|)
 expr_stmt|;
 name|PostQuitMessage
 argument_list|(
-literal|0
+name|selectedHwnd
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
