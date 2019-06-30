@@ -2432,6 +2432,13 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|space
+init|=
+name|NULL
+decl_stmt|;
 name|guint8
 modifier|*
 name|data
@@ -2546,6 +2553,46 @@ argument_list|,
 name|icc_length
 argument_list|)
 expr_stmt|;
+name|space
+operator|=
+name|gimp_color_profile_get_space
+argument_list|(
+name|profile
+argument_list|,
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+operator|&&
+operator|*
+name|error
+condition|)
+block|{
+comment|/* Don't make this a hard failure yet output the error. */
+name|g_printerr
+argument_list|(
+literal|"%s: error getting the profile space: %s"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+operator|(
+operator|*
+name|error
+operator|)
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 comment|/* HAVE_LIBHEIF_1_4_0 */
@@ -2555,6 +2602,18 @@ name|profile
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|space
+condition|)
+name|space
+operator|=
+name|gimp_drawable_get_format
+argument_list|(
+name|drawable_ID
+argument_list|)
+expr_stmt|;
 name|heif_image_add_plane
 argument_list|(
 name|image
@@ -2601,10 +2660,7 @@ name|babl_format_with_space
 argument_list|(
 literal|"R'G'B'A u8"
 argument_list|,
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
+name|space
 argument_list|)
 expr_stmt|;
 else|else
@@ -2614,10 +2670,7 @@ name|babl_format_with_space
 argument_list|(
 literal|"R'G'B' u8"
 argument_list|,
-name|gegl_buffer_get_format
-argument_list|(
-name|buffer
-argument_list|)
+name|space
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
