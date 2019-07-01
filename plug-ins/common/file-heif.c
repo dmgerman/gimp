@@ -1725,9 +1725,9 @@ name|heif_colorspace_RGB
 argument_list|,
 name|has_alpha
 condition|?
-name|heif_chroma_interleaved_32bit
+name|heif_chroma_interleaved_RGBA
 else|:
-name|heif_chroma_interleaved_24bit
+name|heif_chroma_interleaved_RGB
 argument_list|,
 name|NULL
 argument_list|)
@@ -2467,11 +2467,15 @@ name|struct
 name|heif_encoder
 modifier|*
 name|encoder
+init|=
+name|NULL
 decl_stmt|;
 name|struct
 name|heif_image_handle
 modifier|*
 name|handle
+init|=
+name|NULL
 decl_stmt|;
 name|struct
 name|heif_writer
@@ -2898,11 +2902,6 @@ literal|0.33
 argument_list|)
 expr_stmt|;
 comment|/*  encode to HEIF file  */
-name|context
-operator|=
-name|heif_context_alloc
-argument_list|()
-expr_stmt|;
 name|err
 operator|=
 name|heif_context_get_encoder_for_format
@@ -3260,6 +3259,8 @@ name|struct
 name|heif_image_handle
 modifier|*
 name|handle
+init|=
+name|NULL
 decl_stmt|;
 name|struct
 name|heif_error
@@ -3275,6 +3276,8 @@ name|struct
 name|heif_image_handle
 modifier|*
 name|thumbnail_handle
+init|=
+name|NULL
 decl_stmt|;
 name|heif_item_id
 name|thumbnail_ID
@@ -3286,6 +3289,8 @@ name|struct
 name|heif_image
 modifier|*
 name|thumbnail_img
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|thumbnail_width
@@ -3537,7 +3542,7 @@ name|thumbnail_img
 argument_list|,
 name|heif_colorspace_RGB
 argument_list|,
-name|heif_chroma_interleaved_24bit
+name|heif_chroma_interleaved_RGB
 argument_list|,
 name|NULL
 argument_list|)
