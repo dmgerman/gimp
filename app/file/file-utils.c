@@ -356,6 +356,31 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|file
+condition|)
+block|{
+comment|/* Despite the docs says it never fails, it actually can on Windows.        * See issue #3093 (and glib#1819).        */
+name|g_set_error_literal
+argument_list|(
+name|error
+argument_list|,
+name|G_CONVERT_ERROR
+argument_list|,
+name|G_CONVERT_ERROR_ILLEGAL_SEQUENCE
+argument_list|,
+name|_
+argument_list|(
+literal|"Invalid character sequence in URI"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 comment|/*  check for prefixes like http or ftp  */
 if|if
 condition|(
