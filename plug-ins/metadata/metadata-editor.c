@@ -2434,6 +2434,9 @@ name|p
 argument_list|,
 name|p
 operator|+
+operator|(
+name|gint
+operator|)
 name|strlen
 argument_list|(
 name|substring

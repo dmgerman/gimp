@@ -4560,10 +4560,15 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_LIBHEIF_1_4_0
 name|GtkWidget
 modifier|*
 name|profile_button
 decl_stmt|;
+endif|#
+directive|endif
 name|GtkWidget
 modifier|*
 name|quality_slider
