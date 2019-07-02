@@ -645,6 +645,10 @@ name|priv
 decl_stmt|;
 if|if
 condition|(
+name|press_type
+operator|==
+name|GIMP_BUTTON_PRESS_NORMAL
+operator|&&
 name|gimp_selection_tool_start_edit
 argument_list|(
 name|GIMP_SELECTION_TOOL
