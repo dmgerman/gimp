@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -155,9 +161,9 @@ block|{
 name|gboolean
 name|active
 init|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -221,9 +227,9 @@ block|{
 name|gboolean
 name|active
 init|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)

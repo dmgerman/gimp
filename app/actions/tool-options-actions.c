@@ -656,7 +656,7 @@ name|gchar
 modifier|*
 name|action_name
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -673,12 +673,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|action_name
 argument_list|)
@@ -694,12 +691,9 @@ operator|!
 name|action
 condition|)
 break|break;
-name|gtk_action_group_remove_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_remove_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|action
 argument_list|)

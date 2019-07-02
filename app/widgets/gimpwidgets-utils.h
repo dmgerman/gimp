@@ -363,7 +363,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|)

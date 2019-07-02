@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpactionimpl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1622,7 +1628,7 @@ name|i
 operator|++
 control|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -1641,12 +1647,9 @@ argument_list|)
 decl_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -1675,7 +1678,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|GIMP_ACTION
+name|GIMP_ACTION_IMPL
 argument_list|(
 name|action
 argument_list|)

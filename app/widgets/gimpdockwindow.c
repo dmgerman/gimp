@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909a5cf0103
+DECL|enum|__anon28acb9b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1393,16 +1393,13 @@ argument_list|)
 expr_stmt|;
 name|accel_group
 operator|=
-name|gtk_ui_manager_get_accel_group
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|dock_window
 operator|->
 name|p
 operator|->
 name|ui_manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_add_accel_group

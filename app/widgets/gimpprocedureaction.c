@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedureaction.h"
 end_include
 
@@ -53,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4b0550103
+DECL|enum|__anon2b584bab0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -66,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4b0550203
+DECL|enum|__anon2b584bab0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,7 +177,7 @@ argument|GimpProcedureAction
 argument_list|,
 argument|gimp_procedure_action
 argument_list|,
-argument|GIMP_TYPE_ACTION
+argument|GIMP_TYPE_ACTION_IMPL
 argument_list|)
 end_macro
 
@@ -325,14 +331,7 @@ name|GimpProcedureAction
 modifier|*
 name|action
 parameter_list|)
-block|{
-name|action
-operator|->
-name|procedure
-operator|=
-name|NULL
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -737,7 +736,7 @@ end_comment
 begin_function
 name|GimpProcedureAction
 modifier|*
-DECL|function|gimp_procedure_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,GimpProcedure * procedure)
+DECL|function|gimp_procedure_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * icon_name,const gchar * help_id,GimpProcedure * procedure)
 name|gimp_procedure_action_new
 parameter_list|(
 specifier|const
@@ -760,12 +759,22 @@ name|gchar
 modifier|*
 name|icon_name
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
+parameter_list|,
 name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|)
 block|{
-return|return
+name|GimpProcedureAction
+modifier|*
+name|action
+decl_stmt|;
+name|action
+operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PROCEDURE_ACTION
@@ -792,6 +801,19 @@ name|procedure
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|gimp_action_set_help_id
+argument_list|(
+name|GIMP_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+name|help_id
+argument_list|)
+expr_stmt|;
+return|return
+name|action
 return|;
 block|}
 end_function

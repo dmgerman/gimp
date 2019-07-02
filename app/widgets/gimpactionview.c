@@ -346,14 +346,11 @@ name|group
 decl_stmt|;
 name|group
 operator|=
-name|gtk_ui_manager_get_accel_group
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|view
 operator|->
 name|manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -503,7 +500,7 @@ argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
 comment|/* COLUMN_VISIBLE        */
-name|GTK_TYPE_ACTION
+name|GIMP_TYPE_ACTION
 argument_list|,
 comment|/* COLUMN_ACTION         */
 name|G_TYPE_STRING
@@ -530,24 +527,18 @@ expr_stmt|;
 comment|/* COLUMN_ACCEL_CLOSURE  */
 name|accel_group
 operator|=
-name|gtk_ui_manager_get_accel_group
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
 control|(
 name|list
 operator|=
-name|gtk_ui_manager_get_action_groups
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_action_groups
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 init|;
 name|list
@@ -614,12 +605,9 @@ argument_list|)
 expr_stmt|;
 name|actions
 operator|=
-name|gtk_action_group_list_actions
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_list_actions
 argument_list|(
 name|group
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|actions
@@ -650,7 +638,7 @@ name|list2
 argument_list|)
 control|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 init|=
@@ -663,7 +651,7 @@ name|gchar
 modifier|*
 name|name
 init|=
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
@@ -673,7 +661,7 @@ name|gchar
 modifier|*
 name|icon_name
 init|=
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -717,7 +705,7 @@ name|label
 operator|=
 name|gimp_strip_uline
 argument_list|(
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
@@ -766,7 +754,7 @@ condition|)
 block|{
 name|accel_closure
 operator|=
-name|gtk_action_get_accel_closure
+name|gimp_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)
@@ -2058,7 +2046,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e805520108
+DECL|struct|__anon298c430a0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2178,14 +2166,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_action_view_conflict_confirm (GimpActionView * view,GtkAction * action,guint accel_key,GdkModifierType accel_mask,const gchar * accel_path)
+DECL|function|gimp_action_view_conflict_confirm (GimpActionView * view,GimpAction * action,guint accel_key,GdkModifierType accel_mask,const gchar * accel_path)
 name|gimp_action_view_conflict_confirm
 parameter_list|(
 name|GimpActionView
 modifier|*
 name|view
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2241,7 +2229,7 @@ name|label
 operator|=
 name|gimp_strip_uline
 argument_list|(
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
@@ -2432,7 +2420,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_action_view_get_accel_action (GimpActionView * view,const gchar * path_string,GtkAction ** action_return,guint * action_accel_key,GdkModifierType * action_accel_mask)
+DECL|function|gimp_action_view_get_accel_action (GimpActionView * view,const gchar * path_string,GimpAction ** action_return,guint * action_accel_key,GdkModifierType * action_accel_mask)
 name|gimp_action_view_get_accel_action
 parameter_list|(
 name|GimpActionView
@@ -2444,7 +2432,7 @@ name|gchar
 modifier|*
 name|path_string
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 modifier|*
 name|action_return
@@ -2507,7 +2495,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2559,7 +2547,7 @@ operator|=
 name|action
 expr_stmt|;
 return|return
-name|gtk_action_get_accel_path
+name|gimp_action_get_accel_path
 argument_list|(
 name|action
 argument_list|)
@@ -2607,7 +2595,7 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2817,7 +2805,7 @@ name|GtkTreeModel
 modifier|*
 name|model
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|conflict_action
 init|=
@@ -3051,7 +3039,7 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;

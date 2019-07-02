@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpradioaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptextbuffer.h"
 end_include
 
@@ -373,9 +379,9 @@ name|value
 decl_stmt|;
 name|value
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)

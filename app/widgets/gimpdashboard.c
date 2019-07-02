@@ -297,6 +297,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -418,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af002440103
+DECL|enum|__anon2c1bec720103
 block|{
 DECL|enumerator|VARIABLE_NONE
 name|VARIABLE_NONE
@@ -538,7 +544,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af002440203
+DECL|enum|__anon2c1bec720203
 block|{
 DECL|enumerator|VARIABLE_TYPE_BOOLEAN
 name|VARIABLE_TYPE_BOOLEAN
@@ -572,7 +578,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af002440303
+DECL|enum|__anon2c1bec720303
 block|{
 DECL|enumerator|FIRST_GROUP
 name|FIRST_GROUP
@@ -840,7 +846,7 @@ name|gboolean
 name|available
 decl_stmt|;
 union|union
-DECL|union|__anon2af00244040a
+DECL|union|__anon2c1bec72040a
 block|{
 DECL|member|boolean
 name|gboolean
@@ -856,7 +862,7 @@ name|size
 decl_stmt|;
 comment|/* in bytes                   */
 struct|struct
-DECL|struct|__anon2af002440508
+DECL|struct|__anon2c1bec720508
 block|{
 DECL|member|antecedent
 name|guint64
@@ -871,7 +877,7 @@ block|}
 name|size_ratio
 struct|;
 struct|struct
-DECL|struct|__anon2af002440608
+DECL|struct|__anon2c1bec720608
 block|{
 DECL|member|antecedent
 name|gint
@@ -961,7 +967,7 @@ name|gdouble
 name|limit
 decl_stmt|;
 DECL|member|action
-name|GtkToggleAction
+name|GimpToggleAction
 modifier|*
 name|action
 decl_stmt|;
@@ -1264,7 +1270,7 @@ name|GimpDashboard
 modifier|*
 name|dashboard
 parameter_list|,
-name|GtkToggleAction
+name|GimpToggleAction
 modifier|*
 name|action
 parameter_list|)
@@ -5593,7 +5599,7 @@ name|GimpActionGroup
 modifier|*
 name|action_group
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -5772,7 +5778,7 @@ name|group_data
 operator|->
 name|action
 operator|=
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -5862,12 +5868,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|action_group
-argument_list|)
 argument_list|,
 literal|"dashboard-log-add-marker"
 argument_list|)
@@ -6030,12 +6033,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|action_group
-argument_list|)
 argument_list|,
 literal|"dashboard-reset"
 argument_list|)
@@ -7613,14 +7613,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dashboard_group_action_toggled (GimpDashboard * dashboard,GtkToggleAction * action)
+DECL|function|gimp_dashboard_group_action_toggled (GimpDashboard * dashboard,GimpToggleAction * action)
 name|gimp_dashboard_group_action_toggled
 parameter_list|(
 name|GimpDashboard
 modifier|*
 name|dashboard
 parameter_list|,
-name|GtkToggleAction
+name|GimpToggleAction
 modifier|*
 name|action
 parameter_list|)
@@ -7669,7 +7669,7 @@ name|group_data
 operator|->
 name|active
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
 name|action
 argument_list|)
@@ -9097,7 +9097,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440708
+DECL|struct|__anon2c1bec720708
 block|{
 DECL|member|last_time
 name|gint64
@@ -9303,7 +9303,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440808
+DECL|struct|__anon2c1bec720808
 block|{
 DECL|member|free_space
 name|guint64
@@ -9573,7 +9573,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440908
+DECL|struct|__anon2c1bec720908
 block|{
 DECL|member|prev_clock
 name|clock_t
@@ -9779,7 +9779,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440a08
+DECL|struct|__anon2c1bec720a08
 block|{
 DECL|member|prev_time
 name|guint64
@@ -10055,7 +10055,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440b08
+DECL|struct|__anon2c1bec720b08
 block|{
 DECL|member|active
 name|gboolean
@@ -10215,7 +10215,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af002440c08
+DECL|struct|__anon2c1bec720c08
 block|{
 DECL|member|prev_time
 name|gint64
@@ -12883,7 +12883,7 @@ argument_list|,
 name|dashboard
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_action_set_active
+name|gimp_toggle_action_set_active
 argument_list|(
 name|group_data
 operator|->
@@ -19127,12 +19127,9 @@ argument_list|)
 expr_stmt|;
 name|merge_id
 operator|=
-name|gtk_ui_manager_new_merge_id
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_new_merge_id
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -19188,12 +19185,9 @@ argument_list|,
 name|ui_path
 argument_list|)
 expr_stmt|;
-name|gtk_ui_manager_add_ui
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_add_ui
 argument_list|(
 name|manager
-argument_list|)
 argument_list|,
 name|merge_id
 argument_list|,

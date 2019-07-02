@@ -216,7 +216,7 @@ name|GimpSearchPopup
 modifier|*
 name|popup
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

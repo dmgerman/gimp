@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee2bc70103
+DECL|enum|__anon2998cedb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee2bc70203
+DECL|enum|__anon2998cedb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1596,7 +1596,7 @@ name|GtkWidget
 modifier|*
 name|gtk_image
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;

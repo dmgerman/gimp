@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpmenufactory.h"
 end_include
 
@@ -615,7 +621,7 @@ name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
-name|gtk_ui_manager_get_ui
+name|gimp_ui_manager_get_ui
 argument_list|(
 name|managers
 operator|->
@@ -649,7 +655,7 @@ name|GimpImageWindow
 modifier|*
 name|window
 decl_stmt|;
-name|GtkUIManager
+name|GimpUIManager
 modifier|*
 name|manager
 decl_stmt|;
@@ -686,17 +692,14 @@ argument_list|)
 expr_stmt|;
 name|manager
 operator|=
-name|GTK_UI_MANAGER
-argument_list|(
 name|gimp_image_window_get_ui_manager
 argument_list|(
 name|window
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|accel_group
 operator|=
-name|gtk_ui_manager_get_accel_group
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|manager
 argument_list|)
@@ -706,7 +709,7 @@ for|for
 control|(
 name|group_it
 operator|=
-name|gtk_ui_manager_get_action_groups
+name|gimp_ui_manager_get_action_groups
 argument_list|(
 name|manager
 argument_list|)
@@ -743,12 +746,9 @@ name|NULL
 decl_stmt|;
 name|actions
 operator|=
-name|gtk_action_group_list_actions
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_list_actions
 argument_list|(
 name|group
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|actions
@@ -779,7 +779,7 @@ name|action_it
 argument_list|)
 control|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 init|=
@@ -792,7 +792,7 @@ name|gchar
 modifier|*
 name|name
 init|=
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
@@ -829,7 +829,7 @@ condition|)
 continue|continue;
 name|accel_closure
 operator|=
-name|gtk_action_get_accel_closure
+name|gimp_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)
@@ -882,7 +882,7 @@ name|key_string
 decl_stmt|;
 name|label_tmp
 operator|=
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)

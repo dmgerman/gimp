@@ -1221,7 +1221,7 @@ name|GtkToolItem
 modifier|*
 name|item
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;

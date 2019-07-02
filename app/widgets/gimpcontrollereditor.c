@@ -61,6 +61,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpactioneditor.h"
 end_include
 
@@ -120,7 +126,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d06940103
+DECL|enum|__anon2b2fe22d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +142,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d06940203
+DECL|enum|__anon2b2fe22d0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1420,7 +1426,7 @@ condition|(
 name|event_action
 condition|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -1441,7 +1447,7 @@ name|action
 condition|)
 name|icon_name
 operator|=
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)

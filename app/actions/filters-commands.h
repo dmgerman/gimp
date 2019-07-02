@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|filters_apply_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|filters_apply_interactive_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -58,7 +58,7 @@ begin_function_decl
 name|void
 name|filters_repeat_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -75,7 +75,7 @@ begin_function_decl
 name|void
 name|filters_history_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

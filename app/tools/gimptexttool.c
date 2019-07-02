@@ -3315,14 +3315,11 @@ argument_list|)
 expr_stmt|;
 name|im_menu
 operator|=
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_widget
 argument_list|(
 name|text_tool
 operator|->
 name|ui_manager
-argument_list|)
 argument_list|,
 literal|"/text-tool-popup/text-tool-input-methods-menu"
 argument_list|)

@@ -54,6 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpradioaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -154,9 +166,9 @@ name|update_interval
 decl_stmt|;
 name|update_interval
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -203,9 +215,9 @@ name|history_duration
 decl_stmt|;
 name|history_duration
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -830,9 +842,9 @@ name|low_swap_space_warning
 decl_stmt|;
 name|low_swap_space_warning
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)

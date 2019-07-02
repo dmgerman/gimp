@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"error-console-commands.h"
 end_include
 
@@ -498,9 +504,9 @@ name|active
 decl_stmt|;
 name|active
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -545,9 +551,9 @@ name|active
 decl_stmt|;
 name|active
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -592,9 +598,9 @@ name|active
 decl_stmt|;
 name|active
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)

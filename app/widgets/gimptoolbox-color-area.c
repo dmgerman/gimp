@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolordialog.h"
 end_include
 
@@ -979,7 +985,7 @@ name|toolbox
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 init|=
@@ -1037,7 +1043,7 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
@@ -1059,7 +1065,7 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
@@ -1098,7 +1104,7 @@ name|accel_key
 decl_stmt|;
 name|accel_closure
 operator|=
-name|gtk_action_get_accel_closure
+name|gimp_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)

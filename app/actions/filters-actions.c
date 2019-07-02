@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
@@ -4823,7 +4829,7 @@ condition|(
 name|proc
 condition|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|actual_action
 init|=
@@ -4921,12 +4927,9 @@ condition|)
 block|{
 name|actual_action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -4944,12 +4947,9 @@ block|{
 comment|/*  copy the sensitivity of the plug-in procedure's actual            *  action instead of calling filters_actions_update()            *  because doing the latter would set the sensitivity of            *  this image's action on all images' actions. See bug            *  #517683.            */
 name|actual_action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|plug_in_group
-argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -4964,7 +4964,7 @@ name|actual_action
 condition|)
 name|sensitive
 operator|=
-name|gtk_action_get_sensitive
+name|gimp_action_get_sensitive
 argument_list|(
 name|actual_action
 argument_list|)
@@ -5050,11 +5050,11 @@ name|i
 operator|++
 control|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|actual_action
 init|=
@@ -5087,12 +5087,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -5133,12 +5130,9 @@ condition|)
 block|{
 name|actual_action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5156,12 +5150,9 @@ block|{
 comment|/*  see comment above  */
 name|actual_action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|plug_in_group
-argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -5176,7 +5167,7 @@ name|actual_action
 condition|)
 name|sensitive
 operator|=
-name|gtk_action_get_sensitive
+name|gimp_action_get_sensitive
 argument_list|(
 name|actual_action
 argument_list|)
@@ -5236,7 +5227,7 @@ name|i
 operator|++
 control|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -5255,12 +5246,9 @@ argument_list|)
 decl_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|name
 argument_list|)

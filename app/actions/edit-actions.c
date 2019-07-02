@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
@@ -1010,7 +1016,7 @@ name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -1068,17 +1074,14 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 literal|"edit-paste-as-new-image-short"
 argument_list|)
 expr_stmt|;
-name|gtk_action_set_accel_path
+name|gimp_action_set_accel_path
 argument_list|(
 name|action
 argument_list|,

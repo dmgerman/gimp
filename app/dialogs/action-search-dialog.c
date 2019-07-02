@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpaction-history.h"
 end_include
 
@@ -112,7 +118,7 @@ specifier|static
 name|gboolean
 name|action_search_match_keyword
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -284,12 +290,9 @@ name|gimp_search_popup_add_result
 argument_list|(
 name|popup
 argument_list|,
-name|GTK_ACTION
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|,
 literal|0
 argument_list|)
@@ -300,12 +303,9 @@ for|for
 control|(
 name|list
 operator|=
-name|gtk_ui_manager_get_action_groups
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_action_groups
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 init|;
 name|list
@@ -338,12 +338,9 @@ name|NULL
 decl_stmt|;
 name|actions
 operator|=
-name|gtk_action_group_list_actions
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_list_actions
 argument_list|(
 name|group
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|actions
@@ -379,7 +376,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 init|=
@@ -397,7 +394,7 @@ name|section
 decl_stmt|;
 name|name
 operator|=
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
@@ -414,14 +411,14 @@ continue|continue;
 if|if
 condition|(
 operator|!
-name|gtk_action_is_visible
+name|gimp_action_is_visible
 argument_list|(
 name|action
 argument_list|)
 operator|||
 operator|(
 operator|!
-name|gtk_action_is_sensitive
+name|gimp_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -478,14 +475,11 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|gtk_action_get_name
-argument_list|(
-name|GTK_ACTION
+name|gimp_action_get_name
 argument_list|(
 name|list3
 operator|->
 name|data
-argument_list|)
 argument_list|)
 argument_list|,
 name|name
@@ -541,10 +535,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|action_search_match_keyword (GtkAction * action,const gchar * keyword,gint * section,Gimp * gimp)
+DECL|function|action_search_match_keyword (GimpAction * action,const gchar * keyword,gint * section,Gimp * gimp)
 name|action_search_match_keyword
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -630,7 +624,7 @@ name|tmp
 operator|=
 name|gimp_strip_uline
 argument_list|(
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
@@ -1022,7 +1016,7 @@ argument_list|)
 operator|>
 literal|2
 operator|&&
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
@@ -1052,7 +1046,7 @@ name|tooltip_tokens
 operator|=
 name|g_str_tokenize_and_fold
 argument_list|(
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)

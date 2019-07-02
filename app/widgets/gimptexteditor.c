@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fdaa410103
+DECL|enum|__anon2c3c1d8f0103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -658,14 +658,11 @@ argument_list|)
 expr_stmt|;
 name|toolbar
 operator|=
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_widget
 argument_list|(
 name|editor
 operator|->
 name|ui_manager
-argument_list|)
 argument_list|,
 literal|"/text-editor-toolbar"
 argument_list|)

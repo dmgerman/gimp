@@ -198,6 +198,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpradioaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -955,9 +967,9 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -1338,9 +1350,9 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -1507,9 +1519,9 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -1597,9 +1609,9 @@ argument_list|)
 expr_stmt|;
 name|use_srgb
 operator|=
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)

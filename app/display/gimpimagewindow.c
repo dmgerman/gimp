@@ -410,7 +410,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2cce560103
+DECL|enum|__anon2a4245a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -536,7 +536,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cce560208
+DECL|struct|__anon2a4245a10208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -1727,14 +1727,11 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|gtk_ui_manager_get_accel_group
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|private
 operator|->
 name|menubar_manager
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1820,14 +1817,11 @@ name|private
 operator|->
 name|menubar
 operator|=
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_widget
 argument_list|(
 name|private
 operator|->
 name|menubar_manager
-argument_list|)
 argument_list|,
 literal|"/image-menubar"
 argument_list|)

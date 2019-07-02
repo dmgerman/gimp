@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b2cb20103
+DECL|enum|__anon29fc9aae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1528,14 +1528,11 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_widget
 argument_list|(
 name|gimp_editor_get_ui_manager
 argument_list|(
 name|gimp_editor
-argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_editor_get_ui_path

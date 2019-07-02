@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d4d130103
+DECL|enum|__anon2b2afbfd0103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295d4d130208
+DECL|struct|__anon2b2afbfd0208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon295d4d130308
+DECL|struct|__anon2b2afbfd0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -968,7 +968,7 @@ name|actions
 operator|->
 name|data
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -995,14 +995,14 @@ continue|continue;
 if|if
 condition|(
 operator|!
-name|gtk_action_is_visible
+name|gimp_action_is_visible
 argument_list|(
 name|action
 argument_list|)
 operator|||
 operator|(
 operator|!
-name|gtk_action_is_sensitive
+name|gimp_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -1208,10 +1208,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_action_history_action_activated (GtkAction * action)
+DECL|function|gimp_action_history_action_activated (GimpAction * action)
 name|gimp_action_history_action_activated
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|)
@@ -1264,7 +1264,7 @@ condition|)
 return|return;
 name|action_name
 operator|=
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)

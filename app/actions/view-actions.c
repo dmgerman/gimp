@@ -3049,7 +3049,7 @@ modifier|*
 name|group
 parameter_list|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -3281,12 +3281,9 @@ expr_stmt|;
 comment|/*  connect "activate" of view-zoom-other manually so it can be    *  selected even if it's the active item of the radio group    */
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 literal|"view-zoom-other"
 argument_list|)

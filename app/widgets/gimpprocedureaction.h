@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpaction.h"
+file|"gimpactionimpl.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpProcedureAction
 block|{
 DECL|member|parent_instance
-name|GimpAction
+name|GimpActionImpl
 name|parent_instance
 decl_stmt|;
 DECL|member|procedure
@@ -118,7 +118,7 @@ struct|struct
 name|_GimpProcedureActionClass
 block|{
 DECL|member|parent_class
-name|GimpActionClass
+name|GimpActionImplClass
 name|parent_class
 decl_stmt|;
 DECL|member|selected
@@ -175,6 +175,11 @@ specifier|const
 name|gchar
 modifier|*
 name|icon_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpProcedure
 modifier|*

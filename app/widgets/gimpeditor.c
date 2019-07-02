@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdocked.h"
 end_include
 
@@ -67,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptoggleaction.h"
 end_include
 
 begin_include
@@ -121,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf141530103
+DECL|enum|__anon2b0d91840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2214,14 +2232,14 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf141530208
+DECL|struct|__anon2b0d91840208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
 name|mod_mask
 decl_stmt|;
 DECL|member|action
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2350,7 +2368,7 @@ name|ext
 operator|->
 name|mod_mask
 operator|&&
-name|gtk_action_get_sensitive
+name|gimp_action_get_sensitive
 argument_list|(
 name|ext
 operator|->
@@ -2358,7 +2376,7 @@ name|action
 argument_list|)
 condition|)
 block|{
-name|gtk_action_activate
+name|gimp_action_activate
 argument_list|(
 name|ext
 operator|->
@@ -2398,7 +2416,7 @@ name|GimpActionGroup
 modifier|*
 name|group
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2499,12 +2517,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|action_name
 argument_list|)
@@ -2530,7 +2545,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_TOGGLE_ACTION
+name|GIMP_IS_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -2558,7 +2573,7 @@ argument_list|)
 expr_stmt|;
 name|icon_name
 operator|=
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -2567,7 +2582,7 @@ name|tooltip
 operator|=
 name|g_strdup
 argument_list|(
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
@@ -2635,7 +2650,10 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
+name|GTK_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2700,12 +2718,9 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
-argument_list|(
-name|GTK_ACTION_GROUP
+name|gimp_action_group_get_action
 argument_list|(
 name|group
-argument_list|)
 argument_list|,
 name|action_name
 argument_list|)
@@ -2757,7 +2772,7 @@ name|gchar
 modifier|*
 name|ext_tooltip
 init|=
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)

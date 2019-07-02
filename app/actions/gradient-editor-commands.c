@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpradioaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -221,9 +227,9 @@ argument_list|)
 expr_stmt|;
 name|color_type
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -681,9 +687,9 @@ argument_list|)
 expr_stmt|;
 name|color_type
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -1122,9 +1128,9 @@ argument_list|)
 expr_stmt|;
 name|type
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -1232,9 +1238,9 @@ argument_list|)
 expr_stmt|;
 name|color
 operator|=
-name|gtk_radio_action_get_current_value
+name|gimp_radio_action_get_current_value
 argument_list|(
-name|GTK_RADIO_ACTION
+name|GIMP_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)

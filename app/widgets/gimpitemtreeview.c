@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainertreestore.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296a09d30103
+DECL|enum|__anon2a537a390103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -5274,7 +5280,7 @@ name|viewable
 argument_list|)
 condition|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -5315,7 +5321,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_action_activate
+name|gimp_action_activate
 argument_list|(
 name|action
 argument_list|)

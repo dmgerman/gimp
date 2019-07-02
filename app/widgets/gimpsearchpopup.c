@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoggleaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04136f0103
+DECL|enum|__anon29d36b530103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -111,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04136f0203
+DECL|enum|__anon29d36b530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -384,7 +390,7 @@ name|gchar
 modifier|*
 name|gimp_search_popup_find_accel_label
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|)
@@ -698,19 +704,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_search_popup_add_result:  * @popup:   the #GimpSearchPopup.  * @action:  a #GtkAction to add in results list.  * @section: the section to add @action.  *  * Adds @action in the @popup's results at @section.  * The section only indicates relative order. If you want some items  * to appear before other, simply use lower @section.  */
+comment|/**  * gimp_search_popup_add_result:  * @popup:   the #GimpSearchPopup.  * @action:  a #GimpAction to add in results list.  * @section: the section to add @action.  *  * Adds @action in the @popup's results at @section.  * The section only indicates relative order. If you want some items  * to appear before other, simply use lower @section.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_search_popup_add_result (GimpSearchPopup * popup,GtkAction * action,gint section)
+DECL|function|gimp_search_popup_add_result (GimpSearchPopup * popup,GimpAction * action,gint section)
 name|gimp_search_popup_add_result
 parameter_list|(
 name|GimpSearchPopup
 modifier|*
 name|popup
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -792,7 +798,7 @@ name|g_strstrip
 argument_list|(
 name|gimp_strip_uline
 argument_list|(
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
@@ -831,7 +837,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_TOGGLE_ACTION
+name|GIMP_IS_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -839,9 +845,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|gtk_toggle_action_get_active
+name|gimp_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
 argument_list|)
@@ -861,7 +867,7 @@ else|else
 block|{
 name|icon_name
 operator|=
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -896,7 +902,7 @@ expr_stmt|;
 block|}
 name|tooltip
 operator|=
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
@@ -960,7 +966,7 @@ name|action_name
 operator|=
 name|g_markup_escape_text
 argument_list|(
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
@@ -1110,7 +1116,7 @@ name|section
 argument_list|,
 name|COLUMN_SENSITIVE
 argument_list|,
-name|gtk_action_is_sensitive
+name|gimp_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -2583,7 +2589,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -2605,7 +2611,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_action_is_sensitive
+name|gimp_action_is_sensitive
 argument_list|(
 name|action
 argument_list|)
@@ -2625,7 +2631,7 @@ name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_action_activate
+name|gimp_action_activate
 argument_list|(
 name|action
 argument_list|)
@@ -2696,7 +2702,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|GTK_TYPE_ACTION
+name|GIMP_TYPE_ACTION
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -2865,10 +2871,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_search_popup_find_accel_label (GtkAction * action)
+DECL|function|gimp_search_popup_find_accel_label (GimpAction * action)
 name|gimp_search_popup_find_accel_label
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|)
@@ -2912,17 +2918,14 @@ name|data
 expr_stmt|;
 name|accel_group
 operator|=
-name|gtk_ui_manager_get_accel_group
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_get_accel_group
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|accel_closure
 operator|=
-name|gtk_action_get_accel_closure
+name|gimp_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)

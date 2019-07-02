@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -172,10 +178,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|filters_apply_cmd_callback (GtkAction * action,const gchar * operation_str,gpointer data)
+DECL|function|filters_apply_cmd_callback (GimpAction * action,const gchar * operation_str,gpointer data)
 name|filters_apply_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -227,7 +233,7 @@ name|gimp
 argument_list|,
 name|operation_str
 argument_list|,
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
@@ -250,34 +256,29 @@ name|settings
 argument_list|,
 name|operation
 argument_list|,
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|g_object_get_qdata
-argument_list|(
-name|G_OBJECT
+name|gimp_action_get_help_id
 argument_list|(
 name|action
-argument_list|)
-argument_list|,
-name|GIMP_HELP_ID
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -323,10 +324,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_apply_interactive_cmd_callback (GtkAction * action,const gchar * operation,gpointer data)
+DECL|function|filters_apply_interactive_cmd_callback (GimpAction * action,const gchar * operation,gpointer data)
 name|filters_apply_interactive_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -374,34 +375,29 @@ name|NULL
 argument_list|,
 name|operation
 argument_list|,
-name|gtk_action_get_name
+name|gimp_action_get_name
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_label
+name|gimp_action_get_label
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_tooltip
+name|gimp_action_get_tooltip
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|gtk_action_get_icon_name
+name|gimp_action_get_icon_name
 argument_list|(
 name|action
 argument_list|)
 argument_list|,
-name|g_object_get_qdata
-argument_list|(
-name|G_OBJECT
+name|gimp_action_get_help_id
 argument_list|(
 name|action
-argument_list|)
-argument_list|,
-name|GIMP_HELP_ID
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -433,10 +429,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_repeat_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|filters_repeat_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|filters_repeat_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -515,10 +511,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_history_cmd_callback (GtkAction * action,GimpProcedure * procedure,gpointer data)
+DECL|function|filters_history_cmd_callback (GimpAction * action,GimpProcedure * procedure,gpointer data)
 name|filters_history_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

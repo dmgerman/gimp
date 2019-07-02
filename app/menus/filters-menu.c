@@ -93,12 +93,9 @@ argument_list|)
 expr_stmt|;
 name|merge_id
 operator|=
-name|gtk_ui_manager_new_merge_id
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_new_merge_id
 argument_list|(
 name|manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -148,12 +145,9 @@ argument_list|,
 name|ui_path
 argument_list|)
 expr_stmt|;
-name|gtk_ui_manager_add_ui
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_add_ui
 argument_list|(
 name|manager
-argument_list|)
 argument_list|,
 name|merge_id
 argument_list|,

@@ -25,7 +25,7 @@ modifier|*
 name|GimpActionMatchFunc
 function_decl|)
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -126,7 +126,7 @@ begin_function_decl
 name|void
 name|gimp_action_history_action_activated
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|)
