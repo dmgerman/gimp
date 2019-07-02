@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|dockable_add_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|dockable_close_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -53,7 +53,7 @@ begin_function_decl
 name|void
 name|dockable_detach_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -67,7 +67,7 @@ begin_function_decl
 name|void
 name|dockable_lock_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -81,11 +81,11 @@ begin_function_decl
 name|void
 name|dockable_toggle_view_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -99,11 +99,11 @@ begin_function_decl
 name|void
 name|dockable_view_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -117,11 +117,11 @@ begin_function_decl
 name|void
 name|dockable_tab_style_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -135,7 +135,7 @@ begin_function_decl
 name|void
 name|dockable_show_button_bar_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|select_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|select_none_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|select_invert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|select_float_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -76,7 +76,7 @@ begin_function_decl
 name|void
 name|select_feather_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|select_sharpen_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -104,7 +104,7 @@ begin_function_decl
 name|void
 name|select_shrink_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|select_grow_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -132,7 +132,7 @@ begin_function_decl
 name|void
 name|select_border_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -146,7 +146,7 @@ begin_function_decl
 name|void
 name|select_flood_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -160,7 +160,7 @@ begin_function_decl
 name|void
 name|select_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -174,7 +174,7 @@ begin_function_decl
 name|void
 name|select_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -188,7 +188,7 @@ begin_function_decl
 name|void
 name|select_fill_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -202,7 +202,7 @@ begin_function_decl
 name|void
 name|select_stroke_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -216,7 +216,7 @@ begin_function_decl
 name|void
 name|select_stroke_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

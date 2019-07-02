@@ -140,10 +140,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|text_tool_cut_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_cut_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_cut_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -170,10 +170,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_copy_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_copy_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_copy_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -200,10 +200,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_paste_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_paste_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -230,10 +230,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_delete_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_delete_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -260,10 +260,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_load_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_load_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_load_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -481,10 +481,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_clear_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_clear_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -549,10 +549,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_text_to_path_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_text_to_path_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_text_to_path_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -579,10 +579,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_text_along_path_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_tool_text_along_path_cmd_callback (GimpAction * action,gpointer data)
 name|text_tool_text_along_path_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -609,14 +609,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_direction_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|text_tool_direction_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|text_tool_direction_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,

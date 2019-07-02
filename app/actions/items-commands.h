@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|items_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|items_linked_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -58,7 +58,7 @@ begin_function_decl
 name|void
 name|items_lock_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -77,7 +77,7 @@ begin_function_decl
 name|void
 name|items_lock_position_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -96,7 +96,7 @@ begin_function_decl
 name|void
 name|items_color_tag_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|items_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -160,7 +160,7 @@ begin_function_decl
 name|void
 name|items_fill_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -182,7 +182,7 @@ begin_function_decl
 name|void
 name|items_stroke_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -224,7 +224,7 @@ begin_function_decl
 name|void
 name|items_stroke_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

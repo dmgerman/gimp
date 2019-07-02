@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|debug_gtk_inspector_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|debug_mem_profile_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|debug_benchmark_projection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|debug_show_image_graph_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -76,7 +76,7 @@ begin_function_decl
 name|void
 name|debug_dump_menus_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|debug_dump_managers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -104,7 +104,7 @@ begin_function_decl
 name|void
 name|debug_dump_keyboard_shortcuts_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|debug_dump_attached_data_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -132,7 +132,7 @@ begin_function_decl
 name|void
 name|debug_benchmark_projection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|tool_presets_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|tool_presets_restore_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

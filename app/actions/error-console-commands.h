@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|error_console_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|error_console_select_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|error_console_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -65,7 +65,7 @@ begin_function_decl
 name|void
 name|error_console_highlight_error_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -79,7 +79,7 @@ begin_function_decl
 name|void
 name|error_console_highlight_warning_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -93,7 +93,7 @@ begin_function_decl
 name|void
 name|error_console_highlight_info_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

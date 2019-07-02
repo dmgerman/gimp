@@ -293,10 +293,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|channels_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_edit_attributes_cmd_callback (GimpAction * action,gpointer data)
 name|channels_edit_attributes_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -477,10 +477,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_new_cmd_callback (GimpAction * action,gpointer data)
 name|channels_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -643,10 +643,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_last_vals_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_new_last_vals_cmd_callback (GimpAction * action,gpointer data)
 name|channels_new_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -749,10 +749,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_raise_cmd_callback (GimpAction * action,gpointer data)
 name|channels_raise_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -799,10 +799,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_to_top_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_raise_to_top_cmd_callback (GimpAction * action,gpointer data)
 name|channels_raise_to_top_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -847,10 +847,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_lower_cmd_callback (GimpAction * action,gpointer data)
 name|channels_lower_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -897,10 +897,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_to_bottom_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_lower_to_bottom_cmd_callback (GimpAction * action,gpointer data)
 name|channels_lower_to_bottom_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -945,10 +945,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_duplicate_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_duplicate_cmd_callback (GimpAction * action,gpointer data)
 name|channels_duplicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1132,10 +1132,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_delete_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_delete_cmd_callback (GimpAction * action,gpointer data)
 name|channels_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1181,10 +1181,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|channels_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|channels_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1299,10 +1299,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_visible_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_visible_cmd_callback (GimpAction * action,gpointer data)
 name|channels_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1344,10 +1344,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_linked_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_linked_cmd_callback (GimpAction * action,gpointer data)
 name|channels_linked_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1389,10 +1389,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lock_content_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_lock_content_cmd_callback (GimpAction * action,gpointer data)
 name|channels_lock_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1434,10 +1434,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lock_position_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|channels_lock_position_cmd_callback (GimpAction * action,gpointer data)
 name|channels_lock_position_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1479,10 +1479,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_color_tag_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|channels_color_tag_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|channels_color_tag_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1532,10 +1532,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|channels_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|channels_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

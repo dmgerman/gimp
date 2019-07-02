@@ -189,10 +189,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_options_save_new_preset_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|tool_options_save_new_preset_cmd_callback (GimpAction * action,gpointer user_data)
 name|tool_options_save_new_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -268,10 +268,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_save_preset_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tool_options_save_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tool_options_save_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -378,10 +378,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_restore_preset_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tool_options_restore_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tool_options_restore_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -482,10 +482,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_edit_preset_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tool_options_edit_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tool_options_edit_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -573,10 +573,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_delete_preset_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tool_options_delete_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tool_options_delete_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -695,10 +695,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|tool_options_reset_cmd_callback (GimpAction * action,gpointer data)
 name|tool_options_reset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -753,10 +753,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_all_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|tool_options_reset_all_cmd_callback (GimpAction * action,gpointer data)
 name|tool_options_reset_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

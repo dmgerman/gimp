@@ -117,10 +117,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|buffers_paste_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|buffers_paste_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|buffers_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -330,10 +330,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_paste_as_new_image_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|buffers_paste_as_new_image_cmd_callback (GimpAction * action,gpointer data)
 name|buffers_paste_as_new_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -461,10 +461,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_delete_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|buffers_delete_cmd_callback (GimpAction * action,gpointer data)
 name|buffers_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

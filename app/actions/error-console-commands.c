@@ -110,10 +110,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|error_console_clear_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|error_console_clear_cmd_callback (GimpAction * action,gpointer data)
 name|error_console_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -167,10 +167,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_select_all_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|error_console_select_all_cmd_callback (GimpAction * action,gpointer data)
 name|error_console_select_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -224,10 +224,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|error_console_save_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|error_console_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -479,10 +479,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_error_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|error_console_highlight_error_cmd_callback (GimpAction * action,gpointer data)
 name|error_console_highlight_error_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -526,10 +526,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_warning_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|error_console_highlight_warning_cmd_callback (GimpAction * action,gpointer data)
 name|error_console_highlight_warning_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -573,10 +573,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_info_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|error_console_highlight_info_cmd_callback (GimpAction * action,gpointer data)
 name|error_console_highlight_info_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

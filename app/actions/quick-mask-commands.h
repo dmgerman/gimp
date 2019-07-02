@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|quick_mask_toggle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,11 +34,11 @@ begin_function_decl
 name|void
 name|quick_mask_invert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -52,7 +52,7 @@ begin_function_decl
 name|void
 name|quick_mask_configure_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

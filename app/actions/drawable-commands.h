@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|drawable_equalize_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|drawable_levels_stretch_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|drawable_linked_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|drawable_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -76,7 +76,7 @@ begin_function_decl
 name|void
 name|drawable_lock_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|drawable_lock_position_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -104,7 +104,7 @@ begin_function_decl
 name|void
 name|drawable_flip_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -121,7 +121,7 @@ begin_function_decl
 name|void
 name|drawable_rotate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

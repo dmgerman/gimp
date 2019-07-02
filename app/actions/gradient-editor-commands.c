@@ -147,10 +147,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_left_color_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_left_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -177,14 +177,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_type_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|gradient_editor_left_color_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|gradient_editor_left_color_type_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -320,10 +320,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_left_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_load_left_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|gradient_editor_load_left_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -543,10 +543,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_left_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_save_left_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|gradient_editor_save_left_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -607,10 +607,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_right_color_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_right_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -637,14 +637,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_type_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|gradient_editor_right_color_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|gradient_editor_right_color_type_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -780,10 +780,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_right_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_load_right_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|gradient_editor_load_right_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1003,10 +1003,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_right_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_save_right_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|gradient_editor_save_right_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1067,14 +1067,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blending_func_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|gradient_editor_blending_func_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|gradient_editor_blending_func_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -1177,14 +1177,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_coloring_type_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|gradient_editor_coloring_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|gradient_editor_coloring_type_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -1287,10 +1287,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_flip_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_flip_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_flip_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1362,10 +1362,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_replicate_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_replicate_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_replicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1778,10 +1778,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_midpoint_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_split_midpoint_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_split_midpoint_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1870,10 +1870,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_uniformly_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_split_uniformly_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_split_uniformly_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2287,10 +2287,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_delete_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_delete_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2362,10 +2362,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_recenter_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_recenter_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_recenter_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2422,10 +2422,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_redistribute_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_redistribute_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_redistribute_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2482,10 +2482,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_blend_color_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_blend_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2556,10 +2556,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_opacity_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|gradient_editor_blend_opacity_cmd_callback (GimpAction * action,gpointer data)
 name|gradient_editor_blend_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2630,10 +2630,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_zoom_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|gradient_editor_zoom_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

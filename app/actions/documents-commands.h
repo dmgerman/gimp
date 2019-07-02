@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|documents_open_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|documents_raise_or_open_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|documents_file_open_dialog_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|documents_copy_location_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -76,7 +76,7 @@ begin_function_decl
 name|void
 name|documents_show_in_file_manager_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|documents_remove_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -104,7 +104,7 @@ begin_function_decl
 name|void
 name|documents_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|documents_recreate_preview_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -132,7 +132,7 @@ begin_function_decl
 name|void
 name|documents_reload_previews_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -146,7 +146,7 @@ begin_function_decl
 name|void
 name|documents_remove_dangling_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

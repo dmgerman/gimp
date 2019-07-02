@@ -51,10 +51,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|sample_points_sample_merged_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|sample_points_sample_merged_cmd_callback (GimpAction * action,gpointer data)
 name|sample_points_sample_merged_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

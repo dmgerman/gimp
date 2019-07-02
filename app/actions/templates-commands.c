@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b758ba0108
+DECL|struct|__anon2a0d9fb30108
 block|{
 DECL|member|context
 name|GimpContext
@@ -274,10 +274,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|templates_create_image_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|templates_create_image_cmd_callback (GimpAction * action,gpointer data)
 name|templates_create_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -421,10 +421,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_new_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|templates_new_cmd_callback (GimpAction * action,gpointer data)
 name|templates_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -545,10 +545,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_duplicate_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|templates_duplicate_cmd_callback (GimpAction * action,gpointer data)
 name|templates_duplicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -674,10 +674,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_edit_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|templates_edit_cmd_callback (GimpAction * action,gpointer data)
 name|templates_edit_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -834,10 +834,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_delete_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|templates_delete_cmd_callback (GimpAction * action,gpointer data)
 name|templates_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

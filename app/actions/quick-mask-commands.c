@@ -190,10 +190,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|quick_mask_toggle_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|quick_mask_toggle_cmd_callback (GimpAction * action,gpointer data)
 name|quick_mask_toggle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -253,14 +253,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|quick_mask_invert_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|quick_mask_invert_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|quick_mask_invert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -318,10 +318,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|quick_mask_configure_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|quick_mask_configure_cmd_callback (GimpAction * action,gpointer data)
 name|quick_mask_configure_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

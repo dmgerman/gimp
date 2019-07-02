@@ -286,10 +286,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|context_colors_default_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|context_colors_default_cmd_callback (GimpAction * action,gpointer data)
 name|context_colors_default_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -318,10 +318,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_colors_swap_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|context_colors_swap_cmd_callback (GimpAction * action,gpointer data)
 name|context_colors_swap_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -363,7 +363,7 @@ parameter_list|,
 name|use_palette
 parameter_list|)
 define|\
-value|void \ context_##name##_##fgbg##ground_cmd_callback (GtkAction *action, \                                               gint       value, \                                               gpointer   data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, \                         use_colormap, use_palette); \   gimp_context_set_##fgbg##ground (context,&color); \ }
+value|void \ context_##name##_##fgbg##ground_cmd_callback (GimpAction *action, \                                               gint        value, \                                               gpointer    data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, \                         use_colormap, use_palette); \   gimp_context_set_##fgbg##ground (context,&color); \ }
 end_define
 
 begin_macro
@@ -449,7 +449,7 @@ begin_function
 name|void
 name|context_foreground_red_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -529,10 +529,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_green_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_foreground_green_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_foreground_green_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -612,10 +612,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_blue_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_foreground_blue_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_foreground_blue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -695,10 +695,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_red_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_red_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_red_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -778,10 +778,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_green_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_green_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_green_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -861,10 +861,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_blue_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_blue_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_blue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -944,10 +944,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_hue_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_foreground_hue_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_foreground_hue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1048,10 +1048,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_saturation_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_foreground_saturation_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_foreground_saturation_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1150,10 +1150,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_value_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_foreground_value_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_foreground_value_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1252,10 +1252,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_hue_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_hue_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_hue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1356,10 +1356,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_saturation_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_saturation_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_saturation_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1458,10 +1458,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_value_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_background_value_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_background_value_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1560,10 +1560,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_opacity_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1648,10 +1648,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_paint_mode_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_paint_mode_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_paint_mode_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1853,10 +1853,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_tool_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_tool_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_tool_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1899,10 +1899,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1948,10 +1948,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_pattern_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_pattern_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_pattern_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1997,10 +1997,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_palette_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_palette_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_palette_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2046,10 +2046,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_gradient_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_gradient_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_gradient_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2095,10 +2095,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_font_select_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_font_select_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_font_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2144,10 +2144,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_spacing_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2232,10 +2232,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_shape_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_shape_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_shape_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2366,10 +2366,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_radius_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2561,10 +2561,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_spikes_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_spikes_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_spikes_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2649,10 +2649,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_hardness_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2737,10 +2737,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_aspect_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2825,10 +2825,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|context_brush_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|context_brush_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

@@ -716,10 +716,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|image_new_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_new_cmd_callback (GimpAction * action,gpointer data)
 name|image_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -804,10 +804,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_duplicate_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_duplicate_cmd_callback (GimpAction * action,gpointer data)
 name|image_duplicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -900,14 +900,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_base_type_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|image_convert_base_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|image_convert_base_type_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -1289,14 +1289,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_precision_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|image_convert_precision_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|image_convert_precision_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -1474,14 +1474,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_trc_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|image_convert_trc_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|image_convert_trc_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -1582,10 +1582,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_use_srgb_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_color_profile_use_srgb_cmd_callback (GimpAction * action,gpointer data)
 name|image_color_profile_use_srgb_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1647,10 +1647,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_assign_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_color_profile_assign_cmd_callback (GimpAction * action,gpointer data)
 name|image_color_profile_assign_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1797,10 +1797,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_convert_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_color_profile_convert_cmd_callback (GimpAction * action,gpointer data)
 name|image_color_profile_convert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1964,10 +1964,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_discard_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_color_profile_discard_cmd_callback (GimpAction * action,gpointer data)
 name|image_color_profile_discard_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2133,10 +2133,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_save_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_color_profile_save_cmd_callback (GimpAction * action,gpointer data)
 name|image_color_profile_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2335,10 +2335,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_resize_cmd_callback (GimpAction * action,gpointer data)
 name|image_resize_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2506,10 +2506,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_to_layers_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_resize_to_layers_cmd_callback (GimpAction * action,gpointer data)
 name|image_resize_to_layers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2599,10 +2599,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_to_selection_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_resize_to_selection_cmd_callback (GimpAction * action,gpointer data)
 name|image_resize_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2684,10 +2684,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_print_size_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_print_size_cmd_callback (GimpAction * action,gpointer data)
 name|image_print_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2810,10 +2810,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_scale_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_scale_cmd_callback (GimpAction * action,gpointer data)
 name|image_scale_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2961,10 +2961,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flip_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|image_flip_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|image_flip_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3054,10 +3054,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_rotate_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|image_rotate_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|image_rotate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3147,10 +3147,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_crop_to_selection_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_crop_to_selection_cmd_callback (GimpAction * action,gpointer data)
 name|image_crop_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3271,10 +3271,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_crop_to_content_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_crop_to_content_cmd_callback (GimpAction * action,gpointer data)
 name|image_crop_to_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3435,10 +3435,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_merge_layers_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_merge_layers_cmd_callback (GimpAction * action,gpointer data)
 name|image_merge_layers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3575,10 +3575,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flatten_image_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_flatten_image_cmd_callback (GimpAction * action,gpointer data)
 name|image_flatten_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3683,10 +3683,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_configure_grid_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_configure_grid_cmd_callback (GimpAction * action,gpointer data)
 name|image_configure_grid_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3798,10 +3798,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_properties_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|image_properties_cmd_callback (GimpAction * action,gpointer data)
 name|image_properties_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

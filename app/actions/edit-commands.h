@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|edit_undo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|edit_redo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|edit_strong_undo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|edit_strong_redo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -76,7 +76,7 @@ begin_function_decl
 name|void
 name|edit_undo_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|edit_cut_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -104,7 +104,7 @@ begin_function_decl
 name|void
 name|edit_copy_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|edit_copy_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -132,7 +132,7 @@ begin_function_decl
 name|void
 name|edit_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -149,7 +149,7 @@ begin_function_decl
 name|void
 name|edit_paste_as_new_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -163,7 +163,7 @@ begin_function_decl
 name|void
 name|edit_named_cut_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -177,7 +177,7 @@ begin_function_decl
 name|void
 name|edit_named_copy_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -191,7 +191,7 @@ begin_function_decl
 name|void
 name|edit_named_copy_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -205,7 +205,7 @@ begin_function_decl
 name|void
 name|edit_named_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -219,7 +219,7 @@ begin_function_decl
 name|void
 name|edit_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -233,7 +233,7 @@ begin_function_decl
 name|void
 name|edit_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

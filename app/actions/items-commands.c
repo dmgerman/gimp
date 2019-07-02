@@ -189,10 +189,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|items_visible_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_visible_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
 name|items_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -285,10 +285,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_linked_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_linked_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
 name|items_linked_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -381,10 +381,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_lock_content_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_lock_content_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
 name|items_lock_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -477,10 +477,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_lock_position_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_lock_position_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
 name|items_lock_position_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -573,10 +573,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_color_tag_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item,GimpColorTag color_tag)
+DECL|function|items_color_tag_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item,GimpColorTag color_tag)
 name|items_color_tag_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -659,10 +659,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_fill_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item,const gchar * dialog_key,const gchar * dialog_title,const gchar * dialog_icon_name,const gchar * dialog_help_id,gpointer data)
+DECL|function|items_fill_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item,const gchar * dialog_key,const gchar * dialog_title,const gchar * dialog_icon_name,const gchar * dialog_help_id,gpointer data)
 name|items_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -838,10 +838,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_fill_last_vals_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item,gpointer data)
+DECL|function|items_fill_last_vals_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item,gpointer data)
 name|items_fill_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -987,10 +987,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_stroke_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item,const gchar * dialog_key,const gchar * dialog_title,const gchar * dialog_icon_name,const gchar * dialog_help_id,gpointer data)
+DECL|function|items_stroke_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item,const gchar * dialog_key,const gchar * dialog_title,const gchar * dialog_icon_name,const gchar * dialog_help_id,gpointer data)
 name|items_stroke_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1166,10 +1166,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_stroke_last_vals_cmd_callback (GtkAction * action,GimpImage * image,GimpItem * item,gpointer data)
+DECL|function|items_stroke_last_vals_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item,gpointer data)
 name|items_stroke_last_vals_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

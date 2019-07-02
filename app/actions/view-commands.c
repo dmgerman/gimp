@@ -332,10 +332,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|view_new_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_new_cmd_callback (GimpAction * action,gpointer data)
 name|view_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -404,10 +404,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_close_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_close_cmd_callback (GimpAction * action,gpointer data)
 name|view_close_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -465,10 +465,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_center_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_scroll_center_cmd_callback (GimpAction * action,gpointer data)
 name|view_scroll_center_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -504,10 +504,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fit_in_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_zoom_fit_in_cmd_callback (GimpAction * action,gpointer data)
 name|view_zoom_fit_in_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -539,10 +539,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fill_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_zoom_fill_cmd_callback (GimpAction * action,gpointer data)
 name|view_zoom_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -574,10 +574,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_selection_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_zoom_selection_cmd_callback (GimpAction * action,gpointer data)
 name|view_zoom_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -664,10 +664,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_revert_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_zoom_revert_cmd_callback (GimpAction * action,gpointer data)
 name|view_zoom_revert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -699,10 +699,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_zoom_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -898,14 +898,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_explicit_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|view_zoom_explicit_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|view_zoom_explicit_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -983,10 +983,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_other_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_zoom_other_cmd_callback (GimpAction * action,gpointer data)
 name|view_zoom_other_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1039,10 +1039,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_dot_for_dot_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_dot_for_dot_cmd_callback (GimpAction * action,gpointer data)
 name|view_dot_for_dot_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1154,10 +1154,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_flip_horizontally_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_flip_horizontally_cmd_callback (GimpAction * action,gpointer data)
 name|view_flip_horizontally_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1226,10 +1226,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_flip_vertically_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_flip_vertically_cmd_callback (GimpAction * action,gpointer data)
 name|view_flip_vertically_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1298,10 +1298,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_rotate_absolute_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_rotate_absolute_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_rotate_absolute_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1395,10 +1395,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_rotate_relative_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_rotate_relative_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_rotate_relative_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1477,10 +1477,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_rotate_other_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_rotate_other_cmd_callback (GimpAction * action,gpointer data)
 name|view_rotate_other_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1520,10 +1520,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_horizontal_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_scroll_horizontal_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_scroll_horizontal_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1627,10 +1627,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_vertical_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_scroll_vertical_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_scroll_vertical_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1734,10 +1734,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_navigation_window_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_navigation_window_cmd_callback (GimpAction * action,gpointer data)
 name|view_navigation_window_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1798,10 +1798,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_filters_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_display_filters_cmd_callback (GimpAction * action,gpointer data)
 name|view_display_filters_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1880,10 +1880,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_reset_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_color_management_reset_cmd_callback (GimpAction * action,gpointer data)
 name|view_color_management_reset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1956,10 +1956,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_enable_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_color_management_enable_cmd_callback (GimpAction * action,gpointer data)
 name|view_color_management_enable_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2068,10 +2068,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_softproof_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_color_management_softproof_cmd_callback (GimpAction * action,gpointer data)
 name|view_color_management_softproof_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2180,14 +2180,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_intent_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|view_display_intent_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|view_display_intent_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -2263,10 +2263,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_bpc_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_display_bpc_cmd_callback (GimpAction * action,gpointer data)
 name|view_display_bpc_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2342,10 +2342,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_profile_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_softproof_profile_cmd_callback (GimpAction * action,gpointer data)
 name|view_softproof_profile_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2483,14 +2483,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_intent_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|view_softproof_intent_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|view_softproof_intent_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -2566,10 +2566,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_bpc_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_softproof_bpc_cmd_callback (GimpAction * action,gpointer data)
 name|view_softproof_bpc_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2645,10 +2645,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_gamut_check_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_softproof_gamut_check_cmd_callback (GimpAction * action,gpointer data)
 name|view_softproof_gamut_check_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2724,10 +2724,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_selection_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_selection_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2782,10 +2782,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_layer_boundary_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_layer_boundary_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_layer_boundary_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2840,10 +2840,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_menubar_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_menubar_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_menubar_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2898,10 +2898,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_rulers_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_rulers_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_rulers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2956,10 +2956,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_scrollbars_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_scrollbars_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_scrollbars_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3014,10 +3014,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_statusbar_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_statusbar_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_statusbar_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3072,10 +3072,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_guides_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_guides_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_guides_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3130,10 +3130,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_grid_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_grid_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_grid_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3188,10 +3188,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_sample_points_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_toggle_sample_points_cmd_callback (GimpAction * action,gpointer data)
 name|view_toggle_sample_points_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3246,10 +3246,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_guides_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_snap_to_guides_cmd_callback (GimpAction * action,gpointer data)
 name|view_snap_to_guides_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3304,10 +3304,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_grid_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_snap_to_grid_cmd_callback (GimpAction * action,gpointer data)
 name|view_snap_to_grid_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3362,10 +3362,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_canvas_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_snap_to_canvas_cmd_callback (GimpAction * action,gpointer data)
 name|view_snap_to_canvas_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3420,10 +3420,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_vectors_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_snap_to_vectors_cmd_callback (GimpAction * action,gpointer data)
 name|view_snap_to_vectors_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3478,10 +3478,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_padding_color_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|view_padding_color_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|view_padding_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3870,10 +3870,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_shrink_wrap_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_shrink_wrap_cmd_callback (GimpAction * action,gpointer data)
 name|view_shrink_wrap_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -3904,10 +3904,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_fullscreen_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|view_fullscreen_cmd_callback (GimpAction * action,gpointer data)
 name|view_fullscreen_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

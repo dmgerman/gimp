@@ -93,10 +93,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_presets_save_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|tool_presets_save_cmd_callback (GimpAction * action,gpointer data)
 name|tool_presets_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -238,10 +238,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_presets_restore_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|tool_presets_restore_cmd_callback (GimpAction * action,gpointer data)
 name|tool_presets_restore_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

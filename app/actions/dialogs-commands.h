@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|dialogs_create_toplevel_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|dialogs_create_dockable_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

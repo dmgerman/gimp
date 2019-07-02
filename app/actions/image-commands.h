@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|image_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|image_duplicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,11 +48,11 @@ begin_function_decl
 name|void
 name|image_convert_base_type_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -66,11 +66,11 @@ begin_function_decl
 name|void
 name|image_convert_precision_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -84,11 +84,11 @@ begin_function_decl
 name|void
 name|image_convert_trc_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -102,7 +102,7 @@ begin_function_decl
 name|void
 name|image_color_profile_use_srgb_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -116,7 +116,7 @@ begin_function_decl
 name|void
 name|image_color_profile_assign_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -130,7 +130,7 @@ begin_function_decl
 name|void
 name|image_color_profile_convert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -144,7 +144,7 @@ begin_function_decl
 name|void
 name|image_color_profile_discard_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -158,7 +158,7 @@ begin_function_decl
 name|void
 name|image_color_profile_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -172,7 +172,7 @@ begin_function_decl
 name|void
 name|image_resize_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -186,7 +186,7 @@ begin_function_decl
 name|void
 name|image_resize_to_layers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -200,7 +200,7 @@ begin_function_decl
 name|void
 name|image_resize_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -214,7 +214,7 @@ begin_function_decl
 name|void
 name|image_print_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -228,7 +228,7 @@ begin_function_decl
 name|void
 name|image_scale_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -242,7 +242,7 @@ begin_function_decl
 name|void
 name|image_flip_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -259,7 +259,7 @@ begin_function_decl
 name|void
 name|image_rotate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -276,7 +276,7 @@ begin_function_decl
 name|void
 name|image_crop_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -290,7 +290,7 @@ begin_function_decl
 name|void
 name|image_crop_to_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -304,7 +304,7 @@ begin_function_decl
 name|void
 name|image_merge_layers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -318,7 +318,7 @@ begin_function_decl
 name|void
 name|image_flatten_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -332,7 +332,7 @@ begin_function_decl
 name|void
 name|image_configure_grid_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -346,7 +346,7 @@ begin_function_decl
 name|void
 name|image_properties_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

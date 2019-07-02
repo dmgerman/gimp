@@ -124,10 +124,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dockable_add_tab_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
+DECL|function|dockable_add_tab_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
 name|dockable_add_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -161,10 +161,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_close_tab_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dockable_close_tab_cmd_callback (GimpAction * action,gpointer data)
 name|dockable_close_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -212,10 +212,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_detach_tab_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dockable_detach_tab_cmd_callback (GimpAction * action,gpointer data)
 name|dockable_detach_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -255,10 +255,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_lock_tab_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dockable_lock_tab_cmd_callback (GimpAction * action,gpointer data)
 name|dockable_lock_tab_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -313,14 +313,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_view_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|dockable_toggle_view_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|dockable_toggle_view_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -723,14 +723,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_view_size_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|dockable_view_size_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|dockable_view_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -826,14 +826,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_tab_style_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|dockable_tab_style_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|dockable_tab_style_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -928,10 +928,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_show_button_bar_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dockable_show_button_bar_cmd_callback (GimpAction * action,gpointer data)
 name|dockable_show_button_bar_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

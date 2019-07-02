@@ -191,10 +191,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tools_select_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
+DECL|function|tools_select_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
 name|tools_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -345,10 +345,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_color_average_radius_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_color_average_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_color_average_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -431,10 +431,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_size_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -517,10 +517,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -603,10 +603,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_aspect_ratio_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_aspect_ratio_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_aspect_ratio_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -689,10 +689,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_spacing_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -775,10 +775,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_hardness_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -861,10 +861,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_force_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_force_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_paintbrush_force_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -947,10 +947,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_size_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_ink_blob_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1033,10 +1033,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_aspect_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_ink_blob_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1119,10 +1119,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_ink_blob_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1214,10 +1214,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_airbrush_rate_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_airbrush_rate_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_airbrush_rate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1300,10 +1300,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_airbrush_flow_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_airbrush_flow_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_airbrush_flow_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1386,10 +1386,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_mybrush_radius_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_mybrush_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_mybrush_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1472,10 +1472,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_mybrush_hardness_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_mybrush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_mybrush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1558,10 +1558,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_fg_select_brush_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_fg_select_brush_size_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_fg_select_brush_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1644,10 +1644,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_transform_preview_opacity_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_transform_preview_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_transform_preview_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1730,10 +1730,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_warp_effect_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_warp_effect_size_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_warp_effect_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1816,10 +1816,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_warp_effect_hardness_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_warp_effect_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_warp_effect_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1902,10 +1902,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_opacity_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1976,10 +1976,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_size_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2050,10 +2050,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_aspect_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2124,10 +2124,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_angle_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2198,10 +2198,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_spacing_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2272,10 +2272,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_hardness_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2346,10 +2346,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_force_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_force_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_force_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2420,10 +2420,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_object_1_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_object_1_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_object_1_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -2494,10 +2494,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_object_2_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|tools_object_2_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|tools_object_2_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

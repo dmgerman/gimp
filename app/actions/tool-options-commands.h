@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|tool_options_save_new_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|tool_options_save_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -51,7 +51,7 @@ begin_function_decl
 name|void
 name|tool_options_restore_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -68,7 +68,7 @@ begin_function_decl
 name|void
 name|tool_options_edit_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -85,7 +85,7 @@ begin_function_decl
 name|void
 name|tool_options_delete_preset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -102,7 +102,7 @@ begin_function_decl
 name|void
 name|tool_options_reset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -116,7 +116,7 @@ begin_function_decl
 name|void
 name|tool_options_reset_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

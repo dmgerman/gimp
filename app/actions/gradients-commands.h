@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|gradients_save_as_pov_ray_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

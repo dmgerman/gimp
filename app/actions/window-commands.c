@@ -75,10 +75,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|window_close_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|window_close_cmd_callback (GimpAction * action,gpointer data)
 name|window_close_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -169,10 +169,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|window_open_display_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|window_open_display_cmd_callback (GimpAction * action,gpointer data)
 name|window_open_display_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -432,14 +432,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|window_move_to_screen_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|window_move_to_screen_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|window_move_to_screen_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,

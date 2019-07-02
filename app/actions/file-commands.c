@@ -393,10 +393,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_open_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_open_cmd_callback (GimpAction * action,gpointer data)
 name|file_open_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -460,10 +460,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_as_layers_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_open_as_layers_cmd_callback (GimpAction * action,gpointer data)
 name|file_open_as_layers_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -544,10 +544,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_location_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_open_location_cmd_callback (GimpAction * action,gpointer data)
 name|file_open_location_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -594,10 +594,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_recent_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|file_open_recent_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|file_open_recent_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -827,10 +827,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|file_save_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|file_save_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1311,10 +1311,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_create_template_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_create_template_cmd_callback (GimpAction * action,gpointer data)
 name|file_create_template_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1398,10 +1398,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_revert_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_revert_cmd_callback (GimpAction * action,gpointer data)
 name|file_revert_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1664,10 +1664,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_close_all_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_close_all_cmd_callback (GimpAction * action,gpointer data)
 name|file_close_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1738,10 +1738,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_copy_location_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_copy_location_cmd_callback (GimpAction * action,gpointer data)
 name|file_copy_location_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1825,10 +1825,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_show_in_file_manager_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_show_in_file_manager_cmd_callback (GimpAction * action,gpointer data)
 name|file_show_in_file_manager_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1937,10 +1937,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_quit_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|file_quit_cmd_callback (GimpAction * action,gpointer data)
 name|file_quit_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

@@ -59,10 +59,10 @@ end_include
 
 begin_function
 name|void
-DECL|function|help_help_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|help_help_cmd_callback (GimpAction * action,gpointer data)
 name|help_help_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -111,10 +111,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|help_context_help_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|help_context_help_cmd_callback (GimpAction * action,gpointer data)
 name|help_context_help_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

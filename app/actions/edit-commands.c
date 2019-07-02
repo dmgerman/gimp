@@ -310,10 +310,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|edit_undo_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_undo_cmd_callback (GimpAction * action,gpointer data)
 name|edit_undo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -371,10 +371,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_redo_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_redo_cmd_callback (GimpAction * action,gpointer data)
 name|edit_redo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -432,10 +432,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_strong_undo_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_strong_undo_cmd_callback (GimpAction * action,gpointer data)
 name|edit_strong_undo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -471,10 +471,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_strong_redo_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_strong_redo_cmd_callback (GimpAction * action,gpointer data)
 name|edit_strong_redo_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -510,10 +510,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_undo_clear_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_undo_clear_cmd_callback (GimpAction * action,gpointer data)
 name|edit_undo_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -785,10 +785,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_cut_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_cut_cmd_callback (GimpAction * action,gpointer data)
 name|edit_cut_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -939,10 +939,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_copy_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_copy_cmd_callback (GimpAction * action,gpointer data)
 name|edit_copy_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1082,10 +1082,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_copy_visible_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_copy_visible_cmd_callback (GimpAction * action,gpointer data)
 name|edit_copy_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1199,10 +1199,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|edit_paste_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|edit_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1314,10 +1314,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_as_new_image_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_paste_as_new_image_cmd_callback (GimpAction * action,gpointer data)
 name|edit_paste_as_new_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1437,10 +1437,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_cut_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_named_cut_cmd_callback (GimpAction * action,gpointer data)
 name|edit_named_cut_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1518,10 +1518,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_copy_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_named_copy_cmd_callback (GimpAction * action,gpointer data)
 name|edit_named_copy_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1599,10 +1599,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_copy_visible_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_named_copy_visible_cmd_callback (GimpAction * action,gpointer data)
 name|edit_named_copy_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1680,10 +1680,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_paste_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_named_paste_cmd_callback (GimpAction * action,gpointer data)
 name|edit_named_paste_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1741,10 +1741,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_clear_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|edit_clear_cmd_callback (GimpAction * action,gpointer data)
 name|edit_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -1800,10 +1800,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_fill_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|edit_fill_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|edit_fill_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

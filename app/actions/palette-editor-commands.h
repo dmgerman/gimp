@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|palette_editor_edit_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|palette_editor_new_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -51,7 +51,7 @@ begin_function_decl
 name|void
 name|palette_editor_delete_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -65,7 +65,7 @@ begin_function_decl
 name|void
 name|palette_editor_zoom_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

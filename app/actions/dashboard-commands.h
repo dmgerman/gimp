@@ -20,11 +20,11 @@ begin_function_decl
 name|void
 name|dashboard_update_interval_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -38,11 +38,11 @@ begin_function_decl
 name|void
 name|dashboard_history_duration_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -56,7 +56,7 @@ begin_function_decl
 name|void
 name|dashboard_log_record_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -70,7 +70,7 @@ begin_function_decl
 name|void
 name|dashboard_log_add_marker_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -84,7 +84,7 @@ begin_function_decl
 name|void
 name|dashboard_log_add_empty_marker_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -98,7 +98,7 @@ begin_function_decl
 name|void
 name|dashboard_reset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -112,7 +112,7 @@ begin_function_decl
 name|void
 name|dashboard_low_swap_space_warning_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

@@ -63,10 +63,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_editor_edit_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|palette_editor_edit_color_cmd_callback (GimpAction * action,gpointer data)
 name|palette_editor_edit_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -93,10 +93,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|palette_editor_new_color_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|palette_editor_new_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -208,10 +208,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_delete_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|palette_editor_delete_color_cmd_callback (GimpAction * action,gpointer data)
 name|palette_editor_delete_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -274,10 +274,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|palette_editor_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|palette_editor_zoom_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

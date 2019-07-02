@@ -81,10 +81,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|colormap_edit_color_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|colormap_edit_color_cmd_callback (GimpAction * action,gpointer data)
 name|colormap_edit_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -111,10 +111,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_add_color_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|colormap_add_color_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|colormap_add_color_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -200,10 +200,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|colormap_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|colormap_to_selection_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

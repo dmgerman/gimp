@@ -212,10 +212,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_run_cmd_callback (GtkAction * action,GimpProcedure * procedure,gpointer data)
+DECL|function|plug_in_run_cmd_callback (GimpAction * action,GimpProcedure * procedure,gpointer data)
 name|plug_in_run_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -551,10 +551,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_reset_all_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|plug_in_reset_all_cmd_callback (GimpAction * action,gpointer data)
 name|plug_in_reset_all_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

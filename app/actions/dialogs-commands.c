@@ -75,10 +75,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dialogs_create_toplevel_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
+DECL|function|dialogs_create_toplevel_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
 name|dialogs_create_toplevel_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -134,10 +134,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_create_dockable_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
+DECL|function|dialogs_create_dockable_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
 name|dialogs_create_dockable_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

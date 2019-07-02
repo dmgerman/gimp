@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|context_colors_default_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|context_colors_swap_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -48,7 +48,7 @@ begin_function_decl
 name|void
 name|context_palette_foreground_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -65,7 +65,7 @@ begin_function_decl
 name|void
 name|context_palette_background_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -82,7 +82,7 @@ begin_function_decl
 name|void
 name|context_colormap_foreground_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -99,7 +99,7 @@ begin_function_decl
 name|void
 name|context_colormap_background_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -116,7 +116,7 @@ begin_function_decl
 name|void
 name|context_swatch_foreground_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -133,7 +133,7 @@ begin_function_decl
 name|void
 name|context_swatch_background_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -150,7 +150,7 @@ begin_function_decl
 name|void
 name|context_foreground_red_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -167,7 +167,7 @@ begin_function_decl
 name|void
 name|context_foreground_green_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -184,7 +184,7 @@ begin_function_decl
 name|void
 name|context_foreground_blue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -201,7 +201,7 @@ begin_function_decl
 name|void
 name|context_background_red_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -218,7 +218,7 @@ begin_function_decl
 name|void
 name|context_background_green_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -235,7 +235,7 @@ begin_function_decl
 name|void
 name|context_background_blue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -252,7 +252,7 @@ begin_function_decl
 name|void
 name|context_foreground_hue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -269,7 +269,7 @@ begin_function_decl
 name|void
 name|context_foreground_saturation_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -286,7 +286,7 @@ begin_function_decl
 name|void
 name|context_foreground_value_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -303,7 +303,7 @@ begin_function_decl
 name|void
 name|context_background_hue_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -320,7 +320,7 @@ begin_function_decl
 name|void
 name|context_background_saturation_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -337,7 +337,7 @@ begin_function_decl
 name|void
 name|context_background_value_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -354,7 +354,7 @@ begin_function_decl
 name|void
 name|context_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -371,7 +371,7 @@ begin_function_decl
 name|void
 name|context_paint_mode_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -388,7 +388,7 @@ begin_function_decl
 name|void
 name|context_tool_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -405,7 +405,7 @@ begin_function_decl
 name|void
 name|context_brush_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -422,7 +422,7 @@ begin_function_decl
 name|void
 name|context_pattern_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -439,7 +439,7 @@ begin_function_decl
 name|void
 name|context_palette_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -456,7 +456,7 @@ begin_function_decl
 name|void
 name|context_gradient_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -473,7 +473,7 @@ begin_function_decl
 name|void
 name|context_font_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -490,7 +490,7 @@ begin_function_decl
 name|void
 name|context_brush_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -507,7 +507,7 @@ begin_function_decl
 name|void
 name|context_brush_shape_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -524,7 +524,7 @@ begin_function_decl
 name|void
 name|context_brush_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -541,7 +541,7 @@ begin_function_decl
 name|void
 name|context_brush_spikes_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -558,7 +558,7 @@ begin_function_decl
 name|void
 name|context_brush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -575,7 +575,7 @@ begin_function_decl
 name|void
 name|context_brush_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -592,7 +592,7 @@ begin_function_decl
 name|void
 name|context_brush_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

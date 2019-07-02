@@ -116,10 +116,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|text_editor_load_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_editor_load_cmd_callback (GimpAction * action,gpointer data)
 name|text_editor_load_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -300,10 +300,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_editor_clear_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|text_editor_clear_cmd_callback (GimpAction * action,gpointer data)
 name|text_editor_clear_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -350,14 +350,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_editor_direction_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|text_editor_direction_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|text_editor_direction_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,

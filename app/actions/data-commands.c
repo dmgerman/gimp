@@ -165,10 +165,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|data_open_as_image_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_open_as_image_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_open_as_image_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -344,10 +344,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_new_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_new_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_new_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -455,10 +455,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_duplicate_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_duplicate_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_duplicate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -580,10 +580,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_copy_location_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_copy_location_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_copy_location_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -685,10 +685,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_show_in_file_manager_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_show_in_file_manager_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_show_in_file_manager_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -815,10 +815,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_delete_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_delete_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_delete_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -933,10 +933,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_refresh_cmd_callback (GtkAction * action,gpointer user_data)
+DECL|function|data_refresh_cmd_callback (GimpAction * action,gpointer user_data)
 name|data_refresh_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -992,10 +992,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_edit_cmd_callback (GtkAction * action,const gchar * value,gpointer user_data)
+DECL|function|data_edit_cmd_callback (GimpAction * action,const gchar * value,gpointer user_data)
 name|data_edit_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

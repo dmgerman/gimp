@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|tools_select_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|tools_color_average_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -56,7 +56,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -73,7 +73,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_aspect_ratio_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -107,7 +107,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -124,7 +124,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -141,7 +141,7 @@ begin_function_decl
 name|void
 name|tools_paintbrush_force_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -158,7 +158,7 @@ begin_function_decl
 name|void
 name|tools_ink_blob_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -175,7 +175,7 @@ begin_function_decl
 name|void
 name|tools_ink_blob_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -192,7 +192,7 @@ begin_function_decl
 name|void
 name|tools_ink_blob_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -209,7 +209,7 @@ begin_function_decl
 name|void
 name|tools_airbrush_rate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -226,7 +226,7 @@ begin_function_decl
 name|void
 name|tools_airbrush_flow_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -243,7 +243,7 @@ begin_function_decl
 name|void
 name|tools_mybrush_radius_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -260,7 +260,7 @@ begin_function_decl
 name|void
 name|tools_mybrush_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -277,7 +277,7 @@ begin_function_decl
 name|void
 name|tools_fg_select_brush_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -294,7 +294,7 @@ begin_function_decl
 name|void
 name|tools_transform_preview_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -311,7 +311,7 @@ begin_function_decl
 name|void
 name|tools_warp_effect_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -328,7 +328,7 @@ begin_function_decl
 name|void
 name|tools_warp_effect_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -345,7 +345,7 @@ begin_function_decl
 name|void
 name|tools_opacity_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -362,7 +362,7 @@ begin_function_decl
 name|void
 name|tools_size_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -379,7 +379,7 @@ begin_function_decl
 name|void
 name|tools_aspect_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -396,7 +396,7 @@ begin_function_decl
 name|void
 name|tools_angle_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -413,7 +413,7 @@ begin_function_decl
 name|void
 name|tools_spacing_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -430,7 +430,7 @@ begin_function_decl
 name|void
 name|tools_hardness_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -447,7 +447,7 @@ begin_function_decl
 name|void
 name|tools_force_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -464,7 +464,7 @@ begin_function_decl
 name|void
 name|tools_object_1_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -481,7 +481,7 @@ begin_function_decl
 name|void
 name|tools_object_2_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

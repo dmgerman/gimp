@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|data_editor_edit_active_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

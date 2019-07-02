@@ -137,14 +137,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dashboard_update_interval_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|dashboard_update_interval_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|dashboard_update_interval_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -186,14 +186,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_history_duration_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
+DECL|function|dashboard_history_duration_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
 name|dashboard_history_duration_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GtkAction
+name|GimpAction
 modifier|*
 name|current
 parameter_list|,
@@ -235,10 +235,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_record_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dashboard_log_record_cmd_callback (GimpAction * action,gpointer data)
 name|dashboard_log_record_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -639,10 +639,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_add_marker_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dashboard_log_add_marker_cmd_callback (GimpAction * action,gpointer data)
 name|dashboard_log_add_marker_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -755,10 +755,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_add_empty_marker_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dashboard_log_add_empty_marker_cmd_callback (GimpAction * action,gpointer data)
 name|dashboard_log_add_empty_marker_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -787,10 +787,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_reset_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dashboard_reset_cmd_callback (GimpAction * action,gpointer data)
 name|dashboard_reset_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -817,10 +817,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_low_swap_space_warning_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|dashboard_low_swap_space_warning_cmd_callback (GimpAction * action,gpointer data)
 name|dashboard_low_swap_space_warning_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,

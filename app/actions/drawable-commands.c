@@ -129,10 +129,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|drawable_equalize_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_equalize_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_equalize_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -174,10 +174,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_levels_stretch_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_levels_stretch_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_levels_stretch_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -275,10 +275,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_linked_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_linked_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_linked_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -412,10 +412,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_visible_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_visible_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_visible_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -549,10 +549,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_lock_content_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_lock_content_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_lock_content_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -663,10 +663,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_lock_position_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|drawable_lock_position_cmd_callback (GimpAction * action,gpointer data)
 name|drawable_lock_position_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -800,10 +800,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_flip_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|drawable_flip_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|drawable_flip_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
@@ -985,10 +985,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_rotate_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|drawable_rotate_cmd_callback (GimpAction * action,gint value,gpointer data)
 name|drawable_rotate_cmd_callback
 parameter_list|(
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 parameter_list|,
