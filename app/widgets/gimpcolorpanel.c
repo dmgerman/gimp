@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpaction.h"
+file|"gimpactionimpl.h"
 end_include
 
 begin_include
@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2d80e0103
+DECL|enum|__anon2c4268210103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -886,7 +886,7 @@ name|button
 parameter_list|)
 block|{
 return|return
-name|GIMP_TYPE_ACTION
+name|GIMP_TYPE_ACTION_IMPL
 return|;
 block|}
 end_function
