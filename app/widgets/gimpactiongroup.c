@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297dded40103
+DECL|enum|__anon2c02852c0103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297dded40203
+DECL|enum|__anon2c02852c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -497,7 +497,7 @@ name|name
 operator|=
 name|gimp_action_group_get_name
 argument_list|(
-name|object
+name|group
 argument_list|)
 expr_stmt|;
 if|if
@@ -576,7 +576,10 @@ name|name
 init|=
 name|gimp_action_group_get_name
 argument_list|(
+name|GIMP_ACTION_GROUP
+argument_list|(
 name|object
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -1553,7 +1556,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -1813,7 +1819,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -2105,7 +2114,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -2382,7 +2394,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -2630,7 +2645,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -2797,7 +2815,10 @@ name|gimp_action_group_add_action_with_accel
 argument_list|(
 name|group
 argument_list|,
+name|GIMP_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -3218,7 +3239,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_toggle_action_set_active
+name|gtk_toggle_action_set_active
 argument_list|(
 name|GTK_TOGGLE_ACTION
 argument_list|(
