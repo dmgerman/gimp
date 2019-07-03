@@ -144,10 +144,7 @@ argument_list|,
 literal|"Edit this color"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|colormap_edit_color_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_INDEXED_PALETTE_EDIT
 block|}
@@ -384,10 +381,7 @@ argument_list|(
 name|colormap_add_color_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|colormap_add_color_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -403,10 +397,7 @@ argument_list|(
 name|colormap_to_selection_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|colormap_to_selection_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -145,10 +145,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|window_close_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCK_CLOSE
 block|}
@@ -174,10 +171,7 @@ argument_list|,
 literal|"Connect to another display"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|window_open_display_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -210,10 +204,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dock_toggle_image_menu_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -236,10 +227,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dock_toggle_auto_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,

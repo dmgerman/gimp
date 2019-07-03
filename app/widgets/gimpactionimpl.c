@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62d18a0103
+DECL|enum|__anon2bd640ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -882,6 +882,16 @@ operator|->
 name|activate
 argument_list|(
 name|action
+argument_list|)
+expr_stmt|;
+name|gimp_action_emit_activate
+argument_list|(
+name|GIMP_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_action_history_action_activated

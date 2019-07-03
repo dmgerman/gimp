@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/dialogs.h"
 end_include
 
@@ -129,12 +123,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|drawable_equalize_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_equalize_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_equalize_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -174,12 +172,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_levels_stretch_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_levels_stretch_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_levels_stretch_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -275,12 +277,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_linked_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_linked_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_linked_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -308,12 +314,9 @@ argument_list|)
 expr_stmt|;
 name|linked
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -412,12 +415,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -445,12 +452,9 @@ argument_list|)
 expr_stmt|;
 name|visible
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -549,12 +553,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_lock_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_lock_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_lock_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -582,12 +590,9 @@ argument_list|)
 expr_stmt|;
 name|locked
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -663,12 +668,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_lock_position_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|drawable_lock_position_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_lock_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -696,12 +705,9 @@ argument_list|)
 expr_stmt|;
 name|locked
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -800,14 +806,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_flip_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|drawable_flip_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_flip_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -840,6 +847,9 @@ name|axis
 init|=
 literal|0.0
 decl_stmt|;
+name|GimpOrientationType
+name|orientation
+decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
 name|image
@@ -854,6 +864,16 @@ argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|orientation
+operator|=
+operator|(
+name|GimpOrientationType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|item
@@ -876,10 +896,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-operator|(
-name|GimpOrientationType
-operator|)
-name|value
+name|orientation
 condition|)
 block|{
 case|case
@@ -945,10 +962,7 @@ name|item
 argument_list|,
 name|context
 argument_list|,
-operator|(
-name|GimpOrientationType
-operator|)
-name|value
+name|orientation
 argument_list|,
 name|axis
 argument_list|,
@@ -964,10 +978,7 @@ name|item
 argument_list|,
 name|context
 argument_list|,
-operator|(
-name|GimpOrientationType
-operator|)
-name|value
+name|orientation
 argument_list|,
 name|axis
 argument_list|,
@@ -985,14 +996,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_rotate_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|drawable_rotate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|drawable_rotate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1030,6 +1042,9 @@ name|clip_result
 init|=
 name|FALSE
 decl_stmt|;
+name|GimpRotationType
+name|rotation_type
+decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
 name|image
@@ -1044,6 +1059,16 @@ argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|rotation_type
+operator|=
+operator|(
+name|GimpRotationType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|item
@@ -1127,10 +1152,7 @@ name|item
 argument_list|,
 name|context
 argument_list|,
-operator|(
-name|GimpRotationType
-operator|)
-name|value
+name|rotation_type
 argument_list|,
 name|center_x
 argument_list|,
@@ -1148,10 +1170,7 @@ name|item
 argument_list|,
 name|context
 argument_list|,
-operator|(
-name|GimpRotationType
-operator|)
-name|value
+name|rotation_type
 argument_list|,
 name|center_x
 argument_list|,

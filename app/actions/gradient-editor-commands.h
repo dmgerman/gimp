@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297db2e40103
+DECL|enum|__anon2969ae480103
 block|{
 DECL|enumerator|GRADIENT_EDITOR_COLOR_NEIGHBOR_ENDPOINT
 name|GRADIENT_EDITOR_COLOR_NEIGHBOR_ENDPOINT
@@ -46,6 +46,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -60,9 +64,9 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -78,7 +82,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -95,7 +100,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -112,6 +118,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -126,9 +136,9 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -144,7 +154,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -161,7 +172,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -178,9 +190,9 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -196,9 +208,9 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -214,6 +226,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -227,6 +243,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -242,6 +262,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -255,6 +279,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -270,6 +298,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -283,6 +315,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -298,6 +334,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -311,6 +351,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -326,6 +370,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -340,7 +388,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer

@@ -139,10 +139,7 @@ literal|"Save the active tool options to this "
 literal|"tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_preset_editor_save_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_SAVE
 block|}
@@ -168,10 +165,7 @@ argument_list|,
 literal|"Restore this tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_preset_editor_restore_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_RESTORE
 block|}
@@ -204,10 +198,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_editor_edit_active_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,

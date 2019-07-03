@@ -293,12 +293,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|channels_edit_attributes_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_edit_attributes_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_edit_attributes_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -477,12 +481,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -643,12 +651,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_new_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_new_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -749,12 +761,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_raise_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_raise_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -799,12 +815,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_to_top_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_raise_to_top_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_raise_to_top_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -847,12 +867,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_lower_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_lower_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -897,12 +921,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_to_bottom_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_lower_to_bottom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_lower_to_bottom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -945,12 +973,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_duplicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1132,12 +1164,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1181,14 +1217,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|channels_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1207,7 +1244,10 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1299,12 +1339,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1331,6 +1375,8 @@ name|items_visible_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -1344,12 +1390,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_linked_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_linked_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_linked_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1376,6 +1426,8 @@ name|items_linked_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -1389,12 +1441,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lock_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_lock_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_lock_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1421,6 +1477,8 @@ name|items_lock_content_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -1434,12 +1492,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lock_position_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|channels_lock_position_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_lock_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1466,6 +1528,8 @@ name|items_lock_position_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -1479,14 +1543,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_color_tag_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|channels_color_tag_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_color_tag_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1501,6 +1566,9 @@ name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
+name|GimpColorTag
+name|color_tag
+decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|image
@@ -1508,6 +1576,16 @@ argument_list|,
 name|channel
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|color_tag
+operator|=
+operator|(
+name|GimpColorTag
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|items_color_tag_cmd_callback
@@ -1521,10 +1599,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-operator|(
-name|GimpColorTag
-operator|)
-name|value
+name|color_tag
 argument_list|)
 expr_stmt|;
 block|}
@@ -1532,14 +1607,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|channels_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|channels_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1562,6 +1638,9 @@ name|GimpContainer
 modifier|*
 name|container
 decl_stmt|;
+name|GimpActionSelectType
+name|type
+decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|image
@@ -1569,6 +1648,16 @@ argument_list|,
 name|channel
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|container
@@ -1586,10 +1675,7 @@ operator|*
 operator|)
 name|action_select_object
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|type
 argument_list|,
 name|container
 argument_list|,

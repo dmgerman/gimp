@@ -363,10 +363,7 @@ argument_list|,
 literal|"Create another view on this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_NEW
 block|}
@@ -392,10 +389,7 @@ argument_list|,
 literal|"Close the active image view"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_close_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_CLOSE
 block|}
@@ -421,10 +415,7 @@ argument_list|,
 literal|"Scroll the image so that it is centered in the window"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_scroll_center_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_SCROLL_CENTER
 block|}
@@ -450,10 +441,7 @@ argument_list|,
 literal|"Adjust the zoom ratio so that the image becomes fully visible"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_fit_in_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_ZOOM_FIT_IN
 block|}
@@ -479,10 +467,7 @@ argument_list|,
 literal|"Adjust the zoom ratio so that the entire window is used"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_fill_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_ZOOM_FILL
 block|}
@@ -508,10 +493,7 @@ argument_list|,
 literal|"Adjust the zoom ratio so that the selection fills the window"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_selection_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_ZOOM_SELECTION
 block|}
@@ -537,10 +519,7 @@ argument_list|,
 literal|"Restore the previous zoom level"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_revert_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_ZOOM_REVERT
 block|}
@@ -566,10 +545,7 @@ argument_list|,
 literal|"Set a custom rotation angle"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_rotate_other_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_ROTATE_OTHER
 block|}
@@ -595,10 +571,7 @@ argument_list|,
 literal|"Show an overview window for this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_navigation_window_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_NAVIGATION_DIALOG
 block|}
@@ -624,10 +597,7 @@ argument_list|,
 literal|"Configure filters applied to this view"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_display_filters_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DISPLAY_FILTER_DIALOG
 block|}
@@ -653,10 +623,7 @@ argument_list|,
 literal|"Reset color management to what's configured in preferences"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_color_management_reset_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_COLOR_MANAGEMENT
 block|}
@@ -682,10 +649,7 @@ argument_list|,
 literal|"Set the soft-proofing profile"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_softproof_profile_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_COLOR_MANAGEMENT
 block|}
@@ -711,10 +675,7 @@ argument_list|,
 literal|"Reduce the image window to the size of the image display"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_shrink_wrap_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_VIEW_SHRINK_WRAP
 block|}
@@ -740,10 +701,7 @@ argument_list|,
 literal|"Connect to another display"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|window_open_display_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -781,10 +739,7 @@ argument_list|,
 literal|"A pixel on the screen represents an image pixel"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_dot_for_dot_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -812,10 +767,7 @@ argument_list|,
 literal|"Use color management for this view"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_color_management_enable_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -843,10 +795,7 @@ argument_list|,
 literal|"Use this view for soft-proofing"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_color_management_softproof_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -874,10 +823,7 @@ argument_list|,
 literal|"Use black point compensation for image display"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_display_bpc_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -905,10 +851,7 @@ argument_list|,
 literal|"Use black point compensation for soft-proofing"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_softproof_bpc_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -937,10 +880,7 @@ literal|"When soft-proofing, mark colors which cannot "
 literal|"be represented in the target color space"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_softproof_gamut_check_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -968,10 +908,7 @@ argument_list|,
 literal|"Display the selection outline"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_selection_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -999,10 +936,7 @@ argument_list|,
 literal|"Draw a border around the active layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_layer_boundary_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1030,10 +964,7 @@ argument_list|,
 literal|"Display the image's guides"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_guides_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1061,10 +992,7 @@ argument_list|,
 literal|"Display the image's grid"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_grid_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1092,10 +1020,7 @@ argument_list|,
 literal|"Display the image's color sample points"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_sample_points_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1123,10 +1048,7 @@ argument_list|,
 literal|"Tool operations snap to guides"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_snap_to_guides_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1154,10 +1076,7 @@ argument_list|,
 literal|"Tool operations snap to the grid"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_snap_to_grid_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1185,10 +1104,7 @@ argument_list|,
 literal|"Tool operations snap to the canvas edges"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_snap_to_canvas_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1216,10 +1132,7 @@ argument_list|,
 literal|"Tool operations snap to the active path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_snap_to_vectors_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1247,10 +1160,7 @@ argument_list|,
 literal|"Show this window's menubar"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_menubar_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1278,10 +1188,7 @@ argument_list|,
 literal|"Show this window's rulers"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_rulers_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1309,10 +1216,7 @@ argument_list|,
 literal|"Show this window's scrollbars"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_scrollbars_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1340,10 +1244,7 @@ argument_list|,
 literal|"Show this window's statusbar"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_toggle_statusbar_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1371,10 +1272,7 @@ argument_list|,
 literal|"Toggle fullscreen view"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_fullscreen_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -2055,10 +1953,7 @@ argument_list|,
 literal|"Flip the view horizontally"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_flip_horizontally_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -2086,10 +1981,7 @@ argument_list|,
 literal|"Flip the view vertically"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|view_flip_vertically_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -3094,10 +2986,7 @@ argument_list|(
 name|view_zoom_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -3117,10 +3006,7 @@ name|NULL
 argument_list|,
 literal|10000
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_zoom_explicit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_toggle_actions
@@ -3150,10 +3036,7 @@ argument_list|(
 name|view_rotate_absolute_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_rotate_absolute_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -3169,11 +3052,8 @@ argument_list|(
 name|view_rotate_relative_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_rotate_relative_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -3192,11 +3072,8 @@ name|NULL
 argument_list|,
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_display_intent_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -3215,10 +3092,7 @@ name|NULL
 argument_list|,
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_softproof_intent_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -3234,11 +3108,8 @@ argument_list|(
 name|view_padding_color_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_padding_color_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3253,11 +3124,8 @@ argument_list|(
 name|view_scroll_horizontal_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_scroll_horizontal_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3272,10 +3140,7 @@ argument_list|(
 name|view_scroll_vertical_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|view_scroll_vertical_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect "activate" of view-zoom-other manually so it can be    *  selected even if it's the active item of the radio group    */

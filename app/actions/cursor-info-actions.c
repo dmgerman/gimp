@@ -132,10 +132,7 @@ argument_list|,
 literal|"Use the composite color of all visible layers"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|cursor_info_sample_merged_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,

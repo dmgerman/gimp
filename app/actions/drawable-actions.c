@@ -123,10 +123,7 @@ argument_list|,
 literal|"Automatic contrast enhancement"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_equalize_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_EQUALIZE
 block|}
@@ -152,10 +149,7 @@ argument_list|,
 literal|"Automatic white balance correction"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_levels_stretch_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_WHITE_BALANCE
 block|}
@@ -188,10 +182,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_visible_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -214,10 +205,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_linked_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -246,10 +234,7 @@ argument_list|,
 literal|"Keep the pixels on this drawable from being modified"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_lock_content_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -277,10 +262,7 @@ argument_list|,
 literal|"Keep the position on this drawable from being modified"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_lock_position_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -505,10 +487,7 @@ argument_list|(
 name|drawable_flip_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_flip_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -524,10 +503,7 @@ argument_list|(
 name|drawable_rotate_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|drawable_rotate_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 DECL|macro|SET_ALWAYS_SHOW_IMAGE (action,show)

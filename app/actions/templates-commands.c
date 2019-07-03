@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d9fb30108
+DECL|struct|__anon27a8e4ed0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -274,12 +274,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|templates_create_image_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|templates_create_image_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|templates_create_image_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -421,12 +425,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|templates_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|templates_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -545,12 +553,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_duplicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|templates_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|templates_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -665,6 +677,8 @@ name|templates_edit_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -674,12 +688,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_edit_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|templates_edit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|templates_edit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -834,12 +852,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|templates_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|templates_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

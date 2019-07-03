@@ -63,12 +63,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_editor_edit_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|palette_editor_edit_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palette_editor_edit_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -93,14 +97,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|palette_editor_new_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palette_editor_new_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -123,6 +128,17 @@ init|=
 name|GIMP_DATA_EDITOR
 argument_list|(
 name|data
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|background
+init|=
+operator|(
+name|gboolean
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 decl_stmt|;
 if|if
@@ -152,7 +168,7 @@ name|color
 decl_stmt|;
 if|if
 condition|(
-name|value
+name|background
 condition|)
 name|gimp_context_get_background
 argument_list|(
@@ -208,12 +224,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_delete_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|palette_editor_delete_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palette_editor_delete_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -274,14 +294,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|palette_editor_zoom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palette_editor_zoom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -297,14 +318,22 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpZoomType
+name|zoom_type
+init|=
+operator|(
+name|GimpZoomType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 name|gimp_palette_editor_zoom
 argument_list|(
 name|editor
 argument_list|,
-operator|(
-name|GimpZoomType
-operator|)
-name|value
+name|zoom_type
 argument_list|)
 expr_stmt|;
 block|}

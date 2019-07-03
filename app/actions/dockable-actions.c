@@ -210,10 +210,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_close_tab_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCK_TAB_CLOSE
 block|}
@@ -234,10 +231,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_detach_tab_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCK_TAB_DETACH
 block|}
@@ -537,10 +531,7 @@ argument_list|,
 literal|"Protect this tab from being dragged with the mouse pointer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_lock_tab_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -563,10 +554,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_show_button_bar_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -678,10 +666,7 @@ name|dialogs_dockable_actions
 argument_list|,
 name|n_dialogs_dockable_actions
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_add_tab_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -701,10 +686,7 @@ name|NULL
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_view_size_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -724,10 +706,7 @@ name|NULL
 argument_list|,
 name|GIMP_TAB_STYLE_PREVIEW
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_tab_style_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -747,10 +726,7 @@ name|NULL
 argument_list|,
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dockable_toggle_view_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

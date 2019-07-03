@@ -212,16 +212,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_run_cmd_callback (GimpAction * action,GimpProcedure * procedure,gpointer data)
+DECL|function|plug_in_run_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|plug_in_run_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpProcedure
+name|GVariant
 modifier|*
-name|procedure
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -243,11 +243,32 @@ name|display
 init|=
 name|NULL
 decl_stmt|;
+name|GimpProcedure
+modifier|*
+name|procedure
+decl_stmt|;
+name|gsize
+name|hack
+decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|hack
+operator|=
+name|g_variant_get_uint64
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|=
+name|GSIZE_TO_POINTER
+argument_list|(
+name|hack
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -551,12 +572,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_reset_all_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|plug_in_reset_all_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|plug_in_reset_all_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

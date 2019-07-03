@@ -139,10 +139,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_editor_edit_active_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,

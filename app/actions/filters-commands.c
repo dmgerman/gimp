@@ -178,17 +178,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|filters_apply_cmd_callback (GimpAction * action,const gchar * operation_str,gpointer data)
+DECL|function|filters_apply_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|filters_apply_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
-name|operation_str
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -231,7 +230,12 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|operation_str
+name|g_variant_get_string
+argument_list|(
+name|value
+argument_list|,
+name|NULL
+argument_list|)
 argument_list|,
 name|gimp_action_get_icon_name
 argument_list|(
@@ -309,7 +313,13 @@ name|filters_history_cmd_callback
 argument_list|(
 name|NULL
 argument_list|,
+name|g_variant_new_uint64
+argument_list|(
+name|GPOINTER_TO_SIZE
+argument_list|(
 name|procedure
+argument_list|)
+argument_list|)
 argument_list|,
 name|data
 argument_list|)
@@ -324,17 +334,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_apply_interactive_cmd_callback (GimpAction * action,const gchar * operation,gpointer data)
+DECL|function|filters_apply_interactive_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|filters_apply_interactive_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
-name|operation
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -373,7 +382,12 @@ name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|NULL
 argument_list|,
-name|operation
+name|g_variant_get_string
+argument_list|(
+name|value
+argument_list|,
+name|NULL
+argument_list|)
 argument_list|,
 name|gimp_action_get_name
 argument_list|(
@@ -414,7 +428,13 @@ name|filters_history_cmd_callback
 argument_list|(
 name|NULL
 argument_list|,
+name|g_variant_new_uint64
+argument_list|(
+name|GPOINTER_TO_SIZE
+argument_list|(
 name|procedure
+argument_list|)
+argument_list|)
 argument_list|,
 name|data
 argument_list|)
@@ -429,14 +449,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_repeat_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|filters_repeat_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|filters_repeat_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -459,6 +480,9 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
 name|image
@@ -473,6 +497,16 @@ argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|run_mode
+operator|=
+operator|(
+name|GimpRunMode
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|procedure
@@ -500,10 +534,7 @@ name|display
 argument_list|,
 name|procedure
 argument_list|,
-operator|(
-name|GimpRunMode
-operator|)
-name|value
+name|run_mode
 argument_list|)
 expr_stmt|;
 block|}
@@ -511,16 +542,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_history_cmd_callback (GimpAction * action,GimpProcedure * procedure,gpointer data)
+DECL|function|filters_history_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|filters_history_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpProcedure
+name|GVariant
 modifier|*
-name|procedure
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -534,6 +565,13 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+name|GimpProcedure
+modifier|*
+name|procedure
+decl_stmt|;
+name|gsize
+name|hack
+decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
@@ -546,6 +584,20 @@ argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|hack
+operator|=
+name|g_variant_get_uint64
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|=
+name|GSIZE_TO_POINTER
+argument_list|(
+name|hack
 argument_list|)
 expr_stmt|;
 name|filters_run_procedure

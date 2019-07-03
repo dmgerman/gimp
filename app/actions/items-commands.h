@@ -24,6 +24,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -42,6 +46,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -62,6 +70,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -80,6 +92,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*

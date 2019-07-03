@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/dialogs.h"
 end_include
 
@@ -189,12 +183,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|items_visible_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_visible_cmd_callback (GimpAction * action,GVariant * value,GimpImage * image,GimpItem * item)
 name|items_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -207,17 +205,12 @@ parameter_list|)
 block|{
 name|gboolean
 name|visible
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|visible
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|visible
@@ -285,12 +278,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_linked_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_linked_cmd_callback (GimpAction * action,GVariant * value,GimpImage * image,GimpItem * item)
 name|items_linked_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -303,17 +300,12 @@ parameter_list|)
 block|{
 name|gboolean
 name|linked
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|linked
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|linked
@@ -381,12 +373,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_lock_content_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_lock_content_cmd_callback (GimpAction * action,GVariant * value,GimpImage * image,GimpItem * item)
 name|items_lock_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -399,17 +395,12 @@ parameter_list|)
 block|{
 name|gboolean
 name|locked
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|locked
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|locked
@@ -477,12 +468,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|items_lock_position_cmd_callback (GimpAction * action,GimpImage * image,GimpItem * item)
+DECL|function|items_lock_position_cmd_callback (GimpAction * action,GVariant * value,GimpImage * image,GimpItem * item)
 name|items_lock_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -495,17 +490,12 @@ parameter_list|)
 block|{
 name|gboolean
 name|locked
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|locked
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|locked

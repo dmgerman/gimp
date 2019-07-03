@@ -147,12 +147,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palettes_import_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|palettes_import_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palettes_import_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -197,12 +201,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|palettes_merge_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|palettes_merge_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|palettes_merge_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

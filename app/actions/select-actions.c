@@ -151,10 +151,7 @@ argument_list|,
 literal|"Select everything"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_all_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_ALL
 block|}
@@ -180,10 +177,7 @@ argument_list|,
 literal|"Dismiss the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_none_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_NONE
 block|}
@@ -209,10 +203,7 @@ argument_list|,
 literal|"Invert the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_invert_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_INVERT
 block|}
@@ -238,10 +229,7 @@ argument_list|,
 literal|"Create a floating selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_float_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_FLOAT
 block|}
@@ -267,10 +255,7 @@ argument_list|,
 literal|"Blur the selection border so that it fades out smoothly"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_feather_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_FEATHER
 block|}
@@ -296,10 +281,7 @@ argument_list|,
 literal|"Remove fuzziness from the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_sharpen_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_SHARPEN
 block|}
@@ -325,10 +307,7 @@ argument_list|,
 literal|"Contract the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_shrink_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_SHRINK
 block|}
@@ -354,10 +333,7 @@ argument_list|,
 literal|"Enlarge the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_grow_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_GROW
 block|}
@@ -383,10 +359,7 @@ argument_list|,
 literal|"Replace the selection by its border"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_border_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_BORDER
 block|}
@@ -412,10 +385,7 @@ argument_list|,
 literal|"Remove holes from the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_flood_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_FLOOD
 block|}
@@ -441,10 +411,7 @@ argument_list|,
 literal|"Save the selection to a channel"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_save_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_TO_CHANNEL
 block|}
@@ -470,10 +437,7 @@ argument_list|,
 literal|"Fill the selection outline"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_fill_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_FILL
 block|}
@@ -499,10 +463,7 @@ argument_list|,
 literal|"Fill the selection outline with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_fill_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_FILL
 block|}
@@ -528,10 +489,7 @@ argument_list|,
 literal|"Paint along the selection outline"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_stroke_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_STROKE
 block|}
@@ -557,10 +515,7 @@ argument_list|,
 literal|"Stroke the selection with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|select_stroke_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_STROKE
 block|}

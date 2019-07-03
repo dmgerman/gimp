@@ -59,12 +59,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|help_help_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|help_help_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|help_help_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -111,12 +115,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|help_context_help_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|help_context_help_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|help_context_help_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

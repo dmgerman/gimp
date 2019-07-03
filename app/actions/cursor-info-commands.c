@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpcursorview.h"
 end_include
 
@@ -51,12 +45,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|cursor_info_sample_merged_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|cursor_info_sample_merged_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|cursor_info_sample_merged_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -73,17 +71,12 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_cursor_view_set_sample_merged
 argument_list|(
 name|view

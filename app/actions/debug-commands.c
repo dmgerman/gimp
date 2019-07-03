@@ -242,12 +242,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|debug_gtk_inspector_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_gtk_inspector_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_gtk_inspector_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -263,12 +267,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_mem_profile_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_mem_profile_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_mem_profile_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -312,12 +320,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_benchmark_projection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_benchmark_projection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_benchmark_projection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -352,12 +364,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_show_image_graph_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_show_image_graph_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_show_image_graph_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -394,12 +410,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_dump_menus_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_dump_menus_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_dump_menus_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -545,12 +565,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_dump_managers_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_dump_managers_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_dump_managers_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -636,12 +660,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_dump_keyboard_shortcuts_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_dump_keyboard_shortcuts_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_dump_keyboard_shortcuts_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1010,12 +1038,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_dump_attached_data_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|debug_dump_attached_data_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|debug_dump_attached_data_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

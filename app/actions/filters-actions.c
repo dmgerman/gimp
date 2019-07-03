@@ -3156,10 +3156,7 @@ argument_list|(
 name|filters_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|filters_apply_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|filters_actions_set_tooltips
@@ -3187,10 +3184,7 @@ argument_list|(
 name|filters_settings_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|filters_apply_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|filters_actions_set_tooltips
@@ -3218,10 +3212,7 @@ argument_list|(
 name|filters_interactive_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|filters_apply_interactive_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|filters_actions_set_tooltips
@@ -3249,10 +3240,7 @@ argument_list|(
 name|filters_repeat_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|filters_repeat_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|n_entries
@@ -3366,10 +3354,7 @@ name|entries
 argument_list|,
 name|n_entries
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|filters_history_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

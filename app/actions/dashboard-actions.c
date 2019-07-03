@@ -159,10 +159,7 @@ argument_list|,
 literal|"Start/stop recording performance log"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_log_record_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DASHBOARD_LOG_RECORD
 block|}
@@ -189,10 +186,7 @@ literal|"Add an event marker "
 literal|"to the performance log"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_log_add_marker_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DASHBOARD_LOG_ADD_MARKER
 block|}
@@ -219,10 +213,7 @@ literal|"Add an empty event marker "
 literal|"to the performance log"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_log_add_empty_marker_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DASHBOARD_LOG_ADD_EMPTY_MARKER
 block|}
@@ -248,10 +239,7 @@ argument_list|,
 literal|"Reset cumulative data"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_reset_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DASHBOARD_RESET
 block|}
@@ -290,10 +278,7 @@ literal|"Raise the dashboard when "
 literal|"the swap size approaches its limit"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_low_swap_space_warning_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -592,10 +577,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_update_interval_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -615,10 +597,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dashboard_history_duration_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

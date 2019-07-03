@@ -458,10 +458,7 @@ argument_list|,
 literal|"Switch to the next image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|windows_show_display_next_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -487,10 +484,7 @@ argument_list|,
 literal|"Switch to the previous image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|windows_show_display_previous_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -541,10 +535,7 @@ argument_list|,
 literal|"When enabled, docks and other dialogs are hidden, leaving only image windows."
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|windows_hide_docks_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -572,10 +563,7 @@ argument_list|,
 literal|"When enabled, the image tabs bar is shown."
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|windows_show_tabs_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -603,10 +591,7 @@ argument_list|,
 literal|"When enabled, GIMP is in a single-window mode."
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|windows_use_single_window_mode_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -791,10 +776,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|windows_set_tabs_position_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_set_action_hide_empty
@@ -1555,10 +1537,7 @@ name|entry
 operator|.
 name|callback
 operator|=
-name|G_CALLBACK
-argument_list|(
 name|windows_show_display_cmd_callback
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.
@@ -1980,10 +1959,7 @@ name|entry
 operator|.
 name|callback
 operator|=
-name|G_CALLBACK
-argument_list|(
 name|windows_show_dock_cmd_callback
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.
@@ -2353,10 +2329,7 @@ name|entry
 operator|.
 name|callback
 operator|=
-name|G_CALLBACK
-argument_list|(
 name|windows_open_recent_cmd_callback
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.

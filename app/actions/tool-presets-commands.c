@@ -93,12 +93,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_presets_save_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|tool_presets_save_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_presets_save_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -238,12 +242,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_presets_restore_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|tool_presets_restore_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_presets_restore_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

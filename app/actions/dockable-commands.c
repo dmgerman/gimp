@@ -84,19 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpsessioninfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
 end_include
 
 begin_include
@@ -124,15 +112,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dockable_add_tab_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
+DECL|function|dockable_add_tab_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_add_tab_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -153,7 +140,12 @@ name|gimp_dockbook_add_from_dialog_factory
 argument_list|(
 name|dockbook
 argument_list|,
+name|g_variant_get_string
+argument_list|(
 name|value
+argument_list|,
+name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -161,12 +153,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_close_tab_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dockable_close_tab_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_close_tab_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -212,12 +208,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_detach_tab_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dockable_detach_tab_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_detach_tab_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -255,12 +255,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_lock_tab_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dockable_lock_tab_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_lock_tab_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -292,12 +296,9 @@ block|{
 name|gboolean
 name|lock
 init|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 decl_stmt|;
 name|gimp_dockable_set_locked
@@ -313,16 +314,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_view_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|dockable_toggle_view_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_toggle_view_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -352,12 +353,9 @@ operator|=
 operator|(
 name|GimpViewType
 operator|)
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|page_num
@@ -723,16 +721,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_view_size_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|dockable_view_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_view_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -761,12 +759,9 @@ name|view_size
 decl_stmt|;
 name|view_size
 operator|=
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -826,16 +821,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_tab_style_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|dockable_tab_style_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_tab_style_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -867,12 +862,9 @@ operator|=
 operator|(
 name|GimpTabStyle
 operator|)
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -928,12 +920,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_show_button_bar_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dockable_show_button_bar_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dockable_show_button_bar_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -984,12 +980,9 @@ argument_list|)
 expr_stmt|;
 name|show
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_docked_set_show_button_bar

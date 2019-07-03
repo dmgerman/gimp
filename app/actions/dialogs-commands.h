@@ -24,8 +24,7 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -43,8 +42,7 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,

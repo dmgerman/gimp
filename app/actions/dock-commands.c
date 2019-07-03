@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions.h"
 end_include
 
@@ -116,12 +110,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dock_toggle_image_menu_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dock_toggle_image_menu_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dock_toggle_image_menu_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -161,12 +159,9 @@ block|{
 name|gboolean
 name|active
 init|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 decl_stmt|;
 name|gimp_dock_window_set_show_image_menu
@@ -182,12 +177,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dock_toggle_auto_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dock_toggle_auto_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dock_toggle_auto_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -227,12 +226,9 @@ block|{
 name|gboolean
 name|active
 init|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 decl_stmt|;
 name|gimp_dock_window_set_auto_follow_active

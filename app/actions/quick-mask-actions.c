@@ -127,10 +127,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|quick_mask_configure_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_QUICK_MASK_EDIT
 block|}
@@ -168,10 +165,7 @@ argument_list|,
 literal|"Toggle Quick Mask on/off"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|quick_mask_toggle_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -290,10 +284,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|quick_mask_invert_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

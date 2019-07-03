@@ -81,12 +81,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|colormap_edit_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|colormap_edit_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|colormap_edit_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -111,14 +115,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_add_color_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|colormap_add_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|colormap_add_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -133,6 +138,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|gboolean
+name|background
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -145,6 +153,16 @@ argument_list|(
 name|image
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|background
+operator|=
+operator|(
+name|gboolean
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -162,7 +180,7 @@ name|color
 decl_stmt|;
 if|if
 condition|(
-name|value
+name|background
 condition|)
 name|gimp_context_get_background
 argument_list|(
@@ -200,14 +218,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|colormap_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|colormap_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -269,7 +288,10 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
 expr_stmt|;
 name|gimp_channel_select_by_index
 argument_list|(

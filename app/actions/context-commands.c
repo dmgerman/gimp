@@ -286,12 +286,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|context_colors_default_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|context_colors_default_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_colors_default_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -318,12 +322,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_colors_swap_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|context_colors_swap_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_colors_swap_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -363,7 +371,7 @@ parameter_list|,
 name|use_palette
 parameter_list|)
 define|\
-value|void \ context_##name##_##fgbg##ground_cmd_callback (GimpAction *action, \                                               gint        value, \                                               gpointer    data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, \                         use_colormap, use_palette); \   gimp_context_set_##fgbg##ground (context,&color); \ }
+value|void \ context_##name##_##fgbg##ground_cmd_callback (GimpAction *action, \                                               GVariant   *value, \                                               gpointer    data) \ { \   GimpContext          *context; \   GimpRGB               color; \   GimpActionSelectType  select_type; \   return_if_no_context (context, data); \   \   select_type = (GimpActionSelectType) g_variant_get_int32 (value); \   \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color (select_type,&color, \                         use_colormap, use_palette); \   gimp_context_set_##fgbg##ground (context,&color); \ }
 end_define
 
 begin_macro
@@ -453,7 +461,8 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -467,11 +476,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -488,10 +510,7 @@ name|r
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -529,14 +548,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_green_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_foreground_green_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_foreground_green_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -550,11 +570,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -571,10 +604,7 @@ name|g
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -612,14 +642,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_blue_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_foreground_blue_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_foreground_blue_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -633,11 +664,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -654,10 +698,7 @@ name|b
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -695,14 +736,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_red_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_red_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_red_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -716,11 +758,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -737,10 +792,7 @@ name|r
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -778,14 +830,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_green_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_green_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_green_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -799,11 +852,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -820,10 +886,7 @@ name|g
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -861,14 +924,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_blue_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_blue_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_blue_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -882,11 +946,24 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -903,10 +980,7 @@ name|b
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|color
 operator|.
@@ -944,14 +1018,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_hue_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_foreground_hue_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_foreground_hue_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -968,11 +1043,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -998,10 +1086,7 @@ name|h
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1048,14 +1133,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_saturation_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_foreground_saturation_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_foreground_saturation_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1072,11 +1158,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -1102,10 +1201,7 @@ name|s
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1150,14 +1246,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_foreground_value_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_foreground_value_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_foreground_value_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1174,11 +1271,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
@@ -1204,10 +1314,7 @@ name|v
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1252,14 +1359,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_hue_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_hue_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_hue_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1276,11 +1384,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -1306,10 +1427,7 @@ name|h
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1356,14 +1474,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_saturation_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_saturation_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_saturation_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1380,11 +1499,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -1410,10 +1542,7 @@ name|s
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1458,14 +1587,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_background_value_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_background_value_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_background_value_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1482,11 +1612,24 @@ decl_stmt|;
 name|GimpHSV
 name|hsv
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -1512,10 +1655,7 @@ name|v
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|hsv
 operator|.
@@ -1560,14 +1700,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_opacity_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_opacity_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1582,11 +1723,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1610,10 +1764,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1648,14 +1799,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_paint_mode_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_paint_mode_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_paint_mode_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1683,11 +1835,24 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|paint_mode
@@ -1724,10 +1889,7 @@ name|index
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|index
 argument_list|,
@@ -1853,14 +2015,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_tool_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_tool_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_tool_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1871,6 +2034,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -1878,12 +2044,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -1899,14 +2072,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1917,6 +2091,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -1924,12 +2101,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -1948,14 +2132,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_pattern_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_pattern_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_pattern_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1966,6 +2151,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -1973,12 +2161,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -1997,14 +2192,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_palette_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_palette_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_palette_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2015,6 +2211,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -2022,12 +2221,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -2046,14 +2252,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_gradient_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_gradient_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_gradient_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2064,6 +2271,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -2071,12 +2281,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -2095,14 +2312,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_font_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_font_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_font_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2113,6 +2331,9 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
@@ -2120,12 +2341,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|context_select_object
-argument_list|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|context_select_object
+argument_list|(
+name|select_type
 argument_list|,
 name|context
 argument_list|,
@@ -2144,14 +2372,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_spacing_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_spacing_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2166,11 +2395,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2198,10 +2440,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -2232,14 +2471,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_shape_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_shape_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_shape_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2254,11 +2494,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpBrushGeneratedShape
+name|shape
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|shape
+operator|=
+operator|(
+name|GimpBrushGeneratedShape
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2306,17 +2559,14 @@ name|gimp_brush_generated_set_shape
 argument_list|(
 name|generated
 argument_list|,
-operator|(
-name|GimpBrushGeneratedShape
-operator|)
-name|value
+name|shape
 argument_list|)
 expr_stmt|;
 name|gimp_enum_get_value
 argument_list|(
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
-name|value
+name|shape
 argument_list|,
 name|NULL
 argument_list|,
@@ -2366,14 +2616,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_radius_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_radius_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2388,11 +2639,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2447,10 +2711,7 @@ expr_stmt|;
 comment|/* If the user uses a high precision radius adjustment command        * then we allow a minimum radius of 0.1 px, otherwise we set the        * minimum radius to 1.0 px and adjust the radius to 1.0 px if it        * is less than 1.0 px. This prevents irritating 0.1, 1.1, 2.1 etc        * radius sequences when 1.0 px steps are used.        */
 switch|switch
 condition|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 condition|)
 block|{
 case|case
@@ -2491,10 +2752,7 @@ name|radius
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|radius
 argument_list|,
@@ -2561,14 +2819,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_spikes_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_spikes_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_spikes_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2583,11 +2842,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2615,10 +2887,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -2649,14 +2918,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_hardness_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_hardness_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2671,11 +2941,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2703,10 +2986,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -2737,14 +3017,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_aspect_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_aspect_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2759,11 +3040,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2791,10 +3085,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -2825,14 +3116,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|context_brush_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|context_brush_angle_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|context_brush_angle_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2847,11 +3139,24 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2902,7 +3207,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|select_type
 operator|==
 name|GIMP_ACTION_SELECT_FIRST
 condition|)
@@ -2913,7 +3218,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|value
+name|select_type
 operator|==
 name|GIMP_ACTION_SELECT_LAST
 condition|)
@@ -2926,10 +3231,7 @@ name|angle
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|angle
 argument_list|,

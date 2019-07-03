@@ -150,10 +150,7 @@ argument_list|,
 literal|"Create a new tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_NEW
 block|}
@@ -179,10 +176,7 @@ argument_list|,
 literal|"Duplicate this tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_DUPLICATE
 block|}
@@ -208,10 +202,7 @@ argument_list|,
 literal|"Copy tool preset file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_COPY_LOCATION
 block|}
@@ -237,10 +228,7 @@ argument_list|,
 literal|"Show tool preset file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_SHOW_IN_FILE_MANAGER
 block|}
@@ -267,10 +255,7 @@ literal|"Save the active tool options to this "
 literal|"tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_presets_save_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_SAVE
 block|}
@@ -296,10 +281,7 @@ argument_list|,
 literal|"Restore this tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_presets_restore_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_RESTORE
 block|}
@@ -325,10 +307,7 @@ argument_list|,
 literal|"Delete this tool preset"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_DELETE
 block|}
@@ -354,10 +333,7 @@ argument_list|,
 literal|"Refresh tool presets"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_PRESET_REFRESH
 block|}
@@ -440,10 +416,7 @@ argument_list|(
 name|tool_presets_edit_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|data_edit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

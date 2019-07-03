@@ -138,10 +138,7 @@ argument_list|,
 literal|"Edit this entry"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|palette_editor_edit_color_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_EDITOR_EDIT
 block|}
@@ -167,10 +164,7 @@ argument_list|,
 literal|"Delete this entry"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|palette_editor_delete_color_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_EDITOR_DELETE
 block|}
@@ -203,10 +197,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_editor_edit_active_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -419,10 +410,7 @@ argument_list|(
 name|palette_editor_new_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|palette_editor_new_color_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -438,10 +426,7 @@ argument_list|(
 name|palette_editor_zoom_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|palette_editor_zoom_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

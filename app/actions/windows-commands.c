@@ -78,19 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpsessioninfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
 end_include
 
 begin_include
@@ -143,12 +131,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|windows_hide_docks_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_hide_docks_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_hide_docks_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -170,12 +162,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -209,12 +198,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_use_single_window_mode_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_use_single_window_mode_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_use_single_window_mode_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -236,12 +229,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -275,12 +265,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_show_tabs_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_show_tabs_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_show_tabs_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -302,12 +296,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -341,16 +332,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_set_tabs_position_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|windows_set_tabs_position_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_set_tabs_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -361,7 +352,7 @@ modifier|*
 name|gimp
 decl_stmt|;
 name|GimpPosition
-name|value
+name|position
 decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
@@ -370,19 +361,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|position
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpPosition
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|position
 operator|!=
 name|GIMP_GUI_CONFIG
 argument_list|(
@@ -401,7 +392,7 @@ name|config
 argument_list|,
 literal|"tabs-position"
 argument_list|,
-name|value
+name|position
 argument_list|,
 name|NULL
 argument_list|)
@@ -411,12 +402,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_show_display_next_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_show_display_next_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_show_display_next_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -506,12 +501,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_show_display_previous_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_show_display_previous_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_show_display_previous_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -603,12 +602,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_show_display_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_show_display_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_show_display_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -641,12 +644,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_show_dock_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_show_dock_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_show_dock_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -676,12 +683,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|windows_open_recent_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|windows_open_recent_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|windows_open_recent_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

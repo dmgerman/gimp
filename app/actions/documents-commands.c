@@ -168,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be7e96a0108
+DECL|struct|__anon28fd4cc30108
 block|{
 DECL|member|name
 specifier|const
@@ -232,12 +232,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|documents_open_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_open_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_open_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -339,12 +343,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_raise_or_open_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_raise_or_open_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_raise_or_open_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -471,12 +479,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_file_open_dialog_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_file_open_dialog_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_file_open_dialog_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -566,12 +578,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_copy_location_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_copy_location_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_copy_location_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -631,12 +647,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_show_in_file_manager_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_show_in_file_manager_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_show_in_file_manager_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -751,12 +771,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_remove_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_remove_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_remove_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -825,12 +849,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_clear_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_clear_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_clear_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1088,12 +1116,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_recreate_preview_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_recreate_preview_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_recreate_preview_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1220,12 +1252,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_reload_previews_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_reload_previews_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_reload_previews_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1340,12 +1376,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_remove_dangling_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|documents_remove_dangling_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|documents_remove_dangling_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

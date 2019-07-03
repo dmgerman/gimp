@@ -115,10 +115,7 @@ argument_list|,
 literal|"Load text from file"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_editor_load_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -144,10 +141,7 @@ argument_list|,
 literal|"Clear all text"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_editor_clear_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -364,10 +358,7 @@ name|NULL
 argument_list|,
 name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|text_editor_direction_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

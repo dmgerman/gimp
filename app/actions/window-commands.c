@@ -75,12 +75,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|window_close_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|window_close_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|window_close_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -169,12 +173,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|window_open_display_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|window_open_display_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|window_open_display_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -432,16 +440,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|window_move_to_screen_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|window_move_to_screen_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|window_move_to_screen_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -462,59 +470,12 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gtk_widget_is_toplevel
-argument_list|(
-name|widget
-argument_list|)
-condition|)
-name|widget
-operator|=
-name|gtk_widget_get_toplevel
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-name|screen
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|current
-argument_list|)
-argument_list|,
-literal|"screen"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|GDK_IS_SCREEN
-argument_list|(
-name|screen
-argument_list|)
-operator|&&
-name|screen
-operator|!=
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-condition|)
-block|{
-name|gtk_window_set_screen
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|screen
-argument_list|)
-expr_stmt|;
-block|}
+if|#
+directive|if
+literal|0
+block|if (! gtk_widget_is_toplevel (widget))     widget = gtk_widget_get_toplevel (widget);    screen = g_object_get_data (G_OBJECT (current), "screen");    if (GDK_IS_SCREEN (screen)&& screen != gtk_widget_get_screen (widget))     {       gtk_window_set_screen (GTK_WINDOW (widget), screen);     }
+endif|#
+directive|endif
 block|}
 end_function
 

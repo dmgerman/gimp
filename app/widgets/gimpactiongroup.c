@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02852c0103
+DECL|enum|__anon291f05bb0103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02852c0203
+DECL|enum|__anon291f05bb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1538,14 +1538,17 @@ name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"activate"
+literal|"gimp-activate"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|entries
 index|[
 name|i
 index|]
 operator|.
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->
@@ -1776,9 +1779,12 @@ operator|.
 name|help_id
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_action_set_active
+name|gimp_toggle_action_set_active
+argument_list|(
+name|GIMP_TOGGLE_ACTION
 argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|entries
 index|[
@@ -1801,14 +1807,17 @@ name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"toggled"
+literal|"gimp-change-state"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|entries
 index|[
 name|i
 index|]
 operator|.
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->
@@ -1858,7 +1867,7 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,const gchar * msg_context,const GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
+DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,const gchar * msg_context,const GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GimpActionCallback callback)
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1885,7 +1894,7 @@ parameter_list|,
 name|gint
 name|value
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 block|{
@@ -2157,9 +2166,12 @@ name|g_signal_connect
 argument_list|(
 name|first_action
 argument_list|,
-literal|"changed"
+literal|"gimp-change-state"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->
@@ -2174,7 +2186,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,const gchar * msg_context,const GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,const gchar * msg_context,const GimpEnumActionEntry * entries,guint n_entries,GimpActionCallback callback)
 name|gimp_action_group_add_enum_actions
 parameter_list|(
 name|GimpActionGroup
@@ -2194,7 +2206,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 block|{
@@ -2381,9 +2393,12 @@ name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"selected"
+literal|"gimp-activate"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->
@@ -2432,7 +2447,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,const gchar * msg_context,const GimpStringActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,const gchar * msg_context,const GimpStringActionEntry * entries,guint n_entries,GimpActionCallback callback)
 name|gimp_action_group_add_string_actions
 parameter_list|(
 name|GimpActionGroup
@@ -2452,7 +2467,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 block|{
@@ -2632,9 +2647,12 @@ name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"selected"
+literal|"gimp-activate"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->
@@ -2683,7 +2701,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_procedure_actions (GimpActionGroup * group,const GimpProcedureActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_procedure_actions (GimpActionGroup * group,const GimpProcedureActionEntry * entries,guint n_entries,GimpActionCallback callback)
 name|gimp_action_group_add_procedure_actions
 parameter_list|(
 name|GimpActionGroup
@@ -2698,7 +2716,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 block|{
@@ -2802,9 +2820,12 @@ name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"selected"
+literal|"gimp-activate"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|callback
+argument_list|)
 argument_list|,
 name|group
 operator|->

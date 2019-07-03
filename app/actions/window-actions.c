@@ -794,10 +794,7 @@ name|radio_group
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|window_move_to_screen_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

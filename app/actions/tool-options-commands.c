@@ -189,12 +189,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_options_save_new_preset_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|tool_options_save_new_preset_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|tool_options_save_new_preset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -268,14 +272,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_save_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tool_options_save_preset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_save_preset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -324,6 +329,16 @@ name|GimpToolPreset
 modifier|*
 name|preset
 decl_stmt|;
+name|gint
+name|index
+decl_stmt|;
+name|index
+operator|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|preset
 operator|=
 operator|(
@@ -336,7 +351,7 @@ name|tool_info
 operator|->
 name|presets
 argument_list|,
-name|value
+name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -378,14 +393,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_restore_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tool_options_restore_preset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_restore_preset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -434,6 +450,16 @@ name|GimpToolPreset
 modifier|*
 name|preset
 decl_stmt|;
+name|gint
+name|index
+decl_stmt|;
+name|index
+operator|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|preset
 operator|=
 operator|(
@@ -446,7 +472,7 @@ name|tool_info
 operator|->
 name|presets
 argument_list|,
-name|value
+name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -482,14 +508,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_edit_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tool_options_edit_preset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_edit_preset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -538,6 +565,16 @@ name|GimpToolPreset
 modifier|*
 name|preset
 decl_stmt|;
+name|gint
+name|index
+decl_stmt|;
+name|index
+operator|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|preset
 operator|=
 operator|(
@@ -550,7 +587,7 @@ name|tool_info
 operator|->
 name|presets
 argument_list|,
-name|value
+name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -573,14 +610,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_delete_preset_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tool_options_delete_preset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_delete_preset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -623,6 +661,16 @@ name|GimpToolPreset
 modifier|*
 name|preset
 decl_stmt|;
+name|gint
+name|index
+decl_stmt|;
+name|index
+operator|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|preset
 operator|=
 operator|(
@@ -635,7 +683,7 @@ name|tool_info
 operator|->
 name|presets
 argument_list|,
-name|value
+name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -695,12 +743,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|tool_options_reset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_reset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -753,12 +805,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_all_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|tool_options_reset_all_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tool_options_reset_all_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

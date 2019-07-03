@@ -75,15 +75,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dialogs_create_toplevel_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
+DECL|function|dialogs_create_toplevel_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dialogs_create_toplevel_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -95,6 +94,11 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|identifier
+decl_stmt|;
 name|return_if_no_widget
 argument_list|(
 name|widget
@@ -102,9 +106,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|identifier
+operator|=
+name|g_variant_get_string
+argument_list|(
+name|value
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|value
+name|identifier
 condition|)
 name|gimp_dialog_factory_dialog_new
 argument_list|(
@@ -121,7 +134,7 @@ comment|/*ui_manager*/
 argument_list|,
 name|widget
 argument_list|,
-name|value
+name|identifier
 argument_list|,
 operator|-
 literal|1
@@ -134,15 +147,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_create_dockable_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
+DECL|function|dialogs_create_dockable_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dialogs_create_dockable_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -158,6 +170,11 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|identifier
+decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
@@ -172,9 +189,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|identifier
+operator|=
+name|g_variant_get_string
+argument_list|(
+name|value
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|value
+name|identifier
 condition|)
 name|gimp_window_strategy_show_dockable_dialog
 argument_list|(
@@ -196,7 +222,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|value
+name|identifier
 argument_list|)
 expr_stmt|;
 block|}

@@ -126,10 +126,7 @@ argument_list|,
 literal|"Open the selected entry"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_open_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_OPEN
 block|}
@@ -155,10 +152,7 @@ argument_list|,
 literal|"Raise window if already open"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_raise_or_open_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_OPEN
 block|}
@@ -184,10 +178,7 @@ argument_list|,
 literal|"Open image dialog"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_file_open_dialog_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_OPEN
 block|}
@@ -213,10 +204,7 @@ argument_list|,
 literal|"Copy image location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_COPY_LOCATION
 block|}
@@ -242,10 +230,7 @@ argument_list|,
 literal|"Show image location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_SHOW_IN_FILE_MANAGER
 block|}
@@ -271,10 +256,7 @@ argument_list|,
 literal|"Remove the selected entry"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_remove_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REMOVE
 block|}
@@ -300,10 +282,7 @@ argument_list|,
 literal|"Clear the entire document history"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_clear_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_CLEAR
 block|}
@@ -329,10 +308,7 @@ argument_list|,
 literal|"Recreate preview"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_recreate_preview_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REFRESH
 block|}
@@ -358,10 +334,7 @@ argument_list|,
 literal|"Reload all previews"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_reload_previews_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REFRESH
 block|}
@@ -387,10 +360,7 @@ argument_list|,
 literal|"Remove entries for which the corresponding file is not available"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|documents_remove_dangling_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REFRESH
 block|}

@@ -172,10 +172,7 @@ name|NULL
 block|,
 literal|"<primary>X"
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_cut_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -196,10 +193,7 @@ name|NULL
 block|,
 literal|"<primary>C"
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_copy_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -220,10 +214,7 @@ name|NULL
 block|,
 literal|"<primary>V"
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_paste_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -244,10 +235,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_delete_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -268,10 +256,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_load_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -297,10 +282,7 @@ argument_list|,
 literal|"Clear all text"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_clear_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -326,10 +308,7 @@ argument_list|,
 literal|"Create a path from the outlines of the current text"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_text_to_path_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -355,10 +334,7 @@ argument_list|,
 literal|"Bend the text along the currently active path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_text_along_path_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -559,10 +535,7 @@ name|NULL
 argument_list|,
 name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|text_tool_direction_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|SET_HIDE_EMPTY

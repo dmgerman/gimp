@@ -393,12 +393,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_open_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_open_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_open_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -460,12 +464,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_as_layers_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_open_as_layers_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_open_as_layers_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -544,12 +552,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_location_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_open_location_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_open_location_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -594,14 +606,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_recent_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|file_open_recent_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_open_recent_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -617,6 +630,9 @@ modifier|*
 name|imagefile
 decl_stmt|;
 name|gint
+name|index
+decl_stmt|;
+name|gint
 name|num_entries
 decl_stmt|;
 name|return_if_no_gimp
@@ -624,6 +640,13 @@ argument_list|(
 name|gimp
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|index
+operator|=
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|num_entries
@@ -637,7 +660,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|index
 operator|>=
 name|num_entries
 condition|)
@@ -654,7 +677,7 @@ name|gimp
 operator|->
 name|documents
 argument_list|,
-name|value
+name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -827,14 +850,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|file_save_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_save_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -904,7 +928,10 @@ operator|=
 operator|(
 name|GimpSaveMode
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1311,12 +1338,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_create_template_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_create_template_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_create_template_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1398,12 +1429,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_revert_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_revert_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_revert_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1664,12 +1699,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_close_all_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_close_all_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_close_all_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1738,12 +1777,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_copy_location_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_copy_location_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_copy_location_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1825,12 +1868,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_show_in_file_manager_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_show_in_file_manager_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_show_in_file_manager_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1937,12 +1984,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_quit_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|file_quit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|file_quit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

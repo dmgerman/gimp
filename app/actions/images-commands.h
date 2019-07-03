@@ -24,6 +24,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -38,6 +42,10 @@ name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -51,6 +59,10 @@ parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

@@ -126,10 +126,7 @@ argument_list|,
 literal|"Paste the selected buffer as a new image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|buffers_paste_as_new_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_PASTE_AS_NEW_IMAGE
 block|}
@@ -155,10 +152,7 @@ argument_list|,
 literal|"Delete the selected buffer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|buffers_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_DELETE
 block|}
@@ -383,10 +377,7 @@ argument_list|(
 name|buffers_paste_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|buffers_paste_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -85,10 +85,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_gtk_inspector_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -104,10 +101,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_mem_profile_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -125,10 +119,7 @@ literal|"Invalidates the entire projection, measures the time it takes to "
 literal|"validate (render) the part that is visible in the active display, "
 literal|"and print the result to stdout."
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_benchmark_projection_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -144,10 +135,7 @@ name|NULL
 block|,
 literal|"Creates a new image showing the GEGL graph of this image"
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_show_image_graph_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -163,10 +151,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_dump_menus_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -182,10 +167,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_dump_managers_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -201,10 +183,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_dump_keyboard_shortcuts_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}
@@ -220,10 +199,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|debug_dump_attached_data_cmd_callback
-argument_list|)
 block|,
 name|NULL
 block|}

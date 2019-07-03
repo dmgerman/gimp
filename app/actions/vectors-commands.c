@@ -398,12 +398,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|vectors_edit_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_edit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_edit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -512,12 +516,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_edit_attributes_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_edit_attributes_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_edit_attributes_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -679,12 +687,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -828,12 +840,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_new_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_new_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_new_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -904,12 +920,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_raise_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_raise_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_raise_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -954,12 +974,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_raise_to_top_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_raise_to_top_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_raise_to_top_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1002,12 +1026,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lower_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_lower_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_lower_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1052,12 +1080,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lower_to_bottom_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_lower_to_bottom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_lower_to_bottom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1100,12 +1132,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_duplicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1178,12 +1214,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1227,12 +1267,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_merge_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_merge_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_merge_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1320,14 +1364,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|vectors_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1342,6 +1387,9 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
+name|GimpChannelOps
+name|operation
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|image
@@ -1351,6 +1399,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|operation
+operator|=
+operator|(
+name|GimpChannelOps
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_item_to_selection
 argument_list|(
 name|GIMP_ITEM
@@ -1358,10 +1416,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-operator|(
-name|GimpChannelOps
-operator|)
-name|value
+name|operation
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1382,14 +1437,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_selection_to_vectors_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|vectors_selection_to_vectors_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_selection_to_vectors_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1416,6 +1472,9 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+name|gboolean
+name|advanced
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -1436,9 +1495,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|advanced
+operator|=
+operator|(
+name|gboolean
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|value
+name|advanced
 condition|)
 name|procedure
 operator|=
@@ -1607,12 +1676,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_fill_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_fill_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_fill_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1665,12 +1738,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_fill_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_fill_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_fill_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1712,12 +1789,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_stroke_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_stroke_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_stroke_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1770,12 +1851,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_stroke_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_stroke_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_stroke_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1817,12 +1902,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_copy_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_copy_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_copy_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1883,12 +1972,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_paste_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_paste_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_paste_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2019,12 +2112,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_export_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_export_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_export_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2175,12 +2272,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_import_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_import_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_import_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2320,12 +2421,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2352,6 +2457,8 @@ name|items_visible_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -2365,12 +2472,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_linked_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_linked_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_linked_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2397,6 +2508,8 @@ name|items_linked_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -2410,12 +2523,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lock_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_lock_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_lock_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2442,6 +2559,8 @@ name|items_lock_content_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -2455,12 +2574,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lock_position_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|vectors_lock_position_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_lock_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2487,6 +2610,8 @@ name|items_lock_position_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -2500,14 +2625,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_color_tag_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|vectors_color_tag_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_color_tag_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2522,6 +2648,9 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
+name|GimpColorTag
+name|color_tag
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|image
@@ -2529,6 +2658,16 @@ argument_list|,
 name|vectors
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|color_tag
+operator|=
+operator|(
+name|GimpColorTag
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|items_color_tag_cmd_callback
@@ -2542,10 +2681,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-operator|(
-name|GimpColorTag
-operator|)
-name|value
+name|color_tag
 argument_list|)
 expr_stmt|;
 block|}
@@ -3304,14 +3440,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|vectors_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|vectors_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer

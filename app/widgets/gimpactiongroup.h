@@ -159,6 +159,29 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|typedef|GimpActionCallback
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpActionCallback
+function_decl|)
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpActionEntry
 struct|struct
@@ -195,7 +218,7 @@ modifier|*
 name|tooltip
 decl_stmt|;
 DECL|member|callback
-name|GCallback
+name|GimpActionCallback
 name|callback
 decl_stmt|;
 DECL|member|help_id
@@ -244,7 +267,7 @@ modifier|*
 name|tooltip
 decl_stmt|;
 DECL|member|callback
-name|GCallback
+name|GimpActionCallback
 name|callback
 decl_stmt|;
 DECL|member|is_active
@@ -703,7 +726,7 @@ parameter_list|,
 name|gint
 name|value
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 function_decl|;
@@ -730,7 +753,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 function_decl|;
@@ -757,7 +780,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 function_decl|;
@@ -779,7 +802,7 @@ parameter_list|,
 name|guint
 name|n_entries
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|)
 function_decl|;

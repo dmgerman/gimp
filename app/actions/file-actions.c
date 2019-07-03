@@ -295,10 +295,7 @@ argument_list|,
 literal|"Open an image file"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_open_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN
 block|}
@@ -324,10 +321,7 @@ argument_list|,
 literal|"Open an image file as layers"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_open_as_layers_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN_AS_LAYER
 block|}
@@ -353,10 +347,7 @@ argument_list|,
 literal|"Open an image file from a specified location"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_open_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN_LOCATION
 block|}
@@ -382,10 +373,7 @@ argument_list|,
 literal|"Create a new template from this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_create_template_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_CREATE_TEMPLATE
 block|}
@@ -411,10 +399,7 @@ argument_list|,
 literal|"Reload the image file from disk"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_revert_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_REVERT
 block|}
@@ -440,10 +425,7 @@ argument_list|,
 literal|"Close all opened images"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_close_all_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_CLOSE_ALL
 block|}
@@ -469,10 +451,7 @@ argument_list|,
 literal|"Copy image file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_COPY_LOCATION
 block|}
@@ -498,10 +477,7 @@ argument_list|,
 literal|"Show image file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_SHOW_IN_FILE_MANAGER
 block|}
@@ -527,10 +503,7 @@ argument_list|,
 literal|"Quit the GNU Image Manipulation Program"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|file_quit_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_QUIT
 block|}
@@ -794,10 +767,7 @@ argument_list|(
 name|file_save_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|file_save_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|n_entries
@@ -964,10 +934,7 @@ name|entries
 argument_list|,
 name|n_entries
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|file_open_recent_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

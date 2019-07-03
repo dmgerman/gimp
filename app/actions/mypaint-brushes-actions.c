@@ -132,10 +132,7 @@ argument_list|,
 literal|"Create a new MyPaint brush"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_NEW
 block|}
@@ -161,10 +158,7 @@ argument_list|,
 literal|"Duplicate this MyPaint brush"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_DUPLICATE
 block|}
@@ -190,10 +184,7 @@ argument_list|,
 literal|"Copy MyPaint brush file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_COPY_LOCATION
 block|}
@@ -219,10 +210,7 @@ argument_list|,
 literal|"Show MyPaint brush file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_SHOW_IN_FILE_MANAGER
 block|}
@@ -248,10 +236,7 @@ argument_list|,
 literal|"Delete this MyPaint brush"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_DELETE
 block|}
@@ -277,10 +262,7 @@ argument_list|,
 literal|"Refresh MyPaint brushes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_MYPAINT_BRUSH_REFRESH
 block|}
@@ -363,10 +345,7 @@ argument_list|(
 name|mypaint_brushes_edit_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|data_edit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

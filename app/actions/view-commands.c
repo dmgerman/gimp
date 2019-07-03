@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimptoggleaction.h"
 end_include
 
@@ -332,12 +326,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|view_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -404,12 +402,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_close_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_close_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_close_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -465,12 +467,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_center_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_scroll_center_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_scroll_center_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -504,12 +510,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fit_in_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_zoom_fit_in_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_fit_in_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -539,12 +549,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fill_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_zoom_fill_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_fill_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -574,12 +588,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_selection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_zoom_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -664,12 +682,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_revert_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_zoom_revert_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_revert_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -699,14 +721,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|view_zoom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -717,6 +740,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_shell
 argument_list|(
 name|shell
@@ -724,12 +750,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-switch|switch
-condition|(
+name|select_type
+operator|=
 operator|(
 name|GimpActionSelectType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+switch|switch
+condition|(
+name|select_type
 condition|)
 block|{
 case|case
@@ -838,10 +871,7 @@ name|scale
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|scale
 argument_list|,
@@ -898,16 +928,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_explicit_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|view_zoom_explicit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_zoom_explicit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -918,7 +948,7 @@ modifier|*
 name|shell
 decl_stmt|;
 name|gint
-name|value
+name|factor
 decl_stmt|;
 name|return_if_no_shell
 argument_list|(
@@ -927,19 +957,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|factor
 operator|=
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|factor
 operator|!=
 literal|0
 comment|/* not Other... */
@@ -949,7 +976,7 @@ if|if
 condition|(
 name|fabs
 argument_list|(
-name|value
+name|factor
 operator|-
 name|gimp_zoom_model_get_factor
 argument_list|(
@@ -970,7 +997,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|value
+name|factor
 operator|/
 literal|10000
 argument_list|,
@@ -980,6 +1007,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/* not a GimpActionCallback */
+end_comment
 
 begin_function
 name|void
@@ -1039,12 +1070,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_dot_for_dot_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_dot_for_dot_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_dot_for_dot_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1077,12 +1112,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1154,158 +1186,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_flip_horizontally_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_flip_horizontally_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_flip_horizontally_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDisplay
+name|GVariant
 modifier|*
-name|display
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|gboolean
-name|active
-decl_stmt|;
-name|return_if_no_display
-argument_list|(
-name|display
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|gimp_display_get_shell
-argument_list|(
-name|display
-argument_list|)
-expr_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|active
-operator|!=
-name|shell
-operator|->
-name|flip_horizontally
-condition|)
-block|{
-name|gimp_display_shell_flip
-argument_list|(
-name|shell
-argument_list|,
-name|active
-argument_list|,
-name|shell
-operator|->
-name|flip_vertically
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|view_flip_vertically_cmd_callback (GimpAction * action,gpointer data)
-name|view_flip_vertically_cmd_callback
-parameter_list|(
-name|GimpAction
-modifier|*
-name|action
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDisplay
-modifier|*
-name|display
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|gboolean
-name|active
-decl_stmt|;
-name|return_if_no_display
-argument_list|(
-name|display
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|gimp_display_get_shell
-argument_list|(
-name|display
-argument_list|)
-expr_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|active
-operator|!=
-name|shell
-operator|->
-name|flip_vertically
-condition|)
-block|{
-name|gimp_display_shell_flip
-argument_list|(
-name|shell
-argument_list|,
-name|shell
-operator|->
-name|flip_horizontally
-argument_list|,
-name|active
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|view_rotate_absolute_cmd_callback (GimpAction * action,gint value,gpointer data)
-name|view_rotate_absolute_cmd_callback
-parameter_list|(
-name|GimpAction
-modifier|*
-name|action
-parameter_list|,
-name|gint
 name|value
 parameter_list|,
 name|gpointer
@@ -1319,6 +1208,155 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|active
+operator|!=
+name|shell
+operator|->
+name|flip_horizontally
+condition|)
+block|{
+name|gimp_display_shell_flip
+argument_list|(
+name|shell
+argument_list|,
+name|active
+argument_list|,
+name|shell
+operator|->
+name|flip_vertically
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|view_flip_vertically_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
+name|view_flip_vertically_cmd_callback
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|gboolean
+name|active
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|active
+operator|!=
+name|shell
+operator|->
+name|flip_vertically
+condition|)
+block|{
+name|gimp_display_shell_flip
+argument_list|(
+name|shell
+argument_list|,
+name|shell
+operator|->
+name|flip_horizontally
+argument_list|,
+name|active
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|view_rotate_absolute_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
+name|view_rotate_absolute_cmd_callback
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|GimpActionSelectType
+name|select_type
 decl_stmt|;
 name|gdouble
 name|angle
@@ -1332,6 +1370,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|shell
 operator|=
 name|gimp_display_get_shell
@@ -1343,10 +1391,7 @@ name|angle
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1377,7 +1422,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|select_type
 operator|==
 name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
 condition|)
@@ -1395,14 +1440,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_rotate_relative_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|view_rotate_relative_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_rotate_relative_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1417,6 +1463,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|gdouble
 name|delta
 init|=
@@ -1427,6 +1476,16 @@ argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|shell
@@ -1440,10 +1499,7 @@ name|delta
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1477,12 +1533,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_rotate_other_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_rotate_other_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_rotate_other_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1520,14 +1580,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_horizontal_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|view_scroll_horizontal_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_scroll_horizontal_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1537,6 +1598,13 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|GtkAdjustment
+modifier|*
+name|adj
+decl_stmt|;
+name|GimpActionSelectType
+name|select_type
 decl_stmt|;
 name|gdouble
 name|offset
@@ -1548,64 +1616,63 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|adj
+operator|=
+name|shell
+operator|->
+name|hsbdata
+expr_stmt|;
 name|offset
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|gtk_adjustment_get_value
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_lower
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_upper
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 operator|-
 name|gtk_adjustment_get_page_size
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_lower
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 literal|1
 argument_list|,
 name|gtk_adjustment_get_step_increment
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_page_increment
 argument_list|(
-name|shell
-operator|->
-name|hsbdata
+name|adj
 argument_list|)
 argument_list|,
 literal|0
@@ -1627,14 +1694,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_scroll_vertical_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|view_scroll_vertical_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_scroll_vertical_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1644,6 +1712,13 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|GtkAdjustment
+modifier|*
+name|adj
+decl_stmt|;
+name|GimpActionSelectType
+name|select_type
 decl_stmt|;
 name|gdouble
 name|offset
@@ -1655,64 +1730,63 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+name|adj
+operator|=
+name|shell
+operator|->
+name|vsbdata
+expr_stmt|;
 name|offset
 operator|=
 name|action_select_value
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|gtk_adjustment_get_value
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_lower
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_upper
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 operator|-
 name|gtk_adjustment_get_page_size
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_lower
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 literal|1
 argument_list|,
 name|gtk_adjustment_get_step_increment
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 name|gtk_adjustment_get_page_increment
 argument_list|(
-name|shell
-operator|->
-name|vsbdata
+name|adj
 argument_list|)
 argument_list|,
 literal|0
@@ -1734,12 +1808,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_navigation_window_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_navigation_window_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_navigation_window_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1798,12 +1876,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_filters_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_display_filters_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_display_filters_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1880,12 +1962,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_reset_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_color_management_reset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_color_management_reset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1956,13 +2042,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_enable_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_color_management_enable_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_color_management_enable_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -1997,12 +2087,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|mode
@@ -2068,13 +2155,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_color_management_softproof_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_color_management_softproof_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_color_management_softproof_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2109,12 +2200,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|mode
@@ -2180,16 +2268,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_intent_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|view_display_intent_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_display_intent_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2204,13 +2292,23 @@ modifier|*
 name|color_config
 decl_stmt|;
 name|GimpColorRenderingIntent
-name|value
+name|intent
 decl_stmt|;
 name|return_if_no_shell
 argument_list|(
 name|shell
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|intent
+operator|=
+operator|(
+name|GimpColorRenderingIntent
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|color_config
@@ -2220,19 +2318,9 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|value
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|value
+name|intent
 operator|!=
 name|gimp_color_config_get_display_intent
 argument_list|(
@@ -2246,7 +2334,7 @@ name|color_config
 argument_list|,
 literal|"display-rendering-intent"
 argument_list|,
-name|value
+name|intent
 argument_list|,
 name|NULL
 argument_list|)
@@ -2263,12 +2351,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_bpc_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_display_bpc_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_display_bpc_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2301,12 +2393,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2342,12 +2431,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_profile_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_softproof_profile_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_softproof_profile_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2483,16 +2576,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_intent_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|view_softproof_intent_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_softproof_intent_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2507,13 +2600,23 @@ modifier|*
 name|color_config
 decl_stmt|;
 name|GimpColorRenderingIntent
-name|value
+name|intent
 decl_stmt|;
 name|return_if_no_shell
 argument_list|(
 name|shell
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|intent
+operator|=
+operator|(
+name|GimpColorRenderingIntent
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|color_config
@@ -2523,19 +2626,9 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|value
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|value
+name|intent
 operator|!=
 name|gimp_color_config_get_simulation_intent
 argument_list|(
@@ -2549,7 +2642,7 @@ name|color_config
 argument_list|,
 literal|"simulation-rendering-intent"
 argument_list|,
-name|value
+name|intent
 argument_list|,
 name|NULL
 argument_list|)
@@ -2566,12 +2659,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_bpc_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_softproof_bpc_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_softproof_bpc_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2604,12 +2701,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2645,12 +2739,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_softproof_gamut_check_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_softproof_gamut_check_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_softproof_gamut_check_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2683,12 +2781,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2724,12 +2819,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_selection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2751,12 +2850,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2782,12 +2878,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_layer_boundary_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_layer_boundary_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_layer_boundary_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2809,12 +2909,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2840,12 +2937,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_menubar_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_menubar_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_menubar_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2867,12 +2968,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2898,12 +2996,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_rulers_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_rulers_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_rulers_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2925,12 +3027,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -2956,12 +3055,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_scrollbars_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_scrollbars_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_scrollbars_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2983,12 +3086,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3014,12 +3114,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_statusbar_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_statusbar_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_statusbar_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3041,12 +3145,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3072,12 +3173,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_guides_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_guides_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_guides_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3099,12 +3204,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3130,12 +3232,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_grid_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_grid_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_grid_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3157,12 +3263,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3188,12 +3291,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_sample_points_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_toggle_sample_points_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_toggle_sample_points_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3215,12 +3322,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3246,12 +3350,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_guides_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_snap_to_guides_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_snap_to_guides_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3273,12 +3381,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3304,12 +3409,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_grid_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_snap_to_grid_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_snap_to_grid_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3331,12 +3440,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3362,12 +3468,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_canvas_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_snap_to_canvas_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_snap_to_canvas_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3389,12 +3499,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3420,12 +3527,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_vectors_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_snap_to_vectors_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_snap_to_vectors_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3447,12 +3558,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -3478,14 +3586,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_padding_color_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|view_padding_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_padding_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -3508,6 +3617,9 @@ name|GimpDisplayOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpCanvasPaddingMode
+name|padding_mode
+decl_stmt|;
 name|gboolean
 name|fullscreen
 decl_stmt|;
@@ -3516,6 +3628,16 @@ argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|padding_mode
+operator|=
+operator|(
+name|GimpCanvasPaddingMode
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|shell
@@ -3572,10 +3694,7 @@ name|PADDING_COLOR_DIALOG_KEY
 value|"gimp-padding-color-dialog"
 switch|switch
 condition|(
-operator|(
-name|GimpCanvasPaddingMode
-operator|)
-name|value
+name|padding_mode
 condition|)
 block|{
 case|case
@@ -3607,10 +3726,7 @@ name|gimp_display_shell_set_padding
 argument_list|(
 name|shell
 argument_list|,
-operator|(
-name|GimpCanvasPaddingMode
-operator|)
-name|value
+name|padding_mode
 argument_list|,
 operator|&
 name|options
@@ -3870,12 +3986,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_shrink_wrap_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_shrink_wrap_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_shrink_wrap_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3904,12 +4024,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_fullscreen_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|view_fullscreen_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|view_fullscreen_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3955,17 +4079,12 @@ condition|)
 block|{
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_image_window_set_fullscreen
 argument_list|(
 name|window

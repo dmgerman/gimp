@@ -1361,10 +1361,7 @@ argument_list|(
 name|dialogs_dockable_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dialogs_create_dockable_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_string_actions
@@ -1380,10 +1377,7 @@ argument_list|(
 name|dialogs_toplevel_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|dialogs_create_toplevel_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

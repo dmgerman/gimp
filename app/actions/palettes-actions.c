@@ -138,10 +138,7 @@ argument_list|,
 literal|"Create a new palette"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_NEW
 block|}
@@ -167,10 +164,7 @@ argument_list|,
 literal|"Import palette"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|palettes_import_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_IMPORT
 block|}
@@ -196,10 +190,7 @@ argument_list|,
 literal|"Duplicate this palette"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_DUPLICATE
 block|}
@@ -225,10 +216,7 @@ argument_list|,
 literal|"Merge palettes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|palettes_merge_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_MERGE
 block|}
@@ -254,10 +242,7 @@ argument_list|,
 literal|"Copy palette file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_COPY_LOCATION
 block|}
@@ -283,10 +268,7 @@ argument_list|,
 literal|"Show palette file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_SHOW_IN_FILE_MANAGER
 block|}
@@ -312,10 +294,7 @@ argument_list|,
 literal|"Delete this palette"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_DELETE
 block|}
@@ -341,10 +320,7 @@ argument_list|,
 literal|"Refresh palettes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_REFRESH
 block|}
@@ -427,10 +403,7 @@ argument_list|(
 name|palettes_edit_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|data_edit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

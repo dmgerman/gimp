@@ -371,10 +371,7 @@ argument_list|,
 literal|"Create a new image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILE_NEW
 block|}
@@ -400,10 +397,7 @@ argument_list|,
 literal|"Create a duplicate of this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_DUPLICATE
 block|}
@@ -429,10 +423,7 @@ argument_list|,
 literal|"Set a color profile on the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_color_profile_assign_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_COLOR_PROFILE_ASSIGN
 block|}
@@ -458,10 +449,7 @@ argument_list|,
 literal|"Apply a color profile to the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_color_profile_convert_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_COLOR_PROFILE_CONVERT
 block|}
@@ -487,10 +475,7 @@ argument_list|,
 literal|"Remove the image's color profile"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_color_profile_discard_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_COLOR_PROFILE_DISCARD
 block|}
@@ -516,10 +501,7 @@ argument_list|,
 literal|"Save the image's color profile to an ICC file"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_color_profile_save_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_COLOR_PROFILE_SAVE
 block|}
@@ -545,10 +527,7 @@ argument_list|,
 literal|"Adjust the image dimensions"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_resize_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_RESIZE
 block|}
@@ -574,10 +553,7 @@ argument_list|,
 literal|"Resize the image to enclose all layers"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_resize_to_layers_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_RESIZE_TO_LAYERS
 block|}
@@ -603,10 +579,7 @@ argument_list|,
 literal|"Resize the image to the extents of the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_resize_to_selection_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_RESIZE_TO_SELECTION
 block|}
@@ -632,10 +605,7 @@ argument_list|,
 literal|"Adjust the print resolution"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_print_size_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_PRINT_SIZE
 block|}
@@ -661,10 +631,7 @@ argument_list|,
 literal|"Change the size of the image content"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_scale_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_SCALE
 block|}
@@ -690,10 +657,7 @@ argument_list|,
 literal|"Crop the image to the extents of the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_crop_to_selection_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_CROP
 block|}
@@ -719,10 +683,7 @@ argument_list|,
 literal|"Crop the image to the extents of its content (remove empty borders from the image)"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_crop_to_content_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_CROP
 block|}
@@ -748,10 +709,7 @@ argument_list|,
 literal|"Merge all visible layers into one layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_merge_layers_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_MERGE_LAYERS
 block|}
@@ -777,10 +735,7 @@ argument_list|,
 literal|"Merge all layers into one and remove transparency"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_flatten_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_FLATTEN
 block|}
@@ -806,10 +761,7 @@ argument_list|,
 literal|"Configure the grid for this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_configure_grid_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_GRID
 block|}
@@ -835,10 +787,7 @@ argument_list|,
 literal|"Display information about this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_properties_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_PROPERTIES
 block|}
@@ -878,10 +827,7 @@ literal|"This is the same as discarding the image's color profile, but "
 literal|"allows to easily restore the profile."
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_color_profile_use_srgb_cmd_callback
-argument_list|)
 block|,
 name|TRUE
 block|,
@@ -1458,11 +1404,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|image_convert_base_type_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -1481,11 +1424,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|image_convert_precision_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -1504,11 +1444,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|image_convert_trc_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1523,11 +1460,8 @@ argument_list|(
 name|image_flip_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|image_flip_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1542,10 +1476,7 @@ argument_list|(
 name|image_rotate_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|image_rotate_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 DECL|macro|SET_ALWAYS_SHOW_IMAGE (action,show)

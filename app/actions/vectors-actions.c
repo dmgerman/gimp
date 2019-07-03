@@ -171,10 +171,7 @@ argument_list|,
 literal|"Edit the active path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_edit_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_VECTORS
 block|}
@@ -200,10 +197,7 @@ argument_list|,
 literal|"Edit path attributes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_edit_attributes_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_EDIT
 block|}
@@ -229,10 +223,7 @@ argument_list|,
 literal|"Create a new path..."
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_NEW
 block|}
@@ -258,10 +249,7 @@ argument_list|,
 literal|"Create a new path with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_new_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_NEW
 block|}
@@ -287,10 +275,7 @@ argument_list|,
 literal|"Duplicate this path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_DUPLICATE
 block|}
@@ -316,10 +301,7 @@ argument_list|,
 literal|"Delete this path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_DELETE
 block|}
@@ -340,10 +322,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_merge_visible_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_MERGE_VISIBLE
 block|}
@@ -369,10 +348,7 @@ argument_list|,
 literal|"Raise this path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_raise_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_RAISE
 block|}
@@ -398,10 +374,7 @@ argument_list|,
 literal|"Raise this path to the top"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_raise_to_top_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_RAISE_TO_TOP
 block|}
@@ -427,10 +400,7 @@ argument_list|,
 literal|"Lower this path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_lower_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_LOWER
 block|}
@@ -456,10 +426,7 @@ argument_list|,
 literal|"Lower this path to the bottom"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_lower_to_bottom_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_LOWER_TO_BOTTOM
 block|}
@@ -485,10 +452,7 @@ argument_list|,
 literal|"Fill the path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_fill_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_FILL
 block|}
@@ -514,10 +478,7 @@ argument_list|,
 literal|"Fill the path with last values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_fill_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_FILL
 block|}
@@ -543,10 +504,7 @@ argument_list|,
 literal|"Paint along the path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_stroke_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_STROKE
 block|}
@@ -572,10 +530,7 @@ argument_list|,
 literal|"Paint along the path with last values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_stroke_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_STROKE
 block|}
@@ -596,10 +551,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_copy_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_COPY
 block|}
@@ -620,10 +572,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_paste_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_PASTE
 block|}
@@ -644,10 +593,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_export_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_EXPORT
 block|}
@@ -668,10 +614,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_import_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATH_IMPORT
 block|}
@@ -704,10 +647,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_visible_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -730,10 +670,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_linked_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -757,10 +694,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_lock_content_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -783,10 +717,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_lock_position_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1483,11 +1414,8 @@ argument_list|(
 name|vectors_color_tag_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_color_tag_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1502,11 +1430,8 @@ argument_list|(
 name|vectors_to_selection_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_to_selection_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1521,11 +1446,8 @@ argument_list|(
 name|vectors_selection_to_vectors_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_selection_to_vectors_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1540,10 +1462,7 @@ argument_list|(
 name|vectors_select_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|vectors_select_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|items_actions_setup

@@ -198,18 +198,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -716,12 +704,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|image_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -804,12 +796,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_duplicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -900,16 +896,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_base_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|image_convert_base_type_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_convert_base_type_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -936,7 +932,7 @@ modifier|*
 name|dialog
 decl_stmt|;
 name|GimpImageBaseType
-name|value
+name|base_type
 decl_stmt|;
 name|GError
 modifier|*
@@ -965,19 +961,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|base_type
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpImageBaseType
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|base_type
 operator|==
 name|gimp_image_get_base_type
 argument_list|(
@@ -1030,7 +1026,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|value
+name|base_type
 condition|)
 block|{
 case|case
@@ -1086,7 +1082,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|base_type
 operator|==
 name|GIMP_RGB
 condition|)
@@ -1166,7 +1162,7 @@ name|gimp_image_convert_type
 argument_list|(
 name|image
 argument_list|,
-name|value
+name|base_type
 argument_list|,
 name|NULL
 argument_list|,
@@ -1289,16 +1285,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_precision_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|image_convert_precision_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_convert_precision_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1325,7 +1321,7 @@ modifier|*
 name|dialog
 decl_stmt|;
 name|GimpComponentType
-name|value
+name|component_type
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -1348,19 +1344,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|component_type
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpComponentType
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|component_type
 operator|==
 name|gimp_image_get_component_type
 argument_list|(
@@ -1424,7 +1420,7 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|value
+name|component_type
 argument_list|,
 name|config
 operator|->
@@ -1474,16 +1470,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_trc_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|image_convert_trc_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_convert_trc_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1498,7 +1494,7 @@ modifier|*
 name|display
 decl_stmt|;
 name|GimpTRCType
-name|value
+name|trc_type
 decl_stmt|;
 name|GimpPrecision
 name|precision
@@ -1517,19 +1513,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|trc_type
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpTRCType
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|trc_type
 operator|==
 name|gimp_babl_format_get_trc
 argument_list|(
@@ -1551,7 +1547,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|value
+name|trc_type
 argument_list|)
 expr_stmt|;
 name|gimp_image_convert_precision
@@ -1582,12 +1578,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_use_srgb_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_color_profile_use_srgb_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_color_profile_use_srgb_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1609,12 +1609,9 @@ argument_list|)
 expr_stmt|;
 name|use_srgb
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -1647,12 +1644,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_assign_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_color_profile_assign_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_color_profile_assign_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1797,12 +1798,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_convert_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_color_profile_convert_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_color_profile_convert_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1964,12 +1969,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_discard_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_color_profile_discard_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_color_profile_discard_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2133,12 +2142,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_color_profile_save_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_color_profile_save_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_color_profile_save_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2335,12 +2348,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_resize_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_resize_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2506,12 +2523,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_to_layers_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_resize_to_layers_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_resize_to_layers_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2599,12 +2620,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_to_selection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_resize_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_resize_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2684,12 +2709,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_print_size_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_print_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_print_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2810,12 +2839,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_scale_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_scale_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_scale_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2961,14 +2994,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flip_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|image_flip_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_flip_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2987,11 +3021,24 @@ name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;
+name|GimpOrientationType
+name|orientation
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|orientation
+operator|=
+operator|(
+name|GimpOrientationType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|image
@@ -3027,10 +3074,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-operator|(
-name|GimpOrientationType
-operator|)
-name|value
+name|orientation
 argument_list|,
 name|progress
 argument_list|)
@@ -3054,14 +3098,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_rotate_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|image_rotate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_rotate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -3080,11 +3125,24 @@ name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;
+name|GimpRotationType
+name|rotation
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|display
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|rotation
+operator|=
+operator|(
+name|GimpRotationType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|image
@@ -3120,10 +3178,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-operator|(
-name|GimpRotationType
-operator|)
-name|value
+name|rotation
 argument_list|,
 name|progress
 argument_list|)
@@ -3147,12 +3202,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_crop_to_selection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_crop_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_crop_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3271,12 +3330,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_crop_to_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_crop_to_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_crop_to_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3435,12 +3498,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_merge_layers_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_merge_layers_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_merge_layers_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3575,12 +3642,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flatten_image_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_flatten_image_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_flatten_image_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3683,12 +3754,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_configure_grid_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_configure_grid_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_configure_grid_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3798,12 +3873,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_properties_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|image_properties_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|image_properties_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

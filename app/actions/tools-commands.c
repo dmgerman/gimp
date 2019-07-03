@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpenumaction.h"
 end_include
 
@@ -179,7 +185,8 @@ name|gchar
 modifier|*
 name|action_desc
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|)
 function_decl|;
@@ -191,15 +198,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tools_select_cmd_callback (GimpAction * action,const gchar * value,gpointer data)
+DECL|function|tools_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -223,6 +229,11 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|tool_name
+decl_stmt|;
 name|gboolean
 name|rotate_layer
 init|=
@@ -235,12 +246,21 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|tool_name
+operator|=
+name|g_variant_get_string
+argument_list|(
+name|value
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  special case gimp-rotate-tool being called from the Layer menu  */
 if|if
 condition|(
 name|strcmp
 argument_list|(
-name|value
+name|tool_name
 argument_list|,
 literal|"gimp-rotate-layer"
 argument_list|)
@@ -248,13 +268,13 @@ operator|==
 literal|0
 condition|)
 block|{
+name|tool_name
+operator|=
+literal|"gimp-rotate-tool"
+expr_stmt|;
 name|rotate_layer
 operator|=
 name|TRUE
-expr_stmt|;
-name|value
-operator|=
-literal|"gimp-rotate-tool"
 expr_stmt|;
 block|}
 name|tool_info
@@ -263,7 +283,7 @@ name|gimp_get_tool_info
 argument_list|(
 name|gimp
 argument_list|,
-name|value
+name|tool_name
 argument_list|)
 expr_stmt|;
 name|context
@@ -345,14 +365,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_color_average_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_color_average_radius_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_color_average_radius_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -367,11 +388,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -395,10 +429,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -431,14 +462,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_size_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -453,11 +485,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -481,10 +526,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -517,14 +559,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_angle_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_angle_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -539,11 +582,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -567,10 +623,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -603,14 +656,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_aspect_ratio_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_aspect_ratio_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_aspect_ratio_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -625,11 +679,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -653,10 +720,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -689,14 +753,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_spacing_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_spacing_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -711,11 +776,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -739,10 +817,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -775,14 +850,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_hardness_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_hardness_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -797,11 +873,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -825,10 +914,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -861,14 +947,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paintbrush_force_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_paintbrush_force_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_paintbrush_force_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -883,11 +970,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -911,10 +1011,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -947,14 +1044,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_size_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_ink_blob_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -969,11 +1067,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -997,10 +1108,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1033,14 +1141,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_aspect_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_ink_blob_aspect_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1055,11 +1164,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1083,10 +1205,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1119,14 +1238,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_ink_blob_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_ink_blob_angle_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_ink_blob_angle_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1141,11 +1261,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1169,10 +1302,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1214,14 +1344,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_airbrush_rate_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_airbrush_rate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_airbrush_rate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1236,11 +1367,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1264,10 +1408,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1300,14 +1441,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_airbrush_flow_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_airbrush_flow_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_airbrush_flow_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1322,11 +1464,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1350,10 +1505,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1386,14 +1538,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_mybrush_radius_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_mybrush_radius_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_mybrush_radius_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1408,11 +1561,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1436,10 +1602,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1472,14 +1635,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_mybrush_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_mybrush_hardness_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_mybrush_hardness_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1494,11 +1658,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1522,10 +1699,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1558,14 +1732,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_fg_select_brush_size_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_fg_select_brush_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_fg_select_brush_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1580,11 +1755,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1608,10 +1796,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1644,14 +1829,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_transform_preview_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_transform_preview_opacity_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_transform_preview_opacity_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1666,11 +1852,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1694,10 +1893,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1730,14 +1926,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_warp_effect_size_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_warp_effect_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_warp_effect_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1752,11 +1949,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1780,10 +1990,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1816,14 +2023,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_warp_effect_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_warp_effect_hardness_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_warp_effect_hardness_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1838,11 +2046,24 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_context
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1866,10 +2087,7 @@ condition|)
 block|{
 name|action_select_property
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|action_data_get_display
 argument_list|(
@@ -1902,14 +2120,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_opacity_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_opacity_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1976,14 +2195,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_size_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_size_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_size_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2050,14 +2270,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_aspect_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_aspect_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_aspect_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2124,14 +2345,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_angle_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_angle_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_angle_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2198,14 +2420,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_spacing_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_spacing_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_spacing_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2272,14 +2495,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_hardness_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_hardness_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_hardness_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2346,14 +2570,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_force_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_force_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_force_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2420,14 +2645,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_object_1_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_object_1_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_object_1_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2494,14 +2720,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_object_2_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|tools_object_2_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|tools_object_2_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2573,7 +2800,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tools_activate_enum_action (const gchar * action_desc,gint value)
+DECL|function|tools_activate_enum_action (const gchar * action_desc,GVariant * value)
 name|tools_activate_enum_action
 parameter_list|(
 specifier|const
@@ -2581,7 +2808,8 @@ name|gchar
 modifier|*
 name|action_desc
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|)
 block|{
@@ -2663,9 +2891,9 @@ operator|->
 name|value_variable
 condition|)
 block|{
-name|gimp_enum_action_selected
+name|gimp_action_emit_activate
 argument_list|(
-name|GIMP_ENUM_ACTION
+name|GIMP_ACTION
 argument_list|(
 name|action
 argument_list|)

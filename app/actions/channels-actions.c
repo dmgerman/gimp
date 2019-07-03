@@ -165,10 +165,7 @@ argument_list|,
 literal|"Edit the channel's name, color and opacity"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_edit_attributes_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_EDIT
 block|}
@@ -194,10 +191,7 @@ argument_list|,
 literal|"Create a new channel"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_NEW
 block|}
@@ -223,10 +217,7 @@ argument_list|,
 literal|"Create a new channel with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_new_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_NEW
 block|}
@@ -252,10 +243,7 @@ argument_list|,
 literal|"Create a duplicate of this channel and add it to the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_DUPLICATE
 block|}
@@ -281,10 +269,7 @@ argument_list|,
 literal|"Delete this channel"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_DELETE
 block|}
@@ -310,10 +295,7 @@ argument_list|,
 literal|"Raise this channel one step in the channel stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_raise_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_RAISE
 block|}
@@ -339,10 +321,7 @@ argument_list|,
 literal|"Raise this channel to the top of the channel stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_raise_to_top_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_RAISE_TO_TOP
 block|}
@@ -368,10 +347,7 @@ argument_list|,
 literal|"Lower this channel one step in the channel stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_lower_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_LOWER
 block|}
@@ -397,10 +373,7 @@ argument_list|,
 literal|"Lower this channel to the bottom of the channel stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_lower_to_bottom_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_LOWER_TO_BOTTOM
 block|}
@@ -433,10 +406,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_visible_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -459,10 +429,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_linked_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -486,10 +453,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_lock_content_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -512,10 +476,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|channels_lock_position_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1088,11 +1049,8 @@ argument_list|(
 name|channels_color_tag_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|channels_color_tag_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1107,11 +1065,8 @@ argument_list|(
 name|channels_to_selection_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|channels_to_selection_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -1126,10 +1081,7 @@ argument_list|(
 name|channels_select_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|channels_select_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|items_actions_setup

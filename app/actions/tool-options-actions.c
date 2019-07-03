@@ -105,7 +105,7 @@ name|gchar
 modifier|*
 name|action_prefix
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|,
 specifier|const
@@ -260,10 +260,7 @@ literal|""
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_save_new_preset_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_OPTIONS_SAVE
 block|}
@@ -289,10 +286,7 @@ argument_list|,
 literal|"Reset to default values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_reset_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_OPTIONS_RESET
 block|}
@@ -318,10 +312,7 @@ argument_list|,
 literal|"Reset all tool options"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_reset_all_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TOOL_OPTIONS_RESET
 block|}
@@ -498,10 +489,7 @@ name|group
 argument_list|,
 literal|"tool-options-save-preset"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_save_preset_cmd_callback
-argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_SAVE
 argument_list|,
@@ -522,10 +510,7 @@ name|group
 argument_list|,
 literal|"tool-options-restore-preset"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_restore_preset_cmd_callback
-argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_RESTORE
 argument_list|,
@@ -546,10 +531,7 @@ name|group
 argument_list|,
 literal|"tool-options-edit-preset"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_edit_preset_cmd_callback
-argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_EDIT
 argument_list|,
@@ -570,10 +552,7 @@ name|group
 argument_list|,
 literal|"tool-options-delete-preset"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|tool_options_delete_preset_cmd_callback
-argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DELETE
 argument_list|,
@@ -598,7 +577,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GCallback callback,const gchar * help_id,GimpContainer * presets,gboolean need_writable,gboolean need_deletable)
+DECL|function|tool_options_actions_update_presets (GimpActionGroup * group,const gchar * action_prefix,GimpActionCallback callback,const gchar * help_id,GimpContainer * presets,gboolean need_writable,gboolean need_deletable)
 name|tool_options_actions_update_presets
 parameter_list|(
 name|GimpActionGroup
@@ -610,7 +589,7 @@ name|gchar
 modifier|*
 name|action_prefix
 parameter_list|,
-name|GCallback
+name|GimpActionCallback
 name|callback
 parameter_list|,
 specifier|const

@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -137,16 +125,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dashboard_update_interval_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|dashboard_update_interval_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_update_interval_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -166,12 +154,9 @@ name|update_interval
 decl_stmt|;
 name|update_interval
 operator|=
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_dashboard_set_update_interval
@@ -186,16 +171,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_history_duration_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|dashboard_history_duration_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_history_duration_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -215,12 +200,9 @@ name|history_duration
 decl_stmt|;
 name|history_duration
 operator|=
-name|gimp_radio_action_get_current_value
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_dashboard_set_history_duration
@@ -235,12 +217,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_record_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dashboard_log_record_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_log_record_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -639,12 +625,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_add_marker_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dashboard_log_add_marker_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_log_add_marker_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -755,12 +745,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_log_add_empty_marker_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dashboard_log_add_empty_marker_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_log_add_empty_marker_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -787,12 +781,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_reset_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dashboard_reset_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_reset_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -817,12 +815,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|dashboard_low_swap_space_warning_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|dashboard_low_swap_space_warning_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|dashboard_low_swap_space_warning_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -839,17 +841,12 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|low_swap_space_warning
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|low_swap_space_warning
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_dashboard_set_low_swap_space_warning
 argument_list|(
 name|dashboard

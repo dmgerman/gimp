@@ -72,18 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/dialogs.h"
 end_include
 
@@ -190,12 +178,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|quick_mask_toggle_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|quick_mask_toggle_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|quick_mask_toggle_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -217,12 +209,9 @@ argument_list|)
 expr_stmt|;
 name|active
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -253,16 +242,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|quick_mask_invert_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|quick_mask_invert_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|quick_mask_invert_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -272,8 +261,8 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
-name|value
+name|gboolean
+name|inverted
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -282,19 +271,19 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|value
+name|inverted
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|gboolean
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|value
+name|inverted
 operator|!=
 name|gimp_image_get_quick_mask_inverted
 argument_list|(
@@ -318,12 +307,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|quick_mask_configure_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|quick_mask_configure_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|quick_mask_configure_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

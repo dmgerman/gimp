@@ -106,10 +106,7 @@ argument_list|,
 literal|"Open the GIMP user manual"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|help_help_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_HELP
 block|}
@@ -135,10 +132,7 @@ argument_list|,
 literal|"Show the help for a specific user interface item"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|help_context_help_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_HELP_CONTEXT
 block|}

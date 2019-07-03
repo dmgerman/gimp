@@ -120,10 +120,7 @@ argument_list|,
 literal|"Clear error console"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_clear_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_ERRORS_CLEAR
 block|}
@@ -149,10 +146,7 @@ argument_list|,
 literal|"Select all error messages"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_select_all_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_ERRORS_SELECT_ALL
 block|}
@@ -279,10 +273,7 @@ argument_list|,
 literal|"Highlight error console on errors"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_highlight_error_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -310,10 +301,7 @@ argument_list|,
 literal|"Highlight error console on warnings"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_highlight_warning_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -341,10 +329,7 @@ argument_list|,
 literal|"Highlight error console on messages"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_highlight_info_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -391,10 +376,7 @@ argument_list|(
 name|error_console_save_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|error_console_save_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_toggle_actions

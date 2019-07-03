@@ -138,10 +138,7 @@ argument_list|,
 literal|"Create a new gradient"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_NEW
 block|}
@@ -167,10 +164,7 @@ argument_list|,
 literal|"Duplicate this gradient"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_DUPLICATE
 block|}
@@ -196,10 +190,7 @@ argument_list|,
 literal|"Copy gradient file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_COPY_LOCATION
 block|}
@@ -225,10 +216,7 @@ argument_list|,
 literal|"Show gradient file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_SHOW_IN_FILE_MANAGER
 block|}
@@ -254,10 +242,7 @@ argument_list|,
 literal|"Save gradient as POV-Ray"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|gradients_save_as_pov_ray_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_SAVE_AS_POV
 block|}
@@ -283,10 +268,7 @@ argument_list|,
 literal|"Delete this gradient"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_DELETE
 block|}
@@ -312,10 +294,7 @@ argument_list|,
 literal|"Refresh gradients"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_GRADIENT_REFRESH
 block|}
@@ -398,10 +377,7 @@ argument_list|(
 name|gradients_edit_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|data_edit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

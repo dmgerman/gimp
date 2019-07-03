@@ -117,14 +117,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|buffers_paste_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|buffers_paste_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|buffers_paste_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -158,7 +159,10 @@ init|=
 operator|(
 name|GimpPasteType
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
 decl_stmt|;
 name|container
 operator|=
@@ -330,12 +334,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_paste_as_new_image_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|buffers_paste_as_new_image_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|buffers_paste_as_new_image_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -461,12 +469,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|buffers_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|buffers_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

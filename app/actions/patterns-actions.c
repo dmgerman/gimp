@@ -132,10 +132,7 @@ argument_list|,
 literal|"Open this pattern as an image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_open_as_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_OPEN_AS_IMAGE
 block|}
@@ -161,10 +158,7 @@ argument_list|,
 literal|"Create a new pattern"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_NEW
 block|}
@@ -190,10 +184,7 @@ argument_list|,
 literal|"Duplicate this pattern"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_DUPLICATE
 block|}
@@ -219,10 +210,7 @@ argument_list|,
 literal|"Copy pattern file location to clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_copy_location_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_COPY_LOCATION
 block|}
@@ -248,10 +236,7 @@ argument_list|,
 literal|"Show pattern file location in the file manager"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_show_in_file_manager_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_SHOW_IN_FILE_MANAGER
 block|}
@@ -277,10 +262,7 @@ argument_list|,
 literal|"Delete this pattern"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_DELETE
 block|}
@@ -306,10 +288,7 @@ argument_list|,
 literal|"Refresh patterns"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_REFRESH
 block|}
@@ -392,10 +371,7 @@ argument_list|(
 name|patterns_edit_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|data_edit_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

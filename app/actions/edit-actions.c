@@ -291,10 +291,7 @@ argument_list|,
 literal|"Undo the last operation"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_undo_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_UNDO
 block|}
@@ -320,10 +317,7 @@ argument_list|,
 literal|"Redo the last operation that was undone"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_redo_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_REDO
 block|}
@@ -349,10 +343,7 @@ argument_list|,
 literal|"Undo the last operation, skipping visibility changes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_strong_undo_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_STRONG_UNDO
 block|}
@@ -378,10 +369,7 @@ argument_list|,
 literal|"Redo the last operation that was undone, skipping visibility changes"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_strong_redo_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_STRONG_REDO
 block|}
@@ -407,10 +395,7 @@ argument_list|,
 literal|"Remove all operations from the undo history"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_undo_clear_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_UNDO_CLEAR
 block|}
@@ -436,10 +421,7 @@ argument_list|,
 literal|"Move the selected pixels to the clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_cut_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_CUT
 block|}
@@ -465,10 +447,7 @@ argument_list|,
 literal|"Copy the selected pixels to the clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_copy_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_COPY
 block|}
@@ -495,10 +474,7 @@ argument_list|,
 literal|"Copy what is visible in the selected region"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_copy_visible_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_COPY_VISIBLE
 block|}
@@ -524,10 +500,7 @@ argument_list|,
 literal|"Create a new image from the content of the clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_paste_as_new_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
 block|}
@@ -553,10 +526,7 @@ argument_list|,
 literal|"Create a new image from the content of the clipboard"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_paste_as_new_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_PASTE_AS_NEW_IMAGE
 block|}
@@ -582,10 +552,7 @@ argument_list|,
 literal|"Move the selected pixels to a named buffer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_named_cut_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_CUT
 block|}
@@ -611,10 +578,7 @@ argument_list|,
 literal|"Copy the selected pixels to a named buffer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_named_copy_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_COPY
 block|}
@@ -641,10 +605,7 @@ argument_list|,
 literal|"Copy what is visible in the selected region to a named buffer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_named_copy_visible_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_COPY
 block|}
@@ -670,10 +631,7 @@ argument_list|,
 literal|"Paste the content of a named buffer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_named_paste_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_PASTE
 block|}
@@ -699,10 +657,7 @@ argument_list|,
 literal|"Clear the selected pixels"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|edit_clear_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_EDIT_CLEAR
 block|}
@@ -1047,10 +1002,7 @@ argument_list|(
 name|edit_paste_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|edit_paste_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -1066,10 +1018,7 @@ argument_list|(
 name|edit_fill_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|edit_fill_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|action

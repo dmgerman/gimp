@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimptextbuffer.h"
 end_include
 
@@ -116,12 +110,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|text_editor_load_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|text_editor_load_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|text_editor_load_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -300,12 +298,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_editor_clear_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|text_editor_clear_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|text_editor_clear_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -350,16 +352,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_editor_direction_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|text_editor_direction_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|text_editor_direction_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -374,27 +376,24 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gint
-name|value
+name|GimpTextDirection
+name|direction
 decl_stmt|;
-name|value
+name|direction
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpTextDirection
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 name|gimp_text_editor_set_direction
 argument_list|(
 name|editor
 argument_list|,
-operator|(
-name|GimpTextDirection
-operator|)
-name|value
+name|direction
 argument_list|)
 expr_stmt|;
 block|}

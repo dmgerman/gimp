@@ -126,10 +126,7 @@ argument_list|,
 literal|"Create a new image from the selected template"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|templates_create_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_IMAGE_NEW
 block|}
@@ -155,10 +152,7 @@ argument_list|,
 literal|"Create a new template"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|templates_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_NEW
 block|}
@@ -184,10 +178,7 @@ argument_list|,
 literal|"Duplicate this template"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|templates_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_DUPLICATE
 block|}
@@ -213,10 +204,7 @@ argument_list|,
 literal|"Edit this template"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|templates_edit_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_EDIT
 block|}
@@ -242,10 +230,7 @@ argument_list|,
 literal|"Delete this template"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|templates_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_DELETE
 block|}

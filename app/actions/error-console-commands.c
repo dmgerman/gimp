@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"error-console-commands.h"
 end_include
 
@@ -110,12 +104,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|error_console_clear_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|error_console_clear_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_clear_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -167,12 +165,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_select_all_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|error_console_select_all_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_select_all_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -224,14 +226,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|error_console_save_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_save_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -247,9 +250,20 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|selection
+init|=
+operator|(
+name|gboolean
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|value
+name|selection
 operator|&&
 operator|!
 name|gtk_text_buffer_get_selection_bounds
@@ -360,7 +374,7 @@ name|console
 operator|->
 name|save_selection
 operator|=
-name|value
+name|selection
 expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
@@ -479,12 +493,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_error_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|error_console_highlight_error_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_highlight_error_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -501,17 +519,12 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|console
 operator|->
 name|highlight
@@ -526,12 +539,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_warning_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|error_console_highlight_warning_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_highlight_warning_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -548,17 +565,12 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|console
 operator|->
 name|highlight
@@ -573,12 +585,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_highlight_info_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|error_console_highlight_info_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|error_console_highlight_info_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -595,17 +611,12 @@ argument_list|)
 decl_stmt|;
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|console
 operator|->
 name|highlight

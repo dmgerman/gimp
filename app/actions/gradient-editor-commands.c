@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -147,12 +141,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_left_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_left_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -177,16 +175,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|gradient_editor_left_color_type_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_left_color_type_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -212,6 +210,16 @@ decl_stmt|;
 name|GimpGradientColor
 name|color_type
 decl_stmt|;
+name|color_type
+operator|=
+operator|(
+name|GimpGradientColor
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -223,16 +231,6 @@ operator|&
 name|left
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|color_type
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -320,14 +318,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_left_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_load_left_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_load_left_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -376,6 +375,14 @@ name|color_type
 init|=
 name|GIMP_GRADIENT_COLOR_FIXED
 decl_stmt|;
+name|gint
+name|index
+init|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -392,7 +399,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|value
+name|index
 condition|)
 block|{
 case|case
@@ -485,7 +492,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|value
+name|index
 operator|-
 name|GRADIENT_EDITOR_COLOR_FIRST_CUSTOM
 index|]
@@ -543,14 +550,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_left_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_save_left_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_save_left_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -573,6 +581,14 @@ decl_stmt|;
 name|GimpGradientSegment
 modifier|*
 name|left
+decl_stmt|;
+name|gint
+name|index
+init|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
@@ -598,7 +614,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|value
+name|index
 index|]
 argument_list|)
 expr_stmt|;
@@ -607,12 +623,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_right_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_right_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -637,16 +657,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|gradient_editor_right_color_type_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_right_color_type_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -672,6 +692,16 @@ decl_stmt|;
 name|GimpGradientColor
 name|color_type
 decl_stmt|;
+name|color_type
+operator|=
+operator|(
+name|GimpGradientColor
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -683,16 +713,6 @@ name|NULL
 argument_list|,
 operator|&
 name|right
-argument_list|)
-expr_stmt|;
-name|color_type
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -780,14 +800,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_right_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_load_right_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_load_right_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -836,6 +857,14 @@ name|color_type
 init|=
 name|GIMP_GRADIENT_COLOR_FIXED
 decl_stmt|;
+name|gint
+name|index
+init|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -852,7 +881,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|value
+name|index
 condition|)
 block|{
 case|case
@@ -945,7 +974,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|value
+name|index
 operator|-
 name|GRADIENT_EDITOR_COLOR_FIRST_CUSTOM
 index|]
@@ -1003,14 +1032,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_right_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_save_right_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_save_right_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1033,6 +1063,14 @@ decl_stmt|;
 name|GimpGradientSegment
 modifier|*
 name|right
+decl_stmt|;
+name|gint
+name|index
+init|=
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
@@ -1058,7 +1096,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|value
+name|index
 index|]
 argument_list|)
 expr_stmt|;
@@ -1067,16 +1105,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blending_func_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|gradient_editor_blending_func_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_blending_func_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1112,6 +1150,16 @@ decl_stmt|;
 name|GimpGradientSegmentType
 name|type
 decl_stmt|;
+name|type
+operator|=
+operator|(
+name|GimpGradientSegmentType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -1124,16 +1172,6 @@ name|left
 argument_list|,
 operator|&
 name|right
-argument_list|)
-expr_stmt|;
-name|type
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|enum_class
@@ -1177,16 +1215,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_coloring_type_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|gradient_editor_coloring_type_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_coloring_type_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1222,6 +1260,16 @@ decl_stmt|;
 name|GimpGradientSegmentColor
 name|color
 decl_stmt|;
+name|color
+operator|=
+operator|(
+name|GimpGradientSegmentColor
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_gradient_editor_get_selection
 argument_list|(
 name|editor
@@ -1234,16 +1282,6 @@ name|left
 argument_list|,
 operator|&
 name|right
-argument_list|)
-expr_stmt|;
-name|color
-operator|=
-name|gimp_radio_action_get_current_value
-argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|enum_class
@@ -1287,12 +1325,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_flip_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_flip_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_flip_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1362,12 +1404,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_replicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_replicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_replicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1778,12 +1824,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_midpoint_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_split_midpoint_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_split_midpoint_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1870,12 +1920,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_uniformly_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_split_uniformly_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_split_uniformly_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2287,12 +2341,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2362,12 +2420,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_recenter_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_recenter_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_recenter_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2422,12 +2484,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_redistribute_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_redistribute_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_redistribute_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2482,13 +2548,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_color_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_blend_color_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_blend_color_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2556,13 +2626,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_opacity_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|gradient_editor_blend_opacity_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_blend_opacity_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
+name|GVariant
+modifier|*
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2630,14 +2704,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_zoom_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|gradient_editor_zoom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|gradient_editor_zoom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -2653,14 +2728,22 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpZoomType
+name|zoom_type
+init|=
+operator|(
+name|GimpZoomType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 name|gimp_gradient_editor_zoom
 argument_list|(
 name|editor
 argument_list|,
-operator|(
-name|GimpZoomType
-operator|)
-name|value
+name|zoom_type
 argument_list|,
 literal|1.0
 argument_list|)

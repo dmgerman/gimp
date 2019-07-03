@@ -165,12 +165,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|data_open_as_image_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_open_as_image_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_open_as_image_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -344,12 +348,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_new_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_new_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -455,12 +463,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_duplicate_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -580,12 +592,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_copy_location_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_copy_location_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_copy_location_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -685,12 +701,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_show_in_file_manager_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_show_in_file_manager_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_show_in_file_manager_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -815,12 +835,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_delete_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -933,12 +957,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_refresh_cmd_callback (GimpAction * action,gpointer user_data)
+DECL|function|data_refresh_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_refresh_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|user_data
@@ -992,15 +1020,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_edit_cmd_callback (GimpAction * action,const gchar * value,gpointer user_data)
+DECL|function|data_edit_cmd_callback (GimpAction * action,GVariant * value,gpointer user_data)
 name|data_edit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-specifier|const
-name|gchar
+name|GVariant
 modifier|*
 name|value
 parameter_list|,
@@ -1107,7 +1134,12 @@ argument_list|()
 argument_list|,
 name|monitor
 argument_list|,
+name|g_variant_get_string
+argument_list|(
 name|value
+argument_list|,
+name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_data_editor_set_data

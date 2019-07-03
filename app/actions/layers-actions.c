@@ -362,10 +362,7 @@ argument_list|,
 literal|"Activate the default edit action for this type of layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_edit_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_EDIT
 block|}
@@ -391,10 +388,7 @@ argument_list|,
 literal|"Edit this text layer content on canvas"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_edit_text_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_EDIT
 block|}
@@ -420,10 +414,7 @@ argument_list|,
 literal|"Edit the layer's name"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_edit_attributes_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_EDIT
 block|}
@@ -449,10 +440,7 @@ argument_list|,
 literal|"Create a new layer and add it to the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_new_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW
 block|}
@@ -478,10 +466,7 @@ argument_list|,
 literal|"Create a new layer with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_new_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW
 block|}
@@ -507,10 +492,7 @@ argument_list|,
 literal|"Create a new layer from what is visible in this image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_new_from_visible_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW_FROM_VISIBLE
 block|}
@@ -536,10 +518,7 @@ argument_list|,
 literal|"Create a new layer group and add it to the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_new_group_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW
 block|}
@@ -565,10 +544,7 @@ argument_list|,
 literal|"Create a duplicate of the layer and add it to the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_duplicate_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_DUPLICATE
 block|}
@@ -594,10 +570,7 @@ argument_list|,
 literal|"Delete this layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_delete_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_DELETE
 block|}
@@ -623,10 +596,7 @@ argument_list|,
 literal|"Raise this layer one step in the layer stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_raise_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_RAISE
 block|}
@@ -652,10 +622,7 @@ argument_list|,
 literal|"Move this layer to the top of the layer stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_raise_to_top_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_RAISE_TO_TOP
 block|}
@@ -681,10 +648,7 @@ argument_list|,
 literal|"Lower this layer one step in the layer stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_lower_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_LOWER
 block|}
@@ -710,10 +674,7 @@ argument_list|,
 literal|"Move this layer to the bottom of the layer stack"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_lower_to_bottom_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_LOWER_TO_BOTTOM
 block|}
@@ -739,10 +700,7 @@ argument_list|,
 literal|"Anchor the floating layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_anchor_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_ANCHOR
 block|}
@@ -768,10 +726,7 @@ argument_list|,
 literal|"Merge this layer with the first visible layer below it"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_merge_down_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_MERGE_DOWN
 block|}
@@ -797,10 +752,7 @@ argument_list|,
 literal|"Merge the layer group's layers into one normal layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_merge_group_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_MERGE_GROUP
 block|}
@@ -826,10 +778,7 @@ argument_list|,
 literal|"Merge all visible layers into one layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_merge_layers_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_MERGE_LAYERS
 block|}
@@ -855,10 +804,7 @@ argument_list|,
 literal|"Merge all layers into one and remove transparency"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|image_flatten_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_FLATTEN
 block|}
@@ -884,10 +830,7 @@ argument_list|,
 literal|"Turn this text layer into a normal layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_text_discard_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_TEXT_DISCARD
 block|}
@@ -913,10 +856,7 @@ argument_list|,
 literal|"Create a path from this text layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_text_to_vectors_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_TEXT_TO_PATH
 block|}
@@ -942,10 +882,7 @@ argument_list|,
 literal|"Warp this layer's text along the current path"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_text_along_vectors_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_TEXT_ALONG_PATH
 block|}
@@ -971,10 +908,7 @@ argument_list|,
 literal|"Adjust the layer dimensions"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_resize_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_RESIZE
 block|}
@@ -1000,10 +934,7 @@ argument_list|,
 literal|"Resize the layer to the size of the image"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_resize_to_image_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_RESIZE_TO_IMAGE
 block|}
@@ -1029,10 +960,7 @@ argument_list|,
 literal|"Change the size of the layer content"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_scale_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_SCALE
 block|}
@@ -1058,10 +986,7 @@ argument_list|,
 literal|"Crop the layer to the extents of the selection"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_crop_to_selection_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_CROP
 block|}
@@ -1087,10 +1012,7 @@ argument_list|,
 literal|"Crop the layer to the extents of its content (remove empty borders from the layer)"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_crop_to_content_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_CROP
 block|}
@@ -1116,10 +1038,7 @@ argument_list|,
 literal|"Add a mask that allows non-destructive editing of transparency"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_add_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_MASK_ADD
 block|}
@@ -1146,10 +1065,7 @@ argument_list|,
 literal|"Add a mask that allows non-destructive editing of transparency"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_add_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_MASK_ADD
 block|}
@@ -1175,10 +1091,7 @@ argument_list|,
 literal|"Add a mask with last used values"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_add_last_vals_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_MASK_ADD
 block|}
@@ -1204,10 +1117,7 @@ argument_list|,
 literal|"Add transparency information to the layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_alpha_add_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_ALPHA_ADD
 block|}
@@ -1233,10 +1143,7 @@ argument_list|,
 literal|"Remove transparency information from the layer"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_alpha_remove_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_LAYER_ALPHA_REMOVE
 block|}
@@ -1274,10 +1181,7 @@ argument_list|,
 literal|"Work on the layer mask"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_edit_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1300,10 +1204,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_show_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1331,10 +1232,7 @@ argument_list|,
 literal|"Dismiss the effect of the layer mask"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_disable_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1357,10 +1255,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_visible_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1383,10 +1278,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_linked_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1410,10 +1302,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_lock_content_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1436,10 +1325,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_lock_position_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -1467,10 +1353,7 @@ argument_list|,
 literal|"Keep transparency information on this layer from being modified"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|layers_lock_alpha_cmd_callback
-argument_list|)
 block|,
 name|FALSE
 block|,
@@ -2961,11 +2844,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_blend_space_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -2984,11 +2864,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_composite_space_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
@@ -3007,11 +2884,8 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_composite_mode_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3026,11 +2900,8 @@ argument_list|(
 name|layers_color_tag_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_color_tag_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3045,11 +2916,8 @@ argument_list|(
 name|layers_mask_apply_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_apply_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3064,11 +2932,8 @@ argument_list|(
 name|layers_mask_to_selection_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mask_to_selection_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3083,10 +2948,7 @@ argument_list|(
 name|layers_alpha_to_selection_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_alpha_to_selection_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layers_actions_fix_tooltip
@@ -3146,11 +3008,8 @@ argument_list|(
 name|layers_select_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_select_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3165,11 +3024,8 @@ argument_list|(
 name|layers_opacity_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_opacity_cmd_callback
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
@@ -3184,10 +3040,7 @@ argument_list|(
 name|layers_mode_actions
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|layers_mode_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|items_actions_setup

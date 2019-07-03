@@ -246,18 +246,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpradioaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -685,12 +673,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layers_edit_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_edit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_edit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -739,6 +731,8 @@ name|layers_edit_text_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -749,6 +743,8 @@ name|layers_edit_attributes_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -758,12 +754,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_edit_text_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_edit_text_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_edit_text_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -920,12 +920,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_edit_attributes_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_edit_attributes_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_edit_attributes_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1126,12 +1130,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_new_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_new_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1393,12 +1401,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_new_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_new_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1460,6 +1472,8 @@ block|{
 name|layers_new_cmd_callback
 argument_list|(
 name|action
+argument_list|,
+name|value
 argument_list|,
 name|data
 argument_list|)
@@ -1599,12 +1613,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_from_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_new_from_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_new_from_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1712,12 +1730,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_group_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_new_group_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_new_group_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1769,14 +1791,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_select_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_select_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_select_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -1799,11 +1822,24 @@ name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
+name|GimpActionSelectType
+name|select_type
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|select_type
+operator|=
+operator|(
+name|GimpActionSelectType
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1843,10 +1879,7 @@ operator|*
 operator|)
 name|action_select_object
 argument_list|(
-operator|(
-name|GimpActionSelectType
-operator|)
-name|value
+name|select_type
 argument_list|,
 name|container
 argument_list|,
@@ -1884,12 +1917,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_raise_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_raise_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_raise_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1934,12 +1971,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_raise_to_top_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_raise_to_top_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_raise_to_top_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1982,12 +2023,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lower_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_lower_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_lower_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2032,12 +2077,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lower_to_bottom_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_lower_to_bottom_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_lower_to_bottom_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2080,12 +2129,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_duplicate_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_duplicate_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_duplicate_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2158,12 +2211,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_anchor_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_anchor_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_anchor_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2210,12 +2267,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_merge_down_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_merge_down_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_merge_down_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2280,12 +2341,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_merge_group_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_merge_group_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_merge_group_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2328,12 +2393,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_delete_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_delete_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_delete_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2377,12 +2446,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_text_discard_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_text_discard_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_text_discard_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2425,12 +2498,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_text_to_vectors_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_text_to_vectors_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_text_to_vectors_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2537,12 +2614,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_text_along_vectors_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_text_along_vectors_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_text_along_vectors_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2771,12 +2852,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_resize_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_resize_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_resize_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -2955,12 +3040,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_resize_to_image_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_resize_to_image_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_resize_to_image_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3005,12 +3094,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_scale_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_scale_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_scale_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3187,12 +3280,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_crop_to_selection_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_crop_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_crop_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3362,12 +3459,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_crop_to_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_crop_to_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_crop_to_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3559,12 +3660,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_add_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_mask_add_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_add_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3698,12 +3803,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_add_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_mask_add_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_add_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3822,6 +3931,8 @@ name|layers_mask_add_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -3878,14 +3989,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_apply_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_mask_apply_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_apply_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -3923,7 +4035,10 @@ init|=
 operator|(
 name|GimpMaskApplyMode
 operator|)
+name|g_variant_get_int32
+argument_list|(
 name|value
+argument_list|)
 decl_stmt|;
 name|gimp_layer_apply_mask
 argument_list|(
@@ -3945,12 +4060,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_edit_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_mask_edit_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_edit_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -3983,17 +4102,12 @@ condition|)
 block|{
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_layer_set_edit_mask
 argument_list|(
 name|layer
@@ -4012,12 +4126,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_show_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_mask_show_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_show_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4050,17 +4168,12 @@ condition|)
 block|{
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_layer_set_show_mask
 argument_list|(
 name|layer
@@ -4081,12 +4194,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_disable_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_mask_disable_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_disable_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4119,17 +4236,12 @@ condition|)
 block|{
 name|gboolean
 name|active
+init|=
+name|g_variant_get_boolean
+argument_list|(
+name|value
+argument_list|)
 decl_stmt|;
-name|active
-operator|=
-name|gimp_toggle_action_get_active
-argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_layer_set_apply_mask
 argument_list|(
 name|layer
@@ -4151,14 +4263,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_mask_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mask_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -4198,6 +4311,17 @@ condition|(
 name|mask
 condition|)
 block|{
+name|GimpChannelOps
+name|operation
+init|=
+operator|(
+name|GimpChannelOps
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
 name|gimp_item_to_selection
 argument_list|(
 name|GIMP_ITEM
@@ -4205,10 +4329,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
-operator|(
-name|GimpChannelOps
-operator|)
-name|value
+name|operation
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4230,12 +4351,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_alpha_add_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_alpha_add_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_alpha_add_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4286,12 +4411,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_alpha_remove_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_alpha_remove_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_alpha_remove_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4346,14 +4475,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_alpha_to_selection_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_alpha_to_selection_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_alpha_to_selection_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -4368,6 +4498,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GimpChannelOps
+name|operation
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|image
@@ -4377,6 +4510,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|operation
+operator|=
+operator|(
+name|GimpChannelOps
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 name|gimp_item_to_selection
 argument_list|(
 name|GIMP_ITEM
@@ -4384,10 +4527,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-operator|(
-name|GimpChannelOps
-operator|)
-name|value
+name|operation
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4408,14 +4548,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_opacity_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_opacity_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_opacity_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -4534,14 +4675,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mode_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_mode_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_mode_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -4709,16 +4851,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_blend_space_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|layers_blend_space_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_blend_space_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4746,12 +4888,12 @@ argument_list|)
 expr_stmt|;
 name|blend_space
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpLayerColorSpace
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -4824,16 +4966,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_composite_space_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|layers_composite_space_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_composite_space_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4861,12 +5003,12 @@ argument_list|)
 expr_stmt|;
 name|composite_space
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpLayerColorSpace
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -4939,16 +5081,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_composite_mode_cmd_callback (GimpAction * action,GimpAction * current,gpointer data)
+DECL|function|layers_composite_mode_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_composite_mode_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|GimpAction
+name|GVariant
 modifier|*
-name|current
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -4976,12 +5118,12 @@ argument_list|)
 expr_stmt|;
 name|composite_mode
 operator|=
-name|gimp_radio_action_get_current_value
+operator|(
+name|GimpLayerCompositeMode
+operator|)
+name|g_variant_get_int32
 argument_list|(
-name|GIMP_RADIO_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -5054,12 +5196,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_visible_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_visible_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_visible_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -5086,6 +5232,8 @@ name|items_visible_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -5099,12 +5247,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_linked_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_linked_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_linked_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -5131,6 +5283,8 @@ name|items_linked_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -5144,12 +5298,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lock_content_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_lock_content_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_lock_content_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -5176,6 +5334,8 @@ name|items_lock_content_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -5189,12 +5349,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lock_position_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_lock_position_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_lock_position_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -5221,6 +5385,8 @@ name|items_lock_position_cmd_callback
 argument_list|(
 name|action
 argument_list|,
+name|value
+argument_list|,
 name|image
 argument_list|,
 name|GIMP_ITEM
@@ -5234,12 +5400,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lock_alpha_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|layers_lock_alpha_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_lock_alpha_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -5267,12 +5437,9 @@ argument_list|)
 expr_stmt|;
 name|lock_alpha
 operator|=
-name|gimp_toggle_action_get_active
+name|g_variant_get_boolean
 argument_list|(
-name|GIMP_TOGGLE_ACTION
-argument_list|(
-name|action
-argument_list|)
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -5345,14 +5512,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_color_tag_cmd_callback (GimpAction * action,gint value,gpointer data)
+DECL|function|layers_color_tag_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|layers_color_tag_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
+name|GVariant
+modifier|*
 name|value
 parameter_list|,
 name|gpointer
@@ -5367,6 +5535,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GimpColorTag
+name|color_tag
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|image
@@ -5374,6 +5545,16 @@ argument_list|,
 name|layer
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|color_tag
+operator|=
+operator|(
+name|GimpColorTag
+operator|)
+name|g_variant_get_int32
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 name|items_color_tag_cmd_callback
@@ -5387,10 +5568,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-operator|(
-name|GimpColorTag
-operator|)
-name|value
+name|color_tag
 argument_list|)
 expr_stmt|;
 block|}

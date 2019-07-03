@@ -132,10 +132,7 @@ argument_list|,
 literal|"Rescan the installed fonts"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|data_refresh_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FONT_REFRESH
 block|}

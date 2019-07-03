@@ -229,12 +229,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|select_all_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_all_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_all_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -271,12 +275,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_none_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_none_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_none_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -315,12 +323,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_invert_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_invert_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_invert_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -357,12 +369,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_float_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_float_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_float_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -467,12 +483,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_feather_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_feather_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_feather_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -723,12 +743,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_sharpen_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_sharpen_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_sharpen_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -765,12 +789,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_shrink_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_shrink_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_shrink_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1062,12 +1090,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_grow_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_grow_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_grow_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1274,12 +1306,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_border_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_border_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_border_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1644,12 +1680,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_flood_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_flood_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_flood_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1686,12 +1726,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_save_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_save_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_save_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1805,12 +1849,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_fill_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_fill_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_fill_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1860,12 +1908,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_fill_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_fill_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_fill_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1904,12 +1956,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_stroke_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_stroke_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_stroke_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -1959,12 +2015,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_stroke_last_vals_cmd_callback (GimpAction * action,gpointer data)
+DECL|function|select_stroke_last_vals_cmd_callback (GimpAction * action,GVariant * value,gpointer data)
 name|select_stroke_last_vals_cmd_callback
 parameter_list|(
 name|GimpAction
 modifier|*
 name|action
+parameter_list|,
+name|GVariant
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data

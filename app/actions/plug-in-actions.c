@@ -332,10 +332,7 @@ argument_list|,
 literal|"Reset all plug-ins to their default settings"
 argument_list|)
 block|,
-name|G_CALLBACK
-argument_list|(
 name|plug_in_reset_all_cmd_callback
-argument_list|)
 block|,
 name|GIMP_HELP_FILTER_RESET_ALL
 block|}
@@ -1240,10 +1237,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|plug_in_run_cmd_callback
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
