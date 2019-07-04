@@ -5209,7 +5209,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item(),  * gimp_drawable_edit_bucket_fill().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted.  *  * This setting affects the following procedures:  * gimp_image_select_color(), gimp_image_select_contiguous_color(),  * gimp_image_select_round_rectangle(), gimp_image_select_ellipse(),  * gimp_image_select_polygon(), gimp_image_select_item(),  * gimp_drawable_edit_bucket_fill(), gimp_drawable_edit_stroke_item(),  * gimp_drawable_edit_stroke_selection().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
