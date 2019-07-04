@@ -116,10 +116,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-DECL|member|alignment
+DECL|member|border_area
 name|GtkWidget
 modifier|*
-name|alignment
+name|border_area
 decl_stmt|;
 DECL|member|tag_area
 name|GtkWidget
