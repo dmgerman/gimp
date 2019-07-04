@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2afbfd0103
+DECL|enum|__anon2b0bbcc00103
 block|{
 DECL|enumerator|HISTORY_ITEM
 name|HISTORY_ITEM
@@ -118,7 +118,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2afbfd0208
+DECL|struct|__anon2b0bbcc00208
 block|{
 DECL|member|action_name
 name|gchar
@@ -142,7 +142,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b2afbfd0308
+DECL|struct|__anon2b0bbcc00308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1233,15 +1233,15 @@ name|GimpActionHistoryItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
+comment|/* Silently return when called at the wrong time, like when the    * activated action was "quit" and the history is already gone.    */
+if|if
+condition|(
+operator|!
 name|history
 operator|.
 name|gimp
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|config
 operator|=
 name|GIMP_GUI_CONFIG
