@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d36b530103
+DECL|enum|__anon27f207c80103
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -117,7 +117,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d36b530203
+DECL|enum|__anon27f207c80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1187,13 +1187,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GdkScreen
-modifier|*
-name|screen
-init|=
-name|gdk_screen_get_default
-argument_list|()
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|main_vbox
@@ -1429,22 +1422,6 @@ argument_list|,
 name|popup
 argument_list|)
 expr_stmt|;
-comment|/* Default size of the search popup showing the result list is half    * the screen. */
-if|if
-condition|(
-name|window_height
-operator|==
-literal|0
-condition|)
-name|window_height
-operator|=
-name|gdk_screen_get_height
-argument_list|(
-name|screen
-argument_list|)
-operator|/
-literal|2
-expr_stmt|;
 block|}
 end_function
 
@@ -1665,6 +1642,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkRectangle
+name|workarea
+decl_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -1677,6 +1657,34 @@ argument_list|,
 name|allocation
 argument_list|)
 expr_stmt|;
+name|gdk_monitor_get_workarea
+argument_list|(
+name|gimp_widget_get_monitor
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|&
+name|workarea
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|window_height
+operator|==
+literal|0
+condition|)
+block|{
+comment|/* Default to half the monitor */
+name|window_height
+operator|=
+name|workarea
+operator|.
+name|height
+operator|/
+literal|2
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gtk_widget_get_visible
@@ -1694,22 +1702,14 @@ name|list_view
 argument_list|)
 condition|)
 block|{
-name|GdkScreen
-modifier|*
-name|screen
-init|=
-name|gdk_screen_get_default
-argument_list|()
-decl_stmt|;
 comment|/* Save the window height when results are shown so that resizes        * by the user are saved across searches.        */
 name|window_height
 operator|=
 name|MAX
 argument_list|(
-name|gdk_screen_get_height
-argument_list|(
-name|screen
-argument_list|)
+name|workarea
+operator|.
+name|height
 operator|/
 literal|4
 argument_list|,
