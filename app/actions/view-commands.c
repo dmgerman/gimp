@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptoggleaction.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -1036,15 +1030,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-comment|/* check if we are activated by the user or from    * view_actions_set_zoom(), also SIC GTK_TOGGLE_ACTION()    */
+comment|/* check if we are activated by the user or from    * view_actions_set_zoom(), also this is really a GtkToggleAction    * NOT a GimpToggleAction    */
 if|if
 condition|(
 name|gtk_toggle_action_get_active
 argument_list|(
-name|GTK_TOGGLE_ACTION
-argument_list|(
+operator|(
+name|GtkToggleAction
+operator|*
+operator|)
 name|action
-argument_list|)
 argument_list|)
 operator|&&
 name|shell

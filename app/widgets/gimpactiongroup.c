@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291f05bb0103
+DECL|enum|__anon297df02d0103
 block|{
 DECL|enumerator|ACTION_ADDED
 name|ACTION_ADDED
@@ -132,7 +132,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291f05bb0203
+DECL|enum|__anon297df02d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2873,7 +2873,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_action_group_remove_action_and_accel:  * @group:  the #GimpActionGroup to which @action belongs.  * @action: the #GimpAction.  *  * This function removes @action from @group and clean any  * accelerator this action may have set.  * If you wish to only remove the action from the group, use  * gtk_action_group_remove_action() instead.  */
+comment|/**  * gimp_action_group_remove_action_and_accel:  * @group:  the #GimpActionGroup to which @action belongs.  * @action: the #GimpAction.  *  * This function removes @action from @group and clean any  * accelerator this action may have set.  * If you wish to only remove the action from the group, use  * gimp_action_group_remove_action() instead.  */
 end_comment
 
 begin_function
@@ -3418,12 +3418,9 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gtk_action_set_gicon
-argument_list|(
-name|GTK_ACTION
+name|gimp_action_set_gicon
 argument_list|(
 name|action
-argument_list|)
 argument_list|,
 name|G_ICON
 argument_list|(
@@ -4138,10 +4135,11 @@ return|return;
 block|}
 name|gtk_action_set_always_show_image
 argument_list|(
-name|GTK_ACTION
-argument_list|(
+operator|(
+name|GtkAction
+operator|*
+operator|)
 name|action
-argument_list|)
 argument_list|,
 name|always_show_image
 argument_list|)

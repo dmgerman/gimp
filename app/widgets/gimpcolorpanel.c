@@ -66,6 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpactionimpl.h"
 end_include
 
@@ -91,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4268210103
+DECL|enum|__anon2ad7cc470103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -462,11 +474,11 @@ name|GtkUIManager
 modifier|*
 name|ui_manager
 decl_stmt|;
-name|GtkActionGroup
+name|GimpActionGroup
 modifier|*
 name|group
 decl_stmt|;
-name|GtkAction
+name|GimpAction
 modifier|*
 name|action
 decl_stmt|;
@@ -505,14 +517,14 @@ name|data
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,
 literal|"color-button-use-foreground"
 argument_list|)
 expr_stmt|;
-name|gtk_action_set_visible
+name|gimp_action_set_visible
 argument_list|(
 name|action
 argument_list|,
@@ -525,14 +537,14 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,
 literal|"color-button-use-background"
 argument_list|)
 expr_stmt|;
-name|gtk_action_set_visible
+name|gimp_action_set_visible
 argument_list|(
 name|action
 argument_list|,
@@ -552,7 +564,7 @@ condition|)
 block|{
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,
@@ -583,7 +595,7 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,
@@ -615,7 +627,7 @@ expr_stmt|;
 block|}
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,
@@ -650,7 +662,7 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_group_get_action
+name|gimp_action_group_get_action
 argument_list|(
 name|group
 argument_list|,

@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd640ef0103
+DECL|enum|__anon28b5d9b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -822,9 +822,9 @@ for|for
 control|(
 name|list
 operator|=
-name|gtk_action_get_proxies
+name|gimp_action_get_proxies
 argument_list|(
-name|GTK_ACTION
+name|GIMP_ACTION
 argument_list|(
 name|impl
 argument_list|)
