@@ -182,12 +182,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpregioniterator.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpselection.h>
 end_include
 
