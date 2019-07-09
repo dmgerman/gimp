@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff42a40108
+DECL|struct|__anon2b8af12c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -322,7 +322,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff42a40208
+DECL|struct|__anon2b8af12c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1005,7 +1005,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff42a40308
+DECL|struct|__anon2b8af12c0308
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -1977,7 +1977,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff42a40408
+DECL|struct|__anon2b8af12c0408
 block|{
 DECL|member|eol
 name|goffset
@@ -6641,6 +6641,8 @@ decl_stmt|;
 name|void
 modifier|*
 name|instance
+init|=
+name|NULL
 decl_stmt|;
 name|resolution
 operator|=
