@@ -102,14 +102,6 @@ value|13
 end_define
 
 begin_define
-DECL|macro|TILE_CACHE_SIZE
-define|#
-directive|define
-name|TILE_CACHE_SIZE
-value|32
-end_define
-
-begin_define
 DECL|macro|LUMINOSITY_0 (X)
 define|#
 directive|define
@@ -349,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d525d0108
+DECL|struct|__anon2c273bc10108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d525d0208
+DECL|struct|__anon2c273bc10208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d525d0308
+DECL|struct|__anon2c273bc10308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d525d0408
+DECL|struct|__anon2c273bc10408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d525d0508
+DECL|struct|__anon2c273bc10508
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -1615,11 +1607,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
