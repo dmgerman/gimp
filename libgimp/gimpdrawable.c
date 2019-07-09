@@ -323,7 +323,7 @@ index|]
 operator|.
 name|dirty
 condition|)
-name|gimp_tile_flush
+name|_gimp_tile_flush
 argument_list|(
 operator|&
 name|tiles
@@ -389,7 +389,7 @@ index|]
 operator|.
 name|dirty
 condition|)
-name|gimp_tile_flush
+name|_gimp_tile_flush
 argument_list|(
 operator|&
 name|tiles

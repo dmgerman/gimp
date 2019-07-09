@@ -380,7 +380,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_tile_flush
+name|_gimp_tile_flush
 argument_list|(
 name|tile
 argument_list|)
@@ -404,8 +404,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_flush (GimpTile * tile)
-name|gimp_tile_flush
+DECL|function|_gimp_tile_flush (GimpTile * tile)
+name|_gimp_tile_flush
 parameter_list|(
 name|GimpTile
 modifier|*
