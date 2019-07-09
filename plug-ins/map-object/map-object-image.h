@@ -22,29 +22,38 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GimpDrawable
-modifier|*
-name|input_drawable
-decl_stmt|,
-modifier|*
-name|output_drawable
+name|gint32
+name|input_drawable_id
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpPixelRgn
-name|source_region
-decl_stmt|,
-name|dest_region
+name|gint32
+name|output_drawable_id
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpDrawable
+name|GeglBuffer
 modifier|*
-name|box_drawables
+name|source_buffer
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint32
+name|box_drawable_ids
 index|[
 literal|6
 index|]
@@ -53,8 +62,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpPixelRgn
-name|box_regions
+name|GeglBuffer
+modifier|*
+name|box_buffers
 index|[
 literal|6
 index|]
@@ -63,9 +73,8 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpDrawable
-modifier|*
-name|cylinder_drawables
+name|gint32
+name|cylinder_drawable_ids
 index|[
 literal|2
 index|]
@@ -74,8 +83,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpPixelRgn
-name|cylinder_regions
+name|GeglBuffer
+modifier|*
+name|cylinder_buffers
 index|[
 literal|2
 index|]
@@ -119,15 +129,9 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|gint
-name|imgtype
-decl_stmt|,
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
-name|in_channels
-decl_stmt|,
-name|out_channels
 decl_stmt|,
 name|image_id
 decl_stmt|;
@@ -137,13 +141,6 @@ begin_decl_stmt
 specifier|extern
 name|GimpRGB
 name|background
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|oldthreshold
 decl_stmt|;
 end_decl_stmt
 
@@ -160,17 +157,6 @@ name|border_y2
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|GimpTile
-modifier|*
-name|current_in_tile
-decl_stmt|,
-modifier|*
-name|current_out_tile
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* Externally visible functions */
 end_comment
@@ -184,9 +170,8 @@ specifier|extern
 name|gint
 name|image_setup
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|,
 name|gint
 name|interactive
@@ -266,7 +251,7 @@ modifier|*
 name|color
 parameter_list|,
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

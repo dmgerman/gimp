@@ -6727,12 +6727,11 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|main_dialog (GimpDrawable * drawable)
+DECL|function|main_dialog (gint32 drawable_id)
 name|main_dialog
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|GtkWidget
@@ -7403,7 +7402,7 @@ expr_stmt|;
 block|}
 name|image_setup
 argument_list|(
-name|drawable
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
