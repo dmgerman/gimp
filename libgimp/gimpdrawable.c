@@ -1317,5 +1317,53 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_get_thumbnail_format:  * @drawable_ID: the ID of the #GimpDrawable to get the thumbnail format for.  *  * Returns the #Babl thumbnail format of the drawable.  *  * Return value: The #Babl thumbnail format.  *  * Since: 2.10.14  */
+end_comment
+
+begin_function
+specifier|const
+name|Babl
+modifier|*
+DECL|function|gimp_drawable_get_thumbnail_format (gint32 drawable_ID)
+name|gimp_drawable_get_thumbnail_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+specifier|const
+name|Babl
+modifier|*
+name|format
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|format_str
+init|=
+name|_gimp_drawable_get_thumbnail_format
+argument_list|(
+name|drawable_ID
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|format_str
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+name|format_str
+argument_list|)
+expr_stmt|;
+return|return
+name|format
+return|;
+block|}
+end_function
+
 end_unit
 

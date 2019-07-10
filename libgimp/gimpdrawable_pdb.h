@@ -62,6 +62,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
+name|gchar
+modifier|*
+name|_gimp_drawable_get_thumbnail_format
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageType
 name|gimp_drawable_type
 parameter_list|(
