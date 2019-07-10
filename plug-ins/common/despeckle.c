@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9856760108
+DECL|struct|__anon28b892df0108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9856760208
+DECL|struct|__anon28b892df0208
 block|{
 DECL|member|elems
 name|gint
@@ -474,18 +474,18 @@ comment|/* Preview widget   */
 end_comment
 
 begin_decl_stmt
-DECL|variable|drawable
+DECL|variable|drawable_ID
 specifier|static
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_ID
 init|=
-name|NULL
+operator|-
+literal|1
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|drawable
+DECL|variable|drawable_ID
 comment|/* Current drawable */
 end_comment
 
@@ -514,19 +514,11 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  * 'main()' - Main entry - just call gimp_main()...  */
-end_comment
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
-
-begin_comment
-comment|/*  * 'query()' - Respond to a plug-in query...  */
-end_comment
 
 begin_function
 specifier|static
@@ -649,10 +641,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'run()' - Run the filter...  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -687,6 +675,8 @@ name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
+init|=
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 specifier|static
 name|GimpParam
@@ -698,21 +688,12 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/*    * Initialize parameter data...    */
-name|status
-operator|=
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|values
 index|[
@@ -744,11 +725,19 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-comment|/*    * Get drawable information...    */
-name|drawable
+name|run_mode
 operator|=
-name|gimp_drawable_get
-argument_list|(
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
 name|param
 index|[
 literal|2
@@ -757,9 +746,7 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
 expr_stmt|;
-comment|/*    * See how we will run    */
 switch|switch
 condition|(
 name|run_mode
@@ -768,7 +755,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_PROC
@@ -777,21 +763,16 @@ operator|&
 name|despeckle_radius
 argument_list|)
 expr_stmt|;
-comment|/*        * Get information from the dialog...        */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|)
 condition|)
 block|{
@@ -807,7 +788,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/*        * Make sure all the arguments are present...        */
 if|if
 condition|(
 name|nparams
@@ -818,10 +798,12 @@ name|nparams
 operator|>
 literal|9
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -990,10 +972,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*        * Possibly retrieve data...        */
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_PROC
@@ -1009,7 +987,6 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
-comment|/*    * Despeckle the image...    */
 if|if
 condition|(
 name|status
@@ -1021,24 +998,18 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|)
 condition|)
 block|{
-comment|/*            * Run!            */
 name|despeckle
 argument_list|()
 expr_stmt|;
-comment|/*            * If run prevmode is interactive, flush displays...            */
 if|if
 condition|(
 name|run_mode
@@ -1048,7 +1019,6 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/*            * Store data...            */
 if|if
 condition|(
 name|run_mode
@@ -1069,12 +1039,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-comment|/*    * Reset the current run status...    */
+block|}
 name|values
 index|[
 literal|0
@@ -1085,12 +1056,6 @@ operator|.
 name|d_status
 operator|=
 name|status
-expr_stmt|;
-comment|/*    * Detach from the drawable...    */
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1248,12 +1213,18 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GimpPixelRgn
-name|src_rgn
+name|GeglBuffer
+modifier|*
+name|src_buffer
 decl_stmt|;
-comment|/* Source image region */
-name|GimpPixelRgn
-name|dst_rgn
+name|GeglBuffer
+modifier|*
+name|dest_buffer
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1276,23 +1247,12 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|img_bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|,
 operator|&
 name|x
@@ -1308,44 +1268,81 @@ name|height
 argument_list|)
 condition|)
 return|return;
-name|gimp_pixel_rgn_init
+if|if
+condition|(
+name|gimp_drawable_is_rgb
 argument_list|(
-operator|&
-name|src_rgn
-argument_list|,
-name|drawable
-argument_list|,
-name|x
-argument_list|,
-name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|drawable_ID
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
+else|else
+name|format
+operator|=
+name|babl_format
 argument_list|(
-operator|&
-name|dst_rgn
-argument_list|,
-name|drawable
-argument_list|,
-name|x
-argument_list|,
-name|y
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
+block|}
+name|img_bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|format
+argument_list|)
+expr_stmt|;
+name|src_buffer
+operator|=
+name|gimp_drawable_get_buffer
+argument_list|(
+name|drawable_ID
+argument_list|)
+expr_stmt|;
+name|dest_buffer
+operator|=
+name|gimp_drawable_get_shadow_buffer
+argument_list|(
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|src
@@ -1374,13 +1371,12 @@ operator|*
 name|img_bpp
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_rect
+name|gegl_buffer_get
 argument_list|(
-operator|&
-name|src_rgn
+name|src_buffer
 argument_list|,
-name|src
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|x
 argument_list|,
 name|y
@@ -1388,6 +1384,17 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|src
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|despeckle_median
@@ -1407,13 +1414,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-name|dst_rgn
+name|dest_buffer
 argument_list|,
-name|dst
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|x
 argument_list|,
 name|y
@@ -1422,26 +1428,36 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|format
+argument_list|,
+name|dst
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
-name|drawable
+name|src_buffer
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|dest_buffer
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|,
 name|x
 argument_list|,
@@ -1465,13 +1481,9 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'despeckle_dialog()' - Popup a dialog window for the filter box size...  */
-end_comment
-
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|despeckle_dialog (void)
 name|despeckle_dialog
 parameter_list|(
@@ -1625,9 +1637,7 @@ name|preview
 operator|=
 name|gimp_drawable_preview_new_from_drawable_id
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2106,7 +2116,6 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-comment|/*    * Show it and wait for the user to do something...    */
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -2131,16 +2140,11 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-comment|/*    * Return ok/cancel...    */
 return|return
 name|run
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * 'preview_update()' - Update the preview window.  */
-end_comment
 
 begin_function
 specifier|static
@@ -2153,25 +2157,32 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|GimpPixelRgn
-name|src_rgn
+name|GimpPreview
+modifier|*
+name|preview
+init|=
+name|GIMP_PREVIEW
+argument_list|(
+name|widget
+argument_list|)
 decl_stmt|;
-comment|/* Source image region */
+name|GeglBuffer
+modifier|*
+name|src_buffer
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
 name|guchar
 modifier|*
 name|dst
 decl_stmt|;
-comment|/* Output image */
-name|GimpPreview
-modifier|*
-name|preview
-decl_stmt|;
-comment|/* The preview widget */
 name|guchar
 modifier|*
 name|src
 decl_stmt|;
-comment|/* Source pixel rows */
 name|gint
 name|img_bpp
 decl_stmt|;
@@ -2192,13 +2203,67 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_is_rgb
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y'A u8"
+argument_list|)
+expr_stmt|;
+else|else
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
+block|}
 name|img_bpp
 operator|=
-name|gimp_drawable_bpp
+name|babl_format_get_bytes_per_pixel
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
+name|format
 argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
@@ -2223,24 +2288,11 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
+name|src_buffer
+operator|=
+name|gimp_drawable_get_buffer
 argument_list|(
-operator|&
-name|src_rgn
-argument_list|,
-name|drawable
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|dst
@@ -2269,13 +2321,12 @@ operator|*
 name|img_bpp
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_rect
+name|gegl_buffer_get
 argument_list|(
-operator|&
-name|src_rgn
+name|src_buffer
 argument_list|,
-name|src
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|x1
 argument_list|,
 name|y1
@@ -2283,6 +2334,17 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+name|format
+argument_list|,
+name|src
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
+argument_list|,
+name|GEGL_ABYSS_NONE
 argument_list|)
 expr_stmt|;
 name|despeckle_median
@@ -2311,6 +2373,11 @@ argument_list|,
 name|width
 operator|*
 name|img_bpp
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|src_buffer
 argument_list|)
 expr_stmt|;
 name|g_free
