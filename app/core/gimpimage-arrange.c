@@ -429,6 +429,9 @@ operator|*
 name|offset
 operator|)
 operator|/
+operator|(
+name|gint
+operator|)
 name|g_list_length
 argument_list|(
 name|object_list
@@ -464,6 +467,9 @@ operator|*
 name|offset
 operator|)
 operator|/
+operator|(
+name|gint
+operator|)
 name|g_list_length
 argument_list|(
 name|object_list
