@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbbcfee0108
+DECL|struct|__anon27dd193e0108
 block|{
 DECL|member|image
 name|gint32
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbbcfee0203
+DECL|enum|__anon27dd193e0203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbbcfee0303
+DECL|enum|__anon27dd193e0303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -167,7 +167,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bbbcfee0408
+DECL|struct|__anon27dd193e0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -1044,7 +1044,18 @@ decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
-name|format
+name|src_format
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|dest_format
+decl_stmt|;
+name|gint
+name|src_bpp
+decl_stmt|;
+name|gint
+name|dest_bpp
 decl_stmt|;
 name|gboolean
 name|success
@@ -1072,9 +1083,6 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|;
-name|gint
-name|bpp
 decl_stmt|;
 name|gint
 name|sel_x1
@@ -1180,7 +1188,7 @@ operator|->
 name|drawable
 argument_list|)
 condition|)
-name|format
+name|src_format
 operator|=
 name|babl_format
 argument_list|(
@@ -1188,19 +1196,16 @@ literal|"R'G'B'A u8"
 argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|src_format
 operator|=
 name|babl_format
 argument_list|(
 literal|"R'G'B' u8"
 argument_list|)
 expr_stmt|;
-name|bpp
+name|dest_format
 operator|=
-name|babl_format_get_bytes_per_pixel
-argument_list|(
-name|format
-argument_list|)
+name|src_format
 expr_stmt|;
 if|if
 condition|(
@@ -1314,6 +1319,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|dest_format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B'A u8"
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1340,6 +1352,20 @@ condition|)
 return|return
 name|success
 return|;
+name|src_bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|src_format
+argument_list|)
+expr_stmt|;
+name|dest_bpp
+operator|=
+name|babl_format_get_bytes_per_pixel
+argument_list|(
+name|dest_format
+argument_list|)
+expr_stmt|;
 name|sel_x2
 operator|=
 name|sel_x1
@@ -1362,7 +1388,7 @@ name|width
 operator|*
 name|height
 operator|*
-name|bpp
+name|src_bpp
 argument_list|)
 expr_stmt|;
 name|dst
@@ -1375,7 +1401,7 @@ name|width
 operator|*
 name|height
 operator|*
-literal|4
+name|dest_bpp
 argument_list|)
 expr_stmt|;
 name|src_buffer
@@ -1431,7 +1457,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-name|format
+name|src_format
 argument_list|,
 name|src
 argument_list|,
@@ -1592,7 +1618,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|bpp
+name|src_bpp
 operator|==
 literal|4
 condition|)
@@ -1660,7 +1686,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|bpp
+name|src_bpp
 operator|==
 literal|4
 condition|)
@@ -2176,7 +2202,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|bpp
+name|src_bpp
 operator|==
 literal|4
 condition|)
@@ -2222,7 +2248,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|bpp
+name|src_bpp
 condition|;
 name|i
 operator|++
@@ -2240,11 +2266,11 @@ else|else
 block|{
 name|s
 operator|+=
-name|bpp
+name|src_bpp
 expr_stmt|;
 name|d
 operator|+=
-literal|4
+name|dest_bpp
 expr_stmt|;
 block|}
 block|}
@@ -2267,7 +2293,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|format
+name|dest_format
 argument_list|,
 name|dst
 argument_list|,
