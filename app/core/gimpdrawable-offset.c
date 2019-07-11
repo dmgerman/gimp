@@ -180,7 +180,7 @@ condition|(
 name|offset_x
 operator|==
 literal|0
-operator|||
+operator|&&
 name|offset_y
 operator|==
 literal|0
