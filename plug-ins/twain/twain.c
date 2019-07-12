@@ -276,6 +276,7 @@ name|preTransferCallback
 parameter_list|(
 name|void
 modifier|*
+name|clientData
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -285,9 +286,11 @@ name|int
 name|beginTransferCallback
 parameter_list|(
 name|pTW_IMAGEINFO
+name|imageInfo
 parameter_list|,
 name|void
 modifier|*
+name|clientData
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -297,11 +300,14 @@ name|int
 name|dataTransferCallback
 parameter_list|(
 name|pTW_IMAGEINFO
+name|imageInfo
 parameter_list|,
 name|pTW_IMAGEMEMXFER
+name|imageMemXfer
 parameter_list|,
 name|void
 modifier|*
+name|clientData
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -311,11 +317,14 @@ name|int
 name|endTransferCallback
 parameter_list|(
 name|int
+name|completionState
 parameter_list|,
 name|int
+name|pendingCount
 parameter_list|,
 name|void
 modifier|*
+name|clientData
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -325,9 +334,11 @@ name|void
 name|postTransferCallback
 parameter_list|(
 name|int
+name|pendingCount
 parameter_list|,
 name|void
 modifier|*
+name|clientData
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -372,10 +383,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* This plug-in's functions */
-end_comment
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|const
@@ -419,9 +426,9 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon27fa18ff0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon299050460108
 block|{
 DECL|member|sourceName
 name|gchar
@@ -1180,6 +1187,13 @@ expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* Before we get any further, verify that we have    * TWAIN and that there is actually a datasource    * to be used in doing the acquire.    */
 if|if
 condition|(
@@ -1256,7 +1270,7 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/* Retrieve values from the last run...      * Currently ignored      */
+comment|/* Retrieve values from the last run...        * Currently ignored        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1269,7 +1283,7 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* Currently, we don't do non-interactive calls.      * Bail if someone tries to call us non-interactively      */
+comment|/* Currently, we don't do non-interactive calls.        * Bail if someone tries to call us non-interactively        */
 name|values
 index|[
 literal|0
@@ -1285,7 +1299,7 @@ return|return;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/* Retrieve values from the last run...      * Currently ignored      */
+comment|/* Retrieve values from the last run...        * Currently ignored        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1298,7 +1312,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 comment|/* Have we succeeded so far? */
 if|if
 condition|(
@@ -1331,7 +1344,7 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|/* An image was captured from the TWAIN      * datasource.  Do final Interactive      * steps.      */
+comment|/* An image was captured from the TWAIN        * datasource.  Do final Interactive        * steps.        */
 if|if
 condition|(
 name|run_mode
@@ -1387,9 +1400,9 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon27fa18ff0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon299050460208
 block|{
 DECL|member|image_id
 name|gint32
@@ -1399,14 +1412,16 @@ DECL|member|layer_id
 name|gint32
 name|layer_id
 decl_stmt|;
-DECL|member|pixel_rgn
-name|GimpPixelRgn
-name|pixel_rgn
-decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
+DECL|member|buffer
+name|GeglBuffer
 modifier|*
-name|drawable
+name|buffer
+decl_stmt|;
+DECL|member|format
+specifier|const
+name|Babl
+modifier|*
+name|format
 decl_stmt|;
 DECL|member|paletteData
 name|pTW_PALETTE8
@@ -1473,11 +1488,6 @@ modifier|*
 name|clientData
 parameter_list|)
 block|{
-name|int
-name|imageType
-decl_stmt|,
-name|layerType
-decl_stmt|;
 name|pClientDataStruct
 name|theClientData
 init|=
@@ -1487,6 +1497,17 @@ name|ClientDataStruct
 argument_list|,
 literal|1
 argument_list|)
+decl_stmt|;
+specifier|const
+name|Babl
+modifier|*
+name|format
+decl_stmt|;
+name|int
+name|imageType
+decl_stmt|;
+name|int
+name|layerType
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -1523,6 +1544,13 @@ name|layerType
 operator|=
 name|GIMP_GRAY_IMAGE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|TWPT_RGB
@@ -1535,6 +1563,13 @@ expr_stmt|;
 name|layerType
 operator|=
 name|GIMP_RGB_IMAGE
+expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1614,6 +1649,13 @@ name|layerType
 operator|=
 name|GIMP_RGB_IMAGE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"R'G'B' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|TWPA_GRAY
@@ -1627,6 +1669,13 @@ name|layerType
 operator|=
 name|GIMP_GRAY_IMAGE
 expr_stmt|;
+name|format
+operator|=
+name|babl_format
+argument_list|(
+literal|"Y' u8"
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 return|return
@@ -1635,7 +1684,7 @@ return|;
 block|}
 break|break;
 default|default:
-comment|/* We don't know how to deal with anything other than      * the types listed above.  Bail for any other image      * type.      */
+comment|/* We don't know how to deal with anything other than        * the types listed above.  Bail for any other image        * type.        */
 return|return
 name|FALSE
 return|;
@@ -1758,54 +1807,25 @@ literal|0
 expr_stmt|;
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
-comment|/* Get our drawable */
 name|theClientData
 operator|->
-name|drawable
+name|buffer
 operator|=
-name|gimp_drawable_get
+name|gimp_drawable_get_buffer
 argument_list|(
 name|theClientData
 operator|->
 name|layer_id
 argument_list|)
 expr_stmt|;
-comment|/* Initialize a pixel region for writing to the image */
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-operator|(
 name|theClientData
 operator|->
-name|pixel_rgn
-operator|)
-argument_list|,
-name|theClientData
-operator|->
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|imageInfo
-operator|->
-name|ImageWidth
-argument_list|,
-name|imageInfo
-operator|->
-name|ImageLength
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
+name|format
+operator|=
+name|format
 expr_stmt|;
 comment|/* Store our client data for the data transfer callbacks */
 if|if
@@ -2026,21 +2046,14 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Update the complete chunk */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-operator|(
 name|theClientData
 operator|->
-name|pixel_rgn
-operator|)
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|destBuf
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|imageMemXfer
 operator|->
 name|XOffset
@@ -2052,6 +2065,17 @@ argument_list|,
 name|cols
 argument_list|,
 name|rows
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|theClientData
+operator|->
+name|format
+argument_list|,
+name|destBuf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 comment|/* Update the user on our progress */
@@ -2229,21 +2253,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Update the complete chunk */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-operator|(
 name|theClientData
 operator|->
-name|pixel_rgn
-operator|)
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|destBuf
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|imageMemXfer
 operator|->
 name|XOffset
@@ -2255,6 +2272,17 @@ argument_list|,
 name|cols
 argument_list|,
 name|rows
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|theClientData
+operator|->
+name|format
+argument_list|,
+name|destBuf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 comment|/* Update the user on our progress */
@@ -2503,21 +2531,14 @@ block|}
 block|}
 block|}
 comment|/* Send the complete chunk */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-operator|(
 name|theClientData
 operator|->
-name|pixel_rgn
-operator|)
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|destBuf
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|imageMemXfer
 operator|->
 name|XOffset
@@ -2529,6 +2550,17 @@ argument_list|,
 name|cols
 argument_list|,
 name|rows
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|theClientData
+operator|->
+name|format
+argument_list|,
+name|destBuf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 comment|/* Update the user on our progress */
@@ -2613,7 +2645,8 @@ modifier|*
 name|destPtr
 init|=
 name|NULL
-decl_stmt|,
+decl_stmt|;
+name|char
 modifier|*
 name|srcPtr
 init|=
@@ -2826,21 +2859,14 @@ block|}
 block|}
 block|}
 comment|/* Send the complete chunk */
-name|gimp_pixel_rgn_set_rect
+name|gegl_buffer_set
 argument_list|(
-operator|&
-operator|(
 name|theClientData
 operator|->
-name|pixel_rgn
-operator|)
+name|buffer
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-name|destBuf
-argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|imageMemXfer
 operator|->
 name|XOffset
@@ -2852,6 +2878,17 @@ argument_list|,
 name|cols
 argument_list|,
 name|rows
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|theClientData
+operator|->
+name|format
+argument_list|,
+name|destBuf
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 comment|/* Update the user on our progress */
@@ -3065,18 +3102,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|gimp_drawable_flush
+name|g_object_unref
 argument_list|(
 name|theClientData
 operator|->
-name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|theClientData
-operator|->
-name|drawable
+name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* Make sure to check our return code */
