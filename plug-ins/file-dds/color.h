@@ -246,7 +246,7 @@ name|int
 name|b
 parameter_list|)
 block|{
-comment|/* ITU-R BT.709 luma coefficents, scaled by 256 */
+comment|/* ITU-R BT.709 luma coefficients, scaled by 256 */
 return|return
 operator|(
 operator|(

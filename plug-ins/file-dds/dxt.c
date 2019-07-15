@@ -239,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278002e50108
+DECL|struct|__anon2c1bfc740108
 block|{
 DECL|member|single
 name|unsigned
@@ -1593,7 +1593,7 @@ name|flags
 operator|&
 name|DXT_PERCEPTUAL
 condition|)
-comment|/* ITU-R BT.709 luma coefficents */
+comment|/* ITU-R BT.709 luma coefficients */
 name|dxtb
 operator|->
 name|metric

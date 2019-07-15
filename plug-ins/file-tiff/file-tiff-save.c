@@ -3822,7 +3822,7 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Open file and write some gloabl data */
+comment|/* Open file and write some global data */
 name|tif
 operator|=
 name|tiff_open
@@ -4194,7 +4194,7 @@ argument_list|,
 name|tif
 argument_list|)
 expr_stmt|;
-comment|/* close file so we can savely let exiv2 work on it to write metadata.    * this can be simplified once multi page TIFF is supported by exiv2    */
+comment|/* close file so we can safely let exiv2 work on it to write metadata.    * this can be simplified once multi page TIFF is supported by exiv2    */
 name|TIFFFlushData
 argument_list|(
 name|tif

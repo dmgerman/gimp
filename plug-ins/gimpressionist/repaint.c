@@ -438,7 +438,7 @@ name|temp
 decl_stmt|,
 name|diff
 decl_stmt|;
-comment|/* TODO : There seems to be some typoes in the comments here.    * Ask vidar what he meant.    * */
+comment|/* TODO : There seems to be some typos in the comments here.    * Ask vidar what he meant.    * */
 if|if
 condition|(
 operator|(

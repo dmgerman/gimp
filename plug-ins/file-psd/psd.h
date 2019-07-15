@@ -1081,7 +1081,7 @@ end_define
 
 begin_comment
 DECL|macro|PSD_LMT_MERGE_TRANS
-comment|/* Merged transperency save flag (?) */
+comment|/* Merged transparency save flag (?) */
 end_comment
 
 begin_define
@@ -1094,7 +1094,7 @@ end_define
 
 begin_comment
 DECL|macro|PSD_LMT_MERGE_TRANS_16
-comment|/* Merged transperency save flag 2 */
+comment|/* Merged transparency save flag 2 */
 end_comment
 
 begin_define
@@ -1107,7 +1107,7 @@ end_define
 
 begin_comment
 DECL|macro|PSD_LMT_MERGE_TRANS_32
-comment|/* Merged transperency save flag 3 */
+comment|/* Merged transparency save flag 3 */
 end_comment
 
 begin_comment
@@ -1149,7 +1149,7 @@ comment|/* Image color modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10103
+DECL|enum|__anon29e9fa230103
 typedef|typedef
 enum|enum
 block|{
@@ -1211,7 +1211,7 @@ comment|/* Image color spaces */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10203
+DECL|enum|__anon29e9fa230203
 typedef|typedef
 enum|enum
 block|{
@@ -1298,7 +1298,7 @@ comment|/* Image Resource IDs */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10303
+DECL|enum|__anon29e9fa230303
 typedef|typedef
 enum|enum
 block|{
@@ -1834,7 +1834,7 @@ comment|/* Display resolution units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10403
+DECL|enum|__anon29e9fa230403
 typedef|typedef
 enum|enum
 block|{
@@ -1861,7 +1861,7 @@ comment|/* Width and height units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10503
+DECL|enum|__anon29e9fa230503
 typedef|typedef
 enum|enum
 block|{
@@ -1906,7 +1906,7 @@ comment|/* Thumbnail image data encoding */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10603
+DECL|enum|__anon29e9fa230603
 typedef|typedef
 enum|enum
 block|{
@@ -1932,7 +1932,7 @@ comment|/* Path record types */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10703
+DECL|enum|__anon29e9fa230703
 typedef|typedef
 enum|enum
 block|{
@@ -2000,7 +2000,7 @@ comment|/* Channel ID */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10803
+DECL|enum|__anon29e9fa230803
 typedef|typedef
 enum|enum
 block|{
@@ -2053,7 +2053,7 @@ comment|/* Clipping */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10903
+DECL|enum|__anon29e9fa230903
 typedef|typedef
 enum|enum
 block|{
@@ -2079,7 +2079,7 @@ comment|/* Image compression mode */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10a03
+DECL|enum|__anon29e9fa230a03
 typedef|typedef
 enum|enum
 block|{
@@ -2111,7 +2111,7 @@ comment|/* Vertical - horizontal selection */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ab028b10b03
+DECL|enum|__anon29e9fa230b03
 typedef|typedef
 enum|enum
 block|{
@@ -2164,7 +2164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b10c08
+DECL|struct|__anon29e9fa230c08
 block|{
 DECL|member|red
 name|guint16
@@ -2191,7 +2191,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b10d08
+DECL|struct|__anon29e9fa230d08
 block|{
 DECL|member|hue
 name|guint16
@@ -2218,7 +2218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b10e08
+DECL|struct|__anon29e9fa230e08
 block|{
 DECL|member|cyan
 name|guint16
@@ -2249,7 +2249,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b10f08
+DECL|struct|__anon29e9fa230f08
 block|{
 DECL|member|L
 name|guint16
@@ -2276,7 +2276,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11008
+DECL|struct|__anon29e9fa231008
 block|{
 DECL|member|gray
 name|guint16
@@ -2295,7 +2295,7 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ab028b1110a
+DECL|union|__anon29e9fa23110a
 block|{
 DECL|member|rgb
 name|CMRGBColor
@@ -2330,7 +2330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11208
+DECL|struct|__anon29e9fa231208
 block|{
 DECL|member|mode
 name|GimpLayerMode
@@ -2359,7 +2359,7 @@ comment|/* Image resolution data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11308
+DECL|struct|__anon29e9fa231308
 typedef|typedef
 struct|struct
 block|{
@@ -2404,7 +2404,7 @@ comment|/* Grid& guide header */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11408
+DECL|struct|__anon29e9fa231408
 typedef|typedef
 struct|struct
 block|{
@@ -2439,7 +2439,7 @@ comment|/* Guide resource block */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11508
+DECL|struct|__anon29e9fa231508
 typedef|typedef
 struct|struct
 block|{
@@ -2464,7 +2464,7 @@ comment|/* Thumbnail data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11608
+DECL|struct|__anon29e9fa231608
 typedef|typedef
 struct|struct
 block|{
@@ -2519,7 +2519,7 @@ comment|/* Channel display info data for Adobe Photoshop CS2 and lower */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11708
+DECL|struct|__anon29e9fa231708
 typedef|typedef
 struct|struct
 block|{
@@ -2562,7 +2562,7 @@ comment|/* Channel display info data for Adobe Photoshop CS3 and higher to suppo
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab028b11808
+DECL|struct|__anon29e9fa231808
 typedef|typedef
 struct|struct
 block|{
@@ -2607,7 +2607,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11908
+DECL|struct|__anon29e9fa231908
 block|{
 DECL|member|channel_id
 name|gint16
@@ -2632,7 +2632,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11a08
+DECL|struct|__anon29e9fa231a08
 block|{
 DECL|member|trans_prot
 name|gboolean
@@ -2672,7 +2672,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11b08
+DECL|struct|__anon29e9fa231b08
 block|{
 DECL|member|relative_pos
 name|gboolean
@@ -2702,7 +2702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11c08
+DECL|struct|__anon29e9fa231c08
 block|{
 DECL|member|id
 name|gint32
@@ -2830,7 +2830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11d08
+DECL|struct|__anon29e9fa231d08
 block|{
 DECL|member|top
 name|gint32
@@ -2890,7 +2890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11e08
+DECL|struct|__anon29e9fa231e08
 block|{
 DECL|member|top
 name|gint32
@@ -2925,7 +2925,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b11f08
+DECL|struct|__anon29e9fa231f08
 block|{
 DECL|member|xx
 name|gdouble
@@ -2971,7 +2971,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12008
+DECL|struct|__anon29e9fa232008
 block|{
 DECL|member|drop
 name|gboolean
@@ -3112,7 +3112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12108
+DECL|struct|__anon29e9fa232108
 block|{
 DECL|member|id
 name|gint16
@@ -3154,7 +3154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12208
+DECL|struct|__anon29e9fa232208
 block|{
 DECL|member|gimp_color
 name|GimpRGB
@@ -3199,7 +3199,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12308
+DECL|struct|__anon29e9fa232308
 block|{
 DECL|member|type
 name|gchar
@@ -3245,7 +3245,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12408
+DECL|struct|__anon29e9fa232408
 block|{
 DECL|member|sig
 name|gchar
@@ -3286,7 +3286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab028b12508
+DECL|struct|__anon29e9fa232508
 block|{
 DECL|member|merged_image_only
 name|gboolean

@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|retVal
-comment|/* Toggle if cancle button clicked */
+comment|/* Toggle if cancel button clicked */
 end_comment
 
 begin_macro
