@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
@@ -165,7 +171,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be582160103
+DECL|enum|__anon2a107e070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3387,6 +3393,23 @@ operator|*
 name|PAINT_AREA_CHUNK_HEIGHT
 expr_stmt|;
 name|gimp_display_shell_expose_area
+argument_list|(
+name|shell
+argument_list|,
+name|x1
+argument_list|,
+name|y1
+argument_list|,
+name|x2
+operator|-
+name|x1
+argument_list|,
+name|y2
+operator|-
+name|y1
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_invalidate_area
 argument_list|(
 name|shell
 argument_list|,

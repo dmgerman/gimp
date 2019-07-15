@@ -344,6 +344,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|filter_idle_id

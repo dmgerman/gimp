@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-rotate.h"
 end_include
 
@@ -2157,6 +2163,11 @@ name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
 argument_list|(
 name|shell
 argument_list|)

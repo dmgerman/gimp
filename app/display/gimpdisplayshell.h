@@ -670,12 +670,30 @@ name|gint
 name|filter_stride
 decl_stmt|;
 comment|/*  filter_buffer's stride             */
-DECL|member|xfer
-name|GimpDisplayXfer
+DECL|member|render_cache
+name|cairo_surface_t
 modifier|*
-name|xfer
+name|render_cache
 decl_stmt|;
-comment|/*  manages image buffer transfers     */
+DECL|member|render_cache_valid
+name|cairo_region_t
+modifier|*
+name|render_cache_valid
+decl_stmt|;
+DECL|member|render_buf_width
+name|gint
+name|render_buf_width
+decl_stmt|;
+DECL|member|render_buf_height
+name|gint
+name|render_buf_height
+decl_stmt|;
+DECL|member|render_surface
+name|cairo_surface_t
+modifier|*
+name|render_surface
+decl_stmt|;
+comment|/*  buffer for rendering the mask      */
 DECL|member|mask_surface
 name|cairo_surface_t
 modifier|*

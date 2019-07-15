@@ -234,6 +234,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-rulers.h"
 end_include
 
@@ -3449,6 +3455,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -4232,6 +4243,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -4484,6 +4500,11 @@ name|shell
 parameter_list|)
 block|{
 name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
 argument_list|(
 name|shell
 argument_list|)

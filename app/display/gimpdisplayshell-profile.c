@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayxfer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -469,12 +463,16 @@ block|{
 name|gint
 name|w
 init|=
-name|GIMP_DISPLAY_RENDER_BUF_WIDTH
+name|shell
+operator|->
+name|render_buf_width
 decl_stmt|;
 name|gint
 name|h
 init|=
-name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
+name|shell
+operator|->
+name|render_buf_height
 decl_stmt|;
 name|shell
 operator|->

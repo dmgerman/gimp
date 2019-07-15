@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998cedb0103
+DECL|enum|__anon2a040d150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998cedb0203
+DECL|enum|__anon2a040d150203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3207,6 +3207,36 @@ argument_list|(
 operator|&
 name|shell
 operator|->
+name|render_cache
+argument_list|,
+name|cairo_surface_destroy
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|shell
+operator|->
+name|render_cache_valid
+argument_list|,
+name|cairo_region_destroy
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|shell
+operator|->
+name|render_surface
+argument_list|,
+name|cairo_surface_destroy
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|shell
+operator|->
 name|mask_surface
 argument_list|,
 name|cairo_surface_destroy
@@ -4471,6 +4501,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5641,6 +5676,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5865,6 +5905,11 @@ name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
 argument_list|(
 name|shell
 argument_list|)
@@ -7743,6 +7788,11 @@ operator|=
 name|inverted
 expr_stmt|;
 name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_render_invalidate_full
 argument_list|(
 name|shell
 argument_list|)
