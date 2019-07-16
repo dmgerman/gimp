@@ -1549,6 +1549,14 @@ operator|->
 name|render_surface
 argument_list|)
 expr_stmt|;
+comment|/*  SOURCE so the destination's alpha is replaced  */
+name|cairo_set_operator
+argument_list|(
+name|my_cr
+argument_list|,
+name|CAIRO_OPERATOR_SOURCE
+argument_list|)
+expr_stmt|;
 name|cairo_set_source_surface
 argument_list|(
 name|my_cr
@@ -1565,6 +1573,13 @@ expr_stmt|;
 name|cairo_paint
 argument_list|(
 name|my_cr
+argument_list|)
+expr_stmt|;
+name|cairo_set_operator
+argument_list|(
+name|my_cr
+argument_list|,
+name|CAIRO_OPERATOR_OVER
 argument_list|)
 expr_stmt|;
 if|if
