@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b9d1d0108
+DECL|struct|__anon29daa0590108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b9d1d0208
+DECL|struct|__anon29daa0590208
 block|{
 DECL|member|run
 name|gboolean
@@ -1222,6 +1222,11 @@ modifier|*
 name|buffer
 decl_stmt|;
 specifier|const
+name|gchar
+modifier|*
+name|encoding
+decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -1600,20 +1605,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1634,20 +1633,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u8"
-argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1670,20 +1663,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1706,20 +1693,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u8"
-argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1734,10 +1715,7 @@ name|format
 operator|=
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
-name|format
-argument_list|)
+name|encoding
 argument_list|,
 name|space
 argument_list|)
