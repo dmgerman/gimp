@@ -307,6 +307,13 @@ argument_list|(
 name|surface
 argument_list|)
 expr_stmt|;
+name|cairo_set_operator
+argument_list|(
+name|cr
+argument_list|,
+name|CAIRO_OPERATOR_SOURCE
+argument_list|)
+expr_stmt|;
 name|cairo_set_source_surface
 argument_list|(
 name|cr
@@ -337,6 +344,13 @@ argument_list|(
 name|shell
 operator|->
 name|render_cache
+argument_list|)
+expr_stmt|;
+name|cairo_set_operator
+argument_list|(
+name|cr
+argument_list|,
+name|CAIRO_OPERATOR_SOURCE
 argument_list|)
 expr_stmt|;
 name|cairo_set_source_surface
