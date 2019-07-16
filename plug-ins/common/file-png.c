@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b204f0108
+DECL|struct|__anon28ba0eee0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b204f0208
+DECL|struct|__anon28ba0eee0208
 block|{
 DECL|member|run
 name|gboolean
@@ -367,7 +367,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b204f0308
+DECL|struct|__anon28ba0eee0308
 block|{
 DECL|member|has_trns
 name|gboolean
@@ -5246,8 +5246,15 @@ specifier|const
 name|Babl
 modifier|*
 name|file_format
+init|=
+name|NULL
 decl_stmt|;
 comment|/* BABL format of file */
+specifier|const
+name|gchar
+modifier|*
+name|encoding
+decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -5858,20 +5865,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -5880,20 +5881,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u16"
-argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -5915,20 +5910,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -5937,20 +5926,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u16"
-argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -5972,20 +5955,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -5994,20 +5971,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u16"
-argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -6029,20 +6000,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"YA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y'A u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -6051,20 +6016,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"YA u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y'A u16"
-argument_list|)
 expr_stmt|;
 block|}
 break|break;
@@ -6183,20 +6142,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6214,20 +6167,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u8"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6245,20 +6192,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u8"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6276,20 +6217,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"YA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y'A u8"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6307,20 +6242,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u16"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6338,20 +6267,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y' u16"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6369,20 +6292,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u16"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6400,20 +6317,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"YA u16"
-argument_list|)
 expr_stmt|;
 else|else
-name|file_format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"Y'A u16"
-argument_list|)
 expr_stmt|;
 name|bit_depth
 operator|=
@@ -6433,19 +6344,13 @@ block|}
 if|if
 condition|(
 operator|!
-name|babl_format_is_palette
-argument_list|(
 name|file_format
-argument_list|)
 condition|)
 name|file_format
 operator|=
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
-name|file_format
-argument_list|)
+name|encoding
 argument_list|,
 name|space
 argument_list|)
