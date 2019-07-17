@@ -27,52 +27,23 @@ directive|include
 file|"gimpanchor.h"
 end_include
 
-begin_function
-name|GType
-DECL|function|gimp_anchor_get_type (void)
-name|gimp_anchor_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|anchor_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|anchor_type
-condition|)
-name|anchor_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpAnchor,gimp_anchor,gimp_anchor_copy,gimp_anchor_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpAnchor"
+argument|GimpAnchor
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_anchor_copy
+argument|gimp_anchor
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|gimp_anchor_free
+argument|gimp_anchor_copy
+argument_list|,
+argument|gimp_anchor_free
 argument_list|)
-expr_stmt|;
-return|return
-name|anchor_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 name|GimpAnchor
 modifier|*
-DECL|function|gimp_anchor_new (GimpAnchorType type,const GimpCoords * position)
 name|gimp_anchor_new
 parameter_list|(
 name|GimpAnchorType

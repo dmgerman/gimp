@@ -39,52 +39,23 @@ directive|include
 file|"gimpboundary.h"
 end_include
 
-begin_function
-name|GType
-DECL|function|gimp_bezier_desc_get_type (void)
-name|gimp_bezier_desc_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-name|type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpBezierDesc,gimp_bezier_desc,gimp_bezier_desc_copy,gimp_bezier_desc_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpBezierDesc"
+argument|GimpBezierDesc
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_bezier_desc_copy
+argument|gimp_bezier_desc
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|gimp_bezier_desc_free
+argument|gimp_bezier_desc_copy
+argument_list|,
+argument|gimp_bezier_desc_free
 argument_list|)
-expr_stmt|;
-return|return
-name|type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 name|GimpBezierDesc
 modifier|*
-DECL|function|gimp_bezier_desc_new (cairo_path_data_t * data,gint n_data)
 name|gimp_bezier_desc_new
 parameter_list|(
 name|cairo_path_data_t
