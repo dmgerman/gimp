@@ -61,51 +61,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_rgb_get_type (void)
-name|gimp_rgb_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|rgb_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|rgb_type
-condition|)
-name|rgb_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpRGB,gimp_rgb,gimp_rgb_copy,g_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpRGB"
+argument|GimpRGB
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_rgb_copy
+argument|gimp_rgb
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|gimp_rgb_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|rgb_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 name|void
-DECL|function|gimp_value_get_rgb (const GValue * value,GimpRGB * rgb)
 name|gimp_value_get_rgb
 parameter_list|(
 specifier|const

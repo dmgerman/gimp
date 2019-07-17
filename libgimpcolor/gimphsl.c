@@ -45,53 +45,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_hsl_get_type (void)
-name|gimp_hsl_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|hsl_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|hsl_type
-condition|)
-name|hsl_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpHSL,gimp_hsl,gimp_hsl_copy,g_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpHSL"
+argument|GimpHSL
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_hsl_copy
+argument|gimp_hsl
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|gimp_hsl_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|hsl_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 specifier|static
 name|GimpHSL
 modifier|*
-DECL|function|gimp_hsl_copy (const GimpHSL * hsl)
 name|gimp_hsl_copy
 parameter_list|(
 specifier|const

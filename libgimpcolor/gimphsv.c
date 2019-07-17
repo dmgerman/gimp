@@ -49,53 +49,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_hsv_get_type (void)
-name|gimp_hsv_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|hsv_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|hsv_type
-condition|)
-name|hsv_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpHSV,gimp_hsv,gimp_hsv_copy,g_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpHSV"
+argument|GimpHSV
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_hsv_copy
+argument|gimp_hsv
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|gimp_hsv_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|hsv_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 specifier|static
 name|GimpHSV
 modifier|*
-DECL|function|gimp_hsv_copy (const GimpHSV * hsv)
 name|gimp_hsv_copy
 parameter_list|(
 specifier|const

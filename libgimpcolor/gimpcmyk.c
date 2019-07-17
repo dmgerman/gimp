@@ -55,53 +55,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function
-name|GType
-DECL|function|gimp_cmyk_get_type (void)
-name|gimp_cmyk_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|cmyk_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|cmyk_type
-condition|)
-name|cmyk_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+DECL|function|G_DEFINE_BOXED_TYPE (GimpCMYK,gimp_cmyk,gimp_cmyk_copy,g_free)
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpCMYK"
+argument|GimpCMYK
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_cmyk_copy
+argument|gimp_cmyk
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|gimp_cmyk_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|cmyk_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_function
 specifier|static
 name|GimpCMYK
 modifier|*
-DECL|function|gimp_cmyk_copy (const GimpCMYK * cmyk)
 name|gimp_cmyk_copy
 parameter_list|(
 specifier|const
