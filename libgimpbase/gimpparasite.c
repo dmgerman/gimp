@@ -85,47 +85,18 @@ begin_comment
 comment|/*  * GIMP_TYPE_PARASITE  */
 end_comment
 
-begin_function
-name|GType
-DECL|function|gimp_parasite_get_type (void)
-name|gimp_parasite_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-name|type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpParasite"
+argument|GimpParasite
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|gimp_parasite_copy
+argument|gimp_parasite
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|gimp_parasite_free
+argument|gimp_parasite_copy
+argument_list|,
+argument|gimp_parasite_free
 argument_list|)
-expr_stmt|;
-return|return
-name|type
-return|;
-block|}
-end_function
+end_macro
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_PARASITE  */
