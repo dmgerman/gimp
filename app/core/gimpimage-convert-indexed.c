@@ -430,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1c06f60103
+DECL|enum|__anon2bd6ed1e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1518,7 +1518,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c06f60208
+DECL|struct|__anon2bd6ed1e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1748,7 +1748,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1c06f60308
+DECL|struct|__anon2bd6ed1e0308
 block|{
 DECL|member|used_count
 name|glong
@@ -3019,31 +3019,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|g_object_set
-argument_list|(
-name|image
-argument_list|,
-literal|"base-type"
-argument_list|,
-name|GIMP_INDEXED
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* when converting from GRAY, always convert to the new type's    * builtin profile    */
-if|if
-condition|(
-name|old_type
-operator|==
-name|GIMP_GRAY
-condition|)
-name|dest_profile
-operator|=
-name|gimp_image_get_builtin_color_profile
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 comment|/*  Build histogram if necessary.  */
 name|rgb_to_lab_fish
 operator|=
@@ -3461,6 +3436,18 @@ argument_list|(
 name|quantobj
 argument_list|)
 expr_stmt|;
+comment|/* Set the base type just before we also set the colormap. In    * particular we must not let any GUI code in-between (like progress    * update) in order to avoid any context switch. Some various pieces    * of the code are relying on proper image state, and an indexed image    * without a colormap is not a proper state (it will also have neither    * babl format nor profile).    * See #3070.    */
+name|g_object_set
+argument_list|(
+name|image
+argument_list|,
+literal|"base-type"
+argument_list|,
+name|GIMP_INDEXED
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Set the generated palette on the image, we need it to    *  convert the layers. We optionally remove duplicate entries    *  after the layer conversion.    */
 block|{
 name|guchar
@@ -3554,6 +3541,20 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* when converting from GRAY, always convert to the new type's    * builtin profile    */
+if|if
+condition|(
+name|old_type
+operator|==
+name|GIMP_GRAY
+condition|)
+name|dest_profile
+operator|=
+name|gimp_image_get_builtin_color_profile
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 comment|/*  Convert all layers  */
 for|for
 control|(
