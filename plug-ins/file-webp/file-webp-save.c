@@ -570,6 +570,11 @@ name|gboolean
 name|has_alpha
 decl_stmt|;
 specifier|const
+name|gchar
+modifier|*
+name|encoding
+decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -775,20 +780,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -797,30 +796,21 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 block|}
 name|format
 operator|=
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
-name|format
-argument_list|)
+name|encoding
 argument_list|,
 name|space
 argument_list|)
@@ -1929,6 +1919,11 @@ name|gboolean
 name|has_alpha
 decl_stmt|;
 specifier|const
+name|gchar
+modifier|*
+name|encoding
+decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -2327,20 +2322,14 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGBA u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B'A u8"
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -2349,30 +2338,21 @@ if|if
 condition|(
 name|out_linear
 condition|)
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"RGB u8"
-argument_list|)
 expr_stmt|;
 else|else
-name|format
+name|encoding
 operator|=
-name|babl_format
-argument_list|(
 literal|"R'G'B' u8"
-argument_list|)
 expr_stmt|;
 block|}
 name|format
 operator|=
 name|babl_format_with_space
 argument_list|(
-name|babl_format_get_encoding
-argument_list|(
-name|format
-argument_list|)
+name|encoding
 argument_list|,
 name|space
 argument_list|)
