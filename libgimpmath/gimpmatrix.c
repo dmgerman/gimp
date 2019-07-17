@@ -47,51 +47,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/**  * gimp_matrix2_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix2 objects  *  * Since: 2.4  **/
-end_comment
-
-begin_function
-name|GType
-DECL|function|gimp_matrix2_get_type (void)
-name|gimp_matrix2_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|matrix_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|matrix_type
-condition|)
-name|matrix_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpMatrix2"
+argument|GimpMatrix2
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|matrix2_copy
+argument|gimp_matrix2
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|matrix2_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|matrix_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MATRIX2  */
@@ -922,51 +889,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/**  * gimp_matrix3_get_type:  *  * Reveals the object type  *  * Returns: the #GType for Matrix3 objects  *  * Since: 2.8  **/
-end_comment
-
-begin_function
-name|GType
-DECL|function|gimp_matrix3_get_type (void)
-name|gimp_matrix3_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|matrix_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|matrix_type
-condition|)
-name|matrix_type
-operator|=
-name|g_boxed_type_register_static
+begin_macro
+name|G_DEFINE_BOXED_TYPE
 argument_list|(
-literal|"GimpMatrix3"
+argument|GimpMatrix3
 argument_list|,
-operator|(
-name|GBoxedCopyFunc
-operator|)
-name|matrix3_copy
+argument|gimp_matrix3
 argument_list|,
-operator|(
-name|GBoxedFreeFunc
-operator|)
-name|g_free
+argument|matrix3_copy
+argument_list|,
+argument|g_free
 argument_list|)
-expr_stmt|;
-return|return
-name|matrix_type
-return|;
-block|}
-end_function
+end_macro
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MATRIX3  */
