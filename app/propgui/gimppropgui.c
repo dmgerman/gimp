@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppropgui-newsprint.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppropgui-panorama-projection.h"
 end_include
 
@@ -1928,7 +1934,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d58a9a0108
+DECL|struct|__anon296cc34d0108
 block|{
 DECL|member|config_type
 specifier|const
@@ -2004,6 +2010,12 @@ block|{
 literal|"GimpGegl-gegl-motion-blur-zoom-config"
 block|,
 name|_gimp_prop_gui_new_motion_blur_zoom
+block|}
+block|,
+block|{
+literal|"GimpGegl-gegl-newsprint-config"
+block|,
+name|_gimp_prop_gui_new_newsprint
 block|}
 block|,
 block|{

@@ -2934,6 +2934,14 @@ value|"gimp-filter-motion-blur-zoom"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_NEWSPRINT
+define|#
+directive|define
+name|GIMP_HELP_FILTER_NEWSPRINT
+value|"gimp-filter-newsprint"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_NOISE_CELL
 define|#
 directive|define

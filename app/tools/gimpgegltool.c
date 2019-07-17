@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db72b20103
+DECL|enum|__anon2a1ed7890103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -543,6 +543,8 @@ block|,
 literal|"gegl:motion-blur-linear"
 block|,
 literal|"gegl:motion-blur-zoom"
+block|,
+literal|"gegl:newsprint"
 block|,
 literal|"gegl:noise-cie-lch"
 block|,

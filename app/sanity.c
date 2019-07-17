@@ -2003,11 +2003,15 @@ literal|"gegl:mirrors"
 block|,
 literal|"gegl:mono-mixer"
 block|,
+literal|"gegl:mosaic"
+block|,
 literal|"gegl:motion-blur-circular"
 block|,
 literal|"gegl:motion-blur-linear"
 block|,
 literal|"gegl:motion-blur-zoom"
+block|,
+literal|"gegl:newsprint"
 block|,
 literal|"gegl:noise-cie-lch"
 block|,
