@@ -24,47 +24,20 @@ name|GIMP_TYPE_TAGGED
 value|(gimp_tagged_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_IS_TAGGED (obj)
-define|#
-directive|define
-name|GIMP_IS_TAGGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TAGGED))
-end_define
-
-begin_define
-DECL|macro|GIMP_TAGGED (obj)
-define|#
-directive|define
-name|GIMP_TAGGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TAGGED, GimpTagged))
-end_define
-
-begin_define
-DECL|macro|GIMP_TAGGED_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_TAGGED_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_TAGGED, GimpTaggedInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpTaggedInterface
-typedef|typedef
-name|struct
-name|_GimpTaggedInterface
-name|GimpTaggedInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpTagged
+argument_list|,
+argument|gimp_tagged
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|TAGGED
+argument_list|,
+argument|GObject
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpTaggedInterface
@@ -183,16 +156,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_tagged_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|void

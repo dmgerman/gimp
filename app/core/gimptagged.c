@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2953bb400103
+DECL|enum|__anon2ace57d00103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -204,7 +204,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_TAGGED_GET_INTERFACE
+name|GIMP_TAGGED_GET_IFACE
 argument_list|(
 name|tagged
 argument_list|)
@@ -317,7 +317,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_TAGGED_GET_INTERFACE
+name|GIMP_TAGGED_GET_IFACE
 argument_list|(
 name|tagged
 argument_list|)
@@ -496,7 +496,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_TAGGED_GET_INTERFACE
+name|GIMP_TAGGED_GET_IFACE
 argument_list|(
 name|tagged
 argument_list|)
@@ -535,7 +535,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_TAGGED_GET_INTERFACE
+name|GIMP_TAGGED_GET_IFACE
 argument_list|(
 name|tagged
 argument_list|)
@@ -574,7 +574,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_TAGGED_GET_INTERFACE
+name|GIMP_TAGGED_GET_IFACE
 argument_list|(
 name|tagged
 argument_list|)

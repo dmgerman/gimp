@@ -24,47 +24,20 @@ name|GIMP_TYPE_PROGRESS
 value|(gimp_progress_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_IS_PROGRESS (obj)
-define|#
-directive|define
-name|GIMP_IS_PROGRESS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PROGRESS))
-end_define
-
-begin_define
-DECL|macro|GIMP_PROGRESS (obj)
-define|#
-directive|define
-name|GIMP_PROGRESS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PROGRESS, GimpProgress))
-end_define
-
-begin_define
-DECL|macro|GIMP_PROGRESS_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_PROGRESS_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_PROGRESS, GimpProgressInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpProgressInterface
-typedef|typedef
-name|struct
-name|_GimpProgressInterface
-name|GimpProgressInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpProgress
+argument_list|,
+argument|gimp_progress
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|PROGRESS
+argument_list|,
+argument|GObject
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpProgressInterface
@@ -234,16 +207,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_progress_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GimpProgress

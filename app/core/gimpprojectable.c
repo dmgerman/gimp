@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279246c80103
+DECL|enum|__anon294046030103
 block|{
 DECL|enumerator|INVALIDATE
 name|INVALIDATE
@@ -458,7 +458,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -511,7 +511,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -582,7 +582,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -648,7 +648,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -701,7 +701,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -750,7 +750,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -795,7 +795,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)
@@ -840,7 +840,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_PROJECTABLE_GET_INTERFACE
+name|GIMP_PROJECTABLE_GET_IFACE
 argument_list|(
 name|projectable
 argument_list|)

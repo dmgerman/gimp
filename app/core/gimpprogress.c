@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af0e4b0103
+DECL|enum|__anon275ed9530103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -197,7 +197,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -293,7 +293,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -340,7 +340,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -476,7 +476,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -537,7 +537,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -586,7 +586,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -635,7 +635,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -682,7 +682,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)
@@ -778,7 +778,7 @@ argument_list|)
 expr_stmt|;
 name|progress_iface
 operator|=
-name|GIMP_PROGRESS_GET_INTERFACE
+name|GIMP_PROGRESS_GET_IFACE
 argument_list|(
 name|progress
 argument_list|)

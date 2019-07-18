@@ -24,47 +24,20 @@ name|GIMP_TYPE_PROJECTABLE
 value|(gimp_projectable_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_IS_PROJECTABLE (obj)
-define|#
-directive|define
-name|GIMP_IS_PROJECTABLE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PROJECTABLE))
-end_define
-
-begin_define
-DECL|macro|GIMP_PROJECTABLE (obj)
-define|#
-directive|define
-name|GIMP_PROJECTABLE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PROJECTABLE, GimpProjectable))
-end_define
-
-begin_define
-DECL|macro|GIMP_PROJECTABLE_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_PROJECTABLE_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_PROJECTABLE, GimpProjectableInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpProjectableInterface
-typedef|typedef
-name|struct
-name|_GimpProjectableInterface
-name|GimpProjectableInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpProjectable
+argument_list|,
+argument|gimp_projectable
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|PROJECTABLE
+argument_list|,
+argument|GObject
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpProjectableInterface
@@ -257,16 +230,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_projectable_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|void

@@ -396,7 +396,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -444,7 +444,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -497,7 +497,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -550,7 +550,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -602,7 +602,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -688,7 +688,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -784,7 +784,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -937,7 +937,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -1028,7 +1028,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)
@@ -1132,7 +1132,7 @@ argument_list|)
 expr_stmt|;
 name|pickable_iface
 operator|=
-name|GIMP_PICKABLE_GET_INTERFACE
+name|GIMP_PICKABLE_GET_IFACE
 argument_list|(
 name|pickable
 argument_list|)

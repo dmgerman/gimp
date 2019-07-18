@@ -89,7 +89,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_WAITABLE_GET_INTERFACE
+name|GIMP_WAITABLE_GET_IFACE
 argument_list|(
 name|waitable
 argument_list|)
@@ -136,7 +136,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_WAITABLE_GET_INTERFACE
+name|GIMP_WAITABLE_GET_IFACE
 argument_list|(
 name|waitable
 argument_list|)
@@ -200,7 +200,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_WAITABLE_GET_INTERFACE
+name|GIMP_WAITABLE_GET_IFACE
 argument_list|(
 name|waitable
 argument_list|)
