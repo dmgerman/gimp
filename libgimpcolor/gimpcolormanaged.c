@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c69b00103
+DECL|enum|__anon277170590103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -187,7 +187,7 @@ literal|0
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_COLOR_MANAGED_GET_INTERFACE
+name|GIMP_COLOR_MANAGED_GET_IFACE
 argument_list|(
 name|managed
 argument_list|)
@@ -245,7 +245,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_COLOR_MANAGED_GET_INTERFACE
+name|GIMP_COLOR_MANAGED_GET_IFACE
 argument_list|(
 name|managed
 argument_list|)

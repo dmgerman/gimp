@@ -43,71 +43,29 @@ directive|define
 name|__GIMP_COLOR_MANAGED_H__
 end_define
 
-begin_macro
+begin_decl_stmt
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_define
 DECL|macro|GIMP_TYPE_COLOR_MANAGED
 define|#
 directive|define
 name|GIMP_TYPE_COLOR_MANAGED
 value|(gimp_color_managed_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_COLOR_MANAGED (obj)
-define|#
-directive|define
-name|GIMP_IS_COLOR_MANAGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_MANAGED))
-end_define
-
-begin_define
-DECL|macro|GIMP_COLOR_MANAGED (obj)
-define|#
-directive|define
-name|GIMP_COLOR_MANAGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_MANAGED, GimpColorManaged))
-end_define
-
-begin_define
-DECL|macro|GIMP_COLOR_MANAGED_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_COLOR_MANAGED_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_COLOR_MANAGED, GimpColorManagedInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpColorManagedInterface
-typedef|typedef
-name|struct
-name|_GimpColorManagedInterface
-name|GimpColorManagedInterface
-typedef|;
-end_typedef
-
-begin_comment
+name|G_DECLARE_INTERFACE
+argument_list|(
+name|GimpColorManaged
+argument_list|,
+name|gimp_color_managed
+argument_list|,
+name|GIMP
+argument_list|,
+name|COLOR_MANAGED
+argument_list|,
+name|GObject
+argument_list|)
 comment|/**  * GimpColorManagedInterface:  * @base_iface: The parent interface  * @get_icc_profile: Returns the ICC profile of the pixels managed by  *                   the object  * @profile_changed: This signal is emitted when the object's color profile  *                   has changed  * @get_color_profile: Returns the #GimpColorProfile of the pixels managed  *                     by the object  **/
-end_comment
-
-begin_struct
 DECL|struct|_GimpColorManagedInterface
-struct|struct
+decl|struct
 name|_GimpColorManagedInterface
 block|{
 DECL|member|base_iface
@@ -161,18 +119,11 @@ name|managed
 parameter_list|)
 function_decl|;
 block|}
-struct|;
-end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_color_managed_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
 end_decl_stmt
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 specifier|const
