@@ -664,7 +664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel, which  * corresponds to the number of components unless  * gimp_plugin_enable_precision() was called.  *  * Returns: Bytes per pixel.  **/
+comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel.  *  * Returns: Bytes per pixel.  **/
 end_comment
 
 begin_function

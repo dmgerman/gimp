@@ -214,9 +214,6 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|gimp_plugin_enable_precision
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|gimp_item_is_valid
@@ -280,9 +277,6 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|gimp_plugin_enable_precision
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|gimp_item_is_valid
