@@ -114,7 +114,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eedf90103
+DECL|enum|__anon2b6a41f20103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eedf90203
+DECL|enum|__anon2b6a41f20203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -172,7 +172,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eedf90308
+DECL|struct|__anon2b6a41f20308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eedf90408
+DECL|struct|__anon2b6a41f20408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -300,7 +300,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eedf90508
+DECL|struct|__anon2b6a41f20508
 block|{
 DECL|member|r
 DECL|member|g
@@ -343,7 +343,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eedf90608
+DECL|struct|__anon2b6a41f20608
 block|{
 DECL|member|text
 name|GtkWidget
@@ -814,14 +814,6 @@ begin_decl_stmt
 specifier|extern
 name|explorer_vals_t
 name|wvals
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GimpDrawable
-modifier|*
-name|drawable
 decl_stmt|;
 end_decl_stmt
 
