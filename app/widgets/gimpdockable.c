@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296edd0e0103
+DECL|enum|__anon2b2f55540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1513,7 +1513,7 @@ condition|(
 name|child
 operator|&&
 operator|!
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|child
 argument_list|)

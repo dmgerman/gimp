@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c15bf300103
+DECL|enum|__anon2b88fb8a0103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -395,7 +395,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -445,7 +445,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -504,7 +504,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -559,7 +559,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -639,7 +639,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -695,7 +695,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -760,7 +760,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -809,7 +809,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -861,7 +861,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)
@@ -914,7 +914,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)

@@ -103,7 +103,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_WINDOW_STRATEGY_GET_INTERFACE
+name|GIMP_WINDOW_STRATEGY_GET_IFACE
 argument_list|(
 name|strategy
 argument_list|)

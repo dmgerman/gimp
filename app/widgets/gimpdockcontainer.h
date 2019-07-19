@@ -24,47 +24,20 @@ name|GIMP_TYPE_DOCK_CONTAINER
 value|(gimp_dock_container_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_DOCK_CONTAINER (obj)
-define|#
-directive|define
-name|GIMP_DOCK_CONTAINER
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DOCK_CONTAINER, GimpDockContainer))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_DOCK_CONTAINER (obj)
-define|#
-directive|define
-name|GIMP_IS_DOCK_CONTAINER
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DOCK_CONTAINER))
-end_define
-
-begin_define
-DECL|macro|GIMP_DOCK_CONTAINER_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_DOCK_CONTAINER_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_DOCK_CONTAINER, GimpDockContainerInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpDockContainerInterface
-typedef|typedef
-name|struct
-name|_GimpDockContainerInterface
-name|GimpDockContainerInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpDockContainer
+argument_list|,
+argument|gimp_dock_container
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|DOCK_CONTAINER
+argument_list|,
+argument|GtkWidget
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpDockContainerInterface
@@ -154,16 +127,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_dock_container_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GList

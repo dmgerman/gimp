@@ -1390,7 +1390,7 @@ argument_list|)
 expr_stmt|;
 name|docked_iface
 operator|=
-name|GIMP_DOCKED_GET_INTERFACE
+name|GIMP_DOCKED_GET_IFACE
 argument_list|(
 name|docked
 argument_list|)

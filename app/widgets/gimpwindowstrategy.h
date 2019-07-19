@@ -24,47 +24,20 @@ name|GIMP_TYPE_WINDOW_STRATEGY
 value|(gimp_window_strategy_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_WINDOW_STRATEGY (obj)
-define|#
-directive|define
-name|GIMP_WINDOW_STRATEGY
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_WINDOW_STRATEGY, GimpWindowStrategy))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_WINDOW_STRATEGY (obj)
-define|#
-directive|define
-name|GIMP_IS_WINDOW_STRATEGY
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_WINDOW_STRATEGY))
-end_define
-
-begin_define
-DECL|macro|GIMP_WINDOW_STRATEGY_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_WINDOW_STRATEGY_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_WINDOW_STRATEGY, GimpWindowStrategyInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpWindowStrategyInterface
-typedef|typedef
-name|struct
-name|_GimpWindowStrategyInterface
-name|GimpWindowStrategyInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpWindowStrategy
+argument_list|,
+argument|gimp_window_strategy
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|WINDOW_STRATEGY
+argument_list|,
+argument|GObject
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpWindowStrategyInterface
@@ -109,16 +82,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_window_strategy_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GtkWidget

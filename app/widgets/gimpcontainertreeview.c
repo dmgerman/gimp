@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b295f660103
+DECL|enum|__anon2906d73a0103
 block|{
 DECL|enumerator|EDIT_NAME
 name|EDIT_NAME
@@ -1188,7 +1188,7 @@ name|TRUE
 argument_list|,
 literal|"show-expanders"
 argument_list|,
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)

@@ -90,7 +90,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_SESSION_MANAGED_GET_INTERFACE
+name|GIMP_SESSION_MANAGED_GET_IFACE
 argument_list|(
 name|session_managed
 argument_list|)
@@ -147,7 +147,7 @@ argument_list|)
 expr_stmt|;
 name|iface
 operator|=
-name|GIMP_SESSION_MANAGED_GET_INTERFACE
+name|GIMP_SESSION_MANAGED_GET_IFACE
 argument_list|(
 name|session_managed
 argument_list|)

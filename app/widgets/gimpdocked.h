@@ -24,47 +24,20 @@ name|GIMP_TYPE_DOCKED
 value|(gimp_docked_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_IS_DOCKED (obj)
-define|#
-directive|define
-name|GIMP_IS_DOCKED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DOCKED))
-end_define
-
-begin_define
-DECL|macro|GIMP_DOCKED (obj)
-define|#
-directive|define
-name|GIMP_DOCKED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DOCKED, GimpDocked))
-end_define
-
-begin_define
-DECL|macro|GIMP_DOCKED_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_DOCKED_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_DOCKED, GimpDockedInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpDockedInterface
-typedef|typedef
-name|struct
-name|_GimpDockedInterface
-name|GimpDockedInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpDocked
+argument_list|,
+argument|gimp_docked
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|DOCKED
+argument_list|,
+argument|GtkWidget
+argument_list|)
+end_macro
 
 begin_comment
 comment|/**  * GimpDockedInterface:  *  * Interface with common methods for stuff that is docked.  */
@@ -248,16 +221,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_docked_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|void

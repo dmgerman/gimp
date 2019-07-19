@@ -24,47 +24,20 @@ name|GIMP_TYPE_SESSION_MANAGED
 value|(gimp_session_managed_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_SESSION_MANAGED (obj)
-define|#
-directive|define
-name|GIMP_SESSION_MANAGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SESSION_MANAGED, GimpSessionManaged))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_SESSION_MANAGED (obj)
-define|#
-directive|define
-name|GIMP_IS_SESSION_MANAGED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SESSION_MANAGED))
-end_define
-
-begin_define
-DECL|macro|GIMP_SESSION_MANAGED_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_SESSION_MANAGED_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_SESSION_MANAGED, GimpSessionManagedInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpSessionManagedInterface
-typedef|typedef
-name|struct
-name|_GimpSessionManagedInterface
-name|GimpSessionManagedInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpSessionManaged
+argument_list|,
+argument|gimp_session_managed
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|SESSION_MANAGED
+argument_list|,
+argument|GtkWidget
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpSessionManagedInterface
@@ -108,16 +81,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_session_managed_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GList

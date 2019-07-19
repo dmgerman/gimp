@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28964bc50103
+DECL|enum|__anon29e074b50103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -60,47 +60,20 @@ name|GIMP_TYPE_CONTAINER_VIEW
 value|(gimp_container_view_get_type ())
 end_define
 
-begin_define
-DECL|macro|GIMP_CONTAINER_VIEW (obj)
-define|#
-directive|define
-name|GIMP_CONTAINER_VIEW
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerView))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_CONTAINER_VIEW (obj)
-define|#
-directive|define
-name|GIMP_IS_CONTAINER_VIEW
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTAINER_VIEW))
-end_define
-
-begin_define
-DECL|macro|GIMP_CONTAINER_VIEW_GET_INTERFACE (obj)
-define|#
-directive|define
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewInterface))
-end_define
-
-begin_typedef
-DECL|typedef|GimpContainerViewInterface
-typedef|typedef
-name|struct
-name|_GimpContainerViewInterface
-name|GimpContainerViewInterface
-typedef|;
-end_typedef
+begin_macro
+name|G_DECLARE_INTERFACE
+argument_list|(
+argument|GimpContainerView
+argument_list|,
+argument|gimp_container_view
+argument_list|,
+argument|GIMP
+argument_list|,
+argument|CONTAINER_VIEW
+argument_list|,
+argument|GtkWidget
+argument_list|)
+end_macro
 
 begin_struct
 DECL|struct|_GimpContainerViewInterface
@@ -390,16 +363,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_container_view_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GimpContainer

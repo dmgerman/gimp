@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ac09b0103
+DECL|enum|__anon2ba3f6f20103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1142,7 +1142,7 @@ name|view_iface
 decl_stmt|;
 name|view_iface
 operator|=
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -1398,7 +1398,7 @@ operator|->
 name|container
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -1694,7 +1694,7 @@ operator|->
 name|context
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -1850,7 +1850,7 @@ operator|==
 name|GTK_SELECTION_MULTIPLE
 argument_list|)
 expr_stmt|;
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -2035,7 +2035,7 @@ name|view_border_width
 operator|=
 name|view_border_width
 expr_stmt|;
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -2924,7 +2924,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -3445,7 +3445,7 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -3576,7 +3576,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -3701,7 +3701,7 @@ name|insert_data
 decl_stmt|;
 name|view_iface
 operator|=
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -3848,7 +3848,7 @@ name|index
 decl_stmt|;
 name|view_iface
 operator|=
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -4166,7 +4166,7 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -4243,7 +4243,7 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -4428,7 +4428,7 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
@@ -4489,7 +4489,7 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+name|GIMP_CONTAINER_VIEW_GET_IFACE
 argument_list|(
 name|view
 argument_list|)
