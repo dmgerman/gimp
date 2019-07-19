@@ -25871,7 +25871,7 @@ literal|1
 argument_list|,
 literal|99
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
