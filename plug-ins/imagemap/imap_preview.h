@@ -23,14 +23,13 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon29ebe1ce0108
+DECL|struct|__anon27d227320108
 typedef|typedef
 struct|struct
 block|{
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
+DECL|member|drawable_id
+name|gint32
+name|drawable_id
 decl_stmt|;
 DECL|member|window
 name|GtkWidget
@@ -68,10 +67,6 @@ DECL|member|widget_height
 name|gint
 name|widget_height
 decl_stmt|;
-DECL|member|src_rgn
-name|GimpPixelRgn
-name|src_rgn
-decl_stmt|;
 DECL|member|cursor
 name|GdkCursorType
 name|cursor
@@ -87,9 +82,8 @@ name|Preview_t
 modifier|*
 name|make_preview
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl

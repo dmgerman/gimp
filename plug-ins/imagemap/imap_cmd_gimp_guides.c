@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b450de60108
+DECL|struct|__anon2b5315ea0108
 typedef|typedef
 struct|struct
 block|{
@@ -84,10 +84,9 @@ name|ObjectList_t
 modifier|*
 name|list
 decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
+DECL|member|drawable_id
+name|gint32
+name|drawable_id
 decl_stmt|;
 DECL|member|alternate
 name|GtkWidget
@@ -208,8 +207,6 @@ init|=
 name|gimp_item_get_image
 argument_list|(
 name|param
-operator|->
-name|drawable
 operator|->
 name|drawable_id
 argument_list|)
@@ -1102,7 +1099,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|init_gimp_guides_dialog (GimpGuidesDialog_t * dialog,ObjectList_t * list,GimpDrawable * drawable)
+DECL|function|init_gimp_guides_dialog (GimpGuidesDialog_t * dialog,ObjectList_t * list,gint32 drawable_id)
 name|init_gimp_guides_dialog
 parameter_list|(
 name|GimpGuidesDialog_t
@@ -1113,9 +1110,8 @@ name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|dialog
@@ -1126,9 +1122,9 @@ name|list
 expr_stmt|;
 name|dialog
 operator|->
-name|drawable
+name|drawable_id
 operator|=
-name|drawable
+name|drawable_id
 expr_stmt|;
 block|}
 end_function
@@ -1136,16 +1132,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_create_gimp_guides_dialog (ObjectList_t * list,GimpDrawable * drawable)
+DECL|function|do_create_gimp_guides_dialog (ObjectList_t * list,gint32 drawable_id)
 name|do_create_gimp_guides_dialog
 parameter_list|(
 name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 specifier|static
@@ -1169,7 +1164,7 @@ name|dialog
 argument_list|,
 name|list
 argument_list|,
-name|drawable
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|default_dialog_show
@@ -1216,7 +1211,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b450de60208
+DECL|struct|__anon2b5315ea0208
 typedef|typedef
 struct|struct
 block|{
@@ -1229,10 +1224,9 @@ name|ObjectList_t
 modifier|*
 name|list
 decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
+DECL|member|drawable_id
+name|gint32
+name|drawable_id
 decl_stmt|;
 DECL|typedef|GimpGuidesCommand_t
 block|}
@@ -1243,16 +1237,15 @@ end_typedef
 begin_function
 name|Command_t
 modifier|*
-DECL|function|gimp_guides_command_new (ObjectList_t * list,GimpDrawable * drawable)
+DECL|function|gimp_guides_command_new (ObjectList_t * list,gint32 drawable_id)
 name|gimp_guides_command_new
 parameter_list|(
 name|ObjectList_t
 modifier|*
 name|list
 parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|GimpGuidesCommand_t
@@ -1274,9 +1267,9 @@ name|list
 expr_stmt|;
 name|command
 operator|->
-name|drawable
+name|drawable_id
 operator|=
-name|drawable
+name|drawable_id
 expr_stmt|;
 return|return
 name|command_init
@@ -1327,7 +1320,7 @@ name|list
 argument_list|,
 name|command
 operator|->
-name|drawable
+name|drawable_id
 argument_list|)
 expr_stmt|;
 return|return
