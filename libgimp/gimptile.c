@@ -203,8 +203,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_tile_ref (GimpTile * tile)
-name|gimp_tile_ref
+DECL|function|_gimp_tile_ref (GimpTile * tile)
+name|_gimp_tile_ref
 parameter_list|(
 name|GimpTile
 modifier|*
@@ -333,8 +333,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_unref (GimpTile * tile,gboolean dirty)
-name|gimp_tile_unref
+DECL|function|_gimp_tile_unref (GimpTile * tile,gboolean dirty)
+name|_gimp_tile_unref
 parameter_list|(
 name|GimpTile
 modifier|*
@@ -1285,7 +1285,7 @@ operator|-=
 name|max_tile_size
 expr_stmt|;
 comment|/* Unreference the tile.        */
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,

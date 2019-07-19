@@ -819,7 +819,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|gimp_tile
 argument_list|,
@@ -1058,7 +1058,7 @@ name|gimp_tile_stride
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|gimp_tile
 argument_list|,

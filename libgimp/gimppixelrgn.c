@@ -480,7 +480,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -538,7 +538,7 @@ operator|*
 name|tile_data
 operator|++
 expr_stmt|;
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -684,7 +684,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -773,7 +773,7 @@ name|buf
 operator|+=
 name|inc
 expr_stmt|;
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -921,7 +921,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -1026,7 +1026,7 @@ operator|+=
 name|inc
 expr_stmt|;
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -1239,7 +1239,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -1387,7 +1387,7 @@ name|bpp
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -1510,7 +1510,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -1566,7 +1566,7 @@ operator|*
 name|buf
 operator|++
 expr_stmt|;
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -1712,7 +1712,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -1801,7 +1801,7 @@ name|buf
 operator|+=
 name|inc
 expr_stmt|;
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -1946,7 +1946,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -2054,7 +2054,7 @@ operator|+=
 name|inc
 expr_stmt|;
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -2268,7 +2268,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
@@ -2414,7 +2414,7 @@ name|bpp
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -2854,7 +2854,7 @@ operator|->
 name|y
 argument_list|)
 decl_stmt|;
-name|gimp_tile_unref
+name|_gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
@@ -3499,7 +3499,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_tile_ref
+name|_gimp_tile_ref
 argument_list|(
 name|tile
 argument_list|)
