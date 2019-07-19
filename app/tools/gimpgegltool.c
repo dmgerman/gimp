@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1ed7890103
+DECL|enum|__anon2797ead80103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -529,6 +529,8 @@ block|,
 literal|"gegl:mantiuk06"
 block|,
 literal|"gegl:maze"
+block|,
+literal|"gegl:mean-curvature-blur"
 block|,
 literal|"gegl:median-blur"
 block|,

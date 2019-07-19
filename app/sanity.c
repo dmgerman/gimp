@@ -1997,6 +1997,8 @@ literal|"gegl:matting-global"
 block|,
 literal|"gegl:maze"
 block|,
+literal|"gegl:mean-curvature-blur"
+block|,
 literal|"gegl:median-blur"
 block|,
 literal|"gegl:mirrors"

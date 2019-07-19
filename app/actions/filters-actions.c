@@ -1821,6 +1821,27 @@ name|GIMP_HELP_FILTER_MAZE
 block|}
 block|,
 block|{
+literal|"filters-mean-curvature-blur"
+block|,
+name|GIMP_ICON_GEGL
+block|,
+name|NC_
+argument_list|(
+literal|"filters-action"
+argument_list|,
+literal|"Mean C_urvature Blur..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|"gegl:mean-curvature-blur"
+block|,
+name|GIMP_HELP_FILTER_MEAN_CURVATURE_BLUR
+block|}
+block|,
+block|{
 literal|"filters-median-blur"
 block|,
 name|GIMP_ICON_GEGL

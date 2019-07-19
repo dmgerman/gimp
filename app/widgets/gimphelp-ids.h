@@ -2886,6 +2886,14 @@ value|"gimp-filter-maze"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_MEAN_CURVATURE_BLUR
+define|#
+directive|define
+name|GIMP_HELP_FILTER_MEAN_CURVATURE_BLUR
+value|"gimp-filter-mean-curvature-blur"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILTER_MEDIAN_BLUR
 define|#
 directive|define
