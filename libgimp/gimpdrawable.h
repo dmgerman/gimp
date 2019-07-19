@@ -43,66 +43,9 @@ directive|define
 name|__GIMP_DRAWABLE_H__
 end_define
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
-comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_struct
-DECL|struct|_GimpDrawable
-struct|struct
-name|_GimpDrawable
-block|{
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
-decl_stmt|;
-comment|/* drawable ID */
-DECL|member|width
-name|guint
-name|width
-decl_stmt|;
-comment|/* width of drawble */
-DECL|member|height
-name|guint
-name|height
-decl_stmt|;
-comment|/* height of drawble */
-DECL|member|bpp
-name|guint
-name|bpp
-decl_stmt|;
-comment|/* bytes per pixel of drawable */
-DECL|member|ntile_rows
-name|guint
-name|ntile_rows
-decl_stmt|;
-comment|/* # of tile rows */
-DECL|member|ntile_cols
-name|guint
-name|ntile_cols
-decl_stmt|;
-comment|/* # of tile columns */
-DECL|member|tiles
-name|GimpTile
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/* the normal tiles */
-DECL|member|shadow_tiles
-name|GimpTile
-modifier|*
-name|shadow_tiles
-decl_stmt|;
-comment|/* the shadow tiles */
-block|}
-struct|;
-end_struct
-
 begin_function_decl
+name|G_BEGIN_DECLS
+comment|/* For information look into the C source or the html documentation */
 name|GeglBuffer
 modifier|*
 name|gimp_drawable_get_buffer
@@ -144,64 +87,6 @@ name|gimp_drawable_get_thumbnail_format
 parameter_list|(
 name|gint32
 name|drawable_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_drawable_get_buffer
-argument_list|)
-end_macro
-
-begin_function_decl
-name|GimpDrawable
-modifier|*
-name|gimp_drawable_get
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GIMP_DEPRECATED
-name|void
-name|gimp_drawable_detach
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_drawable_get_buffer
-argument_list|)
-end_macro
-
-begin_function_decl
-name|GimpTile
-modifier|*
-name|gimp_drawable_get_tile
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gboolean
-name|shadow
-parameter_list|,
-name|gint
-name|row
-parameter_list|,
-name|gint
-name|col
 parameter_list|)
 function_decl|;
 end_function_decl

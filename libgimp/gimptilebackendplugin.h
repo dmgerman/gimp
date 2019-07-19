@@ -162,9 +162,8 @@ name|GeglTileBackend
 modifier|*
 name|_gimp_tile_backend_plugin_new
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|,
 name|gint
 name|shadow

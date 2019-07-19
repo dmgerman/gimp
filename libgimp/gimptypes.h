@@ -40,24 +40,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpTile
-typedef|typedef
-name|struct
-name|_GimpTile
-name|GimpTile
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDrawable
-typedef|typedef
-name|struct
-name|_GimpDrawable
-name|GimpDrawable
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParamDef
 typedef|typedef
 name|struct
