@@ -58,15 +58,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPixelRgn
-typedef|typedef
-name|struct
-name|_GimpPixelRgn
-name|GimpPixelRgn
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParamDef
 typedef|typedef
 name|struct

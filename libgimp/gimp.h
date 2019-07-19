@@ -176,12 +176,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimptile.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp_pdb_headers.h>
 end_include
 

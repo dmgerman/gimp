@@ -111,32 +111,9 @@ block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|GIMP_DEPRECATED
-name|void
-name|gimp_tile_cache_ntiles
-parameter_list|(
-name|gulong
-name|ntiles
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  private function  */
 end_comment
-
-begin_function_decl
-name|G_GNUC_INTERNAL
-name|void
-name|_gimp_tile_ref
-parameter_list|(
-name|GimpTile
-modifier|*
-name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|G_GNUC_INTERNAL
@@ -176,18 +153,6 @@ parameter_list|(
 name|GimpTile
 modifier|*
 name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|G_GNUC_INTERNAL
-name|void
-name|_gimp_tile_cache_flush_drawable
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
