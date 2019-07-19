@@ -276,29 +276,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_preview_draw_buffer
-argument_list|)
-end_macro
-
-begin_function_decl
-name|void
-name|gimp_drawable_preview_draw_region
-parameter_list|(
-name|GimpDrawablePreview
-modifier|*
-name|preview
-parameter_list|,
-specifier|const
-name|GimpPixelRgn
-modifier|*
-name|region
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  for internal use only  */
 end_comment
