@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gimptilebackendtilemanager.c  * Copyright (C) 2012 Ãyvind KolÃ¥s<pippin@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimptilebackendplugin.c  * Copyright (C) 2011-2019 Ãyvind KolÃ¥s<pippin@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -838,10 +838,6 @@ name|memcpy
 argument_list|(
 name|tile_data
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|gimp_tile
 operator|.
 name|data
@@ -899,10 +895,6 @@ name|row
 operator|*
 name|tile_stride
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|gimp_tile
 operator|.
 name|data
@@ -1048,10 +1040,6 @@ condition|)
 block|{
 name|memcpy
 argument_list|(
-operator|(
-name|gchar
-operator|*
-operator|)
 name|gimp_tile
 operator|.
 name|data
@@ -1105,10 +1093,6 @@ control|)
 block|{
 name|memcpy
 argument_list|(
-operator|(
-name|gchar
-operator|*
-operator|)
 name|gimp_tile
 operator|.
 name|data
@@ -1697,6 +1681,7 @@ name|tile_info
 operator|->
 name|use_shm
 condition|)
+block|{
 name|memcpy
 argument_list|(
 name|gimp_shm_addr
@@ -1719,7 +1704,9 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|tile_data
 operator|.
 name|data
@@ -1728,6 +1715,7 @@ name|tile
 operator|->
 name|data
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
