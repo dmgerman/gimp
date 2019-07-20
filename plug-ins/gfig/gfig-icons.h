@@ -6,139 +6,147 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GFIG_STOCK_H__
+name|__GFIG_ICONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GFIG_STOCK_H__
+DECL|macro|__GFIG_ICONS_H__
 define|#
 directive|define
-name|__GFIG_STOCK_H__
+name|__GFIG_ICONS_H__
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_BEZIER
+DECL|macro|GFIG_ICON_BEZIER
 define|#
 directive|define
-name|GFIG_STOCK_BEZIER
+name|GFIG_ICON_BEZIER
 value|"gfig-bezier"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_CIRCLE
+DECL|macro|GFIG_ICON_CIRCLE
 define|#
 directive|define
-name|GFIG_STOCK_CIRCLE
+name|GFIG_ICON_CIRCLE
 value|"gfig-circle"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_COPY_OBJECT
+DECL|macro|GFIG_ICON_COPY_OBJECT
 define|#
 directive|define
-name|GFIG_STOCK_COPY_OBJECT
+name|GFIG_ICON_COPY_OBJECT
 value|"gfig-copy-object"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_CURVE
+DECL|macro|GFIG_ICON_CURVE
 define|#
 directive|define
-name|GFIG_STOCK_CURVE
+name|GFIG_ICON_CURVE
 value|"gfig-curve"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_DELETE_OBJECT
+DECL|macro|GFIG_ICON_DELETE_OBJECT
 define|#
 directive|define
-name|GFIG_STOCK_DELETE_OBJECT
-value|"gfig-delete"
+name|GFIG_ICON_DELETE_OBJECT
+value|"gfig-delete-object"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_ELLIPSE
+DECL|macro|GFIG_ICON_ELLIPSE
 define|#
 directive|define
-name|GFIG_STOCK_ELLIPSE
+name|GFIG_ICON_ELLIPSE
 value|"gfig-ellipse"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_LINE
+DECL|macro|GFIG_ICON_LINE
 define|#
 directive|define
-name|GFIG_STOCK_LINE
+name|GFIG_ICON_LINE
 value|"gfig-line"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_MOVE_OBJECT
+DECL|macro|GFIG_ICON_MOVE_OBJECT
 define|#
 directive|define
-name|GFIG_STOCK_MOVE_OBJECT
+name|GFIG_ICON_MOVE_OBJECT
 value|"gfig-move-object"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_MOVE_POINT
+DECL|macro|GFIG_ICON_MOVE_POINT
 define|#
 directive|define
-name|GFIG_STOCK_MOVE_POINT
+name|GFIG_ICON_MOVE_POINT
 value|"gfig-move-point"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_POLYGON
+DECL|macro|GFIG_ICON_POLYGON
 define|#
 directive|define
-name|GFIG_STOCK_POLYGON
+name|GFIG_ICON_POLYGON
 value|"gfig-polygon"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_RECTANGLE
+DECL|macro|GFIG_ICON_RECTANGLE
 define|#
 directive|define
-name|GFIG_STOCK_RECTANGLE
+name|GFIG_ICON_RECTANGLE
 value|"gfig-rectangle"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_SELECT_OBJECT
+DECL|macro|GFIG_ICON_SELECT_OBJECT
 define|#
 directive|define
-name|GFIG_STOCK_SELECT_OBJECT
+name|GFIG_ICON_SELECT_OBJECT
 value|"gfig-select-object"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_SHOW_ALL
+DECL|macro|GFIG_ICON_SHOW_ALL
 define|#
 directive|define
-name|GFIG_STOCK_SHOW_ALL
+name|GFIG_ICON_SHOW_ALL
 value|"gfig-show-all"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_SPIRAL
+DECL|macro|GFIG_ICON_SPIRAL
 define|#
 directive|define
-name|GFIG_STOCK_SPIRAL
+name|GFIG_ICON_SPIRAL
 value|"gfig-spiral"
 end_define
 
 begin_define
-DECL|macro|GFIG_STOCK_STAR
+DECL|macro|GFIG_ICON_STAR
 define|#
 directive|define
-name|GFIG_STOCK_STAR
+name|GFIG_ICON_STAR
 value|"gfig-star"
+end_define
+
+begin_define
+DECL|macro|GFIG_ICON_LOGO
+define|#
+directive|define
+name|GFIG_ICON_LOGO
+value|"gfig-logo"
 end_define
 
 begin_function_decl
 name|void
-name|gfig_stock_init
+name|gfig_icons_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -151,7 +159,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GFIG_STOCK_H__ */
+comment|/* __GFIG_ICONS_H__ */
 end_comment
 
 end_unit

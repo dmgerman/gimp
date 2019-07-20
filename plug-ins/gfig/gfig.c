@@ -119,6 +119,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gfig-icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gfig-line.h"
 end_include
 
@@ -144,12 +150,6 @@ begin_include
 include|#
 directive|include
 file|"gfig-star.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gfig-stock.h"
 end_include
 
 begin_include

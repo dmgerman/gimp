@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gfig-icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gfig-line.h"
 end_include
 
@@ -173,12 +179,6 @@ begin_include
 include|#
 directive|include
 file|"gfig-star.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gfig-stock.h"
 end_include
 
 begin_define
@@ -437,7 +437,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280419100108
+DECL|struct|__anon2c77aa110108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1155,7 +1155,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gfig_stock_init
+name|gfig_icons_init
 argument_list|()
 expr_stmt|;
 name|path
@@ -4176,7 +4176,7 @@ block|,
 block|{
 literal|"show_all"
 block|,
-name|GFIG_STOCK_SHOW_ALL
+name|GFIG_ICON_SHOW_ALL
 block|,
 name|N_
 argument_list|(
@@ -4206,7 +4206,7 @@ block|{
 block|{
 literal|"line"
 block|,
-name|GFIG_STOCK_LINE
+name|GFIG_ICON_LINE
 block|,
 name|NULL
 block|,
@@ -4223,7 +4223,7 @@ block|,
 block|{
 literal|"rectangle"
 block|,
-name|GFIG_STOCK_RECTANGLE
+name|GFIG_ICON_RECTANGLE
 block|,
 name|NULL
 block|,
@@ -4240,7 +4240,7 @@ block|,
 block|{
 literal|"circle"
 block|,
-name|GFIG_STOCK_CIRCLE
+name|GFIG_ICON_CIRCLE
 block|,
 name|NULL
 block|,
@@ -4257,7 +4257,7 @@ block|,
 block|{
 literal|"ellipse"
 block|,
-name|GFIG_STOCK_ELLIPSE
+name|GFIG_ICON_ELLIPSE
 block|,
 name|NULL
 block|,
@@ -4274,7 +4274,7 @@ block|,
 block|{
 literal|"arc"
 block|,
-name|GFIG_STOCK_CURVE
+name|GFIG_ICON_CURVE
 block|,
 name|NULL
 block|,
@@ -4291,7 +4291,7 @@ block|,
 block|{
 literal|"polygon"
 block|,
-name|GFIG_STOCK_POLYGON
+name|GFIG_ICON_POLYGON
 block|,
 name|NULL
 block|,
@@ -4308,7 +4308,7 @@ block|,
 block|{
 literal|"star"
 block|,
-name|GFIG_STOCK_STAR
+name|GFIG_ICON_STAR
 block|,
 name|NULL
 block|,
@@ -4325,7 +4325,7 @@ block|,
 block|{
 literal|"spiral"
 block|,
-name|GFIG_STOCK_SPIRAL
+name|GFIG_ICON_SPIRAL
 block|,
 name|NULL
 block|,
@@ -4342,7 +4342,7 @@ block|,
 block|{
 literal|"bezier"
 block|,
-name|GFIG_STOCK_BEZIER
+name|GFIG_ICON_BEZIER
 block|,
 name|NULL
 block|,
@@ -4360,7 +4360,7 @@ block|,
 block|{
 literal|"move_obj"
 block|,
-name|GFIG_STOCK_MOVE_OBJECT
+name|GFIG_ICON_MOVE_OBJECT
 block|,
 name|NULL
 block|,
@@ -4377,7 +4377,7 @@ block|,
 block|{
 literal|"move_point"
 block|,
-name|GFIG_STOCK_MOVE_POINT
+name|GFIG_ICON_MOVE_POINT
 block|,
 name|NULL
 block|,
@@ -4394,7 +4394,7 @@ block|,
 block|{
 literal|"copy"
 block|,
-name|GFIG_STOCK_COPY_OBJECT
+name|GFIG_ICON_COPY_OBJECT
 block|,
 name|NULL
 block|,
@@ -4411,7 +4411,7 @@ block|,
 block|{
 literal|"delete"
 block|,
-name|GFIG_STOCK_DELETE_OBJECT
+name|GFIG_ICON_DELETE_OBJECT
 block|,
 name|NULL
 block|,
@@ -4428,7 +4428,7 @@ block|,
 block|{
 literal|"select"
 block|,
-name|GFIG_STOCK_SELECT_OBJECT
+name|GFIG_ICON_SELECT_OBJECT
 block|,
 name|NULL
 block|,
