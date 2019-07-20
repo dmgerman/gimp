@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"lighting-icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"lighting-image.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"lighting-preview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting-stock.h"
 end_include
 
 begin_include
@@ -3326,9 +3326,9 @@ expr_stmt|;
 comment|/* Ambient intensity */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_AMBIENT_LOW
+name|LIGHTING_INTENSITY_AMBIENT_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3476,9 +3476,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_AMBIENT_HIGH
+name|LIGHTING_INTENSITY_AMBIENT_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3509,9 +3509,9 @@ expr_stmt|;
 comment|/* Diffuse intensity */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_DIFFUSE_LOW
+name|LIGHTING_INTENSITY_DIFFUSE_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3659,9 +3659,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_DIFFUSE_HIGH
+name|LIGHTING_INTENSITY_DIFFUSE_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3692,9 +3692,9 @@ expr_stmt|;
 comment|/* Specular reflection */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_SPECULAR_LOW
+name|LIGHTING_REFLECTIVITY_SPECULAR_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3841,9 +3841,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_SPECULAR_HIGH
+name|LIGHTING_REFLECTIVITY_SPECULAR_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3874,9 +3874,9 @@ expr_stmt|;
 comment|/* Highlight */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_HIGHLIGHT_LOW
+name|LIGHTING_REFLECTIVITY_HIGHLIGHT_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4023,9 +4023,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_HIGHLIGHT_HIGH
+name|LIGHTING_REFLECTIVITY_HIGHLIGHT_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -5169,7 +5169,7 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
-name|lighting_stock_init
+name|lighting_icons_init
 argument_list|()
 expr_stmt|;
 name|appwin
