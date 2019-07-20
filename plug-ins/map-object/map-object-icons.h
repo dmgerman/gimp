@@ -6,99 +6,99 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MAPOBJECT_STOCK_H__
+name|__MAPOBJECT_ICONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MAPOBJECT_STOCK_H__
+DECL|macro|__MAPOBJECT_ICONS_H__
 define|#
 directive|define
-name|__MAPOBJECT_STOCK_H__
+name|__MAPOBJECT_ICONS_H__
 end_define
 
 begin_define
-DECL|macro|STOCK_INTENSITY_AMBIENT_LOW
+DECL|macro|MAPOBJECT_INTENSITY_AMBIENT_LOW
 define|#
 directive|define
-name|STOCK_INTENSITY_AMBIENT_LOW
-value|"intensity-ambient-low"
+name|MAPOBJECT_INTENSITY_AMBIENT_LOW
+value|"lighting-intensity-ambient-low"
 end_define
 
 begin_define
-DECL|macro|STOCK_INTENSITY_AMBIENT_HIGH
+DECL|macro|MAPOBJECT_INTENSITY_AMBIENT_HIGH
 define|#
 directive|define
-name|STOCK_INTENSITY_AMBIENT_HIGH
-value|"intensity-ambient-high"
+name|MAPOBJECT_INTENSITY_AMBIENT_HIGH
+value|"lighting-intensity-ambient-high"
 end_define
 
 begin_define
-DECL|macro|STOCK_INTENSITY_DIFFUSE_LOW
+DECL|macro|MAPOBJECT_INTENSITY_DIFFUSE_LOW
 define|#
 directive|define
-name|STOCK_INTENSITY_DIFFUSE_LOW
-value|"intensity-diffuse-low"
+name|MAPOBJECT_INTENSITY_DIFFUSE_LOW
+value|"lighting-intensity-diffuse-low"
 end_define
 
 begin_define
-DECL|macro|STOCK_INTENSITY_DIFFUSE_HIGH
+DECL|macro|MAPOBJECT_INTENSITY_DIFFUSE_HIGH
 define|#
 directive|define
-name|STOCK_INTENSITY_DIFFUSE_HIGH
-value|"intensity-diffuse-high"
+name|MAPOBJECT_INTENSITY_DIFFUSE_HIGH
+value|"lighting-intensity-diffuse-high"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_DIFFUSE_LOW
+DECL|macro|MAPOBJECT_REFLECTIVITY_DIFFUSE_LOW
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_DIFFUSE_LOW
-value|"reflectivity-diffuse-low"
+name|MAPOBJECT_REFLECTIVITY_DIFFUSE_LOW
+value|"lighting-reflectivity-diffuse-low"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_DIFFUSE_HIGH
+DECL|macro|MAPOBJECT_REFLECTIVITY_DIFFUSE_HIGH
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_DIFFUSE_HIGH
-value|"reflectivity-diffuse-high"
+name|MAPOBJECT_REFLECTIVITY_DIFFUSE_HIGH
+value|"lighting-reflectivity-diffuse-high"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_SPECULAR_LOW
+DECL|macro|MAPOBJECT_REFLECTIVITY_SPECULAR_LOW
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_SPECULAR_LOW
-value|"reflectivity-specular-low"
+name|MAPOBJECT_REFLECTIVITY_SPECULAR_LOW
+value|"lighting-reflectivity-specular-low"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_SPECULAR_HIGH
+DECL|macro|MAPOBJECT_REFLECTIVITY_SPECULAR_HIGH
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_SPECULAR_HIGH
-value|"reflectivity-specular-high"
+name|MAPOBJECT_REFLECTIVITY_SPECULAR_HIGH
+value|"lighting-reflectivity-specular-high"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_HIGHLIGHT_LOW
+DECL|macro|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_LOW
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_HIGHLIGHT_LOW
-value|"reflectivity-highlight-low"
+name|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_LOW
+value|"lighting-reflectivity-highlight-low"
 end_define
 
 begin_define
-DECL|macro|STOCK_REFLECTIVITY_HIGHLIGHT_HIGH
+DECL|macro|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_HIGH
 define|#
 directive|define
-name|STOCK_REFLECTIVITY_HIGHLIGHT_HIGH
-value|"reflectivity-highlight-high"
+name|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_HIGH
+value|"lighting-reflectivity-highlight-high"
 end_define
 
 begin_function_decl
 name|void
-name|mapobject_stock_init
+name|mapobject_icons_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -111,7 +111,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __MAPOBJECT_STOCK_H__ */
+comment|/* __MAPOBJECT_ICONS_H__ */
 end_comment
 
 end_unit

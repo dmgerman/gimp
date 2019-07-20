@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"map-object-icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"map-object-image.h"
 end_include
 
@@ -63,12 +69,6 @@ begin_include
 include|#
 directive|include
 file|"map-object-main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"map-object-stock.h"
 end_include
 
 begin_include
@@ -3717,9 +3717,9 @@ expr_stmt|;
 comment|/* Ambient intensity */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_AMBIENT_LOW
+name|MAPOBJECT_INTENSITY_AMBIENT_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3843,9 +3843,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_AMBIENT_HIGH
+name|MAPOBJECT_INTENSITY_AMBIENT_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -3876,9 +3876,9 @@ expr_stmt|;
 comment|/* Diffuse intensity */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_DIFFUSE_LOW
+name|MAPOBJECT_INTENSITY_DIFFUSE_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4002,9 +4002,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_INTENSITY_DIFFUSE_HIGH
+name|MAPOBJECT_INTENSITY_DIFFUSE_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4143,9 +4143,9 @@ expr_stmt|;
 comment|/* Diffuse reflection */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_DIFFUSE_LOW
+name|MAPOBJECT_REFLECTIVITY_DIFFUSE_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4269,9 +4269,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_DIFFUSE_HIGH
+name|MAPOBJECT_REFLECTIVITY_DIFFUSE_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4302,9 +4302,9 @@ expr_stmt|;
 comment|/* Specular reflection */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_SPECULAR_LOW
+name|MAPOBJECT_REFLECTIVITY_SPECULAR_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4427,9 +4427,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_SPECULAR_HIGH
+name|MAPOBJECT_REFLECTIVITY_SPECULAR_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4460,9 +4460,9 @@ expr_stmt|;
 comment|/* Highlight */
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_HIGHLIGHT_LOW
+name|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_LOW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -4585,9 +4585,9 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|STOCK_REFLECTIVITY_HIGHLIGHT_HIGH
+name|MAPOBJECT_REFLECTIVITY_HIGHLIGHT_HIGH
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
