@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4f810108
+DECL|struct|__anon2a2301a30108
 block|{
 union|union
-DECL|union|__anon2b4e4f81020a
+DECL|union|__anon2a2301a3020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4f810308
+DECL|struct|__anon2a2301a30308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4f810408
+DECL|struct|__anon2a2301a30408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4f810508
+DECL|struct|__anon2a2301a30508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e4f810608
+DECL|struct|__anon2a2301a30608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5116,10 +5116,6 @@ name|GtkTreeModel
 modifier|*
 name|model
 decl_stmt|;
-name|GdkPixbuf
-modifier|*
-name|ico
-decl_stmt|;
 name|hbox
 operator|=
 name|gtk_box_new
@@ -5324,17 +5320,6 @@ index|]
 operator|=
 name|combo
 expr_stmt|;
-name|ico
-operator|=
-name|gtk_widget_render_icon_pixbuf
-argument_list|(
-name|dialog
-argument_list|,
-name|GIMP_ICON_CHANNEL_GRAY
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
-argument_list|)
-expr_stmt|;
 name|model
 operator|=
 name|gtk_combo_box_get_model
@@ -5378,17 +5363,12 @@ argument_list|(
 literal|"Mask value"
 argument_list|)
 argument_list|,
-name|GIMP_INT_STORE_PIXBUF
+name|GIMP_INT_STORE_ICON_NAME
 argument_list|,
-name|ico
+name|GIMP_ICON_CHANNEL_GRAY
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|ico
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
