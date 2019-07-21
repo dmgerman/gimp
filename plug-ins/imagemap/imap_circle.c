@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"imap_object_popup.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
 end_include
 
 begin_include
@@ -358,7 +358,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|circle_get_stock_icon_name
+name|circle_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -425,7 +425,7 @@ name|circle_write_ncsa
 block|,
 name|object_do_popup
 block|,
-name|circle_get_stock_icon_name
+name|circle_get_icon_name
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1273,7 +1273,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon275f1aec0108
+DECL|struct|__anon2941f6ad0108
 typedef|typedef
 struct|struct
 block|{
@@ -2141,14 +2141,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|circle_get_stock_icon_name (void)
-name|circle_get_stock_icon_name
+DECL|function|circle_get_icon_name (void)
+name|circle_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 return|return
-name|IMAP_STOCK_CIRCLE
+name|IMAP_CIRCLE
 return|;
 block|}
 end_function

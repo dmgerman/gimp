@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"imap_settings.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
 end_include
 
 begin_include
@@ -843,7 +843,7 @@ block|,
 block|{
 literal|"MoveToFront"
 block|,
-name|IMAP_STOCK_TO_FRONT
+name|IMAP_TO_FRONT
 block|,
 literal|""
 block|,
@@ -860,7 +860,7 @@ block|,
 block|{
 literal|"SendToBack"
 block|,
-name|IMAP_STOCK_TO_BACK
+name|IMAP_TO_BACK
 block|,
 literal|""
 block|,
@@ -1316,7 +1316,7 @@ block|,
 block|{
 literal|"Rectangle"
 block|,
-name|IMAP_STOCK_RECTANGLE
+name|IMAP_RECTANGLE
 block|,
 name|N_
 argument_list|(
@@ -1336,7 +1336,7 @@ block|,
 block|{
 literal|"Circle"
 block|,
-name|IMAP_STOCK_CIRCLE
+name|IMAP_CIRCLE
 block|,
 name|N_
 argument_list|(
@@ -1356,7 +1356,7 @@ block|,
 block|{
 literal|"Polygon"
 block|,
-name|IMAP_STOCK_POLYGON
+name|IMAP_POLYGON
 block|,
 name|N_
 argument_list|(

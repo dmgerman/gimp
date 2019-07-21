@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"imap_polygon.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
 end_include
 
 begin_include
@@ -427,7 +427,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|polygon_get_stock_icon_name
+name|polygon_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -492,7 +492,7 @@ name|polygon_write_ncsa
 block|,
 name|polygon_do_popup
 block|,
-name|polygon_get_stock_icon_name
+name|polygon_get_icon_name
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1649,7 +1649,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b8884c00108
+DECL|struct|__anon2bdcb97f0108
 typedef|typedef
 struct|struct
 block|{
@@ -4649,14 +4649,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|polygon_get_stock_icon_name (void)
-name|polygon_get_stock_icon_name
+DECL|function|polygon_get_icon_name (void)
+name|polygon_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 return|return
-name|IMAP_STOCK_POLYGON
+name|IMAP_POLYGON
 return|;
 block|}
 end_function

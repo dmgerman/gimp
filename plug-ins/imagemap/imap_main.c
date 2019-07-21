@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -161,12 +167,6 @@ begin_include
 include|#
 directive|include
 file|"imap_statusbar.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
 end_include
 
 begin_include
@@ -5406,7 +5406,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
-name|init_stock_icons
+name|init_icons
 argument_list|()
 expr_stmt|;
 comment|/* Create menu */

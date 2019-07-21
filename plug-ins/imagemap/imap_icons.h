@@ -6,99 +6,99 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_IMAP_STOCK_H
+name|_IMAP_ICONS_H
 end_ifndef
 
 begin_define
-DECL|macro|_IMAP_STOCK_H
+DECL|macro|_IMAP_ICONS_H
 define|#
 directive|define
-name|_IMAP_STOCK_H
+name|_IMAP_ICONS_H
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_ARROW
+DECL|macro|IMAP_ARROW
 define|#
 directive|define
-name|IMAP_STOCK_ARROW
+name|IMAP_ARROW
 value|"imap-arrow"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_CIRCLE
+DECL|macro|IMAP_CIRCLE
 define|#
 directive|define
-name|IMAP_STOCK_CIRCLE
+name|IMAP_CIRCLE
 value|"imap-circle"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_COORD
+DECL|macro|IMAP_COORD
 define|#
 directive|define
-name|IMAP_STOCK_COORD
+name|IMAP_COORD
 value|"imap-coord"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_DIMENSION
+DECL|macro|IMAP_DIMENSION
 define|#
 directive|define
-name|IMAP_STOCK_DIMENSION
+name|IMAP_DIMENSION
 value|"imap-dimension"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_JAVA
+DECL|macro|IMAP_JAVA
 define|#
 directive|define
-name|IMAP_STOCK_JAVA
+name|IMAP_JAVA
 value|"imap-java"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_LINK
+DECL|macro|IMAP_LINK
 define|#
 directive|define
-name|IMAP_STOCK_LINK
+name|IMAP_LINK
 value|"imap-link"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_POLYGON
+DECL|macro|IMAP_POLYGON
 define|#
 directive|define
-name|IMAP_STOCK_POLYGON
+name|IMAP_POLYGON
 value|"imap-polygon"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_RECTANGLE
+DECL|macro|IMAP_RECTANGLE
 define|#
 directive|define
-name|IMAP_STOCK_RECTANGLE
+name|IMAP_RECTANGLE
 value|"imap-rectangle"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_TO_BACK
+DECL|macro|IMAP_TO_BACK
 define|#
 directive|define
-name|IMAP_STOCK_TO_BACK
+name|IMAP_TO_BACK
 value|"imap-to-back"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_TO_FRONT
+DECL|macro|IMAP_TO_FRONT
 define|#
 directive|define
-name|IMAP_STOCK_TO_FRONT
+name|IMAP_TO_FRONT
 value|"imap-to-front"
 end_define
 
 begin_function_decl
 name|void
-name|init_stock_icons
+name|init_icons
 parameter_list|(
 name|void
 parameter_list|)
@@ -111,7 +111,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* _IMAP_STOCK_H */
+comment|/* _IMAP_ICONS_H */
 end_comment
 
 end_unit

@@ -526,13 +526,13 @@ modifier|*
 name|event
 parameter_list|)
 function_decl|;
-DECL|member|get_stock_icon_name
+DECL|member|get_icon_name
 specifier|const
 name|gchar
 modifier|*
 function_decl|(
 modifier|*
-name|get_stock_icon_name
+name|get_icon_name
 function_decl|)
 parameter_list|(
 name|void
@@ -986,19 +986,19 @@ value|((obj)->class->fill_info_tab((obj), (data)))
 end_define
 
 begin_define
-DECL|macro|object_get_stock_icon_name (obj)
+DECL|macro|object_get_icon_name (obj)
 define|#
 directive|define
-name|object_get_stock_icon_name
+name|object_get_icon_name
 parameter_list|(
 name|obj
 parameter_list|)
 define|\
-value|((obj)->class->get_stock_icon_name())
+value|((obj)->class->get_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon2c785c100108
+DECL|struct|__anon2c7fe2780108
 typedef|typedef
 struct|struct
 block|{
@@ -1102,7 +1102,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c785c100208
+DECL|struct|__anon2c7fe2780208
 typedef|typedef
 struct|struct
 block|{

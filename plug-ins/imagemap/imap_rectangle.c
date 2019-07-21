@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_icons.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -59,12 +65,6 @@ begin_include
 include|#
 directive|include
 file|"imap_rectangle.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
 end_include
 
 begin_include
@@ -380,7 +380,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|rectangle_get_stock_icon_name
+name|rectangle_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -446,7 +446,7 @@ name|rectangle_write_ncsa
 block|,
 name|object_do_popup
 block|,
-name|rectangle_get_stock_icon_name
+name|rectangle_get_icon_name
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1907,7 +1907,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b8887b70108
+DECL|struct|__anon2c8b2d1f0108
 typedef|typedef
 struct|struct
 block|{
@@ -3038,14 +3038,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|rectangle_get_stock_icon_name (void)
-name|rectangle_get_stock_icon_name
+DECL|function|rectangle_get_icon_name (void)
+name|rectangle_get_icon_name
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 return|return
-name|IMAP_STOCK_RECTANGLE
+name|IMAP_RECTANGLE
 return|;
 block|}
 end_function

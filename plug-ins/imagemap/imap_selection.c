@@ -1247,9 +1247,9 @@ name|g_object_set
 argument_list|(
 name|cell
 argument_list|,
-literal|"stock-id"
+literal|"icon-name"
 argument_list|,
-name|object_get_stock_icon_name
+name|object_get_icon_name
 argument_list|(
 name|obj
 argument_list|)

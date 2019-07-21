@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_main.h"
+file|"imap_icons.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"imap_stock.h"
+file|"imap_main.h"
 end_include
 
 begin_include
@@ -410,12 +410,12 @@ else|else
 block|{
 if|if
 condition|(
-name|gtk_widget_get_state
+name|gtk_widget_get_state_flags
 argument_list|(
 name|widget
 argument_list|)
 operator|&
-name|GTK_STATE_SELECTED
+name|GTK_STATE_FLAG_SELECTED
 condition|)
 block|{
 name|char
@@ -1871,7 +1871,7 @@ name|obj
 operator|->
 name|class
 operator|->
-name|get_stock_icon_name
+name|get_icon_name
 argument_list|()
 argument_list|,
 name|gettext
@@ -2090,7 +2090,7 @@ name|notebook
 argument_list|,
 name|vbox
 argument_list|,
-name|IMAP_STOCK_JAVA
+name|IMAP_JAVA
 argument_list|,
 name|_
 argument_list|(

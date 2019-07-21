@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_statusbar.h"
+file|"imap_icons.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"imap_stock.h"
+file|"imap_statusbar.h"
 end_include
 
 begin_function
@@ -155,9 +155,9 @@ expr_stmt|;
 comment|/* (x, y) coordinate */
 name|iconw
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|IMAP_STOCK_COORD
+name|IMAP_COORD
 argument_list|,
 name|GTK_ICON_SIZE_SMALL_TOOLBAR
 argument_list|)
@@ -251,9 +251,9 @@ expr_stmt|;
 comment|/* Dimension info */
 name|iconw
 operator|=
-name|gtk_image_new_from_stock
+name|gtk_image_new_from_icon_name
 argument_list|(
-name|IMAP_STOCK_DIMENSION
+name|IMAP_DIMENSION
 argument_list|,
 name|GTK_ICON_SIZE_SMALL_TOOLBAR
 argument_list|)
