@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a1e3e0108
+DECL|struct|__anon29abf4bc0108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -4342,7 +4342,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|aff_element_draw (AffElement * elem,gboolean selected,gint width,gint height,cairo_t * cr,GdkColor * color,PangoLayout * layout)
+DECL|function|aff_element_draw (AffElement * elem,gboolean selected,gint width,gint height,cairo_t * cr,GdkRGBA * color,PangoLayout * layout)
 name|aff_element_draw
 parameter_list|(
 name|AffElement
@@ -4362,7 +4362,7 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GdkColor
+name|GdkRGBA
 modifier|*
 name|color
 parameter_list|,
@@ -4399,7 +4399,7 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
