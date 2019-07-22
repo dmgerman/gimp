@@ -1649,7 +1649,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bdcb97f0108
+DECL|struct|__anon2bd581400108
 typedef|typedef
 struct|struct
 block|{
@@ -2744,16 +2744,6 @@ name|props
 operator|->
 name|store
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_tree_view_set_rules_hint
-argument_list|(
-name|GTK_TREE_VIEW
-argument_list|(
-name|view
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

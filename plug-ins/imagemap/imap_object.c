@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c4246ee0108
+DECL|struct|__anon276179610108
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ name|preferences
 operator|->
 name|colors
 decl_stmt|;
-name|GdkColor
+name|GdkRGBA
 modifier|*
 name|fg
 decl_stmt|,
@@ -1320,7 +1320,7 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -1338,7 +1338,7 @@ argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_color
+name|gdk_cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
