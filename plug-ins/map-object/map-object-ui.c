@@ -1455,6 +1455,11 @@ name|livepreview
 operator|=
 name|live
 expr_stmt|;
+name|gtk_widget_queue_draw
+argument_list|(
+name|previewarea
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
