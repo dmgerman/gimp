@@ -484,8 +484,6 @@ index|[
 name|range
 index|]
 operator|)
-operator|/
-literal|2.0
 decl_stmt|;
 if|if
 condition|(
