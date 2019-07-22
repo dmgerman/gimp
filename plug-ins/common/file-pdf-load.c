@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7fa9f0108
+DECL|struct|__anon2890b7690108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7fa9f0208
+DECL|struct|__anon2890b7690208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f7fa9f0303
+DECL|enum|__anon2890b7690303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2307,9 +2307,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|babl_init
-argument_list|()
-expr_stmt|;
 name|layer_from_surface
 argument_list|(
 name|image
@@ -2324,9 +2321,6 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
-expr_stmt|;
-name|babl_exit
-argument_list|()
 expr_stmt|;
 name|cairo_surface_destroy
 argument_list|(
@@ -2952,7 +2946,13 @@ parameter_list|)
 block|{
 name|gint32
 name|layer
-init|=
+decl_stmt|;
+comment|/* This may have already been run for the interactive code path,    * as part of gimp_ui_init(), but it doesn't hurt to init again    * (needed for non-interactive calls too), as long as we match the    * exit.    */
+name|babl_init
+argument_list|()
+expr_stmt|;
+name|layer
+operator|=
 name|gimp_layer_new_from_surface
 argument_list|(
 name|image
@@ -2967,7 +2967,7 @@ name|progress_start
 operator|+
 name|progress_scale
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
 name|image
@@ -2979,6 +2979,9 @@ literal|1
 argument_list|,
 name|position
 argument_list|)
+expr_stmt|;
+name|babl_exit
+argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -3813,7 +3816,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7fa9f0408
+DECL|struct|__anon2890b7690408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3838,7 +3841,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7fa9f0508
+DECL|struct|__anon2890b7690508
 block|{
 DECL|member|selector
 name|GimpPageSelector
