@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a51a6b40108
+DECL|struct|__anon29f7fa9f0108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a51a6b40208
+DECL|struct|__anon29f7fa9f0208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a51a6b40303
+DECL|enum|__anon29f7fa9f0303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1336,9 +1336,6 @@ index|[
 literal|7
 index|]
 decl_stmt|;
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -1362,17 +1359,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1436,6 +1422,20 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
+name|run_mode
+operator|=
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -2205,7 +2205,7 @@ name|loadvals
 operator|.
 name|PDF_password
 argument_list|,
-name|run_mode
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 operator|&
 name|error
@@ -2307,6 +2307,9 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|babl_init
+argument_list|()
+expr_stmt|;
 name|layer_from_surface
 argument_list|(
 name|image
@@ -2321,6 +2324,9 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
+expr_stmt|;
+name|babl_exit
+argument_list|()
 expr_stmt|;
 name|cairo_surface_destroy
 argument_list|(
@@ -3807,7 +3813,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a51a6b40408
+DECL|struct|__anon29f7fa9f0408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3832,7 +3838,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a51a6b40508
+DECL|struct|__anon29f7fa9f0508
 block|{
 DECL|member|selector
 name|GimpPageSelector
