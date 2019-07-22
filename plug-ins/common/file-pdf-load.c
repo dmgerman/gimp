@@ -133,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890b7690108
+DECL|struct|__anon28b52a040108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890b7690208
+DECL|struct|__anon28b52a040208
 block|{
 DECL|member|n_pages
 name|gint
@@ -766,7 +766,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890b7690303
+DECL|enum|__anon28b52a040303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1361,6 +1361,13 @@ name|NULL
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
+expr_stmt|;
+name|gegl_init
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -2535,6 +2542,9 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+name|gegl_exit
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -2947,10 +2957,6 @@ block|{
 name|gint32
 name|layer
 decl_stmt|;
-comment|/* This may have already been run for the interactive code path,    * as part of gimp_ui_init(), but it doesn't hurt to init again    * (needed for non-interactive calls too), as long as we match the    * exit.    */
-name|babl_init
-argument_list|()
-expr_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_surface
@@ -2979,9 +2985,6 @@ literal|1
 argument_list|,
 name|position
 argument_list|)
-expr_stmt|;
-name|babl_exit
-argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -3816,7 +3819,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890b7690408
+DECL|struct|__anon28b52a040408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -3841,7 +3844,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890b7690508
+DECL|struct|__anon28b52a040508
 block|{
 DECL|member|selector
 name|GimpPageSelector
