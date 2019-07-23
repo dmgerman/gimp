@@ -136,15 +136,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDatafileData
-typedef|typedef
-name|struct
-name|_GimpDatafileData
-name|GimpDatafileData
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpEnumDesc
 typedef|typedef
 name|struct
