@@ -51,10 +51,14 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpPixbufTransparency:  * @GIMP_PIXBUF_KEEP_ALPHA:   Create a pixbuf with alpha  * @GIMP_PIXBUF_SMALL_CHECKS: Show transparency as small checks  * @GIMP_PIXBUF_LARGE_CHECKS: Show transparency as large checks  *  * How to deal with transparency when creating thubnail pixbufs from  * images and drawables.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279f21f30103
+DECL|enum|__anon2c30db660103
 block|{
 DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
 name|GIMP_PIXBUF_KEEP_ALPHA

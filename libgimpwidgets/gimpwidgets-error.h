@@ -47,10 +47,14 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_comment
+comment|/**  * GimpWidgetsError:  * @GIMP_WIDGETS_PARSE_ERROR: A parse error has occured  *  * Types of errors returned by libgimpwidgets functions  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9444230103
+DECL|enum|__anon2c5401100103
 block|{
 DECL|enumerator|GIMP_WIDGETS_PARSE_ERROR
 name|GIMP_WIDGETS_PARSE_ERROR

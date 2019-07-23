@@ -183,10 +183,14 @@ begin_comment
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
 end_comment
 
+begin_comment
+comment|/**  * GimpRGBCompositeMode:  * @GIMP_RGB_COMPOSITE_NONE: don't do compositing  * @GIMP_RGB_COMPOSITE_NORMAL: composite on top  * @GIMP_RGB_COMPOSITE_BEHIND: composite behind  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c79285a0103
+DECL|enum|__anon2a1d4e160103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

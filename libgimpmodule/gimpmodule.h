@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c3a0d0103
+DECL|enum|__anon27fdc0f10103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -107,14 +107,17 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/**  * GimpModuleError:  * @GIMP_MODULE_FAILED: Generic error condition  *  * Types of errors returned by modules  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c3a0d0203
+DECL|enum|__anon27fdc0f10203
 block|{
 DECL|enumerator|GIMP_MODULE_FAILED
 name|GIMP_MODULE_FAILED
-comment|/* generic error condition */
 DECL|typedef|GimpModuleError
 block|}
 name|GimpModuleError

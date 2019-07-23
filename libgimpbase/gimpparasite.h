@@ -192,6 +192,10 @@ name|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 value|(GIMP_PARASITE_UNDOABLE<< 16)
 end_define
 
+begin_comment
+comment|/**  * GimpParasite:  * @name:  the parasite name, USE A UNIQUE PREFIX  * @flags: the parasite flags, like save in XCF etc.  * @size:  the parasite size in bytes  * @data:  the parasite data, the owner os the parasite is responsible  *   for tracking byte order and internal structure  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpParasite
 struct|struct
@@ -202,22 +206,18 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/* The name of the parasite. USE A UNIQUE PREFIX! */
 DECL|member|flags
 name|guint32
 name|flags
 decl_stmt|;
-comment|/* save Parasite in XCF file, etc.                */
 DECL|member|size
 name|guint32
 name|size
 decl_stmt|;
-comment|/* amount of data                                 */
 DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
-comment|/* a pointer to the data.  plugin is              *                      * responsible for tracking byte order            */
 block|}
 struct|;
 end_struct

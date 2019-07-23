@@ -73,10 +73,14 @@ begin_comment
 comment|/*  * GIMP_TYPE_PARAM_CONFIG_PATH  */
 end_comment
 
+begin_comment
+comment|/**  * GimpConfigPathType:  * @GIMP_CONFIG_PATH_FILE:      A single file  * @GIMP_CONFIG_PATH_FILE_LIST: A list of files  * @GIMP_CONFIG_PATH_DIR:       A single folder  * @GIMP_CONFIG_PATH_DIR_LIST:  A list of folders  *  * Types of config paths.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65dd0c0103
+DECL|enum|__anon297d67fe0103
 block|{
 DECL|enumerator|GIMP_CONFIG_PATH_FILE
 name|GIMP_CONFIG_PATH_FILE

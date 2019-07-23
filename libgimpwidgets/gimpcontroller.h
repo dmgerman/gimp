@@ -48,7 +48,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea7a040103
+DECL|enum|__anon2881229e0103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER
@@ -97,6 +97,10 @@ name|GimpControllerEvent
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpControllerEventAny:  * @type:     The event's #GimpControllerEventType  * @source:   The event's source #GimpController  * @event_id: The event's ID  *  * Generic controller event. Every event has these three members at the  * beginning of its struct  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpControllerEventAny
 struct|struct
@@ -119,6 +123,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * GimpControllerEventTrigger:  * @type:     The event's #GimpControllerEventType  * @source:   The event's source #GimpController  * @event_id: The event's ID  *  * Trigger controller event.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpControllerEventTrigger
 struct|struct
@@ -140,6 +148,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpControllerEventValue:  * @type:     The event's #GimpControllerEventType  * @source:   The event's source #GimpController  * @event_id: The event's ID  * @value:    The event's value  *  * Value controller event.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpControllerEventValue
@@ -166,6 +178,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpControllerEvent:  * @type:    The event type  * @any:     GimpControllerEventAny  * @trigger: GimpControllerEventTrigger  * @value:   GimpControllerEventValue  *  * A union to hjold all event event types  **/
+end_comment
 
 begin_union
 DECL|union|_GimpControllerEvent

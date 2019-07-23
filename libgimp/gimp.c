@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288f73020103
+DECL|enum|__anon27a46cd00103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1262,7 +1262,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Returns: an exit status as defined by the C library,  *          on success %EXIT_SUCCESS.  **/
+comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Returns: an exit status as defined by the C library,  *          on success EXIT_SUCCESS.  **/
 end_comment
 
 begin_function
@@ -1285,7 +1285,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon288f73020203
+DECL|enum|__anon27a46cd00203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME

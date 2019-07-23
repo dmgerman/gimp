@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0613a0103
+DECL|enum|__anon29109d8c0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -1051,7 +1051,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_get_left_vbox:  * @browser: a #GimpBrowser widget  *  * Returns: The left vbox.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_browser_get_left_vbox:  * @browser: a #GimpBrowser widget  *  * Returns: The left vbox.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1095,7 +1095,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_get_right_vbox:  * @browser: a #GimpBrowser widget  *  * Returns: The right vbox.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_browser_get_right_vbox:  * @browser: a #GimpBrowser widget  *  * Returns: The right vbox.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1139,7 +1139,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_browser_set_search_summary:  * @browser: a #GimpBrowser widget  * @summary: a string describing the search result  *  * Sets the search summary text.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_browser_set_search_summary:  * @browser: a #GimpBrowser widget  * @summary: a string describing the search result  *  * Sets the search summary text.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

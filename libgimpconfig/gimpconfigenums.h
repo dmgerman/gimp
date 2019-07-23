@@ -34,10 +34,14 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/**  * GimpColorManagementMode:  * @GIMP_COLOR_MANAGEMENT_OFF:       Color management is off  * @GIMP_COLOR_MANAGEMENT_DISPLAY:   Color managed display  * @GIMP_COLOR_MANAGEMENT_SOFTPROOF: Soft-proofing  *  * Modes of color management.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890f2aa0103
+DECL|enum|__anon28c3fe950103
 block|{
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_OFF
 name|GIMP_COLOR_MANAGEMENT_OFF
@@ -74,10 +78,14 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/**  * GimpColorRenderingIntent:  * @GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL:            Preceptual  * @GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC: Relative colorimetric  * @GIMP_COLOR_RENDERING_INTENT_SATURATION:            Saturation  * @GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC: Absolute colorimetric  *  * Intents for color management.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890f2aa0203
+DECL|enum|__anon28c3fe950203
 block|{
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL

@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a02767b0103
+DECL|enum|__anon2acba3300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ name|get_property
 operator|=
 name|gimp_busy_box_get_property
 expr_stmt|;
-comment|/**    * GimpBusyBox:message:    *    * Specifies the displayed message.    *    * Since: 2.10.4    */
+comment|/**    * GimpBusyBox:message:    *    * Specifies the displayed message.    *    * Since: 2.10.4    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class

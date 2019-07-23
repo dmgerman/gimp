@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf1bebe0103
+DECL|enum|__anon2a1d61f60103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf1bebe0203
+DECL|enum|__anon2a1d61f60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -868,7 +868,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_button_new:  * @title:      Title of the dialog to use or %NULL means to use the default  *              title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush.  This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
+comment|/**  * gimp_brush_select_button_new:  * @title:      Title of the dialog to use or %NULL means to use the default  *              title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  *  * Creates a new #GtkWidget that completely controls the selection of  * a brush. This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: 2.4  */
 end_comment
 
 begin_function

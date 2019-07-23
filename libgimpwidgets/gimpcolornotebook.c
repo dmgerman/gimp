@@ -2146,7 +2146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_notebook:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The #GtkNotebook inside.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_color_notebook_get_notebook:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The #GtkNotebook inside.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2181,7 +2181,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_selectors:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The notebook's list of #GimpColorSelector's.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_color_notebook_get_selectors:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The notebook's list of #GimpColorSelector's.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2216,7 +2216,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_current_selector:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The active page's #GimpColorSelector.  *  * Since: GIMP 3.0  **/
+comment|/**  * gimp_color_notebook_get_current_selector:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: The active page's #GimpColorSelector.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

@@ -51,10 +51,14 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpColorTransformFlags:  * @GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE: optimize for accuracy rather  *   than for speed  * @GIMP_COLOR_TRANSFORM_FLAGS_GAMUT_CHECK: mark out of gamut colors in the  *   transform result  * @GIMP_COLOR_TRANSFORM_FLAGS_BLACK_POINT_COMPENSATION: do black point  *   compensation  *  * Flags for modifying #GimpColorTransform's behavior.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3a71f60103
+DECL|enum|__anon27b44b190103
 block|{
 DECL|enumerator|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
 name|GIMP_COLOR_TRANSFORM_FLAGS_NOOPTIMIZE
