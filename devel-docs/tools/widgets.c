@@ -744,7 +744,7 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_grid_set_colummn_spacing
+name|gtk_grid_set_column_spacing
 argument_list|(
 name|GTK_GRID
 argument_list|(
@@ -1991,7 +1991,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-name|GIMP_BLUE_CHANNEL
+name|GIMP_CHANNEL_BLUE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
