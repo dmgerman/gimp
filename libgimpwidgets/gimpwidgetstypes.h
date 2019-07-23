@@ -379,15 +379,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPixmap
-typedef|typedef
-name|struct
-name|_GimpPixmap
-name|GimpPixmap
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpRuler
 typedef|typedef
 name|struct
@@ -438,15 +429,6 @@ typedef|typedef
 name|struct
 name|_GimpUnitComboBox
 name|GimpUnitComboBox
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpUnitMenu
-typedef|typedef
-name|struct
-name|_GimpUnitMenu
-name|GimpUnitMenu
 typedef|;
 end_typedef
 

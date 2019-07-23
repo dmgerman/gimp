@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b046c780103
+DECL|enum|__anon277a59880103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b046c780203
+DECL|enum|__anon277a59880203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2291,7 +2291,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_out_of_gamut:  * @area:   a #GimpColorArea widget.  * @config: a #GimpColorConfig object.  *  * Sets the color area to render as an out-of-gamut color, i.e. with a  * small triangle on a corner using the color management out of gamut  * color (as per gimp_color_area_set_color_config()).  *  * By default, @area will render as out-of-gamut for any RGB color with  * a channel out of the [0; 1] range. This function allows to consider  * more colors out of gamut (for instance non-gray colors on a grayscale  * image, or colors absent of palettes in indexed images, etc.)  *  * Since: 2.10.10  */
+comment|/**  * gimp_color_area_set_out_of_gamut:  * @area:         a #GimpColorArea widget.  * @out_of_gamut: whether to show an out-of-gamut indicator  *  * Sets the color area to render as an out-of-gamut color, i.e. with a  * small triangle on a corner using the color management out of gamut  * color (as per gimp_color_area_set_color_config()).  *  * By default, @area will render as out-of-gamut for any RGB color with  * a channel out of the [0; 1] range. This function allows to consider  * more colors out of gamut (for instance non-gray colors on a grayscale  * image, or colors absent of palettes in indexed images, etc.)  *  * Since: 2.10.10  */
 end_comment
 
 begin_function
