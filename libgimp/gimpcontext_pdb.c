@@ -2337,7 +2337,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  *  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection_(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  *  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

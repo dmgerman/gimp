@@ -14018,7 +14018,7 @@ literal|"This procedure modifies the line dash pattern setting for stroking line
 literal|"\n"
 literal|"The unit of the dash pattern segments is the actual line width used for the stroke operation, in other words a segment length of 1.0 results in a square segment shape (or gap shape).\n"
 literal|"\n"
-literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection-', 'gimp-drawable-edit-stroke-item'."
+literal|"This setting affects the following procedures: 'gimp-drawable-edit-stroke-selection', 'gimp-drawable-edit-stroke-item'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
