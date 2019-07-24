@@ -50,7 +50,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpPixPipeParams:  * @step:                  Step  * @ncells:                Number of cells  * @dim:                   Dimension  * @cols:                  Columns  * @rows:                  Rows  * @cellwidth:             Cell width  * @cellheight:            Cell height  * @placement:             Placement  * @free_placement_string: Unused, ignore  * @rank:                  Rank  * @selection:             Selection  * @free_selection_string: Unused, ignore  *  * PLease somebody help documenting this.  **/
+comment|/**  * GimpPixPipeParams:  * @step:       Step  * @ncells:     Number of cells  * @dim:        Dimension  * @cols:       Columns  * @rows:       Rows  * @cellwidth:  Cell width  * @cellheight: Cell height  * @placement:  Placement  * @rank:       Rank  * @selection:  Selection  *  * PLease somebody help documenting this.  **/
 end_comment
 
 begin_struct
@@ -91,10 +91,6 @@ name|gchar
 modifier|*
 name|placement
 decl_stmt|;
-DECL|member|free_placement_string
-name|gboolean
-name|free_placement_string
-decl_stmt|;
 DECL|member|rank
 name|gint
 name|rank
@@ -109,11 +105,6 @@ name|selection
 index|[
 name|GIMP_PIXPIPE_MAXDIM
 index|]
-decl_stmt|;
-comment|/* this flag is now useless. All selection strings are allocated. */
-DECL|member|free_selection_string
-name|gboolean
-name|free_selection_string
 decl_stmt|;
 block|}
 struct|;
