@@ -49,6 +49,10 @@ name|GimpPixPipeParams
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpPixPipeParams:  * @step:                  Step  * @ncells:                Number of cells  * @dim:                   Dimension  * @cols:                  Columns  * @rows:                  Rows  * @cellwidth:             Cell width  * @cellheight:            Cell height  * @placement:             Placement  * @free_placement_string: Unused, ignore  * @rank:                  Rank  * @selection:             Selection  * @free_selection_string: Unused, ignore  *  * PLease somebody help documenting this.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpPixPipeParams
 struct|struct
