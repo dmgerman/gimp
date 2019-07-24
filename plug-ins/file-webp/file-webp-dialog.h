@@ -32,9 +32,6 @@ name|params
 parameter_list|,
 name|gint32
 name|image_ID
-parameter_list|,
-name|gint32
-name|n_layers
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979e83b0108
+DECL|struct|__anon295cc0b00108
 block|{
 DECL|member|preset
 name|WebPPreset
@@ -91,13 +91,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gint32
-name|nLayers
-parameter_list|,
-name|gint32
-modifier|*
-name|allLayers
 parameter_list|,
 name|gint32
 name|image_ID

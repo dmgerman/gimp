@@ -236,7 +236,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_dialog (WebPSaveParams * params,gint32 image_ID,gint32 n_layers)
+DECL|function|save_dialog (WebPSaveParams * params,gint32 image_ID)
 name|save_dialog
 parameter_list|(
 name|WebPSaveParams
@@ -245,9 +245,6 @@ name|params
 parameter_list|,
 name|gint32
 name|image_ID
-parameter_list|,
-name|gint32
-name|n_layers
 parameter_list|)
 block|{
 name|GtkWidget
@@ -298,6 +295,9 @@ name|GtkAdjustment
 modifier|*
 name|alpha_quality_scale
 decl_stmt|;
+name|gint32
+name|nlayers
+decl_stmt|;
 name|gboolean
 name|animation_supported
 init|=
@@ -315,9 +315,20 @@ name|row
 init|=
 literal|0
 decl_stmt|;
+name|g_free
+argument_list|(
+name|gimp_image_get_layers
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|nlayers
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|animation_supported
 operator|=
-name|n_layers
+name|nlayers
 operator|>
 literal|1
 expr_stmt|;
