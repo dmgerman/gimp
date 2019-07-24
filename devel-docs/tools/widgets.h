@@ -15,7 +15,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b888d620103
+DECL|enum|__anon2946e4260103
 block|{
 DECL|enumerator|SMALL
 name|SMALL
@@ -40,10 +40,10 @@ typedef|typedef
 struct|struct
 name|WidgetInfo
 block|{
-DECL|member|window
+DECL|member|widget
 name|GtkWidget
 modifier|*
-name|window
+name|widget
 decl_stmt|;
 DECL|member|name
 name|gchar
@@ -54,9 +54,9 @@ DECL|member|no_focus
 name|gboolean
 name|no_focus
 decl_stmt|;
-DECL|member|include_decorations
+DECL|member|show_all
 name|gboolean
-name|include_decorations
+name|show_all
 decl_stmt|;
 DECL|member|size
 name|WidgetSize

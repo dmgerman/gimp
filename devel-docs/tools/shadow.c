@@ -36,7 +36,7 @@ value|0.75
 end_define
 
 begin_typedef
-DECL|struct|__anon2c9529bc0108
+DECL|struct|__anon28fbb6740108
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ operator|<
 literal|0
 operator|||
 name|src_y
-operator|>
+operator|>=
 name|gdk_pixbuf_get_height
 argument_list|(
 name|src
@@ -620,7 +620,7 @@ operator|<
 literal|0
 operator|||
 name|src_x
-operator|>
+operator|>=
 name|gdk_pixbuf_get_width
 argument_list|(
 name|src
