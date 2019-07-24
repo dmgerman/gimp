@@ -289,6 +289,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHintBox
+typedef|typedef
+name|struct
+name|_GimpHintBox
+name|GimpHintBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpIntComboBox
 typedef|typedef
 name|struct
