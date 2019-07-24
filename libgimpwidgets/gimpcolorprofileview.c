@@ -51,6 +51,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorprofileview  * @title: GimpColorProfileView  * @short_description: A widget for viewing color profile properties  *  * A widget for viewing the properties of a #GimpColorProfile.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpColorProfileViewPrivate
 struct|struct

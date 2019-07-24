@@ -80,6 +80,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorprofilechooserdialog  * @title: GimpColorProfileChooserDialog  * @short_description: A file chooser for selecting color profiles.  *  * A #GtkFileChooser subclass for selecting color profiles.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpColorProfileChooserDialogPrivate
 struct|struct

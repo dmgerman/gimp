@@ -33,9 +33,13 @@ directive|include
 file|"gimpunitstore.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpunitstore  * @title: GimpUnitStore  * @short_description: A model for units  *  * A model for #GimpUnit views  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b660bf00103
+DECL|enum|__anon28b5997f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
