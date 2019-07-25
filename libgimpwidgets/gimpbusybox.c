@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acba3300103
+DECL|enum|__anon2b65b0730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -187,9 +187,9 @@ name|g_param_spec_string
 argument_list|(
 literal|"message"
 argument_list|,
-name|NULL
+literal|"Message"
 argument_list|,
-name|NULL
+literal|"The message to display"
 argument_list|,
 name|NULL
 argument_list|,
