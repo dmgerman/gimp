@@ -249,7 +249,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpParamSpecValueArray:  * @parent_instance:  private #GParamSpec portion  * @element_spec:     the #GParamSpec of the array elements  * @fixed_n_elements: default length of the array  *  * A #GParamSpec derived structure that contains the meta data for value array  *   character properties  **/
+comment|/**  * GimpParamSpecValueArray:  * @parent_instance:  private #GParamSpec portion  * @element_spec:     the #GParamSpec of the array elements  * @fixed_n_elements: default length of the array  *  * A #GParamSpec derived structure that contains the meta data for  * value array properties.  **/
 end_comment
 
 begin_struct
