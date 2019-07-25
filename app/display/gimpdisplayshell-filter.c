@@ -57,6 +57,12 @@ directive|include
 file|"gimpdisplayshell-profile.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-render.h"
+end_include
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
