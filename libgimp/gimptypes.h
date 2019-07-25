@@ -31,6 +31,24 @@ comment|/* For information look into the html documentation */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpPlugIn
+typedef|typedef
+name|struct
+name|_GimpPlugIn
+name|GimpPlugIn
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpProcedure
+typedef|typedef
+name|struct
+name|_GimpProcedure
+name|GimpProcedure
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugInInfo
 typedef|typedef
 name|struct

@@ -542,6 +542,86 @@ struct|;
 end_struct
 
 begin_comment
+comment|/**  * GIMP_MAIN:  * @plug_in_type: The #GType of the plug-in's #GimpPlugIn subclass  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  *  * GIMP_MAIN (MY_TYPE_PLUG_IN)  *  * at the toplevel of your file. No semicolon should be used.  **/
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_comment
+comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_stdcall
+end_ifndef
+
+begin_define
+DECL|macro|_stdcall
+define|#
+directive|define
+name|_stdcall
+value|__attribute__((stdcall))
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_define
+DECL|macro|GIMP_MAIN (plug_in_type)
+define|#
+directive|define
+name|GIMP_MAIN
+parameter_list|(
+name|plug_in_type
+parameter_list|)
+define|\
+value|struct HINSTANCE__;                                  \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow);                            \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow)                             \    {                                                    \      return gimp_main (plug_in_type,                    \                        _argc, __argv);                  \    }                                                    \                                                         \    int                                                  \    main (int argc, char *argv[])                        \    {                                                    \
+comment|/* Use __argc and __argv here, too, as they work   \       * better with mingw-w64.                          \       */
+value|\      return gimp_main (plug_in_type,                    \                        __argc, __argv);                 \    }
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|GIMP_MAIN (plug_in_type)
+define|#
+directive|define
+name|GIMP_MAIN
+parameter_list|(
+name|plug_in_type
+parameter_list|)
+define|\
+value|int                                                  \    main (int argc, char *argv[])                        \    {                                                    \      return gimp_main (plug_in_type,                    \                        argc, argv);                     \    }
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
 comment|/**  * MAIN:  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  * MAIN() at the toplevel of your file.  No semicolon should be used.  **/
 end_comment
 
@@ -592,9 +672,9 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|struct HINSTANCE__;                                  \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow);                            \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow)                             \    {                                                    \      return gimp_main (&PLUG_IN_INFO, __argc, __argv);  \    }                                                    \                                                         \    int                                                  \    main (int argc, char *argv[])                        \    {                                                    \
+value|struct HINSTANCE__;                                  \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow);                            \                                                         \    int _stdcall                                         \    WinMain (struct HINSTANCE__ *hInstance,              \             struct HINSTANCE__ *hPrevInstance,          \             char *lpszCmdLine,                          \             int   nCmdShow)                             \    {                                                    \      return gimp_main_legacy (&PLUG_IN_INFO,            \                               _argc, __argv);           \    }                                                    \                                                         \    int                                                  \    main (int argc, char *argv[])                        \    {                                                    \
 comment|/* Use __argc and __argv here, too, as they work   \       * better with mingw-w64.                          \       */
-value|\      return gimp_main (&PLUG_IN_INFO, __argc, __argv);  \    }
+value|\      return gimp_main_legacy (&PLUG_IN_INFO,            \                               __argc, __argv);          \    }
 end_define
 
 begin_else
@@ -609,7 +689,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|int                                                  \    main (int argc, char *argv[])                        \    {                                                    \      return gimp_main (&PLUG_IN_INFO, argc, argv);      \    }
+value|int                                                  \    main (int argc, char *argv[])                        \    {                                                    \      return gimp_main_legacy (&PLUG_IN_INFO,            \                               argc, argv);              \    }
 end_define
 
 begin_endif
@@ -641,17 +721,39 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  */
+comment|/* The main procedure that must be called with the PLUG_IN_INFO  * structure and the 'argc' and 'argv' that are passed to "main".  */
+end_comment
+
+begin_function_decl
+name|gint
+name|gimp_main_legacy
+parameter_list|(
+specifier|const
+name|GimpPlugInInfo
+modifier|*
+name|info
+parameter_list|,
+name|gint
+name|argc
+parameter_list|,
+name|gchar
+modifier|*
+name|argv
+index|[]
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* The main procedure that must be called with the plug-in's  * GimpPlugIn subclass type and the 'argc' and 'argv' that are passed  * to "main".  */
 end_comment
 
 begin_function_decl
 name|gint
 name|gimp_main
 parameter_list|(
-specifier|const
-name|GimpPlugInInfo
-modifier|*
-name|info
+name|GType
+name|plug_in_type
 parameter_list|,
 name|gint
 name|argc
