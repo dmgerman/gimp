@@ -1140,7 +1140,7 @@ name|NC_
 argument_list|(
 literal|"matting-preview-mode"
 argument_list|,
-literal|"On color"
+literal|"Color"
 argument_list|)
 block|,
 name|NULL
