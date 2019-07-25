@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b16aac60103
+DECL|enum|__anon29d7e40f0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1262,7 +1262,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_plug_in_info_set_callbacks:  * @info: the PLUG_IN_INFO structure  * @init_proc:  (closure) (scope async) (nullable): the init procedure  * @quit_proc:  (closure) (scope async) (nullable): the quit procedure  * @query_proc: (closure) (scope async) (nullable): the query procedure  * @run_proc:   (closure) (scope async) (nullable): the run procedure  *  * The procedure that must be called with the PLUG_IN_INFO structure to  * set the initialization, query, run and quit callbacks.  **/
+comment|/**  * gimp_plug_in_info_set_callbacks:  * @info: the PLUG_IN_INFO structure  * @init_proc:  (closure) (scope async) (nullable): the init procedure  * @quit_proc:  (closure) (scope async) (nullable): the quit procedure  * @query_proc: (closure) (scope async) (nullable): the query procedure  * @run_proc:   (closure) (scope async) (nullable): the run procedure  *  * The procedure that must be called with the PLUG_IN_INFO structure to  * set the initialization, query, run and quit callbacks.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1338,7 +1338,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b16aac60203
+DECL|enum|__anon29d7e40f0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME

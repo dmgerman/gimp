@@ -253,7 +253,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpQuitProc:  *  * The quit procedure is run when GIMP closes.  */
+comment|/**  * GimpQuitProc:  *  * The quit procedure is run each time the plug-in ends.  */
 end_comment
 
 begin_typedef
