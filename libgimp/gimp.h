@@ -617,6 +617,29 @@ endif|#
 directive|endif
 end_endif
 
+begin_function_decl
+name|void
+name|gimp_plug_in_info_set_callbacks
+parameter_list|(
+name|GimpPlugInInfo
+modifier|*
+name|info
+parameter_list|,
+name|GimpInitProc
+name|init_proc
+parameter_list|,
+name|GimpQuitProc
+name|quit_proc
+parameter_list|,
+name|GimpQueryProc
+name|query_proc
+parameter_list|,
+name|GimpRunProc
+name|run_proc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  */
 end_comment

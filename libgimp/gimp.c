@@ -498,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0a136a0103
+DECL|enum|__anon2b16aac60103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1262,6 +1262,59 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/**  * gimp_plug_in_info_set_callbacks:  * @info: the PLUG_IN_INFO structure  * @init_proc:  (closure) (scope async) (nullable): the init procedure  * @quit_proc:  (closure) (scope async) (nullable): the quit procedure  * @query_proc: (closure) (scope async) (nullable): the query procedure  * @run_proc:   (closure) (scope async) (nullable): the run procedure  *  * The procedure that must be called with the PLUG_IN_INFO structure to  * set the initialization, query, run and quit callbacks.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_info_set_callbacks (GimpPlugInInfo * info,GimpInitProc init_proc,GimpQuitProc quit_proc,GimpQueryProc query_proc,GimpRunProc run_proc)
+name|gimp_plug_in_info_set_callbacks
+parameter_list|(
+name|GimpPlugInInfo
+modifier|*
+name|info
+parameter_list|,
+name|GimpInitProc
+name|init_proc
+parameter_list|,
+name|GimpQuitProc
+name|quit_proc
+parameter_list|,
+name|GimpQueryProc
+name|query_proc
+parameter_list|,
+name|GimpRunProc
+name|run_proc
+parameter_list|)
+block|{
+name|info
+operator|->
+name|init_proc
+operator|=
+name|init_proc
+expr_stmt|;
+name|info
+operator|->
+name|quit_proc
+operator|=
+name|quit_proc
+expr_stmt|;
+name|info
+operator|->
+name|query_proc
+operator|=
+name|query_proc
+expr_stmt|;
+name|info
+operator|->
+name|run_proc
+operator|=
+name|run_proc
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: (array length=argc): the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Returns: an exit status as defined by the C library,  *          on success EXIT_SUCCESS.  **/
 end_comment
 
@@ -1285,7 +1338,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2a0a136a0203
+DECL|enum|__anon2b16aac60203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
