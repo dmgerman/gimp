@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80050b0103
+DECL|enum|__anon2b4e69530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80050b0203
+DECL|enum|__anon2b4e69530203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1680,10 +1680,6 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
-decl_stmt|;
-name|GimpColorDisplayStack
-modifier|*
-name|filter
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3137,32 +3133,6 @@ name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  add display filters  */
-name|filter
-operator|=
-name|gimp_display_shell_filter_new
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|filter
-condition|)
-block|{
-name|gimp_display_shell_filter_set
-argument_list|(
-name|shell
-argument_list|,
-name|filter
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|filter
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|image
@@ -3265,12 +3235,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|filter_stack
-condition|)
 name|gimp_display_shell_filter_set
 argument_list|(
 name|shell
