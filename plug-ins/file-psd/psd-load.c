@@ -1593,6 +1593,12 @@ name|img_a
 operator|->
 name|color_mode
 operator|!=
+name|PSD_MULTICHANNEL
+operator|&&
+name|img_a
+operator|->
+name|color_mode
+operator|!=
 name|PSD_DUOTONE
 condition|)
 block|{
@@ -5948,6 +5954,9 @@ name|color_mode
 condition|)
 block|{
 case|case
+name|PSD_MULTICHANNEL
+case|:
+case|case
 name|PSD_GRAYSCALE
 case|:
 case|case
@@ -9620,6 +9629,12 @@ operator|->
 name|color_mode
 operator|==
 name|PSD_BITMAP
+operator|||
+name|img_a
+operator|->
+name|color_mode
+operator|==
+name|PSD_MULTICHANNEL
 operator|||
 name|img_a
 operator|->
