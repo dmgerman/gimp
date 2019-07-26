@@ -140,6 +140,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpparamspecs.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppatternselect.h>
 end_include
 
