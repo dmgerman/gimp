@@ -1217,7 +1217,7 @@ argument_list|,
 name|num_colors
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_colorarray
+name|gimp_value_take_rgb_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3177,7 +3177,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_color_array
+name|gimp_param_spec_rgb_array
 argument_list|(
 literal|"colors"
 argument_list|,

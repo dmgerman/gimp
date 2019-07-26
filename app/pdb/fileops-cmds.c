@@ -1005,7 +1005,7 @@ argument_list|,
 name|num_layers
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int32array
+name|gimp_value_take_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1585,7 +1585,7 @@ argument_list|,
 name|thumb_data_count
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8array
+name|gimp_value_take_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

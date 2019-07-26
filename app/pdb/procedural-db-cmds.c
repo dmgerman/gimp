@@ -537,7 +537,7 @@ argument_list|,
 name|num_matches
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1779,7 +1779,7 @@ argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8array
+name|gimp_value_take_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2020,7 +2020,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

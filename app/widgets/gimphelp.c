@@ -1507,7 +1507,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1533,7 +1533,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2094,7 +2094,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2120,7 +2120,7 @@ argument_list|,
 name|n_domains
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

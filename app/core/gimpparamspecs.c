@@ -8371,8 +8371,8 @@ begin_function
 specifier|const
 name|guint8
 modifier|*
-DECL|function|gimp_value_get_int8array (const GValue * value)
-name|gimp_value_get_int8array
+DECL|function|gimp_value_get_int8_array (const GValue * value)
+name|gimp_value_get_int8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -8402,8 +8402,8 @@ end_function
 begin_function
 name|guint8
 modifier|*
-DECL|function|gimp_value_dup_int8array (const GValue * value)
-name|gimp_value_dup_int8array
+DECL|function|gimp_value_dup_int8_array (const GValue * value)
+name|gimp_value_dup_int8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -8432,8 +8432,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_int8array (GValue * value,const guint8 * data,gsize length)
-name|gimp_value_set_int8array
+DECL|function|gimp_value_set_int8_array (GValue * value,const guint8 * data,gsize length)
+name|gimp_value_set_int8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -8470,8 +8470,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_int8array (GValue * value,const guint8 * data,gsize length)
-name|gimp_value_set_static_int8array
+DECL|function|gimp_value_set_static_int8_array (GValue * value,const guint8 * data,gsize length)
+name|gimp_value_set_static_int8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -8508,8 +8508,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_int8array (GValue * value,guint8 * data,gsize length)
-name|gimp_value_take_int8array
+DECL|function|gimp_value_take_int8_array (GValue * value,guint8 * data,gsize length)
+name|gimp_value_take_int8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -8784,8 +8784,8 @@ begin_function
 specifier|const
 name|gint16
 modifier|*
-DECL|function|gimp_value_get_int16array (const GValue * value)
-name|gimp_value_get_int16array
+DECL|function|gimp_value_get_int16_array (const GValue * value)
+name|gimp_value_get_int16_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -8820,8 +8820,8 @@ end_function
 begin_function
 name|gint16
 modifier|*
-DECL|function|gimp_value_dup_int16array (const GValue * value)
-name|gimp_value_dup_int16array
+DECL|function|gimp_value_dup_int16_array (const GValue * value)
+name|gimp_value_dup_int16_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -8854,8 +8854,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_int16array (GValue * value,const gint16 * data,gsize length)
-name|gimp_value_set_int16array
+DECL|function|gimp_value_set_int16_array (GValue * value,const gint16 * data,gsize length)
+name|gimp_value_set_int16_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -8902,8 +8902,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_int16array (GValue * value,const gint16 * data,gsize length)
-name|gimp_value_set_static_int16array
+DECL|function|gimp_value_set_static_int16_array (GValue * value,const gint16 * data,gsize length)
+name|gimp_value_set_static_int16_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -8950,8 +8950,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_int16array (GValue * value,gint16 * data,gsize length)
-name|gimp_value_take_int16array
+DECL|function|gimp_value_take_int16_array (GValue * value,gint16 * data,gsize length)
+name|gimp_value_take_int16_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9235,8 +9235,8 @@ begin_function
 specifier|const
 name|gint32
 modifier|*
-DECL|function|gimp_value_get_int32array (const GValue * value)
-name|gimp_value_get_int32array
+DECL|function|gimp_value_get_int32_array (const GValue * value)
+name|gimp_value_get_int32_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -9271,8 +9271,8 @@ end_function
 begin_function
 name|gint32
 modifier|*
-DECL|function|gimp_value_dup_int32array (const GValue * value)
-name|gimp_value_dup_int32array
+DECL|function|gimp_value_dup_int32_array (const GValue * value)
+name|gimp_value_dup_int32_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -9305,8 +9305,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_int32array (GValue * value,const gint32 * data,gsize length)
-name|gimp_value_set_int32array
+DECL|function|gimp_value_set_int32_array (GValue * value,const gint32 * data,gsize length)
+name|gimp_value_set_int32_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9353,8 +9353,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_int32array (GValue * value,const gint32 * data,gsize length)
-name|gimp_value_set_static_int32array
+DECL|function|gimp_value_set_static_int32_array (GValue * value,const gint32 * data,gsize length)
+name|gimp_value_set_static_int32_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9401,8 +9401,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_int32array (GValue * value,gint32 * data,gsize length)
-name|gimp_value_take_int32array
+DECL|function|gimp_value_take_int32_array (GValue * value,gint32 * data,gsize length)
+name|gimp_value_take_int32_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9686,8 +9686,8 @@ begin_function
 specifier|const
 name|gdouble
 modifier|*
-DECL|function|gimp_value_get_floatarray (const GValue * value)
-name|gimp_value_get_floatarray
+DECL|function|gimp_value_get_float_array (const GValue * value)
+name|gimp_value_get_float_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -9722,8 +9722,8 @@ end_function
 begin_function
 name|gdouble
 modifier|*
-DECL|function|gimp_value_dup_floatarray (const GValue * value)
-name|gimp_value_dup_floatarray
+DECL|function|gimp_value_dup_float_array (const GValue * value)
+name|gimp_value_dup_float_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -9756,8 +9756,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_floatarray (GValue * value,const gdouble * data,gsize length)
-name|gimp_value_set_floatarray
+DECL|function|gimp_value_set_float_array (GValue * value,const gdouble * data,gsize length)
+name|gimp_value_set_float_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9804,8 +9804,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_floatarray (GValue * value,const gdouble * data,gsize length)
-name|gimp_value_set_static_floatarray
+DECL|function|gimp_value_set_static_float_array (GValue * value,const gdouble * data,gsize length)
+name|gimp_value_set_static_float_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -9852,8 +9852,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_floatarray (GValue * value,gdouble * data,gsize length)
-name|gimp_value_take_floatarray
+DECL|function|gimp_value_take_float_array (GValue * value,gdouble * data,gsize length)
+name|gimp_value_take_float_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -10652,8 +10652,8 @@ specifier|const
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_value_get_stringarray (const GValue * value)
-name|gimp_value_get_stringarray
+DECL|function|gimp_value_get_string_array (const GValue * value)
+name|gimp_value_get_string_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -10711,8 +10711,8 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_value_dup_stringarray (const GValue * value)
-name|gimp_value_dup_stringarray
+DECL|function|gimp_value_dup_string_array (const GValue * value)
+name|gimp_value_dup_string_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -10815,8 +10815,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_stringarray (GValue * value,const gchar ** data,gsize length)
-name|gimp_value_set_stringarray
+DECL|function|gimp_value_set_string_array (GValue * value,const gchar ** data,gsize length)
+name|gimp_value_set_string_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -10867,8 +10867,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_stringarray (GValue * value,const gchar ** data,gsize length)
-name|gimp_value_set_static_stringarray
+DECL|function|gimp_value_set_static_string_array (GValue * value,const gchar ** data,gsize length)
+name|gimp_value_set_static_string_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -10919,8 +10919,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_stringarray (GValue * value,gchar ** data,gsize length)
-name|gimp_value_take_stringarray
+DECL|function|gimp_value_take_string_array (GValue * value,gchar ** data,gsize length)
+name|gimp_value_take_string_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -10981,13 +10981,13 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * GIMP_TYPE_COLOR_ARRAY  */
+comment|/*  * GIMP_TYPE_RGB_ARRAY  */
 end_comment
 
 begin_function
 name|GType
-DECL|function|gimp_color_array_get_type (void)
-name|gimp_color_array_get_type
+DECL|function|gimp_rgb_array_get_type (void)
+name|gimp_rgb_array_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -11007,7 +11007,7 @@ name|type
 operator|=
 name|g_boxed_type_register_static
 argument_list|(
-literal|"GimpColorArray"
+literal|"GimpRgbArray"
 argument_list|,
 operator|(
 name|GBoxedCopyFunc
@@ -11027,13 +11027,13 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_COLOR_ARRAY  */
+comment|/*  * GIMP_TYPE_PARAM_RGB_ARRAY  */
 end_comment
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_param_color_array_class_init
+name|gimp_param_rgb_array_class_init
 parameter_list|(
 name|GParamSpecClass
 modifier|*
@@ -11045,7 +11045,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_param_color_array_init
+name|gimp_param_rgb_array_init
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -11056,8 +11056,8 @@ end_function_decl
 
 begin_function
 name|GType
-DECL|function|gimp_param_color_array_get_type (void)
-name|gimp_param_color_array_get_type
+DECL|function|gimp_param_rgb_array_get_type (void)
+name|gimp_param_rgb_array_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -11091,7 +11091,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_param_color_array_class_init
+name|gimp_param_rgb_array_class_init
 block|,
 name|NULL
 block|,
@@ -11107,7 +11107,7 @@ block|,
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_param_color_array_init
+name|gimp_param_rgb_array_init
 block|}
 decl_stmt|;
 name|type
@@ -11116,7 +11116,7 @@ name|g_type_register_static
 argument_list|(
 name|G_TYPE_PARAM_BOXED
 argument_list|,
-literal|"GimpParamColorArray"
+literal|"GimpParamRGBArray"
 argument_list|,
 operator|&
 name|info
@@ -11134,8 +11134,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_param_color_array_class_init (GParamSpecClass * klass)
-name|gimp_param_color_array_class_init
+DECL|function|gimp_param_rgb_array_class_init (GParamSpecClass * klass)
+name|gimp_param_rgb_array_class_init
 parameter_list|(
 name|GParamSpecClass
 modifier|*
@@ -11146,7 +11146,7 @@ name|klass
 operator|->
 name|value_type
 operator|=
-name|GIMP_TYPE_COLOR_ARRAY
+name|GIMP_TYPE_RGB_ARRAY
 expr_stmt|;
 block|}
 end_function
@@ -11154,8 +11154,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_param_color_array_init (GParamSpec * pspec)
-name|gimp_param_color_array_init
+DECL|function|gimp_param_rgb_array_init (GParamSpec * pspec)
+name|gimp_param_rgb_array_init
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -11167,8 +11167,8 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_color_array (const gchar * name,const gchar * nick,const gchar * blurb,GParamFlags flags)
-name|gimp_param_spec_color_array
+DECL|function|gimp_param_spec_rgb_array (const gchar * name,const gchar * nick,const gchar * blurb,GParamFlags flags)
+name|gimp_param_spec_rgb_array
 parameter_list|(
 specifier|const
 name|gchar
@@ -11189,7 +11189,7 @@ name|GParamFlags
 name|flags
 parameter_list|)
 block|{
-name|GimpParamSpecColorArray
+name|GimpParamSpecRGBArray
 modifier|*
 name|array_spec
 decl_stmt|;
@@ -11197,7 +11197,7 @@ name|array_spec
 operator|=
 name|g_param_spec_internal
 argument_list|(
-name|GIMP_TYPE_PARAM_COLOR_ARRAY
+name|GIMP_TYPE_PARAM_RGB_ARRAY
 argument_list|,
 name|name
 argument_list|,
@@ -11221,8 +11221,8 @@ begin_function
 specifier|const
 name|GimpRGB
 modifier|*
-DECL|function|gimp_value_get_colorarray (const GValue * value)
-name|gimp_value_get_colorarray
+DECL|function|gimp_value_get_rgb_array (const GValue * value)
+name|gimp_value_get_rgb_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -11232,7 +11232,7 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -11257,8 +11257,8 @@ end_function
 begin_function
 name|GimpRGB
 modifier|*
-DECL|function|gimp_value_dup_colorarray (const GValue * value)
-name|gimp_value_dup_colorarray
+DECL|function|gimp_value_dup_rgb_array (const GValue * value)
+name|gimp_value_dup_rgb_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -11268,7 +11268,7 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -11291,8 +11291,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_colorarray (GValue * value,const GimpRGB * data,gsize length)
-name|gimp_value_set_colorarray
+DECL|function|gimp_value_set_rgb_array (GValue * value,const GimpRGB * data,gsize length)
+name|gimp_value_set_rgb_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -11309,7 +11309,7 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -11339,8 +11339,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_set_static_colorarray (GValue * value,const GimpRGB * data,gsize length)
-name|gimp_value_set_static_colorarray
+DECL|function|gimp_value_set_static_rgb_array (GValue * value,const GimpRGB * data,gsize length)
+name|gimp_value_set_static_rgb_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -11357,7 +11357,7 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -11387,8 +11387,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_value_take_colorarray (GValue * value,GimpRGB * data,gsize length)
-name|gimp_value_take_colorarray
+DECL|function|gimp_value_take_rgb_array (GValue * value,GimpRGB * data,gsize length)
+name|gimp_value_take_rgb_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -11404,7 +11404,7 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 argument_list|(
 name|value
 argument_list|)

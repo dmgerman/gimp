@@ -802,7 +802,7 @@ argument_list|,
 name|num_strokes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int32array
+name|gimp_value_take_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2942,7 +2942,7 @@ argument_list|,
 name|num_points
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_floatarray
+name|gimp_value_take_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3081,7 +3081,7 @@ argument_list|)
 expr_stmt|;
 name|controlpoints
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3606,7 +3606,7 @@ argument_list|,
 name|num_coords
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_floatarray
+name|gimp_value_take_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5260,7 +5260,7 @@ argument_list|,
 name|num_vectors
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int32array
+name|gimp_value_take_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -5564,7 +5564,7 @@ argument_list|,
 name|num_vectors
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int32array
+name|gimp_value_take_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

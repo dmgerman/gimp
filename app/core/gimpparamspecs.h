@@ -2500,7 +2500,7 @@ begin_function_decl
 specifier|const
 name|guint8
 modifier|*
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2513,7 +2513,7 @@ end_function_decl
 begin_function_decl
 name|guint8
 modifier|*
-name|gimp_value_dup_int8array
+name|gimp_value_dup_int8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2525,26 +2525,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_int8array
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|guint8
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_int8array
+name|gimp_value_set_int8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -2563,7 +2544,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_int8array
+name|gimp_value_set_static_int8_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|guint8
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_int8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -2708,7 +2708,7 @@ begin_function_decl
 specifier|const
 name|gint16
 modifier|*
-name|gimp_value_get_int16array
+name|gimp_value_get_int16_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2721,7 +2721,7 @@ end_function_decl
 begin_function_decl
 name|gint16
 modifier|*
-name|gimp_value_dup_int16array
+name|gimp_value_dup_int16_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2733,26 +2733,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_int16array
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|gint16
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_int16array
+name|gimp_value_set_int16_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -2771,7 +2752,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_int16array
+name|gimp_value_set_static_int16_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|gint16
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_int16_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -2916,7 +2916,7 @@ begin_function_decl
 specifier|const
 name|gint32
 modifier|*
-name|gimp_value_get_int32array
+name|gimp_value_get_int32_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2929,7 +2929,7 @@ end_function_decl
 begin_function_decl
 name|gint32
 modifier|*
-name|gimp_value_dup_int32array
+name|gimp_value_dup_int32_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -2941,26 +2941,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_int32array
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|gint32
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_int32array
+name|gimp_value_set_int32_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -2979,7 +2960,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_int32array
+name|gimp_value_set_static_int32_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|gint32
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_int32_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3124,7 +3124,7 @@ begin_function_decl
 specifier|const
 name|gdouble
 modifier|*
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3137,7 +3137,7 @@ end_function_decl
 begin_function_decl
 name|gdouble
 modifier|*
-name|gimp_value_dup_floatarray
+name|gimp_value_dup_float_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3149,26 +3149,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_floatarray
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|gdouble
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_floatarray
+name|gimp_value_set_float_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3187,7 +3168,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_floatarray
+name|gimp_value_set_static_float_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|gdouble
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_float_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3377,7 +3377,7 @@ specifier|const
 name|gchar
 modifier|*
 modifier|*
-name|gimp_value_get_stringarray
+name|gimp_value_get_string_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3391,7 +3391,7 @@ begin_function_decl
 name|gchar
 modifier|*
 modifier|*
-name|gimp_value_dup_stringarray
+name|gimp_value_dup_string_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3403,27 +3403,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_stringarray
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_stringarray
+name|gimp_value_set_string_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3443,7 +3423,27 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_stringarray
+name|gimp_value_set_static_string_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_string_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3461,31 +3461,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  * GIMP_TYPE_COLOR_ARRAY  */
+comment|/*  * GIMP_TYPE_RGB_ARRAY  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_ARRAY
+DECL|macro|GIMP_TYPE_RGB_ARRAY
 define|#
 directive|define
-name|GIMP_TYPE_COLOR_ARRAY
-value|(gimp_color_array_get_type ())
+name|GIMP_TYPE_RGB_ARRAY
+value|(gimp_rgb_array_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUE_HOLDS_COLOR_ARRAY (value)
+DECL|macro|GIMP_VALUE_HOLDS_RGB_ARRAY (value)
 define|#
 directive|define
-name|GIMP_VALUE_HOLDS_COLOR_ARRAY
+name|GIMP_VALUE_HOLDS_RGB_ARRAY
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_COLOR_ARRAY))
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_RGB_ARRAY))
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_color_array_get_type
+name|gimp_rgb_array_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -3494,52 +3494,52 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_COLOR_ARRAY  */
+comment|/*  * GIMP_TYPE_PARAM_RGB_ARRAY  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_PARAM_COLOR_ARRAY
+DECL|macro|GIMP_TYPE_PARAM_RGB_ARRAY
 define|#
 directive|define
-name|GIMP_TYPE_PARAM_COLOR_ARRAY
-value|(gimp_param_color_array_get_type ())
+name|GIMP_TYPE_PARAM_RGB_ARRAY
+value|(gimp_param_rgb_array_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_COLOR_ARRAY (pspec)
+DECL|macro|GIMP_PARAM_SPEC_RGB_ARRAY (pspec)
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_COLOR_ARRAY
+name|GIMP_PARAM_SPEC_RGB_ARRAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_COLOR_ARRAY, GimpParamSpecColorArray))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_RGB_ARRAY, GimpParamSpecRGBArray))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_COLOR_ARRAY (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_RGB_ARRAY (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_COLOR_ARRAY
+name|GIMP_IS_PARAM_SPEC_RGB_ARRAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_COLOR_ARRAY))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_RGB_ARRAY))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecColorArray
+DECL|typedef|GimpParamSpecRGBArray
 typedef|typedef
 name|struct
-name|_GimpParamSpecColorArray
-name|GimpParamSpecColorArray
+name|_GimpParamSpecRGBArray
+name|GimpParamSpecRGBArray
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecColorArray
+DECL|struct|_GimpParamSpecRGBArray
 struct|struct
-name|_GimpParamSpecColorArray
+name|_GimpParamSpecRGBArray
 block|{
 DECL|member|parent_instance
 name|GParamSpecBoxed
@@ -3551,7 +3551,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_color_array_get_type
+name|gimp_param_rgb_array_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -3562,7 +3562,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_color_array
+name|gimp_param_spec_rgb_array
 parameter_list|(
 specifier|const
 name|gchar
@@ -3589,7 +3589,7 @@ begin_function_decl
 specifier|const
 name|GimpRGB
 modifier|*
-name|gimp_value_get_colorarray
+name|gimp_value_get_rgb_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3602,7 +3602,7 @@ end_function_decl
 begin_function_decl
 name|GimpRGB
 modifier|*
-name|gimp_value_dup_colorarray
+name|gimp_value_dup_rgb_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -3614,26 +3614,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_colorarray
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_colorarray
+name|gimp_value_set_rgb_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -3652,7 +3633,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_colorarray
+name|gimp_value_set_static_rgb_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_rgb_array
 parameter_list|(
 name|GValue
 modifier|*

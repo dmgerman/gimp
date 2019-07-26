@@ -1506,7 +1506,7 @@ argument_list|,
 name|num_color_samples
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_floatarray
+name|gimp_value_take_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1623,7 +1623,7 @@ argument_list|)
 expr_stmt|;
 name|positions
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1803,7 +1803,7 @@ argument_list|,
 name|num_color_samples
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_floatarray
+name|gimp_value_take_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

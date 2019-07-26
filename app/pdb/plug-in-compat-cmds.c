@@ -4643,7 +4643,7 @@ argument_list|)
 expr_stmt|;
 name|matrix
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4703,7 +4703,7 @@ argument_list|)
 expr_stmt|;
 name|channels
 operator|=
-name|gimp_value_get_int32array
+name|gimp_value_get_int32_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

@@ -812,7 +812,7 @@ argument_list|)
 expr_stmt|;
 name|matrix
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

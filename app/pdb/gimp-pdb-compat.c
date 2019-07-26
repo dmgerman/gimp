@@ -503,7 +503,7 @@ name|GIMP_PDB_COLORARRAY
 case|:
 name|pspec
 operator|=
-name|gimp_param_spec_color_array
+name|gimp_param_spec_rgb_array
 argument_list|(
 name|name
 argument_list|,
@@ -730,7 +730,7 @@ case|case
 name|GIMP_PDB_COLORARRAY
 case|:
 return|return
-name|GIMP_TYPE_COLOR_ARRAY
+name|GIMP_TYPE_RGB_ARRAY
 return|;
 case|case
 name|GIMP_PDB_VECTORS
@@ -800,7 +800,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2c787f040108
+DECL|struct|__anon288e21140108
 block|{
 DECL|member|g_type
 name|GType
@@ -906,7 +906,7 @@ name|GIMP_PDB_STRINGARRAY
 block|}
 block|,
 block|{
-name|GIMP_TYPE_COLOR_ARRAY
+name|GIMP_TYPE_RGB_ARRAY
 block|,
 name|GIMP_PDB_COLORARRAY
 block|}
@@ -1120,7 +1120,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c787f040208
+DECL|struct|__anon288e21140208
 block|{
 DECL|member|old_name
 specifier|const

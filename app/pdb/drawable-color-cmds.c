@@ -906,7 +906,7 @@ argument_list|)
 expr_stmt|;
 name|values
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1146,7 +1146,7 @@ argument_list|)
 expr_stmt|;
 name|points
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

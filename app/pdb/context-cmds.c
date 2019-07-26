@@ -471,7 +471,7 @@ argument_list|,
 name|num_paint_methods
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_stringarray
+name|gimp_value_take_string_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3027,7 +3027,7 @@ argument_list|,
 name|num_dashes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_floatarray
+name|gimp_value_take_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3108,7 +3108,7 @@ argument_list|)
 expr_stmt|;
 name|dashes
 operator|=
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

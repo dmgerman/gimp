@@ -531,7 +531,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_int32array
+name|gimp_value_set_int32_array
 argument_list|(
 operator|&
 name|value
@@ -549,7 +549,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_int32array
+name|gimp_value_set_static_int32_array
 argument_list|(
 operator|&
 name|value
@@ -588,7 +588,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_int16array
+name|gimp_value_set_int16_array
 argument_list|(
 operator|&
 name|value
@@ -606,7 +606,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_int16array
+name|gimp_value_set_static_int16_array
 argument_list|(
 operator|&
 name|value
@@ -645,7 +645,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_int8array
+name|gimp_value_set_int8_array
 argument_list|(
 operator|&
 name|value
@@ -663,7 +663,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_int8array
+name|gimp_value_set_static_int8_array
 argument_list|(
 operator|&
 name|value
@@ -702,7 +702,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_floatarray
+name|gimp_value_set_float_array
 argument_list|(
 operator|&
 name|value
@@ -720,7 +720,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_floatarray
+name|gimp_value_set_static_float_array
 argument_list|(
 operator|&
 name|value
@@ -759,7 +759,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_stringarray
+name|gimp_value_set_string_array
 argument_list|(
 operator|&
 name|value
@@ -783,7 +783,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_stringarray
+name|gimp_value_set_static_string_array
 argument_list|(
 operator|&
 name|value
@@ -981,7 +981,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_colorarray
+name|gimp_value_set_rgb_array
 argument_list|(
 operator|&
 name|value
@@ -999,7 +999,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_colorarray
+name|gimp_value_set_static_rgb_array
 argument_list|(
 operator|&
 name|value
@@ -1449,7 +1449,7 @@ name|data
 operator|.
 name|d_int32array
 operator|=
-name|gimp_value_dup_int32array
+name|gimp_value_dup_int32_array
 argument_list|(
 name|value
 argument_list|)
@@ -1468,7 +1468,7 @@ operator|(
 name|gint32
 operator|*
 operator|)
-name|gimp_value_get_int32array
+name|gimp_value_get_int32_array
 argument_list|(
 name|value
 argument_list|)
@@ -1490,7 +1490,7 @@ name|data
 operator|.
 name|d_int16array
 operator|=
-name|gimp_value_dup_int16array
+name|gimp_value_dup_int16_array
 argument_list|(
 name|value
 argument_list|)
@@ -1509,7 +1509,7 @@ operator|(
 name|gint16
 operator|*
 operator|)
-name|gimp_value_get_int16array
+name|gimp_value_get_int16_array
 argument_list|(
 name|value
 argument_list|)
@@ -1531,7 +1531,7 @@ name|data
 operator|.
 name|d_int8array
 operator|=
-name|gimp_value_dup_int8array
+name|gimp_value_dup_int8_array
 argument_list|(
 name|value
 argument_list|)
@@ -1550,7 +1550,7 @@ operator|(
 name|guint8
 operator|*
 operator|)
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 argument_list|(
 name|value
 argument_list|)
@@ -1572,7 +1572,7 @@ name|data
 operator|.
 name|d_floatarray
 operator|=
-name|gimp_value_dup_floatarray
+name|gimp_value_dup_float_array
 argument_list|(
 name|value
 argument_list|)
@@ -1591,7 +1591,7 @@ operator|(
 name|gdouble
 operator|*
 operator|)
-name|gimp_value_get_floatarray
+name|gimp_value_get_float_array
 argument_list|(
 name|value
 argument_list|)
@@ -1613,7 +1613,7 @@ name|data
 operator|.
 name|d_stringarray
 operator|=
-name|gimp_value_dup_stringarray
+name|gimp_value_dup_string_array
 argument_list|(
 name|value
 argument_list|)
@@ -1633,7 +1633,7 @@ name|gchar
 operator|*
 operator|*
 operator|)
-name|gimp_value_get_stringarray
+name|gimp_value_get_string_array
 argument_list|(
 name|value
 argument_list|)
@@ -1800,7 +1800,7 @@ name|data
 operator|.
 name|d_colorarray
 operator|=
-name|gimp_value_dup_colorarray
+name|gimp_value_dup_rgb_array
 argument_list|(
 name|value
 argument_list|)
@@ -1819,7 +1819,7 @@ operator|(
 name|GimpRGB
 operator|*
 operator|)
-name|gimp_value_get_colorarray
+name|gimp_value_get_rgb_array
 argument_list|(
 name|value
 argument_list|)

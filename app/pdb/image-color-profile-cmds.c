@@ -250,7 +250,7 @@ argument_list|,
 name|num_bytes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8array
+name|gimp_value_take_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -433,7 +433,7 @@ argument_list|,
 name|num_bytes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8array
+name|gimp_value_take_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -533,7 +533,7 @@ argument_list|)
 expr_stmt|;
 name|color_profile
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -894,7 +894,7 @@ argument_list|)
 expr_stmt|;
 name|color_profile
 operator|=
-name|gimp_value_get_int8array
+name|gimp_value_get_int8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
