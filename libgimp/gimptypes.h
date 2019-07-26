@@ -67,15 +67,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpParamRegion
-typedef|typedef
-name|struct
-name|_GimpParamRegion
-name|GimpParamRegion
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParamData
 typedef|typedef
 name|union
