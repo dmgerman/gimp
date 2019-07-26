@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpparamspecs.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpbase/gimpparasite.h>
 end_include
 
