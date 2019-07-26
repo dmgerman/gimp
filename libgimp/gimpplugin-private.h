@@ -73,7 +73,7 @@ parameter_list|,
 specifier|const
 name|GimpParam
 modifier|*
-name|param
+name|params
 parameter_list|,
 name|gint
 modifier|*

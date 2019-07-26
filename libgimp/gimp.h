@@ -164,6 +164,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpprocedure.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpprogress.h>
 end_include
 
