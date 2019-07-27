@@ -169,6 +169,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_param_spec_rgb_get_default
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|default_value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_param_spec_rgb_has_alpha
 parameter_list|(
@@ -190,7 +205,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1d4e160103
+DECL|enum|__anon2a2ddb950103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
