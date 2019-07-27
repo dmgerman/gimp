@@ -263,7 +263,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -271,11 +271,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -479,7 +477,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -487,11 +485,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -787,7 +783,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -795,11 +791,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1003,7 +997,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -1011,11 +1005,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1334,7 +1326,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -1342,11 +1334,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1550,7 +1540,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -1558,11 +1548,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1835,7 +1823,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|gimp_param_spec_enum
 argument_list|(
 literal|"dummy-param"
 argument_list|,
@@ -1843,11 +1831,9 @@ literal|"Dummy Param"
 argument_list|,
 literal|"Dummy parameter"
 argument_list|,
-name|G_MININT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-name|G_MAXINT32
-argument_list|,
-literal|0
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

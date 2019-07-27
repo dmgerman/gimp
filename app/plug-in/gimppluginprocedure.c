@@ -120,7 +120,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdc33be0103
+DECL|enum|__anon2ae9ba6b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1960,6 +1960,35 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
+name|gboolean
+DECL|function|GIMP_IS_PARAM_SPEC_RUN_MODE (GParamSpec * pspec)
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+return|return
+operator|(
+name|G_IS_PARAM_SPEC_ENUM
+argument_list|(
+name|pspec
+argument_list|)
+operator|&&
+name|pspec
+operator|->
+name|value_type
+operator|==
+name|GIMP_TYPE_RUN_MODE
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_plug_in_procedure_validate_args (GimpPlugInProcedure * proc,Gimp * gimp,GimpValueArray * args,GError ** error)
 name|gimp_plug_in_procedure_validate_args
@@ -2027,7 +2056,7 @@ operator|>=
 literal|1
 operator|)
 operator|&&
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2089,7 +2118,7 @@ operator|>=
 literal|5
 operator|)
 operator|&&
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2716,7 +2745,7 @@ literal|1
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2729,7 +2758,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32"
+literal|"(INT32 | ENUM GimpRunMode)"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2758,7 +2787,7 @@ literal|3
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2809,7 +2838,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, IMAGE, (LAYER | DRAWABLE)"
+literal|"(INT32 | ENUM GimpRunMode), IMAGE, (LAYER | DRAWABLE)"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2838,7 +2867,7 @@ literal|3
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2889,7 +2918,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, IMAGE, (CHANNEL | DRAWABLE)"
+literal|"(INT32 | ENUM GimpRunMode), IMAGE, (CHANNEL | DRAWABLE)"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2918,7 +2947,7 @@ literal|3
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -2953,7 +2982,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, IMAGE, VECTORS"
+literal|"(INT32 | ENUM GimpRunMode), IMAGE, VECTORS"
 expr_stmt|;
 goto|goto
 name|failure
@@ -2982,7 +3011,7 @@ literal|2
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -3006,7 +3035,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, IMAGE"
+literal|"(INT32 | ENUM GimpRunMode), IMAGE"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3035,7 +3064,7 @@ literal|3
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -3070,7 +3099,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, STRING, STRING"
+literal|"(INT32 | ENUM GimpRunMode), STRING, STRING"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3129,7 +3158,7 @@ literal|5
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -3186,7 +3215,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32, IMAGE, DRAWABLE, STRING, STRING"
+literal|"(INT32 | ENUM GimpRunMode), IMAGE, DRAWABLE, STRING, STRING"
 expr_stmt|;
 goto|goto
 name|failure
@@ -3271,7 +3300,7 @@ literal|1
 operator|)
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -3284,7 +3313,7 @@ condition|)
 block|{
 name|required
 operator|=
-literal|"INT32"
+literal|"(INT32 | ENUM GimpRunMode)"
 expr_stmt|;
 goto|goto
 name|failure

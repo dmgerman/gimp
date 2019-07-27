@@ -76,6 +76,35 @@ file|"procedure-commands.h"
 end_include
 
 begin_function
+specifier|static
+specifier|inline
+name|gboolean
+DECL|function|GIMP_IS_PARAM_SPEC_RUN_MODE (GParamSpec * pspec)
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+return|return
+operator|(
+name|G_IS_PARAM_SPEC_ENUM
+argument_list|(
+name|pspec
+argument_list|)
+operator|&&
+name|pspec
+operator|->
+name|value_type
+operator|==
+name|GIMP_TYPE_RUN_MODE
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
 name|GimpValueArray
 modifier|*
 DECL|function|procedure_commands_get_run_mode_arg (GimpProcedure * procedure)
@@ -112,7 +141,7 @@ argument_list|)
 operator|>
 name|n_args
 operator|&&
-name|GIMP_IS_PARAM_SPEC_INT32
+name|GIMP_IS_PARAM_SPEC_RUN_MODE
 argument_list|(
 name|procedure
 operator|->
@@ -123,7 +152,7 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -184,7 +213,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 comment|/* initialize the first argument  */
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -305,7 +334,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 comment|/* initialize the first argument  */
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -427,7 +456,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 comment|/* initialize the first argument  */
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -611,7 +640,7 @@ name|procedure
 argument_list|)
 expr_stmt|;
 comment|/* initialize the first argument  */
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -938,7 +967,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1105,7 +1134,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

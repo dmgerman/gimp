@@ -720,7 +720,7 @@ argument_list|(
 name|file_proc
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|run_mode
 argument_list|,

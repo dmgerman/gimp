@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6f9a10103
+DECL|enum|__anon2b4d2a870103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6f9a10203
+DECL|enum|__anon2b4d2a870203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6f9a10303
+DECL|enum|__anon2b4d2a870303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6f9a10403
+DECL|enum|__anon2b4d2a870403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f9a10508
+DECL|struct|__anon2b4d2a870508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f9a10608
+DECL|struct|__anon2b4d2a870608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f9a10708
+DECL|struct|__anon2b4d2a870708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1824,7 +1824,7 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"ru-_mode"
+literal|"run-mode"
 block|,
 literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
