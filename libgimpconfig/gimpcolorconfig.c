@@ -222,7 +222,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b276bd60103
+DECL|enum|__anon2901b4690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1958,7 +1958,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_config_get_rgb_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+comment|/**  * gimp_color_config_get_rgb_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Return value: (transfer full): the default RGB color profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2101,7 +2101,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_config_get_gray_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+comment|/**  * gimp_color_config_get_gray_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Return value: (transfer full): the default grayscale color profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2244,7 +2244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_config_get_cmyk_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+comment|/**  * gimp_color_config_get_cmyk_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Return value: (transfer full): the default CMYK color profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2387,7 +2387,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_config_get_display_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+comment|/**  * gimp_color_config_get_display_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Return value: (transfer full): the default display color profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2490,7 +2490,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_config_get_simulation_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Since: 2.10  **/
+comment|/**  * gimp_color_config_get_simulation_color_profile:  * @config: a #GimpColorConfig  * @error:  return location for a #GError  *  * Return value: (transfer full): the default soft-proofing color  *                                profile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
