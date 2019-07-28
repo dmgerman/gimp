@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgpparams.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-params.h"
 end_include
 
 begin_include
@@ -998,7 +998,7 @@ name|proc_run
 operator|.
 name|params
 operator|=
-name|plug_in_args_to_params
+name|_gimp_value_array_to_gp_params
 argument_list|(
 name|args
 argument_list|,
@@ -1394,7 +1394,7 @@ name|proc_run
 operator|.
 name|params
 operator|=
-name|plug_in_args_to_params
+name|_gimp_value_array_to_gp_params
 argument_list|(
 name|args
 argument_list|,

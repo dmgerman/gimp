@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpgpparamspecs.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpgpparams.c  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgpparamspecs.h"
+file|"gimpgpparams.h"
 end_include
 
 begin_comment
@@ -74,13 +74,13 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/*  include the implementation of _gimp_param_spec_to_gp_param_def()  *  from libgimp, they are identical.  */
+comment|/*  include the implementations of  *  *  _gimp_param_spec_to_gp_param_def()  *  _gimp_gp_params_to_value_array()  *  _gimp_value_array_to_gp_params()  *  *  from libgimp, they are identical.  */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|"../../libgimp/gimpgpparamspecs-body.c"
+file|"../../libgimp/gimpgpparams-body.c"
 end_include
 
 begin_function

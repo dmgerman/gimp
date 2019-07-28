@@ -1144,7 +1144,7 @@ name|tool_name
 decl_stmt|;
 name|run_mode
 operator|=
-name|g_value_get_int
+name|g_value_get_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

@@ -17,16 +17,6 @@ name|__GIMP_PDB_COMPAT_H__
 end_define
 
 begin_function_decl
-name|GType
-name|gimp_pdb_compat_arg_type_to_gtype
-parameter_list|(
-name|GimpPDBArgType
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpPDBArgType
 name|gimp_pdb_compat_arg_type_from_gtype
 parameter_list|(

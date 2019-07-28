@@ -2291,7 +2291,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

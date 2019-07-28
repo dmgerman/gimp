@@ -54,13 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/gimp-pdb-compat.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpgpparamspecs.h"
+file|"gimpgpparams.h"
 end_include
 
 begin_include
@@ -92,7 +86,7 @@ DECL|macro|PLUG_IN_RC_FILE_VERSION
 define|#
 directive|define
 name|PLUG_IN_RC_FILE_VERSION
-value|5
+value|6
 end_define
 
 begin_comment
@@ -266,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ed6a30103
+DECL|enum|__anon28b7d8540103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

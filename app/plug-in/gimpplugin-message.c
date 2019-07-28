@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-babl-compat.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimp-gegl-tile-compat.h"
 end_include
 
@@ -108,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgpparamspecs.h"
+file|"gimpgpparams.h"
 end_include
 
 begin_include
@@ -151,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimptemporaryprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-params.h"
 end_include
 
 begin_include
@@ -2328,7 +2316,7 @@ name|canonical
 expr_stmt|;
 name|args
 operator|=
-name|plug_in_params_to_args
+name|_gimp_gp_params_to_value_array
 argument_list|(
 name|procedure
 condition|?
@@ -2479,7 +2467,7 @@ name|proc_return
 operator|.
 name|params
 operator|=
-name|plug_in_args_to_params
+name|_gimp_value_array_to_gp_params
 argument_list|(
 name|return_vals
 argument_list|,
@@ -2578,7 +2566,7 @@ name|proc_frame
 operator|->
 name|return_vals
 operator|=
-name|plug_in_params_to_args
+name|_gimp_gp_params_to_value_array
 argument_list|(
 name|proc_frame
 operator|->
@@ -2701,7 +2689,7 @@ name|proc_frame
 operator|->
 name|return_vals
 operator|=
-name|plug_in_params_to_args
+name|_gimp_gp_params_to_value_array
 argument_list|(
 name|proc_frame
 operator|->
