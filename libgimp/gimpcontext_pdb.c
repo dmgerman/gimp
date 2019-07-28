@@ -4842,7 +4842,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: The name of the active palette.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: (transfer full): The name of the active palette.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

@@ -3066,7 +3066,7 @@ literal|"num-colors"
 argument_list|,
 literal|"num colors"
 argument_list|,
-literal|"The number of colors in the palette"
+literal|"(out): The number of colors in the palette"
 argument_list|,
 name|G_MININT32
 argument_list|,
@@ -3718,7 +3718,7 @@ literal|"color"
 argument_list|,
 literal|"color"
 argument_list|,
-literal|"The color requested"
+literal|"(out): The color requested"
 argument_list|,
 name|FALSE
 argument_list|,
