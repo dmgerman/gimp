@@ -505,7 +505,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: 2.4  **/
+comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: (transfer container) (element-type GParamSpec): a GList of differing GParamSpecs.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
