@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"operations/gimp-operation-config.h"
 end_include
 
@@ -3671,6 +3677,17 @@ argument_list|,
 name|output
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_gegl_node_set_underlying_operation
+argument_list|(
+name|gradient_tool
+operator|->
+name|graph
+argument_list|,
+name|gradient_tool
+operator|->
+name|render_node
 argument_list|)
 expr_stmt|;
 name|gimp_gradient_tool_update_graph
