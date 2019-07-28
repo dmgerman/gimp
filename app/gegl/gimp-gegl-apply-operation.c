@@ -81,6 +81,40 @@ directive|include
 file|"gimp-gegl-utils.h"
 end_include
 
+begin_comment
+comment|/* iteration interval when applying an operation interactively  * (with progress indication)  */
+end_comment
+
+begin_define
+DECL|macro|APPLY_OPERATION_INTERACTIVE_INTERVAL
+define|#
+directive|define
+name|APPLY_OPERATION_INTERACTIVE_INTERVAL
+value|(1.0 / 8.0)
+end_define
+
+begin_comment
+DECL|macro|APPLY_OPERATION_INTERACTIVE_INTERVAL
+comment|/* seconds */
+end_comment
+
+begin_comment
+comment|/* iteration interval when applying an operation non-interactively  * (without progress indication)  */
+end_comment
+
+begin_define
+DECL|macro|APPLY_OPERATION_NON_INTERACTIVE_INTERVAL
+define|#
+directive|define
+name|APPLY_OPERATION_NON_INTERACTIVE_INTERVAL
+value|1.0
+end_define
+
+begin_comment
+DECL|macro|APPLY_OPERATION_NON_INTERACTIVE_INTERVAL
+comment|/* seconds */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_gegl_apply_operation (GeglBuffer * src_buffer,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,GeglBuffer * dest_buffer,const GeglRectangle * dest_rect,gboolean crop_input)
@@ -228,6 +262,10 @@ decl_stmt|;
 name|GeglNode
 modifier|*
 name|dest_node
+decl_stmt|;
+name|GeglNode
+modifier|*
+name|underlying_operation
 decl_stmt|;
 name|GeglNode
 modifier|*
@@ -383,6 +421,13 @@ name|effect
 operator|=
 name|operation
 expr_stmt|;
+name|underlying_operation
+operator|=
+name|gimp_gegl_node_get_underlying_operation
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|src_buffer
@@ -392,17 +437,6 @@ name|GeglNode
 modifier|*
 name|src_node
 decl_stmt|;
-name|GeglNode
-modifier|*
-name|underlying_operation
-decl_stmt|;
-name|underlying_operation
-operator|=
-name|gimp_gegl_node_get_underlying_operation
-argument_list|(
-name|operation
-argument_list|)
-expr_stmt|;
 comment|/* dup() because reading and writing the same buffer doesn't        * generally work with non-point ops when working in chunks.        * See bug #701875.        */
 if|if
 condition|(
@@ -843,6 +877,38 @@ argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|progress
+operator|&&
+comment|/* avoid the interactive iteration interval for area filters (or meta ops        * that potentially involve area filters), since their processing speed        * tends to be sensitive to the chunk size.        */
+operator|!
+name|gimp_gegl_node_is_area_filter_operation
+argument_list|(
+name|underlying_operation
+argument_list|)
+condition|)
+block|{
+comment|/* we use a shorter iteration interval for interactive use (when there's        * progress indication), to stay responsive.        */
+name|gimp_chunk_iterator_set_interval
+argument_list|(
+name|iter
+argument_list|,
+name|APPLY_OPERATION_INTERACTIVE_INTERVAL
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* we use a longer iteration interval for non-interactive use (when        * there's no progress indication), or when applying an area filter (see        * above), as this generally allows for faster processing.  we don't        * avoid chunking altogether, since *some* chunking is still desirable to        * reduce the space needed for intermediate results.        */
+name|gimp_chunk_iterator_set_interval
+argument_list|(
+name|iter
+argument_list|,
+name|APPLY_OPERATION_NON_INTERACTIVE_INTERVAL
+argument_list|)
+expr_stmt|;
+block|}
 while|while
 condition|(
 name|gimp_chunk_iterator_next
