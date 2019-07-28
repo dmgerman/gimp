@@ -2351,7 +2351,7 @@ end_expr_stmt
 
 begin_comment
 unit|}
-comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Return value: The new #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Return value: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_expr_stmt
@@ -2421,7 +2421,7 @@ end_expr_stmt
 
 begin_comment
 unit|}
-comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Return value: The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Return value: (transfer full):  *               The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: 2.10  */
 end_comment
 
 begin_expr_stmt
@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2ba7459f0108
+DECL|struct|__anon2a2850720108
 block|{
 DECL|member|name
 name|gchar
@@ -3054,7 +3054,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Return value: The new #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Return value: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3703,7 +3703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Return value: The loaded #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Return value: (transfer full): The loaded #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function

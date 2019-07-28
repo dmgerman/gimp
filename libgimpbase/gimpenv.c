@@ -1789,7 +1789,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the data  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_directory_file:  * @first_element: the first element of a path to a file in the  *                 user's GIMP directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the user's GIMP directory, or the data  * directory itself if @first_element is %NULL.  *  * See also: gimp_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1844,7 +1844,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_installation_directory_file:  * @first_element: the first element of a path to a file in the  *                 top installation directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the installation directory, or the installation  * directory itself if @first_element is %NULL.  *  * See also: gimp_installation_directory().  *  * Since: 2.10.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_installation_directory_file:  * @first_element: the first element of a path to a file in the  *                 top installation directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the installation directory, or the installation  * directory itself if @first_element is %NULL.  *  * See also: gimp_installation_directory().  *  * Since: 2.10.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1899,7 +1899,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_directory_file:  * @first_element: the first element of a path to a file in the  *                 data directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the data directory, or the data directory  * itself if @first_element is %NULL.  *  * See also: gimp_data_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_data_directory_file:  * @first_element: the first element of a path to a file in the  *                 data directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the data directory, or the data directory  * itself if @first_element is %NULL.  *  * See also: gimp_data_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -1954,7 +1954,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory_file:  * @first_element: the first element of a path to a file in the  *                 locale directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the locale directory, or the locale directory  * itself if @first_element is %NULL.  *  * See also: gimp_locale_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_locale_directory_file:  * @first_element: the first element of a path to a file in the  *                 locale directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the locale directory, or the locale directory  * itself if @first_element is %NULL.  *  * See also: gimp_locale_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -2009,7 +2009,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory_file:  * @first_element: the first element of a path to a file in the  *                 sysconf directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the sysconf directory, or the sysconf directory  * itself if @first_element is %NULL.  *  * See also: gimp_sysconf_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_sysconf_directory_file:  * @first_element: the first element of a path to a file in the  *                 sysconf directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the sysconf directory, or the sysconf directory  * itself if @first_element is %NULL.  *  * See also: gimp_sysconf_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -2064,7 +2064,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory_file:  * @first_element: the first element of a path to a file in the  *                 plug-in directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the plug-in directory, or the plug-in directory  * itself if @first_element is %NULL.  *  * See also: gimp_plug_in_directory().  *  * Since: 2.10  *  * Returns: a new @GFile for the path, Free with g_object_unref().  **/
+comment|/**  * gimp_plug_in_directory_file:  * @first_element: the first element of a path to a file in the  *                 plug-in directory, or %NULL.  * @...: a %NULL terminated list of the remaining elements of the path  *       to the file.  *  * Returns a #GFile in the plug-in directory, or the plug-in directory  * itself if @first_element is %NULL.  *  * See also: gimp_plug_in_directory().  *  * Since: 2.10  *  * Returns: (transfer full):  *          a new @GFile for the path, Free with g_object_unref().  **/
 end_comment
 
 begin_function
@@ -2413,7 +2413,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_parse:  * @path:         A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths:    The maximum number of directories to return.  * @check:        %TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed.  *  * Returns: A #GList of all directories in @path.  **/
+comment|/**  * gimp_path_parse:  * @path:         A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths:    The maximum number of directories to return.  * @check:        %TRUE if you want the directories to be checked.  * @check_failed: (element-type filename) (out callee-allocates):                   Returns a #GList of path elements for which the check failed.  *  * Returns: (element-type filename) (transfer full):             A #GList of all directories in @path.  **/
 end_comment
 
 begin_function
@@ -2727,7 +2727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_to_str:  * @path: A list of directories as returned by gimp_path_parse().  *  * Returns: A searchpath string separated by #G_SEARCHPATH_SEPARATOR.  **/
+comment|/**  * gimp_path_to_str:  * @path: (element-type filename):  *        A list of directories as returned by gimp_path_parse().  *  * Returns: (type filename) (transfer full):  *          A searchpath string separated by #G_SEARCHPATH_SEPARATOR.  **/
 end_comment
 
 begin_function
@@ -2832,7 +2832,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_free:  * @path: A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and the strings  * it contains.  **/
+comment|/**  * gimp_path_free:  * @path: (element-type filename):  *        A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and the strings  * it contains.  **/
 end_comment
 
 begin_function
@@ -2859,7 +2859,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_user_writable_dir:  * @path: A list of directories as returned by gimp_path_parse().  *  * Note that you have to g_free() the returned string.  *  * Returns: The first directory in @path where the user has write permission.  **/
+comment|/**  * gimp_path_get_user_writable_dir:  * @path: (element-type filename):  *        A list of directories as returned by gimp_path_parse().  *  * Note that you have to g_free() the returned string.  *  * Returns: The first directory in @path where the user has write permission.  **/
 end_comment
 
 begin_function
