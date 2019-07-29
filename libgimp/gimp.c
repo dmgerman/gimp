@@ -516,7 +516,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbdc4b10103
+DECL|enum|__anon2a35fad80103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1759,7 +1759,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2bbdc4b10203
+DECL|enum|__anon2a35fad80203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -5552,7 +5552,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|//gimp_value_array_unref (return_values);
+name|gimp_value_array_unref
+argument_list|(
+name|return_values
+argument_list|)
+expr_stmt|;
 name|gimp_wire_destroy
 argument_list|(
 operator|&
