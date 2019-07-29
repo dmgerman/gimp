@@ -2890,7 +2890,23 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* Shift program name and arguments to the right. */
+name|program
+operator|=
+name|g_hash_table_lookup
+argument_list|(
+name|db
+operator|->
+name|programs
+argument_list|,
+name|cp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|program
+condition|)
+block|{
+comment|/* Shift program name and arguments to the right, if and                * only if we recorded a specific interpreter for such                * script. Otherwise let `env` tool do its job.                */
 name|name
 operator|=
 name|cp
@@ -2941,6 +2957,7 @@ operator|++
 operator|=
 literal|'\0'
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
