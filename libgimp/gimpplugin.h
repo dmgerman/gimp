@@ -458,30 +458,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  unrelated old API  */
-end_comment
-
-begin_function_decl
-name|gboolean
-name|gimp_plugin_icon_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|GimpIconType
-name|icon_type
-parameter_list|,
-specifier|const
-name|guint8
-modifier|*
-name|icon_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 name|G_END_DECLS
 end_macro
