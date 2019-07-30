@@ -53,11 +53,6 @@ DECL|struct|_GimpPlugInPrivate
 struct|struct
 name|_GimpPlugInPrivate
 block|{
-DECL|member|procedures
-name|GList
-modifier|*
-name|procedures
-decl_stmt|;
 DECL|member|translation_domain_name
 name|gchar
 modifier|*
@@ -82,6 +77,11 @@ DECL|member|menu_branches
 name|GList
 modifier|*
 name|menu_branches
+decl_stmt|;
+DECL|member|temp_procedures
+name|GList
+modifier|*
+name|temp_procedures
 decl_stmt|;
 block|}
 struct|;

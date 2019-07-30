@@ -400,7 +400,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_add_procedure
+name|gimp_plug_in_add_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -415,7 +415,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_plug_in_remove_procedure
+name|gimp_plug_in_remove_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -432,7 +432,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_plug_in_get_procedures
+name|gimp_plug_in_get_temp_procedures
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -444,7 +444,7 @@ end_function_decl
 begin_function_decl
 name|GimpProcedure
 modifier|*
-name|gimp_plug_in_get_procedure
+name|gimp_plug_in_get_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*

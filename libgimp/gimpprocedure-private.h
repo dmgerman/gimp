@@ -28,6 +28,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|_gimp_procedure_unregister
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

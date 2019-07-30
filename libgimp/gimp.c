@@ -516,7 +516,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ede2f10103
+DECL|enum|__anon2b92da290103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1755,7 +1755,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon27ede2f10203
+DECL|enum|__anon2b92da290203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -8600,7 +8600,7 @@ name|procedure
 decl_stmt|;
 name|procedure
 operator|=
-name|gimp_plug_in_get_procedure
+name|gimp_plug_in_get_temp_procedure
 argument_list|(
 name|PLUG_IN
 argument_list|,

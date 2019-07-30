@@ -27,6 +27,12 @@ directive|include
 file|"gimpplugin-private.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprocedure-private.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpplugin  * @title: GimpPlugIn  * @short_description: The base class for plug-ins to derive from  *  * The base class for plug-ins to derive from. Manages the plug-in's  * #GimpProcedure objects.  *  * Since: 3.0  **/
 end_comment
@@ -144,7 +150,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 condition|)
 block|{
 name|g_list_free_full
@@ -153,7 +159,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 argument_list|,
 name|g_object_unref
 argument_list|)
@@ -162,7 +168,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 operator|=
 name|NULL
 expr_stmt|;
@@ -600,8 +606,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_add_procedure (GimpPlugIn * plug_in,GimpProcedure * procedure)
-name|gimp_plug_in_add_procedure
+DECL|function|gimp_plug_in_add_temp_procedure (GimpPlugIn * plug_in,GimpProcedure * procedure)
+name|gimp_plug_in_add_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -632,7 +638,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 operator|=
 name|g_list_prepend
 argument_list|(
@@ -640,7 +646,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 argument_list|,
 name|g_object_ref
 argument_list|(
@@ -648,13 +654,18 @@ name|procedure
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|_gimp_procedure_register
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_remove_procedure (GimpPlugIn * plug_in,const gchar * name)
-name|gimp_plug_in_remove_procedure
+DECL|function|gimp_plug_in_remove_temp_procedure (GimpPlugIn * plug_in,const gchar * name)
+name|gimp_plug_in_remove_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -687,7 +698,7 @@ argument_list|)
 expr_stmt|;
 name|procedure
 operator|=
-name|gimp_plug_in_get_procedure
+name|gimp_plug_in_get_temp_procedure
 argument_list|(
 name|plug_in
 argument_list|,
@@ -699,11 +710,16 @@ condition|(
 name|procedure
 condition|)
 block|{
+name|_gimp_procedure_unregister
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
 name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 operator|=
 name|g_list_remove
 argument_list|(
@@ -711,7 +727,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 argument_list|,
 name|procedure
 argument_list|)
@@ -728,8 +744,8 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_plug_in_get_procedures (GimpPlugIn * plug_in)
-name|gimp_plug_in_get_procedures
+DECL|function|gimp_plug_in_get_temp_procedures (GimpPlugIn * plug_in)
+name|gimp_plug_in_get_temp_procedures
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -751,7 +767,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 return|;
 block|}
 end_function
@@ -759,8 +775,8 @@ end_function
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_plug_in_get_procedure (GimpPlugIn * plug_in,const gchar * name)
-name|gimp_plug_in_get_procedure
+DECL|function|gimp_plug_in_get_temp_procedure (GimpPlugIn * plug_in,const gchar * name)
+name|gimp_plug_in_get_temp_procedure
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -803,7 +819,7 @@ name|plug_in
 operator|->
 name|priv
 operator|->
-name|procedures
+name|temp_procedures
 init|;
 name|list
 condition|;
