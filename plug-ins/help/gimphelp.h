@@ -97,6 +97,7 @@ parameter_list|(
 name|gint
 name|n_domain_names
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
@@ -105,6 +106,7 @@ parameter_list|,
 name|gint
 name|n_domain_uris
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*

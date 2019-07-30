@@ -85,12 +85,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_help_init (gint num_domain_names,gchar ** domain_names,gint num_domain_uris,gchar ** domain_uris)
+DECL|function|gimp_help_init (gint num_domain_names,const gchar ** domain_names,gint num_domain_uris,const gchar ** domain_uris)
 name|gimp_help_init
 parameter_list|(
 name|gint
 name|num_domain_names
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
@@ -99,6 +100,7 @@ parameter_list|,
 name|gint
 name|num_domain_uris
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
