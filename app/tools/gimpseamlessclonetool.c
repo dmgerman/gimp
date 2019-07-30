@@ -68,6 +68,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -247,7 +253,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a10d38a0103
+DECL|enum|__anon2bc45b390103
 block|{
 DECL|enumerator|SC_STATE_INIT
 name|SC_STATE_INIT
@@ -999,7 +1005,7 @@ name|sc
 operator|->
 name|paste
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|gimp_buffer_get_buffer
 argument_list|(

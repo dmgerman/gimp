@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -5804,7 +5810,7 @@ name|height
 decl_stmt|;
 name|buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|undo
 operator|->

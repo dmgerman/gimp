@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-memsize.h"
 end_include
 
@@ -1571,7 +1577,7 @@ name|gimp_buffer
 operator|->
 name|buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|buffer
 argument_list|)

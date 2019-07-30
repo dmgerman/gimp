@@ -460,7 +460,7 @@ condition|)
 block|{
 name|src_buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|src_buffer
 argument_list|)

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-parallel.h"
 end_include
 
@@ -129,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b5baa0103
+DECL|enum|__anon28a5b29b0103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -145,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b5baa0203
+DECL|enum|__anon28a5b29b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -247,7 +253,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8b5baa0308
+DECL|struct|__anon28a5b29b0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -279,7 +285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8b5baa0408
+DECL|struct|__anon28a5b29b0408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -2838,7 +2844,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|gimp_pickable_get_buffer
 argument_list|(
@@ -4272,7 +4278,7 @@ argument_list|)
 expr_stmt|;
 name|closed
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|strokes
 argument_list|)

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl/gimptilehandlerbuffer.h"
 end_include
 
@@ -229,7 +235,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297cb5210103
+DECL|enum|__anon2bcaee960103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,7 +254,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297cb5210203
+DECL|enum|__anon2bcaee960203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2272,7 +2278,7 @@ name|new_buffer
 decl_stmt|;
 name|new_buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|gimp_drawable_get_buffer
 argument_list|(
@@ -4173,7 +4179,7 @@ argument_list|)
 decl_stmt|;
 name|tmp
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|buffer
 argument_list|)
@@ -7569,7 +7575,7 @@ name|private
 operator|->
 name|paint_buffer
 operator|=
-name|gegl_buffer_dup
+name|gimp_gegl_buffer_dup
 argument_list|(
 name|buffer
 argument_list|)
