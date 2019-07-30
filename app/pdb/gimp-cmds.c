@@ -1405,7 +1405,7 @@ literal|"parasites"
 argument_list|,
 literal|"parasites"
 argument_list|,
-literal|"(array length=num_parasites) (element-type gchar) (transfer full): The names of currently attached parasites"
+literal|"The names of currently attached parasites"
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)

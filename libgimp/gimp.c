@@ -516,7 +516,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ac32e80103
+DECL|enum|__anon27ede2f10103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1755,7 +1755,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon29ac32e80203
+DECL|enum|__anon27ede2f10203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -4019,7 +4019,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_label:    the procedure's menu label, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params: (array length=n_params):                    the procedure's parameters.  * @return_vals: (array length=n_return_vals):                    the procedure's return values.  * @run_proc: (closure) (scope async):                    the function to call for executing the procedure.  *  * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be %GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
+comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_label:    the procedure's menu label, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params:        the procedure's parameters.  * @return_vals:   the procedure's return values.  * @run_proc:      the function to call for executing the procedure.  *  * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be %GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
 end_comment
 
 begin_function
@@ -4301,7 +4301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure: (skip)  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @...:           list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by %GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array and  * passes them to gimp_run_procedure2(). Please look there for further  * information.  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * the first return value will be a string detailing the error.  **/
+comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @...:           list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by %GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array and  * passes them to gimp_run_procedure2(). Please look there for further  * information.  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * the first return value will be a string detailing the error.  **/
 end_comment
 
 begin_function
@@ -5354,7 +5354,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure2: (rename-to gimp_run_procedure)  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * if there are two values returned, the other return value will be a  * string detailing the error.  **/
+comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * if there are two values returned, the other return value will be a  * string detailing the error.  **/
 end_comment
 
 begin_function
