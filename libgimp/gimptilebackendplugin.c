@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpwire.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"gimp-private.h"
 end_include
 
 begin_include
@@ -289,24 +289,6 @@ parameter_list|,
 name|GimpTile
 modifier|*
 name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* EEK */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_read_expect_msg
-parameter_list|(
-name|GimpWireMessage
-modifier|*
-name|msg
-parameter_list|,
-name|gint
-name|type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1302,11 +1284,6 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-specifier|extern
-name|GIOChannel
-modifier|*
-name|_writechannel
-decl_stmt|;
 name|GimpTileBackendPluginPrivate
 modifier|*
 name|priv
@@ -1357,7 +1334,7 @@ condition|(
 operator|!
 name|gp_tile_req_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|tile_req
@@ -1368,7 +1345,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|gimp_read_expect_msg
+name|_gimp_read_expect_msg
 argument_list|(
 operator|&
 name|msg
@@ -1500,7 +1477,7 @@ condition|(
 operator|!
 name|gp_tile_ack_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|)
@@ -1535,11 +1512,6 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-specifier|extern
-name|GIOChannel
-modifier|*
-name|_writechannel
-decl_stmt|;
 name|GimpTileBackendPluginPrivate
 modifier|*
 name|priv
@@ -1588,7 +1560,7 @@ condition|(
 operator|!
 name|gp_tile_req_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|tile_req
@@ -1599,7 +1571,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|gimp_read_expect_msg
+name|_gimp_read_expect_msg
 argument_list|(
 operator|&
 name|msg
@@ -1721,7 +1693,7 @@ condition|(
 operator|!
 name|gp_tile_data_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|tile_data
@@ -1751,7 +1723,7 @@ operator|&
 name|msg
 argument_list|)
 expr_stmt|;
-name|gimp_read_expect_msg
+name|_gimp_read_expect_msg
 argument_list|(
 operator|&
 name|msg

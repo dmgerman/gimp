@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpwire.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"gimp-private.h"
 end_include
 
 begin_include
@@ -82,22 +82,6 @@ name|boxed
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|GHashTable
-modifier|*
-name|_gimp_temp_proc_ht
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GIOChannel
-modifier|*
-name|_writechannel
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/**  * gimp_plug_in_info_set_callbacks:  * @info: the PLUG_IN_INFO structure  * @init_proc:  (closure) (scope async) (nullable): the init procedure  * @quit_proc:  (closure) (scope async) (nullable): the quit procedure  * @query_proc: (closure) (scope async) (nullable): the query procedure  * @run_proc:   (closure) (scope async) (nullable): the run procedure  *  * The procedure that must be called with the PLUG_IN_INFO structure to  * set the initialization, query, run and quit callbacks.  *  * Since: 3.0  **/
@@ -807,7 +791,7 @@ condition|(
 operator|!
 name|gp_proc_install_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_install
@@ -1090,7 +1074,7 @@ condition|(
 operator|!
 name|gp_proc_uninstall_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_uninstall

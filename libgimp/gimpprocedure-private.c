@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgpparams.h"
 end_include
 
@@ -68,14 +74,6 @@ include|#
 directive|include
 file|"gimpprocedure-private.h"
 end_include
-
-begin_decl_stmt
-specifier|extern
-name|GIOChannel
-modifier|*
-name|_writechannel
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -370,7 +368,7 @@ condition|(
 operator|!
 name|gp_proc_install_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_install
@@ -492,7 +490,7 @@ condition|(
 operator|!
 name|gp_proc_uninstall_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_uninstall

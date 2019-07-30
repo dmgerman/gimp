@@ -450,13 +450,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpwire.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"gimp-private.h"
 end_include
 
 begin_include
@@ -516,7 +516,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2eae450103
+DECL|enum|__anon28d134020103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -581,20 +581,6 @@ directive|define
 name|WRITE_BUFFER_SIZE
 value|1024
 end_define
-
-begin_function_decl
-name|void
-name|gimp_read_expect_msg
-parameter_list|(
-name|GimpWireMessage
-modifier|*
-name|msg
-parameter_list|,
-name|gint
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -952,21 +938,21 @@ directive|endif
 end_endif
 
 begin_decl_stmt
-DECL|variable|_readchannel
+DECL|variable|_gimp_readchannel
 specifier|static
 name|GIOChannel
 modifier|*
-name|_readchannel
+name|_gimp_readchannel
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_writechannel
+DECL|variable|_gimp_writechannel
 name|GIOChannel
 modifier|*
-name|_writechannel
+name|_gimp_writechannel
 init|=
 name|NULL
 decl_stmt|;
@@ -1434,7 +1420,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2c2eae450203
+DECL|enum|__anon28d134020203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2493,7 +2479,7 @@ directive|endif
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-name|_readchannel
+name|_gimp_readchannel
 operator|=
 name|g_io_channel_win32_new_fd
 argument_list|(
@@ -2506,7 +2492,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_writechannel
+name|_gimp_writechannel
 operator|=
 name|g_io_channel_win32_new_fd
 argument_list|(
@@ -2521,7 +2507,7 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|_readchannel
+name|_gimp_readchannel
 operator|=
 name|g_io_channel_unix_new
 argument_list|(
@@ -2534,7 +2520,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|_writechannel
+name|_gimp_writechannel
 operator|=
 name|g_io_channel_unix_new
 argument_list|(
@@ -2551,7 +2537,7 @@ endif|#
 directive|endif
 name|g_io_channel_set_encoding
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|NULL
 argument_list|,
@@ -2560,7 +2546,7 @@ argument_list|)
 expr_stmt|;
 name|g_io_channel_set_encoding
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|,
@@ -2569,28 +2555,28 @@ argument_list|)
 expr_stmt|;
 name|g_io_channel_set_buffered
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_io_channel_set_buffered
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_io_channel_set_close_on_unref
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_io_channel_set_close_on_unref
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3021,7 +3007,7 @@ name|init_procedures
 condition|)
 name|gp_has_init_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|)
@@ -3037,7 +3023,7 @@ name|init_proc
 condition|)
 name|gp_has_init_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|)
@@ -3176,7 +3162,7 @@ argument_list|)
 expr_stmt|;
 name|g_io_add_watch
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|G_IO_ERR
 operator||
@@ -3239,8 +3225,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_read_expect_msg (GimpWireMessage * msg,gint type)
-name|gimp_read_expect_msg
+DECL|function|_gimp_read_expect_msg (GimpWireMessage * msg,gint type)
+name|_gimp_read_expect_msg
 parameter_list|(
 name|GimpWireMessage
 modifier|*
@@ -3260,7 +3246,7 @@ condition|(
 operator|!
 name|gimp_wire_read_msg
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|msg
 argument_list|,
@@ -3408,7 +3394,7 @@ condition|(
 operator|!
 name|gp_proc_run_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_run
@@ -3419,7 +3405,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|gimp_read_expect_msg
+name|_gimp_read_expect_msg
 argument_list|(
 operator|&
 name|msg
@@ -3921,7 +3907,7 @@ condition|(
 operator|!
 name|gp_extension_ack_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|)
@@ -3958,7 +3944,7 @@ condition|)
 block|{
 name|g_io_add_watch
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|G_IO_IN
 operator||
@@ -4056,7 +4042,7 @@ name|FD_SET
 argument_list|(
 name|g_io_channel_unix_get_fd
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|)
 argument_list|,
 operator|&
@@ -4144,7 +4130,7 @@ literal|1
 expr_stmt|;
 name|g_io_channel_win32_make_pollfd
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 name|G_IO_IN
 argument_list|,
@@ -4294,7 +4280,7 @@ endif|#
 directive|endif
 name|gp_quit_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 name|NULL
 argument_list|)
@@ -5307,7 +5293,7 @@ condition|(
 operator|!
 name|gimp_wire_read_msg
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 operator|&
 name|msg
@@ -6028,7 +6014,7 @@ condition|(
 operator|!
 name|gp_proc_return_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_return
@@ -6166,7 +6152,7 @@ condition|(
 operator|!
 name|gp_temp_proc_return_write
 argument_list|(
-name|_writechannel
+name|_gimp_writechannel
 argument_list|,
 operator|&
 name|proc_return
@@ -6484,7 +6470,7 @@ condition|(
 operator|!
 name|gimp_wire_read_msg
 argument_list|(
-name|_readchannel
+name|_gimp_readchannel
 argument_list|,
 operator|&
 name|msg
