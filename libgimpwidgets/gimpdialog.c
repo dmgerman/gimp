@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e4b3370103
+DECL|enum|__anon29991da40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1702,7 +1702,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4b3370208
+DECL|struct|__anon29991da40208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -2086,7 +2086,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_set_alternative_button_order_from_array:  * @dialog:                         The #GimpDialog  * @n_buttons:                      The size of @order  * @order: (array length=n_buttons) array of buttons' response ids.  *  * Reorder @dialog's buttons if "gtk-alternative-button-order" setting  * is set to TRUE. This is mostly a wrapper around the GTK function  * gtk_dialog_set_alternative_button_order(), except it won't output a  * deprecation warning.  *  * Since: 3.0  **/
+comment|/**  * gimp_dialog_set_alternative_button_order_from_array:  * @dialog:                          The #GimpDialog  * @n_buttons:                       The size of @order  * @order: (array length=n_buttons): array of buttons' response ids.  *  * Reorder @dialog's buttons if "gtk-alternative-button-order" setting  * is set to TRUE. This is mostly a wrapper around the GTK function  * gtk_dialog_set_alternative_button_order(), except it won't output a  * deprecation warning.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
