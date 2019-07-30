@@ -322,7 +322,11 @@ name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
+name|plug_in
+argument_list|,
 name|name
+argument_list|,
+name|GIMP_PLUGIN
 argument_list|,
 name|goat_run
 argument_list|)
