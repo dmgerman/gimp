@@ -269,7 +269,8 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_image_base_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -405,9 +406,11 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_image_base_type_get_type
+argument_list|()
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_precision_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -4319,7 +4322,8 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_merge_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -4440,7 +4444,8 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_merge_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6146,7 +6151,8 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_channel_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6264,7 +6270,8 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_channel_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -6381,7 +6388,8 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_channel_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6499,7 +6507,8 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|gimp_channel_type_get_type
+argument_list|()
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
