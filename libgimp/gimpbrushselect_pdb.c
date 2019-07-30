@@ -84,7 +84,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -342,7 +342,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

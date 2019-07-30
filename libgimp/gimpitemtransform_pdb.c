@@ -198,7 +198,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -753,7 +753,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_ROTATION_TYPE
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -1248,7 +1248,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_ORIENTATION_TYPE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,

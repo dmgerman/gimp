@@ -80,13 +80,13 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1397,7 +1397,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_ADD_MASK_TYPE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1813,7 +1813,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_MASK_APPLY_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3117,7 +3117,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3318,7 +3318,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_COLOR_SPACE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3519,7 +3519,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_COLOR_SPACE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3720,7 +3720,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_COMPOSITE_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

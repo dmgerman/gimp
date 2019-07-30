@@ -496,7 +496,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_ICON_TYPE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
@@ -624,7 +624,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_PDB_ERROR_HANDLER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

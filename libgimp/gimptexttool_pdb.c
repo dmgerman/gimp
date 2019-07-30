@@ -101,7 +101,7 @@ name|G_TYPE_BOOLEAN
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_SIZE_TYPE
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -342,7 +342,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_SIZE_TYPE
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

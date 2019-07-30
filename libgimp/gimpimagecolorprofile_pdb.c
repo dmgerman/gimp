@@ -550,7 +550,7 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT8_ARRAY
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -703,7 +703,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_COLOR_RENDERING_INTENT
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,

@@ -342,7 +342,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_CLONE_TYPE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -652,7 +652,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
@@ -937,9 +937,9 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_DODGE_BURN_TYPE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
@@ -1235,9 +1235,9 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_FLOAT_ARRAY
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_BRUSH_APPLICATION_MODE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1821,7 +1821,7 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_FLOAT_ARRAY
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_PAINT_APPLICATION_MODE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,

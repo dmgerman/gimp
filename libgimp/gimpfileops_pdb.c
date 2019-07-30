@@ -64,7 +64,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -199,7 +199,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
@@ -339,7 +339,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
@@ -501,7 +501,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,

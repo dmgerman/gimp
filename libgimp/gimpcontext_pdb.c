@@ -643,7 +643,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_STROKE_METHOD
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1481,7 +1481,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1988,7 +1988,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_CAP_STYLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2157,7 +2157,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_JOIN_STYLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5267,7 +5267,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_GRADIENT_BLEND_COLOR_SPACE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5436,7 +5436,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_REPEAT_MODE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6849,7 +6849,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_SELECT_CRITERION
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7694,7 +7694,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GEGL_TYPE_DISTANCE_METRIC
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7863,7 +7863,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -8032,7 +8032,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TRANSFORM_DIRECTION
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -8201,7 +8201,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TRANSFORM_RESIZE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -9215,7 +9215,7 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
-name|G_TYPE_ENUM
+name|GIMP_TYPE_INK_BLOB_TYPE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

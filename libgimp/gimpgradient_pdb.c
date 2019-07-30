@@ -2733,7 +2733,7 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_GRADIENT_SEGMENT_TYPE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2872,7 +2872,7 @@ name|GIMP_TYPE_INT32
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_GRADIENT_SEGMENT_COLOR
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

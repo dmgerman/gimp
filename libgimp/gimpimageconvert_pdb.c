@@ -247,9 +247,9 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_CONVERT_DITHER_TYPE
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
@@ -561,7 +561,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_PRECISION
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

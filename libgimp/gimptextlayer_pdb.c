@@ -1275,7 +1275,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TEXT_HINT_STYLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1882,7 +1882,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TEXT_DIRECTION
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2083,7 +2083,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_TEXT_JUSTIFICATION
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

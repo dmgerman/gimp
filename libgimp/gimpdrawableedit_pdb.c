@@ -144,7 +144,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_FILL_TYPE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -253,7 +253,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_FILL_TYPE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -411,7 +411,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|G_TYPE_ENUM
+name|GIMP_TYPE_GRADIENT_TYPE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
