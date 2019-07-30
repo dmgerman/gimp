@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c042c020103
+DECL|enum|__anon29e4b3370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1133,7 +1133,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @...:          A %NULL-terminated @va_list destribing the  *                action_area buttons.  *  * Creates a new @GimpDialog widget.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_new_valist().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_new: (skip)  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @...:          A %NULL-terminated @va_list destribing the  *                action_area buttons.  *  * Creates a new @GimpDialog widget.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_new_valist().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
@@ -1247,7 +1247,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new_valist:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog or %NULL.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @args:         A @va_list destribing the action_area buttons.  *  * Creates a new @GimpDialog widget. If a GtkWindow is specified as  * @parent then the dialog will be made transient for this window.  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_new_valist: (skip)  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog or %NULL.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @args:         A @va_list destribing the action_area buttons.  *  * Creates a new @GimpDialog widget. If a GtkWindow is specified as  * @parent then the dialog will be made transient for this window.  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
@@ -1423,7 +1423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_add_button:  * @dialog: The @dialog to add a button to.  * @button_text: text of button, or stock ID.  * @response_id: response ID for the button.  *  * This function is essentially the same as gtk_dialog_add_button()  * except it ensures there is only one help button and automatically  * sets the RESPONSE_OK widget as the default response.  *  * Return value: the button widget that was added.  **/
+comment|/**  * gimp_dialog_add_button:  * @dialog: The @dialog to add a button to.  * @button_text: text of button, or stock ID.  * @response_id: response ID for the button.  *  * This function is essentially the same as gtk_dialog_add_button()  * except it ensures there is only one help button and automatically  * sets the RESPONSE_OK widget as the default response.  *  * Return value: (type Gtk.Widget) (transfer none): the button widget that was added.  **/
 end_comment
 
 begin_function
@@ -1588,7 +1588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_add_buttons:  * @dialog: The @dialog to add buttons to.  * @...: button_text-response_id pairs.  *  * This function is essentially the same as gtk_dialog_add_buttons()  * except it calls gimp_dialog_add_button() instead of gtk_dialog_add_button()  **/
+comment|/**  * gimp_dialog_add_buttons: (skip)  * @dialog: The @dialog to add buttons to.  * @...: button_text-response_id pairs.  *  * This function is essentially the same as gtk_dialog_add_buttons()  * except it calls gimp_dialog_add_button() instead of gtk_dialog_add_button()  **/
 end_comment
 
 begin_function
@@ -1629,7 +1629,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_add_buttons_valist:  * @dialog: The @dialog to add buttons to.  * @args:   The buttons as va_list.  *  * This function is essentially the same as gimp_dialog_add_buttons()  * except it takes a va_list instead of '...'  **/
+comment|/**  * gimp_dialog_add_buttons_valist: (skip)  * @dialog: The @dialog to add buttons to.  * @args:   The buttons as va_list.  *  * This function is essentially the same as gimp_dialog_add_buttons()  * except it takes a va_list instead of '...'  **/
 end_comment
 
 begin_function
@@ -1702,7 +1702,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c042c020208
+DECL|struct|__anon29e4b3370208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -2124,7 +2124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialogs_show_help_button:  * @show: whether a help button should be added when creating a GimpDialog  *  * This function is for internal use only.  *  * Since: 2.2  **/
+comment|/**  * gimp_dialogs_show_help_button: (skip)  * @show: whether a help button should be added when creating a GimpDialog  *  * This function is for internal use only.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
