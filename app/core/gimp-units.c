@@ -553,7 +553,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc32310103
+DECL|enum|__anon27dd7ff20103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -1138,7 +1138,7 @@ name|gimp_config_writer_print
 argument_list|(
 name|writer
 argument_list|,
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -1146,8 +1146,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%f"
 argument_list|,
 name|_gimp_unit_get_factor
 argument_list|(

@@ -761,7 +761,7 @@ parameter_list|,
 name|value
 parameter_list|)
 define|\
-value|{ gchar card[81], dbl[21], *istr; \   g_ascii_formatd (dbl, sizeof(dbl), "%f", (gdouble)value); \   istr = strstr (dbl, "e"); \   if (istr) *istr = 'E'; \   g_snprintf (card, sizeof (card), \               "%-8.8s= %20.20s%50s", key, dbl, " "); \   fwrite (card, 1, 80, fp); }
+value|{ gchar card[81], dbl[21], *istr; \   g_ascii_dtostr (dbl, sizeof(dbl), (gdouble)value); \   istr = strstr (dbl, "e"); \   if (istr) *istr = 'E'; \   g_snprintf (card, sizeof (card), \               "%-8.8s= %20.20s%50s", key, dbl, " "); \   fwrite (card, 1, 80, fp); }
 end_define
 
 begin_define

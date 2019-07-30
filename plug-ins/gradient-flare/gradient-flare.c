@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ba839d0103
+DECL|enum|__anon2c75c8760103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ba839d0203
+DECL|enum|__anon2c75c8760203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -408,7 +408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0308
+DECL|struct|__anon2c75c8760308
 block|{
 DECL|member|name
 name|gchar
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0408
+DECL|struct|__anon2c75c8760408
 block|{
 DECL|member|fp
 name|FILE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ba839d0503
+DECL|enum|__anon2c75c8760503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -597,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0608
+DECL|struct|__anon2c75c8760608
 block|{
 DECL|member|init
 name|gint
@@ -619,7 +619,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27ba839d0708
+DECL|struct|__anon2c75c8760708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -698,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0808
+DECL|struct|__anon2c75c8760808
 block|{
 DECL|member|init
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0908
+DECL|struct|__anon2c75c8760908
 block|{
 DECL|member|x0
 name|gdouble
@@ -795,7 +795,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0a08
+DECL|struct|__anon2c75c8760a08
 block|{
 DECL|member|init
 name|gint
@@ -965,7 +965,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0b08
+DECL|struct|__anon2c75c8760b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -992,7 +992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0c08
+DECL|struct|__anon2c75c8760c08
 block|{
 DECL|member|format
 specifier|const
@@ -1235,7 +1235,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0d08
+DECL|struct|__anon2c75c8760d08
 block|{
 DECL|member|tag
 name|gint
@@ -1312,7 +1312,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba839d0e08
+DECL|struct|__anon2c75c8760e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -7174,7 +7174,7 @@ argument_list|,
 name|GFLARE_FILE_HEADER
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7182,8 +7182,6 @@ literal|0
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7209,7 +7207,7 @@ name|glow_mode
 index|]
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7217,8 +7215,6 @@ literal|0
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7244,7 +7240,7 @@ name|rays_mode
 index|]
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7252,8 +7248,6 @@ literal|0
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7306,7 +7300,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7315,14 +7309,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|glow_size
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7331,14 +7323,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|glow_rotation
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7346,8 +7336,6 @@ literal|2
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7403,7 +7391,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7412,14 +7400,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|rays_size
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7428,14 +7414,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|rays_rotation
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7443,8 +7427,6 @@ literal|2
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7473,7 +7455,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7481,8 +7463,6 @@ literal|0
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -7532,7 +7512,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7541,14 +7521,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|sflare_size
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7557,14 +7535,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|gflare
 operator|->
 name|sflare_rotation
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -7572,8 +7548,6 @@ literal|2
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|gflare
 operator|->
@@ -8790,7 +8764,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27ba839d0f08
+DECL|struct|__anon2c75c8760f08
 block|{
 DECL|member|values
 name|guchar
@@ -14768,7 +14742,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27ba839d1008
+DECL|struct|__anon2c75c8761008
 block|{
 DECL|member|label
 specifier|const

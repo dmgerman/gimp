@@ -172,7 +172,7 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -181,14 +181,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -197,14 +195,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|middle
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -213,14 +209,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -229,8 +223,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -238,7 +230,7 @@ operator|.
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -247,8 +239,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -256,7 +246,7 @@ operator|.
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -265,8 +255,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -274,7 +262,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -283,8 +271,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -292,7 +278,7 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -301,8 +287,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -310,7 +294,7 @@ operator|.
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -319,8 +303,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -328,7 +310,7 @@ operator|.
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -337,8 +319,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -346,7 +326,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -354,8 +334,6 @@ literal|10
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|seg
 operator|->
@@ -646,20 +624,18 @@ name|next
 control|)
 block|{
 comment|/* Left */
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|seg
 operator|->
 name|left
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -668,8 +644,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -677,7 +651,7 @@ operator|.
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -686,8 +660,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -695,7 +667,7 @@ operator|.
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -704,8 +676,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|left_color
@@ -713,7 +683,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -721,8 +691,6 @@ literal|3
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 literal|1.0
 operator|-
@@ -763,20 +731,18 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* Middle */
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|seg
 operator|->
 name|middle
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -785,8 +751,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 operator|(
 name|seg
 operator|->
@@ -804,7 +768,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -813,8 +777,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 operator|(
 name|seg
 operator|->
@@ -832,7 +794,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -841,8 +803,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 operator|(
 name|seg
 operator|->
@@ -860,7 +820,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -868,8 +828,6 @@ literal|3
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 literal|1.0
 operator|-
@@ -920,20 +878,18 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* Right */
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|seg
 operator|->
 name|right
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -942,8 +898,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -951,7 +905,7 @@ operator|.
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -960,8 +914,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -969,7 +921,7 @@ operator|.
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -978,8 +930,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|seg
 operator|->
 name|right_color
@@ -987,7 +937,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|color_buf
 index|[
@@ -995,8 +945,6 @@ literal|3
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 literal|1.0
 operator|-

@@ -7613,7 +7613,7 @@ operator|.
 name|fractaltype
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7621,8 +7621,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7638,7 +7636,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7646,8 +7644,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7663,7 +7659,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7671,8 +7667,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7688,7 +7682,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7696,8 +7690,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7713,7 +7705,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7721,8 +7713,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7738,7 +7728,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7746,8 +7736,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7763,7 +7751,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7771,8 +7759,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7788,7 +7774,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7796,8 +7782,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7815,7 +7799,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7823,8 +7807,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.
@@ -7842,7 +7824,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -7850,8 +7832,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%0.15f"
 argument_list|,
 name|wvals
 operator|.

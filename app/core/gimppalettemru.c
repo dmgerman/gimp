@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ab33f40103
+DECL|enum|__anon2b1f3eb80103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -500,7 +500,7 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -509,8 +509,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|entry
 operator|->
 name|color
@@ -518,7 +516,7 @@ operator|.
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -527,8 +525,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|entry
 operator|->
 name|color
@@ -536,7 +532,7 @@ operator|.
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -545,8 +541,6 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|entry
 operator|->
 name|color
@@ -554,7 +548,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -562,8 +556,6 @@ literal|3
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|entry
 operator|->

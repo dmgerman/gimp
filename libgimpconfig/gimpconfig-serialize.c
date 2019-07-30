@@ -1218,7 +1218,7 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
@@ -1226,8 +1226,6 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-argument_list|,
-literal|"%f"
 argument_list|,
 name|v_double
 argument_list|)
@@ -1335,7 +1333,7 @@ operator|,
 name|k
 operator|++
 control|)
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -1343,8 +1341,6 @@ name|k
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|trafo
 operator|->
@@ -1723,7 +1719,7 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -1732,14 +1728,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|rgb
 operator|->
 name|r
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -1748,14 +1742,12 @@ index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
-literal|"%f"
-argument_list|,
 name|rgb
 operator|->
 name|g
 argument_list|)
 expr_stmt|;
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -1763,8 +1755,6 @@ literal|2
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|rgb
 operator|->
@@ -1776,7 +1766,7 @@ condition|(
 name|has_alpha
 condition|)
 block|{
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 index|[
@@ -1784,8 +1774,6 @@ literal|3
 index|]
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|rgb
 operator|->

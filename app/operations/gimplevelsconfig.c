@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd9a7a20103
+DECL|enum|__anon2c4d14930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4149,13 +4149,11 @@ operator|*
 literal|255.999
 argument_list|)
 argument_list|,
-name|g_ascii_formatd
+name|g_ascii_dtostr
 argument_list|(
 name|buf
 argument_list|,
 name|G_ASCII_DTOSTR_BUF_SIZE
-argument_list|,
-literal|"%f"
 argument_list|,
 name|config
 operator|->
