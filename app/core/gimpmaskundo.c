@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-memsize.h"
 end_include
 
@@ -59,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297522870103
+DECL|enum|__anon29c391460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -434,7 +428,7 @@ decl_stmt|;
 name|GeglRectangle
 name|rect
 decl_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -445,6 +439,8 @@ operator|->
 name|bounds
 argument_list|,
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|mask_undo
@@ -838,7 +834,7 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -847,6 +843,8 @@ operator|&
 name|bounds
 argument_list|,
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|new_buffer

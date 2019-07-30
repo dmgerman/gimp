@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -72,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb2c0be0108
+DECL|struct|__anon29239a410108
 block|{
 DECL|member|rect
 name|GeglRectangle
@@ -406,7 +400,7 @@ name|update_area
 operator|=
 name|area
 expr_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|area
@@ -415,6 +409,8 @@ operator|&
 name|area
 argument_list|,
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 block|}

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
+file|"gegl/gimptilehandlerbuffer.h"
 end_include
 
 begin_include
@@ -229,7 +229,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf79340103
+DECL|enum|__anon297cb5210103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -248,7 +248,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf79340203
+DECL|enum|__anon297cb5210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3999,7 +3999,7 @@ decl_stmt|;
 name|GeglRectangle
 name|drawable_rect
 decl_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|drawable_rect
@@ -4016,6 +4016,8 @@ name|height
 argument_list|)
 argument_list|,
 name|drawable_buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|x

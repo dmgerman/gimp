@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -229,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27926cb30103
+DECL|enum|__anon2c0668380103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5784,7 +5778,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|aligned_rect
@@ -5793,6 +5787,8 @@ operator|&
 name|rect
 argument_list|,
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_clear

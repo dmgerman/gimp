@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-utils.h"
 end_include
 
@@ -645,7 +639,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|undo_rect
@@ -657,6 +651,8 @@ name|gimp_drawable_get_buffer
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|undo_buffer

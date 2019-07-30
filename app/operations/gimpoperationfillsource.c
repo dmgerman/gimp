@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -59,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2926fd0103
+DECL|enum|__anon287ecf8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -815,7 +809,7 @@ decl_stmt|;
 name|GeglRectangle
 name|rect
 decl_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -828,6 +822,8 @@ name|fill_source
 operator|->
 name|drawable
 argument_list|)
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|buffer

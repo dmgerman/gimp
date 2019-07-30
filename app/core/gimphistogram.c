@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-atomic.h"
 end_include
 
@@ -114,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782c56a0103
+DECL|enum|__anon29647c930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,7 +159,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c56a0208
+DECL|struct|__anon29647c930208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -214,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782c56a0308
+DECL|struct|__anon29647c930308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -1221,7 +1215,7 @@ operator|->
 name|calculate_async
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -1229,6 +1223,8 @@ argument_list|,
 name|buffer_rect
 argument_list|,
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|context
@@ -1309,7 +1305,7 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -1320,6 +1316,8 @@ operator|->
 name|mask_rect
 argument_list|,
 name|mask
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|context

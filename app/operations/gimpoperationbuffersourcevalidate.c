@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimp-gegl-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimptilehandlervalidate.h"
 end_include
 
@@ -53,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd025c0103
+DECL|enum|__anon2c09c7600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -795,7 +789,7 @@ name|GeglRectangle
 name|rect
 decl_stmt|;
 comment|/* align the rectangle to the tile grid */
-name|gimp_gegl_rectangle_align_to_tile_grid
+name|gegl_rectangle_align_to_buffer
 argument_list|(
 operator|&
 name|rect
@@ -805,6 +799,8 @@ argument_list|,
 name|buffer_source_validate
 operator|->
 name|buffer
+argument_list|,
+name|GEGL_RECTANGLE_ALIGNMENT_SUPERSET
 argument_list|)
 expr_stmt|;
 name|gimp_tile_handler_validate_validate
