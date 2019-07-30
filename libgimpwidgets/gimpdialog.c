@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed80320103
+DECL|enum|__anon2c042c020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1702,7 +1702,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed80320208
+DECL|struct|__anon2c042c020208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -2082,6 +2082,44 @@ name|ri
 operator|.
 name|response_id
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_dialog_set_alternative_button_order_from_array:  * @dialog:                         The #GimpDialog  * @n_buttons:                      The size of @order  * @order: (array length=n_buttons) array of buttons' response ids.  *  * Reorder @dialog's buttons if "gtk-alternative-button-order" setting  * is set to TRUE. This is mostly a wrapper around the GTK function  * gtk_dialog_set_alternative_button_order(), except it won't output a  * deprecation warning.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_dialog_set_alternative_button_order_from_array (GimpDialog * dialog,gint n_buttons,gint * order)
+name|gimp_dialog_set_alternative_button_order_from_array
+parameter_list|(
+name|GimpDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|gint
+name|n_buttons
+parameter_list|,
+name|gint
+modifier|*
+name|order
+parameter_list|)
+block|{
+comment|/* since we don't know yet what to do about alternative button order,    * just hide the warnings for now...    */
+name|G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order_from_array
+argument_list|(
+name|dialog
+argument_list|,
+name|n_buttons
+argument_list|,
+name|order
+argument_list|)
+expr_stmt|;
+name|G_GNUC_END_IGNORE_DEPRECATIONS
+expr_stmt|;
 block|}
 end_function
 
