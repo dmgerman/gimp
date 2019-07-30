@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gimptilehandlerbuffer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-memsize.h"
 end_include
 
@@ -219,7 +213,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2ed8e0103
+DECL|enum|__anon27b5e5880103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -238,7 +232,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2ed8e0203
+DECL|enum|__anon27b5e5880203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
