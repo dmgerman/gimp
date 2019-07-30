@@ -496,7 +496,7 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint32
+name|gint
 modifier|*
 modifier|*
 name|vectors_ids
@@ -529,7 +529,7 @@ name|gint
 modifier|*
 name|num_vectors
 parameter_list|,
-name|gint32
+name|gint
 modifier|*
 modifier|*
 name|vectors_ids
