@@ -378,7 +378,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve the error message for the last procedure call.  */
+comment|/* Retrieve the error message and return status for the last procedure  * call.  */
 end_comment
 
 begin_function_decl
@@ -391,10 +391,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Retrieve the return status for the last procedure call.  */
-end_comment
 
 begin_function_decl
 name|GimpPDBStatusType
