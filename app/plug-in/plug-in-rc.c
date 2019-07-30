@@ -86,7 +86,7 @@ DECL|macro|PLUG_IN_RC_FILE_VERSION
 define|#
 directive|define
 name|PLUG_IN_RC_FILE_VERSION
-value|6
+value|7
 end_define
 
 begin_comment
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7d8540103
+DECL|enum|__anon29bd7e950103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -3892,6 +3892,12 @@ operator|.
 name|param_def_type
 condition|)
 block|{
+name|gchar
+name|double_string
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
 case|case
 name|GP_PARAM_DEF_TYPE_DEFAULT
 case|:
@@ -3989,7 +3995,16 @@ name|gimp_config_writer_printf
 argument_list|(
 name|writer
 argument_list|,
-literal|"%f %f %f"
+literal|"%s %s %s"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -3998,6 +4013,16 @@ operator|.
 name|m_float
 operator|.
 name|min_val
+argument_list|)
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4006,6 +4031,16 @@ operator|.
 name|m_float
 operator|.
 name|max_val
+argument_list|)
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4014,6 +4049,7 @@ operator|.
 name|m_float
 operator|.
 name|default_val
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4072,7 +4108,7 @@ name|gimp_config_writer_printf
 argument_list|(
 name|writer
 argument_list|,
-literal|"%d %f %f %f %f"
+literal|"%d %s %s %s %s"
 argument_list|,
 name|param_def
 operator|.
@@ -4081,6 +4117,15 @@ operator|.
 name|m_color
 operator|.
 name|has_alpha
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4091,6 +4136,16 @@ operator|.
 name|default_val
 operator|.
 name|r
+argument_list|)
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4101,6 +4156,16 @@ operator|.
 name|default_val
 operator|.
 name|g
+argument_list|)
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4111,6 +4176,16 @@ operator|.
 name|default_val
 operator|.
 name|b
+argument_list|)
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|double_string
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double_string
+argument_list|)
 argument_list|,
 name|param_def
 operator|.
@@ -4121,6 +4196,7 @@ operator|.
 name|default_val
 operator|.
 name|a
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
