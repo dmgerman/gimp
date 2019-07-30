@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpselection  * @title: gimpselection  * @short_description: Functions for manipulating selections.  *  * Functions for manipulating selections.  **/
+comment|/**  * SECTION: gimpselection_pdb  * @title: gimpselection  * @short_description: Functions for manipulating selections.  *  * Functions for manipulating selections.  **/
 end_comment
 
 begin_comment

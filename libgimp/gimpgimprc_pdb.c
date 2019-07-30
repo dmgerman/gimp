@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpgimprc  * @title: gimpgimprc  * @short_description: Interactions with settings from gimprc.  *  * Interactions with settings from gimprc.  **/
+comment|/**  * SECTION: gimpgimprc_pdb  * @title: gimpgimprc  * @short_description: Interactions with settings from gimprc.  *  * Interactions with settings from gimprc.  **/
 end_comment
 
 begin_comment

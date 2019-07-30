@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpprogress  * @title: gimpprogress  * @short_description: Functions for embedding the progress bar into a plug-in's GUI.  *  * Functions for embedding the progress bar into a plug-in's GUI.  **/
+comment|/**  * SECTION: gimpprogress_pdb  * @title: gimpprogress  * @short_description: Functions for embedding the progress bar into a plug-in's GUI.  *  * Functions for embedding the progress bar into a plug-in's GUI.  **/
 end_comment
 
 begin_comment

@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimphelp  * @title: gimphelp  * @short_description: Loading help pages using gimp_help.  *  * Loading help pages using gimp_help.  **/
+comment|/**  * SECTION: gimphelp_pdb  * @title: gimphelp  * @short_description: Loading help pages using gimp_help.  *  * Loading help pages using gimp_help.  **/
 end_comment
 
 begin_comment

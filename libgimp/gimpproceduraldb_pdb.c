@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpproceduraldb  * @title: gimpproceduraldb  * @short_description: Functions for querying and changing procedural database (PDB) entries.  *  * Functions for querying and changing procedural database (PDB)  * entries.  **/
+comment|/**  * SECTION: gimpproceduraldb_pdb  * @title: gimpproceduraldb  * @short_description: Functions for querying and changing procedural database (PDB) entries.  *  * Functions for querying and changing procedural database (PDB)  * entries.  **/
 end_comment
 
 begin_comment

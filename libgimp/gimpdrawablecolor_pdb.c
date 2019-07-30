@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdrawablecolor  * @title: gimpdrawablecolor  * @short_description: Functions for manipulating a drawable's color.  *  * Functions for manipulating a drawable's color, including curves and  * histograms.  **/
+comment|/**  * SECTION: gimpdrawablecolor_pdb  * @title: gimpdrawablecolor  * @short_description: Functions for manipulating a drawable's color.  *  * Functions for manipulating a drawable's color, including curves and  * histograms.  **/
 end_comment
 
 begin_comment

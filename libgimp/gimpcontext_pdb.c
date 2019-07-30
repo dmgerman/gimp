@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpcontext  * @title: gimpcontext  * @short_description: Functions to manipulate a plug-in's context.  *  * Functions to manipulate a plug-in's context.  **/
+comment|/**  * SECTION: gimpcontext_pdb  * @title: gimpcontext  * @short_description: Functions to manipulate a plug-in's context.  *  * Functions to manipulate a plug-in's context.  **/
 end_comment
 
 begin_comment

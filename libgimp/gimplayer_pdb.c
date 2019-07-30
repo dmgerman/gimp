@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Operations on a single layer.  *  * Operations on a single layer.  **/
+comment|/**  * SECTION: gimplayer_pdb  * @title: gimplayer  * @short_description: Operations on a single layer.  *  * Operations on a single layer.  **/
 end_comment
 
 begin_comment

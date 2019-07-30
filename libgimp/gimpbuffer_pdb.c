@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpbuffer  * @title: gimpbuffer  * @short_description: Functions for manipulating cut buffers.  *  * Functions related to named cut buffers.  **/
+comment|/**  * SECTION: gimpbuffer_pdb  * @title: gimpbuffer  * @short_description: Functions for manipulating cut buffers.  *  * Functions related to named cut buffers.  **/
 end_comment
 
 begin_comment

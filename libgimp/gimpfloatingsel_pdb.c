@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpfloatingsel  * @title: gimpfloatingsel  * @short_description: Functions for removing or attaching floating selections.  *  * Functions for removing or attaching floating selections.  **/
+comment|/**  * SECTION: gimpfloatingsel_pdb  * @title: gimpfloatingsel  * @short_description: Functions for removing or attaching floating selections.  *  * Functions for removing or attaching floating selections.  **/
 end_comment
 
 begin_comment

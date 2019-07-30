@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimptexttool  * @title: gimptexttool  * @short_description: Functions for controlling the text tool.  *  * Functions for controlling the text tool.  **/
+comment|/**  * SECTION: gimptexttool_pdb  * @title: gimptexttool  * @short_description: Functions for controlling the text tool.  *  * Functions for controlling the text tool.  **/
 end_comment
 
 begin_comment

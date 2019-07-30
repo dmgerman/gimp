@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimageconvert  * @title: gimpimageconvert  * @short_description: Conversions between RGB, indexed, and grayscale modes.  *  * Conversions between RGB, indexed, and grayscale modes.  **/
+comment|/**  * SECTION: gimpimageconvert_pdb  * @title: gimpimageconvert  * @short_description: Conversions between RGB, indexed, and grayscale modes.  *  * Conversions between RGB, indexed, and grayscale modes.  **/
 end_comment
 
 begin_comment

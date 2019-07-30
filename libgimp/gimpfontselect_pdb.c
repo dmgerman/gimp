@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpfontselect  * @title: gimpfontselect  * @short_description: Functions providing a font selection dialog.  *  * Functions providing a font selection dialog.  **/
+comment|/**  * SECTION: gimpfontselect_pdb  * @title: gimpfontselect  * @short_description: Functions providing a font selection dialog.  *  * Functions providing a font selection dialog.  **/
 end_comment
 
 begin_comment

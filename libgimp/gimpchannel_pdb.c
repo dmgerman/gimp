@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpchannel  * @title: gimpchannel  * @short_description: Functions for manipulating channels.  *  * Functions for manipulating channels.  **/
+comment|/**  * SECTION: gimpchannel_pdb  * @title: gimpchannel  * @short_description: Functions for manipulating channels.  *  * Functions for manipulating channels.  **/
 end_comment
 
 begin_comment

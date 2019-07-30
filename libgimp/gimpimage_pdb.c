@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Operations on complete images.  *  * Operations on complete images: creation, resizing/rescaling, and  * operations involving multiple layers.  **/
+comment|/**  * SECTION: gimpimage_pdb  * @title: gimpimage  * @short_description: Operations on complete images.  *  * Operations on complete images: creation, resizing/rescaling, and  * operations involving multiple layers.  **/
 end_comment
 
 begin_comment

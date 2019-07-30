@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpmessage  * @title: gimpmessage  * @short_description: Display a dialog box with a message.  *  * Display a dialog box with a message.  **/
+comment|/**  * SECTION: gimpmessage_pdb  * @title: gimpmessage  * @short_description: Display a dialog box with a message.  *  * Display a dialog box with a message.  **/
 end_comment
 
 begin_comment

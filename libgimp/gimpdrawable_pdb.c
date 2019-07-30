@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_description: Functions to manipulate drawables.  *  * Functions to manipulate drawables.  **/
+comment|/**  * SECTION: gimpdrawable_pdb  * @title: gimpdrawable  * @short_description: Functions to manipulate drawables.  *  * Functions to manipulate drawables.  **/
 end_comment
 
 begin_comment

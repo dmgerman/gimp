@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppatternselect  * @title: gimppatternselect  * @short_description: Functions providing a pattern selection dialog.  *  * Functions providing a pattern selection dialog.  **/
+comment|/**  * SECTION: gimppatternselect_pdb  * @title: gimppatternselect  * @short_description: Functions providing a pattern selection dialog.  *  * Functions providing a pattern selection dialog.  **/
 end_comment
 
 begin_comment

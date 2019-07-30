@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpitem  * @title: gimpitem  * @short_description: Functions to manipulate items.  *  * Functions to manipulate items.  **/
+comment|/**  * SECTION: gimpitem_pdb  * @title: gimpitem  * @short_description: Functions to manipulate items.  *  * Functions to manipulate items.  **/
 end_comment
 
 begin_comment

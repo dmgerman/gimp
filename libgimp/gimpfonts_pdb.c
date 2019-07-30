@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpfonts  * @title: gimpfonts  * @short_description: Operations related to fonts.  *  * Operations related to fonts.  **/
+comment|/**  * SECTION: gimpfonts_pdb  * @title: gimpfonts  * @short_description: Operations related to fonts.  *  * Operations related to fonts.  **/
 end_comment
 
 begin_comment

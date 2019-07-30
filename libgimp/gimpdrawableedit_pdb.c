@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdrawableedit  * @title: gimpdrawableedit  * @short_description: Drawable edit functions (clear, fill, gradient, stroke etc.)  *  * Drawable edit functions (clear, fill, gradient, stroke etc.)  **/
+comment|/**  * SECTION: gimpdrawableedit_pdb  * @title: gimpdrawableedit  * @short_description: Drawable edit functions (clear, fill, gradient, stroke etc.)  *  * Drawable edit functions (clear, fill, gradient, stroke etc.)  **/
 end_comment
 
 begin_comment

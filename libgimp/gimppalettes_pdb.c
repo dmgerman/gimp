@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppalettes  * @title: gimppalettes  * @short_description: Operations related to palettes.  *  * Operations related to palettes.  **/
+comment|/**  * SECTION: gimppalettes_pdb  * @title: gimppalettes  * @short_description: Operations related to palettes.  *  * Operations related to palettes.  **/
 end_comment
 
 begin_comment

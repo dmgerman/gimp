@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppainttools  * @title: gimppainttools  * @short_description: Access to toolbox paint tools.  *  * Functions giving access to toolbox paint tools.  **/
+comment|/**  * SECTION: gimppainttools_pdb  * @title: gimppainttools  * @short_description: Access to toolbox paint tools.  *  * Functions giving access to toolbox paint tools.  **/
 end_comment
 
 begin_comment
