@@ -82,6 +82,17 @@ value|(gimp_param_unit_get_type ())
 end_define
 
 begin_define
+DECL|macro|GIMP_PARAM_SPEC_UNIT (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_UNIT
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_UNIT, GimpParamSpecUnit))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PARAM_SPEC_UNIT (pspec)
 define|#
 directive|define
@@ -91,6 +102,32 @@ name|pspec
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_UNIT))
 end_define
+
+begin_typedef
+DECL|typedef|GimpParamSpecUnit
+typedef|typedef
+name|struct
+name|_GimpParamSpecUnit
+name|GimpParamSpecUnit
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpParamSpecUnit
+struct|struct
+name|_GimpParamSpecUnit
+block|{
+DECL|member|parent_instance
+name|GParamSpecInt
+name|parent_instance
+decl_stmt|;
+DECL|member|allow_percent
+name|gboolean
+name|allow_percent
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_decl_stmt
 name|GType
