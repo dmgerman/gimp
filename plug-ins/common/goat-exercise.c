@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -353,6 +359,20 @@ argument_list|(
 name|procedure
 argument_list|,
 literal|"<Image>/Filters"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_icon
+argument_list|(
+name|procedure
+argument_list|,
+name|GIMP_ICON_TYPE_ICON_NAME
+argument_list|,
+operator|(
+specifier|const
+name|guint8
+operator|*
+operator|)
+name|GIMP_ICON_GEGL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
