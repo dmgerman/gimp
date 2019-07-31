@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  * Note that the actual PDB procedure only transfers the format's  * encoding. In order to get to the real format, the libbgimp C wrapper  * must be used.  *  * Returns: The drawable's Babl format.  *  * Since: 2.10  **/
+comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  * Note that the actual PDB procedure only transfers the format's  * encoding. In order to get to the real format, the libbgimp C wrapper  * must be used.  *  * Returns: (transfer full) The drawable's Babl format.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -124,7 +124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_get_thumbnail_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's thumbnail Babl format  *  * This procedure returns the drawable's thumbnail Babl format.  * Thumbnails are always 8-bit images, see gimp_drawable_thumbnail()  * and gimp_drawable_sub_thmbnail().  *  * Returns: The drawable's thumbnail Babl format.  *  * Since: 2.10.14  **/
+comment|/**  * _gimp_drawable_get_thumbnail_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's thumbnail Babl format  *  * This procedure returns the drawable's thumbnail Babl format.  * Thumbnails are always 8-bit images, see gimp_drawable_thumbnail()  * and gimp_drawable_sub_thmbnail().  *  * Returns: (transfer full) The drawable's thumbnail Babl format.  *  * Since: 2.10.14  **/
 end_comment
 
 begin_function
@@ -1921,7 +1921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: The pixel value.  **/
+comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: (transfer full) The pixel value.  **/
 end_comment
 
 begin_function
@@ -2494,7 +2494,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: (transfer full) The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2731,7 +2731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: (transfer full) The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

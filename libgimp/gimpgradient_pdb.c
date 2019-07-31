@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpgradient  * @title: gimpgradient  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_gradient_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: The actual new gradient name.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: (transfer full) The actual new gradient name.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: The name of the gradient's copy.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: (transfer full) The name of the gradient's copy.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -328,7 +328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_rename:  * @name: The gradient name.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: The actual new name of the gradient.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_rename:  * @name: The gradient name.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: (transfer full) The actual new name of the gradient.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -637,7 +637,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_uniform_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_get_uniform_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -810,7 +810,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
