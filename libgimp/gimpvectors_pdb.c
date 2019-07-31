@@ -357,7 +357,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: (element-type gint32) (transfer full) List of the strokes  * belonging to the path.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: (out) The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: (element-type gint32) (transfer full) List of the strokes  * belonging to the path.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -613,7 +613,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_point_at_dist:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @dist: The given distance.  * @precision: The precision used for the approximation.  * @x_point: The x position of the point.  * @y_point: The y position of the point.  * @slope: The slope (dy / dx) at the specified point.  * @valid: Indicator for the validity of the returned data.  *  * Get point at a specified distance along the stroke.  *  * This will return the x,y position of a point at a given distance  * along the stroke. The distance will be obtained by first digitizing  * the curve internally and then walking along the curve. For a closed  * stroke the start of the path is the first point on the path that was  * created. This might not be obvious. If the stroke is not long  * enough, a \"valid\" flag will be FALSE.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_get_point_at_dist:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @dist: The given distance.  * @precision: The precision used for the approximation.  * @x_point: (out) The x position of the point.  * @y_point: (out) The y position of the point.  * @slope: (out) The slope (dy / dx) at the specified point.  * @valid: (out) Indicator for the validity of the returned data.  *  * Get point at a specified distance along the stroke.  *  * This will return the x,y position of a point at a given distance  * along the stroke. The distance will be obtained by first digitizing  * the curve internally and then walking along the curve. For a closed  * stroke the start of the path is the first point on the path that was  * created. This might not be obvious. If the stroke is not long  * enough, a \"valid\" flag will be FALSE.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1786,7 +1786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: The number of floats returned.  * @controlpoints: (elemen-type gdouble) (transfer full) List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: (out) The number of floats returned.  * @controlpoints: (out) (elemen-type gdouble) (transfer full) List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: (out) Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2130,7 +2130,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: The number of floats returned.  * @closed: Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (elemen-type gdouble) (transfer full) List of the coords  * along the path (x0, y0, x1, y1, ...).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out) The number of floats returned.  * @closed: (out) Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (elemen-type gdouble) (transfer full) List of the coords  * along the path (x0, y0, x1, y1, ...).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3133,7 +3133,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_file:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: (element-type gint32) (transfer full) The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_file:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out) The number of newly created vectors.  * @vectors_ids: (out) (element-type gint32) (transfer full) The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3323,7 +3323,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: The number of newly created vectors.  * @vectors_ids: (element-type gint32) (transfer full) The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out) The number of newly created vectors.  * @vectors_ids: (out) (element-type gint32) (transfer full) The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

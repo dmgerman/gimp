@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpimagegrid  * @title: gimpimagegrid  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_grid_get_spacing:  * @image_ID: The image.  * @xspacing: The image's grid horizontal spacing.  * @yspacing: The image's grid vertical spacing.  *  * Gets the spacing of an image's grid.  *  * This procedure retrieves the horizontal and vertical spacing of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_spacing:  * @image_ID: The image.  * @xspacing: (out) The image's grid horizontal spacing.  * @yspacing: (out) The image's grid vertical spacing.  *  * Gets the spacing of an image's grid.  *  * This procedure retrieves the horizontal and vertical spacing of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -280,7 +280,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_offset:  * @image_ID: The image.  * @xoffset: The image's grid horizontal offset.  * @yoffset: The image's grid vertical offset.  *  * Gets the offset of an image's grid.  *  * This procedure retrieves the horizontal and vertical offset of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_offset:  * @image_ID: The image.  * @xoffset: (out) The image's grid horizontal offset.  * @yoffset: (out) The image's grid vertical offset.  *  * Gets the offset of an image's grid.  *  * This procedure retrieves the horizontal and vertical offset of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -536,7 +536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_foreground_color:  * @image_ID: The image.  * @fgcolor: The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_foreground_color:  * @image_ID: The image.  * @fgcolor: (out) The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -749,7 +749,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_background_color:  * @image_ID: The image.  * @bgcolor: The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_background_color:  * @image_ID: The image.  * @bgcolor: (out) The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

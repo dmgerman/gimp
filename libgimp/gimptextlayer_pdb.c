@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: (out) The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2152,7 +2152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: (out) The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function

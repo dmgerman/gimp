@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimppattern  * @title: gimppattern  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_pattern_get_info:  * @name: The pattern name.  * @width: The pattern width.  * @height: The pattern height.  * @bpp: The pattern bpp.  *  * Retrieve information about the specified pattern.  *  * This procedure retrieves information about the specified pattern.  * This includes the pattern extents (width and height).  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_pattern_get_info:  * @name: The pattern name.  * @width: (out) The pattern width.  * @height: (out) The pattern height.  * @bpp: (out) The pattern bpp.  *  * Retrieve information about the specified pattern.  *  * This procedure retrieves information about the specified pattern.  * This includes the pattern extents (width and height).  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -184,7 +184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_get_pixels:  * @name: The pattern name.  * @width: The pattern width.  * @height: The pattern height.  * @bpp: The pattern bpp.  * @num_color_bytes: Number of pattern bytes.  * @color_bytes: (element-type guint8) (transfer full) The pattern data.  *  * Retrieve information about the specified pattern (including pixels).  *  * This procedure retrieves information about the specified. This  * includes the pattern extents (width and height), its bpp and its  * pixel data.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_pattern_get_pixels:  * @name: The pattern name.  * @width: (out) The pattern width.  * @height: (out) The pattern height.  * @bpp: (out) The pattern bpp.  * @num_color_bytes: (out) Number of pattern bytes.  * @color_bytes: (out) (element-type guint8) (transfer full) The pattern data.  *  * Retrieve information about the specified pattern (including pixels).  *  * This procedure retrieves information about the specified. This  * includes the pattern extents (width and height), its bpp and its  * pixel data.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

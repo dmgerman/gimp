@@ -401,7 +401,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_monitor_resolution:  * @xres: X resolution.  * @yres: Y resolution.  *  * Get the monitor resolution as specified in the Preferences.  *  * Returns the resolution of the monitor in pixels/inch. This value is  * taken from the Preferences (or the windowing system if this is set  * in the Preferences) and there's no guarantee for the value to be  * reasonable.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_get_monitor_resolution:  * @xres: (out) X resolution.  * @yres: (out) Y resolution.  *  * Get the monitor resolution as specified in the Preferences.  *  * Returns the resolution of the monitor in pixels/inch. This value is  * taken from the Preferences (or the windowing system if this is set  * in the Preferences) and there's no guarantee for the value to be  * reasonable.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

@@ -637,7 +637,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_info:  * @name: The brush name.  * @width: The brush width.  * @height: The brush height.  * @mask_bpp: The brush mask bpp.  * @color_bpp: The brush color bpp.  *  * Retrieves information about the specified brush.  *  * This procedure retrieves information about the specified brush:  * brush extents (width and height), color depth and mask depth.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_get_info:  * @name: The brush name.  * @width: (out) The brush width.  * @height: (out) The brush height.  * @mask_bpp: (out) The brush mask bpp.  * @color_bpp: (out) The brush color bpp.  *  * Retrieves information about the specified brush.  *  * This procedure retrieves information about the specified brush:  * brush extents (width and height), color depth and mask depth.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -819,7 +819,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_pixels:  * @name: The brush name.  * @width: The brush width.  * @height: The brush height.  * @mask_bpp: The brush mask bpp.  * @num_mask_bytes: Length of brush mask data.  * @mask_bytes: (element-type guint8) (transfer full) The brush mask data.  * @color_bpp: The brush color bpp.  * @num_color_bytes: Length of brush color data.  * @color_bytes: (element-type guint8) (transfer full) The brush color data.  *  * Retrieves information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush extents (width and height) and its pixels data.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_get_pixels:  * @name: The brush name.  * @width: (out) The brush width.  * @height: (out) The brush height.  * @mask_bpp: (out) The brush mask bpp.  * @num_mask_bytes: (out) Length of brush mask data.  * @mask_bytes: (out) (element-type guint8) (transfer full) The brush mask data.  * @color_bpp: (out) The brush color bpp.  * @num_color_bytes: (out) Length of brush color data.  * @color_bytes: (out) (element-type guint8) (transfer full) The brush color data.  *  * Retrieves information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush extents (width and height) and its pixels data.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1091,7 +1091,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_spacing:  * @name: The brush name.  * @spacing: The brush spacing.  *  * Gets the brush spacing.  *  * This procedure returns the spacing setting for the specified brush.  * The return value is an integer between 0 and 1000 which represents  * percentage of the maximum of the width and height of the mask.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_get_spacing:  * @name: The brush name.  * @spacing: (out) The brush spacing.  *  * Gets the brush spacing.  *  * This procedure returns the spacing setting for the specified brush.  * The return value is an integer between 0 and 1000 which represents  * percentage of the maximum of the width and height of the mask.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

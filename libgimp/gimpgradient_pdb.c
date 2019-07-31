@@ -637,7 +637,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_uniform_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: (elemen-type gdouble) (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_get_uniform_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  * @num_color_samples: (out) Length of the color_samples array (4 * num_samples).  * @color_samples: (out) (elemen-type gdouble) (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -810,7 +810,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: (elemen-type gdouble) (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: (out) Length of the color_samples array (4 * num_samples).  * @color_samples: (out) (elemen-type gdouble) (transfer full) Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1004,7 +1004,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out) The return color.  * @opacity: (out) The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1296,7 +1296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out) The return color.  * @opacity: (out) The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1588,7 +1588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the left endpoint position of the specified segment  *  * This procedure retrieves the left endpoint position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: (out) The return position.  *  * Retrieves the left endpoint position of the specified segment  *  * This procedure retrieves the left endpoint position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: (out) The return position.  *  * Sets the left endpoint position of the specified segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1867,7 +1867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the middle point position of the specified segment  *  * This procedure retrieves the middle point position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: (out) The return position.  *  * Retrieves the middle point position of the specified segment  *  * This procedure retrieves the middle point position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1998,7 +1998,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the middle point position of the specified segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: (out) The return position.  *  * Sets the middle point position of the specified segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2146,7 +2146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the right endpoint position of the specified segment  *  * This procedure retrieves the right endpoint position of the  * specified segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: (out) The return position.  *  * Retrieves the right endpoint position of the specified segment  *  * This procedure retrieves the right endpoint position of the  * specified segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2277,7 +2277,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: The return position.  *  * Sets the right endpoint position of the specified segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint to.  * @final_pos: (out) The return position.  *  * Sets the right endpoint position of the specified segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right.  * This procedure returns the final position.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2425,7 +2425,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_blending_function:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @blend_func: The blending function of the segment.  *  * Retrieves the gradient segment's blending function  *  * This procedure retrieves the blending function of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_blending_function:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @blend_func: (out) The blending function of the segment.  *  * Retrieves the gradient segment's blending function  *  * This procedure retrieves the blending function of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2556,7 +2556,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_coloring_type:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @coloring_type: The coloring type of the segment.  *  * Retrieves the gradient segment's coloring type  *  * This procedure retrieves the coloring type of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_coloring_type:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @coloring_type: (out) The coloring type of the segment.  *  * Retrieves the gradient segment's coloring type  *  * This procedure retrieves the coloring type of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

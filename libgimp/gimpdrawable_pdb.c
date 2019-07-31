@@ -1106,7 +1106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: x offset of drawable.  * @offset_y: y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: (out) x offset of drawable.  * @offset_y: (out) y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1242,7 +1242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: x coordinate of the upper left corner of selection bounds.  * @y1: y coordinate of the upper left corner of selection bounds.  * @x2: x coordinate of the lower right corner of selection bounds.  * @y2: y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  **/
+comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: (out) x coordinate of the upper left corner of selection bounds.  * @y1: (out) y coordinate of the upper left corner of selection bounds.  * @x2: (out) x coordinate of the lower right corner of selection bounds.  * @y2: (out) y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  **/
 end_comment
 
 begin_function
@@ -1410,7 +1410,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height.  * If there is no selection this function returns TRUE and the returned  * bounds are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: 2.2  **/
+comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: (out) x coordinate of the upper left corner of the intersection.  * @y: (out) y coordinate of the upper left corner of the intersection.  * @width: (out) width of the intersection.  * @height: (out) height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height.  * If there is no selection this function returns TRUE and the returned  * bounds are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1921,7 +1921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: (element-type guint8) (transfer full) The pixel value.  **/
+comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: (out) The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: (element-type guint8) (transfer full) The pixel value.  **/
 end_comment
 
 begin_function
@@ -2494,7 +2494,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out) The previews width.  * @actual_height: (out) The previews height.  * @bpp: (out) The previews bpp.  * @thumbnail_data_count: (out) The number of bytes in thumbnail data.  * @thumbnail_data: (out) (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2731,7 +2731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: (out) The previews width.  * @height: (out) The previews height.  * @bpp: (out) The previews bpp.  * @thumbnail_data_count: (out) The number of bytes in thumbnail data.  * @thumbnail_data: (out) (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

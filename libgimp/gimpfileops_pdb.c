@@ -296,7 +296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (element-type gint32) (transfer full) The list of loaded  * layers.  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: (out) The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (element-type gint32) (transfer full) The list of loaded  * layers.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
