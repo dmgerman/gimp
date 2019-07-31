@@ -79,6 +79,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text-types.h"
 end_include
 
@@ -137,7 +143,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b27dfd0103
+DECL|enum|__anon299d5f690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1510,7 +1516,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b27dfd0208
+DECL|struct|__anon299d5f690208
 block|{
 DECL|member|script
 specifier|const

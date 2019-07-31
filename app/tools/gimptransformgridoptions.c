@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abb29280103
+DECL|enum|__anon28f7999e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2013,7 +2019,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2abb29280208
+DECL|struct|__anon28f7999e0208
 block|{
 DECL|member|mod
 name|GdkModifierType

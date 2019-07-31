@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0d5140103
+DECL|enum|__anon2b8ac09b0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM

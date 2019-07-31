@@ -46,12 +46,37 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/**  * GIMP_PARAM_NO_VALIDATE:  *  * Since 3.0  */
 comment|/*  * Keep in sync with libgimpconfig/gimpconfig-params.h  */
 DECL|macro|GIMP_PARAM_NO_VALIDATE
 define|#
 directive|define
 name|GIMP_PARAM_NO_VALIDATE
 value|(1<< (6 + G_PARAM_USER_SHIFT))
+comment|/**  * GIMP_PARAM_STATIC_STRINGS:  *  * Since: 2.4  **/
+DECL|macro|GIMP_PARAM_STATIC_STRINGS
+define|#
+directive|define
+name|GIMP_PARAM_STATIC_STRINGS
+value|(G_PARAM_STATIC_NAME | \                                    G_PARAM_STATIC_NICK | \                                    G_PARAM_STATIC_BLURB)
+comment|/**  * GIMP_PARAM_READABLE:  *  * Since: 2.4  **/
+DECL|macro|GIMP_PARAM_READABLE
+define|#
+directive|define
+name|GIMP_PARAM_READABLE
+value|(G_PARAM_READABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+comment|/**  * GIMP_PARAM_WRITABLE:  *  * Since: 2.4  **/
+DECL|macro|GIMP_PARAM_WRITABLE
+define|#
+directive|define
+name|GIMP_PARAM_WRITABLE
+value|(G_PARAM_WRITABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+comment|/**  * GIMP_PARAM_READWRITE:  *  * Since: 2.4  **/
+DECL|macro|GIMP_PARAM_READWRITE
+define|#
+directive|define
+name|GIMP_PARAM_READWRITE
+value|(G_PARAM_READWRITE   | \                                    GIMP_PARAM_STATIC_STRINGS)
 comment|/*  * GIMP_TYPE_INT32  */
 DECL|macro|GIMP_TYPE_INT32
 define|#

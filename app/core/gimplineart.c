@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -135,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5b29b0103
+DECL|enum|__anon29da7e040103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -151,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5b29b0203
+DECL|enum|__anon29da7e040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -253,7 +259,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5b29b0308
+DECL|struct|__anon29da7e040308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -285,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5b29b0408
+DECL|struct|__anon29da7e040408
 block|{
 DECL|member|closed
 name|GeglBuffer

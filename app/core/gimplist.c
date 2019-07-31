@@ -28,7 +28,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gio/gio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -51,7 +57,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e30db0103
+DECL|enum|__anon29db78d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

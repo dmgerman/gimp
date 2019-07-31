@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882d1ba0103
+DECL|enum|__anon29927cad0103
 block|{
 DECL|enumerator|COLOR_SELECTED
 name|COLOR_SELECTED
@@ -108,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882d1ba0203
+DECL|enum|__anon29927cad0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

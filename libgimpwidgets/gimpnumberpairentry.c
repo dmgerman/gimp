@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -71,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad7cfc0103
+DECL|enum|__anon29e536530103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -87,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad7cfc0203
+DECL|enum|__anon29e536530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -134,7 +140,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bad7cfc0303
+DECL|enum|__anon29e536530303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID

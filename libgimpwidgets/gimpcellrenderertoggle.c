@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
@@ -47,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf2ec90103
+DECL|enum|__anon294069700103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf2ec90203
+DECL|enum|__anon294069700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -84,6 +84,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -410,7 +416,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4245a10103
+DECL|enum|__anon27b741eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -536,7 +542,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4245a10208
+DECL|struct|__anon27b741eb0208
 block|{
 DECL|member|canvas_x
 name|gint

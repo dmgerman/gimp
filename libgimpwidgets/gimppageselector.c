@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
@@ -76,7 +82,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ec1360103
+DECL|enum|__anon27e7c3540103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -92,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ec1360203
+DECL|enum|__anon27e7c3540203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ec1360303
+DECL|enum|__anon27e7c3540303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO

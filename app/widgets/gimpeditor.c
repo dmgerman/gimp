@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -139,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70cb400103
+DECL|enum|__anon287128750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2232,7 +2238,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70cb400208
+DECL|struct|__anon287128750208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

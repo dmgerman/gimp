@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290805850103
+DECL|enum|__anon2ad195630103
 block|{
 DECL|enumerator|PRE_CLICKED
 name|PRE_CLICKED
@@ -75,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290805850203
+DECL|enum|__anon2ad195630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

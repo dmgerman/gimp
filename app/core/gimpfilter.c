@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -53,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd986ac0103
+DECL|enum|__anon2b0e17e40103
 block|{
 DECL|enumerator|ACTIVE_CHANGED
 name|ACTIVE_CHANGED
@@ -66,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd986ac0203
+DECL|enum|__anon2b0e17e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

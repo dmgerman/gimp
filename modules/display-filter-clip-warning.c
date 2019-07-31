@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -142,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f999c20103
+DECL|enum|__anon2ac5ef040103
 block|{
 DECL|enumerator|WARNING_SHADOW
 name|WARNING_SHADOW
@@ -261,7 +267,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f999c20203
+DECL|enum|__anon2ac5ef040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

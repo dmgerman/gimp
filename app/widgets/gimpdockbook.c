@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -219,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc90db60103
+DECL|enum|__anon2c50a4310103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED

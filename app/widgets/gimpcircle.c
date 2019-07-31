@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -53,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5429520103
+DECL|enum|__anon27614e310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5493780103
+DECL|enum|__anon2c908d850103
 block|{
 DECL|enumerator|PROP_LAYER_ONLY
 name|PROP_LAYER_ONLY

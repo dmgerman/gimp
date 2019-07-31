@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -126,7 +132,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2fe22d0103
+DECL|enum|__anon2c6ede7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2fe22d0203
+DECL|enum|__anon2c6ede7a0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
