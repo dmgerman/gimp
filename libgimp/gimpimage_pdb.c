@@ -4657,7 +4657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: (element-type guint8) The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

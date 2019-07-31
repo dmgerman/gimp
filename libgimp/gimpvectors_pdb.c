@@ -1786,7 +1786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: (out) The number of floats returned.  * @controlpoints: (out) (elemen-type gdouble) (transfer full) List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: (out) Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: (out) The number of floats returned.  * @controlpoints: (out) (element-type gdouble) (transfer full) List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: (out) Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1960,7 +1960,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_new_from_points:  * @vectors_ID: The vectors object.  * @type: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER for now).  * @num_points: The number of elements in the array, i.e. the number of controlpoints in the stroke * 2 (x- and y-coordinate).  * @controlpoints: List of the x- and y-coordinates of the control points.  * @closed: Whether the stroke is to be closed or not.  *  * Adds a stroke of a given type to the vectors object.  *  * Adds a stroke of a given type to the vectors object. The coordinates  * of the control points can be specified. For now only strokes of the  * type GIMP_VECTORS_STROKE_TYPE_BEZIER are supported. The control  * points are specified as a pair of float values for the x- and  * y-coordinate. The Bezier stroke type needs a multiple of three  * control points. Each Bezier segment endpoint (anchor, A) has two  * additional control points (C) associated. They are specified in the  * order CACCACCAC...  *  * Returns: The stroke ID of the newly created stroke.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_new_from_points:  * @vectors_ID: The vectors object.  * @type: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER for now).  * @num_points: The number of elements in the array, i.e. the number of controlpoints in the stroke * 2 (x- and y-coordinate).  * @controlpoints: (element-type gdouble) List of the x- and y-coordinates of the control points.  * @closed: Whether the stroke is to be closed or not.  *  * Adds a stroke of a given type to the vectors object.  *  * Adds a stroke of a given type to the vectors object. The coordinates  * of the control points can be specified. For now only strokes of the  * type GIMP_VECTORS_STROKE_TYPE_BEZIER are supported. The control  * points are specified as a pair of float values for the x- and  * y-coordinate. The Bezier stroke type needs a multiple of three  * control points. Each Bezier segment endpoint (anchor, A) has two  * additional control points (C) associated. They are specified in the  * order CACCACCAC...  *  * Returns: The stroke ID of the newly created stroke.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2130,7 +2130,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out) The number of floats returned.  * @closed: (out) Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (elemen-type gdouble) (transfer full) List of the coords  * along the path (x0, y0, x1, y1, ...).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out) The number of floats returned.  * @closed: (out) Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (element-type gdouble) (transfer full) List of the coords  * along the path (x0, y0, x1, y1, ...).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
