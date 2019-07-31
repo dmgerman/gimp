@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdebug_pdb  * @title: gimpdebug  * @short_description: Debug utility functions  *  * Miscellaneous debug utility functions. Not part of the stable  * library interface.  **/
+comment|/**  * SECTION: gimpdebug  * @title: gimpdebug  * @short_description: Debug utility functions  *  * Miscellaneous debug utility functions. Not part of the stable  * library interface.  **/
 end_comment
 
 begin_comment

@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpedit_pdb  * @title: gimpedit  * @short_description: Edit menu functions (cut, copy, paste, clear, etc.)  *  * Edit menu functions (cut, copy, paste, clear, etc.)  **/
+comment|/**  * SECTION: gimpedit  * @title: gimpedit  * @short_description: Edit menu functions (cut, copy, paste, clear, etc.)  *  * Edit menu functions (cut, copy, paste, clear, etc.)  **/
 end_comment
 
 begin_comment

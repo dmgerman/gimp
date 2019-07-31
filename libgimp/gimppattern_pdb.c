@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppattern_pdb  * @title: gimppattern  * @short_description: Functions operating on a single pattern.  *  * Functions operating on a single pattern.  **/
+comment|/**  * SECTION: gimppattern  * @title: gimppattern  * @short_description: Functions operating on a single pattern.  *  * Functions operating on a single pattern.  **/
 end_comment
 
 begin_comment

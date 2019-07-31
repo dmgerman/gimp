@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpbrush_pdb  * @title: gimpbrush  * @short_description: Functions operating on a single brush.  *  * Functions operating on a single brush.  **/
+comment|/**  * SECTION: gimpbrush  * @title: gimpbrush  * @short_description: Functions operating on a single brush.  *  * Functions operating on a single brush.  **/
 end_comment
 
 begin_comment

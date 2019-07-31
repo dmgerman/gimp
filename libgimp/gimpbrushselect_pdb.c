@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpbrushselect_pdb  * @title: gimpbrushselect  * @short_description: Functions providing a brush selection dialog.  *  * Functions providing a brush selection dialog.  **/
+comment|/**  * SECTION: gimpbrushselect  * @title: gimpbrushselect  * @short_description: Functions providing a brush selection dialog.  *  * Functions providing a brush selection dialog.  **/
 end_comment
 
 begin_comment

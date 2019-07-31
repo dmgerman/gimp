@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppalette_pdb  * @title: gimppalette  * @short_description: Functions operating on a single palette.  *  * Functions operating on a single palette.  **/
+comment|/**  * SECTION: gimppalette  * @title: gimppalette  * @short_description: Functions operating on a single palette.  *  * Functions operating on a single palette.  **/
 end_comment
 
 begin_comment

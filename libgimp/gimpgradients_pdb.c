@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpgradients_pdb  * @title: gimpgradients  * @short_description: Operations related to gradients.  *  * Operations related to gradients.  **/
+comment|/**  * SECTION: gimpgradients  * @title: gimpgradients  * @short_description: Operations related to gradients.  *  * Operations related to gradients.  **/
 end_comment
 
 begin_comment

@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimageundo_pdb  * @title: gimpimageundo  * @short_description: Control of image undo/redo.  *  * Control of image undo/redo.  **/
+comment|/**  * SECTION: gimpimageundo  * @title: gimpimageundo  * @short_description: Control of image undo/redo.  *  * Control of image undo/redo.  **/
 end_comment
 
 begin_comment

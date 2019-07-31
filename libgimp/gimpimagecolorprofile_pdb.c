@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimagecolorprofile_pdb  * @title: gimpimagecolorprofile  * @short_description: Operations on an image's color profile.  *  * Operations on an image's color profile.  **/
+comment|/**  * SECTION: gimpimagecolorprofile  * @title: gimpimagecolorprofile  * @short_description: Operations on an image's color profile.  *  * Operations on an image's color profile.  **/
 end_comment
 
 begin_comment

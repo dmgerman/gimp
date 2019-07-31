@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpitemtransform_pdb  * @title: gimpitemtransform  * @short_description: Functions to perform transformations on items.  *  * Functions to perform transformations on items.  **/
+comment|/**  * SECTION: gimpitemtransform  * @title: gimpitemtransform  * @short_description: Functions to perform transformations on items.  *  * Functions to perform transformations on items.  **/
 end_comment
 
 begin_comment

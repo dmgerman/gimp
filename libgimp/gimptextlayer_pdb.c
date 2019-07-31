@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimptextlayer_pdb  * @title: gimptextlayer  * @short_description: Functions for querying and manipulating text layers.  *  * Functions for querying and manipulating text layers.  **/
+comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_description: Functions for querying and manipulating text layers.  *  * Functions for querying and manipulating text layers.  **/
 end_comment
 
 begin_comment

@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimagegrid_pdb  * @title: gimpimagegrid  * @short_description: Functions manuipulating an image's grid.  *  * Functions manuipulating an image's grid.  **/
+comment|/**  * SECTION: gimpimagegrid  * @title: gimpimagegrid  * @short_description: Functions manuipulating an image's grid.  *  * Functions manuipulating an image's grid.  **/
 end_comment
 
 begin_comment

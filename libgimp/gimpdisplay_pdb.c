@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpdisplay_pdb  * @title: gimpdisplay  * @short_description: Functions to create, delete and flush displays (views) on an image.  *  * Functions to create, delete and flush displays (views) on an image.  **/
+comment|/**  * SECTION: gimpdisplay  * @title: gimpdisplay  * @short_description: Functions to create, delete and flush displays (views) on an image.  *  * Functions to create, delete and flush displays (views) on an image.  **/
 end_comment
 
 begin_comment

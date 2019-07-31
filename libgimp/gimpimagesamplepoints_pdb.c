@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimagesamplepoints_pdb  * @title: gimpimagesamplepoints  * @short_description: Functions for manipulating an image's sample points.  *  * Functions for manipulating an image's sample points.  **/
+comment|/**  * SECTION: gimpimagesamplepoints  * @title: gimpimagesamplepoints  * @short_description: Functions for manipulating an image's sample points.  *  * Functions for manipulating an image's sample points.  **/
 end_comment
 
 begin_comment

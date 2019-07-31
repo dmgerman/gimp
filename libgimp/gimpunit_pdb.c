@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpunit_pdb  * @title: gimpunit  * @short_description: Provides a collection of predefined units and functions for creating user-defined units.  *  * Provides a collection of predefined units and functions for creating  * user-defined units.  **/
+comment|/**  * SECTION: gimpunit  * @title: gimpunit  * @short_description: Provides a collection of predefined units and functions for creating user-defined units.  *  * Provides a collection of predefined units and functions for creating  * user-defined units.  **/
 end_comment
 
 begin_comment

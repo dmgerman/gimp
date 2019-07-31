@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpfileops_pdb  * @title: gimpfileops  * @short_description: Image file operations (load, save, etc.)  *  * Image file operations (load, save, etc.)  **/
+comment|/**  * SECTION: gimpfileops  * @title: gimpfileops  * @short_description: Image file operations (load, save, etc.)  *  * Image file operations (load, save, etc.)  **/
 end_comment
 
 begin_comment

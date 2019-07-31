@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpimageguides_pdb  * @title: gimpimageguides  * @short_description: Functions for manipulating an image's guides.  *  * Functions for manipulating an image's guides.  **/
+comment|/**  * SECTION: gimpimageguides  * @title: gimpimageguides  * @short_description: Functions for manipulating an image's guides.  *  * Functions for manipulating an image's guides.  **/
 end_comment
 
 begin_comment

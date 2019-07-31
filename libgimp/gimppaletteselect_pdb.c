@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimppaletteselect_pdb  * @title: gimppaletteselect  * @short_description: Functions providing a palette selection dialog.  *  * Functions providing a palette selection dialog.  **/
+comment|/**  * SECTION: gimppaletteselect  * @title: gimppaletteselect  * @short_description: Functions providing a palette selection dialog.  *  * Functions providing a palette selection dialog.  **/
 end_comment
 
 begin_comment

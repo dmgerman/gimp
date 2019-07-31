@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpgradient_pdb  * @title: gimpgradient  * @short_description: Functions operating on a single gradient.  *  * Functions operating on a single gradient.  **/
+comment|/**  * SECTION: gimpgradient  * @title: gimpgradient  * @short_description: Functions operating on a single gradient.  *  * Functions operating on a single gradient.  **/
 end_comment
 
 begin_comment

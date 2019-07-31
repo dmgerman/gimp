@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpgradientselect_pdb  * @title: gimpgradientselect  * @short_description: Functions providing a gradient selection dialog.  *  * Functions providing a gradient selection dialog.  **/
+comment|/**  * SECTION: gimpgradientselect  * @title: gimpgradientselect  * @short_description: Functions providing a gradient selection dialog.  *  * Functions providing a gradient selection dialog.  **/
 end_comment
 
 begin_comment

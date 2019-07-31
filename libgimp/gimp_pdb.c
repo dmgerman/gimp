@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimp_pdb  * @title: gimp  * @short_description: Miscellaneous procedures  *  * Miscellaneous procedures not fitting in any category.  **/
+comment|/**  * SECTION: gimp  * @title: gimp  * @short_description: Miscellaneous procedures  *  * Miscellaneous procedures not fitting in any category.  **/
 end_comment
 
 begin_comment
