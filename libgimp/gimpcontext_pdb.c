@@ -237,7 +237,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: (transfer full) The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: (element-type gchar*) (transfer full) The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2552,7 +2552,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: (transfer full) The line dash pattern setting.  *  * Get the line dash pattern setting.  *  * This procedure returns the line dash pattern setting.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_get_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: (elemen-type gdouble) (transfer full) The line dash pattern setting.  *  * Get the line dash pattern setting.  *  * This procedure returns the line dash pattern setting.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
