@@ -376,7 +376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_sample_point_position:  * @image_ID: The image.  * @sample_point_ID: The guide.  * @position_y: (out) The sample points's position relative to top of image.  *  * Get position of a sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * returns the position of the sample point relative to the top and  * left of the image.  *  * Returns: The sample points's position relative to top of image.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_sample_point_position:  * @image_ID: The image.  * @sample_point_ID: The guide.  * @position_y: (out): The sample points's position relative to top of image.  *  * Get position of a sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * returns the position of the sample point relative to the top and  * left of the image.  *  * Returns: The sample points's position relative to top of image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

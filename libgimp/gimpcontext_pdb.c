@@ -237,7 +237,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: (out) The number of the available paint methods.  * @paint_methods: (out) (array length=num_paint_methods) (element-type gchar*) (transfer full) The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: (out): The number of the available paint methods.  * @paint_methods: (out) (array length=num_paint_methods) (element-type gchar*) (transfer full): The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -358,7 +358,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: (transfer full) The name of the active paint method.  *  * Since: 2.4  **/
+comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: (transfer full): The name of the active paint method.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -700,7 +700,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_foreground:  * @foreground: (out) The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_foreground:  * @foreground: (out): The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -879,7 +879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_background:  * @background: (out) The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_background:  * @background: (out): The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2552,7 +2552,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_line_dash_pattern:  * @num_dashes: (out) The number of dashes in the dash_pattern array.  * @dashes: (out) (array length=num_dashes) (element-type gdouble) (transfer full) The line dash pattern setting.  *  * Get the line dash pattern setting.  *  * This procedure returns the line dash pattern setting.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_get_line_dash_pattern:  * @num_dashes: (out): The number of dashes in the dash_pattern array.  * @dashes: (out) (array length=num_dashes) (element-type gdouble) (transfer full): The line dash pattern setting.  *  * Get the line dash pattern setting.  *  * This procedure returns the line dash pattern setting.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2672,7 +2672,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: (array length=num_dashes) (element-type gdouble) The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  *  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_set_line_dash_pattern:  * @num_dashes: The number of dashes in the dash_pattern array.  * @dashes: (array length=num_dashes) (element-type gdouble): The line dash pattern setting.  *  * Set the line dash pattern setting.  *  * This procedure modifies the line dash pattern setting for stroking  * lines.  *  * The unit of the dash pattern segments is the actual line width used  * for the stroke operation, in other words a segment length of 1.0  * results in a square segment shape (or gap shape).  *  * This setting affects the following procedures:  * gimp_drawable_edit_stroke_selection(),  * gimp_drawable_edit_stroke_item().  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2779,7 +2779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: (transfer full) The name of the active brush.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: (transfer full): The name of the active brush.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4179,7 +4179,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_dynamics:  *  * Retrieve the currently active paint dynamics.  *  * This procedure returns the name of the currently active paint  * dynamics. All paint operations and stroke operations use this paint  * dynamics to control the application of paint to the image.  *  * Returns: (transfer full) The name of the active paint dynamics.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_get_dynamics:  *  * Retrieve the currently active paint dynamics.  *  * This procedure returns the name of the currently active paint  * dynamics. All paint operations and stroke operations use this paint  * dynamics to control the application of paint to the image.  *  * Returns: (transfer full): The name of the active paint dynamics.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -4352,7 +4352,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_mypaint_brush:  *  * Retrieve the currently active MyPaint brush.  *  * This procedure returns the name of the currently active MyPaint  * brush.  *  * Returns: (transfer full) The name of the active MyPaint brush.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_get_mypaint_brush:  *  * Retrieve the currently active MyPaint brush.  *  * This procedure returns the name of the currently active MyPaint  * brush.  *  * Returns: (transfer full): The name of the active MyPaint brush.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -4525,7 +4525,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: (transfer full) The name of the active pattern.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: (transfer full): The name of the active pattern.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4698,7 +4698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: (transfer full) The name of the active gradient.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: (transfer full): The name of the active gradient.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -5662,7 +5662,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: (transfer full) (transfer full): The name of the active  * palette.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: (transfer full): (transfer full): The name of the active  * palette.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -5835,7 +5835,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: (transfer full) The name of the active font.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: (transfer full): The name of the active font.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -6346,7 +6346,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_feather_radius:  * @feather_radius_x: (out) The horizontal feather radius.  * @feather_radius_y: (out) The vertical feather radius.  *  * Get the feather radius setting.  *  * This procedure returns the feather radius setting.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_context_get_feather_radius:  * @feather_radius_x: (out): The horizontal feather radius.  * @feather_radius_y: (out): The vertical feather radius.  *  * Get the feather radius setting.  *  * This procedure returns the feather radius setting.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

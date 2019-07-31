@@ -1002,7 +1002,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_get_color:  * @channel_ID: The channel.  * @color: (out) The channel compositing color.  *  * Get the compositing color of the specified channel.  *  * This procedure returns the specified channel's compositing color.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_channel_get_color:  * @channel_ID: The channel.  * @color: (out): The channel compositing color.  *  * Get the compositing color of the specified channel.  *  * This procedure returns the specified channel's compositing color.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

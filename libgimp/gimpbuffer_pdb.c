@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpbuffer  * @title: gimpbuffer  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: (out) The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: (array length=num_buffers) (element-type gchar*) (transfer  * full) The list of buffer names. The returned value must be freed  * with g_strfreev().  *  * Since: 2.4  **/
+comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: (out): The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: (array length=num_buffers) (element-type gchar*) (transfer  * full): The list of buffer names. The returned value must be freed  * with g_strfreev().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -152,7 +152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_buffer_rename:  * @buffer_name: The buffer name.  * @new_name: The buffer's new name.  *  * Renames a named buffer.  *  * This procedure renames a named buffer.  *  * Returns: (transfer full) The real name given to the buffer.  *  * Since: 2.4  **/
+comment|/**  * gimp_buffer_rename:  * @buffer_name: The buffer name.  * @new_name: The buffer's new name.  *  * Renames a named buffer.  *  * This procedure renames a named buffer.  *  * Returns: (transfer full): The real name given to the buffer.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

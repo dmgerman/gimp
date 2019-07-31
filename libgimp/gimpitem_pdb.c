@@ -1190,7 +1190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_children:  * @item_ID: The item.  * @num_children: (out) The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (element-type gint32) (transfer  * full) The item's list of children.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_children:  * @item_ID: The item.  * @num_children: (out): The item's number of children.  *  * Returns the item's list of children.  *  * This procedure returns the list of items which are children of the  * specified item. The order is topmost to bottommost.  *  * Returns: (array length=num_children) (element-type gint32) (transfer  * full): The item's list of children.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1515,7 +1515,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_name:  * @item_ID: The item.  *  * Get the name of the specified item.  *  * This procedure returns the specified item's name.  *  * Returns: (transfer full) The item name.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_name:  * @item_ID: The item.  *  * Get the name of the specified item.  *  * This procedure returns the specified item's name.  *  * Returns: (transfer full): The item name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3136,7 +3136,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: (transfer full) The found parasite.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_parasite:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: (transfer full): The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -3255,7 +3255,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parasite_list:  * @item_ID: The item.  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full) The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_parasite_list:  * @item_ID: The item.  * @num_parasites: (out): The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full): The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

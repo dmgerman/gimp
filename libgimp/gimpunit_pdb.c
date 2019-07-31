@@ -601,7 +601,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_identifier:  * @unit_id: The unit's integer ID.  *  * Returns the textual identifier of the unit.  *  * This procedure returns the textual identifier of the unit. For  * built-in units it will be the english singular form of the unit's  * name. For user-defined units this should equal to the singular form.  *  * Returns: (transfer full) The unit's textual identifier.  **/
+comment|/**  * _gimp_unit_get_identifier:  * @unit_id: The unit's integer ID.  *  * Returns the textual identifier of the unit.  *  * This procedure returns the textual identifier of the unit. For  * built-in units it will be the english singular form of the unit's  * name. For user-defined units this should equal to the singular form.  *  * Returns: (transfer full): The unit's textual identifier.  **/
 end_comment
 
 begin_function
@@ -897,7 +897,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_symbol:  * @unit_id: The unit's integer ID.  *  * Returns the symbol of the unit.  *  * This procedure returns the symbol of the unit (\"''\" for inches).  *  * Returns: (transfer full) The unit's symbol.  **/
+comment|/**  * _gimp_unit_get_symbol:  * @unit_id: The unit's integer ID.  *  * Returns the symbol of the unit.  *  * This procedure returns the symbol of the unit (\"''\" for inches).  *  * Returns: (transfer full): The unit's symbol.  **/
 end_comment
 
 begin_function
@@ -997,7 +997,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_abbreviation:  * @unit_id: The unit's integer ID.  *  * Returns the abbreviation of the unit.  *  * This procedure returns the abbreviation of the unit (\"in\" for  * inches).  *  * Returns: (transfer full) The unit's abbreviation.  **/
+comment|/**  * _gimp_unit_get_abbreviation:  * @unit_id: The unit's integer ID.  *  * Returns the abbreviation of the unit.  *  * This procedure returns the abbreviation of the unit (\"in\" for  * inches).  *  * Returns: (transfer full): The unit's abbreviation.  **/
 end_comment
 
 begin_function
@@ -1097,7 +1097,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_singular:  * @unit_id: The unit's integer ID.  *  * Returns the singular form of the unit.  *  * This procedure returns the singular form of the unit.  *  * Returns: (transfer full) The unit's singular form.  **/
+comment|/**  * _gimp_unit_get_singular:  * @unit_id: The unit's integer ID.  *  * Returns the singular form of the unit.  *  * This procedure returns the singular form of the unit.  *  * Returns: (transfer full): The unit's singular form.  **/
 end_comment
 
 begin_function
@@ -1197,7 +1197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_plural:  * @unit_id: The unit's integer ID.  *  * Returns the plural form of the unit.  *  * This procedure returns the plural form of the unit.  *  * Returns: (transfer full) The unit's plural form.  **/
+comment|/**  * _gimp_unit_get_plural:  * @unit_id: The unit's integer ID.  *  * Returns the plural form of the unit.  *  * This procedure returns the plural form of the unit.  *  * Returns: (transfer full): The unit's plural form.  **/
 end_comment
 
 begin_function

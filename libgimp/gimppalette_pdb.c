@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimppalette  * @title: gimppalette  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_palette_new:  * @name: The requested name of the new palette.  *  * Creates a new palette  *  * This procedure creates a new, uninitialized palette  *  * Returns: (transfer full) The actual new palette name.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_new:  * @name: The requested name of the new palette.  *  * Creates a new palette  *  * This procedure creates a new, uninitialized palette  *  * Returns: (transfer full): The actual new palette name.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_duplicate:  * @name: The palette name.  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: (transfer full) The name of the palette's copy.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_duplicate:  * @name: The palette name.  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: (transfer full): The name of the palette's copy.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -228,7 +228,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_rename:  * @name: The palette name.  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: (transfer full) The actual new name of the palette.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_rename:  * @name: The palette name.  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: (transfer full): The actual new name of the palette.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -537,7 +537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_info:  * @name: The palette name.  * @num_colors: (out) (out): The number of colors in the palette.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_get_info:  * @name: The palette name.  * @num_colors: (out): (out): The number of colors in the palette.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -651,7 +651,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: (out) Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: (array length=num_colors) (element-type GimpRGB) (transfer  * full) The colors in the palette.  *  * Since: 2.6  **/
+comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: (out): Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: (array length=num_colors) (element-type GimpRGB) (transfer  * full): The colors in the palette.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -982,7 +982,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_add_entry:  * @name: The palette name.  * @entry_name: The name of the entry.  * @color: The new entry's color color.  * @entry_num: (out) The index of the added entry.  *  * Adds a palette entry to the specified palette.  *  * This procedure adds an entry to the specified palette. It returns an  * error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_add_entry:  * @name: The palette name.  * @entry_name: The name of the entry.  * @color: The new entry's color color.  * @entry_num: (out): The index of the added entry.  *  * Adds a palette entry to the specified palette.  *  * This procedure adds an entry to the specified palette. It returns an  * error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1239,7 +1239,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: (out) (out): The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: (out): (out): The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1490,7 +1490,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_get_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: (out) (transfer full) The name requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the name of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_entry_get_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: (out) (transfer full): The name requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the name of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

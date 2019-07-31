@@ -195,7 +195,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_text:  * @layer_ID: The text layer.  *  * Get the text from a text layer as string.  *  * This procedure returns the text from a text layer as a string.  *  * Returns: (transfer full) The text from the specified text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_text:  * @layer_ID: The text layer.  *  * Get the text from a text layer as string.  *  * This procedure returns the text from a text layer as a string.  *  * Returns: (transfer full): The text from the specified text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -400,7 +400,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * https://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: (transfer full) The markup which represents the style of  * the specified text layer.  *  * Since: 2.8  **/
+comment|/**  * gimp_text_layer_get_markup:  * @layer_ID: The text layer.  *  * Get the markup from a text layer as string.  *  * This procedure returns the markup of the styles from a text layer.  * The markup will be in the form of Pango's markup - See  * https://www.pango.org/ for more information about Pango and its  * markup. Note: Setting the markup of a text layer using Pango's  * markup is not supported for now.  *  * Returns: (transfer full): The markup which represents the style of  * the specified text layer.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -500,7 +500,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_font:  * @layer_ID: The text layer.  *  * Get the font from a text layer as string.  *  * This procedure returns the name of the font from a text layer.  *  * Returns: (transfer full) The font which is used in the specified  * text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_font:  * @layer_ID: The text layer.  *  * Get the font from a text layer as string.  *  * This procedure returns the name of the font from a text layer.  *  * Returns: (transfer full): The font which is used in the specified  * text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: (out) The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_font_size:  * @layer_ID: The text layer.  * @unit: (out): The unit used for the font size.  *  * Get the font size from a text layer.  *  * This procedure returns the size of the font which is used in a text  * layer. You will receive the size as a float 'font-size' in 'unit'  * units.  *  * Returns: The font size.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -1545,7 +1545,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_language:  * @layer_ID: The text layer.  *  * Get the language used in the text layer.  *  * This procedure returns the language string which is set for the text  * in the text layer.  *  * Returns: (transfer full) The language used in the text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_language:  * @layer_ID: The text layer.  *  * Get the language used in the text layer.  *  * This procedure returns the language string which is set for the text  * in the text layer.  *  * Returns: (transfer full): The language used in the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -2152,7 +2152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: (out) The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: (out): The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function

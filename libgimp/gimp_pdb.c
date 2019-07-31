@@ -24,7 +24,7 @@ comment|/**  * SECTION: Gimp  * @title: Gimp  * @short_description: Main functio
 end_comment
 
 begin_comment
-comment|/**  * gimp_version:  *  * Returns the host GIMP version.  *  * This procedure returns the version number of the currently running  * GIMP.  *  * Returns: (transfer full) GIMP version number.  **/
+comment|/**  * gimp_version:  *  * Returns the host GIMP version.  *  * This procedure returns the version number of the currently running  * GIMP.  *  * Returns: (transfer full): GIMP version number.  **/
 end_comment
 
 begin_function
@@ -368,7 +368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_parasite:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: (transfer full) The found parasite.  *  * Since: 2.8  **/
+comment|/**  * gimp_get_parasite:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: (transfer full): The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_parasite_list:  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full) The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_get_parasite_list:  * @num_parasites: (out): The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full): The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -579,7 +579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_temp_name:  * @extension: The extension the file will have.  *  * Generates a unique filename.  *  * Generates a unique filename using the temp path supplied in the  * user's gimprc.  *  * Returns: (transfer full) The new temp filename.  **/
+comment|/**  * gimp_temp_name:  * @extension: The extension the file will have.  *  * Generates a unique filename.  *  * Generates a unique filename using the temp path supplied in the  * user's gimprc.  *  * Returns: (transfer full): The new temp filename.  **/
 end_comment
 
 begin_function

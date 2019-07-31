@@ -122,7 +122,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  * @num_images: (out) The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (element-type gint32) (transfer  * full) The list of images currently open. The returned value must be  * freed with g_free().  **/
+comment|/**  * gimp_image_list:  * @num_images: (out): The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (element-type gint32) (transfer  * full): The list of images currently open. The returned value must be  * freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1187,7 +1187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: (out) The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer  * full) The list of layers contained in the image. The returned value  * must be freed with g_free().  **/
+comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: (out): The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer  * full): The list of layers contained in the image. The returned value  * must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1311,7 +1311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: (out) The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer  * full) The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer  * full): The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1435,7 +1435,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: (out) The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer  * full) The list of vectors contained in the image. The returned value  * must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: (out): The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer  * full): The list of vectors contained in the image. The returned  * value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1942,7 +1942,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_color:  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out) The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_pick_color:  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4533,7 +4533,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: (out) Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer  * full) The image's colormap. The returned value must be freed with  * g_free().  **/
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: (out): Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer  * full): The image's colormap. The returned value must be freed with  * g_free().  **/
 end_comment
 
 begin_function
@@ -4657,7 +4657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: (array length=num_bytes) (element-type guint8) The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: (array length=num_bytes) (element-type guint8): The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4781,7 +4781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (transfer full) The exif/ptc/xmp metadata as a string.  **/
+comment|/**  * _gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (transfer full): The exif/ptc/xmp metadata as a string.  **/
 end_comment
 
 begin_function
@@ -5170,7 +5170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out) The previews width.  * @actual_height: (out) The previews height.  * @bpp: (out) The previews bpp.  * @thumbnail_data_count: (out) The number of bytes in thumbnail data.  * @thumbnail_data: (out) (array length=thumbnail_data_count) (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out): The previews width.  * @actual_height: (out): The previews height.  * @bpp: (out): The previews bpp.  * @thumbnail_data_count: (out): The number of bytes in thumbnail data.  * @thumbnail_data: (out) (array length=thumbnail_data_count) (element-type guint8) (transfer full): The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6582,7 +6582,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: (transfer full) The filename. The returned value must be  * freed with g_free().  **/
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: (transfer full): The filename. The returned value must be  * freed with g_free().  **/
 end_comment
 
 begin_function
@@ -6787,7 +6787,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: (transfer full) The URI. The returned value must be freed  * with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: (transfer full): The URI. The returned value must be freed  * with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6887,7 +6887,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: (transfer full) The imported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -6987,7 +6987,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full) The imported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -7087,7 +7087,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full) The exported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full): The exported URI. The returned value must  * be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -7187,7 +7187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then the returned name contains the filename's or URI's  * base name (the last component of the path). Otherwise it is the  * translated string \"Untitled\". The returned name is formatted like  * the image name in the image window title, it may contain '[]',  * '(imported)' etc. and should only be used to label user interface  * elements. Never use it to construct filenames.  *  * Returns: (transfer full) The name. The returned value must be freed  * with g_free().  **/
+comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then the returned name contains the filename's or URI's  * base name (the last component of the path). Otherwise it is the  * translated string \"Untitled\". The returned name is formatted like  * the image name in the image window title, it may contain '[]',  * '(imported)' etc. and should only be used to label user interface  * elements. Never use it to construct filenames.  *  * Returns: (transfer full): The name. The returned value must be freed  * with g_free().  **/
 end_comment
 
 begin_function
@@ -7287,7 +7287,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: (out) The resolution in the x-axis, in dots per inch.  * @yresolution: (out) The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: (out): The resolution in the x-axis, in dots per inch.  * @yresolution: (out): The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -8857,7 +8857,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: (transfer full) The found parasite.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_parasite:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: (transfer full): The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -8976,7 +8976,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full) The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: (out): The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full): The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
