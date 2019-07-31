@@ -16469,7 +16469,7 @@ literal|"name"
 argument_list|,
 literal|"name"
 argument_list|,
-literal|"(transfer full): The name of the active palette"
+literal|"The name of the active palette"
 argument_list|,
 name|FALSE
 argument_list|,
