@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cb45d0103
+DECL|enum|__anon27dfc9e50103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -991,7 +991,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_entry_get_spinbutton:  * @entry: a #GimpMemsizeEntry  *  * Returns: the entry's #GtkSpinbutton.  *  * Since: 3.0  **/
+comment|/**  * gimp_memsize_entry_get_spinbutton:  * @entry: a #GimpMemsizeEntry  *  * Returns: (transfer none): the entry's #GtkSpinbutton.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

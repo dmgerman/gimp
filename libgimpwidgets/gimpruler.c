@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79f6480103
+DECL|enum|__anon29505a900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79f6480208
+DECL|struct|__anon29505a900208
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -2247,7 +2247,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ruler_get_unit:  * @ruler: a #GimpRuler  *  * Return value: the unit currently used in the @ruler widget.  *  * Since: 2.8  **/
+comment|/**  * gimp_ruler_get_unit:  * @ruler: a #GimpRuler  *  * Return value: (transfer none): the unit currently used in the @ruler widget.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

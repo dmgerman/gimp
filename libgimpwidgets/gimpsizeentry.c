@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a867de0103
+DECL|enum|__anon275e5c250103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1967,7 +1967,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkGrid).  *  * Returns: A pointer to the new #GtkLabel widget.  **/
+comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkGrid).  *  * Returns: (transfer full): A pointer to the new #GtkLabel widget.  **/
 end_comment
 
 begin_function
@@ -4237,7 +4237,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitComboBox.  *  * Returns: The sizeentry's unit.  **/
+comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitComboBox.  *  * Returns: (transfer none): The sizeentry's unit.  **/
 end_comment
 
 begin_function
@@ -5757,7 +5757,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_help_widget:  * @gse: a #GimpSizeEntry  * @field: the index of the widget you want to get a pointer to  *  * You shouldn't fiddle with the internals of a #GimpSizeEntry but  * if you want to set tooltips using gimp_help_set_help_data() you  * can use this function to get a pointer to the spinbuttons.  *  * Return value: a #GtkWidget pointer that you can attach a tooltip to.  **/
+comment|/**  * gimp_size_entry_get_help_widget:  * @gse: a #GimpSizeEntry  * @field: the index of the widget you want to get a pointer to  *  * You shouldn't fiddle with the internals of a #GimpSizeEntry but  * if you want to set tooltips using gimp_help_set_help_data() you  * can use this function to get a pointer to the spinbuttons.  *  * Return value: (transfer none): a #GtkWidget pointer that you can attach a tooltip to.  **/
 end_comment
 
 begin_function
