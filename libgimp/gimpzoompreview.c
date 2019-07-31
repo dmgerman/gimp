@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e602260103
+DECL|enum|__anon2b94cee80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e602260208
+DECL|struct|__anon2b94cee80208
 block|{
 DECL|member|update
 name|gboolean
@@ -3262,7 +3262,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Return Value: a pointer to the #GimpZoomModel owned by the @preview  *  * Since: 2.4  **/
+comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Return Value: (transfer none): a pointer to the #GimpZoomModel owned  *               by the @preview  *  * Since: 2.4  **/
 end_comment
 
 begin_function

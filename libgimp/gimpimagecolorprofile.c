@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: The image's color profile. The returned value  *          must be freed with g_object_unref().  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_color_profile:  * @image_ID: The image.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: (transfer full): The image's color profile. The returned  *          value must be freed with g_object_unref().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -161,7 +161,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_effective_color_profile:  * @image_ID: The image.  *  * Returns the color profile that is used for the image.  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or the default RGB profile from preferences if no profile is  * assigned to the image. If there is no default RGB profile configured  * in preferences either, a generated default RGB profile is returned.  *  * Returns: The color profile. The returned value  *          must be freed with g_object_unref().  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_effective_color_profile:  * @image_ID: The image.  *  * Returns the color profile that is used for the image.  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or the default RGB profile from preferences if no profile is  * assigned to the image. If there is no default RGB profile configured  * in preferences either, a generated default RGB profile is returned.  *  * Returns: (transfer full): The color profile. The returned value must  *          be freed with g_object_unref().  *  * Since: 2.10  **/
 end_comment
 
 begin_function

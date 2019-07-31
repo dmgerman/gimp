@@ -3437,7 +3437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_srgb_trc_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_srgb_trc_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Return value: (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3473,7 +3473,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_linear_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Return value: the new #GimpColorProfile, or %NULL if @profile is not  *               an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_linear_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Return value: (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
