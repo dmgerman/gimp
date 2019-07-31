@@ -99,7 +99,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixbuf_create_buffer:  * @pixbuf: a #GdkPixbuf  *  * Returns a #GeglBuffer that's either backed by the @pixbuf's pixels,  * or a copy of them. This function tries to not copy the @pixbuf's  * pixels. If the pixbuf's rowstride is a multiple of its bpp, a  * simple reference to the @pixbuf's pixels is made and @pixbuf will  * be kept around for as long as the buffer exists; otherwise the  * pixels are copied.  *  * Return value: a new #GeglBuffer.  *  * Since: 2.10  **/
+comment|/**  * gimp_pixbuf_create_buffer:  * @pixbuf: a #GdkPixbuf  *  * Returns a #GeglBuffer that's either backed by the @pixbuf's pixels,  * or a copy of them. This function tries to not copy the @pixbuf's  * pixels. If the pixbuf's rowstride is a multiple of its bpp, a  * simple reference to the @pixbuf's pixels is made and @pixbuf will  * be kept around for as long as the buffer exists; otherwise the  * pixels are copied.  *  * Return value: (transfer full): a new #GeglBuffer.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
