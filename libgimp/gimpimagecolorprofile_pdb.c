@@ -272,7 +272,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (element-type guint8) The new serialized color profile.  *  * Sets the image's color profile  *  * This procedure sets the image's color profile, or unsets it if NULL  * is passed as 'color_profile'. This procedure does no color  * conversion. However, it will change the pixel format of all layers  * to contain the babl space matching the profile. You must call this  * procedure before adding layers to the image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_set_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8) The new serialized color profile.  *  * Sets the image's color profile  *  * This procedure sets the image's color profile, or unsets it if NULL  * is passed as 'color_profile'. This procedure does no color  * conversion. However, it will change the pixel format of all layers  * to contain the babl space matching the profile. You must call this  * procedure before adding layers to the image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -501,7 +501,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_convert_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (element-type guint8) The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to the given color  * profile. Only RGB and grayscale color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_convert_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8) The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to the given color  * profile. Only RGB and grayscale color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
