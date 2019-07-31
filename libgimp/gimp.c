@@ -489,10 +489,6 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
-begin_comment
-comment|/**  * SECTION: gimp  * @title: Gimp  * @short_description: Main functions needed for building a GIMP plug-in.  *                     This header includes all other GIMP Library headers.  *  * Main functions needed for building a GIMP plug-in. This header  * includes all other GIMP Library headers.  **/
-end_comment
-
 begin_define
 DECL|macro|TILE_MAP_SIZE
 define|#
@@ -516,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d134020103
+DECL|enum|__anon28d8d0900103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1420,7 +1416,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon28d134020203
+DECL|enum|__anon28d8d0900203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
