@@ -122,7 +122,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  * @num_images: (out) The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (element-type gint32) (transfer full) The list of images  * currently open. The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_list:  * @num_images: (out) The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: (array length=num_images) (element-type gint32) (transfer  * full) The list of images currently open. The returned value must be  * freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1187,7 +1187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: (out) The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (element-type gint32) (transfer full) The list of layers  * contained in the image. The returned value must be freed with  * g_free().  **/
+comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: (out) The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer  * full) The list of layers contained in the image. The returned value  * must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1311,7 +1311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: (out) The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (element-type gint32) (transfer full) The list of channels  * contained in the image. The returned value must be freed with  * g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: (out) The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer  * full) The list of channels contained in the image. The returned  * value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -1435,7 +1435,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: (out) The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (element-type gint32) (transfer full) The list of vectors  * contained in the image. The returned value must be freed with  * g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: (out) The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer  * full) The list of vectors contained in the image. The returned value  * must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -4533,7 +4533,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: (out) Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (element-type guint8) (transfer full) The image's colormap.  * The returned value must be freed with g_free().  **/
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: (out) Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer  * full) The image's colormap. The returned value must be freed with  * g_free().  **/
 end_comment
 
 begin_function
@@ -5170,7 +5170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out) The previews width.  * @actual_height: (out) The previews height.  * @bpp: (out) The previews bpp.  * @thumbnail_data_count: (out) The number of bytes in thumbnail data.  * @thumbnail_data: (out) (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out) The previews width.  * @actual_height: (out) The previews height.  * @bpp: (out) The previews bpp.  * @thumbnail_data_count: (out) The number of bytes in thumbnail data.  * @thumbnail_data: (out) (array length=thumbnail_data_count) (element-type guint8) (transfer full) The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -8976,7 +8976,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (element-type gchar*) (transfer full) The names of  * currently attached parasites. The returned value must be freed with  * g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full) The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

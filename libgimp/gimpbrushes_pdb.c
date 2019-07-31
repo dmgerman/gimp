@@ -95,7 +95,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_brushes: (out) The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * gimp_context_set_brush() procedure.  *  * Returns: (element-type gchar*) (transfer full) The list of brush  * names. The returned value must be freed with g_strfreev().  **/
+comment|/**  * gimp_brushes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_brushes: (out) The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * gimp_context_set_brush() procedure.  *  * Returns: (array length=num_brushes) (element-type gchar*) (transfer  * full) The list of brush names. The returned value must be freed with  * g_strfreev().  **/
 end_comment
 
 begin_function

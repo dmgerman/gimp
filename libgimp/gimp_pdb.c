@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_parasite_list:  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: (element-type gchar*) (transfer full) The names of  * currently attached parasites. The returned value must be freed with  * g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_get_parasite_list:  * @num_parasites: (out) The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*)  * (transfer full) The names of currently attached parasites. The  * returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function

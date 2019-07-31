@@ -651,7 +651,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: (out) Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: (element-type GimpRGB) (transfer full) The colors in the  * palette.  *  * Since: 2.6  **/
+comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: (out) Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: (array length=num_colors) (element-type GimpRGB) (transfer  * full) The colors in the palette.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
