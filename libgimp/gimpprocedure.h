@@ -51,6 +51,10 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpRunFunc:  * @procedure: the #GimpProcedure that runs.  * @args:      the @procedure's arguments.  * @run_data:  the run_data given in gimp_procedure_new().  *  * The run function is run during the lifetime of the GIMP session,  * each time a plug-in procedure is called.  *  * Returns: (transfer full): the @procedure's return values.  *  * Since: 3.0  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpRunFunc
 typedef|typedef
@@ -240,6 +244,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_procedure_get_name
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpPDBProcType
 name|gimp_procedure_get_proc_type
 parameter_list|(
@@ -292,19 +309,6 @@ specifier|const
 name|gchar
 modifier|*
 name|date
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_procedure_get_name
-parameter_list|(
-name|GimpProcedure
-modifier|*
-name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
