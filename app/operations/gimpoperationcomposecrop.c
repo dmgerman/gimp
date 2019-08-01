@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de9d240103
+DECL|enum|__anon288001210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,7 +326,7 @@ literal|"x"
 argument_list|,
 literal|"x"
 argument_list|,
-literal|0
+name|G_MININT
 argument_list|,
 name|G_MAXINT
 argument_list|,
@@ -352,7 +352,7 @@ literal|"y"
 argument_list|,
 literal|"y"
 argument_list|,
-literal|0
+name|G_MININT
 argument_list|,
 name|G_MAXINT
 argument_list|,
