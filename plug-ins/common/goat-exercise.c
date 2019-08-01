@@ -361,6 +361,11 @@ argument_list|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
 literal|"21march 2012"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_image_types
+argument_list|(
+name|procedure
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|)

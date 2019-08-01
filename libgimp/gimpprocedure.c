@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291e5d680103
+DECL|enum|__anon2987911d0103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -588,7 +588,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable) free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * Returns: a new #GimpProcedure.  **/
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable) free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins. Using  * %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called gimp_extension_ack(), which  * means that the procedure has done its initialization, installed its  * temporary procedures and is ready to run. %GIMP_TEMPORARY must be  * used for temporary procedures that are created during a plug-ins  * lifetime.  They must be added to the #GimpPlugIn using  * gimp_plug_in_add_temp_procedure().  *  * Returns: a new #GimpProcedure.  **/
 end_comment
 
 begin_function
@@ -792,7 +792,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * menu_label,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * author,const gchar * copyright,const gchar * date,const gchar * image_types)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * menu_label,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * author,const gchar * copyright,const gchar * date)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
@@ -833,11 +833,6 @@ specifier|const
 name|gchar
 modifier|*
 name|date
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|image_types
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -928,17 +923,6 @@ operator|=
 name|g_strdup
 argument_list|(
 name|date
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|priv
-operator|->
-name|image_types
-operator|=
-name|g_strdup
-argument_list|(
-name|image_types
 argument_list|)
 expr_stmt|;
 block|}
@@ -1199,6 +1183,60 @@ name|date
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_set_image_types:  * @image_types the image types this procedure can operate on.  *  * This is a comma separated list of image types, or actually drawable  * types, that this procedure can deal with. Wildcards are possible  * here, so you could say "RGB*" instead of "RGB, RGBA" or "*" for all  * image types.  *  * Supported types are "RGB", "GRAY", "INDEXED" and their variants  * with alpha.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_procedure_set_image_types (GimpProcedure * procedure,const gchar * image_types)
+name|gimp_procedure_set_image_types
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|image_types
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|image_types
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|image_types
+operator|=
+name|g_strdup
+argument_list|(
+name|image_types
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_image_types:  *  * This procedure retrieves the list of image types the procedure can  * operate on. See gimp_procedure_set_image_types().  *  * Returns: The image types.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const

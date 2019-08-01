@@ -110,7 +110,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dec73a0108
+DECL|struct|__anon2b1ceff40108
 block|{
 DECL|member|procedure
 name|gchar
@@ -508,8 +508,6 @@ argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
 literal|"1999-2008"
-argument_list|,
-literal|""
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -821,8 +819,6 @@ argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
 literal|"1999-2008"
-argument_list|,
-literal|""
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
