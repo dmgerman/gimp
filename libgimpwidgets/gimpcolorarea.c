@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a59880103
+DECL|enum|__anon2b14d1520103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a59880203
+DECL|enum|__anon2b14d1520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2032,7 +2032,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_get_color:  * @area: Pointer to a #GimpColorArea.  * @color: Pointer to a #GimpRGB struct that is used to return the color.  *  * Retrieves the current color of the @area.  **/
+comment|/**  * gimp_color_area_get_color:  * @area:  Pointer to a #GimpColorArea.  * @color: (out caller-allocates): Pointer to a #GimpRGB struct  *         that is used to return the color.  *  * Retrieves the current color of the @area.  **/
 end_comment
 
 begin_function

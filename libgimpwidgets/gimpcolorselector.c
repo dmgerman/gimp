@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cfe3bf0103
+DECL|enum|__anon2a9f25260103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1043,7 +1043,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_color:  * @selector: A #GimpColorSelector widget.  * @rgb:      Return location for the color.  * @hsv:      Return location for the same same color in HSV.  *  * Retrieves the color shown in the @selector widget.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_color:  * @selector: A #GimpColorSelector widget.  * @rgb:      (out caller-allocates): Return location for the color.  * @hsv:      (out caller-allocates): Return location for the same same  *            color in HSV.  *  * Retrieves the color shown in the @selector widget.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

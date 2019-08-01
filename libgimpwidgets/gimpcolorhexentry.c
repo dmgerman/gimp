@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e03ae0103
+DECL|enum|__anon2894b3880103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e03ae0203
+DECL|enum|__anon2894b3880203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -831,7 +831,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_hex_entry_get_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Retrieves the color value displayed by a #GimpColorHexEntry.  *  * Since: 2.2  **/
+comment|/**  * gimp_color_hex_entry_get_color:  * @entry: a #GimpColorHexEntry widget  * @color: (out caller-allocates): pointer to a #GimpRGB  *  * Retrieves the color value displayed by a #GimpColorHexEntry.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

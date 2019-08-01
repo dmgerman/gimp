@@ -68,7 +68,7 @@ comment|/*  GimpRGB functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgb_to_hsv:  * @rgb: A color value in the RGB colorspace  * @hsv: The value converted to the HSV colorspace  *  * Does a conversion from RGB to HSV (Hue, Saturation,  * Value) colorspace.  **/
+comment|/**  * gimp_rgb_to_hsv:  * @rgb: A color value in the RGB colorspace  * @hsv: (out caller-allocates): The value converted to the HSV colorspace  *  * Does a conversion from RGB to HSV (Hue, Saturation,  * Value) colorspace.  **/
 end_comment
 
 begin_function
@@ -272,7 +272,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hsv_to_rgb:  * @hsv: A color value in the HSV colorspace  * @rgb: The returned RGB value.  *  * Converts a color value from HSV to RGB colorspace  **/
+comment|/**  * gimp_hsv_to_rgb:  * @hsv: A color value in the HSV colorspace  * @rgb: (out caller-allocates): The returned RGB value.  *  * Converts a color value from HSV to RGB colorspace  **/
 end_comment
 
 begin_function
@@ -605,7 +605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_hsl:  * @rgb: A color value in the RGB colorspace  * @hsl: The value converted to HSL  *  * Convert an RGB color value to a HSL (Hue, Saturation, Lightness)  * color value.  **/
+comment|/**  * gimp_rgb_to_hsl:  * @rgb: A color value in the RGB colorspace  * @hsl: (out caller-allocates): The value converted to HSL  *  * Convert an RGB color value to a HSL (Hue, Saturation, Lightness)  * color value.  **/
 end_comment
 
 begin_function
@@ -964,7 +964,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hsl_to_rgb:  * @hsl: A color value in the HSL colorspace  * @rgb: The value converted to a value in the RGB colorspace  *  * Convert a HSL color value to an RGB color value.  **/
+comment|/**  * gimp_hsl_to_rgb:  * @hsl: A color value in the HSL colorspace  * @rgb: (out caller-allocates): The value converted to a value  *       in the RGB colorspace  *  * Convert a HSL color value to an RGB color value.  **/
 end_comment
 
 begin_function
@@ -1157,7 +1157,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_cmyk:  * @rgb: A value in the RGB colorspace  * @pullout: A scaling value (0-1) indicating how much black should be  *           pulled out  * @cmyk: The input value naively converted to the CMYK colorspace  *  * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * A value of 1 causes the maximum amount of black to be pulled out.  **/
+comment|/**  * gimp_rgb_to_cmyk:  * @rgb: A value in the RGB colorspace  * @pullout: A scaling value (0-1) indicating how much black should be  *           pulled out  * @cmyk: (out caller-allocates): The input value naively converted  *        to the CMYK colorspace  *  * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * A value of 1 causes the maximum amount of black to be pulled out.  **/
 end_comment
 
 begin_function
@@ -1358,7 +1358,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cmyk_to_rgb:  * @cmyk: A color value in the CMYK colorspace  * @rgb: The value converted to the RGB colorspace  *  * Does a simple transformation from the CMYK colorspace to the RGB  * colorspace, without taking color profiles into account.  **/
+comment|/**  * gimp_cmyk_to_rgb:  * @cmyk: A color value in the CMYK colorspace  * @rgb: (out caller-allocates): The value converted to the RGB colorspace  *  * Does a simple transformation from the CMYK colorspace to the RGB  * colorspace, without taking color profiles into account.  **/
 end_comment
 
 begin_function

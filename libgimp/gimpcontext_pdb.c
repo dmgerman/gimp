@@ -700,7 +700,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_foreground:  * @foreground: (out): The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_foreground:  * @foreground: (out caller-allocates): The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -879,7 +879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_background:  * @background: (out): The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_context_get_background:  * @background: (out caller-allocates): The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

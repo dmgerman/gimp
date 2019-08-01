@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2883333f0103
+DECL|enum|__anon29aa4b620103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2883333f0203
+DECL|enum|__anon29aa4b620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2556,7 +2556,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color:  Pointer to a #GimpRGB struct used to return the color.  *  * Retrieves the currently set color from the @button.  **/
+comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color:  (out caller-allocates): Pointer to a #GimpRGB struct  *          used to return the color.  *  * Retrieves the currently set color from the @button.  **/
 end_comment
 
 begin_function

@@ -536,7 +536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_foreground_color:  * @image_ID: The image.  * @fgcolor: (out): The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_foreground_color:  * @image_ID: The image.  * @fgcolor: (out caller-allocates): The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -749,7 +749,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_background_color:  * @image_ID: The image.  * @bgcolor: (out): The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_background_color:  * @image_ID: The image.  * @bgcolor: (out caller-allocates): The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

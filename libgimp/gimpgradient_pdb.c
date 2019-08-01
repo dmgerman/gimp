@@ -1004,7 +1004,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out): The return color.  * @opacity: (out): The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out caller-allocates): The return color.  * @opacity: (out): The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1296,7 +1296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out): The return color.  * @opacity: (out): The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: (out caller-allocates): The return color.  * @opacity: (out): The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

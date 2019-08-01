@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0dab350108
+DECL|struct|__anon27e6c6670108
 block|{
 DECL|member|name
 name|gchar
@@ -1871,7 +1871,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dab350203
+DECL|enum|__anon27e6c6670203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1891,7 +1891,7 @@ enum|;
 end_enum
 
 begin_comment
-comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a color to store the result  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: (out caller-allocates): Pointer to a color to store the result  *  * Return value: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function

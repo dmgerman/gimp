@@ -1239,7 +1239,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: (out): The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
+comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: (out caller-allocates): The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specified  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

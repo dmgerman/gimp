@@ -2152,7 +2152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: (out): The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_get_color:  * @layer_ID: The text layer.  * @color: (out caller-allocates): The color of the text.  *  * Get the color of the text in a text layer.  *  * This procedure returns the color of the text in a text layer.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
