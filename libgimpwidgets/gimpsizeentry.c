@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e5c250103
+DECL|enum|__anon2b5c5e370103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1967,7 +1967,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkGrid).  *  * Returns: (transfer full): A pointer to the new #GtkLabel widget.  **/
+comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkGrid).  *  * Returns: (transfer none): A pointer to the new #GtkLabel widget.  **/
 end_comment
 
 begin_function

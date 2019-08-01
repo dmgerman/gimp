@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29069a890103
+DECL|enum|__anon295b9d340103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29069a890203
+DECL|enum|__anon295b9d340203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29069a890303
+DECL|enum|__anon295b9d340303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1912,7 +1912,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's current @color.  *  * This function returns the #GimpColorSelection's current color.  **/
+comment|/**  * gimp_color_selection_get_color:  * @selection: A #GimpColorSelection widget.  * @color:     (out): Return location for the @selection's current @color.  *  * This function returns the #GimpColorSelection's current color.  **/
 end_comment
 
 begin_function
@@ -2018,7 +2018,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's old @color.  *  * This function returns the #GimpColorSelection's old color.  **/
+comment|/**  * gimp_color_selection_get_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     (out): Return location for the @selection's old @color.  *  * This function returns the #GimpColorSelection's old color.  **/
 end_comment
 
 begin_function
@@ -2310,7 +2310,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_right_vbox:  * @selection: A #GimpColorSelection widget.  *  * Returns: (transfer none): The selection's right #GtkBox which contains the color scales.  *  * Since: 3.0  */
+comment|/**  * gimp_color_selection_get_right_vbox:  * @selection: A #GimpColorSelection widget.  *  * Returns: (transfer none): The selection's right #GtkBox which  *          contains the color scales.  *  * Since: 3.0  */
 end_comment
 
 begin_function
