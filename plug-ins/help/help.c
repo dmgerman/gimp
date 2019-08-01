@@ -110,7 +110,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952cb7f0108
+DECL|struct|__anon27dec73a0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -218,6 +218,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -236,6 +239,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -475,6 +481,10 @@ argument_list|,
 name|GIMP_EXTENSION
 argument_list|,
 name|help_run
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_strings
@@ -589,7 +599,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|help_run (GimpProcedure * procedure,const GimpValueArray * args)
+DECL|function|help_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
 name|help_run
 parameter_list|(
 name|GimpProcedure
@@ -600,6 +610,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 block|{
 name|GimpPDBStatusType
@@ -783,6 +796,10 @@ argument_list|,
 name|GIMP_TEMPORARY
 argument_list|,
 name|help_temp_run
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_strings
@@ -899,7 +916,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|help_temp_run (GimpProcedure * procedure,const GimpValueArray * args)
+DECL|function|help_temp_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
 name|help_temp_run
 parameter_list|(
 name|GimpProcedure
@@ -910,6 +927,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 block|{
 name|GimpPDBStatusType

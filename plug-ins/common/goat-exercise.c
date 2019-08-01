@@ -163,6 +163,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -329,6 +332,10 @@ argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
 name|goat_run
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_strings
@@ -446,7 +453,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|goat_run (GimpProcedure * procedure,const GimpValueArray * args)
+DECL|function|goat_run (GimpProcedure * procedure,const GimpValueArray * args,gpointer run_data)
 name|goat_run
 parameter_list|(
 name|GimpProcedure
@@ -457,6 +464,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 block|{
 name|GimpPDBStatusType

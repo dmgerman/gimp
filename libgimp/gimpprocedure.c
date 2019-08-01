@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fbb4340103
+DECL|enum|__anon291e5d680103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -219,6 +219,14 @@ DECL|member|run_func
 name|GimpRunFunc
 name|run_func
 decl_stmt|;
+DECL|member|run_data
+name|gpointer
+name|run_data
+decl_stmt|;
+DECL|member|run_data_destroy
+name|GDestroyNotify
+name|run_data_destroy
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -373,6 +381,27 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data_destroy
+condition|)
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data_destroy
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data
+argument_list|)
+expr_stmt|;
 name|g_clear_object
 argument_list|(
 operator|&
@@ -559,13 +588,13 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func: (scope async): the run function for the new procedure.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * Returns: a new #GimpProcedure.  **/
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable) free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * Returns: a new #GimpProcedure.  **/
 end_comment
 
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_procedure_new (GimpPlugIn * plug_in,const gchar * name,GimpPDBProcType proc_type,GimpRunFunc run_func)
+DECL|function|gimp_procedure_new (GimpPlugIn * plug_in,const gchar * name,GimpPDBProcType proc_type,GimpRunFunc run_func,gpointer run_data,GDestroyNotify run_data_destroy)
 name|gimp_procedure_new
 parameter_list|(
 name|GimpPlugIn
@@ -582,6 +611,12 @@ name|proc_type
 parameter_list|,
 name|GimpRunFunc
 name|run_func
+parameter_list|,
+name|gpointer
+name|run_data
+parameter_list|,
+name|GDestroyNotify
+name|run_data_destroy
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -671,6 +706,22 @@ operator|->
 name|run_func
 operator|=
 name|run_func
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data
+operator|=
+name|run_data
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data_destroy
+operator|=
+name|run_data_destroy
 expr_stmt|;
 return|return
 name|procedure
@@ -2304,6 +2355,12 @@ argument_list|(
 name|procedure
 argument_list|,
 name|args
+argument_list|,
+name|procedure
+operator|->
+name|priv
+operator|->
+name|run_data
 argument_list|)
 expr_stmt|;
 if|if

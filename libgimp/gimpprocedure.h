@@ -69,6 +69,9 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|args
+parameter_list|,
+name|gpointer
+name|run_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -214,6 +217,12 @@ name|proc_type
 parameter_list|,
 name|GimpRunFunc
 name|run_func
+parameter_list|,
+name|gpointer
+name|run_data
+parameter_list|,
+name|GDestroyNotify
+name|run_data_destroy
 parameter_list|)
 function_decl|;
 end_function_decl
