@@ -4715,9 +4715,16 @@ name|NULL
 argument_list|,
 name|buffer
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

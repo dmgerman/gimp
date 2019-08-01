@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0668380103
+DECL|enum|__anon28caf0d00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -745,11 +745,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
-name|offset_x
-parameter_list|,
-name|gint
-name|offset_y
+specifier|const
+name|GeglRectangle
+modifier|*
+name|bounds
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2896,6 +2895,8 @@ name|NULL
 argument_list|,
 name|new_buffer
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|gimp_item_get_offset_x
 argument_list|(
 name|item
@@ -2904,6 +2905,11 @@ argument_list|,
 name|gimp_item_get_offset_y
 argument_list|(
 name|item
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 argument_list|,
 name|TRUE
@@ -3514,9 +3520,16 @@ name|NULL
 argument_list|,
 name|new_buffer
 argument_list|,
+name|GEGL_RECTANGLE
+argument_list|(
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4543,7 +4556,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_set_buffer (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,gint offset_x,gint offset_y)
+DECL|function|gimp_channel_set_buffer (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,GeglBuffer * buffer,const GeglRectangle * bounds)
 name|gimp_channel_set_buffer
 parameter_list|(
 name|GimpDrawable
@@ -4562,11 +4575,10 @@ name|GeglBuffer
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
-name|offset_x
-parameter_list|,
-name|gint
-name|offset_y
+specifier|const
+name|GeglRectangle
+modifier|*
+name|bounds
 parameter_list|)
 block|{
 name|GimpChannel
@@ -4617,9 +4629,7 @@ name|undo_desc
 argument_list|,
 name|buffer
 argument_list|,
-name|offset_x
-argument_list|,
-name|offset_y
+name|bounds
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_signal_connect
