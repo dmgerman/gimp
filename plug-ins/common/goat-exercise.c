@@ -338,7 +338,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_strings
+name|gimp_procedure_set_menu_label
 argument_list|(
 name|procedure
 argument_list|,
@@ -346,6 +346,11 @@ name|N_
 argument_list|(
 literal|"Goat-exercise"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_documentation
+argument_list|(
+name|procedure
 argument_list|,
 name|N_
 argument_list|(
