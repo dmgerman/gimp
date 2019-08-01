@@ -7075,7 +7075,7 @@ block|}
 operator|*
 name|params
 operator|=
-name|g_new0
+name|g_try_new0
 argument_list|(
 name|GPParam
 argument_list|,
@@ -7083,6 +7083,33 @@ operator|*
 name|nparams
 argument_list|)
 expr_stmt|;
+comment|/* We may read crap on the wire (and as a consequence try to allocate    * far too much), which would be a plug-in error.    */
+if|if
+condition|(
+operator|*
+name|params
+operator|==
+name|NULL
+condition|)
+block|{
+comment|/* Output on stderr but no WARNING/CRITICAL. This is likely a        * plug-in bug sending bogus data, not a core bug.        */
+name|g_printerr
+argument_list|(
+literal|"%s: failed to allocate %u parameters\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+operator|*
+name|nparams
+argument_list|)
+expr_stmt|;
+operator|*
+name|nparams
+operator|=
+literal|0
+expr_stmt|;
+return|return;
+block|}
 for|for
 control|(
 name|i
