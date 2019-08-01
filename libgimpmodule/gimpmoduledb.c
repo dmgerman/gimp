@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8155d0103
+DECL|enum|__anon29468e220103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -609,7 +609,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_modules:  * @db: A #GimpModuleDB.  *  * Returns a #GList of the modules kept by @db. The list must not be  * modified or freed.  *  * Return value: a #GList of #GimpModule instances.  *  * Since: 3.0  **/
+comment|/**  * gimp_module_db_get_modules:  * @db: A #GimpModuleDB.  *  * Returns a #GList of the modules kept by @db. The list must not be  * modified or freed.  *  * Return value: (element-type GimpModule) (transfer none): a #GList  * of #GimpModule instances.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
