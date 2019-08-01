@@ -110,7 +110,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ceff40108
+DECL|struct|__anon2b6f17fe0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -727,8 +727,10 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-name|gimp_extension_ack
-argument_list|()
+name|gimp_procedure_extension_ready
+argument_list|(
+name|procedure
+argument_list|)
 expr_stmt|;
 name|gimp_extension_enable
 argument_list|()
