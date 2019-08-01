@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3bf4d90103
+DECL|enum|__anon28a370330103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -556,6 +556,10 @@ end_function
 
 begin_comment
 comment|/*  public functions  */
+end_comment
+
+begin_comment
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func: (scope async): the run function for the new procedure.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * Returns: a new #GimpProcedure.  **/
 end_comment
 
 begin_function
@@ -1532,6 +1536,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_add_argument:  * @procedure: the #GimpProcedure.  * @pspec: the argument specification.  *  * Add a new argument to @procedure according to @pspec specifications.  * The arguments will be ordered according to the call order to  * gimp_procedure_add_argument().  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_procedure_add_argument (GimpProcedure * procedure,GParamSpec * pspec)
@@ -1617,6 +1625,10 @@ operator|++
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_add_return_value:  * @procedure: the #GimpProcedure.  * @pspec: the return value specification.  *  * Add a new return value to @procedure according to @pspec  * specifications. The returned values will be ordered according to the  * call order to * gimp_procedure_add_return_value().  */
+end_comment
 
 begin_function
 name|void
@@ -1912,6 +1924,10 @@ name|args
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status: the success status of the procedure run.  * @error: (nullable): an optional #GError. This parameter should be set  *         if @status is either #GIMP_PDB_EXECUTION_ERROR or  *         #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  */
+end_comment
 
 begin_function
 name|GimpValueArray

@@ -212,6 +212,10 @@ parameter_list|)
 block|{ }
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_int32:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @minimum: the minimum accepted value.  * @maximum: the maximum accepted value.  * @default_value: the default value.  * @flags: #GParamFlags for the new parameter.  *  * Create a new int32 #GParamSpec with the given specifications.  *  * Returns: (transfer full) (type GObject.ParamSpec): a new #GParamSpec.  */
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
