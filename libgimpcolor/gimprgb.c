@@ -2981,7 +2981,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb_get_default:  * @pspec:         a #GimpParamSpecRGB.  * @default_value: return location for @pspec's default value  *  * Returns the @pspec's default color value.  *  * Since: 2.10.12  **/
+comment|/**  * gimp_param_spec_rgb_get_default:  * @pspec:         a #GimpParamSpecRGB.  * @default_value: return location for @pspec's default value  *  * Returns the @pspec's default color value.  *  * Since: 2.10.14  **/
 end_comment
 
 begin_function
