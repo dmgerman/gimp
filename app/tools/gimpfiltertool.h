@@ -181,6 +181,11 @@ name|GtkWidget
 modifier|*
 name|controller_toggle
 decl_stmt|;
+DECL|member|clip_combo
+name|GtkWidget
+modifier|*
+name|clip_combo
+decl_stmt|;
 DECL|member|region_combo
 name|GtkWidget
 modifier|*

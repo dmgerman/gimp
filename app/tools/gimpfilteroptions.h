@@ -123,6 +123,10 @@ DECL|member|controller
 name|gboolean
 name|controller
 decl_stmt|;
+DECL|member|clip
+name|GimpTransformResize
+name|clip
+decl_stmt|;
 DECL|member|region
 name|GimpFilterRegion
 name|region
