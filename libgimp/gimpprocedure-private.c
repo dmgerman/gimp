@@ -201,7 +201,7 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|gimp_procedure_get_author
+name|gimp_procedure_get_authors
 argument_list|(
 name|procedure
 argument_list|)

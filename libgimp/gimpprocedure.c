@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba9232f0103
+DECL|enum|__anon28fc49c60103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -156,12 +156,12 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-DECL|member|author
+DECL|member|authors
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
-comment|/* Author field                   */
+comment|/* Authors field                  */
 DECL|member|copyright
 name|gchar
 modifier|*
@@ -433,6 +433,42 @@ expr_stmt|;
 name|gimp_procedure_free_strings
 argument_list|(
 name|procedure
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|procedure
+operator|->
+name|priv
+operator|->
+name|authors
+argument_list|,
+name|g_free
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|procedure
+operator|->
+name|priv
+operator|->
+name|copyright
+argument_list|,
+name|g_free
+argument_list|)
+expr_stmt|;
+name|g_clear_pointer
+argument_list|(
+operator|&
+name|procedure
+operator|->
+name|priv
+operator|->
+name|date
+argument_list|,
+name|g_free
 argument_list|)
 expr_stmt|;
 name|g_clear_pointer
@@ -747,6 +783,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_get_plug_in:  * @procedure: A #GimpProcedure.  *  * Returns: (transfer none): The #GimpPlugIn given in gimp_procedure_new().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GimpPlugIn
 modifier|*
@@ -777,6 +817,10 @@ name|plug_in
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_name:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's name given in gimp_procedure_new().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const
@@ -810,6 +854,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_get_proc_type:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's type given in gimp_procedure_new().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GimpPDBProcType
 DECL|function|gimp_procedure_get_proc_type (GimpProcedure * procedure)
@@ -842,7 +890,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * menu_label,const gchar * blurb,const gchar * help,const gchar * help_id,const gchar * author,const gchar * copyright,const gchar * date)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * menu_label,const gchar * blurb,const gchar * help,const gchar * help_id)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
@@ -868,21 +916,6 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|author
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|copyright
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|date
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -942,41 +975,12 @@ argument_list|(
 name|help_id
 argument_list|)
 expr_stmt|;
-name|procedure
-operator|->
-name|priv
-operator|->
-name|author
-operator|=
-name|g_strdup
-argument_list|(
-name|author
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|priv
-operator|->
-name|copyright
-operator|=
-name|g_strdup
-argument_list|(
-name|copyright
-argument_list|)
-expr_stmt|;
-name|procedure
-operator|->
-name|priv
-operator|->
-name|date
-operator|=
-name|g_strdup
-argument_list|(
-name|date
-argument_list|)
-expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_menu_label:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's menu label given in  *          gimp_procedure_set_strings().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const
@@ -1010,6 +1014,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_get_blurb:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's blurb given in  *          gimp_procedure_set_strings().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 specifier|const
 name|gchar
@@ -1041,6 +1049,10 @@ name|blurb
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_help:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's help text given in  *          gimp_procedure_set_strings().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const
@@ -1074,6 +1086,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_get_help_id:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's help ID given in  *          gimp_procedure_set_strings().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 specifier|const
 name|gchar
@@ -1106,12 +1122,116 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_set_attribution:  * @procedure: A #GimpProcedure.  * @authors:   The @procedure's author(s).  * @copyright: The @procedure's copyright.  * @data:      The @procedure's date (written or pushished).  *  * Sets various attribution strings on @procedure.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_procedure_set_attribution (GimpProcedure * procedure,const gchar * authors,const gchar * copyright,const gchar * date)
+name|gimp_procedure_set_attribution
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|authors
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|copyright
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|date
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|authors
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|copyright
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|date
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|authors
+operator|=
+name|g_strdup
+argument_list|(
+name|authors
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|copyright
+operator|=
+name|g_strdup
+argument_list|(
+name|copyright
+argument_list|)
+expr_stmt|;
+name|procedure
+operator|->
+name|priv
+operator|->
+name|date
+operator|=
+name|g_strdup
+argument_list|(
+name|date
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_author:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's authors given in  *          gimp_procedure_set_attribution().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_procedure_get_author (GimpProcedure * procedure)
-name|gimp_procedure_get_author
+DECL|function|gimp_procedure_get_authors (GimpProcedure * procedure)
+name|gimp_procedure_get_authors
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1133,10 +1253,14 @@ name|procedure
 operator|->
 name|priv
 operator|->
-name|author
+name|authors
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_copyright:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's copyright given in  *          gimp_procedure_set_attribution().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const
@@ -1169,6 +1293,10 @@ name|copyright
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_date:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's date given in  *          gimp_procedure_set_attribution().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 specifier|const
@@ -1559,6 +1687,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_add_menu_path:  * @procedure: A #GimpProcedure.  * @menu_path: The @procedure's additional menu path.  *  * Adds a menu path to te procedure. Only procedures which have a menu  * label can add a menu path.  *  * Menu paths are untranslated paths to menus and submenus with the  * syntax:  *  *&lt;Prefix&gt;/Path/To/Submenu  *  * for instance:  *  *&lt;Image&gt;/Layer/Transform  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_procedure_add_menu_path (GimpProcedure * procedure,const gchar * menu_path)
@@ -1589,6 +1721,17 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|procedure
+operator|->
+name|priv
+operator|->
+name|menu_label
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|procedure
 operator|->
 name|priv
@@ -1611,6 +1754,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_menu_paths:  * @procedure: A #GimpProcedure.  *  * Returns: (transfer none) (element-type gchar*): the @procedure's  *          menu paths as added with gimp_procedure_add_menu_path().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GList
@@ -1644,7 +1791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_argument:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the argument specification.  *  * Add a new argument to @procedure according to @pspec specifications.  * The arguments will be ordered according to the call order to  * gimp_procedure_add_argument().  */
+comment|/**  * gimp_procedure_add_argument:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the argument specification.  *  * Add a new argument to @procedure according to @pspec specifications.  * The arguments will be ordered according to the call order to  * gimp_procedure_add_argument().  **/
 end_comment
 
 begin_function
@@ -1734,7 +1881,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_return_value:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the return value specification.  *  * Add a new return value to @procedure according to @pspec  * specifications. The returned values will be ordered according to the  * call order to * gimp_procedure_add_return_value().  */
+comment|/**  * gimp_procedure_add_return_value:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the return value specification.  *  * Add a new return value to @procedure according to @pspec  * specifications. The returned values will be ordered according to the  * call order to * gimp_procedure_add_return_value().  **/
 end_comment
 
 begin_function
@@ -1823,6 +1970,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_procedure_get_arguments:  * @procedure:   A #GimpProcedure.  * @n_arguments: (out) Returns the number of arguments.  *  * Returns: (transfer none) (array n-elements=n_arguments): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_argument().  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -1876,6 +2027,10 @@ name|args
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_procedure_get_return_values:  * @procedure:       A #GimpProcedure.  * @n_return_values: (out) Returns the number of return values.  *  * Returns: (transfer none) (array n-elements=n_return_values): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_return_value().  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GParamSpec
@@ -2033,7 +2188,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (in) (nullable) (transfer full):  *             an optional #GError. This parameter should be set if  *             @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  */
+comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (in) (nullable) (transfer full):  *             an optional #GError. This parameter should be set if  *             @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  **/
 end_comment
 
 begin_function
@@ -2581,42 +2736,6 @@ operator|->
 name|priv
 operator|->
 name|help_id
-argument_list|,
-name|g_free
-argument_list|)
-expr_stmt|;
-name|g_clear_pointer
-argument_list|(
-operator|&
-name|procedure
-operator|->
-name|priv
-operator|->
-name|author
-argument_list|,
-name|g_free
-argument_list|)
-expr_stmt|;
-name|g_clear_pointer
-argument_list|(
-operator|&
-name|procedure
-operator|->
-name|priv
-operator|->
-name|copyright
-argument_list|,
-name|g_free
-argument_list|)
-expr_stmt|;
-name|g_clear_pointer
-argument_list|(
-operator|&
-name|procedure
-operator|->
-name|priv
-operator|->
-name|date
 argument_list|,
 name|g_free
 argument_list|)

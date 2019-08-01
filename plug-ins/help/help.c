@@ -110,7 +110,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f17fe0108
+DECL|struct|__anon294f4d3d0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -500,6 +500,11 @@ literal|""
 argument_list|,
 comment|/* FIXME */
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Michael Natterer<mitch@gimp.org>, "
@@ -813,6 +818,11 @@ argument_list|,
 literal|"(Temporary procedure)"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Michael Natterer<mitch@gimp.org>"

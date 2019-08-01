@@ -355,6 +355,11 @@ argument_list|,
 literal|"takes a goat for a walk"
 argument_list|,
 name|PLUG_IN_PROC
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_attribution
+argument_list|(
+name|procedure
 argument_list|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
