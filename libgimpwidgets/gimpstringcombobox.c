@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949413b0103
+DECL|enum|__anon2c73170a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -238,7 +238,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpStringComboBox:id-column:    *    * The column in the associated GtkTreeModel that holds strings to    * be used as labels in the combo-box.    *    * Since: 2.4    */
+comment|/**    * GimpStringComboBox:label-column:    *    * The column in the associated GtkTreeModel that holds strings to    * be used as labels in the combo-box.    *    * Since: 2.4    */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
