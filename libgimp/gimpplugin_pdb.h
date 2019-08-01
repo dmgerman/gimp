@@ -50,8 +50,9 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_plugin_domain_register
+name|_gimp_plugin_domain_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -67,8 +68,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_plugin_help_register
+name|_gimp_plugin_help_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -84,25 +86,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_plugin_menu_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|menu_path
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_plugin_menu_branch_register
+name|_gimp_plugin_menu_branch_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -113,6 +99,24 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|gboolean
+name|_gimp_plugin_menu_register
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|procedure_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
 parameter_list|)
 function_decl|;
 end_function_decl
