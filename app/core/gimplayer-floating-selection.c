@@ -538,6 +538,7 @@ if|if
 condition|(
 name|filter
 condition|)
+block|{
 name|gimp_drawable_merge_filter
 argument_list|(
 name|drawable
@@ -548,11 +549,14 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|TRUE
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_remove_layer
 argument_list|(
 name|image

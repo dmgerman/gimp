@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accfdc30103
+DECL|enum|__anon276076470103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1813,6 +1813,8 @@ name|gimp_object_get_name
 argument_list|(
 name|filter
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|,
 name|cancellable
 argument_list|,

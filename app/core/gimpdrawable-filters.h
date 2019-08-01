@@ -106,6 +106,9 @@ modifier|*
 name|undo_desc
 parameter_list|,
 name|gboolean
+name|clip
+parameter_list|,
+name|gboolean
 name|cancellable
 parameter_list|,
 name|gboolean
