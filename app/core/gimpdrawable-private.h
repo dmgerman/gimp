@@ -53,6 +53,10 @@ name|GimpContainer
 modifier|*
 name|filter_stack
 decl_stmt|;
+DECL|member|bounding_box
+name|GeglRectangle
+name|bounding_box
+decl_stmt|;
 DECL|member|floating_selection
 name|GimpLayer
 modifier|*
