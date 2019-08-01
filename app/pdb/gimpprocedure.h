@@ -170,12 +170,12 @@ modifier|*
 name|help
 decl_stmt|;
 comment|/* Detailed help instructions     */
-DECL|member|author
+DECL|member|authors
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
-comment|/* Author field                   */
+comment|/* Authors field                  */
 DECL|member|copyright
 name|gchar
 modifier|*
@@ -431,7 +431,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -477,7 +477,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -519,7 +519,7 @@ name|help
 parameter_list|,
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 name|gchar
 modifier|*

@@ -174,10 +174,10 @@ name|GRegex
 modifier|*
 name|help_regex
 decl_stmt|;
-DECL|member|author_regex
+DECL|member|authors_regex
 name|GRegex
 modifier|*
-name|author_regex
+name|authors_regex
 decl_stmt|;
 DECL|member|copyright_regex
 name|GRegex
@@ -240,10 +240,10 @@ name|gchar
 modifier|*
 name|help
 decl_stmt|;
-DECL|member|author
+DECL|member|authors
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
 DECL|member|copyright
 name|gchar
@@ -569,7 +569,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_query (GimpPDB * pdb,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs,GError ** error)
+DECL|function|gimp_pdb_query (GimpPDB * pdb,const gchar * name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs,GError ** error)
 name|gimp_pdb_query
 parameter_list|(
 name|GimpPDB
@@ -594,7 +594,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -678,7 +678,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|author
+name|authors
 operator|!=
 name|NULL
 argument_list|,
@@ -831,11 +831,11 @@ name|cleanup
 goto|;
 name|pdb_query
 operator|.
-name|author_regex
+name|authors_regex
 operator|=
 name|g_regex_new
 argument_list|(
-name|author
+name|authors
 argument_list|,
 name|PDB_REGEX_FLAGS
 argument_list|,
@@ -849,7 +849,7 @@ condition|(
 operator|!
 name|pdb_query
 operator|.
-name|author_regex
+name|authors_regex
 condition|)
 goto|goto
 name|cleanup
@@ -1032,13 +1032,13 @@ if|if
 condition|(
 name|pdb_query
 operator|.
-name|author_regex
+name|authors_regex
 condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
 operator|.
-name|author_regex
+name|authors_regex
 argument_list|)
 expr_stmt|;
 if|if
@@ -1108,7 +1108,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_info (GimpPDB * pdb,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GError ** error)
+DECL|function|gimp_pdb_proc_info (GimpPDB * pdb,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** authors,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GError ** error)
 name|gimp_pdb_proc_info
 parameter_list|(
 name|GimpPDB
@@ -1133,7 +1133,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|author
+name|authors
 parameter_list|,
 name|gchar
 modifier|*
@@ -1316,7 +1316,7 @@ name|help
 argument_list|)
 expr_stmt|;
 operator|*
-name|author
+name|authors
 operator|=
 name|strings
 operator|.
@@ -1324,13 +1324,13 @@ name|compat
 condition|?
 name|strings
 operator|.
-name|author
+name|authors
 else|:
 name|g_strdup
 argument_list|(
 name|strings
 operator|.
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1618,11 +1618,11 @@ name|match_string
 argument_list|(
 name|pdb_query
 operator|->
-name|author_regex
+name|authors_regex
 argument_list|,
 name|strings
 operator|.
-name|author
+name|authors
 argument_list|)
 operator|&&
 name|match_string
@@ -2298,7 +2298,7 @@ name|string
 argument_list|,
 name|strings
 operator|.
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|g_string_append_printf
@@ -2747,7 +2747,7 @@ argument_list|)
 expr_stmt|;
 name|strings
 operator|->
-name|author
+name|authors
 operator|=
 name|NULL
 expr_stmt|;
@@ -2784,11 +2784,11 @@ name|help
 expr_stmt|;
 name|strings
 operator|->
-name|author
+name|authors
 operator|=
 name|procedure
 operator|->
-name|author
+name|authors
 expr_stmt|;
 name|strings
 operator|->

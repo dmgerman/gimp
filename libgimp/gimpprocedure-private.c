@@ -195,7 +195,7 @@ argument_list|)
 expr_stmt|;
 name|proc_install
 operator|.
-name|author
+name|authors
 operator|=
 operator|(
 name|gchar

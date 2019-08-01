@@ -5260,7 +5260,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|,
 literal|1
 argument_list|,
@@ -5546,7 +5546,7 @@ name|g_free
 argument_list|(
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -6419,7 +6419,7 @@ argument_list|,
 operator|&
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|,
 literal|1
 argument_list|,
@@ -6680,7 +6680,7 @@ name|g_free
 argument_list|(
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|g_free

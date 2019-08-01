@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0106
 name|enum
-DECL|enum|__anon2ac733500103
+DECL|enum|__anon2c3a1a7c0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -72,7 +72,7 @@ begin_typedef
 unit|};
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac733500203
+DECL|enum|__anon2c3a1a7c0203
 block|{
 DECL|enumerator|GP_PARAM_TYPE_INT
 name|GP_PARAM_TYPE_INT
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac733500303
+DECL|enum|__anon2c3a1a7c0303
 block|{
 DECL|enumerator|GP_PARAM_DEF_TYPE_DEFAULT
 name|GP_PARAM_DEF_TYPE_DEFAULT
@@ -534,7 +534,7 @@ modifier|*
 name|type_name
 decl_stmt|;
 union|union
-DECL|union|__anon2ac73350040a
+DECL|union|__anon2c3a1a7c040a
 block|{
 DECL|member|d_int
 name|gint32
@@ -753,7 +753,7 @@ modifier|*
 name|blurb
 decl_stmt|;
 union|union
-DECL|union|__anon2ac73350050a
+DECL|union|__anon2c3a1a7c050a
 block|{
 DECL|member|m_int
 name|GPParamDefInt
@@ -861,10 +861,10 @@ name|gchar
 modifier|*
 name|help
 decl_stmt|;
-DECL|member|author
+DECL|member|authors
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
 DECL|member|copyright
 name|gchar

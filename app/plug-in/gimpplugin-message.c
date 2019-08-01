@@ -3046,7 +3046,7 @@ name|VALIDATE_OR_NULL
 argument_list|(
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|)
 operator|&&
 name|VALIDATE_OR_NULL
@@ -3504,7 +3504,7 @@ name|help
 argument_list|,
 name|proc_install
 operator|->
-name|author
+name|authors
 argument_list|,
 name|proc_install
 operator|->

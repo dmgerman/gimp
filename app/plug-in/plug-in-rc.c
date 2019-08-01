@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0b7270103
+DECL|enum|__anon2b43645f0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1643,7 +1643,7 @@ argument_list|,
 operator|&
 name|procedure
 operator|->
-name|author
+name|authors
 argument_list|)
 condition|)
 return|return
@@ -4634,7 +4634,7 @@ name|writer
 argument_list|,
 name|procedure
 operator|->
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_linefeed
