@@ -565,7 +565,6 @@ parameter_list|,
 name|GimpPDBStatusType
 name|status
 parameter_list|,
-specifier|const
 name|GError
 modifier|*
 name|error

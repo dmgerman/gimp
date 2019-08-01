@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4df91d0103
+DECL|enum|__anon28fbb4340103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -1926,13 +1926,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (nullable): an optional #GError. This parameter should be  *             set if @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  */
+comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (in) (nullable) (transfer full):  *             an optional #GError. This parameter should be set if  *             @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  */
 end_comment
 
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_procedure_new_return_values (GimpProcedure * procedure,GimpPDBStatusType status,const GError * error)
+DECL|function|gimp_procedure_new_return_values (GimpProcedure * procedure,GimpPDBStatusType status,GError * error)
 name|gimp_procedure_new_return_values
 parameter_list|(
 name|GimpProcedure
@@ -1942,7 +1942,6 @@ parameter_list|,
 name|GimpPDBStatusType
 name|status
 parameter_list|,
-specifier|const
 name|GError
 modifier|*
 name|error
@@ -2188,6 +2187,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
 return|return
 name|args
 return|;
