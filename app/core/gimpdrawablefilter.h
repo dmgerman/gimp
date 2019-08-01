@@ -165,6 +165,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_drawable_filter_set_clip
+parameter_list|(
+name|GimpDrawableFilter
+modifier|*
+name|filter
+parameter_list|,
+name|gboolean
+name|clip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_drawable_filter_set_region
 parameter_list|(
 name|GimpDrawableFilter
