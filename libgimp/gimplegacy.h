@@ -702,6 +702,19 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Notify the main GIMP application that the extension is ready to run  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_extension_ack
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified via the variable length argument list. The return  *  values are returned in the 'GimpParam*' array.  */
 end_comment
 

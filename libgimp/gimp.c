@@ -512,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d8d0900103
+DECL|enum|__anon2783a5c70103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1416,7 +1416,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon28d8d0900203
+DECL|enum|__anon2783a5c70203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3883,34 +3883,6 @@ block|{
 return|return
 name|progname
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_extension_ack:  *  * Notify the main GIMP application that the extension has been properly  * initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure that was registered as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_extension_enable() or  * gimp_extension_process().  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_extension_ack (void)
-name|gimp_extension_ack
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|gp_extension_ack_write
-argument_list|(
-name|_gimp_writechannel
-argument_list|,
-name|NULL
-argument_list|)
-condition|)
-name|gimp_quit
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 

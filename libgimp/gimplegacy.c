@@ -1124,6 +1124,34 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_extension_ack:  *  * Notify the main GIMP application that the extension has been properly  * initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure that was registered as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_extension_enable() or  * gimp_extension_process().  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_extension_ack (void)
+name|gimp_extension_ack
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|gp_extension_ack_write
+argument_list|(
+name|_gimp_writechannel
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_run_procedure: (skip)  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @...:           list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by %GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array and  * passes them to gimp_run_procedure2(). Please look there for further  * information.  *  * Return value: the procedure's return values unless there was an error,  * in which case the zero-th return value will be the error status, and  * the first return value will be a string detailing the error.  **/
 end_comment
 

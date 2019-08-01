@@ -504,5 +504,31 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|_gimp_procedure_extension_ready (GimpProcedure * procedure)
+name|_gimp_procedure_extension_ready
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|gp_extension_ack_write
+argument_list|(
+name|_gimp_writechannel
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

@@ -317,19 +317,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Notify the main GIMP application that the extension is ready to run  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_extension_ack
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Enable asynchronous processing of temp_procs  */
 end_comment
 
