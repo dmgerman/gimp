@@ -209,7 +209,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/**  * SECTION: gimpmetadata  * @title: gimpmetadata  * @short_description: Basic functions for handling #GimpMetadata objects.  * @see_also: gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish(),  *            gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish().  *  * Basic functions for handling #GimpMetadata objects.  **/
+comment|/**  * SECTION: gimpmetadata  * @title: GimpMetadata  * @short_description: Basic functions for handling #GimpMetadata objects.  * @see_also: gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish(),  *            gimp_image_metadata_load_prepare(),  *            gimp_image_metadata_load_finish().  *  * Basic functions for handling #GimpMetadata objects.  **/
 end_comment
 
 begin_define
@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2a2850720108
+DECL|struct|__anon2a3e75c30108
 block|{
 DECL|member|name
 name|gchar

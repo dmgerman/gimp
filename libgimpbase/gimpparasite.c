@@ -78,7 +78,7 @@ file|"gimpparasite.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpparasite  * @title: gimpparasite  * @short_description: Arbitrary pieces of data which can be attached  *                     to various GIMP objects.  * @see_also: gimp_image_parasite_attach(),  *            gimp_drawable_parasite_attach(), gimp_parasite_attach()  *            and their related functions.  *  * Arbitrary pieces of data which can be attached to various GIMP objects.  **/
+comment|/**  * SECTION: gimpparasite  * @title: GimpParasite  * @short_description: Arbitrary pieces of data which can be attached  *                     to various GIMP objects.  * @see_also: gimp_image_parasite_attach(),  *            gimp_drawable_parasite_attach(), gimp_parasite_attach()  *            and their related functions.  *  * Arbitrary pieces of data which can be attached to various GIMP objects.  **/
 end_comment
 
 begin_comment
