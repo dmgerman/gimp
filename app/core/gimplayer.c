@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19b3300103
+DECL|enum|__anon296308570103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -261,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19b3300203
+DECL|enum|__anon296308570203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -956,6 +956,18 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|bounds
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GeglRectangle
+name|gimp_layer_get_bounding_box
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2198,6 +2210,12 @@ operator|->
 name|set_buffer
 operator|=
 name|gimp_layer_set_buffer
+expr_stmt|;
+name|drawable_class
+operator|->
+name|get_bounding_box
+operator|=
+name|gimp_layer_get_bounding_box
 expr_stmt|;
 name|klass
 operator|->
@@ -6467,6 +6485,56 @@ end_function
 
 begin_function
 specifier|static
+name|GeglRectangle
+DECL|function|gimp_layer_get_bounding_box (GimpDrawable * drawable)
+name|gimp_layer_get_bounding_box
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|GimpLayer
+modifier|*
+name|layer
+init|=
+name|GIMP_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimp_layer_get_mask
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+return|return
+name|GIMP_DRAWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|get_bounding_box
+argument_list|(
+name|drawable
+argument_list|)
+return|;
+return|return
+name|gegl_node_get_bounding_box
+argument_list|(
+name|gimp_drawable_get_source_node
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|GimpColorProfile
 modifier|*
 DECL|function|gimp_layer_get_color_profile (GimpColorManaged * managed)
@@ -8082,6 +8150,14 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_drawable_update_bounding_box
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_layer_get_apply_mask
@@ -9342,6 +9418,14 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_drawable_update_bounding_box
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  If applying actually changed the view  */
 if|if
 condition|(
