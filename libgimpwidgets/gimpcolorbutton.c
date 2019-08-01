@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad04d8f0103
+DECL|enum|__anon2883333f0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad04d8f0203
+DECL|enum|__anon2883333f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3007,7 +3007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_ui_manager:  * @button: a #GimpColorButton.  *  * Returns: The @button's #GtkUIManager.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_button_get_ui_manager:  * @button: a #GimpColorButton.  *  * Returns: (transfer none): The @button's #GtkUIManager.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

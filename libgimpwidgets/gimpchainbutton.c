@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acdfe400103
+DECL|enum|__anon2c1688920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -64,7 +64,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acdfe400203
+DECL|enum|__anon2c1688920203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1267,7 +1267,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_get_button  * @button: A #GimpChainButton.  *  * Returns: The #GimpChainButton's button.  *  * Since: 3.0  */
+comment|/**  * gimp_chain_button_get_button  * @button: A #GimpChainButton.  *  * Returns: (transfer none): The #GimpChainButton's button.  *  * Since: 3.0  */
 end_comment
 
 begin_function

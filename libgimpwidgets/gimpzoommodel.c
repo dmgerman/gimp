@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5142060103
+DECL|enum|__anon27aaf8010103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5142060203
+DECL|enum|__anon27aaf8010203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1628,7 +1628,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_button_new:  * @model:     a #GimpZoomModel  * @zoom_type:  * @icon_size: use 0 for a button with text labels  *  * Return value: a newly created GtkButton  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_button_new:  * @model:     a #GimpZoomModel  * @zoom_type:  * @icon_size: use 0 for a button with text labels  *  * Return value: (transfer full): a newly created GtkButton  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function

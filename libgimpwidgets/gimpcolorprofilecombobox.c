@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a79d70103
+DECL|enum|__anon27d7c3150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_get_active_file:  * @combo: a #GimpColorProfileComboBox  *  * Return value: The file of the currently selected color profile,  *               release using g_object_unref() when it is not any  *               longer needed.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_combo_box_get_active_file:  * @combo: a #GimpColorProfileComboBox  *  * Return value: (transfer full): The file of the currently selected  *               color profile, release using g_object_unref() when it  *               is not any longer needed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

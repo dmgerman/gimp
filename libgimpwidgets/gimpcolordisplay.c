@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795492b0103
+DECL|enum|__anon2b4e43300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795492b0203
+DECL|enum|__anon2b4e43300203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1371,7 +1371,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_get_config:  * @display:  *  * Return value: a pointer to the #GimpColorConfig object or %NULL.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_display_get_config:  * @display:  *  * Return value: (transfer none): a pointer to the #GimpColorConfig object or %NULL.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1407,7 +1407,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_display_get_managed:  * @display:  *  * Return value: a pointer to the #GimpColorManaged object or %NULL.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_display_get_managed:  * @display:  *  * Return value: (transfer none): a pointer to the #GimpColorManaged object or %NULL.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

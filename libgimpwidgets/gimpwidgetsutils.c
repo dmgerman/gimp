@@ -296,7 +296,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_grid_attach_aligned:  * @grid:       The #GtkGrid the widgets will be attached to.  * @left:       The column to start with.  * @top:        The row to attach the widgets.  * @label_text: The text for the #GtkLabel which will be attached left of  *              the widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertical alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @columns:    The number of columns the widget will use.  *  * Note that the @label_text can be %NULL and that the widget will be  * attached starting at (@column + 1) in this case, too.  *  * Returns: The created #GtkLabel.  **/
+comment|/**  * gimp_grid_attach_aligned:  * @grid:       The #GtkGrid the widgets will be attached to.  * @left:       The column to start with.  * @top:        The row to attach the widgets.  * @label_text: The text for the #GtkLabel which will be attached left of  *              the widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertical alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @columns:    The number of columns the widget will use.  *  * Note that the @label_text can be %NULL and that the widget will be  * attached starting at (@column + 1) in this case, too.  *  * Returns: (transfer none): The created #GtkLabel.  **/
 end_comment
 
 begin_function
@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c114dc50108
+DECL|struct|__anon2a0eb7f00108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1505,7 +1505,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_monitor_get_color_profile:  * @monitor: a #GdkMonitor  *  * This function returns the #GimpColorProfile of @monitor  * or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Return value: the monitor's #GimpColorProfile, or %NULL.  **/
+comment|/**  * gimp_monitor_get_color_profile:  * @monitor: a #GdkMonitor  *  * This function returns the #GimpColorProfile of @monitor  * or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Return value: (transfer full): the monitor's #GimpColorProfile, or %NULL.  **/
 end_comment
 
 begin_function
