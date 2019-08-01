@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9c2e0c0103
+DECL|enum|__anon2934ea080103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -673,7 +673,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable) free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called gimp_extension_ack(), which  * means that the procedure has done its initialization, installed its  * temporary procedures and is ready to run.  *  * %GIMP_TEMPORARY must be used for temporary procedures that are  * created during a plug-ins lifetime. They must be added to the  * #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PLUGIN and %GIMP_EXTENSION procedures the call of  * @run_func is basically the lifetime of the plug-in.  *  * Returns: a new #GimpProcedure.  **/
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable) free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called  * gimp_procedure_extension_ready(), which means that the procedure  * has done its initialization, installed its temporary procedures and  * is ready to run.  *  *<emphasis>Not calling gimp_procedure_extension_reads() from a  * %GIMP_EXTENSION procedure will cause the GIMP core to lock  * up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no arguments added  * is an "automatic" extension that will be automatically started on  * each GIMP startup.  *  * %GIMP_TEMPORARY must be used for temporary procedures that are  * created during a plug-ins lifetime. They must be added to the  * #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PLUGIN and %GIMP_EXTENSION procedures the call of  * @run_func is basically the lifetime of the plug-in.  *  * Returns: a new #GimpProcedure.  **/
 end_comment
 
 begin_function
@@ -920,7 +920,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_set_menu_label:  * @procedure:  A #GimpProcedure.  * @menu_label: The @procedure's menu label.  *  * Sets the label to use for the @procedure's menu entry, The  * location(s) where to register in the menu hierarchy is chosen using  * gimp_procedure_add_menu_path().  *  * For translations of menu labels to work properly, this string  * should only be marked for translation but passed to this function  * untranslated, for example using N_("Label").  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_set_menu_label:  * @procedure:  A #GimpProcedure.  * @menu_label: The @procedure's menu label.  *  * Sets the label to use for the @procedure's menu entry, The  * location(s) where to register in the menu hierarchy is chosen using  * gimp_procedure_add_menu_path().  *  * For translations of menu labels to work properly, @menu_label  * should only be marked for translation but passed to this function  * untranslated, for example using N_("Label"). GIMP will look up the  * translation in the textdomain registered for the plug-in.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1009,7 +1009,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_set_documentation:  * @procedure: A #GimpProcedure.  * @blurb:     The @procedure's blurb.  * @help:      The @procedure's help text.  * @help_id:   The @procedure's help ID.  *  * @blurb is used as the @procedure's tooltip when represented in the UI,  * for example as a menu entry.  *  * For translations of tooltips to work properly, this string should  * only be marked for translation but passed to this function  * untranslated, for example using N_("Blurb").  *  * @help: is a free-form text that's meant as documentation for  * developers of scripts and plug-ins.  *  * Sets various documentation strings on @procedure.  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_set_documentation:  * @procedure: A #GimpProcedure.  * @blurb:     The @procedure's blurb.  * @help:      The @procedure's help text.  * @help_id:   The @procedure's help ID.  *  * @blurb is used as the @procedure's tooltip when represented in the UI,  * for example as a menu entry.  *  * For translations of tooltips to work properly, @blurb should only  * be marked for translation but passed to this function untranslated,  * for example using N_("Blurb"). GIMP will look up the translation in  * the textdomain registered for the plug-in.  *  * @help: is a free-form text that's meant as documentation for  * developers of scripts and plug-ins.  *  * Sets various documentation strings on @procedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1791,7 +1791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_menu_path:  * @procedure: A #GimpProcedure.  * @menu_path: The @procedure's additional menu path.  *  * Adds a menu path to te procedure. Only procedures which have a menu  * label can add a menu path.  *  * Menu paths are untranslated paths to menus and submenus with the  * syntax:  *  *&lt;Prefix&gt;/Path/To/Submenu  *  * for instance:  *  *&lt;Image&gt;/Layer/Transform  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_add_menu_path:  * @procedure: A #GimpProcedure.  * @menu_path: The @procedure's additional menu path.  *  * Adds a menu path to te procedure. Only procedures which have a menu  * label can add a menu path.  *  * Menu paths are untranslated paths to menus and submenus with the  * syntax:  *  *&lt;Prefix&gt;/Path/To/Submenu  *  * for instance:  *  *&lt;Image&gt;/Layer/Transform  *  * See also: gimp_plug_in_add_menu_branch().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
