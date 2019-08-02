@@ -210,7 +210,7 @@ modifier|*
 name|n_procedures
 parameter_list|)
 function_decl|;
-comment|/**    * GimpPlugInClass::create_procedure:    * @plug_in: a #GimpPlugIn.    * @name: procedure name.    *    * This method should be overridden by all plug-ins and return a newly    * allocated #GimpProcedure named @name.    * It will be called for every @name as returned by query_procedures()    * so care must be taken.    *    * Returns: (transfer full):    *          the procedure to be registered by @plug_in.    */
+comment|/**    * GimpPlugInClass::create_procedure:    * @plug_in: a #GimpPlugIn.    * @name: procedure name.    *    * This method should be overridden by all plug-ins and return a newly    * allocated #GimpProcedure named @name.    * It will be called for every @name as returned by query_procedures()    * and init_procedures() so care must be taken to handle them all.    *    * Returns: (transfer full):    *          the procedure to be registered by @plug_in.    */
 DECL|member|create_procedure
 name|GimpProcedure
 modifier|*
