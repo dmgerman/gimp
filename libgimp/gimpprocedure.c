@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c866aca0103
+DECL|enum|__anon2ad96c0e0103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -2074,7 +2074,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_get_arguments:  * @procedure:   A #GimpProcedure.  * @n_arguments: (out) Returns the number of arguments.  *  * Returns: (transfer none) (array n-elements=n_arguments): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_argument().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_get_arguments:  * @procedure:   A #GimpProcedure.  * @n_arguments: (out): Returns the number of arguments.  *  * Returns: (transfer none) (array length=n_arguments): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_argument().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2132,7 +2132,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_get_return_values:  * @procedure:       A #GimpProcedure.  * @n_return_values: (out) Returns the number of return values.  *  * Returns: (transfer none) (array n-elements=n_return_values): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_return_value().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_get_return_values:  * @procedure:       A #GimpProcedure.  * @n_return_values: (out): Returns the number of return values.  *  * Returns: (transfer none) (array length=n_return_values): An array  *          of @GParamSpec in the order added with  *          gimp_procedure_add_return_value().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2593,7 +2593,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_run:  * @procedure: a @GimpProcedure.  * @args:      the @procedure's arguments.  *  * Runs the procedure, calling the run_func given in gimp_procedure_new().  *  * Returns: (transfer-full): The @procedure's return values.  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_run:  * @procedure: a @GimpProcedure.  * @args:      the @procedure's arguments.  *  * Runs the procedure, calling the run_func given in gimp_procedure_new().  *  * Returns: (transfer full): The @procedure's return values.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

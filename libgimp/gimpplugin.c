@@ -693,7 +693,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_add_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function removes a temporary procedure from @plug_in by the  * procedure's @name.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_remove_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function removes a temporary procedure from @plug_in by the  * procedure's @name.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -776,7 +776,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_get_temp_procedures:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function retrieves the list of temporary procedure of @plug_in as  * added with gimp_plug_in_add_temp_procedure().  *  * Returns: (transfer none) (element-type GimpProcedure): The list of  *          procedures.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_get_temp_procedures:  * @plug_in: A #GimpPlugIn  *  * This function retrieves the list of temporary procedure of @plug_in as  * added with gimp_plug_in_add_temp_procedure().  *  * Returns: (transfer none) (element-type GimpProcedure): The list of  *          procedures.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
