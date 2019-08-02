@@ -38,15 +38,6 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|_gimp_close
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|_gimp_config
 parameter_list|(
 name|GPConfig

@@ -512,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293d8ad60103
+DECL|enum|__anon29e571ae0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -598,6 +598,16 @@ name|gchar
 modifier|*
 name|argv
 index|[]
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_close
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1286,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon293d8ad60203
+DECL|enum|__anon29e571ae0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2929,7 +2939,7 @@ name|query_proc
 argument_list|()
 expr_stmt|;
 block|}
-name|_gimp_close
+name|gimp_close
 argument_list|()
 expr_stmt|;
 return|return
@@ -2985,7 +2995,7 @@ name|init_proc
 argument_list|()
 expr_stmt|;
 block|}
-name|_gimp_close
+name|gimp_close
 argument_list|()
 expr_stmt|;
 return|return
@@ -3051,6 +3061,9 @@ name|run_proc
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_close
+argument_list|()
+expr_stmt|;
 return|return
 name|EXIT_SUCCESS
 return|;
@@ -3069,7 +3082,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|_gimp_close
+name|gimp_close
 argument_list|()
 expr_stmt|;
 if|#
@@ -3786,9 +3799,10 @@ comment|/*  private functions  */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|_gimp_close (void)
-name|_gimp_close
+DECL|function|gimp_close (void)
+name|gimp_close
 parameter_list|(
 name|void
 parameter_list|)

@@ -586,12 +586,7 @@ argument_list|,
 name|NULL
 argument_list|)
 condition|)
-block|{
-name|_gimp_close
-argument_list|()
-expr_stmt|;
 return|return;
-block|}
 switch|switch
 condition|(
 name|msg
@@ -607,9 +602,6 @@ argument_list|(
 operator|&
 name|msg
 argument_list|)
-expr_stmt|;
-name|_gimp_close
-argument_list|()
 expr_stmt|;
 return|return;
 case|case
@@ -655,9 +647,6 @@ argument_list|(
 operator|&
 name|msg
 argument_list|)
-expr_stmt|;
-name|_gimp_close
-argument_list|()
 expr_stmt|;
 return|return;
 case|case
