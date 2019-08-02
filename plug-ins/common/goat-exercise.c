@@ -130,10 +130,6 @@ parameter_list|(
 name|GimpPlugIn
 modifier|*
 name|plug_in
-parameter_list|,
-name|gint
-modifier|*
-name|n_procedures
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -248,16 +244,12 @@ specifier|static
 name|gchar
 modifier|*
 modifier|*
-DECL|function|goat_query_procedures (GimpPlugIn * plug_in,gint * n_procedures)
+DECL|function|goat_query_procedures (GimpPlugIn * plug_in)
 name|goat_query_procedures
 parameter_list|(
 name|GimpPlugIn
 modifier|*
 name|plug_in
-parameter_list|,
-name|gint
-modifier|*
-name|n_procedures
 parameter_list|)
 block|{
 name|gchar
@@ -282,11 +274,6 @@ name|g_strdup
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|)
-expr_stmt|;
-operator|*
-name|n_procedures
-operator|=
-literal|1
 expr_stmt|;
 return|return
 name|procedures
