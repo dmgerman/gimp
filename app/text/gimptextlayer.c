@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af8d4ad0103
+DECL|enum|__anon2c3f04e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1690,7 +1690,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_text_layer_new:  * @image: the #GimpImage the layer should belong to  * @text: a #GimpText object  *  * Creates a new text layer.  *  * Returns: a new #GimpTextLayer or %NULL in case of a problem  **/
+comment|/**  * gimp_text_layer_new:  * @image: the #GimpImage the layer should belong to  * @text: a #GimpText object  *  * Creates a new text layer.  *  * Returns: (nullable): a new #GimpTextLayer or %NULL in case of a problem  **/
 end_comment
 
 begin_function

@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275421150103
+DECL|enum|__anon2c64576b0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275421150203
+DECL|enum|__anon2c64576b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -140,7 +140,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275421150303
+DECL|enum|__anon2c64576b0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -1857,7 +1857,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manually set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: 2.4  */
+comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: (nullable): the string manually set to be shown,  *          or %NULL if values are shown in a normal fashion.  *  * Since: 2.4  */
 end_comment
 
 begin_function

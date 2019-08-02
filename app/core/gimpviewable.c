@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e1d100103
+DECL|enum|__anon2c3d3cd80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e1d100203
+DECL|enum|__anon2c3d3cd80203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -2935,7 +2935,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
+comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: (nullable): A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
@@ -3152,7 +3152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
+comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: (nullable): A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
@@ -3424,7 +3424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: A #GdkPixbuf containing the preview pixbuf, or %NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: (nullable): A #GdkPixbuf containing the preview pixbuf,  *          or %NULL if none can be found or created.  **/
 end_comment
 
 begin_function
@@ -3639,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: A #GdkPixbuf containing the preview, or %NULL if none can  *          be created.  **/
+comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: (nullable): A #GdkPixbuf containing the preview,  *          or %NULL if none can be created.  **/
 end_comment
 
 begin_function

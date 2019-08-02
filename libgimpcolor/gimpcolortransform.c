@@ -79,7 +79,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c61035d0103
+DECL|enum|__anon29510e540103
 block|{
 DECL|enumerator|PROGRESS
 name|PROGRESS
@@ -408,7 +408,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new:  * @src_profile:      the source #GimpColorProfile  * @src_format:       the source #Babl format  * @dest_profile:     the destination #GimpColorProfile  * @dest_format:      the destination #Babl format  * @rendering_intent: the rendering intent  * @flags:            transform flags  *  * This function creates an color transform.  *  * The color transform is determined exclusively by @src_profile and  * @dest_profile. The color spaces of @src_format and @dest_format are  * ignored, the formats are only used to decide between what pixel  * encodings to transform.  *  * Note: this function used to return %NULL if  * gimp_color_transform_can_gegl_copy() returned %TRUE for  * @src_profile and @dest_profile. This is no longer the case because  * special care has to be taken not to perform multiple implicit color  * transforms caused by babl formats with color spaces. Now, it always  * returns a non-%NULL transform and the code takes care of doing only  * exactly the requested color transform.  *  * Returns: the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new:  * @src_profile:      the source #GimpColorProfile  * @src_format:       the source #Babl format  * @dest_profile:     the destination #GimpColorProfile  * @dest_format:      the destination #Babl format  * @rendering_intent: the rendering intent  * @flags:            transform flags  *  * This function creates an color transform.  *  * The color transform is determined exclusively by @src_profile and  * @dest_profile. The color spaces of @src_format and @dest_format are  * ignored, the formats are only used to decide between what pixel  * encodings to transform.  *  * Note: this function used to return %NULL if  * gimp_color_transform_can_gegl_copy() returned %TRUE for  * @src_profile and @dest_profile. This is no longer the case because  * special care has to be taken not to perform multiple implicit color  * transforms caused by babl formats with color spaces. Now, it always  * returns a non-%NULL transform and the code takes care of doing only  * exactly the requested color transform.  *  * Returns: (nullable): the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -811,7 +811,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:    the source #GimpColorProfile  * @src_format:     the source #Babl format  * @dest_profile:   the destination #GimpColorProfile  * @dest_format:    the destination #Babl format  * @proof_profile:  the proof #GimpColorProfile  * @proof_intent:   the proof intent  * @display_intent: the display intent  * @flags:          transform flags  *  * This function creates a simulation / proofing color transform.  *  * See gimp_color_transform_new() about the color spaces to transform  * between.  *  * Returns: the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_transform_new_proofing:  * @src_profile:    the source #GimpColorProfile  * @src_format:     the source #Babl format  * @dest_profile:   the destination #GimpColorProfile  * @dest_format:    the destination #Babl format  * @proof_profile:  the proof #GimpColorProfile  * @proof_intent:   the proof intent  * @display_intent: the display intent  * @flags:          transform flags  *  * This function creates a simulation / proofing color transform.  *  * See gimp_color_transform_new() about the color spaces to transform  * between.  *  * Returns: (nullable): the #GimpColorTransform, or %NULL if there was an error.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

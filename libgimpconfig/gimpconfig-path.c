@@ -931,7 +931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_new_for_config_path:  * @path:   a NUL-terminated string in UTF-8 encoding  * @error:  return location for errors  *  * Expands @path using gimp_config_path_expand() and returns a #GFile  * for the expanded path.  *  * To reverse the expansion, use gimp_file_get_config_path().  *  * Returns: (transfer full): a newly allocated #GFile, or %NULL if the expansion failed.  *  * Since: 2.10  **/
+comment|/**  * gimp_file_new_for_config_path:  * @path:   a NUL-terminated string in UTF-8 encoding  * @error:  return location for errors  *  * Expands @path using gimp_config_path_expand() and returns a #GFile  * for the expanded path.  *  * To reverse the expansion, use gimp_file_get_config_path().  *  * Returns: (nullable) (transfer full): a newly allocated #GFile,  *          or %NULL if the expansion failed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1958,7 +1958,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon2ad52a5b0108
+DECL|struct|__anon291bcf690108
 block|{
 DECL|member|id
 specifier|const

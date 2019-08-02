@@ -581,7 +581,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_id_table_lookup:  * @id_table: An #GimpIdTable  * @id: The ID of the data to lookup  *  * Lookup data based on ID.  *  * Returns: The data, or NULL if no data with the given ID was found.  **/
+comment|/**  * gimp_id_table_lookup:  * @id_table: An #GimpIdTable  * @id: The ID of the data to lookup  *  * Lookup data based on ID.  *  * Returns: (nullable) (transfer none): The data,  *          or %NULL if no data with the given ID was found.  **/
 end_comment
 
 begin_function

@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d96cdc0103
+DECL|enum|__anon27de79520103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d96cdc0203
+DECL|enum|__anon27de79520203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d96cdc0303
+DECL|enum|__anon27de79520303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -938,7 +938,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_proc_browser_dialog_get_selected:  * @dialog: a #GimpProcBrowserDialog  *  * Retrieves the name of the currently selected procedure.  *  * Returns: The name of the selected procedure of %NULL if no  *               procedure is selected.  *  * Since: 2.4  **/
+comment|/**  * gimp_proc_browser_dialog_get_selected:  * @dialog: a #GimpProcBrowserDialog  *  * Retrieves the name of the currently selected procedure.  *  * Returns: (nullable): The name of the selected procedure of %NULL if no  *               procedure is selected.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

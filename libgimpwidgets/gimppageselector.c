@@ -82,7 +82,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6f48f0103
+DECL|enum|__anon2a58e0530103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6f48f0203
+DECL|enum|__anon2a58e0530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af6f48f0303
+DECL|enum|__anon2a58e0530303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -2129,7 +2129,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: (transfer none): The page's thumbnail, or %NULL if none is set. The returned  *          pixbuf is owned by #GimpPageSelector and must not be  *          unref'ed when no longer needed.  *  * Since: 2.4  **/
+comment|/**  * gimp_page_selector_get_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: (nullable) (transfer none): The page's thumbnail, or %NULL if none  *          is set. The returned pixbuf is owned by #GimpPageSelector and must  *          not be unref'ed when no longer needed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2396,7 +2396,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: The page's label, or %NULL if none is set. This is a newly  *          allocated string that should be g_free()'d when no longer  *          needed.  *  * Since: 2.4  **/
+comment|/**  * gimp_page_selector_get_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to get the thumbnail for.  *  * Returns: (nullable) (transfer full): The page's label, or %NULL if none is  *          set. This is a newly allocated string that should be g_free()'d  *          when no longer needed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2773967f0103
+DECL|enum|__anon2ad6903b0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2773967f0203
+DECL|enum|__anon2ad6903b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4077,7 +4077,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_duplicate:  * @data: a #GimpData object  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
+comment|/**  * gimp_data_duplicate:  * @data: a #GimpData object  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: (nullable) (transfer full): the newly created copy, or %NULL if  *          @data cannot be copied.  **/
 end_comment
 
 begin_function

@@ -535,7 +535,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Returns: the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_from_file:  * @file:  a #GFile  * @error: return location for #GError  *  * This function opens an ICC color profile from @file.  *  * Returns: (nullable): the #GimpColorProfile, or %NULL. On error, %NULL is  *               returned and @error is set.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_from_icc_profile:  * @data:   pointer to memory containing an ICC profile  * @length: length of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Returns: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_from_icc_profile:  * @data:   pointer to memory containing an ICC profile  * @length: length of the profile in memory, in bytes  * @error:  return location for #GError  *  * This function opens an ICC color profile from memory. On error,  * %NULL is returned and @error is set.  *  * Returns: (nullable): the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1022,7 +1022,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_from_lcms_profile:  * @lcms_profile: an LCMS cmsHPROFILE pointer  * @error:        return location for #GError  *  * This function creates a GimpColorProfile from a cmsHPROFILE. On  * error, %NULL is returned and @error is set. The passed  * @lcms_profile pointer is not retained by the created  * #GimpColorProfile.  *  * Returns: the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_from_lcms_profile:  * @lcms_profile: an LCMS cmsHPROFILE pointer  * @error:        return location for #GError  *  * This function creates a GimpColorProfile from a cmsHPROFILE. On  * error, %NULL is returned and @error is set. The passed  * @lcms_profile pointer is not retained by the created  * #GimpColorProfile.  *  * Returns: (nullable): the #GimpColorProfile, or %NULL.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3437,7 +3437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_srgb_trc_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Returns: (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_srgb_trc_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a sRGB gamma  * TRC and @profile's RGB chromacities and whitepoint.  *  * Returns: (nullable) (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3473,7 +3473,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_new_linear_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Returns: (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_new_linear_from_color_profile:  * @profile: a #GimpColorProfile  *  * This function creates a new RGB #GimpColorProfile with a linear TRC  * and @profile's RGB chromacities and whitepoint.  *  * Returns: (nullable) (transfer full): the new #GimpColorProfile, or %NULL if  *               @profile is not an RGB profile or not matrix-based.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -5034,7 +5034,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_get_lcms_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B',  * R'G'B'A, Y, YA, Y', Y'A and the cairo-RGB24 and cairo-ARGB32 formats.  *  * Returns: the #Babl format to be used instead of @format, or %NULL  *               if the passed @format is not supported at all.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_get_lcms_format:  * @format:      a #Babl format  * @lcms_format: return location for an lcms format  *  * This function takes a #Babl format and returns the lcms format to  * be used with that @format. It also returns a #Babl format to be  * used instead of the passed @format, which usually is the same as  * @format, unless lcms doesn't support @format.  *  * Note that this function currently only supports RGB, RGBA, R'G'B',  * R'G'B'A, Y, YA, Y', Y'A and the cairo-RGB24 and cairo-ARGB32 formats.  *  * Returns: (nullable): the #Babl format to be used instead of @format, or %NULL  *               if the passed @format is not supported at all.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

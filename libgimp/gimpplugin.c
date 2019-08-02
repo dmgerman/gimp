@@ -856,7 +856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_get_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function retrieves a temporary procedure from @plug_in by the  * procedure's @name.  *  * Returns: (transfer none): The procedure if registered, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_get_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function retrieves a temporary procedure from @plug_in by the  * procedure's @name.  *  * Returns: (nullable) (transfer none): The procedure if registered, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

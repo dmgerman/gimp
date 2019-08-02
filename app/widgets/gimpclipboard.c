@@ -900,7 +900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_object:  * @gimp: pointer to #Gimp  *  * Retrieves either an image or a buffer from the global image cut  * buffer of @gimp.  *  * The returned #GimpObject needs to be unref'ed when it's no longer  * needed.  *  * Returns: a reference to a #GimpObject or %NULL if there's no  *               image or buffer in the clipboard  **/
+comment|/**  * gimp_clipboard_get_object:  * @gimp: pointer to #Gimp  *  * Retrieves either an image or a buffer from the global image cut  * buffer of @gimp.  *  * The returned #GimpObject needs to be unref'ed when it's no longer  * needed.  *  * Returns: (nullable): a reference to a #GimpObject or %NULL if there's no  *               image or buffer in the clipboard  **/
 end_comment
 
 begin_function
@@ -960,7 +960,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_image:  * @gimp: pointer to #Gimp  *  * Retrieves an image from the global image cut buffer of @gimp.  *  * The returned #GimpImage needs to be unref'ed when it's no longer  * needed.  *  * Returns: a reference to a #GimpImage or %NULL if there's no  *               image in the clipboard  **/
+comment|/**  * gimp_clipboard_get_image:  * @gimp: pointer to #Gimp  *  * Retrieves an image from the global image cut buffer of @gimp.  *  * The returned #GimpImage needs to be unref'ed when it's no longer  * needed.  *  * Returns: (nullable): a reference to a #GimpImage or %NULL if there's no  *               image in the clipboard  **/
 end_comment
 
 begin_function
@@ -1118,7 +1118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_buffer:  * @gimp: pointer to #Gimp  *  * Retrieves either image data from %GDK_SELECTION_CLIPBOARD or from  * the global cut buffer of @gimp.  *  * The returned #GimpBuffer needs to be unref'ed when it's no longer  * needed.  *  * Returns: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
+comment|/**  * gimp_clipboard_get_buffer:  * @gimp: pointer to #Gimp  *  * Retrieves either image data from %GDK_SELECTION_CLIPBOARD or from  * the global cut buffer of @gimp.  *  * The returned #GimpBuffer needs to be unref'ed when it's no longer  * needed.  *  * Returns: (nullable): a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
 end_comment
 
 begin_function
@@ -1303,7 +1303,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_svg:  * @gimp: pointer to #Gimp  * @svg_length: returns the size of the SVG stream in bytes  *  * Retrieves SVG data from %GDK_SELECTION_CLIPBOARD or from the global  * SVG buffer of @gimp.  *  * The returned data needs to be freed when it's no longer needed.  *  * Returns: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
+comment|/**  * gimp_clipboard_get_svg:  * @gimp: pointer to #Gimp  * @svg_length: returns the size of the SVG stream in bytes  *  * Retrieves SVG data from %GDK_SELECTION_CLIPBOARD or from the global  * SVG buffer of @gimp.  *  * The returned data needs to be freed when it's no longer needed.  *  * Returns: (nullable): a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
 end_comment
 
 begin_function
@@ -1508,7 +1508,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_curve:  * @gimp: pointer to #Gimp  *  * Retrieves curve data from %GDK_SELECTION_CLIPBOARD or from the global  * curve buffer of @gimp.  *  * The returned curve needs to be unref'ed when it's no longer needed.  *  * Returns: a reference to a #GimpCurve or %NULL if there's no  *               curve data  **/
+comment|/**  * gimp_clipboard_get_curve:  * @gimp: pointer to #Gimp  *  * Retrieves curve data from %GDK_SELECTION_CLIPBOARD or from the global  * curve buffer of @gimp.  *  * The returned curve needs to be unref'ed when it's no longer needed.  *  * Returns: (nullable): a reference to a #GimpCurve or %NULL if there's no  *               curve data  **/
 end_comment
 
 begin_function

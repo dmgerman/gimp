@@ -549,7 +549,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Returns: (transfer full): A reference to a #GdkWindow or %NULL.  *               You should unref the window using g_object_unref() as  *               soon as you don't need it any longer.  *  * Since: 2.4  */
+comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Returns: (nullable) (transfer full): A reference to a #GdkWindow or %NULL.  *               You should unref the window using g_object_unref() as  *               soon as you don't need it any longer.  *  * Since: 2.4  */
 end_comment
 
 begin_function

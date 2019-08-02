@@ -106,7 +106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_new:  * @tag_string: a tag name.  *  * If given tag name is not valid, an attempt will be made to fix it.  *  * Returns: a new #GimpTag object, or NULL if tag string is invalid and  * cannot be fixed.  **/
+comment|/**  * gimp_tag_new:  * @tag_string: a tag name.  *  * If given tag name is not valid, an attempt will be made to fix it.  *  * Returns: (nullable) (transfer full): a new #GimpTag object,  *          or NULL if tag string is invalid and cannot be fixed.  **/
 end_comment
 
 begin_function
@@ -230,7 +230,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_try_new:  * @tag_string: a tag name.  *  * Similar to gimp_tag_new(), but returns NULL if tag is surely not equal  * to any of currently created tags. It is useful for tag querying to avoid  * unneeded comparisons. If tag is created, however, it does not mean that  * it would necessarily match with some other tag.  *  * Returns: new #GimpTag object, or NULL if tag will not match with any  * other #GimpTag.  **/
+comment|/**  * gimp_tag_try_new:  * @tag_string: a tag name.  *  * Similar to gimp_tag_new(), but returns NULL if tag is surely not equal  * to any of currently created tags. It is useful for tag querying to avoid  * unneeded comparisons. If tag is created, however, it does not mean that  * it would necessarily match with some other tag.  *  * Returns: (nullable) (transfer full): new #GimpTag object,  *          or NULL if tag will not match with any other #GimpTag.  **/
 end_comment
 
 begin_function

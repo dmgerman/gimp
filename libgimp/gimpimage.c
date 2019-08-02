@@ -186,7 +186,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (transfer full): The exif/ptc/xmp metadata, or %NULL if  *          there is none.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7c5ab10103
+DECL|enum|__anon2c2f0d430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3418,7 +3418,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_thumbnail_load_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred #GimpThumbSize for the preview  * @error: return location for possible errors  *  * Attempts to load a thumbnail preview for the image associated with  * @thumbnail. Before you use this function you need need to set an  * image location using gimp_thumbnail_set_uri() or  * gimp_thumbnail_set_filename(). You can also peek at the thumb  * before loading it using gimp_thumbnail_peek_thumb.  *  * This function will return the best matching pixbuf for the  * specified @size. It returns the pixbuf as loaded from disk. It is  * left to the caller to scale it to the desired size. The returned  * pixbuf may also represent an outdated preview of the image file.  * In order to verify if the preview is uptodate, you should check the  * "thumb_state" property after calling this function.  *  * Returns: (transfer full): a preview pixbuf or %NULL if no  *               thumbnail was found  **/
+comment|/**  * gimp_thumbnail_load_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred #GimpThumbSize for the preview  * @error: return location for possible errors  *  * Attempts to load a thumbnail preview for the image associated with  * @thumbnail. Before you use this function you need need to set an  * image location using gimp_thumbnail_set_uri() or  * gimp_thumbnail_set_filename(). You can also peek at the thumb  * before loading it using gimp_thumbnail_peek_thumb.  *  * This function will return the best matching pixbuf for the  * specified @size. It returns the pixbuf as loaded from disk. It is  * left to the caller to scale it to the desired size. The returned  * pixbuf may also represent an outdated preview of the image file.  * In order to verify if the preview is uptodate, you should check the  * "thumb_state" property after calling this function.  *  * Returns: (nullable) (transfer full): a preview pixbuf or %NULL if no  *               thumbnail was found  **/
 end_comment
 
 begin_function
