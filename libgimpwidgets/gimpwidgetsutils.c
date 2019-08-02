@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0eb7f00108
+DECL|struct|__anon29a2e5140108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1901,6 +1901,10 @@ name|profile
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_widget_get_color_profile:  * @monitor: a #GdkMonitor  *  * This function returns the #GimpColorProfile of the monitor @widget is  * currently displayed on, or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Return value: (transfer full): @widget's monitor's #GimpColorProfile, or %NULL.  **/
+end_comment
 
 begin_function
 name|GimpColorProfile

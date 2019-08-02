@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a86910103
+DECL|enum|__anon275539ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a86910203
+DECL|enum|__anon275539ba0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -933,6 +933,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_clone:  * @display: a #GimpColorDisplay  *  * Creates a copy of @display.  *  * Returns: (transfer full): a duplicate of @display.  *  * Since: 1.3.10  **/
+end_comment
+
 begin_function
 name|GimpColorDisplay
 modifier|*
@@ -1050,6 +1054,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_load_state:  * @display: a #GimpColorDisplay  * @state:   a #GimpParasite  *  * Configures @display from the contents of the parasite @state.  * @state must be a properly serialized configuration for a  * #GimpColorDisplay, such as saved by gimp_color_display_save_state().  *  * Since: 1.3.10  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_display_load_state (GimpColorDisplay * display,GimpParasite * state)
@@ -1103,6 +1111,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_save_state:  * @display: a #GimpColorDisplay  *  * Saves the configuration state of @display as a new parasite.  *  * Returns: (transfer full): a #GimpParasite  *  * Since: 1.3.10  **/
+end_comment
 
 begin_function
 name|GimpParasite
@@ -1173,6 +1185,10 @@ name|parasite
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_configure:  * @display: a #GimpColorDisplay  *  * Creates a configuration widget for @display which can be added to a  * container widget.  *  * Returns: (transfer full): a new configuration widget for @display, or  *          %NULL if no specific widget exists.  *  * Since: 1.3.10  **/
+end_comment
 
 begin_function
 name|GtkWidget

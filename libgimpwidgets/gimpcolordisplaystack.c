@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon287fea730103
+DECL|enum|__anon288d14b90103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -531,6 +531,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_color_display_stack_new:  *  * Creates a new stack of color correction modules.  *  * Returns: (transfer full): a newly allocated #GimpColorDisplayStack.  *  * Since: 1.3.23  **/
+end_comment
+
 begin_function
 name|GimpColorDisplayStack
 modifier|*
@@ -550,6 +554,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_stack_clone:  * @stack: a #GimpColorDisplayStack  *  * Creates a copy of @stack with all its display color modules also  * duplicated.  *  * Returns: (transfer full): a duplicate of @stack.  *  * Since: 1.3.23  **/
+end_comment
 
 begin_function
 name|GimpColorDisplayStack
@@ -650,6 +658,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_stack_changed:  * @stack: a #GimpColorDisplayStack  *  * Emit the "changed" signal of @stack.  *  * Since: 1.3.23  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_display_stack_changed (GimpColorDisplayStack * stack)
@@ -683,6 +695,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_stack_get_filters:  * @stack: a #GimpColorDisplayStack  *  * Gets the list of added color modules.  *  * Returns: (transfer none) (element-type GimpColorDisplay):             the list of @stack's display color modules.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GList
 modifier|*
@@ -714,6 +730,10 @@ name|filters
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_stack_add:  * @stack:   a #GimpColorDisplayStack  * @display: (transfer none): a #GimpColorDisplay  *  * Add the color module @display to @stack.  *  * Since: 1.3.23  **/
+end_comment
 
 begin_function
 name|void
@@ -851,6 +871,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_display_stack_remove:  * @stack:   a #GimpColorDisplayStack  * @display: (transfer none): a #GimpColorDisplay  *  * Remove the color module @display from @stack.  *  * Since: 1.3.23  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_display_stack_remove (GimpColorDisplayStack * stack,GimpColorDisplay * display)
@@ -952,6 +976,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_stack_reorder_up:  * @stack:   a #GimpColorDisplayStack  * @display: a #GimpColorDisplay  *  * Move the color module @display up in the filter list of @stack.  *  * Since: 1.3.23  **/
+end_comment
 
 begin_function
 name|void
@@ -1074,6 +1102,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_display_stack_reorder_down:  * @stack:   a #GimpColorDisplayStack  * @display: a #GimpColorDisplay  *  * Move the color module @display down in the filter list of @stack.  *  * Since: 1.3.23  **/
+end_comment
 
 begin_function
 name|void
