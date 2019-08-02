@@ -658,6 +658,16 @@ name|type_name
 argument_list|,
 literal|"GimpParamString"
 argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|param_def
+operator|->
+name|type_name
+argument_list|,
+literal|"GParamString"
+argument_list|)
 condition|)
 return|return
 name|gimp_param_spec_string
