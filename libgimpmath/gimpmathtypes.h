@@ -170,6 +170,28 @@ struct|;
 end_struct
 
 begin_comment
+comment|/**  * GIMP_TYPE_VECTOR2:  *  * Boxed type representing a two-dimensional vector.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_VECTOR2
+define|#
+directive|define
+name|GIMP_TYPE_VECTOR2
+value|(gimp_vector2_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_vector2_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/**  * GimpVector3:  * @x: the x axis  * @y: the y axis  * @z: the z axis  *  * A three dimensional vector.  **/
 end_comment
 
@@ -191,6 +213,28 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GIMP_TYPE_VECTOR3:  *  * Boxed type representing a three-dimensional vector.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_VECTOR3
+define|#
+directive|define
+name|GIMP_TYPE_VECTOR3
+value|(gimp_vector3_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_vector3_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/**  * GimpVector4:  * @x: the x axis  * @y: the y axis  * @z: the z axis  * @w: the w axis  *  * A four dimensional vector.  **/
