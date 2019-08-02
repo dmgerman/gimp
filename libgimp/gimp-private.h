@@ -36,13 +36,14 @@ name|_gimp_writechannel
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|GHashTable
-modifier|*
-name|_gimp_temp_proc_ht
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|_gimp_close
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -51,6 +52,16 @@ parameter_list|(
 name|GPConfig
 modifier|*
 name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|_gimp_loop
+parameter_list|(
+name|GimpRunProc
+name|run_proc
 parameter_list|)
 function_decl|;
 end_function_decl
