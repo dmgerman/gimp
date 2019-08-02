@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9f25260103
+DECL|enum|__anon29eddd820103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -703,7 +703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_toggles_visible:  * @selector: A #GimpColorSelector widget.  *  * Returns the @visible property of the @selector's toggles.  *  * Return value: #TRUE if the #GimpColorSelector's toggles are visible.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_toggles_visible:  * @selector: A #GimpColorSelector widget.  *  * Returns the @visible property of the @selector's toggles.  *  * Return value: %TRUE if the #GimpColorSelector's toggles are visible.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -809,7 +809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_toggles_sensitive:  * @selector: A #GimpColorSelector widget.  *  * Returns the @sensitive property of the @selector's toggles.  *  * Return value: #TRUE if the #GimpColorSelector's toggles are sensitive.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_toggles_sensitive:  * @selector: A #GimpColorSelector widget.  *  * Returns the @sensitive property of the @selector's toggles.  *  * Return value: %TRUE if the #GimpColorSelector's toggles are sensitive.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -915,7 +915,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_show_alpha:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's @show_alpha property.  *  * Return value: #TRUE if the #GimpColorSelector has alpha controls.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_show_alpha:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's @show_alpha property.  *  * Return value: %TRUE if the #GimpColorSelector has alpha controls.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

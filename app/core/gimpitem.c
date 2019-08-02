@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc24d230103
+DECL|enum|__anon288ae9240103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc24d230203
+DECL|enum|__anon288ae9240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3047,7 +3047,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_remove:  * @item: the #GimpItem to remove.  *  * This function sets the 'removed' flag on @item to #TRUE, and emits  * a 'removed' signal on the item.  */
+comment|/**  * gimp_item_remove:  * @item: the #GimpItem to remove.  *  * This function sets the 'removed' flag on @item to %TRUE, and emits  * a 'removed' signal on the item.  */
 end_comment
 
 begin_function
@@ -4905,7 +4905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_translate:  * @item:      The #GimpItem to move.  * @offset_x:  Increment to the X offset of the item.  * @offset_y:  Increment to the Y offset of the item.  * @push_undo: If #TRUE, create an entry in the image's undo stack  *             for this action.  *  * Adds the specified increments to the X and Y offsets for the item.  */
+comment|/**  * gimp_item_translate:  * @item:      The #GimpItem to move.  * @offset_x:  Increment to the X offset of the item.  * @offset_y:  Increment to the Y offset of the item.  * @push_undo: If %TRUE, create an entry in the image's undo stack  *             for this action.  *  * Adds the specified increments to the X and Y offsets for the item.  */
 end_comment
 
 begin_function
@@ -5024,7 +5024,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_check_scaling:  * @item:       Item to check  * @new_width:  proposed width of item, in pixels  * @new_height: proposed height of item, in pixels  *  * Scales item dimensions, then snaps them to pixel centers  *  * Returns: #FALSE if any dimension reduces to zero as a result  *          of this; otherwise, returns #TRUE.  **/
+comment|/**  * gimp_item_check_scaling:  * @item:       Item to check  * @new_width:  proposed width of item, in pixels  * @new_height: proposed height of item, in pixels  *  * Scales item dimensions, then snaps them to pixel centers  *  * Returns: %FALSE if any dimension reduces to zero as a result  *          of this; otherwise, returns %TRUE.  **/
 end_comment
 
 begin_function
@@ -5372,7 +5372,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  * @progress:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the same  * width and height scaling factors are to be uniformly applied to a  * set of items. In this context, the item's dimensions and offsets  * from the sides of the containing image all change by these  * predetermined factors. By fiat, the fixed point of the transform is  * the upper left hand corner of the image. Returns #FALSE if a  * requested scale factor is zero or if a scaling zero's out a item  * dimension; returns #TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
+comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  * @progress:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the same  * width and height scaling factors are to be uniformly applied to a  * set of items. In this context, the item's dimensions and offsets  * from the sides of the containing image all change by these  * predetermined factors. By fiat, the fixed point of the transform is  * the upper left hand corner of the image. Returns %FALSE if a  * requested scale factor is zero or if a scaling zero's out a item  * dimension; returns %TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: %TRUE, if the scaled item has positive dimensions  *          %FALSE if the scaled item has at least one zero dimension  **/
 end_comment
 
 begin_function
@@ -5424,7 +5424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_factors:  * @item:         Item to be transformed by explicit width and height factors.  * @w_factor:     scale factor to apply to width and horizontal offset  * @h_factor:     scale factor to apply to height and vertical offset  * @origin_x:     x-coordinate of the transformation input origin  * @origin_y:     y-coordinate of the transformation input origin  * @new_origin_x: x-coordinate of the transformation output origin  * @new_origin_y: y-coordinate of the transformation output origin  * @interpolation:  * @progress:  *  * Same as gimp_item_scale_by_factors(), but with the option to specify  * custom input and output points of origin for the transformation.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
+comment|/**  * gimp_item_scale_by_factors:  * @item:         Item to be transformed by explicit width and height factors.  * @w_factor:     scale factor to apply to width and horizontal offset  * @h_factor:     scale factor to apply to height and vertical offset  * @origin_x:     x-coordinate of the transformation input origin  * @origin_y:     y-coordinate of the transformation input origin  * @new_origin_x: x-coordinate of the transformation output origin  * @new_origin_y: y-coordinate of the transformation output origin  * @interpolation:  * @progress:  *  * Same as gimp_item_scale_by_factors(), but with the option to specify  * custom input and output points of origin for the transformation.  *  * Returns: %TRUE, if the scaled item has positive dimensions  *          %FALSE if the scaled item has at least one zero dimension  **/
 end_comment
 
 begin_function
@@ -5650,7 +5650,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @interpolation:  * @progress:  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * #TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-GimpItem::offset_x, -GimpItem::->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use  * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled  *& painted to new item tiles  **/
+comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @interpolation:  * @progress:  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * %TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-GimpItem::offset_x, -GimpItem::->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use  * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled  *& painted to new item tiles  **/
 end_comment
 
 begin_function

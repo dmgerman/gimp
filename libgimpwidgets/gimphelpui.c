@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2980b98b0103
+DECL|enum|__anon28a0bfad0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -429,7 +429,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The text for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_widget_set_tooltip_text() is that  * elements in the GIMP user interface should, if possible, also have  * a @help_id set for context-sensitive help.  *  * This function can be called with #NULL for @tooltip. Use this feature  * if you want to set a help link for a widget which shouldn't have  * a visible tooltip.  **/
+comment|/**  * gimp_help_set_help_data:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_id for.  * @tooltip: The text for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_widget_set_tooltip_text() is that  * elements in the GIMP user interface should, if possible, also have  * a @help_id set for context-sensitive help.  *  * This function can be called with %NULL for @tooltip. Use this feature  * if you want to set a help link for a widget which shouldn't have  * a visible tooltip.  **/
 end_comment
 
 begin_function

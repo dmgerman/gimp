@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da7e040103
+DECL|enum|__anon2b20906c0103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da7e040203
+DECL|enum|__anon2b20906c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -259,7 +259,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da7e040308
+DECL|struct|__anon2b20906c0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da7e040408
+DECL|struct|__anon2b20906c0408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -3469,7 +3469,7 @@ comment|/* All actual computation functions. */
 end_comment
 
 begin_comment
-comment|/**  * gimp_line_art_close:  * @buffer: the input #GeglBuffer.  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @spline_max_length: the maximum length for creating splines between  *                     end points.  * @segment_max_length: the maximum length for creating segments  *                      between end points. Unlike splines, segments  *                      are straight lines.  * @minimal_lineart_area: the minimum size in number pixels for area to  *                        be considered as line art.  * @normal_estimate_mask_size:  * @end_point_rate: threshold to estimate if a curvature is an end-point  *                  in [0-1] range value.  * @spline_max_angle: the maximum angle between end point normals for  *                    creating splines between them.  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections: whether to allow created splines and  *                            segments to intersect.  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @closed_distmap: a distance map of the closed line art pixels.  * @async: the #GimpAsync associated with the computation  *  * Creates a binarized version of the strokes of @buffer, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  * https://hal.archives-ouvertes.fr/hal-01891876  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. If @lineart_distmap is not #NULL, a  *          newly allocated float buffer is returned, which can be used  *          for overflowing created masks later.  */
+comment|/**  * gimp_line_art_close:  * @buffer: the input #GeglBuffer.  * @select_transparent: whether we binarize the alpha channel or the  *                      luminosity.  * @stroke_threshold: [0-1] threshold value for detecting stroke pixels  *                    (higher values will detect more stroke pixels).  * @spline_max_length: the maximum length for creating splines between  *                     end points.  * @segment_max_length: the maximum length for creating segments  *                      between end points. Unlike splines, segments  *                      are straight lines.  * @minimal_lineart_area: the minimum size in number pixels for area to  *                        be considered as line art.  * @normal_estimate_mask_size:  * @end_point_rate: threshold to estimate if a curvature is an end-point  *                  in [0-1] range value.  * @spline_max_angle: the maximum angle between end point normals for  *                    creating splines between them.  * @end_point_connectivity:  * @spline_roundness:  * @allow_self_intersections: whether to allow created splines and  *                            segments to intersect.  * @created_regions_significant_area:  * @created_regions_minimum_area:  * @small_segments_from_spline_sources:  * @closed_distmap: a distance map of the closed line art pixels.  * @async: the #GimpAsync associated with the computation  *  * Creates a binarized version of the strokes of @buffer, detected either  * with luminosity (light means background) or alpha values depending on  * @select_transparent. This binary version of the strokes will have closed  * regions allowing adequate selection of "nearly closed regions".  * This algorithm is meant for digital painting (and in particular on the  * sketch-only step), and therefore will likely produce unexpected results on  * other types of input.  *  * The algorithm is the first step from the research paper "A Fast and  * Efficient Semi-guided Algorithm for Flat Coloring Line-arts", by SÃ©bastian  * Fourey, David TschumperlÃ©, David Revoy.  * https://hal.archives-ouvertes.fr/hal-01891876  *  * Returns: a new #GeglBuffer of format "Y u8" representing the  *          binarized @line_art. If @lineart_distmap is not %NULL, a  *          newly allocated float buffer is returned, which can be used  *          for overflowing created masks later.  */
 end_comment
 
 begin_function
@@ -9900,7 +9900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_line_art_allow_closure:  * @mask: the current state of line art closure.  * @pixels: the pixels of a candidate closure (spline or segment).  * @fill_pixels: #GList of unsignificant pixels to bucket fill.  * @significant_size: number of pixels for area to be considered  *                    "significant".  * @minimum_size: number of pixels for area to be allowed.  *  * Checks whether adding the set of points @pixels to @mask will create  * 4-connected background regions whose size (i.e. number of pixels)  * will be below @minimum_size. If it creates such small areas, the  * function will refuse this candidate spline/segment, with the  * exception of very small areas under @significant_size. These  * micro-area are considered "unsignificant" and accepted (because they  * can be created in some conditions, for instance when created curves  * cross or start from a same endpoint), and one pixel for each  * micro-area will be added to @fill_pixels to be later filled along  * with the candidate pixels.  *  * Returns: #TRUE if @pixels should be added to @mask, #FALSE otherwise.  */
+comment|/**  * gimp_line_art_allow_closure:  * @mask: the current state of line art closure.  * @pixels: the pixels of a candidate closure (spline or segment).  * @fill_pixels: #GList of unsignificant pixels to bucket fill.  * @significant_size: number of pixels for area to be considered  *                    "significant".  * @minimum_size: number of pixels for area to be allowed.  *  * Checks whether adding the set of points @pixels to @mask will create  * 4-connected background regions whose size (i.e. number of pixels)  * will be below @minimum_size. If it creates such small areas, the  * function will refuse this candidate spline/segment, with the  * exception of very small areas under @significant_size. These  * micro-area are considered "unsignificant" and accepted (because they  * can be created in some conditions, for instance when created curves  * cross or start from a same endpoint), and one pixel for each  * micro-area will be added to @fill_pixels to be later filled along  * with the candidate pixels.  *  * Returns: %TRUE if @pixels should be added to @mask, %FALSE otherwise.  */
 end_comment
 
 begin_function

@@ -1997,7 +1997,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_set_has_page:  * @notebook:  A #GimpColorNotebook widget.  * @page_type: The #GType of the notebook page to add or remove.  * @has_page:  Whether the page should be added or removed.  *  * This function adds and removed pages to / from a #GimpColorNotebook.  * The @page_type passed must be a #GimpColorSelector subtype.  *  * Return value: (transfer none): The new page widget, if @has_page was  *               #TRUE, or #NULL if @has_page was #FALSE.  **/
+comment|/**  * gimp_color_notebook_set_has_page:  * @notebook:  A #GimpColorNotebook widget.  * @page_type: The #GType of the notebook page to add or remove.  * @has_page:  Whether the page should be added or removed.  *  * This function adds and removed pages to / from a #GimpColorNotebook.  * The @page_type passed must be a #GimpColorSelector subtype.  *  * Return value: (transfer none): The new page widget, if @has_page was  *               %TRUE, or %NULL if @has_page was %FALSE.  **/
 end_comment
 
 begin_function

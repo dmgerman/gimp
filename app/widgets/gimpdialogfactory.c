@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895cbc20103
+DECL|enum|__anon274f921b0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2686,7 +2686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @monitor:      the #GdkMonitor the dialog should appear on  * @parent:       the #GtkWidget from which the raised dialog  *                originated, if applicable, #NULL otherwise.  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @monitor:      the #GdkMonitor the dialog should appear on  * @parent:       the #GtkWidget from which the raised dialog  *                originated, if applicable, %NULL otherwise.  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function

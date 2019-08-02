@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a41368f0103
+DECL|enum|__anon2bd3475c0103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -549,7 +549,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_get_checksum:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the checksum of the @tagged object. It is used to remap the  * tags for an object for which the identifier has changed, for  * example if the user has renamed a data file since the last session.  *  * If the object does not want to support such remapping (objects not  * stored in file for example) it can return #NULL.  *  * Return value: checksum string if object needs identifier remapping,  * #NULL otherwise. Returned string must be freed with #g_free().  **/
+comment|/**  * gimp_tagged_get_checksum:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the checksum of the @tagged object. It is used to remap the  * tags for an object for which the identifier has changed, for  * example if the user has renamed a data file since the last session.  *  * If the object does not want to support such remapping (objects not  * stored in file for example) it can return %NULL.  *  * Return value: checksum string if object needs identifier remapping,  * %NULL otherwise. Returned string must be freed with #g_free().  **/
 end_comment
 
 begin_function
@@ -588,7 +588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_has_tag:  * @tagged: an object that implements the %GimpTagged interface  * @tag:    a %GimpTag  *  * Return value: #TRUE if the object has @tag, #FALSE otherwise.  **/
+comment|/**  * gimp_tagged_has_tag:  * @tagged: an object that implements the %GimpTagged interface  * @tag:    a %GimpTag  *  * Return value: %TRUE if the object has @tag, %FALSE otherwise.  **/
 end_comment
 
 begin_function

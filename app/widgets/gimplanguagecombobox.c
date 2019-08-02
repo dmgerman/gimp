@@ -140,7 +140,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_language_combo_box_new:  * @manual_l18n: get only the sublist of manual languages.  * @empty_label: the label for empty language code.  *  * Returns a combo box containing all GUI localization languages if  * @manual_l18n is #FALSE, or all manual localization languages  * otherwise. If @empty_label is not #NULL, an entry with this label  * will be created for the language code "", otherwise if @empty_label  * is #NULL and @manual_l18n is #FALSE, the entry will be "System  * Language" localized in itself (not in the GUI language).  */
+comment|/**  * gimp_language_combo_box_new:  * @manual_l18n: get only the sublist of manual languages.  * @empty_label: the label for empty language code.  *  * Returns a combo box containing all GUI localization languages if  * @manual_l18n is %FALSE, or all manual localization languages  * otherwise. If @empty_label is not %NULL, an entry with this label  * will be created for the language code "", otherwise if @empty_label  * is %NULL and @manual_l18n is %FALSE, the entry will be "System  * Language" localized in itself (not in the GUI language).  */
 end_comment
 
 begin_function

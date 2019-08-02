@@ -1120,7 +1120,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_or_null_ref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_ref() that silently accepts #NULL.  **/
+comment|/**  * gimp_tag_or_null_ref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_ref() that silently accepts %NULL.  **/
 end_comment
 
 begin_function
@@ -1156,7 +1156,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_or_null_unref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_unref() that silently accepts #NULL.  **/
+comment|/**  * gimp_tag_or_null_unref:  * @tag: a #GimpTag  *  * A simple wrapper around g_object_unref() that silently accepts %NULL.  **/
 end_comment
 
 begin_function

@@ -512,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c754e130103
+DECL|enum|__anon27504f140103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1296,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2c754e130203
+DECL|enum|__anon27504f140203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3571,7 +3571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3589,7 +3589,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_xmp:  *  * Returns whether file plug-ins should default to exporting XMP  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export XMP.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_xmp:  *  * Returns whether file plug-ins should default to exporting XMP  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export XMP.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3607,7 +3607,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_iptc:  *  * Returns whether file plug-ins should default to exporting IPTC  * metadata, according preferences (original settings is #FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export IPTC.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_iptc:  *  * Returns whether file plug-ins should default to exporting IPTC  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export IPTC.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3699,7 +3699,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  * Will return #NULL if GIMP has been started with no GUI, either  * via "--no-interface" flag, or a console build.  *  * Return value: the display name  **/
+comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  * Will return %NULL if GIMP has been started with no GUI, either  * via "--no-interface" flag, or a console build.  *  * Return value: the display name  **/
 end_comment
 
 begin_function

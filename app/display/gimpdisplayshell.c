@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e69530103
+DECL|enum|__anon2c783ab70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e69530203
+DECL|enum|__anon2c783ab70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7729,7 +7729,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  * @inverted: #TRUE if the mask should be drawn inverted  *  * Previews a mask originating at offset_x, offset_x. Depending on  * @inverted, pixels that are selected or not selected are tinted with  * the given color.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  * @inverted: %TRUE if the mask should be drawn inverted  *  * Previews a mask originating at offset_x, offset_x. Depending on  * @inverted, pixels that are selected or not selected are tinted with  * the given color.  **/
 end_comment
 
 begin_function

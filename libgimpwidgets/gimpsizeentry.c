@@ -52,7 +52,7 @@ file|"gimpsizeentry.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpsizeentry  * @title: GimpSizeEntry  * @short_description: Widget for entering pixel values and resolutions.  * @see_also: #GimpUnit, #GimpUnitComboBox, gimp_coordinates_new()  *  * This widget is used to enter pixel distances/sizes and resolutions.  *  * You can specify the number of fields the widget should provide. For  * each field automatic mappings are performed between the field's  * "reference value" and its "value".  *  * There is a #GimpUnitComboBox right of the entry fields which lets  * you specify the #GimpUnit of the displayed values.  *  * For each field, there can be one or two #GtkSpinButton's to enter  * "value" and "reference value". If you specify @show_refval as  * #FALSE in gimp_size_entry_new() there will be only one  * #GtkSpinButton and the #GimpUnitComboBox will contain an item for  * selecting GIMP_UNIT_PIXEL.  *  * The "reference value" is either of GIMP_UNIT_PIXEL or dpi,  * depending on which #GimpSizeEntryUpdatePolicy you specify in  * gimp_size_entry_new().  The "value" is either the size in pixels  * mapped to the size in a real-world-unit (see #GimpUnit) or the dpi  * value mapped to pixels per real-world-unit.  **/
+comment|/**  * SECTION: gimpsizeentry  * @title: GimpSizeEntry  * @short_description: Widget for entering pixel values and resolutions.  * @see_also: #GimpUnit, #GimpUnitComboBox, gimp_coordinates_new()  *  * This widget is used to enter pixel distances/sizes and resolutions.  *  * You can specify the number of fields the widget should provide. For  * each field automatic mappings are performed between the field's  * "reference value" and its "value".  *  * There is a #GimpUnitComboBox right of the entry fields which lets  * you specify the #GimpUnit of the displayed values.  *  * For each field, there can be one or two #GtkSpinButton's to enter  * "value" and "reference value". If you specify @show_refval as  * %FALSE in gimp_size_entry_new() there will be only one  * #GtkSpinButton and the #GimpUnitComboBox will contain an item for  * selecting GIMP_UNIT_PIXEL.  *  * The "reference value" is either of GIMP_UNIT_PIXEL or dpi,  * depending on which #GimpSizeEntryUpdatePolicy you specify in  * gimp_size_entry_new().  The "value" is either the size in pixels  * mapped to the size in a real-world-unit (see #GimpUnit) or the dpi  * value mapped to pixels per real-world-unit.  **/
 end_comment
 
 begin_define
@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c5e370103
+DECL|enum|__anon2b12eaf60103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -5475,7 +5475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is #TRUE, the menu is shown; otherwise it is hidden.  *  * Since: 2.4  **/
+comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is %TRUE, the menu is shown; otherwise it is hidden.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

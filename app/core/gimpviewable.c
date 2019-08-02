@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fd70e0103
+DECL|enum|__anon2c7e1d100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fd70e0203
+DECL|enum|__anon2c7e1d100203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -2275,7 +2275,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_calc_preview_size:  * @aspect_width:   unscaled width of the preview for an item.  * @aspect_height:  unscaled height of the preview for an item.  * @width:          maximum available width for scaled preview.  * @height:         maximum available height for scaled preview.  * @dot_for_dot:    if #TRUE, ignore any differences in axis resolution.  * @xresolution:    resolution in the horizontal direction.  * @yresolution:    resolution in the vertical direction.  * @return_width:   place to return the calculated preview width.  * @return_height:  place to return the calculated preview height.  * @scaling_up:     returns #TRUE here if the calculated preview size  *                  is larger than the viewable itself.  *  * A utility function, for calculating the dimensions of a preview  * based on the information specified in the arguments.  The arguments  * @aspect_width and @aspect_height are the dimensions of the unscaled  * preview.  The arguments @width and @height represent the maximum  * width and height that the scaled preview must fit into. The  * preview is scaled to be as large as possible without exceeding  * these constraints.  *  * If @dot_for_dot is #TRUE, and @xresolution and @yresolution are  * different, then these results are corrected for the difference in  * resolution on the two axes, so that the requested aspect ratio  * applies to the appearance of the display rather than to pixel  * counts.  **/
+comment|/**  * gimp_viewable_calc_preview_size:  * @aspect_width:   unscaled width of the preview for an item.  * @aspect_height:  unscaled height of the preview for an item.  * @width:          maximum available width for scaled preview.  * @height:         maximum available height for scaled preview.  * @dot_for_dot:    if %TRUE, ignore any differences in axis resolution.  * @xresolution:    resolution in the horizontal direction.  * @yresolution:    resolution in the vertical direction.  * @return_width:   place to return the calculated preview width.  * @return_height:  place to return the calculated preview height.  * @scaling_up:     returns %TRUE here if the calculated preview size  *                  is larger than the viewable itself.  *  * A utility function, for calculating the dimensions of a preview  * based on the information specified in the arguments.  The arguments  * @aspect_width and @aspect_height are the dimensions of the unscaled  * preview.  The arguments @width and @height represent the maximum  * width and height that the scaled preview must fit into. The  * preview is scaled to be as large as possible without exceeding  * these constraints.  *  * If @dot_for_dot is %TRUE, and @xresolution and @yresolution are  * different, then these results are corrected for the difference in  * resolution on the two axes, so that the requested aspect ratio  * applies to the appearance of the display rather than to pixel  * counts.  **/
 end_comment
 
 begin_function
@@ -2563,7 +2563,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_preview_size:  * @viewable:    the object for which to calculate the preview size.  * @size:        requested size for preview.  * @popup:       %TRUE if the preview is intended for a popup window.  * @dot_for_dot: If #TRUE, ignore any differences in X and Y resolution.  * @width:       return location for the the calculated width.  * @height:      return location for the calculated height.  *  * Retrieve the size of a viewable's preview.  By default, this  * simply returns the value of the @size argument for both the @width  * and @height, but this can be overridden in objects derived from  * #GimpViewable.  If either the width or height exceeds  * #GIMP_VIEWABLE_MAX_PREVIEW_SIZE, they are silently truncated.  **/
+comment|/**  * gimp_viewable_get_preview_size:  * @viewable:    the object for which to calculate the preview size.  * @size:        requested size for preview.  * @popup:       %TRUE if the preview is intended for a popup window.  * @dot_for_dot: If %TRUE, ignore any differences in X and Y resolution.  * @width:       return location for the the calculated width.  * @height:      return location for the calculated height.  *  * Retrieve the size of a viewable's preview.  By default, this  * simply returns the value of the @size argument for both the @width  * and @height, but this can be overridden in objects derived from  * #GimpViewable.  If either the width or height exceeds  * #GIMP_VIEWABLE_MAX_PREVIEW_SIZE, they are silently truncated.  **/
 end_comment
 
 begin_function
@@ -2675,7 +2675,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_popup_size:  * @viewable:     the object for which to calculate the popup size.  * @width:        the width of the preview from which the popup will be shown.  * @height:       the height of the preview from which the popup will be shown.  * @dot_for_dot:  If #TRUE, ignore any differences in X and Y resolution.  * @popup_width:  return location for the calculated popup width.  * @popup_height: return location for the calculated popup height.  *  * Calculate the size of a viewable's preview, for use in making a  * popup. The arguments @width and @height specify the size of the  * preview from which the popup will be shown.  *  * Returns: Whether the viewable wants a popup to be shown. Usually  *          %TRUE if the passed preview size is smaller than the viewable  *          size, and %FALSE if the viewable completely fits into the  *          original preview.  **/
+comment|/**  * gimp_viewable_get_popup_size:  * @viewable:     the object for which to calculate the popup size.  * @width:        the width of the preview from which the popup will be shown.  * @height:       the height of the preview from which the popup will be shown.  * @dot_for_dot:  If %TRUE, ignore any differences in X and Y resolution.  * @popup_width:  return location for the calculated popup width.  * @popup_height: return location for the calculated popup height.  *  * Calculate the size of a viewable's preview, for use in making a  * popup. The arguments @width and @height specify the size of the  * preview from which the popup will be shown.  *  * Returns: Whether the viewable wants a popup to be shown. Usually  *          %TRUE if the passed preview size is smaller than the viewable  *          size, and %FALSE if the viewable completely fits into the  *          original preview.  **/
 end_comment
 
 begin_function
@@ -2935,7 +2935,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #GimpTempBuf containing the preview image, or #NULL if  *          none can be found or created.  **/
+comment|/**  * gimp_viewable_get_preview:  * @viewable: The viewable object to get a preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_preview" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_preview"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
@@ -3152,7 +3152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: A #GimpTempBuf containing the preview image, or #NULL if  *          none can be found or created.  **/
+comment|/**  * gimp_viewable_get_new_preview:  * @viewable: The viewable object to get a preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_preview(), except that it tries things in a  * different order, first looking for a "get_new_preview" method, and  * then if that fails for a "get_preview" method.  This function does  * not look for a cached preview.  *  * Returns: A #GimpTempBuf containing the preview image, or %NULL if  *          none can be found or created.  **/
 end_comment
 
 begin_function
@@ -3424,7 +3424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not #NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * #NULL is returned.  *  * Returns: A #GdkPixbuf containing the preview pixbuf, or #NULL if none can  *          be found or created.  **/
+comment|/**  * gimp_viewable_get_pixbuf:  * @viewable: The viewable object to get a pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the preview  * @height:   desired height for the preview  *  * Gets a preview for a viewable object, by running through a variety  * of methods until it finds one that works.  First, if an  * implementation exists of a "get_pixbuf" method, it is tried, and  * the result is returned if it is not %NULL.  Second, the function  * checks to see whether there is a cached preview with the correct  * dimensions; if so, it is returned.  If neither of these works, then  * the function looks for an implementation of the "get_new_pixbuf"  * method, and executes it, caching the result.  If everything fails,  * %NULL is returned.  *  * Returns: A #GdkPixbuf containing the preview pixbuf, or %NULL if none can  *          be found or created.  **/
 end_comment
 
 begin_function
@@ -3639,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: A #GdkPixbuf containing the preview, or #NULL if none can  *          be created.  **/
+comment|/**  * gimp_viewable_get_new_pixbuf:  * @viewable: The viewable object to get a new pixbuf preview for.  * @context:  The context to render the preview for.  * @width:    desired width for the pixbuf  * @height:   desired height for the pixbuf  *  * Gets a new preview for a viewable object.  Similar to  * gimp_viewable_get_pixbuf(), except that it tries things in a  * different order, first looking for a "get_new_pixbuf" method, and  * then if that fails for a "get_pixbuf" method.  This function does  * not look for a cached pixbuf.  *  * Returns: A #GdkPixbuf containing the preview, or %NULL if none can  *          be created.  **/
 end_comment
 
 begin_function

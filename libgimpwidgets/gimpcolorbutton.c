@@ -181,7 +181,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa4b620103
+DECL|enum|__anon289b80140103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -194,7 +194,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa4b620203
+DECL|enum|__anon289b80140203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2768,7 +2768,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_update:  * @button:     A #GimpColorButton widget.  * @continuous: The new setting of the @continuous_update property.  *  * When set to #TRUE, the @button will emit the "color-changed"  * continuously while the color is changed in the color selection  * dialog.  **/
+comment|/**  * gimp_color_button_set_update:  * @button:     A #GimpColorButton widget.  * @continuous: The new setting of the @continuous_update property.  *  * When set to %TRUE, the @button will emit the "color-changed"  * continuously while the color is changed in the color selection  * dialog.  **/
 end_comment
 
 begin_function

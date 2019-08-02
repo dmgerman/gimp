@@ -2865,7 +2865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_delete_recursive:  * @file: #GFile to delete from file system.  * @error:  *  * Delete @file. If file is a directory, it will delete its children as  * well recursively. It will not follow symlinks so you won't end up in  * infinite loops, not will you be at risk of deleting your whole file  * system (unless you pass the root of course!).  * Such function unfortunately does not exist in glib, which only allows  * to delete single files or empty directories by default.  *  * Returns: #TRUE if @file was successfully deleted and all its  * children, #FALSE otherwise with @error filled.  */
+comment|/**  * gimp_file_delete_recursive:  * @file: #GFile to delete from file system.  * @error:  *  * Delete @file. If file is a directory, it will delete its children as  * well recursively. It will not follow symlinks so you won't end up in  * infinite loops, not will you be at risk of deleting your whole file  * system (unless you pass the root of course!).  * Such function unfortunately does not exist in glib, which only allows  * to delete single files or empty directories by default.  *  * Returns: %TRUE if @file was successfully deleted and all its  * children, %FALSE otherwise with @error filled.  */
 end_comment
 
 begin_function
