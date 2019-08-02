@@ -163,6 +163,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|_gimp_plug_in_process_message
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+name|GimpWireMessage
+modifier|*
+name|msg
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
