@@ -24,6 +24,14 @@ file|"libgimpbase/gimpwire.h"
 specifier|extern
 name|GIOChannel
 modifier|*
+name|_gimp_readchannel
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GIOChannel
+modifier|*
 name|_gimp_writechannel
 decl_stmt|;
 end_decl_stmt
@@ -35,6 +43,17 @@ modifier|*
 name|_gimp_temp_proc_ht
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|_gimp_config
+parameter_list|(
+name|GPConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

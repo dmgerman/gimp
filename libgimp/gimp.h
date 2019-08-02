@@ -317,33 +317,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Enable asynchronous processing of temp_procs  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_extension_enable
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Process one temp_proc and return  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_extension_process
-parameter_list|(
-name|guint
-name|timeout
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified as a GimpValueArray, so are the return values.  *  * FIXME this API is not final!  */
 end_comment
 

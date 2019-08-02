@@ -47,6 +47,12 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_COMPAT_CRUFT
+end_ifndef
+
 begin_comment
 comment|/**  * GimpInitProc:  *  * The init procedure is run at every GIMP startup.  */
 end_comment
@@ -715,6 +721,33 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Enable asynchronous processing of temp_procs  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_extension_enable
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Process one temp_proc and return  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_extension_process
+parameter_list|(
+name|guint
+name|timeout
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified via the variable length argument list. The return  *  values are returned in the 'GimpParam*' array.  */
 end_comment
 
@@ -897,6 +930,15 @@ name|icon_data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_COMPAT_CRUFT */
+end_comment
 
 begin_macro
 name|G_END_DECLS
