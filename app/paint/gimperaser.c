@@ -138,6 +138,9 @@ name|GimpSymmetry
 modifier|*
 name|sym
 parameter_list|,
+name|gdouble
+name|grad_point
+parameter_list|,
 name|GimpLayerMode
 modifier|*
 name|paint_mode
@@ -317,7 +320,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_get_paint_params (GimpPaintbrush * paintbrush,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym,GimpLayerMode * paint_mode,GimpPaintApplicationMode * paint_appl_mode,const GimpTempBuf ** paint_pixmap,GimpRGB * paint_color)
+DECL|function|gimp_eraser_get_paint_params (GimpPaintbrush * paintbrush,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpSymmetry * sym,gdouble grad_point,GimpLayerMode * paint_mode,GimpPaintApplicationMode * paint_appl_mode,const GimpTempBuf ** paint_pixmap,GimpRGB * paint_color)
 name|gimp_eraser_get_paint_params
 parameter_list|(
 name|GimpPaintbrush
@@ -335,6 +338,9 @@ parameter_list|,
 name|GimpSymmetry
 modifier|*
 name|sym
+parameter_list|,
+name|gdouble
+name|grad_point
 parameter_list|,
 name|GimpLayerMode
 modifier|*

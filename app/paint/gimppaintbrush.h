@@ -179,6 +179,9 @@ name|GimpSymmetry
 modifier|*
 name|sym
 parameter_list|,
+name|gdouble
+name|grad_point
+parameter_list|,
 name|GimpLayerMode
 modifier|*
 name|paint_mode
