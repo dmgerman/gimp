@@ -93,7 +93,7 @@ end_struct
 
 begin_function_decl
 name|void
-name|_gimp_plug_in_init
+name|_gimp_plug_in_query
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -104,7 +104,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|_gimp_plug_in_query
+name|_gimp_plug_in_init
 parameter_list|(
 name|GimpPlugIn
 modifier|*
