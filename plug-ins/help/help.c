@@ -117,7 +117,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6e02d0108
+DECL|struct|__anon2be51f500108
 block|{
 DECL|member|procedure
 name|gchar
@@ -177,8 +177,7 @@ end_decl_stmt
 
 begin_function_decl
 specifier|static
-name|gchar
-modifier|*
+name|GList
 modifier|*
 name|help_query_procedures
 parameter_list|(
@@ -390,8 +389,7 @@ end_function
 
 begin_function
 specifier|static
-name|gchar
-modifier|*
+name|GList
 modifier|*
 DECL|function|help_query_procedures (GimpPlugIn * plug_in)
 name|help_query_procedures
@@ -401,31 +399,16 @@ modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-modifier|*
-name|procedures
-init|=
-name|g_new0
+return|return
+name|g_list_append
 argument_list|(
-name|gchar
-operator|*
+name|NULL
 argument_list|,
-literal|2
-argument_list|)
-decl_stmt|;
-name|procedures
-index|[
-literal|0
-index|]
-operator|=
 name|g_strdup
 argument_list|(
 name|GIMP_HELP_EXT_PROC
 argument_list|)
-expr_stmt|;
-return|return
-name|procedures
+argument_list|)
 return|;
 block|}
 end_function

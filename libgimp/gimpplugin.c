@@ -599,7 +599,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_create_procedure:  * @plug_in: A #GimpPlugIn  * @name:    A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PLUGIN or  * %GIMP_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugIn::init_procedures() or  * GimpPlugIn::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
+comment|/**  * gimp_plug_in_create_procedure:  * @plug_in: A #GimpPlugIn  * @name:    A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PLUGIN or  * %GIMP_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
 end_comment
 
 begin_function
