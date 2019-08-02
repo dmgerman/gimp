@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e72d3a0103
+DECL|enum|__anon2773967f0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e72d3a0203
+DECL|enum|__anon2773967f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4299,7 +4299,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_compare:  * @data1: a #GimpData object.  * @data2: another #GimpData object.  *  * Compares two data objects for use in sorting. Objects marked as  * "internal" come first, then user-writable objects, then system data  * files. In these three groups, the objects are sorted alphabetically  * by name, using gimp_object_name_collate().  *  * Return value: -1 if @data1 compares before @data2,  *                0 if they compare equal,  *                1 if @data1 compares after @data2.  **/
+comment|/**  * gimp_data_compare:  * @data1: a #GimpData object.  * @data2: another #GimpData object.  *  * Compares two data objects for use in sorting. Objects marked as  * "internal" come first, then user-writable objects, then system data  * files. In these three groups, the objects are sorted alphabetically  * by name, using gimp_object_name_collate().  *  * Returns: -1 if @data1 compares before @data2,  *                0 if they compare equal,  *                1 if @data1 compares after @data2.  **/
 end_comment
 
 begin_function
@@ -4372,7 +4372,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_error_quark:  *  * This function is used to implement the GIMP_DATA_ERROR macro. It  * shouldn't be called directly.  *  * Return value: the #GQuark to identify error in the GimpData error domain.  **/
+comment|/**  * gimp_data_error_quark:  *  * This function is used to implement the GIMP_DATA_ERROR macro. It  * shouldn't be called directly.  *  * Returns: the #GQuark to identify error in the GimpData error domain.  **/
 end_comment
 
 begin_function

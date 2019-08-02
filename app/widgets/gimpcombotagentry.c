@@ -475,7 +475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_combo_tag_entry_new:  * @container: a tagged container to be used.  * @mode:      tag entry mode to work in.  *  * Creates a new #GimpComboTagEntry widget which extends #GimpTagEntry by  * adding ability to pick tags using popup window (similar to combo box).  *  * Return value: a new #GimpComboTagEntry widget.  **/
+comment|/**  * gimp_combo_tag_entry_new:  * @container: a tagged container to be used.  * @mode:      tag entry mode to work in.  *  * Creates a new #GimpComboTagEntry widget which extends #GimpTagEntry by  * adding ability to pick tags using popup window (similar to combo box).  *  * Returns: a new #GimpComboTagEntry widget.  **/
 end_comment
 
 begin_function

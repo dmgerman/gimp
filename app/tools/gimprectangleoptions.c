@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a95cf6e0103
+DECL|enum|__anon2a07598e0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -4500,7 +4500,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_options_fixed_rule_active:  * @rectangle_options:  * @fixed_rule:  *  * Return value: %TRUE if @fixed_rule is active, %FALSE otherwise.  */
+comment|/**  * gimp_rectangle_options_fixed_rule_active:  * @rectangle_options:  * @fixed_rule:  *  * Returns: %TRUE if @fixed_rule is active, %FALSE otherwise.  */
 end_comment
 
 begin_function

@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c793f120108
+DECL|struct|__anon2c789f7f0108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -148,7 +148,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_install_vtable:  * @vtable:    a pointer to a @GimpProgressVtable.  * @user_data: a pointer that is passed as user_data to all vtable functions.  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: 2.4  **/
+comment|/**  * gimp_progress_install_vtable:  * @vtable:    a pointer to a @GimpProgressVtable.  * @user_data: a pointer that is passed as user_data to all vtable functions.  *  * Returns: the name of the temporary procedure that's been installed  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -463,7 +463,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_uninstall:  * @progress_callback: the name of the temporary procedure to uninstall  *  * Uninstalls a temporary progress procedure that was installed using  * gimp_progress_install().  *  * Return value: the @user_data that was passed to gimp_progress_install().  *  * Since: 2.2  **/
+comment|/**  * gimp_progress_uninstall:  * @progress_callback: the name of the temporary procedure to uninstall  *  * Uninstalls a temporary progress procedure that was installed using  * gimp_progress_install().  *  * Returns: the @user_data that was passed to gimp_progress_install().  *  * Since: 2.2  **/
 end_comment
 
 begin_function

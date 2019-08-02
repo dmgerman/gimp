@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3475c0103
+DECL|enum|__anon2953bb400103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -471,7 +471,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_get_tags:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the list of tags assigned to this object. The returned %GList  * is owned by the @tagged object and must not be modified or destroyed.  *  * Return value: a list of tags  **/
+comment|/**  * gimp_tagged_get_tags:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the list of tags assigned to this object. The returned %GList  * is owned by the @tagged object and must not be modified or destroyed.  *  * Returns: a list of tags  **/
 end_comment
 
 begin_function
@@ -510,7 +510,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_get_identifier:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns an identifier string which uniquely identifies the tagged  * object. Two different objects must have unique identifiers but may  * have the same checksum (which will be the case if one object is a  * copy of the other). The identifier must be the same across  * sessions, so for example an instance pointer cannot be used as an  * identifier.  *  * Return value: a newly allocated string containing unique identifier  * of the object. It must be freed using #g_free.  **/
+comment|/**  * gimp_tagged_get_identifier:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns an identifier string which uniquely identifies the tagged  * object. Two different objects must have unique identifiers but may  * have the same checksum (which will be the case if one object is a  * copy of the other). The identifier must be the same across  * sessions, so for example an instance pointer cannot be used as an  * identifier.  *  * Returns: a newly allocated string containing unique identifier  * of the object. It must be freed using #g_free.  **/
 end_comment
 
 begin_function
@@ -549,7 +549,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_get_checksum:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the checksum of the @tagged object. It is used to remap the  * tags for an object for which the identifier has changed, for  * example if the user has renamed a data file since the last session.  *  * If the object does not want to support such remapping (objects not  * stored in file for example) it can return %NULL.  *  * Return value: checksum string if object needs identifier remapping,  * %NULL otherwise. Returned string must be freed with #g_free().  **/
+comment|/**  * gimp_tagged_get_checksum:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns the checksum of the @tagged object. It is used to remap the  * tags for an object for which the identifier has changed, for  * example if the user has renamed a data file since the last session.  *  * If the object does not want to support such remapping (objects not  * stored in file for example) it can return %NULL.  *  * Returns: checksum string if object needs identifier remapping,  * %NULL otherwise. Returned string must be freed with #g_free().  **/
 end_comment
 
 begin_function
@@ -588,7 +588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_has_tag:  * @tagged: an object that implements the %GimpTagged interface  * @tag:    a %GimpTag  *  * Return value: %TRUE if the object has @tag, %FALSE otherwise.  **/
+comment|/**  * gimp_tagged_has_tag:  * @tagged: an object that implements the %GimpTagged interface  * @tag:    a %GimpTag  *  * Returns: %TRUE if the object has @tag, %FALSE otherwise.  **/
 end_comment
 
 begin_function

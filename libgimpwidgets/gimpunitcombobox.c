@@ -324,7 +324,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_combo_box_new:  *  * Return value: a new #GimpUnitComboBox.  **/
+comment|/**  * gimp_unit_combo_box_new:  *  * Returns: a new #GimpUnitComboBox.  **/
 end_comment
 
 begin_function
@@ -376,7 +376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_combo_box_new_with_model:  * @model: a GimpUnitStore  *  * Return value: a new #GimpUnitComboBox.  **/
+comment|/**  * gimp_unit_combo_box_new_with_model:  * @model: a GimpUnitStore  *  * Returns: a new #GimpUnitComboBox.  **/
 end_comment
 
 begin_function

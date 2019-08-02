@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e536530103
+DECL|enum|__anon275421150103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e536530203
+DECL|enum|__anon275421150203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -140,7 +140,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e536530303
+DECL|enum|__anon275421150303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -1131,7 +1131,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_new:  * @separators:           The allowed separators.  * @allow_simplification: Whether to do simplification on the entered term.  * @min_valid_value:      The minimum allowed result value.  * @max_valid_value:      The maximum allowed result value.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the  * input ends in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as  * separators when parsing input. The first separator is used when  * displaying the current values.  *  * It is possible to specify what range of values that shall be  * considered as valid when parsing user input, by changing  * "min-valid-value" and "max-valid-value".  *  * The first separator of @separators is used to display the current  * value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: 2.4  **/
+comment|/**  * gimp_number_pair_entry_new:  * @separators:           The allowed separators.  * @allow_simplification: Whether to do simplification on the entered term.  * @min_valid_value:      The minimum allowed result value.  * @max_valid_value:      The maximum allowed result value.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the  * input ends in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as  * separators when parsing input. The first separator is used when  * displaying the current values.  *  * It is possible to specify what range of values that shall be  * considered as valid when parsing user input, by changing  * "min-valid-value" and "max-valid-value".  *  * The first separator of @separators is used to display the current  * value.  *  * Returns: The new #GimpNumberPairEntry widget.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

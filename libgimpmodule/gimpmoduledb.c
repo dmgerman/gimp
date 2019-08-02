@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29468e220103
+DECL|enum|__anon2c09f6d40103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -564,7 +564,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_new:  * @verbose: Pass %TRUE to enable debugging output.  *  * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *  * Return value: The new #GimpModuleDB instance.  **/
+comment|/**  * gimp_module_db_new:  * @verbose: Pass %TRUE to enable debugging output.  *  * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *  * Returns: The new #GimpModuleDB instance.  **/
 end_comment
 
 begin_function
@@ -609,7 +609,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_modules:  * @db: A #GimpModuleDB.  *  * Returns a #GList of the modules kept by @db. The list must not be  * modified or freed.  *  * Return value: (element-type GimpModule) (transfer none): a #GList  * of #GimpModule instances.  *  * Since: 3.0  **/
+comment|/**  * gimp_module_db_get_modules:  * @db: A #GimpModuleDB.  *  * Returns a #GList of the modules kept by @db. The list must not be  * modified or freed.  *  * Returns: (element-type GimpModule) (transfer none): a #GList  * of #GimpModule instances.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -686,7 +686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_verbose:  * @db: A #GimpModuleDB.  *  * Returns the 'verbose' setting of @db.  *  * Return value: the 'verbose' setting.  *  * Since: 3.0  **/
+comment|/**  * gimp_module_db_get_verbose:  * @db: A #GimpModuleDB.  *  * Returns the 'verbose' setting of @db.  *  * Returns: the 'verbose' setting.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -972,7 +972,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *  * Return the #G_SEARCHPATH_SEPARATOR delimited list of module filenames  * which are excluded from auto-loading.  *  * Return value: the @db's @load_inhibit string.  **/
+comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *  * Return the #G_SEARCHPATH_SEPARATOR delimited list of module filenames  * which are excluded from auto-loading.  *  * Returns: the @db's @load_inhibit string.  **/
 end_comment
 
 begin_function

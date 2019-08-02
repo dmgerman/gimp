@@ -372,7 +372,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_revert:  * @shell:     the #GimpDisplayShell  *  * Reverts the display to the previously used scale. If no previous  * scale exist, then the call does nothing.  *  * Return value: %TRUE if the scale was reverted, otherwise %FALSE.  **/
+comment|/**  * gimp_display_shell_scale_revert:  * @shell:     the #GimpDisplayShell  *  * Reverts the display to the previously used scale. If no previous  * scale exist, then the call does nothing.  *  * Returns: %TRUE if the scale was reverted, otherwise %FALSE.  **/
 end_comment
 
 begin_function
@@ -440,7 +440,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_can_revert:  * @shell: the #GimpDisplayShell  *  * Return value: %TRUE if a previous display scale exists, otherwise %FALSE.  **/
+comment|/**  * gimp_display_shell_scale_can_revert:  * @shell: the #GimpDisplayShell  *  * Returns: %TRUE if a previous display scale exists, otherwise %FALSE.  **/
 end_comment
 
 begin_function

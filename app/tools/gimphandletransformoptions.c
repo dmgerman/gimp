@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c391d2b0103
+DECL|enum|__anon28e77c4b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -369,7 +369,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_handle_transform_options_gui:  * @tool_options: a #GimpToolOptions  *  * Build the Transform Tool Options.  *  * Return value: a container holding the transform tool options  **/
+comment|/**  * gimp_handle_transform_options_gui:  * @tool_options: a #GimpToolOptions  *  * Build the Transform Tool Options.  *  * Returns: a container holding the transform tool options  **/
 end_comment
 
 begin_function

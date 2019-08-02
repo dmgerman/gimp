@@ -93,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_desc() instead.  *  * Return value: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: 2.2  **/
+comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_desc() instead.  *  * Returns: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -159,7 +159,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_desc() instead.  *  * Return value: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: 2.8  **/
+comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_desc() instead.  *  * Returns: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: 2.8  **/
 end_comment
 
 begin_function

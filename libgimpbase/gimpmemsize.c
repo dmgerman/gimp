@@ -145,7 +145,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size().  *  * Return value: A newly allocated string representation of @memsize.  *  * Since: 2.2  **/
+comment|/**  * gimp_memsize_serialize:  * @memsize: memory size in bytes  *  * Creates a string representation of a given memory size. This string  * can be parsed by gimp_memsize_deserialize() and can thus be used in  * config files. It should not be displayed to the user. If you need a  * nice human-readable string please use g_format_size().  *  * Returns: A newly allocated string representation of @memsize.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -270,7 +270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_memsize_deserialize:  * @string:  a string as returned by gimp_memsize_serialize()  * @memsize: return location for memory size in bytes  *  * Parses a string representation of a memory size as returned by  * gimp_memsize_serialize().  *  * Return value: %TRUE if the @string was successfully parsed and  *               @memsize has been set, %FALSE otherwise.  *  * Since: 2.2  **/
+comment|/**  * gimp_memsize_deserialize:  * @string:  a string as returned by gimp_memsize_serialize()  * @memsize: return location for memory size in bytes  *  * Parses a string representation of a memory size as returned by  * gimp_memsize_serialize().  *  * Returns: %TRUE if the @string was successfully parsed and  *               @memsize has been set, %FALSE otherwise.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

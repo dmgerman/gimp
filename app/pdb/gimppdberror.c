@@ -22,7 +22,7 @@ file|"gimppdberror.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_pdb_error_quark:  *  * This function is never called directly. Use GIMP_PDB_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpPlugIn error domain.  **/
+comment|/**  * gimp_pdb_error_quark:  *  * This function is never called directly. Use GIMP_PDB_ERROR() instead.  *  * Returns: the #GQuark that defines the GimpPlugIn error domain.  **/
 end_comment
 
 begin_function

@@ -285,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2035d0103
+DECL|enum|__anon2c247fcc0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -313,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2035d0203
+DECL|enum|__anon2c247fcc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3427,7 +3427,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_is_restored:  * @gimp: a #Gimp object  *  * Return value: %TRUE if GIMP is completely started, %FALSE otherwise.  **/
+comment|/**  * gimp_is_restored:  * @gimp: a #Gimp object  *  * Returns: %TRUE if GIMP is completely started, %FALSE otherwise.  **/
 end_comment
 
 begin_function

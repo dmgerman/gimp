@@ -114,7 +114,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991aaf90103
+DECL|enum|__anon2b41804c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,7 +165,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991aaf90208
+DECL|struct|__anon2b41804c0208
 block|{
 comment|/*  input  */
 DECL|member|histogram
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991aaf90308
+DECL|struct|__anon2b41804c0308
 block|{
 DECL|member|async
 name|GimpAsync
@@ -864,7 +864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_histogram_duplicate:  * @histogram: a %GimpHistogram  *  * Creates a duplicate of @histogram. The duplicate has a reference  * count of 1 and contains the values from @histogram.  *  * Return value: a newly allocated %GimpHistogram  **/
+comment|/**  * gimp_histogram_duplicate:  * @histogram: a %GimpHistogram  *  * Creates a duplicate of @histogram. The duplicate has a reference  * count of 1 and contains the values from @histogram.  *  * Returns: a newly allocated %GimpHistogram  **/
 end_comment
 
 begin_function

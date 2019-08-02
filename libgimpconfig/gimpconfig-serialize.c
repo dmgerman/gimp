@@ -995,7 +995,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #GString.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: 2.4  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #GString.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

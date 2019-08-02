@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b12eaf60103
+DECL|enum|__anon2b83f1600103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -5757,7 +5757,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_help_widget:  * @gse: a #GimpSizeEntry  * @field: the index of the widget you want to get a pointer to  *  * You shouldn't fiddle with the internals of a #GimpSizeEntry but  * if you want to set tooltips using gimp_help_set_help_data() you  * can use this function to get a pointer to the spinbuttons.  *  * Return value: (transfer none): a #GtkWidget pointer that you can attach a tooltip to.  **/
+comment|/**  * gimp_size_entry_get_help_widget:  * @gse: a #GimpSizeEntry  * @field: the index of the widget you want to get a pointer to  *  * You shouldn't fiddle with the internals of a #GimpSizeEntry but  * if you want to set tooltips using gimp_help_set_help_data() you  * can use this function to get a pointer to the spinbuttons.  *  * Returns: (transfer none): a #GtkWidget pointer that you can attach a tooltip to.  **/
 end_comment
 
 begin_function

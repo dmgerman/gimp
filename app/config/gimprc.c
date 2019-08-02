@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad489bd0103
+DECL|enum|__anon2b70f6520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1332,7 +1332,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_query:  * @rc:  a #GimpRc object.  * @key: a string used as a key for the lookup.  *  * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Return value: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
+comment|/**  * gimp_rc_query:  * @rc:  a #GimpRc object.  * @key: a string used as a key for the lookup.  *  * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Returns: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
 end_comment
 
 begin_function

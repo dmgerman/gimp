@@ -243,7 +243,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_buffer:  * @buffer:     The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %buffer to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_buffer:  * @buffer:     The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %buffer to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Returns: The new layer.  **/
 end_comment
 
 begin_function
@@ -334,7 +334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_gegl_buffer:  * @buffer:     The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %buffer to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_gegl_buffer:  * @buffer:     The buffer to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %buffer to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Returns: The new layer.  **/
 end_comment
 
 begin_function
@@ -463,7 +463,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @pixbuf:     The pixbuf to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_pixbuf:  * @pixbuf:     The pixbuf to make the new layer from.  * @dest_image: The image the new layer will be added to.  * @format:     The #Babl format of the new layer.  * @name:       The new layer's name.  * @opacity:    The new layer's opacity.  * @mode:       The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Returns: The new layer.  **/
 end_comment
 
 begin_function

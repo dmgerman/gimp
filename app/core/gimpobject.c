@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd173480103
+DECL|enum|__anon2c375c1f0103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd173480203
+DECL|enum|__anon2c375c1f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1098,7 +1098,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_get_name:  * @object: a #GimpObject  *  * This function gives access to the name of a GimpObject. The  * returned name belongs to the object and must not be freed.  *  * Return value: a pointer to the @object's name  **/
+comment|/**  * gimp_object_get_name:  * @object: a #GimpObject  *  * This function gives access to the name of a GimpObject. The  * returned name belongs to the object and must not be freed.  *  * Returns: a pointer to the @object's name  **/
 end_comment
 
 begin_function
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_name_collate:  * @object1: a #GimpObject  * @object2: another #GimpObject  *  * Compares two object names for ordering using the linguistically  * correct rules for the current locale. It caches the normalized  * version of the object name to speed up subsequent calls.  *  * Return value: -1 if object1 compares before object2,  *                0 if they compare equal,  *                1 if object1 compares after object2.  **/
+comment|/**  * gimp_object_name_collate:  * @object1: a #GimpObject  * @object2: another #GimpObject  *  * Compares two object names for ordering using the linguistically  * correct rules for the current locale. It caches the normalized  * version of the object name to speed up subsequent calls.  *  * Returns: -1 if object1 compares before object2,  *                0 if they compare equal,  *                1 if object1 compares after object2.  **/
 end_comment
 
 begin_function

@@ -492,7 +492,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_boundary_find:  * @buffer:    a #GeglBuffer  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        bottom side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR parameter can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Return value: the boundary array.  **/
+comment|/**  * gimp_boundary_find:  * @buffer:    a #GeglBuffer  * @format:    a #Babl float format representing the component to analyze  * @type:      type of bounds  * @x1:        left side of bounds  * @y1:        top side of bounds  * @x2:        right side of bounds  * @y2:        bottom side of bounds  * @threshold: pixel value of boundary line  * @num_segs:  number of returned #GimpBoundSeg's  *  * This function returns an array of #GimpBoundSeg's which describe all  * outlines along pixel value @threahold, optionally within specified  * bounds instead of the whole region.  *  * The @maskPR parameter can be any PixelRegion.  If the region has  * more than 1 bytes/pixel, the last byte of each pixel is used to  * determine the boundary outline.  *  * Returns: the boundary array.  **/
 end_comment
 
 begin_function
@@ -667,7 +667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_boundary_sort:  * @segs:       unsorted input segs.  * @num_segs:   number of input segs  * @num_groups: number of groups in the sorted segs  *  * This function takes an array of #GimpBoundSeg's as returned by  * gimp_boundary_find() and sorts it by contiguous groups. The returned  * array contains markers consisting of -1 coordinates and is  * @num_groups elements longer than @segs.  *  * Return value: the sorted segs  **/
+comment|/**  * gimp_boundary_sort:  * @segs:       unsorted input segs.  * @num_segs:   number of input segs  * @num_groups: number of groups in the sorted segs  *  * This function takes an array of #GimpBoundSeg's as returned by  * gimp_boundary_find() and sorts it by contiguous groups. The returned  * array contains markers consisting of -1 coordinates and is  * @num_groups elements longer than @segs.  *  * Returns: the sorted segs  **/
 end_comment
 
 begin_function
@@ -1211,7 +1211,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_boundary_simplify:  * @sorted_segs: sorted input segs  * @num_groups:  number of groups in the sorted segs  * @num_segs:    number of returned segs.  *  * This function takes an array of #GimpBoundSeg's which has been sorted  * with gimp_boundary_sort() and reduces the number of segments while  * preserving the general shape as close as possible.  *  * Return value: the simplified segs.  **/
+comment|/**  * gimp_boundary_simplify:  * @sorted_segs: sorted input segs  * @num_groups:  number of groups in the sorted segs  * @num_segs:    number of returned segs.  *  * This function takes an array of #GimpBoundSeg's which has been sorted  * with gimp_boundary_sort() and reduces the number of segments while  * preserving the general shape as close as possible.  *  * Returns: the simplified segs.  **/
 end_comment
 
 begin_function

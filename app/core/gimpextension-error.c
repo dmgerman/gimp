@@ -22,7 +22,7 @@ file|"gimpextension-error.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_extension_error_quark:  *  * This function is never called directly. Use GIMP_EXTENSION_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpExtension error domain.  **/
+comment|/**  * gimp_extension_error_quark:  *  * This function is never called directly. Use GIMP_EXTENSION_ERROR() instead.  *  * Returns: the #GQuark that defines the GimpExtension error domain.  **/
 end_comment
 
 begin_function

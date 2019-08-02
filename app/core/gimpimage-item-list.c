@@ -1142,7 +1142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_item_list_get_list:  * @image:   An @image.  * @type:    Which type of items to return.  * @set:     Set the returned items are part of.  *  * This function returns a #GList of #GimpItem<!-- -->s for which the  * @type and @set criterions match.  *  * Return value: The list of items.  **/
+comment|/**  * gimp_image_item_list_get_list:  * @image:   An @image.  * @type:    Which type of items to return.  * @set:     Set the returned items are part of.  *  * This function returns a #GList of #GimpItem<!-- -->s for which the  * @type and @set criterions match.  *  * Returns: The list of items.  **/
 end_comment
 
 begin_function

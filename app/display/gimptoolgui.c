@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af541950103
+DECL|enum|__anon27e635e10103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -803,7 +803,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_gui_new:  * @tool_info:   a #GimpToolInfo  * @description: a string to use in the gui header or %NULL to use the help  *               field from #GimpToolInfo  * @...:         a %NULL-terminated valist of button parameters as described in  *               gtk_gui_new_with_buttons().  *  * This function creates a #GimpToolGui using the information stored  * in @tool_info.  *  * Return value: a new #GimpToolGui  **/
+comment|/**  * gimp_tool_gui_new:  * @tool_info:   a #GimpToolInfo  * @description: a string to use in the gui header or %NULL to use the help  *               field from #GimpToolInfo  * @...:         a %NULL-terminated valist of button parameters as described in  *               gtk_gui_new_with_buttons().  *  * This function creates a #GimpToolGui using the information stored  * in @tool_info.  *  * Returns: a new #GimpToolGui  **/
 end_comment
 
 begin_function

@@ -1150,7 +1150,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * file_open_thumbnail:  * @gimp:  * @context:  * @progress:  * @file:         an image file  * @size:         requested size of the thumbnail  * @mime_type:    return location for image MIME type  * @image_width:  return location for image width  * @image_height: return location for image height  * @format:       return location for image format (set to NULL if unknown)  * @num_layers:   return location for number of layers  *                (set to -1 if the number of layers is not known)  * @error:  *  * Attempts to load a thumbnail by using a registered thumbnail loader.  *  * Return value: the thumbnail image  */
+comment|/**  * file_open_thumbnail:  * @gimp:  * @context:  * @progress:  * @file:         an image file  * @size:         requested size of the thumbnail  * @mime_type:    return location for image MIME type  * @image_width:  return location for image width  * @image_height: return location for image height  * @format:       return location for image format (set to NULL if unknown)  * @num_layers:   return location for number of layers  *                (set to -1 if the number of layers is not known)  * @error:  *  * Attempts to load a thumbnail by using a registered thumbnail loader.  *  * Returns: the thumbnail image  */
 end_comment
 
 begin_function

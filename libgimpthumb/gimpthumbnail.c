@@ -260,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0988180103
+DECL|enum|__anon2b7c5ab10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1331,7 +1331,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_new:  *  * Creates a new #GimpThumbnail object.  *  * Return value: a newly allocated GimpThumbnail object  **/
+comment|/**  * gimp_thumbnail_new:  *  * Creates a new #GimpThumbnail object.  *  * Returns: a newly allocated GimpThumbnail object  **/
 end_comment
 
 begin_function
@@ -1500,7 +1500,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_set_filename:  * @thumbnail: a #GimpThumbnail object  * @filename: a local filename in the encoding of the filesystem  * @error: return location for possible errors  *  * Sets the location of the image file associated with the #thumbnail.  *  * Return value: %TRUE if the filename was successfully set,  *               %FALSE otherwise  **/
+comment|/**  * gimp_thumbnail_set_filename:  * @thumbnail: a #GimpThumbnail object  * @filename: a local filename in the encoding of the filesystem  * @error: return location for possible errors  *  * Sets the location of the image file associated with the #thumbnail.  *  * Returns: %TRUE if the filename was successfully set,  *               %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -1597,7 +1597,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_set_from_thumb:  * @thumbnail: a #GimpThumbnail object  * @filename: filename of a local thumbnail file  * @error: return location for possible errors  *  * This function tries to load the thumbnail file pointed to by  * @filename and retrieves the URI of the original image file from  * it. This allows you to find the image file associated with a  * thumbnail file.  *  * This will only work with thumbnails from the global thumbnail  * directory that contain a valid Thumb::URI tag.  *  * Return value: %TRUE if the pixbuf could be loaded, %FALSE otherwise  **/
+comment|/**  * gimp_thumbnail_set_from_thumb:  * @thumbnail: a #GimpThumbnail object  * @filename: filename of a local thumbnail file  * @error: return location for possible errors  *  * This function tries to load the thumbnail file pointed to by  * @filename and retrieves the URI of the original image file from  * it. This allows you to find the image file associated with a  * thumbnail file.  *  * This will only work with thumbnails from the global thumbnail  * directory that contain a valid Thumb::URI tag.  *  * Returns: %TRUE if the pixbuf could be loaded, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -1741,7 +1741,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_peek_image:  * @thumbnail: a #GimpThumbnail object  *  * Checks the image file associated with the @thumbnail and updates  * information such as state, filesize and modification time.  *  * Return value: the image's #GimpThumbState after the update  **/
+comment|/**  * gimp_thumbnail_peek_image:  * @thumbnail: a #GimpThumbnail object  *  * Checks the image file associated with the @thumbnail and updates  * information such as state, filesize and modification time.  *  * Returns: the image's #GimpThumbState after the update  **/
 end_comment
 
 begin_function
@@ -1799,7 +1799,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_peek_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists. It doesn't  * load the thumbnail image and thus cannot check if the thumbnail is  * valid and uptodate for the image file asosciated with the  * @thumbnail.  *  * If you want to check the thumbnail, either attempt to load it using  * gimp_thumbnail_load_thumb(), or, if you don't need the resulting  * thumbnail pixbuf, use gimp_thumbnail_check_thumb().  *  * Return value: the thumbnail's #GimpThumbState after the update  **/
+comment|/**  * gimp_thumbnail_peek_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists. It doesn't  * load the thumbnail image and thus cannot check if the thumbnail is  * valid and uptodate for the image file asosciated with the  * @thumbnail.  *  * If you want to check the thumbnail, either attempt to load it using  * gimp_thumbnail_load_thumb(), or, if you don't need the resulting  * thumbnail pixbuf, use gimp_thumbnail_check_thumb().  *  * Returns: the thumbnail's #GimpThumbState after the update  **/
 end_comment
 
 begin_function
@@ -1867,7 +1867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_check_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists, loads it and  * verifies it is valid and uptodate for the image file asosciated  * with the @thumbnail.  *  * Return value: the thumbnail's #GimpThumbState after the update  *  * Since: 2.2  **/
+comment|/**  * gimp_thumbnail_check_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists, loads it and  * verifies it is valid and uptodate for the image file asosciated  * with the @thumbnail.  *  * Returns: the thumbnail's #GimpThumbState after the update  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3418,7 +3418,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_thumbnail_load_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred #GimpThumbSize for the preview  * @error: return location for possible errors  *  * Attempts to load a thumbnail preview for the image associated with  * @thumbnail. Before you use this function you need need to set an  * image location using gimp_thumbnail_set_uri() or  * gimp_thumbnail_set_filename(). You can also peek at the thumb  * before loading it using gimp_thumbnail_peek_thumb.  *  * This function will return the best matching pixbuf for the  * specified @size. It returns the pixbuf as loaded from disk. It is  * left to the caller to scale it to the desired size. The returned  * pixbuf may also represent an outdated preview of the image file.  * In order to verify if the preview is uptodate, you should check the  * "thumb_state" property after calling this function.  *  * Return value: (transfer full): a preview pixbuf or %NULL if no  *               thumbnail was found  **/
+comment|/**  * gimp_thumbnail_load_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred #GimpThumbSize for the preview  * @error: return location for possible errors  *  * Attempts to load a thumbnail preview for the image associated with  * @thumbnail. Before you use this function you need need to set an  * image location using gimp_thumbnail_set_uri() or  * gimp_thumbnail_set_filename(). You can also peek at the thumb  * before loading it using gimp_thumbnail_peek_thumb.  *  * This function will return the best matching pixbuf for the  * specified @size. It returns the pixbuf as loaded from disk. It is  * left to the caller to scale it to the desired size. The returned  * pixbuf may also represent an outdated preview of the image file.  * In order to verify if the preview is uptodate, you should check the  * "thumb_state" property after calling this function.  *  * Returns: (transfer full): a preview pixbuf or %NULL if no  *               thumbnail was found  **/
 end_comment
 
 begin_function
@@ -3786,7 +3786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_save_thumb:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail.  * to the global thumbnail repository.  *  * The caller is responsible for setting the image file location, it's  * filesize, modification time. One way to set this info is to is to  * call gimp_thumbnail_set_uri() followed by gimp_thumbnail_peek_image().  * Since this won't work for remote images, it is left to the user of  * gimp_thumbnail_save_thumb() to do this or to set the information  * using the @thumbnail object properties.  *  * The image format type and the number of layers can optionally be  * set in order to be stored with the preview image.  *  * Return value: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  **/
+comment|/**  * gimp_thumbnail_save_thumb:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail.  * to the global thumbnail repository.  *  * The caller is responsible for setting the image file location, it's  * filesize, modification time. One way to set this info is to is to  * call gimp_thumbnail_set_uri() followed by gimp_thumbnail_peek_image().  * Since this won't work for remote images, it is left to the user of  * gimp_thumbnail_save_thumb() to do this or to set the information  * using the @thumbnail object properties.  *  * The image format type and the number of layers can optionally be  * set in order to be stored with the preview image.  *  * Returns: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -3974,7 +3974,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_save_thumb_local:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail  * to the local thumbnail repository. Local thumbnails have been added  * with version 0.7 of the spec.  *  * Please see also gimp_thumbnail_save_thumb(). The notes made there  * apply here as well.  *  * Return value: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  *  * Since: 2.2  **/
+comment|/**  * gimp_thumbnail_save_thumb_local:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail  * to the local thumbnail repository. Local thumbnails have been added  * with version 0.7 of the spec.  *  * Please see also gimp_thumbnail_save_thumb(). The notes made there  * apply here as well.  *  * Returns: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -4218,7 +4218,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_save_failure:  * @thumbnail: a #GimpThumbnail object  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a failure thumbnail for the image associated with  * @thumbnail. This is an empty pixbuf that indicates that an attempt  * to create a preview for the image file failed. It should be used to  * prevent the software from further attempts to create this thumbnail.  *  * Return value: %TRUE if a failure thumbnail was successfully written,  *               %FALSE otherwise  **/
+comment|/**  * gimp_thumbnail_save_failure:  * @thumbnail: a #GimpThumbnail object  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a failure thumbnail for the image associated with  * @thumbnail. This is an empty pixbuf that indicates that an attempt  * to create a preview for the image file failed. It should be used to  * prevent the software from further attempts to create this thumbnail.  *  * Returns: %TRUE if a failure thumbnail was successfully written,  *               %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -4630,7 +4630,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_has_failed:  * @thumbnail: a #GimpThumbnail object  *  * Checks if a valid failure thumbnail for the given thumbnail exists  * in the global thumbnail repository. This may be the case even if  * gimp_thumbnail_peek_thumb() doesn't return %GIMP_THUMB_STATE_FAILED  * since there might be a real thumbnail and a failure thumbnail for  * the same image file.  *  * The application should not attempt to create the thumbnail if a  * valid failure thumbnail exists.  *  * Return value: %TRUE if a failure thumbnail exists or  *  * Since: 2.2  **/
+comment|/**  * gimp_thumbnail_has_failed:  * @thumbnail: a #GimpThumbnail object  *  * Checks if a valid failure thumbnail for the given thumbnail exists  * in the global thumbnail repository. This may be the case even if  * gimp_thumbnail_peek_thumb() doesn't return %GIMP_THUMB_STATE_FAILED  * since there might be a real thumbnail and a failure thumbnail for  * the same image file.  *  * The application should not attempt to create the thumbnail if a  * valid failure thumbnail exists.  *  * Returns: %TRUE if a failure thumbnail exists or  *  * Since: 2.2  **/
 end_comment
 
 begin_function

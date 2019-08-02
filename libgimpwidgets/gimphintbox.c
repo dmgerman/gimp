@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0bdfd90103
+DECL|enum|__anon29c1a4fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -679,7 +679,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hint_box_new:  * @hint: text to display as a user hint  *  * Creates a new widget that shows a text label showing @hint,  * decorated with a GIMP_ICON_INFO wilber icon.  *  * Return value: a new widget  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_hint_box_new:  * @hint: text to display as a user hint  *  * Creates a new widget that shows a text label showing @hint,  * decorated with a GIMP_ICON_INFO wilber icon.  *  * Returns: a new widget  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function

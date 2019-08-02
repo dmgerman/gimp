@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4355be0103
+DECL|enum|__anon291e7f4a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4355be0203
+DECL|enum|__anon291e7f4a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1190,7 +1190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_estimate_memsize:  * @type:           the projectable's base type  * @component_type: the projectable's component type  * @width:          projection width  * @height:         projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Return value: a rough estimate of the memory requirements.  **/
+comment|/**  * gimp_projection_estimate_memsize:  * @type:           the projectable's base type  * @component_type: the projectable's component type  * @width:          projection width  * @height:         projection height  *  * Calculates a rough estimate of the memory that is required for the  * projection of an image with the given @width and @height.  *  * Returns: a rough estimate of the memory requirements.  **/
 end_comment
 
 begin_function

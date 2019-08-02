@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c15c190103
+DECL|enum|__anon292b10d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -486,7 +486,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum  * @value:     an enum value  *  * Return value: a new #GimpEnumLabel.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_label_new:  * @enum_type: the #GType of an enum  * @value:     an enum value  *  * Returns: a new #GimpEnumLabel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d22730103
+DECL|enum|__anon290c69b00103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
@@ -138,7 +138,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_managed_get_icc_profile:  * @managed: an object the implements the #GimpColorManaged interface  * @len:     return location for the number of bytes in the profile data  *  * Return value: A pointer to a blob of data that represents an ICC  *               color profile.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_managed_get_icc_profile:  * @managed: an object the implements the #GimpColorManaged interface  * @len:     return location for the number of bytes in the profile data  *  * Returns: A pointer to a blob of data that represents an ICC  *               color profile.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -215,7 +215,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function always returns a #GimpColorProfile and falls back to  * gimp_color_profile_new_rgb_srgb() if the method is not implemented.  *  * Return value: (transfer full): The @managed's #GimpColorProfile.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_managed_get_color_profile:  * @managed: an object the implements the #GimpColorManaged interface  *  * This function always returns a #GimpColorProfile and falls back to  * gimp_color_profile_new_rgb_srgb() if the method is not implemented.  *  * Returns: (transfer full): The @managed's #GimpColorProfile.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

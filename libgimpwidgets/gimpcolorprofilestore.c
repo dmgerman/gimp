@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c807fa0103
+DECL|enum|__anon2b9f449a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -771,7 +771,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Return value: a new #GimpColorProfileStore  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Returns: a new #GimpColorProfileStore  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -937,7 +937,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_color_profile_store_history_add:  * @store: a #GimpColorProfileStore  * @file:  file of the profile to add (or %NULL)  * @label: label to use for the profile (or %NULL)  * @iter:  a #GtkTreeIter  *  * Return value: %TRUE if the iter is valid and pointing to the item  *  * Since: 2.4  **/
+comment|/**  * _gimp_color_profile_store_history_add:  * @store: a #GimpColorProfileStore  * @file:  file of the profile to add (or %NULL)  * @label: label to use for the profile (or %NULL)  * @iter:  a #GtkTreeIter  *  * Returns: %TRUE if the iter is valid and pointing to the item  *  * Since: 2.4  **/
 end_comment
 
 begin_function

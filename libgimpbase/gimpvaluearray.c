@@ -537,7 +537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_ref:  * @value_array: #GimpValueArray to ref  *  * Adds a reference to a #GimpValueArray.  *  * Return value: the same @value_array  *  * Since: 2.10  */
+comment|/**  * gimp_value_array_ref:  * @value_array: #GimpValueArray to ref  *  * Adds a reference to a #GimpValueArray.  *  * Returns: the same @value_array  *  * Since: 2.10  */
 end_comment
 
 begin_function

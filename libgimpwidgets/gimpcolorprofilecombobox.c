@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba7a7ec0103
+DECL|enum|__anon27c322f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -900,7 +900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_new:  * @dialog:  a #GtkDialog to present when the user selects the  *           "Select color profile from disk..." item  * @history: filename of the profilerc (or %NULL for no history)  *  * Create a combo-box widget for selecting color profiles. The combo-box  * is populated from the file specified as @history. This filename is  * typically created using the following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * The recommended @dialog type to use is a #GimpColorProfileChooserDialog.  * If a #GimpColorProfileChooserDialog is passed, #GimpColorProfileComboBox  * will take complete control over the dialog, which means connecting  * a GtkDialog::response() callback by itself, and take care of destroying  * the dialog when the combo box is destroyed.  *  * If another type of @dialog is passed, this has to be implemented  * separately.  *  * See also gimp_color_profile_combo_box_new_with_model().  *  * Return value: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_new:  * @dialog:  a #GtkDialog to present when the user selects the  *           "Select color profile from disk..." item  * @history: filename of the profilerc (or %NULL for no history)  *  * Create a combo-box widget for selecting color profiles. The combo-box  * is populated from the file specified as @history. This filename is  * typically created using the following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * The recommended @dialog type to use is a #GimpColorProfileChooserDialog.  * If a #GimpColorProfileChooserDialog is passed, #GimpColorProfileComboBox  * will take complete control over the dialog, which means connecting  * a GtkDialog::response() callback by itself, and take care of destroying  * the dialog when the combo box is destroyed.  *  * If another type of @dialog is passed, this has to be implemented  * separately.  *  * See also gimp_color_profile_combo_box_new_with_model().  *  * Returns: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -968,7 +968,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_new_with_model:  * @dialog: a #GtkDialog to present when the user selects the  *          "Select color profile from disk..." item  * @model:  a #GimpColorProfileStore object  *  * This constructor is useful when you want to create several  * combo-boxes for profile selection that all share the same  * #GimpColorProfileStore. This is for example done in the  * GIMP Preferences dialog.  *  * See also gimp_color_profile_combo_box_new().  *  * Return value: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_new_with_model:  * @dialog: a #GtkDialog to present when the user selects the  *          "Select color profile from disk..." item  * @model:  a #GimpColorProfileStore object  *  * This constructor is useful when you want to create several  * combo-boxes for profile selection that all share the same  * #GimpColorProfileStore. This is for example done in the  * GIMP Preferences dialog.  *  * See also gimp_color_profile_combo_box_new().  *  * Returns: a new #GimpColorProfileComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_get_active_file:  * @combo: a #GimpColorProfileComboBox  *  * Return value: (transfer none): The file of the currently selected  *               color profile, release using g_object_unref() when it  *               is not any longer needed.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_profile_combo_box_get_active_file:  * @combo: a #GimpColorProfileComboBox  *  * Returns: (transfer none): The file of the currently selected  *               color profile, release using g_object_unref() when it  *               is not any longer needed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

@@ -1214,7 +1214,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_get_guid:  *  * Generate Version 4 UUID/GUID.  *  * Return value: The new GUID/UUID string.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_get_guid:  *  * Generate Version 4 UUID/GUID.  *  * Returns: The new GUID/UUID string.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -2351,7 +2351,7 @@ end_expr_stmt
 
 begin_comment
 unit|}
-comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Return value: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_new:  *  * Creates a new #GimpMetadata instance.  *  * Returns: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_expr_stmt
@@ -2421,7 +2421,7 @@ end_expr_stmt
 
 begin_comment
 unit|}
-comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Return value: (transfer full):  *               The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_duplicate:  * @metadata: The object to duplicate, or %NULL.  *  * Duplicates a #GimpMetadata instance.  *  * Returns: (transfer full):  *               The new #GimpMetadata, or %NULL if @metadata is %NULL.  *  * Since: 2.10  */
 end_comment
 
 begin_expr_stmt
@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon2a3e75c30108
+DECL|struct|__anon29457bd90108
 block|{
 DECL|member|name
 name|gchar
@@ -3054,7 +3054,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Return value: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_deserialize:  * @metadata_xml: A string of serialized metadata XML.  *  * Deserializes a string of XML that has been created by  * gimp_metadata_serialize().  *  * Returns: (transfer full): The new #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3336,7 +3336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_serialize:  * @metadata: A #GimpMetadata instance.  *  * Serializes @metadata into an XML string that can later be deserialized  * using gimp_metadata_deserialize().  *  * Return value: The serialized XML string.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_serialize:  * @metadata: A #GimpMetadata instance.  *  * Serializes @metadata into an XML string that can later be deserialized  * using gimp_metadata_deserialize().  *  * Returns: The serialized XML string.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3703,7 +3703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Return value: (transfer full): The loaded #GimpMetadata.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_load_from_file:  * @file:  The #GFile to load the metadata from  * @error: Return location for error message  *  * Loads #GimpMetadata from @file.  *  * Returns: (transfer full): The loaded #GimpMetadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -3900,7 +3900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_save_to_file:  * @metadata: A #GimpMetadata instance.  * @file:     The file to save the metadata to  * @error:    Return location for error message  *  * Saves @metadata to @file.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_save_to_file:  * @metadata: A #GimpMetadata instance.  * @file:     The file to save the metadata to  * @error:    Return location for error message  *  * Saves @metadata to @file.  *  * Returns: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -4080,7 +4080,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of Exif data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of Exif data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_set_from_exif:  * @metadata:         A #GimpMetadata instance.  * @exif_data:        The blob of Exif data to set  * @exif_data_length: Length of @exif_data, in bytes  * @error:            Return location for error message  *  * Sets the tags from a piece of Exif data on @metadata.  *  * Returns: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -4404,7 +4404,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_iptc:  * @metadata:        A #GimpMetadata instance.  * @iptc_data:       The blob of Ipc data to set  * @iptc_data_length:Length of @iptc_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of IPTC data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_set_from_iptc:  * @metadata:        A #GimpMetadata instance.  * @iptc_data:       The blob of Ipc data to set  * @iptc_data_length:Length of @iptc_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of IPTC data on @metadata.  *  * Returns: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -4557,7 +4557,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of Exif data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_set_from_xmp:  * @metadata:        A #GimpMetadata instance.  * @xmp_data:        The blob of Exif data to set  * @xmp_data_length: Length of @exif_data, in bytes  * @error:           Return location for error message  *  * Sets the tags from a piece of XMP data on @metadata.  *  * Returns: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -4863,7 +4863,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_get_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     Return location for the X Resolution, in ppi  * @yres:     Return location for the Y Resolution, in ppi  * @unit:     Return location for the unit unit  *  * Returns values based on Exif.Image.XResolution,  * Exif.Image.YResolution and Exif.Image.ResolutionUnit of @metadata.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_get_resolution:  * @metadata: A #GimpMetadata instance.  * @xres:     Return location for the X Resolution, in ppi  * @yres:     Return location for the Y Resolution, in ppi  * @unit:     Return location for the unit unit  *  * Returns values based on Exif.Image.XResolution,  * Exif.Image.YResolution and Exif.Image.ResolutionUnit of @metadata.  *  * Returns: %TRUE on success, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -5305,7 +5305,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_get_colorspace:  * @metadata: A #GimpMetadata instance.  *  * Returns values based on Exif.Photo.ColorSpace, Xmp.exif.ColorSpace,  * Exif.Iop.InteroperabilityIndex, Exif.Nikon3.ColorSpace,  * Exif.Canon.ColorSpace of @metadata.  *  * Return value: The colorspace specified by above tags.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_get_colorspace:  * @metadata: A #GimpMetadata instance.  *  * Returns values based on Exif.Photo.ColorSpace, Xmp.exif.ColorSpace,  * Exif.Iop.InteroperabilityIndex, Exif.Nikon3.ColorSpace,  * Exif.Canon.ColorSpace of @metadata.  *  * Returns: The colorspace specified by above tags.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -5900,7 +5900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_metadata_is_tag_supported:  * @tag:       A metadata tag name  * @mime_type: A mime type  *  * Returns whether @tag is supported in a file of type @mime_type.  *  * Return value: %TRUE if the @tag supported with @mime_type, %FALSE otherwise.  *  * Since: 2.10  */
+comment|/**  * gimp_metadata_is_tag_supported:  * @tag:       A metadata tag name  * @mime_type: A mime type  *  * Returns whether @tag is supported in a file of type @mime_type.  *  * Returns: %TRUE if the @tag supported with @mime_type, %FALSE otherwise.  *  * Since: 2.10  */
 end_comment
 
 begin_function

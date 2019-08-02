@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94cee80103
+DECL|enum|__anon29904c180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94cee80208
+DECL|struct|__anon29904c180208
 block|{
 DECL|member|update
 name|gboolean
@@ -3226,7 +3226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_drawable_id:  * @preview: a #GimpZoomPreview widget  *  * Returns the drawable_ID the #GimpZoomPreview is attached to.  *  * Return Value: the drawable_ID that was passed to  * gimp_zoom_preview_new_from_drawable_id().  *  * Since: 2.10  **/
+comment|/**  * gimp_zoom_preview_get_drawable_id:  * @preview: a #GimpZoomPreview widget  *  * Returns the drawable_ID the #GimpZoomPreview is attached to.  *  * Returns: the drawable_ID that was passed to  * gimp_zoom_preview_new_from_drawable_id().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3262,7 +3262,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Return Value: (transfer none): a pointer to the #GimpZoomModel owned  *               by the @preview  *  * Since: 2.4  **/
+comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Returns: (transfer none): a pointer to the #GimpZoomModel owned  *               by the @preview  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3298,7 +3298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor the preview is currently using.  *  * Return Value: the current zoom factor  *  * Since: 2.4  **/
+comment|/**  * gimp_zoom_preview_get_factor:  * @preview: a #GimpZoomPreview widget  *  * Returns the zoom factor the preview is currently using.  *  * Returns: the current zoom factor  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3350,7 +3350,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: return location for the number of bytes per pixel  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Return Value: newly allocated data that should be released using g_free()  *               when it is not any longer needed  *  * Since: 2.4  */
+comment|/**  * gimp_zoom_preview_get_source:  * @preview: a #GimpZoomPreview widget  * @width: a pointer to an int where the current width of the zoom widget  *         will be put.  * @height: a pointer to an int where the current width of the zoom widget  *          will be put.  * @bpp: return location for the number of bytes per pixel  *  * Returns the scaled image data of the part of the drawable the  * #GimpZoomPreview is currently showing, as a newly allocated array of guchar.  * This function also allow to get the current width, height and bpp of the  * #GimpZoomPreview.  *  * Returns: newly allocated data that should be released using g_free()  *               when it is not any longer needed  *  * Since: 2.4  */
 end_comment
 
 begin_function

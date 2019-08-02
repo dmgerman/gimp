@@ -113,7 +113,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2922dacc0103
+DECL|enum|__anon2a2e83fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922dacc0208
+DECL|struct|__anon2a2e83fd0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922dacc0308
+DECL|struct|__anon2a2e83fd0308
 block|{
 DECL|member|records
 name|GArray
@@ -730,7 +730,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_cache_new:  *  * Return value: creates new GimpTagCache object.  **/
+comment|/**  * gimp_tag_cache_new:  *  * Returns: creates new GimpTagCache object.  **/
 end_comment
 
 begin_function

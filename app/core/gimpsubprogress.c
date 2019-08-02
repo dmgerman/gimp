@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b29ad830103
+DECL|enum|__anon2c353bb60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -961,7 +961,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sub_progress_new:  * @progress: parent progress or %NULL  *  * GimpSubProgress implements the GimpProgress interface and can be  * used wherever a GimpProgress is needed. It maps progress  * information to a sub-range of its parent @progress. This is useful  * when an action breaks down into multiple sub-actions that itself  * need a #GimpProgress pointer. See gimp_image_scale() for an example.  *  * Return value: a new #GimpProgress object  */
+comment|/**  * gimp_sub_progress_new:  * @progress: parent progress or %NULL  *  * GimpSubProgress implements the GimpProgress interface and can be  * used wherever a GimpProgress is needed. It maps progress  * information to a sub-range of its parent @progress. This is useful  * when an action breaks down into multiple sub-actions that itself  * need a #GimpProgress pointer. See gimp_image_scale() for an example.  *  * Returns: a new #GimpProgress object  */
 end_comment
 
 begin_function

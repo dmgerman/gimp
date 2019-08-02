@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a230e680103
+DECL|enum|__anon2ac2d7df0103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a230e680203
+DECL|enum|__anon2ac2d7df0203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a230e680308
+DECL|struct|__anon2ac2d7df0308
 block|{
 DECL|member|state
 name|TipsParserState
@@ -547,7 +547,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tips_from_file:  * @file:  the tips file to parse  * @error: return location for a #GError  *  * Reads a gimp-tips XML file, creates a new #GimpTip for  * each tip entry and returns a #GList of them. If a parser  * error occurs at some point, the uncompleted list is  * returned and @error is set (unless @error is %NULL).  * The message set in @error contains a detailed description  * of the problem.  *  * Return value: a #Glist of #GimpTips.  **/
+comment|/**  * gimp_tips_from_file:  * @file:  the tips file to parse  * @error: return location for a #GError  *  * Reads a gimp-tips XML file, creates a new #GimpTip for  * each tip entry and returns a #GList of them. If a parser  * error occurs at some point, the uncompleted list is  * returned and @error is set (unless @error is %NULL).  * The message set in @error contains a detailed description  * of the problem.  *  * Returns: a #Glist of #GimpTips.  **/
 end_comment
 
 begin_function

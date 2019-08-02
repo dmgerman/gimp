@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b671d410103
+DECL|enum|__anon2b9e73ea0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b671d410203
+DECL|enum|__anon2b9e73ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2064,7 +2064,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_undo_get_age:  * @undo:  *  * Return value: the time in seconds since this undo item was created  */
+comment|/**  * gimp_undo_get_age:  * @undo:  *  * Returns: the time in seconds since this undo item was created  */
 end_comment
 
 begin_function

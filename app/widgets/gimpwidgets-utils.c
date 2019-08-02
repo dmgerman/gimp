@@ -1302,7 +1302,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_widget_load_icon:  * @widget:                  parent widget (to determine icon theme and  *                           style)  * @icon_name:               icon name  * @size:                    requested pixel size  *  * Loads an icon into a pixbuf with size as close as possible to @size.  * If icon does not exist or fail to load, the function will fallback to  * "gimp-wilber-eek" instead to prevent NULL pixbuf. As a last resort,  * if even the fallback failed to load, a magenta @size square will be  * returned, so this function is guaranteed to always return a  * #GdkPixbuf.  *  * Return value: a newly allocated #GdkPixbuf containing @icon_name at  * size @size or a fallback icon/size.  **/
+comment|/**  * gimp_widget_load_icon:  * @widget:                  parent widget (to determine icon theme and  *                           style)  * @icon_name:               icon name  * @size:                    requested pixel size  *  * Loads an icon into a pixbuf with size as close as possible to @size.  * If icon does not exist or fail to load, the function will fallback to  * "gimp-wilber-eek" instead to prevent NULL pixbuf. As a last resort,  * if even the fallback failed to load, a magenta @size square will be  * returned, so this function is guaranteed to always return a  * #GdkPixbuf.  *  * Returns: a newly allocated #GdkPixbuf containing @icon_name at  * size @size or a fallback icon/size.  **/
 end_comment
 
 begin_function
@@ -1916,7 +1916,7 @@ value|100
 end_define
 
 begin_comment
-comment|/**  * gimp_suggest_modifiers:  * @message:                 initial text for the message  * @modifiers:               bit mask of modifiers that should be suggested  * @extend_selection_format: optional format string for the  *                           "Extend selection" modifier  * @toggle_behavior_format:  optional format string for the  *                           "Toggle behavior" modifier  * @alt_format:              optional format string for the Alt modifier  *  * Utility function to build a message suggesting to use some  * modifiers for performing different actions (only Shift, Ctrl and  * Alt are currently supported).  If some of these modifiers are  * already active, they will not be suggested.  The optional format  * strings #extend_selection_format, #toggle_behavior_format and  * #alt_format may be used to describe what the modifier will do.  * They must contain a single '%%s' which will be replaced by the name  * of the modifier.  They can also be %NULL if the modifier name  * should be left alone.  *  * Return value: a newly allocated string containing the message.  **/
+comment|/**  * gimp_suggest_modifiers:  * @message:                 initial text for the message  * @modifiers:               bit mask of modifiers that should be suggested  * @extend_selection_format: optional format string for the  *                           "Extend selection" modifier  * @toggle_behavior_format:  optional format string for the  *                           "Toggle behavior" modifier  * @alt_format:              optional format string for the Alt modifier  *  * Utility function to build a message suggesting to use some  * modifiers for performing different actions (only Shift, Ctrl and  * Alt are currently supported).  If some of these modifiers are  * already active, they will not be suggested.  The optional format  * strings #extend_selection_format, #toggle_behavior_format and  * #alt_format may be used to describe what the modifier will do.  * They must contain a single '%%s' which will be replaced by the name  * of the modifier.  They can also be %NULL if the modifier name  * should be left alone.  *  * Returns: a newly allocated string containing the message.  **/
 end_comment
 
 begin_function
@@ -3053,7 +3053,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_window_get_native_id:  * @window: a #GtkWindow  *  * This function is used to pass a window handle to plug-ins so that  * they can set their dialog windows transient to the parent window.  *  * Return value: a native window ID of the window's #GdkWindow or 0  *               if the window isn't realized yet  */
+comment|/**  * gimp_window_get_native_id:  * @window: a #GtkWindow  *  * This function is used to pass a window handle to plug-ins so that  * they can set their dialog windows transient to the parent window.  *  * Returns: a native window ID of the window's #GdkWindow or 0  *               if the window isn't realized yet  */
 end_comment
 
 begin_function
@@ -3916,7 +3916,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296a09840108
+DECL|struct|__anon29318fbf0108
 block|{
 DECL|member|r
 name|guchar
@@ -4526,7 +4526,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a09840208
+DECL|struct|__anon29318fbf0208
 block|{
 DECL|member|timeout_id
 name|gint

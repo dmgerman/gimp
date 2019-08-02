@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b4cde0108
+DECL|struct|__anon29e9bee50108
 block|{
 DECL|member|tag
 name|gchar
@@ -1215,7 +1215,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_finish:  * @image_ID:  The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Return value: Whether the save was successful.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_finish:  * @image_ID:  The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Returns: Whether the save was successful.  *  * Since: 2.10  */
 end_comment
 
 begin_function

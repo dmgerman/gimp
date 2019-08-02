@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2426930103
+DECL|enum|__anon2a23f6750103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2426930203
+DECL|enum|__anon2a23f6750203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2426930303
+DECL|enum|__anon2a23f6750303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1650,7 +1650,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_new:  *  * Creates a new #GimpColorSelection widget.  *  * Return value: The new #GimpColorSelection widget.  **/
+comment|/**  * gimp_color_selection_new:  *  * Creates a new #GimpColorSelection widget.  *  * Returns: The new #GimpColorSelection widget.  **/
 end_comment
 
 begin_function
@@ -1797,7 +1797,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_show_alpha:  * @selection: A #GimpColorSelection widget.  *  * Returns the @selection's @show_alpha property.  *  * Return value: %TRUE if the #GimpColorSelection has alpha controls.  **/
+comment|/**  * gimp_color_selection_get_show_alpha:  * @selection: A #GimpColorSelection widget.  *  * Returns the @selection's @show_alpha property.  *  * Returns: %TRUE if the #GimpColorSelection has alpha controls.  **/
 end_comment
 
 begin_function

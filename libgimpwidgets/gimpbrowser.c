@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2782ac0103
+DECL|enum|__anon29ffdaf30103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -835,7 +835,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_browser_new:  *  * Create a new #GimpBrowser widget.  *  * Return Value: a newly created #GimpBrowser.  *  * Since: 2.4  **/
+comment|/**  * gimp_browser_new:  *  * Create a new #GimpBrowser widget.  *  * Returns: a newly created #GimpBrowser.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

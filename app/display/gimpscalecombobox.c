@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf4adb0103
+DECL|enum|__anon2c72090b0103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf4adb0203
+DECL|enum|__anon2c72090b0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -1586,7 +1586,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_combo_box_new:  *  * Return value: a new #GimpScaleComboBox.  **/
+comment|/**  * gimp_scale_combo_box_new:  *  * Returns: a new #GimpScaleComboBox.  **/
 end_comment
 
 begin_function

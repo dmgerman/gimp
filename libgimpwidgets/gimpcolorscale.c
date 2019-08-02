@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcce76e0103
+DECL|enum|__anon27dda1100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2060,7 +2060,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_new:  * @orientation: the scale's orientation (horizontal or vertical)  * @channel: the scale's color channel  *  * Creates a new #GimpColorScale widget.  *  * Return value: a new #GimpColorScale widget  **/
+comment|/**  * gimp_color_scale_new:  * @orientation: the scale's orientation (horizontal or vertical)  * @channel: the scale's color channel  *  * Creates a new #GimpColorScale widget.  *  * Returns: a new #GimpColorScale widget  **/
 end_comment
 
 begin_function

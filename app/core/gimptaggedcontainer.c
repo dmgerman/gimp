@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88565f0103
+DECL|enum|__anon28fc7f770103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -981,7 +981,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for  * objects containing all of the filtering tags. Synchronization with  * @src_container data is performed automatically.  *  * Return value: a new #GimpTaggedContainer object.  **/
+comment|/**  * gimp_tagged_container_new:  * @src_container: container to be filtered.  *  * Creates a new #GimpTaggedContainer object which creates filtered  * data view of #GimpTagged objects. It filters @src_container for  * objects containing all of the filtering tags. Synchronization with  * @src_container data is performed automatically.  *  * Returns: a new #GimpTaggedContainer object.  **/
 end_comment
 
 begin_function
@@ -1228,7 +1228,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_get_filter:  * @tagged_container: a #GimpTaggedContainer object.  *  * Returns current tag filter. Tag filter is a list of GimpTag objects, which  * must be contained by each object matching filter criteria.  *  * Return value: a list of GimpTag objects used as filter. This value should  *               not be modified or freed.  **/
+comment|/**  * gimp_tagged_container_get_filter:  * @tagged_container: a #GimpTaggedContainer object.  *  * Returns current tag filter. Tag filter is a list of GimpTag objects, which  * must be contained by each object matching filter criteria.  *  * Returns: a list of GimpTag objects used as filter. This value should  *               not be modified or freed.  **/
 end_comment
 
 begin_function
@@ -1680,7 +1680,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_container_get_tag_count:  * @container:  a #GimpTaggedContainer object.  *  * Get number of distinct tags that are currently assigned to all  * objects in the container. The count is independent of currently  * used filter, it is provided for all available objects (ie. empty  * filter).  *  * Return value: number of distinct tags assigned to all objects in the  *               container.  **/
+comment|/**  * gimp_tagged_container_get_tag_count:  * @container:  a #GimpTaggedContainer object.  *  * Get number of distinct tags that are currently assigned to all  * objects in the container. The count is independent of currently  * used filter, it is provided for all available objects (ie. empty  * filter).  *  * Returns: number of distinct tags assigned to all objects in the  *               container.  **/
 end_comment
 
 begin_function

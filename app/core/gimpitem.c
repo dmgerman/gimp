@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ae9240103
+DECL|enum|__anon2c48f3860103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ae9240203
+DECL|enum|__anon2c48f3860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2887,7 +2887,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_item_new:  * @type:     The new item's type.  * @image:    The new item's #GimpImage.  * @name:     The name to assign the item.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width:    The width to assign the item.  * @height:   The height to assign the item.  *  * Return value: The newly created item.  */
+comment|/**  * gimp_item_new:  * @type:     The new item's type.  * @image:    The new item's #GimpImage.  * @name:     The name to assign the item.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width:    The width to assign the item.  * @height:   The height to assign the item.  *  * Returns: The newly created item.  */
 end_comment
 
 begin_function
@@ -7901,7 +7901,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parasites:  * @item: a #GimpItem  *  * Get an @item's #GimpParasiteList. It's usually never needed to  * fiddle with an item's parasite list directly. This function exists  * for special purposes only, like when saving an item to XCF.  *  * Return value: The @item's #GimpParasiteList.  **/
+comment|/**  * gimp_item_get_parasites:  * @item: a #GimpItem  *  * Get an @item's #GimpParasiteList. It's usually never needed to  * fiddle with an item's parasite list directly. This function exists  * for special purposes only, like when saving an item to XCF.  *  * Returns: The @item's #GimpParasiteList.  **/
 end_comment
 
 begin_function

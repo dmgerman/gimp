@@ -65,7 +65,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b5d82e0103
+DECL|enum|__anon290f20e60103
 block|{
 DECL|enumerator|XLFD_FOUNDRY
 name|XLFD_FOUNDRY
@@ -173,7 +173,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_text_font_name_from_xlfd:  * @xlfd: X Logical Font Description  *  * Attempts to extract a meaningful font name from the "family",  * "weight", "slant" and "stretch" fields of an X Logical Font  * Description.  *  * Return value: a newly allocated string.  **/
+comment|/**  * gimp_text_font_name_from_xlfd:  * @xlfd: X Logical Font Description  *  * Attempts to extract a meaningful font name from the "family",  * "weight", "slant" and "stretch" fields of an X Logical Font  * Description.  *  * Returns: a newly allocated string.  **/
 end_comment
 
 begin_function
@@ -440,7 +440,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_font_size_from_xlfd:  * @xlfd: X Logical Font Description  * @size: return location for the font size  * @size_unit: return location for the font size unit  *  * Attempts to extract the font size from an X Logical Font  * Description.  *  * Return value: %TRUE on success, %FALSE otherwise.  **/
+comment|/**  * gimp_text_font_size_from_xlfd:  * @xlfd: X Logical Font Description  * @size: return location for the font size  * @size_unit: return location for the font size unit  *  * Attempts to extract the font size from an X Logical Font  * Description.  *  * Returns: %TRUE on success, %FALSE otherwise.  **/
 end_comment
 
 begin_function

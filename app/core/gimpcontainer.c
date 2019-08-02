@@ -106,7 +106,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef2c1d0103
+DECL|enum|__anon2ad672550103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef2c1d0203
+DECL|enum|__anon2ad672550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef2c1d0308
+DECL|struct|__anon2ad672550308
 block|{
 DECL|member|signame
 name|gchar
@@ -1278,7 +1278,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef2c1d0408
+DECL|struct|__anon2ad672550408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -3241,7 +3241,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_container_get_first_child:  * @container: a #GimpContainer  *  * Return value: the first child object stored in @container or %NULL if the  *               container is empty  */
+comment|/**  * gimp_container_get_first_child:  * @container: a #GimpContainer  *  * Returns: the first child object stored in @container or %NULL if the  *               container is empty  */
 end_comment
 
 begin_function
@@ -3295,7 +3295,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_container_get_last_child:  * @container: a #GimpContainer  *  * Return value: the last child object stored in @container or %NULL if the  *               container is empty  */
+comment|/**  * gimp_container_get_last_child:  * @container: a #GimpContainer  *  * Returns: the last child object stored in @container or %NULL if the  *               container is empty  */
 end_comment
 
 begin_function

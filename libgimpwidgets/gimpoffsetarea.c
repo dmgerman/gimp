@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1abf580103
+DECL|enum|__anon2bbabf5a0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -361,7 +361,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_new:  * @orig_width: the original width  * @orig_height: the original height  *  * Creates a new #GimpOffsetArea widget. A #GimpOffsetArea can be used  * when resizing an image or a drawable to allow the user to interactively  * specify the new offsets.  *  * Return value: the new #GimpOffsetArea widget.  **/
+comment|/**  * gimp_offset_area_new:  * @orig_width: the original width  * @orig_height: the original height  *  * Creates a new #GimpOffsetArea widget. A #GimpOffsetArea can be used  * when resizing an image or a drawable to allow the user to interactively  * specify the new offsets.  *  * Returns: the new #GimpOffsetArea widget.  **/
 end_comment
 
 begin_function

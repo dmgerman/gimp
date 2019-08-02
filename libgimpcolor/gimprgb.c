@@ -1167,7 +1167,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: 2.4  **/
+comment|/**  * gimp_rgb_luminance:  * @rgb: a #GimpRGB struct  *  * Returns: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1224,7 +1224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance_uchar:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: 2.4  **/
+comment|/**  * gimp_rgb_luminance_uchar:  * @rgb: a #GimpRGB struct  *  * Returns: the luminous intensity in the range from 0 to 255.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

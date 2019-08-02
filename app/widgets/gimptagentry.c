@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd545660103
+DECL|enum|__anon2b6eed990103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -144,7 +144,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd545660203
+DECL|enum|__anon2b6eed990203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1331,7 +1331,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_new:  * @container: a #GimpTaggedContainer object  * @mode:      #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @container.  *  * Return value: a new GimpTagEntry widget.  **/
+comment|/**  * gimp_tag_entry_new:  * @container: a #GimpTaggedContainer object  * @mode:      #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @container.  *  * Returns: a new GimpTagEntry widget.  **/
 end_comment
 
 begin_function
@@ -3289,7 +3289,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_parse_tags:  * @entry: a #GimpTagEntry widget.  *  * Parses currently entered tags from @entry. Tags do not need to be  * valid as they are fixed when necessary. Only valid tags are  * returned.  *  * Return value: a newly allocated NULL terminated list of strings. It  *               should be freed using g_strfreev().  **/
+comment|/**  * gimp_tag_entry_parse_tags:  * @entry: a #GimpTagEntry widget.  *  * Parses currently entered tags from @entry. Tags do not need to be  * valid as they are fixed when necessary. Only valid tags are  * returned.  *  * Returns: a newly allocated NULL terminated list of strings. It  *               should be freed using g_strfreev().  **/
 end_comment
 
 begin_function
@@ -6927,7 +6927,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_get_separator:  *  * Tag separator is a single Unicode terminal punctuation  * character.  *  * Return value: returns locale dependent tag separator.  **/
+comment|/**  * gimp_tag_entry_get_separator:  *  * Tag separator is a single Unicode terminal punctuation  * character.  *  * Returns: returns locale dependent tag separator.  **/
 end_comment
 
 begin_function

@@ -22,7 +22,7 @@ file|"gimppluginerror.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_plug_in_error_quark:  *  * This function is never called directly. Use GIMP_PLUG_IN_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpPlugIn error domain.  **/
+comment|/**  * gimp_plug_in_error_quark:  *  * This function is never called directly. Use GIMP_PLUG_IN_ERROR() instead.  *  * Returns: the #GQuark that defines the GimpPlugIn error domain.  **/
 end_comment
 
 begin_function

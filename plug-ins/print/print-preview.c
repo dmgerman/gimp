@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b754e7a0103
+DECL|enum|__anon29915ee50103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -2298,7 +2298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * print_preview_new:  * @page: page setup  * @drawable_id: the drawable to print  *  * Creates a new #PrintPreview widget.  *  * Return value: the new #PrintPreview widget.  **/
+comment|/**  * print_preview_new:  * @page: page setup  * @drawable_id: the drawable to print  *  * Creates a new #PrintPreview widget.  *  * Returns: the new #PrintPreview widget.  **/
 end_comment
 
 begin_function

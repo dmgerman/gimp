@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aea0010103
+DECL|enum|__anon296a46860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -682,7 +682,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_canvas_new:  *  * Creates a new #GimpCanvas widget.  *  * The #GimpCanvas widget is a #GtkDrawingArea abstraction. It manages  * a set of graphic contexts for drawing on a GIMP display. If you  * draw using a #GimpCanvasStyle, #GimpCanvas makes sure that the  * associated #GdkGC is created. All drawing on the canvas needs to  * happen by means of the #GimpCanvas drawing functions. Besides from  * not needing a #GdkGC pointer, the #GimpCanvas drawing functions  * look and work like their #GdkDrawable counterparts. #GimpCanvas  * gracefully handles attempts to draw on the unrealized widget.  *  * Return value: a new #GimpCanvas widget  **/
+comment|/**  * gimp_canvas_new:  *  * Creates a new #GimpCanvas widget.  *  * The #GimpCanvas widget is a #GtkDrawingArea abstraction. It manages  * a set of graphic contexts for drawing on a GIMP display. If you  * draw using a #GimpCanvasStyle, #GimpCanvas makes sure that the  * associated #GdkGC is created. All drawing on the canvas needs to  * happen by means of the #GimpCanvas drawing functions. Besides from  * not needing a #GdkGC pointer, the #GimpCanvas drawing functions  * look and work like their #GdkDrawable counterparts. #GimpCanvas  * gracefully handles attempts to draw on the unrealized widget.  *  * Returns: a new #GimpCanvas widget  **/
 end_comment
 
 begin_function

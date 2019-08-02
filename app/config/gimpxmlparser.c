@@ -69,7 +69,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_xml_parser_new:  * @markup_parser: a #GMarkupParser  * @user_data: user data to pass to #GMarkupParser functions  *  * GimpXmlParser is a thin wrapper around GMarkupParser. This function  * creates one for you and sets up a GMarkupParseContext.  *  * Return value: a new #GimpXmlParser  **/
+comment|/**  * gimp_xml_parser_new:  * @markup_parser: a #GMarkupParser  * @user_data: user data to pass to #GMarkupParser functions  *  * GimpXmlParser is a thin wrapper around GMarkupParser. This function  * creates one for you and sets up a GMarkupParseContext.  *  * Returns: a new #GimpXmlParser  **/
 end_comment
 
 begin_function
@@ -129,7 +129,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_file:  * @parser: a #GimpXmlParser  * @filename: name of a file to parse  * @error: return location for possible errors  *  * This function creates a GIOChannel for @filename and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_file:  * @parser: a #GimpXmlParser  * @filename: name of a file to parse  * @error: return location for possible errors  *  * This function creates a GIOChannel for @filename and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Returns: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -233,7 +233,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_gfile:  * @parser: a #GimpXmlParser  * @file: the #GFile to parse  * @error: return location for possible errors  *  * This function creates a GIOChannel for @file and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_gfile:  * @parser: a #GimpXmlParser  * @file: the #GFile to parse  * @error: return location for possible errors  *  * This function creates a GIOChannel for @file and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Returns: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -311,7 +311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_fd:  * @parser: a #GimpXmlParser  * @fd:     a file descriptor  * @error: return location for possible errors  *  * This function creates a GIOChannel for @fd and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_fd:  * @parser: a #GimpXmlParser  * @fd:     a file descriptor  * @error: return location for possible errors  *  * This function creates a GIOChannel for @fd and calls  * gimp_xml_parser_parse_io_channel() for you.  *  * Returns: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -406,7 +406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_io_channel:  * @parser: a #GimpXmlParser  * @io: a #GIOChannel  * @error: return location for possible errors  *  * Makes @parser read from the specified @io channel. This function  * returns when the GIOChannel becomes empty (end of file) or an  * error occurs, either reading from @io or parsing the read data.  *  * This function tries to determine the character encoding from the  * XML header and converts the content to UTF-8 for you. For this  * feature to work, the XML header with the encoding attribute must be  * contained in the first 4096 bytes read. Otherwise UTF-8 encoding  * will be assumed and parsing may break later if this assumption  * was wrong.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_io_channel:  * @parser: a #GimpXmlParser  * @io: a #GIOChannel  * @error: return location for possible errors  *  * Makes @parser read from the specified @io channel. This function  * returns when the GIOChannel becomes empty (end of file) or an  * error occurs, either reading from @io or parsing the read data.  *  * This function tries to determine the character encoding from the  * XML header and converts the content to UTF-8 for you. For this  * feature to work, the XML header with the encoding attribute must be  * contained in the first 4096 bytes read. Otherwise UTF-8 encoding  * will be assumed and parsing may break later if this assumption  * was wrong.  *  * Returns: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -705,7 +705,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_buffer:  * @parser: a #GimpXmlParser  * @buffer: a string buffer  * @len: the number of byes in @buffer or -1 if @buffer is nul-terminated  * @error: return location for possible errors  *  * This function uses the given @parser to parse the XML in @buffer.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_buffer:  * @parser: a #GimpXmlParser  * @buffer: a string buffer  * @len: the number of byes in @buffer or -1 if @buffer is nul-terminated  * @error: return location for possible errors  *  * This function uses the given @parser to parse the XML in @buffer.  *  * Returns: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function

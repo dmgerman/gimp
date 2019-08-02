@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e57a050103
+DECL|enum|__anon2aceb3d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1269,7 +1269,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cell_renderer_color_new:  *  * Creates a #GtkCellRenderer that displays a color.  *  * Return value: a new #GimpCellRendererColor  *  * Since: 2.2  **/
+comment|/**  * gimp_cell_renderer_color_new:  *  * Creates a #GtkCellRenderer that displays a color.  *  * Returns: a new #GimpCellRendererColor  *  * Since: 2.2  **/
 end_comment
 
 begin_function

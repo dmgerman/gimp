@@ -57,7 +57,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db78d50103
+DECL|enum|__anon2b0bf0550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1479,7 +1479,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_list_new:  * @children_type: the #GType of objects the list is going to hold  * @unique_names:  if the list should ensure that all its children  *                 have unique names.  *  * Creates a new #GimpList object. Since #GimpList is a #GimpContainer  * implementation, it holds GimpObjects. Thus @children_type must be  * GIMP_TYPE_OBJECT or a type derived from it.  *  * The returned list has the #GIMP_CONTAINER_POLICY_STRONG.  *  * Return value: a new #GimpList object  **/
+comment|/**  * gimp_list_new:  * @children_type: the #GType of objects the list is going to hold  * @unique_names:  if the list should ensure that all its children  *                 have unique names.  *  * Creates a new #GimpList object. Since #GimpList is a #GimpContainer  * implementation, it holds GimpObjects. Thus @children_type must be  * GIMP_TYPE_OBJECT or a type derived from it.  *  * The returned list has the #GIMP_CONTAINER_POLICY_STRONG.  *  * Returns: a new #GimpList object  **/
 end_comment
 
 begin_function
@@ -1560,7 +1560,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_list_new_weak:  * @children_type: the #GType of objects the list is going to hold  * @unique_names:  if the list should ensure that all its children  *                 have unique names.  *  * Creates a new #GimpList object. Since #GimpList is a #GimpContainer  * implementation, it holds GimpObjects. Thus @children_type must be  * GIMP_TYPE_OBJECT or a type derived from it.  *  * The returned list has the #GIMP_CONTAINER_POLICY_WEAK.  *  * Return value: a new #GimpList object  **/
+comment|/**  * gimp_list_new_weak:  * @children_type: the #GType of objects the list is going to hold  * @unique_names:  if the list should ensure that all its children  *                 have unique names.  *  * Creates a new #GimpList object. Since #GimpList is a #GimpContainer  * implementation, it holds GimpObjects. Thus @children_type must be  * GIMP_TYPE_OBJECT or a type derived from it.  *  * The returned list has the #GIMP_CONTAINER_POLICY_WEAK.  *  * Returns: a new #GimpList object  **/
 end_comment
 
 begin_function
@@ -1768,7 +1768,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_list_get_sort_func:  * @list: a #GimpList  *  * Returns the @list's sort function, see gimp_list_set_sort_func().  *  * Return Value: The @list's sort function.  **/
+comment|/**  * gimp_list_get_sort_func:  * @list: a #GimpList  *  * Returns the @list's sort function, see gimp_list_set_sort_func().  *  * Returns: The @list's sort function.  **/
 end_comment
 
 begin_function

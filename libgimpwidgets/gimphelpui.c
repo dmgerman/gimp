@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0bfad0103
+DECL|enum|__anon27ffad100103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -609,7 +609,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_id_quark:  *  * This function returns the #GQuark which should be used as key when  * attaching help IDs to widgets and objects.  *  * Return value: The #GQuark.  *  * Since: 2.2  **/
+comment|/**  * gimp_help_id_quark:  *  * This function returns the #GQuark which should be used as key when  * attaching help IDs to widgets and objects.  *  * Returns: The #GQuark.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

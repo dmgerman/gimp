@@ -505,7 +505,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: (transfer container) (element-type GParamSpec): a GList of differing GParamSpecs.  *  * Since: 2.4  **/
+comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Returns: (transfer container) (element-type GParamSpec): a GList of differing GParamSpecs.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -595,7 +595,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_sync:  * @src: a #GObject  * @dest: another #GObject  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: 2.4  **/
+comment|/**  * gimp_config_sync:  * @src: a #GObject  * @dest: another #GObject  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * synchronized  *  * Returns: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function

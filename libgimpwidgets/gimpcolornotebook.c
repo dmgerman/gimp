@@ -1997,7 +1997,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_set_has_page:  * @notebook:  A #GimpColorNotebook widget.  * @page_type: The #GType of the notebook page to add or remove.  * @has_page:  Whether the page should be added or removed.  *  * This function adds and removed pages to / from a #GimpColorNotebook.  * The @page_type passed must be a #GimpColorSelector subtype.  *  * Return value: (transfer none): The new page widget, if @has_page was  *               %TRUE, or %NULL if @has_page was %FALSE.  **/
+comment|/**  * gimp_color_notebook_set_has_page:  * @notebook:  A #GimpColorNotebook widget.  * @page_type: The #GType of the notebook page to add or remove.  * @has_page:  Whether the page should be added or removed.  *  * This function adds and removed pages to / from a #GimpColorNotebook.  * The @page_type passed must be a #GimpColorSelector subtype.  *  * Returns: (transfer none): The new page widget, if @has_page was  *               %TRUE, or %NULL if @has_page was %FALSE.  **/
 end_comment
 
 begin_function
@@ -2146,7 +2146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_notebook:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: (transfer none): The #GtkNotebook inside.  *  * Since: 3.0  **/
+comment|/**  * gimp_color_notebook_get_notebook:  * @notebook:  A #GimpColorNotebook widget.  *  * Returns: (transfer none): The #GtkNotebook inside.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2181,7 +2181,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_selectors:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: (element-type GimpColorSelector) (transfer none): The  *               notebook's list of #GimpColorSelector's.  *  * Since: 3.0  **/
+comment|/**  * gimp_color_notebook_get_selectors:  * @notebook:  A #GimpColorNotebook widget.  *  * Returns: (element-type GimpColorSelector) (transfer none): The  *               notebook's list of #GimpColorSelector's.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2216,7 +2216,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_notebook_get_current_selector:  * @notebook:  A #GimpColorNotebook widget.  *  * Return value: (transfer none): The active page's #GimpColorSelector.  *  * Since: 3.0  **/
+comment|/**  * gimp_color_notebook_get_current_selector:  * @notebook:  A #GimpColorNotebook widget.  *  * Returns: (transfer none): The active page's #GimpColorSelector.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951fb830103
+DECL|enum|__anon275a72390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1595,7 +1595,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_new:  *  * Creates a new #GimpPreviewArea widget.  *  * Return value: a new #GimpPreviewArea widget.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_new:  *  * Creates a new #GimpPreviewArea widget.  *  * Returns: a new #GimpPreviewArea widget.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function

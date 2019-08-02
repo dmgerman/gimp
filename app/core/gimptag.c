@@ -106,7 +106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_new:  * @tag_string: a tag name.  *  * If given tag name is not valid, an attempt will be made to fix it.  *  * Return value: a new #GimpTag object, or NULL if tag string is invalid and  * cannot be fixed.  **/
+comment|/**  * gimp_tag_new:  * @tag_string: a tag name.  *  * If given tag name is not valid, an attempt will be made to fix it.  *  * Returns: a new #GimpTag object, or NULL if tag string is invalid and  * cannot be fixed.  **/
 end_comment
 
 begin_function
@@ -230,7 +230,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_try_new:  * @tag_string: a tag name.  *  * Similar to gimp_tag_new(), but returns NULL if tag is surely not equal  * to any of currently created tags. It is useful for tag querying to avoid  * unneeded comparisons. If tag is created, however, it does not mean that  * it would necessarily match with some other tag.  *  * Return value: new #GimpTag object, or NULL if tag will not match with any  * other #GimpTag.  **/
+comment|/**  * gimp_tag_try_new:  * @tag_string: a tag name.  *  * Similar to gimp_tag_new(), but returns NULL if tag is surely not equal  * to any of currently created tags. It is useful for tag querying to avoid  * unneeded comparisons. If tag is created, however, it does not mean that  * it would necessarily match with some other tag.  *  * Returns: new #GimpTag object, or NULL if tag will not match with any  * other #GimpTag.  **/
 end_comment
 
 begin_function
@@ -382,7 +382,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_get_internal:  * @tag: a gimp tag.  *  * Retrieve internal status of the tag.  *  * Return value: internal status of tag. Internal tags are not saved.  **/
+comment|/**  * gimp_tag_get_internal:  * @tag: a gimp tag.  *  * Retrieve internal status of the tag.  *  * Returns: internal status of tag. Internal tags are not saved.  **/
 end_comment
 
 begin_function
@@ -448,7 +448,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_get_name:  * @tag: a gimp tag.  *  * Retrieve name of the tag.  *  * Return value: name of tag.  **/
+comment|/**  * gimp_tag_get_name:  * @tag: a gimp tag.  *  * Retrieve name of the tag.  *  * Returns: name of tag.  **/
 end_comment
 
 begin_function
@@ -485,7 +485,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_get_hash:  * @tag: a gimp tag.  *  * Hashing function which is useful, for example, to store #GimpTag in  * a #GHashTable.  *  * Return value: hash value for tag.  **/
+comment|/**  * gimp_tag_get_hash:  * @tag: a gimp tag.  *  * Hashing function which is useful, for example, to store #GimpTag in  * a #GHashTable.  *  * Returns: hash value for tag.  **/
 end_comment
 
 begin_function
@@ -518,7 +518,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_equals:  * @tag:   a gimp tag.  * @other: another gimp tag to compare with.  *  * Compares tags for equality according to tag comparison rules.  *  * Return value: TRUE if tags are equal, FALSE otherwise.  **/
+comment|/**  * gimp_tag_equals:  * @tag:   a gimp tag.  * @other: another gimp tag to compare with.  *  * Compares tags for equality according to tag comparison rules.  *  * Returns: TRUE if tags are equal, FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -568,7 +568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_compare_func:  * @p1: pointer to left-hand #GimpTag object.  * @p2: pointer to right-hand #GimpTag object.  *  * Compares tags according to tag comparison rules. Useful for sorting  * functions.  *  * Return value: meaning of return value is the same as in strcmp().  **/
+comment|/**  * gimp_tag_compare_func:  * @p1: pointer to left-hand #GimpTag object.  * @p2: pointer to right-hand #GimpTag object.  *  * Compares tags according to tag comparison rules. Useful for sorting  * functions.  *  * Returns: meaning of return value is the same as in strcmp().  **/
 end_comment
 
 begin_function
@@ -627,7 +627,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_compare_with_string:  * @tag:        a #GimpTag object.  * @tag_string: the string to compare to.  *  * Compares tag and a string according to tag comparison rules. Similar to  * gimp_tag_compare_func(), but can be used without creating temporary tag  * object.  *  * Return value: meaning of return value is the same as in strcmp().  **/
+comment|/**  * gimp_tag_compare_with_string:  * @tag:        a #GimpTag object.  * @tag_string: the string to compare to.  *  * Compares tag and a string according to tag comparison rules. Similar to  * gimp_tag_compare_func(), but can be used without creating temporary tag  * object.  *  * Returns: meaning of return value is the same as in strcmp().  **/
 end_comment
 
 begin_function
@@ -735,7 +735,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_has_prefix:  * @tag:           a #GimpTag object.  * @prefix_string: the prefix to compare to.  *  * Compares tag and a prefix according to tag comparison rules. Similar to  * gimp_tag_compare_with_string(), but does not work on the collate key  * because that can't be matched partially.  *  * Return value: wheher #tag starts with @prefix_string.  **/
+comment|/**  * gimp_tag_has_prefix:  * @tag:           a #GimpTag object.  * @prefix_string: the prefix to compare to.  *  * Compares tag and a prefix according to tag comparison rules. Similar to  * gimp_tag_compare_with_string(), but does not work on the collate key  * because that can't be matched partially.  *  * Returns: wheher #tag starts with @prefix_string.  **/
 end_comment
 
 begin_function
@@ -850,7 +850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_string_make_valid:  * @tag_string: a text string.  *  * Tries to create a valid tag string from given @tag_string.  *  * Return value: a newly allocated tag string in case given @tag_string was  * valid or could be fixed, otherwise NULL. Allocated value should be freed  * using g_free().  **/
+comment|/**  * gimp_tag_string_make_valid:  * @tag_string: a text string.  *  * Tries to create a valid tag string from given @tag_string.  *  * Returns: a newly allocated tag string in case given @tag_string was  * valid or could be fixed, otherwise NULL. Allocated value should be freed  * using g_free().  **/
 end_comment
 
 begin_function
@@ -1047,7 +1047,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_is_tag_separator:  * @c: Unicode character.  *  * Defines a set of characters that are considered tag separators. The  * tag separators are hand-picked from the set of characters with the  * Terminal_Punctuation property as specified in the version 5.1.0 of  * the Unicode Standard.  *  * Return value: %TRUE if the character is a tag separator.  */
+comment|/**  * gimp_tag_is_tag_separator:  * @c: Unicode character.  *  * Defines a set of characters that are considered tag separators. The  * tag separators are hand-picked from the set of characters with the  * Terminal_Punctuation property as specified in the version 5.1.0 of  * the Unicode Standard.  *  * Returns: %TRUE if the character is a tag separator.  */
 end_comment
 
 begin_function

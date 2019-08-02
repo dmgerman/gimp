@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec92e00103
+DECL|enum|__anon2be19a6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -810,7 +810,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_bar_new:  * @orientation: whether the bar should be oriented horizontally or  *               vertically  *  * Creates a new #GimpColorBar widget.  *  * Return value: The new #GimpColorBar widget.  **/
+comment|/**  * gimp_color_bar_new:  * @orientation: whether the bar should be oriented horizontally or  *               vertically  *  * Creates a new #GimpColorBar widget.  *  * Returns: The new #GimpColorBar widget.  **/
 end_comment
 
 begin_function

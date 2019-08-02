@@ -45,7 +45,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c73170a0103
+DECL|enum|__anon298c37f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -701,7 +701,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_new:  * @model:        a #GtkTreeModel  * @id_column:    the model column of the ID  * @label_column: the modl column of the label  *  * Return value: a new #GimpStringComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_string_combo_box_new:  * @model:        a #GtkTreeModel  * @id_column:    the model column of the ID  * @label_column: the modl column of the label  *  * Returns: a new #GimpStringComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -783,7 +783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:        the ID of the item to select  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: 2.4  **/
+comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:        the ID of the item to select  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Returns: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -900,7 +900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_get_active:  * @combo_box: a #GimpStringComboBox  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: newly allocated ID string or %NULL if nothing was selected  *  * Since: 2.4  **/
+comment|/**  * gimp_string_combo_box_get_active:  * @combo_box: a #GimpStringComboBox  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Returns: newly allocated ID string or %NULL if nothing was selected  *  * Since: 2.4  **/
 end_comment
 
 begin_function

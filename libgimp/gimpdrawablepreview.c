@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275007820103
+DECL|enum|__anon28fb47170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275007820208
+DECL|struct|__anon28fb47170208
 block|{
 DECL|member|x
 name|gint
@@ -2503,7 +2503,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_get_drawable_id:  * @preview:   a #GimpDrawablePreview widget  *  * Return value: the drawable_ID that has been passed to  *               gimp_drawable_preview_new_from_drawable_id().  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_preview_get_drawable_id:  * @preview:   a #GimpDrawablePreview widget  *  * Returns: the drawable_ID that has been passed to  *               gimp_drawable_preview_new_from_drawable_id().  *  * Since: 2.10  **/
 end_comment
 
 begin_function

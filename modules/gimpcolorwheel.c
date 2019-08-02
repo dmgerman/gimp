@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8c22f0103
+DECL|enum|__anon29353a950103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8c22f0208
+DECL|struct|__anon29353a950208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb8c22f0303
+DECL|enum|__anon29353a950303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -6371,7 +6371,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_wheel_new:  *  * Creates a new HSV color selector.  *  * Return value: A newly-created HSV color selector.  *  * Since: 2.10  */
+comment|/**  * gimp_color_wheel_new:  *  * Creates a new HSV color selector.  *  * Returns: A newly-created HSV color selector.  *  * Since: 2.10  */
 end_comment
 
 begin_function
@@ -6810,7 +6810,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_wheel_is_adjusting:  * @hsv: A #GimpColorWheel  *  * An HSV color selector can be said to be adjusting if multiple rapid  * changes are being made to its value, for example, when the user is  * adjusting the value with the mouse. This function queries whether  * the HSV color selector is being adjusted or not.  *  * Return value: %TRUE if clients can ignore changes to the color value,  *     since they may be transitory, or %FALSE if they should consider  *     the color value status to be final.  *  * Since: 2.10  */
+comment|/**  * gimp_color_wheel_is_adjusting:  * @hsv: A #GimpColorWheel  *  * An HSV color selector can be said to be adjusting if multiple rapid  * changes are being made to its value, for example, when the user is  * adjusting the value with the mouse. This function queries whether  * the HSV color selector is being adjusted or not.  *  * Returns: %TRUE if clients can ignore changes to the color value,  *     since they may be transitory, or %FALSE if they should consider  *     the color value status to be final.  *  * Since: 2.10  */
 end_comment
 
 begin_function

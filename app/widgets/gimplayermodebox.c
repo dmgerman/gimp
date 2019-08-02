@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e46dc40103
+DECL|enum|__anon289a982d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -743,7 +743,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_mode_box_new:  * Foo.  *  * Return value: a new #GimpLayerModeBox.  **/
+comment|/**  * gimp_layer_mode_box_new:  * Foo.  *  * Returns: a new #GimpLayerModeBox.  **/
 end_comment
 
 begin_function

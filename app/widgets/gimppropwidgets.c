@@ -313,7 +313,7 @@ comment|/*********************/
 end_comment
 
 begin_comment
-comment|/**  * gimp_prop_expanding_frame_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of boolean property.  * @button_label:  Toggle widget title appearing as a frame title.  * @child:         Child #GtkWidget of the returned frame.  * @button:        Pointer to the #GtkCheckButton used as frame title  *                 if not %NULL.  *  * Creates a #GimpFrame containing @child, using a #GtkCheckButton as a  * title whose value is tied to the boolean @property_name.  * @child will be visible when @property_name is %TRUE, hidden otherwise.  * If @button_label is %NULL, the @property_name's nick will be used as  * label of the #GtkCheckButton title.  *  * Return value:  A new #GimpFrame widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_expanding_frame_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of boolean property.  * @button_label:  Toggle widget title appearing as a frame title.  * @child:         Child #GtkWidget of the returned frame.  * @button:        Pointer to the #GtkCheckButton used as frame title  *                 if not %NULL.  *  * Creates a #GimpFrame containing @child, using a #GtkCheckButton as a  * title whose value is tied to the boolean @property_name.  * @child will be visible when @property_name is %TRUE, hidden otherwise.  * If @button_label is %NULL, the @property_name's nick will be used as  * label of the #GtkCheckButton title.  *  * Returns:  A new #GimpFrame widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1106,7 +1106,7 @@ comment|/********************/
 end_comment
 
 begin_comment
-comment|/**  * gimp_prop_layer_mode_box_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of Enum property.  * @context:       A context mask, determining the set of modes to  *                 include in the menu.  *  * Creates a #GimpLayerModeBox widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerMode.  *  * Return value: The newly created #GimpLayerModeBox widget.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_layer_mode_box_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of Enum property.  * @context:       A context mask, determining the set of modes to  *                 include in the menu.  *  * Creates a #GimpLayerModeBox widget to display and set the specified  * Enum property, for which the enum must be #GimpLayerMode.  *  * Returns: The newly created #GimpLayerModeBox widget.  *  * Since GIMP 2.10  */
 end_comment
 
 begin_function
@@ -1237,7 +1237,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  * If @title is %NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Return value:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_color_button_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of #GimpRGB property.  * @title:         Title of the #GimpColorPanel that is to be created  * @width:         Width of color button.  * @height:        Height of color button.  * @type:          How transparency is represented.  *  * Creates a #GimpColorPanel to set and display the value of a #GimpRGB  * property.  Pressing the button brings up a color selector dialog.  * If @title is %NULL, the @property_name's nick will be used as label  * of the returned widget.  *  * Returns:  A new #GimpColorPanel widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1599,7 +1599,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  * @label:         Label of the created #GimpSpinScale.  * @step_increment:  * @page_increment:  * @digits:  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  * If @label is %NULL, the @property_name's nick will be used as label  * of the returned widget.  * The property's lower and upper values will be used as min/max of the  * #GimpSpinScale.  *  * Return value:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
+comment|/**  * gimp_prop_spin_scale_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  * @label:         Label of the created #GimpSpinScale.  * @step_increment:  * @page_increment:  * @digits:  *  * Creates a #GimpSpinScale to set and display the value of a  * gdouble property in a very space-efficient way.  * If @label is %NULL, the @property_name's nick will be used as label  * of the returned widget.  * The property's lower and upper values will be used as min/max of the  * #GimpSpinScale.  *  * Returns:  A new #GimpSpinScale widget.  *  * Since GIMP 2.8  */
 end_comment
 
 begin_function
@@ -3050,7 +3050,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_angle_dial_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  *  * Creates a #GimpDial to set and display the value of a  * gdouble property that represents an angle.  *  * Return value:  A new #GimpDial widget.  *  * Since GIMP 2.10  */
+comment|/**  * gimp_prop_angle_dial_new:  * @config:        #GimpConfig object to which property is attached.  * @property_name: Name of gdouble property  *  * Creates a #GimpDial to set and display the value of a  * gdouble property that represents an angle.  *  * Returns:  A new #GimpDial widget.  *  * Since GIMP 2.10  */
 end_comment
 
 begin_function
@@ -3642,7 +3642,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_view_new:  * @config:        #GimpConfig object to which property is attached.  * @context:       a #Gimpcontext.  * @property_name: Name of #GimpViewable property.  * @size:          Width and height of preview display.  *  * Creates a widget to display the value of a #GimpViewable property.  *  * Return value:  A new #GimpView widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_view_new:  * @config:        #GimpConfig object to which property is attached.  * @context:       a #Gimpcontext.  * @property_name: Name of #GimpViewable property.  * @size:          Width and height of preview display.  *  * Creates a widget to display the value of a #GimpViewable property.  *  * Returns:  A new #GimpView widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3993,7 +3993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e40c1c0108
+DECL|struct|__anon2bd14caa0108
 block|{
 DECL|member|config
 name|GObject
@@ -4114,7 +4114,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_number_pair_entry_new:  * @config:                        Object to which properties are attached.  * @left_number_property:          Name of double property for left number.  * @right_number_property:         Name of double property for right number.  * @default_left_number_property:  Name of double property for default left number.  * @default_right_number_property: Name of double property for default right number.  * @user_override_property:        Name of boolean property for user override mode.  * @connect_numbers_changed:       %TRUE to connect to the widgets "numbers-changed"  *                                 signal, %FALSE to not connect.  * @connect_ratio_changed:         %TRUE to connect to the widgets "ratio-changed"  *                                 signal, %FALSE to not connect.  * @separators:  * @allow_simplification:  * @min_valid_value:  * @max_valid_value:         What to pass to gimp_number_pair_entry_new ().  *  * Return value: A #GimpNumberPairEntry widget.  */
+comment|/**  * gimp_prop_number_pair_entry_new:  * @config:                        Object to which properties are attached.  * @left_number_property:          Name of double property for left number.  * @right_number_property:         Name of double property for right number.  * @default_left_number_property:  Name of double property for default left number.  * @default_right_number_property: Name of double property for default right number.  * @user_override_property:        Name of boolean property for user override mode.  * @connect_numbers_changed:       %TRUE to connect to the widgets "numbers-changed"  *                                 signal, %FALSE to not connect.  * @connect_ratio_changed:         %TRUE to connect to the widgets "ratio-changed"  *                                 signal, %FALSE to not connect.  * @separators:  * @allow_simplification:  * @min_valid_value:  * @max_valid_value:         What to pass to gimp_number_pair_entry_new ().  *  * Returns: A #GimpNumberPairEntry widget.  */
 end_comment
 
 begin_function

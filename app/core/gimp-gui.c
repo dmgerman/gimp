@@ -1051,7 +1051,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_user_time:  * @gimp:  *  * Returns the timestamp of the last user interaction. The timestamp is  * taken from events caused by user interaction such as key presses or  * pointer movements. See gdk_x11_display_get_user_time().  *  * Return value: the timestamp of the last user interaction  */
+comment|/**  * gimp_get_user_time:  * @gimp:  *  * Returns the timestamp of the last user interaction. The timestamp is  * taken from events caused by user interaction such as key presses or  * pointer movements. See gdk_x11_display_get_user_time().  *  * Returns: the timestamp of the last user interaction  */
 end_comment
 
 begin_function

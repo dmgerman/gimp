@@ -144,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_export_file:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @file: the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Return value: %TRUE on success,  *               %FALSE if there was an error writing the file  **/
+comment|/**  * gimp_vectors_export_file:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @file: the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Returns: %TRUE on success,  *               %FALSE if there was an error writing the file  **/
 end_comment
 
 begin_function
@@ -388,7 +388,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_string:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  *  * Exports one or more vectors to a SVG string.  *  * Return value: a %NUL-terminated string that holds a complete XML document  **/
+comment|/**  * gimp_vectors_export_string:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  *  * Exports one or more vectors to a SVG string.  *  * Returns: a %NUL-terminated string that holds a complete XML document  **/
 end_comment
 
 begin_function

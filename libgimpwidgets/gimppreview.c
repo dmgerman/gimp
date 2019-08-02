@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3cd7c40103
+DECL|enum|__anon278e882c0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3cd7c40203
+DECL|enum|__anon278e882c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2322,7 +2322,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_update:  * @preview: a #GimpPreview widget  *  * Return value: the state of the "Preview" check button.  *  * Since: 2.2  **/
+comment|/**  * gimp_preview_get_update:  * @preview: a #GimpPreview widget  *  * Returns: the state of the "Preview" check button.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3002,7 +3002,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_frame:  * @preview: a #GimpPreview widget  *  * Return value: (transfer none): a pointer to the #GtkAspectFrame used in the @preview.  *  * Since: 3.0  **/
+comment|/**  * gimp_preview_get_frame:  * @preview: a #GimpPreview widget  *  * Returns: (transfer none): a pointer to the #GtkAspectFrame used in the @preview.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -3038,7 +3038,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_grid:  * @preview: a #GimpPreview widget  *  * Return value: (transfer none): a pointer to the #GtkGrid used in the @preview.  *  * Since: 3.0  **/
+comment|/**  * gimp_preview_get_grid:  * @preview: a #GimpPreview widget  *  * Returns: (transfer none): a pointer to the #GtkGrid used in the @preview.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -3074,7 +3074,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_area:  * @preview: a #GimpPreview widget  *  * In most cases, you shouldn't need to access the #GimpPreviewArea  * that is being used in the @preview. Sometimes however, you need to.  * For example if you want to receive mouse events from the area. In  * such cases, use gimp_preview_get_area().  *  * Return value: (transfer none): a pointer to the #GimpPreviewArea used in the @preview.  *  * Since: 2.4  **/
+comment|/**  * gimp_preview_get_area:  * @preview: a #GimpPreview widget  *  * In most cases, you shouldn't need to access the #GimpPreviewArea  * that is being used in the @preview. Sometimes however, you need to.  * For example if you want to receive mouse events from the area. In  * such cases, use gimp_preview_get_area().  *  * Returns: (transfer none): a pointer to the #GimpPreviewArea used in the @preview.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3359,7 +3359,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_controls:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Return value: (transfer none): the #GtkHBox at the bottom of the preview.  *  * Since: 2.4  **/
+comment|/**  * gimp_preview_get_controls:  * @preview: a #GimpPreview widget  *  * Gives access to the #GtkHBox at the bottom of the preview that  * contains the update toggle. Derived widgets can use this function  * if they need to add controls to this area.  *  * Returns: (transfer none): the #GtkHBox at the bottom of the preview.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

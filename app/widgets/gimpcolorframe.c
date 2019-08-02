@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3c9450103
+DECL|enum|__anon289092ad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1900,7 +1900,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_frame_new:  *  * Creates a new #GimpColorFrame widget.  *  * Return value: The new #GimpColorFrame widget.  **/
+comment|/**  * gimp_color_frame_new:  *  * Creates a new #GimpColorFrame widget.  *  * Returns: The new #GimpColorFrame widget.  **/
 end_comment
 
 begin_function

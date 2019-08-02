@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tool_dialog_new:  * @tool_info: a #GimpToolInfo  * @desc:      a string to use in the dialog header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_dialog_new_with_buttons().  *  * This function conveniently creates a #GimpViewableDialog using the  * information stored in @tool_info. It also registers the tool with  * the "toplevel" dialog factory.  *  * Return value: a new #GimpViewableDialog  **/
+comment|/**  * gimp_tool_dialog_new:  * @tool_info: a #GimpToolInfo  * @desc:      a string to use in the dialog header or %NULL to use the help  *             field from #GimpToolInfo  * @...:       a %NULL-terminated valist of button parameters as described in  *             gtk_dialog_new_with_buttons().  *  * This function conveniently creates a #GimpViewableDialog using the  * information stored in @tool_info. It also registers the tool with  * the "toplevel" dialog factory.  *  * Returns: a new #GimpViewableDialog  **/
 end_comment
 
 begin_function

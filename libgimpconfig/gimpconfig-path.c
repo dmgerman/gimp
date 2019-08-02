@@ -575,7 +575,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_path_expand:  * @path:   a NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error:  return location for errors  *  * Paths as stored in gimprc and other config files have to be treated  * special.  The string may contain special identifiers such as for  * example ${gimp_dir} that have to be substituted before use. Also  * the user's filesystem may be in a different encoding than UTF-8  * (which is what is used for the gimprc). This function does the  * variable substitution for you and can also attempt to convert to  * the filesystem encoding.  *  * To reverse the expansion, use gimp_config_path_unexpand().  *  * Return value: a newly allocated NUL-terminated string  *  * Since: 2.4  **/
+comment|/**  * gimp_config_path_expand:  * @path:   a NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error:  return location for errors  *  * Paths as stored in gimprc and other config files have to be treated  * special.  The string may contain special identifiers such as for  * example ${gimp_dir} that have to be substituted before use. Also  * the user's filesystem may be in a different encoding than UTF-8  * (which is what is used for the gimprc). This function does the  * variable substitution for you and can also attempt to convert to  * the filesystem encoding.  *  * To reverse the expansion, use gimp_config_path_unexpand().  *  * Returns: a newly allocated NUL-terminated string  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -686,7 +686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_path_expand_to_files:  * @path:  a NUL-terminated string in UTF-8 encoding  * @error: return location for errors  *  * Paths as stored in the gimprc have to be treated special. The  * string may contain special identifiers such as for example  * ${gimp_dir} that have to be substituted before use. Also the user's  * filesystem may be in a different encoding than UTF-8 (which is what  * is used for the gimprc).  *  * This function runs @path through gimp_config_path_expand() and  * gimp_path_parse(), then turns the filenames returned by  * gimp_path_parse() into GFile using g_file_new_for_path().  *  * Return value: (element-type GFile) (transfer full):                  a #GList of newly allocated #GFile objects.  *  * Since: 2.10  **/
+comment|/**  * gimp_config_path_expand_to_files:  * @path:  a NUL-terminated string in UTF-8 encoding  * @error: return location for errors  *  * Paths as stored in the gimprc have to be treated special. The  * string may contain special identifiers such as for example  * ${gimp_dir} that have to be substituted before use. Also the user's  * filesystem may be in a different encoding than UTF-8 (which is what  * is used for the gimprc).  *  * This function runs @path through gimp_config_path_expand() and  * gimp_path_parse(), then turns the filenames returned by  * gimp_path_parse() into GFile using g_file_new_for_path().  *  * Returns: (element-type GFile) (transfer full):                  a #GList of newly allocated #GFile objects.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -824,7 +824,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_path_unexpand:  * @path:   a NUL-terminated string  * @recode: whether @path is in filesystem encoding or UTF-8  * @error:  return location for errors  *  * The inverse operation of gimp_config_path_expand()  *  * This function takes a @path and tries to substitute the first  * elements by well-known special identifiers such as for example  * ${gimp_dir}. The unexpanded path can then be stored in gimprc and  * other config files.  *  * If @recode is %TRUE then @path is in local filesystem encoding,  * if @recode is %FALSE then @path is assumed to be UTF-8.  *  * Return value: a newly allocated NUL-terminated UTF-8 string  *  * Since: 2.10  **/
+comment|/**  * gimp_config_path_unexpand:  * @path:   a NUL-terminated string  * @recode: whether @path is in filesystem encoding or UTF-8  * @error:  return location for errors  *  * The inverse operation of gimp_config_path_expand()  *  * This function takes a @path and tries to substitute the first  * elements by well-known special identifiers such as for example  * ${gimp_dir}. The unexpanded path can then be stored in gimprc and  * other config files.  *  * If @recode is %TRUE then @path is in local filesystem encoding,  * if @recode is %FALSE then @path is assumed to be UTF-8.  *  * Returns: a newly allocated NUL-terminated UTF-8 string  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -931,7 +931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_new_for_config_path:  * @path:   a NUL-terminated string in UTF-8 encoding  * @error:  return location for errors  *  * Expands @path using gimp_config_path_expand() and returns a #GFile  * for the expanded path.  *  * To reverse the expansion, use gimp_file_get_config_path().  *  * Return value: (transfer full): a newly allocated #GFile, or %NULL if the expansion failed.  *  * Since: 2.10  **/
+comment|/**  * gimp_file_new_for_config_path:  * @path:   a NUL-terminated string in UTF-8 encoding  * @error:  return location for errors  *  * Expands @path using gimp_config_path_expand() and returns a #GFile  * for the expanded path.  *  * To reverse the expansion, use gimp_file_get_config_path().  *  * Returns: (transfer full): a newly allocated #GFile, or %NULL if the expansion failed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1020,7 +1020,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_get_config_path:  * @file:   a #GFile  * @error:  return location for errors  *  * Unexpands @file's path using gimp_config_path_unexpand() and  * returns the unexpanded path.  *  * The inverse operation of gimp_file_new_for_config_path().  *  * Return value: a newly allocated NUL-terminated UTF-8 string, or %NULL if  *               unexpanding failed.  *  * Since: 2.10  **/
+comment|/**  * gimp_file_get_config_path:  * @file:   a #GFile  * @error:  return location for errors  *  * Unexpands @file's path using gimp_config_path_unexpand() and  * returns the unexpanded path.  *  * The inverse operation of gimp_file_new_for_config_path().  *  * Returns: a newly allocated NUL-terminated UTF-8 string, or %NULL if  *               unexpanding failed.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1958,7 +1958,7 @@ parameter_list|)
 block|{
 specifier|const
 struct|struct
-DECL|struct|__anon2bf0a3170108
+DECL|struct|__anon2ad52a5b0108
 block|{
 DECL|member|id
 specifier|const

@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0d15a50103
+DECL|enum|__anon27c501560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -897,7 +897,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_store_new:  *  * Creates a #GtkListStore with a number of useful columns.  * #GimpIntStore is especially useful if the items you want to store  * are identified using an integer value.  *  * Return value: a new #GimpIntStore.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_store_new:  *  * Creates a #GtkListStore with a number of useful columns.  * #GimpIntStore is especially useful if the items you want to store  * are identified using an integer value.  *  * Returns: a new #GimpIntStore.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -921,7 +921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_store_lookup_by_value:  * @model: a #GimpIntStore  * @value: an integer value to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Return value: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_store_lookup_by_value:  * @model: a #GimpIntStore  * @value: an integer value to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Returns: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1019,7 +1019,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_store_lookup_by_user_data:  * @model: a #GimpIntStore  * @user_data: a gpointer "user-data" to lookup in the @model  * @iter:  return location for the iter of the given @user_data  *  * Iterate over the @model looking for @user_data.  *  * Return value: %TRUE if the user-data has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_int_store_lookup_by_user_data:  * @model: a #GimpIntStore  * @user_data: a gpointer "user-data" to lookup in the @model  * @iter:  return location for the iter of the given @user_data  *  * Iterate over the @model looking for @user_data.  *  * Returns: %TRUE if the user-data has been located and @iter is  *               valid, %FALSE otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

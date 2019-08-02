@@ -1856,7 +1856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_get_color_at:  * @gradient:          a gradient  * @context:           a context  * @seg:               a segment to seed the search with (or %NULL)  * @pos:               position in the gradient (between 0.0 and 1.0)  * @reverse:           when %TRUE, use the reversed gradient  * @blend_color_space: color space to use for blending RGB segments  * @color:             returns the color  *  * If you are iterating over an gradient, you should pass the the  * return value from the last call for @seg.  *  * Return value: the gradient segment the color is from  **/
+comment|/**  * gimp_gradient_get_color_at:  * @gradient:          a gradient  * @context:           a context  * @seg:               a segment to seed the search with (or %NULL)  * @pos:               position in the gradient (between 0.0 and 1.0)  * @reverse:           when %TRUE, use the reversed gradient  * @blend_color_space: color space to use for blending RGB segments  * @color:             returns the color  *  * If you are iterating over an gradient, you should pass the the  * return value from the last call for @seg.  *  * Returns: the gradient segment the color is from  **/
 end_comment
 
 begin_function

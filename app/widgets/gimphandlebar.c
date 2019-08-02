@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2f0f80103
+DECL|enum|__anon2c14e8de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1199,7 +1199,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_handle_bar_new:  * @orientation: whether the bar should be oriented horizontally or  *               vertically  *  * Creates a new #GimpHandleBar widget.  *  * Return value: The new #GimpHandleBar widget.  **/
+comment|/**  * gimp_handle_bar_new:  * @orientation: whether the bar should be oriented horizontally or  *               vertically  *  * Creates a new #GimpHandleBar widget.  *  * Returns: The new #GimpHandleBar widget.  **/
 end_comment
 
 begin_function

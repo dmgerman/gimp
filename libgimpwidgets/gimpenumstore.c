@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa2dfb0103
+DECL|enum|__anon27596e380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -568,7 +568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Returns: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -633,7 +633,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range. Values smaller than  * @minimum or larger than @maximum are not added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range. Values smaller than  * @minimum or larger than @maximum are not added to the store.  *  * Returns: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -742,7 +742,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to explicitly list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to explicitly list the enum values that should be added to the  * store.  *  * Returns: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -797,7 +797,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  *  * Since: 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Returns: a new #GimpEnumStore.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

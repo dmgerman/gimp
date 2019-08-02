@@ -470,7 +470,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * jpeg_detect_quality:  * @cinfo: a pointer to a JPEG decompressor info.  *  * Returns the exact or estimated quality value that was used to save  * the JPEG image by analyzing the quantization table divisors.  *  * If an exact match for the IJG quantization tables is found, then a  * quality setting in the range 1..100 is returned.  If the quality  * can only be estimated, then a negative number in the range -1..-100  * is returned; its absolute value represents the maximum IJG quality  * setting to use.  If the quality cannot be reliably determined, then  * 0 is returned.  *  * This function must be called after jpeg_read_header() so that  * @cinfo contains the quantization tables read from the DQT markers  * in the file.  *  * Return Value: the JPEG quality setting in the range 1..100, -1..-100 or 0.  */
+comment|/**  * jpeg_detect_quality:  * @cinfo: a pointer to a JPEG decompressor info.  *  * Returns the exact or estimated quality value that was used to save  * the JPEG image by analyzing the quantization table divisors.  *  * If an exact match for the IJG quantization tables is found, then a  * quality setting in the range 1..100 is returned.  If the quality  * can only be estimated, then a negative number in the range -1..-100  * is returned; its absolute value represents the maximum IJG quality  * setting to use.  If the quality cannot be reliably determined, then  * 0 is returned.  *  * This function must be called after jpeg_read_header() so that  * @cinfo contains the quantization tables read from the DQT markers  * in the file.  *  * Returns: the JPEG quality setting in the range 1..100, -1..-100 or 0.  */
 end_comment
 
 begin_function

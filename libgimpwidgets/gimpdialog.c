@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893cec40103
+DECL|enum|__anon2af707e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1429,7 +1429,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_add_button:  * @dialog: The @dialog to add a button to.  * @button_text: text of button, or stock ID.  * @response_id: response ID for the button.  *  * This function is essentially the same as gtk_dialog_add_button()  * except it ensures there is only one help button and automatically  * sets the RESPONSE_OK widget as the default response.  *  * Return value: (type Gtk.Widget) (transfer none): the button widget that was added.  **/
+comment|/**  * gimp_dialog_add_button:  * @dialog: The @dialog to add a button to.  * @button_text: text of button, or stock ID.  * @response_id: response ID for the button.  *  * This function is essentially the same as gtk_dialog_add_button()  * except it ensures there is only one help button and automatically  * sets the RESPONSE_OK widget as the default response.  *  * Returns: (type Gtk.Widget) (transfer none): the button widget that was added.  **/
 end_comment
 
 begin_function
@@ -1708,7 +1708,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893cec40208
+DECL|struct|__anon2af707e50208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -1876,7 +1876,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_run:  * @dialog: a #GimpDialog  *  * This function does exactly the same as gtk_dialog_run() except it  * does not make the dialog modal while the #GMainLoop is running.  *  * Return value: response ID  **/
+comment|/**  * gimp_dialog_run:  * @dialog: a #GimpDialog  *  * This function does exactly the same as gtk_dialog_run() except it  * does not make the dialog modal while the #GMainLoop is running.  *  * Returns: response ID  **/
 end_comment
 
 begin_function

@@ -1469,7 +1469,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_get_logarithmic:  * @adjustment: a  #GtkAdjustment as returned by gimp_scale_entry_new()  *  * Return value: %TRUE if the the entry's scale widget will behave in  *               logharithmic fashion, %FALSE for linear behaviour.  *  * Since: 2.2  **/
+comment|/**  * gimp_scale_entry_get_logarithmic:  * @adjustment: a  #GtkAdjustment as returned by gimp_scale_entry_new()  *  * Returns: %TRUE if the the entry's scale widget will behave in  *               logharithmic fashion, %FALSE for linear behaviour.  *  * Since: 2.2  **/
 end_comment
 
 begin_function

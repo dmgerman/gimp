@@ -620,7 +620,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_get_desc:  * @pspec: a #GParamSpec  *  * This function creates a description of the passed @pspec, which is  * suitable for use in the PDB.  Actually, it currently only deals with  * parameter types used in the PDB and should not be used for anything  * else.  *  * Return value: A newly allocated string describing the parameter.  */
+comment|/**  * gimp_param_spec_get_desc:  * @pspec: a #GParamSpec  *  * This function creates a description of the passed @pspec, which is  * suitable for use in the PDB.  Actually, it currently only deals with  * parameter types used in the PDB and should not be used for anything  * else.  *  * Returns: A newly allocated string describing the parameter.  */
 end_comment
 
 begin_function

@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b010e450103
+DECL|enum|__anon2c2bc0bf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4677,7 +4677,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_curve_is_identity:  * @curve: a #GimpCurve object  *  * If this function returns %TRUE, then the curve maps each value to  * itself. If it returns %FALSE, then this assumption can not be made.  *  * Return value: %TRUE if the curve is an identity mapping, %FALSE otherwise.  **/
+comment|/**  * gimp_curve_is_identity:  * @curve: a #GimpCurve object  *  * If this function returns %TRUE, then the curve maps each value to  * itself. If it returns %FALSE, then this assumption can not be made.  *  * Returns: %TRUE if the curve is an identity mapping, %FALSE otherwise.  **/
 end_comment
 
 begin_function

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f06bd0103
+DECL|enum|__anon2af2c0c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -661,7 +661,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_transform_options_gui:  * @tool_options:  a #GimpToolOptions  * @direction:     whether to show the direction frame  * @interpolation: whether to show the interpolation menu  * @clipping:      whether to show the clipping menu  *  * Build the Transform Tool Options.  *  * Return value: a container holding the transform tool options  **/
+comment|/**  * gimp_transform_options_gui:  * @tool_options:  a #GimpToolOptions  * @direction:     whether to show the direction frame  * @interpolation: whether to show the interpolation menu  * @clipping:      whether to show the clipping menu  *  * Build the Transform Tool Options.  *  * Returns: a container holding the transform tool options  **/
 end_comment
 
 begin_function

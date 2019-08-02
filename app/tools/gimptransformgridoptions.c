@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7999e0103
+DECL|enum|__anon296320750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1169,7 +1169,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_transform_grid_options_gui:  * @tool_options: a #GimpToolOptions  *  * Build the TransformGrid Tool Options.  *  * Return value: a container holding the transform_grid tool options  **/
+comment|/**  * gimp_transform_grid_options_gui:  * @tool_options: a #GimpToolOptions  *  * Build the TransformGrid Tool Options.  *  * Returns: a container holding the transform_grid tool options  **/
 end_comment
 
 begin_function
@@ -2019,7 +2019,7 @@ name|GIMP_TYPE_UNIFIED_TRANSFORM_TOOL
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28f7999e0208
+DECL|struct|__anon296320750208
 block|{
 DECL|member|mod
 name|GdkModifierType

@@ -142,7 +142,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_scan_convert_new:  *  * Create a new scan conversion context.  *  * Return value: a newly allocated #GimpScanConvert context.  */
+comment|/**  * gimp_scan_convert_new:  *  * Create a new scan conversion context.  *  * Returns: a newly allocated #GimpScanConvert context.  */
 end_comment
 
 begin_function

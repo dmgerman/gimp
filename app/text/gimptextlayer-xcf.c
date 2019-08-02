@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf04680103
+DECL|enum|__anon2a4439e70103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -523,7 +523,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_from_layer:  * @layer: a #GimpLayer object  * @text: a #GimpText object  *  * Converts a standard #GimpLayer and a #GimpText object into a  * #GimpTextLayer. The new text layer takes ownership of the @text and  * @layer objects.  The @layer object is rendered unusable by this  * function. Don't even try to use if afterwards!  *  * This is a gross hack that is needed in order to load text layers  * from XCF files in a backwards-compatible way. Please don't use it  * for anything else!  *  * Return value: a newly allocated #GimpTextLayer object  **/
+comment|/**  * gimp_text_layer_from_layer:  * @layer: a #GimpLayer object  * @text: a #GimpText object  *  * Converts a standard #GimpLayer and a #GimpText object into a  * #GimpTextLayer. The new text layer takes ownership of the @text and  * @layer objects.  The @layer object is rendered unusable by this  * function. Don't even try to use if afterwards!  *  * This is a gross hack that is needed in order to load text layers  * from XCF files in a backwards-compatible way. Please don't use it  * for anything else!  *  * Returns: a newly allocated #GimpTextLayer object  **/
 end_comment
 
 begin_function

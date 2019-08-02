@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f921b0103
+DECL|enum|__anon2c4834370103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2408,7 +2408,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @monitor       the #GdkMonitor the dialog should appear on  * @ui_manager:   A #GimpUIManager, if applicable.  * @parent:       The parent widget, from which the call originated, if  *                applicable, NULL otherwise.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @monitor       the #GdkMonitor the dialog should appear on  * @ui_manager:   A #GimpUIManager, if applicable.  * @parent:       The parent widget, from which the call originated, if  *                applicable, NULL otherwise.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Returns: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
@@ -2686,7 +2686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @monitor:      the #GdkMonitor the dialog should appear on  * @parent:       the #GtkWidget from which the raised dialog  *                originated, if applicable, %NULL otherwise.  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @monitor:      the #GdkMonitor the dialog should appear on  * @parent:       the #GtkWidget from which the raised dialog  *                originated, if applicable, %NULL otherwise.  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Returns: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
@@ -2851,7 +2851,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock created by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that gimp_dockable_get_dockbook (dockable)  * is NULL before trying to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
+comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock created by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that gimp_dockable_get_dockbook (dockable)  * is NULL before trying to add it to it's #GimpDockbook.  *  * Returns: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
 end_comment
 
 begin_function

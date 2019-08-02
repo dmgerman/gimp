@@ -1562,7 +1562,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_overlay_box_new:  *  * Creates a new #GimpOverlayBox widget.  *  * Return value: a new #GimpOverlayBox widget  **/
+comment|/**  * gimp_overlay_box_new:  *  * Creates a new #GimpOverlayBox widget.  *  * Returns: a new #GimpOverlayBox widget  **/
 end_comment
 
 begin_function

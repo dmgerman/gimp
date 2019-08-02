@@ -38,7 +38,7 @@ comment|/**  * SECTION: gimppixbuf  * @title: GimpPixbuf  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_pixbuf_get_format:  * @pixbuf: a #GdkPixbuf  *  * Returns the Babl format that corresponds to the @pixbuf's pixel format.  *  * Return value: the @pixbuf's pixel format  *  * Since: 2.10  **/
+comment|/**  * gimp_pixbuf_get_format:  * @pixbuf: a #GdkPixbuf  *  * Returns the Babl format that corresponds to the @pixbuf's pixel format.  *  * Returns: the @pixbuf's pixel format  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -99,7 +99,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixbuf_create_buffer:  * @pixbuf: a #GdkPixbuf  *  * Returns a #GeglBuffer that's either backed by the @pixbuf's pixels,  * or a copy of them. This function tries to not copy the @pixbuf's  * pixels. If the pixbuf's rowstride is a multiple of its bpp, a  * simple reference to the @pixbuf's pixels is made and @pixbuf will  * be kept around for as long as the buffer exists; otherwise the  * pixels are copied.  *  * Return value: (transfer full): a new #GeglBuffer.  *  * Since: 2.10  **/
+comment|/**  * gimp_pixbuf_create_buffer:  * @pixbuf: a #GdkPixbuf  *  * Returns a #GeglBuffer that's either backed by the @pixbuf's pixels,  * or a copy of them. This function tries to not copy the @pixbuf's  * pixels. If the pixbuf's rowstride is a multiple of its bpp, a  * simple reference to the @pixbuf's pixels is made and @pixbuf will  * be kept around for as long as the buffer exists; otherwise the  * pixels are copied.  *  * Returns: (transfer full): a new #GeglBuffer.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -266,7 +266,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixbuf_get_icc_profile:  * @pixbuf: a #GdkPixbuf  * @length: return location for the ICC profile's length  *  * Returns the ICC profile attached to the @pixbuf, or %NULL if there  * is none.  *  * Return value: The ICC profile data, or %NULL. The value should be freed  *               with g_free().  *  * Since: 2.10  **/
+comment|/**  * gimp_pixbuf_get_icc_profile:  * @pixbuf: a #GdkPixbuf  * @length: return location for the ICC profile's length  *  * Returns the ICC profile attached to the @pixbuf, or %NULL if there  * is none.  *  * Returns: The ICC profile data, or %NULL. The value should be freed  *               with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function

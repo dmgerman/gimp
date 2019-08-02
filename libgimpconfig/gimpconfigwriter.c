@@ -365,7 +365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Returns: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -456,7 +456,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
+comment|/**  * gimp_config_writer_new_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Returns: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -720,7 +720,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
+comment|/**  * gimp_config_writer_new_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Returns: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -822,7 +822,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_fd:  * @fd:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_fd:  * @fd:  *  * Returns: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -903,7 +903,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_string:  * @string:  *  * Return value: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_string:  * @string:  *  * Returns: a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1695,7 +1695,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_finish:  * @writer: a #GimpConfigWriter  * @footer: text to include as comment at the bottom of the file  * @error: return location for possible errors  *  * This function finishes the work of @writer and frees it afterwards.  * It closes all open elements, appends an optional comment and  * releases all resources allocated by @writer. You must not access  * the @writer afterwards.  *  * Return value: %TRUE if everything could be successfully written,  *               %FALSE otherwise  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_finish:  * @writer: a #GimpConfigWriter  * @footer: text to include as comment at the bottom of the file  * @error: return location for possible errors  *  * This function finishes the work of @writer and frees it afterwards.  * It closes all open elements, appends an optional comment and  * releases all resources allocated by @writer. You must not access  * the @writer afterwards.  *  * Returns: %TRUE if everything could be successfully written,  *               %FALSE otherwise  *  * Since: 2.4  **/
 end_comment
 
 begin_function

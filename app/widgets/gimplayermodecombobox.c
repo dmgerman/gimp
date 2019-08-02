@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f5e7720103
+DECL|enum|__anon292a49840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -695,7 +695,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_mode_combo_box_new:  * Foo.  *  * Return value: a new #GimpLayerModeComboBox.  **/
+comment|/**  * gimp_layer_mode_combo_box_new:  * Foo.  *  * Returns: a new #GimpLayerModeComboBox.  **/
 end_comment
 
 begin_function

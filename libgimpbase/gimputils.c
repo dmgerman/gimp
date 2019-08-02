@@ -440,7 +440,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_any_to_utf8:  * @str:            The string to be converted to UTF-8.  * @len:            The length of the string, or -1 if the string  *                  is nul-terminated.  * @warning_format: The message format for the warning message if conversion  *                  to UTF-8 fails. See the<function>printf()</function>  *                  documentation.  * @...:            The parameters to insert into the format string.  *  * This function takes any string (UTF-8 or not) and always returns a valid  * UTF-8 string.  *  * If @str is valid UTF-8, a copy of the string is returned.  *  * If UTF-8 validation fails, g_locale_to_utf8() is tried and if it  * succeeds the resulting string is returned.  *  * Otherwise, the portion of @str that is UTF-8, concatenated  * with "(invalid UTF-8 string)" is returned. If not even the start  * of @str is valid UTF-8, only "(invalid UTF-8 string)" is returned.  *  * Return value: The UTF-8 string as described above.  **/
+comment|/**  * gimp_any_to_utf8:  * @str:            The string to be converted to UTF-8.  * @len:            The length of the string, or -1 if the string  *                  is nul-terminated.  * @warning_format: The message format for the warning message if conversion  *                  to UTF-8 fails. See the<function>printf()</function>  *                  documentation.  * @...:            The parameters to insert into the format string.  *  * This function takes any string (UTF-8 or not) and always returns a valid  * UTF-8 string.  *  * If @str is valid UTF-8, a copy of the string is returned.  *  * If UTF-8 validation fails, g_locale_to_utf8() is tried and if it  * succeeds the resulting string is returned.  *  * Otherwise, the portion of @str that is UTF-8, concatenated  * with "(invalid UTF-8 string)" is returned. If not even the start  * of @str is valid UTF-8, only "(invalid UTF-8 string)" is returned.  *  * Returns: The UTF-8 string as described above.  **/
 end_comment
 
 begin_function
@@ -641,7 +641,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_filename_to_utf8:  * @filename: The filename to be converted to UTF-8.  *  * Convert a filename in the filesystem's encoding to UTF-8  * temporarily.  The return value is a pointer to a string that is  * guaranteed to be valid only during the current iteration of the  * main loop or until the next call to gimp_filename_to_utf8().  *  * The only purpose of this function is to provide an easy way to pass  * a filename in the filesystem encoding to a function that expects an  * UTF-8 encoded filename.  *  * Return value: A temporarily valid UTF-8 representation of @filename.  *               This string must not be changed or freed.  **/
+comment|/**  * gimp_filename_to_utf8:  * @filename: The filename to be converted to UTF-8.  *  * Convert a filename in the filesystem's encoding to UTF-8  * temporarily.  The return value is a pointer to a string that is  * guaranteed to be valid only during the current iteration of the  * main loop or until the next call to gimp_filename_to_utf8().  *  * The only purpose of this function is to provide an easy way to pass  * a filename in the filesystem encoding to a function that expects an  * UTF-8 encoded filename.  *  * Returns: A temporarily valid UTF-8 representation of @filename.  *               This string must not be changed or freed.  **/
 end_comment
 
 begin_function
@@ -733,7 +733,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_get_utf8_name:  * @file: a #GFile  *  * This function works like gimp_filename_to_utf8() and returns  * a UTF-8 encoded string that does not need to be freed.  *  * It converts a #GFile's path or uri to UTF-8 temporarily.  The  * return value is a pointer to a string that is guaranteed to be  * valid only during the current iteration of the main loop or until  * the next call to gimp_file_get_utf8_name().  *  * The only purpose of this function is to provide an easy way to pass  * a #GFile's name to a function that expects an UTF-8 encoded string.  *  * See g_file_get_parse_name().  *  * Since: 2.10  *  * Return value: A temporarily valid UTF-8 representation of @file's name.  *               This string must not be changed or freed.  **/
+comment|/**  * gimp_file_get_utf8_name:  * @file: a #GFile  *  * This function works like gimp_filename_to_utf8() and returns  * a UTF-8 encoded string that does not need to be freed.  *  * It converts a #GFile's path or uri to UTF-8 temporarily.  The  * return value is a pointer to a string that is guaranteed to be  * valid only during the current iteration of the main loop or until  * the next call to gimp_file_get_utf8_name().  *  * The only purpose of this function is to provide an easy way to pass  * a #GFile's name to a function that expects an UTF-8 encoded string.  *  * See g_file_get_parse_name().  *  * Since: 2.10  *  * Returns: A temporarily valid UTF-8 representation of @file's name.  *               This string must not be changed or freed.  **/
 end_comment
 
 begin_function
@@ -793,7 +793,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_has_extension:  * @file:      a #GFile  * @extension: an ASCII extension  *  * This function checks if @file's URI ends with @extension. It behaves  * like g_str_has_suffix() on g_file_get_uri(), except that the string  * comparison is done case-insensitively using g_ascii_strcasecmp().  *  * Since: 2.10  *  * Return value: %TRUE if @file's URI ends with @extension,  *               %FALSE otherwise.  **/
+comment|/**  * gimp_file_has_extension:  * @file:      a #GFile  * @extension: an ASCII extension  *  * This function checks if @file's URI ends with @extension. It behaves  * like g_str_has_suffix() on g_file_get_uri(), except that the string  * comparison is done case-insensitively using g_ascii_strcasecmp().  *  * Since: 2.10  *  * Returns: %TRUE if @file's URI ends with @extension,  *               %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -911,7 +911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_show_in_file_manager:  * @file:  a #GFile  * @error: return location for a #GError  *  * Shows @file in the system file manager.  *  * Since: 2.10  *  * Return value: %TRUE on success, %FALSE otherwise. On %FALSE, @error  *               is set.  **/
+comment|/**  * gimp_file_show_in_file_manager:  * @file:  a #GFile  * @error: return location for a #GError  *  * Shows @file in the system file manager.  *  * Since: 2.10  *  * Returns: %TRUE on success, %FALSE otherwise. On %FALSE, @error  *               is set.  **/
 end_comment
 
 begin_function
@@ -1474,7 +1474,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_strip_uline:  * @str: underline infested string (or %NULL)  *  * This function returns a copy of @str stripped of underline  * characters. This comes in handy when needing to strip mnemonics  * from menu paths etc.  *  * In some languages, mnemonics are handled by adding the mnemonic  * character in brackets (like "File (_F)"). This function recognizes  * this construct and removes the whole bracket construction to get  * rid of the mnemonic (see bug 157561).  *  * Return value: A (possibly stripped) copy of @str which should be  *               freed using g_free() when it is not needed any longer.  **/
+comment|/**  * gimp_strip_uline:  * @str: underline infested string (or %NULL)  *  * This function returns a copy of @str stripped of underline  * characters. This comes in handy when needing to strip mnemonics  * from menu paths etc.  *  * In some languages, mnemonics are handled by adding the mnemonic  * character in brackets (like "File (_F)"). This function recognizes  * this construct and removes the whole bracket construction to get  * rid of the mnemonic (see bug 157561).  *  * Returns: A (possibly stripped) copy of @str which should be  *               freed using g_free() when it is not needed any longer.  **/
 end_comment
 
 begin_function
@@ -1635,7 +1635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_escape_uline:  * @str: Underline infested string (or %NULL)  *  * This function returns a copy of @str with all underline converted  * to two adjacent underlines. This comes in handy when needing to display  * strings with underlines (like filenames) in a place that would convert  * them to mnemonics.  *  * Return value: A (possibly escaped) copy of @str which should be  * freed using g_free() when it is not needed any longer.  *  * Since: 2.2  **/
+comment|/**  * gimp_escape_uline:  * @str: Underline infested string (or %NULL)  *  * This function returns a copy of @str with all underline converted  * to two adjacent underlines. This comes in handy when needing to display  * strings with underlines (like filenames) in a place that would convert  * them to mnemonics.  *  * Returns: A (possibly escaped) copy of @str which should be  * freed using g_free() when it is not needed any longer.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1753,7 +1753,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_canonicalize_identifier:  * @identifier: The identifier string to canonicalize.  *  * Turns any input string into a canonicalized string.  *  * Canonical identifiers are e.g. expected by the PDB for procedure  * and parameter names. Every character of the input string that is  * not either '-', 'a-z', 'A-Z' or '0-9' will be replaced by a '-'.  *  * Return value: The canonicalized identifier. This is a newly  *               allocated string that should be freed with g_free()  *               when no longer needed.  *  * Since: 2.4  **/
+comment|/**  * gimp_canonicalize_identifier:  * @identifier: The identifier string to canonicalize.  *  * Turns any input string into a canonicalized string.  *  * Canonical identifiers are e.g. expected by the PDB for procedure  * and parameter names. Every character of the input string that is  * not either '-', 'a-z', 'A-Z' or '0-9' will be replaced by a '-'.  *  * Returns: The canonicalized identifier. This is a newly  *               allocated string that should be freed with g_free()  *               when no longer needed.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1861,7 +1861,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_get_desc:  * @enum_class: a #GEnumClass  * @value:      a value from @enum_class  *  * Retrieves #GimpEnumDesc associated with the given value, or %NULL.  *  * Return value: the value's #GimpEnumDesc.  *  * Since: 2.2  **/
+comment|/**  * gimp_enum_get_desc:  * @enum_class: a #GEnumClass  * @value:      a value from @enum_class  *  * Retrieves #GimpEnumDesc associated with the given value, or %NULL.  *  * Returns: the value's #GimpEnumDesc.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1942,7 +1942,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_get_value:  * @enum_type:  the #GType of a registered enum  * @value:      an integer value  * @value_name: return location for the value's name (or %NULL)  * @value_nick: return location for the value's nick (or %NULL)  * @value_desc: return location for the value's translated description (or %NULL)  * @value_help: return location for the value's translated help (or %NULL)  *  * Checks if @value is valid for the enum registered as @enum_type.  * If the value exists in that enum, its name, nick and its translated  * description and help are returned (if @value_name, @value_nick,  * @value_desc and @value_help are not %NULL).  *  * Return value: %TRUE if @value is valid for the @enum_type,  *               %FALSE otherwise  *  * Since: 2.2  **/
+comment|/**  * gimp_enum_get_value:  * @enum_type:  the #GType of a registered enum  * @value:      an integer value  * @value_name: return location for the value's name (or %NULL)  * @value_nick: return location for the value's nick (or %NULL)  * @value_desc: return location for the value's translated description (or %NULL)  * @value_help: return location for the value's translated help (or %NULL)  *  * Checks if @value is valid for the enum registered as @enum_type.  * If the value exists in that enum, its name, nick and its translated  * description and help are returned (if @value_name, @value_nick,  * @value_desc and @value_help are not %NULL).  *  * Returns: %TRUE if @value is valid for the @enum_type,  *               %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2200,7 +2200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_value_get_desc:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated description for a given @enum_value.  *  * Return value: the translated description of the enum value  *  * Since: 2.2  **/
+comment|/**  * gimp_enum_value_get_desc:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated description for a given @enum_value.  *  * Returns: the translated description of the enum value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2315,7 +2315,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_value_get_help:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated help for a given @enum_value.  *  * Return value: the translated help of the enum value  *  * Since: 2.2  **/
+comment|/**  * gimp_enum_value_get_help:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated help for a given @enum_value.  *  * Returns: the translated help of the enum value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2385,7 +2385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_value_get_abbrev:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated abbreviation for a given @enum_value.  *  * Return value: the translated abbreviation of the enum value  *  * Since: 2.10  **/
+comment|/**  * gimp_enum_value_get_abbrev:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated abbreviation for a given @enum_value.  *  * Returns: the translated abbreviation of the enum value  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2479,7 +2479,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_get_first_desc:  * @flags_class: a #GFlagsClass  * @value:       a value from @flags_class  *  * Retrieves the first #GimpFlagsDesc that matches the given value, or %NULL.  *  * Return value: the value's #GimpFlagsDesc.  *  * Since: 2.2  **/
+comment|/**  * gimp_flags_get_first_desc:  * @flags_class: a #GFlagsClass  * @value:       a value from @flags_class  *  * Retrieves the first #GimpFlagsDesc that matches the given value, or %NULL.  *  * Returns: the value's #GimpFlagsDesc.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2566,7 +2566,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_get_first_value:  * @flags_type: the #GType of registered flags  * @value:      an integer value  * @value_name: return location for the value's name (or %NULL)  * @value_nick: return location for the value's nick (or %NULL)  * @value_desc: return location for the value's translated description (or %NULL)  * @value_help: return location for the value's translated help (or %NULL)  *  * Checks if @value is valid for the flags registered as @flags_type.  * If the value exists in that flags, its name, nick and its  * translated description and help are returned (if @value_name,  * @value_nick, @value_desc and @value_help are not %NULL).  *  * Return value: %TRUE if @value is valid for the @flags_type,  *               %FALSE otherwise  *  * Since: 2.2  **/
+comment|/**  * gimp_flags_get_first_value:  * @flags_type: the #GType of registered flags  * @value:      an integer value  * @value_name: return location for the value's name (or %NULL)  * @value_nick: return location for the value's nick (or %NULL)  * @value_desc: return location for the value's translated description (or %NULL)  * @value_help: return location for the value's translated help (or %NULL)  *  * Checks if @value is valid for the flags registered as @flags_type.  * If the value exists in that flags, its name, nick and its  * translated description and help are returned (if @value_name,  * @value_nick, @value_desc and @value_help are not %NULL).  *  * Returns: %TRUE if @value is valid for the @flags_type,  *               %FALSE otherwise  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2760,7 +2760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_value_get_desc:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated description for a given @flags_value.  *  * Return value: the translated description of the flags value  *  * Since: 2.2  **/
+comment|/**  * gimp_flags_value_get_desc:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated description for a given @flags_value.  *  * Returns: the translated description of the flags value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2873,7 +2873,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_value_get_help:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated help for a given @flags_value.  *  * Return value: the translated help of the flags value  *  * Since: 2.2  **/
+comment|/**  * gimp_flags_value_get_help:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated help for a given @flags_value.  *  * Returns: the translated help of the flags value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -2941,7 +2941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_value_get_abbrev:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated abbreviation for a given @flags_value.  *  * Return value: the translated abbreviation of the flags value  *  * Since: 2.10  **/
+comment|/**  * gimp_flags_value_get_abbrev:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated abbreviation for a given @flags_value.  *  * Returns: the translated abbreviation of the flags value  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3132,7 +3132,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_stack_trace_print:  * @prog_name: the program to attach to.  * @stream: a #FILE * stream.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @stream or  * returned as a newly allocated string in @trace, if not %NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Return value: %TRUE if a stack trace could be generated, %FALSE  * otherwise.  *  * Since: 2.10  **/
+comment|/**  * gimp_stack_trace_print:  * @prog_name: the program to attach to.  * @stream: a #FILE * stream.  * @trace: location to store a newly allocated string of the trace.  *  * Attempts to generate a stack trace at current code position in  * @prog_name. @prog_name is mostly a helper and can be set to NULL.  * Nevertheless if set, it has to be the current program name (argv[0]).  * This function is not meant to generate stack trace for third-party  * programs, and will attach the current process id only.  * Internally, this function uses `gdb` or `lldb` if they are available,  * or the stacktrace() API on platforms where it is available. It always  * fails on Win32.  *  * The stack trace, once generated, will either be printed to @stream or  * returned as a newly allocated string in @trace, if not %NULL.  *  * In some error cases (e.g. segmentation fault), trying to allocate  * more memory will trigger more segmentation faults and therefore loop  * our error handling (which is just wrong). Therefore printing to a  * file description is an implementation without any memory allocation.   * Returns: %TRUE if a stack trace could be generated, %FALSE  * otherwise.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

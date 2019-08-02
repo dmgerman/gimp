@@ -240,7 +240,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_thumb_init:  * @creator: an ASCII string that identifies the thumbnail creator  * @thumb_basedir: an absolute path or %NULL to use the default  *  * This function initializes the thumbnail system. It must be called  * before any other functions from libgimpthumb are used. You may call  * it more than once if you want to change the @thumb_basedir but if  * you do that, you should make sure that no thread is still using the  * library. Apart from this function, libgimpthumb is multi-thread  * safe.  *  * The @creator string must be 7bit ASCII and should contain the name  * of the software that creates the thumbnails. It is used to handle  * thumbnail creation failures. See the spec for more details.  *  * Usually you will pass %NULL for @thumb_basedir. Thumbnails will  * then be stored in the user's personal thumbnail directory as  * defined in the spec. If you wish to use libgimpthumb to store  * application-specific thumbnails, you can specify a different base  * directory here.  *  * Return value: %TRUE if the library was successfully initialized.  **/
+comment|/**  * gimp_thumb_init:  * @creator: an ASCII string that identifies the thumbnail creator  * @thumb_basedir: an absolute path or %NULL to use the default  *  * This function initializes the thumbnail system. It must be called  * before any other functions from libgimpthumb are used. You may call  * it more than once if you want to change the @thumb_basedir but if  * you do that, you should make sure that no thread is still using the  * library. Apart from this function, libgimpthumb is multi-thread  * safe.  *  * The @creator string must be 7bit ASCII and should contain the name  * of the software that creates the thumbnails. It is used to handle  * thumbnail creation failures. See the spec for more details.  *  * Usually you will pass %NULL for @thumb_basedir. Thumbnails will  * then be stored in the user's personal thumbnail directory as  * defined in the spec. If you wish to use libgimpthumb to store  * application-specific thumbnails, you can specify a different base  * directory here.  *  * Returns: %TRUE if the library was successfully initialized.  **/
 end_comment
 
 begin_function
@@ -626,7 +626,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_get_thumb_dir:  * @size: a GimpThumbSize  *  * Retrieve the name of the thumbnail folder for a specific size. The  * returned pointer will become invalid if gimp_thumb_init() is used  * again. It must not be changed or freed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  **/
+comment|/**  * gimp_thumb_get_thumb_dir:  * @size: a GimpThumbSize  *  * Retrieve the name of the thumbnail folder for a specific size. The  * returned pointer will become invalid if gimp_thumb_init() is used  * again. It must not be changed or freed.  *  * Returns: the thumbnail directory in the encoding of the filesystem  **/
 end_comment
 
 begin_function
@@ -664,7 +664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  *  * Since: 2.2  **/
+comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Returns: the thumbnail directory in the encoding of the filesystem  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -731,7 +731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_ensure_thumb_dir:  * @size: a GimpThumbSize  * @error: return location for possible errors  *  * This function checks if the directory that is required to store  * thumbnails for a particular @size exist and attempts to create it  * if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb() and gimp_thumbnail_save_failure() will  * do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  **/
+comment|/**  * gimp_thumb_ensure_thumb_dir:  * @size: a GimpThumbSize  * @error: return location for possible errors  *  * This function checks if the directory that is required to store  * thumbnails for a particular @size exist and attempts to create it  * if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb() and gimp_thumbnail_save_failure() will  * do this for you.  *  * Returns: %TRUE is the directory exists, %FALSE if it could not  *               be created  **/
 end_comment
 
 begin_function
@@ -889,7 +889,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  * @error:   return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: 2.2  **/
+comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  * @error:   return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Returns: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1110,7 +1110,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_name_from_uri:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of the thumbnail file of the specified @size that  * belongs to an image file located at the given @uri.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri points to the user's  *               thumbnail repository.  **/
+comment|/**  * gimp_thumb_name_from_uri:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of the thumbnail file of the specified @size that  * belongs to an image file located at the given @uri.  *  * Returns: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri points to the user's  *               thumbnail repository.  **/
 end_comment
 
 begin_function
@@ -1183,7 +1183,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the user's thumbnail repository.  *  * Since: 2.2  **/
+comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Returns: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the user's thumbnail repository.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -1344,7 +1344,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @uri. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the user's thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails (if  * there are any).  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
+comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @uri. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the user's thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails (if  * there are any).  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Returns: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
 end_comment
 
 begin_function
@@ -1508,7 +1508,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_file_test:  * @filename: a filename in the encoding of the filesystem  * @mtime: return location for modification time  * @size: return location for file size  * @err_no: return location for system "errno"  *  * This is a convenience and portability wrapper around stat(). It  * checks if the given @filename exists and returns modification time  * and file size in 64bit integer values.  *  * Return value: The type of the file, or #GIMP_THUMB_FILE_TYPE_NONE if  *               the file doesn't exist.  **/
+comment|/**  * gimp_thumb_file_test:  * @filename: a filename in the encoding of the filesystem  * @mtime: return location for modification time  * @size: return location for file size  * @err_no: return location for system "errno"  *  * This is a convenience and portability wrapper around stat(). It  * checks if the given @filename exists and returns modification time  * and file size in 64bit integer values.  *  * Returns: The type of the file, or #GIMP_THUMB_FILE_TYPE_NONE if  *               the file doesn't exist.  **/
 end_comment
 
 begin_function

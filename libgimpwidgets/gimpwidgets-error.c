@@ -22,7 +22,7 @@ file|"gimpwidgets-error.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_widgets_error_quark:  *  * This function is never called directly. Use GIMP_WIDGETS_ERROR() instead.  *  * Return value: the #GQuark that defines the GIMP widgets error domain.  **/
+comment|/**  * gimp_widgets_error_quark:  *  * This function is never called directly. Use GIMP_WIDGETS_ERROR() instead.  *  * Returns: the #GQuark that defines the GIMP widgets error domain.  **/
 end_comment
 
 begin_function

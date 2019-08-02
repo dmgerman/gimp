@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294069700103
+DECL|enum|__anon27a5b7e30103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294069700203
+DECL|enum|__anon27a5b7e30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1999,7 +1999,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cell_renderer_toggle_new:  * @icon_name: the icon name of the icon to use for the active state  *  * Creates a custom version of the #GtkCellRendererToggle. Instead of  * showing the standard toggle button, it shows a named icon if the  * cell is active and no icon otherwise. This cell renderer is for  * example used in the Layers treeview to indicate and control the  * layer's visibility by showing %GIMP_STOCK_VISIBLE.  *  * Return value: a new #GimpCellRendererToggle  *  * Since: 2.2  **/
+comment|/**  * gimp_cell_renderer_toggle_new:  * @icon_name: the icon name of the icon to use for the active state  *  * Creates a custom version of the #GtkCellRendererToggle. Instead of  * showing the standard toggle button, it shows a named icon if the  * cell is active and no icon otherwise. This cell renderer is for  * example used in the Layers treeview to indicate and control the  * layer's visibility by showing %GIMP_STOCK_VISIBLE.  *  * Returns: a new #GimpCellRendererToggle  *  * Since: 2.2  **/
 end_comment
 
 begin_function

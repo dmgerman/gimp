@@ -512,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27504f140103
+DECL|enum|__anon275685980103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1296,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon27504f140203
+DECL|enum|__anon275685980203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3365,7 +3365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus libgimp  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Return value: the error message  *  * Since: 2.6  **/
+comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus libgimp  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Returns: the error message  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -3444,7 +3444,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb_status:  *  * Retrieves the status from the last procedure call.  *  * Return value: the #GimpPDBStatusType.  *  * Since: 2.10  **/
+comment|/**  * gimp_get_pdb_status:  *  * Retrieves the status from the last procedure call.  *  * Returns: the #GimpPDBStatusType.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3462,7 +3462,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_width:  *  * Returns the tile width GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the tile_width  **/
+comment|/**  * gimp_tile_width:  *  * Returns the tile width GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the tile_width  **/
 end_comment
 
 begin_function
@@ -3480,7 +3480,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_height:  *  * Returns the tile height GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the tile_height  **/
+comment|/**  * gimp_tile_height:  *  * Returns the tile height GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the tile_height  **/
 end_comment
 
 begin_function
@@ -3498,7 +3498,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_ID:  *  * Returns the shared memory ID used for passing tile data between the  * GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the shared memory ID  **/
+comment|/**  * gimp_shm_ID:  *  * Returns the shared memory ID used for passing tile data between the  * GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the shared memory ID  **/
 end_comment
 
 begin_function
@@ -3516,7 +3516,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the shared memory address  **/
+comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the shared memory address  **/
 end_comment
 
 begin_function
@@ -3535,7 +3535,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_help_button boolean  *  * Since: 2.2  **/
+comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the show_help_button boolean  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3553,7 +3553,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_color_profile:  *  * Returns whether file plug-ins should default to exporting the  * image's color profile.  *  * Return value: TRUE if preferences are set to export the color profile.  *  * Since: 2.10.4  **/
+comment|/**  * gimp_export_color_profile:  *  * Returns whether file plug-ins should default to exporting the  * image's color profile.  *  * Returns: TRUE if preferences are set to export the color profile.  *  * Since: 2.10.4  **/
 end_comment
 
 begin_function
@@ -3571,7 +3571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_exif:  *  * Returns whether file plug-ins should default to exporting Exif  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Returns: TRUE if preferences are set to export Exif.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3589,7 +3589,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_xmp:  *  * Returns whether file plug-ins should default to exporting XMP  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export XMP.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_xmp:  *  * Returns whether file plug-ins should default to exporting XMP  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Returns: TRUE if preferences are set to export XMP.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3607,7 +3607,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_iptc:  *  * Returns whether file plug-ins should default to exporting IPTC  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Return value: TRUE if preferences are set to export IPTC.  *  * Since: 2.10  **/
+comment|/**  * gimp_export_iptc:  *  * Returns whether file plug-ins should default to exporting IPTC  * metadata, according preferences (original settings is %FALSE since  * metadata can contain sensitive information).  *  * Returns: TRUE if preferences are set to export IPTC.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -3625,7 +3625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: 2.2  **/
+comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the check_size value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3643,7 +3643,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_type value  *  * Since: 2.2  **/
+comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the check_type value  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3661,7 +3661,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the default display ID  **/
+comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the default display ID  **/
 end_comment
 
 begin_function
@@ -3679,7 +3679,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the window manager class  **/
+comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the window manager class  **/
 end_comment
 
 begin_function
@@ -3699,7 +3699,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  * Will return %NULL if GIMP has been started with no GUI, either  * via "--no-interface" flag, or a console build.  *  * Return value: the display name  **/
+comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  * Will return %NULL if GIMP has been started with no GUI, either  * via "--no-interface" flag, or a console build.  *  * Returns: the display name  **/
 end_comment
 
 begin_function
@@ -3719,7 +3719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_monitor_number:  *  * Returns the monitor number to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the monitor number  **/
+comment|/**  * gimp_monitor_number:  *  * Returns the monitor number to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the monitor number  **/
 end_comment
 
 begin_function
@@ -3737,7 +3737,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently, plug-in authors  * do not have to care about it.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: timestamp for plug-in window  *  * Since: 2.6  **/
+comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently, plug-in authors  * do not have to care about it.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: timestamp for plug-in window  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -3755,7 +3755,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_icon_theme_dir:  *  * Returns the directory of the current icon theme.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the icon theme directory  *  * Since: 2.10.4  **/
+comment|/**  * gimp_get_icon_theme_dir:  *  * Returns the directory of the current icon theme.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: the icon theme directory  *  * Since: 2.10.4  **/
 end_comment
 
 begin_function
@@ -3775,7 +3775,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_progname:  *  * Returns the plug-in's executable name.  *  * Return value: the executable name  **/
+comment|/**  * gimp_get_progname:  *  * Returns the plug-in's executable name.  *  * Returns: the executable name  **/
 end_comment
 
 begin_function

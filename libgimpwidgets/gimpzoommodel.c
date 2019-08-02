@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aaf8010103
+DECL|enum|__anon2891a2370103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aaf8010203
+DECL|enum|__anon2891a2370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -963,7 +963,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_new:  *  * Creates a new #GimpZoomModel.  *  * Return value: a new #GimpZoomModel.  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_new:  *  * Creates a new #GimpZoomModel.  *  * Returns: a new #GimpZoomModel.  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1131,7 +1131,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_get_factor:  * @model: a #GimpZoomModel  *  * Retrieves the current zoom factor of @model.  *  * Return value: the current scale factor  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_get_factor:  * @model: a #GimpZoomModel  *  * Retrieves the current zoom factor of @model.  *  * Returns: the current scale factor  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1628,7 +1628,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_button_new:  * @model:     a #GimpZoomModel  * @zoom_type:  * @icon_size: use 0 for a button with text labels  *  * Return value: (transfer full): a newly created GtkButton  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_button_new:  * @model:     a #GimpZoomModel  * @zoom_type:  * @icon_size: use 0 for a button with text labels  *  * Returns: (transfer full): a newly created GtkButton  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1845,7 +1845,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  * @delta:     the delta from a smooth zoom event  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  * @delta:     the delta from a smooth zoom event  *  * Utility function to calculate a new scale factor.  *  * Returns: the new scale factor  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function

@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eddd820103
+DECL|enum|__anon29fcdb870103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -703,7 +703,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_toggles_visible:  * @selector: A #GimpColorSelector widget.  *  * Returns the @visible property of the @selector's toggles.  *  * Return value: %TRUE if the #GimpColorSelector's toggles are visible.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_toggles_visible:  * @selector: A #GimpColorSelector widget.  *  * Returns the @visible property of the @selector's toggles.  *  * Returns: %TRUE if the #GimpColorSelector's toggles are visible.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -809,7 +809,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_toggles_sensitive:  * @selector: A #GimpColorSelector widget.  *  * Returns the @sensitive property of the @selector's toggles.  *  * Return value: %TRUE if the #GimpColorSelector's toggles are sensitive.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_toggles_sensitive:  * @selector: A #GimpColorSelector widget.  *  * Returns the @sensitive property of the @selector's toggles.  *  * Returns: %TRUE if the #GimpColorSelector's toggles are sensitive.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -915,7 +915,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_show_alpha:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's @show_alpha property.  *  * Return value: %TRUE if the #GimpColorSelector has alpha controls.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_show_alpha:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's @show_alpha property.  *  * Returns: %TRUE if the #GimpColorSelector has alpha controls.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1298,7 +1298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_channel:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's current channel.  *  * Return value: The #GimpColorSelectorChannel currently shown by the  * @selector.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_channel:  * @selector: A #GimpColorSelector widget.  *  * Returns the @selector's current channel.  *  * Returns: The #GimpColorSelectorChannel currently shown by the  * @selector.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1437,7 +1437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_get_model_visible:  * @selector: A #GimpColorSelector widget.  * @model:    The #GimpColorSelectorModel.  *  * Return value: whether @model is visible in @selector.  *  * Since: 2.10  **/
+comment|/**  * gimp_color_selector_get_model_visible:  * @selector: A #GimpColorSelector widget.  * @model:    The #GimpColorSelectorModel.  *  * Returns: whether @model is visible in @selector.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

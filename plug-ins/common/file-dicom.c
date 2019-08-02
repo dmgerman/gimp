@@ -3115,7 +3115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5652160108
+DECL|struct|__anon2b5fdb950108
 block|{
 DECL|member|group_word
 name|guint16
@@ -3152,7 +3152,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * dicom_add_element:  * @elements:     head of a GSList containing DICOMELEMENT structures.  * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added  *                to @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object and inserts it into @elements.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_add_element:  * @elements:     head of a GSList containing DICOMELEMENT structures.  * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added  *                to @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object and inserts it into @elements.  *  * Returns: the new head of @elements **/
 end_comment
 
 begin_function
@@ -3336,7 +3336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_add_element_int:  * @elements:     head of a GSList containing DICOMELEMENT structures.   * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added to  *                @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object from the passed integer pointer and  * adds it to @elements.  Note: value should be the address of a  * guint16 for @value_rep == %US or guint32 for other values of  * @value_rep  *  * Return value: the new head of @elements  */
+comment|/**  * dicom_add_element_int:  * @elements:     head of a GSList containing DICOMELEMENT structures.   * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added to  *                @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object from the passed integer pointer and  * adds it to @elements.  Note: value should be the address of a  * guint16 for @value_rep == %US or guint32 for other values of  * @value_rep  *  * Returns: the new head of @elements  */
 end_comment
 
 begin_function
@@ -3486,7 +3486,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_destroy_element:  * @elements: head of a GSList containing DICOMELEMENT structures.  * @ele: a DICOMELEMENT structure to be removed from @elements  *  * Removes the specified DICOMELEMENT from @elements and Destroys it  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_destroy_element:  * @elements: head of a GSList containing DICOMELEMENT structures.  * @ele: a DICOMELEMENT structure to be removed from @elements  *  * Removes the specified DICOMELEMENT from @elements and Destroys it  *  * Returns: the new head of @elements **/
 end_comment
 
 begin_function
@@ -3547,7 +3547,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_elements_compare:  * @a: pointer to a DICOMELEMENT structure.  * @b: pointer to a DICOMELEMENT structure.  *  * Determines the equality of @a and @b as strcmp  *  * Return value: an integer indicating the equality of @a and @b. **/
+comment|/**  * dicom_elements_compare:  * @a: pointer to a DICOMELEMENT structure.  * @b: pointer to a DICOMELEMENT structure.  *  * Determines the equality of @a and @b as strcmp  *  * Returns: an integer indicating the equality of @a and @b. **/
 end_comment
 
 begin_function
@@ -3657,7 +3657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_element_find_by_num:  * @head: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be found.  * @element_word: Dicom Element element number for the tag to be found.  *  * Retrieves the specified DICOMELEMENT from @head, if available.  *  * Return value: a DICOMELEMENT matching the specified group,element,  *               or NULL if the specified element was not found. **/
+comment|/**  * dicom_element_find_by_num:  * @head: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be found.  * @element_word: Dicom Element element number for the tag to be found.  *  * Retrieves the specified DICOMELEMENT from @head, if available.  *  * Returns: a DICOMELEMENT matching the specified group,element,  *               or NULL if the specified element was not found. **/
 end_comment
 
 begin_function
@@ -3722,7 +3722,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_get_elements_list:  * @image_ID: the image_ID from which to read parasites in order to  *            retrieve the dicom elements  *  * Reads all DICOMELEMENTs from the specified image's parasites.  *  * Return value: a GSList of all known dicom elements **/
+comment|/**  * dicom_get_elements_list:  * @image_ID: the image_ID from which to read parasites in order to  *            retrieve the dicom elements  *  * Reads all DICOMELEMENTs from the specified image's parasites.  *  * Returns: a GSList of all known dicom elements **/
 end_comment
 
 begin_function
@@ -4137,7 +4137,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_remove_gimp_specified_elements:  * @elements:  GSList to remove elements from  * @samples_per_pixel: samples per pixel of the image to be written.  *                     if set to %3 the planar configuration for color images  *                     will also be removed from @elements  *  * Removes certain DICOMELEMENTs from the elements list which are specific to the output of this plugin.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_remove_gimp_specified_elements:  * @elements:  GSList to remove elements from  * @samples_per_pixel: samples per pixel of the image to be written.  *                     if set to %3 the planar configuration for color images  *                     will also be removed from @elements  *  * Removes certain DICOMELEMENTs from the elements list which are specific to the output of this plugin.  *  * Returns: the new head of @elements **/
 end_comment
 
 begin_function
@@ -4385,7 +4385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_ensure_required_elements_present:  * @elements:     GSList to remove elements from  * @today_string: string containing today's date in DICOM format. This  *                is used to default any required Dicom elements of date  *                type to today's date.  *  * Defaults DICOMELEMENTs to the values set by previous version of  * this plugin, but only if they do not already exist.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_ensure_required_elements_present:  * @elements:     GSList to remove elements from  * @today_string: string containing today's date in DICOM format. This  *                is used to default any required Dicom elements of date  *                type to today's date.  *  * Defaults DICOMELEMENTs to the values set by previous version of  * this plugin, but only if they do not already exist.  *  * Returns: the new head of @elements **/
 end_comment
 
 begin_function
@@ -5699,7 +5699,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2b5652160208
+DECL|struct|__anon2b5fdb950208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5804,7 +5804,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_add_tags:  * @DICOM:        File pointer to which @elements should be written.  * @group_stream: byte array used for staging Dicom Element groups  *                before flushing them to disk.  * @elements:     GSList container the Dicom Element elements from  *  * Writes all Dicom tags in @elements to the file @DICOM  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_add_tags:  * @DICOM:        File pointer to which @elements should be written.  * @group_stream: byte array used for staging Dicom Element groups  *                before flushing them to disk.  * @elements:     GSList container the Dicom Element elements from  *  * Writes all Dicom tags in @elements to the file @DICOM  *  * Returns: the new head of @elements **/
 end_comment
 
 begin_function
@@ -5827,7 +5827,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2b5652160308
+DECL|struct|__anon2b5fdb950308
 struct|struct
 block|{
 DECL|member|DICOM

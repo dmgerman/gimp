@@ -177,7 +177,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bda6e080103
+DECL|enum|__anon2b5c20a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2091,7 +2091,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_popup_new:  * @combo_entry: #GimpComboTagEntry which is owner of the popup window.  *  * Tag popup widget is only useful for for #GimpComboTagEntry and  * should not be used elsewhere.  *  * Return value: a newly created #GimpTagPopup widget.  **/
+comment|/**  * gimp_tag_popup_new:  * @combo_entry: #GimpComboTagEntry which is owner of the popup window.  *  * Tag popup widget is only useful for for #GimpComboTagEntry and  * should not be used elsewhere.  *  * Returns: a newly created #GimpTagPopup widget.  **/
 end_comment
 
 begin_function

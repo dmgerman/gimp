@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19f1a00108
+DECL|struct|__anon28fd56a70108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1505,7 +1505,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_monitor_get_color_profile:  * @monitor: a #GdkMonitor  *  * This function returns the #GimpColorProfile of @monitor  * or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Return value: (transfer full): the monitor's #GimpColorProfile, or %NULL.  **/
+comment|/**  * gimp_monitor_get_color_profile:  * @monitor: a #GdkMonitor  *  * This function returns the #GimpColorProfile of @monitor  * or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Returns: (transfer full): the monitor's #GimpColorProfile, or %NULL.  **/
 end_comment
 
 begin_function
@@ -1903,7 +1903,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_widget_get_color_profile:  * @widget: a #GtkWidget  *  * This function returns the #GimpColorProfile of the monitor @widget is  * currently displayed on, or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Return value: (transfer full): @widget's monitor's #GimpColorProfile, or %NULL.  **/
+comment|/**  * gimp_widget_get_color_profile:  * @widget: a #GtkWidget  *  * This function returns the #GimpColorProfile of the monitor @widget is  * currently displayed on, or %NULL if there is no profile configured.  *  * Since: 3.0  *  * Returns: (transfer full): @widget's monitor's #GimpColorProfile, or %NULL.  **/
 end_comment
 
 begin_function
