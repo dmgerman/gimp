@@ -80,6 +80,22 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_plug_in_process_message
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+name|GimpWireMessage
+modifier|*
+name|msg
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_plug_in_proc_run
 parameter_list|(
 name|GimpPlugIn
@@ -735,7 +751,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|_gimp_plug_in_process_message
+name|gimp_plug_in_process_message
 argument_list|(
 name|plug_in
 argument_list|,
@@ -753,9 +769,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|_gimp_plug_in_process_message (GimpPlugIn * plug_in,GimpWireMessage * msg)
-name|_gimp_plug_in_process_message
+DECL|function|gimp_plug_in_process_message (GimpPlugIn * plug_in,GimpWireMessage * msg)
+name|gimp_plug_in_process_message
 parameter_list|(
 name|GimpPlugIn
 modifier|*
