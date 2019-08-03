@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38e3e50103
+DECL|enum|__anon2ad9172c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1049,6 +1049,33 @@ operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
+if|if
+condition|(
+name|error
+operator|&&
+name|error
+operator|->
+name|message
+condition|)
+name|message
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+else|else
+name|message
+operator|=
+name|_
+argument_list|(
+literal|"The corresponding plug-in may have crashed."
+argument_list|)
+expr_stmt|;
 name|gimp_message
 argument_list|(
 name|dialog
@@ -1066,9 +1093,7 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"Unable to run %s callback. "
-literal|"The corresponding plug-in may have "
-literal|"crashed."
+literal|"Unable to run %s callback.\n%s"
 argument_list|)
 argument_list|,
 name|g_type_name
@@ -1078,6 +1103,8 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
+argument_list|,
+name|message
 argument_list|)
 expr_stmt|;
 block|}
