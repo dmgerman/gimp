@@ -93,6 +93,10 @@ if|if
 condition|(
 name|pspec_type
 operator|==
+name|G_TYPE_PARAM_INT
+operator|||
+name|pspec_type
+operator|==
 name|GIMP_TYPE_PARAM_INT32
 operator|||
 name|pspec_type
