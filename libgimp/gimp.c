@@ -432,7 +432,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -451,12 +451,6 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpwire.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp.h"
 end_include
 
 begin_include
@@ -518,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29022a580103
+DECL|enum|__anon2be1aaa20103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1302,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon29022a580203
+DECL|enum|__anon2be1aaa20203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
