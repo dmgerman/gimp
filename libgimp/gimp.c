@@ -450,6 +450,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpwire.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -512,7 +518,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f12ca0103
+DECL|enum|__anon29022a580103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1296,7 +1302,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon297f12ca0203
+DECL|enum|__anon29022a580203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3227,6 +3233,21 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|PLUG_IN
+condition|)
+name|_gimp_plug_in_read_expect_msg
+argument_list|(
+name|PLUG_IN
+argument_list|,
+operator|&
+name|msg
+argument_list|,
+name|GP_PROC_RETURN
+argument_list|)
+expr_stmt|;
+else|else
 name|_gimp_read_expect_msg
 argument_list|(
 operator|&

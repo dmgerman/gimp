@@ -18,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gio/gio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase-private.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -42,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"libgimpbase/gimpwire.h"
 end_include
 
 begin_include

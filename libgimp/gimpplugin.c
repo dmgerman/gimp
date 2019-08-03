@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpwire.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-private.h"
 end_include
 

@@ -18,9 +18,6 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
-include|#
-directive|include
-file|"libgimpbase/gimpwire.h"
 specifier|extern
 name|GIOChannel
 modifier|*

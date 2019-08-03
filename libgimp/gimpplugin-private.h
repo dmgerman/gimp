@@ -136,6 +136,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|_gimp_plug_in_read_expect_msg
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+name|GimpWireMessage
+modifier|*
+name|msg
+parameter_list|,
+name|gint
+name|type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_plug_in_extension_read
 parameter_list|(
