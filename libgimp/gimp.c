@@ -512,7 +512,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275685980103
+DECL|enum|__anon27a345a70103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1296,7 +1296,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon275685980203
+DECL|enum|__anon27a345a70203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -3066,6 +3066,25 @@ argument_list|()
 expr_stmt|;
 return|return
 name|EXIT_SUCCESS
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpPlugIn
+modifier|*
+DECL|function|gimp_get_plug_in (void)
+name|gimp_get_plug_in
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|PLUG_IN
 return|;
 block|}
 end_function

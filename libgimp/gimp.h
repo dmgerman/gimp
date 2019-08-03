@@ -303,6 +303,20 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Return the GimpPlugIn singleton of this plug-in process  */
+end_comment
+
+begin_function_decl
+name|GimpPlugIn
+modifier|*
+name|gimp_get_plug_in
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Forcefully causes the gimp library to exit and  *  close down its connection to main gimp application.  */
 end_comment
 
