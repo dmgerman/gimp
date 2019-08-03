@@ -55,6 +55,18 @@ begin_comment
 comment|/**  * SECTION: gimplegacy  * @title: GimpLegacy  * @short_description: Main functions needed for building a GIMP plug-in.  *                     This is the old legacy API, please use GimpPlugIn  *                     and GimpProcedure for all new plug-ins.  *  * Main functions needed for building a GIMP plug-in. Compat cruft.  **/
 end_comment
 
+begin_define
+DECL|macro|ASSERT_NO_PLUG_IN_EXISTS (strfunc)
+define|#
+directive|define
+name|ASSERT_NO_PLUG_IN_EXISTS
+parameter_list|(
+name|strfunc
+parameter_list|)
+define|\
+value|if (gimp_get_plug_in ())                                              \     {                                                                   \       g_printerr ("%s ERROR: %s() cannot be called when using the "     \                   "new plug-in API\n",                                  \                   g_get_prgname (), strfunc);                           \       gimp_quit ();                                                     \     }
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -291,6 +303,11 @@ name|return_vals
 operator|!=
 name|NULL
 operator|)
+argument_list|)
+expr_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|proc_install
@@ -751,6 +768,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|name
@@ -830,6 +852,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|proc_uninstall
 operator|.
 name|name
@@ -906,6 +933,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -940,6 +972,11 @@ name|callback_added
 init|=
 name|FALSE
 decl_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -986,6 +1023,11 @@ name|G_OS_WIN32
 name|gint
 name|select_val
 decl_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 do|do
 block|{
 name|fd_set
@@ -1121,6 +1163,11 @@ comment|/* Zero means infinite wait for us, but g_poll and    * g_io_channel_win
 name|GPollFD
 name|pollfd
 decl_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|timeout
@@ -1177,6 +1224,11 @@ name|gint
 name|type
 parameter_list|)
 block|{
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|TRUE
@@ -1311,6 +1363,11 @@ operator|!=
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|va_start
@@ -2275,6 +2332,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|arguments
 operator|=
 name|_gimp_params_to_value_array
@@ -2348,6 +2410,11 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2684,6 +2751,11 @@ name|gint
 name|n_params
 parameter_list|)
 block|{
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|n_params
@@ -2731,6 +2803,11 @@ block|{
 name|GimpWireMessage
 name|msg
 decl_stmt|;
+name|ASSERT_NO_PLUG_IN_EXISTS
+argument_list|(
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|gimp_temp_proc_ht
 operator|=
 name|g_hash_table_new
