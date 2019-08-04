@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpgpparams.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-types.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpgpparams.h"
 end_include
 
 begin_include
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43645f0103
+DECL|enum|__anon2bdba5550103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

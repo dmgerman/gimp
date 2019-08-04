@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpgpparams.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-types.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"pdb/gimppdberror.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpgpparams.h"
 end_include
 
 begin_include
@@ -2318,6 +2318,12 @@ name|args
 operator|=
 name|_gimp_gp_params_to_value_array
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
 name|procedure
 condition|?
 name|procedure
@@ -2568,6 +2574,12 @@ name|return_vals
 operator|=
 name|_gimp_gp_params_to_value_array
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
 name|proc_frame
 operator|->
 name|procedure
@@ -2691,6 +2703,12 @@ name|return_vals
 operator|=
 name|_gimp_gp_params_to_value_array
 argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
 name|proc_frame
 operator|->
 name|procedure

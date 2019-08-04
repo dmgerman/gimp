@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpgpparams.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-types.h"
 end_include
 
@@ -84,12 +90,6 @@ begin_include
 include|#
 directive|include
 file|"pdb/gimppdbcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpgpparams.h"
 end_include
 
 begin_include

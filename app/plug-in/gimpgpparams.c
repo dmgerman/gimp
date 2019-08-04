@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgpparams.h"
+file|"libgimp/gimpgpparams.h"
 end_include
 
 begin_comment
@@ -86,11 +86,10 @@ end_include
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|_gimp_gp_param_def_to_param_spec (Gimp * gimp,GPParamDef * param_def)
+DECL|function|_gimp_gp_param_def_to_param_spec (gpointer gimp,GPParamDef * param_def)
 name|_gimp_gp_param_def_to_param_spec
 parameter_list|(
-name|Gimp
-modifier|*
+name|gpointer
 name|gimp
 parameter_list|,
 name|GPParamDef

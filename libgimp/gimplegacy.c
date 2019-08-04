@@ -3588,6 +3588,8 @@ name|_gimp_gp_params_to_value_array
 argument_list|(
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|proc_run

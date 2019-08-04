@@ -1008,7 +1008,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2792a6e90103
+DECL|enum|__anon2a115c820103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2817,6 +2817,8 @@ name|return_values
 operator|=
 name|_gimp_gp_params_to_value_array
 argument_list|(
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
