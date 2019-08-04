@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  * Note that the actual PDB procedure only transfers the format's  * encoding. In order to get to the real format, the libbgimp C wrapper  * must be used.  *  * Returns: (transfer full): The drawable's Babl format.  *  * Since: 2.10  **/
+comment|/**  * _gimp_drawable_get_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's Babl format  *  * This procedure returns the drawable's Babl format.  * Note that the actual PDB procedure only transfers the format's  * encoding. In order to get to the real format, the libbgimp C wrapper  * must be used.  *  * Returns: (transfer full): The drawable's Babl format.  *          The returned value must be freed with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -124,7 +124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_get_thumbnail_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's thumbnail Babl format  *  * This procedure returns the drawable's thumbnail Babl format.  * Thumbnails are always 8-bit images, see gimp_drawable_thumbnail()  * and gimp_drawable_sub_thmbnail().  *  * Returns: (transfer full): The drawable's thumbnail Babl format.  *  * Since: 2.10.14  **/
+comment|/**  * _gimp_drawable_get_thumbnail_format:  * @drawable_ID: The drawable.  *  * Returns the drawable's thumbnail Babl format  *  * This procedure returns the drawable's thumbnail Babl format.  * Thumbnails are always 8-bit images, see gimp_drawable_thumbnail()  * and gimp_drawable_sub_thmbnail().  *  * Returns: (transfer full): The drawable's thumbnail Babl format.  *          The returned value must be freed with g_free().  *  * Since: 2.10.14  **/
 end_comment
 
 begin_function
@@ -1921,7 +1921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: (out): The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: (array length=num_channels) (element-type guint8) (transfer  * full): The pixel value.  **/
+comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: (out): The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: (array length=num_channels) (element-type guint8) (transfer full):  *          The pixel value.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function

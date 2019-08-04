@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpgimprc  * @title: gimpgimprc  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: (transfer full): The value associated with the queried  * token.  **/
+comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: (transfer full): The value associated with the queried token.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -233,7 +233,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_default_comment:  *  * Get the default image comment as specified in the Preferences.  *  * Returns a copy of the default image comment.  *  * Returns: (transfer full): Default image comment.  **/
+comment|/**  * gimp_get_default_comment:  *  * Get the default image comment as specified in the Preferences.  *  * Returns a copy of the default image comment.  *  * Returns: (transfer full): Default image comment.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
@@ -520,7 +520,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: (transfer full): Serialized color management configuration.  *  * Since: 2.4  **/
+comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: (transfer full): Serialized color management configuration.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -605,7 +605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_module_load_inhibit:  *  * Get the list of modules which should not be loaded.  *  * Returns a copy of the list of modules which should not be loaded.  *  * Returns: (transfer full): The list of modules.  **/
+comment|/**  * gimp_get_module_load_inhibit:  *  * Get the list of modules which should not be loaded.  *  * Returns a copy of the list of modules which should not be loaded.  *  * Returns: (transfer full): The list of modules.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function

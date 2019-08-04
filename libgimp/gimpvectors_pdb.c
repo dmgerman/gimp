@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the  * image.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -357,7 +357,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: (out): The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: (array length=num_strokes) (element-type gint32) (transfer  * full): List of the strokes belonging to the path.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: (out): The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: (array length=num_strokes) (element-type gint32) (transfer full):  *          List of the strokes belonging to the path.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -1786,7 +1786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: (out): The number of floats returned.  * @controlpoints: (out) (array length=num_points) (element-type gdouble) (transfer full): List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: (out): Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER  * for now).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_get_points:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @num_points: (out): The number of floats returned.  * @controlpoints: (out) (array length=num_points) (element-type gdouble) (transfer full): List of the control points for the stroke (x0, y0, x1, y1, ...).  * @closed: (out): Whether the stroke is closed or not.  *  * returns the control points of a stroke.  *  * returns the control points of a stroke. The interpretation of the  * coordinates returned depends on the type of the stroke. For Gimp 2.4  * this is always a bezier stroke, where the coordinates are the  * control points.  *  * Returns: type of the stroke (always GIMP_VECTORS_STROKE_TYPE_BEZIER for now).  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2130,7 +2130,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out): The number of floats returned.  * @closed: (out): Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (array length=coords) (element-type gdouble) (transfer  * full): List of the coords along the path (x0, y0, x1, y1, ...).  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out): The number of floats returned.  * @closed: (out): Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (array length=coords) (element-type gdouble) (transfer full):  *          List of the coords along the path (x0, y0, x1, y1, ...).  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3652,7 +3652,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: (transfer full): A string whose contents are a complete SVG  * document.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: (transfer full):  *          A string whose contents are a complete SVG document.  *          The returned value must be freed with g_free().  *  * Since: 2.6  **/
 end_comment
 
 begin_function

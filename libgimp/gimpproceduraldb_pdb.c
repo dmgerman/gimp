@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpproceduraldb  * @title: gimpproceduraldb  * @short_d
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedural_db_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary  * PDB entry.  **/
+comment|/**  * gimp_procedural_db_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary PDB entry.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function

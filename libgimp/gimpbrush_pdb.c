@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpbrush  * @title: gimpbrush  * @short_description: Fu
 end_comment
 
 begin_comment
-comment|/**  * gimp_brush_new:  * @name: The requested name of the new brush.  *  * Creates a new brush.  *  * This procedure creates a new, uninitialized brush.  *  * Returns: (transfer full): The actual new brush name. The returned  * value must be freed with g_free().  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_new:  * @name: The requested name of the new brush.  *  * Creates a new brush.  *  * This procedure creates a new, uninitialized brush.  *  * Returns: (transfer full): The actual new brush name.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_duplicate:  * @name: The brush name.  *  * Duplicates a brush.  *  * This procedure creates an identical brush by a different name.  *  * Returns: (transfer full): The name of the brush's copy. The returned  * value must be freed with g_free().  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_duplicate:  * @name: The brush name.  *  * Duplicates a brush.  *  * This procedure creates an identical brush by a different name.  *  * Returns: (transfer full): The name of the brush's copy.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -328,7 +328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_rename:  * @name: The brush name.  * @new_name: The new name of the brush.  *  * Renames a brush.  *  * This procedure renames a brush.  *  * Returns: (transfer full): The actual new name of the brush. The  * returned value must be freed with g_free().  *  * Since: 2.2  **/
+comment|/**  * gimp_brush_rename:  * @name: The brush name.  * @new_name: The new name of the brush.  *  * Renames a brush.  *  * This procedure renames a brush.  *  * Returns: (transfer full): The actual new name of the brush.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function

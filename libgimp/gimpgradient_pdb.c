@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpgradient  * @title: gimpgradient  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_gradient_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: (transfer full): The actual new gradient name.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: (transfer full): The actual new gradient name.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: (transfer full): The name of the gradient's copy.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: (transfer full): The name of the gradient's copy.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -328,7 +328,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_rename:  * @name: The gradient name.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: (transfer full): The actual new name of the gradient.  *  * Since: 2.2  **/
+comment|/**  * gimp_gradient_rename:  * @name: The gradient name.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: (transfer full): The actual new name of the gradient.  *          The returned value must be freed with g_free().  *  * Since: 2.2  **/
 end_comment
 
 begin_function

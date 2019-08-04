@@ -3926,7 +3926,7 @@ literal|"actual-name"
 argument_list|,
 literal|"actual name"
 argument_list|,
-literal|"The actual new brush name. The returned value must be freed with g_free()"
+literal|"The actual new brush name."
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4023,7 +4023,7 @@ literal|"copy-name"
 argument_list|,
 literal|"copy name"
 argument_list|,
-literal|"The name of the brush's copy. The returned value must be freed with g_free()"
+literal|"The name of the brush's copy."
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4235,7 +4235,7 @@ literal|"actual-name"
 argument_list|,
 literal|"actual name"
 argument_list|,
-literal|"The actual new name of the brush. The returned value must be freed with g_free()"
+literal|"The actual new name of the brush."
 argument_list|,
 name|FALSE
 argument_list|,
