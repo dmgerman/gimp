@@ -114,12 +114,6 @@ argument_list|,
 name|GTK_ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
-name|select_button
-operator|->
-name|temp_callback
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 

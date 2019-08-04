@@ -404,7 +404,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1801620103
+DECL|enum|__anon2c42710e0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1147,7 +1147,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b1801620203
+DECL|enum|__anon2c42710e0203
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1182,10 +1182,6 @@ specifier|const
 name|gchar
 modifier|*
 name|env_string
-decl_stmt|;
-name|gchar
-modifier|*
-name|debug_string
 decl_stmt|;
 name|gint
 name|protocol_version
@@ -1906,6 +1902,10 @@ condition|(
 name|env_string
 condition|)
 block|{
+name|gchar
+modifier|*
+name|debug_string
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
