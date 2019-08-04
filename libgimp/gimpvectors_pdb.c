@@ -2130,7 +2130,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out): The number of floats returned.  * @closed: (out): Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (array length=coords) (element-type gdouble) (transfer full):  *          List of the coords along the path (x0, y0, x1, y1, ...).  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_stroke_interpolate:  * @vectors_ID: The vectors object.  * @stroke_id: The stroke ID.  * @precision: The precision used for the approximation.  * @num_coords: (out): The number of floats returned.  * @closed: (out): Whether the stroke is closed or not.  *  * returns polygonal approximation of the stroke.  *  * returns polygonal approximation of the stroke.  *  * Returns: (array length=num_coords) (element-type gdouble) (transfer full):  *          List of the coords along the path (x0, y0, x1, y1, ...).  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
