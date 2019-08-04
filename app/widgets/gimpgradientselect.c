@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f290b0103
+DECL|enum|__anon29f27c200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -727,7 +727,7 @@ name|GIMP_TYPE_FLOAT_ARRAY
 argument_list|,
 name|array
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_BOOLEAN
 argument_list|,
 name|closing
 argument_list|,

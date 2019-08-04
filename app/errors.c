@@ -1757,9 +1757,9 @@ name|NULL
 argument_list|,
 literal|"gimp-xcf-save"
 argument_list|,
-name|GIMP_TYPE_INT32
+name|GIMP_TYPE_RUN_MODE
 argument_list|,
-literal|0
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,

@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf18ad00103
+DECL|enum|__anon2a3251970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1240,7 +1240,7 @@ argument_list|)
 operator|*
 literal|100.0
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|GIMP_BRUSH_SELECT
 argument_list|(
@@ -1249,7 +1249,7 @@ argument_list|)
 operator|->
 name|spacing
 argument_list|,
-name|GIMP_TYPE_INT32
+name|GIMP_TYPE_LAYER_MODE
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
@@ -1258,14 +1258,14 @@ operator|->
 name|context
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|gimp_brush_get_width
 argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|gimp_brush_get_height
 argument_list|(
@@ -1282,7 +1282,7 @@ name|GIMP_TYPE_INT8_ARRAY
 argument_list|,
 name|array
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_BOOLEAN
 argument_list|,
 name|closing
 argument_list|,

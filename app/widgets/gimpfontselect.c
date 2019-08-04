@@ -394,7 +394,7 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_BOOLEAN
 argument_list|,
 name|closing
 argument_list|,

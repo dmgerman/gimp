@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40095d0103
+DECL|enum|__anon2bef99140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1007,7 +1007,7 @@ name|progress
 operator|->
 name|callback_name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|GIMP_TYPE_PROGRESS_COMMAND
 argument_list|,
 name|command
 argument_list|,

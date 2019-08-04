@@ -485,7 +485,7 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|gimp_temp_buf_get_width
 argument_list|(
@@ -494,7 +494,7 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|gimp_temp_buf_get_height
 argument_list|(
@@ -503,7 +503,7 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|babl_format_get_bytes_per_pixel
 argument_list|(
@@ -525,7 +525,7 @@ name|GIMP_TYPE_INT8_ARRAY
 argument_list|,
 name|array
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_BOOLEAN
 argument_list|,
 name|closing
 argument_list|,
