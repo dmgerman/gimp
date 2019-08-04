@@ -340,7 +340,7 @@ name|param_def
 operator|->
 name|meta
 operator|.
-name|m_float
+name|m_enum
 operator|.
 name|default_val
 operator|=
