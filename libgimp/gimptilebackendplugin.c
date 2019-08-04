@@ -1333,9 +1333,6 @@ name|priv
 operator|->
 name|shadow
 expr_stmt|;
-name|gp_lock
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1507,9 +1504,6 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|gp_unlock
-argument_list|()
-expr_stmt|;
 name|gimp_wire_destroy
 argument_list|(
 operator|&
@@ -1580,9 +1574,6 @@ operator|.
 name|shadow
 operator|=
 literal|0
-expr_stmt|;
-name|gp_lock
-argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1789,9 +1780,6 @@ name|msg
 argument_list|,
 name|GP_TILE_ACK
 argument_list|)
-expr_stmt|;
-name|gp_unlock
-argument_list|()
 expr_stmt|;
 name|gimp_wire_destroy
 argument_list|(

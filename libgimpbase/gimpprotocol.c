@@ -45,14 +45,6 @@ directive|include
 file|"gimpwire.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|readwrite_mutex
-specifier|static
-name|GMutex
-name|readwrite_mutex
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -913,44 +905,6 @@ argument_list|,
 name|_gp_has_init_write
 argument_list|,
 name|_gp_has_init_destroy
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* lock/unlock the global wire mutex */
-end_comment
-
-begin_function
-name|void
-DECL|function|gp_lock (void)
-name|gp_lock
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|g_mutex_lock
-argument_list|(
-operator|&
-name|readwrite_mutex
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gp_unlock (void)
-name|gp_unlock
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|g_mutex_unlock
-argument_list|(
-operator|&
-name|readwrite_mutex
 argument_list|)
 expr_stmt|;
 block|}
