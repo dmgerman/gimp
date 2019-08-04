@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0071d60103
+DECL|enum|__anon289b50dd0103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0071d60203
+DECL|enum|__anon289b50dd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -119,17 +119,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_define
-DECL|macro|GET_PRIVATE (obj)
-define|#
-directive|define
-name|GET_PRIVATE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(((GimpFontSelectButton *) (obj))->priv)
-end_define
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -470,10 +459,6 @@ modifier|*
 name|button
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
-modifier|*
-name|priv
-decl_stmt|;
 name|button
 operator|->
 name|priv
@@ -483,19 +468,8 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|priv
-operator|=
-name|GET_PRIVATE
-argument_list|(
 name|button
-argument_list|)
-expr_stmt|;
-name|priv
 operator|->
-name|font_name
-operator|=
-name|NULL
-expr_stmt|;
 name|priv
 operator|->
 name|inside
@@ -512,6 +486,8 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
+name|button
+operator|->
 name|priv
 operator|->
 name|inside
@@ -613,10 +589,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GET_PRIVATE
-argument_list|(
 name|button
-argument_list|)
+operator|->
+name|priv
 operator|->
 name|font_name
 return|;
@@ -704,11 +679,11 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
+name|GimpFontSelectButton
 modifier|*
-name|priv
+name|button
 init|=
-name|GET_PRIVATE
+name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
 name|object
 argument_list|)
@@ -716,6 +691,8 @@ decl_stmt|;
 name|g_clear_pointer
 argument_list|(
 operator|&
+name|button
+operator|->
 name|priv
 operator|->
 name|font_name
@@ -726,6 +703,8 @@ expr_stmt|;
 name|g_clear_pointer
 argument_list|(
 operator|&
+name|button
+operator|->
 name|priv
 operator|->
 name|title
@@ -778,15 +757,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
-modifier|*
-name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|button
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -795,6 +765,8 @@ block|{
 case|case
 name|PROP_TITLE
 case|:
+name|button
+operator|->
 name|priv
 operator|->
 name|title
@@ -865,15 +837,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpFontSelectButtonPrivate
-modifier|*
-name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|button
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -886,6 +849,8 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
+name|button
+operator|->
 name|priv
 operator|->
 name|title
@@ -899,6 +864,8 @@ name|g_value_set_string
 argument_list|(
 name|value
 argument_list|,
+name|button
+operator|->
 name|priv
 operator|->
 name|font_name
@@ -951,10 +918,9 @@ name|GimpFontSelectButtonPrivate
 modifier|*
 name|priv
 init|=
-name|GET_PRIVATE
-argument_list|(
 name|button
-argument_list|)
+operator|->
+name|priv
 decl_stmt|;
 name|GimpSelectButton
 modifier|*
@@ -1043,15 +1009,6 @@ modifier|*
 name|button
 parameter_list|)
 block|{
-name|GimpFontSelectButtonPrivate
-modifier|*
-name|priv
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|button
-argument_list|)
-decl_stmt|;
 name|GimpSelectButton
 modifier|*
 name|select_button
@@ -1075,6 +1032,8 @@ name|select_button
 operator|->
 name|temp_callback
 argument_list|,
+name|button
+operator|->
 name|priv
 operator|->
 name|font_name
@@ -1089,10 +1048,14 @@ name|temp_callback
 operator|=
 name|gimp_font_select_new
 argument_list|(
+name|button
+operator|->
 name|priv
 operator|->
 name|title
 argument_list|,
+name|button
+operator|->
 name|priv
 operator|->
 name|font_name
@@ -1286,10 +1249,9 @@ name|GimpFontSelectButtonPrivate
 modifier|*
 name|priv
 init|=
-name|GET_PRIVATE
-argument_list|(
 name|font_button
-argument_list|)
+operator|->
+name|priv
 decl_stmt|;
 name|GtkWidget
 modifier|*
