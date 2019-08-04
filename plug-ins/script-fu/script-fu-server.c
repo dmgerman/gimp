@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d311d0108
+DECL|struct|__anon289a1a4e0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d311d0208
+DECL|struct|__anon289a1a4e0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a1d311d030a
+DECL|union|__anon289a1a4e030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -1741,6 +1741,8 @@ name|gimp_progress_install_vtable
 argument_list|(
 operator|&
 name|vtable
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

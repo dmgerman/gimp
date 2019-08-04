@@ -297,6 +297,8 @@ operator|&
 name|vtable
 argument_list|,
 name|bar
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

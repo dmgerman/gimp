@@ -241,12 +241,15 @@ name|vtable
 parameter_list|,
 name|gpointer
 name|user_data
+parameter_list|,
+name|GDestroyNotify
+name|user_data_destroy
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gpointer
+name|void
 name|gimp_progress_uninstall
 parameter_list|(
 specifier|const
