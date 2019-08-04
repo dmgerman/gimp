@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80a22d0103
+DECL|enum|__anon275ba04c0103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80a22d0203
+DECL|enum|__anon275ba04c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -845,12 +845,6 @@ name|priv
 operator|->
 name|inside
 argument_list|)
-expr_stmt|;
-name|priv
-operator|->
-name|popup
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

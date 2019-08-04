@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b50dd0103
+DECL|enum|__anon28d42e290103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b50dd0203
+DECL|enum|__anon28d42e290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,6 +642,7 @@ name|select_button
 operator|->
 name|temp_callback
 condition|)
+block|{
 name|gimp_fonts_set_popup
 argument_list|(
 name|select_button
@@ -651,16 +652,48 @@ argument_list|,
 name|font_name
 argument_list|)
 expr_stmt|;
+block|}
 else|else
-name|gimp_font_select_button_callback
+block|{
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+if|if
+condition|(
+name|font_name
+operator|&&
+operator|*
+name|font_name
+condition|)
+name|name
+operator|=
+name|g_strdup
 argument_list|(
 name|font_name
+argument_list|)
+expr_stmt|;
+else|else
+name|name
+operator|=
+name|gimp_context_get_font
+argument_list|()
+expr_stmt|;
+name|gimp_font_select_button_callback
+argument_list|(
+name|name
 argument_list|,
 name|FALSE
 argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
