@@ -400,27 +400,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-name|gint
-name|gimp_shm_ID
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-name|guchar
-modifier|*
-name|gimp_shm_addr
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 name|gboolean
 name|gimp_show_help_button
 argument_list|(

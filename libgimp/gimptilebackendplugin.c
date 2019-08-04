@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-shm.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin-private.h"
 end_include
 
@@ -1454,7 +1460,7 @@ name|data
 operator|=
 name|g_memdup
 argument_list|(
-name|gimp_shm_addr
+name|_gimp_shm_addr
 argument_list|()
 argument_list|,
 name|tile
@@ -1694,7 +1700,7 @@ condition|)
 block|{
 name|memcpy
 argument_list|(
-name|gimp_shm_addr
+name|_gimp_shm_addr
 argument_list|()
 argument_list|,
 name|tile
