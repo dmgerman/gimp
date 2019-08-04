@@ -63,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3f9570103
+DECL|enum|__anon2a0071d60103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3f9570203
+DECL|enum|__anon2a0071d60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1100,6 +1100,8 @@ argument_list|,
 name|gimp_font_select_button_callback
 argument_list|,
 name|button
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

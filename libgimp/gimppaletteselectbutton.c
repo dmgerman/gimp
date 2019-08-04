@@ -113,7 +113,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3020b0103
+DECL|enum|__anon2b1529740103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3020b0203
+DECL|enum|__anon2b1529740203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1174,6 +1174,8 @@ argument_list|,
 name|gimp_palette_select_button_callback
 argument_list|,
 name|button
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

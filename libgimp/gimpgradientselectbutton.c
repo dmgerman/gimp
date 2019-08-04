@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec0eac0103
+DECL|enum|__anon27d6522e0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec0eac0203
+DECL|enum|__anon27d6522e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1320,6 +1320,8 @@ argument_list|,
 name|gimp_gradient_select_button_callback
 argument_list|,
 name|button
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
