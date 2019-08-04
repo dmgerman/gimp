@@ -13199,8 +13199,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plug_in_oilify2_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plug_in_oilify2_invoker
+DECL|function|plug_in_oilify_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_oilify_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -13400,8 +13400,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|plug_in_oilify_enhanced2_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|plug_in_oilify_enhanced2_invoker
+DECL|function|plug_in_oilify_enhanced_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|plug_in_oilify_enhanced_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -31117,12 +31117,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plug-in-oilify2    */
+comment|/*    * gimp-plug-in-oilify    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plug_in_oilify2_invoker
+name|plug_in_oilify_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -31132,14 +31132,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"plug-in-oilify2"
+literal|"plug-in-oilify"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-oilify2"
+literal|"plug-in-oilify"
 argument_list|,
 literal|"Smear colors to simulate an oil painting"
 argument_list|,
@@ -31274,12 +31274,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-plug-in-oilify-enhanced2    */
+comment|/*    * gimp-plug-in-oilify-enhanced    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|plug_in_oilify_enhanced2_invoker
+name|plug_in_oilify_enhanced_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -31289,14 +31289,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"plug-in-oilify-enhanced2"
+literal|"plug-in-oilify-enhanced"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"plug-in-oilify-enhanced2"
+literal|"plug-in-oilify-enhanced"
 argument_list|,
 literal|"Smear colors to simulate an oil painting"
 argument_list|,
