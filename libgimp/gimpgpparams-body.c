@@ -161,6 +161,10 @@ if|if
 condition|(
 name|pspec_type
 operator|==
+name|G_TYPE_PARAM_UINT
+operator|||
+name|pspec_type
+operator|==
 name|GIMP_TYPE_PARAM_INT8
 condition|)
 block|{
