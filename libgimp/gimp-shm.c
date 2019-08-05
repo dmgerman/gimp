@@ -222,7 +222,7 @@ DECL|macro|TILE_MAP_SIZE
 define|#
 directive|define
 name|TILE_MAP_SIZE
-value|(_tile_width * _tile_height * 32)
+value|(gimp_tile_width () * gimp_tile_height () * 32)
 end_define
 
 begin_define
@@ -385,7 +385,7 @@ name|_shm_ID
 argument_list|)
 expr_stmt|;
 comment|/* Open the file mapping */
-name|shm_handle
+name|_shm_handle
 operator|=
 name|OpenFileMapping
 argument_list|(
@@ -398,7 +398,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shm_handle
+name|_shm_handle
 condition|)
 block|{
 comment|/* Map the shared memory into our address space for use */
@@ -410,7 +410,7 @@ operator|*
 operator|)
 name|MapViewOfFile
 argument_list|(
-name|shm_handle
+name|_shm_handle
 argument_list|,
 name|FILE_MAP_ALL_ACCESS
 argument_list|,
@@ -614,11 +614,11 @@ name|USE_WIN32_SHM
 argument_list|)
 if|if
 condition|(
-name|shm_handle
+name|_shm_handle
 condition|)
 name|CloseHandle
 argument_list|(
-name|shm_handle
+name|_shm_handle
 argument_list|)
 expr_stmt|;
 elif|#
