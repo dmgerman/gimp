@@ -548,7 +548,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_parasite:  * @name: the #GParamSpec's name.  * @nick: the #GParamSpec's nick.  * @blurb: the #GParamSpec's blurb.  * @flags: a combination of #GParamFlags  *  * Returns: (transfer full): a newly allocated #GimpParamSpecParasite.  *  * Since: 2.3.8  */
+comment|/**  * gimp_param_spec_parasite:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecParasite specifying a  * #GIMP_TYPE_PARASITE property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecParasite.  *  * Since: 2.3.8  **/
 end_comment
 
 begin_function

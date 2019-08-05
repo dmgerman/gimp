@@ -213,7 +213,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int32:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @minimum: the minimum accepted value.  * @maximum: the maximum accepted value.  * @default_value: the default value.  * @flags: #GParamFlags for the new parameter.  *  * Create a new int32 #GParamSpec with the given specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int32:  * @name:          Canonical name of the property specified.  * @nick:          Nick name of the property specified.  * @blurb:         Description of the property specified.  * @minimum:       The minimum accepted value.  * @maximum:       The maximum accepted value.  * @default_value: The default value.  * @flags:         Flags for the property specified.  *  * Creates a new #GimpParamSpecInt32 specifying a  * #GIMP_TYPE_INT32 property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created  *          #GimpParamSpecInt32.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -519,7 +519,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int16:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @minimum: the minimum accepted value.  * @maximum: the maximum accepted value.  * @default_value: the default value.  * @flags: #GParamFlags for the new parameter.  *  * Create a new int16 #GParamSpec with the given specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int16:  * @name:          Canonical name of the property specified.  * @nick:          Nick name of the property specified.  * @blurb:         Description of the property specified.  * @minimum:       The minimum accepted value.  * @maximum:       The maximum accepted value.  * @default_value: The default value.  * @flags:         Flags for the property specified.  *  * Creates a new #GimpParamSpecInt16 specifying a  * #GIMP_TYPE_INT16 property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecInt16.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -825,7 +825,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int8:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @minimum: the minimum accepted value.  * @maximum: the maximum accepted value.  * @default_value: the default value.  * @flags: #GParamFlags for the new parameter.  *  * Create a new int8 #GParamSpec with the given specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int8:  * @name:          Canonical name of the property specified.  * @nick:          Nick name of the property specified.  * @blurb:         Description of the property specified.  * @minimum:       The minimum accepted value.  * @maximum:       The maximum accepted value.  * @default_value: The default value.  * @flags:         Flags for the property specified.  *  * Creates a new #GimpParamSpecInt8 specifying a  * #GIMP_TYPE_INT8 property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecInt8.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1416,7 +1416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_string:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @allow_non_utf8: whether non-UTF8 text is allowed.  * @null_ok: whether %NULL is an acceptable value.  * @non_empty: whether the empty string is an acceptable value.  * @default_value: the default value.  * @flags: #GParamFlags for the new parameter.  *  * Create a new string #GParamSpec with the given specifications.  *  * If @null_ok is %FALSE, %NULL strings will be replaced by an empty  * string.  * If @non_empty is %TRUE, empty strings will be replaced by `"none"`.  * If @allow_non_utf8 is %FALSE, non-valid UTF-8 strings will be  * replaced by question marks.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_string:  * @name:           Canonical name of the property specified.  * @nick:           Nick name of the property specified.  * @blurb:          Description of the property specified.  * @allow_non_utf8: Whether non-UTF-8 strings are allowed.  * @null_ok:        Whether %NULL is allowed.  * @non_empty:      Whether a non-Â½NULL value must be set.  * @default_:       The default value.  * @flags:          Flags for the property specified.  *  * Creates a new #GimpParamSpecString specifying a  * #GIMP_TYPE_STRING property.  *  * If @allow_non_utf8 is %FALSE, non-valid UTF-8 strings will be  * replaced by question marks.  *  * If @null_ok is %FALSE, %NULL strings will be replaced by an empty  * string.  *  * If @non_empty is %TRUE, empty strings will be replaced by `"none"`.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecString.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2156,7 +2156,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray data with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecArray specifying a  * #GIMP_TYPE_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2618,7 +2618,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int8_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of int8 with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int8_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecInt8Array specifying a  * #GIMP_TYPE_INT8_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecInt8Array.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -3035,7 +3035,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int16_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of int16 with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int16_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecInt16Array specifying a  * #GIMP_TYPE_INT16_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecInt16Array.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -3490,7 +3490,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_int32_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of int32 with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_int32_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecInt32Array specifying a  * #GIMP_TYPE_INT32_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecInt32Array.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -3945,7 +3945,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_float_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of float with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_float_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecFloatArray specifying a  * #GIMP_TYPE_FLOAT_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecFloatArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -4373,7 +4373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_array_copy:  * @array: an original #GimpArray of strings.  *  * Creates a new #GimpArray containing a deep copy of @array.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  */
+comment|/**  * gimp_string_array_copy:  * @array: an original #GimpArray of strings.  *  * Creates a new #GimpArray containing a deep copy of @array.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  **/
 end_comment
 
 begin_function
@@ -4926,7 +4926,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_string_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of string with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_string_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecStringArray specifying a  * #GIMP_TYPE_STRING_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecStringArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -5512,7 +5512,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb_array:  * @name: new parameter's name.  * @nick: nick name for the parameter.  * @blurb: longer description of the parameter.  * @flags: #GParamFlags for the new parameter.  *  * Create a new #GParamSpec for #GimpArray of rgb with the given  * specifications.  *  * Returns: (transfer full) (type GParamSpec): a new #GParamSpec.  */
+comment|/**  * gimp_param_spec_rgb_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecRgbArray specifying a  * #GIMP_TYPE_RGB_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecRgbArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

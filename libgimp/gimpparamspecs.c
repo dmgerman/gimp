@@ -4357,7 +4357,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_vectors_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecVectorsID specifying a  * #GIMP_TYPE_VECTORS_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecVectorsID.  *  * Since: 3.0  **/
+comment|/**  * gimp_param_spec_display_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecDisplayID specifying a  * #GIMP_TYPE_DISPLAY_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecDisplayID.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
