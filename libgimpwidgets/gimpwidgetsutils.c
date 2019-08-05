@@ -884,6 +884,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_widget_get_monitor:  * @widget: a #GtkWidget.  *  * Returns: (transfer none): the #GdkMonitor where @widget is current displayed on.  */
+end_comment
+
 begin_function
 name|GdkMonitor
 modifier|*
@@ -1004,6 +1008,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_get_monitor_at_pointer:  *  * Returns: (transfer none): the #GdkMonitor where the pointer is.  */
+end_comment
+
 begin_function
 name|GdkMonitor
 modifier|*
@@ -1087,7 +1095,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3efabb0108
+DECL|struct|__anon27a692e60108
 block|{
 DECL|member|widget
 name|GtkWidget
