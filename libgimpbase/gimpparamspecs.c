@@ -4220,7 +4220,7 @@ comment|/*  * GIMP_TYPE_STRING_ARRAY  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_string_array_new:  * @data: (array length=length): an array of strings.  * @length: the length of @data.  * @static_data: whether the strings in @data are static strings rather  *               than allocated.  *  * Creates a new #GimpArray containing string data, of size @length.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  */
+comment|/**  * gimp_string_array_new:  * @data: (array length=length) (transfer none): an array of strings.  * @length: the length of @data.  * @static_data: whether the strings in @data are static strings rather  *               than allocated.  *  * Creates a new #GimpArray containing string data, of size @length.  *  * If @static_data is %TRUE, @data is used as-is and should also be  * NULL-terminated.  *  * If @static_data is %FALSE, the string and array will be re-allocated,  * hence you are expected to free your input data after.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  */
 end_comment
 
 begin_function
@@ -4267,6 +4267,24 @@ name|length
 operator|>
 literal|0
 operator|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|!
+name|static_data
+operator|||
+operator|!
+name|data
+operator|||
+name|g_strv_length
+argument_list|(
+name|data
+argument_list|)
+operator|==
+name|length
 argument_list|,
 name|NULL
 argument_list|)
@@ -5047,7 +5065,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_dup_string_array:  * @value: a #GValue holding a string #GimpArray.  *  * Returns: (transfer none)  (array zero-terminated=1): a deep copy of the array of strings.  */
+comment|/**  * gimp_value_dup_string_array:  * @value: a #GValue holding a string #GimpArray.  *  * Returns: (transfer full)  (array zero-terminated=1): a deep copy of the array of strings.  */
 end_comment
 
 begin_function
