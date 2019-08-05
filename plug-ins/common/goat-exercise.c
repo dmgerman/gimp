@@ -315,6 +315,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_procedure_set_image_types
+argument_list|(
+name|procedure
+argument_list|,
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|)
+expr_stmt|;
 name|gimp_procedure_set_menu_label
 argument_list|(
 name|procedure
@@ -323,6 +330,13 @@ name|N_
 argument_list|(
 literal|"Goat-e_xercise"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_menu_path
+argument_list|(
+name|procedure
+argument_list|,
+literal|"<Image>/Filters"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_documentation
@@ -348,20 +362,6 @@ argument_list|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
 literal|"21march 2012"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_image_types
-argument_list|(
-name|procedure
-argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_menu_path
-argument_list|(
-name|procedure
-argument_list|,
-literal|"<Image>/Filters"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_icon
