@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5b8dc0103
+DECL|enum|__anon28b865a00103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad5b8dc0203
+DECL|enum|__anon28b865a00203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5b8dc0303
+DECL|enum|__anon28b865a00303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -780,6 +780,25 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/* first search (all procedures) */
+name|browser_search
+argument_list|(
+name|GIMP_BROWSER
+argument_list|(
+name|dialog
+operator|->
+name|priv
+operator|->
+name|browser
+argument_list|)
+argument_list|,
+literal|""
+argument_list|,
+name|SEARCH_TYPE_ALL
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -890,25 +909,6 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|args
-argument_list|)
-expr_stmt|;
-comment|/* first search (all procedures) */
-name|browser_search
-argument_list|(
-name|GIMP_BROWSER
-argument_list|(
-name|dialog
-operator|->
-name|priv
-operator|->
-name|browser
-argument_list|)
-argument_list|,
-literal|""
-argument_list|,
-name|SEARCH_TYPE_ALL
-argument_list|,
-name|dialog
 argument_list|)
 expr_stmt|;
 return|return
