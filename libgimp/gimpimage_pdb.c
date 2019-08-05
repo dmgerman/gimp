@@ -7543,7 +7543,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: The unit.  **/
+comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: (transfer none): The unit.  **/
 end_comment
 
 begin_function

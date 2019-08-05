@@ -502,6 +502,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_image_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecImageID specifying a  * #GIMP_TYPE_IMAGE_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecImageID.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -1107,6 +1111,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_item_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecItemID specifying a  * #GIMP_TYPE_ITEM_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecItemID.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -1538,6 +1546,10 @@ name|FALSE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_param_spec_drawable_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecDrawableID specifying a  * #GIMP_TYPE_DRAWABLE_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecDrawableID.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GParamSpec
@@ -1975,6 +1987,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_layer_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecLayerID specifying a  * #GIMP_TYPE_LAYER_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecLayerID.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -2410,6 +2426,10 @@ name|FALSE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_param_spec_channel_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecChannelID specifying a  * #GIMP_TYPE_CHANNEL_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecChannelID.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GParamSpec
@@ -2847,6 +2867,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_layer_mask_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecLayerMaskID specifying a  * #GIMP_TYPE_LAYER_MASK_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecLayerMaskID.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -3283,6 +3307,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_param_spec_selection_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecSelectionID specifying a  * #GIMP_TYPE_SELECTION_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecSelectionID.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GParamSpec
 modifier|*
@@ -3718,6 +3746,10 @@ name|FALSE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_param_spec_vectors_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecVectorsID specifying a  * #GIMP_TYPE_VECTORS_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecVectorsID.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GParamSpec
@@ -4323,6 +4355,10 @@ literal|0
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_param_spec_vectors_id:  * @name:    Canonical name of the property specified.  * @nick:    Nick name of the property specified.  * @blurb:   Description of the property specified.  * @none_ok: Whether no ID is a valid value.  * @flags:   Flags for the property specified.  *  * Creates a new #GimpParamSpecVectorsID specifying a  * #GIMP_TYPE_VECTORS_ID property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecVectorsID.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GParamSpec

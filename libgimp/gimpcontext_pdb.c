@@ -1707,7 +1707,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_line_width_unit:  *  * Get the line width unit setting.  *  * This procedure returns the line width unit setting.  *  * Returns: The line width unit setting.  *  * Since: 2.10  **/
+comment|/**  * gimp_context_get_line_width_unit:  *  * Get the line width unit setting.  *  * This procedure returns the line width unit setting.  *  * Returns: (transfer none): The line width unit setting.  *  * Since: 2.10  **/
 end_comment
 
 begin_function

@@ -318,7 +318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: Default unit.  *  * Since: 2.4  **/
+comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: (transfer none): Default unit.  *  * Since: 2.4  **/
 end_comment
 
 begin_function

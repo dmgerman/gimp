@@ -1008,7 +1008,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2a115c820103
+DECL|enum|__anon2c591b7a0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2631,7 +2631,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none): The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
