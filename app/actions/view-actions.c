@@ -403,7 +403,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Center Image in Window"
+literal|"C_enter Image in Window"
 argument_list|)
 block|,
 literal|"<shift>J"
@@ -1008,7 +1008,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Show Sample Points"
+literal|"Sh_ow Sample Points"
 argument_list|)
 block|,
 name|NULL
@@ -1941,7 +1941,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Flip Horizontally"
+literal|"Flip _Horizontally"
 argument_list|)
 block|,
 name|NULL
@@ -1969,7 +1969,7 @@ name|NC_
 argument_list|(
 literal|"view-action"
 argument_list|,
-literal|"Flip Vertically"
+literal|"Flip _Vertically"
 argument_list|)
 block|,
 name|NULL

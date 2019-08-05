@@ -321,7 +321,7 @@ name|procedure
 argument_list|,
 name|N_
 argument_list|(
-literal|"Goat-exercise"
+literal|"Goat-e_xercise"
 argument_list|)
 argument_list|)
 expr_stmt|;

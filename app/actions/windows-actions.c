@@ -523,7 +523,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"Hide Docks"
+literal|"_Hide Docks"
 argument_list|)
 block|,
 literal|"Tab"
@@ -551,7 +551,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"Show Tabs"
+literal|"_Show Tabs"
 argument_list|)
 block|,
 name|NULL
@@ -579,7 +579,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"Single-Window Mode"
+literal|"Single-Window _Mode"
 argument_list|)
 block|,
 name|NULL

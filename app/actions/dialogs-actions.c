@@ -424,7 +424,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Pointer"
+literal|"_Pointer"
 argument_list|)
 block|,
 name|NULL
@@ -554,7 +554,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Paint Dynamics"
+literal|"Paint D_ynamics"
 argument_list|)
 block|,
 name|NULL
@@ -1431,7 +1431,7 @@ name|toolbox_label
 operator|=
 name|_
 argument_list|(
-literal|"Toolbox"
+literal|"Tool_box"
 argument_list|)
 expr_stmt|;
 name|toolbox_tooltip
@@ -1448,7 +1448,7 @@ name|toolbox_label
 operator|=
 name|_
 argument_list|(
-literal|"New Toolbox"
+literal|"New Tool_box"
 argument_list|)
 expr_stmt|;
 name|toolbox_tooltip

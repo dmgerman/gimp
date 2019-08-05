@@ -180,7 +180,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Recently Used"
+literal|"Recently _Used"
 argument_list|)
 block|}
 block|,
@@ -1157,7 +1157,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Difference of Gaussians..."
+literal|"Difference of _Gaussians..."
 argument_list|)
 block|,
 name|NULL
@@ -1178,7 +1178,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Diffraction Patterns..."
+literal|"D_iffraction Patterns..."
 argument_list|)
 block|,
 name|NULL
@@ -1199,7 +1199,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Displace..."
+literal|"_Displace..."
 argument_list|)
 block|,
 name|NULL
@@ -1220,7 +1220,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Distance Map..."
+literal|"Distance _Map..."
 argument_list|)
 block|,
 name|NULL
@@ -1661,7 +1661,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Lens Distortion..."
+literal|"Le_ns Distortion..."
 argument_list|)
 block|,
 name|NULL
@@ -1682,7 +1682,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"Lens Flare..."
+literal|"Lens _Flare..."
 argument_list|)
 block|,
 name|NULL
@@ -2018,7 +2018,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"CIE lch Noise..."
+literal|"_CIE lch Noise..."
 argument_list|)
 block|,
 name|NULL
@@ -2039,7 +2039,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"HSV Noise..."
+literal|"HS_V Noise..."
 argument_list|)
 block|,
 name|NULL
@@ -2081,7 +2081,7 @@ name|NC_
 argument_list|(
 literal|"filters-action"
 argument_list|,
-literal|"_Perlin Noise..."
+literal|"Perlin _Noise..."
 argument_list|)
 block|,
 name|NULL

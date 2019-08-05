@@ -361,7 +361,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Create Template..."
+literal|"Create _Template..."
 argument_list|)
 block|,
 name|NULL
@@ -413,7 +413,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Close all"
+literal|"C_lose All"
 argument_list|)
 block|,
 literal|"<primary><shift>W"
@@ -642,7 +642,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export..."
+literal|"E_xport..."
 argument_list|)
 block|,
 literal|"<primary>E"
@@ -698,7 +698,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export As..."
+literal|"E_xport As..."
 argument_list|)
 block|,
 literal|"<primary><shift>E"
@@ -1512,7 +1512,7 @@ name|C_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export..."
+literal|"E_xport..."
 argument_list|)
 argument_list|)
 expr_stmt|;

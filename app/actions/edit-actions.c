@@ -711,7 +711,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"Paste In Place"
+literal|"Paste In P_lace"
 argument_list|)
 block|,
 literal|"<primary><alt>V"
@@ -767,7 +767,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"Paste Into Selection In Place"
+literal|"Paste Int_o Selection In Place"
 argument_list|)
 block|,
 name|NULL

@@ -440,7 +440,7 @@ name|NC_
 argument_list|(
 literal|"vectors-action"
 argument_list|,
-literal|"Fill Path..."
+literal|"Fill Pat_h..."
 argument_list|)
 block|,
 name|NULL

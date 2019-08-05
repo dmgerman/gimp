@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2306260103
+DECL|enum|__anon2c5a8a6a0103
 block|{
 DECL|enumerator|C_XMP_TAG
 name|C_XMP_TAG
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2306260203
+DECL|enum|__anon2c5a8a6a0203
 block|{
 DECL|enumerator|C_EXIF_TAG
 name|C_EXIF_TAG
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2306260303
+DECL|enum|__anon2c5a8a6a0303
 block|{
 DECL|enumerator|C_IPTC_TAG
 name|C_IPTC_TAG
@@ -384,7 +384,7 @@ literal|"2013, 2017"
 argument_list|,
 name|N_
 argument_list|(
-literal|"View Metadata"
+literal|"_View Metadata"
 argument_list|)
 argument_list|,
 literal|"*"
