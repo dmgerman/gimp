@@ -24,24 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -60,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d53600103
+DECL|enum|__anon2ace57ec0103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
@@ -661,7 +643,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called  * gimp_procedure_extension_ready(), which means that the procedure  * has done its initialization, installed its temporary procedures and  * is ready to run.  *  *<emphasis>Not calling gimp_procedure_extension_reads() from a  * %GIMP_EXTENSION procedure will cause the GIMP core to lock  * up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no arguments added  * is an "automatic" extension that will be automatically started on  * each GIMP startup.  *  * %GIMP_TEMPORARY must be used for temporary procedures that are  * created during a plug-ins lifetime. They must be added to the  * #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PLUGIN and %GIMP_EXTENSION procedures the call of  * @run_func is basically the lifetime of the plug-in.  *  * Returns: a new #GimpProcedure.  **/
+comment|/**  * gimp_procedure_new:  * @plug_in:   a #GimpPlugIn.  * @name:      the new procedure's name.  * @proc_type: the new procedure's #GimpPDBProcType.  * @run_func:  the run function for the new procedure.  * @run_data:  user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new procedure named @name which will call @run_func when  * invoked.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * @proc_type should be %GIMP_PLUGIN for "normal" plug-ins.  *  * Using %GIMP_EXTENSION means that the plug-in will add temporary  * procedures. Therefore, the GIMP core will wait until the  * %GIMP_EXTENSION procedure has called  * gimp_procedure_extension_ready(), which means that the procedure  * has done its initialization, installed its temporary procedures and  * is ready to run.  *  *<emphasis>Not calling gimp_procedure_extension_reads() from a  * %GIMP_EXTENSION procedure will cause the GIMP core to lock  * up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no arguments added  * is an "automatic" extension that will be automatically started on  * each GIMP startup.  *  * %GIMP_TEMPORARY must be used for temporary procedures that are  * created during a plug-ins lifetime. They must be added to the  * #GimpPlugIn using gimp_plug_in_add_temp_procedure().  *  * @run_func is called via gimp_procedure_run().  *  * For %GIMP_PLUGIN and %GIMP_EXTENSION procedures the call of  * @run_func is basically the lifetime of the plug-in.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -1883,7 +1865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_argument:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the argument specification.  *  * Add a new argument to @procedure according to @pspec specifications.  * The arguments will be ordered according to the call order to  * gimp_procedure_add_argument() and  * gimp_procedure_add_argument_from_property().  **/
+comment|/**  * gimp_procedure_add_argument:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the argument specification.  *  * Add a new argument to @procedure according to @pspec specifications.  * The arguments will be ordered according to the call order to  * gimp_procedure_add_argument() and  * gimp_procedure_add_argument_from_property().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2052,7 +2034,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_add_return_value:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the return value specification.  *  * Add a new return value to @procedure according to @pspec  * specifications.  *  * The returned values will be ordered according to the call order to  * gimp_procedure_add_return_value() and  * gimp_procedure_add_return_value_from_property().  **/
+comment|/**  * gimp_procedure_add_return_value:  * @procedure: the #GimpProcedure.  * @pspec:     (transfer full): the return value specification.  *  * Add a new return value to @procedure according to @pspec  * specifications.  *  * The returned values will be ordered according to the call order to  * gimp_procedure_add_return_value() and  * gimp_procedure_add_return_value_from_property().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2452,7 +2434,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (in) (nullable) (transfer full):  *             an optional #GError. This parameter should be set if  *             @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  **/
+comment|/**  * gimp_procedure_new_return_values:  * @procedure: the #GimpProcedure.  * @status:    the success status of the procedure run.  * @error:     (in) (nullable) (transfer full):  *             an optional #GError. This parameter should be set if  *             @status is either #GIMP_PDB_EXECUTION_ERROR or  *             #GIMP_PDB_CALLING_ERROR.  *  * Format the expected return values from procedures, using the return  * values set with gimp_procedure_add_return_value().  *  * Returns: the expected #GimpValueArray as could be returned by a  *          #GimpRunFunc.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
