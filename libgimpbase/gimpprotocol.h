@@ -26,7 +26,7 @@ directive|define
 name|GIMP_PROTOCOL_VERSION
 value|0x0106
 name|enum
-DECL|enum|__anon275bc57d0103
+DECL|enum|__anon28c18db90103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -72,7 +72,7 @@ begin_typedef
 unit|};
 typedef|typedef
 enum|enum
-DECL|enum|__anon275bc57d0203
+DECL|enum|__anon28c18db90203
 block|{
 DECL|enumerator|GP_PARAM_DEF_TYPE_DEFAULT
 name|GP_PARAM_DEF_TYPE_DEFAULT
@@ -100,6 +100,9 @@ name|GP_PARAM_DEF_TYPE_COLOR
 block|,
 DECL|enumerator|GP_PARAM_DEF_TYPE_ID
 name|GP_PARAM_DEF_TYPE_ID
+block|,
+DECL|enumerator|GP_PARAM_DEF_TYPE_PARAM_DEF
+name|GP_PARAM_DEF_TYPE_PARAM_DEF
 DECL|typedef|GPParamDefType
 block|}
 name|GPParamDefType
@@ -109,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275bc57d0303
+DECL|enum|__anon28c18db90303
 block|{
 DECL|enumerator|GP_PARAM_TYPE_INT
 name|GP_PARAM_TYPE_INT
@@ -254,6 +257,15 @@ typedef|typedef
 name|struct
 name|_GPParamDefID
 name|GPParamDefID
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GPParamDefParamDef
+typedef|typedef
+name|struct
+name|_GPParamDefParamDef
+name|GPParamDefParamDef
 typedef|;
 end_typedef
 
@@ -636,6 +648,20 @@ struct|;
 end_struct
 
 begin_struct
+DECL|struct|_GPParamDefParamDef
+struct|struct
+name|_GPParamDefParamDef
+block|{
+DECL|member|type_name
+name|gchar
+modifier|*
+name|type_name
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GPParamDef
 struct|struct
 name|_GPParamDef
@@ -665,7 +691,7 @@ modifier|*
 name|blurb
 decl_stmt|;
 union|union
-DECL|union|__anon275bc57d040a
+DECL|union|__anon28c18db9040a
 block|{
 DECL|member|m_int
 name|GPParamDefInt
@@ -698,6 +724,10 @@ decl_stmt|;
 DECL|member|m_id
 name|GPParamDefID
 name|m_id
+decl_stmt|;
+DECL|member|m_param_def
+name|GPParamDefParamDef
+name|m_param_def
 decl_stmt|;
 DECL|member|meta
 block|}
@@ -759,7 +789,7 @@ modifier|*
 name|type_name
 decl_stmt|;
 union|union
-DECL|union|__anon275bc57d050a
+DECL|union|__anon28c18db9050a
 block|{
 DECL|member|d_int
 name|gint32
