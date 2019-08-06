@@ -25,6 +25,7 @@ parameter_list|(
 name|gpointer
 name|gimp
 parameter_list|,
+specifier|const
 name|GPParamDef
 modifier|*
 name|param_def
@@ -54,6 +55,7 @@ parameter_list|(
 name|gpointer
 name|gimp
 parameter_list|,
+specifier|const
 name|GPParam
 modifier|*
 name|param
@@ -87,6 +89,7 @@ parameter_list|,
 name|gint
 name|n_pspecs
 parameter_list|,
+specifier|const
 name|GPParam
 modifier|*
 name|params
@@ -127,6 +130,7 @@ name|GPParam
 modifier|*
 name|_gimp_value_array_to_gp_params
 parameter_list|(
+specifier|const
 name|GimpValueArray
 modifier|*
 name|args

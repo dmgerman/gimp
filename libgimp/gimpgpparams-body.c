@@ -759,12 +759,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_gp_param_to_value (gpointer gimp,GPParam * param,GType type,GValue * value,gboolean full_copy)
+DECL|function|_gimp_gp_param_to_value (gpointer gimp,const GPParam * param,GType type,GValue * value,gboolean full_copy)
 name|_gimp_gp_param_to_value
 parameter_list|(
 name|gpointer
 name|gimp
 parameter_list|,
+specifier|const
 name|GPParam
 modifier|*
 name|param
@@ -1571,7 +1572,7 @@ end_function
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|_gimp_gp_params_to_value_array (gpointer gimp,GParamSpec ** pspecs,gint n_pspecs,GPParam * params,gint n_params,gboolean return_values,gboolean full_copy)
+DECL|function|_gimp_gp_params_to_value_array (gpointer gimp,GParamSpec ** pspecs,gint n_pspecs,const GPParam * params,gint n_params,gboolean return_values,gboolean full_copy)
 name|_gimp_gp_params_to_value_array
 parameter_list|(
 name|gpointer
@@ -1585,6 +1586,7 @@ parameter_list|,
 name|gint
 name|n_pspecs
 parameter_list|,
+specifier|const
 name|GPParam
 modifier|*
 name|params
@@ -2580,9 +2582,10 @@ end_function
 begin_function
 name|GPParam
 modifier|*
-DECL|function|_gimp_value_array_to_gp_params (GimpValueArray * args,gboolean full_copy)
+DECL|function|_gimp_value_array_to_gp_params (const GimpValueArray * args,gboolean full_copy)
 name|_gimp_value_array_to_gp_params
 parameter_list|(
+specifier|const
 name|GimpValueArray
 modifier|*
 name|args

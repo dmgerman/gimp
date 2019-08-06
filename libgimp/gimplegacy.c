@@ -2571,7 +2571,7 @@ end_function
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_run_procedure_array (const gchar * name,GimpValueArray * arguments)
+DECL|function|gimp_run_procedure_array (const gchar * name,const GimpValueArray * arguments)
 name|gimp_run_procedure_array
 parameter_list|(
 specifier|const
@@ -2579,6 +2579,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
+specifier|const
 name|GimpValueArray
 modifier|*
 name|arguments

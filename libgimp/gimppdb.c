@@ -754,7 +754,7 @@ end_comment
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_pdb_run_procedure_array (GimpPDB * pdb,const gchar * procedure_name,GimpValueArray * arguments)
+DECL|function|gimp_pdb_run_procedure_array (GimpPDB * pdb,const gchar * procedure_name,const GimpValueArray * arguments)
 name|gimp_pdb_run_procedure_array
 parameter_list|(
 name|GimpPDB
@@ -766,6 +766,7 @@ name|gchar
 modifier|*
 name|procedure_name
 parameter_list|,
+specifier|const
 name|GimpValueArray
 modifier|*
 name|arguments

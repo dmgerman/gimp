@@ -76,12 +76,13 @@ end_include
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|_gimp_gp_param_def_to_param_spec (gpointer gimp,GPParamDef * param_def)
+DECL|function|_gimp_gp_param_def_to_param_spec (gpointer gimp,const GPParamDef * param_def)
 name|_gimp_gp_param_def_to_param_spec
 parameter_list|(
 name|gpointer
 name|gimp
 parameter_list|,
+specifier|const
 name|GPParamDef
 modifier|*
 name|param_def

@@ -346,6 +346,7 @@ name|gchar
 modifier|*
 name|procedure_name
 parameter_list|,
+specifier|const
 name|GimpValueArray
 modifier|*
 name|arguments
