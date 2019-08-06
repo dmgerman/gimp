@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c474a180103
+DECL|enum|__anon2afc25820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2911,16 +2911,6 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_PROCEDURE
-argument_list|(
-name|procedure
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|status
 operator|!=
 name|GIMP_PDB_PASS_THROUGH
@@ -2939,6 +2929,16 @@ case|:
 case|case
 name|GIMP_PDB_CANCEL
 case|:
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|args
 operator|=
 name|gimp_value_array_new
