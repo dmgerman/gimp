@@ -931,6 +931,38 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pdb_temp_procedure_name:  * @pdb: the #GimpPDB object.  *  * Generates a unique temporary PDB name.  *  * This function generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary  *          PDB entry. The returned value must be freed with  *          g_free().  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_pdb_temp_procedure_name (GimpPDB * pdb)
+name|gimp_pdb_temp_procedure_name
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PDB
+argument_list|(
+name|pdb
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|_gimp_pdb_temp_name
+argument_list|()
+return|;
+block|}
+end_function
+
 begin_function
 name|GQuark
 DECL|function|_gimp_pdb_error_quark (void)
@@ -951,6 +983,26 @@ end_function
 begin_comment
 comment|/*  Cruft API  */
 end_comment
+
+begin_comment
+comment|/**  * gimp_pdb_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary PDB entry.  *          The returned value must be freed with g_free().  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_pdb_temp_name (void)
+name|gimp_pdb_temp_name
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_gimp_pdb_temp_name
+argument_list|()
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/**  * gimp_pdb_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: 2.6  **/

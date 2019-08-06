@@ -50,9 +50,10 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|G_GNUC_INTERNAL
 name|gchar
 modifier|*
-name|gimp_pdb_temp_name
+name|_gimp_pdb_temp_name
 parameter_list|(
 name|void
 parameter_list|)

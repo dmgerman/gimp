@@ -354,9 +354,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_pdb_temp_procedure_name
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  Cruft API  */
 end_comment
+
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_pdb_temp_name
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
