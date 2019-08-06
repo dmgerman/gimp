@@ -832,7 +832,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2bfa78fe0103
+DECL|enum|__anon2ad88f580103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1713,7 +1713,7 @@ comment|/* ! G_OS_WIN32 */
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-name|readc_hannel
+name|read_channel
 operator|=
 name|g_io_channel_win32_new_fd
 argument_list|(
