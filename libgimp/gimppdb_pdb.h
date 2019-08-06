@@ -124,8 +124,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_pdb_proc_exists
+name|_gimp_pdb_proc_exists
 parameter_list|(
 specifier|const
 name|gchar
@@ -186,8 +187,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_pdb_proc_arg
+name|_gimp_pdb_proc_arg
 parameter_list|(
 specifier|const
 name|gchar
@@ -215,8 +217,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_pdb_proc_val
+name|_gimp_pdb_proc_val
 parameter_list|(
 specifier|const
 name|gchar
@@ -298,8 +301,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gint
-name|gimp_pdb_get_data_size
+name|_gimp_pdb_get_data_size
 parameter_list|(
 specifier|const
 name|gchar

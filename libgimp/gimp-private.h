@@ -68,6 +68,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|_gimp_set_pdb_error
+parameter_list|(
+name|GimpValueArray
+modifier|*
+name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

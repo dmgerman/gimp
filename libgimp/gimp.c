@@ -388,6 +388,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin-private.h"
 end_include
 
@@ -595,18 +601,6 @@ name|channel
 parameter_list|,
 name|gpointer
 name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_set_pdb_error
-parameter_list|(
-name|GimpValueArray
-modifier|*
-name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -878,6 +872,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|PDB
+specifier|static
+name|GimpPDB
+modifier|*
+name|PDB
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|static
 name|GimpPlugInInfo
@@ -1008,7 +1013,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2ac120fa0103
+DECL|enum|__anon2a51454d0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2625,6 +2630,43 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_get_pdb:  *  * This function returns the plug-in's #GimpPDB instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none): The plug-in's #GimpPDB singleton, or %NULL.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpPDB
+modifier|*
+DECL|function|gimp_get_pdb (void)
+name|gimp_get_pdb
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|PDB
+condition|)
+block|{
+if|if
+condition|(
+name|PLUG_IN
+condition|)
+name|PDB
+operator|=
+name|_gimp_pdb_new
+argument_list|(
+name|PLUG_IN
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|PDB
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_quit:  *  * Forcefully causes the GIMP library to exit and close down its  * connection to main gimp application. This function never returns.  **/
 end_comment
 
@@ -2817,7 +2859,7 @@ operator|&
 name|msg
 argument_list|)
 expr_stmt|;
-name|gimp_set_pdb_error
+name|_gimp_set_pdb_error
 argument_list|(
 name|return_values
 argument_list|)
@@ -4319,10 +4361,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_set_pdb_error (GimpValueArray * return_values)
-name|gimp_set_pdb_error
+DECL|function|_gimp_set_pdb_error (GimpValueArray * return_values)
+name|_gimp_set_pdb_error
 parameter_list|(
 name|GimpValueArray
 modifier|*

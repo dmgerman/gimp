@@ -447,13 +447,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: 2.6  **/
+comment|/**  * _gimp_pdb_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_exists (const gchar * procedure_name)
-name|gimp_pdb_proc_exists
+DECL|function|_gimp_pdb_proc_exists (const gchar * procedure_name)
+name|_gimp_pdb_proc_exists
 parameter_list|(
 specifier|const
 name|gchar
@@ -822,13 +822,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_arg:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  * @arg_type: (out): The type of argument.  * @arg_name: (out) (transfer full): The name of the argument.  * @arg_desc: (out) (transfer full): A description of the argument.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns information on the specified procedure's  * argument. The argument type, name, and a description are retrieved.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_proc_arg:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  * @arg_type: (out): The type of argument.  * @arg_name: (out) (transfer full): The name of the argument.  * @arg_desc: (out) (transfer full): A description of the argument.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns information on the specified procedure's  * argument. The argument type, name, and a description are retrieved.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_arg (const gchar * procedure_name,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
-name|gimp_pdb_proc_arg
+DECL|function|_gimp_pdb_proc_arg (const gchar * procedure_name,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
+name|_gimp_pdb_proc_arg
 parameter_list|(
 specifier|const
 name|gchar
@@ -1001,13 +1001,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_val:  * @procedure_name: The procedure name.  * @val_num: The return value number.  * @val_type: (out): The type of return value.  * @val_name: (out) (transfer full): The name of the return value.  * @val_desc: (out) (transfer full): A description of the return value.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns information on the specified procedure's  * return value. The return value type, name, and a description are  * retrieved.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_proc_val:  * @procedure_name: The procedure name.  * @val_num: The return value number.  * @val_type: (out): The type of return value.  * @val_name: (out) (transfer full): The name of the return value.  * @val_desc: (out) (transfer full): A description of the return value.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns information on the specified procedure's  * return value. The return value type, name, and a description are  * retrieved.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_val (const gchar * procedure_name,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
-name|gimp_pdb_proc_val
+DECL|function|_gimp_pdb_proc_val (const gchar * procedure_name,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
+name|_gimp_pdb_proc_val
 parameter_list|(
 specifier|const
 name|gchar
@@ -1557,13 +1557,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_get_data_size:  * @identifier: The identifier associated with data.  *  * Returns size of data associated with the specified identifier.  *  * This procedure returns the size of any data which may have been  * associated with the specified identifier. If no data has been  * associated with the identifier, an error is returned.  *  * Returns: The number of bytes in the data.  **/
+comment|/**  * _gimp_pdb_get_data_size:  * @identifier: The identifier associated with data.  *  * Returns size of data associated with the specified identifier.  *  * This procedure returns the size of any data which may have been  * associated with the specified identifier. If no data has been  * associated with the identifier, an error is returned.  *  * Returns: The number of bytes in the data.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_pdb_get_data_size (const gchar * identifier)
-name|gimp_pdb_get_data_size
+DECL|function|_gimp_pdb_get_data_size (const gchar * identifier)
+name|_gimp_pdb_get_data_size
 parameter_list|(
 specifier|const
 name|gchar
