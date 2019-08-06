@@ -294,7 +294,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_PRIVATE (GimpTileBackendPlugin,_gimp_tile_backend_plugin,GEGL_TYPE_TILE_BACKEND)
 name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
 argument|GimpTileBackendPlugin
@@ -314,6 +313,23 @@ value|_gimp_tile_backend_plugin_parent_class
 end_define
 
 begin_decl_stmt
+specifier|extern
+name|GIOChannel
+modifier|*
+name|_gimp_readchannel
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GIOChannel
+modifier|*
+name|_gimp_writechannel
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|backend_plugin_mutex
 specifier|static
 name|GMutex
 name|backend_plugin_mutex
@@ -323,6 +339,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
+DECL|function|_gimp_tile_backend_plugin_class_init (GimpTileBackendPluginClass * klass)
 name|_gimp_tile_backend_plugin_class_init
 parameter_list|(
 name|GimpTileBackendPluginClass

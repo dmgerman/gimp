@@ -433,7 +433,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|gimp_plugin_menu_register
+name|_gimp_plugin_menu_register
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(

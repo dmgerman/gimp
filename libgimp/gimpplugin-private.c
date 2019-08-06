@@ -717,7 +717,7 @@ operator|->
 name|translation_domain_path
 argument_list|)
 decl_stmt|;
-name|gimp_plugin_domain_register
+name|_gimp_plugin_domain_register
 argument_list|(
 name|plug_in
 operator|->
@@ -756,7 +756,7 @@ operator|->
 name|help_domain_uri
 argument_list|)
 decl_stmt|;
-name|gimp_plugin_domain_register
+name|_gimp_plugin_help_register
 argument_list|(
 name|plug_in
 operator|->
@@ -801,7 +801,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|gimp_plugin_menu_branch_register
+name|_gimp_plugin_menu_branch_register
 argument_list|(
 name|branch
 operator|->

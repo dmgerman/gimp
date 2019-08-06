@@ -20,6 +20,14 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_define
+DECL|macro|WRITE_BUFFER_SIZE
+define|#
+directive|define
+name|WRITE_BUFFER_SIZE
+value|1024
+end_define
+
 begin_typedef
 DECL|typedef|GimpPlugInMenuBranch
 typedef|typedef
@@ -62,6 +70,17 @@ DECL|member|write_channel
 name|GIOChannel
 modifier|*
 name|write_channel
+decl_stmt|;
+DECL|member|write_buffer
+name|gchar
+name|write_buffer
+index|[
+name|WRITE_BUFFER_SIZE
+index|]
+decl_stmt|;
+DECL|member|write_buffer_index
+name|gulong
+name|write_buffer_index
 decl_stmt|;
 DECL|member|extension_source_id
 name|guint
