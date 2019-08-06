@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c48f3860103
+DECL|enum|__anon28de6c3f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c48f3860203
+DECL|enum|__anon28de6c3f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -766,7 +766,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -800,7 +800,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -834,7 +834,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -868,7 +868,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -902,7 +902,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -936,7 +936,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

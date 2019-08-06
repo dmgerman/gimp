@@ -285,7 +285,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c247fcc0103
+DECL|enum|__anon289cd72a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -313,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c247fcc0203
+DECL|enum|__anon289cd72a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -597,7 +597,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -633,7 +633,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -705,7 +705,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -739,7 +739,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -773,7 +773,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

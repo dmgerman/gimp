@@ -106,7 +106,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c017400103
+DECL|enum|__anon297c11c40103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c017400203
+DECL|enum|__anon297c11c40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c017400308
+DECL|struct|__anon297c11c40308
 block|{
 DECL|member|signame
 name|gchar
@@ -474,7 +474,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -510,7 +510,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -584,7 +584,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -618,7 +618,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1278,7 +1278,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c017400408
+DECL|struct|__anon297c11c40408
 block|{
 DECL|member|writer
 name|GimpConfigWriter

@@ -390,7 +390,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65f8940103
+DECL|enum|__anon2b1cd2040103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -490,7 +490,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65f8940203
+DECL|enum|__anon2b1cd2040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1345,7 +1345,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1379,7 +1379,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1413,7 +1413,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1447,7 +1447,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1481,7 +1481,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1515,7 +1515,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1549,7 +1549,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1583,7 +1583,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1619,7 +1619,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1655,7 +1655,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1689,7 +1689,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

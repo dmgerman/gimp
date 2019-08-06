@@ -1616,7 +1616,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1b5870103
+DECL|enum|__anon29b095100103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1630,7 +1630,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1b5870203
+DECL|enum|__anon29b095100203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1952,7 +1952,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1988,7 +1988,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2024,7 +2024,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2060,7 +2060,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2096,7 +2096,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__BOXED
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2134,7 +2134,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__BOXED
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2172,7 +2172,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__DOUBLE
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2208,7 +2208,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2244,7 +2244,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2280,7 +2280,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2316,7 +2316,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2352,7 +2352,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2388,7 +2388,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2424,7 +2424,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2460,7 +2460,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2496,7 +2496,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2532,7 +2532,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2568,7 +2568,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2604,7 +2604,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2640,7 +2640,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
