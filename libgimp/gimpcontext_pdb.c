@@ -80,7 +80,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-push"
 argument_list|,
@@ -174,7 +174,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-pop"
 argument_list|,
@@ -268,7 +268,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-defaults"
 argument_list|,
@@ -370,7 +370,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-list-paint-methods"
 argument_list|,
@@ -508,7 +508,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-paint-method"
 argument_list|,
@@ -631,7 +631,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-paint-method"
 argument_list|,
@@ -725,7 +725,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-stroke-method"
 argument_list|,
@@ -846,7 +846,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-stroke-method"
 argument_list|,
@@ -942,7 +942,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-foreground"
 argument_list|,
@@ -1071,7 +1071,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-foreground"
 argument_list|,
@@ -1167,7 +1167,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-background"
 argument_list|,
@@ -1296,7 +1296,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-background"
 argument_list|,
@@ -1390,7 +1390,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-default-colors"
 argument_list|,
@@ -1484,7 +1484,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-swap-colors"
 argument_list|,
@@ -1578,7 +1578,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-opacity"
 argument_list|,
@@ -1699,7 +1699,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-opacity"
 argument_list|,
@@ -1793,7 +1793,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-paint-mode"
 argument_list|,
@@ -1914,7 +1914,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-paint-mode"
 argument_list|,
@@ -2008,7 +2008,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-width"
 argument_list|,
@@ -2129,7 +2129,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-width"
 argument_list|,
@@ -2223,7 +2223,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-width-unit"
 argument_list|,
@@ -2344,7 +2344,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-width-unit"
 argument_list|,
@@ -2438,7 +2438,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-cap-style"
 argument_list|,
@@ -2559,7 +2559,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-cap-style"
 argument_list|,
@@ -2653,7 +2653,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-join-style"
 argument_list|,
@@ -2774,7 +2774,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-join-style"
 argument_list|,
@@ -2868,7 +2868,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-miter-limit"
 argument_list|,
@@ -2989,7 +2989,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-miter-limit"
 argument_list|,
@@ -3083,7 +3083,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-dash-offset"
 argument_list|,
@@ -3204,7 +3204,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-dash-offset"
 argument_list|,
@@ -3305,7 +3305,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-line-dash-pattern"
 argument_list|,
@@ -3477,7 +3477,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-line-dash-pattern"
 argument_list|,
@@ -3573,7 +3573,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush"
 argument_list|,
@@ -3696,7 +3696,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush"
 argument_list|,
@@ -3790,7 +3790,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-size"
 argument_list|,
@@ -3911,7 +3911,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-size"
 argument_list|,
@@ -4005,7 +4005,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-default-size"
 argument_list|,
@@ -4099,7 +4099,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-aspect-ratio"
 argument_list|,
@@ -4220,7 +4220,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-aspect-ratio"
 argument_list|,
@@ -4314,7 +4314,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-angle"
 argument_list|,
@@ -4435,7 +4435,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-angle"
 argument_list|,
@@ -4529,7 +4529,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-spacing"
 argument_list|,
@@ -4650,7 +4650,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-spacing"
 argument_list|,
@@ -4744,7 +4744,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-default-spacing"
 argument_list|,
@@ -4838,7 +4838,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-hardness"
 argument_list|,
@@ -4959,7 +4959,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-hardness"
 argument_list|,
@@ -5053,7 +5053,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-default-hardness"
 argument_list|,
@@ -5147,7 +5147,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-brush-force"
 argument_list|,
@@ -5268,7 +5268,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-brush-force"
 argument_list|,
@@ -5364,7 +5364,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-dynamics"
 argument_list|,
@@ -5487,7 +5487,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-dynamics"
 argument_list|,
@@ -5583,7 +5583,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-mypaint-brush"
 argument_list|,
@@ -5706,7 +5706,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-mypaint-brush"
 argument_list|,
@@ -5802,7 +5802,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-pattern"
 argument_list|,
@@ -5925,7 +5925,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-pattern"
 argument_list|,
@@ -6021,7 +6021,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-gradient"
 argument_list|,
@@ -6144,7 +6144,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient"
 argument_list|,
@@ -6238,7 +6238,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-fg-bg-rgb"
 argument_list|,
@@ -6332,7 +6332,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-fg-bg-hsv-cw"
 argument_list|,
@@ -6426,7 +6426,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-fg-bg-hsv-ccw"
 argument_list|,
@@ -6520,7 +6520,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-fg-transparent"
 argument_list|,
@@ -6614,7 +6614,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-gradient-blend-color-space"
 argument_list|,
@@ -6735,7 +6735,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-blend-color-space"
 argument_list|,
@@ -6829,7 +6829,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-gradient-repeat-mode"
 argument_list|,
@@ -6950,7 +6950,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-repeat-mode"
 argument_list|,
@@ -7044,7 +7044,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-gradient-reverse"
 argument_list|,
@@ -7165,7 +7165,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-gradient-reverse"
 argument_list|,
@@ -7261,7 +7261,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-palette"
 argument_list|,
@@ -7384,7 +7384,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-palette"
 argument_list|,
@@ -7480,7 +7480,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-font"
 argument_list|,
@@ -7603,7 +7603,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-font"
 argument_list|,
@@ -7697,7 +7697,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-antialias"
 argument_list|,
@@ -7818,7 +7818,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-antialias"
 argument_list|,
@@ -7912,7 +7912,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-feather"
 argument_list|,
@@ -8033,7 +8033,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-feather"
 argument_list|,
@@ -8133,7 +8133,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-feather-radius"
 argument_list|,
@@ -8301,7 +8301,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-feather-radius"
 argument_list|,
@@ -8395,7 +8395,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-sample-merged"
 argument_list|,
@@ -8516,7 +8516,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-sample-merged"
 argument_list|,
@@ -8610,7 +8610,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-sample-criterion"
 argument_list|,
@@ -8731,7 +8731,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-sample-criterion"
 argument_list|,
@@ -8825,7 +8825,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-sample-threshold"
 argument_list|,
@@ -8946,7 +8946,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-sample-threshold"
 argument_list|,
@@ -9040,7 +9040,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-sample-threshold-int"
 argument_list|,
@@ -9161,7 +9161,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-sample-threshold-int"
 argument_list|,
@@ -9255,7 +9255,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-sample-transparent"
 argument_list|,
@@ -9376,7 +9376,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-sample-transparent"
 argument_list|,
@@ -9470,7 +9470,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-diagonal-neighbors"
 argument_list|,
@@ -9591,7 +9591,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-diagonal-neighbors"
 argument_list|,
@@ -9685,7 +9685,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-distance-metric"
 argument_list|,
@@ -9806,7 +9806,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-distance-metric"
 argument_list|,
@@ -9900,7 +9900,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-interpolation"
 argument_list|,
@@ -10021,7 +10021,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-interpolation"
 argument_list|,
@@ -10115,7 +10115,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-transform-direction"
 argument_list|,
@@ -10236,7 +10236,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-transform-direction"
 argument_list|,
@@ -10330,7 +10330,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-transform-resize"
 argument_list|,
@@ -10451,7 +10451,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-transform-resize"
 argument_list|,
@@ -10545,7 +10545,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-size"
 argument_list|,
@@ -10666,7 +10666,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-size"
 argument_list|,
@@ -10760,7 +10760,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-angle"
 argument_list|,
@@ -10881,7 +10881,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-angle"
 argument_list|,
@@ -10975,7 +10975,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-size-sensitivity"
 argument_list|,
@@ -11096,7 +11096,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-size-sensitivity"
 argument_list|,
@@ -11190,7 +11190,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-tilt-sensitivity"
 argument_list|,
@@ -11311,7 +11311,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-tilt-sensitivity"
 argument_list|,
@@ -11405,7 +11405,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-speed-sensitivity"
 argument_list|,
@@ -11526,7 +11526,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-speed-sensitivity"
 argument_list|,
@@ -11620,7 +11620,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-blob-type"
 argument_list|,
@@ -11741,7 +11741,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-blob-type"
 argument_list|,
@@ -11835,7 +11835,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-blob-aspect-ratio"
 argument_list|,
@@ -11956,7 +11956,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-blob-aspect-ratio"
 argument_list|,
@@ -12050,7 +12050,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-get-ink-blob-angle"
 argument_list|,
@@ -12171,7 +12171,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-context-set-ink-blob-angle"
 argument_list|,

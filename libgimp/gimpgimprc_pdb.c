@@ -99,7 +99,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-gimprc-query"
 argument_list|,
@@ -241,7 +241,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-gimprc-set"
 argument_list|,
@@ -337,7 +337,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-default-comment"
 argument_list|,
@@ -443,7 +443,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-default-unit"
 argument_list|,
@@ -555,7 +555,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-monitor-resolution"
 argument_list|,
@@ -693,7 +693,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-color-configuration"
 argument_list|,
@@ -801,7 +801,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-module-load-inhibit"
 argument_list|,

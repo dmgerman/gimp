@@ -82,7 +82,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-version"
 argument_list|,
@@ -188,7 +188,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-getpid"
 argument_list|,
@@ -311,7 +311,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-attach-parasite"
 argument_list|,
@@ -422,7 +422,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-detach-parasite"
 argument_list|,
@@ -535,7 +535,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-parasite"
 argument_list|,
@@ -647,7 +647,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-get-parasite-list"
 argument_list|,
@@ -792,7 +792,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-temp-name"
 argument_list|,

@@ -95,7 +95,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-group-start"
 argument_list|,
@@ -204,7 +204,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-group-end"
 argument_list|,
@@ -313,7 +313,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-is-enabled"
 argument_list|,
@@ -434,7 +434,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-disable"
 argument_list|,
@@ -555,7 +555,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-enable"
 argument_list|,
@@ -676,7 +676,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-freeze"
 argument_list|,
@@ -797,7 +797,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-image-undo-thaw"
 argument_list|,

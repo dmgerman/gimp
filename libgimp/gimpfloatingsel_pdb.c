@@ -95,7 +95,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-floating-sel-remove"
 argument_list|,
@@ -204,7 +204,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-floating-sel-anchor"
 argument_list|,
@@ -313,7 +313,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-floating-sel-to-layer"
 argument_list|,
@@ -439,7 +439,7 @@ expr_stmt|;
 else|else
 name|return_vals
 operator|=
-name|gimp_run_procedure_with_array
+name|gimp_run_procedure_array
 argument_list|(
 literal|"gimp-floating-sel-attach"
 argument_list|,

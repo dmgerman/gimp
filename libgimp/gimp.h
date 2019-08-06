@@ -345,27 +345,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Run a procedure in the procedure database. The parameters are  *  specified as a GimpValueArray, so are the return values.  *  * FIXME this API is not final!  */
-end_comment
-
-begin_function_decl
-name|GimpValueArray
-modifier|*
-name|gimp_run_procedure_with_array
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|GimpValueArray
-modifier|*
-name|arguments
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Retrieve the error message and return status for the last procedure  * call.  */
 end_comment
 
