@@ -308,13 +308,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpplugin_pdb.h>
+file|<libgimp/gimppdb_pdb.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpproceduraldb_pdb.h>
+file|<libgimp/gimpplugin_pdb.h>
 end_include
 
 begin_include

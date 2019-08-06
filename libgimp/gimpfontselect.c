@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4c6820108
+DECL|struct|__anon29984a8a0108
 block|{
 DECL|member|font_callback
 name|gchar
@@ -192,7 +192,7 @@ name|gchar
 modifier|*
 name|font_callback
 init|=
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 argument_list|()
 decl_stmt|;
 name|GimpFontData

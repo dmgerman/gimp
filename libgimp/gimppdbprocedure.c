@@ -240,7 +240,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|_gimp_procedural_db_proc_info
+name|_gimp_pdb_proc_info
 argument_list|(
 name|name
 argument_list|,
@@ -369,7 +369,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|gimp_procedural_db_proc_argument
+name|gimp_pdb_proc_argument
 argument_list|(
 name|name
 argument_list|,
@@ -407,7 +407,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|gimp_procedural_db_proc_return_value
+name|gimp_pdb_proc_return_value
 argument_list|(
 name|name
 argument_list|,

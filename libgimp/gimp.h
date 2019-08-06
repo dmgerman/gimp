@@ -176,12 +176,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpproceduraldb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpprocedure.h>
 end_include
 
@@ -236,17 +230,17 @@ DECL|macro|gimp_get_data
 define|#
 directive|define
 name|gimp_get_data
-value|gimp_procedural_db_get_data
+value|gimp_pdb_get_data
 DECL|macro|gimp_get_data_size
 define|#
 directive|define
 name|gimp_get_data_size
-value|gimp_procedural_db_get_data_size
+value|gimp_pdb_get_data_size
 DECL|macro|gimp_set_data
 define|#
 directive|define
 name|gimp_set_data
-value|gimp_procedural_db_set_data
+value|gimp_pdb_set_data
 comment|/**  * GIMP_MAIN:  * @plug_in_type: The #GType of the plug-in's #GimpPlugIn subclass  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  *  * GIMP_MAIN (MY_TYPE_PLUG_IN)  *  * at the toplevel of your file. No semicolon should be used.  **/
 ifdef|#
 directive|ifdef

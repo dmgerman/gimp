@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af17b2e0108
+DECL|struct|__anon2a1be9410108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -267,7 +267,7 @@ argument_list|()
 expr_stmt|;
 name|progress_callback
 operator|=
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 argument_list|()
 expr_stmt|;
 name|progress_data

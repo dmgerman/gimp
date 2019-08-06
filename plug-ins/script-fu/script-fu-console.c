@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29260c9a0108
+DECL|struct|__anon2a555f310108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -147,7 +147,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29260c9a0203
+DECL|enum|__anon2a555f310203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -1775,7 +1775,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|gimp_procedural_db_proc_info
+name|gimp_pdb_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

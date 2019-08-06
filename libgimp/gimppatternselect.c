@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a29010108
+DECL|struct|__anon2be574cc0108
 block|{
 DECL|member|pattern_callback
 name|gchar
@@ -209,7 +209,7 @@ name|gchar
 modifier|*
 name|pattern_callback
 init|=
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 argument_list|()
 decl_stmt|;
 name|GimpPatternData

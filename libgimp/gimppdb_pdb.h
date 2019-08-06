@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2003 Peter Mattis and Spencer Kimball  *  * gimpproceduraldb_pdb.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2003 Peter Mattis and Spencer Kimball  *  * gimppdb_pdb.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -37,14 +37,14 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PROCEDURAL_DB_PDB_H__
+name|__GIMP_PDB_PDB_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PROCEDURAL_DB_PDB_H__
+DECL|macro|__GIMP_PDB_PDB_H__
 define|#
 directive|define
-name|__GIMP_PROCEDURAL_DB_PDB_H__
+name|__GIMP_PDB_PDB_H__
 end_define
 
 begin_function_decl
@@ -52,7 +52,7 @@ name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gchar
 modifier|*
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -61,7 +61,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_procedural_db_dump
+name|gimp_pdb_dump
 parameter_list|(
 specifier|const
 name|gchar
@@ -73,7 +73,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 parameter_list|(
 specifier|const
 name|gchar
@@ -125,7 +125,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_procedural_db_proc_exists
+name|gimp_pdb_proc_exists
 parameter_list|(
 specifier|const
 name|gchar
@@ -138,7 +138,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_procedural_db_proc_info
+name|_gimp_pdb_proc_info
 parameter_list|(
 specifier|const
 name|gchar
@@ -187,7 +187,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_procedural_db_proc_arg
+name|gimp_pdb_proc_arg
 parameter_list|(
 specifier|const
 name|gchar
@@ -216,7 +216,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_procedural_db_proc_val
+name|gimp_pdb_proc_val
 parameter_list|(
 specifier|const
 name|gchar
@@ -246,7 +246,7 @@ end_function_decl
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_procedural_db_proc_argument
+name|gimp_pdb_proc_argument
 parameter_list|(
 specifier|const
 name|gchar
@@ -262,7 +262,7 @@ end_function_decl
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_procedural_db_proc_return_value
+name|gimp_pdb_proc_return_value
 parameter_list|(
 specifier|const
 name|gchar
@@ -278,7 +278,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_procedural_db_get_data
+name|_gimp_pdb_get_data
 parameter_list|(
 specifier|const
 name|gchar
@@ -299,7 +299,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_procedural_db_get_data_size
+name|gimp_pdb_get_data_size
 parameter_list|(
 specifier|const
 name|gchar
@@ -312,7 +312,7 @@ end_function_decl
 begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_procedural_db_set_data
+name|_gimp_pdb_set_data
 parameter_list|(
 specifier|const
 name|gchar
@@ -340,7 +340,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PROCEDURAL_DB_PDB_H__ */
+comment|/* __GIMP_PDB_PDB_H__ */
 end_comment
 
 end_unit

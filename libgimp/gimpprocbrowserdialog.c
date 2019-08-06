@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b865a00103
+DECL|enum|__anon27ed255f0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b865a00203
+DECL|enum|__anon27ed255f0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b865a00303
+DECL|enum|__anon27ed255f0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1287,7 +1287,7 @@ literal|"Searching"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1383,7 +1383,7 @@ name|q
 operator|++
 expr_stmt|;
 block|}
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 name|query
 operator|->
@@ -1430,7 +1430,7 @@ literal|"Searching by description"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1467,7 +1467,7 @@ literal|"Searching by help"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1504,7 +1504,7 @@ literal|"Searching by author"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1541,7 +1541,7 @@ literal|"Searching by copyright"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1578,7 +1578,7 @@ literal|"Searching by date"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1615,7 +1615,7 @@ literal|"Searching by type"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,

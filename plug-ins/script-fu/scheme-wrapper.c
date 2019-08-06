@@ -337,7 +337,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295537390108
+DECL|struct|__anon2b3d69370108
 block|{
 DECL|member|name
 specifier|const
@@ -2252,7 +2252,7 @@ argument_list|(
 name|symbol
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_query
+name|gimp_pdb_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -2733,7 +2733,7 @@ comment|/*  Attempt to fetch the procedure from the database  */
 if|if
 condition|(
 operator|!
-name|gimp_procedural_db_proc_info
+name|gimp_pdb_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

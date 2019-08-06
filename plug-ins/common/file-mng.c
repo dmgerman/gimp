@@ -249,7 +249,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9b0440103
+DECL|enum|__anon28cb63700103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9b0440203
+DECL|enum|__anon28cb63700203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6667,7 +6667,7 @@ operator|==
 name|GIMP_RUN_WITH_LAST_VALS
 condition|)
 block|{
-name|gimp_procedural_db_get_data
+name|gimp_get_data
 argument_list|(
 name|SAVE_PROC
 argument_list|,

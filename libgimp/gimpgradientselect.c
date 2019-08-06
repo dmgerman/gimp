@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9a55110108
+DECL|struct|__anon276d411e0108
 block|{
 DECL|member|gradient_callback
 name|gchar
@@ -204,7 +204,7 @@ name|gchar
 modifier|*
 name|gradient_callback
 init|=
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 argument_list|()
 decl_stmt|;
 name|GimpGradientData

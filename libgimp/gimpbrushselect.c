@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8682620108
+DECL|struct|__anon2c776e550108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -226,7 +226,7 @@ name|gchar
 modifier|*
 name|brush_callback
 init|=
-name|gimp_procedural_db_temp_name
+name|gimp_pdb_temp_name
 argument_list|()
 decl_stmt|;
 name|GimpBrushData

@@ -101,8 +101,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_temp_name_invoker
+DECL|function|pdb_temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_temp_name_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -190,8 +190,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_dump_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_dump_invoker
+DECL|function|pdb_dump_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_dump_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -297,8 +297,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_query_invoker
+DECL|function|pdb_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_query_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -562,8 +562,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_exists_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_exists_invoker
+DECL|function|pdb_proc_exists_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_exists_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -743,8 +743,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_info_invoker
+DECL|function|pdb_proc_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_info_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1038,8 +1038,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_arg_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_arg_invoker
+DECL|function|pdb_proc_arg_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_arg_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1330,8 +1330,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_val_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_val_invoker
+DECL|function|pdb_proc_val_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_val_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1622,8 +1622,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_argument_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_argument_invoker
+DECL|function|pdb_proc_argument_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_argument_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -1851,8 +1851,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_proc_return_value_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_proc_return_value_invoker
+DECL|function|pdb_proc_return_value_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_proc_return_value_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2080,8 +2080,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_get_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_get_data_invoker
+DECL|function|pdb_get_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_data_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2262,8 +2262,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_get_data_size_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_get_data_size_invoker
+DECL|function|pdb_get_data_size_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_get_data_size_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2404,8 +2404,8 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|procedural_db_set_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
-name|procedural_db_set_data_invoker
+DECL|function|pdb_set_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GimpValueArray * args,GError ** error)
+name|pdb_set_data_invoker
 parameter_list|(
 name|GimpProcedure
 modifier|*
@@ -2541,8 +2541,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|register_procedural_db_procs (GimpPDB * pdb)
-name|register_procedural_db_procs
+DECL|function|register_pdb_procs (GimpPDB * pdb)
+name|register_pdb_procs
 parameter_list|(
 name|GimpPDB
 modifier|*
@@ -2553,12 +2553,12 @@ name|GimpProcedure
 modifier|*
 name|procedure
 decl_stmt|;
-comment|/*    * gimp-procedural-db-temp-name    */
+comment|/*    * gimp-pdb-temp-name    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_temp_name_invoker
+name|pdb_temp_name_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -2568,14 +2568,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-temp-name"
+literal|"gimp-pdb-temp-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-temp-name"
+literal|"gimp-pdb-temp-name"
 argument_list|,
 literal|"Generates a unique temporary PDB name."
 argument_list|,
@@ -2626,12 +2626,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-dump    */
+comment|/*    * gimp-pdb-dump    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_dump_invoker
+name|pdb_dump_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -2641,14 +2641,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-dump"
+literal|"gimp-pdb-dump"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-dump"
+literal|"gimp-pdb-dump"
 argument_list|,
 literal|"Dumps the current contents of the procedural database"
 argument_list|,
@@ -2699,12 +2699,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-query    */
+comment|/*    * gimp-pdb-query    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_query_invoker
+name|pdb_query_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -2714,14 +2714,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-query"
+literal|"gimp-pdb-query"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-query"
+literal|"gimp-pdb-query"
 argument_list|,
 literal|"Queries the procedural database for its contents using regular expression matching."
 argument_list|,
@@ -2954,12 +2954,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-exists    */
+comment|/*    * gimp-pdb-proc-exists    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_exists_invoker
+name|pdb_proc_exists_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -2969,14 +2969,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-exists"
+literal|"gimp-pdb-proc-exists"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-exists"
+literal|"gimp-pdb-proc-exists"
 argument_list|,
 literal|"Checks if the specified procedure exists in the procedural database"
 argument_list|,
@@ -3045,12 +3045,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-info    */
+comment|/*    * gimp-pdb-proc-info    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_info_invoker
+name|pdb_proc_info_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3060,14 +3060,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-info"
+literal|"gimp-pdb-proc-info"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-info"
+literal|"gimp-pdb-proc-info"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure."
 argument_list|,
@@ -3302,12 +3302,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-arg    */
+comment|/*    * gimp-pdb-proc-arg    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_arg_invoker
+name|pdb_proc_arg_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3317,14 +3317,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-arg"
+literal|"gimp-pdb-proc-arg"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-arg"
+literal|"gimp-pdb-proc-arg"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure's argument."
 argument_list|,
@@ -3480,12 +3480,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-val    */
+comment|/*    * gimp-pdb-proc-val    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_val_invoker
+name|pdb_proc_val_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3495,14 +3495,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-val"
+literal|"gimp-pdb-proc-val"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-val"
+literal|"gimp-pdb-proc-val"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure's return value."
 argument_list|,
@@ -3658,12 +3658,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-argument    */
+comment|/*    * gimp-pdb-proc-argument    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_argument_invoker
+name|pdb_proc_argument_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3673,14 +3673,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-argument"
+literal|"gimp-pdb-proc-argument"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-argument"
+literal|"gimp-pdb-proc-argument"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure's argument."
 argument_list|,
@@ -3771,12 +3771,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-proc-return-value    */
+comment|/*    * gimp-pdb-proc-return-value    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_proc_return_value_invoker
+name|pdb_proc_return_value_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3786,14 +3786,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-proc-return-value"
+literal|"gimp-pdb-proc-return-value"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-proc-return-value"
+literal|"gimp-pdb-proc-return-value"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure's return value."
 argument_list|,
@@ -3884,12 +3884,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-get-data    */
+comment|/*    * gimp-pdb-get-data    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_get_data_invoker
+name|pdb_get_data_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -3899,14 +3899,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-get-data"
+literal|"gimp-pdb-get-data"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-get-data"
+literal|"gimp-pdb-get-data"
 argument_list|,
 literal|"Returns data associated with the specified identifier."
 argument_list|,
@@ -3995,12 +3995,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-get-data-size    */
+comment|/*    * gimp-pdb-get-data-size    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_get_data_size_invoker
+name|pdb_get_data_size_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4010,14 +4010,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-get-data-size"
+literal|"gimp-pdb-get-data-size"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-get-data-size"
+literal|"gimp-pdb-get-data-size"
 argument_list|,
 literal|"Returns size of data associated with the specified identifier."
 argument_list|,
@@ -4090,12 +4090,12 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-procedural-db-set-data    */
+comment|/*    * gimp-pdb-set-data    */
 name|procedure
 operator|=
 name|gimp_procedure_new
 argument_list|(
-name|procedural_db_set_data_invoker
+name|pdb_set_data_invoker
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name
@@ -4105,14 +4105,14 @@ argument_list|(
 name|procedure
 argument_list|)
 argument_list|,
-literal|"gimp-procedural-db-set-data"
+literal|"gimp-pdb-set-data"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_static_strings
 argument_list|(
 name|procedure
 argument_list|,
-literal|"gimp-procedural-db-set-data"
+literal|"gimp-pdb-set-data"
 argument_list|,
 literal|"Associates the specified identifier with the supplied data."
 argument_list|,

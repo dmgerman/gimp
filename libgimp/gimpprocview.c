@@ -245,7 +245,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_procedural_db_proc_info
+name|gimp_pdb_proc_info
 argument_list|(
 name|procedure_name
 argument_list|,
@@ -2136,7 +2136,7 @@ name|return_values
 condition|)
 name|pspec
 operator|=
-name|gimp_procedural_db_proc_return_value
+name|gimp_pdb_proc_return_value
 argument_list|(
 name|procedure_name
 argument_list|,
@@ -2146,7 +2146,7 @@ expr_stmt|;
 else|else
 name|pspec
 operator|=
-name|gimp_procedural_db_proc_argument
+name|gimp_pdb_proc_argument
 argument_list|(
 name|procedure_name
 argument_list|,
