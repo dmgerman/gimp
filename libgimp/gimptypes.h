@@ -31,6 +31,15 @@ comment|/* For information look into the html documentation */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpPDB
+typedef|typedef
+name|struct
+name|_GimpPDB
+name|GimpPDB
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugIn
 typedef|typedef
 name|struct
