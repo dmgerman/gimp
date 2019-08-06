@@ -388,6 +388,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplegacy-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdb-private.h"
 end_include
 
@@ -408,30 +414,6 @@ include|#
 directive|include
 file|"libgimp-intl.h"
 end_include
-
-begin_function_decl
-specifier|static
-name|gint
-name|gimp_main_internal
-parameter_list|(
-name|GType
-name|plug_in_type
-parameter_list|,
-specifier|const
-name|GimpPlugInInfo
-modifier|*
-name|info
-parameter_list|,
-name|gint
-name|argc
-parameter_list|,
-name|gchar
-modifier|*
-name|argv
-index|[]
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -515,42 +497,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_plugin_sigfatal_handler
-parameter_list|(
-name|gint
-name|sig_num
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-name|defined
-name|G_OS_WIN32
-operator|&&
-name|defined
-name|HAVE_EXCHNDL
-end_if
-
 begin_decl_stmt
 DECL|variable|_prevExceptionFilter
 specifier|static
@@ -576,6 +522,57 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* ! G_OS_WIN32 */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_plugin_sigfatal_handler
+parameter_list|(
+name|gint
+name|sig_num
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
+
+begin_decl_stmt
+DECL|variable|PLUG_IN
+specifier|static
+name|GimpPlugIn
+modifier|*
+name|PLUG_IN
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|PDB
+specifier|static
+name|GimpPDB
+modifier|*
+name|PDB
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|_tile_width
@@ -756,40 +753,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|PLUG_IN
-specifier|static
-name|GimpPlugIn
-modifier|*
-name|PLUG_IN
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|PDB
-specifier|static
-name|GimpPDB
-modifier|*
-name|PDB
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-specifier|static
-name|GimpPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|pdb_error_status
 specifier|static
 name|GimpPDBStatusType
@@ -832,7 +795,7 @@ index|[]
 parameter_list|)
 block|{
 return|return
-name|gimp_main_internal
+name|_gimp_main_internal
 argument_list|(
 name|plug_in_type
 argument_list|,
@@ -846,49 +809,10 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_main_legacy:  * @info: the #GimpPlugInInfo structure  * @argc: the number of arguments  * @argv: (array length=argc): the arguments  *  * The main procedure that must be called with the #GimpPlugInInfo  * structure and the 'argc' and 'argv' that are passed to "main".  *  * Returns: an exit status as defined by the C library,  *          on success EXIT_SUCCESS.  **/
-end_comment
-
 begin_function
 name|gint
-DECL|function|gimp_main_legacy (const GimpPlugInInfo * info,gint argc,gchar * argv[])
-name|gimp_main_legacy
-parameter_list|(
-specifier|const
-name|GimpPlugInInfo
-modifier|*
-name|info
-parameter_list|,
-name|gint
-name|argc
-parameter_list|,
-name|gchar
-modifier|*
-name|argv
-index|[]
-parameter_list|)
-block|{
-return|return
-name|gimp_main_internal
-argument_list|(
-name|G_TYPE_NONE
-argument_list|,
-name|info
-argument_list|,
-name|argc
-argument_list|,
-name|argv
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|gimp_main_internal (GType plug_in_type,const GimpPlugInInfo * info,gint argc,gchar * argv[])
-name|gimp_main_internal
+DECL|function|_gimp_main_internal (GType plug_in_type,const GimpPlugInInfo * info,gint argc,gchar * argv[])
+name|_gimp_main_internal
 parameter_list|(
 name|GType
 name|plug_in_type
@@ -908,7 +832,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b7b94fe0103
+DECL|enum|__anon2bfa78fe0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1248,6 +1172,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/* HAVE_EXCHNDL */
 ifndef|#
 directive|ifndef
 name|_WIN64
@@ -1297,6 +1222,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/* _WIN64 */
 comment|/* Group all our windows together on the taskbar */
 block|{
 DECL|typedef|t_SetCurrentProcessExplicitAppUserModelID
@@ -1501,6 +1427,7 @@ block|}
 block|}
 endif|#
 directive|endif
+comment|/* G_OS_WIN32 */
 name|g_assert
 argument_list|(
 operator|(
@@ -1782,6 +1709,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* ! G_OS_WIN32 */
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
@@ -2305,13 +2233,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|PLUG_IN_INFO
-operator|=
-operator|*
-name|info
-expr_stmt|;
-name|_gimp_legacy_init
+name|_gimp_legacy_initialize
 argument_list|(
+name|info
+argument_list|,
 name|read_channel
 argument_list|,
 name|write_channel
@@ -2347,40 +2272,15 @@ if|if
 condition|(
 name|PLUG_IN
 condition|)
-block|{
 name|_gimp_plug_in_query
 argument_list|(
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-if|if
-condition|(
-name|PLUG_IN_INFO
-operator|.
-name|init_proc
-condition|)
-name|gp_has_init_write
-argument_list|(
-name|write_channel
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|PLUG_IN_INFO
-operator|.
-name|query_proc
-condition|)
-name|PLUG_IN_INFO
-operator|.
-name|query_proc
+name|_gimp_legacy_query
 argument_list|()
 expr_stmt|;
-block|}
 name|gimp_close
 argument_list|()
 expr_stmt|;
@@ -2417,27 +2317,15 @@ if|if
 condition|(
 name|PLUG_IN
 condition|)
-block|{
 name|_gimp_plug_in_init
 argument_list|(
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-if|if
-condition|(
-name|PLUG_IN_INFO
-operator|.
-name|init_proc
-condition|)
-name|PLUG_IN_INFO
-operator|.
-name|init_proc
+name|_gimp_legacy_init
 argument_list|()
 expr_stmt|;
-block|}
 name|gimp_close
 argument_list|()
 expr_stmt|;
@@ -2476,23 +2364,15 @@ if|if
 condition|(
 name|PLUG_IN
 condition|)
-block|{
 name|_gimp_plug_in_run
 argument_list|(
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-name|_gimp_loop
-argument_list|(
-name|PLUG_IN_INFO
-operator|.
-name|run_proc
-argument_list|)
+name|_gimp_legacy_run
+argument_list|()
 expr_stmt|;
-block|}
 name|gimp_close
 argument_list|()
 expr_stmt|;
@@ -3019,30 +2899,15 @@ if|if
 condition|(
 name|PLUG_IN
 condition|)
-block|{
 name|_gimp_plug_in_quit
 argument_list|(
 name|PLUG_IN
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-if|if
-condition|(
-name|PLUG_IN_INFO
-operator|.
-name|quit_proc
-condition|)
-name|PLUG_IN_INFO
-operator|.
-name|quit_proc
-argument_list|()
-expr_stmt|;
 name|_gimp_legacy_quit
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -3233,6 +3098,7 @@ break|break;
 block|}
 endif|#
 directive|endif
+comment|/* ! G_OS_WIN32 */
 comment|/* Do not end with gimp_quit().    * We want the plug-in to continue its normal crash course, otherwise    * we won't get the "Plug-in crashed" error in GIMP.    */
 name|exit
 argument_list|(
@@ -3387,10 +3253,18 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* HAVE_EXCHNDL */
+end_comment
+
 begin_else
 else|#
 directive|else
 end_else
+
+begin_comment
+comment|/* ! G_OS_WIN32 */
+end_comment
 
 begin_function
 specifier|static
@@ -3549,6 +3423,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 begin_function
 name|void

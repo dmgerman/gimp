@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-private.h"
+file|"gimp-shm.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-shm.h"
+file|"gimplegacy-private.h"
 end_include
 
 begin_include
@@ -1403,7 +1403,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|_gimp_read_expect_msg
+name|_gimp_legacy_read_expect_msg
 argument_list|(
 operator|&
 name|msg
@@ -1693,7 +1693,7 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-name|_gimp_read_expect_msg
+name|_gimp_legacy_read_expect_msg
 argument_list|(
 operator|&
 name|msg
@@ -1889,7 +1889,7 @@ name|GP_TILE_ACK
 argument_list|)
 expr_stmt|;
 else|else
-name|_gimp_read_expect_msg
+name|_gimp_legacy_read_expect_msg
 argument_list|(
 operator|&
 name|msg

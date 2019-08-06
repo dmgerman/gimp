@@ -23,7 +23,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293df5180103
+DECL|enum|__anon2b0abb630103
 block|{
 DECL|enumerator|GIMP_PDB_ERROR_FAILED
 name|GIMP_PDB_ERROR_FAILED
