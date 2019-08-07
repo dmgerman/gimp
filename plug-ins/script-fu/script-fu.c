@@ -394,7 +394,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-console"
 argument_list|,
-literal|"<Image>/Filters/Languages/Script-Fu"
+literal|"<Image>/Filters/Development/Script-Fu"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -478,7 +478,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-server"
 argument_list|,
-literal|"<Image>/Filters/Languages/Script-Fu"
+literal|"<Image>/Filters/Development/Script-Fu"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -942,7 +942,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Filters/Languages"
+literal|"<Image>/Filters/Development"
 argument_list|,
 name|N_
 argument_list|(
@@ -952,7 +952,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Filters/Languages/Script-Fu"
+literal|"<Image>/Filters/Development/Script-Fu"
 argument_list|,
 name|N_
 argument_list|(
@@ -1084,7 +1084,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"script-fu-refresh"
 argument_list|,
-literal|"<Image>/Filters/Languages/Script-Fu"
+literal|"<Image>/Filters/Development/Script-Fu"
 argument_list|)
 expr_stmt|;
 block|}

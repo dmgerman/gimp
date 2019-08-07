@@ -379,7 +379,7 @@ name|procedure
 argument_list|,
 name|N_
 argument_list|(
-literal|"Goat-e_xercise"
+literal|"Exercise in _C minor"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -387,7 +387,7 @@ name|gimp_procedure_add_menu_path
 argument_list|(
 name|procedure
 argument_list|,
-literal|"<Image>/Filters"
+literal|"<Image>/Filters/Development/Goat exercises/"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_documentation
@@ -396,10 +396,10 @@ name|procedure
 argument_list|,
 name|N_
 argument_list|(
-literal|"Exercise a goat"
+literal|"Exercise a goat in the C language"
 argument_list|)
 argument_list|,
-literal|"takes a goat for a walk"
+literal|"Takes a goat for a walk"
 argument_list|,
 name|PLUG_IN_PROC
 argument_list|)
@@ -412,7 +412,7 @@ literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
 literal|"Ãyvind KolÃ¥s<pippin@gimp.org>"
 argument_list|,
-literal|"21march 2012"
+literal|"21 march 2012"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_set_icon
