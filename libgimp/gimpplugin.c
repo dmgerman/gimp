@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c363ec40103
+DECL|enum|__anon29ea47830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -266,13 +266,15 @@ index|[
 name|PROP_READ_CHANNEL
 index|]
 operator|=
-name|g_param_spec_pointer
+name|g_param_spec_boxed
 argument_list|(
 literal|"read-channel"
 argument_list|,
 literal|"Read channel"
 argument_list|,
 literal|"The GIOChanel to read from GIMP"
+argument_list|,
+name|G_TYPE_IO_CHANNEL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -284,13 +286,15 @@ index|[
 name|PROP_WRITE_CHANNEL
 index|]
 operator|=
-name|g_param_spec_pointer
+name|g_param_spec_boxed
 argument_list|(
 literal|"write-channel"
 argument_list|,
 literal|"Write channel"
 argument_list|,
 literal|"The GIOChanel to write to GIMP"
+argument_list|,
+name|G_TYPE_IO_CHANNEL
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -645,7 +649,7 @@ name|priv
 operator|->
 name|read_channel
 operator|=
-name|g_value_get_pointer
+name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)
@@ -660,7 +664,7 @@ name|priv
 operator|->
 name|write_channel
 operator|=
-name|g_value_get_pointer
+name|g_value_get_boxed
 argument_list|(
 name|value
 argument_list|)
@@ -720,7 +724,7 @@ block|{
 case|case
 name|PROP_READ_CHANNEL
 case|:
-name|g_value_set_pointer
+name|g_value_set_boxed
 argument_list|(
 name|value
 argument_list|,
@@ -735,7 +739,7 @@ break|break;
 case|case
 name|PROP_WRITE_CHANNEL
 case|:
-name|g_value_set_pointer
+name|g_value_set_boxed
 argument_list|(
 name|value
 argument_list|,
