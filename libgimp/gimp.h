@@ -164,12 +164,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimppixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpplugin.h>
 end_include
 

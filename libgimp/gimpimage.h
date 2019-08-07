@@ -102,6 +102,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkPixbuf
+modifier|*
+name|gimp_image_get_thumbnail
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|GimpPixbufTransparency
+name|alpha
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpMetadata
 modifier|*
 name|gimp_image_get_metadata

@@ -93,6 +93,33 @@ name|GimpParam
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* FIXME move somewhere else */
+end_comment
+
+begin_comment
+comment|/**  * GimpPixbufTransparency:  * @GIMP_PIXBUF_KEEP_ALPHA:   Create a pixbuf with alpha  * @GIMP_PIXBUF_SMALL_CHECKS: Show transparency as small checks  * @GIMP_PIXBUF_LARGE_CHECKS: Show transparency as large checks  *  * How to deal with transparency when creating thubnail pixbufs from  * images and drawables.  **/
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2acc7f6c0103
+block|{
+DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
+name|GIMP_PIXBUF_KEEP_ALPHA
+block|,
+DECL|enumerator|GIMP_PIXBUF_SMALL_CHECKS
+name|GIMP_PIXBUF_SMALL_CHECKS
+block|,
+DECL|enumerator|GIMP_PIXBUF_LARGE_CHECKS
+name|GIMP_PIXBUF_LARGE_CHECKS
+DECL|typedef|GimpPixbufTransparency
+block|}
+name|GimpPixbufTransparency
+typedef|;
+end_typedef
+
 begin_macro
 name|G_END_DECLS
 end_macro
