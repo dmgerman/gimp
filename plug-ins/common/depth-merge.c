@@ -3737,6 +3737,8 @@ argument_list|(
 name|dm_constraint
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect
@@ -3840,6 +3842,8 @@ argument_list|(
 name|dm_constraint
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_bottom
@@ -3943,6 +3947,8 @@ argument_list|(
 name|dm_constraint
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect
@@ -4046,6 +4052,8 @@ argument_list|(
 name|dm_constraint
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_bottom

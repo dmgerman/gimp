@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2d1f70108
+DECL|struct|__anon2b15438e0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2d1f70208
+DECL|struct|__anon2b15438e0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2d1f70308
+DECL|struct|__anon2b15438e0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2d1f70408
+DECL|struct|__anon2b15438e0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2d1f70508
+DECL|struct|__anon2b15438e0508
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -6157,6 +6157,8 @@ argument_list|(
 name|smp_constrain
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect
@@ -6250,6 +6252,8 @@ operator|=
 name|gimp_layer_combo_box_new
 argument_list|(
 name|smp_constrain
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

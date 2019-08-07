@@ -5607,6 +5607,8 @@ argument_list|(
 name|box_constrain
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect
@@ -6163,6 +6165,8 @@ operator|=
 name|gimp_drawable_combo_box_new
 argument_list|(
 name|cylinder_constrain
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

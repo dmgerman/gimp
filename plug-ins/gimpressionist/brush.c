@@ -2663,6 +2663,8 @@ argument_list|(
 name|validdrawable
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_connect

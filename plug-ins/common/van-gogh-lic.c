@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca908b0103
+DECL|enum|__anon293fa3c80103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca908b0208
+DECL|struct|__anon293fa3c80208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3218,6 +3218,8 @@ operator|=
 name|gimp_drawable_combo_box_new
 argument_list|(
 name|effect_image_constrain
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

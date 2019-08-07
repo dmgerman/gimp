@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c091c8a0108
+DECL|struct|__anon277445b00108
 block|{
 DECL|member|randomize
 name|gint
@@ -5729,6 +5729,8 @@ operator|=
 name|gimp_drawable_combo_box_new
 argument_list|(
 name|cmap_constrain
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

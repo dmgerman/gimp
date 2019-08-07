@@ -274,6 +274,9 @@ name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -490,20 +493,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to get the active  * drawable ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected drawable.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_drawable_combo_box_new:  * @constraint:   a #GimpItemConstraintFunc or %NULL  * @data  :       a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to get the active  * drawable ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected drawable.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_combo_box_new (GimpDrawableConstraintFunc constraint,gpointer data)
+DECL|function|gimp_drawable_combo_box_new (GimpItemConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_drawable_combo_box_new
 parameter_list|(
-name|GimpDrawableConstraintFunc
+name|GimpItemConstraintFunc
 name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 return|return
@@ -514,6 +520,8 @@ argument_list|,
 name|constraint
 argument_list|,
 name|data
+argument_list|,
+name|data_destroy
 argument_list|)
 return|;
 block|}
@@ -616,20 +624,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box_new() for more information.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_channel_combo_box_new:  * @constraint:   a #GimpItemConstraintFunc or %NULL  * @data:         a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box_new() for more information.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_channel_combo_box_new (GimpDrawableConstraintFunc constraint,gpointer data)
+DECL|function|gimp_channel_combo_box_new (GimpItemConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_channel_combo_box_new
 parameter_list|(
-name|GimpDrawableConstraintFunc
+name|GimpItemConstraintFunc
 name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 return|return
@@ -640,6 +651,8 @@ argument_list|,
 name|constraint
 argument_list|,
 name|data
+argument_list|,
+name|data_destroy
 argument_list|)
 return|;
 block|}
@@ -744,20 +757,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_layer_combo_box_new:  * @constraint:   a #GimpItemConstraintFunc or %NULL  * @data:         a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_layer_combo_box_new (GimpDrawableConstraintFunc constraint,gpointer data)
+DECL|function|gimp_layer_combo_box_new (GimpItemConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_layer_combo_box_new
 parameter_list|(
-name|GimpDrawableConstraintFunc
+name|GimpItemConstraintFunc
 name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 return|return
@@ -768,6 +784,8 @@ argument_list|,
 name|constraint
 argument_list|,
 name|data
+argument_list|,
+name|data_destroy
 argument_list|)
 return|;
 block|}
@@ -872,20 +890,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_combo_box_new:  * @constraint: a #GimpVectorsConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * vectors objects. If a @constraint function is specified, it is called for  * each vectors object and only if the function returns %TRUE, the vectors  * object is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to set the active  * vectors ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected vectors object.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_combo_box_new:  * @constraint:   a #GimpItemConstraintFunc or %NULL  * @data:         a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data  *  * Creates a new #GimpIntComboBox filled with all currently opened  * vectors objects. If a @constraint function is specified, it is called for  * each vectors object and only if the function returns %TRUE, the vectors  * object is added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to set the active  * vectors ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected vectors object.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_vectors_combo_box_new (GimpVectorsConstraintFunc constraint,gpointer data)
+DECL|function|gimp_vectors_combo_box_new (GimpItemConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_vectors_combo_box_new
 parameter_list|(
-name|GimpVectorsConstraintFunc
+name|GimpItemConstraintFunc
 name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 return|return
@@ -896,6 +917,8 @@ argument_list|,
 name|constraint
 argument_list|,
 name|data
+argument_list|,
+name|data_destroy
 argument_list|)
 return|;
 block|}
@@ -905,7 +928,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_combo_box_new (GType type,GimpItemConstraintFunc constraint,gpointer data)
+DECL|function|gimp_item_combo_box_new (GType type,GimpItemConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_item_combo_box_new
 parameter_list|(
 name|GType
@@ -916,6 +939,9 @@ name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 name|GimpIntComboBox
@@ -961,6 +987,21 @@ operator|->
 name|data
 operator|=
 name|data
+expr_stmt|;
+name|g_object_weak_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
+name|data_destroy
+argument_list|,
+name|data
+argument_list|)
 expr_stmt|;
 name|gimp_item_combo_box_populate
 argument_list|(

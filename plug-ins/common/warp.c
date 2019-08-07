@@ -78,7 +78,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dceaca0103
+DECL|enum|__anon2bc0c8740103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -98,7 +98,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dceaca0208
+DECL|struct|__anon2bc0c8740208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1893,6 +1893,8 @@ name|GINT_TO_POINTER
 argument_list|(
 name|drawable_id
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_start
@@ -2780,6 +2782,8 @@ name|GINT_TO_POINTER
 argument_list|(
 name|drawable_id
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_start
@@ -3116,6 +3120,8 @@ name|GINT_TO_POINTER
 argument_list|(
 name|drawable_id
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_start
@@ -3366,6 +3372,8 @@ name|GINT_TO_POINTER
 argument_list|(
 name|drawable_id
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_margin_start

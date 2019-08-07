@@ -103,6 +103,10 @@ DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+DECL|member|data_destroy
+name|GDestroyNotify
+name|data_destroy
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -119,6 +123,18 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_image_combo_box_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -228,6 +244,14 @@ argument|GIMP_TYPE_INT_COMBO_BOX
 argument_list|)
 end_macro
 
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_image_combo_box_parent_class
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -238,6 +262,15 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
+name|GObjectClass
+modifier|*
+name|object_class
+init|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -247,6 +280,12 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|object_class
+operator|->
+name|finalize
+operator|=
+name|gimp_image_combo_box_finalize
+expr_stmt|;
 name|widget_class
 operator|->
 name|drag_data_received
@@ -291,14 +330,62 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_combo_box_finalize (GObject * object)
+name|gimp_image_combo_box_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpImageComboBox
+modifier|*
+name|combo
+init|=
+name|GIMP_IMAGE_COMBO_BOX
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|combo
+operator|->
+name|data_destroy
+condition|)
+name|combo
+operator|->
+name|data_destroy
+argument_list|(
+name|combo
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|finalize
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
-comment|/**  * gimp_image_combo_box_new:  * @constraint: a #GimpImageConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * images. If a @constraint function is specified, it is called for  * each image and only if the function returns %TRUE, the image is  * added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and  * connect the combo. Use gimp_int_combo_box_set_active() to get the  * active image ID and gimp_int_combo_box_get_active() to retrieve the  * ID of the selected image.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_image_combo_box_new:  * @constraint:   a #GimpImageConstraintFunc or %NULL  * @data:         a pointer that is passed to @constraint  * @data_destroy: Destroy function for @data.  *  * Creates a new #GimpIntComboBox filled with all currently opened  * images. If a @constraint function is specified, it is called for  * each image and only if the function returns %TRUE, the image is  * added to the combobox.  *  * You should use gimp_int_combo_box_connect() to initialize and  * connect the combo. Use gimp_int_combo_box_set_active() to get the  * active image ID and gimp_int_combo_box_get_active() to retrieve the  * ID of the selected image.  *  * Returns: a new #GimpIntComboBox.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_combo_box_new (GimpImageConstraintFunc constraint,gpointer data)
+DECL|function|gimp_image_combo_box_new (GimpImageConstraintFunc constraint,gpointer data,GDestroyNotify data_destroy)
 name|gimp_image_combo_box_new
 parameter_list|(
 name|GimpImageConstraintFunc
@@ -306,6 +393,9 @@ name|constraint
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 name|GimpImageComboBox
@@ -340,6 +430,12 @@ operator|->
 name|data
 operator|=
 name|data
+expr_stmt|;
+name|combo_box
+operator|->
+name|data_destroy
+operator|=
+name|data_destroy
 expr_stmt|;
 name|gimp_image_combo_box_populate
 argument_list|(
