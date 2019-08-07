@@ -611,6 +611,8 @@ argument_list|)
 argument_list|,
 name|editor
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|editor
 operator|->

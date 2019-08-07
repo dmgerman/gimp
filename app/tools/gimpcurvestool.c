@@ -3261,6 +3261,8 @@ argument_list|)
 argument_list|,
 name|tool
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|tool
 operator|->

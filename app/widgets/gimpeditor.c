@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287128750103
+DECL|enum|__anon2790a4590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2125,6 +2125,8 @@ name|callback
 argument_list|,
 name|callback_data
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|first_button
 argument_list|)
@@ -2238,7 +2240,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287128750208
+DECL|struct|__anon2790a4590208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

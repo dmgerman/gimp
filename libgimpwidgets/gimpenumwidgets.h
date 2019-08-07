@@ -58,6 +58,9 @@ parameter_list|,
 name|gpointer
 name|callback_data
 parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
+parameter_list|,
 name|GtkWidget
 modifier|*
 modifier|*
@@ -86,6 +89,9 @@ parameter_list|,
 name|gpointer
 name|callback_data
 parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
+parameter_list|,
 name|GtkWidget
 modifier|*
 modifier|*
@@ -111,6 +117,9 @@ name|callback
 parameter_list|,
 name|gpointer
 name|callback_data
+parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -144,6 +153,9 @@ parameter_list|,
 name|gpointer
 name|callback_data
 parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
+parameter_list|,
 name|GtkWidget
 modifier|*
 modifier|*
@@ -173,6 +185,9 @@ name|callback
 parameter_list|,
 name|gpointer
 name|callback_data
+parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -209,6 +224,9 @@ name|callback
 parameter_list|,
 name|gpointer
 name|callback_data
+parameter_list|,
+name|GDestroyNotify
+name|callback_data_destroy
 parameter_list|,
 name|GtkWidget
 modifier|*

@@ -2767,6 +2767,8 @@ argument_list|)
 argument_list|,
 name|config
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|button
 argument_list|)
@@ -2793,6 +2795,8 @@ name|gimp_prop_radio_button_callback
 argument_list|)
 argument_list|,
 name|config
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|button
@@ -2970,6 +2974,8 @@ argument_list|)
 argument_list|,
 name|config
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|button
 argument_list|)
@@ -2991,6 +2997,8 @@ name|gimp_prop_radio_button_callback
 argument_list|)
 argument_list|,
 name|config
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|button
@@ -3580,6 +3588,8 @@ argument_list|)
 argument_list|,
 name|config
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|button
 argument_list|)
@@ -3605,6 +3615,8 @@ name|gimp_prop_radio_button_callback
 argument_list|)
 argument_list|,
 name|config
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|button

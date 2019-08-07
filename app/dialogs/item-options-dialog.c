@@ -877,6 +877,8 @@ name|private
 operator|->
 name|color_tag
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|radio
 argument_list|)
