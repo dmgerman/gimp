@@ -1552,6 +1552,8 @@ argument_list|,
 name|cut_named_buffer_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1637,6 +1639,8 @@ argument_list|,
 name|copy_named_buffer_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1722,6 +1726,8 @@ argument_list|,
 name|copy_named_visible_buffer_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -3159,6 +3159,8 @@ argument_list|,
 name|delete_dialog_callback
 argument_list|,
 name|data
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

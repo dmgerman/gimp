@@ -1417,6 +1417,8 @@ argument_list|,
 name|file_new_template_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -287,6 +287,8 @@ argument_list|,
 name|palettes_merge_callback
 argument_list|,
 name|editor
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog

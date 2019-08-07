@@ -714,6 +714,8 @@ operator|)
 name|dashboard_log_add_marker_response
 argument_list|,
 name|dashboard
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog

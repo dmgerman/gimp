@@ -643,6 +643,8 @@ argument_list|,
 name|select_feather_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Edge lock button */
@@ -990,6 +992,8 @@ argument_list|,
 name|select_shrink_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Edge lock button */
@@ -1278,6 +1282,8 @@ argument_list|,
 name|select_grow_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog
@@ -1511,6 +1517,8 @@ argument_list|,
 name|select_border_callback
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Border style combo */

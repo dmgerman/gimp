@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06701f0103
+DECL|enum|__anon2c5ce6570103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06701f0203
+DECL|enum|__anon2c5ce6570203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2384,6 +2384,8 @@ argument_list|,
 name|gimp_settings_box_favorite_callback
 argument_list|,
 name|box
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
