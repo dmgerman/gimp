@@ -3760,6 +3760,8 @@ name|dialogSource1ChangedCallback
 argument_list|)
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -3872,6 +3874,8 @@ name|dialogDepthMap1ChangedCallback
 argument_list|)
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -3970,6 +3974,8 @@ name|dialogSource2ChangedCallback
 argument_list|)
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -4082,6 +4088,8 @@ name|dialogDepthMap2ChangedCallback
 argument_list|)
 argument_list|,
 name|dm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach

@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55fe930103
+DECL|enum|__anon2af6fccd0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55fe930203
+DECL|enum|__anon2af6fccd0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55fe930303
+DECL|enum|__anon2af6fccd0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55fe930403
+DECL|enum|__anon2af6fccd0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b55fe930503
+DECL|enum|__anon2af6fccd0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930608
+DECL|struct|__anon2af6fccd0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930708
+DECL|struct|__anon2af6fccd0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930808
+DECL|struct|__anon2af6fccd0808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930908
+DECL|struct|__anon2af6fccd0908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930a08
+DECL|struct|__anon2af6fccd0a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930b08
+DECL|struct|__anon2af6fccd0b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930c08
+DECL|struct|__anon2af6fccd0c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930d08
+DECL|struct|__anon2af6fccd0d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930e08
+DECL|struct|__anon2af6fccd0e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe930f08
+DECL|struct|__anon2af6fccd0f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe931008
+DECL|struct|__anon2af6fccd1008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55fe931108
+DECL|struct|__anon2af6fccd1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b55fe93120a
+DECL|union|__anon2af6fccd120a
 block|{
 DECL|member|com
 name|common
@@ -15547,6 +15547,8 @@ name|selecttype
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned
@@ -15642,6 +15644,8 @@ name|G_CALLBACK
 argument_list|(
 name|selecttexture
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

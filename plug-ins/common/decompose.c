@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd589bf0108
+DECL|struct|__anon2900e7560108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd589bf0208
+DECL|struct|__anon2900e7560208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd589bf0308
+DECL|struct|__anon2900e7560308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -4287,6 +4287,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|extract_idx
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle

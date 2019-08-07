@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon277445b00108
+DECL|struct|__anon292344620108
 block|{
 DECL|member|randomize
 name|gint
@@ -5888,6 +5888,8 @@ name|G_CALLBACK
 argument_list|(
 name|cmap_callback
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

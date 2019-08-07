@@ -5637,6 +5637,8 @@ name|boxmap_id
 index|[
 name|i
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned
@@ -6197,6 +6199,8 @@ name|cylindermap_id
 index|[
 name|i
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label

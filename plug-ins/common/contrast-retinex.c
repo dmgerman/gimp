@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7483700108
+DECL|struct|__anon291458da0108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7483700203
+DECL|enum|__anon291458da0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7483700308
+DECL|struct|__anon291458da0308
 block|{
 DECL|member|N
 name|gint
@@ -1256,6 +1256,8 @@ operator|&
 name|rvals
 operator|.
 name|scales_mode
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped

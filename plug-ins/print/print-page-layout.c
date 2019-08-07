@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28761e120108
+DECL|struct|__anon2a984ddb0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28761e120203
+DECL|enum|__anon2a984ddb0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -2860,6 +2860,8 @@ name|G_CALLBACK
 argument_list|(
 name|print_size_info_center_changed
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

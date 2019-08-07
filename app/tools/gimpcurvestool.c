@@ -3400,6 +3400,8 @@ name|curves_curve_type_callback
 argument_list|)
 argument_list|,
 name|tool
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

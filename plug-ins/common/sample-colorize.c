@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15438e0108
+DECL|struct|__anon298ed44b0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15438e0208
+DECL|struct|__anon298ed44b0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15438e0308
+DECL|struct|__anon298ed44b0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15438e0408
+DECL|struct|__anon298ed44b0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15438e0508
+DECL|struct|__anon298ed44b0508
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -6178,6 +6178,8 @@ name|smp_dest_combo_callback
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -6325,6 +6327,8 @@ name|G_CALLBACK
 argument_list|(
 name|smp_sample_combo_callback
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

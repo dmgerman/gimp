@@ -4384,6 +4384,8 @@ operator|&
 name|mapvals
 operator|.
 name|bumpmap_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -4865,6 +4867,8 @@ name|G_CALLBACK
 argument_list|(
 name|envmap_combo_callback
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

@@ -1677,6 +1677,8 @@ operator|&
 name|private
 operator|->
 name|layer_set
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1762,6 +1764,8 @@ operator|&
 name|private
 operator|->
 name|fill_type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

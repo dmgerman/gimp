@@ -847,6 +847,8 @@ operator|&
 name|private
 operator|->
 name|blend_space
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|private
@@ -905,6 +907,8 @@ operator|&
 name|private
 operator|->
 name|composite_space
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -965,6 +969,8 @@ operator|&
 name|private
 operator|->
 name|composite_mode
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  set the sensitivity of above 3 menus  */
@@ -1929,6 +1935,8 @@ operator|&
 name|private
 operator|->
 name|fill_type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

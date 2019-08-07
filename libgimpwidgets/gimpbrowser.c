@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffdaf30103
+DECL|enum|__anon28eb82c60103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -1011,6 +1011,8 @@ operator|&
 name|priv
 operator|->
 name|search_type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

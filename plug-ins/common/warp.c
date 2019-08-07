@@ -78,7 +78,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0c8740103
+DECL|enum|__anon276e6b460103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -98,7 +98,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0c8740208
+DECL|struct|__anon276e6b460208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1924,6 +1924,8 @@ operator|&
 name|dvals
 operator|.
 name|warp_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -2813,6 +2815,8 @@ operator|&
 name|dvals
 operator|.
 name|mag_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_grid_attach
@@ -3175,6 +3179,8 @@ operator|&
 name|dvals
 operator|.
 name|grad_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -3427,6 +3433,8 @@ operator|&
 name|dvals
 operator|.
 name|vector_map
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data

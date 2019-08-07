@@ -2683,6 +2683,8 @@ name|brushdmenuselect
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

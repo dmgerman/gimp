@@ -109,7 +109,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9da1000103
+DECL|enum|__anon298e47350103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -6422,6 +6422,8 @@ operator|&
 name|tsvals
 operator|.
 name|origin
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

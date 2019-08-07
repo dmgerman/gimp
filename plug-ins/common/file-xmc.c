@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c376f960108
+DECL|struct|__anon28832f4c0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -839,7 +839,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c376f960208
+DECL|struct|__anon28832f4c0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -4902,6 +4902,8 @@ operator|&
 name|xmcvals
 operator|.
 name|size
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -9175,7 +9177,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c376f960308
+DECL|struct|__anon28832f4c0308
 block|{
 DECL|member|size
 name|guint32

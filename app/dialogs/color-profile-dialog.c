@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2ad200108
+DECL|struct|__anon292a47ce0108
 block|{
 DECL|member|dialog_type
 name|ColorProfileDialogType
@@ -1257,6 +1257,8 @@ operator|&
 name|private
 operator|->
 name|intent
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_mnemonic_widget

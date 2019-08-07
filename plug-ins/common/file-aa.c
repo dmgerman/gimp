@@ -1570,6 +1570,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|selected
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

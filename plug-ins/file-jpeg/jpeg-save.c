@@ -323,7 +323,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29daa0590108
+DECL|struct|__anon27fb1cda0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29daa0590208
+DECL|struct|__anon27fb1cda0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5254,6 +5254,8 @@ name|subsampling_changed
 argument_list|)
 argument_list|,
 name|entry
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

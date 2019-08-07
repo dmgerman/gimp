@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6cd7e0103
+DECL|enum|__anon2b6e1c340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1558,12 +1558,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_connect:  * @combo_box: a #GimpIntComboBox  * @value:     the value to set  * @callback:  a callback to connect to the @combo_box's "changed" signal  * @data:      a pointer passed as data to g_signal_connect()  *  * A convenience function that sets the initial @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Returns: the signal handler ID as returned by g_signal_connect()  *  * Since: 2.2  **/
+comment|/**  * gimp_int_combo_box_connect:  * @combo_box:    a #GimpIntComboBox  * @value:        the value to set  * @callback:     a callback to connect to the @combo_box's "changed" signal  * @data:         a pointer passed as data to g_signal_connect()  * @data_destroy: Destroy function for @data.  *  * A convenience function that sets the initial @value of a  * #GimpIntComboBox and connects @callback to the "changed"  * signal.  *  * This function also calls the @callback once after setting the  * initial @value. This is often convenient when working with combo  * boxes that select a default active item, like for example  * gimp_drawable_combo_box_new(). If you pass an invalid initial  * @value, the @callback will be called with the default item active.  *  * Returns: the signal handler ID as returned by g_signal_connect()  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|gulong
-DECL|function|gimp_int_combo_box_connect (GimpIntComboBox * combo_box,gint value,GCallback callback,gpointer data)
+DECL|function|gimp_int_combo_box_connect (GimpIntComboBox * combo_box,gint value,GCallback callback,gpointer data,GDestroyNotify data_destroy)
 name|gimp_int_combo_box_connect
 parameter_list|(
 name|GimpIntComboBox
@@ -1578,6 +1578,9 @@ name|callback
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
 parameter_list|)
 block|{
 name|gulong
@@ -1608,6 +1611,25 @@ argument_list|,
 literal|"changed"
 argument_list|,
 name|callback
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|data_destroy
+condition|)
+name|g_object_weak_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
+name|data_destroy
 argument_list|,
 name|data
 argument_list|)

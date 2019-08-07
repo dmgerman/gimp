@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab042780103
+DECL|enum|__anon2bf7bed60103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab042780203
+DECL|enum|__anon2bf7bed60203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab042780303
+DECL|enum|__anon2bf7bed60303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab042780408
+DECL|struct|__anon2bf7bed60408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -2702,6 +2702,8 @@ operator|&
 name|curl
 operator|.
 name|colors
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|grid

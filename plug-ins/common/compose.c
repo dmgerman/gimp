@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af089fe0108
+DECL|struct|__anon2a070d7d0108
 block|{
 union|union
-DECL|union|__anon2af089fe020a
+DECL|union|__anon2a070d7d020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af089fe0308
+DECL|struct|__anon2a070d7d0308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af089fe0408
+DECL|struct|__anon2a070d7d0408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af089fe0508
+DECL|struct|__anon2a070d7d0508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af089fe0608
+DECL|struct|__anon2a070d7d0608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5539,6 +5539,8 @@ name|GINT_TO_POINTER
 argument_list|(
 name|j
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -5563,6 +5565,8 @@ name|G_CALLBACK
 argument_list|(
 name|type_combo_callback
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

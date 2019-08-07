@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f11deb0108
+DECL|struct|__anon2af3cb7d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1281,6 +1281,8 @@ name|gimp_int_combo_box_get_active
 argument_list|)
 argument_list|,
 name|ID_ptr
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

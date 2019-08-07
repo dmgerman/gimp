@@ -1203,6 +1203,8 @@ operator|&
 name|private
 operator|->
 name|dither_type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle

@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293fa3c80103
+DECL|enum|__anon28fa9f910103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293fa3c80208
+DECL|struct|__anon28fa9f910208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3244,6 +3244,8 @@ operator|&
 name|licvals
 operator|.
 name|effect_image_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_grid_attach_aligned

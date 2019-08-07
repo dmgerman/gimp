@@ -971,6 +971,8 @@ operator|&
 name|private
 operator|->
 name|layer_dither_method
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  text layers  */
@@ -1110,6 +1112,8 @@ operator|&
 name|private
 operator|->
 name|text_layer_dither_method
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -1262,6 +1266,8 @@ operator|&
 name|private
 operator|->
 name|channel_dither_method
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_unref

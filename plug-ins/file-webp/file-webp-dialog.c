@@ -783,6 +783,8 @@ operator|&
 name|params
 operator|->
 name|preset
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
