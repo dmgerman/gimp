@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b8a830103
+DECL|enum|__anon28e2273e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -143,7 +143,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b8a830203
+DECL|enum|__anon28e2273e0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -784,6 +784,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_fg_bg_editor_destroy_transform
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

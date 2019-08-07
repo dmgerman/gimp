@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29353a950103
+DECL|enum|__anon28eccdcb0103
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29353a950208
+DECL|struct|__anon28eccdcb0208
 block|{
 comment|/* Color value */
 DECL|member|h
@@ -191,7 +191,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29353a950303
+DECL|enum|__anon28eccdcb0303
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -944,6 +944,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_color_wheel_destroy_transform
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

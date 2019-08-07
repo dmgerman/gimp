@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8e0b840103
+DECL|enum|__anon2b214b420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -333,6 +333,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_fg_bg_view_destroy_transform
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

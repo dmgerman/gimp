@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14d1520103
+DECL|enum|__anon2c8953440103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14d1520203
+DECL|enum|__anon2c8953440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -845,6 +845,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_color_area_destroy_transform
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

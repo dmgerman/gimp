@@ -832,6 +832,8 @@ name|colorsel_water_destroy_transform
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

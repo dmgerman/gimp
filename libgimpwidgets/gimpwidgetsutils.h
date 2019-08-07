@@ -129,6 +129,9 @@ name|monitor_changed_callback
 parameter_list|,
 name|gpointer
 name|user_data
+parameter_list|,
+name|GDestroyNotify
+name|user_data_destroy
 parameter_list|)
 function_decl|;
 end_function_decl

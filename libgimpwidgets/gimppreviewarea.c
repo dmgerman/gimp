@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a72390103
+DECL|enum|__anon2b0e8d390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -563,6 +563,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_preview_area_destroy_transform
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

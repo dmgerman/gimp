@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b4e8a0103
+DECL|enum|__anon2aad9e630103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -834,6 +834,8 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_view_monitor_changed
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

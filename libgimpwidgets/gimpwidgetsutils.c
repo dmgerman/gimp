@@ -1095,7 +1095,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a692e60108
+DECL|struct|__anon2c6e30ec0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1326,7 +1326,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_widget_track_monitor (GtkWidget * widget,GCallback monitor_changed_callback,gpointer user_data)
+DECL|function|gimp_widget_track_monitor (GtkWidget * widget,GCallback monitor_changed_callback,gpointer user_data,GDestroyNotify user_data_destroy)
 name|gimp_widget_track_monitor
 parameter_list|(
 name|GtkWidget
@@ -1338,6 +1338,9 @@ name|monitor_changed_callback
 parameter_list|,
 name|gpointer
 name|user_data
+parameter_list|,
+name|GDestroyNotify
+name|user_data_destroy
 parameter_list|)
 block|{
 name|TrackMonitorData
@@ -1406,6 +1409,25 @@ operator|)
 name|g_free
 argument_list|,
 name|track_data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|user_data_destroy
+condition|)
+name|g_object_weak_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
+name|user_data_destroy
+argument_list|,
+name|user_data
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
