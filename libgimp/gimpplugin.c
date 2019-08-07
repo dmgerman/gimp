@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2938c0140103
+DECL|enum|__anon29e615f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1024,13 +1024,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_create_procedure:  * @plug_in: A #GimpPlugIn  * @name:    A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PLUGIN or  * %GIMP_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
+comment|/**  * gimp_plug_in_create_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: A procedure name.  *  * This functiond creates a new procedure and is called when a plug-in  * instance is started by GIMP when one of the %GIMP_PLUGIN or  * %GIMP_EXTENSION procedures it implements is invoked.  *  * This function will only ever be called with names returned by  * implementations of GimpPlugInClass::init_procedures() or  * GimpPlugInClass::query_procedures().  *  * Returns: (transfer full): The newly created #GimpProcedure.  **/
 end_comment
 
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_plug_in_create_procedure (GimpPlugIn * plug_in,const gchar * name)
+DECL|function|gimp_plug_in_create_procedure (GimpPlugIn * plug_in,const gchar * procedure_name)
 name|gimp_plug_in_create_procedure
 parameter_list|(
 name|GimpPlugIn
@@ -1040,7 +1040,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1055,7 +1055,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1081,7 +1081,7 @@ name|create_procedure
 argument_list|(
 name|plug_in
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 return|;
 return|return
@@ -1163,12 +1163,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_remove_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function removes a temporary procedure from @plug_in by the  * procedure's @name.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_remove_temp_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: The name of a #GimpProcedure added to @plug_in.  *  * This function removes a temporary procedure from @plug_in by the  * procedure's @procedure_name.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_plug_in_remove_temp_procedure (GimpPlugIn * plug_in,const gchar * name)
+DECL|function|gimp_plug_in_remove_temp_procedure (GimpPlugIn * plug_in,const gchar * procedure_name)
 name|gimp_plug_in_remove_temp_procedure
 parameter_list|(
 name|GimpPlugIn
@@ -1178,7 +1178,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -1195,7 +1195,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|)
@@ -1206,7 +1206,7 @@ name|gimp_plug_in_get_temp_procedure
 argument_list|(
 name|plug_in
 argument_list|,
-name|name
+name|procedure_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1281,13 +1281,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_get_temp_procedure:  * @plug_in: A #GimpPlugIn  * @name:    The name of a #GimpProcedure added to @plug_in.  *  * This function retrieves a temporary procedure from @plug_in by the  * procedure's @name.  *  * Returns: (nullable) (transfer none): The procedure if registered, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_get_temp_procedure:  * @plug_in:        A #GimpPlugIn  * @procedure_name: The name of a #GimpProcedure added to @plug_in.  *  * This function retrieves a temporary procedure from @plug_in by the  * procedure's @procedure_name.  *  * Returns: (nullable) (transfer none): The procedure if registered, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_plug_in_get_temp_procedure (GimpPlugIn * plug_in,const gchar * name)
+DECL|function|gimp_plug_in_get_temp_procedure (GimpPlugIn * plug_in,const gchar * procedure_name)
 name|gimp_plug_in_get_temp_procedure
 parameter_list|(
 name|GimpPlugIn
@@ -1297,7 +1297,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 block|{
 name|GList
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|name
+name|procedure_name
 operator|!=
 name|NULL
 argument_list|,
@@ -1356,7 +1356,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|name
+name|procedure_name
 argument_list|,
 name|gimp_procedure_get_name
 argument_list|(
@@ -1696,9 +1696,6 @@ name|plug_in
 init|=
 name|user_data
 decl_stmt|;
-name|gulong
-name|bytes
-decl_stmt|;
 while|while
 condition|(
 name|count
@@ -1706,6 +1703,9 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gulong
+name|bytes
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -1845,21 +1845,6 @@ name|plug_in
 init|=
 name|user_data
 decl_stmt|;
-name|GIOStatus
-name|status
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
-name|gsize
-name|count
-decl_stmt|;
-name|gsize
-name|bytes
-decl_stmt|;
 if|if
 condition|(
 name|plug_in
@@ -1871,10 +1856,11 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gsize
 name|count
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|count
@@ -1886,6 +1872,18 @@ operator|->
 name|write_buffer_index
 condition|)
 block|{
+name|GIOStatus
+name|status
+decl_stmt|;
+name|gsize
+name|bytes
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 do|do
 block|{
 name|bytes

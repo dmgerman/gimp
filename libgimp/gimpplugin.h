@@ -387,7 +387,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -418,7 +418,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -447,7 +447,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl
