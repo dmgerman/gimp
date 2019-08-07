@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ed255f0103
+DECL|enum|__anon298189bd0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ed255f0203
+DECL|enum|__anon298189bd0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ed255f0303
+DECL|enum|__anon298189bd0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -807,7 +807,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_proc_browser_dialog_new:  * @title:     The dialog's title.  * @role:      The dialog's role, see gtk_window_set_role().  * @help_func: The function which will be called if the user presses "F1".  * @help_id:   The help_id which will be passed to @help_func.  * @...:       A %NULL-terminated list destribing the action_area buttons.  *  * Create a new #GimpProcBrowserDialog.  *  * Returns: a newly created #GimpProcBrowserDialog.  *  * Since: 2.4  **/
+comment|/**  * gimp_proc_browser_dialog_new:  * @title:     The dialog's title.  * @role:      The dialog's role, see gtk_window_set_role().  * @help_func: (scope async): The function which will be called if  *             the user presses "F1".  * @help_id:   The help_id which will be passed to @help_func.  * @...:       A %NULL-terminated list destribing the action_area buttons.  *  * Create a new #GimpProcBrowserDialog.  *  * Returns: a newly created #GimpProcBrowserDialog.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
