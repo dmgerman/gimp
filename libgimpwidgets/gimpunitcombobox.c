@@ -376,7 +376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_combo_box_new_with_model:  * @model: a GimpUnitStore  *  * Returns: a new #GimpUnitComboBox.  **/
+comment|/**  * gimp_unit_combo_box_new_with_model:  * @model: a #GimpUnitStore  *  * Returns: a new #GimpUnitComboBox.  **/
 end_comment
 
 begin_function
@@ -404,6 +404,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_unit_combo_box_get_active:  * @combo: a #GimpUnitComboBox  *  * Returns the #GimpUnit currently selected in the combo box.  *  * Returns: (transfer none): The selected #GimpUnit.  **/
+end_comment
 
 begin_function
 name|GimpUnit
@@ -473,6 +477,10 @@ name|unit
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_unit_combo_box_set_active:  * @combo: a #GimpUnitComboBox  * @unit:  a #GimpUnit  *  * Sets @unit as the currently selected #GimpUnit on @combo.  **/
+end_comment
 
 begin_function
 name|void
