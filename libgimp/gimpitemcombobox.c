@@ -988,6 +988,10 @@ name|data
 operator|=
 name|data
 expr_stmt|;
+if|if
+condition|(
+name|data_destroy
+condition|)
 name|g_object_weak_ref
 argument_list|(
 name|G_OBJECT
