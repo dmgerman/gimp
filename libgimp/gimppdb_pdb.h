@@ -61,8 +61,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_pdb_dump
+name|_gimp_pdb_dump
 parameter_list|(
 specifier|const
 name|gchar
@@ -73,8 +74,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_pdb_query
+name|_gimp_pdb_query
 parameter_list|(
 specifier|const
 name|gchar
