@@ -247,7 +247,7 @@ name|sel_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
-name|dispaly
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20906c0103
+DECL|enum|__anon27bbce0e0103
 block|{
 DECL|enumerator|COMPUTING_START
 name|COMPUTING_START
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20906c0203
+DECL|enum|__anon27bbce0e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -259,7 +259,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20906c0308
+DECL|struct|__anon27bbce0e0308
 block|{
 DECL|member|buffer
 name|GeglBuffer
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20906c0408
+DECL|struct|__anon27bbce0e0408
 block|{
 DECL|member|closed
 name|GeglBuffer
@@ -9900,7 +9900,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_line_art_allow_closure:  * @mask: the current state of line art closure.  * @pixels: the pixels of a candidate closure (spline or segment).  * @fill_pixels: #GList of unsignificant pixels to bucket fill.  * @significant_size: number of pixels for area to be considered  *                    "significant".  * @minimum_size: number of pixels for area to be allowed.  *  * Checks whether adding the set of points @pixels to @mask will create  * 4-connected background regions whose size (i.e. number of pixels)  * will be below @minimum_size. If it creates such small areas, the  * function will refuse this candidate spline/segment, with the  * exception of very small areas under @significant_size. These  * micro-area are considered "unsignificant" and accepted (because they  * can be created in some conditions, for instance when created curves  * cross or start from a same endpoint), and one pixel for each  * micro-area will be added to @fill_pixels to be later filled along  * with the candidate pixels.  *  * Returns: %TRUE if @pixels should be added to @mask, %FALSE otherwise.  */
+comment|/**  * gimp_line_art_allow_closure:  * @mask: the current state of line art closure.  * @pixels: the pixels of a candidate closure (spline or segment).  * @fill_pixels: #GList of insignificant pixels to bucket fill.  * @significant_size: number of pixels for area to be considered  *                    "significant".  * @minimum_size: number of pixels for area to be allowed.  *  * Checks whether adding the set of points @pixels to @mask will create  * 4-connected background regions whose size (i.e. number of pixels)  * will be below @minimum_size. If it creates such small areas, the  * function will refuse this candidate spline/segment, with the  * exception of very small areas under @significant_size. These  * micro-area are considered "insignificant" and accepted (because they  * can be created in some conditions, for instance when created curves  * cross or start from a same endpoint), and one pixel for each  * micro-area will be added to @fill_pixels to be later filled along  * with the candidate pixels.  *  * Returns: %TRUE if @pixels should be added to @mask, %FALSE otherwise.  */
 end_comment
 
 begin_function

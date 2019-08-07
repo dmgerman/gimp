@@ -52,13 +52,13 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/**  * GimpExportCapabilities:  * @GIMP_EXPORT_CAN_HANDLE_RGB:                 Handles RGB images  * @GIMP_EXPORT_CAN_HANDLE_GRAY:                Handles grayscale images  * @GIMP_EXPORT_CAN_HANDLE_INDEXED:             Handles indexed images  * @GIMP_EXPORT_CAN_HANDLE_BITMAP:              Handles two-color indexed images  * @GIMP_EXPORT_CAN_HANDLE_ALPHA:               Handles alpha channels  * @GIMP_EXPORT_CAN_HANDLE_LAYERS:              Hanldes layers  * @GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION: Handles aminations of layers  * @GIMP_EXPORT_CAN_HANDLE_LAYER_MASKS:         Handles layer masks  * @GIMP_EXPORT_NEEDS_ALPHA:                    Needs alpha channels  *  * The types of images and layers an export procedure can handle  **/
+comment|/**  * GimpExportCapabilities:  * @GIMP_EXPORT_CAN_HANDLE_RGB:                 Handles RGB images  * @GIMP_EXPORT_CAN_HANDLE_GRAY:                Handles grayscale images  * @GIMP_EXPORT_CAN_HANDLE_INDEXED:             Handles indexed images  * @GIMP_EXPORT_CAN_HANDLE_BITMAP:              Handles two-color indexed images  * @GIMP_EXPORT_CAN_HANDLE_ALPHA:               Handles alpha channels  * @GIMP_EXPORT_CAN_HANDLE_LAYERS:              Handles layers  * @GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION: Handles animation of layers  * @GIMP_EXPORT_CAN_HANDLE_LAYER_MASKS:         Handles layer masks  * @GIMP_EXPORT_NEEDS_ALPHA:                    Needs alpha channels  *  * The types of images and layers an export procedure can handle  **/
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c85388b0103
+DECL|enum|__anon2bfa49750103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c85388b0203
+DECL|enum|__anon2bfa49750203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL

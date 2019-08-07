@@ -3445,7 +3445,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_add_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
+comment|/**  * gimp_draw_tool_add_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordinates.  **/
 end_comment
 
 begin_function
