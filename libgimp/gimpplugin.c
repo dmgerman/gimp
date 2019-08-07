@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpplugin_pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure-private.h"
 end_include
 
@@ -57,7 +63,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea47830103
+DECL|enum|__anon29737c530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

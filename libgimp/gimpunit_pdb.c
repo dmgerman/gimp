@@ -19,6 +19,12 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpunit_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * _gimp_unit_get_number_of_units:  *  * Returns the number of units.  *  * This procedure returns the number of defined units.  *  * Returns: The number of units.  **/
 end_comment

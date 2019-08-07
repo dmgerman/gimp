@@ -314,12 +314,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpplugin_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpprogress_pdb.h>
 end_include
 
@@ -339,12 +333,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimptexttool_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit_pdb.h>
 end_include
 
 begin_include
