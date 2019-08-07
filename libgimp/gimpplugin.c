@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e615f00103
+DECL|enum|__anon2c363ec40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1661,6 +1661,70 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_plugin_set_pdb_error_handler:  * @plug_in: A #GimpPlugIn  * @handler: Who is responsible for handling procedure call errors.  *  * Sets an error handler for procedure calls.  *  * This procedure changes the way that errors in procedure calls are  * handled. By default GIMP will raise an error dialog if a procedure  * call made by a plug-in fails. Using this procedure the plug-in can  * change this behavior. If the error handler is set to  * %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for  * calling gimp_get_pdb_error() and handling the error whenever one if  * its procedure calls fails. It can do this by displaying the error  * message or by forwarding it in its own return values.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_plug_in_set_pdb_error_handler (GimpPlugIn * plug_in,GimpPDBErrorHandler handler)
+name|gimp_plug_in_set_pdb_error_handler
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+name|GimpPDBErrorHandler
+name|handler
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|_gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|handler
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_plugin_get_pdb_error_handler:  * @plug_in: A #GimpPlugIn  *  * Retrieves the active error handler for procedure calls.  *  * This procedure retrieves the currently active error handler for  * procedure calls made by the calling plug-in. See  * gimp_plugin_set_pdb_error_handler() for details.  *  * Returns: Who is responsible for handling procedure call errors.  *  * Since: 3.0  **/
+end_comment
+
+begin_function
+name|GimpPDBErrorHandler
+DECL|function|gimp_plug_in_get_pdb_error_handler (GimpPlugIn * plug_in)
+name|gimp_plug_in_get_pdb_error_handler
+parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|,
+name|GIMP_PDB_ERROR_HANDLER_INTERNAL
+argument_list|)
+expr_stmt|;
+return|return
+name|_gimp_plugin_get_pdb_error_handler
+argument_list|()
+return|;
 block|}
 end_function
 

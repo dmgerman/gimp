@@ -146,8 +146,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_plugin_set_pdb_error_handler
+name|_gimp_plugin_set_pdb_error_handler
 parameter_list|(
 name|GimpPDBErrorHandler
 name|handler
@@ -156,8 +157,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|GimpPDBErrorHandler
-name|gimp_plugin_get_pdb_error_handler
+name|_gimp_plugin_get_pdb_error_handler
 parameter_list|(
 name|void
 parameter_list|)
