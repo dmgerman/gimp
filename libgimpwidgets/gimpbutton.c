@@ -33,7 +33,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a415e0103
+DECL|enum|__anon28db123c0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -258,12 +258,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_button_extended_clicked:  * @button: a #GimpButton.  * @state:  a state as found in #GdkEventButton->state, e.g. #GDK_SHIFT_MASK.  *  * Emits the button's "extended_clicked" signal.  **/
+comment|/**  * gimp_button_extended_clicked:  * @button:         a #GimpButton.  * @modifier_state: a state as found in #GdkEventButton->state,  *                  e.g. #GDK_SHIFT_MASK.  *  * Emits the button's "extended_clicked" signal.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_button_extended_clicked (GimpButton * button,GdkModifierType state)
+DECL|function|gimp_button_extended_clicked (GimpButton * button,GdkModifierType modifier_state)
 name|gimp_button_extended_clicked
 parameter_list|(
 name|GimpButton
@@ -271,7 +271,7 @@ modifier|*
 name|button
 parameter_list|,
 name|GdkModifierType
-name|state
+name|modifier_state
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -293,7 +293,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|state
+name|modifier_state
 argument_list|)
 expr_stmt|;
 block|}

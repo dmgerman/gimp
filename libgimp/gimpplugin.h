@@ -187,7 +187,7 @@ modifier|*
 name|plug_in
 parameter_list|)
 function_decl|;
-comment|/**    * GimpPlugInClass::create_procedure:    * @plug_in: a #GimpPlugIn.    * @name: procedure name.    *    * This method should be overridden by all plug-ins and return a newly    * allocated #GimpProcedure named @name.    * It will be called for every @name as returned by query_procedures()    * and init_procedures() so care must be taken to handle them all.    *    * Returns: (transfer full):    *          the procedure to be registered by @plug_in.    */
+comment|/**    * GimpPlugInClass::create_procedure:    * @plug_in:        a #GimpPlugIn.    * @procedure_name: procedure name.    *    * This method should be overridden by all plug-ins and return a newly    * allocated #GimpProcedure named @name.    * It will be called for every @name as returned by query_procedures()    * and init_procedures() so care must be taken to handle them all.    *    * Returns: (transfer full):    *          the procedure to be registered by @plug_in.    */
 DECL|member|create_procedure
 name|GimpProcedure
 modifier|*
@@ -203,7 +203,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|procedure_name
 parameter_list|)
 function_decl|;
 comment|/**    * GimpPlugInClass::quit:    * @plug_in: a #GimpPlugIn.    *    * This method can be overridden by a plug-in which needs to perform    * some actions upon quitting.    */

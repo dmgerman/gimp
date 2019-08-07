@@ -288,7 +288,7 @@ modifier|*
 name|button
 parameter_list|,
 name|GdkModifierType
-name|state
+name|modifier_state
 parameter_list|)
 function_decl|;
 end_function_decl
