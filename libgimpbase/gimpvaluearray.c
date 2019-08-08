@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gobject/gvaluecollector.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbasetypes.h"
 end_include
 
@@ -399,15 +405,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_new_from_types:  * @first_type: first type in the array, or #G_TYPE_NONE.  * @...:        the remaining types in the array, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * values that are initialized to the types passed.  *  * Returns: a newly allocated #GimpValueArray  *  * Since: 3.0  */
+comment|/**  * gimp_value_array_new_from_types:  * @error_msg:  return location for an error message.  * @first_type: first type in the array, or #G_TYPE_NONE.  * @...:        the remaining types in the array, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * values that are given as a list of (#GType, value) pairs,  * terminated by #G_TYPE_NONE.  *  * Returns: (nullable): a newly allocated #GimpValueArray, or %NULL if  *          an error happened.  *  * Since: 3.0  */
 end_comment
 
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_value_array_new_from_types (GType first_type,...)
+DECL|function|gimp_value_array_new_from_types (gchar ** error_msg,GType first_type,...)
 name|gimp_value_array_new_from_types
 parameter_list|(
+name|gchar
+modifier|*
+modifier|*
+name|error_msg
+parameter_list|,
 name|GType
 name|first_type
 parameter_list|,
@@ -432,6 +443,8 @@ name|value_array
 operator|=
 name|gimp_value_array_new_from_types_valist
 argument_list|(
+name|error_msg
+argument_list|,
 name|first_type
 argument_list|,
 name|va_args
@@ -449,15 +462,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_new_from_types_valist:  * @first_type: first type in the array, or #G_TYPE_NONE.  * @va_args:    a va_list of GTypes and values, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * values that are initialized to the types passed.  *  * Returns: a newly allocated #GimpValueArray  *  * Since: 3.0  */
+comment|/**  * gimp_value_array_new_from_types_valist:  * @first_type: first type in the array, or #G_TYPE_NONE.  * @va_args:    a va_list of GTypes and values, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * @va_args given in the order as passed to  * gimp_value_array_new_from_types().  *  * Returns: (nullable): a newly allocated #GimpValueArray, or %NULL if  *          an error happened.  *  * Since: 3.0  */
 end_comment
 
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_value_array_new_from_types_valist (GType first_type,va_list va_args)
+DECL|function|gimp_value_array_new_from_types_valist (gchar ** error_msg,GType first_type,va_list va_args)
 name|gimp_value_array_new_from_types_valist
 parameter_list|(
+name|gchar
+modifier|*
+modifier|*
+name|error_msg
+parameter_list|,
 name|GType
 name|first_type
 parameter_list|,
@@ -493,6 +511,12 @@ name|value
 init|=
 name|G_VALUE_INIT
 decl_stmt|;
+name|gchar
+modifier|*
+name|my_error
+init|=
+name|NULL
+decl_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
@@ -501,6 +525,66 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
+name|G_VALUE_COLLECT
+argument_list|(
+operator|&
+name|value
+argument_list|,
+name|va_args
+argument_list|,
+name|G_VALUE_NOCOPY_CONTENTS
+argument_list|,
+operator|&
+name|my_error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|my_error
+condition|)
+block|{
+if|if
+condition|(
+name|error_msg
+condition|)
+block|{
+operator|*
+name|error_msg
+operator|=
+name|my_error
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"%s: %s"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|my_error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|my_error
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_value_array_unref
+argument_list|(
+name|value_array
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|va_args
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|gimp_value_array_append
 argument_list|(
 name|value_array

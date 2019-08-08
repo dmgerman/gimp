@@ -59,6 +59,8 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
+name|NULL
+argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
@@ -153,6 +155,8 @@ name|args
 operator|=
 name|gimp_value_array_new_from_types
 argument_list|(
+name|NULL
+argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;

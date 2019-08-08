@@ -76,6 +76,11 @@ name|GimpValueArray
 modifier|*
 name|gimp_value_array_new_from_types
 parameter_list|(
+name|gchar
+modifier|*
+modifier|*
+name|error_msg
+parameter_list|,
 name|GType
 name|first_type
 parameter_list|,
@@ -89,6 +94,11 @@ name|GimpValueArray
 modifier|*
 name|gimp_value_array_new_from_types_valist
 parameter_list|(
+name|gchar
+modifier|*
+modifier|*
+name|error_msg
+parameter_list|,
 name|GType
 name|first_type
 parameter_list|,
