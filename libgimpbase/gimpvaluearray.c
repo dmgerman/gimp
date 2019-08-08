@@ -432,6 +432,20 @@ decl_stmt|;
 name|va_list
 name|va_args
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error_msg
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error_msg
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|va_start
 argument_list|(
 name|va_args
@@ -462,7 +476,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_array_new_from_types_valist:  * @first_type: first type in the array, or #G_TYPE_NONE.  * @va_args:    a va_list of GTypes and values, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * @va_args given in the order as passed to  * gimp_value_array_new_from_types().  *  * Returns: (nullable): a newly allocated #GimpValueArray, or %NULL if  *          an error happened.  *  * Since: 3.0  */
+comment|/**  * gimp_value_array_new_from_types_valist:  * @error_msg:  return location for an error message.  * @first_type: first type in the array, or #G_TYPE_NONE.  * @va_args:    a va_list of GTypes and values, terminated by #G_TYPE_NONE  *  * Allocate and initialize a new #GimpValueArray, and fill it with  * @va_args given in the order as passed to  * gimp_value_array_new_from_types().  *  * Returns: (nullable): a newly allocated #GimpValueArray, or %NULL if  *          an error happened.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -486,18 +500,40 @@ block|{
 name|GimpValueArray
 modifier|*
 name|value_array
-init|=
-name|gimp_value_array_new
-argument_list|(
-literal|0
-argument_list|)
 decl_stmt|;
 name|GType
 name|type
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error_msg
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error_msg
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|type
 operator|=
 name|first_type
+expr_stmt|;
+name|value_array
+operator|=
+name|gimp_value_array_new
+argument_list|(
+name|type
+operator|==
+name|G_TYPE_NONE
+condition|?
+literal|0
+else|:
+literal|1
+argument_list|)
 expr_stmt|;
 while|while
 condition|(
