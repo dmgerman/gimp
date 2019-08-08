@@ -526,6 +526,16 @@ name|help
 expr_stmt|;
 name|proc_install
 operator|.
+name|help_id
+operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
+name|name
+expr_stmt|;
+name|proc_install
+operator|.
 name|authors
 operator|=
 operator|(
