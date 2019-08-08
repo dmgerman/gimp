@@ -851,9 +851,7 @@ parameter_list|,
 name|GimpIconType
 name|icon_type
 parameter_list|,
-specifier|const
-name|guint8
-modifier|*
+name|gconstpointer
 name|icon_data
 parameter_list|)
 function_decl|;

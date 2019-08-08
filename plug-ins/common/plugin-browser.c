@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299048940103
+DECL|enum|__anon2b97c3b90103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299048940203
+DECL|enum|__anon2b97c3b90203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299048940308
+DECL|struct|__anon2b97c3b90308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299048940408
+DECL|struct|__anon2b97c3b90408
 block|{
 DECL|member|menu
 name|gchar
@@ -589,17 +589,10 @@ argument_list|,
 literal|"<Image>/Help/Programming"
 argument_list|)
 expr_stmt|;
-name|gimp_procedure_set_icon
+name|gimp_procedure_set_icon_name
 argument_list|(
 name|procedure
 argument_list|,
-name|GIMP_ICON_TYPE_ICON_NAME
-argument_list|,
-operator|(
-specifier|const
-name|guint8
-operator|*
-operator|)
 name|GIMP_ICON_PLUGIN
 argument_list|)
 expr_stmt|;

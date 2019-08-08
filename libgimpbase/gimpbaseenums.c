@@ -4535,11 +4535,11 @@ literal|"icon-name"
 block|}
 block|,
 block|{
-name|GIMP_ICON_TYPE_INLINE_PIXBUF
+name|GIMP_ICON_TYPE_PIXBUF
 block|,
-literal|"GIMP_ICON_TYPE_INLINE_PIXBUF"
+literal|"GIMP_ICON_TYPE_PIXBUF"
 block|,
-literal|"inline-pixbuf"
+literal|"pixbuf"
 block|}
 block|,
 block|{
@@ -4580,13 +4580,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_ICON_TYPE_INLINE_PIXBUF
+name|GIMP_ICON_TYPE_PIXBUF
 block|,
 name|NC_
 argument_list|(
 literal|"icon-type"
 argument_list|,
-literal|"Inline pixbuf"
+literal|"Pixbuf"
 argument_list|)
 block|,
 name|NULL
