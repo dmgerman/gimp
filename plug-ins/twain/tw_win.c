@@ -769,9 +769,9 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* _DEBUG */
-comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
+comment|/*    * Now, call gimp_main_legacy... This is what the MAIN() macro    * would usually do.    */
 return|return
-name|gimp_main
+name|gimp_main_legacy
 argument_list|(
 operator|&
 name|PLUG_IN_INFO
@@ -814,9 +814,9 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* _DEBUG */
-comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
+comment|/*    * Now, call gimp_main_legacy... This is what the MAIN() macro    * would usually do.    */
 return|return
-name|gimp_main
+name|gimp_main_legacy
 argument_list|(
 operator|&
 name|PLUG_IN_INFO
