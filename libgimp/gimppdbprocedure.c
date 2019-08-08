@@ -24,12 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb_pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdbprocedure.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e271d00103
+DECL|enum|__anon27b7e6740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

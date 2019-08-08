@@ -250,9 +250,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|GParamSpec
 modifier|*
-name|gimp_pdb_proc_argument
+name|_gimp_pdb_proc_argument
 parameter_list|(
 specifier|const
 name|gchar
@@ -266,9 +267,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|GParamSpec
 modifier|*
-name|gimp_pdb_proc_return_value
+name|_gimp_pdb_proc_return_value
 parameter_list|(
 specifier|const
 name|gchar

@@ -19,6 +19,12 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppdb_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * _gimp_pdb_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary PDB entry.  *          The returned value must be freed with g_free().  **/
 end_comment
@@ -1215,14 +1221,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_argument:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns the #GParamSpec of procedure_name's argument.  *  * Returns: (transfer full): The GParamSpec of the argument.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_proc_argument:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns the #GParamSpec of procedure_name's argument.  *  * Returns: (transfer full): The GParamSpec of the argument.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_pdb_proc_argument (const gchar * procedure_name,gint arg_num)
-name|gimp_pdb_proc_argument
+DECL|function|_gimp_pdb_proc_argument (const gchar * procedure_name,gint arg_num)
+name|_gimp_pdb_proc_argument
 parameter_list|(
 specifier|const
 name|gchar
@@ -1339,14 +1345,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_return_value:  * @procedure_name: The procedure name.  * @val_num: The return value number.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns the #GParamSpec of procedure_name's return  * value.  *  * Returns: (transfer full): The GParamSpec of the return value.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
+comment|/**  * _gimp_pdb_proc_return_value:  * @procedure_name: The procedure name.  * @val_num: The return value number.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns the #GParamSpec of procedure_name's return  * value.  *  * Returns: (transfer full): The GParamSpec of the return value.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_pdb_proc_return_value (const gchar * procedure_name,gint val_num)
-name|gimp_pdb_proc_return_value
+DECL|function|_gimp_pdb_proc_return_value (const gchar * procedure_name,gint val_num)
+name|_gimp_pdb_proc_return_value
 parameter_list|(
 specifier|const
 name|gchar

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb_pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin_pdb.h"
 end_include
 
