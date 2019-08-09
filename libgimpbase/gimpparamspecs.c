@@ -4220,11 +4220,11 @@ comment|/*  * GIMP_TYPE_STRING_ARRAY  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_string_array_new:  * @data: (array length=length) (transfer none): an array of strings.  * @length: the length of @data.  * @static_data: whether the strings in @data are static strings rather  *               than allocated.  *  * Creates a new #GimpArray containing string data, of size @length.  *  * If @static_data is %TRUE, @data is used as-is.  *  * If @static_data is %FALSE, the string and array will be re-allocated,  * hence you are expected to free your input data after.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  */
+comment|/**  * gimp_string_array_new:  * @data: (array length=length) (transfer none): an array of strings.  * @length: the length of @data.  * @static_data: whether the strings in @data are static strings rather  *               than allocated.  *  * Creates a new #GimpStringArray containing string data, of size @length.  *  * If @static_data is %TRUE, @data is used as-is.  *  * If @static_data is %FALSE, the string and array will be re-allocated,  * hence you are expected to free your input data after.  *  * Returns: (transfer full): a new #GimpStringArray.  */
 end_comment
 
 begin_function
-name|GimpArray
+name|GimpStringArray
 modifier|*
 DECL|function|gimp_string_array_new (const gchar ** data,gsize length,gboolean static_data)
 name|gimp_string_array_new
@@ -4242,7 +4242,7 @@ name|gboolean
 name|static_data
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;
@@ -4275,7 +4275,7 @@ name|array
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpArray
+name|GimpStringArray
 argument_list|)
 expr_stmt|;
 if|if
@@ -4373,17 +4373,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_array_copy:  * @array: an original #GimpArray of strings.  *  * Creates a new #GimpArray containing a deep copy of @array.  *  * Returns: (transfer full) (type GimpArray): a new #GimpArray.  **/
+comment|/**  * gimp_string_array_copy:  * @array: an original #GimpStringArray of strings.  *  * Creates a new #GimpStringArray containing a deep copy of @array.  *  * Returns: (transfer full): a new #GimpStringArray.  **/
 end_comment
 
 begin_function
-name|GimpArray
+name|GimpStringArray
 modifier|*
-DECL|function|gimp_string_array_copy (const GimpArray * array)
+DECL|function|gimp_string_array_copy (const GimpStringArray * array)
 name|gimp_string_array_copy
 parameter_list|(
 specifier|const
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 parameter_list|)
@@ -4420,10 +4420,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_string_array_free (GimpArray * array)
+DECL|function|gimp_string_array_free (GimpStringArray * array)
 name|gimp_string_array_free
 parameter_list|(
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 parameter_list|)
@@ -4491,7 +4491,7 @@ expr_stmt|;
 block|}
 name|g_slice_free
 argument_list|(
-name|GimpArray
+name|GimpStringArray
 argument_list|,
 name|array
 argument_list|)
@@ -4745,7 +4745,7 @@ modifier|*
 name|value
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 init|=
@@ -4833,7 +4833,7 @@ modifier|*
 name|value2
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array1
 init|=
@@ -4846,7 +4846,7 @@ index|]
 operator|.
 name|v_pointer
 decl_stmt|;
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array2
 init|=
@@ -4983,7 +4983,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_get_string_array:  * @value: a #GValue holding a string #GimpArray.  *  * Returns: (transfer none) (array zero-terminated=1): the internal array of strings.  */
+comment|/**  * gimp_value_get_string_array:  * @value: a #GValue holding a string #GimpStringArray.  *  * Returns: (transfer none) (array zero-terminated=1): the internal  *          array of strings.  */
 end_comment
 
 begin_function
@@ -5000,7 +5000,7 @@ modifier|*
 name|value
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;
@@ -5047,7 +5047,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_value_dup_string_array:  * @value: a #GValue holding a string #GimpArray.  *  * Returns: (transfer full) (array zero-terminated=1): a deep copy of the array of strings.  */
+comment|/**  * gimp_value_dup_string_array:  * @value: a #GValue holding a string #GimpStringArray.  *  * Returns: (transfer full) (array zero-terminated=1): a deep copy of  *          the array of strings.  */
 end_comment
 
 begin_function
@@ -5063,7 +5063,7 @@ modifier|*
 name|value
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;
@@ -5179,7 +5179,7 @@ name|gsize
 name|length
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;
@@ -5231,7 +5231,7 @@ name|gsize
 name|length
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;
@@ -5282,7 +5282,7 @@ name|gsize
 name|length
 parameter_list|)
 block|{
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 decl_stmt|;

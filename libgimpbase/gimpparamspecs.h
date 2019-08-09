@@ -1622,8 +1622,17 @@ begin_comment
 comment|/*  * GIMP_TYPE_STRING_ARRAY  */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpStringArray
+typedef|typedef
+name|struct
+name|_GimpArray
+name|GimpStringArray
+typedef|;
+end_typedef
+
 begin_function_decl
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|gimp_string_array_new
 parameter_list|(
@@ -1643,12 +1652,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|gimp_string_array_copy
 parameter_list|(
 specifier|const
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 parameter_list|)
@@ -1659,7 +1668,7 @@ begin_function_decl
 name|void
 name|gimp_string_array_free
 parameter_list|(
-name|GimpArray
+name|GimpStringArray
 modifier|*
 name|array
 parameter_list|)
