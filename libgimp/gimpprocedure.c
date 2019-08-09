@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ea2930103
+DECL|enum|__anon2c483fd70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2267,7 +2267,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_get_icon_file:  * @procedure: a #GimpProcedure.  *  * Gets the file of the icon if one was set for @procedure.  *  * Returns: (nullable): the icon #GFile or %NULL if no file was set.  *  * Since: 3.0  */
+comment|/**  * gimp_procedure_get_icon_file:  * @procedure: a #GimpProcedure.  *  * Gets the file of the icon if one was set for @procedure.  *  * Returns: (nullable) (transfer none): the icon #GFile or %NULL if no  *          file was set.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -2319,7 +2319,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_get_icon_pixbuf:  * @procedure: a #GimpProcedure.  *  * Gets the #GdkPixbuf of the icon if an icon was set this way for  * @procedure.  *  * Returns: (nullable): the icon pixbuf or %NULL if no icon name was set.  *  * Since: 3.0  */
+comment|/**  * gimp_procedure_get_icon_pixbuf:  * @procedure: a #GimpProcedure.  *  * Gets the #GdkPixbuf of the icon if an icon was set this way for  * @procedure.  *  * Returns: (nullable) (transfer none): the icon pixbuf or %NULL if no  *          icon name was set.  *  * Since: 3.0  */
 end_comment
 
 begin_function
