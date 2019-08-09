@@ -1451,28 +1451,7 @@ condition|(
 name|orig_buffer
 condition|)
 block|{
-comment|/*  this happens when transforming a selection cut out of a        *  normal drawable, or the selection        */
-comment|/*  always clip the selection and unfloated channels        *  so they keep their size        */
-if|if
-condition|(
-name|GIMP_IS_CHANNEL
-argument_list|(
-name|active_item
-argument_list|)
-operator|&&
-operator|!
-name|babl_format_has_alpha
-argument_list|(
-name|gegl_buffer_get_format
-argument_list|(
-name|orig_buffer
-argument_list|)
-argument_list|)
-condition|)
-name|clip_result
-operator|=
-name|TRUE
-expr_stmt|;
+comment|/*  this happens when transforming a selection cut out of a        *  normal drawable        */
 name|ret
 operator|=
 name|gimp_drawable_transform_buffer_flip
@@ -1507,18 +1486,6 @@ block|}
 else|else
 block|{
 comment|/*  this happens for entire drawables, paths and layer groups  */
-comment|/*  always clip layer masks so they keep their size        */
-if|if
-condition|(
-name|GIMP_IS_CHANNEL
-argument_list|(
-name|active_item
-argument_list|)
-condition|)
-name|clip_result
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 name|gimp_item_get_linked
@@ -1543,6 +1510,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|clip_result
+operator|=
+name|gimp_item_get_clip
+argument_list|(
+name|active_item
+argument_list|,
+name|clip_result
+argument_list|)
+expr_stmt|;
 name|gimp_item_flip
 argument_list|(
 name|active_item
