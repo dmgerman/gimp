@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28caf0d00103
+DECL|enum|__anon279f6ebd0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -559,6 +559,21 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpTransformResize
+name|gimp_channel_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1253,6 +1268,12 @@ operator|->
 name|transform
 operator|=
 name|gimp_channel_transform
+expr_stmt|;
+name|item_class
+operator|->
+name|get_clip
+operator|=
+name|gimp_channel_get_clip
 expr_stmt|;
 name|item_class
 operator|->
@@ -3832,6 +3853,26 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpTransformResize
+DECL|function|gimp_channel_get_clip (GimpItem * item,GimpTransformResize clip_result)
+name|gimp_channel_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+block|{
+return|return
+name|GIMP_TRANSFORM_RESIZE_CLIP
+return|;
 block|}
 end_function
 

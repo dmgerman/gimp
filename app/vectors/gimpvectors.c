@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ee6840103
+DECL|enum|__anon2bbfc28f0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -469,6 +469,21 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpTransformResize
+name|gimp_vectors_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1033,6 +1048,12 @@ operator|->
 name|transform
 operator|=
 name|gimp_vectors_transform
+expr_stmt|;
+name|item_class
+operator|->
+name|get_clip
+operator|=
+name|gimp_vectors_get_clip
 expr_stmt|;
 name|item_class
 operator|->
@@ -3026,6 +3047,26 @@ argument_list|(
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpTransformResize
+DECL|function|gimp_vectors_get_clip (GimpItem * item,GimpTransformResize clip_result)
+name|gimp_vectors_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+block|{
+return|return
+name|GIMP_TRANSFORM_RESIZE_ADJUST
+return|;
 block|}
 end_function
 

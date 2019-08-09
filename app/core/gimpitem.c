@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28de6c3f0103
+DECL|enum|__anon2a23c13e0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28de6c3f0203
+DECL|enum|__anon2a23c13e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -668,6 +668,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|GimpTransformResize
+name|gimp_item_real_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_DEFINE_TYPE_WITH_PRIVATE
 argument_list|(
@@ -1140,6 +1155,12 @@ operator|->
 name|transform
 operator|=
 name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|get_clip
+operator|=
+name|gimp_item_real_get_clip
 expr_stmt|;
 name|klass
 operator|->
@@ -2879,6 +2900,26 @@ operator|-
 name|offset_y
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpTransformResize
+DECL|function|gimp_item_real_get_clip (GimpItem * item,GimpTransformResize clip_result)
+name|gimp_item_real_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+block|{
+return|return
+name|clip_result
+return|;
 block|}
 end_function
 
@@ -6516,6 +6557,45 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpTransformResize
+DECL|function|gimp_item_get_clip (GimpItem * item,GimpTransformResize clip_result)
+name|gimp_item_get_clip
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpTransformResize
+name|clip_result
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|GIMP_TRANSFORM_RESIZE_ADJUST
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_ITEM_GET_CLASS
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|get_clip
+argument_list|(
+name|item
+argument_list|,
+name|clip_result
+argument_list|)
+return|;
 block|}
 end_function
 
