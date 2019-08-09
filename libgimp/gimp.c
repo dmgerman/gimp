@@ -832,7 +832,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2ad88f580103
+DECL|enum|__anon2b16fd6d0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2383,7 +2383,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none): The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_get_plug_in:  *  * This function returns the plug-in's #GimpPlugIn instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPlugIn singleton, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -2402,7 +2402,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb:  *  * This function returns the plug-in's #GimpPDB instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none): The plug-in's #GimpPDB singleton, or %NULL.  *  * Since: 3.0  **/
+comment|/**  * gimp_get_pdb:  *  * This function returns the plug-in's #GimpPDB instance, which can  * exist exactly once per running plug-in program.  *  * Returns: (transfer none) (nullable): The plug-in's #GimpPDB singleton, or %NULL.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
