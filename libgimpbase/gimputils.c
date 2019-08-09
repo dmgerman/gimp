@@ -1969,6 +1969,7 @@ comment|/**  * gimp_enum_get_desc:  * @enum_class: a #GEnumClass  * @value:     
 end_comment
 
 begin_function
+specifier|const
 name|GimpEnumDesc
 modifier|*
 DECL|function|gimp_enum_get_desc (GEnumClass * enum_class,gint value)
@@ -2028,10 +2029,6 @@ operator|==
 name|value
 condition|)
 return|return
-operator|(
-name|GimpEnumDesc
-operator|*
-operator|)
 name|value_desc
 return|;
 name|value_desc
@@ -2089,6 +2086,7 @@ name|GEnumClass
 modifier|*
 name|enum_class
 decl_stmt|;
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -2158,6 +2156,7 @@ operator|||
 name|value_help
 condition|)
 block|{
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|enum_desc
@@ -2311,13 +2310,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_enum_value_get_desc (GEnumClass * enum_class,GEnumValue * enum_value)
+DECL|function|gimp_enum_value_get_desc (GEnumClass * enum_class,const GEnumValue * enum_value)
 name|gimp_enum_value_get_desc
 parameter_list|(
 name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -2331,6 +2331,7 @@ argument_list|(
 name|enum_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|enum_desc
@@ -2426,13 +2427,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_enum_value_get_help (GEnumClass * enum_class,GEnumValue * enum_value)
+DECL|function|gimp_enum_value_get_help (GEnumClass * enum_class,const GEnumValue * enum_value)
 name|gimp_enum_value_get_help
 parameter_list|(
 name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -2446,6 +2448,7 @@ argument_list|(
 name|enum_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|enum_desc
@@ -2496,13 +2499,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_enum_value_get_abbrev (GEnumClass * enum_class,GEnumValue * enum_value)
+DECL|function|gimp_enum_value_get_abbrev (GEnumClass * enum_class,const GEnumValue * enum_value)
 name|gimp_enum_value_get_abbrev
 parameter_list|(
 name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -2516,6 +2520,7 @@ argument_list|(
 name|enum_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|enum_desc
@@ -2587,6 +2592,7 @@ comment|/**  * gimp_flags_get_first_desc:  * @flags_class: a #GFlagsClass  * @va
 end_comment
 
 begin_function
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 DECL|function|gimp_flags_get_first_desc (GFlagsClass * flags_class,guint value)
@@ -2652,10 +2658,6 @@ operator|->
 name|value
 condition|)
 return|return
-operator|(
-name|GimpFlagsDesc
-operator|*
-operator|)
 name|value_desc
 return|;
 name|value_desc
@@ -2713,6 +2715,7 @@ name|GFlagsClass
 modifier|*
 name|flags_class
 decl_stmt|;
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -2777,6 +2780,7 @@ operator|||
 name|value_help
 condition|)
 block|{
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 name|flags_desc
@@ -2871,13 +2875,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_flags_value_get_desc (GFlagsClass * flags_class,GFlagsValue * flags_value)
+DECL|function|gimp_flags_value_get_desc (GFlagsClass * flags_class,const GFlagsValue * flags_value)
 name|gimp_flags_value_get_desc
 parameter_list|(
 name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -2891,6 +2896,7 @@ argument_list|(
 name|flags_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 name|flags_desc
@@ -2984,13 +2990,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_flags_value_get_help (GFlagsClass * flags_class,GFlagsValue * flags_value)
+DECL|function|gimp_flags_value_get_help (GFlagsClass * flags_class,const GFlagsValue * flags_value)
 name|gimp_flags_value_get_help
 parameter_list|(
 name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -3004,6 +3011,7 @@ argument_list|(
 name|flags_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 name|flags_desc
@@ -3052,13 +3060,14 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_flags_value_get_abbrev (GFlagsClass * flags_class,GFlagsValue * flags_value)
+DECL|function|gimp_flags_value_get_abbrev (GFlagsClass * flags_class,const GFlagsValue * flags_value)
 name|gimp_flags_value_get_abbrev
 parameter_list|(
 name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -3072,6 +3081,7 @@ argument_list|(
 name|flags_class
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 name|flags_desc

@@ -1502,6 +1502,7 @@ name|GEnumClass
 modifier|*
 name|enum_class
 decl_stmt|;
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|type_desc
@@ -1992,6 +1993,7 @@ name|GEnumValue
 modifier|*
 name|arg_value
 decl_stmt|;
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|type_desc

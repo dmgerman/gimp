@@ -205,6 +205,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|gimp_enum_get_desc
@@ -266,6 +267,7 @@ name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -283,6 +285,7 @@ name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -300,6 +303,7 @@ name|GEnumClass
 modifier|*
 name|enum_class
 parameter_list|,
+specifier|const
 name|GEnumValue
 modifier|*
 name|enum_value
@@ -308,6 +312,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpFlagsDesc
 modifier|*
 name|gimp_flags_get_first_desc
@@ -369,6 +374,7 @@ name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -386,6 +392,7 @@ name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value
@@ -403,6 +410,7 @@ name|GFlagsClass
 modifier|*
 name|flags_class
 parameter_list|,
+specifier|const
 name|GFlagsValue
 modifier|*
 name|flags_value

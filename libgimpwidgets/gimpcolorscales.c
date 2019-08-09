@@ -81,7 +81,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b9db860103
+DECL|enum|__anon27ee68ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b9db860203
+DECL|enum|__anon27ee68ed0203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED_U8
 name|GIMP_COLOR_SELECTOR_RED_U8
@@ -1149,6 +1149,7 @@ name|row
 operator|++
 control|)
 block|{
+specifier|const
 name|GimpEnumDesc
 modifier|*
 name|enum_desc
