@@ -8527,10 +8527,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * gimp_prop_path_editor_new:  * @config:                 object to which property is attached.  * @path_property_name:     name of path property.  * @writable_property_name: name of writable path property.  * @filechooser_title:      window title of #GtkFileChooserDialog widget.  *  * Creates a #GimpPathEditor to edit the specified path and writable  * path properties.  *  * Returns: (transfer full): A new #GimpPathEditor.  **/
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_path_editor_new (GObject * config,const gchar * path_property_name,const gchar * writable_property_name,const gchar * filesel_title)
+DECL|function|gimp_prop_path_editor_new (GObject * config,const gchar * path_property_name,const gchar * writable_property_name,const gchar * filechooser_title)
 name|gimp_prop_path_editor_new
 parameter_list|(
 name|GObject
@@ -8550,7 +8554,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filesel_title
+name|filechooser_title
 parameter_list|)
 block|{
 name|GParamSpec
@@ -8678,7 +8682,7 @@ name|editor
 operator|=
 name|gimp_path_editor_new
 argument_list|(
-name|filesel_title
+name|filechooser_title
 argument_list|,
 name|filename
 argument_list|)

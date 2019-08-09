@@ -1095,7 +1095,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6e30ec0108
+DECL|struct|__anon2afb59df0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2426,6 +2426,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_widget_get_color_transform:  * @widget:      a #GtkWidget  * @config:      a #GimpColorConfig  * @src_profile: a #GimpColorProfile  * @src_format:  Babl format for the transform's source pixels  * @dest_format: Babl format for the transforms's destination pixels  *  * This function returns the #GimpColorTransform that transforms pixels  * from @src_profile to the profile of the #GdkMonitor the @widget is  * displayed on.  *  * Returns: (nullable) (transfer full): the #GimpColorTransform.  *  * Since: 2.10  **/
+end_comment
 
 begin_function
 name|GimpColorTransform

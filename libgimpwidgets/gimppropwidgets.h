@@ -672,7 +672,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filesel_title
+name|filechooser_title
 parameter_list|)
 function_decl|;
 end_function_decl
