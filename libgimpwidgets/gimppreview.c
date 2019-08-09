@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e882c0103
+DECL|enum|__anon2b74b03c0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278e882c0203
+DECL|enum|__anon2b74b03c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3325,6 +3325,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_preview_get_default_cursor:  * @preview: a #GimpPreview widget  *  * See gimp_preview_set_default_cursor():  *  * Returns: (transfer none): The @preview's default #GdkCursor.  *  * Since: 3.0  **/
+end_comment
 
 begin_function
 name|GdkCursor

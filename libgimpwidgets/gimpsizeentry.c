@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83f1600103
+DECL|enum|__anon2c37bde70103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1933,6 +1933,10 @@ name|number_of_fields
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_get_unit_combo:  * @gse: a #GimpSizeEntry.  *  * Returns: (transfer none): the size entry's #GimpUnitComboBox.  **/
+end_comment
 
 begin_function
 name|GtkWidget
