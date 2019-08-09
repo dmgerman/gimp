@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26252b0103
+DECL|enum|__anon278230e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1404,6 +1404,8 @@ operator|->
 name|help_id
 argument_list|,
 name|dialog
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

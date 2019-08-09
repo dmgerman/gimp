@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ce6570103
+DECL|enum|__anon2c0826d10103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ce6570203
+DECL|enum|__anon2c0826d10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3185,6 +3185,8 @@ argument_list|,
 name|private
 operator|->
 name|help_id
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

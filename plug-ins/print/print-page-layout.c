@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a984ddb0108
+DECL|struct|__anon289b858f0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a984ddb0203
+DECL|enum|__anon289b858f0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -945,6 +945,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|help_id
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

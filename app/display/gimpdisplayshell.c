@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c783ab70103
+DECL|enum|__anon2bd0ccf90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c783ab70203
+DECL|enum|__anon2bd0ccf90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1646,6 +1646,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

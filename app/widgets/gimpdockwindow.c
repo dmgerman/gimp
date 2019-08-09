@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ed00d50103
+DECL|enum|__anon28927f4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2024,6 +2024,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_DOCK
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

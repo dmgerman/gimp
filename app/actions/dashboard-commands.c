@@ -534,6 +534,8 @@ argument_list|,
 name|GIMP_HELP_DASHBOARD_LOG_RECORD
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog

@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ffad100103
+DECL|enum|__anon2ac616540103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TOOLTIP
 name|GIMP_WIDGET_HELP_TOOLTIP
@@ -278,12 +278,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_connect:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_id:   The @help_id which will be passed to @help_func.  * @help_data: The @help_data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  **/
+comment|/**  * gimp_help_connect:  * @widget:            The widget you want to connect the help accelerator for.  *                     Will be a #GtkWindow in most cases.  * @help_func:         The function which will be called if the user presses "F1".  * @help_id:           The @help_id which will be passed to @help_func.  * @help_data:         The @help_data pointer which will be passed to @help_func.  * @help_data_destroy: Destroy function for @help_data.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_connect (GtkWidget * widget,GimpHelpFunc help_func,const gchar * help_id,gpointer help_data)
+DECL|function|gimp_help_connect (GtkWidget * widget,GimpHelpFunc help_func,const gchar * help_id,gpointer help_data,GDestroyNotify help_data_destroy)
 name|gimp_help_connect
 parameter_list|(
 name|GtkWidget
@@ -300,6 +300,9 @@ name|help_id
 parameter_list|,
 name|gpointer
 name|help_data
+parameter_list|,
+name|GDestroyNotify
+name|help_data_destroy
 parameter_list|)
 block|{
 specifier|static
@@ -392,7 +395,7 @@ argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
+name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -402,6 +405,8 @@ argument_list|,
 literal|"gimp-help-data"
 argument_list|,
 name|help_data
+argument_list|,
+name|help_data_destroy
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

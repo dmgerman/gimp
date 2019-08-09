@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af707e50103
+DECL|enum|__anon2aaaf2a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -513,6 +513,8 @@ operator|->
 name|help_id
 argument_list|,
 name|object
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1708,7 +1710,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af707e50208
+DECL|struct|__anon2aaaf2a90208
 block|{
 DECL|member|dialog
 name|GtkDialog

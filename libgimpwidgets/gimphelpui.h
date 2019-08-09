@@ -83,6 +83,9 @@ name|help_id
 parameter_list|,
 name|gpointer
 name|help_data
+parameter_list|,
+name|GDestroyNotify
+name|help_data_destroy
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -387,6 +387,8 @@ argument_list|,
 name|GIMP_HELP_GRADIENT_SAVE_AS_POV
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialogs_attach_dialog

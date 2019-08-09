@@ -5306,6 +5306,8 @@ argument_list|,
 name|PLUG_IN_PROC
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position

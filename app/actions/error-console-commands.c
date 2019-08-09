@@ -475,6 +475,8 @@ argument_list|,
 name|GIMP_HELP_ERRORS_DIALOG
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
