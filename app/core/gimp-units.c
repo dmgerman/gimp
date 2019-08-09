@@ -553,7 +553,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd7ff20103
+DECL|enum|__anon2c3d82700103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -966,7 +966,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)

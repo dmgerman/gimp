@@ -82,8 +82,12 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299bbf930108
+DECL|struct|__anon2aab8c070108
 block|{
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
 DECL|member|name
 name|gchar
 modifier|*
@@ -111,13 +115,26 @@ name|GimpScannerData
 typedef|;
 end_typedef
 
+begin_macro
+name|G_DEFINE_BOXED_TYPE
+argument_list|(
+argument|GimpScanner
+argument_list|,
+argument|gimp_scanner
+argument_list|,
+argument|gimp_scanner_ref
+argument_list|,
+argument|gimp_scanner_unref
+argument_list|)
+end_macro
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
 specifier|static
-name|GScanner
+name|GimpScanner
 modifier|*
 name|gimp_scanner_new
 parameter_list|(
@@ -147,7 +164,7 @@ specifier|static
 name|void
 name|gimp_scanner_message
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -166,11 +183,11 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Returns:  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
-name|GScanner
+name|GimpScanner
 modifier|*
 DECL|function|gimp_scanner_new_file (const gchar * filename,GError ** error)
 name|gimp_scanner_new_file
@@ -186,7 +203,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 decl_stmt|;
@@ -245,11 +262,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_gfile:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Returns: The new #GScanner.  *  * Since: 2.10  **/
+comment|/**  * gimp_scanner_new_gfile:  * @file: a #GFile  * @error: return location for #GError, or %NULL  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|GScanner
+name|GimpScanner
 modifier|*
 DECL|function|gimp_scanner_new_gfile (GFile * file,GError ** error)
 name|gimp_scanner_new_gfile
@@ -264,7 +281,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 decl_stmt|;
@@ -509,11 +526,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_stream:  * @input: a #GInputStream  * @error: return location for #GError, or %NULL  *  * Returns: The new #GScanner.  *  * Since: 2.10  **/
+comment|/**  * gimp_scanner_new_stream:  * @input: a #GInputStream  * @error: return location for #GError, or %NULL  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|GScanner
+name|GimpScanner
 modifier|*
 DECL|function|gimp_scanner_new_stream (GInputStream * input,GError ** error)
 name|gimp_scanner_new_stream
@@ -528,7 +545,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 decl_stmt|;
@@ -770,11 +787,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_new_string:  * @text:  * @text_len:  * @error:  *  * Returns:  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_new_string:  * @text:  * @text_len:  * @error:  *  * Returns: (transfer full): The new #GimpScanner.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
-name|GScanner
+name|GimpScanner
 modifier|*
 DECL|function|gimp_scanner_new_string (const gchar * text,gint text_len,GError ** error)
 name|gimp_scanner_new_string
@@ -793,7 +810,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 decl_stmt|;
@@ -867,7 +884,7 @@ end_function
 
 begin_function
 specifier|static
-name|GScanner
+name|GimpScanner
 modifier|*
 DECL|function|gimp_scanner_new (const gchar * name,GMappedFile * mapped,gchar * text,GError ** error)
 name|gimp_scanner_new
@@ -891,7 +908,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 decl_stmt|;
@@ -912,6 +929,12 @@ name|g_slice_new0
 argument_list|(
 name|GimpScannerData
 argument_list|)
+expr_stmt|;
+name|data
+operator|->
+name|ref_count
+operator|=
+literal|1
 expr_stmt|;
 name|data
 operator|->
@@ -999,15 +1022,60 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_destroy:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_ref:  * @scanner: #GimpScanner to ref  *  * Adds a reference to a #GimpScanner.  *  * Returns: the same @scanner.  *  * Since: 3.0  */
+end_comment
+
+begin_function
+name|GimpScanner
+modifier|*
+DECL|function|gimp_scanner_ref (GimpScanner * scanner)
+name|gimp_scanner_ref
+parameter_list|(
+name|GimpScanner
+modifier|*
+name|scanner
+parameter_list|)
+block|{
+name|GimpScannerData
+modifier|*
+name|data
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|scanner
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|data
+operator|=
+name|scanner
+operator|->
+name|user_data
+expr_stmt|;
+name|data
+operator|->
+name|ref_count
+operator|++
+expr_stmt|;
+return|return
+name|scanner
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_scanner_unref:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  *  * Unref a #GimpScanner. If the reference count drops to zero, the  * scanner is freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scanner_destroy (GScanner * scanner)
-name|gimp_scanner_destroy
+DECL|function|gimp_scanner_unref (GimpScanner * scanner)
+name|gimp_scanner_unref
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|)
@@ -1029,6 +1097,20 @@ name|scanner
 operator|->
 name|user_data
 expr_stmt|;
+name|data
+operator|->
+name|ref_count
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|data
+operator|->
+name|ref_count
+operator|<
+literal|1
+condition|)
+block|{
 if|if
 condition|(
 name|data
@@ -1075,18 +1157,19 @@ name|scanner
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: the #GTokenType expected as next token.  *  * Returns: %TRUE if the next token is @token, %FALSE otherwise.  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_token:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @token: the #GTokenType expected as next token.  *  * Returns: %TRUE if the next token is @token, %FALSE otherwise.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_token (GScanner * scanner,GTokenType token)
+DECL|function|gimp_scanner_parse_token (GimpScanner * scanner,GTokenType token)
 name|gimp_scanner_parse_token
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1118,15 +1201,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: the expected identifier.  *  * Returns: %TRUE if the next token is an identifier and if its  * value matches @identifier.  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_identifier:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @identifier: the expected identifier.  *  * Returns: %TRUE if the next token is an identifier and if its  * value matches @identifier.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_identifier (GScanner * scanner,const gchar * identifier)
+DECL|function|gimp_scanner_parse_identifier (GimpScanner * scanner,const gchar * identifier)
 name|gimp_scanner_parse_identifier
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1176,15 +1259,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_string:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_string:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_string (GScanner * scanner,gchar ** dest)
+DECL|function|gimp_scanner_parse_string (GimpScanner * scanner,gchar ** dest)
 name|gimp_scanner_parse_string
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1281,15 +1364,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_string_no_validate:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_string_no_validate:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed string  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_string_no_validate (GScanner * scanner,gchar ** dest)
+DECL|function|gimp_scanner_parse_string_no_validate (GimpScanner * scanner,gchar ** dest)
 name|gimp_scanner_parse_string_no_validate
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1350,15 +1433,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of the data to parse  * @dest: Return location for the parsed data  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_data:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @length: Length of the data to parse  * @dest: Return location for the parsed data  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_data (GScanner * scanner,gint length,guint8 ** dest)
+DECL|function|gimp_scanner_parse_data (GimpScanner * scanner,gint length,guint8 ** dest)
 name|gimp_scanner_parse_data
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1423,15 +1506,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_int:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_int:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_int (GScanner * scanner,gint * dest)
+DECL|function|gimp_scanner_parse_int (GimpScanner * scanner,gint * dest)
 name|gimp_scanner_parse_int
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1513,15 +1596,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_int64:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Returns: %TRUE on success  *  * Since: 2.8  **/
+comment|/**  * gimp_scanner_parse_int64:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed integer  *  * Returns: %TRUE on success  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_int64 (GScanner * scanner,gint64 * dest)
+DECL|function|gimp_scanner_parse_int64 (GimpScanner * scanner,gint64 * dest)
 name|gimp_scanner_parse_int64
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1603,15 +1686,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_float:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed float  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_float:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed float  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_float (GScanner * scanner,gdouble * dest)
+DECL|function|gimp_scanner_parse_float (GimpScanner * scanner,gdouble * dest)
 name|gimp_scanner_parse_float
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1739,15 +1822,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_boolean:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed boolean  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_boolean:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Return location for the parsed boolean  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_boolean (GScanner * scanner,gboolean * dest)
+DECL|function|gimp_scanner_parse_boolean (GimpScanner * scanner,gboolean * dest)
 name|gimp_scanner_parse_boolean
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -1871,7 +1954,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon299bbf930203
+DECL|enum|__anon2aab8c070203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1891,15 +1974,15 @@ enum|;
 end_enum
 
 begin_comment
-comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: (out caller-allocates): Pointer to a color to store the result  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_color:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: (out caller-allocates): Pointer to a color to store the result  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_color (GScanner * scanner,GimpRGB * dest)
+DECL|function|gimp_scanner_parse_color (GimpScanner * scanner,GimpRGB * dest)
 name|gimp_scanner_parse_color
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -2316,15 +2399,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scanner_parse_matrix2:  * @scanner: A #GScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a matrix to store the result  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
+comment|/**  * gimp_scanner_parse_matrix2:  * @scanner: A #GimpScanner created by gimp_scanner_new_file() or  *           gimp_scanner_new_string()  * @dest: Pointer to a matrix to store the result  *  * Returns: %TRUE on success  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scanner_parse_matrix2 (GScanner * scanner,GimpMatrix2 * dest)
+DECL|function|gimp_scanner_parse_matrix2 (GimpScanner * scanner,GimpMatrix2 * dest)
 name|gimp_scanner_parse_matrix2
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -2606,10 +2689,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scanner_message (GScanner * scanner,gchar * message,gboolean is_error)
+DECL|function|gimp_scanner_message (GimpScanner * scanner,gchar * message,gboolean is_error)
 name|gimp_scanner_message
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,

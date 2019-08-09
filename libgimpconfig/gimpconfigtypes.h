@@ -60,6 +60,15 @@ comment|/* to satisfy docs */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpScanner
+typedef|typedef
+name|struct
+name|_GScanner
+name|GimpScanner
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorConfig
 typedef|typedef
 name|struct

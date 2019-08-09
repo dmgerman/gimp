@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add15290103
+DECL|enum|__anon27dda7740103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1054,7 +1054,7 @@ argument_list|(
 name|enum_class
 argument_list|)
 expr_stmt|;
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)

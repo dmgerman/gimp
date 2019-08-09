@@ -43,8 +43,30 @@ directive|define
 name|__GIMP_SCANNER_H__
 end_define
 
+begin_comment
+comment|/**  * GIMP_TYPE_SCANNER:  *  * The type ID of the GIMP scanner type which is a boxed type, used to  * read config files.  *  * Since: 3.0  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_SCANNER
+define|#
+directive|define
+name|GIMP_TYPE_SCANNER
+value|(gimp_scnner_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_scanner_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
-name|GScanner
+name|GimpScanner
 modifier|*
 name|gimp_scanner_new_file
 parameter_list|(
@@ -62,7 +84,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GScanner
+name|GimpScanner
 modifier|*
 name|gimp_scanner_new_gfile
 parameter_list|(
@@ -79,7 +101,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GScanner
+name|GimpScanner
 modifier|*
 name|gimp_scanner_new_stream
 parameter_list|(
@@ -96,7 +118,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GScanner
+name|GimpScanner
 modifier|*
 name|gimp_scanner_new_string
 parameter_list|(
@@ -117,10 +139,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_scanner_destroy
+name|GimpScanner
+modifier|*
+name|gimp_scanner_ref
 parameter_list|(
-name|GScanner
+name|GimpScanner
+modifier|*
+name|scanner
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_scanner_unref
+parameter_list|(
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|)
@@ -131,7 +165,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_token
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -145,7 +179,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_identifier
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -161,7 +195,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_string
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -177,7 +211,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_string_no_validate
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -193,7 +227,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_data
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -212,7 +246,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_int
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -227,7 +261,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_int64
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -242,7 +276,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_float
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -257,7 +291,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_boolean
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -272,7 +306,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_color
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,
@@ -287,7 +321,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scanner_parse_matrix2
 parameter_list|(
-name|GScanner
+name|GimpScanner
 modifier|*
 name|scanner
 parameter_list|,

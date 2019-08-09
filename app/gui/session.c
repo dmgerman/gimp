@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c91910103
+DECL|enum|__anon2bb085d50103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -978,7 +978,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)

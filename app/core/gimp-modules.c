@@ -412,7 +412,7 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)

@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f449a0103
+DECL|enum|__anon2892ffe40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2257,7 +2257,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)

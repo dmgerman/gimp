@@ -1030,7 +1030,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_unref:  * @writer: #GimpConfigWriter to unref  *  * Unref a #GimpConfigWriter. If the reference count drops to zero, the  * array including its contents are freed.  *  * Note that at least one of the references has to be dropped using  * gimp_config_writer_finish().  *  * Since: 3.0  */
+comment|/**  * gimp_config_writer_unref:  * @writer: #GimpConfigWriter to unref  *  * Unref a #GimpConfigWriter. If the reference count drops to zero, the  * writer is freed.  *  * Note that at least one of the references has to be dropped using  * gimp_config_writer_finish().  *  * Since: 3.0  */
 end_comment
 
 begin_function

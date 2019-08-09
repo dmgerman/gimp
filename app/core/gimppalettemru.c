@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add7ead0103
+DECL|enum|__anon2b63a6d00103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -400,7 +400,7 @@ block|}
 block|}
 name|end
 label|:
-name|gimp_scanner_destroy
+name|gimp_scanner_unref
 argument_list|(
 name|scanner
 argument_list|)
