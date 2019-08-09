@@ -1210,6 +1210,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_adaptive_supersample_area:  * @x1:             left x coordinate of the area to process.  * @y1:             top y coordinate of the area to process.  * @x2:             right x coordinate of the area to process.  * @y2:             bottom y coordinate of the area to process.  * @max_depth:      maximum depth of supersampling.  * @threshold:      lower threshold of pixel difference that stops  *                  supersampling.  * @render_func:    (scope call): function calculate the color value at  *                  given  coordinates.  * @render_data:    user data passed to @render_func.  * @put_pixel_func: (scope call): function to a pixels to a color at  *                  given coordinates.  * @put_pixel_data: user data passed to @put_pixel_func.  * @progress_func:  (scope call): function to report progress.  * @progress_data:  user data passed to @progress_func.  *  * Returns: the number of pixels processed.  **/
+end_comment
+
 begin_function
 name|gulong
 DECL|function|gimp_adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,GimpRenderFunc render_func,gpointer render_data,GimpPutPixelFunc put_pixel_func,gpointer put_pixel_data,GimpProgressFunc progress_func,gpointer progress_data)
