@@ -1039,10 +1039,12 @@ name|rect
 operator|.
 name|height
 argument_list|,
+operator|-
 name|rect
 operator|.
 name|x
 argument_list|,
+operator|-
 name|rect
 operator|.
 name|y
