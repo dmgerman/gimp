@@ -43,7 +43,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"goat-exercise"
+value|"goat-exercise-c"
 end_define
 
 begin_define
@@ -59,7 +59,7 @@ DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
 name|PLUG_IN_PROC
-value|"plug-in-goat-exercise"
+value|"plug-in-goat-exercise-c"
 end_define
 
 begin_define
