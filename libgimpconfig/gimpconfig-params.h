@@ -112,7 +112,7 @@ DECL|macro|GIMP_CONFIG_PARAM_FLAGS
 define|#
 directive|define
 name|GIMP_CONFIG_PARAM_FLAGS
-value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  GIMP_CONFIG_PARAM_SERIALIZE)
+value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  G_PARAM_STATIC_STRINGS | \                                  GIMP_CONFIG_PARAM_SERIALIZE)
 end_define
 
 begin_comment
