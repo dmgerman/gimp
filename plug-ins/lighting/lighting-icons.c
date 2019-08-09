@@ -27,12 +27,6 @@ directive|include
 file|"images/lighting-icon-images.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"images/lighting-icon-images.c"
-end_include
-
 begin_function
 name|void
 DECL|function|lighting_icons_init (void)

@@ -27,12 +27,6 @@ directive|include
 file|"../lighting/images/lighting-icon-images.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"../lighting/images/lighting-icon-images.c"
-end_include
-
 begin_function
 name|void
 DECL|function|mapobject_icons_init (void)

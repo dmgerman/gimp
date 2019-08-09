@@ -27,12 +27,6 @@ directive|include
 file|"images/imagemap-icon-images.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"images/imagemap-icon-images.c"
-end_include
-
 begin_function
 name|void
 DECL|function|init_icons (void)

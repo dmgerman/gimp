@@ -27,12 +27,6 @@ directive|include
 file|"images/gfig-icon-images.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"images/gfig-icon-images.c"
-end_include
-
 begin_function
 name|void
 DECL|function|gfig_icons_init (void)
