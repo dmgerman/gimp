@@ -242,6 +242,32 @@ literal|"gimp-rotate-layer"
 block|,
 name|GIMP_HELP_TOOL_ROTATE
 block|}
+block|,
+block|{
+literal|"tools-rotate-image-arbitrary"
+block|,
+name|GIMP_ICON_TOOL_ROTATE
+block|,
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"_Arbitrary Rotation..."
+argument_list|)
+block|,
+literal|""
+block|,
+name|NC_
+argument_list|(
+literal|"tools-action"
+argument_list|,
+literal|"Rotate by an arbitrary angle"
+argument_list|)
+block|,
+literal|"gimp-rotate-image"
+block|,
+name|GIMP_HELP_TOOL_ROTATE
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt

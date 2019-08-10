@@ -264,7 +264,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  special case gimp-rotate-tool being called from the Layer menu  */
+comment|/*  special case gimp-rotate-tool being called from the Image or Layer    *  menus    */
 if|if
 condition|(
 name|strcmp
@@ -288,6 +288,32 @@ expr_stmt|;
 name|transform_type
 operator|=
 name|GIMP_TRANSFORM_TYPE_LAYER
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|tool_name
+argument_list|,
+literal|"gimp-rotate-image"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|tool_name
+operator|=
+literal|"gimp-rotate-tool"
+expr_stmt|;
+name|set_transform_type
+operator|=
+name|TRUE
+expr_stmt|;
+name|transform_type
+operator|=
+name|GIMP_TRANSFORM_TYPE_IMAGE
 expr_stmt|;
 block|}
 name|tool_info
