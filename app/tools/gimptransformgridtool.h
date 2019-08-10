@@ -168,12 +168,12 @@ modifier|*
 name|redo_list
 decl_stmt|;
 comment|/*  list of all undone states,                                            NULL when nothing undone */
-DECL|member|hidden_item
-name|GimpItem
+DECL|member|hidden_object
+name|GimpObject
 modifier|*
-name|hidden_item
+name|hidden_object
 decl_stmt|;
-comment|/*  the item that was hidden during                                            the transform                         */
+comment|/*  the object that was hidden during                                            the transform                         */
 DECL|member|widget
 name|GimpToolWidget
 modifier|*
@@ -366,9 +366,9 @@ name|GimpTransformGridTool
 modifier|*
 name|tg_tool
 parameter_list|,
-name|GimpItem
+name|GimpObject
 modifier|*
-name|item
+name|object
 parameter_list|,
 name|GeglBuffer
 modifier|*

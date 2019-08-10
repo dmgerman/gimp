@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be708d90103
+DECL|enum|__anon2a3eff950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -746,9 +746,9 @@ literal|"move-type"
 argument_list|,
 literal|"gimp"
 argument_list|,
-literal|0
+name|GIMP_TRANSFORM_TYPE_LAYER
 argument_list|,
-literal|0
+name|GIMP_TRANSFORM_TYPE_PATH
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

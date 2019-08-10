@@ -4388,6 +4388,14 @@ expr_stmt|;
 block|}
 block|}
 break|break;
+case|case
+name|GIMP_TRANSFORM_TYPE_IMAGE
+case|:
+name|g_return_val_if_reached
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 if|if

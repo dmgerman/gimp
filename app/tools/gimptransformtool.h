@@ -137,10 +137,10 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|item
-name|GimpItem
+DECL|member|object
+name|GimpObject
 modifier|*
-name|item
+name|object
 decl_stmt|;
 DECL|member|x1
 DECL|member|y1
@@ -231,9 +231,9 @@ name|GimpTransformTool
 modifier|*
 name|tr_tool
 parameter_list|,
-name|GimpItem
+name|GimpObject
 modifier|*
-name|item
+name|object
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -286,9 +286,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpItem
+name|GimpObject
 modifier|*
-name|gimp_transform_tool_get_active_item
+name|gimp_transform_tool_get_active_object
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -302,9 +302,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpItem
+name|GimpObject
 modifier|*
-name|gimp_transform_tool_check_active_item
+name|gimp_transform_tool_check_active_object
 parameter_list|(
 name|GimpTransformTool
 modifier|*
