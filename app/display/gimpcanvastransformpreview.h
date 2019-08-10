@@ -148,9 +148,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GimpDrawable
+name|GimpPickable
 modifier|*
-name|drawable
+name|pickable
 parameter_list|,
 specifier|const
 name|GimpMatrix3

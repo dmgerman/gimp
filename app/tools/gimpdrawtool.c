@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimppickable.h"
 end_include
 
 begin_include
@@ -4476,16 +4476,16 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_transform_preview (GimpDrawTool * draw_tool,GimpDrawable * drawable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_draw_tool_add_transform_preview (GimpDrawTool * draw_tool,GimpPickable * pickable,const GimpMatrix3 * transform,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_add_transform_preview
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|GimpDrawable
+name|GimpPickable
 modifier|*
-name|drawable
+name|pickable
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -4521,9 +4521,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_DRAWABLE
+name|GIMP_IS_PICKABLE
 argument_list|(
-name|drawable
+name|pickable
 argument_list|)
 argument_list|,
 name|NULL
@@ -4549,7 +4549,7 @@ operator|->
 name|display
 argument_list|)
 argument_list|,
-name|drawable
+name|pickable
 argument_list|,
 name|transform
 argument_list|,

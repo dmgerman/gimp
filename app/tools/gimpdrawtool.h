@@ -636,9 +636,9 @@ name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|GimpDrawable
+name|GimpPickable
 modifier|*
-name|drawable
+name|pickable
 parameter_list|,
 specifier|const
 name|GimpMatrix3

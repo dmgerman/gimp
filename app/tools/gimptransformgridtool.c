@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
@@ -210,7 +216,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1f4a50108
+DECL|struct|__anon275d47d50108
 block|{
 DECL|member|direction
 name|GimpTransformDirection
@@ -2977,9 +2983,12 @@ name|gimp_draw_tool_add_transform_preview
 argument_list|(
 name|draw_tool
 argument_list|,
+name|GIMP_PICKABLE
+argument_list|(
 name|tool
 operator|->
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|matrix
