@@ -260,7 +260,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dda7740103
+DECL|enum|__anon2a3039180103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2981,7 +2981,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|gimp_scanner_parse_int
+name|gimp_scanner_parse_int64
 argument_list|(
 name|scanner
 argument_list|,
@@ -2996,7 +2996,7 @@ name|min_val
 argument_list|)
 operator|||
 operator|!
-name|gimp_scanner_parse_int
+name|gimp_scanner_parse_int64
 argument_list|(
 name|scanner
 argument_list|,
@@ -3011,7 +3011,7 @@ name|max_val
 argument_list|)
 operator|||
 operator|!
-name|gimp_scanner_parse_int
+name|gimp_scanner_parse_int64
 argument_list|(
 name|scanner
 argument_list|,
@@ -3972,7 +3972,12 @@ name|gimp_config_writer_printf
 argument_list|(
 name|writer
 argument_list|,
-literal|"%d %d %d"
+literal|"%"
+name|G_GINT64_FORMAT
+literal|" %"
+name|G_GINT64_FORMAT
+literal|" %"
+name|G_GINT64_FORMAT
 argument_list|,
 name|param_def
 operator|.
