@@ -443,7 +443,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1f38f90108
+DECL|struct|__anon2a2002300108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1839,6 +1839,13 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|show_image
+condition|)
+block|{
 name|cairo_set_matrix
 argument_list|(
 name|cr
@@ -1908,6 +1915,7 @@ name|height
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|cairo_rectangle_list_destroy

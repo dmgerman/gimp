@@ -371,7 +371,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0ccf90103
+DECL|enum|__anon2990730a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -402,7 +402,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0ccf90203
+DECL|enum|__anon2990730a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1336,6 +1336,12 @@ operator|->
 name|scale_y
 operator|=
 literal|1.0
+expr_stmt|;
+name|shell
+operator|->
+name|show_image
+operator|=
+name|TRUE
 expr_stmt|;
 name|gimp_display_shell_items_init
 argument_list|(
@@ -7369,6 +7375,51 @@ operator|>
 literal|0
 operator|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_display_shell_set_show_image (GimpDisplayShell * shell,gboolean show_image)
+name|gimp_display_shell_set_show_image
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gboolean
+name|show_image
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|show_image
+operator|!=
+name|shell
+operator|->
+name|show_image
+condition|)
+block|{
+name|shell
+operator|->
+name|show_image
+operator|=
+name|show_image
+expr_stmt|;
+name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

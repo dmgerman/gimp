@@ -345,6 +345,11 @@ name|gboolean
 name|proximity
 decl_stmt|;
 comment|/*  is a device in proximity           */
+DECL|member|show_image
+name|gboolean
+name|show_image
+decl_stmt|;
+comment|/*  whether to show the image          */
 DECL|member|selection
 name|Selection
 modifier|*
@@ -1224,6 +1229,20 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_set_show_image
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gboolean
+name|show_image
 parameter_list|)
 function_decl|;
 end_function_decl
