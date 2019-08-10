@@ -216,7 +216,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d47d50108
+DECL|struct|__anon2c3e016b0108
 block|{
 DECL|member|direction
 name|GimpTransformDirection
