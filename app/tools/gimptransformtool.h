@@ -149,7 +149,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  upper left hand coordinate         */
+comment|/*  upper left hand coordinate   */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -157,17 +157,25 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coords            */
+comment|/*  lower right hand coords      */
 DECL|member|transform
 name|GimpMatrix3
 name|transform
 decl_stmt|;
-comment|/*  transformation matrix              */
+comment|/*  transformation matrix        */
 DECL|member|transform_valid
 name|gboolean
 name|transform_valid
 decl_stmt|;
-comment|/*  whether the matrix is valid        */
+comment|/*  whether the matrix is valid  */
+DECL|member|restore_type
+name|gboolean
+name|restore_type
+decl_stmt|;
+DECL|member|saved_type
+name|GimpTransformType
+name|saved_type
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -363,6 +371,20 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_set_type
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|,
+name|GimpTransformType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
