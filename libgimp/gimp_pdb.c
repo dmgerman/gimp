@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: Gimp  * @title: Gimp  * @short_description: Main functions needed for building a GIMP plug-in.  *  * Main functions needed for building a GIMP plug-in.  * This header includes all other GIMP Library headers.  *  * Also contains some miscellaneous procedures that don't fit in any  * other category.  **/
+comment|/**  * SECTION: gimp  * @title: gimp  * @short_description: Main functions needed for building a GIMP plug-in.  *  * Main functions needed for building a GIMP plug-in.  * This header includes all other GIMP Library headers.  *  * Also contains some miscellaneous procedures that don't fit in any  * other category.  **/
 end_comment
 
 begin_comment
