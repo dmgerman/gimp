@@ -134,6 +134,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimploadprocedure.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimplegacy.h>
 end_include
 
@@ -170,13 +176,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpprocedure.h>
+file|<libgimp/gimpprogress.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpprogress.h>
+file|<libgimp/gimpsaveprocedure.h>
 end_include
 
 begin_include

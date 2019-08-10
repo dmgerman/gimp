@@ -57,12 +57,6 @@ directive|include
 file|"gimpplugin_pdb.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpprocedure-private.h"
-end_include
-
 begin_comment
 comment|/*  local function prototpes  */
 end_comment
@@ -672,7 +666,12 @@ condition|(
 name|procedure
 condition|)
 block|{
-name|_gimp_procedure_register
+name|GIMP_PROCEDURE_GET_CLASS
+argument_list|(
+name|procedure
+argument_list|)
+operator|->
+name|install
 argument_list|(
 name|procedure
 argument_list|)
