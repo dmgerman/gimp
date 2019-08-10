@@ -817,7 +817,7 @@ operator|)
 operator|||
 operator|(
 name|new_y
-operator|>
+operator|>=
 name|new_height
 operator|)
 condition|)
@@ -841,7 +841,7 @@ operator|)
 operator|||
 operator|(
 name|new_x
-operator|>
+operator|>=
 name|new_width
 operator|)
 condition|)
