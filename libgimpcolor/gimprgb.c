@@ -2181,15 +2181,6 @@ parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_RGB, GimpParamSpecRGB))
 end_define
 
-begin_typedef
-DECL|typedef|GimpParamSpecRGB
-typedef|typedef
-name|struct
-name|_GimpParamSpecRGB
-name|GimpParamSpecRGB
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpParamSpecRGB
 struct|struct

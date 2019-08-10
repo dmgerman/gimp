@@ -124,6 +124,15 @@ parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_RGB))
 end_define
 
+begin_typedef
+DECL|typedef|GimpParamSpecRGB
+typedef|typedef
+name|struct
+name|_GimpParamSpecRGB
+name|GimpParamSpecRGB
+typedef|;
+end_typedef
+
 begin_decl_stmt
 name|GType
 name|gimp_param_rgb_get_type
@@ -205,7 +214,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2ddb950103
+DECL|enum|__anon28a28a5f0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

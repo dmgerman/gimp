@@ -1416,7 +1416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_string:  * @name:           Canonical name of the property specified.  * @nick:           Nick name of the property specified.  * @blurb:          Description of the property specified.  * @allow_non_utf8: Whether non-UTF-8 strings are allowed.  * @null_ok:        Whether %NULL is allowed.  * @non_empty:      Whether a non-Â½NULL value must be set.  * @default_value:  The default value.  * @flags:          Flags for the property specified.  *  * Creates a new #GimpParamSpecString specifying a  * #GIMP_TYPE_STRING property.  *  * If @allow_non_utf8 is %FALSE, non-valid UTF-8 strings will be  * replaced by question marks.  *  * If @null_ok is %FALSE, %NULL strings will be replaced by an empty  * string.  *  * If @non_empty is %TRUE, empty strings will be replaced by `"none"`.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecString.  *  * Since: 3.0  **/
+comment|/**  * gimp_param_spec_string:  * @name:           Canonical name of the property specified.  * @nick:           Nick name of the property specified.  * @blurb:          Description of the property specified.  * @allow_non_utf8: Whether non-UTF-8 strings are allowed.  * @null_ok:        Whether %NULL is allowed.  * @non_empty:      Whether a non-Â½NULL value must be set.  * @default_value:  The default value.  * @flags:          Flags for the property specified.  *  * Creates a new #GimpParamSpecString specifying a  * #G_TYPE_STRING property.  *  * If @allow_non_utf8 is %FALSE, non-valid UTF-8 strings will be  * replaced by question marks.  *  * If @null_ok is %FALSE, %NULL strings will be replaced by an empty  * string.  *  * If @non_empty is %TRUE, empty strings will be replaced by `"none"`.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecString.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -5354,7 +5354,7 @@ name|type
 operator|=
 name|g_boxed_type_register_static
 argument_list|(
-literal|"GimpRgbArray"
+literal|"GimpRGBArray"
 argument_list|,
 operator|(
 name|GBoxedCopyFunc
@@ -5512,7 +5512,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_rgb_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecRgbArray specifying a  * #GIMP_TYPE_RGB_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecRgbArray.  *  * Since: 3.0  **/
+comment|/**  * gimp_param_spec_rgb_array:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecRGBArray specifying a  * #GIMP_TYPE_RGB_ARRAY property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecRGBArray.  *  * Since: 3.0  **/
 end_comment
 
 begin_function

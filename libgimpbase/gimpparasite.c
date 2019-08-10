@@ -142,15 +142,6 @@ parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_PARASITE, GimpParamSpecParasite))
 end_define
 
-begin_typedef
-DECL|typedef|GimpParamSpecParasite
-typedef|typedef
-name|struct
-name|_GimpParamSpecParasite
-name|GimpParamSpecParasite
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpParamSpecParasite
 struct|struct
@@ -548,7 +539,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_parasite:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecParasite specifying a  * #GIMP_TYPE_PARASITE property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecParasite.  *  * Since: 2.3.8  **/
+comment|/**  * gimp_param_spec_parasite:  * @name:  Canonical name of the property specified.  * @nick:  Nick name of the property specified.  * @blurb: Description of the property specified.  * @flags: Flags for the property specified.  *  * Creates a new #GimpParamSpecParasite specifying a  * #GIMP_TYPE_PARASITE property.  *  * See g_param_spec_internal() for details on property names.  *  * Returns: (transfer full): The newly created #GimpParamSpecParasite.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -713,7 +704,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_parasite_new:  * @name:  the new #GimpParasite name.  * @flags: see libgimpbase/gimpparasite.h macros.  * @size:  the size of @data, including a terminal %NULL byte if needed.  * @data:  (nullable): the data to save in a parasite.  *  * Creates a new parasite and save @data which may be a proper text (in  * which case you may want to set @size as strlen(@data) + 1) or not.  *  * Returns: (transfer full): a new #GimpParasite.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_new:  * @name:  the new #GimpParasite name.  * @flags: see libgimpbase/gimpparasite.h macros.  * @size:  the size of @data, including a terminal %NULL byte if needed.  * @data:  (nullable): the data to save in a parasite.  *  * Creates a new parasite and save @data which may be a proper text (in  * which case you may want to set @size as strlen(@data) + 1) or not.  *  * Returns: (transfer full): a new #GimpParasite.  */
 end_comment
 
 begin_function
@@ -815,7 +806,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_free:  * @parasite: a #GimpParasite  *  * Free @parasite's dynamically allocated memory.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_free:  * @parasite: a #GimpParasite  *  * Free @parasite's dynamically allocated memory.  */
 end_comment
 
 begin_function
@@ -872,7 +863,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_is_type:  * @parasite: a #GimpParasite  * @name:     a parasite name.  *  * Compare parasite's names.  *  * Returns: %TRUE if @parasite is named @name, %FALSE otherwise.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_is_type:  * @parasite: a #GimpParasite  * @name:     a parasite name.  *  * Compare parasite's names.  *  * Returns: %TRUE if @parasite is named @name, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -922,7 +913,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_copy:  * @parasite: a #GimpParasite  *  * Create a new parasite with all the same values.  *  * Returns: (transfer full): a newly allocated #GimpParasite with same contents.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_copy:  * @parasite: a #GimpParasite  *  * Create a new parasite with all the same values.  *  * Returns: (transfer full): a newly allocated #GimpParasite with same contents.  */
 end_comment
 
 begin_function
@@ -970,7 +961,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_compare:  * @a: a #GimpParasite  * @b: a #GimpParasite  *  * Compare parasite's contents.  *  * Returns: %TRUE if @a and @b have same contents, %FALSE otherwise.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_compare:  * @a: a #GimpParasite  * @b: a #GimpParasite  *  * Compare parasite's contents.  *  * Returns: %TRUE if @a and @b have same contents, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1089,7 +1080,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_flags:  * @parasite: a #GimpParasite  *  * Returns: @parasite flags.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_flags:  * @parasite: a #GimpParasite  *  * Returns: @parasite flags.  */
 end_comment
 
 begin_function
@@ -1121,7 +1112,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_is_persistent:  * @parasite: a #GimpParasite  *  * Returns: %TRUE if @parasite is persistent, %FALSE otherwise.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_is_persistent:  * @parasite: a #GimpParasite  *  * Returns: %TRUE if @parasite is persistent, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1157,7 +1148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_is_undoable:  * @parasite: a #GimpParasite  *  * Returns: %TRUE if @parasite is undoable, %FALSE otherwise.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_is_undoable:  * @parasite: a #GimpParasite  *  * Returns: %TRUE if @parasite is undoable, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1193,7 +1184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_has_flag:  * @parasite: a #GimpParasite  * @flag:     a parasite flag  *  * Returns: %TRUE if @parasite has @flag set, %FALSE otherwise.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_has_flag:  * @parasite: a #GimpParasite  * @flag:     a parasite flag  *  * Returns: %TRUE if @parasite has @flag set, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1232,7 +1223,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_name:  * @parasite: a #GimpParasite  *  * Returns: @parasite's name.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_name:  * @parasite: a #GimpParasite  *  * Returns: @parasite's name.  */
 end_comment
 
 begin_function
@@ -1264,7 +1255,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_data:  * @parasite: a #GimpParasite  *  * Gets the parasite's data. It may not necessarily be text, nor is it  * guaranteed to be %NULL-terminated. It is your responsibility to also  * call gimp_parasite_data_size() and to know how to deal with this  * data.  *  * Returns: @parasite's data.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_data:  * @parasite: a #GimpParasite  *  * Gets the parasite's data. It may not necessarily be text, nor is it  * guaranteed to be %NULL-terminated. It is your responsibility to also  * call gimp_parasite_data_size() and to know how to deal with this  * data.  *  * Returns: @parasite's data.  */
 end_comment
 
 begin_function
@@ -1294,7 +1285,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_data_size:  * @parasite: a #GimpParasite  *  * Returns: @parasite's data size.  *  * Since: 1.1.23  */
+comment|/**  * gimp_parasite_data_size:  * @parasite: a #GimpParasite  *  * Returns: @parasite's data size.  */
 end_comment
 
 begin_function

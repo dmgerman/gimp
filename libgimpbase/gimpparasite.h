@@ -92,6 +92,15 @@ parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_PARASITE))
 end_define
 
+begin_typedef
+DECL|typedef|GimpParamSpecParasite
+typedef|typedef
+name|struct
+name|_GimpParamSpecParasite
+name|GimpParamSpecParasite
+typedef|;
+end_typedef
+
 begin_decl_stmt
 name|GType
 name|gimp_param_parasite_get_type

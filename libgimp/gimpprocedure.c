@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3af6af0103
+DECL|enum|__anon2c5934b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1931,7 +1931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_get_author:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's authors given in  *          gimp_procedure_set_attribution().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_get_authors:  * @procedure: A #GimpProcedure.  *  * Returns: The procedure's authors given in  *          gimp_procedure_set_attribution().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
