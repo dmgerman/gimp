@@ -5682,6 +5682,14 @@ literal|"group-image-rotate"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_TRANSFORM
+block|,
+literal|"GIMP_UNDO_GROUP_IMAGE_TRANSFORM"
+block|,
+literal|"group-image-transform"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 block|,
 literal|"GIMP_UNDO_GROUP_IMAGE_CROP"
@@ -6469,6 +6477,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Rotate image"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_IMAGE_TRANSFORM
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Transform image"
 argument_list|)
 block|,
 name|NULL

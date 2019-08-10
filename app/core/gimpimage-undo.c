@@ -2156,6 +2156,9 @@ case|case
 name|GIMP_UNDO_GROUP_IMAGE_ROTATE
 case|:
 case|case
+name|GIMP_UNDO_GROUP_IMAGE_TRANSFORM
+case|:
+case|case
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 case|:
 return|return
