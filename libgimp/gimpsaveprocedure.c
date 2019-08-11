@@ -9,6 +9,13 @@ directive|include
 file|"config.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_DISABLE_COMPAT_CRUFT
+define|#
+directive|define
+name|GIMP_DISABLE_COMPAT_CRUFT
+end_define
+
 begin_include
 include|#
 directive|include
@@ -406,7 +413,7 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-name|gimp_register_save_handler
+name|_gimp_register_save_handler
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -431,7 +438,7 @@ argument_list|(
 name|file_proc
 argument_list|)
 condition|)
-name|gimp_register_file_handler_uri
+name|_gimp_register_file_handler_uri
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -450,7 +457,7 @@ if|if
 condition|(
 name|mime_types
 condition|)
-name|gimp_register_file_handler_mime
+name|_gimp_register_file_handler_mime
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(
@@ -473,7 +480,7 @@ name|priority
 operator|!=
 literal|0
 condition|)
-name|gimp_register_file_handler_priority
+name|_gimp_register_file_handler_priority
 argument_list|(
 name|gimp_procedure_get_name
 argument_list|(

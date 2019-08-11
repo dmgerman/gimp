@@ -152,8 +152,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_magic_load_handler
+name|_gimp_register_magic_load_handler
 parameter_list|(
 specifier|const
 name|gchar
@@ -179,8 +180,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_load_handler
+name|_gimp_register_load_handler
 parameter_list|(
 specifier|const
 name|gchar
@@ -201,8 +203,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_save_handler
+name|_gimp_register_save_handler
 parameter_list|(
 specifier|const
 name|gchar
@@ -223,8 +226,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_file_handler_priority
+name|_gimp_register_file_handler_priority
 parameter_list|(
 specifier|const
 name|gchar
@@ -238,8 +242,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_file_handler_mime
+name|_gimp_register_file_handler_mime
 parameter_list|(
 specifier|const
 name|gchar
@@ -255,8 +260,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_file_handler_uri
+name|_gimp_register_file_handler_uri
 parameter_list|(
 specifier|const
 name|gchar
@@ -267,8 +273,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_file_handler_raw
+name|_gimp_register_file_handler_raw
 parameter_list|(
 specifier|const
 name|gchar
