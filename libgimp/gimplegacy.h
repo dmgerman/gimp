@@ -1053,18 +1053,6 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_pdb_dump
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
 name|gimp_pdb_query
 parameter_list|(
 specifier|const
@@ -1111,18 +1099,6 @@ modifier|*
 modifier|*
 modifier|*
 name|procedure_names
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_pdb_proc_exists
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
 parameter_list|)
 function_decl|;
 end_function_decl

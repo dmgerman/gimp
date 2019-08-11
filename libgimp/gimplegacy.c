@@ -4210,35 +4210,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_dump:  * @filename: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_pdb_dump (const gchar * filename)
-name|gimp_pdb_dump
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_pdb_dump
-argument_list|(
-name|filename
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_pdb_query:  * @name: The regex for procedure name.  * @blurb: The regex for procedure blurb.  * @help: The regex for procedure help.  * @authors: The regex for procedure authors.  * @copyright: The regex for procedure copyright.  * @date: The regex for procedure date.  * @proc_type: The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }.  * @num_matches: (out): The number of matching procedures.  * @procedure_names: (out) (array length=num_matches) (element-type gchar*) (transfer full): The list of procedure names.  *  * Queries the procedural database for its contents using regular  * expression matching.  *  * This procedure queries the contents of the procedural database. It  * is supplied with seven arguments matching procedures on { name,  * blurb, help, authors, copyright, date, procedure type}. This is  * accomplished using regular expression matching. For instance, to  * find all procedures with \"jpeg\" listed in the blurb, all seven  * arguments can be supplied as \".*\", except for the second, which  * can be supplied as \".*jpeg.*\". There are two return arguments for  * this procedure. The first is the number of procedures matching the  * query. The second is a concatenated list of procedure names  * corresponding to those matching the query. If no matching entries  * are found, then the returned string is NULL and the number of  * entries is 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
@@ -4318,35 +4289,6 @@ argument_list|,
 name|num_matches
 argument_list|,
 name|procedure_names
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_pdb_proc_exists:  * @procedure_name: The procedure name.  *  * Checks if the specified procedure exists in the procedural database  *  * This procedure checks if the specified procedure is registered in  * the procedural database.  *  * Returns: Whether a procedure of that name is registered.  *  * Since: 2.6  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_pdb_proc_exists (const gchar * procedure_name)
-name|gimp_pdb_proc_exists
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_pdb_proc_exists
-argument_list|(
-name|procedure_name
 argument_list|)
 return|;
 block|}
