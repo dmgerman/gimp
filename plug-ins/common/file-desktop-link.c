@@ -575,14 +575,6 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|filename
-condition|)
-goto|goto
-name|out
-goto|;
-if|if
-condition|(
-operator|!
 name|g_key_file_load_from_file
 argument_list|(
 name|key_file

@@ -424,6 +424,13 @@ name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_file_procedure_get_handles_uri
+argument_list|(
+name|file_proc
+argument_list|)
+condition|)
 name|gimp_register_file_handler_uri
 argument_list|(
 name|gimp_procedure_get_name
