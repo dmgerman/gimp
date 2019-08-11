@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfcc79a0103
+DECL|enum|__anon2b76aeb60103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -110,7 +110,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfcc79a0203
+DECL|enum|__anon2b76aeb60203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -124,8 +124,8 @@ block|,
 DECL|enumerator|SEARCH_TYPE_HELP
 name|SEARCH_TYPE_HELP
 block|,
-DECL|enumerator|SEARCH_TYPE_AUTHOR
-name|SEARCH_TYPE_AUTHOR
+DECL|enumerator|SEARCH_TYPE_AUTHORS
+name|SEARCH_TYPE_AUTHORS
 block|,
 DECL|enumerator|SEARCH_TYPE_COPYRIGHT
 name|SEARCH_TYPE_COPYRIGHT
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfcc79a0303
+DECL|enum|__anon2b76aeb60303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -468,10 +468,10 @@ name|SEARCH_TYPE_HELP
 argument_list|,
 name|_
 argument_list|(
-literal|"by author"
+literal|"by authors"
 argument_list|)
 argument_list|,
-name|SEARCH_TYPE_AUTHOR
+name|SEARCH_TYPE_AUTHORS
 argument_list|,
 name|_
 argument_list|(
@@ -1626,7 +1626,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SEARCH_TYPE_AUTHOR
+name|SEARCH_TYPE_AUTHORS
 case|:
 name|gimp_browser_show_message
 argument_list|(
@@ -1634,7 +1634,7 @@ name|browser
 argument_list|,
 name|_
 argument_list|(
-literal|"Searching by author"
+literal|"Searching by authors"
 argument_list|)
 argument_list|)
 expr_stmt|;

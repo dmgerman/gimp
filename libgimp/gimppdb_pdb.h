@@ -96,7 +96,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -162,7 +162,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|author
+name|authors
 parameter_list|,
 name|gchar
 modifier|*

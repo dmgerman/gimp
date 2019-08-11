@@ -354,7 +354,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
 specifier|const
 name|gchar
@@ -419,7 +419,7 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|author
+name|authors
 operator|=
 name|g_value_get_string
 argument_list|(
@@ -486,7 +486,7 @@ name|blurb
 argument_list|,
 name|help
 argument_list|,
-name|author
+name|authors
 argument_list|,
 name|copyright
 argument_list|,
@@ -801,7 +801,7 @@ name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
-name|author
+name|authors
 init|=
 name|NULL
 decl_stmt|;
@@ -880,7 +880,7 @@ operator|&
 name|help
 argument_list|,
 operator|&
-name|author
+name|authors
 argument_list|,
 operator|&
 name|copyright
@@ -964,7 +964,7 @@ argument_list|,
 literal|3
 argument_list|)
 argument_list|,
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|g_value_take_string
@@ -2725,7 +2725,7 @@ literal|"gimp-pdb-query"
 argument_list|,
 literal|"Queries the procedural database for its contents using regular expression matching."
 argument_list|,
-literal|"This procedure queries the contents of the procedural database. It is supplied with seven arguments matching procedures on { name, blurb, help, author, copyright, date, procedure type}. This is accomplished using regular expression matching. For instance, to find all procedures with \"jpeg\" listed in the blurb, all seven arguments can be supplied as \".*\", except for the second, which can be supplied as \".*jpeg.*\". There are two return arguments for this procedure. The first is the number of procedures matching the query. The second is a concatenated list of procedure names corresponding to those matching the query. If no matching entries are found, then the returned string is NULL and the number of entries is 0."
+literal|"This procedure queries the contents of the procedural database. It is supplied with seven arguments matching procedures on { name, blurb, help, authors, copyright, date, procedure type}. This is accomplished using regular expression matching. For instance, to find all procedures with \"jpeg\" listed in the blurb, all seven arguments can be supplied as \".*\", except for the second, which can be supplied as \".*jpeg.*\". There are two return arguments for this procedure. The first is the number of procedures matching the query. The second is a concatenated list of procedure names corresponding to those matching the query. If no matching entries are found, then the returned string is NULL and the number of entries is 0."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -2814,11 +2814,11 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
-literal|"author"
+literal|"authors"
 argument_list|,
-literal|"author"
+literal|"authors"
 argument_list|,
-literal|"The regex for procedure author"
+literal|"The regex for procedure authors"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3071,7 +3071,7 @@ literal|"gimp-pdb-proc-info"
 argument_list|,
 literal|"Queries the procedural database for information on the specified procedure."
 argument_list|,
-literal|"This procedure returns information on the specified procedure. A short blurb, detailed help, author(s), copyright information, procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp-procedural-db-proc-arg' and 'gimp-procedural-db-proc-val' procedures."
+literal|"This procedure returns information on the specified procedure. A short blurb, detailed help, authors, copyright information, procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp-procedural-db-proc-arg' and 'gimp-procedural-db-proc-val' procedures."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3160,11 +3160,11 @@ name|procedure
 argument_list|,
 name|gimp_param_spec_string
 argument_list|(
-literal|"author"
+literal|"authors"
 argument_list|,
-literal|"author"
+literal|"authors"
 argument_list|,
-literal|"Author(s) of the procedure"
+literal|"Authors of the procedure"
 argument_list|,
 name|FALSE
 argument_list|,

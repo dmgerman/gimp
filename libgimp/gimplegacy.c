@@ -394,12 +394,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_procedure:  * @name:                                      the procedure's name.  * @blurb:                                     a short text describing what the procedure does.  * @help:                                      the help text for the procedure (usually considerably  *                                             longer than @blurb).  * @author:                                    the procedure's author(s).  * @copyright:                                 the procedure's copyright.  * @date:                                      the date the procedure was added.  * @menu_label:                                the label to use for the procedure's menu entry,  *                                             or %NULL if the procedure has no menu entry.  * @image_types:                               the drawable types the procedure can handle.  * @type:                                      the type of the procedure.  * @n_params:                                  the number of parameters the procedure takes.  * @n_return_vals:                             the number of return values the procedure returns.  * @params: (array length=n_params):           the procedure's parameters.  * @return_vals: (array length=n_return_vals): the procedure's return values.  *  * Installs a new procedure with the PDB (procedural database).  *  * Call this function from within your plug-in's query() function for  * each procedure your plug-in implements.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * The @blurb, @help, @author, @copyright and @date parameters are  * optional but then you shouldn't write procedures without proper  * documentation, should you.  *  * @menu_label defines the label that should be used for the  * procedure's menu entry. The position where to register in the menu  * hierarchy is chosen using gimp_plugin_menu_register().  *  * It is possible to register a procedure only for keyboard-shortcut  * activation by passing a @menu_label to gimp_install_procedure() but  * not registering any menu path with gimp_plugin_menu_register(). In  * this case, the given @menu_label will only be used as the  * procedure's user-visible name in the keyboard shortcut editor.  *  * @image_types is a comma separated list of image types, or actually  * drawable types, that this procedure can deal with. Wildcards are  * possible here, so you could say "RGB*" instead of "RGB, RGBA" or  * "*" for all image types. If the procedure doesn't need an image to  * run, use the empty string.  *  * @type must be one of %GIMP_PLUGIN or %GIMP_EXTENSION. Note that  * temporary procedures must be installed using  * gimp_install_temp_proc().  *  * NOTE: Unlike the GIMP 1.2 API, %GIMP_EXTENSION no longer means  * that the procedure's menu prefix is&lt;Toolbox&gt;, but that  * it will install temporary procedures. Therefore, the GIMP core  * will wait until the %GIMP_EXTENSION procedure has called  * gimp_extension_ack(), which means that the procedure has done  * its initialization, installed its temporary procedures and is  * ready to run.  *  *<emphasis>Not calling gimp_extension_ack() from a %GIMP_EXTENSION  * procedure will cause the GIMP core to lock up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no parameters  * (@n_params == 0 and @params == %NULL) is an "automatic" extension  * that will be automatically started on each GIMP startup.  **/
+comment|/**  * gimp_install_procedure:  * @name:                                      the procedure's name.  * @blurb:                                     a short text describing what the procedure does.  * @help:                                      the help text for the procedure (usually considerably  *                                             longer than @blurb).  * @authors:                                   the procedure's authors.  * @copyright:                                 the procedure's copyright.  * @date:                                      the date the procedure was added.  * @menu_label:                                the label to use for the procedure's menu entry,  *                                             or %NULL if the procedure has no menu entry.  * @image_types:                               the drawable types the procedure can handle.  * @type:                                      the type of the procedure.  * @n_params:                                  the number of parameters the procedure takes.  * @n_return_vals:                             the number of return values the procedure returns.  * @params: (array length=n_params):           the procedure's parameters.  * @return_vals: (array length=n_return_vals): the procedure's return values.  *  * Installs a new procedure with the PDB (procedural database).  *  * Call this function from within your plug-in's query() function for  * each procedure your plug-in implements.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * The @blurb, @help, @authors, @copyright and @date parameters are  * optional but then you shouldn't write procedures without proper  * documentation, should you.  *  * @menu_label defines the label that should be used for the  * procedure's menu entry. The position where to register in the menu  * hierarchy is chosen using gimp_plugin_menu_register().  *  * It is possible to register a procedure only for keyboard-shortcut  * activation by passing a @menu_label to gimp_install_procedure() but  * not registering any menu path with gimp_plugin_menu_register(). In  * this case, the given @menu_label will only be used as the  * procedure's user-visible name in the keyboard shortcut editor.  *  * @image_types is a comma separated list of image types, or actually  * drawable types, that this procedure can deal with. Wildcards are  * possible here, so you could say "RGB*" instead of "RGB, RGBA" or  * "*" for all image types. If the procedure doesn't need an image to  * run, use the empty string.  *  * @type must be one of %GIMP_PLUGIN or %GIMP_EXTENSION. Note that  * temporary procedures must be installed using  * gimp_install_temp_proc().  *  * NOTE: Unlike the GIMP 1.2 API, %GIMP_EXTENSION no longer means  * that the procedure's menu prefix is&lt;Toolbox&gt;, but that  * it will install temporary procedures. Therefore, the GIMP core  * will wait until the %GIMP_EXTENSION procedure has called  * gimp_extension_ack(), which means that the procedure has done  * its initialization, installed its temporary procedures and is  * ready to run.  *  *<emphasis>Not calling gimp_extension_ack() from a %GIMP_EXTENSION  * procedure will cause the GIMP core to lock up.</emphasis>  *  * Additionally, a %GIMP_EXTENSION procedure with no parameters  * (@n_params == 0 and @params == %NULL) is an "automatic" extension  * that will be automatically started on each GIMP startup.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_install_procedure (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_label,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
+DECL|function|gimp_install_procedure (const gchar * name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * menu_label,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
 name|gimp_install_procedure
 parameter_list|(
 specifier|const
@@ -420,7 +420,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -587,7 +587,7 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|author
+name|authors
 expr_stmt|;
 name|proc_install
 operator|.
@@ -869,12 +869,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_label:    the procedure's menu label, or %NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params: (array length=n_params):  *                 the procedure's parameters.  * @return_vals: (array length=n_return_vals):  *                 the procedure's return values.  * @run_proc: (closure) (scope async):  *                 the function to call for executing the procedure.  *  * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be %GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
+comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @authors:       the procedure's authors.  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_label:    the procedure's menu label, or %NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params: (array length=n_params):  *                 the procedure's parameters.  * @return_vals: (array length=n_return_vals):  *                 the procedure's return values.  * @run_proc: (closure) (scope async):  *                 the function to call for executing the procedure.  *  * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your plug-in's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be %GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, plug-in communication is triggered by the plug-in  * and the GIMP core only responds to the plug-in's requests. You must  * explicitly enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_install_temp_proc (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_label,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals,GimpRunProc run_proc)
+DECL|function|gimp_install_temp_proc (const gchar * name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * menu_label,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals,GimpRunProc run_proc)
 name|gimp_install_temp_proc
 parameter_list|(
 specifier|const
@@ -895,7 +895,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -1020,7 +1020,7 @@ name|blurb
 argument_list|,
 name|help
 argument_list|,
-name|author
+name|authors
 argument_list|,
 name|copyright
 argument_list|,
@@ -4239,12 +4239,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_query:  * @name: The regex for procedure name.  * @blurb: The regex for procedure blurb.  * @help: The regex for procedure help.  * @author: The regex for procedure author.  * @copyright: The regex for procedure copyright.  * @date: The regex for procedure date.  * @proc_type: The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }.  * @num_matches: (out): The number of matching procedures.  * @procedure_names: (out) (array length=num_matches) (element-type gchar*) (transfer full): The list of procedure names.  *  * Queries the procedural database for its contents using regular  * expression matching.  *  * This procedure queries the contents of the procedural database. It  * is supplied with seven arguments matching procedures on { name,  * blurb, help, author, copyright, date, procedure type}. This is  * accomplished using regular expression matching. For instance, to  * find all procedures with \"jpeg\" listed in the blurb, all seven  * arguments can be supplied as \".*\", except for the second, which  * can be supplied as \".*jpeg.*\". There are two return arguments for  * this procedure. The first is the number of procedures matching the  * query. The second is a concatenated list of procedure names  * corresponding to those matching the query. If no matching entries  * are found, then the returned string is NULL and the number of  * entries is 0.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_pdb_query:  * @name: The regex for procedure name.  * @blurb: The regex for procedure blurb.  * @help: The regex for procedure help.  * @authors: The regex for procedure authors.  * @copyright: The regex for procedure copyright.  * @date: The regex for procedure date.  * @proc_type: The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }.  * @num_matches: (out): The number of matching procedures.  * @procedure_names: (out) (array length=num_matches) (element-type gchar*) (transfer full): The list of procedure names.  *  * Queries the procedural database for its contents using regular  * expression matching.  *  * This procedure queries the contents of the procedural database. It  * is supplied with seven arguments matching procedures on { name,  * blurb, help, authors, copyright, date, procedure type}. This is  * accomplished using regular expression matching. For instance, to  * find all procedures with \"jpeg\" listed in the blurb, all seven  * arguments can be supplied as \".*\", except for the second, which  * can be supplied as \".*jpeg.*\". There are two return arguments for  * this procedure. The first is the number of procedures matching the  * query. The second is a concatenated list of procedure names  * corresponding to those matching the query. If no matching entries  * are found, then the returned string is NULL and the number of  * entries is 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_query (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_matches,gchar *** procedure_names)
+DECL|function|gimp_pdb_query (const gchar * name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_matches,gchar *** procedure_names)
 name|gimp_pdb_query
 parameter_list|(
 specifier|const
@@ -4265,7 +4265,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -4307,7 +4307,7 @@ name|blurb
 argument_list|,
 name|help
 argument_list|,
-name|author
+name|authors
 argument_list|,
 name|copyright
 argument_list|,
@@ -4353,12 +4353,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_proc_info:  * @procedure_name: The procedure name.  * @blurb: A short blurb.  * @help: Detailed procedure help.  * @author: Author(s) of the procedure.  * @copyright: The copyright.  * @date: Copyright date.  * @proc_type: The procedure type.  * @num_args: The number of input arguments.  * @num_values: The number of return values.  * @args: The input arguments.  * @return_vals: The return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, author(s), copyright information,  * procedure type, number of input, and number of return values are  * returned. Additionally this function returns specific information  * about each input argument and return value.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_pdb_proc_info:  * @procedure_name: The procedure name.  * @blurb: A short blurb.  * @help: Detailed procedure help.  * @authors: Authors of the procedure.  * @copyright: The copyright.  * @date: Copyright date.  * @proc_type: The procedure type.  * @num_args: The number of input arguments.  * @num_values: The number of return values.  * @args: The input arguments.  * @return_vals: The return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, authors, copyright information,  * procedure type, number of input, and number of return values are  * returned. Additionally this function returns specific information  * about each input argument and return value.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_info (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GimpParamDef ** args,GimpParamDef ** return_vals)
+DECL|function|gimp_pdb_proc_info (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** authors,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GimpParamDef ** args,GimpParamDef ** return_vals)
 name|gimp_pdb_proc_info
 parameter_list|(
 specifier|const
@@ -4379,7 +4379,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|author
+name|authors
 parameter_list|,
 name|gchar
 modifier|*
@@ -4432,7 +4432,7 @@ name|blurb
 argument_list|,
 name|help
 argument_list|,
-name|author
+name|authors
 argument_list|,
 name|copyright
 argument_list|,

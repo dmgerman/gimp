@@ -201,7 +201,7 @@ name|help
 decl_stmt|;
 name|gchar
 modifier|*
-name|author
+name|authors
 decl_stmt|;
 name|gchar
 modifier|*
@@ -256,7 +256,7 @@ operator|&
 name|help
 argument_list|,
 operator|&
-name|author
+name|authors
 argument_list|,
 operator|&
 name|copyright
@@ -320,11 +320,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|author
+name|authors
 operator|&&
 name|strlen
 argument_list|(
-name|author
+name|authors
 argument_list|)
 operator|<
 literal|2
@@ -332,7 +332,7 @@ condition|)
 name|g_clear_pointer
 argument_list|(
 operator|&
-name|author
+name|authors
 argument_list|,
 name|g_free
 argument_list|)
@@ -1147,7 +1147,7 @@ operator|!
 name|help
 operator|&&
 operator|!
-name|author
+name|authors
 operator|&&
 operator|!
 name|date
@@ -1278,11 +1278,11 @@ name|label
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* show the author& the copyright */
+comment|/* show the authors& the copyright */
 if|if
 condition|(
 operator|!
-name|author
+name|authors
 operator|&&
 operator|!
 name|date
@@ -1345,14 +1345,14 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|author
+name|authors
 condition|)
 block|{
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_selectable
@@ -1409,7 +1409,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Author:"
+literal|"Authors:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1594,7 +1594,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|author
+name|authors
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -239,12 +239,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_query:  * @name: The regex for procedure name.  * @blurb: The regex for procedure blurb.  * @help: The regex for procedure help.  * @author: The regex for procedure author.  * @copyright: The regex for procedure copyright.  * @date: The regex for procedure date.  * @proc_type: The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }.  * @num_matches: (out): The number of matching procedures.  * @procedure_names: (out) (array length=num_matches) (element-type gchar*) (transfer full): The list of procedure names.  *  * Queries the procedural database for its contents using regular  * expression matching.  *  * This procedure queries the contents of the procedural database. It  * is supplied with seven arguments matching procedures on { name,  * blurb, help, author, copyright, date, procedure type}. This is  * accomplished using regular expression matching. For instance, to  * find all procedures with \"jpeg\" listed in the blurb, all seven  * arguments can be supplied as \".*\", except for the second, which  * can be supplied as \".*jpeg.*\". There are two return arguments for  * this procedure. The first is the number of procedures matching the  * query. The second is a concatenated list of procedure names  * corresponding to those matching the query. If no matching entries  * are found, then the returned string is NULL and the number of  * entries is 0.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_query:  * @name: The regex for procedure name.  * @blurb: The regex for procedure blurb.  * @help: The regex for procedure help.  * @authors: The regex for procedure authors.  * @copyright: The regex for procedure copyright.  * @date: The regex for procedure date.  * @proc_type: The regex for procedure type: { 'Internal GIMP procedure', 'GIMP Plug-in', 'GIMP Extension', 'Temporary Procedure' }.  * @num_matches: (out): The number of matching procedures.  * @procedure_names: (out) (array length=num_matches) (element-type gchar*) (transfer full): The list of procedure names.  *  * Queries the procedural database for its contents using regular  * expression matching.  *  * This procedure queries the contents of the procedural database. It  * is supplied with seven arguments matching procedures on { name,  * blurb, help, authors, copyright, date, procedure type}. This is  * accomplished using regular expression matching. For instance, to  * find all procedures with \"jpeg\" listed in the blurb, all seven  * arguments can be supplied as \".*\", except for the second, which  * can be supplied as \".*jpeg.*\". There are two return arguments for  * this procedure. The first is the number of procedures matching the  * query. The second is a concatenated list of procedure names  * corresponding to those matching the query. If no matching entries  * are found, then the returned string is NULL and the number of  * entries is 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_query (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_matches,gchar *** procedure_names)
+DECL|function|_gimp_pdb_query (const gchar * name,const gchar * blurb,const gchar * help,const gchar * authors,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_matches,gchar *** procedure_names)
 name|_gimp_pdb_query
 parameter_list|(
 specifier|const
@@ -265,7 +265,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|author
+name|authors
 parameter_list|,
 specifier|const
 name|gchar
@@ -333,7 +333,7 @@ name|help
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|author
+name|authors
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -563,12 +563,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_pdb_proc_info:  * @procedure_name: The procedure name.  * @blurb: (out) (transfer full): A short blurb.  * @help: (out) (transfer full): Detailed procedure help.  * @author: (out) (transfer full): Author(s) of the procedure.  * @copyright: (out) (transfer full): The copyright.  * @date: (out) (transfer full): Copyright date.  * @proc_type: (out): The procedure type.  * @num_args: (out): The number of input arguments.  * @num_values: (out): The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, author(s), copyright information,  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the gimp_procedural_db_proc_arg() and  * gimp_procedural_db_proc_val() procedures.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_pdb_proc_info:  * @procedure_name: The procedure name.  * @blurb: (out) (transfer full): A short blurb.  * @help: (out) (transfer full): Detailed procedure help.  * @authors: (out) (transfer full): Authors of the procedure.  * @copyright: (out) (transfer full): The copyright.  * @date: (out) (transfer full): Copyright date.  * @proc_type: (out): The procedure type.  * @num_args: (out): The number of input arguments.  * @num_values: (out): The number of return values.  *  * Queries the procedural database for information on the specified  * procedure.  *  * This procedure returns information on the specified procedure. A  * short blurb, detailed help, authors, copyright information,  * procedure type, number of input, and number of return values are  * returned. For specific information on each input argument and return  * value, use the gimp_procedural_db_proc_arg() and  * gimp_procedural_db_proc_val() procedures.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_pdb_proc_info (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+DECL|function|_gimp_pdb_proc_info (const gchar * procedure_name,gchar ** blurb,gchar ** help,gchar ** authors,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
 name|_gimp_pdb_proc_info
 parameter_list|(
 specifier|const
@@ -589,7 +589,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
-name|author
+name|authors
 parameter_list|,
 name|gchar
 modifier|*
@@ -688,7 +688,7 @@ operator|=
 name|NULL
 expr_stmt|;
 operator|*
-name|author
+name|authors
 operator|=
 name|NULL
 expr_stmt|;
@@ -763,7 +763,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 operator|*
-name|author
+name|authors
 operator|=
 name|g_value_dup_string
 argument_list|(
