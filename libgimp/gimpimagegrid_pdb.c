@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpimagegrid  * @title: gimpimagegrid  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_grid_get_spacing:  * @image_ID: The image.  * @xspacing: (out): The image's grid horizontal spacing.  * @yspacing: (out): The image's grid vertical spacing.  *  * Gets the spacing of an image's grid.  *  * This procedure retrieves the horizontal and vertical spacing of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_spacing:  * @image: The image.  * @xspacing: (out): The image's grid horizontal spacing.  * @yspacing: (out): The image's grid vertical spacing.  *  * Gets the spacing of an image's grid.  *  * This procedure retrieves the horizontal and vertical spacing of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_get_spacing (gint32 image_ID,gdouble * xspacing,gdouble * yspacing)
+DECL|function|gimp_image_grid_get_spacing (GimpImage * image,gdouble * xspacing,gdouble * yspacing)
 name|gimp_image_grid_get_spacing
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 modifier|*
@@ -72,7 +73,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -175,16 +179,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_set_spacing:  * @image_ID: The image.  * @xspacing: The image's grid horizontal spacing.  * @yspacing: The image's grid vertical spacing.  *  * Sets the spacing of an image's grid.  *  * This procedure sets the horizontal and vertical spacing of an  * image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_set_spacing:  * @image: The image.  * @xspacing: The image's grid horizontal spacing.  * @yspacing: The image's grid vertical spacing.  *  * Sets the spacing of an image's grid.  *  * This procedure sets the horizontal and vertical spacing of an  * image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_set_spacing (gint32 image_ID,gdouble xspacing,gdouble yspacing)
+DECL|function|gimp_image_grid_set_spacing (GimpImage * image,gdouble xspacing,gdouble yspacing)
 name|gimp_image_grid_set_spacing
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 name|xspacing
@@ -221,7 +226,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -290,16 +298,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_offset:  * @image_ID: The image.  * @xoffset: (out): The image's grid horizontal offset.  * @yoffset: (out): The image's grid vertical offset.  *  * Gets the offset of an image's grid.  *  * This procedure retrieves the horizontal and vertical offset of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_offset:  * @image: The image.  * @xoffset: (out): The image's grid horizontal offset.  * @yoffset: (out): The image's grid vertical offset.  *  * Gets the offset of an image's grid.  *  * This procedure retrieves the horizontal and vertical offset of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_get_offset (gint32 image_ID,gdouble * xoffset,gdouble * yoffset)
+DECL|function|gimp_image_grid_get_offset (GimpImage * image,gdouble * xoffset,gdouble * yoffset)
 name|gimp_image_grid_get_offset
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 modifier|*
@@ -338,7 +347,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -441,16 +453,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_set_offset:  * @image_ID: The image.  * @xoffset: The image's grid horizontal offset.  * @yoffset: The image's grid vertical offset.  *  * Sets the offset of an image's grid.  *  * This procedure sets the horizontal and vertical offset of an image's  * grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_set_offset:  * @image: The image.  * @xoffset: The image's grid horizontal offset.  * @yoffset: The image's grid vertical offset.  *  * Sets the offset of an image's grid.  *  * This procedure sets the horizontal and vertical offset of an image's  * grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_set_offset (gint32 image_ID,gdouble xoffset,gdouble yoffset)
+DECL|function|gimp_image_grid_set_offset (GimpImage * image,gdouble xoffset,gdouble yoffset)
 name|gimp_image_grid_set_offset
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 name|xoffset
@@ -487,7 +500,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -556,16 +572,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_foreground_color:  * @image_ID: The image.  * @fgcolor: (out caller-allocates): The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_foreground_color:  * @image: The image.  * @fgcolor: (out caller-allocates): The image's grid foreground color.  *  * Sets the foreground color of an image's grid.  *  * This procedure gets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_get_foreground_color (gint32 image_ID,GimpRGB * fgcolor)
+DECL|function|gimp_image_grid_get_foreground_color (GimpImage * image,GimpRGB * fgcolor)
 name|gimp_image_grid_get_foreground_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -600,7 +617,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -679,16 +699,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_set_foreground_color:  * @image_ID: The image.  * @fgcolor: The new foreground color.  *  * Gets the foreground color of an image's grid.  *  * This procedure sets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_set_foreground_color:  * @image: The image.  * @fgcolor: The new foreground color.  *  * Gets the foreground color of an image's grid.  *  * This procedure sets the foreground color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_set_foreground_color (gint32 image_ID,const GimpRGB * fgcolor)
+DECL|function|gimp_image_grid_set_foreground_color (GimpImage * image,const GimpRGB * fgcolor)
 name|gimp_image_grid_set_foreground_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -724,7 +745,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_RGB
 argument_list|,
@@ -789,16 +813,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_background_color:  * @image_ID: The image.  * @bgcolor: (out caller-allocates): The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_background_color:  * @image: The image.  * @bgcolor: (out caller-allocates): The image's grid background color.  *  * Sets the background color of an image's grid.  *  * This procedure gets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_get_background_color (gint32 image_ID,GimpRGB * bgcolor)
+DECL|function|gimp_image_grid_get_background_color (GimpImage * image,GimpRGB * bgcolor)
 name|gimp_image_grid_get_background_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -833,7 +858,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -912,16 +940,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_set_background_color:  * @image_ID: The image.  * @bgcolor: The new background color.  *  * Gets the background color of an image's grid.  *  * This procedure sets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_set_background_color:  * @image: The image.  * @bgcolor: The new background color.  *  * Gets the background color of an image's grid.  *  * This procedure sets the background color of an image's grid.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_set_background_color (gint32 image_ID,const GimpRGB * bgcolor)
+DECL|function|gimp_image_grid_set_background_color (GimpImage * image,const GimpRGB * bgcolor)
 name|gimp_image_grid_set_background_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -957,7 +986,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_RGB
 argument_list|,
@@ -1022,16 +1054,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_get_style:  * @image_ID: The image.  *  * Gets the style of an image's grid.  *  * This procedure retrieves the style of an image's grid.  *  * Returns: The image's grid style.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_get_style:  * @image: The image.  *  * Gets the style of an image's grid.  *  * This procedure retrieves the style of an image's grid.  *  * Returns: The image's grid style.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GimpGridStyle
-DECL|function|gimp_image_grid_get_style (gint32 image_ID)
+DECL|function|gimp_image_grid_get_style (GimpImage * image)
 name|gimp_image_grid_get_style
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1062,7 +1095,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1135,16 +1171,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_grid_set_style:  * @image_ID: The image.  * @style: The image's grid style.  *  * Sets the style unit of an image's grid.  *  * This procedure sets the style of an image's grid. It takes the image  * and the new style as parameters.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_grid_set_style:  * @image: The image.  * @style: The image's grid style.  *  * Sets the style unit of an image's grid.  *  * This procedure sets the style of an image's grid. It takes the image  * and the new style as parameters.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_grid_set_style (gint32 image_ID,GimpGridStyle style)
+DECL|function|gimp_image_grid_set_style (GimpImage * image,GimpGridStyle style)
 name|gimp_image_grid_set_style
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpGridStyle
 name|style
@@ -1178,7 +1215,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_GRID_STYLE
 argument_list|,

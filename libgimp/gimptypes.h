@@ -93,6 +93,15 @@ name|GimpParam
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpImage
+typedef|typedef
+name|struct
+name|_GimpImage
+name|GimpImage
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* FIXME move somewhere else */
 end_comment
@@ -104,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc7f6c0103
+DECL|enum|__anon2bed4ae50103
 block|{
 DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
 name|GIMP_PIXBUF_KEEP_ALPHA

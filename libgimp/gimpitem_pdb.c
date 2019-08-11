@@ -137,11 +137,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_image:  * @item_ID: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: The item's image.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_image:  * @item_ID: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: (transfer full): The item's image.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_item_get_image (gint32 item_ID)
 name|gimp_item_get_image
 parameter_list|(
@@ -164,11 +165,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -227,16 +228,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -245,7 +252,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function

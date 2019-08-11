@@ -137,16 +137,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_new:  * @image_ID: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI, and will result  * in an execution error if called when GIMP has no UI.  *  * Returns: The new display.  **/
+comment|/**  * gimp_display_new:  * @image: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI, and will result  * in an execution error if called when GIMP has no UI.  *  * Returns: The new display.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_display_new (gint32 image_ID)
+DECL|function|gimp_display_new (GimpImage * image)
 name|gimp_display_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -178,7 +179,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -561,19 +565,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_displays_reconnect:  * @old_image_ID: The old image (must have at least one display).  * @new_image_ID: The new image (must not have a display).  *  * Reconnect displays from one image to another image.  *  * This procedure connects all displays of the old_image to the  * new_image. If the old_image has no display or new_image already has  * a display the reconnect is not performed and the procedure returns  * without success. You should rarely need to use this function.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_displays_reconnect:  * @old_image: The old image (must have at least one display).  * @new_image: The new image (must not have a display).  *  * Reconnect displays from one image to another image.  *  * This procedure connects all displays of the old_image to the  * new_image. If the old_image has no display or new_image already has  * a display the reconnect is not performed and the procedure returns  * without success. You should rarely need to use this function.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_displays_reconnect (gint32 old_image_ID,gint32 new_image_ID)
+DECL|function|gimp_displays_reconnect (GimpImage * old_image,GimpImage * new_image)
 name|gimp_displays_reconnect
 parameter_list|(
-name|gint32
-name|old_image_ID
+name|GimpImage
+modifier|*
+name|old_image
 parameter_list|,
-name|gint32
-name|new_image_ID
+name|GimpImage
+modifier|*
+name|new_image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -604,11 +610,17 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|old_image_ID
+name|gimp_image_get_id
+argument_list|(
+name|old_image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|new_image_ID
+name|gimp_image_get_id
+argument_list|(
+name|new_image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

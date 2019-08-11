@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_is_valid:  * @image: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image is valid and refers to an  * existing image.  *  * Returns: Whether the image is valid.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_is_valid (gint32 image_ID)
+DECL|function|gimp_image_is_valid (GimpImage * image)
 name|gimp_image_is_valid
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -64,7 +65,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -269,11 +273,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: The ID of the newly created image.  **/
+comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: (transfer full): The newly created image.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_image_new (gint width,gint height,GimpImageBaseType type)
 name|gimp_image_new
 parameter_list|(
@@ -302,11 +307,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -373,16 +378,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -391,17 +402,18 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_NON_LINEAR precision. See gimp_image_new() for  * further details.  *  * Returns: The ID of the newly created image.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_NON_LINEAR precision. See gimp_image_new() for  * further details.  *  * Returns: (transfer full): The newly created image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_image_new_with_precision (gint width,gint height,GimpImageBaseType type,GimpPrecision precision)
 name|gimp_image_new_with_precision
 parameter_list|(
@@ -433,11 +445,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -508,16 +520,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -526,22 +544,24 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_duplicate:  * @image_ID: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: The new, duplicated image.  **/
+comment|/**  * gimp_image_duplicate:  * @image: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: (transfer full): The new, duplicated image.  **/
 end_comment
 
 begin_function
-name|gint32
-DECL|function|gimp_image_duplicate (gint32 image_ID)
+name|GimpImage
+modifier|*
+DECL|function|gimp_image_duplicate (GimpImage * image)
 name|gimp_image_duplicate
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -559,11 +579,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|new_image_ID
+name|GimpImage
+modifier|*
+name|new_image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -573,7 +593,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -622,16 +645,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|new_image_ID
+name|new_image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -640,22 +669,23 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|new_image_ID
+name|new_image
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_delete:  * @image_ID: The image.  *  * Delete the specified image.  *  * If there are no displays associated with this image it will be  * deleted. This means that you can not delete an image through the PDB  * that was created by the user. If the associated display was however  * created through the PDB and you know the display ID, you may delete  * the display. Removal of the last associated display will then delete  * the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_delete:  * @image: The image.  *  * Delete the specified image.  *  * If there are no displays associated with this image it will be  * deleted. This means that you can not delete an image through the PDB  * that was created by the user. If the associated display was however  * created through the PDB and you know the display ID, you may delete  * the display. Removal of the last associated display will then delete  * the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_delete (gint32 image_ID)
+DECL|function|gimp_image_delete (GimpImage * image)
 name|gimp_image_delete
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -686,7 +716,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -747,16 +780,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_base_type:  * @image_ID: The image.  *  * Get the base type of the image.  *  * This procedure returns the image's base type. Layers in the image  * must be of this subtype, but can have an optional alpha channel.  *  * Returns: The image's base type.  **/
+comment|/**  * gimp_image_base_type:  * @image: The image.  *  * Get the base type of the image.  *  * This procedure returns the image's base type. Layers in the image  * must be of this subtype, but can have an optional alpha channel.  *  * Returns: The image's base type.  **/
 end_comment
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_image_base_type (gint32 image_ID)
+DECL|function|gimp_image_base_type (GimpImage * image)
 name|gimp_image_base_type
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -787,7 +821,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -860,16 +897,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_precision:  * @image_ID: The image.  *  * Get the precision of the image.  *  * This procedure returns the image's precision.  *  * Returns: The image's precision.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_precision:  * @image: The image.  *  * Get the precision of the image.  *  * This procedure returns the image's precision.  *  * Returns: The image's precision.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpPrecision
-DECL|function|gimp_image_get_precision (gint32 image_ID)
+DECL|function|gimp_image_get_precision (GimpImage * image)
 name|gimp_image_get_precision
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -900,7 +938,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -973,16 +1014,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_default_new_layer_mode:  * @image_ID: The image.  *  * Get the default mode for newly created layers of this image.  *  * Returns the default mode for newly created layers of this image.  *  * Returns: The layer mode.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_default_new_layer_mode:  * @image: The image.  *  * Get the default mode for newly created layers of this image.  *  * Returns the default mode for newly created layers of this image.  *  * Returns: The layer mode.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpLayerMode
-DECL|function|gimp_image_get_default_new_layer_mode (gint32 image_ID)
+DECL|function|gimp_image_get_default_new_layer_mode (GimpImage * image)
 name|gimp_image_get_default_new_layer_mode
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1013,7 +1055,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1086,16 +1131,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_width:  * @image_ID: The image.  *  * Return the width of the image  *  * This procedure returns the image's width. This value is independent  * of any of the layers in this image. This is the \"canvas\" width.  *  * Returns: The image's width.  **/
+comment|/**  * gimp_image_width:  * @image: The image.  *  * Return the width of the image  *  * This procedure returns the image's width. This value is independent  * of any of the layers in this image. This is the \"canvas\" width.  *  * Returns: The image's width.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_width (gint32 image_ID)
+DECL|function|gimp_image_width (GimpImage * image)
 name|gimp_image_width
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1126,7 +1172,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1199,16 +1248,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_height:  * @image_ID: The image.  *  * Return the height of the image  *  * This procedure returns the image's height. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  **/
+comment|/**  * gimp_image_height:  * @image: The image.  *  * Return the height of the image  *  * This procedure returns the image's height. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_height (gint32 image_ID)
+DECL|function|gimp_image_height (GimpImage * image)
 name|gimp_image_height
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1239,7 +1289,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1312,17 +1365,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: (out): The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of layers contained in the image.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_layers:  * @image: The image.  * @num_layers: (out): The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of layers contained in the image.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|gint
 modifier|*
-DECL|function|gimp_image_get_layers (gint32 image_ID,gint * num_layers)
+DECL|function|gimp_image_get_layers (GimpImage * image,gint * num_layers)
 name|gimp_image_get_layers
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -1358,7 +1412,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1451,17 +1508,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer full):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_channels:  * @image: The image.  * @num_channels: (out): The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (array length=num_channels) (element-type gint32) (transfer full):  *          The list of channels contained in the image.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|gint
 modifier|*
-DECL|function|gimp_image_get_channels (gint32 image_ID,gint * num_channels)
+DECL|function|gimp_image_get_channels (GimpImage * image,gint * num_channels)
 name|gimp_image_get_channels
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -1497,7 +1555,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1590,17 +1651,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: (out): The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer full):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_image_get_vectors:  * @image: The image.  * @num_vectors: (out): The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (array length=num_vectors) (element-type gint32) (transfer full):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gint
 modifier|*
-DECL|function|gimp_image_get_vectors (gint32 image_ID,gint * num_vectors)
+DECL|function|gimp_image_get_vectors (GimpImage * image,gint * num_vectors)
 name|gimp_image_get_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -1636,7 +1698,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1729,16 +1794,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_drawable:  * @image_ID: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  **/
+comment|/**  * gimp_image_get_active_drawable:  * @image: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_active_drawable (gint32 image_ID)
+DECL|function|gimp_image_get_active_drawable (GimpImage * image)
 name|gimp_image_get_active_drawable
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1770,7 +1836,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1843,16 +1912,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_unset_active_channel:  * @image_ID: The image.  *  * Unsets the active channel in the specified image.  *  * If an active channel exists, it is unset. There then exists no  * active channel, and if desired, one can be set through a call to  * 'Set Active Channel'. No error is returned in the case of no  * existing active channel.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_unset_active_channel:  * @image: The image.  *  * Unsets the active channel in the specified image.  *  * If an active channel exists, it is unset. There then exists no  * active channel, and if desired, one can be set through a call to  * 'Set Active Channel'. No error is returned in the case of no  * existing active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_unset_active_channel (gint32 image_ID)
+DECL|function|gimp_image_unset_active_channel (GimpImage * image)
 name|gimp_image_unset_active_channel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1883,7 +1953,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1944,16 +2017,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_floating_sel:  * @image_ID: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  **/
+comment|/**  * gimp_image_get_floating_sel:  * @image: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_floating_sel (gint32 image_ID)
+DECL|function|gimp_image_get_floating_sel (GimpImage * image)
 name|gimp_image_get_floating_sel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1985,7 +2059,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2058,16 +2135,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_floating_sel_attached_to:  * @image_ID: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: The drawable the floating selection is attached to.  **/
+comment|/**  * gimp_image_floating_sel_attached_to:  * @image: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: The drawable the floating selection is attached to.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_floating_sel_attached_to (gint32 image_ID)
+DECL|function|gimp_image_floating_sel_attached_to (GimpImage * image)
 name|gimp_image_floating_sel_attached_to
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -2099,7 +2177,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2172,16 +2253,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_color:  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_pick_color:  * @image: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: (out caller-allocates): The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_pick_color (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpRGB * color)
+DECL|function|gimp_image_pick_color (GimpImage * image,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpRGB * color)
 name|gimp_image_pick_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -2234,7 +2316,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
@@ -2337,16 +2422,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_correlate_layer:  * @image_ID: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: The layer found at the specified coordinates.  **/
+comment|/**  * gimp_image_pick_correlate_layer:  * @image: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: The layer found at the specified coordinates.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_pick_correlate_layer (gint32 image_ID,gint x,gint y)
+DECL|function|gimp_image_pick_correlate_layer (GimpImage * image,gint x,gint y)
 name|gimp_image_pick_correlate_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -2384,7 +2470,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -2465,16 +2554,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_layer:  * @image: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is 0, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as 0, then the layer is inserted above the active layer,  * or inside the group if the active layer is a layer group. The layer  * type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_insert_layer (gint32 image_ID,gint32 layer_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_insert_layer (GimpImage * image,gint32 layer_ID,gint32 parent_ID,gint position)
 name|gimp_image_insert_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|layer_ID
@@ -2514,7 +2604,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
@@ -2587,16 +2680,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_layer:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Remove the specified layer from the image.  *  * This procedure removes the specified layer from the image. If the  * layer doesn't exist, an error is returned. If there are no layers  * left in the image, this call will fail. If this layer is the last  * layer remaining, the image will become empty and have no active  * layer.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_remove_layer:  * @image: The image.  * @layer_ID: The layer.  *  * Remove the specified layer from the image.  *  * This procedure removes the specified layer from the image. If the  * layer doesn't exist, an error is returned. If there are no layers  * left in the image, this call will fail. If this layer is the last  * layer remaining, the image will become empty and have no active  * layer.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_remove_layer (gint32 image_ID,gint32 layer_ID)
+DECL|function|gimp_image_remove_layer (GimpImage * image,gint32 layer_ID)
 name|gimp_image_remove_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|layer_ID
@@ -2630,7 +2724,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
@@ -2695,16 +2792,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_freeze_layers:  * @image_ID: The image.  *  * Freeze the image's layer list.  *  * This procedure freezes the layer list of the image, suppressing any  * updates to the Layers dialog in response to changes to the image's  * layers. This can significantly improve performance while applying  * changes affecting the layer list.  *  * Each call to gimp_image_freeze_layers() should be matched by a  * corresponding call to gimp_image_thaw_layers(), undoing its effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_freeze_layers:  * @image: The image.  *  * Freeze the image's layer list.  *  * This procedure freezes the layer list of the image, suppressing any  * updates to the Layers dialog in response to changes to the image's  * layers. This can significantly improve performance while applying  * changes affecting the layer list.  *  * Each call to gimp_image_freeze_layers() should be matched by a  * corresponding call to gimp_image_thaw_layers(), undoing its effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_freeze_layers (gint32 image_ID)
+DECL|function|gimp_image_freeze_layers (GimpImage * image)
 name|gimp_image_freeze_layers
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -2735,7 +2833,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2796,16 +2897,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_thaw_layers:  * @image_ID: The image.  *  * Thaw the image's layer list.  *  * This procedure thaws the layer list of the image, re-enabling  * updates to the Layers dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_layers().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_thaw_layers:  * @image: The image.  *  * Thaw the image's layer list.  *  * This procedure thaws the layer list of the image, re-enabling  * updates to the Layers dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_layers().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_thaw_layers (gint32 image_ID)
+DECL|function|gimp_image_thaw_layers (GimpImage * image)
 name|gimp_image_thaw_layers
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -2836,7 +2938,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -2897,16 +3002,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_channel:  * @image: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_insert_channel (gint32 image_ID,gint32 channel_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_insert_channel (GimpImage * image,gint32 channel_ID,gint32 parent_ID,gint position)
 name|gimp_image_insert_channel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|channel_ID
@@ -2946,7 +3052,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
@@ -3019,16 +3128,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_channel:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_remove_channel:  * @image: The image.  * @channel_ID: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_remove_channel (gint32 image_ID,gint32 channel_ID)
+DECL|function|gimp_image_remove_channel (GimpImage * image,gint32 channel_ID)
 name|gimp_image_remove_channel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|channel_ID
@@ -3062,7 +3172,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
@@ -3127,16 +3240,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_freeze_channels:  * @image_ID: The image.  *  * Freeze the image's channel list.  *  * This procedure freezes the channel list of the image, suppressing  * any updates to the Channels dialog in response to changes to the  * image's channels. This can significantly improve performance while  * applying changes affecting the channel list.  *  * Each call to gimp_image_freeze_channels() should be matched by a  * corresponding call to gimp_image_thaw_channels(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_freeze_channels:  * @image: The image.  *  * Freeze the image's channel list.  *  * This procedure freezes the channel list of the image, suppressing  * any updates to the Channels dialog in response to changes to the  * image's channels. This can significantly improve performance while  * applying changes affecting the channel list.  *  * Each call to gimp_image_freeze_channels() should be matched by a  * corresponding call to gimp_image_thaw_channels(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_freeze_channels (gint32 image_ID)
+DECL|function|gimp_image_freeze_channels (GimpImage * image)
 name|gimp_image_freeze_channels
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3167,7 +3281,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3228,16 +3345,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_thaw_channels:  * @image_ID: The image.  *  * Thaw the image's channel list.  *  * This procedure thaws the channel list of the image, re-enabling  * updates to the Channels dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_channels().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_thaw_channels:  * @image: The image.  *  * Thaw the image's channel list.  *  * This procedure thaws the channel list of the image, re-enabling  * updates to the Channels dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_channels().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_thaw_channels (gint32 image_ID)
+DECL|function|gimp_image_thaw_channels (GimpImage * image)
 name|gimp_image_thaw_channels
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3268,7 +3386,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3329,16 +3450,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_vectors:  * @image: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_insert_vectors (gint32 image_ID,gint32 vectors_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_insert_vectors (GimpImage * image,gint32 vectors_ID,gint32 parent_ID,gint position)
 name|gimp_image_insert_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|vectors_ID
@@ -3378,7 +3500,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
@@ -3451,16 +3576,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_remove_vectors:  * @image: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_remove_vectors (gint32 image_ID,gint32 vectors_ID)
+DECL|function|gimp_image_remove_vectors (GimpImage * image,gint32 vectors_ID)
 name|gimp_image_remove_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|vectors_ID
@@ -3494,7 +3620,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
@@ -3559,16 +3688,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_freeze_vectors:  * @image_ID: The image.  *  * Freeze the image's vectors list.  *  * This procedure freezes the vectors list of the image, suppressing  * any updates to the Paths dialog in response to changes to the  * image's vectors. This can significantly improve performance while  * applying changes affecting the vectors list.  *  * Each call to gimp_image_freeze_vectors() should be matched by a  * corresponding call to gimp_image_thaw_vectors(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_freeze_vectors:  * @image: The image.  *  * Freeze the image's vectors list.  *  * This procedure freezes the vectors list of the image, suppressing  * any updates to the Paths dialog in response to changes to the  * image's vectors. This can significantly improve performance while  * applying changes affecting the vectors list.  *  * Each call to gimp_image_freeze_vectors() should be matched by a  * corresponding call to gimp_image_thaw_vectors(), undoing its  * effects.  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_freeze_vectors (gint32 image_ID)
+DECL|function|gimp_image_freeze_vectors (GimpImage * image)
 name|gimp_image_freeze_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3599,7 +3729,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3660,16 +3793,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_thaw_vectors:  * @image_ID: The image.  *  * Thaw the image's vectors list.  *  * This procedure thaws the vectors list of the image, re-enabling  * updates to the Paths dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_vectors().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
+comment|/**  * gimp_image_thaw_vectors:  * @image: The image.  *  * Thaw the image's vectors list.  *  * This procedure thaws the vectors list of the image, re-enabling  * updates to the Paths dialog.  *  * This procedure should match a corresponding call to  * gimp_image_freeze_vectors().  *  * Returns: TRUE on success.  *  * Since: 2.10.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_thaw_vectors (gint32 image_ID)
+DECL|function|gimp_image_thaw_vectors (GimpImage * image)
 name|gimp_image_thaw_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3700,7 +3834,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3761,16 +3898,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_item_position:  * @image_ID: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_item_position:  * @image: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_item_position (gint32 image_ID,gint32 item_ID)
+DECL|function|gimp_image_get_item_position (GimpImage * image,gint32 item_ID)
 name|gimp_image_get_item_position
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -3804,7 +3942,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -3881,16 +4022,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procedure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_raise_item:  * @image: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procedure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_raise_item (gint32 image_ID,gint32 item_ID)
+DECL|function|gimp_image_raise_item (GimpImage * image,gint32 item_ID)
 name|gimp_image_raise_item
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -3924,7 +4066,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -3989,16 +4134,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procedure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_lower_item:  * @image: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procedure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_item (gint32 image_ID,gint32 item_ID)
+DECL|function|gimp_image_lower_item (GimpImage * image,gint32 item_ID)
 name|gimp_image_lower_item
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -4032,7 +4178,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -4097,16 +4246,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item_to_top:  * @image_ID: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_raise_item_to_top:  * @image: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_raise_item_to_top (gint32 image_ID,gint32 item_ID)
+DECL|function|gimp_image_raise_item_to_top (GimpImage * image,gint32 item_ID)
 name|gimp_image_raise_item_to_top
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -4140,7 +4290,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -4205,16 +4358,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item_to_bottom:  * @image_ID: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_lower_item_to_bottom:  * @image: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_item_to_bottom (gint32 image_ID,gint32 item_ID)
+DECL|function|gimp_image_lower_item_to_bottom (GimpImage * image,gint32 item_ID)
 name|gimp_image_lower_item_to_bottom
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -4248,7 +4402,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -4313,16 +4470,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_reorder_item:  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_reorder_item:  * @image: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_reorder_item (gint32 image_ID,gint32 item_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_reorder_item (GimpImage * image,gint32 item_ID,gint32 parent_ID,gint position)
 name|gimp_image_reorder_item
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|item_ID
@@ -4362,7 +4520,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
@@ -4435,16 +4596,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_flatten:  * @image_ID: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: The resulting layer.  **/
+comment|/**  * gimp_image_flatten:  * @image: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_flatten (gint32 image_ID)
+DECL|function|gimp_image_flatten (GimpImage * image)
 name|gimp_image_flatten
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -4476,7 +4638,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -4549,16 +4714,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_visible_layers:  * @image_ID: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: The resulting layer.  **/
+comment|/**  * gimp_image_merge_visible_layers:  * @image: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_merge_visible_layers (gint32 image_ID,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * image,GimpMergeType merge_type)
 name|gimp_image_merge_visible_layers
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpMergeType
 name|merge_type
@@ -4593,7 +4759,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_MERGE_TYPE
 argument_list|,
@@ -4670,16 +4839,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_down:  * @image_ID: The image.  * @merge_layer_ID: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: The resulting layer.  **/
+comment|/**  * gimp_image_merge_down:  * @image: The image.  * @merge_layer_ID: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_merge_down (gint32 image_ID,gint32 merge_layer_ID,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_down (GimpImage * image,gint32 merge_layer_ID,GimpMergeType merge_type)
 name|gimp_image_merge_down
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|merge_layer_ID
@@ -4717,7 +4887,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
@@ -4798,17 +4971,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: (out): Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's colormap.  *          The returned value must be freed with g_free().  **/
+comment|/**  * _gimp_image_get_colormap:  * @image: The image.  * @num_bytes: (out): Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's colormap.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|guint8
 modifier|*
-DECL|function|_gimp_image_get_colormap (gint32 image_ID,gint * num_bytes)
+DECL|function|_gimp_image_get_colormap (GimpImage * image,gint * num_bytes)
 name|_gimp_image_get_colormap
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -4844,7 +5018,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -4937,16 +5114,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: (array length=num_bytes) (element-type guint8): The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_set_colormap:  * @image: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: (array length=num_bytes) (element-type guint8): The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_set_colormap (gint32 image_ID,gint num_bytes,const guint8 * colormap)
+DECL|function|_gimp_image_set_colormap (GimpImage * image,gint num_bytes,const guint8 * colormap)
 name|_gimp_image_set_colormap
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|num_bytes
@@ -4985,7 +5163,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -5068,17 +5249,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (transfer full): The exif/ptc/xmp metadata as a string.  *          The returned value must be freed with g_free().  **/
+comment|/**  * _gimp_image_get_metadata:  * @image: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (transfer full): The exif/ptc/xmp metadata as a string.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_image_get_metadata (gint32 image_ID)
+DECL|function|_gimp_image_get_metadata (GimpImage * image)
 name|_gimp_image_get_metadata
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -5110,7 +5292,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5183,16 +5368,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_metadata:  * @image_ID: The image.  * @metadata_string: The exif/ptc/xmp metadata as a string.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_set_metadata:  * @image: The image.  * @metadata_string: The exif/ptc/xmp metadata as a string.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_set_metadata (gint32 image_ID,const gchar * metadata_string)
+DECL|function|_gimp_image_set_metadata (GimpImage * image,const gchar * metadata_string)
 name|_gimp_image_set_metadata
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -5228,7 +5414,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -5293,16 +5482,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_clean_all:  * @image_ID: The image.  *  * Set the image dirty count to 0.  *  * This procedure sets the specified image's dirty count to 0, allowing  * operations to occur without having a 'dirtied' image. This is  * especially useful for creating and loading images which should not  * initially be considered dirty, even though layers must be created,  * filled, and installed in the image. Note that save plug-ins must NOT  * call this function themselves after saving the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_clean_all:  * @image: The image.  *  * Set the image dirty count to 0.  *  * This procedure sets the specified image's dirty count to 0, allowing  * operations to occur without having a 'dirtied' image. This is  * especially useful for creating and loading images which should not  * initially be considered dirty, even though layers must be created,  * filled, and installed in the image. Note that save plug-ins must NOT  * call this function themselves after saving the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_clean_all (gint32 image_ID)
+DECL|function|gimp_image_clean_all (GimpImage * image)
 name|gimp_image_clean_all
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -5333,7 +5523,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5394,16 +5587,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp_image_clean_all()  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  **/
+comment|/**  * gimp_image_is_dirty:  * @image: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp_image_clean_all()  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_is_dirty (gint32 image_ID)
+DECL|function|gimp_image_is_dirty (GimpImage * image)
 name|gimp_image_is_dirty
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -5434,7 +5628,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5507,16 +5704,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out): The previews width.  * @actual_height: (out): The previews height.  * @bpp: (out): The previews bpp.  * @thumbnail_data_count: (out): The number of bytes in thumbnail data.  * @thumbnail_data: (out) (array length=thumbnail_data_count) (element-type guint8) (transfer full): The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * _gimp_image_thumbnail:  * @image: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: (out): The previews width.  * @actual_height: (out): The previews height.  * @bpp: (out): The previews bpp.  * @thumbnail_data_count: (out): The number of bytes in thumbnail data.  * @thumbnail_data: (out) (array length=thumbnail_data_count) (element-type guint8) (transfer full): The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_thumbnail (gint32 image_ID,gint width,gint height,gint * actual_width,gint * actual_height,gint * bpp,gint * thumbnail_data_count,guint8 ** thumbnail_data)
+DECL|function|_gimp_image_thumbnail (GimpImage * image,gint width,gint height,gint * actual_width,gint * actual_height,gint * bpp,gint * thumbnail_data_count,guint8 ** thumbnail_data)
 name|_gimp_image_thumbnail
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -5574,7 +5772,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -5739,16 +5940,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_layer:  * @image_ID: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  **/
+comment|/**  * gimp_image_get_active_layer:  * @image: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_active_layer (gint32 image_ID)
+DECL|function|gimp_image_get_active_layer (GimpImage * image)
 name|gimp_image_get_active_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -5780,7 +5982,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -5853,16 +6058,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_layer:  * @image_ID: The image.  * @active_layer_ID: The new image active layer.  *  * Sets the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_layer:  * @image: The image.  * @active_layer_ID: The new image active layer.  *  * Sets the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_active_layer (gint32 image_ID,gint32 active_layer_ID)
+DECL|function|gimp_image_set_active_layer (GimpImage * image,gint32 active_layer_ID)
 name|gimp_image_set_active_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|active_layer_ID
@@ -5896,7 +6102,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
@@ -5961,16 +6170,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_channel:  * @image_ID: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  **/
+comment|/**  * gimp_image_get_active_channel:  * @image: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_active_channel (gint32 image_ID)
+DECL|function|gimp_image_get_active_channel (GimpImage * image)
 name|gimp_image_get_active_channel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -6002,7 +6212,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6075,16 +6288,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or layer is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_channel:  * @image: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or layer is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_active_channel (gint32 image_ID,gint32 active_channel_ID)
+DECL|function|gimp_image_set_active_channel (GimpImage * image,gint32 active_channel_ID)
 name|gimp_image_set_active_channel
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|active_channel_ID
@@ -6118,7 +6332,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
@@ -6183,16 +6400,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_vectors:  * @image_ID: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: The active vectors.  **/
+comment|/**  * gimp_image_get_active_vectors:  * @image: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: The active vectors.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_active_vectors (gint32 image_ID)
+DECL|function|gimp_image_get_active_vectors (GimpImage * image)
 name|gimp_image_get_active_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -6224,7 +6442,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6297,16 +6518,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_vectors:  * @image_ID: The image.  * @active_vectors_ID: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_vectors:  * @image: The image.  * @active_vectors_ID: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_active_vectors (gint32 image_ID,gint32 active_vectors_ID)
+DECL|function|gimp_image_set_active_vectors (GimpImage * image,gint32 active_vectors_ID)
 name|gimp_image_set_active_vectors
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|active_vectors_ID
@@ -6340,7 +6562,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
@@ -6405,16 +6630,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_selection:  * @image_ID: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  **/
+comment|/**  * gimp_image_get_selection:  * @image: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_selection (gint32 image_ID)
+DECL|function|gimp_image_get_selection (GimpImage * image)
 name|gimp_image_get_selection
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -6446,7 +6672,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6519,16 +6748,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_active:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  **/
+comment|/**  * gimp_image_get_component_active:  * @image: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_active (gint32 image_ID,GimpChannelType component)
+DECL|function|gimp_image_get_component_active (GimpImage * image,GimpChannelType component)
 name|gimp_image_get_component_active
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -6562,7 +6792,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -6639,16 +6872,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_active:  * @image_ID: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_component_active:  * @image: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_component_active (gint32 image_ID,GimpChannelType component,gboolean active)
+DECL|function|gimp_image_set_component_active (GimpImage * image,GimpChannelType component,gboolean active)
 name|gimp_image_set_component_active
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -6685,7 +6919,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -6754,16 +6991,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_visible:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible -- whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  **/
+comment|/**  * gimp_image_get_component_visible:  * @image: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible -- whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_visible (gint32 image_ID,GimpChannelType component)
+DECL|function|gimp_image_get_component_visible (GimpImage * image,GimpChannelType component)
 name|gimp_image_get_component_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -6797,7 +7035,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -6874,16 +7115,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_visible:  * @image_ID: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible -- whether or not it can be seen. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_component_visible:  * @image: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible -- whether or not it can be seen. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_component_visible (gint32 image_ID,GimpChannelType component,gboolean visible)
+DECL|function|gimp_image_set_component_visible (GimpImage * image,GimpChannelType component,gboolean visible)
 name|gimp_image_set_component_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -6920,7 +7162,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,
@@ -6989,17 +7234,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: (transfer full): The filename.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_filename:  * @image: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or imported from a file or has since been saved or exported.  * Otherwise, this function returns %NULL. See also  * gimp_image_get_uri().  *  * Returns: (transfer full): The filename.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_filename (gint32 image_ID)
+DECL|function|gimp_image_get_filename (GimpImage * image)
 name|gimp_image_get_filename
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7031,7 +7277,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7104,16 +7353,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_filename:  * @image: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_filename (gint32 image_ID,const gchar * filename)
+DECL|function|gimp_image_set_filename (GimpImage * image,const gchar * filename)
 name|gimp_image_set_filename
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -7149,7 +7399,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -7214,17 +7467,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: (transfer full): The URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_uri:  * @image: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded or imported from a file  * or has since been saved or exported. Otherwise, this function  * returns %NULL. See also gimp-image-get-imported-uri to get the URI  * of the current file if it was imported from a non-GIMP file format  * and not yet saved, or gimp-image-get-exported-uri if the image has  * been exported to a non-GIMP file format.  *  * Returns: (transfer full): The URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_uri (gint32 image_ID)
+DECL|function|gimp_image_get_uri (GimpImage * image)
 name|gimp_image_get_uri
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7256,7 +7510,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7329,17 +7586,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_xcf_uri:  * @image_ID: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_xcf_uri:  * @image: The image.  *  * Returns the XCF URI for the specified image.  *  * This procedure returns the XCF URI associated with the image. If  * there is no such URI, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_xcf_uri (gint32 image_ID)
+DECL|function|gimp_image_get_xcf_uri (GimpImage * image)
 name|gimp_image_get_xcf_uri
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7371,7 +7629,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7444,17 +7705,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_imported_uri:  * @image_ID: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_imported_uri:  * @image: The image.  *  * Returns the imported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was imported from a non-native Gimp format. If the  * image was not imported, or has since been saved in the native Gimp  * format, this procedure returns %NULL.  *  * Returns: (transfer full): The imported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_imported_uri (gint32 image_ID)
+DECL|function|gimp_image_get_imported_uri (GimpImage * image)
 name|gimp_image_get_imported_uri
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7486,7 +7748,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7559,17 +7824,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_exported_uri:  * @image_ID: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full): The exported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_exported_uri:  * @image: The image.  *  * Returns the exported URI for the specified image.  *  * This procedure returns the URI associated with the specified image  * if the image was exported a non-native GIMP format. If the image was  * not exported, this procedure returns %NULL.  *  * Returns: (transfer full): The exported URI.  *          The returned value must be freed with g_free().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_exported_uri (gint32 image_ID)
+DECL|function|gimp_image_get_exported_uri (GimpImage * image)
 name|gimp_image_get_exported_uri
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7601,7 +7867,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7674,17 +7943,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then the returned name contains the filename's or URI's  * base name (the last component of the path). Otherwise it is the  * translated string \"Untitled\". The returned name is formatted like  * the image name in the image window title, it may contain '[]',  * '(imported)' etc. and should only be used to label user interface  * elements. Never use it to construct filenames.  *  * Returns: (transfer full): The name.  *          The returned value must be freed with g_free().  **/
+comment|/**  * gimp_image_get_name:  * @image: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then the returned name contains the filename's or URI's  * base name (the last component of the path). Otherwise it is the  * translated string \"Untitled\". The returned name is formatted like  * the image name in the image window title, it may contain '[]',  * '(imported)' etc. and should only be used to label user interface  * elements. Never use it to construct filenames.  *  * Returns: (transfer full): The name.  *          The returned value must be freed with g_free().  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_get_name (gint32 image_ID)
+DECL|function|gimp_image_get_name (GimpImage * image)
 name|gimp_image_get_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -7716,7 +7986,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7789,16 +8062,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: (out): The resolution in the x-axis, in dots per inch.  * @yresolution: (out): The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_get_resolution:  * @image: The image.  * @xresolution: (out): The resolution in the x-axis, in dots per inch.  * @yresolution: (out): The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_resolution (gint32 image_ID,gdouble * xresolution,gdouble * yresolution)
+DECL|function|gimp_image_get_resolution (GimpImage * image,gdouble * xresolution,gdouble * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 modifier|*
@@ -7837,7 +8111,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -7940,16 +8217,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_resolution:  * @image_ID: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets the specified image's resolution.  *  * This procedure sets the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_resolution:  * @image: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets the specified image's resolution.  *  * This procedure sets the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_resolution (gint32 image_ID,gdouble xresolution,gdouble yresolution)
+DECL|function|gimp_image_set_resolution (GimpImage * image,gdouble xresolution,gdouble yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 name|xresolution
@@ -7986,7 +8264,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -8055,16 +8336,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: (transfer none): The unit.  **/
+comment|/**  * gimp_image_get_unit:  * @image: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: (transfer none): The unit.  **/
 end_comment
 
 begin_function
 name|GimpUnit
-DECL|function|gimp_image_get_unit (gint32 image_ID)
+DECL|function|gimp_image_get_unit (GimpImage * image)
 name|gimp_image_get_unit
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -8095,7 +8377,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -8168,16 +8453,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_*() procedure definitions  * for the valid range of unit IDs and a description of the unit  * system.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_unit:  * @image: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_*() procedure definitions  * for the valid range of unit IDs and a description of the unit  * system.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_unit (gint32 image_ID,GimpUnit unit)
+DECL|function|gimp_image_set_unit (GimpImage * image,GimpUnit unit)
 name|gimp_image_set_unit
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -8211,7 +8497,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_UNIT
 argument_list|,
@@ -8276,16 +8565,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  **/
+comment|/**  * gimp_image_get_tattoo_state:  * @image: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  **/
 end_comment
 
 begin_function
 name|guint
-DECL|function|gimp_image_get_tattoo_state (gint32 image_ID)
+DECL|function|gimp_image_get_tattoo_state (GimpImage * image)
 name|gimp_image_get_tattoo_state
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -8316,7 +8606,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -8389,16 +8682,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_tattoo_state:  * @image_ID: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_tattoo_state:  * @image: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plug-ins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_tattoo_state (gint32 image_ID,guint tattoo_state)
+DECL|function|gimp_image_set_tattoo_state (GimpImage * image,guint tattoo_state)
 name|gimp_image_set_tattoo_state
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|guint
 name|tattoo_state
@@ -8432,7 +8726,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -8497,16 +8794,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: The layer with the specified tattoo.  **/
+comment|/**  * gimp_image_get_layer_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: The layer with the specified tattoo.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_layer_by_tattoo (gint32 image_ID,guint tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (GimpImage * image,guint tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|guint
 name|tattoo
@@ -8541,7 +8839,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -8618,16 +8919,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: The channel with the specified tattoo.  **/
+comment|/**  * gimp_image_get_channel_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: The channel with the specified tattoo.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_channel_by_tattoo (gint32 image_ID,guint tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * image,guint tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|guint
 name|tattoo
@@ -8662,7 +8964,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -8739,16 +9044,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: 2.6  **/
+comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_vectors_by_tattoo (gint32 image_ID,guint tattoo)
+DECL|function|gimp_image_get_vectors_by_tattoo (GimpImage * image,guint tattoo)
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|guint
 name|tattoo
@@ -8783,7 +9089,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -8860,16 +9169,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_name:  * @image_ID: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: The layer with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_layer_by_name:  * @image: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: The layer with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_layer_by_name (gint32 image_ID,const gchar * name)
+DECL|function|gimp_image_get_layer_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_layer_by_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -8906,7 +9216,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -8983,16 +9296,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_name:  * @image_ID: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: The channel with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_channel_by_name:  * @image: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: The channel with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_channel_by_name (gint32 image_ID,const gchar * name)
+DECL|function|gimp_image_get_channel_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_channel_by_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -9029,7 +9343,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -9106,16 +9423,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_name:  * @image_ID: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: The vectors with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_vectors_by_name:  * @image: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: The vectors with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_vectors_by_name (gint32 image_ID,const gchar * name)
+DECL|function|gimp_image_get_vectors_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_vectors_by_name
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -9152,7 +9470,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -9229,16 +9550,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_attach_parasite:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_attach_parasite:  * @image: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_attach_parasite (gint32 image_ID,const GimpParasite * parasite)
+DECL|function|gimp_image_attach_parasite (GimpImage * image,const GimpParasite * parasite)
 name|gimp_image_attach_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|GimpParasite
@@ -9274,7 +9596,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_PARASITE
 argument_list|,
@@ -9339,16 +9664,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_detach_parasite:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_detach_parasite:  * @image: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_detach_parasite (gint32 image_ID,const gchar * name)
+DECL|function|gimp_image_detach_parasite (GimpImage * image,const gchar * name)
 name|gimp_image_detach_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -9384,7 +9710,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -9449,17 +9778,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: (transfer full): The found parasite.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_parasite:  * @image: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: (transfer full): The found parasite.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_image_get_parasite (gint32 image_ID,const gchar * name)
+DECL|function|gimp_image_get_parasite (GimpImage * image,const gchar * name)
 name|gimp_image_get_parasite
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -9496,7 +9826,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -9573,18 +9906,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_parasite_list:  * @image_ID: The image.  * @num_parasites: (out): The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*) (transfer full):  *          The names of currently attached parasites.  *          The returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_parasite_list:  * @image: The image.  * @num_parasites: (out): The number of attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: (array length=num_parasites) (element-type gchar*) (transfer full):  *          The names of currently attached parasites.  *          The returned value must be freed with g_strfreev().  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_image_get_parasite_list (gint32 image_ID,gint * num_parasites)
+DECL|function|gimp_image_get_parasite_list (GimpImage * image,gint * num_parasites)
 name|gimp_image_get_parasite_list
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -9621,7 +9955,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

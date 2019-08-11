@@ -24,11 +24,12 @@ comment|/**  * SECTION: gimpfileops  * @title: gimpfileops  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * https://www.gimp.org/foo.png he wants to fetch a URL, and the full  * pathname will not look like a URL.  *  * Returns: The output image.  **/
+comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * https://www.gimp.org/foo.png he wants to fetch a URL, and the full  * pathname will not look like a URL.  *  * Returns: (transfer full): The output image.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_file_load (GimpRunMode run_mode,const gchar * filename,const gchar * raw_filename)
 name|gimp_file_load
 parameter_list|(
@@ -61,11 +62,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -132,16 +133,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -150,25 +157,26 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_file_load_layer (GimpRunMode run_mode,gint32 image_ID,const gchar * filename)
+DECL|function|gimp_file_load_layer (GimpRunMode run_mode,GimpImage * image,const gchar * filename)
 name|gimp_file_load_layer
 parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -209,7 +217,10 @@ name|run_mode
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -286,20 +297,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: (out): The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of loaded layers.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  * @num_layers: (out): The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (array length=num_layers) (element-type gint32) (transfer full):  *          The list of loaded layers.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gint
 modifier|*
-DECL|function|gimp_file_load_layers (GimpRunMode run_mode,gint32 image_ID,const gchar * filename,gint * num_layers)
+DECL|function|gimp_file_load_layers (GimpRunMode run_mode,GimpImage * image,const gchar * filename,gint * num_layers)
 name|gimp_file_load_layers
 parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -344,7 +356,10 @@ name|run_mode
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -441,19 +456,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image_ID: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save (GimpRunMode run_mode,gint32 image_ID,gint32 drawable_ID,const gchar * filename,const gchar * raw_filename)
+DECL|function|gimp_file_save (GimpRunMode run_mode,GimpImage * image,gint32 drawable_ID,const gchar * filename,const gchar * raw_filename)
 name|gimp_file_save
 parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -501,7 +517,10 @@ name|run_mode
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
@@ -574,16 +593,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save_thumbnail:  * @image_ID: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitly save a thumbnail with a file.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_file_save_thumbnail:  * @image: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitly save a thumbnail with a file.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save_thumbnail (gint32 image_ID,const gchar * filename)
+DECL|function|gimp_file_save_thumbnail (GimpImage * image,const gchar * filename)
 name|gimp_file_save_thumbnail
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -619,7 +639,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

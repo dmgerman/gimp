@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpimagesamplepoints  * @title: gimpimagesamplepoints  
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_add_sample_point:  * @image_ID: The image.  * @position_x: The guide'sample points x-offset from left of image.  * @position_y: The guide'sample points y-offset from top of image.  *  * Add a sample point to an image.  *  * This procedure adds a sample point to an image. It takes the input  * image and the position of the new sample points as parameters. It  * returns the sample point ID of the new sample point.  *  * Returns: The new sample point.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_add_sample_point:  * @image: The image.  * @position_x: The guide'sample points x-offset from left of image.  * @position_y: The guide'sample points y-offset from top of image.  *  * Add a sample point to an image.  *  * This procedure adds a sample point to an image. It takes the input  * image and the position of the new sample points as parameters. It  * returns the sample point ID of the new sample point.  *  * Returns: The new sample point.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_add_sample_point (gint32 image_ID,gint position_x,gint position_y)
+DECL|function|gimp_image_add_sample_point (GimpImage * image,gint position_x,gint position_y)
 name|gimp_image_add_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|position_x
@@ -71,7 +72,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -152,16 +156,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_delete_sample_point:  * @image_ID: The image.  * @sample_point_ID: The ID of the sample point to be removed.  *  * Deletes a sample point from an image.  *  * This procedure takes an image and a sample point ID as input and  * removes the specified sample point from the specified image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_delete_sample_point:  * @image: The image.  * @sample_point_ID: The ID of the sample point to be removed.  *  * Deletes a sample point from an image.  *  * This procedure takes an image and a sample point ID as input and  * removes the specified sample point from the specified image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_delete_sample_point (gint32 image_ID,gint32 sample_point_ID)
+DECL|function|gimp_image_delete_sample_point (GimpImage * image,gint32 sample_point_ID)
 name|gimp_image_delete_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID
@@ -195,7 +200,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -260,16 +268,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_find_next_sample_point:  * @image_ID: The image.  * @sample_point_ID: The ID of the current sample point (0 if first invocation).  *  * Find next sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * finds the sample point ID of the successor of the given sample point  * ID in the image's sample point list. If the supplied sample point ID  * is 0, the procedure will return the first sample point. The  * procedure will return 0 if given the final sample point ID as an  * argument or the image has no sample points.  *  * Returns: The next sample point's ID.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_find_next_sample_point:  * @image: The image.  * @sample_point_ID: The ID of the current sample point (0 if first invocation).  *  * Find next sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * finds the sample point ID of the successor of the given sample point  * ID in the image's sample point list. If the supplied sample point ID  * is 0, the procedure will return the first sample point. The  * procedure will return 0 if given the final sample point ID as an  * argument or the image has no sample points.  *  * Returns: The next sample point's ID.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_find_next_sample_point (gint32 image_ID,gint32 sample_point_ID)
+DECL|function|gimp_image_find_next_sample_point (GimpImage * image,gint32 sample_point_ID)
 name|gimp_image_find_next_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID
@@ -304,7 +313,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -381,16 +393,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_sample_point_position:  * @image_ID: The image.  * @sample_point_ID: The guide.  * @position_y: (out): The sample points's position relative to top of image.  *  * Get position of a sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * returns the position of the sample point relative to the top and  * left of the image.  *  * Returns: The sample points's position relative to top of image.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_sample_point_position:  * @image: The image.  * @sample_point_ID: The guide.  * @position_y: (out): The sample points's position relative to top of image.  *  * Get position of a sample point on an image.  *  * This procedure takes an image and a sample point ID as input and  * returns the position of the sample point relative to the top and  * left of the image.  *  * Returns: The sample points's position relative to top of image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_sample_point_position (gint32 image_ID,gint32 sample_point_ID,gint * position_y)
+DECL|function|gimp_image_get_sample_point_position (GimpImage * image,gint32 sample_point_ID,gint * position_y)
 name|gimp_image_get_sample_point_position
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID
@@ -428,7 +441,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,

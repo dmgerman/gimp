@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpchannel  * @title: gimpchannel  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * _gimp_channel_new:  * @image_ID: The image to which to add the channel.  * @width: The channel width.  * @height: The channel height.  * @name: The channel name.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width,  * height, name, opacity and color.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  * The channel's contents are undefined initially.  *  * Returns: The newly created channel.  **/
+comment|/**  * _gimp_channel_new:  * @image: The image to which to add the channel.  * @width: The channel width.  * @height: The channel height.  * @name: The channel name.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width,  * height, name, opacity and color.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  * The channel's contents are undefined initially.  *  * Returns: The newly created channel.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|_gimp_channel_new (gint32 image_ID,gint width,gint height,const gchar * name,gdouble opacity,const GimpRGB * color)
+DECL|function|_gimp_channel_new (GimpImage * image,gint width,gint height,const gchar * name,gdouble opacity,const GimpRGB * color)
 name|_gimp_channel_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -84,7 +85,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -177,16 +181,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_new_from_component:  * @image_ID: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  *  * Returns: The newly created channel.  *  * Since: 2.4  **/
+comment|/**  * gimp_channel_new_from_component:  * @image: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  * The new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with gimp_image_insert_channel().  * Other attributes, such as channel visibility, should be set with  * explicit procedure calls.  *  * Returns: The newly created channel.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_channel_new_from_component (gint32 image_ID,GimpChannelType component,const gchar * name)
+DECL|function|gimp_channel_new_from_component (GimpImage * image,GimpChannelType component,const gchar * name)
 name|gimp_channel_new_from_component
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -226,7 +231,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|,

@@ -24,17 +24,18 @@ comment|/**  * SECTION: gimpimagecolorprofile  * @title: gimpimagecolorprofile  
 end_comment
 
 begin_comment
-comment|/**  * _gimp_image_get_color_profile:  * @image_ID: The image.  * @num_bytes: (out): Number of bytes in the color_profile array.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's serialized color profile.  *          The returned value must be freed with g_free().  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_get_color_profile:  * @image: The image.  * @num_bytes: (out): Number of bytes in the color_profile array.  *  * Returns the image's color profile  *  * This procedure returns the image's color profile, or NULL if the  * image has no color profile assigned.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's serialized color profile.  *          The returned value must be freed with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|guint8
 modifier|*
-DECL|function|_gimp_image_get_color_profile (gint32 image_ID,gint * num_bytes)
+DECL|function|_gimp_image_get_color_profile (GimpImage * image,gint * num_bytes)
 name|_gimp_image_get_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -70,7 +71,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -163,17 +167,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_effective_color_profile:  * @image_ID: The image.  * @num_bytes: (out): Number of bytes in the color_profile array.  *  * Returns the color profile that is used for the image  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or a generated default RGB or grayscale profile, according to the  * image's type.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's serialized color profile.  *          The returned value must be freed with g_free().  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_get_effective_color_profile:  * @image: The image.  * @num_bytes: (out): Number of bytes in the color_profile array.  *  * Returns the color profile that is used for the image  *  * This procedure returns the color profile that is actually used for  * this image, which is the profile returned by  * gimp_image_get_color_profile() if the image has a profile assigned,  * or a generated default RGB or grayscale profile, according to the  * image's type.  *  * Returns: (array length=num_bytes) (element-type guint8) (transfer full):  *          The image's serialized color profile.  *          The returned value must be freed with g_free().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|guint8
 modifier|*
-DECL|function|_gimp_image_get_effective_color_profile (gint32 image_ID,gint * num_bytes)
+DECL|function|_gimp_image_get_effective_color_profile (GimpImage * image,gint * num_bytes)
 name|_gimp_image_get_effective_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -209,7 +214,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -302,16 +310,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8): The new serialized color profile.  *  * Sets the image's color profile  *  * This procedure sets the image's color profile, or unsets it if NULL  * is passed as 'color_profile'. This procedure does no color  * conversion. However, it will change the pixel format of all layers  * to contain the babl space matching the profile. You must call this  * procedure before adding layers to the image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_set_color_profile:  * @image: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8): The new serialized color profile.  *  * Sets the image's color profile  *  * This procedure sets the image's color profile, or unsets it if NULL  * is passed as 'color_profile'. This procedure does no color  * conversion. However, it will change the pixel format of all layers  * to contain the babl space matching the profile. You must call this  * procedure before adding layers to the image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_set_color_profile (gint32 image_ID,gint num_bytes,const guint8 * color_profile)
+DECL|function|_gimp_image_set_color_profile (GimpImage * image,gint num_bytes,const guint8 * color_profile)
 name|_gimp_image_set_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|num_bytes
@@ -350,7 +359,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -433,16 +445,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  *  * Sets the image's color profile from an ICC file  *  * This procedure sets the image's color profile from a file containing  * an ICC profile, or unsets it if NULL is passed as 'uri'. This  * procedure does no color conversion. However, it will change the  * pixel format of all layers to contain the babl space matching the  * profile. You must call this procedure before adding layers to the  * image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_set_color_profile_from_file:  * @image: The image.  * @uri: The URI of the file containing the new color profile.  *  * Sets the image's color profile from an ICC file  *  * This procedure sets the image's color profile from a file containing  * an ICC profile, or unsets it if NULL is passed as 'uri'. This  * procedure does no color conversion. However, it will change the  * pixel format of all layers to contain the babl space matching the  * profile. You must call this procedure before adding layers to the  * image.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_color_profile_from_file (gint32 image_ID,const gchar * uri)
+DECL|function|gimp_image_set_color_profile_from_file (GimpImage * image,const gchar * uri)
 name|gimp_image_set_color_profile_from_file
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -478,7 +491,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -543,16 +559,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_convert_color_profile:  * @image_ID: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8): The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to the given color  * profile. Only RGB and grayscale color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * _gimp_image_convert_color_profile:  * @image: The image.  * @num_bytes: Number of bytes in the color_profile array.  * @color_profile: (array length=num_bytes) (element-type guint8): The serialized color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to the given color  * profile. Only RGB and grayscale color profiles are accepted,  * according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_convert_color_profile (gint32 image_ID,gint num_bytes,const guint8 * color_profile,GimpColorRenderingIntent intent,gboolean bpc)
+DECL|function|_gimp_image_convert_color_profile (GimpImage * image,gint num_bytes,const guint8 * color_profile,GimpColorRenderingIntent intent,gboolean bpc)
 name|_gimp_image_convert_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|num_bytes
@@ -597,7 +614,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -688,16 +708,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_color_profile_from_file:  * @image_ID: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * specified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_color_profile_from_file:  * @image: The image.  * @uri: The URI of the file containing the new color profile.  * @intent: Rendering intent.  * @bpc: Black point compensation.  *  * Convert the image's layers to a color profile  *  * This procedure converts from the image's color profile (or the  * default RGB or grayscale profile if none is set) to an ICC profile  * specified by 'uri'. Only RGB and grayscale color profiles are  * accepted, according to the image's type.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_color_profile_from_file (gint32 image_ID,const gchar * uri,GimpColorRenderingIntent intent,gboolean bpc)
+DECL|function|gimp_image_convert_color_profile_from_file (GimpImage * image,const gchar * uri,GimpColorRenderingIntent intent,gboolean bpc)
 name|gimp_image_convert_color_profile_from_file
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -739,7 +760,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

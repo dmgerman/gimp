@@ -54,8 +54,9 @@ name|G_GNUC_INTERNAL
 name|gint32
 name|_gimp_channel_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -83,8 +84,9 @@ begin_function_decl
 name|gint32
 name|gimp_channel_new_from_component
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelType
 name|component

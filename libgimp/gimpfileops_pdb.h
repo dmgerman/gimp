@@ -50,7 +50,8 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-name|gint32
+name|GimpImage
+modifier|*
 name|gimp_file_load
 parameter_list|(
 name|GimpRunMode
@@ -76,8 +77,9 @@ parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -95,8 +97,9 @@ parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -117,8 +120,9 @@ parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|drawable_ID
@@ -140,8 +144,9 @@ begin_function_decl
 name|gboolean
 name|gimp_file_save_thumbnail
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar

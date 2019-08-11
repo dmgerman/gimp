@@ -60,7 +60,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|gimp_item_get_image
 parameter_list|(
 name|gint32

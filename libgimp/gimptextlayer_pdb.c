@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_insert_layer().  *  * Returns: The new text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_text_layer_new:  * @image: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_insert_layer().  *  * Returns: The new text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_text_layer_new (gint32 image_ID,const gchar * text,const gchar * fontname,gdouble size,GimpUnit unit)
+DECL|function|gimp_text_layer_new (GimpImage * image,const gchar * text,const gchar * fontname,gdouble size,GimpUnit unit)
 name|gimp_text_layer_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -81,7 +82,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

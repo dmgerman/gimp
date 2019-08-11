@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpimageconvert  * @title: gimpimageconvert  * @short_d
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_convert_rgb:  * @image_ID: The image.  *  * Convert specified image to RGB color  *  * This procedure converts the specified image to RGB color. This  * process requires an image in Grayscale or Indexed color mode. No  * image content is lost in this process aside from the colormap for an  * indexed image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_convert_rgb:  * @image: The image.  *  * Convert specified image to RGB color  *  * This procedure converts the specified image to RGB color. This  * process requires an image in Grayscale or Indexed color mode. No  * image content is lost in this process aside from the colormap for an  * indexed image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_rgb (gint32 image_ID)
+DECL|function|gimp_image_convert_rgb (GimpImage * image)
 name|gimp_image_convert_rgb
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -64,7 +65,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -125,16 +129,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_grayscale:  * @image_ID: The image.  *  * Convert specified image to grayscale  *  * This procedure converts the specified image to grayscale. This  * process requires an image in RGB or Indexed color mode.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_convert_grayscale:  * @image: The image.  *  * Convert specified image to grayscale  *  * This procedure converts the specified image to grayscale. This  * process requires an image in RGB or Indexed color mode.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_grayscale (gint32 image_ID)
+DECL|function|gimp_image_convert_grayscale (GimpImage * image)
 name|gimp_image_convert_grayscale
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -165,7 +170,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -226,16 +234,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_indexed:  * @image_ID: The image.  * @dither_type: The dither type to use.  * @palette_type: The type of palette to use.  * @num_cols: The number of colors to quantize to, ignored unless (palette_type == GIMP_CONVERT_PALETTE_GENERATE).  * @alpha_dither: Dither transparency to fake partial opacity.  * @remove_unused: Remove unused or duplicate color entries from final palette, ignored if (palette_type == GIMP_CONVERT_PALETTE_GENERATE).  * @palette: The name of the custom palette to use, ignored unless (palette_type == GIMP_CONVERT_PALETTE_CUSTOM).  *  * Convert specified image to and Indexed image  *  * This procedure converts the specified image to 'indexed' color. This  * process requires an image in RGB or Grayscale mode. The  * 'palette_type' specifies what kind of palette to use, A type of '0'  * means to use an optimal palette of 'num_cols' generated from the  * colors in the image. A type of '1' means to re-use the previous  * palette (not currently implemented). A type of '2' means to use the  * so-called WWW-optimized palette. Type '3' means to use only black  * and white colors. A type of '4' means to use a palette from the gimp  * palettes directories. The 'dither type' specifies what kind of  * dithering to use. '0' means no dithering, '1' means standard  * Floyd-Steinberg error diffusion, '2' means Floyd-Steinberg error  * diffusion with reduced bleeding, '3' means dithering based on pixel  * location ('Fixed' dithering).  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_convert_indexed:  * @image: The image.  * @dither_type: The dither type to use.  * @palette_type: The type of palette to use.  * @num_cols: The number of colors to quantize to, ignored unless (palette_type == GIMP_CONVERT_PALETTE_GENERATE).  * @alpha_dither: Dither transparency to fake partial opacity.  * @remove_unused: Remove unused or duplicate color entries from final palette, ignored if (palette_type == GIMP_CONVERT_PALETTE_GENERATE).  * @palette: The name of the custom palette to use, ignored unless (palette_type == GIMP_CONVERT_PALETTE_CUSTOM).  *  * Convert specified image to and Indexed image  *  * This procedure converts the specified image to 'indexed' color. This  * process requires an image in RGB or Grayscale mode. The  * 'palette_type' specifies what kind of palette to use, A type of '0'  * means to use an optimal palette of 'num_cols' generated from the  * colors in the image. A type of '1' means to re-use the previous  * palette (not currently implemented). A type of '2' means to use the  * so-called WWW-optimized palette. Type '3' means to use only black  * and white colors. A type of '4' means to use a palette from the gimp  * palettes directories. The 'dither type' specifies what kind of  * dithering to use. '0' means no dithering, '1' means standard  * Floyd-Steinberg error diffusion, '2' means Floyd-Steinberg error  * diffusion with reduced bleeding, '3' means dithering based on pixel  * location ('Fixed' dithering).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_indexed (gint32 image_ID,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gint num_cols,gboolean alpha_dither,gboolean remove_unused,const gchar * palette)
+DECL|function|gimp_image_convert_indexed (GimpImage * image,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gint num_cols,gboolean alpha_dither,gboolean remove_unused,const gchar * palette)
 name|gimp_image_convert_indexed
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpConvertDitherType
 name|dither_type
@@ -286,7 +295,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CONVERT_DITHER_TYPE
 argument_list|,
@@ -509,16 +521,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_convert_precision:  * @image_ID: The image.  * @precision: The new precision.  *  * Convert the image to the specified precision  *  * This procedure converts the image to the specified precision. Note  * that indexed images cannot be converted and are always in  * GIMP_PRECISION_U8.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_convert_precision:  * @image: The image.  * @precision: The new precision.  *  * Convert the image to the specified precision  *  * This procedure converts the image to the specified precision. Note  * that indexed images cannot be converted and are always in  * GIMP_PRECISION_U8.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_convert_precision (gint32 image_ID,GimpPrecision precision)
+DECL|function|gimp_image_convert_precision (GimpImage * image,GimpPrecision precision)
 name|gimp_image_convert_precision
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpPrecision
 name|precision
@@ -552,7 +565,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_PRECISION
 argument_list|,

@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  **/
+comment|/**  * _gimp_layer_new:  * @image: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|_gimp_layer_new (gint32 image_ID,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerMode mode)
+DECL|function|_gimp_layer_new (GimpImage * image,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerMode mode)
 name|_gimp_layer_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -85,7 +86,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -182,19 +186,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_visible:  * @image_ID: The source image from where the content is copied.  * @dest_image_ID: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_layer_new_from_visible:  * @image: The source image from where the content is copied.  * @dest_image: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_visible (gint32 image_ID,gint32 dest_image_ID,const gchar * name)
+DECL|function|gimp_layer_new_from_visible (GimpImage * image,GimpImage * dest_image,const gchar * name)
 name|gimp_layer_new_from_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|dest_image_ID
+name|GimpImage
+modifier|*
+name|dest_image
 parameter_list|,
 specifier|const
 name|gchar
@@ -231,11 +237,17 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|dest_image_ID
+name|gimp_image_get_id
+argument_list|(
+name|dest_image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -312,19 +324,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image_ID: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  **/
+comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_drawable (gint32 drawable_ID,gint32 dest_image_ID)
+DECL|function|gimp_layer_new_from_drawable (gint32 drawable_ID,GimpImage * dest_image)
 name|gimp_layer_new_from_drawable
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|gint32
-name|dest_image_ID
+name|GimpImage
+modifier|*
+name|dest_image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -360,7 +373,10 @@ name|drawable_ID
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|dest_image_ID
+name|gimp_image_get_id
+argument_list|(
+name|dest_image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -433,16 +449,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: The newly created layer group.  *  * Since: 2.8  **/
+comment|/**  * gimp_layer_group_new:  * @image: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: The newly created layer group.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_group_new (gint32 image_ID)
+DECL|function|gimp_layer_group_new (GimpImage * image)
 name|gimp_layer_group_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -474,7 +491,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

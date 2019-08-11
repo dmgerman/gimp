@@ -73,8 +73,9 @@ begin_function_decl
 name|gboolean
 name|gimp_edit_copy_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -93,7 +94,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|gimp_edit_paste_as_new_image
 parameter_list|(
 name|void
@@ -138,8 +140,9 @@ name|gchar
 modifier|*
 name|gimp_edit_named_copy_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -168,7 +171,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|gimp_edit_named_paste_as_new_image
 parameter_list|(
 specifier|const

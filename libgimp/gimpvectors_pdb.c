@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_new:  * @image: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_vectors_new (gint32 image_ID,const gchar * name)
+DECL|function|gimp_vectors_new (GimpImage * image,const gchar * name)
 name|gimp_vectors_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -70,7 +71,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -147,16 +151,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_text_layer:  * @image_ID: The image.  * @layer_ID: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_new_from_text_layer:  * @image: The image.  * @layer_ID: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_vectors_new_from_text_layer (gint32 image_ID,gint32 layer_ID)
+DECL|function|gimp_vectors_new_from_text_layer (GimpImage * image,gint32 layer_ID)
 name|gimp_vectors_new_from_text_layer
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|layer_ID
@@ -191,7 +196,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
@@ -2900,16 +2908,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_file:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_file:  * @image: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG file.  *  * This procedure imports paths from an SVG file. SVG elements other  * than paths and basic shapes are ignored.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_from_file (gint32 image_ID,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
+DECL|function|gimp_vectors_import_from_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
 name|gimp_vectors_import_from_file
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2960,7 +2969,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -3075,16 +3087,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_import_from_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_import_from_string:  * @image: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  * @num_vectors: (out): The number of newly created vectors.  * @vectors_ids: (out) (array length=num_vectors) (element-type gint32) (transfer full): The list of newly created vectors.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_vectors_import_from_file() but takes  * a string rather than reading the SVG from a file. This allows you to  * write scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_from_string (gint32 image_ID,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
+DECL|function|gimp_vectors_import_from_string (GimpImage * image,const gchar * string,gint length,gboolean merge,gboolean scale,gint * num_vectors,gint ** vectors_ids)
 name|gimp_vectors_import_from_string
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -3138,7 +3151,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -3257,16 +3273,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_file:  * @image_ID: The image.  * @filename: The name of the SVG file to create.  * @vectors_ID: The vectors object to be saved, or 0 for all in the image.  *  * save a path as an SVG file.  *  * This procedure creates an SVG file to save a Vectors object, that  * is, a path. The resulting file can be edited using a vector graphics  * application, or later reloaded into GIMP. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_export_to_file:  * @image: The image.  * @filename: The name of the SVG file to create.  * @vectors_ID: The vectors object to be saved, or 0 for all in the image.  *  * save a path as an SVG file.  *  * This procedure creates an SVG file to save a Vectors object, that  * is, a path. The resulting file can be edited using a vector graphics  * application, or later reloaded into GIMP. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: TRUE on success.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_export_to_file (gint32 image_ID,const gchar * filename,gint32 vectors_ID)
+DECL|function|gimp_vectors_export_to_file (GimpImage * image,const gchar * filename,gint32 vectors_ID)
 name|gimp_vectors_export_to_file
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -3305,7 +3322,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -3374,17 +3394,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: (transfer full):  *          A string whose contents are a complete SVG document.  *          The returned value must be freed with g_free().  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_export_to_string:  * @image: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: (transfer full):  *          A string whose contents are a complete SVG document.  *          The returned value must be freed with g_free().  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_vectors_export_to_string (gint32 image_ID,gint32 vectors_ID)
+DECL|function|gimp_vectors_export_to_string (GimpImage * image,gint32 vectors_ID)
 name|gimp_vectors_export_to_string
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|vectors_ID
@@ -3419,7 +3440,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,

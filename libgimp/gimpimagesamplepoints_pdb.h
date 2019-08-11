@@ -53,8 +53,9 @@ comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_image_add_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|position_x
@@ -69,8 +70,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_delete_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID
@@ -82,8 +84,9 @@ begin_function_decl
 name|gint32
 name|gimp_image_find_next_sample_point
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID
@@ -95,8 +98,9 @@ begin_function_decl
 name|gint
 name|gimp_image_get_sample_point_position
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|sample_point_ID

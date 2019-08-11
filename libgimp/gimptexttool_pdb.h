@@ -53,8 +53,9 @@ comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_text_fontname
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|drawable_ID

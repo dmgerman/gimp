@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpselection  * @title: gimpselection  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: (out): TRUE if there is a selection.  * @x1: (out): x coordinate of upper left corner of selection bounds.  * @y1: (out): y coordinate of upper left corner of selection bounds.  * @x2: (out): x coordinate of lower right corner of selection bounds.  * @y2: (out): y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower right coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_bounds:  * @image: The image.  * @non_empty: (out): TRUE if there is a selection.  * @x1: (out): x coordinate of upper left corner of selection bounds.  * @y1: (out): y coordinate of upper left corner of selection bounds.  * @x2: (out): x coordinate of lower right corner of selection bounds.  * @y2: (out): y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower right coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_bounds (gint32 image_ID,gboolean * non_empty,gint * x1,gint * y1,gint * x2,gint * y2)
+DECL|function|gimp_selection_bounds (GimpImage * image,gboolean * non_empty,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimp_selection_bounds
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 modifier|*
@@ -84,7 +85,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -241,16 +245,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_value:  * @image_ID: The image.  * @x: x coordinate of value.  * @y: y coordinate of value.  *  * Find the value of the selection at the specified coordinates.  *  * This procedure returns the value of the selection at the specified  * coordinates. If the coordinates lie out of bounds, 0 is returned.  *  * Returns: Value of the selection.  **/
+comment|/**  * gimp_selection_value:  * @image: The image.  * @x: x coordinate of value.  * @y: y coordinate of value.  *  * Find the value of the selection at the specified coordinates.  *  * This procedure returns the value of the selection at the specified  * coordinates. If the coordinates lie out of bounds, 0 is returned.  *  * Returns: Value of the selection.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_selection_value (gint32 image_ID,gint x,gint y)
+DECL|function|gimp_selection_value (GimpImage * image,gint x,gint y)
 name|gimp_selection_value
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|x
@@ -287,7 +292,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -368,16 +376,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is empty.  *  * Returns: Is the selection empty?  **/
+comment|/**  * gimp_selection_is_empty:  * @image: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is empty.  *  * Returns: Is the selection empty?  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_is_empty (gint32 image_ID)
+DECL|function|gimp_selection_is_empty (GimpImage * image)
 name|gimp_selection_is_empty
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -408,7 +417,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -481,16 +493,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_translate:  * @image_ID: The image.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Translate the selection by the specified offsets.  *  * This procedure actually translates the selection for the specified  * image by the specified offsets. Regions that are translated from  * beyond the bounds of the image are set to empty. Valid regions of  * the selection which are translated beyond the bounds of the image  * because of this call are lost.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_translate:  * @image: The image.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Translate the selection by the specified offsets.  *  * This procedure actually translates the selection for the specified  * image by the specified offsets. Regions that are translated from  * beyond the bounds of the image are set to empty. Valid regions of  * the selection which are translated beyond the bounds of the image  * because of this call are lost.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_translate (gint32 image_ID,gint offx,gint offy)
+DECL|function|gimp_selection_translate (GimpImage * image,gint offx,gint offy)
 name|gimp_selection_translate
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|offx
@@ -527,7 +540,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -724,16 +740,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_invert:  * @image_ID: The image.  *  * Invert the selection mask.  *  * This procedure inverts the selection mask. For every pixel in the  * selection channel, its new value is calculated as (255 - old-value).  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_invert:  * @image: The image.  *  * Invert the selection mask.  *  * This procedure inverts the selection mask. For every pixel in the  * selection channel, its new value is calculated as (255 - old-value).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_invert (gint32 image_ID)
+DECL|function|gimp_selection_invert (GimpImage * image)
 name|gimp_selection_invert
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -764,7 +781,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -825,16 +845,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_sharpen:  * @image_ID: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is&gt; 127, the new pixel is  * assigned a value of 255. This removes any \"anti-aliasing\" that  * might exist in the selection mask's boundary.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_sharpen:  * @image: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is&gt; 127, the new pixel is  * assigned a value of 255. This removes any \"anti-aliasing\" that  * might exist in the selection mask's boundary.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_sharpen (gint32 image_ID)
+DECL|function|gimp_selection_sharpen (GimpImage * image)
 name|gimp_selection_sharpen
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -865,7 +886,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -926,16 +950,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_all:  * @image_ID: The image.  *  * Select all of the image.  *  * This procedure sets the selection mask to completely encompass the  * image. Every pixel in the selection channel is set to 255.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_all:  * @image: The image.  *  * Select all of the image.  *  * This procedure sets the selection mask to completely encompass the  * image. Every pixel in the selection channel is set to 255.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_all (gint32 image_ID)
+DECL|function|gimp_selection_all (GimpImage * image)
 name|gimp_selection_all
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -966,7 +991,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1027,16 +1055,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_none:  * @image_ID: The image.  *  * Deselect the entire image.  *  * This procedure deselects the entire image. Every pixel in the  * selection channel is set to 0.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_none:  * @image: The image.  *  * Deselect the entire image.  *  * This procedure deselects the entire image. Every pixel in the  * selection channel is set to 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_none (gint32 image_ID)
+DECL|function|gimp_selection_none (GimpImage * image)
 name|gimp_selection_none
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1067,7 +1096,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1128,16 +1160,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_feather:  * @image_ID: The image.  * @radius: Radius of feather (in pixels).  *  * Feather the image's selection  *  * This procedure feathers the selection. Feathering is implemented  * using a gaussian blur.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_feather:  * @image: The image.  * @radius: Radius of feather (in pixels).  *  * Feather the image's selection  *  * This procedure feathers the selection. Feathering is implemented  * using a gaussian blur.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_feather (gint32 image_ID,gdouble radius)
+DECL|function|gimp_selection_feather (GimpImage * image,gdouble radius)
 name|gimp_selection_feather
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gdouble
 name|radius
@@ -1171,7 +1204,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -1236,16 +1272,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_border:  * @image_ID: The image.  * @radius: Radius of border (in pixels).  *  * Border the image's selection  *  * This procedure borders the selection. Bordering creates a new  * selection which is defined along the boundary of the previous  * selection at every point within the specified radius.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_border:  * @image: The image.  * @radius: Radius of border (in pixels).  *  * Border the image's selection  *  * This procedure borders the selection. Bordering creates a new  * selection which is defined along the boundary of the previous  * selection at every point within the specified radius.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_border (gint32 image_ID,gint radius)
+DECL|function|gimp_selection_border (GimpImage * image,gint radius)
 name|gimp_selection_border
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|radius
@@ -1279,7 +1316,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -1344,16 +1384,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_grow:  * @image_ID: The image.  * @steps: Steps of grow (in pixels).  *  * Grow the image's selection  *  * This procedure grows the selection. Growing involves expanding the  * boundary in all directions by the specified pixel amount.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_grow:  * @image: The image.  * @steps: Steps of grow (in pixels).  *  * Grow the image's selection  *  * This procedure grows the selection. Growing involves expanding the  * boundary in all directions by the specified pixel amount.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_grow (gint32 image_ID,gint steps)
+DECL|function|gimp_selection_grow (GimpImage * image,gint steps)
 name|gimp_selection_grow
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|steps
@@ -1387,7 +1428,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -1452,16 +1496,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_shrink:  * @image_ID: The image.  * @steps: Steps of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking involves trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_shrink:  * @image: The image.  * @steps: Steps of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking involves trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_shrink (gint32 image_ID,gint steps)
+DECL|function|gimp_selection_shrink (GimpImage * image,gint steps)
 name|gimp_selection_shrink
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|steps
@@ -1495,7 +1540,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -1560,16 +1608,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_flood:  * @image_ID: The image.  *  * Remove holes from the image's selection  *  * This procedure removes holes from the selection, that can come from  * selecting a patchy area with the Fuzzy Select Tool. In technical  * terms this procedure floods the selection. See the Algorithms page  * in the developer wiki for details.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_selection_flood:  * @image: The image.  *  * Remove holes from the image's selection  *  * This procedure removes holes from the selection, that can come from  * selecting a patchy area with the Fuzzy Select Tool. In technical  * terms this procedure floods the selection. See the Algorithms page  * in the developer wiki for details.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_selection_flood (gint32 image_ID)
+DECL|function|gimp_selection_flood (GimpImage * image)
 name|gimp_selection_flood
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1600,7 +1649,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1661,16 +1713,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_save:  * @image_ID: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: The new channel.  **/
+comment|/**  * gimp_selection_save:  * @image: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: The new channel.  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_selection_save (gint32 image_ID)
+DECL|function|gimp_selection_save (GimpImage * image)
 name|gimp_selection_save
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1702,7 +1755,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

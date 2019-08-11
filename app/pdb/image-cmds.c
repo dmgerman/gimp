@@ -12248,7 +12248,7 @@ name|procedure
 argument_list|,
 literal|"Returns TRUE if the image is valid."
 argument_list|,
-literal|"This procedure checks if the given image ID is valid and refers to an existing image."
+literal|"This procedure checks if the given image is valid and refers to an existing image."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -12293,7 +12293,7 @@ literal|"valid"
 argument_list|,
 literal|"valid"
 argument_list|,
-literal|"Whether the image ID is valid"
+literal|"Whether the image is valid"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -12509,7 +12509,7 @@ literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
-literal|"The ID of the newly created image"
+literal|"The newly created image"
 argument_list|,
 name|pdb
 operator|->
@@ -12662,7 +12662,7 @@ literal|"image"
 argument_list|,
 literal|"image"
 argument_list|,
-literal|"The ID of the newly created image"
+literal|"The newly created image"
 argument_list|,
 name|pdb
 operator|->

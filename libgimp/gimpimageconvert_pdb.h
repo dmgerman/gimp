@@ -53,8 +53,9 @@ comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_image_convert_rgb
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -63,8 +64,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_convert_grayscale
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -73,8 +75,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_convert_indexed
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpConvertDitherType
 name|dither_type
@@ -124,8 +127,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_convert_precision
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpPrecision
 name|precision

@@ -250,16 +250,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy_visible:  * @image_ID: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * gimp_edit_paste() command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful.  *  * Since: 2.2  **/
+comment|/**  * gimp_edit_copy_visible:  * @image: The image to copy from.  *  * Copy from the projection.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the projection and placed in an internal  * GIMP edit buffer. It can subsequently be retrieved using the  * gimp_edit_paste() command. If there is no selection, then the  * projection's contents will be stored in the internal GIMP edit  * buffer.  *  * Returns: TRUE if the copy was successful.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_copy_visible (gint32 image_ID)
+DECL|function|gimp_edit_copy_visible (GimpImage * image)
 name|gimp_edit_copy_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpPDB
@@ -290,7 +291,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -484,11 +488,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new_image:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: The new image.  *  * Since: 2.10  **/
+comment|/**  * gimp_edit_paste_as_new_image:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: (transfer full): The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_edit_paste_as_new_image (void)
 name|gimp_edit_paste_as_new_image
 parameter_list|(
@@ -510,11 +515,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -569,16 +574,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -587,7 +598,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -841,17 +852,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_copy_visible:  * @image_ID: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: (transfer full):  *          The real name given to the buffer, or NULL if the copy failed.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
+comment|/**  * gimp_edit_named_copy_visible:  * @image: The image to copy from.  * @buffer_name: The name of the buffer to create.  *  * Copy from the projection into a named buffer.  *  * This procedure works like gimp_edit_copy_visible(), but additionally  * stores the copied buffer into a named buffer that will stay  * available for later pasting, regardless of any intermediate copy or  * cut operations.  *  * Returns: (transfer full):  *          The real name given to the buffer, or NULL if the copy failed.  *          The returned value must be freed with g_free().  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_copy_visible (gint32 image_ID,const gchar * buffer_name)
+DECL|function|gimp_edit_named_copy_visible (GimpImage * image,const gchar * buffer_name)
 name|gimp_edit_named_copy_visible
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -888,7 +900,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -1095,11 +1110,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste_as_new_image:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new_image() but pastes  * a named buffer instead of the global buffer.  *  * Returns: The new image.  *  * Since: 2.10  **/
+comment|/**  * gimp_edit_named_paste_as_new_image:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new_image() but pastes  * a named buffer instead of the global buffer.  *  * Returns: (transfer full): The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_edit_named_paste_as_new_image (const gchar * buffer_name)
 name|gimp_edit_named_paste_as_new_image
 parameter_list|(
@@ -1124,11 +1140,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -1187,16 +1203,22 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|image_ID
+name|image
 operator|=
-name|gimp_value_get_image_id
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
 name|gimp_value_array_index
 argument_list|(
 name|return_vals
 argument_list|,
 literal|1
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
@@ -1205,7 +1227,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function

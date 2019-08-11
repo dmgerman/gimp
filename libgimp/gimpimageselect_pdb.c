@@ -24,16 +24,17 @@ comment|/**  * SECTION: gimpimageselect  * @title: gimpimageselect  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_select_color:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the current context settings. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold and criterion context values) are  * included in the selection. To select transparent regions, the color  * specified must also have minimum alpha.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent().  *  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the current context settings. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold and criterion context values) are  * included in the selection. To select transparent regions, the color  * specified must also have minimum alpha.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent().  *  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_color (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color)
+DECL|function|gimp_image_select_color (GimpImage * image,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color)
 name|gimp_image_select_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -75,7 +76,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -148,16 +152,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_contiguous_color:  * @image_ID: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  *  * Create a selection by selecting all pixels around specified  * coordinates with the same (or similar) color to that at the  * coordinates.  *  * This tool creates a contiguous selection over the specified image. A  * contiguous color selection is determined by a seed fill under the  * constraints of the current context settings. Essentially, the color  * at the specified coordinates (in the drawable) is measured and the  * selection expands outwards from that point to any adjacent pixels  * which are not significantly different (as determined by the  * threshold and criterion context settings). This process continues  * until no more expansion is possible. If antialiasing is turned on,  * the final selection mask will contain intermediate values based on  * close misses to the threshold bar at pixels along the seed fill  * boundary.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent(),  * gimp_context_set_diagonal_neighbors().  *  * In the case of a merged sampling, the supplied drawable is ignored.  * If the sample is merged, the specified coordinates are relative to  * the image origin; otherwise, they are relative to the drawable's  * origin.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_contiguous_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  *  * Create a selection by selecting all pixels around specified  * coordinates with the same (or similar) color to that at the  * coordinates.  *  * This tool creates a contiguous selection over the specified image. A  * contiguous color selection is determined by a seed fill under the  * constraints of the current context settings. Essentially, the color  * at the specified coordinates (in the drawable) is measured and the  * selection expands outwards from that point to any adjacent pixels  * which are not significantly different (as determined by the  * threshold and criterion context settings). This process continues  * until no more expansion is possible. If antialiasing is turned on,  * the final selection mask will contain intermediate values based on  * close misses to the threshold bar at pixels along the seed fill  * boundary.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent(),  * gimp_context_set_diagonal_neighbors().  *  * In the case of a merged sampling, the supplied drawable is ignored.  * If the sample is merged, the specified coordinates are relative to  * the image origin; otherwise, they are relative to the drawable's  * origin.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_contiguous_color (gint32 image_ID,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y)
+DECL|function|gimp_image_select_contiguous_color (GimpImage * image,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y)
 name|gimp_image_select_contiguous_color
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -200,7 +205,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -277,16 +285,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_feather(), gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_rectangle:  * @image: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  *  * Create a rectangular selection over the specified image;  *  * This tool creates a rectangular selection over the specified image.  * The rectangular region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_feather(), gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_rectangle (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
+DECL|function|gimp_image_select_rectangle (GimpImage * image,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_image_select_rectangle
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -332,7 +341,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -413,16 +425,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_round_rectangle:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_round_rectangle:  * @image: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @width: The width of the rectangle.  * @height: The height of the rectangle.  * @corner_radius_x: The corner radius in X direction.  * @corner_radius_y: The corner radius in Y direction.  *  * Create a rectangular selection with round corners over the specified  * image;  *  * This tool creates a rectangular selection with round corners over  * the specified image. The rectangular region can be either added to,  * subtracted from, or replace the contents of the previous selection  * mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_round_rectangle (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height,gdouble corner_radius_x,gdouble corner_radius_y)
+DECL|function|gimp_image_select_round_rectangle (GimpImage * image,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height,gdouble corner_radius_x,gdouble corner_radius_y)
 name|gimp_image_select_round_rectangle
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -474,7 +487,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -563,16 +579,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_ellipse:  * @image_ID: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_ellipse:  * @image: The image.  * @operation: The selection operation.  * @x: x coordinate of upper-left corner of ellipse bounding box.  * @y: y coordinate of upper-left corner of ellipse bounding box.  * @width: The width of the ellipse.  * @height: The height of the ellipse.  *  * Create an elliptical selection over the specified image.  *  * This tool creates an elliptical selection over the specified image.  * The elliptical region can be either added to, subtracted from, or  * replace the contents of the previous selection mask.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_ellipse (gint32 image_ID,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
+DECL|function|gimp_image_select_ellipse (GimpImage * image,GimpChannelOps operation,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_image_select_ellipse
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -618,7 +635,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -699,16 +719,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_polygon:  * @image_ID: The image.  * @operation: The selection operation.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: (array length=num_segs) (element-type gdouble): Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_polygon:  * @image: The image.  * @operation: The selection operation.  * @num_segs: Number of points (count 1 coordinate as two points).  * @segs: (array length=num_segs) (element-type gdouble): Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}.  *  * Create a polygonal selection over the specified image.  *  * This tool creates a polygonal selection over the specified image.  * The polygonal region can be either added to, subtracted from, or  * replace the contents of the previous selection mask. The polygon is  * specified through an array of floating point numbers and its length.  * The length of array must be 2n, where n is the number of points.  * Each point is defined by 2 floating point values which correspond to  * the x and y coordinates. If the final point does not connect to the  * starting point, a connecting segment is automatically added.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_polygon (gint32 image_ID,GimpChannelOps operation,gint num_segs,const gdouble * segs)
+DECL|function|gimp_image_select_polygon (GimpImage * image,GimpChannelOps operation,gint num_segs,const gdouble * segs)
 name|gimp_image_select_polygon
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -750,7 +771,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
@@ -837,16 +861,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_item:  * @image_ID: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_item:  * @image: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_item (gint32 image_ID,GimpChannelOps operation,gint32 item_ID)
+DECL|function|gimp_image_select_item (GimpImage * image,GimpChannelOps operation,gint32 item_ID)
 name|gimp_image_select_item
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpChannelOps
 name|operation
@@ -883,7 +908,10 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_IMAGE_ID
 argument_list|,
-name|image_ID
+name|gimp_image_get_id
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
