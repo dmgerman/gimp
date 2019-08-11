@@ -438,6 +438,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_pdb_get_last_error
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpPDBStatusType
+name|gimp_pdb_get_last_status
+parameter_list|(
+name|GimpPDB
+modifier|*
+name|pdb
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  Temporary API, to go away before 3.0  */
 end_comment

@@ -345,30 +345,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Retrieve the error message and return status for the last procedure  * call.  */
-end_comment
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_get_pdb_error
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpPDBStatusType
-name|gimp_get_pdb_status
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Return various constants given by the GIMP core at plug-in config time.  */
 end_comment
 

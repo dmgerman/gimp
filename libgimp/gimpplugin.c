@@ -64,7 +64,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d8cf700103
+DECL|enum|__anon2886b01b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1686,7 +1686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_set_pdb_error_handler:  * @plug_in: A #GimpPlugIn  * @handler: Who is responsible for handling procedure call errors.  *  * Sets an error handler for procedure calls.  *  * This procedure changes the way that errors in procedure calls are  * handled. By default GIMP will raise an error dialog if a procedure  * call made by a plug-in fails. Using this procedure the plug-in can  * change this behavior. If the error handler is set to  * %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for  * calling gimp_get_pdb_error() and handling the error whenever one if  * its procedure calls fails. It can do this by displaying the error  * message or by forwarding it in its own return values.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_set_pdb_error_handler:  * @plug_in: A #GimpPlugIn  * @handler: Who is responsible for handling procedure call errors.  *  * Sets an error handler for procedure calls.  *  * This procedure changes the way that errors in procedure calls are  * handled. By default GIMP will raise an error dialog if a procedure  * call made by a plug-in fails. Using this procedure the plug-in can  * change this behavior. If the error handler is set to  * %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for  * calling gimp_pdb_get_last_error() and handling the error whenever  * one if its procedure calls fails. It can do this by displaying the  * error message or by forwarding it in its own return values.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
