@@ -750,7 +750,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_load_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new load procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpLoadProcedure is a #GimpProcedure subclass that makes it easier  * to write file load procedures.  *  * It automatically adds the standard  *  * (run-mode, uri, raw-uri)  *  * arguments of a load procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguemnts and calls @run_func which is a #GimpRunLoadFunc. The  * "args" #GimpValueArray of #GimpRunLoadFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
+comment|/**  * gimp_load_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new load procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpLoadProcedure is a #GimpProcedure subclass that makes it easier  * to write file load procedures.  *  * It automatically adds the standard  *  * (run-mode, uri, raw-uri)  *  * arguments and the standard  *  * (image-id)  *  * return value of a load procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguemnts and calls @run_func which is a #GimpRunLoadFunc. The  * "args" #GimpValueArray of #GimpRunLoadFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -998,7 +998,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_load_procedure_get_thumbnail_loader:  * @procedure: A #GimpLoadProcedure.  *  * Returns: The procedure's thumbnail loader procedure as set with  *          gimp_load_procedure_set_thumbnail_procedure().  *  * Since: 3.0  **/
+comment|/**  * gimp_load_procedure_get_thumbnail_loader:  * @procedure: A #GimpLoadProcedure.  *  * Returns: The procedure's thumbnail loader procedure as set with  *          gimp_load_procedure_set_thumbnail_loader().  *  * Since: 3.0  **/
 end_comment
 
 begin_function

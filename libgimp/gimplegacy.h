@@ -174,6 +174,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * GimpParamDef:  * @type:        the parameter's type.  * @name:        the parameter's name.  * @description: the parameter's desctiption.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpParamDef
 struct|struct
@@ -196,6 +200,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpParamData:  * @d_int32:       a 32-bit integer.  * @d_int16:       a 16-bit integer.  * @d_int8:        an 8-bit unsigned integer.  * @d_float:       a double.  * @d_string:      a string.  * @d_color:       a #GimpRGB.  * @d_int32array:  an array of int32.  * @d_int16array:  an array of int16.  * @d_int8array:   an array of int8.  * @d_floatarray:  an array of floats.  * @d_stringarray: an array of strings.  * @d_colorarray:  an array of colors.  * @d_display:     a display id.  * @d_image:       an image id.  * @d_item:        an item id.  * @d_drawable:    a drawable id.  * @d_layer:       a layer id.  * @d_channel:     a channel id.  * @d_layer_mask:  a layer mask id.  * @d_selection:   a selection id.  * @d_vectors:     a vectors id.  * @d_unit:        a GimpUnit.  * @d_parasite:    a GimpParasite.  * @d_tattoo:      a tattoo.  * @d_status:      a return status.  **/
+end_comment
 
 begin_union
 DECL|union|_GimpParamData
@@ -222,6 +230,10 @@ DECL|member|d_string
 name|gchar
 modifier|*
 name|d_string
+decl_stmt|;
+DECL|member|d_color
+name|GimpRGB
+name|d_color
 decl_stmt|;
 DECL|member|d_int32array
 name|gint32
@@ -254,10 +266,6 @@ name|GimpRGB
 modifier|*
 name|d_colorarray
 decl_stmt|;
-DECL|member|d_color
-name|GimpRGB
-name|d_color
-decl_stmt|;
 DECL|member|d_display
 name|gint32
 name|d_display
@@ -270,29 +278,25 @@ DECL|member|d_item
 name|gint32
 name|d_item
 decl_stmt|;
+DECL|member|d_drawable
+name|gint32
+name|d_drawable
+decl_stmt|;
 DECL|member|d_layer
 name|gint32
 name|d_layer
-decl_stmt|;
-DECL|member|d_layer_mask
-name|gint32
-name|d_layer_mask
 decl_stmt|;
 DECL|member|d_channel
 name|gint32
 name|d_channel
 decl_stmt|;
-DECL|member|d_drawable
+DECL|member|d_layer_mask
 name|gint32
-name|d_drawable
+name|d_layer_mask
 decl_stmt|;
 DECL|member|d_selection
 name|gint32
 name|d_selection
-decl_stmt|;
-DECL|member|d_boundary
-name|gint32
-name|d_boundary
 decl_stmt|;
 DECL|member|d_vectors
 name|gint32
@@ -317,6 +321,10 @@ decl_stmt|;
 block|}
 union|;
 end_union
+
+begin_comment
+comment|/**  * GimpParam:  * @type: the parameter's type.  * @data: the parameter's data.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpParam
