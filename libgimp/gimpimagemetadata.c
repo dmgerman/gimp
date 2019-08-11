@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9bee50108
+DECL|struct|__anon2b85b99b0108
 block|{
 DECL|member|tag
 name|gchar
@@ -82,8 +82,9 @@ specifier|static
 name|void
 name|gimp_image_metadata_rotate
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GExiv2Orientation
 name|orientation
@@ -112,8 +113,9 @@ specifier|static
 name|void
 name|gimp_image_metadata_rotate_query
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -135,8 +137,9 @@ specifier|static
 name|gboolean
 name|gimp_image_metadata_rotate_dialog
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GExiv2Orientation
 name|orientation
@@ -154,17 +157,18 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_metadata_load_prepare:  * @image_ID:  The image  * @mime_type: The loaded file's mime-type  * @file:      The file to load the metadata from  * @error:     Return location for error  *  * Loads and returns metadata from @file to be passed into  * gimp_image_metadata_load_finish().  *  * Returns: (transfer full): The file's metadata.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_load_prepare:  * @image:     The image  * @mime_type: The loaded file's mime-type  * @file:      The file to load the metadata from  * @error:     Return location for error  *  * Loads and returns metadata from @file to be passed into  * gimp_image_metadata_load_finish().  *  * Returns: (transfer full): The file's metadata.  *  * Since: 2.10  */
 end_comment
 
 begin_function
 name|GimpMetadata
 modifier|*
-DECL|function|gimp_image_metadata_load_prepare (gint32 image_ID,const gchar * mime_type,GFile * file,GError ** error)
+DECL|function|gimp_image_metadata_load_prepare (GimpImage * image,const gchar * mime_type,GFile * file,GError ** error)
 name|gimp_image_metadata_load_prepare
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -187,9 +191,10 @@ name|metadata
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|image_ID
-operator|>
-literal|0
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -257,16 +262,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_load_finish:  * @image_ID:    The image  * @mime_type:   The loaded file's mime-type  * @metadata:    The metadata to set on the image  * @flags:       Flags to specify what of the metadata to apply to the image  * @interactive: Whether this function is allowed to query info with dialogs  *  * Applies the @metadata previously loaded with  * gimp_image_metadata_load_prepare() to the image, taking into account  * the passed @flags.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_load_finish:  * @image:       The image  * @mime_type:   The loaded file's mime-type  * @metadata:    The metadata to set on the image  * @flags:       Flags to specify what of the metadata to apply to the image  * @interactive: Whether this function is allowed to query info with dialogs  *  * Applies the @metadata previously loaded with  * gimp_image_metadata_load_prepare() to the image, taking into account  * the passed @flags.  *  * Since: 2.10  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_metadata_load_finish (gint32 image_ID,const gchar * mime_type,GimpMetadata * metadata,GimpMetadataLoadFlags flags,gboolean interactive)
+DECL|function|gimp_image_metadata_load_finish (GimpImage * image,const gchar * mime_type,GimpMetadata * metadata,GimpMetadataLoadFlags flags,gboolean interactive)
 name|gimp_image_metadata_load_finish
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -286,9 +292,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|image_ID
-operator|>
-literal|0
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -380,7 +387,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_attach_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|parasite
 argument_list|)
@@ -427,7 +434,7 @@ condition|)
 block|{
 name|gimp_image_set_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|xres
 argument_list|,
@@ -436,7 +443,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|unit
 argument_list|)
@@ -452,7 +459,7 @@ condition|)
 block|{
 name|gimp_image_metadata_rotate_query
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|mime_type
 argument_list|,
@@ -475,7 +482,7 @@ name|profile
 init|=
 name|gimp_image_get_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 decl_stmt|;
 comment|/* only look for colorspace information from metadata if the        * image didn't contain an embedded color profile        */
@@ -527,7 +534,7 @@ name|profile
 condition|)
 name|gimp_image_set_color_profile
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|profile
 argument_list|)
@@ -545,7 +552,7 @@ expr_stmt|;
 block|}
 name|gimp_image_set_metadata
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|metadata
 argument_list|)
@@ -554,17 +561,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_prepare:  * @image_ID:        The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image and the preferences  * for metadata exporting.  * The calling application may still update @available_flags, for  * instance to follow the settings from a previous export in the same  * session, or a previous export of the same image. But it should not  * override the preferences without a good reason since it is a data  * leak.  *  * The suggested value for GIMP_METADATA_SAVE_THUMBNAIL is determined by  * whether there was a thumbnail in the previously imported image.  *  * Returns: (transfer full): The image's metadata, prepared for saving.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_prepare:  * @image:           The image  * @mime_type:       The saved file's mime-type  * @suggested_flags: Suggested default values for the @flags passed to  *                   gimp_image_metadata_save_finish()  *  * Gets the image metadata for saving it using  * gimp_image_metadata_save_finish().  *  * The @suggested_flags are determined from what kind of metadata  * (Exif, XMP, ...) is actually present in the image and the preferences  * for metadata exporting.  * The calling application may still update @available_flags, for  * instance to follow the settings from a previous export in the same  * session, or a previous export of the same image. But it should not  * override the preferences without a good reason since it is a data  * leak.  *  * The suggested value for GIMP_METADATA_SAVE_THUMBNAIL is determined by  * whether there was a thumbnail in the previously imported image.  *  * Returns: (transfer full): The image's metadata, prepared for saving.  *  * Since: 2.10  */
 end_comment
 
 begin_function
 name|GimpMetadata
 modifier|*
-DECL|function|gimp_image_metadata_save_prepare (gint32 image_ID,const gchar * mime_type,GimpMetadataSaveFlags * suggested_flags)
+DECL|function|gimp_image_metadata_save_prepare (GimpImage * image,const gchar * mime_type,GimpMetadataSaveFlags * suggested_flags)
 name|gimp_image_metadata_save_prepare
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -582,9 +590,10 @@ name|metadata
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|image_ID
-operator|>
-literal|0
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -616,7 +625,7 @@ name|metadata
 operator|=
 name|gimp_image_get_metadata
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -671,14 +680,14 @@ name|image_width
 operator|=
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|image_height
 operator|=
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|datetime
@@ -690,7 +699,7 @@ name|comment_parasite
 operator|=
 name|gimp_image_get_parasite
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"gimp-comment"
 argument_list|)
@@ -820,7 +829,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|xres
@@ -839,7 +848,7 @@ name|yres
 argument_list|,
 name|gimp_image_get_unit
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1215,16 +1224,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_metadata_save_finish:  * @image_ID:  The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Returns: Whether the save was successful.  *  * Since: 2.10  */
+comment|/**  * gimp_image_metadata_save_finish:  * @image:     The image  * @mime_type: The saved file's mime-type  * @metadata:  The metadata to set on the image  * @flags:     Flags to specify what of the metadata to save  * @file:      The file to load the metadata from  * @error:     Return location for error message  *  * Saves the @metadata retrieved from the image with  * gimp_image_metadata_save_prepare() to @file, taking into account  * the passed @flags.  *  * Returns: Whether the save was successful.  *  * Since: 2.10  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_metadata_save_finish (gint32 image_ID,const gchar * mime_type,GimpMetadata * metadata,GimpMetadataSaveFlags flags,GFile * file,GError ** error)
+DECL|function|gimp_image_metadata_save_finish (GimpImage * image,const gchar * mime_type,GimpMetadata * metadata,GimpMetadataSaveFlags flags,GFile * file,GError ** error)
 name|gimp_image_metadata_save_finish
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -1275,9 +1285,10 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|image_ID
-operator|>
-literal|0
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1982,14 +1993,14 @@ name|image_width
 operator|=
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|image_height
 operator|=
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -2031,7 +2042,7 @@ name|thumb_pixbuf
 operator|=
 name|gimp_image_get_thumbnail
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|thumbw
 argument_list|,
@@ -2199,8 +2210,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_image_metadata_load_thumbnail:  * @file:  A #GFile image  * @error: Return location for error message  *  * Retrieves a thumbnail from metadata if present.  *  * Returns: (transfer full) (nullable): a #GimpImage of the @file thumbnail.  */
+end_comment
+
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|gimp_image_metadata_load_thumbnail (GFile * file,GError ** error)
 name|gimp_image_metadata_load_thumbnail
 parameter_list|(
@@ -2233,11 +2249,11 @@ decl_stmt|;
 name|gint
 name|thumbnail_size
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2246,8 +2262,7 @@ argument_list|(
 name|file
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2261,8 +2276,7 @@ name|error
 operator|==
 name|NULL
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 name|metadata
@@ -2280,8 +2294,7 @@ operator|!
 name|metadata
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 if|if
 condition|(
@@ -2307,8 +2320,7 @@ name|metadata
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|input_stream
@@ -2349,7 +2361,7 @@ block|{
 name|gint32
 name|layer_ID
 decl_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_image_new
 argument_list|(
@@ -2368,14 +2380,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|layer_ID
 operator|=
 name|gimp_layer_new_from_pixbuf
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|_
 argument_list|(
@@ -2388,7 +2400,7 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2403,7 +2415,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|layer_ID
 argument_list|,
@@ -2415,7 +2427,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|gexiv2_metadata_get_orientation
 argument_list|(
@@ -2433,7 +2445,7 @@ name|metadata
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
@@ -2445,11 +2457,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_metadata_rotate (gint32 image_ID,GExiv2Orientation orientation)
+DECL|function|gimp_image_metadata_rotate (GimpImage * image,GExiv2Orientation orientation)
 name|gimp_image_metadata_rotate
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GExiv2Orientation
 name|orientation
@@ -2473,7 +2486,7 @@ name|GEXIV2_ORIENTATION_HFLIP
 case|:
 name|gimp_image_flip
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|)
@@ -2484,7 +2497,7 @@ name|GEXIV2_ORIENTATION_ROT_180
 case|:
 name|gimp_image_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ROTATE_180
 argument_list|)
@@ -2495,7 +2508,7 @@ name|GEXIV2_ORIENTATION_VFLIP
 case|:
 name|gimp_image_flip
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
@@ -2507,14 +2520,14 @@ case|:
 comment|/* flipped diagonally around '\' */
 name|gimp_image_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ROTATE_90
 argument_list|)
 expr_stmt|;
 name|gimp_image_flip
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|)
@@ -2526,7 +2539,7 @@ case|:
 comment|/* 90 CW */
 name|gimp_image_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ROTATE_90
 argument_list|)
@@ -2538,14 +2551,14 @@ case|:
 comment|/* flipped diagonally around '/' */
 name|gimp_image_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ROTATE_90
 argument_list|)
 expr_stmt|;
 name|gimp_image_flip
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
@@ -2557,7 +2570,7 @@ case|:
 comment|/* 90 CCW */
 name|gimp_image_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_ROTATE_270
 argument_list|)
@@ -2751,11 +2764,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_metadata_rotate_query (gint32 image_ID,const gchar * mime_type,GimpMetadata * metadata,gboolean interactive)
+DECL|function|gimp_image_metadata_rotate_query (GimpImage * image,const gchar * mime_type,GimpMetadata * metadata,gboolean interactive)
 name|gimp_image_metadata_rotate_query
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -2899,7 +2913,7 @@ operator|&&
 operator|!
 name|gimp_image_metadata_rotate_dialog
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|orientation
 argument_list|,
@@ -2921,7 +2935,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_rotate
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|orientation
 argument_list|)
@@ -2942,11 +2956,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_metadata_rotate_dialog (gint32 image_ID,GExiv2Orientation orientation,const gchar * parasite_name)
+DECL|function|gimp_image_metadata_rotate_dialog (GimpImage * image,GExiv2Orientation orientation,const gchar * parasite_name)
 name|gimp_image_metadata_rotate_dialog
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GExiv2Orientation
 name|orientation
@@ -2996,7 +3011,7 @@ name|name
 operator|=
 name|gimp_image_get_name
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|title
@@ -3142,7 +3157,7 @@ name|pixbuf
 operator|=
 name|gimp_image_get_thumbnail
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|THUMBNAIL_SIZE
 argument_list|,

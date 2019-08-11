@@ -16,16 +16,17 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_channel_new:  * @image_ID: The image to which to add the channel.  * @name: The channel name.  * @width: The channel width.  * @height: The channel height.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: The newly created channel.  */
+comment|/**  * gimp_channel_new:  * @image:   The image to which to add the channel.  * @name:    The channel name.  * @width:   The channel width.  * @height:  The channel height.  * @opacity: The channel opacity.  * @color:   The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: The newly created channel.  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_channel_new (gint32 image_ID,const gchar * name,guint width,guint height,gdouble opacity,const GimpRGB * color)
+DECL|function|gimp_channel_new (GimpImage * image,const gchar * name,guint width,guint height,gdouble opacity,const GimpRGB * color)
 name|gimp_channel_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -50,7 +51,7 @@ block|{
 return|return
 name|_gimp_channel_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|width
 argument_list|,

@@ -50,8 +50,9 @@ name|GimpMetadata
 modifier|*
 name|gimp_image_metadata_load_prepare
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -74,8 +75,9 @@ begin_function_decl
 name|void
 name|gimp_image_metadata_load_finish
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -100,8 +102,9 @@ name|GimpMetadata
 modifier|*
 name|gimp_image_metadata_save_prepare
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -119,8 +122,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_metadata_save_finish
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -151,7 +155,8 @@ comment|/* this is experimental API, to be finished for 2.10 */
 end_comment
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|gimp_image_metadata_load_thumbnail
 parameter_list|(
 name|GFile

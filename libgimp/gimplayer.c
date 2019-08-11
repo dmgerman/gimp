@@ -22,16 +22,17 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @name: The layer name.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
+comment|/**  * gimp_layer_new:  * @image:   The image to which to add the layer.  * @name:    The layer name.  * @width:   The layer width.  * @height:  The layer height.  * @type:    The layer type.  * @opacity: The layer opacity.  * @mode:    The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new (gint32 image_ID,const gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerMode mode)
+DECL|function|gimp_layer_new (GimpImage * image,const gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerMode mode)
 name|gimp_layer_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -57,7 +58,7 @@ block|{
 return|return
 name|_gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|width
 argument_list|,
@@ -100,16 +101,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @image_ID:       The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.4  */
+comment|/**  * gimp_layer_new_from_pixbuf:  * @image:          The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_pixbuf (gint32 image_ID,const gchar * name,GdkPixbuf * pixbuf,gdouble opacity,GimpLayerMode mode,gdouble progress_start,gdouble progress_end)
+DECL|function|gimp_layer_new_from_pixbuf (GimpImage * image,const gchar * name,GdkPixbuf * pixbuf,gdouble opacity,GimpLayerMode mode,gdouble progress_start,gdouble progress_end)
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -171,7 +173,7 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|GIMP_RGB
@@ -232,7 +234,7 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|name
 argument_list|,
@@ -327,16 +329,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_surface:  * @image_ID:        The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.8  */
+comment|/**  * gimp_layer_new_from_surface:  * @image:           The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.8  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new_from_surface (gint32 image_ID,const gchar * name,cairo_surface_t * surface,gdouble progress_start,gdouble progress_end)
+DECL|function|gimp_layer_new_from_surface (GimpImage * image,const gchar * name,cairo_surface_t * surface,gdouble progress_start,gdouble progress_end)
 name|gimp_layer_new_from_surface
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -408,7 +411,7 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|GIMP_RGB
@@ -470,7 +473,7 @@ name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|name
 argument_list|,
@@ -490,7 +493,7 @@ literal|100.0
 argument_list|,
 name|gimp_image_get_default_new_layer_mode
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

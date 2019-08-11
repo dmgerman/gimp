@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfa49750103
+DECL|enum|__anon296df6800103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfa49750203
+DECL|enum|__anon296df6800203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL
@@ -155,9 +155,10 @@ begin_function_decl
 name|GimpExportReturn
 name|gimp_export_image
 parameter_list|(
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*

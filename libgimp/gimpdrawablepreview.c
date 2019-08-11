@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fb47170103
+DECL|enum|__anon297e8cac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fb47170208
+DECL|struct|__anon297e8cac0208
 block|{
 DECL|member|x
 name|gint
@@ -1603,6 +1603,10 @@ argument_list|(
 name|gimp_preview
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gint
 name|xmin
 decl_stmt|,
@@ -1612,9 +1616,6 @@ name|gint
 name|xoff
 decl_stmt|,
 name|yoff
-decl_stmt|;
-name|gint32
-name|image_ID
 decl_stmt|;
 name|gimp_preview_get_bounds
 argument_list|(
@@ -1642,7 +1643,7 @@ operator|&
 name|yoff
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1655,7 +1656,7 @@ if|if
 condition|(
 name|gimp_selection_is_empty
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1836,7 +1837,7 @@ name|selection_ID
 operator|=
 name|gimp_image_get_selection
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|src
@@ -1941,6 +1942,11 @@ argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|gimp_preview_area_mask
@@ -2015,6 +2021,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2186,8 +2197,9 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|guint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
@@ -2214,7 +2226,7 @@ name|cmap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|num_colors
@@ -2230,6 +2242,11 @@ argument_list|,
 name|cmap
 argument_list|,
 name|num_colors
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|g_free

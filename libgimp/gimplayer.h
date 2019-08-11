@@ -49,8 +49,9 @@ comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_layer_new
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -89,8 +90,9 @@ begin_function_decl
 name|gint32
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar
@@ -120,8 +122,9 @@ begin_function_decl
 name|gint32
 name|gimp_layer_new_from_surface
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|gchar

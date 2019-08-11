@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a7f510103
+DECL|enum|__anon2b08f1c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a7f510208
+DECL|struct|__anon2b08f1c60208
 block|{
 DECL|member|update
 name|gboolean
@@ -1046,14 +1046,15 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
 name|gint
 name|height
-decl_stmt|;
-name|gint32
-name|image_ID
 decl_stmt|;
 name|gimp_preview_get_size
 argument_list|(
@@ -1066,7 +1067,7 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
@@ -1079,7 +1080,7 @@ if|if
 condition|(
 name|gimp_selection_is_empty
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 condition|)
 block|{
@@ -1136,7 +1137,7 @@ name|selection_ID
 operator|=
 name|gimp_image_get_selection
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|w
@@ -1234,6 +1235,11 @@ name|src
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28daaf580103
+DECL|enum|__anon2afa64b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -384,17 +384,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_colormap:  * @image_ID:   The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_colormap:  * @image:      The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_image_get_colormap (gint32 image_ID,gint * num_colors)
+DECL|function|gimp_image_get_colormap (GimpImage * image,gint * num_colors)
 name|gimp_image_get_colormap
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -412,7 +413,7 @@ name|cmap
 operator|=
 name|_gimp_image_get_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|num_bytes
@@ -436,16 +437,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_colormap:  * @image_ID:   The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_colormap:  * @image:      The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_colormap (gint32 image_ID,const guchar * colormap,gint num_colors)
+DECL|function|gimp_image_set_colormap (GimpImage * image,const guchar * colormap,gint num_colors)
 name|gimp_image_set_colormap
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 specifier|const
 name|guchar
@@ -459,7 +461,7 @@ block|{
 return|return
 name|_gimp_image_set_colormap
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|num_colors
 operator|*
@@ -472,17 +474,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_thumbnail_data:  * @image_ID: The image.  * @width:    (inout): The requested thumbnail width.  * @height:   (inout): The requested thumbnail height.  * @bpp:      (out): The previews bpp.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value  * gives the number of bytes per pixel in the image.  *  * Returns: (transfer full): the thumbnail data.  **/
+comment|/**  * gimp_image_get_thumbnail_data:  * @image:  The image.  * @width:  (inout): The requested thumbnail width.  * @height: (inout): The requested thumbnail height.  * @bpp:    (out): The previews bpp.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value  * gives the number of bytes per pixel in the image.  *  * Returns: (transfer full): the thumbnail data.  **/
 end_comment
 
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_image_get_thumbnail_data (gint32 image_ID,gint * width,gint * height,gint * bpp)
+DECL|function|gimp_image_get_thumbnail_data (GimpImage * image,gint * width,gint * height,gint * bpp)
 name|gimp_image_get_thumbnail_data
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -512,7 +515,7 @@ name|data_size
 decl_stmt|;
 name|_gimp_image_thumbnail
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|*
 name|width
@@ -552,17 +555,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_thumbnail:  * @image_ID: the image ID  * @width:    the requested thumbnail width  (<= 1024 pixels)  * @height:   the requested thumbnail height (<= 1024 pixels)  * @alpha:    how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image_ID.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 2.2  **/
+comment|/**  * gimp_image_get_thumbnail:  * @image:  the image ID  * @width:  the requested thumbnail width  (<= 1024 pixels)  * @height: the requested thumbnail height (<= 1024 pixels)  * @alpha:  how to handle an alpha channel  *  * Retrieves a thumbnail pixbuf for the image identified by @image->priv->id.  * The thumbnail will be not larger than the requested size.  *  * Returns: (transfer full): a new #GdkPixbuf  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_image_get_thumbnail (gint32 image_ID,gint width,gint height,GimpPixbufTransparency alpha)
+DECL|function|gimp_image_get_thumbnail (GimpImage * image,gint width,gint height,GimpPixbufTransparency alpha)
 name|gimp_image_get_thumbnail
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 name|width
@@ -621,7 +625,7 @@ name|data
 operator|=
 name|gimp_image_get_thumbnail_data
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|thumb_width
@@ -659,17 +663,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_metadata:  * @image_ID: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_get_metadata:  * @image: The image.  *  * Returns the image's metadata.  *  * Returns exif/iptc/xmp metadata from the image.  *  * Returns: (nullable) (transfer full): The exif/ptc/xmp metadata,  *          or %NULL if there is none.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpMetadata
 modifier|*
-DECL|function|gimp_image_get_metadata (gint32 image_ID)
+DECL|function|gimp_image_get_metadata (GimpImage * image)
 name|gimp_image_get_metadata
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 name|GimpMetadata
@@ -686,7 +691,7 @@ name|metadata_string
 operator|=
 name|_gimp_image_get_metadata
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -714,16 +719,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_metadata:  * @image_ID: The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_set_metadata:  * @image:    The image.  * @metadata: The exif/ptc/xmp metadata.  *  * Set the image's metadata.  *  * Sets exif/iptc/xmp metadata on the image, or deletes it if  * @metadata is %NULL.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_metadata (gint32 image_ID,GimpMetadata * metadata)
+DECL|function|gimp_image_set_metadata (GimpImage * image,GimpMetadata * metadata)
 name|gimp_image_set_metadata
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpMetadata
 modifier|*
@@ -754,7 +760,7 @@ name|success
 operator|=
 name|_gimp_image_set_metadata
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|metadata_string
 argument_list|)

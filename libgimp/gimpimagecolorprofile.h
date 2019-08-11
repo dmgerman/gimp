@@ -50,8 +50,9 @@ name|GimpColorProfile
 modifier|*
 name|gimp_image_get_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -60,8 +61,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_set_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*
@@ -75,8 +77,9 @@ name|GimpColorProfile
 modifier|*
 name|gimp_image_get_effective_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -85,8 +88,9 @@ begin_function_decl
 name|gboolean
 name|gimp_image_convert_color_profile
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|GimpColorProfile
 modifier|*

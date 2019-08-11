@@ -52,8 +52,9 @@ modifier|*
 name|ExportFunc
 function_decl|)
 parameter_list|(
-name|gint32
-name|imageID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -69,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1947390108
+DECL|struct|__anon29ed21fe0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -111,11 +112,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|export_merge (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_merge (GimpImage * image,gint32 * drawable_ID)
 name|export_merge
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -147,7 +149,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|nlayers
@@ -193,18 +195,18 @@ name|transp
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 literal|"-"
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 name|gimp_drawable_type
@@ -222,7 +224,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_insert_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|transp
 argument_list|,
@@ -234,7 +236,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_selection_none
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_edit_clear
@@ -262,7 +264,7 @@ name|merged
 operator|=
 name|gimp_image_merge_visible_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_CLIP_TO_IMAGE
 argument_list|)
@@ -286,7 +288,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|nlayers
@@ -302,7 +304,7 @@ argument_list|)
 operator|!=
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|||
 name|gimp_drawable_height
@@ -312,7 +314,7 @@ argument_list|)
 operator|!=
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 condition|)
 block|{
@@ -338,12 +340,12 @@ name|merged
 argument_list|,
 name|gimp_image_width
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 name|gimp_image_height
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 argument_list|,
 name|off_x
@@ -380,7 +382,7 @@ name|drawable_ID
 condition|)
 name|gimp_image_remove_layer
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|layers
 index|[
@@ -400,11 +402,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_flatten (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_flatten (GimpImage * image,gint32 * drawable_ID)
 name|export_flatten
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -418,7 +421,7 @@ name|flattened
 operator|=
 name|gimp_image_flatten
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -439,11 +442,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_remove_alpha (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_remove_alpha (GimpImage * image,gint32 * drawable_ID)
 name|export_remove_alpha
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -464,7 +468,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|n_layers
@@ -514,11 +518,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_apply_masks (gint32 image_ID,gint * drawable_ID)
+DECL|function|export_apply_masks (GimpImage * image,gint * drawable_ID)
 name|export_apply_masks
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint
 modifier|*
@@ -539,7 +544,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|n_layers
@@ -594,11 +599,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_convert_rgb (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_convert_rgb (GimpImage * image,gint32 * drawable_ID)
 name|export_convert_rgb
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -607,7 +613,7 @@ parameter_list|)
 block|{
 name|gimp_image_convert_rgb
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -616,11 +622,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_convert_grayscale (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_convert_grayscale (GimpImage * image,gint32 * drawable_ID)
 name|export_convert_grayscale
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -629,7 +636,7 @@ parameter_list|)
 block|{
 name|gimp_image_convert_grayscale
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -638,11 +645,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_convert_indexed (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_convert_indexed (GimpImage * image,gint32 * drawable_ID)
 name|export_convert_indexed
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -657,7 +665,7 @@ name|g_free
 argument_list|(
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|nlayers
@@ -678,7 +686,7 @@ argument_list|)
 condition|)
 name|gimp_image_convert_indexed
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
@@ -696,7 +704,7 @@ expr_stmt|;
 else|else
 name|gimp_image_convert_indexed
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_CONVERT_DITHER_NONE
 argument_list|,
@@ -717,11 +725,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_convert_bitmap (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_convert_bitmap (GimpImage * image,gint32 * drawable_ID)
 name|export_convert_bitmap
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -732,19 +741,19 @@ if|if
 condition|(
 name|gimp_image_base_type
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 operator|==
 name|GIMP_INDEXED
 condition|)
 name|gimp_image_convert_rgb
 argument_list|(
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_convert_indexed
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|GIMP_CONVERT_DITHER_FS
 argument_list|,
@@ -765,11 +774,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_add_alpha (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_add_alpha (GimpImage * image,gint32 * drawable_ID)
 name|export_add_alpha
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -790,7 +800,7 @@ name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|nlayers
@@ -841,11 +851,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_void (gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_void (GimpImage * image,gint32 * drawable_ID)
 name|export_void
 parameter_list|(
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -1421,7 +1432,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|export_action_perform (const ExportAction * action,gint32 image_ID,gint32 * drawable_ID)
+DECL|function|export_action_perform (const ExportAction * action,GimpImage * image,gint32 * drawable_ID)
 name|export_action_perform
 parameter_list|(
 specifier|const
@@ -1429,8 +1440,9 @@ name|ExportAction
 modifier|*
 name|action
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -1442,7 +1454,7 @@ function_decl|(
 name|action
 function_decl|)
 parameter_list|(
-name|image_ID
+name|image
 parameter_list|,
 name|drawable_ID
 parameter_list|)
@@ -2749,17 +2761,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_image:  * @image_ID: Pointer to the image_ID.  * @drawable_ID: Pointer to the drawable_ID.  * @format_name: The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, the image_ID and drawable_ID  * are changed to point to the new image and the procedure returns  * GIMP_EXPORT_EXPORT. The save_plugin has to take care of deleting the  * created image using gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, the image_ID  * and drawable_ID is not altered, GIMP_EXPORT_IGNORE is returned and  * the save_plugin should try to save the original image. If the  * user chooses Cancel, GIMP_EXPORT_CANCEL is returned and the  * save_plugin should quit itself with status %GIMP_PDB_CANCEL.  *  * If @format_name is NULL, no dialogs will be shown and this function  * will behave as if the user clicked on the 'Export' button, if a  * dialog would have been shown.  *  * Returns: An enum of #GimpExportReturn describing the user_action.  **/
+comment|/**  * gimp_export_image:  * @image:        Pointer to the image.  * @drawable_ID:  Pointer to the drawable_ID.  * @format_name:  The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, @image and @drawable_ID are changed to  * point to the new image and the procedure returns GIMP_EXPORT_EXPORT.  * The save_plugin has to take care of deleting the created image using  * gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, @image and  * @drawable_ID are not altered, GIMP_EXPORT_IGNORE is returned and the  * save_plugin should try to save the original image. If the user  * chooses Cancel, GIMP_EXPORT_CANCEL is returned and the save_plugin  * should quit itself with status %GIMP_PDB_CANCEL.  *  * If @format_name is NULL, no dialogs will be shown and this function  * will behave as if the user clicked on the 'Export' button, if a  * dialog would have been shown.  *  * Returns: An enum of #GimpExportReturn describing the user_action.  **/
 end_comment
 
 begin_function
 name|GimpExportReturn
-DECL|function|gimp_export_image (gint32 * image_ID,gint32 * drawable_ID,const gchar * format_name,GimpExportCapabilities capabilities)
+DECL|function|gimp_export_image (GimpImage ** image,gint32 * drawable_ID,const gchar * format_name,GimpExportCapabilities capabilities)
 name|gimp_export_image
 parameter_list|(
-name|gint32
+name|GimpImage
 modifier|*
-name|image_ID
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 modifier|*
@@ -2820,11 +2833,11 @@ name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|gimp_image_is_valid
+argument_list|(
 operator|*
-name|image_ID
-operator|>
-operator|-
-literal|1
+name|image
+argument_list|)
 operator|&&
 operator|*
 name|drawable_ID
@@ -2974,7 +2987,7 @@ operator|=
 name|gimp_image_get_layers
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|n_layers
@@ -3224,7 +3237,7 @@ operator|(
 name|gimp_image_width
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|gimp_drawable_width
@@ -3238,7 +3251,7 @@ operator|(
 name|gimp_image_height
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 operator|!=
 name|gimp_drawable_height
@@ -3457,7 +3470,7 @@ operator|=
 name|gimp_image_base_type
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3732,7 +3745,7 @@ argument_list|(
 name|gimp_image_get_colormap
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|,
 operator|&
 name|n_colors
@@ -3809,12 +3822,12 @@ modifier|*
 name|list
 decl_stmt|;
 operator|*
-name|image_ID
+name|image
 operator|=
 name|gimp_image_duplicate
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3823,13 +3836,13 @@ operator|=
 name|gimp_image_get_active_layer
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
 argument_list|(
 operator|*
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 for|for
@@ -3854,7 +3867,7 @@ operator|->
 name|data
 argument_list|,
 operator|*
-name|image_ID
+name|image
 argument_list|,
 name|drawable_ID
 argument_list|)

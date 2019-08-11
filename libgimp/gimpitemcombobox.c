@@ -306,7 +306,8 @@ name|GtkListStore
 modifier|*
 name|store
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gint
@@ -1095,6 +1096,10 @@ name|i
 operator|++
 control|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gint32
 modifier|*
 name|items
@@ -1102,6 +1107,22 @@ decl_stmt|;
 name|gint
 name|num_items
 decl_stmt|;
+name|image
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+literal|"id"
+argument_list|,
+name|images
+index|[
+name|i
+index|]
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_DRAWABLE_COMBO_BOX
@@ -1119,10 +1140,7 @@ name|items
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 operator|&
 name|num_items
@@ -1137,10 +1155,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 name|num_items
 argument_list|,
@@ -1172,10 +1187,7 @@ name|items
 operator|=
 name|gimp_image_get_channels
 argument_list|(
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 operator|&
 name|num_items
@@ -1190,10 +1202,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 name|num_items
 argument_list|,
@@ -1220,10 +1229,7 @@ name|items
 operator|=
 name|gimp_image_get_vectors
 argument_list|(
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 operator|&
 name|num_items
@@ -1238,10 +1244,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|images
-index|[
-name|i
-index|]
+name|image
 argument_list|,
 name|num_items
 argument_list|,
@@ -1256,6 +1259,11 @@ name|items
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(
@@ -1289,7 +1297,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_combo_box_model_add (GimpIntComboBox * combo_box,GtkListStore * store,gint32 image,gint num_items,gint32 * items,gint tree_level)
+DECL|function|gimp_item_combo_box_model_add (GimpIntComboBox * combo_box,GtkListStore * store,GimpImage * image,gint num_items,gint32 * items,gint tree_level)
 name|gimp_item_combo_box_model_add
 parameter_list|(
 name|GimpIntComboBox
@@ -1300,7 +1308,8 @@ name|GtkListStore
 modifier|*
 name|store
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gint
@@ -1467,7 +1476,10 @@ name|indent
 argument_list|,
 name|image_name
 argument_list|,
+name|gimp_image_get_id
+argument_list|(
 name|image
+argument_list|)
 argument_list|,
 name|item_name
 argument_list|,
