@@ -31,17 +31,17 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/**  * GimpSaveFunc:  * @procedure:   the #GimpProcedure that runs.  * @run_mode:    the #GimpRunMode.  * @image_id:    the image to save.  * @drawable_id: the drawable to save.  * @file:        the #GFile to save to.  * @args:        the @procedure's remaining arguments.  * @run_data:    the run_data given in gimp_save_procedure_new().  *  * The save function is run during the lifetime of the GIMP session,  * each time a plug-in save procedure is called.  *  * Returns: (transfer full): the @procedure's return values.  *  * Since: 3.0  **/
+comment|/**  * GimpRunSaveFunc:  * @procedure:   the #GimpProcedure that runs.  * @run_mode:    the #GimpRunMode.  * @image_id:    the image to save.  * @drawable_id: the drawable to save.  * @file:        the #GFile to save to.  * @args:        the @procedure's remaining arguments.  * @run_data:    the run_data given in gimp_save_procedure_new().  *  * The save function is run during the lifetime of the GIMP session,  * each time a plug-in save procedure is called.  *  * Returns: (transfer full): the @procedure's return values.  *  * Since: 3.0  **/
 end_comment
 
 begin_typedef
-DECL|typedef|GimpSaveFunc
+DECL|typedef|GimpRunSaveFunc
 typedef|typedef
 name|GimpValueArray
 modifier|*
 function_decl|(
 modifier|*
-name|GimpSaveFunc
+name|GimpRunSaveFunc
 function_decl|)
 parameter_list|(
 name|GimpProcedure
@@ -220,7 +220,7 @@ parameter_list|,
 name|GimpPDBProcType
 name|proc_type
 parameter_list|,
-name|GimpSaveFunc
+name|GimpRunSaveFunc
 name|run_func
 parameter_list|,
 name|gpointer

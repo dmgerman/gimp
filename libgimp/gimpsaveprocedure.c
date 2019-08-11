@@ -34,7 +34,7 @@ struct|struct
 name|_GimpSaveProcedurePrivate
 block|{
 DECL|member|run_func
-name|GimpSaveFunc
+name|GimpRunSaveFunc
 name|run_func
 decl_stmt|;
 DECL|member|run_data
@@ -699,10 +699,14 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_save_procedure_new:  * @plug_in:          a #GimpPlugIn.  * @name:             the new procedure's name.  * @proc_type:        the new procedure's #GimpPDBProcType.  * @run_func:         the run function for the new procedure.  * @run_data:         user data passed to @run_func.  * @run_data_destroy: (nullable): free function for @run_data, or %NULL.  *  * Creates a new save procedure named @name which will call @run_func  * when invoked.  *  * See gimp_procedure_new() for information about @proc_type.  *  * #GimpSaveProcedure is a #GimpProcedure subclass that makes it easier  * to write file save procedures.  *  * It automatically adds the standard  *  * (run-mode, image-id, drawable-id, uri, raw-uri)  *  * arguments of a save procedure. It is possible to add additional  * arguments.  *  * When invoked via gimp_procedure_run(), it unpacks these standard  * arguemnts and calls @run_func which is a #GimpRunSaveFunc. The  * "args" #GimpValueArray of #GimpRunSaveFunc only contains  * additionally added arguments.  *  * Returns: a new #GimpProcedure.  *  * Since: 3.0  **/
+end_comment
+
 begin_function
 name|GimpProcedure
 modifier|*
-DECL|function|gimp_save_procedure_new (GimpPlugIn * plug_in,const gchar * name,GimpPDBProcType proc_type,GimpSaveFunc run_func,gpointer run_data,GDestroyNotify run_data_destroy)
+DECL|function|gimp_save_procedure_new (GimpPlugIn * plug_in,const gchar * name,GimpPDBProcType proc_type,GimpRunSaveFunc run_func,gpointer run_data,GDestroyNotify run_data_destroy)
 name|gimp_save_procedure_new
 parameter_list|(
 name|GimpPlugIn
@@ -717,7 +721,7 @@ parameter_list|,
 name|GimpPDBProcType
 name|proc_type
 parameter_list|,
-name|GimpSaveFunc
+name|GimpRunSaveFunc
 name|run_func
 parameter_list|,
 name|gpointer
