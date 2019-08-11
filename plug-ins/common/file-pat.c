@@ -95,10 +95,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/* Declare local functions.  */
-end_comment
-
 begin_define
 DECL|macro|PAT_TYPE
 define|#
