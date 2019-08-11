@@ -286,8 +286,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gboolean
-name|gimp_register_thumbnail_loader
+name|_gimp_register_thumbnail_loader
 parameter_list|(
 specifier|const
 name|gchar
