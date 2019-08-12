@@ -235,7 +235,7 @@ name|NC_
 argument_list|(
 literal|"tools-action"
 argument_list|,
-literal|"Rotate by an arbitrary angle"
+literal|"Rotate drawable by an arbitrary angle"
 argument_list|)
 block|,
 literal|"gimp-rotate-layer"
@@ -261,7 +261,7 @@ name|NC_
 argument_list|(
 literal|"tools-action"
 argument_list|,
-literal|"Rotate by an arbitrary angle"
+literal|"Rotate image by an arbitrary angle"
 argument_list|)
 block|,
 literal|"gimp-rotate-image"
