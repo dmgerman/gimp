@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -283,9 +289,42 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/*  we need to register all enum types so they are known to the type  *  system by name, re-use the files the pdb generated for libgimp  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_enums_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|gimp_enums_get_type_names
+parameter_list|(
+name|gint
+modifier|*
+name|n_type_names
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenums.c.tail"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon289cd72a0103
+DECL|enum|__anon2b4f78f70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -313,7 +352,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289cd72a0203
+DECL|enum|__anon2b4f78f70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -948,6 +987,9 @@ operator|->
 name|parasites
 operator|=
 name|gimp_parasite_list_new
+argument_list|()
+expr_stmt|;
+name|gimp_enums_init
 argument_list|()
 expr_stmt|;
 name|gimp_units_init
