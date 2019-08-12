@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1454a80103
+DECL|enum|__anon29c6e88c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4285,7 +4285,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedure_extension_ready:  * @procedure: A #GimpProcedure  *  * Notify the main GIMP application that the extension has been  * properly initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure's #GimpRunFunc that was created as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_extension_enable() or  * gimp_extension_process().  *  * See also: gimp_procedure_new().  *  * Since: 3.0  **/
+comment|/**  * gimp_procedure_extension_ready:  * @procedure: A #GimpProcedure  *  * Notify the main GIMP application that the extension has been  * properly initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure's #GimpRunFunc that was created as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_plug_in_extension_enable() or  * gimp_plug_in_extension_process().  *  * See also: gimp_procedure_new().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
