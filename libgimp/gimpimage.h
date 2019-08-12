@@ -276,6 +276,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_image_new_by_id
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guchar
 modifier|*
 name|gimp_image_get_colormap

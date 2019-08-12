@@ -404,15 +404,9 @@ name|FALSE
 return|;
 name|image
 operator|=
-name|g_object_new
+name|gimp_image_new_by_id
 argument_list|(
-name|GIMP_TYPE_IMAGE
-argument_list|,
-literal|"id"
-argument_list|,
 name|image_id
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
