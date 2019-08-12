@@ -43,23 +43,14 @@ directive|define
 name|__GIMP_IMAGE_COMBO_BOX_H__
 end_define
 
-begin_macro
+begin_decl_stmt
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_define
 DECL|macro|GIMP_TYPE_IMAGE_COMBO_BOX
 define|#
 directive|define
 name|GIMP_TYPE_IMAGE_COMBO_BOX
 value|(gimp_image_combo_box_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_IMAGE_COMBO_BOX (obj)
 define|#
 directive|define
@@ -68,9 +59,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_COMBO_BOX, GimpImageComboBox))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_IMAGE_COMBO_BOX (obj)
 define|#
 directive|define
@@ -79,7 +67,20 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_COMBO_BOX)
-end_define
+name|GType
+name|gimp_image_combo_box_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DEPRECATED_REPLACE_NEW_API
+end_ifndef
 
 begin_typedef
 DECL|typedef|GimpImageConstraintFunc
@@ -100,22 +101,81 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_decl_stmt
-name|GType
-name|gimp_image_combo_box_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_image_combo_box_new
 parameter_list|(
 name|GimpImageConstraintFunc
+name|constraint
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_define
+DECL|macro|GimpImageConstraintFunc
+define|#
+directive|define
+name|GimpImageConstraintFunc
+value|GimpImageConstraintDeprecatedFunc
+end_define
+
+begin_define
+DECL|macro|gimp_image_combo_box_new
+define|#
+directive|define
+name|gimp_image_combo_box_new
+value|gimp_image_combo_box_new_deprecated
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpImageConstraintDeprecatedFunc
+typedef|typedef
+name|gboolean
+function_decl|(
+modifier|*
+name|GimpImageConstraintDeprecatedFunc
+function_decl|)
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_image_combo_box_new_deprecated
+parameter_list|(
+name|GimpImageConstraintDeprecatedFunc
 name|constraint
 parameter_list|,
 name|gpointer

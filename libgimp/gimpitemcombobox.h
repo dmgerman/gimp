@@ -43,23 +43,14 @@ directive|define
 name|__GIMP_ITEM_COMBO_BOX_H__
 end_define
 
-begin_macro
+begin_decl_stmt
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
-
-begin_define
 DECL|macro|GIMP_TYPE_DRAWABLE_COMBO_BOX
 define|#
 directive|define
 name|GIMP_TYPE_DRAWABLE_COMBO_BOX
 value|(gimp_drawable_combo_box_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_DRAWABLE_COMBO_BOX (obj)
 define|#
 directive|define
@@ -68,9 +59,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX, GimpDrawableComboBox))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_DRAWABLE_COMBO_BOX (obj)
 define|#
 directive|define
@@ -79,17 +67,11 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX))
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_CHANNEL_COMBO_BOX
 define|#
 directive|define
 name|GIMP_TYPE_CHANNEL_COMBO_BOX
 value|(gimp_channel_combo_box_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_CHANNEL_COMBO_BOX (obj)
 define|#
 directive|define
@@ -98,9 +80,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX, GimpChannelComboBox))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_CHANNEL_COMBO_BOX (obj)
 define|#
 directive|define
@@ -109,17 +88,11 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX))
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_LAYER_COMBO_BOX
 define|#
 directive|define
 name|GIMP_TYPE_LAYER_COMBO_BOX
 value|(gimp_layer_combo_box_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_LAYER_COMBO_BOX (obj)
 define|#
 directive|define
@@ -128,9 +101,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_LAYER_COMBO_BOX, GimpLayerComboBox))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_LAYER_COMBO_BOX (obj)
 define|#
 directive|define
@@ -139,17 +109,11 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_LAYER_COMBO_BOX))
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_VECTORS_COMBO_BOX
 define|#
 directive|define
 name|GIMP_TYPE_VECTORS_COMBO_BOX
 value|(gimp_vectors_combo_box_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_VECTORS_COMBO_BOX (obj)
 define|#
 directive|define
@@ -158,9 +122,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VECTORS_COMBO_BOX, GimpVectorsComboBox))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_VECTORS_COMBO_BOX (obj)
 define|#
 directive|define
@@ -169,31 +130,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_VECTORS_COMBO_BOX))
-end_define
-
-begin_typedef
-DECL|typedef|GimpItemConstraintFunc
-typedef|typedef
-name|gboolean
-function_decl|(
-modifier|*
-name|GimpItemConstraintFunc
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|gint32
-name|item_id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_decl_stmt
 name|GType
 name|gimp_drawable_combo_box_get_type
 argument_list|(
@@ -232,6 +168,34 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DEPRECATED_REPLACE_NEW_API
+end_ifndef
+
+begin_typedef
+DECL|typedef|GimpItemConstraintFunc
+typedef|typedef
+name|gboolean
+function_decl|(
+modifier|*
+name|GimpItemConstraintFunc
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint32
+name|item_id
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
 
 begin_function_decl
 name|GtkWidget
@@ -290,6 +254,153 @@ modifier|*
 name|gimp_vectors_combo_box_new
 parameter_list|(
 name|GimpItemConstraintFunc
+name|constraint
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_define
+DECL|macro|GimpItemConstraintFunc
+define|#
+directive|define
+name|GimpItemConstraintFunc
+value|GimpItemConstraintDeprecatedFunc
+end_define
+
+begin_define
+DECL|macro|gimp_drawable_combo_box_new
+define|#
+directive|define
+name|gimp_drawable_combo_box_new
+value|gimp_drawable_combo_box_new_deprecated
+end_define
+
+begin_define
+DECL|macro|gimp_channel_combo_box_new
+define|#
+directive|define
+name|gimp_channel_combo_box_new
+value|gimp_channel_combo_box_new_deprecated
+end_define
+
+begin_define
+DECL|macro|gimp_layer_combo_box_new
+define|#
+directive|define
+name|gimp_layer_combo_box_new
+value|gimp_layer_combo_box_new_deprecated
+end_define
+
+begin_define
+DECL|macro|gimp_vectors_combo_box_new
+define|#
+directive|define
+name|gimp_vectors_combo_box_new
+value|gimp_vectors_combo_box_new_deprecated
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpItemConstraintDeprecatedFunc
+typedef|typedef
+name|gboolean
+function_decl|(
+modifier|*
+name|GimpItemConstraintDeprecatedFunc
+function_decl|)
+parameter_list|(
+name|gint
+name|image_id
+parameter_list|,
+name|gint32
+name|item_id
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_drawable_combo_box_new_deprecated
+parameter_list|(
+name|GimpItemConstraintDeprecatedFunc
+name|constraint
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_channel_combo_box_new_deprecated
+parameter_list|(
+name|GimpItemConstraintDeprecatedFunc
+name|constraint
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_layer_combo_box_new_deprecated
+parameter_list|(
+name|GimpItemConstraintDeprecatedFunc
+name|constraint
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|GDestroyNotify
+name|data_destroy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_vectors_combo_box_new_deprecated
+parameter_list|(
+name|GimpItemConstraintDeprecatedFunc
 name|constraint
 parameter_list|,
 name|gpointer
