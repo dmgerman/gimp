@@ -106,6 +106,34 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DEPRECATED_REPLACE_NEW_API
+end_ifndef
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
+end_comment
+
+begin_comment
+comment|/* Below API are deprecated and should not be used by new plug-ins.  * They are not marked internal as a trick to keep the old API alive for now.  */
+end_comment
+
 begin_macro
 name|G_END_DECLS
 end_macro
