@@ -42,7 +42,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a0fd20103
+DECL|enum|__anon297558520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -811,11 +811,6 @@ argument_list|,
 name|pspec
 argument_list|)
 expr_stmt|;
-name|g_param_spec_unref
-argument_list|(
-name|pspec
-argument_list|)
-expr_stmt|;
 block|}
 for|for
 control|(
@@ -846,11 +841,6 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|pspec
-argument_list|)
-expr_stmt|;
-name|g_param_spec_unref
-argument_list|(
 name|pspec
 argument_list|)
 expr_stmt|;
