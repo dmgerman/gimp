@@ -64,7 +64,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2886b01b0103
+DECL|enum|__anon291a33120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -778,7 +778,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_plug_in_set_translation_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog  *               (may be %NULL).  *  * Sets a textdomain for localisation for the @plug_in.  *  * This function adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another  * location. This function can only be called in the  * GimpPlugIn::query() function of a plug-in and it has to be called  * before any procedure is installed.  *  * Since: 3.0  **/
+comment|/**  * gimp_plug_in_set_translation_domain:  * @plug_in:     A #GimpPlugIn.  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: (nullable): A #GFile pointing to the compiled message catalog  *               (may be %NULL).  *  * Sets a textdomain for localisation for the @plug_in.  *  * This function adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another  * location. This function can only be called in the  * GimpPlugIn::query() function of a plug-in and it has to be called  * before any procedure is installed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -817,6 +817,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|domain_path
+operator|==
+name|NULL
+operator|||
 name|G_IS_FILE
 argument_list|(
 name|domain_path

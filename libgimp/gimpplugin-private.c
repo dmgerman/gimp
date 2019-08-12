@@ -720,6 +720,18 @@ name|gchar
 modifier|*
 name|path
 init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|plug_in
+operator|->
+name|priv
+operator|->
+name|translation_domain_path
+condition|)
+name|path
+operator|=
 name|g_file_get_path
 argument_list|(
 name|plug_in
@@ -728,7 +740,7 @@ name|priv
 operator|->
 name|translation_domain_path
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|_gimp_plugin_domain_register
 argument_list|(
 name|plug_in
