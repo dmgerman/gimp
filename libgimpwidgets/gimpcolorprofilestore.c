@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892ffe40103
+DECL|enum|__anon2be185570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2330,7 +2330,7 @@ name|i
 decl_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_file
+name|gimp_config_writer_new_from_file
 argument_list|(
 name|filename
 argument_list|,

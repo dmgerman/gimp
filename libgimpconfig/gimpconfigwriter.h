@@ -68,7 +68,7 @@ end_decl_stmt
 begin_function_decl
 name|GimpConfigWriter
 modifier|*
-name|gimp_config_writer_new_file
+name|gimp_config_writer_new_from_file
 parameter_list|(
 specifier|const
 name|gchar
@@ -94,7 +94,7 @@ end_function_decl
 begin_function_decl
 name|GimpConfigWriter
 modifier|*
-name|gimp_config_writer_new_gfile
+name|gimp_config_writer_new_from_gfile
 parameter_list|(
 name|GFile
 modifier|*
@@ -119,7 +119,7 @@ end_function_decl
 begin_function_decl
 name|GimpConfigWriter
 modifier|*
-name|gimp_config_writer_new_stream
+name|gimp_config_writer_new_from_stream
 parameter_list|(
 name|GOutputStream
 modifier|*
@@ -141,7 +141,7 @@ end_function_decl
 begin_function_decl
 name|GimpConfigWriter
 modifier|*
-name|gimp_config_writer_new_fd
+name|gimp_config_writer_new_from_fd
 parameter_list|(
 name|gint
 name|fd
@@ -152,7 +152,7 @@ end_function_decl
 begin_function_decl
 name|GimpConfigWriter
 modifier|*
-name|gimp_config_writer_new_string
+name|gimp_config_writer_new_from_string
 parameter_list|(
 name|GString
 modifier|*

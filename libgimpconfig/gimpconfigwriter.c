@@ -386,14 +386,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_from_file:  * @filename: a filename  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @filename. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to  * @filename when the writer is closed.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_file (const gchar * filename,gboolean atomic,const gchar * header,GError ** error)
-name|gimp_config_writer_new_file
+DECL|function|gimp_config_writer_new_from_file (const gchar * filename,gboolean atomic,const gchar * header,GError ** error)
+name|gimp_config_writer_new_from_file
 parameter_list|(
 specifier|const
 name|gchar
@@ -454,7 +454,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_gfile
+name|gimp_config_writer_new_from_gfile
 argument_list|(
 name|file
 argument_list|,
@@ -477,14 +477,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
+comment|/**  * gimp_config_writer_new_from_gfile:  * @file: a #GFile  * @atomic: if %TRUE the file is written atomically  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @file. If @atomic is %TRUE, a temporary file is used to avoid  * possible race conditions. The temporary file is then moved to @file  * when the writer is closed.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_gfile (GFile * file,gboolean atomic,const gchar * header,GError ** error)
-name|gimp_config_writer_new_gfile
+DECL|function|gimp_config_writer_new_from_gfile (GFile * file,gboolean atomic,const gchar * header,GError ** error)
+name|gimp_config_writer_new_from_gfile
 parameter_list|(
 name|GFile
 modifier|*
@@ -747,14 +747,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
+comment|/**  * gimp_config_writer_new_from_stream:  * @output: a #GOutputStream  * @header: text to include as comment at the top of the file  * @error: return location for errors  *  * Creates a new #GimpConfigWriter and sets it up to write to  * @output.  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_stream (GOutputStream * output,const gchar * header,GError ** error)
-name|gimp_config_writer_new_stream
+DECL|function|gimp_config_writer_new_from_stream (GOutputStream * output,const gchar * header,GError ** error)
+name|gimp_config_writer_new_from_stream
 parameter_list|(
 name|GOutputStream
 modifier|*
@@ -855,14 +855,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_fd:  * @fd:  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_from_fd:  * @fd:  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_fd (gint fd)
-name|gimp_config_writer_new_fd
+DECL|function|gimp_config_writer_new_from_fd (gint fd)
+name|gimp_config_writer_new_from_fd
 parameter_list|(
 name|gint
 name|fd
@@ -942,14 +942,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_new_string:  * @string:  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
+comment|/**  * gimp_config_writer_new_from_string:  * @string:  *  * Returns: (nullable): a new #GimpConfigWriter or %NULL in case of an error  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_string (GString * string)
-name|gimp_config_writer_new_string
+DECL|function|gimp_config_writer_new_from_string (GString * string)
+name|gimp_config_writer_new_from_string
 parameter_list|(
 name|GString
 modifier|*

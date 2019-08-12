@@ -1101,7 +1101,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_file
+name|gimp_config_writer_new_from_file
 argument_list|(
 name|filename
 argument_list|,
@@ -1223,7 +1223,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_gfile
+name|gimp_config_writer_new_from_gfile
 argument_list|(
 name|file
 argument_list|,
@@ -1345,7 +1345,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_stream
+name|gimp_config_writer_new_from_stream
 argument_list|(
 name|output
 argument_list|,
@@ -1434,7 +1434,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_fd
+name|gimp_config_writer_new_from_fd
 argument_list|(
 name|fd
 argument_list|)
@@ -1519,7 +1519,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_string
+name|gimp_config_writer_new_from_string
 argument_list|(
 name|str
 argument_list|)

@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63a6d00103
+DECL|enum|__anon2c7fd2610103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY
@@ -452,7 +452,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_gfile
+name|gimp_config_writer_new_from_gfile
 argument_list|(
 name|file
 argument_list|,

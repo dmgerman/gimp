@@ -251,7 +251,7 @@ endif|#
 directive|endif
 name|writer
 operator|=
-name|gimp_config_writer_new_stream
+name|gimp_config_writer_new_from_stream
 argument_list|(
 name|output
 argument_list|,

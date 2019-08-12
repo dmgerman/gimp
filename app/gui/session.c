@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb085d50103
+DECL|enum|__anon2bcdd80f0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -1161,7 +1161,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_gfile
+name|gimp_config_writer_new_from_gfile
 argument_list|(
 name|file
 argument_list|,
