@@ -1159,66 +1159,6 @@ comment|/*  Temporary API, to go away before 3.0  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_pdb_proc_argument:  * @procedure_name: The procedure name.  * @arg_num: The argument number.  *  * Queries the procedural database for information on the specified  * procedure's argument.  *  * This procedure returns the #GParamSpec of procedure_name's argument.  *  * Returns: (transfer full): The GParamSpec of the argument.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
-end_comment
-
-begin_function
-name|GParamSpec
-modifier|*
-DECL|function|gimp_pdb_proc_argument (const gchar * procedure_name,gint arg_num)
-name|gimp_pdb_proc_argument
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|gint
-name|arg_num
-parameter_list|)
-block|{
-return|return
-name|_gimp_pdb_proc_argument
-argument_list|(
-name|procedure_name
-argument_list|,
-name|arg_num
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_pdb_proc_return_value:  * @procedure_name: The procedure name.  * @val_num: The return value number.  *  * Queries the procedural database for information on the specified  * procedure's return value.  *  * This procedure returns the #GParamSpec of procedure_name's return  * value.  *  * Returns: (transfer full): The GParamSpec of the return value.  *          The returned value must be freed with g_param_spec_unref().  *  * Since: 3.0  **/
-end_comment
-
-begin_function
-name|GParamSpec
-modifier|*
-DECL|function|gimp_pdb_proc_return_value (const gchar * procedure_name,gint val_num)
-name|gimp_pdb_proc_return_value
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|gint
-name|val_num
-parameter_list|)
-block|{
-return|return
-name|_gimp_pdb_proc_return_value
-argument_list|(
-name|procedure_name
-argument_list|,
-name|val_num
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_pdb_get_last_error:  * @pdb: a #GimpPDB.  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus #GimpPDB  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by @pdb and must not be freed or  * modified.  *  * Returns: the error message  *  * Since: 3.0  **/
 end_comment
 

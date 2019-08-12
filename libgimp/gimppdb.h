@@ -463,42 +463,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Temporary API, to go away before 3.0  */
-end_comment
-
-begin_function_decl
-name|GParamSpec
-modifier|*
-name|gimp_pdb_proc_argument
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|gint
-name|arg_num
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GParamSpec
-modifier|*
-name|gimp_pdb_proc_return_value
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|gint
-name|val_num
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  Cruft API  */
 end_comment
 

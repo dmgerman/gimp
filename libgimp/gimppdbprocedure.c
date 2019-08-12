@@ -42,7 +42,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297558520103
+DECL|enum|__anon277ff9b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -797,7 +797,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|gimp_pdb_proc_argument
+name|_gimp_pdb_proc_argument
 argument_list|(
 name|name
 argument_list|,
@@ -830,7 +830,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 init|=
-name|gimp_pdb_proc_return_value
+name|_gimp_pdb_proc_return_value
 argument_list|(
 name|name
 argument_list|,
