@@ -20,6 +20,10 @@ begin_function_decl
 name|void
 name|script_fu_find_scripts
 parameter_list|(
+name|GimpPlugIn
+modifier|*
+name|plug_in
+parameter_list|,
 name|GList
 modifier|*
 name|path

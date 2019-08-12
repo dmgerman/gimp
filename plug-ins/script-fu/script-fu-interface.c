@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3cb7d0108
+DECL|struct|__anon27d6d6770108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3552,8 +3552,11 @@ argument_list|,
 name|output
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_set_pdb_error_handler
+name|gimp_plug_in_set_pdb_error_handler
 argument_list|(
+name|gimp_get_plug_in
+argument_list|()
+argument_list|,
 name|GIMP_PDB_ERROR_HANDLER_PLUGIN
 argument_list|)
 expr_stmt|;
@@ -3598,8 +3601,11 @@ name|message
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_plugin_set_pdb_error_handler
+name|gimp_plug_in_set_pdb_error_handler
 argument_list|(
+name|gimp_get_plug_in
+argument_list|()
+argument_list|,
 name|GIMP_PDB_ERROR_HANDLER_INTERNAL
 argument_list|)
 expr_stmt|;
