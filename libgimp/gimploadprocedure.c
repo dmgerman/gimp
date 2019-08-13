@@ -651,9 +651,27 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* raw_uri = g_value_get_string (gimp_value_array_index (args, 2)); */
+if|if
+condition|(
+name|gimp_file_procedure_get_handles_uri
+argument_list|(
+name|GIMP_FILE_PROCEDURE
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+condition|)
 name|file
 operator|=
 name|g_file_new_for_uri
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+else|else
+name|file
+operator|=
+name|g_file_new_for_path
 argument_list|(
 name|uri
 argument_list|)
