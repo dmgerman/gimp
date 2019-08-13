@@ -292,11 +292,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (transfer full): The layer created when loading the image file.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpLayer
+modifier|*
 DECL|function|gimp_file_load_layer (GimpRunMode run_mode,GimpImage * image,const gchar * filename)
 name|gimp_file_load_layer
 parameter_list|(
@@ -328,11 +329,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -402,8 +403,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|layer_ID
+name|layer
 operator|=
+name|GIMP_LAYER
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
 name|gimp_value_array_index
@@ -413,6 +418,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -420,7 +427,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|layer_ID
+name|layer
 return|;
 block|}
 end_function
@@ -870,12 +877,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image: Input image.  * @drawable: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types https://www.gimp.org/foo.png she  * wants to fetch a URL, and the full pathname will not look like a  * URL.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save (GimpRunMode run_mode,GimpImage * image,gint32 drawable_ID,const gchar * filename,const gchar * raw_filename)
+DECL|function|gimp_file_save (GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,const gchar * filename,const gchar * raw_filename)
 name|gimp_file_save
 parameter_list|(
 name|GimpRunMode
@@ -885,8 +892,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|gchar
@@ -938,7 +946,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|drawable_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

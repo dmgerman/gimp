@@ -95,15 +95,17 @@ name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_text_fontname
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gdouble
 name|x

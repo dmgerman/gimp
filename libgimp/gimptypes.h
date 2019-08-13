@@ -102,6 +102,33 @@ name|GimpImage
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpItem
+typedef|typedef
+name|struct
+name|_GimpItem
+name|GimpItem
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawable
+typedef|typedef
+name|struct
+name|_GimpDrawable
+name|GimpDrawable
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayer
+typedef|typedef
+name|struct
+name|_GimpLayer
+name|GimpLayer
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* FIXME move somewhere else */
 end_comment
@@ -113,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed4ae50103
+DECL|enum|__anon28af3f580103
 block|{
 DECL|enumerator|GIMP_PIXBUF_KEEP_ALPHA
 name|GIMP_PIXBUF_KEEP_ALPHA

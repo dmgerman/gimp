@@ -274,20 +274,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_text_layer:  * @image: The image.  * @layer_ID: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_new_from_text_layer:  * @image: The image.  * @layer: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_vectors_new_from_text_layer (GimpImage * image,gint32 layer_ID)
+DECL|function|gimp_vectors_new_from_text_layer (GimpImage * image,GimpLayer * layer)
 name|gimp_vectors_new_from_text_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 block|{
 name|GimpPDB
@@ -326,7 +327,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_ID
 argument_list|,
-name|layer_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

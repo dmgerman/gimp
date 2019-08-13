@@ -50,29 +50,9 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-name|G_GNUC_INTERNAL
-name|gint32
-name|_gimp_selection_float
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gint
-name|offx
-parameter_list|,
-name|gint
-name|offy
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_ifndef
 ifndef|#
 directive|ifndef
 name|GIMP_DEPRECATED_REPLACE_NEW_API
-end_ifndef
-
-begin_function_decl
 name|gboolean
 name|gimp_selection_bounds
 parameter_list|(
@@ -138,6 +118,25 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gint
+name|offx
+parameter_list|,
+name|gint
+name|offy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|GimpLayer
+modifier|*
+name|_gimp_selection_float
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|offx
@@ -280,7 +279,6 @@ comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
 end_comment
 
 begin_define
-DECL|macro|gimp_selection_bounds
 define|#
 directive|define
 name|gimp_selection_bounds
@@ -288,7 +286,6 @@ value|_gimp_selection_bounds
 end_define
 
 begin_define
-DECL|macro|gimp_selection_value
 define|#
 directive|define
 name|gimp_selection_value
@@ -296,7 +293,6 @@ value|_gimp_selection_value
 end_define
 
 begin_define
-DECL|macro|gimp_selection_is_empty
 define|#
 directive|define
 name|gimp_selection_is_empty
@@ -304,7 +300,6 @@ value|_gimp_selection_is_empty
 end_define
 
 begin_define
-DECL|macro|gimp_selection_translate
 define|#
 directive|define
 name|gimp_selection_translate
@@ -312,7 +307,13 @@ value|_gimp_selection_translate
 end_define
 
 begin_define
-DECL|macro|gimp_selection_invert
+define|#
+directive|define
+name|_gimp_selection_float
+value|__gimp_selection_float
+end_define
+
+begin_define
 define|#
 directive|define
 name|gimp_selection_invert
@@ -320,7 +321,6 @@ value|_gimp_selection_invert
 end_define
 
 begin_define
-DECL|macro|gimp_selection_sharpen
 define|#
 directive|define
 name|gimp_selection_sharpen
@@ -328,7 +328,6 @@ value|_gimp_selection_sharpen
 end_define
 
 begin_define
-DECL|macro|gimp_selection_all
 define|#
 directive|define
 name|gimp_selection_all
@@ -336,7 +335,6 @@ value|_gimp_selection_all
 end_define
 
 begin_define
-DECL|macro|gimp_selection_none
 define|#
 directive|define
 name|gimp_selection_none
@@ -344,7 +342,6 @@ value|_gimp_selection_none
 end_define
 
 begin_define
-DECL|macro|gimp_selection_feather
 define|#
 directive|define
 name|gimp_selection_feather
@@ -352,7 +349,6 @@ value|_gimp_selection_feather
 end_define
 
 begin_define
-DECL|macro|gimp_selection_border
 define|#
 directive|define
 name|gimp_selection_border
@@ -360,7 +356,6 @@ value|_gimp_selection_border
 end_define
 
 begin_define
-DECL|macro|gimp_selection_grow
 define|#
 directive|define
 name|gimp_selection_grow
@@ -368,7 +363,6 @@ value|_gimp_selection_grow
 end_define
 
 begin_define
-DECL|macro|gimp_selection_shrink
 define|#
 directive|define
 name|gimp_selection_shrink
@@ -376,7 +370,6 @@ value|_gimp_selection_shrink
 end_define
 
 begin_define
-DECL|macro|gimp_selection_flood
 define|#
 directive|define
 name|gimp_selection_flood
@@ -384,7 +377,6 @@ value|_gimp_selection_flood
 end_define
 
 begin_define
-DECL|macro|gimp_selection_save
 define|#
 directive|define
 name|gimp_selection_save
@@ -466,6 +458,22 @@ name|_gimp_selection_translate
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|gint
+name|offx
+parameter_list|,
+name|gint
+name|offy
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|__gimp_selection_float
+parameter_list|(
+name|gint32
+name|drawable_ID
 parameter_list|,
 name|gint
 name|offx

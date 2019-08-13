@@ -21,6 +21,55 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpLayer,gimp_layer,GIMP_TYPE_DRAWABLE)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|GimpLayer
+argument_list|,
+argument|gimp_layer
+argument_list|,
+argument|GIMP_TYPE_DRAWABLE
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_layer_parent_class
+end_define
+
+begin_function
+specifier|static
+name|void
+name|gimp_layer_class_init
+parameter_list|(
+name|GimpLayerClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_layer_init (GimpLayer * layer)
+name|gimp_layer_init
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
+comment|/* Public API. */
+end_comment
+
 begin_comment
 comment|/**  * gimp_layer_new:  * @image:   The image to which to add the layer.  * @name:    The layer name.  * @width:   The layer width.  * @height:  The layer height.  * @type:    The layer type.  * @opacity: The layer opacity.  * @mode:    The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment

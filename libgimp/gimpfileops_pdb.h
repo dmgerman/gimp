@@ -229,7 +229,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_file_load_layer
 parameter_list|(
 name|GimpRunMode
@@ -282,8 +283,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|gchar

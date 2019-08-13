@@ -27,6 +27,55 @@ directive|include
 file|"gimptilebackendplugin.h"
 end_include
 
+begin_macro
+DECL|function|G_DEFINE_ABSTRACT_TYPE (GimpDrawable,gimp_drawable,GIMP_TYPE_ITEM)
+name|G_DEFINE_ABSTRACT_TYPE
+argument_list|(
+argument|GimpDrawable
+argument_list|,
+argument|gimp_drawable
+argument_list|,
+argument|GIMP_TYPE_ITEM
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_drawable_parent_class
+end_define
+
+begin_function
+specifier|static
+name|void
+name|gimp_drawable_class_init
+parameter_list|(
+name|GimpDrawableClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_drawable_init (GimpDrawable * drawable)
+name|gimp_drawable_init
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
+comment|/* Public API. */
+end_comment
+
 begin_function
 name|guchar
 modifier|*

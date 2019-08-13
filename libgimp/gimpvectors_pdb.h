@@ -476,8 +476,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl

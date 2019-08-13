@@ -242,7 +242,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpDrawable
+modifier|*
 name|gimp_image_get_active_drawable
 parameter_list|(
 name|GimpImage
@@ -264,7 +265,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_get_floating_sel
 parameter_list|(
 name|GimpImage
@@ -275,7 +277,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpDrawable
+modifier|*
 name|gimp_image_floating_sel_attached_to
 parameter_list|(
 name|GimpImage
@@ -293,8 +296,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gdouble
 name|x
@@ -319,7 +323,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_pick_correlate_layer
 parameter_list|(
 name|GimpImage
@@ -343,11 +348,13 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpLayer
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -363,8 +370,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -511,8 +519,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -525,8 +534,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -539,8 +549,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -553,8 +564,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -567,8 +579,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -581,11 +594,13 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpItem
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -594,7 +609,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
@@ -605,7 +621,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
@@ -619,15 +636,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|merge_layer_ID
+name|GimpLayer
+modifier|*
+name|merge_layer
 parameter_list|,
 name|GimpMergeType
 name|merge_type
@@ -764,7 +783,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_get_active_layer
 parameter_list|(
 name|GimpImage
@@ -782,8 +802,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|active_layer_ID
+name|GimpLayer
+modifier|*
+name|active_layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1086,7 +1107,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
 name|GimpImage
@@ -1128,7 +1150,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_image_get_layer_by_name
 parameter_list|(
 name|GimpImage

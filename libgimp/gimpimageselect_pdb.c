@@ -24,12 +24,12 @@ comment|/**  * SECTION: gimpimageselect  * @title: gimpimageselect  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_select_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @color: The color to select.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the current context settings. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold and criterion context values) are  * included in the selection. To select transparent regions, the color  * specified must also have minimum alpha.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent().  *  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable: The affected drawable.  * @color: The color to select.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the current context settings. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold and criterion context values) are  * included in the selection. To select transparent regions, the color  * specified must also have minimum alpha.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent().  *  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_color (GimpImage * image,GimpChannelOps operation,gint32 drawable_ID,const GimpRGB * color)
+DECL|function|gimp_image_select_color (GimpImage * image,GimpChannelOps operation,GimpDrawable * drawable,const GimpRGB * color)
 name|gimp_image_select_color
 parameter_list|(
 name|GimpImage
@@ -39,8 +39,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -87,7 +88,13 @@ name|operation
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|drawable_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_RGB
 argument_list|,
@@ -276,12 +283,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_contiguous_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable_ID: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  *  * Create a selection by selecting all pixels around specified  * coordinates with the same (or similar) color to that at the  * coordinates.  *  * This tool creates a contiguous selection over the specified image. A  * contiguous color selection is determined by a seed fill under the  * constraints of the current context settings. Essentially, the color  * at the specified coordinates (in the drawable) is measured and the  * selection expands outwards from that point to any adjacent pixels  * which are not significantly different (as determined by the  * threshold and criterion context settings). This process continues  * until no more expansion is possible. If antialiasing is turned on,  * the final selection mask will contain intermediate values based on  * close misses to the threshold bar at pixels along the seed fill  * boundary.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent(),  * gimp_context_set_diagonal_neighbors().  *  * In the case of a merged sampling, the supplied drawable is ignored.  * If the sample is merged, the specified coordinates are relative to  * the image origin; otherwise, they are relative to the drawable's  * origin.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_contiguous_color:  * @image: The affected image.  * @operation: The selection operation.  * @drawable: The affected drawable.  * @x: x coordinate of initial seed fill point: (image coordinates).  * @y: y coordinate of initial seed fill point: (image coordinates).  *  * Create a selection by selecting all pixels around specified  * coordinates with the same (or similar) color to that at the  * coordinates.  *  * This tool creates a contiguous selection over the specified image. A  * contiguous color selection is determined by a seed fill under the  * constraints of the current context settings. Essentially, the color  * at the specified coordinates (in the drawable) is measured and the  * selection expands outwards from that point to any adjacent pixels  * which are not significantly different (as determined by the  * threshold and criterion context settings). This process continues  * until no more expansion is possible. If antialiasing is turned on,  * the final selection mask will contain intermediate values based on  * close misses to the threshold bar at pixels along the seed fill  * boundary.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius(), gimp_context_set_sample_merged(),  * gimp_context_set_sample_criterion(),  * gimp_context_set_sample_threshold(),  * gimp_context_set_sample_transparent(),  * gimp_context_set_diagonal_neighbors().  *  * In the case of a merged sampling, the supplied drawable is ignored.  * If the sample is merged, the specified coordinates are relative to  * the image origin; otherwise, they are relative to the drawable's  * origin.  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_contiguous_color (GimpImage * image,GimpChannelOps operation,gint32 drawable_ID,gdouble x,gdouble y)
+DECL|function|gimp_image_select_contiguous_color (GimpImage * image,GimpChannelOps operation,GimpDrawable * drawable,gdouble x,gdouble y)
 name|gimp_image_select_contiguous_color
 parameter_list|(
 name|GimpImage
@@ -291,8 +298,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gdouble
 name|x
@@ -340,7 +348,13 @@ name|operation
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|drawable_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -1674,12 +1688,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_select_item:  * @image: The image.  * @operation: The desired operation with current selection.  * @item_ID: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_select_item:  * @image: The image.  * @operation: The desired operation with current selection.  * @item: The item to render to the selection.  *  * Transforms the specified item into a selection  *  * This procedure renders the item's outline into the current selection  * of the image the item belongs to. What exactly the item's outline is  * depends on the item type: for layers, it's the layer's alpha  * channel, for vectors the vector's shape.  *  * This procedure is affected by the following context setters:  * gimp_context_set_antialias(), gimp_context_set_feather(),  * gimp_context_set_feather_radius().  *  * Returns: TRUE on success.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_select_item (GimpImage * image,GimpChannelOps operation,gint32 item_ID)
+DECL|function|gimp_image_select_item (GimpImage * image,GimpChannelOps operation,GimpItem * item)
 name|gimp_image_select_item
 parameter_list|(
 name|GimpImage
@@ -1689,8 +1703,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1732,7 +1747,13 @@ name|operation
 argument_list|,
 name|GIMP_TYPE_ITEM_ID
 argument_list|,
-name|item_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

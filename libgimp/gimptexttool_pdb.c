@@ -24,20 +24,22 @@ comment|/**  * SECTION: gimptexttool  * @title: gimptexttool  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_text_fontname:  * @image: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate (in UTF-8 encoding).  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @fontname: The name of the font.  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This tool requires a fontname matching an installed PangoFT2 font.  * You can specify the fontsize in units of pixels or points, and the  * appropriate metric is specified using the size_type argument. The x  * and y parameters together control the placement of the new text by  * specifying the upper left corner of the text bounding box. If the  * specified drawable parameter is valid, the text will be created as a  * floating selection attached to the drawable. If the drawable  * parameter is not valid (-1), the text will appear as a new layer.  * Finally, a border can be specified around the final rendered text.  * The border is measured in pixels. Parameter size-type is not used  * and is currently ignored. If you need to display a font in points,  * divide the size in points by 72.0 and multiply it by the image's  * vertical resolution.  *  * Returns: The new text layer or -1 if no layer was created.  **/
+comment|/**  * gimp_text_fontname:  * @image: The image.  * @drawable: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate (in UTF-8 encoding).  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @fontname: The name of the font.  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This tool requires a fontname matching an installed PangoFT2 font.  * You can specify the fontsize in units of pixels or points, and the  * appropriate metric is specified using the size_type argument. The x  * and y parameters together control the placement of the new text by  * specifying the upper left corner of the text bounding box. If the  * specified drawable parameter is valid, the text will be created as a  * floating selection attached to the drawable. If the drawable  * parameter is not valid (-1), the text will appear as a new layer.  * Finally, a border can be specified around the final rendered text.  * The border is measured in pixels. Parameter size-type is not used  * and is currently ignored. If you need to display a font in points,  * divide the size in points by 72.0 and multiply it by the image's  * vertical resolution.  *  * Returns: (transfer full): The new text layer or -1 if no layer was created.  **/
 end_comment
 
 begin_function
-name|gint32
-DECL|function|gimp_text_fontname (GimpImage * image,gint32 drawable_ID,gdouble x,gdouble y,const gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,const gchar * fontname)
+name|GimpLayer
+modifier|*
+DECL|function|gimp_text_fontname (GimpImage * image,GimpDrawable * drawable,gdouble x,gdouble y,const gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,const gchar * fontname)
 name|gimp_text_fontname
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gdouble
 name|x
@@ -83,11 +85,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|text_layer_ID
+name|GimpLayer
+modifier|*
+name|text_layer
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -104,7 +106,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
-name|drawable_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -185,8 +193,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|text_layer_ID
+name|text_layer
 operator|=
+name|GIMP_LAYER
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
 name|gimp_value_array_index
@@ -196,6 +208,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -203,7 +217,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|text_layer_ID
+name|text_layer
 return|;
 block|}
 end_function

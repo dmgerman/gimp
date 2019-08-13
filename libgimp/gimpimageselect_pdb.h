@@ -63,8 +63,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -85,8 +86,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gdouble
 name|x
@@ -214,8 +216,9 @@ parameter_list|,
 name|GimpChannelOps
 name|operation
 parameter_list|,
-name|gint32
-name|item_ID
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
