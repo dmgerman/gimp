@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e7f4a0103
+DECL|enum|__anon2c061b480103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e7f4a0203
+DECL|enum|__anon2c061b480203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3944,6 +3944,28 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dx
+operator|==
+literal|0
+operator|&&
+name|dy
+operator|==
+literal|0
+condition|)
+block|{
+name|gimp_tile_handler_validate_buffer_set_extent
+argument_list|(
+name|old_buffer
+argument_list|,
+operator|&
+name|bounding_box
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|old_validate_handler
 operator|=
 name|proj
@@ -4030,11 +4052,6 @@ name|height
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|old_validate_handler
-condition|)
-block|{
 name|gimp_tile_handler_validate_unassign
 argument_list|(
 name|old_validate_handler
@@ -4047,12 +4064,12 @@ argument_list|(
 name|old_validate_handler
 argument_list|)
 expr_stmt|;
-block|}
 name|g_object_unref
 argument_list|(
 name|old_buffer
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|proj
