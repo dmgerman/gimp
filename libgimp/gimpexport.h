@@ -58,7 +58,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2addc5910103
+DECL|enum|__anon2a2d60da0103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2addc5910203
+DECL|enum|__anon2a2d60da0203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL
@@ -201,9 +201,10 @@ modifier|*
 modifier|*
 name|image
 parameter_list|,
-name|gint32
+name|GimpDrawable
 modifier|*
-name|drawable_ID
+modifier|*
+name|drawable
 parameter_list|,
 specifier|const
 name|gchar

@@ -1031,7 +1031,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_valid
+name|_gimp_item_is_valid
 argument_list|(
 name|item_id
 argument_list|)
@@ -1540,7 +1540,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_drawable
+name|_gimp_item_is_drawable
 argument_list|(
 name|item_id
 argument_list|)
@@ -1980,7 +1980,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_layer
+name|_gimp_item_is_layer
 argument_list|(
 name|item_id
 argument_list|)
@@ -2420,7 +2420,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_channel
+name|_gimp_item_is_channel
 argument_list|(
 name|item_id
 argument_list|)
@@ -2860,7 +2860,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_layer_mask
+name|_gimp_item_is_layer_mask
 argument_list|(
 name|item_id
 argument_list|)
@@ -3300,7 +3300,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_selection
+name|_gimp_item_is_selection
 argument_list|(
 name|item_id
 argument_list|)
@@ -3740,7 +3740,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_item_is_vectors
+name|_gimp_item_is_vectors
 argument_list|(
 name|item_id
 argument_list|)

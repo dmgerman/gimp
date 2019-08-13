@@ -549,11 +549,12 @@ end_comment
 begin_function
 name|GeglTileBackend
 modifier|*
-DECL|function|_gimp_tile_backend_plugin_new (gint32 drawable_id,gint shadow)
+DECL|function|_gimp_tile_backend_plugin_new (GimpDrawable * drawable,gint shadow)
 name|_gimp_tile_backend_plugin_new
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|shadow
@@ -574,7 +575,7 @@ name|format
 init|=
 name|gimp_drawable_get_format
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -582,7 +583,7 @@ name|width
 init|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|gint
@@ -590,7 +591,7 @@ name|height
 init|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 decl_stmt|;
 name|backend
@@ -627,7 +628,13 @@ name|priv
 operator|->
 name|drawable_id
 operator|=
-name|drawable_id
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|backend_plugin
 operator|->
@@ -661,7 +668,7 @@ name|bpp
 operator|=
 name|gimp_drawable_bpp
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|backend_plugin

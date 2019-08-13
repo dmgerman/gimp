@@ -257,10 +257,11 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_zoom_preview_new_from_drawable_id
+name|gimp_zoom_preview_new_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -268,10 +269,11 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_zoom_preview_new_with_model_from_drawable_id
+name|gimp_zoom_preview_new_with_model_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpZoomModel
 modifier|*
@@ -305,8 +307,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
-name|gimp_zoom_preview_get_drawable_id
+name|GimpDrawable
+modifier|*
+name|gimp_zoom_preview_get_drawable
 parameter_list|(
 name|GimpZoomPreview
 modifier|*

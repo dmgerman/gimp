@@ -259,16 +259,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|gint32
-name|gimp_layer_copy
-parameter_list|(
-name|gint32
-name|layer_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -276,7 +266,8 @@ name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_layer_new
 parameter_list|(
 name|GimpImage
@@ -307,7 +298,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_layer_new_from_pixbuf
 parameter_list|(
 name|GimpImage
@@ -339,7 +331,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayer
+modifier|*
 name|gimp_layer_new_from_surface
 parameter_list|(
 name|GimpImage
@@ -360,6 +353,18 @@ name|progress_start
 parameter_list|,
 name|gdouble
 name|progress_end
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_layer_copy
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,6 +400,14 @@ define|#
 directive|define
 name|gimp_layer_new_from_surface
 value|gimp_layer_new_from_surface_deprecated
+end_define
+
+begin_define
+DECL|macro|gimp_layer_copy
+define|#
+directive|define
+name|gimp_layer_copy
+value|gimp_layer_copy_deprecated
 end_define
 
 begin_endif
@@ -488,6 +501,16 @@ name|progress_start
 parameter_list|,
 name|gdouble
 name|progress_end
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|gimp_layer_copy_deprecated
+parameter_list|(
+name|gint32
+name|layer_ID
 parameter_list|)
 function_decl|;
 end_function_decl

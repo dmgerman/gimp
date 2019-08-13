@@ -57,13 +57,13 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c4fd20103
+DECL|enum|__anon28bf0a850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_DRAWABLE_ID
-name|PROP_DRAWABLE_ID
+DECL|enumerator|PROP_DRAWABLE
+name|PROP_DRAWABLE
 block|,
 DECL|enumerator|PROP_MODEL
 name|PROP_MODEL
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c4fd20208
+DECL|struct|__anon28bf0a850208
 block|{
 DECL|member|update
 name|gboolean
@@ -91,9 +91,10 @@ DECL|struct|_GimpZoomPreviewPrivate
 struct|struct
 name|_GimpZoomPreviewPrivate
 block|{
-DECL|member|drawable_ID
-name|gint32
-name|drawable_ID
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|model
 name|GimpZoomModel
@@ -393,14 +394,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_zoom_preview_set_drawable_id
+name|gimp_zoom_preview_set_drawable
 parameter_list|(
 name|GimpZoomPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -592,23 +594,17 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 argument_list|,
-name|g_param_spec_int
+name|g_param_spec_object
 argument_list|(
-literal|"drawable-id"
+literal|"drawable"
 argument_list|,
-literal|"Drawable ID"
+literal|"Drawable"
 argument_list|,
 literal|"The drawable this preview is attached to"
 argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|G_MAXINT
-argument_list|,
-operator|-
-literal|1
+name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -905,6 +901,14 @@ operator|->
 name|model
 argument_list|)
 expr_stmt|;
+name|g_clear_object
+argument_list|(
+operator|&
+name|priv
+operator|->
+name|drawable
+argument_list|)
+expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1034,13 +1038,13 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 case|:
-name|g_value_set_int
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|gimp_zoom_preview_get_drawable_id
+name|gimp_zoom_preview_get_drawable
 argument_list|(
 name|preview
 argument_list|)
@@ -1114,13 +1118,13 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 case|:
-name|gimp_zoom_preview_set_drawable_id
+name|gimp_zoom_preview_set_drawable
 argument_list|(
 name|preview
 argument_list|,
-name|g_value_get_int
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -1472,7 +1476,7 @@ name|_gimp_drawable_preview_get_bounds
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1509,7 +1513,7 @@ name|gimp_drawable_width
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
@@ -1518,7 +1522,7 @@ name|gimp_drawable_height
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -1763,9 +1767,9 @@ if|if
 condition|(
 name|priv
 operator|->
-name|drawable_ID
-operator|<
-literal|1
+name|drawable
+operator|==
+name|NULL
 condition|)
 return|return;
 name|data
@@ -1820,7 +1824,7 @@ name|gimp_drawable_type
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|data
@@ -1903,9 +1907,12 @@ name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1935,7 +1942,7 @@ name|gimp_drawable_type
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|buffer
@@ -1953,6 +1960,10 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|src
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|selection
 decl_stmt|;
 name|gint
 name|selection_ID
@@ -1994,6 +2005,16 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|selection
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|selection_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|w
 operator|=
 name|width
@@ -2025,7 +2046,7 @@ name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 name|src_x
 argument_list|,
@@ -2049,7 +2070,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|offsx
@@ -2062,7 +2083,7 @@ name|sel
 operator|=
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
-name|selection_ID
+name|selection
 argument_list|,
 name|src_x
 operator|+
@@ -2086,6 +2107,11 @@ operator|&
 name|bpp
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|selection
+argument_list|)
+expr_stmt|;
 name|gimp_preview_area_mask
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -2105,7 +2131,7 @@ name|gimp_drawable_type
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|src
@@ -2116,7 +2142,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|buffer
@@ -2183,9 +2209,9 @@ if|if
 condition|(
 name|priv
 operator|->
-name|drawable_ID
-operator|>
-literal|0
+name|drawable
+operator|!=
+name|NULL
 condition|)
 name|_gimp_drawable_preview_area_draw_thumb
 argument_list|(
@@ -2193,7 +2219,7 @@ name|area
 argument_list|,
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
@@ -2604,15 +2630,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_zoom_preview_set_drawable_id (GimpZoomPreview * preview,gint32 drawable_ID)
-name|gimp_zoom_preview_set_drawable_id
+DECL|function|gimp_zoom_preview_set_drawable (GimpZoomPreview * preview,GimpDrawable * drawable)
+name|gimp_zoom_preview_set_drawable
 parameter_list|(
 name|GimpZoomPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GimpZoomPreviewPrivate
@@ -2644,22 +2671,22 @@ name|preview
 operator|->
 name|priv
 operator|->
-name|drawable_ID
-operator|<
-literal|1
+name|drawable
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 operator|=
-name|drawable_ID
+name|drawable
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -2698,14 +2725,14 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|priv
@@ -3116,24 +3143,25 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new_from_drawable_id:  * @drawable_ID: a drawable ID  *  * Creates a new #GimpZoomPreview widget for @drawable_ID.  *  * Since: 2.10  *  * Returns: a new #GimpZoomPreview.  **/
+comment|/**  * gimp_zoom_preview_new_from_drawable:  * @drawable: (transfer none): a drawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: 3.0  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_zoom_preview_new_from_drawable_id (gint32 drawable_ID)
-name|gimp_zoom_preview_new_from_drawable_id
+DECL|function|gimp_zoom_preview_new_from_drawable (GimpDrawable * drawable)
+name|gimp_zoom_preview_new_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|gimp_item_is_valid
+name|GIMP_IS_DRAWABLE
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|NULL
@@ -3141,9 +3169,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimp_item_is_drawable
+name|gimp_item_is_valid
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -3154,9 +3185,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_ZOOM_PREVIEW
 argument_list|,
-literal|"drawable-id"
+literal|"drawable"
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -3165,17 +3196,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new_with_model_from_drawable_id:  * @drawable_ID: a drawable ID  * @model:       a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawable_ID using the  * given @model.  *  * This variant of gimp_zoom_preview_new_from_drawable_id() allows you  * to create a preview using an existing zoom model. This may be  * useful if for example you want to have two zoom previews that keep  * their zoom factor in sync.  *  * Since: 2.10  *  * Returns: a new #GimpZoomPreview.  **/
+comment|/**  * gimp_zoom_preview_new_with_model_from_drawable_id:  * @drawable: (transfer none): a drawable  * @model:    (transfer full): a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawableusing the  * given @model.  *  * This variant of gimp_zoom_preview_new_from_drawable() allows you  * to create a preview using an existing zoom model. This may be  * useful if for example you want to have two zoom previews that keep  * their zoom factor in sync.  *  * Since: 2.10  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_zoom_preview_new_with_model_from_drawable_id (gint32 drawable_ID,GimpZoomModel * model)
-name|gimp_zoom_preview_new_with_model_from_drawable_id
+DECL|function|gimp_zoom_preview_new_with_model_from_drawable (GimpDrawable * drawable,GimpZoomModel * model)
+name|gimp_zoom_preview_new_with_model_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpZoomModel
 modifier|*
@@ -3184,9 +3216,9 @@ parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|gimp_item_is_valid
+name|GIMP_IS_DRAWABLE
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|NULL
@@ -3194,9 +3226,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimp_item_is_drawable
+name|gimp_item_is_valid
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -3217,9 +3252,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_ZOOM_PREVIEW
 argument_list|,
-literal|"drawable-id"
+literal|"drawable"
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 literal|"model"
 argument_list|,
@@ -3232,13 +3267,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_drawable_id:  * @preview: a #GimpZoomPreview widget  *  * Returns the drawable_ID the #GimpZoomPreview is attached to.  *  * Returns: the drawable_ID that was passed to  * gimp_zoom_preview_new_from_drawable_id().  *  * Since: 2.10  **/
+comment|/**  * gimp_zoom_preview_get_drawable:  * @preview: a #GimpZoomPreview widget  *  * Returns the drawable the #GimpZoomPreview is attached to.  *  * Returns: (transfer none): the drawable that was passed to  *          gimp_zoom_preview_new_from_drawable().  *  * Since: 3.0  **/
 end_comment
 
 begin_function
-name|gint32
-DECL|function|gimp_zoom_preview_get_drawable_id (GimpZoomPreview * preview)
-name|gimp_zoom_preview_get_drawable_id
+name|GimpDrawable
+modifier|*
+DECL|function|gimp_zoom_preview_get_drawable (GimpZoomPreview * preview)
+name|gimp_zoom_preview_get_drawable
 parameter_list|(
 name|GimpZoomPreview
 modifier|*
@@ -3252,8 +3288,7 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -3262,13 +3297,13 @@ argument_list|(
 name|preview
 argument_list|)
 operator|->
-name|drawable_ID
+name|drawable
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Returns: (transfer none): a pointer to the #GimpZoomModel owned  *               by the @preview  *  * Since: 2.4  **/
+comment|/**  * gimp_zoom_preview_get_model:  * @preview: a #GimpZoomPreview widget  *  * Returns the #GimpZoomModel the preview is using.  *  * Returns: (transfer none): a pointer to the #GimpZoomModel owned  *          by the @preview  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -3382,8 +3417,9 @@ modifier|*
 name|bpp
 parameter_list|)
 block|{
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -3412,18 +3448,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|drawable_ID
+name|drawable
 operator|=
-name|gimp_zoom_preview_get_drawable_id
+name|gimp_zoom_preview_get_drawable
 argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_ID
-operator|>
-literal|0
+name|drawable
 condition|)
 block|{
 name|GimpPreview
@@ -3476,7 +3510,7 @@ expr_stmt|;
 return|return
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|src_x
 argument_list|,

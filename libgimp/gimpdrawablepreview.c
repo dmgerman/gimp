@@ -59,13 +59,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e8cac0103
+DECL|enum|__anon2b1f44880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_DRAWABLE_ID
-name|PROP_DRAWABLE_ID
+DECL|enumerator|PROP_DRAWABLE
+name|PROP_DRAWABLE
 block|}
 enum|;
 end_enum
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e8cac0208
+DECL|struct|__anon2b1f44880208
 block|{
 DECL|member|x
 name|gint
@@ -98,9 +98,10 @@ DECL|struct|_GimpDrawablePreviewPrivate
 struct|struct
 name|_GimpDrawablePreviewPrivate
 block|{
-DECL|member|drawable_ID
-name|gint32
-name|drawable_ID
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 block|}
 struct|;
@@ -257,14 +258,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_set_drawable_id
+name|gimp_drawable_preview_set_drawable
 parameter_list|(
 name|GimpDrawablePreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -388,23 +390,17 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 argument_list|,
-name|g_param_spec_int
+name|g_param_spec_object
 argument_list|(
-literal|"drawable-id"
+literal|"drawable"
 argument_list|,
-literal|"Drawable ID"
+literal|"Drawable"
 argument_list|,
 literal|"The drawable this preview is attached to"
 argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|G_MAXINT
-argument_list|,
-operator|-
-literal|1
+name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -570,11 +566,22 @@ modifier|*
 name|object
 parameter_list|)
 block|{
+name|GimpDrawablePreviewPrivate
+modifier|*
+name|priv
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|data_name
-init|=
+decl_stmt|;
+name|data_name
+operator|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -584,7 +591,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-drawable-preview-data-name"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|data_name
@@ -640,6 +647,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_clear_object
+argument_list|(
+operator|&
+name|priv
+operator|->
+name|drawable
+argument_list|)
+expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -690,13 +705,13 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 case|:
-name|g_value_set_int
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|gimp_drawable_preview_get_drawable_id
+name|gimp_drawable_preview_get_drawable
 argument_list|(
 name|preview
 argument_list|)
@@ -756,13 +771,13 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_DRAWABLE_ID
+name|PROP_DRAWABLE
 case|:
-name|gimp_drawable_preview_set_drawable_id
+name|gimp_drawable_preview_set_drawable
 argument_list|(
 name|preview
 argument_list|,
-name|g_value_get_int
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -951,9 +966,9 @@ if|if
 condition|(
 name|priv
 operator|->
-name|drawable_ID
-operator|<
-literal|1
+name|drawable
+operator|==
+name|NULL
 condition|)
 return|return;
 name|gimp_preview_get_size
@@ -1040,7 +1055,7 @@ name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 name|xoff
 operator|+
@@ -1178,9 +1193,7 @@ if|if
 condition|(
 name|priv
 operator|->
-name|drawable_ID
-operator|>
-literal|0
+name|drawable
 condition|)
 name|_gimp_drawable_preview_area_draw_thumb
 argument_list|(
@@ -1188,7 +1201,7 @@ name|area
 argument_list|,
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 name|width
 argument_list|,
@@ -1200,15 +1213,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_drawable_preview_area_draw_thumb (GimpPreviewArea * area,gint32 drawable_ID,gint width,gint height)
+DECL|function|_gimp_drawable_preview_area_draw_thumb (GimpPreviewArea * area,GimpDrawable * drawable,gint width,gint height)
 name|_gimp_drawable_preview_area_draw_thumb
 parameter_list|(
 name|GimpPreviewArea
 modifier|*
 name|area
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 name|width
@@ -1255,7 +1269,10 @@ name|g_return_if_fail
 argument_list|(
 name|gimp_item_is_valid
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1263,7 +1280,10 @@ name|g_return_if_fail
 argument_list|(
 name|gimp_item_is_drawable
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1271,7 +1291,7 @@ if|if
 condition|(
 name|_gimp_drawable_preview_get_bounds
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1306,14 +1326,14 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -1370,7 +1390,7 @@ if|if
 condition|(
 name|_gimp_drawable_preview_get_bounds
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1390,7 +1410,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -1421,7 +1441,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_thumbnail_data
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|nav_width
@@ -1647,9 +1667,12 @@ name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
+name|GIMP_ITEM
+argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1687,7 +1710,7 @@ name|gimp_drawable_type
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|)
 argument_list|,
 name|buf
@@ -1727,7 +1750,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|offset_x
@@ -1742,7 +1765,7 @@ name|gimp_drawable_mask_intersect
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|mask_x
@@ -1792,6 +1815,10 @@ block|{
 name|GimpImageType
 name|type
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|selection
+decl_stmt|;
 name|gint32
 name|selection_ID
 decl_stmt|;
@@ -1840,13 +1867,23 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|selection
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|selection_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|src
 operator|=
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 argument_list|,
 name|draw_x
 argument_list|,
@@ -1870,7 +1907,7 @@ name|sel
 operator|=
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
-name|selection_ID
+name|selection
 argument_list|,
 name|draw_x
 operator|+
@@ -1892,6 +1929,11 @@ name|s_h
 argument_list|,
 operator|&
 name|s_bpp
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|selection
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2106,15 +2148,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_set_drawable_id (GimpDrawablePreview * drawable_preview,gint32 drawable_ID)
-name|gimp_drawable_preview_set_drawable_id
+DECL|function|gimp_drawable_preview_set_drawable (GimpDrawablePreview * drawable_preview,GimpDrawable * drawable)
+name|gimp_drawable_preview_set_drawable
 parameter_list|(
 name|GimpDrawablePreview
 modifier|*
 name|drawable_preview
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GimpPreview
@@ -2148,20 +2191,20 @@ name|g_return_if_fail
 argument_list|(
 name|priv
 operator|->
-name|drawable_ID
-operator|<
-literal|1
+name|drawable
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|priv
 operator|->
-name|drawable_ID
+name|drawable
 operator|=
-name|drawable_ID
+name|drawable
 expr_stmt|;
 name|_gimp_drawable_preview_get_bounds
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -2193,7 +2236,7 @@ if|if
 condition|(
 name|gimp_drawable_is_indexed
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -2203,7 +2246,10 @@ name|image
 init|=
 name|gimp_item_get_image
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -2290,11 +2336,12 @@ end_define
 
 begin_function
 name|gboolean
-DECL|function|_gimp_drawable_preview_get_bounds (gint32 drawable_ID,gint * xmin,gint * ymin,gint * xmax,gint * ymax)
+DECL|function|_gimp_drawable_preview_get_bounds (GimpDrawable * drawable,gint * xmin,gint * ymin,gint * xmax,gint * ymax)
 name|_gimp_drawable_preview_get_bounds
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint
 modifier|*
@@ -2342,7 +2389,10 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_item_is_valid
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2352,7 +2402,10 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_item_is_drawable
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2362,21 +2415,21 @@ name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|retval
 operator|=
 name|gimp_drawable_mask_bounds
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -2393,7 +2446,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|offset_x
@@ -2471,24 +2524,28 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_new_from_drawable_id:  * @drawable_ID: a drawable ID  *  * Creates a new #GimpDrawablePreview widget for @drawable_ID.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_preview_new_from_drawable:  * @drawable: (transfer none): a drawable  *  * Creates a new #GimpDrawablePreview widget for @drawable.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_preview_new_from_drawable_id (gint32 drawable_ID)
-name|gimp_drawable_preview_new_from_drawable_id
+DECL|function|gimp_drawable_preview_new_from_drawable (GimpDrawable * drawable)
+name|gimp_drawable_preview_new_from_drawable
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|gimp_item_is_valid
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -2498,7 +2555,10 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_item_is_drawable
 argument_list|(
-name|drawable_ID
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -2509,9 +2569,9 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_PREVIEW
 argument_list|,
-literal|"drawable-id"
+literal|"drawable"
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -2520,13 +2580,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_get_drawable_id:  * @preview:   a #GimpDrawablePreview widget  *  * Returns: the drawable_ID that has been passed to  *               gimp_drawable_preview_new_from_drawable_id().  *  * Since: 2.10  **/
+comment|/**  * gimp_drawable_preview_get_drawable:  * @preview:   a #GimpDrawablePreview widget  *  * Returns: (transfer none): the drawable that has been passed to  *          gimp_drawable_preview_new_from_drawable().  *  * Since: 2.10  **/
 end_comment
 
 begin_function
-name|gint32
-DECL|function|gimp_drawable_preview_get_drawable_id (GimpDrawablePreview * preview)
-name|gimp_drawable_preview_get_drawable_id
+name|GimpDrawable
+modifier|*
+DECL|function|gimp_drawable_preview_get_drawable (GimpDrawablePreview * preview)
+name|gimp_drawable_preview_get_drawable
 parameter_list|(
 name|GimpDrawablePreview
 modifier|*
@@ -2540,8 +2601,7 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -2550,7 +2610,7 @@ argument_list|(
 name|preview
 argument_list|)
 operator|->
-name|drawable_ID
+name|drawable
 return|;
 block|}
 end_function
