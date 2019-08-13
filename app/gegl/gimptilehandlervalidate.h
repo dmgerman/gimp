@@ -388,6 +388,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_tile_handler_validate_buffer_set_extent
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|extent
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_handler_validate_buffer_copy
 parameter_list|(
