@@ -5790,23 +5790,25 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_channel:  * @image: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_channel:  * @image: The image.  * @channel: The channel.  * @parent: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_insert_channel (GimpImage * image,gint32 channel_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_insert_channel (GimpImage * image,GimpChannel * channel,GimpChannel * parent,gint position)
 name|gimp_image_insert_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpChannel
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -5847,11 +5849,23 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
-name|channel_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
-name|parent_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -6038,20 +6052,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_channel:  * @image: The image.  * @channel_ID: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_remove_channel:  * @image: The image.  * @channel: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_remove_channel (GimpImage * image,gint32 channel_ID)
+DECL|function|gimp_image_remove_channel (GimpImage * image,GimpChannel * channel)
 name|gimp_image_remove_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 parameter_list|)
 block|{
 name|GimpPDB
@@ -6089,7 +6104,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
-name|channel_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -6670,23 +6691,25 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_vectors:  * @image: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_insert_vectors:  * @image: The image.  * @vectors: The vectors.  * @parent: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be 0. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_insert_vectors (GimpImage * image,gint32 vectors_ID,gint32 parent_ID,gint position)
+DECL|function|gimp_image_insert_vectors (GimpImage * image,GimpVectors * vectors,GimpVectors * parent,gint position)
 name|gimp_image_insert_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -6727,11 +6750,23 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
-name|vectors_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
-name|parent_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -6918,20 +6953,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_vectors:  * @image: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
+comment|/**  * gimp_image_remove_vectors:  * @image: The image.  * @vectors: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_remove_vectors (GimpImage * image,gint32 vectors_ID)
+DECL|function|gimp_image_remove_vectors (GimpImage * image,GimpVectors * vectors)
 name|gimp_image_remove_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|)
 block|{
 name|GimpPDB
@@ -6969,7 +7005,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
-name|vectors_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -12113,11 +12155,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_channel:  * @image: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  **/
+comment|/**  * gimp_image_get_active_channel:  * @image: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: (transfer full): The active channel.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpChannel
+modifier|*
 DECL|function|gimp_image_get_active_channel (GimpImage * image)
 name|gimp_image_get_active_channel
 parameter_list|(
@@ -12141,11 +12184,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|active_channel_ID
+name|GimpChannel
+modifier|*
+name|active_channel
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -12207,8 +12250,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|active_channel_ID
+name|active_channel
 operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
 name|gimp_value_array_index
@@ -12218,6 +12265,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -12225,7 +12274,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|active_channel_ID
+name|active_channel
 return|;
 block|}
 end_function
@@ -12345,20 +12394,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_channel:  * @image: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or layer is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_channel:  * @image: The image.  * @active_channel: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or layer is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_active_channel (GimpImage * image,gint32 active_channel_ID)
+DECL|function|gimp_image_set_active_channel (GimpImage * image,GimpChannel * active_channel)
 name|gimp_image_set_active_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|active_channel_ID
+name|GimpChannel
+modifier|*
+name|active_channel
 parameter_list|)
 block|{
 name|GimpPDB
@@ -12396,7 +12446,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
-name|active_channel_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|active_channel
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -12565,11 +12621,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_vectors:  * @image: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: The active vectors.  **/
+comment|/**  * gimp_image_get_active_vectors:  * @image: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: (transfer full): The active vectors.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpVectors
+modifier|*
 DECL|function|gimp_image_get_active_vectors (GimpImage * image)
 name|gimp_image_get_active_vectors
 parameter_list|(
@@ -12593,11 +12650,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|active_vectors_ID
+name|GimpVectors
+modifier|*
+name|active_vectors
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -12659,8 +12716,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|active_vectors_ID
+name|active_vectors
 operator|=
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
 name|gimp_value_array_index
@@ -12670,6 +12731,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -12677,7 +12740,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|active_vectors_ID
+name|active_vectors
 return|;
 block|}
 end_function
@@ -12797,20 +12860,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_vectors:  * @image: The image.  * @active_vectors_ID: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_set_active_vectors:  * @image: The image.  * @active_vectors: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_active_vectors (GimpImage * image,gint32 active_vectors_ID)
+DECL|function|gimp_image_set_active_vectors (GimpImage * image,GimpVectors * active_vectors)
 name|gimp_image_set_active_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|active_vectors_ID
+name|GimpVectors
+modifier|*
+name|active_vectors
 parameter_list|)
 block|{
 name|GimpPDB
@@ -12848,7 +12912,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS_ID
 argument_list|,
-name|active_vectors_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|active_vectors
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -13017,11 +13087,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_selection:  * @image: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  **/
+comment|/**  * gimp_image_get_selection:  * @image: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: (transfer full): The selection channel.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpSelection
+modifier|*
 DECL|function|gimp_image_get_selection (GimpImage * image)
 name|gimp_image_get_selection
 parameter_list|(
@@ -13045,11 +13116,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|selection_ID
+name|GimpSelection
+modifier|*
+name|selection
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -13111,8 +13182,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|selection_ID
+name|selection
 operator|=
+name|GIMP_SELECTION
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_selection_id
 argument_list|(
 name|gimp_value_array_index
@@ -13122,6 +13197,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -13129,7 +13206,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|selection_ID
+name|selection
 return|;
 block|}
 end_function
@@ -17526,11 +17603,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: The channel with the specified tattoo.  **/
+comment|/**  * gimp_image_get_channel_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: (transfer full): The channel with the specified tattoo.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpChannel
+modifier|*
 DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * image,guint tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
@@ -17557,11 +17635,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -17627,8 +17705,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|channel_ID
+name|channel
 operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
 name|gimp_value_array_index
@@ -17638,6 +17720,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -17645,7 +17729,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|channel_ID
+name|channel
 return|;
 block|}
 end_function
@@ -17772,11 +17856,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: 2.6  **/
+comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: (transfer full): The vectors with the specified tattoo.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpVectors
+modifier|*
 DECL|function|gimp_image_get_vectors_by_tattoo (GimpImage * image,guint tattoo)
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
@@ -17803,11 +17888,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -17873,8 +17958,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|vectors_ID
+name|vectors
 operator|=
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
 name|gimp_value_array_index
@@ -17884,6 +17973,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -17891,7 +17982,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|vectors_ID
+name|vectors
 return|;
 block|}
 end_function
@@ -18275,11 +18366,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_name:  * @image: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: The channel with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_channel_by_name:  * @image: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: (transfer full): The channel with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpChannel
+modifier|*
 DECL|function|gimp_image_get_channel_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_channel_by_name
 parameter_list|(
@@ -18308,11 +18400,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -18378,8 +18470,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|channel_ID
+name|channel
 operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
 name|gimp_value_array_index
@@ -18389,6 +18485,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -18396,7 +18494,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|channel_ID
+name|channel
 return|;
 block|}
 end_function
@@ -18525,11 +18623,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_name:  * @image: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: The vectors with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_vectors_by_name:  * @image: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: (transfer full): The vectors with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpVectors
+modifier|*
 DECL|function|gimp_image_get_vectors_by_name (GimpImage * image,const gchar * name)
 name|gimp_image_get_vectors_by_name
 parameter_list|(
@@ -18558,11 +18657,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -18628,8 +18727,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|vectors_ID
+name|vectors
 operator|=
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
 name|gimp_value_array_index
@@ -18639,6 +18742,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -18646,7 +18751,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|vectors_ID
+name|vectors
 return|;
 block|}
 end_function

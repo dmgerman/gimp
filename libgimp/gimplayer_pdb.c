@@ -2761,11 +2761,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_create_mask:  * @layer: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified layer.  *  * This procedure creates a layer mask for the specified layer.  * Layer masks serve as an additional alpha channel for a layer.  * Different types of masks are allowed for initialisation:  * - white mask (leaves the layer fully visible);  * - black mask (gives the layer complete transparency);  * - the layer's alpha channel (either a copy, or a transfer, which  * leaves the layer fully visible, but which may be more useful than a  * white mask);  * - the current selection;  * - a grayscale copy of the layer;  * - or a copy of the active channel.  *  * The layer mask still needs to be added to the layer. This can be  * done with a call to gimp_layer_add_mask().  *  * gimp_layer_create_mask() will fail if there are no active channels  * on the image, when called with 'ADD-CHANNEL-MASK'. It will return a  * black mask when called with 'ADD-ALPHA-MASK' or  * 'ADD-ALPHA-TRANSFER-MASK' on a layer with no alpha channels, or with  * 'ADD-SELECTION-MASK' when there is no selection on the image.  *  * Returns: The newly created mask.  **/
+comment|/**  * gimp_layer_create_mask:  * @layer: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified layer.  *  * This procedure creates a layer mask for the specified layer.  * Layer masks serve as an additional alpha channel for a layer.  * Different types of masks are allowed for initialisation:  * - white mask (leaves the layer fully visible);  * - black mask (gives the layer complete transparency);  * - the layer's alpha channel (either a copy, or a transfer, which  * leaves the layer fully visible, but which may be more useful than a  * white mask);  * - the current selection;  * - a grayscale copy of the layer;  * - or a copy of the active channel.  *  * The layer mask still needs to be added to the layer. This can be  * done with a call to gimp_layer_add_mask().  *  * gimp_layer_create_mask() will fail if there are no active channels  * on the image, when called with 'ADD-CHANNEL-MASK'. It will return a  * black mask when called with 'ADD-ALPHA-MASK' or  * 'ADD-ALPHA-TRANSFER-MASK' on a layer with no alpha channels, or with  * 'ADD-SELECTION-MASK' when there is no selection on the image.  *  * Returns: (transfer full): The newly created mask.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpLayerMask
+modifier|*
 DECL|function|gimp_layer_create_mask (GimpLayer * layer,GimpAddMaskType mask_type)
 name|gimp_layer_create_mask
 parameter_list|(
@@ -2792,11 +2793,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -2865,8 +2866,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|mask_ID
+name|mask
 operator|=
+name|GIMP_LAYER_MASK
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_layer_mask_id
 argument_list|(
 name|gimp_value_array_index
@@ -2876,6 +2881,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -2883,7 +2890,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|mask_ID
+name|mask
 return|;
 block|}
 end_function
@@ -3010,11 +3017,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_mask:  * @layer: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: The layer mask.  **/
+comment|/**  * gimp_layer_get_mask:  * @layer: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: (transfer full): The layer mask.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpLayerMask
+modifier|*
 DECL|function|gimp_layer_get_mask (GimpLayer * layer)
 name|gimp_layer_get_mask
 parameter_list|(
@@ -3038,11 +3046,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -3107,8 +3115,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|mask_ID
+name|mask
 operator|=
+name|GIMP_LAYER_MASK
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_layer_mask_id
 argument_list|(
 name|gimp_value_array_index
@@ -3118,6 +3130,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -3125,7 +3139,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|mask_ID
+name|mask
 return|;
 block|}
 end_function
@@ -3245,17 +3259,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_from_mask:  * @mask_ID: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: (transfer full): The mask's layer.  *  * Since: 2.2  **/
+comment|/**  * gimp_layer_from_mask:  * @mask: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: (transfer full): The mask's layer.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_from_mask (gint32 mask_ID)
+DECL|function|gimp_layer_from_mask (GimpLayerMask * mask)
 name|gimp_layer_from_mask
 parameter_list|(
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3287,7 +3302,13 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_ID
 argument_list|,
-name|mask_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -3480,20 +3501,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_add_mask:  * @layer: The layer to receive the mask.  * @mask_ID: The mask to add to the layer.  *  * Add a layer mask to the specified layer.  *  * This procedure adds a layer mask to the specified layer. Layer masks  * serve as an additional alpha channel for a layer. This procedure  * will fail if a number of prerequisites aren't met. The layer cannot  * already have a layer mask. The specified mask must exist and have  * the same dimensions as the layer. The layer must have been created  * for use with the specified image and the mask must have been created  * with the procedure 'gimp-layer-create-mask'.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_layer_add_mask:  * @layer: The layer to receive the mask.  * @mask: The mask to add to the layer.  *  * Add a layer mask to the specified layer.  *  * This procedure adds a layer mask to the specified layer. Layer masks  * serve as an additional alpha channel for a layer. This procedure  * will fail if a number of prerequisites aren't met. The layer cannot  * already have a layer mask. The specified mask must exist and have  * the same dimensions as the layer. The layer must have been created  * for use with the specified image and the mask must have been created  * with the procedure 'gimp-layer-create-mask'.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_add_mask (GimpLayer * layer,gint32 mask_ID)
+DECL|function|gimp_layer_add_mask (GimpLayer * layer,GimpLayerMask * mask)
 name|gimp_layer_add_mask
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 parameter_list|)
 block|{
 name|GimpPDB
@@ -3534,7 +3556,13 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK_ID
 argument_list|,
-name|mask_ID
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

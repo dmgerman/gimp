@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpchannel.h  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-2000 Peter Mattis and Spencer Kimball  *  * gimpdisplay.h  * Copyright (C) Jehan  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<https://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_if
@@ -33,14 +33,14 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CHANNEL_H__
+name|__GIMP_DISPLAY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CHANNEL_H__
+DECL|macro|__GIMP_DISPLAY_H__
 define|#
 directive|define
-name|__GIMP_CHANNEL_H__
+name|__GIMP_DISPLAY_H__
 end_define
 
 begin_macro
@@ -51,104 +51,112 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpdrawable.h>
-end_include
-
 begin_define
-DECL|macro|GIMP_TYPE_CHANNEL
+DECL|macro|GIMP_TYPE_DISPLAY
 define|#
 directive|define
-name|GIMP_TYPE_CHANNEL
-value|(gimp_channel_get_type ())
+name|GIMP_TYPE_DISPLAY
+value|(gimp_display_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL (obj)
+DECL|macro|GIMP_DISPLAY (obj)
 define|#
 directive|define
-name|GIMP_CHANNEL
+name|GIMP_DISPLAY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL, GimpChannel))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DISPLAY, GimpDisplay))
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_CLASS (klass)
+DECL|macro|GIMP_DISPLAY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CHANNEL_CLASS
+name|GIMP_DISPLAY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHANNEL, GimpChannelClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DISPLAY, GimpDisplayClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CHANNEL (obj)
+DECL|macro|GIMP_IS_DISPLAY (obj)
 define|#
 directive|define
-name|GIMP_IS_CHANNEL
+name|GIMP_IS_DISPLAY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DISPLAY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CHANNEL_CLASS (klass)
+DECL|macro|GIMP_IS_DISPLAY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CHANNEL_CLASS
+name|GIMP_IS_DISPLAY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY))
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_GET_CLASS (obj)
+DECL|macro|GIMP_DISPLAY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_CHANNEL_GET_CLASS
+name|GIMP_DISPLAY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHANNEL, GimpChannelClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DISPLAY, GimpDisplayClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpChannelClass
+DECL|typedef|GimpDisplayClass
 typedef|typedef
 name|struct
-name|_GimpChannelClass
-name|GimpChannelClass
+name|_GimpDisplayClass
+name|GimpDisplayClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDisplayPrivate
+typedef|typedef
+name|struct
+name|_GimpDisplayPrivate
+name|GimpDisplayPrivate
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpChannel
+DECL|struct|_GimpDisplay
 struct|struct
-name|_GimpChannel
+name|_GimpDisplay
 block|{
 DECL|member|parent_instance
-name|GimpDrawable
+name|GObject
 name|parent_instance
+decl_stmt|;
+DECL|member|priv
+name|GimpDisplayPrivate
+modifier|*
+name|priv
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpChannelClass
+DECL|struct|_GimpDisplayClass
 struct|struct
-name|_GimpChannelClass
+name|_GimpDisplayClass
 block|{
 DECL|member|parent_class
-name|GimpDrawableClass
+name|GObjectClass
 name|parent_class
 decl_stmt|;
 comment|/* Padding for future expansion */
@@ -248,7 +256,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_channel_get_type
+name|gimp_display_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -256,93 +264,24 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_DEPRECATED_REPLACE_NEW_API
-end_ifndef
-
 begin_function_decl
 name|gint32
-name|gimp_channel_new
+name|gimp_display_get_id
 parameter_list|(
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|image
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|guint
-name|width
-parameter_list|,
-name|guint
-name|height
-parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
-end_comment
-
-begin_define
-DECL|macro|gimp_channel_new
-define|#
-directive|define
-name|gimp_channel_new
-value|gimp_channel_new_deprecated
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
-end_comment
-
 begin_function_decl
-name|gint32
-name|gimp_channel_new_deprecated
+name|GimpDisplay
+modifier|*
+name|gimp_display_new_by_id
 parameter_list|(
 name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|guint
-name|width
-parameter_list|,
-name|guint
-name|height
-parameter_list|,
-name|gdouble
-name|opacity
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
+name|display_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -357,7 +296,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CHANNEL_H__ */
+comment|/* __GIMP_DISPLAY_H__ */
 end_comment
 
 end_unit

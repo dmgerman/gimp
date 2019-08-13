@@ -28,7 +28,7 @@ comment|/**  * gimp_image_add_hguide:  * @image: The image.  * @yposition: The g
 end_comment
 
 begin_function
-name|gint32
+name|guint
 DECL|function|gimp_image_add_hguide (GimpImage * image,gint yposition)
 name|gimp_image_add_hguide
 parameter_list|(
@@ -55,11 +55,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 init|=
-operator|-
-literal|1
+literal|0
 decl_stmt|;
 name|args
 operator|=
@@ -125,7 +124,7 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|guide_ID
+name|guide
 operator|=
 name|g_value_get_uint
 argument_list|(
@@ -143,7 +142,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|guide_ID
+name|guide
 return|;
 block|}
 end_function
@@ -274,7 +273,7 @@ comment|/**  * gimp_image_add_vguide:  * @image: The image.  * @xposition: The g
 end_comment
 
 begin_function
-name|gint32
+name|guint
 DECL|function|gimp_image_add_vguide (GimpImage * image,gint xposition)
 name|gimp_image_add_vguide
 parameter_list|(
@@ -301,11 +300,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 init|=
-operator|-
-literal|1
+literal|0
 decl_stmt|;
 name|args
 operator|=
@@ -371,7 +369,7 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|guide_ID
+name|guide
 operator|=
 name|g_value_get_uint
 argument_list|(
@@ -389,7 +387,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|guide_ID
+name|guide
 return|;
 block|}
 end_function
@@ -516,20 +514,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_delete_guide:  * @image: The image.  * @guide_ID: The ID of the guide to be removed.  *  * Deletes a guide from an image.  *  * This procedure takes an image and a guide ID as input and removes  * the specified guide from the specified image.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_delete_guide:  * @image: The image.  * @guide: The ID of the guide to be removed.  *  * Deletes a guide from an image.  *  * This procedure takes an image and a guide ID as input and removes  * the specified guide from the specified image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_delete_guide (GimpImage * image,gint32 guide_ID)
+DECL|function|gimp_image_delete_guide (GimpImage * image,guint guide)
 name|gimp_image_delete_guide
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 parameter_list|)
 block|{
 name|GimpPDB
@@ -567,7 +565,7 @@ argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
-name|guide_ID
+name|guide
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -736,20 +734,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_find_next_guide:  * @image: The image.  * @guide_ID: The ID of the current guide (0 if first invocation).  *  * Find next guide on an image.  *  * This procedure takes an image and a guide ID as input and finds the  * guide ID of the successor of the given guide ID in the image's guide  * list. If the supplied guide ID is 0, the procedure will return the  * first Guide. The procedure will return 0 if given the final guide ID  * as an argument or the image has no guides.  *  * Returns: The next guide's ID.  **/
+comment|/**  * gimp_image_find_next_guide:  * @image: The image.  * @guide: The ID of the current guide (0 if first invocation).  *  * Find next guide on an image.  *  * This procedure takes an image and a guide ID as input and finds the  * guide ID of the successor of the given guide ID in the image's guide  * list. If the supplied guide ID is 0, the procedure will return the  * first Guide. The procedure will return 0 if given the final guide ID  * as an argument or the image has no guides.  *  * Returns: The next guide's ID.  **/
 end_comment
 
 begin_function
-name|gint32
-DECL|function|gimp_image_find_next_guide (GimpImage * image,gint32 guide_ID)
+name|guint
+DECL|function|gimp_image_find_next_guide (GimpImage * image,guint guide)
 name|gimp_image_find_next_guide
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 parameter_list|)
 block|{
 name|GimpPDB
@@ -767,11 +765,10 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|next_guide_ID
+name|guint
+name|next_guide
 init|=
-operator|-
-literal|1
+literal|0
 decl_stmt|;
 name|args
 operator|=
@@ -788,7 +785,7 @@ argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
-name|guide_ID
+name|guide
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -837,7 +834,7 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|next_guide_ID
+name|next_guide
 operator|=
 name|g_value_get_uint
 argument_list|(
@@ -855,7 +852,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|next_guide_ID
+name|next_guide
 return|;
 block|}
 end_function
@@ -982,20 +979,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_guide_orientation:  * @image: The image.  * @guide_ID: The guide.  *  * Get orientation of a guide on an image.  *  * This procedure takes an image and a guide ID as input and returns  * the orientations of the guide.  *  * Returns: The guide's orientation.  **/
+comment|/**  * gimp_image_get_guide_orientation:  * @image: The image.  * @guide: The guide.  *  * Get orientation of a guide on an image.  *  * This procedure takes an image and a guide ID as input and returns  * the orientations of the guide.  *  * Returns: The guide's orientation.  **/
 end_comment
 
 begin_function
 name|GimpOrientationType
-DECL|function|gimp_image_get_guide_orientation (GimpImage * image,gint32 guide_ID)
+DECL|function|gimp_image_get_guide_orientation (GimpImage * image,guint guide)
 name|gimp_image_get_guide_orientation
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1033,7 +1030,7 @@ argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
-name|guide_ID
+name|guide
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
@@ -1226,20 +1223,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_guide_position:  * @image: The image.  * @guide_ID: The guide.  *  * Get position of a guide on an image.  *  * This procedure takes an image and a guide ID as input and returns  * the position of the guide relative to the top or left of the image.  *  * Returns: The guide's position relative to top or left of image.  **/
+comment|/**  * gimp_image_get_guide_position:  * @image: The image.  * @guide: The guide.  *  * Get position of a guide on an image.  *  * This procedure takes an image and a guide ID as input and returns  * the position of the guide relative to the top or left of the image.  *  * Returns: The guide's position relative to top or left of image.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_guide_position (GimpImage * image,gint32 guide_ID)
+DECL|function|gimp_image_get_guide_position (GimpImage * image,guint guide)
 name|gimp_image_get_guide_position
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|guide_ID
+name|guint
+name|guide
 parameter_list|)
 block|{
 name|GimpPDB
@@ -1278,7 +1275,7 @@ argument_list|)
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
-name|guide_ID
+name|guide
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)

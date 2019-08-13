@@ -15,6 +15,55 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpChannel,gimp_channel,GIMP_TYPE_DRAWABLE)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|GimpChannel
+argument_list|,
+argument|gimp_channel
+argument_list|,
+argument|GIMP_TYPE_DRAWABLE
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_drawable_parent_class
+end_define
+
+begin_function
+specifier|static
+name|void
+name|gimp_channel_class_init
+parameter_list|(
+name|GimpChannelClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_channel_init (GimpChannel * channel)
+name|gimp_channel_init
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
+comment|/* Public API. */
+end_comment
+
 begin_comment
 comment|/**  * gimp_channel_new:  * @image:   The image to which to add the channel.  * @name:    The channel name.  * @width:   The channel width.  * @height:  The channel height.  * @opacity: The channel opacity.  * @color:   The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be  * set with explicit procedure calls. The channel's contents are  * undefined initially.  *  * Returns: The newly created channel.  */
 end_comment

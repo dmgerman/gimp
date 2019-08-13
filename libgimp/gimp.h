@@ -92,6 +92,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpdisplay.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpdrawable.h>
 end_include
 
@@ -141,6 +147,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimplayer.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimplayermask.h>
 end_include
 
 begin_include
@@ -213,6 +225,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpthumbnailprocedure.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpvectors.h>
 end_include
 
 begin_include

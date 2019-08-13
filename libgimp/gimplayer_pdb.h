@@ -244,7 +244,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayerMask
+modifier|*
 name|gimp_layer_create_mask
 parameter_list|(
 name|GimpLayer
@@ -258,7 +259,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpLayerMask
+modifier|*
 name|gimp_layer_get_mask
 parameter_list|(
 name|GimpLayer
@@ -273,8 +275,9 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_from_mask
 parameter_list|(
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -287,8 +290,9 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gint32
-name|mask_ID
+name|GimpLayerMask
+modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl

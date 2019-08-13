@@ -3364,11 +3364,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_save:  * @image: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: The new channel.  **/
+comment|/**  * gimp_selection_save:  * @image: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: (transfer full): The new channel.  **/
 end_comment
 
 begin_function
-name|gint32
+name|GimpChannel
+modifier|*
 DECL|function|gimp_selection_save (GimpImage * image)
 name|gimp_selection_save
 parameter_list|(
@@ -3392,11 +3393,11 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|args
 operator|=
@@ -3458,8 +3459,12 @@ argument_list|)
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|channel_ID
+name|channel
 operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
 name|gimp_value_array_index
@@ -3469,6 +3474,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_value_array_unref
 argument_list|(
@@ -3476,7 +3483,7 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|channel_ID
+name|channel
 return|;
 block|}
 end_function

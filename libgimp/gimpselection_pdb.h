@@ -259,7 +259,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpChannel
+modifier|*
 name|gimp_selection_save
 parameter_list|(
 name|GimpImage

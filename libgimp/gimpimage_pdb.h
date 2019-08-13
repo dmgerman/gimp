@@ -407,11 +407,13 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpChannel
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -427,8 +429,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|channel_ID
+name|GimpChannel
+modifier|*
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -463,11 +466,13 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|,
-name|gint32
-name|parent_ID
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -483,8 +488,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|vectors_ID
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -810,7 +816,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpChannel
+modifier|*
 name|gimp_image_get_active_channel
 parameter_list|(
 name|GimpImage
@@ -828,14 +835,16 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|active_channel_ID
+name|GimpChannel
+modifier|*
+name|active_channel
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpVectors
+modifier|*
 name|gimp_image_get_active_vectors
 parameter_list|(
 name|GimpImage
@@ -853,14 +862,16 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|active_vectors_ID
+name|GimpVectors
+modifier|*
+name|active_vectors
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpSelection
+modifier|*
 name|gimp_image_get_selection
 parameter_list|(
 name|GimpImage
@@ -1122,7 +1133,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpChannel
+modifier|*
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
 name|GimpImage
@@ -1136,7 +1148,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpVectors
+modifier|*
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
 name|GimpImage
@@ -1167,7 +1180,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpChannel
+modifier|*
 name|gimp_image_get_channel_by_name
 parameter_list|(
 name|GimpImage
@@ -1183,7 +1197,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpVectors
+modifier|*
 name|gimp_image_get_vectors_by_name
 parameter_list|(
 name|GimpImage

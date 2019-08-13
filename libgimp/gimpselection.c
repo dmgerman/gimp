@@ -15,6 +15,51 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_macro
+DECL|function|G_DEFINE_TYPE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
+name|G_DEFINE_TYPE
+argument_list|(
+argument|GimpSelection
+argument_list|,
+argument|gimp_selection
+argument_list|,
+argument|GIMP_TYPE_CHANNEL
+argument_list|)
+end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_selection_parent_class
+end_define
+
+begin_function
+specifier|static
+name|void
+name|gimp_selection_class_init
+parameter_list|(
+name|GimpSelectionClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_selection_init (GimpSelection * selection)
+name|gimp_selection_init
+parameter_list|(
+name|GimpSelection
+modifier|*
+name|selection
+parameter_list|)
+block|{ }
+end_function
+
 begin_comment
 comment|/**  * gimp_selection_float:  * @image: ignored  * @drawable: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer full): The floated layer.  */
 end_comment

@@ -53,7 +53,7 @@ comment|/* For information look into the C source or the html documentation */
 ifndef|#
 directive|ifndef
 name|GIMP_DEPRECATED_REPLACE_NEW_API
-name|gint32
+name|guint
 name|gimp_image_add_sample_point
 parameter_list|(
 name|GimpImage
@@ -77,22 +77,22 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|sample_point_ID
+name|guint
+name|sample_point
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|guint
 name|gimp_image_find_next_sample_point
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|sample_point_ID
+name|guint
+name|sample_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,8 +105,8 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|sample_point_ID
+name|guint
+name|sample_point
 parameter_list|,
 name|gint
 modifier|*

@@ -52,22 +52,6 @@ name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|G_GNUC_INTERNAL
 name|gboolean
-name|_gimp_progress_init
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|message
-parameter_list|,
-name|gint32
-name|gdisplay_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|G_GNUC_INTERNAL
-name|gboolean
 name|_gimp_progress_update
 parameter_list|(
 name|gdouble
@@ -159,6 +143,23 @@ directive|ifndef
 name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
 
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|gboolean
+name|_gimp_progress_init
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisplay
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_else
 else|#
 directive|else
@@ -167,6 +168,14 @@ end_else
 begin_comment
 comment|/* GIMP_DEPRECATED_REPLACE_NEW_API */
 end_comment
+
+begin_define
+DECL|macro|_gimp_progress_init
+define|#
+directive|define
+name|_gimp_progress_init
+value|__gimp_progress_init
+end_define
 
 begin_endif
 endif|#
@@ -180,6 +189,21 @@ end_comment
 begin_comment
 comment|/* Below API are deprecated and should not be used by new plug-ins.  * They are not marked internal as a trick to keep the old API alive for now.  */
 end_comment
+
+begin_function_decl
+name|gboolean
+name|__gimp_progress_init
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|,
+name|gint32
+name|gdisplay_ID
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_macro
 name|G_END_DECLS
