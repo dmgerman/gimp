@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6e88c0103
+DECL|enum|__anon275afc350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4544,8 +4544,18 @@ return|return
 name|FALSE
 return|;
 block|}
-else|else
-comment|/* if (! (pspec->flags& GIMP_PARAM_NO_VALIDATE)) */
+elseif|else
+if|if
+condition|(
+operator|!
+operator|(
+name|pspec
+operator|->
+name|flags
+operator|&
+name|GIMP_PARAM_NO_VALIDATE
+operator|)
+condition|)
 block|{
 name|GValue
 name|string_value
