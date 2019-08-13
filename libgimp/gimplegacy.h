@@ -616,29 +616,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Run a procedure in the procedure database. The parameters are  *  specified via the variable length argument list. The return  *  values are returned in the 'GimpParam*' array.  */
-end_comment
-
-begin_function_decl
-name|GimpParam
-modifier|*
-name|gimp_run_procedure
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
-parameter_list|,
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified as a GimpValueArray, so are the return values.  */
 end_comment
 
@@ -656,24 +633,6 @@ specifier|const
 name|GimpValueArray
 modifier|*
 name|arguments
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Destroy the an array of parameters. This is useful for  *  destroying the return values returned by a call to  *  'gimp_run_procedure'.  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_destroy_params
-parameter_list|(
-name|GimpParam
-modifier|*
-name|params
-parameter_list|,
-name|gint
-name|n_params
 parameter_list|)
 function_decl|;
 end_function_decl
