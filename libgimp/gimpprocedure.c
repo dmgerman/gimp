@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a0df90103
+DECL|enum|__anon2acc63f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -340,7 +340,6 @@ parameter_list|,
 name|gint
 name|n_param_specs
 parameter_list|,
-specifier|const
 name|GimpValueArray
 modifier|*
 name|args
@@ -3966,14 +3965,13 @@ end_comment
 begin_function
 name|GimpValueArray
 modifier|*
-DECL|function|gimp_procedure_run (GimpProcedure * procedure,const GimpValueArray * args)
+DECL|function|gimp_procedure_run (GimpProcedure * procedure,GimpValueArray * args)
 name|gimp_procedure_run
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-specifier|const
 name|GimpValueArray
 modifier|*
 name|args
@@ -4354,7 +4352,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,GParamSpec ** param_specs,gint n_param_specs,const GimpValueArray * args,gboolean return_vals,GError ** error)
+DECL|function|gimp_procedure_validate_args (GimpProcedure * procedure,GParamSpec ** param_specs,gint n_param_specs,GimpValueArray * args,gboolean return_vals,GError ** error)
 name|gimp_procedure_validate_args
 parameter_list|(
 name|GimpProcedure
@@ -4369,7 +4367,6 @@ parameter_list|,
 name|gint
 name|n_param_specs
 parameter_list|,
-specifier|const
 name|GimpValueArray
 modifier|*
 name|args
@@ -4444,6 +4441,76 @@ argument_list|(
 name|pspec
 argument_list|)
 decl_stmt|;
+comment|/* As a special case, validation can transform IDs into their        * respective object.        */
+if|if
+condition|(
+name|arg_type
+operator|==
+name|GIMP_TYPE_IMAGE_ID
+operator|&&
+name|spec_type
+operator|==
+name|GIMP_TYPE_IMAGE
+condition|)
+block|{
+name|GValue
+name|value
+init|=
+name|G_VALUE_INIT
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_image_new_by_id
+argument_list|(
+name|g_value_get_int
+argument_list|(
+name|arg
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|g_value_init
+argument_list|(
+operator|&
+name|value
+argument_list|,
+name|GIMP_TYPE_IMAGE
+argument_list|)
+expr_stmt|;
+name|g_value_take_object
+argument_list|(
+operator|&
+name|value
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|gimp_value_array_remove
+argument_list|(
+name|args
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+name|gimp_value_array_insert
+argument_list|(
+name|args
+argument_list|,
+name|i
+argument_list|,
+operator|&
+name|value
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|arg_type

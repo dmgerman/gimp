@@ -844,7 +844,6 @@ name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
-specifier|const
 name|GimpValueArray
 modifier|*
 name|args
