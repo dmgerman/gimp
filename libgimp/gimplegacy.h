@@ -603,19 +603,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Notify the main GIMP application that the extension is ready to run  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_extension_ack
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Enable asynchronous processing of temp_procs  */
 end_comment
 
@@ -624,20 +611,6 @@ name|void
 name|gimp_extension_enable
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Process one temp_proc and return  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_extension_process
-parameter_list|(
-name|guint
-name|timeout
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -661,35 +634,6 @@ modifier|*
 name|n_return_vals
 parameter_list|,
 modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Run a procedure in the procedure database. The parameters are  *  specified as an array of GimpParam.  The return  *  values are returned in the 'GimpParam*' array.  */
-end_comment
-
-begin_function_decl
-name|GimpParam
-modifier|*
-name|gimp_run_procedure2
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-modifier|*
-name|n_return_vals
-parameter_list|,
-name|gint
-name|n_params
-parameter_list|,
-specifier|const
-name|GimpParam
-modifier|*
-name|params
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -735,24 +679,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Destroy the an array of GimpParamDef's. This is useful for  *  destroying the return values returned by a call to  *  'gimp_procedural_db_proc_info'.  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_destroy_paramdefs
-parameter_list|(
-name|GimpParamDef
-modifier|*
-name|paramdefs
-parameter_list|,
-name|gint
-name|n_params
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Retrieve the error message and return status for the last procedure  * call.  */
 end_comment
 
@@ -779,57 +705,6 @@ end_function_decl
 begin_comment
 comment|/* gimp_plugin API that should now be done by using GimpPlugIn  */
 end_comment
-
-begin_function_decl
-name|gboolean
-name|gimp_plugin_domain_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_path
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_plugin_help_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_uri
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_plugin_menu_branch_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|menu_path
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|menu_name
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|gboolean
