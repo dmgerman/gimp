@@ -263,7 +263,8 @@ name|GIMP_DEPRECATED_REPLACE_NEW_API
 end_ifndef
 
 begin_function_decl
-name|gint32
+name|GimpChannel
+modifier|*
 name|gimp_channel_new
 parameter_list|(
 name|GimpImage

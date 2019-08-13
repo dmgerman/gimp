@@ -549,17 +549,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Returns: (nullable) (transfer full): A reference to a #GdkWindow or %NULL.  *               You should unref the window using g_object_unref() as  *               soon as you don't need it any longer.  *  * Since: 2.4  */
+comment|/**  * gimp_ui_get_display_window:  * @display: a #GimpDisplay.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Returns: (nullable) (transfer full): A reference to a #GdkWindow or %NULL.  *               You should unref the window using g_object_unref() as  *               soon as you don't need it any longer.  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|GdkWindow
 modifier|*
-DECL|function|gimp_ui_get_display_window (guint32 gdisp_ID)
+DECL|function|gimp_ui_get_display_window (GimpDisplay * display)
 name|gimp_ui_get_display_window
 parameter_list|(
-name|guint32
-name|gdisp_ID
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|guint32
@@ -576,7 +577,7 @@ name|window
 operator|=
 name|gimp_display_get_window_handle
 argument_list|(
-name|gdisp_ID
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -681,20 +682,21 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_window_set_transient_for_display:  * @window:   the #GtkWindow that should become transient  * @gdisp_ID: display ID of the image window that should become the parent  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP image window that is identified by it's  * display ID.  See gdk_window_set_transient_for () for more information.  *  * Most of the time you will want to use the convenience function  * gimp_window_set_transient().  *  * Since: 2.4  */
+comment|/**  * gimp_window_set_transient_for_display:  * @window:  the #GtkWindow that should become transient  * @display: display of the image window that should become the parent  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP image window that is identified by it's  * display ID. See gdk_window_set_transient_for () for more information.  *  * Most of the time you will want to use the convenience function  * gimp_window_set_transient().  *  * Since: 2.4  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_window_set_transient_for_display (GtkWindow * window,guint32 gdisp_ID)
+DECL|function|gimp_window_set_transient_for_display (GtkWindow * window,GimpDisplay * display)
 name|gimp_window_set_transient_for_display
 parameter_list|(
 name|GtkWindow
 modifier|*
 name|window
 parameter_list|,
-name|guint32
-name|gdisp_ID
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -719,7 +721,7 @@ name|window
 argument_list|,
 name|gimp_ui_get_display_window
 argument_list|(
-name|gdisp_ID
+name|display
 argument_list|)
 argument_list|)
 condition|)
@@ -1266,6 +1268,96 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* Deprecated API. */
+end_comment
+
+begin_comment
+comment|/**  * gimp_ui_get_display_window_deprecated: (skip)  * @gdisp_ID: a GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Returns: (nullable) (transfer full): A reference to a #GdkWindow or %NULL.  *               You should unref the window using g_object_unref() as  *               soon as you don't need it any longer.  *  * Since: 2.4  */
+end_comment
+
+begin_function
+name|GdkWindow
+modifier|*
+DECL|function|gimp_ui_get_display_window_deprecated (guint32 gdisp_ID)
+name|gimp_ui_get_display_window_deprecated
+parameter_list|(
+name|guint32
+name|gdisp_ID
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|gimp_display_new_by_id
+argument_list|(
+name|gdisp_ID
+argument_list|)
+decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+decl_stmt|;
+name|window
+operator|=
+name|gimp_ui_get_display_window
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+return|return
+name|window
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_window_set_transient_for_display_deprecated: (skip)  * @window:   the #GtkWindow that should become transient  * @gdisp_ID: display ID of the image window that should become the parent  *  * Indicates to the window manager that @window is a transient dialog  * associated with the GIMP image window that is identified by it's  * display ID.  See gdk_window_set_transient_for () for more information.  *  * Most of the time you will want to use the convenience function  * gimp_window_set_transient().  *  * Since: 2.4  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_window_set_transient_for_display_deprecated (GtkWindow * window,guint32 gdisp_ID)
+name|gimp_window_set_transient_for_display_deprecated
+parameter_list|(
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|,
+name|guint32
+name|gdisp_ID
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|display
+init|=
+name|gimp_display_new_by_id
+argument_list|(
+name|gdisp_ID
+argument_list|)
+decl_stmt|;
+name|gimp_window_set_transient_for_display
+argument_list|(
+name|window
+argument_list|,
+name|display
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 end_unit
 

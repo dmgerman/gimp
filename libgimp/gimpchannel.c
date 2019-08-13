@@ -69,7 +69,8 @@ comment|/**  * gimp_channel_new:  * @image:   The image to which to add the chan
 end_comment
 
 begin_function
-name|gint32
+name|GimpChannel
+modifier|*
 DECL|function|gimp_channel_new (GimpImage * image,const gchar * name,guint width,guint height,gdouble opacity,const GimpRGB * color)
 name|gimp_channel_new
 parameter_list|(
@@ -161,10 +162,14 @@ argument_list|(
 name|image_id
 argument_list|)
 decl_stmt|;
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 name|gint32
 name|channel_id
 decl_stmt|;
-name|channel_id
+name|channel
 operator|=
 name|gimp_channel_new
 argument_list|(
@@ -181,9 +186,24 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
+name|channel_id
+operator|=
+name|gimp_item_get_id
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|channel
 argument_list|)
 expr_stmt|;
 return|return

@@ -481,7 +481,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-name|gint32
+name|GimpDisplay
+modifier|*
 name|gimp_default_display
 argument_list|(
 name|void

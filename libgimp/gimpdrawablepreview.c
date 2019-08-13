@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f44880103
+DECL|enum|__anon2a4c85a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f44880208
+DECL|struct|__anon2a4c85a40208
 block|{
 DECL|member|x
 name|gint
@@ -1815,12 +1815,9 @@ block|{
 name|GimpImageType
 name|type
 decl_stmt|;
-name|GimpDrawable
+name|GimpSelection
 modifier|*
 name|selection
-decl_stmt|;
-name|gint32
-name|selection_ID
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1860,21 +1857,11 @@ name|s_h
 operator|=
 name|draw_height
 expr_stmt|;
-name|selection_ID
+name|selection
 operator|=
 name|gimp_image_get_selection
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
-name|selection
-operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_new_by_id
-argument_list|(
-name|selection_ID
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|src
@@ -1907,7 +1894,10 @@ name|sel
 operator|=
 name|gimp_drawable_get_sub_thumbnail_data
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|selection
+argument_list|)
 argument_list|,
 name|draw_x
 operator|+

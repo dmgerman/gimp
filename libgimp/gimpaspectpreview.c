@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3267f50103
+DECL|enum|__anon298dc9de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -85,7 +85,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3267f50208
+DECL|struct|__anon298dc9de0208
 block|{
 DECL|member|update
 name|gboolean
@@ -1140,12 +1140,9 @@ name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|GimpDrawable
+name|GimpSelection
 modifier|*
 name|selection
-decl_stmt|;
-name|gint
-name|selection_ID
 decl_stmt|;
 name|gint
 name|w
@@ -1155,21 +1152,11 @@ decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
-name|selection_ID
+name|selection
 operator|=
 name|gimp_image_get_selection
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
-name|selection
-operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|gimp_item_new_by_id
-argument_list|(
-name|selection_ID
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|w
@@ -1202,7 +1189,10 @@ name|sel
 operator|=
 name|gimp_drawable_get_thumbnail_data
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|selection
+argument_list|)
 argument_list|,
 operator|&
 name|w

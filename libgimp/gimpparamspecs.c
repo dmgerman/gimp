@@ -4276,7 +4276,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_display_is_valid
+name|_gimp_display_is_valid
 argument_list|(
 name|display_id
 argument_list|)
