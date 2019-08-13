@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e635e10103
+DECL|enum|__anon2a5578a00103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -3502,7 +3502,7 @@ else|else
 block|{
 name|gimp_dialog_set_alternative_button_order_from_array
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|private
 operator|->
