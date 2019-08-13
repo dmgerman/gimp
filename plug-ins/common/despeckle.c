@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b892df0108
+DECL|struct|__anon27a65c340108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b892df0208
+DECL|struct|__anon27a65c340208
 block|{
 DECL|member|elems
 name|gint
@@ -474,18 +474,18 @@ comment|/* Preview widget   */
 end_comment
 
 begin_decl_stmt
-DECL|variable|drawable_ID
+DECL|variable|drawable
 specifier|static
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|drawable_ID
+DECL|variable|drawable
 comment|/* Current drawable */
 end_comment
 
@@ -685,6 +685,9 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -747,6 +750,16 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|drawable_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -767,12 +780,12 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -782,7 +795,14 @@ operator|!
 name|despeckle_dialog
 argument_list|()
 condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 block|}
 break|break;
 case|case
@@ -998,12 +1018,12 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1046,6 +1066,11 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1252,7 +1277,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -1272,7 +1297,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1280,7 +1305,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -1305,7 +1330,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -1335,14 +1360,14 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|src
@@ -1450,14 +1475,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1635,9 +1660,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new_from_drawable_id
+name|gimp_drawable_preview_new_from_drawable
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2207,7 +2232,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -2215,7 +2240,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -2240,7 +2265,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -2292,7 +2317,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dst

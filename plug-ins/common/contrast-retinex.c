@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291458da0108
+DECL|struct|__anon2a033fcd0108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291458da0203
+DECL|enum|__anon2a033fcd0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291458da0308
+DECL|struct|__anon2a033fcd0308
 block|{
 DECL|member|N
 name|gint
@@ -265,8 +265,9 @@ specifier|static
 name|gboolean
 name|retinex_dialog
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -276,8 +277,9 @@ specifier|static
 name|void
 name|retinex
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -291,8 +293,9 @@ specifier|static
 name|void
 name|retinex_preview
 parameter_list|(
-name|gpointer
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -640,6 +643,10 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
@@ -719,12 +726,22 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|drawable_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -763,6 +780,11 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 switch|switch
@@ -788,10 +810,17 @@ condition|(
 operator|!
 name|retinex_dialog
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -897,7 +926,7 @@ operator|&&
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -912,7 +941,7 @@ argument_list|)
 expr_stmt|;
 name|retinex
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -954,6 +983,11 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -971,11 +1005,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|retinex_dialog (gint32 drawable_ID)
+DECL|function|retinex_dialog (GimpDrawable * drawable)
 name|retinex_dialog
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1119,9 +1154,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_zoom_preview_new_from_drawable_id
+name|gimp_zoom_preview_new_from_drawable
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1156,10 +1191,7 @@ argument_list|(
 name|retinex_preview
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|drawable_ID
-argument_list|)
+name|drawable
 argument_list|)
 expr_stmt|;
 name|grid
@@ -1575,11 +1607,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|retinex (gint32 drawable_ID,GimpPreview * preview)
+DECL|function|retinex (GimpDrawable * drawable,GimpPreview * preview)
 name|retinex
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -1658,7 +1691,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x
@@ -1678,7 +1711,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -1757,7 +1790,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_get
@@ -1830,7 +1863,7 @@ name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -1874,14 +1907,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1904,11 +1937,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|retinex_preview (gpointer drawable_ID,GimpPreview * preview)
+DECL|function|retinex_preview (GimpDrawable * drawable,GimpPreview * preview)
 name|retinex_preview
 parameter_list|(
-name|gpointer
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -1917,10 +1951,7 @@ parameter_list|)
 block|{
 name|retinex
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
-name|drawable_ID
-argument_list|)
+name|drawable
 argument_list|,
 name|preview
 argument_list|)

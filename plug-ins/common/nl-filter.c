@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e6b3ff0108
+DECL|struct|__anon27c293a20108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e6b3ff0203
+DECL|enum|__anon27c293a20203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -168,8 +168,9 @@ specifier|static
 name|void
 name|nlfilter
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -183,8 +184,9 @@ specifier|static
 name|void
 name|nlfilter_preview
 parameter_list|(
-name|gpointer
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -198,8 +200,9 @@ specifier|static
 name|gboolean
 name|nlfilter_dialog
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -438,6 +441,10 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|gint32
 name|drawable_id
 decl_stmt|;
@@ -477,6 +484,16 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|drawable_id
+argument_list|)
+argument_list|)
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -529,10 +546,17 @@ condition|(
 operator|!
 name|nlfilter_dialog
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -616,7 +640,7 @@ condition|)
 block|{
 name|nlfilter
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -642,6 +666,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -5373,11 +5402,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|nlfilter (gint32 drawable_id,GimpPreview * preview)
+DECL|function|nlfilter (GimpDrawable * drawable,GimpPreview * preview)
 name|nlfilter
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -5483,7 +5513,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -5510,7 +5540,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -5532,7 +5562,7 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -5556,7 +5586,7 @@ name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -6041,14 +6071,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -6069,11 +6099,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|nlfilter_preview (gpointer drawable_id,GimpPreview * preview)
+DECL|function|nlfilter_preview (GimpDrawable * drawable,GimpPreview * preview)
 name|nlfilter_preview
 parameter_list|(
-name|gpointer
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -6082,10 +6113,7 @@ parameter_list|)
 block|{
 name|nlfilter
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
-name|drawable_id
-argument_list|)
+name|drawable
 argument_list|,
 name|preview
 argument_list|)
@@ -6096,11 +6124,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|nlfilter_dialog (gint32 drawable_id)
+DECL|function|nlfilter_dialog (GimpDrawable * drawable)
 name|nlfilter_dialog
 parameter_list|(
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
@@ -6256,9 +6285,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new_from_drawable_id
+name|gimp_drawable_preview_new_from_drawable
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6293,10 +6322,7 @@ argument_list|(
 name|nlfilter_preview
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|drawable_id
-argument_list|)
+name|drawable
 argument_list|)
 expr_stmt|;
 name|frame

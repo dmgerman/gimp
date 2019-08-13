@@ -134,8 +134,9 @@ specifier|static
 name|void
 name|destripe
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -149,8 +150,9 @@ specifier|static
 name|void
 name|destripe_preview
 parameter_list|(
-name|gpointer
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -164,8 +166,9 @@ specifier|static
 name|gboolean
 name|destripe_dialog
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -199,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5db970108
+DECL|struct|__anon29f6f06c0108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -386,6 +389,10 @@ name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/* Current run mode */
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
@@ -455,6 +462,16 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|drawable_ID
+argument_list|)
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -478,10 +495,17 @@ condition|(
 operator|!
 name|destripe_dialog
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -546,12 +570,12 @@ condition|(
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -559,7 +583,7 @@ block|{
 comment|/*            * Run!            */
 name|destripe
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -604,6 +628,11 @@ expr_stmt|;
 block|}
 block|}
 empty_stmt|;
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 comment|/*    * Reset the current run status...    */
 name|values
 index|[
@@ -622,11 +651,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|destripe (gint32 drawable_ID,GimpPreview * preview)
+DECL|function|destripe (GimpDrawable * drawable,GimpPreview * preview)
 name|destripe
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -747,7 +777,7 @@ condition|(
 operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -788,7 +818,7 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -796,7 +826,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -821,7 +851,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -852,14 +882,14 @@ name|src_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|dest_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|hist
@@ -1554,14 +1584,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -1589,11 +1619,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|destripe_preview (gpointer drawable_ID,GimpPreview * preview)
+DECL|function|destripe_preview (GimpDrawable * drawable,GimpPreview * preview)
 name|destripe_preview
 parameter_list|(
-name|gpointer
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -1602,10 +1633,7 @@ parameter_list|)
 block|{
 name|destripe
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
-name|drawable_ID
-argument_list|)
+name|drawable
 argument_list|,
 name|preview
 argument_list|)
@@ -1616,11 +1644,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|destripe_dialog (gint32 drawable_ID)
+DECL|function|destripe_dialog (GimpDrawable * drawable)
 name|destripe_dialog
 parameter_list|(
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1764,9 +1793,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new_from_drawable_id
+name|gimp_drawable_preview_new_from_drawable
 argument_list|(
-name|drawable_ID
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1801,10 +1830,7 @@ argument_list|(
 name|destripe_preview
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|drawable_ID
-argument_list|)
+name|drawable
 argument_list|)
 expr_stmt|;
 name|grid

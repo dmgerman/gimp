@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b568d480103
+DECL|enum|__anon2ad226740103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b568d480203
+DECL|enum|__anon2ad226740203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -140,8 +140,9 @@ specifier|static
 name|void
 name|jigsaw
 parameter_list|(
-name|guint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -155,8 +156,9 @@ specifier|static
 name|void
 name|jigsaw_preview
 parameter_list|(
-name|gpointer
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -170,8 +172,9 @@ specifier|static
 name|gboolean
 name|jigsaw_dialog
 parameter_list|(
-name|guint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1969,6 +1972,10 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|guint32
 name|drawable_id
 decl_stmt|;
@@ -2008,6 +2015,16 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_item_new_by_id
+argument_list|(
+name|drawable_id
+argument_list|)
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -2091,7 +2108,7 @@ name|d_float
 expr_stmt|;
 name|jigsaw
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -2121,7 +2138,7 @@ condition|(
 operator|!
 name|jigsaw_dialog
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -2141,7 +2158,7 @@ argument_list|)
 expr_stmt|;
 name|jigsaw
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -2176,7 +2193,7 @@ argument_list|)
 expr_stmt|;
 name|jigsaw
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|NULL
 argument_list|)
@@ -2186,6 +2203,11 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/* switch */
+name|g_object_unref
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -2222,11 +2244,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|jigsaw (guint32 drawable_id,GimpPreview * preview)
+DECL|function|jigsaw (GimpDrawable * drawable,GimpPreview * preview)
 name|jigsaw
 parameter_list|(
-name|guint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -2282,7 +2305,7 @@ name|buffer
 operator|=
 name|gimp_drawable_get_thumbnail_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|width
@@ -2309,28 +2332,28 @@ name|gegl_buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|width
 operator|=
 name|gimp_drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gimp_drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|format
@@ -2517,7 +2540,7 @@ name|gegl_buffer
 operator|=
 name|gimp_drawable_get_shadow_buffer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -2551,14 +2574,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
@@ -2581,11 +2604,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|jigsaw_preview (gpointer drawable_id,GimpPreview * preview)
+DECL|function|jigsaw_preview (GimpDrawable * drawable,GimpPreview * preview)
 name|jigsaw_preview
 parameter_list|(
-name|gpointer
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GimpPreview
 modifier|*
@@ -2594,10 +2618,7 @@ parameter_list|)
 block|{
 name|jigsaw
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
-name|drawable_id
-argument_list|)
+name|drawable
 argument_list|,
 name|preview
 argument_list|)
@@ -13994,11 +14015,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|jigsaw_dialog (guint32 drawable_id)
+DECL|function|jigsaw_dialog (GimpDrawable * drawable)
 name|jigsaw_dialog
 parameter_list|(
-name|guint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
@@ -14154,9 +14176,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_aspect_preview_new_from_drawable_id
+name|gimp_aspect_preview_new_from_drawable
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14191,10 +14213,7 @@ argument_list|(
 name|jigsaw_preview
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|drawable_id
-argument_list|)
+name|drawable
 argument_list|)
 expr_stmt|;
 name|frame
