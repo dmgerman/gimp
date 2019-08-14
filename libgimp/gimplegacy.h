@@ -725,20 +725,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* pdb stuff that should now be done using GimpPDB  */
-end_comment
-
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_pdb_temp_name
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

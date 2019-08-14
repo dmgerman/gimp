@@ -1823,31 +1823,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pdb_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: (transfer full): A unique temporary name for a temporary PDB entry.  *          The returned value must be freed with g_free().  **/
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_pdb_temp_name (void)
-name|gimp_pdb_temp_name
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_pdb_temp_name
-argument_list|()
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/*  private functions  */
 end_comment
 
