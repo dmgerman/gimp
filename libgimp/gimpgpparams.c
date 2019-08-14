@@ -67,11 +67,24 @@ begin_comment
 comment|/*  include the implementation, they are shared between app/ and  *  libgimp/ but need different headers.  */
 end_comment
 
+begin_define
+DECL|macro|__LIBGIMP_GPPARAMS__
+define|#
+directive|define
+name|__LIBGIMP_GPPARAMS__
+end_define
+
 begin_include
 include|#
 directive|include
 file|"gimpgpparams-body.c"
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|__LIBGIMP_GPPARAMS__
+end_undef
 
 begin_function
 name|GParamSpec
