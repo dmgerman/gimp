@@ -280,8 +280,6 @@ literal|"Image"
 argument_list|,
 literal|"Output image"
 argument_list|,
-name|FALSE
-argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
 expr_stmt|;

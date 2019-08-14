@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a28b250103
+DECL|enum|__anon2b5580950103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a28b250203
+DECL|enum|__anon2b5580950203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a28b250303
+DECL|enum|__anon2b5580950303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -211,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a28b250408
+DECL|struct|__anon2b5580950408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -904,8 +904,6 @@ argument_list|,
 literal|"Curl layer"
 argument_list|,
 literal|"The new layer with the curl."
-argument_list|,
-name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

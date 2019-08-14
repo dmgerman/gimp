@@ -240,8 +240,6 @@ literal|"Image"
 argument_list|,
 literal|"The input image"
 argument_list|,
-name|FALSE
-argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -254,8 +252,6 @@ argument_list|,
 literal|"Drawable"
 argument_list|,
 literal|"The input drawable"
-argument_list|,
-name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

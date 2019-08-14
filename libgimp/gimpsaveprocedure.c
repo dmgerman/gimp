@@ -241,8 +241,6 @@ literal|"Image"
 argument_list|,
 literal|"The image to save"
 argument_list|,
-name|FALSE
-argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
 expr_stmt|;
@@ -255,8 +253,6 @@ argument_list|,
 literal|"Drawable"
 argument_list|,
 literal|"The drawable to save"
-argument_list|,
-name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -503,11 +499,13 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 specifier|const
 name|gchar
@@ -530,7 +528,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|GIMP_VALUES_GET_IMAGE
 argument_list|(
@@ -539,7 +537,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
 name|GIMP_VALUES_GET_DRAWABLE
 argument_list|(
@@ -557,7 +555,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-comment|/* raw_uri  = GIMP_VALUES_GET_STRING   (args, 4); */
+comment|/* raw_uri = GIMP_VALUES_GET_STRING   (args, 4); */
 name|file
 operator|=
 name|g_file_new_for_uri
@@ -625,9 +623,9 @@ name|procedure
 argument_list|,
 name|run_mode
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|file
 argument_list|,
