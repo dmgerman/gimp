@@ -81,10 +81,6 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
-begin_comment
-comment|/**  * SECTION: gimplegacy  * @title: GimpLegacy  * @short_description: Main functions needed for building a GIMP plug-in.  *                     This is the old legacy API, please use GimpPlugIn  *                     and GimpProcedure for all new plug-ins.  *  * Main functions needed for building a GIMP plug-in. Compat cruft.  **/
-end_comment
-
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
