@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaf2a90103
+DECL|enum|__anon2b4a5f1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1710,7 +1710,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaaf2a90208
+DECL|struct|__anon2b4a5f1b0208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -2119,7 +2119,10 @@ name|G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 expr_stmt|;
 name|gtk_dialog_set_alternative_button_order_from_array
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|,
 name|n_buttons
 argument_list|,
