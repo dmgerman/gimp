@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7a4410108
+DECL|struct|__anon2badb8b40108
 block|{
 DECL|member|url
 name|char
@@ -117,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7a4410208
+DECL|struct|__anon2badb8b40208
 block|{
 DECL|member|url
 name|char
@@ -648,7 +648,7 @@ operator|<
 name|MAX_URL_LEN
 condition|)
 block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|save
 operator|.
@@ -660,17 +660,6 @@ name|url
 argument_list|,
 name|MAX_URL_LEN
 argument_list|)
-expr_stmt|;
-name|save
-operator|.
-name|url
-index|[
-name|MAX_URL_LEN
-operator|-
-literal|1
-index|]
-operator|=
-literal|0
 expr_stmt|;
 block|}
 else|else

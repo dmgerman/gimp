@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aec8100103
+DECL|enum|__anon2c2a0a7b0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aec8100208
+DECL|struct|__anon2c2a0a7b0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aec8100308
+DECL|struct|__anon2c2a0a7b0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -3908,7 +3908,7 @@ name|dialog
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|qbist_info
 operator|.
@@ -3917,8 +3917,6 @@ argument_list|,
 name|name
 argument_list|,
 name|PATH_MAX
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|load_data
@@ -4090,7 +4088,7 @@ name|dialog
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|qbist_info
 operator|.
@@ -4099,8 +4097,6 @@ argument_list|,
 name|name
 argument_list|,
 name|PATH_MAX
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|save_data

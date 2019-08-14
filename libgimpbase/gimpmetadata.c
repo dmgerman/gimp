@@ -2493,7 +2493,7 @@ end_return
 begin_struct
 unit|}  typedef
 struct|struct
-DECL|struct|__anon29457bd90108
+DECL|struct|__anon2be492540108
 block|{
 DECL|member|name
 name|gchar
@@ -2683,7 +2683,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|parse_data
 operator|->
@@ -2698,22 +2698,6 @@ operator|->
 name|name
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|parse_data
-operator|->
-name|name
-index|[
-sizeof|sizeof
-argument_list|(
-name|parse_data
-operator|->
-name|name
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|0
 expr_stmt|;
 name|parse_data
 operator|->

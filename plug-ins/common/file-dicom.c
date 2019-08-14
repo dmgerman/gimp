@@ -3115,7 +3115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5fdb950108
+DECL|struct|__anon2a2bc6730108
 block|{
 DECL|member|group_word
 name|guint16
@@ -3206,7 +3206,7 @@ name|element_word
 operator|=
 name|element_word
 expr_stmt|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|element
 operator|->
@@ -3220,25 +3220,7 @@ name|element
 operator|->
 name|value_rep
 argument_list|)
-operator|-
-literal|1
 argument_list|)
-expr_stmt|;
-name|element
-operator|->
-name|value_rep
-index|[
-sizeof|sizeof
-argument_list|(
-name|element
-operator|->
-name|value_rep
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 name|element
 operator|->
@@ -3861,7 +3843,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* sacrificial buffer */
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|buf
 argument_list|,
@@ -3874,21 +3856,7 @@ sizeof|sizeof
 argument_list|(
 name|buf
 argument_list|)
-operator|-
-literal|1
 argument_list|)
-expr_stmt|;
-name|buf
-index|[
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 comment|/* buf should now hold a string of the form                    * dcm/XXXX-XXXX-AA where XXXX are Hex values for                    * group and element respectively AA is the Value                    * Representation of the element                    *                    * start off by jumping over the dcm/ to the first Hex blob                    */
 name|ptr1
@@ -4037,8 +4005,7 @@ if|if
 condition|(
 name|ptr1
 condition|)
-block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|value_rep
 argument_list|,
@@ -4048,23 +4015,8 @@ sizeof|sizeof
 argument_list|(
 name|value_rep
 argument_list|)
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
-name|value_rep
-index|[
-sizeof|sizeof
-argument_list|(
-name|value_rep
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-block|}
 comment|/*                    * If all went according to plan, we should be able                    * to add this element                    */
 if|if
 condition|(
@@ -5699,7 +5651,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2b5fdb950208
+DECL|struct|__anon2a2bc6730208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5827,7 +5779,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2b5fdb950308
+DECL|struct|__anon2a2bc6730308
 struct|struct
 block|{
 DECL|member|DICOM

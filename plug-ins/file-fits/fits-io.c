@@ -1972,8 +1972,7 @@ name|fits_n_error
 operator|<
 name|FITS_MAX_ERROR
 condition|)
-block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|fits_error
 index|[
@@ -1985,20 +1984,6 @@ argument_list|,
 name|FITS_ERROR_LENGTH
 argument_list|)
 expr_stmt|;
-name|fits_error
-index|[
-name|fits_n_error
-operator|++
-index|]
-index|[
-name|FITS_ERROR_LENGTH
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-block|}
 block|}
 end_function
 

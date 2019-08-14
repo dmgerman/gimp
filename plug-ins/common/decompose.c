@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900e7560108
+DECL|struct|__anon28a70b4f0108
 block|{
 DECL|member|babl_name
 specifier|const
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900e7560208
+DECL|struct|__anon28a70b4f0208
 block|{
 DECL|member|type
 specifier|const
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900e7560308
+DECL|struct|__anon28a70b4f0308
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1887,7 +1887,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|decovals
 operator|.
@@ -1909,22 +1909,6 @@ operator|.
 name|extract_type
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|decovals
-operator|.
-name|extract_type
-index|[
-sizeof|sizeof
-argument_list|(
-name|decovals
-operator|.
-name|extract_type
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 name|decovals
 operator|.
@@ -4455,7 +4439,7 @@ if|if
 condition|(
 name|run
 condition|)
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|decovals
 operator|.
@@ -4472,8 +4456,6 @@ sizeof|sizeof
 name|decovals
 operator|.
 name|extract_type
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 return|return

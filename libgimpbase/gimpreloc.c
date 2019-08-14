@@ -244,15 +244,13 @@ return|return
 name|NULL
 return|;
 block|}
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|path2
 argument_list|,
 literal|"/proc/self/exe"
 argument_list|,
 name|buf_size
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 while|while
@@ -350,15 +348,13 @@ name|path
 return|;
 block|}
 comment|/* path is a symlink. Continue loop and resolve this. */
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|path
 argument_list|,
 name|path2
 argument_list|,
 name|buf_size
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}

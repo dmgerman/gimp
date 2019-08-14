@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5d42f0108
+DECL|struct|__anon2c54f4e00108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -3307,7 +3307,7 @@ modifier|*
 name|string
 parameter_list|)
 block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|string
 argument_list|,
@@ -3316,7 +3316,7 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-literal|255
+literal|256
 argument_list|)
 expr_stmt|;
 block|}

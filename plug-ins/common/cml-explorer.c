@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27677d090103
+DECL|enum|__anon28d55dcf0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27677d090203
+DECL|enum|__anon28d55dcf0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27677d090303
+DECL|enum|__anon28d55dcf0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27677d090403
+DECL|enum|__anon28d55dcf0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27677d090508
+DECL|struct|__anon28d55dcf0508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27677d090608
+DECL|struct|__anon28d55dcf0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27677d090708
+DECL|struct|__anon28d55dcf0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11808,7 +11808,7 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|VALS
 operator|.
@@ -11822,8 +11822,6 @@ name|VALS
 operator|.
 name|last_file_name
 argument_list|)
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -13023,7 +13021,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|VALS
 operator|.
@@ -13037,8 +13035,6 @@ name|VALS
 operator|.
 name|last_file_name
 argument_list|)
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 block|}

@@ -470,7 +470,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c8166910108
+DECL|struct|__anon2c877d490108
 typedef|typedef
 struct|struct
 block|{
@@ -517,7 +517,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c8166910208
+DECL|struct|__anon2c877d490208
 typedef|typedef
 struct|struct
 block|{
@@ -1278,15 +1278,13 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Copy to the buffer */
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|buffer
 argument_list|,
 name|lpMsgBuf
 argument_list|,
 name|buf_size
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|LocalFree

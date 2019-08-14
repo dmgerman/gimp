@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97c3b90103
+DECL|enum|__anon29a2143c0103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97c3b90203
+DECL|enum|__anon29a2143c0203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97c3b90308
+DECL|struct|__anon29a2143c0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97c3b90408
+DECL|struct|__anon29a2143c0408
 block|{
 DECL|member|menu
 name|gchar
@@ -1855,7 +1855,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|xtimestr
 argument_list|,
@@ -1866,18 +1866,6 @@ argument_list|(
 name|xtimestr
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|xtimestr
-index|[
-sizeof|sizeof
-argument_list|(
-name|xtimestr
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|0
 expr_stmt|;
 name|g_free
 argument_list|(

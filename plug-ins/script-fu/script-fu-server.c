@@ -488,7 +488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c36f15f0108
+DECL|struct|__anon29907f0a0108
 block|{
 DECL|member|command
 name|gchar
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c36f15f0208
+DECL|struct|__anon29907f0a0208
 block|{
 DECL|member|ip_entry
 name|GtkWidget
@@ -556,7 +556,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c36f15f030a
+DECL|union|__anon29907f0a030a
 block|{
 DECL|member|family
 name|sa_family_t
@@ -1459,15 +1459,13 @@ return|return;
 block|}
 comment|/*  Associate the client address with the socket  */
 comment|/* If all else fails ... */
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|clientname
 argument_list|,
 literal|"(error during host address lookup)"
 argument_list|,
 name|NI_MAXHOST
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Lookup address */

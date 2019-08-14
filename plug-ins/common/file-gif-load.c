@@ -942,7 +942,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b4fc220108
+DECL|struct|__anon279df88d0108
 block|{
 DECL|member|Width
 name|guint
@@ -986,7 +986,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b4fc220208
+DECL|struct|__anon279df88d0208
 block|{
 DECL|member|transparent
 name|gint
@@ -1363,7 +1363,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|version
 argument_list|,
@@ -1377,13 +1377,6 @@ literal|3
 argument_list|,
 literal|3
 argument_list|)
-expr_stmt|;
-name|version
-index|[
-literal|3
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 if|if
 condition|(

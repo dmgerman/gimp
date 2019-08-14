@@ -65,7 +65,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f20e60103
+DECL|enum|__anon27a0e5120103
 block|{
 DECL|enumerator|XLFD_FOUNDRY
 name|XLFD_FOUNDRY
@@ -851,7 +851,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|buffer
 argument_list|,
@@ -859,13 +859,6 @@ name|t1
 argument_list|,
 name|len
 argument_list|)
-expr_stmt|;
-name|buffer
-index|[
-name|len
-index|]
-operator|=
-literal|0
 expr_stmt|;
 comment|/* Convert to lower case. */
 for|for
