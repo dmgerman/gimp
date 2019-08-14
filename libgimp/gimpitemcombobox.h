@@ -188,8 +188,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gint32
-name|item_id
+name|GimpItem
+modifier|*
+name|item
 parameter_list|,
 name|gpointer
 name|data

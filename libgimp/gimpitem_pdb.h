@@ -187,9 +187,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_GNUC_INTERNAL
 name|gint
 modifier|*
-name|gimp_item_get_children
+name|_gimp_item_get_children
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -567,13 +568,6 @@ end_define
 begin_define
 define|#
 directive|define
-name|gimp_item_get_children
-value|_gimp_item_get_children
-end_define
-
-begin_define
-define|#
-directive|define
 name|gimp_item_get_expanded
 value|_gimp_item_get_expanded
 end_define
@@ -840,21 +834,6 @@ name|_gimp_item_get_parent
 parameter_list|(
 name|gint32
 name|item_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-modifier|*
-name|_gimp_item_get_children
-parameter_list|(
-name|gint32
-name|item_ID
-parameter_list|,
-name|gint
-modifier|*
-name|num_children
 parameter_list|)
 function_decl|;
 end_function_decl
