@@ -214,7 +214,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -235,7 +236,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_thumbnail_image
 parameter_list|(
 specifier|const
@@ -918,8 +920,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -937,7 +940,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -956,9 +959,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -987,7 +989,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1027,8 +1029,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -1039,7 +1042,7 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|load_thumbnail_image
 argument_list|(
@@ -1056,9 +1059,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -1087,7 +1089,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_VALUES_SET_INT
@@ -1141,7 +1143,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,GimpRunMode run_mode,GError ** error)
 name|load_image
 parameter_list|(
@@ -1159,11 +1162,11 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1276,7 +1279,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -1289,14 +1292,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 condition|)
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -1329,14 +1329,15 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_thumbnail_image (const gchar * filename,gint thumb_size,GError ** error)
 name|load_thumbnail_image
 parameter_list|(
@@ -1354,11 +1355,11 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1591,7 +1592,7 @@ argument_list|(
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -1604,16 +1605,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 condition|)
 block|{
 comment|/* is this needed for thumbnails? */
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -1660,7 +1658,7 @@ name|exec_path
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
