@@ -461,11 +461,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -512,7 +514,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -555,11 +558,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint32
 name|run_mode
@@ -1267,8 +1272,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -1294,7 +1300,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -1329,10 +1335,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 operator|&&
 name|status
 operator|==
@@ -1344,7 +1347,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -1357,7 +1360,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|compressor_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|compressor_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|compressor_save
 parameter_list|(
 name|GimpProcedure
@@ -1367,11 +1370,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -1432,9 +1437,9 @@ name|compressor
 argument_list|,
 name|filename
 argument_list|,
-name|image_id
+name|image
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|run_mode
 argument_list|,
@@ -1463,7 +1468,7 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|save_image (const CompressorEntry * compressor,const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode,GError ** error)
+DECL|function|save_image (const CompressorEntry * compressor,const gchar * filename,GimpImage * image,GimpDrawable * drawable,gint32 run_mode,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -1476,11 +1481,13 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_ID
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|gint32
 name|run_mode
@@ -1546,9 +1553,9 @@ name|gimp_file_save
 argument_list|(
 name|run_mode
 argument_list|,
-name|image_ID
+name|image
 argument_list|,
-name|drawable_ID
+name|drawable
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1662,7 +1669,7 @@ literal|0
 condition|)
 name|gimp_file_save_thumbnail
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -1675,7 +1682,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const CompressorEntry * compressor,const gchar * filename,gint32 run_mode,GimpPDBStatusType * status,GError ** error)
 name|load_image
 parameter_list|(
@@ -1702,8 +1710,9 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1777,12 +1786,11 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* now that we uncompressed it, load the temp file */
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -1805,10 +1813,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
+name|image
 condition|)
 block|{
 operator|*
@@ -1818,7 +1823,7 @@ name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
-name|image_ID
+name|image
 argument_list|,
 name|filename
 argument_list|)
@@ -1855,7 +1860,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
