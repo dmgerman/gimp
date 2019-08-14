@@ -192,7 +192,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 name|GFile
@@ -436,8 +437,9 @@ name|GimpValueArray
 modifier|*
 name|return_values
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -445,7 +447,7 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|image_ID
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -459,9 +461,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -490,7 +491,7 @@ name|return_values
 argument_list|,
 literal|1
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -501,7 +502,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (GFile * file,GimpRunMode run_mode,GError ** load_error)
 name|load_image
 parameter_list|(
@@ -525,6 +527,12 @@ init|=
 name|g_key_file_new
 argument_list|()
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|NULL
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -542,12 +550,6 @@ modifier|*
 name|value
 init|=
 name|NULL
-decl_stmt|;
-name|gint32
-name|image_ID
-init|=
-operator|-
-literal|1
 decl_stmt|;
 name|GError
 modifier|*
@@ -658,7 +660,7 @@ if|if
 condition|(
 name|value
 condition|)
-name|image_ID
+name|image
 operator|=
 name|gimp_file_load
 argument_list|(
@@ -730,7 +732,7 @@ name|key_file
 argument_list|)
 expr_stmt|;
 return|return
-name|image_ID
+name|image
 return|;
 block|}
 end_function
