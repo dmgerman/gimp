@@ -1538,29 +1538,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/**  * gimp_get_pdb_status:  *  * Retrieves the status from the last procedure call.  *  * Returns: the #GimpPDBStatusType.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|GimpPDBStatusType
-DECL|function|gimp_get_pdb_status (void)
-name|gimp_get_pdb_status
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|pdb_error_status
-return|;
-block|}
-end_function
-
 begin_function
 name|void
 DECL|function|_gimp_legacy_initialize (const GimpPlugInInfo * info,GIOChannel * read_channel,GIOChannel * write_channel)
@@ -2223,35 +2200,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|_gimp_register_file_handler_uri
-argument_list|(
-name|procedure_name
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_register_file_handler_raw:  * @procedure_name: The name of the procedure to enable raw handling for.  *  * Registers a file handler procedure as capable of handling raw camera  * files.  *  * Registers a file handler procedure as capable of handling raw  * digital camera files. Use this procedure only to register raw load  * handlers, calling it on a save handler will generate an error.  *  * Returns: TRUE on success.  *  * Since: 2.10  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_register_file_handler_raw (const gchar * procedure_name)
-name|gimp_register_file_handler_raw
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|)
-block|{
-name|ASSERT_NO_PLUG_IN_EXISTS
-argument_list|(
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-return|return
-name|_gimp_register_file_handler_raw
 argument_list|(
 name|procedure_name
 argument_list|)
