@@ -3031,15 +3031,17 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
-DECL|function|ico_load_layer (FILE * fp,gint32 image,gint32 icon_num,guchar * buf,gint maxsize,IcoLoadInfo * info)
+name|GimpLayer
+modifier|*
+DECL|function|ico_load_layer (FILE * fp,GimpImage * image,gint32 icon_num,guchar * buf,gint maxsize,IcoLoadInfo * info)
 name|ico_load_layer
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 parameter_list|,
 name|gint32
@@ -3062,7 +3064,8 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 name|guint32
@@ -3105,8 +3108,7 @@ literal|1
 argument_list|)
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 if|if
 condition|(
@@ -3136,8 +3138,7 @@ name|height
 argument_list|)
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 elseif|else
@@ -3169,15 +3170,13 @@ name|height
 argument_list|)
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 else|else
 block|{
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* read successfully. add to image */
@@ -3228,8 +3227,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 name|icon_num
 argument_list|)
@@ -3238,7 +3236,10 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gegl_buffer_set
@@ -3277,7 +3278,8 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|ico_load_image (const gchar * filename,GError ** error)
 name|ico_load_image
 parameter_list|(
@@ -3308,7 +3310,8 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
 name|guchar
@@ -3377,8 +3380,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|icon_count
@@ -3400,8 +3402,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|info
@@ -3427,8 +3428,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* find width and height of image */
@@ -3517,8 +3517,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|D
@@ -3630,7 +3629,8 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|ico_load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** error)
 name|ico_load_thumbnail_image
 parameter_list|(
@@ -3661,7 +3661,8 @@ name|IcoLoadInfo
 modifier|*
 name|info
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 decl_stmt|;
 name|gint
@@ -3749,8 +3750,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|icon_count
@@ -3772,8 +3772,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 name|D
@@ -3810,8 +3809,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 comment|/* Do a quick scan of the icons in the file to find the best match */
@@ -3954,8 +3952,7 @@ operator|<=
 literal|0
 condition|)
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 name|image
 operator|=

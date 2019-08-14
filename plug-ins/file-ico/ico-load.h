@@ -17,7 +17,8 @@ name|__ICO_LOAD_H__
 end_define
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|ico_load_image
 parameter_list|(
 specifier|const
@@ -34,7 +35,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
+name|GimpImage
+modifier|*
 name|ico_load_thumbnail_image
 parameter_list|(
 specifier|const

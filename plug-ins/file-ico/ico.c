@@ -249,11 +249,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -716,8 +718,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -742,7 +745,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|ico_load_image
 argument_list|(
@@ -759,9 +762,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -790,7 +792,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -840,8 +842,9 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -874,7 +877,7 @@ name|height
 operator|=
 name|size
 expr_stmt|;
-name|image_id
+name|image
 operator|=
 name|ico_load_thumbnail_image
 argument_list|(
@@ -892,9 +895,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_id
-operator|<
-literal|1
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -923,7 +924,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_id
+name|image
 argument_list|)
 expr_stmt|;
 name|GIMP_VALUES_SET_INT
@@ -961,7 +962,7 @@ begin_function
 specifier|static
 name|GimpValueArray
 modifier|*
-DECL|function|ico_save (GimpProcedure * procedure,GimpRunMode run_mode,gint32 image_id,gint32 drawable_id,GFile * file,const GimpValueArray * args,gpointer run_data)
+DECL|function|ico_save (GimpProcedure * procedure,GimpRunMode run_mode,GimpImage * image,GimpDrawable * drawable,GFile * file,const GimpValueArray * args,gpointer run_data)
 name|ico_save
 parameter_list|(
 name|GimpProcedure
@@ -971,11 +972,13 @@ parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
-name|gint32
-name|image_id
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
-name|gint32
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GFile
 modifier|*
@@ -1026,7 +1029,7 @@ name|ico_save_image
 argument_list|(
 name|filename
 argument_list|,
-name|image_id
+name|image
 argument_list|,
 name|run_mode
 argument_list|,

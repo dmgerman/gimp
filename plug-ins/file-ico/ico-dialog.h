@@ -36,7 +36,8 @@ name|GtkWidget
 modifier|*
 name|dialog
 parameter_list|,
-name|gint32
+name|GimpDrawable
+modifier|*
 name|layer
 parameter_list|,
 name|gint

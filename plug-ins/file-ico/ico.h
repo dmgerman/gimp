@@ -286,7 +286,7 @@ modifier|*
 name|compress
 decl_stmt|;
 DECL|member|layers
-name|gint
+name|GList
 modifier|*
 name|layers
 decl_stmt|;

@@ -25,8 +25,9 @@ name|gchar
 modifier|*
 name|file_name
 parameter_list|,
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gint32
 name|run_mode
