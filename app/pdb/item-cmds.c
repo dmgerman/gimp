@@ -3428,7 +3428,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 init|=
 literal|0
@@ -3544,7 +3544,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 decl_stmt|;
 name|item

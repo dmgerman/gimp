@@ -3064,7 +3064,7 @@ comment|/**  * gimp_item_get_tattoo:  * @item_ID: The item.  *  * Get the tattoo
 end_comment
 
 begin_function
-name|gint
+name|guint
 DECL|function|gimp_item_get_tattoo (gint32 item_ID)
 name|gimp_item_get_tattoo
 parameter_list|(
@@ -3087,7 +3087,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 init|=
 literal|0
@@ -3178,13 +3178,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_set_tattoo (gint32 item_ID,gint tattoo)
+DECL|function|gimp_item_set_tattoo (gint32 item_ID,guint tattoo)
 name|gimp_item_set_tattoo
 parameter_list|(
 name|gint32
 name|item_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 block|{
@@ -3218,7 +3218,7 @@ name|GIMP_TYPE_ITEM_ID
 argument_list|,
 name|item_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|tattoo
 argument_list|,

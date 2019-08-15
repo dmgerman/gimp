@@ -349,7 +349,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|guint
 name|gimp_item_get_tattoo
 parameter_list|(
 name|gint32
@@ -365,7 +365,7 @@ parameter_list|(
 name|gint32
 name|item_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 function_decl|;

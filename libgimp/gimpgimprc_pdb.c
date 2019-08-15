@@ -392,7 +392,7 @@ decl_stmt|;
 name|GimpUnit
 name|unit_id
 init|=
-literal|0
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|args
 operator|=

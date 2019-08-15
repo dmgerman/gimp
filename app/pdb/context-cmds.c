@@ -1980,7 +1980,7 @@ decl_stmt|;
 name|GimpUnit
 name|line_width_unit
 init|=
-literal|0
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|GimpStrokeOptions
 modifier|*

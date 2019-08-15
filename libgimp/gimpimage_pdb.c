@@ -8085,7 +8085,7 @@ decl_stmt|;
 name|GimpUnit
 name|unit
 init|=
-literal|0
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|args
 operator|=
@@ -8280,7 +8280,7 @@ comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Retur
 end_comment
 
 begin_function
-name|gint
+name|guint
 DECL|function|gimp_image_get_tattoo_state (gint32 image_ID)
 name|gimp_image_get_tattoo_state
 parameter_list|(
@@ -8303,7 +8303,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo_state
 init|=
 literal|0
@@ -8394,13 +8394,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_tattoo_state (gint32 image_ID,gint tattoo_state)
+DECL|function|gimp_image_set_tattoo_state (gint32 image_ID,guint tattoo_state)
 name|gimp_image_set_tattoo_state
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo_state
 parameter_list|)
 block|{
@@ -8434,7 +8434,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|tattoo_state
 argument_list|,
@@ -8502,13 +8502,13 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_layer_by_tattoo (gint32 image_ID,gint tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (gint32 image_ID,guint tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 block|{
@@ -8543,7 +8543,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|tattoo
 argument_list|,
@@ -8623,13 +8623,13 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_channel_by_tattoo (gint32 image_ID,gint tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (gint32 image_ID,guint tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 block|{
@@ -8664,7 +8664,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|tattoo
 argument_list|,
@@ -8744,13 +8744,13 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_get_vectors_by_tattoo (gint32 image_ID,gint tattoo)
+DECL|function|gimp_image_get_vectors_by_tattoo (gint32 image_ID,guint tattoo)
 name|gimp_image_get_vectors_by_tattoo
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 block|{
@@ -8785,7 +8785,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|tattoo
 argument_list|,

@@ -985,7 +985,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|guint
 name|gimp_image_get_tattoo_state
 parameter_list|(
 name|gint32
@@ -1001,7 +1001,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo_state
 parameter_list|)
 function_decl|;
@@ -1014,7 +1014,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 function_decl|;
@@ -1027,7 +1027,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 function_decl|;
@@ -1040,7 +1040,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|guint
 name|tattoo
 parameter_list|)
 function_decl|;

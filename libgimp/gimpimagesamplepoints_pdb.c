@@ -197,7 +197,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|sample_point_ID
 argument_list|,
@@ -306,7 +306,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|sample_point_ID
 argument_list|,
@@ -430,7 +430,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|G_TYPE_INT
+name|G_TYPE_UINT
 argument_list|,
 name|sample_point_ID
 argument_list|,

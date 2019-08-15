@@ -159,7 +159,7 @@ decl_stmt|;
 name|gint
 name|yposition
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 init|=
 literal|0
@@ -325,7 +325,7 @@ decl_stmt|;
 name|gint
 name|xposition
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 init|=
 literal|0
@@ -484,7 +484,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 decl_stmt|;
 name|image
@@ -615,10 +615,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 decl_stmt|;
-name|gint
+name|guint
 name|next_guide
 init|=
 literal|0
@@ -799,7 +799,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 decl_stmt|;
 name|gint
@@ -953,7 +953,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|guide
 decl_stmt|;
 name|gint

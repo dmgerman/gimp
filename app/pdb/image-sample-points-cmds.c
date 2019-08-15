@@ -150,7 +150,7 @@ decl_stmt|;
 name|gint
 name|position_y
 decl_stmt|;
-name|gint
+name|guint
 name|sample_point
 init|=
 literal|0
@@ -330,7 +330,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|sample_point
 decl_stmt|;
 name|image
@@ -461,10 +461,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|sample_point
 decl_stmt|;
-name|gint
+name|guint
 name|next_sample_point
 init|=
 literal|0
@@ -645,7 +645,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|sample_point
 decl_stmt|;
 name|gint

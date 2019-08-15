@@ -1162,7 +1162,7 @@ decl_stmt|;
 name|GimpUnit
 name|unit
 init|=
-literal|0
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|layer
 operator|=

@@ -10482,7 +10482,7 @@ decl_stmt|;
 name|GimpUnit
 name|unit
 init|=
-literal|0
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|image
 operator|=
@@ -10699,7 +10699,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo_state
 init|=
 literal|0
@@ -10812,7 +10812,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo_state
 decl_stmt|;
 name|image
@@ -10919,7 +10919,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 decl_stmt|;
 name|GimpLayer
@@ -11054,7 +11054,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 decl_stmt|;
 name|GimpChannel
@@ -11189,7 +11189,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint
+name|guint
 name|tattoo
 decl_stmt|;
 name|GimpVectors
