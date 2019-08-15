@@ -503,11 +503,11 @@ name|param_def
 operator|->
 name|type_name
 argument_list|,
-literal|"GimpParamInt8"
+literal|"GParamUChar"
 argument_list|)
 condition|)
 return|return
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 name|name
 argument_list|,

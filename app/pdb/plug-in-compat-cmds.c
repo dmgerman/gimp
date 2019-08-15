@@ -1559,7 +1559,7 @@ argument_list|)
 expr_stmt|;
 name|colormodel
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1571,7 +1571,7 @@ argument_list|)
 expr_stmt|;
 name|redmode
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1583,7 +1583,7 @@ argument_list|)
 expr_stmt|;
 name|greenmode
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1595,7 +1595,7 @@ argument_list|)
 expr_stmt|;
 name|bluemode
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7608,7 +7608,7 @@ argument_list|)
 expr_stmt|;
 name|from_red
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7620,7 +7620,7 @@ argument_list|)
 expr_stmt|;
 name|from_green
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7632,7 +7632,7 @@ argument_list|)
 expr_stmt|;
 name|from_blue
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7644,7 +7644,7 @@ argument_list|)
 expr_stmt|;
 name|to_red
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7656,7 +7656,7 @@ argument_list|)
 expr_stmt|;
 name|to_green
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7668,7 +7668,7 @@ argument_list|)
 expr_stmt|;
 name|to_blue
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7680,7 +7680,7 @@ argument_list|)
 expr_stmt|;
 name|red_threshold
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7692,7 +7692,7 @@ argument_list|)
 expr_stmt|;
 name|green_threshold
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -7704,7 +7704,7 @@ argument_list|)
 expr_stmt|;
 name|blue_threshold
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -10528,7 +10528,7 @@ argument_list|)
 expr_stmt|;
 name|tileable
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -10540,7 +10540,7 @@ argument_list|)
 expr_stmt|;
 name|algorithm
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -22000,7 +22000,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"colormodel"
 argument_list|,
@@ -22022,7 +22022,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"redmode"
 argument_list|,
@@ -22044,7 +22044,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"greenmode"
 argument_list|,
@@ -22066,7 +22066,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"bluemode"
 argument_list|,
@@ -26664,7 +26664,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"from-red"
 argument_list|,
@@ -26686,7 +26686,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"from-green"
 argument_list|,
@@ -26708,7 +26708,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"from-blue"
 argument_list|,
@@ -26730,7 +26730,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"to-red"
 argument_list|,
@@ -26752,7 +26752,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"to-green"
 argument_list|,
@@ -26774,7 +26774,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"to-blue"
 argument_list|,
@@ -26796,7 +26796,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"red-threshold"
 argument_list|,
@@ -26818,7 +26818,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"green-threshold"
 argument_list|,
@@ -26840,7 +26840,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"blue-threshold"
 argument_list|,
@@ -29262,7 +29262,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"tileable"
 argument_list|,
@@ -29284,7 +29284,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"algorithm"
 argument_list|,

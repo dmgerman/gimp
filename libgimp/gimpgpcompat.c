@@ -137,7 +137,7 @@ name|GIMP_PDB_INT8
 case|:
 name|pspec
 operator|=
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 name|name
 argument_list|,
@@ -577,7 +577,7 @@ case|case
 name|GIMP_PDB_INT8
 case|:
 return|return
-name|GIMP_TYPE_INT8
+name|G_TYPE_UCHAR
 return|;
 case|case
 name|GIMP_PDB_FLOAT
@@ -743,7 +743,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28ea46050108
+DECL|struct|__anon28e2ae610108
 block|{
 DECL|member|g_type
 name|GType
@@ -795,7 +795,7 @@ name|GIMP_PDB_INT16
 block|}
 block|,
 block|{
-name|GIMP_TYPE_INT8
+name|G_TYPE_UCHAR
 block|,
 name|GIMP_PDB_INT8
 block|}
@@ -1251,7 +1251,7 @@ break|break;
 case|case
 name|GIMP_PDB_INT8
 case|:
-name|g_value_set_uint
+name|g_value_set_uchar
 argument_list|(
 operator|&
 name|value
@@ -2183,7 +2183,7 @@ name|data
 operator|.
 name|d_int8
 operator|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|value
 argument_list|)

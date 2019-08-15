@@ -692,7 +692,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"index1"
 argument_list|,
@@ -715,7 +715,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8
+name|g_param_spec_uchar
 argument_list|(
 literal|"index2"
 argument_list|,
@@ -1064,7 +1064,7 @@ block|{
 name|guchar
 name|index1
 init|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1077,7 +1077,7 @@ decl_stmt|;
 name|guchar
 name|index2
 init|=
-name|g_value_get_uint
+name|g_value_get_uchar
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2011,7 +2011,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2932d8590103
+DECL|enum|__anon2b8b78060103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
