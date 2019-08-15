@@ -278,7 +278,7 @@ end_function_decl
 begin_function_decl
 name|GimpDisplay
 modifier|*
-name|gimp_display_new_by_id
+name|gimp_display_get_by_id
 parameter_list|(
 name|gint32
 name|display_id

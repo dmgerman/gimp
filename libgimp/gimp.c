@@ -818,7 +818,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b93b9390103
+DECL|enum|__anon28fcdb530103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -2626,7 +2626,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: (transfer full): the default display ID  **/
+comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from.  *  * This is a constant value given at plug-in configuration time.  *  * Returns: (transfer none): the default display ID  *          The object belongs to libgimp and you should not free it.  **/
 end_comment
 
 begin_function
@@ -2639,7 +2639,7 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|gimp_display_new_by_id
+name|gimp_display_get_by_id
 argument_list|(
 name|_gdisp_ID
 argument_list|)

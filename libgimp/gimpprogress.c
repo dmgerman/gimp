@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c043c9e0108
+DECL|struct|__anon2b5d579e0108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -528,12 +528,6 @@ name|_gimp_progress_init
 argument_list|(
 name|message
 argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-name|g_clear_object
-argument_list|(
-operator|&
 name|display
 argument_list|)
 expr_stmt|;

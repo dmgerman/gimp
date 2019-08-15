@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_new:  * @image: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI, and will result  * in an execution error if called when GIMP has no UI.  *  * Returns: (transfer full): The new display.  **/
+comment|/**  * gimp_display_new:  * @image: The image.  *  * Create a new display for the specified image.  *  * Creates a new display for the specified image. If the image already  * has a display, another is added. Multiple displays are handled  * transparently by GIMP. The newly created display is returned and can  * be subsequently destroyed with a call to gimp_display_delete(). This  * procedure only makes sense for use with the GIMP UI, and will result  * in an execution error if called when GIMP has no UI.  *  * Returns: (transfer none): The new display.  **/
 end_comment
 
 begin_function
@@ -351,7 +351,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|display
 operator|=
-name|gimp_display_new_by_id
+name|gimp_display_get_by_id
 argument_list|(
 name|gimp_value_get_display_id
 argument_list|(
