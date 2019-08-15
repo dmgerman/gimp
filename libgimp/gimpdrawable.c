@@ -890,11 +890,6 @@ name|space
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|format_str

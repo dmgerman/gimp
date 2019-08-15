@@ -257,7 +257,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_image:  * @item: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: (transfer full): The item's image.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_image:  * @item: The item.  *  * Returns the item's image.  *  * This procedure returns the item's image.  *  * Returns: (transfer none): The item's image.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -357,7 +357,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(

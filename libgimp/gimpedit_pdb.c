@@ -976,7 +976,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste_as_new_image:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: (transfer full): The new image.  *  * Since: 2.10  **/
+comment|/**  * gimp_edit_paste_as_new_image:  *  * Paste buffer to a new image.  *  * This procedure pastes a copy of the internal GIMP edit buffer to a  * new image. The GIMP edit buffer will be empty unless a call was  * previously made to either gimp_edit_cut() or gimp_edit_copy(). This  * procedure returns the new image or -1 if the edit buffer was empty.  *  * Returns: (transfer none): The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -1064,7 +1064,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(
@@ -2234,7 +2234,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste_as_new_image:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new_image() but pastes  * a named buffer instead of the global buffer.  *  * Returns: (transfer full): The new image.  *  * Since: 2.10  **/
+comment|/**  * gimp_edit_named_paste_as_new_image:  * @buffer_name: The name of the buffer to paste.  *  * Paste named buffer to a new image.  *  * This procedure works like gimp_edit_paste_as_new_image() but pastes  * a named buffer instead of the global buffer.  *  * Returns: (transfer none): The new image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -2329,7 +2329,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(

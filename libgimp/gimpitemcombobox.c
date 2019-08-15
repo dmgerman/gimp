@@ -1233,11 +1233,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_list_free_full
+name|g_list_free
 argument_list|(
 name|images
-argument_list|,
-name|g_object_unref
 argument_list|)
 expr_stmt|;
 if|if

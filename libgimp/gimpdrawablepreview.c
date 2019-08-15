@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4c85a40103
+DECL|enum|__anon29c7fc730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c85a40208
+DECL|struct|__anon29c7fc730208
 block|{
 DECL|member|x
 name|gint
@@ -1974,11 +1974,6 @@ argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 name|gimp_preview_area_mask
@@ -2053,11 +2048,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2278,11 +2268,6 @@ argument_list|,
 name|cmap
 argument_list|,
 name|num_colors
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|image
 argument_list|)
 expr_stmt|;
 name|g_free

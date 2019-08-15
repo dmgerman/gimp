@@ -479,7 +479,7 @@ name|d_drawable
 expr_stmt|;
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|image_ID
 argument_list|)
@@ -521,11 +521,6 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|drawable
@@ -658,11 +653,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -680,7 +670,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa9e70a0108
+DECL|struct|__anon2bd8e6f70108
 block|{
 DECL|member|fg
 name|guchar

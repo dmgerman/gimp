@@ -386,7 +386,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: (transfer full): The newly created image.  **/
+comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed, with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * If your image's type if INDEXED, a colormap must also be added with  * gimp_image_set_colormap(). An indexed image without a colormap will  * output unexpected colors.  *  * Returns: (transfer none): The newly created image.  **/
 end_comment
 
 begin_function
@@ -493,7 +493,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(
@@ -646,7 +646,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_NON_LINEAR precision. See gimp_image_new() for  * further details.  *  * Returns: (transfer full): The newly created image.  *  * Since: 2.10  **/
+comment|/**  * gimp_image_new_with_precision:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  * @precision: The precision.  *  * Creates a new image with the specified width, height, type and  * precision.  *  * Creates a new image, undisplayed with the specified extents, type  * and precision. Indexed images can only be created at  * GIMP_PRECISION_U8_NON_LINEAR precision. See gimp_image_new() for  * further details.  *  * Returns: (transfer none): The newly created image.  *  * Since: 2.10  **/
 end_comment
 
 begin_function
@@ -760,7 +760,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(
@@ -920,7 +920,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_duplicate:  * @image: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: (transfer full): The new, duplicated image.  **/
+comment|/**  * gimp_image_duplicate:  * @image: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: (transfer none): The new, duplicated image.  **/
 end_comment
 
 begin_function
@@ -1017,7 +1017,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|new_image
 operator|=
-name|gimp_image_new_by_id
+name|gimp_image_get_by_id
 argument_list|(
 name|gimp_value_get_image_id
 argument_list|(
