@@ -322,7 +322,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecea6e0108
+DECL|struct|__anon2b38ff090108
 block|{
 DECL|member|name
 specifier|const
@@ -4124,7 +4124,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 argument_list|(
 operator|&
 name|value
@@ -4346,7 +4346,7 @@ name|v_element
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_value_take_int8_array
+name|gimp_value_take_uint8_array
 argument_list|(
 operator|&
 name|value
@@ -7259,7 +7259,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -7283,7 +7283,7 @@ name|guint8
 modifier|*
 name|v
 init|=
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 argument_list|(
 name|value
 argument_list|)

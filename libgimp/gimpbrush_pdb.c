@@ -1139,7 +1139,7 @@ expr_stmt|;
 operator|*
 name|mask_bytes
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -1178,7 +1178,7 @@ expr_stmt|;
 operator|*
 name|color_bytes
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

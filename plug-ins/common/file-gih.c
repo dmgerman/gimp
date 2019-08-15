@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badc1320108
+DECL|struct|__anon27b134190108
 block|{
 DECL|member|description
 name|gchar
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2badc1320208
+DECL|struct|__anon27b134190208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -771,7 +771,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"rank"
 argument_list|,
@@ -811,7 +811,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_string_array
 argument_list|(
 literal|"sel"
 argument_list|,
@@ -1389,7 +1389,7 @@ name|guint8
 modifier|*
 name|rank
 init|=
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

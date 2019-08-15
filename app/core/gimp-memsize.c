@@ -199,7 +199,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0aa4920108
+DECL|struct|__anon29a90e760108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
@@ -810,7 +810,7 @@ argument_list|(
 name|value
 argument_list|)
 operator|||
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 argument_list|(
 name|value
 argument_list|)

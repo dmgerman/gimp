@@ -536,7 +536,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"map"
 argument_list|,
@@ -901,7 +901,7 @@ argument_list|)
 expr_stmt|;
 name|col_args
 operator|=
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2011,7 +2011,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a87a30103
+DECL|enum|__anon2ade29d90103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

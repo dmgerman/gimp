@@ -433,31 +433,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  * GIMP_TYPE_INT8_ARRAY  */
+comment|/*  * GIMP_TYPE_UINT8_ARRAY  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_INT8_ARRAY
+DECL|macro|GIMP_TYPE_UINT8_ARRAY
 define|#
 directive|define
-name|GIMP_TYPE_INT8_ARRAY
-value|(gimp_int8_array_get_type ())
+name|GIMP_TYPE_UINT8_ARRAY
+value|(gimp_uint8_array_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_VALUE_HOLDS_INT8_ARRAY (value)
+DECL|macro|GIMP_VALUE_HOLDS_UINT8_ARRAY (value)
 define|#
 directive|define
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 parameter_list|(
 name|value
 parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_INT8_ARRAY))
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_UINT8_ARRAY))
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_int8_array_get_type
+name|gimp_uint8_array_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -466,52 +466,52 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_INT8_ARRAY  */
+comment|/*  * GIMP_TYPE_PARAM_UINT8_ARRAY  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_PARAM_INT8_ARRAY
+DECL|macro|GIMP_TYPE_PARAM_UINT8_ARRAY
 define|#
 directive|define
-name|GIMP_TYPE_PARAM_INT8_ARRAY
-value|(gimp_param_int8_array_get_type ())
+name|GIMP_TYPE_PARAM_UINT8_ARRAY
+value|(gimp_param_uint8_array_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_INT8_ARRAY (pspec)
+DECL|macro|GIMP_PARAM_SPEC_UINT8_ARRAY (pspec)
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_INT8_ARRAY
+name|GIMP_PARAM_SPEC_UINT8_ARRAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_INT8_ARRAY, GimpParamSpecInt8Array))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_UINT8_ARRAY, GimpParamSpecUInt8Array))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_INT8_ARRAY (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_UINT8_ARRAY (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_INT8_ARRAY
+name|GIMP_IS_PARAM_SPEC_UINT8_ARRAY
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_INT8_ARRAY))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_UINT8_ARRAY))
 end_define
 
 begin_typedef
-DECL|typedef|GimpParamSpecInt8Array
+DECL|typedef|GimpParamSpecUInt8Array
 typedef|typedef
 name|struct
-name|_GimpParamSpecInt8Array
-name|GimpParamSpecInt8Array
+name|_GimpParamSpecUInt8Array
+name|GimpParamSpecUInt8Array
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecInt8Array
+DECL|struct|_GimpParamSpecUInt8Array
 struct|struct
-name|_GimpParamSpecInt8Array
+name|_GimpParamSpecUInt8Array
 block|{
 DECL|member|parent_instance
 name|GimpParamSpecArray
@@ -523,7 +523,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_param_int8_array_get_type
+name|gimp_param_uint8_array_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -534,7 +534,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 parameter_list|(
 specifier|const
 name|gchar
@@ -561,7 +561,7 @@ begin_function_decl
 specifier|const
 name|guint8
 modifier|*
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -574,7 +574,7 @@ end_function_decl
 begin_function_decl
 name|guint8
 modifier|*
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 parameter_list|(
 specifier|const
 name|GValue
@@ -586,26 +586,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_set_int8_array
-parameter_list|(
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-specifier|const
-name|guint8
-modifier|*
-name|array
-parameter_list|,
-name|gsize
-name|length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_value_set_static_int8_array
+name|gimp_value_set_uint8_array
 parameter_list|(
 name|GValue
 modifier|*
@@ -624,7 +605,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_value_take_int8_array
+name|gimp_value_set_static_uint8_array
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|guint8
+modifier|*
+name|array
+parameter_list|,
+name|gsize
+name|length
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_value_take_uint8_array
 parameter_list|(
 name|GValue
 modifier|*

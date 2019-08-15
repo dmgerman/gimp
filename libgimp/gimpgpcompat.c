@@ -243,7 +243,7 @@ name|GIMP_PDB_INT8ARRAY
 case|:
 name|pspec
 operator|=
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 name|name
 argument_list|,
@@ -607,7 +607,7 @@ case|case
 name|GIMP_PDB_INT8ARRAY
 case|:
 return|return
-name|GIMP_TYPE_INT8_ARRAY
+name|GIMP_TYPE_UINT8_ARRAY
 return|;
 case|case
 name|GIMP_PDB_FLOATARRAY
@@ -743,7 +743,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2b52b6fd0108
+DECL|struct|__anon2750ac010108
 block|{
 DECL|member|g_type
 name|GType
@@ -819,7 +819,7 @@ name|GIMP_PDB_INT16ARRAY
 block|}
 block|,
 block|{
-name|GIMP_TYPE_INT8_ARRAY
+name|GIMP_TYPE_UINT8_ARRAY
 block|,
 name|GIMP_PDB_INT8ARRAY
 block|}
@@ -1448,7 +1448,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_int8_array
+name|gimp_value_set_uint8_array
 argument_list|(
 operator|&
 name|value
@@ -1466,7 +1466,7 @@ name|count
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_int8_array
+name|gimp_value_set_static_uint8_array
 argument_list|(
 operator|&
 name|value
@@ -2334,7 +2334,7 @@ name|data
 operator|.
 name|d_int8array
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|value
 argument_list|)
@@ -2353,7 +2353,7 @@ operator|(
 name|guint8
 operator|*
 operator|)
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 argument_list|(
 name|value
 argument_list|)

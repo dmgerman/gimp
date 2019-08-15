@@ -2256,7 +2256,7 @@ argument_list|)
 expr_stmt|;
 name|pixel
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2347,14 +2347,14 @@ name|G_TYPE_INT
 argument_list|,
 name|num_channels
 argument_list|,
-name|GIMP_TYPE_INT8_ARRAY
+name|GIMP_TYPE_UINT8_ARRAY
 argument_list|,
 name|NULL
 argument_list|,
 name|G_TYPE_NONE
 argument_list|)
 expr_stmt|;
-name|gimp_value_set_int8_array
+name|gimp_value_set_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2870,7 +2870,7 @@ expr_stmt|;
 operator|*
 name|thumbnail_data
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3130,7 +3130,7 @@ expr_stmt|;
 operator|*
 name|thumbnail_data
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

@@ -521,7 +521,7 @@ name|array
 operator|->
 name|length
 argument_list|,
-name|GIMP_TYPE_INT8_ARRAY
+name|GIMP_TYPE_UINT8_ARRAY
 argument_list|,
 name|array
 argument_list|,

@@ -818,7 +818,7 @@ index|[]
 parameter_list|)
 block|{
 enum|enum
-DECL|enum|__anon2b84be7c0103
+DECL|enum|__anon29db353d0103
 block|{
 DECL|enumerator|ARG_PROGNAME
 name|ARG_PROGNAME
@@ -1824,9 +1824,9 @@ name|GIMP_TYPE_ARRAY
 block|,
 name|GIMP_TYPE_PARAM_ARRAY
 block|,
-name|GIMP_TYPE_INT8_ARRAY
+name|GIMP_TYPE_UINT8_ARRAY
 block|,
-name|GIMP_TYPE_PARAM_INT8_ARRAY
+name|GIMP_TYPE_PARAM_UINT8_ARRAY
 block|,
 name|GIMP_TYPE_INT16_ARRAY
 block|,

@@ -2739,7 +2739,7 @@ argument_list|,
 name|num_channels
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8_array
+name|gimp_value_take_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -2869,7 +2869,7 @@ argument_list|)
 expr_stmt|;
 name|pixel
 operator|=
-name|gimp_value_get_int8_array
+name|gimp_value_get_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -3707,7 +3707,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8_array
+name|gimp_value_take_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -4141,7 +4141,7 @@ argument_list|,
 name|thumbnail_data_count
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8_array
+name|gimp_value_take_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -6381,7 +6381,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"pixel"
 argument_list|,
@@ -6536,7 +6536,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"pixel"
 argument_list|,
@@ -7000,7 +7000,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"thumbnail-data"
 argument_list|,
@@ -7307,7 +7307,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"thumbnail-data"
 argument_list|,

@@ -1227,7 +1227,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 argument_list|(
 name|value
 argument_list|)
@@ -1237,7 +1237,7 @@ if|if
 condition|(
 name|full_copy
 condition|)
-name|gimp_value_set_int8_array
+name|gimp_value_set_uint8_array
 argument_list|(
 name|value
 argument_list|,
@@ -1264,7 +1264,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_value_set_static_int8_array
+name|gimp_value_set_static_uint8_array
 argument_list|(
 name|value
 argument_list|,
@@ -2359,7 +2359,7 @@ argument_list|(
 name|value
 argument_list|)
 operator|||
-name|GIMP_VALUE_HOLDS_INT8_ARRAY
+name|GIMP_VALUE_HOLDS_UINT8_ARRAY
 argument_list|(
 name|value
 argument_list|)

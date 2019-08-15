@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289593d60108
+DECL|struct|__anon2a441a970108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -402,7 +402,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"mask-data"
 argument_list|,
@@ -739,7 +739,7 @@ name|data
 operator|->
 name|brush_mask_data
 operator|=
-name|gimp_value_dup_int8_array
+name|gimp_value_dup_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(

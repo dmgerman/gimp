@@ -584,7 +584,7 @@ argument_list|,
 name|num_color_bytes
 argument_list|)
 expr_stmt|;
-name|gimp_value_take_int8_array
+name|gimp_value_take_uint8_array
 argument_list|(
 name|gimp_value_array_index
 argument_list|(
@@ -911,7 +911,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int8_array
+name|gimp_param_spec_uint8_array
 argument_list|(
 literal|"color-bytes"
 argument_list|,

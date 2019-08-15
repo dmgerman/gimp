@@ -2929,7 +2929,7 @@ name|param_def
 operator|->
 name|type_name
 argument_list|,
-literal|"GimpParamInt8Array"
+literal|"GimpParamUInt8Array"
 argument_list|)
 operator|||
 operator|!
