@@ -43,163 +43,77 @@ directive|define
 name|__GIMP_PARAM_SPECS_H__
 end_define
 
-begin_decl_stmt
+begin_macro
 name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_comment
 comment|/**  * GIMP_PARAM_NO_VALIDATE:  *  * Since 3.0  */
+end_comment
+
+begin_comment
 comment|/*  * Keep in sync with libgimpconfig/gimpconfig-params.h  */
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARAM_NO_VALIDATE
 define|#
 directive|define
 name|GIMP_PARAM_NO_VALIDATE
 value|(1<< (6 + G_PARAM_USER_SHIFT))
+end_define
+
+begin_comment
 comment|/**  * GIMP_PARAM_STATIC_STRINGS:  *  * Since: 2.4  **/
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARAM_STATIC_STRINGS
 define|#
 directive|define
 name|GIMP_PARAM_STATIC_STRINGS
 value|(G_PARAM_STATIC_NAME | \                                    G_PARAM_STATIC_NICK | \                                    G_PARAM_STATIC_BLURB)
+end_define
+
+begin_comment
 comment|/**  * GIMP_PARAM_READABLE:  *  * Since: 2.4  **/
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARAM_READABLE
 define|#
 directive|define
 name|GIMP_PARAM_READABLE
 value|(G_PARAM_READABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+end_define
+
+begin_comment
 comment|/**  * GIMP_PARAM_WRITABLE:  *  * Since: 2.4  **/
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARAM_WRITABLE
 define|#
 directive|define
 name|GIMP_PARAM_WRITABLE
 value|(G_PARAM_WRITABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
+end_define
+
+begin_comment
 comment|/**  * GIMP_PARAM_READWRITE:  *  * Since: 2.4  **/
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARAM_READWRITE
 define|#
 directive|define
 name|GIMP_PARAM_READWRITE
 value|(G_PARAM_READWRITE   | \                                    GIMP_PARAM_STATIC_STRINGS)
-comment|/*  * GIMP_TYPE_INT16  */
-DECL|macro|GIMP_TYPE_INT16
-define|#
-directive|define
-name|GIMP_TYPE_INT16
-value|(gimp_int16_get_type ())
-DECL|macro|GIMP_VALUE_HOLDS_INT16 (value)
-define|#
-directive|define
-name|GIMP_VALUE_HOLDS_INT16
-parameter_list|(
-name|value
-parameter_list|)
-value|(G_TYPE_CHECK_VALUE_TYPE ((value),\                                        GIMP_TYPE_INT16))
-name|GType
-name|gimp_int16_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  * GIMP_TYPE_PARAM_INT16  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_PARAM_INT16
-define|#
-directive|define
-name|GIMP_TYPE_PARAM_INT16
-value|(gimp_param_int16_get_type ())
 end_define
-
-begin_define
-DECL|macro|GIMP_PARAM_SPEC_INT16 (pspec)
-define|#
-directive|define
-name|GIMP_PARAM_SPEC_INT16
-parameter_list|(
-name|pspec
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_INT16, GimpParamSpecInt16))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_INT16 (pspec)
-define|#
-directive|define
-name|GIMP_IS_PARAM_SPEC_INT16
-parameter_list|(
-name|pspec
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_INT16))
-end_define
-
-begin_typedef
-DECL|typedef|GimpParamSpecInt16
-typedef|typedef
-name|struct
-name|_GimpParamSpecInt16
-name|GimpParamSpecInt16
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpParamSpecInt16
-struct|struct
-name|_GimpParamSpecInt16
-block|{
-DECL|member|parent_instance
-name|GParamSpecInt
-name|parent_instance
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_param_int16_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_function_decl
-name|GParamSpec
-modifier|*
-name|gimp_param_spec_int16
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|nick
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|blurb
-parameter_list|,
-name|gint
-name|minimum
-parameter_list|,
-name|gint
-name|maximum
-parameter_list|,
-name|gint
-name|default_value
-parameter_list|,
-name|GParamFlags
-name|flags
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  * GIMP_TYPE_PARAM_STRING  */

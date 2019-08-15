@@ -94,10 +94,6 @@ condition|(
 name|pspec_type
 operator|==
 name|G_TYPE_PARAM_INT
-operator|||
-name|pspec_type
-operator|==
-name|GIMP_TYPE_PARAM_INT16
 condition|)
 block|{
 name|GParamSpecInt
@@ -874,10 +870,6 @@ condition|(
 name|type
 operator|==
 name|G_TYPE_INT
-operator|||
-name|type
-operator|==
-name|GIMP_TYPE_INT16
 operator|||
 name|type
 operator|==
@@ -1956,10 +1948,6 @@ condition|(
 name|type
 operator|==
 name|G_TYPE_INT
-operator|||
-name|type
-operator|==
-name|GIMP_TYPE_INT16
 operator|||
 name|type
 operator|==
