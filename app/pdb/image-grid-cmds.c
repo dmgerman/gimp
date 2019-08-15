@@ -1300,7 +1300,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|style
 init|=
 literal|0
@@ -1436,7 +1436,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|style
 decl_stmt|;
 name|image

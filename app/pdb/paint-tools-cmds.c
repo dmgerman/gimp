@@ -397,7 +397,7 @@ decl_stmt|;
 name|gdouble
 name|pressure
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -621,7 +621,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -826,7 +826,7 @@ name|GimpDrawable
 modifier|*
 name|src_drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|clone_type
 decl_stmt|;
 name|gdouble
@@ -835,7 +835,7 @@ decl_stmt|;
 name|gdouble
 name|src_y
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -1121,7 +1121,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -1325,10 +1325,10 @@ decl_stmt|;
 name|gdouble
 name|pressure
 decl_stmt|;
-name|gint32
+name|gint
 name|convolve_type
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -1568,7 +1568,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -1772,13 +1772,13 @@ decl_stmt|;
 name|gdouble
 name|exposure
 decl_stmt|;
-name|gint32
+name|gint
 name|dodgeburn_type
 decl_stmt|;
-name|gint32
+name|gint
 name|dodgeburn_mode
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -2034,7 +2034,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -2235,7 +2235,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -2243,10 +2243,10 @@ name|gdouble
 modifier|*
 name|strokes
 decl_stmt|;
-name|gint32
+name|gint
 name|hardness
 decl_stmt|;
-name|gint32
+name|gint
 name|method
 decl_stmt|;
 name|drawable
@@ -2481,7 +2481,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -2692,7 +2692,7 @@ decl_stmt|;
 name|gdouble
 name|src_y
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -2955,7 +2955,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -3159,7 +3159,7 @@ decl_stmt|;
 name|gdouble
 name|fade_out
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -3167,7 +3167,7 @@ name|gdouble
 modifier|*
 name|strokes
 decl_stmt|;
-name|gint32
+name|gint
 name|method
 decl_stmt|;
 name|gdouble
@@ -3524,7 +3524,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -3725,7 +3725,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -3929,7 +3929,7 @@ decl_stmt|;
 name|gdouble
 name|pressure
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -4153,7 +4153,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 decl_stmt|;
 specifier|const
@@ -4410,7 +4410,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -4519,7 +4519,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -4716,7 +4716,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -4825,7 +4825,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -4976,7 +4976,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5085,7 +5085,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5256,7 +5256,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5365,7 +5365,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5474,7 +5474,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5623,7 +5623,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5800,7 +5800,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -5909,7 +5909,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6040,7 +6040,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6191,7 +6191,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6300,7 +6300,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6431,7 +6431,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6540,7 +6540,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,

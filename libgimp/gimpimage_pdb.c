@@ -314,11 +314,11 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|width
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|height
 argument_list|,
@@ -445,11 +445,11 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|width
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|height
 argument_list|,
@@ -2386,11 +2386,11 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|x
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|y
 argument_list|,
@@ -2524,7 +2524,7 @@ name|GIMP_TYPE_LAYER_ID
 argument_list|,
 name|parent_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position
 argument_list|,
@@ -2956,7 +2956,7 @@ name|GIMP_TYPE_CHANNEL_ID
 argument_list|,
 name|parent_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position
 argument_list|,
@@ -3388,7 +3388,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|parent_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position
 argument_list|,
@@ -4372,7 +4372,7 @@ name|GIMP_TYPE_ITEM_ID
 argument_list|,
 name|parent_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position
 argument_list|,
@@ -4987,7 +4987,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_bytes
 argument_list|,
@@ -5576,11 +5576,11 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|width
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|height
 argument_list|,
@@ -8434,7 +8434,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|tattoo_state
 argument_list|,
@@ -8543,7 +8543,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|tattoo
 argument_list|,
@@ -8664,7 +8664,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|tattoo
 argument_list|,
@@ -8785,7 +8785,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|tattoo
 argument_list|,

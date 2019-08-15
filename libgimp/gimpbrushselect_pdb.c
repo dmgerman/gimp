@@ -99,7 +99,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|opacity
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|spacing
 argument_list|,
@@ -335,7 +335,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|opacity
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|spacing
 argument_list|,

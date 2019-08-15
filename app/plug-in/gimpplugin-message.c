@@ -2969,7 +2969,7 @@ name|prev_param_def
 operator|->
 name|type_name
 argument_list|,
-literal|"GimpParamInt32"
+literal|"GParamInt"
 argument_list|)
 condition|)
 block|{
@@ -3632,7 +3632,7 @@ name|i
 operator|==
 literal|0
 operator|&&
-name|GIMP_IS_PARAM_SPEC_INT32
+name|G_IS_PARAM_SPEC_INT
 argument_list|(
 name|pspec
 argument_list|)

@@ -670,7 +670,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|num_strokes
 init|=
 literal|0
@@ -870,7 +870,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -1043,7 +1043,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -1313,7 +1313,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|vectors
@@ -1470,7 +1470,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|vectors
@@ -1635,13 +1635,13 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
-name|gint32
+name|gint
 name|off_x
 decl_stmt|;
-name|gint32
+name|gint
 name|off_y
 decl_stmt|;
 name|vectors
@@ -1836,7 +1836,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -2037,7 +2037,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -2255,10 +2255,10 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
-name|gint32
+name|gint
 name|flip_type
 decl_stmt|;
 name|gdouble
@@ -2456,7 +2456,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -2695,15 +2695,15 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|num_points
 init|=
 literal|0
@@ -3022,10 +3022,10 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 decl_stmt|;
-name|gint32
+name|gint
 name|num_points
 decl_stmt|;
 specifier|const
@@ -3036,7 +3036,7 @@ decl_stmt|;
 name|gboolean
 name|closed
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 init|=
 literal|0
@@ -3370,13 +3370,13 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
 name|precision
 decl_stmt|;
-name|gint32
+name|gint
 name|num_coords
 init|=
 literal|0
@@ -3692,7 +3692,7 @@ decl_stmt|;
 name|gdouble
 name|y0
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 init|=
 literal|0
@@ -3929,7 +3929,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -4144,7 +4144,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -4409,7 +4409,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 decl_stmt|;
 name|gdouble
@@ -4743,7 +4743,7 @@ decl_stmt|;
 name|gdouble
 name|angle
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_id
 init|=
 literal|0
@@ -5037,7 +5037,7 @@ decl_stmt|;
 name|gboolean
 name|scale
 decl_stmt|;
-name|gint32
+name|gint
 name|num_vectors
 init|=
 literal|0
@@ -5333,7 +5333,7 @@ name|gchar
 modifier|*
 name|string
 decl_stmt|;
-name|gint32
+name|gint
 name|length
 decl_stmt|;
 name|gboolean
@@ -5342,7 +5342,7 @@ decl_stmt|;
 name|gboolean
 name|scale
 decl_stmt|;
-name|gint32
+name|gint
 name|num_vectors
 init|=
 literal|0
@@ -6276,7 +6276,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-strokes"
 argument_list|,
@@ -6385,7 +6385,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -6524,7 +6524,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -6750,7 +6750,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -6843,7 +6843,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -6936,7 +6936,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -6958,7 +6958,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"off-x"
 argument_list|,
@@ -6980,7 +6980,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"off-y"
 argument_list|,
@@ -7073,7 +7073,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -7212,7 +7212,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -7374,7 +7374,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -7525,7 +7525,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -7710,7 +7710,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -7752,7 +7752,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-points"
 argument_list|,
@@ -7899,7 +7899,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-points"
 argument_list|,
@@ -7955,7 +7955,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -8048,7 +8048,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -8093,7 +8093,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-coords"
 argument_list|,
@@ -8266,7 +8266,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -8359,7 +8359,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -8498,7 +8498,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -8683,7 +8683,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -9029,7 +9029,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"stroke-id"
 argument_list|,
@@ -9182,7 +9182,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-vectors"
 argument_list|,
@@ -9315,7 +9315,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"length"
 argument_list|,
@@ -9373,7 +9373,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-vectors"
 argument_list|,

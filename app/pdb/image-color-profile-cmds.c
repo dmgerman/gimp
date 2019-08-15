@@ -138,7 +138,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 init|=
 literal|0
@@ -318,7 +318,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 init|=
 literal|0
@@ -497,7 +497,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 decl_stmt|;
 specifier|const
@@ -852,7 +852,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 decl_stmt|;
 specifier|const
@@ -860,7 +860,7 @@ name|guint8
 modifier|*
 name|color_profile
 decl_stmt|;
-name|gint32
+name|gint
 name|intent
 decl_stmt|;
 name|gboolean
@@ -1059,7 +1059,7 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
-name|gint32
+name|gint
 name|intent
 decl_stmt|;
 name|gboolean
@@ -1287,7 +1287,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -1396,7 +1396,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -1505,7 +1505,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -1709,7 +1709,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,

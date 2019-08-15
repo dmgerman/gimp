@@ -97,10 +97,6 @@ name|G_TYPE_PARAM_INT
 operator|||
 name|pspec_type
 operator|==
-name|GIMP_TYPE_PARAM_INT32
-operator|||
-name|pspec_type
-operator|==
 name|GIMP_TYPE_PARAM_INT16
 condition|)
 block|{
@@ -878,10 +874,6 @@ condition|(
 name|type
 operator|==
 name|G_TYPE_INT
-operator|||
-name|type
-operator|==
-name|GIMP_TYPE_INT32
 operator|||
 name|type
 operator|==
@@ -1801,7 +1793,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 condition|)
 block|{
 if|if
@@ -1814,7 +1806,7 @@ name|G_TYPE_ENUM
 argument_list|)
 condition|)
 block|{
-comment|/*  if the param spec's type is enum, but an                            *  int32 was passed, use the enum type.                            */
+comment|/*  if the param spec's type is enum, but an                            *  int was passed, use the enum type.                            */
 name|type
 operator|=
 name|pspec_type
@@ -1831,7 +1823,7 @@ name|G_TYPE_BOOLEAN
 argument_list|)
 condition|)
 block|{
-comment|/*  if the param spec's type is boolean, but                            *  an int32 was passed, use the boolean                            *  type.                            */
+comment|/*  if the param spec's type is boolean, but                            *  an int was passed, use the boolean                            *  type.                            */
 name|type
 operator|=
 name|pspec_type
@@ -1964,10 +1956,6 @@ condition|(
 name|type
 operator|==
 name|G_TYPE_INT
-operator|||
-name|type
-operator|==
-name|GIMP_TYPE_INT32
 operator|||
 name|type
 operator|==

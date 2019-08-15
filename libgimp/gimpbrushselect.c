@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27905e640108
+DECL|struct|__anon289593d60108
 block|{
 DECL|member|brush_callback
 name|gchar
@@ -379,7 +379,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"mask-len"
 argument_list|,

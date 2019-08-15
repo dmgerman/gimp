@@ -371,7 +371,7 @@ name|gchar
 modifier|*
 name|proc_type
 decl_stmt|;
-name|gint32
+name|gint
 name|num_matches
 init|=
 literal|0
@@ -817,17 +817,17 @@ name|date
 init|=
 name|NULL
 decl_stmt|;
-name|gint32
+name|gint
 name|proc_type
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|num_args
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|num_values
 init|=
 literal|0
@@ -1082,7 +1082,7 @@ name|gchar
 modifier|*
 name|procedure_name
 decl_stmt|;
-name|gint32
+name|gint
 name|arg_num
 decl_stmt|;
 name|GParamSpec
@@ -1311,7 +1311,7 @@ name|gchar
 modifier|*
 name|procedure_name
 decl_stmt|;
-name|gint32
+name|gint
 name|val_num
 decl_stmt|;
 name|GParamSpec
@@ -1540,7 +1540,7 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
-name|gint32
+name|gint
 name|bytes
 init|=
 literal|0
@@ -1722,7 +1722,7 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
-name|gint32
+name|gint
 name|bytes
 init|=
 literal|0
@@ -1860,7 +1860,7 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
-name|gint32
+name|gint
 name|bytes
 decl_stmt|;
 specifier|const
@@ -2324,7 +2324,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-matches"
 argument_list|,
@@ -2666,7 +2666,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-args"
 argument_list|,
@@ -2688,7 +2688,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-values"
 argument_list|,
@@ -2783,7 +2783,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"arg-num"
 argument_list|,
@@ -2896,7 +2896,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"val-num"
 argument_list|,
@@ -3009,7 +3009,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"bytes"
 argument_list|,
@@ -3120,7 +3120,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"bytes"
 argument_list|,
@@ -3215,7 +3215,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"bytes"
 argument_list|,

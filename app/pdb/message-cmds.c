@@ -251,7 +251,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|handler
 init|=
 literal|0
@@ -330,7 +330,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|handler
 decl_stmt|;
 name|handler

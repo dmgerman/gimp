@@ -70,7 +70,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|yposition
 argument_list|,
@@ -191,7 +191,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|xposition
 argument_list|,
@@ -311,7 +311,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|guide_ID
 argument_list|,
@@ -420,7 +420,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|guide_ID
 argument_list|,
@@ -540,7 +540,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|guide_ID
 argument_list|,
@@ -661,7 +661,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|guide_ID
 argument_list|,

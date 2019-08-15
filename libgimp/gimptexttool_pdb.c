@@ -114,7 +114,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|text
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|border
 argument_list|,

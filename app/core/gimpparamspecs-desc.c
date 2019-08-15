@@ -118,8 +118,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_param_spec_int32_desc (GParamSpec * pspec)
-name|gimp_param_spec_int32_desc
+DECL|function|gimp_param_spec_int_desc (GParamSpec * pspec)
+name|gimp_param_spec_int_desc
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -655,14 +655,14 @@ block|{     }
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_PARAM_SPEC_INT32
+name|G_IS_PARAM_SPEC_INT
 argument_list|(
 name|pspec
 argument_list|)
 condition|)
 block|{
 return|return
-name|gimp_param_spec_int32_desc
+name|gimp_param_spec_int_desc
 argument_list|(
 name|pspec
 argument_list|)

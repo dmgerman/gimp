@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288abfc10103
+DECL|enum|__anon2ad0b8a30103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1595,32 +1595,18 @@ argument_list|(
 name|value
 argument_list|)
 expr_stmt|;
-comment|/* GIMP_TYPE_INT32 is widely abused for enums and booleans in        * old plug-ins, silently copy stuff into integers when enums        * and booleans are passed        */
+comment|/* G_TYPE_INT is widely abused for enums and booleans in        * old plug-ins, silently copy stuff into integers when enums        * and booleans are passed        */
 if|if
 condition|(
 name|arg_type
 operator|!=
 name|value_type
 operator|&&
-operator|(
 name|value_type
 operator|==
 name|G_TYPE_INT
-operator|||
-name|value_type
-operator|==
-name|GIMP_TYPE_INT32
-operator|)
 operator|&&
 operator|(
-name|arg_type
-operator|==
-name|G_TYPE_INT
-operator|||
-name|arg_type
-operator|==
-name|GIMP_TYPE_INT32
-operator|||
 name|arg_type
 operator|==
 name|G_TYPE_BOOLEAN

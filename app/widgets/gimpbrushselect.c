@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3251970103
+DECL|enum|__anon2af668700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1272,7 +1272,7 @@ argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|array
 operator|->

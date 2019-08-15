@@ -902,7 +902,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|procedure_name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|arg_num
 argument_list|,
@@ -1026,7 +1026,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|procedure_name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|val_num
 argument_list|,
@@ -1422,7 +1422,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|identifier
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|bytes
 argument_list|,

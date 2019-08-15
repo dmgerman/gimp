@@ -316,7 +316,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|factor
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|digits
 argument_list|,

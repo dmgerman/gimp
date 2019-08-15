@@ -81,7 +81,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|pressure
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -212,7 +212,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -371,7 +371,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|src_y
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -502,7 +502,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -647,7 +647,7 @@ name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
 name|convolve_type
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -778,7 +778,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -930,7 +930,7 @@ name|GIMP_TYPE_TRANSFER_MODE
 argument_list|,
 name|dodgeburn_mode
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1061,7 +1061,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1198,7 +1198,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1337,7 +1337,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1489,7 +1489,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|src_y
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1620,7 +1620,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1764,7 +1764,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|fade_out
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1903,7 +1903,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -2034,7 +2034,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -2172,7 +2172,7 @@ name|G_TYPE_DOUBLE
 argument_list|,
 name|pressure
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -2303,7 +2303,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_strokes
 argument_list|,

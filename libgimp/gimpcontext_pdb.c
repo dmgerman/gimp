@@ -3370,7 +3370,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_dashes
 argument_list|,
@@ -8938,7 +8938,7 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|sample_threshold
 argument_list|,

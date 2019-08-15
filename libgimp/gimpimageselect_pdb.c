@@ -756,7 +756,7 @@ name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
 name|operation
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_segs
 argument_list|,

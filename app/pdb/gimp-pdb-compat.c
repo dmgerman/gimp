@@ -98,7 +98,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28b406ca0108
+DECL|struct|__anon2bae11a50108
 block|{
 DECL|member|g_type
 name|GType
@@ -113,12 +113,6 @@ name|type_mapping
 index|[]
 init|=
 block|{
-block|{
-name|GIMP_TYPE_INT32
-block|,
-name|GIMP_PDB_INT32
-block|}
-block|,
 block|{
 name|G_TYPE_INT
 block|,
@@ -359,7 +353,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b406ca0208
+DECL|struct|__anon2bae11a50208
 block|{
 DECL|member|old_name
 specifier|const

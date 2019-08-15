@@ -569,7 +569,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -715,7 +715,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -909,7 +909,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1017,7 +1017,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1131,15 +1131,15 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|off_x
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|off_y
 argument_list|,
@@ -1253,7 +1253,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1378,7 +1378,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1504,7 +1504,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1632,7 +1632,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1769,7 +1769,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -1950,7 +1950,7 @@ name|GIMP_TYPE_VECTORS_STROKE_TYPE
 argument_list|,
 name|type
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_points
 argument_list|,
@@ -2105,7 +2105,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -2395,7 +2395,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -2523,7 +2523,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -2665,7 +2665,7 @@ name|GIMP_TYPE_VECTORS_ID
 argument_list|,
 name|vectors_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|stroke_id
 argument_list|,
@@ -3144,7 +3144,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|string
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|length
 argument_list|,

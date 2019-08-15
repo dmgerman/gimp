@@ -73,11 +73,11 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position_x
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|position_y
 argument_list|,
@@ -197,7 +197,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|sample_point_ID
 argument_list|,
@@ -306,7 +306,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|sample_point_ID
 argument_list|,
@@ -430,7 +430,7 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|sample_point_ID
 argument_list|,

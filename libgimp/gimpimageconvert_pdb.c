@@ -296,7 +296,7 @@ name|GIMP_TYPE_CONVERT_PALETTE_TYPE
 argument_list|,
 name|palette_type
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_cols
 argument_list|,
@@ -420,15 +420,15 @@ name|gimp_value_array_new_from_types
 argument_list|(
 name|NULL
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|width
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|height
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|matrix_length
 argument_list|,

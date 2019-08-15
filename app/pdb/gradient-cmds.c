@@ -1119,7 +1119,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_segments
 init|=
 literal|0
@@ -1279,13 +1279,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_samples
 decl_stmt|;
 name|gboolean
 name|reverse
 decl_stmt|;
-name|gint32
+name|gint
 name|num_color_samples
 init|=
 literal|0
@@ -1575,7 +1575,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_samples
 decl_stmt|;
 specifier|const
@@ -1586,7 +1586,7 @@ decl_stmt|;
 name|gboolean
 name|reverse
 decl_stmt|;
-name|gint32
+name|gint
 name|num_color_samples
 init|=
 literal|0
@@ -1872,7 +1872,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|GimpRGB
@@ -2075,7 +2075,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|GimpRGB
@@ -2260,7 +2260,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|GimpRGB
@@ -2463,7 +2463,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|GimpRGB
@@ -2648,7 +2648,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -2818,7 +2818,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -3005,7 +3005,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -3175,7 +3175,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -3362,7 +3362,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -3532,7 +3532,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
 name|gdouble
@@ -3719,10 +3719,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
-name|gint32
+name|gint
 name|blend_func
 init|=
 literal|0
@@ -3889,10 +3889,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|segment
 decl_stmt|;
-name|gint32
+name|gint
 name|coloring_type
 init|=
 literal|0
@@ -4055,13 +4055,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|blending_function
 decl_stmt|;
 name|name
@@ -4235,13 +4235,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|coloring_type
 decl_stmt|;
 name|name
@@ -4415,10 +4415,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -4582,13 +4582,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|replicate_times
 decl_stmt|;
 name|name
@@ -4774,10 +4774,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -4945,13 +4945,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|split_parts
 decl_stmt|;
 name|name
@@ -5133,10 +5133,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -5300,10 +5300,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -5463,10 +5463,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -5652,10 +5652,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|name
@@ -5845,10 +5845,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|start_segment
 decl_stmt|;
-name|gint32
+name|gint
 name|end_segment
 decl_stmt|;
 name|gdouble
@@ -6583,7 +6583,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-segments"
 argument_list|,
@@ -6678,7 +6678,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-samples"
 argument_list|,
@@ -6718,7 +6718,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-color-samples"
 argument_list|,
@@ -6829,7 +6829,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-samples"
 argument_list|,
@@ -6885,7 +6885,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-color-samples"
 argument_list|,
@@ -6996,7 +6996,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7134,7 +7134,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7271,7 +7271,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7409,7 +7409,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7546,7 +7546,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7665,7 +7665,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7805,7 +7805,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -7924,7 +7924,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -8064,7 +8064,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -8183,7 +8183,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -8323,7 +8323,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -8438,7 +8438,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"segment"
 argument_list|,
@@ -8553,7 +8553,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -8575,7 +8575,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -8690,7 +8690,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -8712,7 +8712,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -8827,7 +8827,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -8849,7 +8849,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -8944,7 +8944,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -8966,7 +8966,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -8988,7 +8988,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"replicate-times"
 argument_list|,
@@ -9083,7 +9083,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9105,7 +9105,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9200,7 +9200,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9222,7 +9222,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9244,7 +9244,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"split-parts"
 argument_list|,
@@ -9339,7 +9339,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9361,7 +9361,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9456,7 +9456,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9478,7 +9478,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9573,7 +9573,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9595,7 +9595,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9690,7 +9690,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9712,7 +9712,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,
@@ -9807,7 +9807,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"start-segment"
 argument_list|,
@@ -9829,7 +9829,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"end-segment"
 argument_list|,

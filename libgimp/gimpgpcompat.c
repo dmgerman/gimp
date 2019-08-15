@@ -91,7 +91,7 @@ name|GIMP_PDB_INT32
 case|:
 name|pspec
 operator|=
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 name|name
 argument_list|,
@@ -565,7 +565,7 @@ case|case
 name|GIMP_PDB_INT32
 case|:
 return|return
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 return|;
 case|case
 name|GIMP_PDB_INT16
@@ -743,7 +743,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon28e2ae610108
+DECL|struct|__anon2a3eac110108
 block|{
 DECL|member|g_type
 name|GType
@@ -758,12 +758,6 @@ name|type_mapping
 index|[]
 init|=
 block|{
-block|{
-name|GIMP_TYPE_INT32
-block|,
-name|GIMP_PDB_INT32
-block|}
-block|,
 block|{
 name|G_TYPE_INT
 block|,

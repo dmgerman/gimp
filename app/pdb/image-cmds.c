@@ -458,7 +458,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|num_images
 init|=
 literal|0
@@ -624,13 +624,13 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 decl_stmt|;
 name|GimpImage
@@ -788,16 +788,16 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 decl_stmt|;
-name|gint32
+name|gint
 name|precision
 decl_stmt|;
 name|GimpImage
@@ -1214,7 +1214,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|base_type
 init|=
 literal|0
@@ -1331,7 +1331,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|precision
 init|=
 literal|0
@@ -1448,7 +1448,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|mode
 init|=
 literal|0
@@ -1565,7 +1565,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 init|=
 literal|0
@@ -1682,7 +1682,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 init|=
 literal|0
@@ -1799,7 +1799,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_layers
 init|=
 literal|0
@@ -2000,7 +2000,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_channels
 init|=
 literal|0
@@ -2201,7 +2201,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_vectors
 init|=
 literal|0
@@ -3175,10 +3175,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|x
 decl_stmt|;
-name|gint32
+name|gint
 name|y
 decl_stmt|;
 name|GimpLayer
@@ -3333,7 +3333,7 @@ name|GimpLayer
 modifier|*
 name|parent
 decl_stmt|;
-name|gint32
+name|gint
 name|position
 decl_stmt|;
 name|image
@@ -3977,7 +3977,7 @@ name|GimpChannel
 modifier|*
 name|parent
 decl_stmt|;
-name|gint32
+name|gint
 name|position
 decl_stmt|;
 name|image
@@ -4586,7 +4586,7 @@ name|GimpVectors
 modifier|*
 name|parent
 decl_stmt|;
-name|gint32
+name|gint
 name|position
 decl_stmt|;
 name|image
@@ -5195,7 +5195,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint32
+name|gint
 name|position
 init|=
 literal|0
@@ -5856,7 +5856,7 @@ name|GimpItem
 modifier|*
 name|parent
 decl_stmt|;
-name|gint32
+name|gint
 name|position
 decl_stmt|;
 name|image
@@ -6189,7 +6189,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|merge_type
 decl_stmt|;
 name|GimpLayer
@@ -6345,7 +6345,7 @@ name|GimpLayer
 modifier|*
 name|merge_layer
 decl_stmt|;
-name|gint32
+name|gint
 name|merge_type
 decl_stmt|;
 name|GimpLayer
@@ -6534,7 +6534,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 init|=
 literal|0
@@ -6683,7 +6683,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_bytes
 decl_stmt|;
 specifier|const
@@ -7272,28 +7272,28 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 decl_stmt|;
-name|gint32
+name|gint
 name|actual_width
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|actual_height
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|bpp
 init|=
 literal|0
 decl_stmt|;
-name|gint32
+name|gint
 name|thumbnail_data_count
 init|=
 literal|0
@@ -8462,7 +8462,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|component
 decl_stmt|;
 name|gboolean
@@ -8643,7 +8643,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|component
 decl_stmt|;
 name|gboolean
@@ -8818,7 +8818,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|component
 decl_stmt|;
 name|gboolean
@@ -8999,7 +8999,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|component
 decl_stmt|;
 name|gboolean
@@ -10699,7 +10699,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|tattoo_state
 init|=
 literal|0
@@ -10812,7 +10812,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|tattoo_state
 decl_stmt|;
 name|image
@@ -10919,7 +10919,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|tattoo
 decl_stmt|;
 name|GimpLayer
@@ -11054,7 +11054,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|tattoo
 decl_stmt|;
 name|GimpChannel
@@ -11189,7 +11189,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|tattoo
 decl_stmt|;
 name|GimpVectors
@@ -12114,7 +12114,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|num_parasites
 init|=
 literal|0
@@ -12356,7 +12356,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-images"
 argument_list|,
@@ -12445,7 +12445,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -12467,7 +12467,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -12580,7 +12580,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -12602,7 +12602,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -13194,7 +13194,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -13287,7 +13287,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -13380,7 +13380,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-layers"
 argument_list|,
@@ -13489,7 +13489,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-channels"
 argument_list|,
@@ -13598,7 +13598,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-vectors"
 argument_list|,
@@ -14276,7 +14276,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"x"
 argument_list|,
@@ -14298,7 +14298,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"y"
 argument_list|,
@@ -14457,7 +14457,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"position"
 argument_list|,
@@ -14833,7 +14833,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"position"
 argument_list|,
@@ -15209,7 +15209,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"position"
 argument_list|,
@@ -15563,7 +15563,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"position"
 argument_list|,
@@ -16072,7 +16072,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"position"
 argument_list|,
@@ -16536,7 +16536,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -16645,7 +16645,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-bytes"
 argument_list|,
@@ -17104,7 +17104,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -17126,7 +17126,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -17148,7 +17148,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"actual-width"
 argument_list|,
@@ -17170,7 +17170,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"actual-height"
 argument_list|,
@@ -17192,7 +17192,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"bpp"
 argument_list|,
@@ -17214,7 +17214,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"thumbnail-data-count"
 argument_list|,
@@ -20670,7 +20670,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-parasites"
 argument_list|,

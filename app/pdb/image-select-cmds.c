@@ -164,7 +164,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|GimpDrawable
@@ -377,7 +377,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|GimpDrawable
@@ -609,7 +609,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|gdouble
@@ -818,7 +818,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|gdouble
@@ -1065,7 +1065,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|gdouble
@@ -1278,10 +1278,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
-name|gint32
+name|gint
 name|num_segs
 decl_stmt|;
 specifier|const
@@ -1458,7 +1458,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
 name|GimpItem
@@ -2573,7 +2573,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-segs"
 argument_list|,

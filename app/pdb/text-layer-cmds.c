@@ -1763,7 +1763,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|style
 init|=
 literal|0
@@ -1907,7 +1907,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|style
 decl_stmt|;
 name|layer
@@ -2615,7 +2615,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|direction
 init|=
 literal|0
@@ -2759,7 +2759,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|direction
 decl_stmt|;
 name|layer
@@ -2898,7 +2898,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|justify
 init|=
 literal|0
@@ -3042,7 +3042,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|justify
 decl_stmt|;
 name|layer

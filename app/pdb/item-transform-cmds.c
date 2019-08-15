@@ -372,7 +372,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint32
+name|gint
 name|flip_type
 decl_stmt|;
 name|gboolean
@@ -1749,7 +1749,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint32
+name|gint
 name|rotate_type
 decl_stmt|;
 name|gboolean
@@ -3113,7 +3113,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gint32
+name|gint
 name|shear_type
 decl_stmt|;
 name|gdouble

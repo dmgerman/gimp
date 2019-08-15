@@ -3218,7 +3218,7 @@ name|GIMP_TYPE_ITEM_ID
 argument_list|,
 name|item_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|tattoo
 argument_list|,

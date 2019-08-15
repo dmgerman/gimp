@@ -922,7 +922,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_colors
 init|=
 literal|0
@@ -1062,7 +1062,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_colors
 init|=
 literal|0
@@ -1286,7 +1286,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|num_columns
 init|=
 literal|0
@@ -1422,7 +1422,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|columns
 decl_stmt|;
 name|name
@@ -1560,7 +1560,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 init|=
 literal|0
@@ -1739,7 +1739,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 decl_stmt|;
 name|name
@@ -1891,7 +1891,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 decl_stmt|;
 name|GimpRGB
@@ -2072,7 +2072,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 decl_stmt|;
 name|GimpRGB
@@ -2223,7 +2223,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 decl_stmt|;
 name|gchar
@@ -2399,7 +2399,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
+name|gint
 name|entry_num
 decl_stmt|;
 specifier|const
@@ -3060,7 +3060,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-colors"
 argument_list|,
@@ -3155,7 +3155,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-colors"
 argument_list|,
@@ -3266,7 +3266,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-columns"
 argument_list|,
@@ -3361,7 +3361,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"columns"
 argument_list|,
@@ -3500,7 +3500,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,
@@ -3595,7 +3595,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,
@@ -3690,7 +3690,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,
@@ -3805,7 +3805,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,
@@ -3920,7 +3920,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,
@@ -4039,7 +4039,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"entry-num"
 argument_list|,

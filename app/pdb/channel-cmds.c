@@ -150,10 +150,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 decl_stmt|;
 specifier|const
@@ -377,7 +377,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|component
 decl_stmt|;
 specifier|const
@@ -757,13 +757,13 @@ name|GimpChannel
 modifier|*
 name|channel2
 decl_stmt|;
-name|gint32
+name|gint
 name|operation
 decl_stmt|;
-name|gint32
+name|gint
 name|offx
 decl_stmt|;
-name|gint32
+name|gint
 name|offy
 decl_stmt|;
 name|channel1
@@ -1669,7 +1669,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -1691,7 +1691,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -2146,7 +2146,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offx"
 argument_list|,
@@ -2168,7 +2168,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offy"
 argument_list|,

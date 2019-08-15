@@ -533,7 +533,7 @@ name|GIMP_TYPE_ICON_TYPE
 argument_list|,
 name|icon_type
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|icon_data_length
 argument_list|,

@@ -89,7 +89,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|initial_gradient
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|sample_size
 argument_list|,

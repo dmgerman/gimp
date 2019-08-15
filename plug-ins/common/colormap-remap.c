@@ -513,7 +513,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-colors"
 argument_list|,
@@ -2011,7 +2011,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b78060103
+DECL|enum|__anon290a87a30103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

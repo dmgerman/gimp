@@ -203,7 +203,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|pid
 init|=
 literal|0
@@ -686,7 +686,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|num_parasites
 init|=
 literal|0
@@ -1012,7 +1012,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"pid"
 argument_list|,
@@ -1377,7 +1377,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-parasites"
 argument_list|,

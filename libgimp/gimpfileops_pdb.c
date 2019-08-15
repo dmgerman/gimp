@@ -1103,7 +1103,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|procedure_name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|priority
 argument_list|,

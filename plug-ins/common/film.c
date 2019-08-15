@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792e91d0108
+DECL|struct|__anon2bf3bf3d0108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792e91d0208
+DECL|struct|__anon2bf3bf3d0208
 block|{
 DECL|member|advanced_adj
 name|GtkAdjustment
@@ -1110,7 +1110,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-images"
 argument_list|,

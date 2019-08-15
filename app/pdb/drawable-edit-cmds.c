@@ -321,7 +321,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|fill_type
 decl_stmt|;
 name|drawable
@@ -523,7 +523,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|fill_type
 decl_stmt|;
 name|gdouble
@@ -804,7 +804,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|gradient_type
 decl_stmt|;
 name|gdouble
@@ -813,7 +813,7 @@ decl_stmt|;
 name|gboolean
 name|supersample
 decl_stmt|;
-name|gint32
+name|gint
 name|supersample_max_depth
 decl_stmt|;
 name|gdouble
@@ -2058,7 +2058,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"supersample-max-depth"
 argument_list|,

@@ -18,7 +18,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec5acf0108
+DECL|struct|__anon2ad56fc10108
 block|{
 DECL|member|gradient_callback
 name|gchar
@@ -248,7 +248,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"gradient-width"
 argument_list|,

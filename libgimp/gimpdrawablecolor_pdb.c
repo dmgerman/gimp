@@ -454,7 +454,7 @@ name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
 name|channel
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_values
 argument_list|,
@@ -592,7 +592,7 @@ name|GIMP_TYPE_HISTOGRAM_CHANNEL
 argument_list|,
 name|channel
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|num_points
 argument_list|,
@@ -1696,7 +1696,7 @@ name|GIMP_TYPE_DRAWABLE_ID
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|levels
 argument_list|,

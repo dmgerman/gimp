@@ -86,11 +86,11 @@ name|GIMP_TYPE_IMAGE_ID
 argument_list|,
 name|image_ID
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|width
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|height
 argument_list|,
@@ -483,11 +483,11 @@ name|GIMP_TYPE_CHANNEL_OPS
 argument_list|,
 name|operation
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|offx
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|offy
 argument_list|,

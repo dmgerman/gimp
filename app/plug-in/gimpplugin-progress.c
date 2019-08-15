@@ -965,7 +965,7 @@ operator|!=
 literal|3
 operator|||
 operator|!
-name|GIMP_IS_PARAM_SPEC_INT32
+name|G_IS_PARAM_SPEC_INT
 argument_list|(
 name|procedure
 operator|->

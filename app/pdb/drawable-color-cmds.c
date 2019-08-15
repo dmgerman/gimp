@@ -380,7 +380,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|transfer_mode
 decl_stmt|;
 name|gboolean
@@ -855,10 +855,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|channel
 decl_stmt|;
-name|gint32
+name|gint
 name|num_values
 decl_stmt|;
 specifier|const
@@ -1095,10 +1095,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|channel
 decl_stmt|;
-name|gint32
+name|gint
 name|num_points
 decl_stmt|;
 specifier|const
@@ -1332,7 +1332,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|desaturate_mode
 decl_stmt|;
 name|drawable
@@ -1649,7 +1649,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|channel
 decl_stmt|;
 name|gdouble
@@ -2111,7 +2111,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|hue_range
 decl_stmt|;
 name|gdouble
@@ -2520,7 +2520,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|channel
 decl_stmt|;
 name|gdouble
@@ -2979,7 +2979,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|levels
 decl_stmt|;
 name|drawable
@@ -3148,7 +3148,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
+name|gint
 name|channel
 decl_stmt|;
 name|gdouble
@@ -3848,7 +3848,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-values"
 argument_list|,
@@ -3977,7 +3977,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-points"
 argument_list|,
@@ -5121,7 +5121,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"levels"
 argument_list|,

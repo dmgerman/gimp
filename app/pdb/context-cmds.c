@@ -424,7 +424,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|num_paint_methods
 init|=
 literal|0
@@ -753,7 +753,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_method
 init|=
 literal|0
@@ -850,7 +850,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|stroke_method
 decl_stmt|;
 name|stroke_method
@@ -1606,7 +1606,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|paint_mode
 init|=
 literal|0
@@ -1686,7 +1686,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|paint_mode
 decl_stmt|;
 name|paint_mode
@@ -2174,7 +2174,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|cap_style
 init|=
 literal|0
@@ -2271,7 +2271,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|cap_style
 decl_stmt|;
 name|cap_style
@@ -2371,7 +2371,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|join_style
 init|=
 literal|0
@@ -2468,7 +2468,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|join_style
 decl_stmt|;
 name|join_style
@@ -2962,7 +2962,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|num_dashes
 init|=
 literal|0
@@ -3086,7 +3086,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|num_dashes
 decl_stmt|;
 specifier|const
@@ -6500,7 +6500,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|blend_color_space
 init|=
 literal|0
@@ -6618,7 +6618,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|blend_color_space
 decl_stmt|;
 name|blend_color_space
@@ -6753,7 +6753,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|repeat_mode
 init|=
 literal|0
@@ -6871,7 +6871,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|repeat_mode
 decl_stmt|;
 name|repeat_mode
@@ -8437,7 +8437,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|sample_criterion
 init|=
 literal|0
@@ -8522,7 +8522,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|sample_criterion
 decl_stmt|;
 name|sample_criterion
@@ -8783,7 +8783,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|sample_threshold
 init|=
 literal|0
@@ -8882,7 +8882,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|sample_threshold
 decl_stmt|;
 name|sample_threshold
@@ -9321,7 +9321,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|metric
 init|=
 literal|0
@@ -9406,7 +9406,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|metric
 decl_stmt|;
 name|metric
@@ -9494,7 +9494,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|interpolation
 init|=
 literal|0
@@ -9579,7 +9579,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|interpolation
 decl_stmt|;
 name|interpolation
@@ -9667,7 +9667,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|transform_direction
 init|=
 literal|0
@@ -9752,7 +9752,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|transform_direction
 decl_stmt|;
 name|transform_direction
@@ -9840,7 +9840,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|transform_resize
 init|=
 literal|0
@@ -9925,7 +9925,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|transform_resize
 decl_stmt|;
 name|transform_resize
@@ -11183,7 +11183,7 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 init|=
 literal|0
@@ -11300,7 +11300,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 decl_stmt|;
 name|type
@@ -12060,7 +12060,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-paint-methods"
 argument_list|,
@@ -13942,7 +13942,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-dashes"
 argument_list|,
@@ -14033,7 +14033,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-dashes"
 argument_list|,
@@ -17635,7 +17635,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"sample-threshold"
 argument_list|,
@@ -17706,7 +17706,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"sample-threshold"
 argument_list|,

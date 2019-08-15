@@ -117,7 +117,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2746f6e50108
+DECL|struct|__anon2b88bc8b0108
 block|{
 DECL|member|procedure
 name|gchar
@@ -481,7 +481,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-domain-names"
 argument_list|,
@@ -519,7 +519,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-domain-uris"
 argument_list|,

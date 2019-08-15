@@ -130,10 +130,10 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|gint32
+name|gint
 name|spacing
 decl_stmt|;
-name|gint32
+name|gint
 name|paint_mode
 decl_stmt|;
 name|brush_callback
@@ -468,10 +468,10 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|gint32
+name|gint
 name|spacing
 decl_stmt|;
-name|gint32
+name|gint
 name|paint_mode
 decl_stmt|;
 name|brush_callback
@@ -770,7 +770,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"spacing"
 argument_list|,
@@ -1004,7 +1004,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"spacing"
 argument_list|,

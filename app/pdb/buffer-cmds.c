@@ -151,7 +151,7 @@ name|gchar
 modifier|*
 name|filter
 decl_stmt|;
-name|gint32
+name|gint
 name|num_buffers
 init|=
 literal|0
@@ -584,7 +584,7 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 init|=
 literal|0
@@ -722,7 +722,7 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 init|=
 literal|0
@@ -860,7 +860,7 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|gint32
+name|gint
 name|bytes
 init|=
 literal|0
@@ -1010,7 +1010,7 @@ name|gchar
 modifier|*
 name|buffer_name
 decl_stmt|;
-name|gint32
+name|gint
 name|image_type
 init|=
 literal|0
@@ -1182,7 +1182,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"num-buffers"
 argument_list|,
@@ -1487,7 +1487,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -1582,7 +1582,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -1677,7 +1677,7 @@ name|gimp_procedure_add_return_value
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"bytes"
 argument_list|,

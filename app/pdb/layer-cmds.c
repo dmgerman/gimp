@@ -222,13 +222,13 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-name|gint32
+name|gint
 name|height
 decl_stmt|;
-name|gint32
+name|gint
 name|type
 decl_stmt|;
 specifier|const
@@ -239,7 +239,7 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|gint32
+name|gint
 name|mode
 decl_stmt|;
 name|GimpLayer
@@ -1512,10 +1512,10 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|new_width
 decl_stmt|;
-name|gint32
+name|gint
 name|new_height
 decl_stmt|;
 name|gboolean
@@ -1719,16 +1719,16 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|new_width
 decl_stmt|;
-name|gint32
+name|gint
 name|new_height
 decl_stmt|;
-name|gint32
+name|gint
 name|offx
 decl_stmt|;
-name|gint32
+name|gint
 name|offy
 decl_stmt|;
 name|layer
@@ -2016,10 +2016,10 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|offx
 decl_stmt|;
-name|gint32
+name|gint
 name|offy
 decl_stmt|;
 name|layer
@@ -2223,7 +2223,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|mask_type
 decl_stmt|;
 name|GimpLayerMask
@@ -2784,7 +2784,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|mode
 decl_stmt|;
 name|layer
@@ -4257,7 +4257,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|mode
 init|=
 literal|0
@@ -4370,7 +4370,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|mode
 decl_stmt|;
 name|layer
@@ -4542,7 +4542,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|blend_space
 init|=
 literal|0
@@ -4655,7 +4655,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|blend_space
 decl_stmt|;
 name|layer
@@ -4764,7 +4764,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|composite_space
 init|=
 literal|0
@@ -4877,7 +4877,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|composite_space
 decl_stmt|;
 name|layer
@@ -4986,7 +4986,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|composite_mode
 init|=
 literal|0
@@ -5099,7 +5099,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gint
 name|composite_mode
 decl_stmt|;
 name|layer
@@ -5238,7 +5238,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"width"
 argument_list|,
@@ -5260,7 +5260,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"height"
 argument_list|,
@@ -6062,7 +6062,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"new-width"
 argument_list|,
@@ -6084,7 +6084,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"new-height"
 argument_list|,
@@ -6195,7 +6195,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"new-width"
 argument_list|,
@@ -6217,7 +6217,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"new-height"
 argument_list|,
@@ -6239,7 +6239,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offx"
 argument_list|,
@@ -6261,7 +6261,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offy"
 argument_list|,
@@ -6425,7 +6425,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offx"
 argument_list|,
@@ -6447,7 +6447,7 @@ name|gimp_procedure_add_argument
 argument_list|(
 name|procedure
 argument_list|,
-name|gimp_param_spec_int32
+name|g_param_spec_int
 argument_list|(
 literal|"offy"
 argument_list|,

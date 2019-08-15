@@ -1377,7 +1377,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|spacing
 argument_list|,
@@ -2076,7 +2076,7 @@ name|G_TYPE_STRING
 argument_list|,
 name|name
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|spikes_in
 argument_list|,

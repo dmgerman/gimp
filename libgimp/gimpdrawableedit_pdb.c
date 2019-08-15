@@ -439,7 +439,7 @@ name|G_TYPE_BOOLEAN
 argument_list|,
 name|supersample
 argument_list|,
-name|GIMP_TYPE_INT32
+name|G_TYPE_INT
 argument_list|,
 name|supersample_max_depth
 argument_list|,
