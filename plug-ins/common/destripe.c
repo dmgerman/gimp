@@ -202,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f6f06c0108
+DECL|struct|__anon28c852610108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -466,7 +466,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -498,14 +498,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -628,11 +621,6 @@ expr_stmt|;
 block|}
 block|}
 empty_stmt|;
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 comment|/*    * Reset the current run status...    */
 name|values
 index|[

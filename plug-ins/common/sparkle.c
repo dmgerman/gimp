@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53b5f0108
+DECL|struct|__anon27a5498c0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -824,7 +824,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -859,11 +859,6 @@ literal|"Region selected for filter is empty"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 switch|switch
@@ -892,14 +887,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -1369,11 +1357,6 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|0

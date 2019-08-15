@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a65c340108
+DECL|struct|__anon28f7dea20108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a65c340208
+DECL|struct|__anon28f7dea20208
 block|{
 DECL|member|elems
 name|gint
@@ -754,7 +754,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -795,14 +795,7 @@ operator|!
 name|despeckle_dialog
 argument_list|()
 condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 block|}
 break|break;
 case|case
@@ -1066,11 +1059,6 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|0

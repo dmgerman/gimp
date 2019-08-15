@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * _gimp_layer_new:  * @image: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: (transfer full): The newly created layer.  **/
+comment|/**  * _gimp_layer_new:  * @image: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: (transfer none): The newly created layer.  **/
 end_comment
 
 begin_function
@@ -167,7 +167,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -193,7 +193,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_visible:  * @image: The source image from where the content is copied.  * @dest_image: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: (transfer full): The newly created layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_layer_new_from_visible:  * @image: The source image from where the content is copied.  * @dest_image: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: (transfer none): The newly created layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -312,7 +312,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -468,7 +468,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_drawable:  * @drawable: The source drawable from where the new layer is copied.  * @dest_image: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: (transfer full): The newly copied layer.  **/
+comment|/**  * gimp_layer_new_from_drawable:  * @drawable: The source drawable from where the new layer is copied.  * @dest_image: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: (transfer none): The newly copied layer.  **/
 end_comment
 
 begin_function
@@ -581,7 +581,7 @@ name|layer_copy
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -728,7 +728,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_group_new:  * @image: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: (transfer full): The newly created layer group.  *  * Since: 2.8  **/
+comment|/**  * gimp_layer_group_new:  * @image: The image to which to add the layer group.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  * Other procedures useful with layer groups:  * gimp_image_reorder_item(), gimp_item_get_parent(),  * gimp_item_get_children(), gimp_item_is_group().  *  * Returns: (transfer none): The newly created layer group.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -827,7 +827,7 @@ name|layer_group
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -967,7 +967,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_layer_copy:  * @layer: The layer to copy.  * @add_alpha: Add an alpha channel to the copied layer.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image. The copied  * layer can optionally have an added alpha channel. This is useful if  * the background layer in an image is being copied and added to the  * same image.  *  * Returns: (transfer full): The newly copied layer.  **/
+comment|/**  * _gimp_layer_copy:  * @layer: The layer to copy.  * @add_alpha: Add an alpha channel to the copied layer.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image. The copied  * layer can optionally have an added alpha channel. This is useful if  * the background layer in an image is being copied and added to the  * same image.  *  * Returns: (transfer none): The newly copied layer.  **/
 end_comment
 
 begin_function
@@ -1076,7 +1076,7 @@ name|layer_copy
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -2482,7 +2482,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_create_mask:  * @layer: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified layer.  *  * This procedure creates a layer mask for the specified layer.  * Layer masks serve as an additional alpha channel for a layer.  * Different types of masks are allowed for initialisation:  * - white mask (leaves the layer fully visible);  * - black mask (gives the layer complete transparency);  * - the layer's alpha channel (either a copy, or a transfer, which  * leaves the layer fully visible, but which may be more useful than a  * white mask);  * - the current selection;  * - a grayscale copy of the layer;  * - or a copy of the active channel.  *  * The layer mask still needs to be added to the layer. This can be  * done with a call to gimp_layer_add_mask().  *  * gimp_layer_create_mask() will fail if there are no active channels  * on the image, when called with 'ADD-CHANNEL-MASK'. It will return a  * black mask when called with 'ADD-ALPHA-MASK' or  * 'ADD-ALPHA-TRANSFER-MASK' on a layer with no alpha channels, or with  * 'ADD-SELECTION-MASK' when there is no selection on the image.  *  * Returns: (transfer full): The newly created mask.  **/
+comment|/**  * gimp_layer_create_mask:  * @layer: The layer to which to add the mask.  * @mask_type: The type of mask.  *  * Create a layer mask for the specified layer.  *  * This procedure creates a layer mask for the specified layer.  * Layer masks serve as an additional alpha channel for a layer.  * Different types of masks are allowed for initialisation:  * - white mask (leaves the layer fully visible);  * - black mask (gives the layer complete transparency);  * - the layer's alpha channel (either a copy, or a transfer, which  * leaves the layer fully visible, but which may be more useful than a  * white mask);  * - the current selection;  * - a grayscale copy of the layer;  * - or a copy of the active channel.  *  * The layer mask still needs to be added to the layer. This can be  * done with a call to gimp_layer_add_mask().  *  * gimp_layer_create_mask() will fail if there are no active channels  * on the image, when called with 'ADD-CHANNEL-MASK'. It will return a  * black mask when called with 'ADD-ALPHA-MASK' or  * 'ADD-ALPHA-TRANSFER-MASK' on a layer with no alpha channels, or with  * 'ADD-SELECTION-MASK' when there is no selection on the image.  *  * Returns: (transfer none): The newly created mask.  **/
 end_comment
 
 begin_function
@@ -2591,7 +2591,7 @@ name|mask
 operator|=
 name|GIMP_LAYER_MASK
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_mask_id
 argument_list|(
@@ -2738,7 +2738,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_mask:  * @layer: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: (transfer full): The layer mask.  **/
+comment|/**  * gimp_layer_get_mask:  * @layer: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: (transfer none): The layer mask.  **/
 end_comment
 
 begin_function
@@ -2840,7 +2840,7 @@ name|mask
 operator|=
 name|GIMP_LAYER_MASK
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_mask_id
 argument_list|(
@@ -2980,7 +2980,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_from_mask:  * @mask: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: (transfer full): The mask's layer.  *  * Since: 2.2  **/
+comment|/**  * gimp_layer_from_mask:  * @mask: Mask for which to return the layer.  *  * Get the specified mask's layer.  *  * This procedure returns the specified mask's layer , or -1 if none  * exists.  *  * Returns: (transfer none): The mask's layer.  *  * Since: 2.2  **/
 end_comment
 
 begin_function
@@ -3082,7 +3082,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(

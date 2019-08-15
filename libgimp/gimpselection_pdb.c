@@ -1184,7 +1184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_selection_float:  * @drawable: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer full): The floated layer.  **/
+comment|/**  * _gimp_selection_float:  * @drawable: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: (transfer none): The floated layer.  **/
 end_comment
 
 begin_function
@@ -1300,7 +1300,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -3236,7 +3236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_save:  * @image: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: (transfer full): The new channel.  **/
+comment|/**  * gimp_selection_save:  * @image: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: (transfer none): The new channel.  **/
 end_comment
 
 begin_function
@@ -3335,7 +3335,7 @@ name|channel
 operator|=
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(

@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef88cc0108
+DECL|struct|__anon288890890108
 block|{
 DECL|member|tag
 name|gchar
@@ -2423,11 +2423,6 @@ argument_list|,
 name|NULL
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
 argument_list|)
 expr_stmt|;
 name|gimp_image_metadata_rotate

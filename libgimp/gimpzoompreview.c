@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2eae30103
+DECL|enum|__anon288c1ad80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -74,7 +74,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2eae30208
+DECL|struct|__anon288c1ad80208
 block|{
 DECL|member|update
 name|gboolean
@@ -2095,11 +2095,6 @@ name|height
 argument_list|,
 operator|&
 name|bpp
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|selection
 argument_list|)
 expr_stmt|;
 name|gimp_preview_area_mask

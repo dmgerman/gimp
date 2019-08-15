@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c7fc730103
+DECL|enum|__anon28ddca1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,7 +73,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7fc730208
+DECL|struct|__anon28ddca1a0208
 block|{
 DECL|member|x
 name|gint
@@ -1919,11 +1919,6 @@ name|s_h
 argument_list|,
 operator|&
 name|s_bpp
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|selection
 argument_list|)
 expr_stmt|;
 switch|switch

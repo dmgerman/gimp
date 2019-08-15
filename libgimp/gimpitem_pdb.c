@@ -2569,7 +2569,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_parent:  * @item: The item.  *  * Returns the item's parent item.  *  * This procedure returns the item's parent item, if any.  *  * Returns: (transfer full): The item's parent item.  *  * Since: 2.8  **/
+comment|/**  * gimp_item_get_parent:  * @item: The item.  *  * Returns the item's parent item.  *  * This procedure returns the item's parent item, if any.  *  * Returns: (transfer none): The item's parent item.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -2669,7 +2669,7 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|parent
 operator|=
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_item_id
 argument_list|(

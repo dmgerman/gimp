@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e4e87b0103
+DECL|enum|__anon2980b1b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -600,7 +600,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image: The image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (element-type GimpImage) (transfer full):  *          The list of layers contained in the image.  *          The returned value must be freed with:  *          g_list_free_full(list, g_object_unref);  *  * Since: 3.0  **/
+comment|/**  * gimp_image_get_layers:  * @image: The image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: (element-type GimpImage) (transfer container):  *          The list of layers contained in the image.  *          The returned value must be freed with g_list_free(). Layer  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -653,16 +653,15 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-name|layer
+name|layers
 operator|=
+name|g_list_prepend
+argument_list|(
+name|layers
+argument_list|,
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|ids
 index|[
@@ -670,17 +669,8 @@ name|i
 index|]
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|layers
-operator|=
-name|g_list_prepend
-argument_list|(
-name|layers
-argument_list|,
-name|layer
 argument_list|)
 expr_stmt|;
-block|}
 name|layers
 operator|=
 name|g_list_reverse
@@ -700,7 +690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image: The image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (element-type GimpChannel) (transfer full):  *          The list of channels contained in the image.  *          The returned value must be freed with:  *          g_list_free_full(list, g_object_unref);  *  * Since: 3.0  **/
+comment|/**  * gimp_image_get_channels:  * @image: The image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost. Note that  * \"channels\" are custom channels and do not include the image's  * color components.  *  * Returns: (element-type GimpChannel) (transfer container):  *          The list of channels contained in the image.  *          The returned value must be freed with g_list_free(). Channel  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -753,16 +743,15 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
-name|channel
+name|channels
 operator|=
+name|g_list_prepend
+argument_list|(
+name|channels
+argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|ids
 index|[
@@ -770,17 +759,8 @@ name|i
 index|]
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|channels
-operator|=
-name|g_list_prepend
-argument_list|(
-name|channels
-argument_list|,
-name|channel
 argument_list|)
 expr_stmt|;
-block|}
 name|channels
 operator|=
 name|g_list_reverse
@@ -800,7 +780,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image: The image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (element-type GimpVectors) (transfer full):  *          The list of vectors contained in the image.  *          The returned value must be freed with:  *          g_list_free_full(list, g_object_unref);  *  * Since: 3.0  **/
+comment|/**  * gimp_image_get_vectors:  * @image: The image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: (element-type GimpVectors) (transfer container):  *          The list of vectors contained in the image.  *          The returned value must be freed with g_list_free(). Vectors  *          elements belong to libgimp and must not be freed.  *  * Since: 3.0  **/
 end_comment
 
 begin_function
@@ -853,16 +833,15 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
-name|GimpVectors
-modifier|*
-name|path
-decl_stmt|;
-name|path
+name|vectors
 operator|=
+name|g_list_prepend
+argument_list|(
+name|vectors
+argument_list|,
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|ids
 index|[
@@ -870,17 +849,8 @@ name|i
 index|]
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|vectors
-operator|=
-name|g_list_prepend
-argument_list|(
-name|vectors
-argument_list|,
-name|path
 argument_list|)
 expr_stmt|;
-block|}
 name|vectors
 operator|=
 name|g_list_reverse

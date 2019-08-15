@@ -71,7 +71,7 @@ comment|/* Public API. */
 end_comment
 
 begin_comment
-comment|/**  * gimp_layer_new:  * @image:   The image to which to add the layer.  * @name:    The layer name.  * @width:   The layer width.  * @height:  The layer height.  * @type:    The layer type.  * @opacity: The layer opacity.  * @mode:    The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
+comment|/**  * gimp_layer_new:  * @image:   The image to which to add the layer.  * @name:    The layer name.  * @width:   The layer width.  * @height:  The layer height.  * @type:    The layer type.  * @opacity: The layer opacity.  * @mode:    The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -127,7 +127,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_copy:  * @layer: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image.  *  * Returns: (transfer full): The newly copied layer.  */
+comment|/**  * gimp_layer_copy:  * @layer: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image.  *  * Returns: (transfer none): The newly copied layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -153,7 +153,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @image:          The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.4  */
+comment|/**  * gimp_layer_new_from_pixbuf:  * @image:          The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -380,7 +380,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_surface:  * @image:           The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.8  */
+comment|/**  * gimp_layer_new_from_surface:  * @image:           The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: (transfer none): The newly created layer.  *          The object belongs to libgimp and you should not free it.  *  * Since: 3.0  */
 end_comment
 
 begin_function
@@ -617,7 +617,7 @@ comment|/* Deprecate API. */
 end_comment
 
 begin_comment
-comment|/**  * gimp_layer_new_deprecated: (skip)  * @image_id: The image to which to add the layer.  * @name:     The layer name.  * @width:    The layer width.  * @height:   The layer height.  * @type:     The layer type.  * @opacity:  The layer opacity.  * @mode:     The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
+comment|/**  * gimp_layer_new_deprecated: (skip)  * @image_id: The image to which to add the layer.  * @name:     The layer name.  * @width:    The layer width.  * @height:   The layer height.  * @type:     The layer type.  * @opacity:  The layer opacity.  * @mode:     The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer ID.  */
 end_comment
 
 begin_function
@@ -653,9 +653,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
-name|layer_id
-decl_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new
@@ -678,8 +675,7 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-name|layer_id
-operator|=
+return|return
 name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
@@ -687,20 +683,12 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-return|return
-name|layer_id
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf_deprecated: (skip)  * @image_id:       The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.4  */
+comment|/**  * gimp_layer_new_from_pixbuf_deprecated: (skip)  * @image_id:       The RGB image to which to add the layer.  * @name:           The layer name.  * @pixbuf:         A GdkPixbuf.  * @opacity:        The layer opacity.  * @mode:           The layer combination mode.  * @progress_start: start of progress  * @progress_end:   end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer ID.  *  * Since: 2.4  */
 end_comment
 
 begin_function
@@ -737,9 +725,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
-name|layer_id
-decl_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_pixbuf
@@ -762,8 +747,7 @@ argument_list|,
 name|progress_end
 argument_list|)
 expr_stmt|;
-name|layer_id
-operator|=
+return|return
 name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
@@ -771,20 +755,12 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-return|return
-name|layer_id
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_surface_deprecated: (skip)  * @image_id:        The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: 2.8  */
+comment|/**  * gimp_layer_new_from_surface_deprecated: (skip)  * @image_id:        The RGB image to which to add the layer.  * @name:            The layer name.  * @surface:         A Cairo image surface.  * @progress_start:  start of progress  * @progress_end:    end of progress  *  * Create a new layer from a #cairo_surface_t.  *  * This procedure creates a new layer from the given  * #cairo_surface_t. The image has to be an RGB image and just like  * with gimp_layer_new() you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer ID.  *  * Since: 2.8  */
 end_comment
 
 begin_function
@@ -815,9 +791,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
-name|layer_id
-decl_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_surface
@@ -836,8 +809,7 @@ argument_list|,
 name|progress_end
 argument_list|)
 expr_stmt|;
-name|layer_id
-operator|=
+return|return
 name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
@@ -845,20 +817,12 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-return|return
-name|layer_id
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_copy_deprecated: (skip)  * @layer_ID: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image.  *  * Returns: The newly copied layer.  */
+comment|/**  * gimp_layer_copy_deprecated: (skip)  * @layer_ID: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image.  *  * Returns: The newly copied layer ID.  */
 end_comment
 
 begin_function
@@ -872,50 +836,22 @@ parameter_list|)
 block|{
 name|GimpLayer
 modifier|*
-name|layer
-decl_stmt|;
-name|GimpLayer
-modifier|*
 name|copy
 decl_stmt|;
-name|gint32
-name|copy_id
-decl_stmt|;
-name|layer
-operator|=
-name|GIMP_LAYER
-argument_list|(
-name|gimp_item_new_by_id
-argument_list|(
-name|layer_ID
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|layer
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|copy
 operator|=
 name|gimp_layer_copy
 argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
+name|GIMP_LAYER
 argument_list|(
-name|copy
-argument_list|,
-operator|-
-literal|1
+name|gimp_item_get_by_id
+argument_list|(
+name|layer_ID
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|copy_id
-operator|=
+return|return
 name|gimp_item_get_id
 argument_list|(
 name|GIMP_ITEM
@@ -923,19 +859,6 @@ argument_list|(
 name|copy
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|copy
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
-return|return
-name|copy_id
 return|;
 block|}
 end_function

@@ -720,7 +720,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_paste:  * @drawable: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either gimp_edit_cut() or gimp_edit_copy().  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to its drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: (transfer full): The new floating selection.  **/
+comment|/**  * gimp_edit_paste:  * @drawable: The drawable to paste to.  * @paste_into: Clear selection, or paste behind it?  *  * Paste buffer to the specified drawable.  *  * This procedure pastes a copy of the internal GIMP edit buffer to the  * specified drawable. The GIMP edit buffer will be empty unless a call  * was previously made to either gimp_edit_cut() or gimp_edit_copy().  * The \"paste_into\" option specifies whether to clear the current  * image selection, or to paste the buffer \"behind\" the selection.  * This allows the selection to act as a mask for the pasted buffer.  * Anywhere that the selection mask is non-zero, the pasted buffer will  * show through. The pasted buffer will be a new layer in the image  * which is designated as the image floating selection. If the image  * has a floating selection at the time of pasting, the old floating  * selection will be anchored to its drawable before the new floating  * selection is added. This procedure returns the new floating layer.  * The resulting floating selection will already be attached to the  * specified drawable, and a subsequent call to floating_sel_attach is  * not needed.  *  * Returns: (transfer none): The new floating selection.  **/
 end_comment
 
 begin_function
@@ -829,7 +829,7 @@ name|floating_sel
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -1960,7 +1960,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_named_paste:  * @drawable: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp_edit_paste() but pastes a named  * buffer instead of the global buffer.  *  * Returns: (transfer full): The new floating selection.  *  * Since: 2.4  **/
+comment|/**  * gimp_edit_named_paste:  * @drawable: The drawable to paste to.  * @buffer_name: The name of the buffer to paste.  * @paste_into: Clear selection, or paste behind it?  *  * Paste named buffer to the specified drawable.  *  * This procedure works like gimp_edit_paste() but pastes a named  * buffer instead of the global buffer.  *  * Returns: (transfer none): The new floating selection.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -2078,7 +2078,7 @@ name|floating_sel
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(

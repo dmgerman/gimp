@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad226740103
+DECL|enum|__anon29c4dd070103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad226740203
+DECL|enum|__anon29c4dd070203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2020,7 +2020,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -2203,11 +2203,6 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|/* switch */
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=

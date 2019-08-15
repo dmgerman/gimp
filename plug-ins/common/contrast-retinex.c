@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a033fcd0108
+DECL|struct|__anon2955f4a40108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a033fcd0203
+DECL|enum|__anon2955f4a40203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a033fcd0308
+DECL|struct|__anon2955f4a40308
 block|{
 DECL|member|N
 name|gint
@@ -730,7 +730,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -780,11 +780,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 switch|switch
@@ -813,14 +808,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -983,11 +971,6 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-name|g_object_unref
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|0

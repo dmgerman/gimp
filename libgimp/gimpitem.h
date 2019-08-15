@@ -278,7 +278,7 @@ end_function_decl
 begin_function_decl
 name|GimpItem
 modifier|*
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 parameter_list|(
 name|gint32
 name|item_id

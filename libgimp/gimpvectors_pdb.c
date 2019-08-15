@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: (transfer full):  *          the current vector object, 0 if no vector exists in the image.  *  * Since: 2.4  **/
+comment|/**  * gimp_vectors_new:  * @image: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: (transfer none):  *          the current vector object, 0 if no vector exists in the image.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -132,7 +132,7 @@ name|vectors
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
@@ -281,7 +281,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_text_layer:  * @image: The image.  * @layer: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: (transfer full): The vectors of the text layer.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_new_from_text_layer:  * @image: The image.  * @layer: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: (transfer none): The vectors of the text layer.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -394,7 +394,7 @@ name|vectors
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
@@ -541,7 +541,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_copy:  * @vectors: The vectors object to copy.  *  * Copy a vectors object.  *  * This procedure copies the specified vectors object and returns the  * copy.  *  * Returns: (transfer full): The newly copied vectors object.  *  * Since: 2.6  **/
+comment|/**  * gimp_vectors_copy:  * @vectors: The vectors object to copy.  *  * Copy a vectors object.  *  * This procedure copies the specified vectors object and returns the  * copy.  *  * Returns: (transfer none): The newly copied vectors object.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -643,7 +643,7 @@ name|vectors_copy
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(

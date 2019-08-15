@@ -292,7 +292,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (transfer full): The layer created when loading the image file.  *  * Since: 2.4  **/
+comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: (transfer none): The layer created when loading the image file.  *  * Since: 2.4  **/
 end_comment
 
 begin_function
@@ -407,7 +407,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(

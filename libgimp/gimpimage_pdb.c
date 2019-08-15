@@ -2941,7 +2941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_drawable:  * @image: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: (transfer full): The active drawable.  **/
+comment|/**  * gimp_image_get_active_drawable:  * @image: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: (transfer none): The active drawable.  **/
 end_comment
 
 begin_function
@@ -3040,7 +3040,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_drawable_id
 argument_list|(
@@ -3386,7 +3386,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_floating_sel:  * @image: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: (transfer full): The image's floating selection.  **/
+comment|/**  * gimp_image_get_floating_sel:  * @image: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: (transfer none): The image's floating selection.  **/
 end_comment
 
 begin_function
@@ -3485,7 +3485,7 @@ name|floating_sel
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -3625,7 +3625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_floating_sel_attached_to:  * @image: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: (transfer full):  *          The drawable the floating selection is attached to.  **/
+comment|/**  * gimp_image_floating_sel_attached_to:  * @image: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: (transfer none):  *          The drawable the floating selection is attached to.  **/
 end_comment
 
 begin_function
@@ -3724,7 +3724,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_drawable_id
 argument_list|(
@@ -4205,7 +4205,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_correlate_layer:  * @image: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: (transfer full): The layer found at the specified coordinates.  **/
+comment|/**  * gimp_image_pick_correlate_layer:  * @image: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: (transfer none): The layer found at the specified coordinates.  **/
 end_comment
 
 begin_function
@@ -4318,7 +4318,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -8596,7 +8596,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_flatten:  * @image: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: (transfer full): The resulting layer.  **/
+comment|/**  * gimp_image_flatten:  * @image: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: (transfer none): The resulting layer.  **/
 end_comment
 
 begin_function
@@ -8695,7 +8695,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -8835,7 +8835,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_visible_layers:  * @image: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: (transfer full): The resulting layer.  **/
+comment|/**  * gimp_image_merge_visible_layers:  * @image: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: (transfer none): The resulting layer.  **/
 end_comment
 
 begin_function
@@ -8941,7 +8941,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -9088,7 +9088,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_down:  * @image: The image.  * @merge_layer: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: (transfer full): The resulting layer.  **/
+comment|/**  * gimp_image_merge_down:  * @image: The image.  * @merge_layer: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: (transfer none): The resulting layer.  **/
 end_comment
 
 begin_function
@@ -9208,7 +9208,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -10545,7 +10545,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_layer:  * @image: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: (transfer full): The active layer.  **/
+comment|/**  * gimp_image_get_active_layer:  * @image: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: (transfer none): The active layer.  **/
 end_comment
 
 begin_function
@@ -10644,7 +10644,7 @@ name|active_layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -11011,7 +11011,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_channel:  * @image: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: (transfer full): The active channel.  **/
+comment|/**  * gimp_image_get_active_channel:  * @image: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: (transfer none): The active channel.  **/
 end_comment
 
 begin_function
@@ -11110,7 +11110,7 @@ name|active_channel
 operator|=
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
@@ -11477,7 +11477,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_vectors:  * @image: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: (transfer full): The active vectors.  **/
+comment|/**  * gimp_image_get_active_vectors:  * @image: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: (transfer none): The active vectors.  **/
 end_comment
 
 begin_function
@@ -11576,7 +11576,7 @@ name|active_vectors
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
@@ -11943,7 +11943,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_selection:  * @image: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: (transfer full): The selection channel.  **/
+comment|/**  * gimp_image_get_selection:  * @image: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: (transfer none): The selection channel.  **/
 end_comment
 
 begin_function
@@ -12042,7 +12042,7 @@ name|selection
 operator|=
 name|GIMP_SELECTION
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_selection_id
 argument_list|(
@@ -16206,7 +16206,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: (transfer full): The layer with the specified tattoo.  **/
+comment|/**  * gimp_image_get_layer_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: (transfer none): The layer with the specified tattoo.  **/
 end_comment
 
 begin_function
@@ -16312,7 +16312,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -16459,7 +16459,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: (transfer full): The channel with the specified tattoo.  **/
+comment|/**  * gimp_image_get_channel_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: (transfer none): The channel with the specified tattoo.  **/
 end_comment
 
 begin_function
@@ -16565,7 +16565,7 @@ name|channel
 operator|=
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
@@ -16712,7 +16712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: (transfer full): The vectors with the specified tattoo.  *  * Since: 2.6  **/
+comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: (transfer none): The vectors with the specified tattoo.  *  * Since: 2.6  **/
 end_comment
 
 begin_function
@@ -16818,7 +16818,7 @@ name|vectors
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
@@ -16965,7 +16965,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_name:  * @image: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: (transfer full): The layer with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_layer_by_name:  * @image: The image.  * @name: The name of the layer to find.  *  * Find a layer with a given name in an image.  *  * This procedure returns the layer with the given name in the  * specified image.  *  * Returns: (transfer none): The layer with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -17073,7 +17073,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_layer_id
 argument_list|(
@@ -17222,7 +17222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_name:  * @image: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: (transfer full): The channel with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_channel_by_name:  * @image: The image.  * @name: The name of the channel to find.  *  * Find a channel with a given name in an image.  *  * This procedure returns the channel with the given name in the  * specified image.  *  * Returns: (transfer none): The channel with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -17330,7 +17330,7 @@ name|channel
 operator|=
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_channel_id
 argument_list|(
@@ -17479,7 +17479,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_name:  * @image: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: (transfer full): The vectors with the specified name.  *  * Since: 2.8  **/
+comment|/**  * gimp_image_get_vectors_by_name:  * @image: The image.  * @name: The name of the vectors to find.  *  * Find a vectors with a given name in an image.  *  * This procedure returns the vectors with the given name in the  * specified image.  *  * Returns: (transfer none): The vectors with the specified name.  *  * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -17587,7 +17587,7 @@ name|vectors
 operator|=
 name|GIMP_VECTORS
 argument_list|(
-name|gimp_item_new_by_id
+name|gimp_item_get_by_id
 argument_list|(
 name|gimp_value_get_vectors_id
 argument_list|(
