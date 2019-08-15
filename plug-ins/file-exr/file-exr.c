@@ -188,7 +188,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 name|load_image
 parameter_list|(
 specifier|const
@@ -464,8 +465,9 @@ name|GimpValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint32
-name|image_ID
+name|GimpImage
+modifier|*
+name|image
 decl_stmt|;
 name|GError
 modifier|*
@@ -483,7 +485,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|image_ID
+name|image
 operator|=
 name|load_image
 argument_list|(
@@ -502,9 +504,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_ID
-operator|<
-literal|1
+operator|!
+name|image
 condition|)
 return|return
 name|gimp_procedure_new_return_values
@@ -533,7 +534,7 @@ name|return_vals
 argument_list|,
 literal|1
 argument_list|,
-name|image_ID
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -544,7 +545,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint32
+name|GimpImage
+modifier|*
 DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
@@ -581,16 +583,17 @@ decl_stmt|;
 name|GimpPrecision
 name|image_precision
 decl_stmt|;
-name|gint32
+name|GimpImage
+modifier|*
 name|image
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 name|GimpImageType
 name|layer_type
 decl_stmt|;
-name|gint32
+name|GimpLayer
+modifier|*
 name|layer
 decl_stmt|;
 specifier|const
@@ -897,10 +900,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|image
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|g_set_error
@@ -997,8 +998,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|-
-literal|1
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -1007,14 +1007,20 @@ name|buffer
 operator|=
 name|gimp_drawable_get_buffer
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|format
 operator|=
 name|gimp_drawable_get_format
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -1423,9 +1429,6 @@ return|;
 if|if
 condition|(
 name|image
-operator|!=
-operator|-
-literal|1
 condition|)
 name|gimp_image_delete
 argument_list|(
@@ -1433,8 +1436,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|NULL
 return|;
 block|}
 end_function
