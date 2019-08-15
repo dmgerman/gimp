@@ -571,24 +571,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_plugin_icon_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|procedure_name
-parameter_list|,
-name|GimpIconType
-name|icon_type
-parameter_list|,
-name|gconstpointer
-name|icon_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* gimp_fileops API that should now be done by using GimpFileProcedure  */
 end_comment
