@@ -924,8 +924,11 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|,
-name|gimp_get_pdb_error
+name|gimp_pdb_get_last_error
+argument_list|(
+name|gimp_get_pdb
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
